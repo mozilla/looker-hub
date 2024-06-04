@@ -205,7 +205,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_doc_css_align_tracks {
     label: "Use Counter Css Doc Css Align Tracks"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_align_tracks ;;
     type: number
     group_label: "Use Counter Css Doc"
@@ -4037,6 +4037,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_inset_area {
+    label: "Use Counter Css Doc Css Inset Area"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_inset_area ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Inset Area"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Inset Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_inset_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property inset-area. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_inset_block {
     label: "Use Counter Css Doc Css Inset Block"
     hidden: no
@@ -4219,7 +4237,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_doc_css_justify_tracks {
     label: "Use Counter Css Doc Css Justify Tracks"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_justify_tracks ;;
     type: number
     group_label: "Use Counter Css Doc"
@@ -7367,6 +7385,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_position_try_order {
+    label: "Use Counter Css Doc Css Position Try Order"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try_order ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Position Try Order"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Try Order"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_position_try_order"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property position-try-order. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_position_visibility {
     label: "Use Counter Css Doc Css Position Visibility"
     hidden: no
@@ -10082,6 +10118,24 @@ view: use_counters {
     }
 
     description: "Whether a document used the CSS property -webkit-flex-wrap. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_webkit_font_smoothing {
+    label: "Use Counter Css Doc Css Webkit Font Smoothing"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_webkit_font_smoothing ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Webkit Font Smoothing"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Webkit Font Smoothing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_webkit_font_smoothing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property -webkit-font-smoothing. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -12841,7 +12895,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_page_css_align_tracks {
     label: "Use Counter Css Page Css Align Tracks"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_align_tracks ;;
     type: number
     group_label: "Use Counter Css Page"
@@ -16673,6 +16727,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_inset_area {
+    label: "Use Counter Css Page Css Inset Area"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_inset_area ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Inset Area"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Inset Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_inset_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property inset-area. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_inset_block {
     label: "Use Counter Css Page Css Inset Block"
     hidden: no
@@ -16855,7 +16927,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_page_css_justify_tracks {
     label: "Use Counter Css Page Css Justify Tracks"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_justify_tracks ;;
     type: number
     group_label: "Use Counter Css Page"
@@ -20003,6 +20075,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_position_try_order {
+    label: "Use Counter Css Page Css Position Try Order"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try_order ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Position Try Order"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Try Order"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_try_order"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property position-try-order. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_position_visibility {
     label: "Use Counter Css Page Css Position Visibility"
     hidden: no
@@ -22718,6 +22808,24 @@ view: use_counters {
     }
 
     description: "Whether a page used the CSS property -webkit-flex-wrap. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_webkit_font_smoothing {
+    label: "Use Counter Css Page Css Webkit Font Smoothing"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_webkit_font_smoothing ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Webkit Font Smoothing"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Webkit Font Smoothing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_webkit_font_smoothing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property -webkit-font-smoothing. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -25457,6 +25565,114 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domattr_modified {
+    label: "Use Counter Deprecated Ops Doc Domattr Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domattr_modified ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Doc"
+    group_item_label: "Domattr Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domattr Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domattr_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used DOMAttrModified. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domcharacter_data_modified {
+    label: "Use Counter Deprecated Ops Doc Domcharacter Data Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domcharacter_data_modified ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Doc"
+    group_item_label: "Domcharacter Data Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domcharacter Data Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domcharacter_data_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used DOMCharacterDataModified. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domnode_inserted {
+    label: "Use Counter Deprecated Ops Doc Domnode Inserted"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domnode_inserted ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Doc"
+    group_item_label: "Domnode Inserted"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domnode Inserted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domnode_inserted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used DOMNodeInserted. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domnode_inserted_into_document {
+    label: "Use Counter Deprecated Ops Doc Domnode Inserted Into Document"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domnode_inserted_into_document ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Doc"
+    group_item_label: "Domnode Inserted Into Document"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domnode Inserted Into Document"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domnode_inserted_into_document"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used DOMNodeInsertedIntoDocument. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domnode_removed {
+    label: "Use Counter Deprecated Ops Doc Domnode Removed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domnode_removed ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Doc"
+    group_item_label: "Domnode Removed"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domnode Removed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domnode_removed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used DOMNodeRemoved. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domnode_removed_from_document {
+    label: "Use Counter Deprecated Ops Doc Domnode Removed From Document"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domnode_removed_from_document ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Doc"
+    group_item_label: "Domnode Removed From Document"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domnode Removed From Document"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domnode_removed_from_document"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used DOMNodeRemovedFromDocument. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_domquad_bounds_attr {
     label: "Use Counter Deprecated Ops Doc Domquad Bounds Attr"
     hidden: no
@@ -25472,6 +25688,24 @@ view: use_counters {
     }
 
     description: "Whether a document used DOMQuadBoundsAttr. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domsubtree_modified {
+    label: "Use Counter Deprecated Ops Doc Domsubtree Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domsubtree_modified ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Doc"
+    group_item_label: "Domsubtree Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domsubtree Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domsubtree_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used DOMSubtreeModified. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -25801,7 +26035,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_deprecated_ops_doc_mutation_event {
     label: "Use Counter Deprecated Ops Doc Mutation Event"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_mutation_event ;;
     type: number
     group_label: "Use Counter Deprecated Ops Doc"
@@ -26231,6 +26465,114 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domattr_modified {
+    label: "Use Counter Deprecated Ops Page Domattr Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domattr_modified ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Page"
+    group_item_label: "Domattr Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domattr Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domattr_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used DOMAttrModified. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domcharacter_data_modified {
+    label: "Use Counter Deprecated Ops Page Domcharacter Data Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domcharacter_data_modified ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Page"
+    group_item_label: "Domcharacter Data Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domcharacter Data Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domcharacter_data_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used DOMCharacterDataModified. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domnode_inserted {
+    label: "Use Counter Deprecated Ops Page Domnode Inserted"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domnode_inserted ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Page"
+    group_item_label: "Domnode Inserted"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domnode Inserted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domnode_inserted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used DOMNodeInserted. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domnode_inserted_into_document {
+    label: "Use Counter Deprecated Ops Page Domnode Inserted Into Document"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domnode_inserted_into_document ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Page"
+    group_item_label: "Domnode Inserted Into Document"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domnode Inserted Into Document"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domnode_inserted_into_document"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used DOMNodeInsertedIntoDocument. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domnode_removed {
+    label: "Use Counter Deprecated Ops Page Domnode Removed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domnode_removed ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Page"
+    group_item_label: "Domnode Removed"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domnode Removed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domnode_removed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used DOMNodeRemoved. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domnode_removed_from_document {
+    label: "Use Counter Deprecated Ops Page Domnode Removed From Document"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domnode_removed_from_document ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Page"
+    group_item_label: "Domnode Removed From Document"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domnode Removed From Document"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domnode_removed_from_document"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used DOMNodeRemovedFromDocument. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_page_domquad_bounds_attr {
     label: "Use Counter Deprecated Ops Page Domquad Bounds Attr"
     hidden: no
@@ -26246,6 +26588,24 @@ view: use_counters {
     }
 
     description: "Whether a page used DOMQuadBoundsAttr. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domsubtree_modified {
+    label: "Use Counter Deprecated Ops Page Domsubtree Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domsubtree_modified ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Page"
+    group_item_label: "Domsubtree Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domsubtree Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domsubtree_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used DOMSubtreeModified. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -26575,7 +26935,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_deprecated_ops_page_mutation_event {
     label: "Use Counter Deprecated Ops Page Mutation Event"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_mutation_event ;;
     type: number
     group_label: "Use Counter Deprecated Ops Page"
@@ -29324,6 +29684,186 @@ view: use_counters {
     }
 
     description: "Whether a document parses a Date with day of week in an unexpected position. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_2 {
+    label: "Use Counter Doc Js Subclassing Array Type 2"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_array_type_2 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Array Type 2"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Array Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_array_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document Array is Type II subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_3 {
+    label: "Use Counter Doc Js Subclassing Array Type 3"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_array_type_3 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Array Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Array Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_array_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document Array is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_arraybuffer_type_3 {
+    label: "Use Counter Doc Js Subclassing Arraybuffer Type 3"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_arraybuffer_type_3 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Arraybuffer Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Arraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_arraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document ArrayBuffer is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_promise_type_2 {
+    label: "Use Counter Doc Js Subclassing Promise Type 2"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_promise_type_2 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Promise Type 2"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Promise Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_promise_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document Promise is Type II subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_promise_type_3 {
+    label: "Use Counter Doc Js Subclassing Promise Type 3"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_promise_type_3 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Promise Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Promise Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_promise_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document Promise is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_regexp_type_3 {
+    label: "Use Counter Doc Js Subclassing Regexp Type 3"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_regexp_type_3 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Regexp Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Regexp Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_regexp_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document RegExp is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_regexp_type_4 {
+    label: "Use Counter Doc Js Subclassing Regexp Type 4"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_regexp_type_4 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Regexp Type 4"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Regexp Type 4"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_regexp_type_4"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document RegExp is Type IV subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_sharedarraybuffer_type_3 {
+    label: "Use Counter Doc Js Subclassing Sharedarraybuffer Type 3"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_sharedarraybuffer_type_3 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Sharedarraybuffer Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Sharedarraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_sharedarraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document SharedArrayBuffer is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_typedarray_type_2 {
+    label: "Use Counter Doc Js Subclassing Typedarray Type 2"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_typedarray_type_2 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Typedarray Type 2"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Typedarray Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_typedarray_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document TypedArray is Type II subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_typedarray_type_3 {
+    label: "Use Counter Doc Js Subclassing Typedarray Type 3"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_typedarray_type_3 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Typedarray Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Typedarray Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_typedarray_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document TypedArray is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -35785,6 +36325,186 @@ view: use_counters {
     }
 
     description: "Whether a page parses a Date with day of week in an unexpected position. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_array_type_2 {
+    label: "Use Counter Page Js Subclassing Array Type 2"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_array_type_2 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Array Type 2"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Array Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_array_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page Array is Type II subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_array_type_3 {
+    label: "Use Counter Page Js Subclassing Array Type 3"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_array_type_3 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Array Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Array Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_array_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page Array is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_arraybuffer_type_3 {
+    label: "Use Counter Page Js Subclassing Arraybuffer Type 3"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_arraybuffer_type_3 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Arraybuffer Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Arraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_arraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page ArrayBuffer is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_promise_type_2 {
+    label: "Use Counter Page Js Subclassing Promise Type 2"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_promise_type_2 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Promise Type 2"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Promise Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_promise_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page Promise is Type II subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_promise_type_3 {
+    label: "Use Counter Page Js Subclassing Promise Type 3"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_promise_type_3 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Promise Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Promise Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_promise_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page Promise is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_regexp_type_3 {
+    label: "Use Counter Page Js Subclassing Regexp Type 3"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_regexp_type_3 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Regexp Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Regexp Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_regexp_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page RegExp is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_regexp_type_4 {
+    label: "Use Counter Page Js Subclassing Regexp Type 4"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_regexp_type_4 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Regexp Type 4"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Regexp Type 4"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_regexp_type_4"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page RegExp is Type IV subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_sharedarraybuffer_type_3 {
+    label: "Use Counter Page Js Subclassing Sharedarraybuffer Type 3"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_sharedarraybuffer_type_3 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Sharedarraybuffer Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Sharedarraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_sharedarraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page SharedArrayBuffer is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_typedarray_type_2 {
+    label: "Use Counter Page Js Subclassing Typedarray Type 2"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_typedarray_type_2 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Typedarray Type 2"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Typedarray Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_typedarray_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page TypedArray is Type II subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_typedarray_type_3 {
+    label: "Use Counter Page Js Subclassing Typedarray Type 3"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_typedarray_type_3 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Typedarray Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Typedarray Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_typedarray_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page TypedArray is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -47724,6 +48444,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_doc_css_inset_area {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_inset_area} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Inset Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_inset_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_inset_area_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_inset_area: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Inset Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_inset_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_doc_css_inset_block {
     type: sum
     sql: ${metrics__counter__use_counter_css_doc_css_inset_block} ;;
@@ -52349,6 +53094,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_doc_css_position_try_order {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_position_try_order} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Try Order"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_position_try_order"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_position_try_order_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_position_try_order: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Try Order"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_position_try_order"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_doc_css_position_visibility {
     type: sum
     sql: ${metrics__counter__use_counter_css_doc_css_position_visibility} ;;
@@ -56120,6 +56890,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Doc Css Webkit Flex Wrap"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_webkit_flex_wrap"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_webkit_font_smoothing {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_webkit_font_smoothing} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Webkit Font Smoothing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_webkit_font_smoothing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_webkit_font_smoothing_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_webkit_font_smoothing: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Webkit Font Smoothing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_webkit_font_smoothing"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -65274,6 +66069,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_page_css_inset_area {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_inset_area} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Inset Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_inset_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_inset_area_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_inset_area: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Inset Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_inset_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_page_css_inset_block {
     type: sum
     sql: ${metrics__counter__use_counter_css_page_css_inset_block} ;;
@@ -69899,6 +70719,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_page_css_position_try_order {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_position_try_order} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Try Order"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_try_order"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_position_try_order_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_position_try_order: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Try Order"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_try_order"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_page_css_position_visibility {
     type: sum
     sql: ${metrics__counter__use_counter_css_page_css_position_visibility} ;;
@@ -73670,6 +74515,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Page Css Webkit Flex Wrap"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_webkit_flex_wrap"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_webkit_font_smoothing {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_webkit_font_smoothing} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Webkit Font Smoothing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_webkit_font_smoothing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_webkit_font_smoothing_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_webkit_font_smoothing: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Webkit Font Smoothing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_webkit_font_smoothing"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -77474,6 +78344,156 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_deprecated_ops_doc_domattr_modified {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_doc_domattr_modified} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domattr Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domattr_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_domattr_modified_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_doc_domattr_modified: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domattr Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domattr_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_domcharacter_data_modified {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_doc_domcharacter_data_modified} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domcharacter Data Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domcharacter_data_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_domcharacter_data_modified_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_doc_domcharacter_data_modified: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domcharacter Data Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domcharacter_data_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_domnode_inserted {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_doc_domnode_inserted} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domnode Inserted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domnode_inserted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_domnode_inserted_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_doc_domnode_inserted: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domnode Inserted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domnode_inserted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_domnode_inserted_into_document {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_doc_domnode_inserted_into_document} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domnode Inserted Into Document"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domnode_inserted_into_document"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_domnode_inserted_into_document_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_doc_domnode_inserted_into_document: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domnode Inserted Into Document"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domnode_inserted_into_document"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_domnode_removed {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_doc_domnode_removed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domnode Removed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domnode_removed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_domnode_removed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_doc_domnode_removed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domnode Removed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domnode_removed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_domnode_removed_from_document {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_doc_domnode_removed_from_document} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domnode Removed From Document"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domnode_removed_from_document"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_domnode_removed_from_document_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_doc_domnode_removed_from_document: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domnode Removed From Document"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domnode_removed_from_document"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_deprecated_ops_doc_domquad_bounds_attr {
     type: sum
     sql: ${metrics__counter__use_counter_deprecated_ops_doc_domquad_bounds_attr} ;;
@@ -77495,6 +78515,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domquad Bounds Attr"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domquad_bounds_attr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_domsubtree_modified {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_doc_domsubtree_modified} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domsubtree Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domsubtree_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_domsubtree_modified_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_doc_domsubtree_modified: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Domsubtree Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_domsubtree_modified"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -78549,6 +79594,156 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_deprecated_ops_page_domattr_modified {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_page_domattr_modified} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domattr Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domattr_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_domattr_modified_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_page_domattr_modified: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domattr Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domattr_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_domcharacter_data_modified {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_page_domcharacter_data_modified} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domcharacter Data Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domcharacter_data_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_domcharacter_data_modified_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_page_domcharacter_data_modified: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domcharacter Data Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domcharacter_data_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_domnode_inserted {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_page_domnode_inserted} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domnode Inserted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domnode_inserted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_domnode_inserted_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_page_domnode_inserted: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domnode Inserted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domnode_inserted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_domnode_inserted_into_document {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_page_domnode_inserted_into_document} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domnode Inserted Into Document"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domnode_inserted_into_document"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_domnode_inserted_into_document_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_page_domnode_inserted_into_document: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domnode Inserted Into Document"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domnode_inserted_into_document"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_domnode_removed {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_page_domnode_removed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domnode Removed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domnode_removed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_domnode_removed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_page_domnode_removed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domnode Removed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domnode_removed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_domnode_removed_from_document {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_page_domnode_removed_from_document} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domnode Removed From Document"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domnode_removed_from_document"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_domnode_removed_from_document_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_page_domnode_removed_from_document: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domnode Removed From Document"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domnode_removed_from_document"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_deprecated_ops_page_domquad_bounds_attr {
     type: sum
     sql: ${metrics__counter__use_counter_deprecated_ops_page_domquad_bounds_attr} ;;
@@ -78570,6 +79765,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domquad Bounds Attr"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domquad_bounds_attr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_domsubtree_modified {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_page_domsubtree_modified} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domsubtree Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domsubtree_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_domsubtree_modified_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_page_domsubtree_modified: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Domsubtree Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_domsubtree_modified"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -82845,6 +84065,256 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Doc Js Late Weekday"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_late_weekday"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_array_type_2 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_array_type_2} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Array Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_array_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_array_type_2_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_array_type_2: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Array Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_array_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_array_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_array_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Array Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_array_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_array_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_array_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Array Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_array_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_arraybuffer_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_arraybuffer_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Arraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_arraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_arraybuffer_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_arraybuffer_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Arraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_arraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_promise_type_2 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_promise_type_2} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Promise Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_promise_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_promise_type_2_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_promise_type_2: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Promise Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_promise_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_promise_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_promise_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Promise Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_promise_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_promise_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_promise_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Promise Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_promise_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_regexp_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_regexp_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Regexp Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_regexp_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_regexp_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_regexp_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Regexp Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_regexp_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_regexp_type_4 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_regexp_type_4} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Regexp Type 4"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_regexp_type_4"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_regexp_type_4_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_regexp_type_4: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Regexp Type 4"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_regexp_type_4"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_sharedarraybuffer_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_sharedarraybuffer_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Sharedarraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_sharedarraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_sharedarraybuffer_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_sharedarraybuffer_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Sharedarraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_sharedarraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_typedarray_type_2 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_typedarray_type_2} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Typedarray Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_typedarray_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_typedarray_type_2_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_typedarray_type_2: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Typedarray Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_typedarray_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_typedarray_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_typedarray_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Typedarray Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_typedarray_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_typedarray_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_typedarray_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Typedarray Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_subclassing_typedarray_type_3"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -91795,6 +93265,256 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Page Js Late Weekday"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_late_weekday"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_array_type_2 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_array_type_2} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Array Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_array_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_array_type_2_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_array_type_2: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Array Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_array_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_array_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_array_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Array Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_array_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_array_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_array_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Array Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_array_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_arraybuffer_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_arraybuffer_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Arraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_arraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_arraybuffer_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_arraybuffer_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Arraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_arraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_promise_type_2 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_promise_type_2} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Promise Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_promise_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_promise_type_2_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_promise_type_2: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Promise Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_promise_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_promise_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_promise_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Promise Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_promise_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_promise_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_promise_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Promise Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_promise_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_regexp_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_regexp_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Regexp Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_regexp_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_regexp_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_regexp_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Regexp Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_regexp_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_regexp_type_4 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_regexp_type_4} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Regexp Type 4"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_regexp_type_4"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_regexp_type_4_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_regexp_type_4: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Regexp Type 4"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_regexp_type_4"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_sharedarraybuffer_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_sharedarraybuffer_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Sharedarraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_sharedarraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_sharedarraybuffer_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_sharedarraybuffer_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Sharedarraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_sharedarraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_typedarray_type_2 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_typedarray_type_2} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Typedarray Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_typedarray_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_typedarray_type_2_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_typedarray_type_2: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Typedarray Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_typedarray_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_typedarray_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_typedarray_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Typedarray Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_typedarray_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_typedarray_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_typedarray_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Typedarray Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_subclassing_typedarray_type_3"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

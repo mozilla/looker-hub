@@ -20,6 +20,26 @@ countries_pocket_available_on_newtab,
 countries_region_name,
 countries_sponsored_tiles_available_on_newtab,
 countries_subregion_name,
+desktop_engagement_v1_app_version,
+desktop_engagement_v1_attribution_campaign,
+desktop_engagement_v1_attribution_content,
+desktop_engagement_v1_attribution_dlsource,
+desktop_engagement_v1_attribution_experiment,
+desktop_engagement_v1_attribution_medium,
+desktop_engagement_v1_attribution_ua,
+desktop_engagement_v1_attribution_variation,
+desktop_engagement_v1_country,
+desktop_engagement_v1_dau,
+desktop_engagement_v1_distribution_id,
+desktop_engagement_v1_is_desktop,
+desktop_engagement_v1_lifecycle_stage,
+desktop_engagement_v1_locale,
+desktop_engagement_v1_mau,
+desktop_engagement_v1_normalized_channel,
+desktop_engagement_v1_normalized_os,
+desktop_engagement_v1_normalized_os_version,
+desktop_engagement_v1_startup_profile_selection_reason,
+desktop_engagement_v1_wau,
 
                 NULL AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
@@ -61,6 +81,26 @@ countries.pocket_available_on_newtab AS countries_pocket_available_on_newtab,
 countries.region_name AS countries_region_name,
 countries.sponsored_tiles_available_on_newtab AS countries_sponsored_tiles_available_on_newtab,
 countries.subregion_name AS countries_subregion_name,
+desktop_engagement_v1.app_version AS desktop_engagement_v1_app_version,
+desktop_engagement_v1.attribution_campaign AS desktop_engagement_v1_attribution_campaign,
+desktop_engagement_v1.attribution_content AS desktop_engagement_v1_attribution_content,
+desktop_engagement_v1.attribution_dlsource AS desktop_engagement_v1_attribution_dlsource,
+desktop_engagement_v1.attribution_experiment AS desktop_engagement_v1_attribution_experiment,
+desktop_engagement_v1.attribution_medium AS desktop_engagement_v1_attribution_medium,
+desktop_engagement_v1.attribution_ua AS desktop_engagement_v1_attribution_ua,
+desktop_engagement_v1.attribution_variation AS desktop_engagement_v1_attribution_variation,
+desktop_engagement_v1.country AS desktop_engagement_v1_country,
+desktop_engagement_v1.dau AS desktop_engagement_v1_dau,
+desktop_engagement_v1.distribution_id AS desktop_engagement_v1_distribution_id,
+desktop_engagement_v1.is_desktop AS desktop_engagement_v1_is_desktop,
+desktop_engagement_v1.lifecycle_stage AS desktop_engagement_v1_lifecycle_stage,
+desktop_engagement_v1.locale AS desktop_engagement_v1_locale,
+desktop_engagement_v1.mau AS desktop_engagement_v1_mau,
+desktop_engagement_v1.normalized_channel AS desktop_engagement_v1_normalized_channel,
+desktop_engagement_v1.normalized_os AS desktop_engagement_v1_normalized_os,
+desktop_engagement_v1.normalized_os_version AS desktop_engagement_v1_normalized_os_version,
+desktop_engagement_v1.startup_profile_selection_reason AS desktop_engagement_v1_startup_profile_selection_reason,
+desktop_engagement_v1.wau AS desktop_engagement_v1_wau,
 
                     FROM
                     (
@@ -104,6 +144,26 @@ countries_pocket_available_on_newtab,
 countries_region_name,
 countries_sponsored_tiles_available_on_newtab,
 countries_subregion_name,
+desktop_engagement_v1_app_version,
+desktop_engagement_v1_attribution_campaign,
+desktop_engagement_v1_attribution_content,
+desktop_engagement_v1_attribution_dlsource,
+desktop_engagement_v1_attribution_experiment,
+desktop_engagement_v1_attribution_medium,
+desktop_engagement_v1_attribution_ua,
+desktop_engagement_v1_attribution_variation,
+desktop_engagement_v1_country,
+desktop_engagement_v1_dau,
+desktop_engagement_v1_distribution_id,
+desktop_engagement_v1_is_desktop,
+desktop_engagement_v1_lifecycle_stage,
+desktop_engagement_v1_locale,
+desktop_engagement_v1_mau,
+desktop_engagement_v1_normalized_channel,
+desktop_engagement_v1_normalized_os,
+desktop_engagement_v1_normalized_os_version,
+desktop_engagement_v1_startup_profile_selection_reason,
+desktop_engagement_v1_wau,
 
                 client_id,
                 analysis_basis ;;
@@ -193,6 +253,127 @@ countries_subregion_name,
   dimension: subregion_name {
     sql: ${TABLE}.countries_subregion_name ;;
     type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version {
+    sql: ${TABLE}.desktop_engagement_v1_app_version ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: attribution_campaign {
+    sql: ${TABLE}.desktop_engagement_v1_attribution_campaign ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: attribution_content {
+    sql: ${TABLE}.desktop_engagement_v1_attribution_content ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: attribution_dlsource {
+    sql: ${TABLE}.desktop_engagement_v1_attribution_dlsource ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: attribution_experiment {
+    sql: ${TABLE}.desktop_engagement_v1_attribution_experiment ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: attribution_medium {
+    sql: ${TABLE}.desktop_engagement_v1_attribution_medium ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: attribution_ua {
+    sql: ${TABLE}.desktop_engagement_v1_attribution_ua ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: attribution_variation {
+    sql: ${TABLE}.desktop_engagement_v1_attribution_variation ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: country {
+    sql: ${TABLE}.desktop_engagement_v1_country ;;
+    type: string
+    map_layer_name: countries
+    group_label: "Base Fields"
+  }
+
+  dimension: dau {
+    sql: ${TABLE}.desktop_engagement_v1_dau ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: distribution_id {
+    sql: ${TABLE}.desktop_engagement_v1_distribution_id ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: is_desktop {
+    sql: ${TABLE}.desktop_engagement_v1_is_desktop ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: lifecycle_stage {
+    sql: ${TABLE}.desktop_engagement_v1_lifecycle_stage ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: locale {
+    sql: ${TABLE}.desktop_engagement_v1_locale ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: mau {
+    sql: ${TABLE}.desktop_engagement_v1_mau ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: normalized_channel {
+    sql: ${TABLE}.desktop_engagement_v1_normalized_channel ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: normalized_os {
+    sql: ${TABLE}.desktop_engagement_v1_normalized_os ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: normalized_os_version {
+    sql: ${TABLE}.desktop_engagement_v1_normalized_os_version ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: startup_profile_selection_reason {
+    sql: ${TABLE}.desktop_engagement_v1_startup_profile_selection_reason ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: wau {
+    sql: ${TABLE}.desktop_engagement_v1_wau ;;
+    type: number
     group_label: "Base Fields"
   }
 

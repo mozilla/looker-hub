@@ -333,6 +333,15 @@ view: newtab_table {
 "
   }
 
+  dimension: metrics__boolean__newtab_weather_enabled {
+    sql: ${TABLE}.metrics.boolean.newtab_weather_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Newtab Weather Enabled"
+    description: "Whether the weather widget is enabled on the newtab. Corresponds to the value of the `browser.newtabpage.activity-stream.showWeather` pref.
+"
+  }
+
   dimension: metrics__boolean__pocket_enabled {
     sql: ${TABLE}.metrics.boolean.pocket_enabled ;;
     type: yesno

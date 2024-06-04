@@ -111,6 +111,11 @@ view: mobile_retention {
     type: string
   }
 
+  dimension: product_name {
+    sql: ${TABLE}.product_name ;;
+    type: string
+  }
+
   dimension: repeat_profiles {
     sql: ${TABLE}.repeat_profiles ;;
     type: number

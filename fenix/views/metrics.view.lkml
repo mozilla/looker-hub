@@ -3736,6 +3736,23 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
+  dimension: metrics__labeled_counter__bounce_tracking_protection_purge_count {
+    label: "Bounce Tracking Protection Purge Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.bounce_tracking_protection_purge_count ;;
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Purge Count"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Purge Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/bounce_tracking_protection_purge_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often we purge trackers. Giving a high level overview about the effectivness of bounce tracking protection. Allows determining error rate with failure/success label. When in dry mode, we count the purges that would have happened under the dry label.
+"
+  }
+
   dimension: metrics__counter__bounce_tracking_protection_purge_count_classified_tracker {
     label: "Bounce Tracking Protection Purge Count Classified Tracker"
     hidden: no
@@ -7013,6 +7030,58 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__network_tls_early_data_accepted {
+    label: "Network Tls Early Data Accepted"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_tls_early_data_accepted ;;
+    group_label: "Network"
+    group_item_label: "Tls Early Data Accepted"
+
+    link: {
+      label: "Glean Dictionary reference for Network Tls Early Data Accepted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_tls_early_data_accepted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "TLS early data was used and it was accepted or rejected by the remote host.
+"
+  }
+
+  dimension: metrics__custom_distribution__network_tls_early_data_bytes_written__sum {
+    label: "Network Tls Early Data Bytes Written Sum"
+    hidden: yes
+    sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Tls Early Data Bytes Written Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Tls Early Data Bytes Written Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_tls_early_data_bytes_written"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of bytes sent using TLS early data at the start of a TLS connection for a given channel.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_tls_early_data_negotiated {
+    label: "Network Tls Early Data Negotiated"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_tls_early_data_negotiated ;;
+    group_label: "Network"
+    group_item_label: "Tls Early Data Negotiated"
+
+    link: {
+      label: "Glean Dictionary reference for Network Tls Early Data Negotiated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_tls_early_data_negotiated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sending TLS early data was not possible, possible and used, or possible but not used.
+"
+  }
+
   dimension: metrics__timing_distribution__network_tls_handshake__sum {
     label: "Network Tls Handshake Sum"
     hidden: no
@@ -7835,6 +7904,40 @@ To be used to validate GIFFT.
     }
 
     description: "Time in milliseconds that http channel spent suspended between AsyncOpen and OnStartRequest.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_redirect_to_scheme_subresource {
+    label: "Networking Http Redirect To Scheme Subresource"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_redirect_to_scheme_subresource ;;
+    group_label: "Networking"
+    group_item_label: "Http Redirect To Scheme Subresource"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Redirect To Scheme Subresource"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_redirect_to_scheme_subresource"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of the HTTP redirection that triggered by subresource, keyed by the URL scheme redirected to
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_redirect_to_scheme_top_level {
+    label: "Networking Http Redirect To Scheme Top Level"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_redirect_to_scheme_top_level ;;
+    group_label: "Networking"
+    group_item_label: "Http Redirect To Scheme Top Level"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Redirect To Scheme Top Level"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_redirect_to_scheme_top_level"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of the HTTP redirection that triggered by top-level document, keyed by the URL scheme redirected to
 "
   }
 
@@ -15674,6 +15777,47 @@ view: metrics__metrics__labeled_counter__avif_yuv_color_space {
   }
 }
 
+view: metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count {
+  label: "Bounce Tracking Protection - Purge Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_search_ad_clicks {
   label: "Browser Search - Ad Clicks"
 
@@ -18218,6 +18362,88 @@ view: metrics__metrics__labeled_counter__network_data_size_per_type {
   }
 }
 
+view: metrics__metrics__labeled_counter__network_tls_early_data_accepted {
+  label: "Network - Tls Early Data Accepted"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_tls_early_data_negotiated {
+  label: "Network - Tls Early Data Negotiated"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
   label: "Networking - Cookie Timestamp Fixed Count"
 
@@ -18338,6 +18564,88 @@ view: metrics__metrics__labeled_counter__networking_http_channel_onstart_success
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_redirect_to_scheme_subresource {
+  label: "Networking - Http Redirect To Scheme Subresource"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_redirect_to_scheme_top_level {
+  label: "Networking - Http Redirect To Scheme Top Level"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
   }
 }
 
@@ -20620,6 +20928,18 @@ view: metrics__metrics__custom_distribution__js_execution_percentage__values {
 }
 
 view: metrics__metrics__custom_distribution__js_xdr_encode_percentage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__network_tls_early_data_bytes_written__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

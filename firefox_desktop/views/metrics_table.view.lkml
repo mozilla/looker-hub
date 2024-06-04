@@ -1345,6 +1345,26 @@ of the shopping experiment.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__network_tls_early_data_bytes_written__count {
+    sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Network Tls Early Data Bytes Written"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__network_tls_early_data_bytes_written__sum {
+    sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Network Tls Early Data Bytes Written"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__network_tls_early_data_bytes_written__values {
+    sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_cookie_access_fixup_diff.count ;;
     type: number
@@ -2139,6 +2159,13 @@ of the shopping experiment.
 "
   }
 
+  dimension: metrics__labeled_counter__bounce_tracking_protection_purge_count {
+    sql: ${TABLE}.metrics.labeled_counter.bounce_tracking_protection_purge_count ;;
+    hidden: yes
+    description: "Counts how often we purge trackers. Giving a high level overview about the effectivness of bounce tracking protection. Allows determining error rate with failed/success label. When in dry mode, we count the purges that would have happened under the dry label.
+"
+  }
+
   dimension: metrics__labeled_counter__cert_verifier_crlite_status {
     sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_status ;;
     hidden: yes
@@ -2515,6 +2542,20 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__labeled_counter__network_tls_early_data_accepted {
+    sql: ${TABLE}.metrics.labeled_counter.network_tls_early_data_accepted ;;
+    hidden: yes
+    description: "TLS early data was used and it was accepted or rejected by the remote host.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_tls_early_data_negotiated {
+    sql: ${TABLE}.metrics.labeled_counter.network_tls_early_data_negotiated ;;
+    hidden: yes
+    description: "Sending TLS early data was not possible, possible and used, or possible but not used.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
     sql: ${TABLE}.metrics.labeled_counter.networking_cookie_timestamp_fixed_count ;;
     hidden: yes
@@ -2533,6 +2574,20 @@ If you're unsure, please ask in
     sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_onstart_success_https_rr ;;
     hidden: yes
     description: "Successfully started HTTP channels when HTTPS RR is used
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_redirect_to_scheme_subresource {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_redirect_to_scheme_subresource ;;
+    hidden: yes
+    description: "Count of the HTTP redirection that triggered by subresource, keyed by the URL scheme redirected to
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_redirect_to_scheme_top_level {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_redirect_to_scheme_top_level ;;
+    hidden: yes
+    description: "Count of the HTTP redirection that triggered by top-level document, keyed by the URL scheme redirected to
 "
   }
 
@@ -11678,6 +11733,18 @@ view: metrics_table__metrics__custom_distribution__gfx_content_frame_time_withou
 }
 
 view: metrics_table__metrics__custom_distribution__gfx_content_frame_time_without_upload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__network_tls_early_data_bytes_written__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

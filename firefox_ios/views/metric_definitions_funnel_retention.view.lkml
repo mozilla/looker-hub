@@ -42,6 +42,15 @@ looker_base_fields_sample_id,
 looker_base_fields_user_agent__browser,
 looker_base_fields_user_agent__os,
 looker_base_fields_user_agent__version,
+funnel_retention_adjust_ad_group,
+funnel_retention_adjust_campaign,
+funnel_retention_adjust_creative,
+funnel_retention_adjust_network,
+funnel_retention_first_reported_country,
+funnel_retention_first_reported_isp,
+funnel_retention_new_profiles,
+funnel_retention_repeat_user,
+funnel_retention_retained_week_4,
 
                 NULL AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
@@ -105,6 +114,15 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
 looker_base_fields.user_agent.browser AS looker_base_fields_user_agent__browser,
 looker_base_fields.user_agent.os AS looker_base_fields_user_agent__os,
 looker_base_fields.user_agent.version AS looker_base_fields_user_agent__version,
+funnel_retention.adjust_ad_group AS funnel_retention_adjust_ad_group,
+funnel_retention.adjust_campaign AS funnel_retention_adjust_campaign,
+funnel_retention.adjust_creative AS funnel_retention_adjust_creative,
+funnel_retention.adjust_network AS funnel_retention_adjust_network,
+funnel_retention.first_reported_country AS funnel_retention_first_reported_country,
+funnel_retention.first_reported_isp AS funnel_retention_first_reported_isp,
+funnel_retention.new_profiles AS funnel_retention_new_profiles,
+funnel_retention.repeat_user AS funnel_retention_repeat_user,
+funnel_retention.retained_week_4 AS funnel_retention_retained_week_4,
 
                     FROM
                     (
@@ -176,6 +194,15 @@ looker_base_fields_sample_id,
 looker_base_fields_user_agent__browser,
 looker_base_fields_user_agent__os,
 looker_base_fields_user_agent__version,
+funnel_retention_adjust_ad_group,
+funnel_retention_adjust_campaign,
+funnel_retention_adjust_creative,
+funnel_retention_adjust_network,
+funnel_retention_first_reported_country,
+funnel_retention_first_reported_isp,
+funnel_retention_new_profiles,
+funnel_retention_repeat_user,
+funnel_retention_retained_week_4,
 
                 client_id,
                 analysis_basis ;;
@@ -446,6 +473,60 @@ looker_base_fields_user_agent__version,
     type: string
     group_label: "Base Fields"
     group_item_label: "Version"
+  }
+
+  dimension: adjust_ad_group {
+    sql: ${TABLE}.funnel_retention_adjust_ad_group ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: adjust_campaign {
+    sql: ${TABLE}.funnel_retention_adjust_campaign ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: adjust_creative {
+    sql: ${TABLE}.funnel_retention_adjust_creative ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: adjust_network {
+    sql: ${TABLE}.funnel_retention_adjust_network ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: first_reported_country {
+    sql: ${TABLE}.funnel_retention_first_reported_country ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: first_reported_isp {
+    sql: ${TABLE}.funnel_retention_first_reported_isp ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: new_profiles {
+    sql: ${TABLE}.funnel_retention_new_profiles ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: repeat_user {
+    sql: ${TABLE}.funnel_retention_repeat_user ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: retained_week_4 {
+    sql: ${TABLE}.funnel_retention_retained_week_4 ;;
+    type: number
+    group_label: "Base Fields"
   }
 
   dimension_group: submission {
