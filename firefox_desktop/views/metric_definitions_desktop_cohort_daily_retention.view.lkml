@@ -350,12 +350,6 @@ desktop_cohort_daily_retention_vendor,
     group_label: "Base Fields"
   }
 
-  dimension: app_version {
-    sql: ${TABLE}.desktop_cohort_daily_retention_app_version ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
   dimension: architecture {
     sql: ${TABLE}.desktop_cohort_daily_retention_architecture ;;
     type: string
@@ -404,27 +398,8 @@ desktop_cohort_daily_retention_vendor,
     group_label: "Base Fields"
   }
 
-  dimension: country {
-    sql: ${TABLE}.desktop_cohort_daily_retention_country ;;
-    type: string
-    map_layer_name: countries
-    group_label: "Base Fields"
-  }
-
   dimension: db_version {
     sql: ${TABLE}.desktop_cohort_daily_retention_db_version ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: distribution_id {
-    sql: ${TABLE}.desktop_cohort_daily_retention_distribution_id ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: locale {
-    sql: ${TABLE}.desktop_cohort_daily_retention_locale ;;
     type: string
     group_label: "Base Fields"
   }
@@ -435,20 +410,8 @@ desktop_cohort_daily_retention_vendor,
     group_label: "Base Fields"
   }
 
-  dimension: normalized_channel {
-    sql: ${TABLE}.desktop_cohort_daily_retention_normalized_channel ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
   dimension: normalized_os {
     sql: ${TABLE}.desktop_cohort_daily_retention_normalized_os ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: normalized_os_version {
-    sql: ${TABLE}.desktop_cohort_daily_retention_normalized_os_version ;;
     type: string
     group_label: "Base Fields"
   }
@@ -533,12 +496,6 @@ desktop_cohort_daily_retention_vendor,
 
   dimension: partner_distributor_channel {
     sql: ${TABLE}.desktop_cohort_daily_retention_partner_distributor_channel ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: partner_id {
-    sql: ${TABLE}.desktop_cohort_daily_retention_partner_id ;;
     type: string
     group_label: "Base Fields"
   }
