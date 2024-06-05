@@ -4001,6 +4001,12 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.topsites_impression
       type: table_view
+firefox_metrics:
+  glean_app: false
+  owners:
+  - vsabino@mozilla.com
+  pretty_name: Firefox Metrics
+  spoke: looker-spoke-default
 firefox_okrs:
   glean_app: false
   owners:
