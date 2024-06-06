@@ -24,14 +24,15 @@ mobile_active_users_aggregates_v1_attribution_source,
 mobile_active_users_aggregates_v1_channel,
 mobile_active_users_aggregates_v1_city,
 mobile_active_users_aggregates_v1_country,
+mobile_active_users_aggregates_v1_daily_users,
 mobile_active_users_aggregates_v1_dau,
 mobile_active_users_aggregates_v1_distribution_id,
 mobile_active_users_aggregates_v1_first_seen_year,
 mobile_active_users_aggregates_v1_install_source,
 mobile_active_users_aggregates_v1_is_default_browser,
-mobile_active_users_aggregates_v1_language_name,
+mobile_active_users_aggregates_v1_locale,
 mobile_active_users_aggregates_v1_mau,
-mobile_active_users_aggregates_v1_new_profiles,
+mobile_active_users_aggregates_v1_monthly_users,
 mobile_active_users_aggregates_v1_os,
 mobile_active_users_aggregates_v1_os_grouped,
 mobile_active_users_aggregates_v1_os_version,
@@ -40,6 +41,7 @@ mobile_active_users_aggregates_v1_os_version_minor,
 mobile_active_users_aggregates_v1_segment,
 mobile_active_users_aggregates_v1_uri_count,
 mobile_active_users_aggregates_v1_wau,
+mobile_active_users_aggregates_v1_weekly_users,
 
                 NULL AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
@@ -86,14 +88,15 @@ mobile_active_users_aggregates_v1.attribution_source AS mobile_active_users_aggr
 mobile_active_users_aggregates_v1.channel AS mobile_active_users_aggregates_v1_channel,
 mobile_active_users_aggregates_v1.city AS mobile_active_users_aggregates_v1_city,
 mobile_active_users_aggregates_v1.country AS mobile_active_users_aggregates_v1_country,
+mobile_active_users_aggregates_v1.daily_users AS mobile_active_users_aggregates_v1_daily_users,
 mobile_active_users_aggregates_v1.dau AS mobile_active_users_aggregates_v1_dau,
 mobile_active_users_aggregates_v1.distribution_id AS mobile_active_users_aggregates_v1_distribution_id,
 mobile_active_users_aggregates_v1.first_seen_year AS mobile_active_users_aggregates_v1_first_seen_year,
 mobile_active_users_aggregates_v1.install_source AS mobile_active_users_aggregates_v1_install_source,
 mobile_active_users_aggregates_v1.is_default_browser AS mobile_active_users_aggregates_v1_is_default_browser,
-mobile_active_users_aggregates_v1.language_name AS mobile_active_users_aggregates_v1_language_name,
+mobile_active_users_aggregates_v1.locale AS mobile_active_users_aggregates_v1_locale,
 mobile_active_users_aggregates_v1.mau AS mobile_active_users_aggregates_v1_mau,
-mobile_active_users_aggregates_v1.new_profiles AS mobile_active_users_aggregates_v1_new_profiles,
+mobile_active_users_aggregates_v1.monthly_users AS mobile_active_users_aggregates_v1_monthly_users,
 mobile_active_users_aggregates_v1.os AS mobile_active_users_aggregates_v1_os,
 mobile_active_users_aggregates_v1.os_grouped AS mobile_active_users_aggregates_v1_os_grouped,
 mobile_active_users_aggregates_v1.os_version AS mobile_active_users_aggregates_v1_os_version,
@@ -102,6 +105,7 @@ mobile_active_users_aggregates_v1.os_version_minor AS mobile_active_users_aggreg
 mobile_active_users_aggregates_v1.segment AS mobile_active_users_aggregates_v1_segment,
 mobile_active_users_aggregates_v1.uri_count AS mobile_active_users_aggregates_v1_uri_count,
 mobile_active_users_aggregates_v1.wau AS mobile_active_users_aggregates_v1_wau,
+mobile_active_users_aggregates_v1.weekly_users AS mobile_active_users_aggregates_v1_weekly_users,
 
                     FROM
                     (
@@ -143,14 +147,15 @@ mobile_active_users_aggregates_v1_attribution_source,
 mobile_active_users_aggregates_v1_channel,
 mobile_active_users_aggregates_v1_city,
 mobile_active_users_aggregates_v1_country,
+mobile_active_users_aggregates_v1_daily_users,
 mobile_active_users_aggregates_v1_dau,
 mobile_active_users_aggregates_v1_distribution_id,
 mobile_active_users_aggregates_v1_first_seen_year,
 mobile_active_users_aggregates_v1_install_source,
 mobile_active_users_aggregates_v1_is_default_browser,
-mobile_active_users_aggregates_v1_language_name,
+mobile_active_users_aggregates_v1_locale,
 mobile_active_users_aggregates_v1_mau,
-mobile_active_users_aggregates_v1_new_profiles,
+mobile_active_users_aggregates_v1_monthly_users,
 mobile_active_users_aggregates_v1_os,
 mobile_active_users_aggregates_v1_os_grouped,
 mobile_active_users_aggregates_v1_os_version,
@@ -159,6 +164,7 @@ mobile_active_users_aggregates_v1_os_version_minor,
 mobile_active_users_aggregates_v1_segment,
 mobile_active_users_aggregates_v1_uri_count,
 mobile_active_users_aggregates_v1_wau,
+mobile_active_users_aggregates_v1_weekly_users,
 
                 client_id,
                 analysis_basis ;;
@@ -292,6 +298,12 @@ mobile_active_users_aggregates_v1_wau,
     group_label: "Base Fields"
   }
 
+  dimension: daily_users {
+    sql: ${TABLE}.mobile_active_users_aggregates_v1_daily_users ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
   dimension: dau {
     sql: ${TABLE}.mobile_active_users_aggregates_v1_dau ;;
     type: number
@@ -322,8 +334,8 @@ mobile_active_users_aggregates_v1_wau,
     group_label: "Base Fields"
   }
 
-  dimension: language_name {
-    sql: ${TABLE}.mobile_active_users_aggregates_v1_language_name ;;
+  dimension: locale {
+    sql: ${TABLE}.mobile_active_users_aggregates_v1_locale ;;
     type: string
     group_label: "Base Fields"
   }
@@ -334,8 +346,8 @@ mobile_active_users_aggregates_v1_wau,
     group_label: "Base Fields"
   }
 
-  dimension: new_profiles {
-    sql: ${TABLE}.mobile_active_users_aggregates_v1_new_profiles ;;
+  dimension: monthly_users {
+    sql: ${TABLE}.mobile_active_users_aggregates_v1_monthly_users ;;
     type: number
     group_label: "Base Fields"
   }
@@ -384,6 +396,12 @@ mobile_active_users_aggregates_v1_wau,
 
   dimension: wau {
     sql: ${TABLE}.mobile_active_users_aggregates_v1_wau ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: weekly_users {
+    sql: ${TABLE}.mobile_active_users_aggregates_v1_weekly_users ;;
     type: number
     group_label: "Base Fields"
   }
