@@ -6764,6 +6764,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__translations_request_count {
+    label: "Translations Request Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.translations_request_count ;;
+    group_label: "Translations"
+    group_item_label: "Request Count"
+
+    link: {
+      label: "Glean Dictionary reference for Translations Request Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/translations_request_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of translation requests, along with their type.
+"
+  }
+
   dimension: metrics__counter__translations_requests_count {
     label: "Translations Requests Count"
     hidden: no
@@ -13823,6 +13840,47 @@ view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_
 
 view: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
   label: "Tls - Xyber Intolerance Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__translations_request_count {
+  label: "Translations - Request Count"
 
   dimension: document_id {
     type: string

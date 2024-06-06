@@ -1924,7 +1924,7 @@ This does not include deletion-request pings.
   dimension: metrics__labeled_counter__bounce_tracking_protection_purge_count {
     sql: ${TABLE}.metrics.labeled_counter.bounce_tracking_protection_purge_count ;;
     hidden: yes
-    description: "Counts how often we purge trackers. Giving a high level overview about the effectivness of bounce tracking protection. Allows determining error rate with failed/success label. When in dry mode, we count the purges that would have happened under the dry label.
+    description: "Counts how often we purge trackers. Giving a high level overview about the effectivness of bounce tracking protection. Allows determining error rate with failure/success label. When in dry mode, we count the purges that would have happened under the dry label.
 "
   }
 
@@ -2580,6 +2580,13 @@ This metric appears in both the metrics and baseline pings.
     sql: ${TABLE}.metrics.labeled_counter.tls_xyber_intolerance_reason ;;
     hidden: yes
     description: "The error that was returned from a failed TLS 1.3 handshake in which the client sent a Xyber key share (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
+"
+  }
+
+  dimension: metrics__labeled_counter__translations_request_count {
+    sql: ${TABLE}.metrics.labeled_counter.translations_request_count ;;
+    hidden: yes
+    description: "The count of translation requests, along with their type.
 "
   }
 

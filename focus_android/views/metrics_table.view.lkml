@@ -2353,6 +2353,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__translations_request_count {
+    sql: ${TABLE}.metrics.labeled_counter.translations_request_count ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__webrtcdtls_cipher {
     sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_cipher ;;
     hidden: yes
