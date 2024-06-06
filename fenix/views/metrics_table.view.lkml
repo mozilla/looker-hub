@@ -3048,6 +3048,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__translations_request_count {
+    sql: ${TABLE}.metrics.labeled_counter.translations_request_count ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__wallpapers_new_wallpaper_applied {
     sql: ${TABLE}.metrics.labeled_counter.wallpapers_new_wallpaper_applied ;;
     hidden: yes
