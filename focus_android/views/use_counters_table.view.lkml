@@ -3160,6 +3160,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css Position Anchor"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_position_try_options {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try_options ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Try Options"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_position_try_order {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try_order ;;
     type: number
@@ -8093,6 +8100,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Position Anchor"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_try_options {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try_options ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Try Options"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_position_try_order {
