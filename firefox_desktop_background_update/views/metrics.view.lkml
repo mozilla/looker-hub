@@ -614,7 +614,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
   dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__sum {
     label: "Cookie Banners Click Handle Duration Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.cookie_banners_click_handle_duration.sum ;;
     type: number
     group_label: "Cookie Banners Click"
@@ -738,7 +738,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
   dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__sum {
     label: "Cookie Banners Cmp Handle Duration Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.sum ;;
     type: number
     group_label: "Cookie Banners Cmp"

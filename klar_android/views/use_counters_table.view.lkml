@@ -4014,6 +4014,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_position_try_options {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try_options ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Try Options"
+    description: "Whether a document used the CSS property position-try-options. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_position_try_order {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try_order ;;
     type: number
@@ -10356,6 +10365,15 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Position Anchor"
     description: "Whether a page used the CSS property position-anchor. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_try_options {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try_options ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Try Options"
+    description: "Whether a page used the CSS property position-try-options. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

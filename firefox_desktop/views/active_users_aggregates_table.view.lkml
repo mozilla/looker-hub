@@ -10,11 +10,6 @@ view: active_users_aggregates_table {
     type: number
   }
 
-  dimension: ad_clicks {
-    sql: ${TABLE}.ad_clicks ;;
-    type: number
-  }
-
   dimension: app_name {
     sql: ${TABLE}.app_name ;;
     type: string
@@ -101,8 +96,8 @@ view: active_users_aggregates_table {
     type: yesno
   }
 
-  dimension: language_name {
-    sql: ${TABLE}.language_name ;;
+  dimension: locale {
+    sql: ${TABLE}.locale ;;
     type: string
   }
 
@@ -113,16 +108,6 @@ view: active_users_aggregates_table {
 
   dimension: monthly_users {
     sql: ${TABLE}.monthly_users ;;
-    type: number
-  }
-
-  dimension: new_profiles {
-    sql: ${TABLE}.new_profiles ;;
-    type: number
-  }
-
-  dimension: organic_search_count {
-    sql: ${TABLE}.organic_search_count ;;
     type: number
   }
 
@@ -148,16 +133,6 @@ view: active_users_aggregates_table {
 
   dimension: os_version_minor {
     sql: ${TABLE}.os_version_minor ;;
-    type: number
-  }
-
-  dimension: search_count {
-    sql: ${TABLE}.search_count ;;
-    type: number
-  }
-
-  dimension: search_with_ads {
-    sql: ${TABLE}.search_with_ads ;;
     type: number
   }
 
