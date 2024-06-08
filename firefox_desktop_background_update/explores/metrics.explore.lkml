@@ -118,6 +118,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__bounce_tracking_protection_purge_count}) AS metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__cert_compression_failures {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cert_compression_failures}) AS metrics__metrics__labeled_counter__cert_compression_failures ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cert_compression_failures.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__cert_compression_used {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cert_compression_used}) AS metrics__metrics__labeled_counter__cert_compression_used ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cert_compression_used.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__cert_verifier_crlite_status {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cert_verifier_crlite_status}) AS metrics__metrics__labeled_counter__cert_verifier_crlite_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cert_verifier_crlite_status.document_id} ;;
@@ -576,6 +586,16 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__translations_request_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__translations_request_count}) AS metrics__metrics__labeled_counter__translations_request_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__translations_request_count.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webauthn_create_authenticator_attachment {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webauthn_create_authenticator_attachment}) AS metrics__metrics__labeled_counter__webauthn_create_authenticator_attachment ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webauthn_create_authenticator_attachment.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webauthn_get_authenticator_attachment {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webauthn_get_authenticator_attachment}) AS metrics__metrics__labeled_counter__webauthn_get_authenticator_attachment ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webauthn_get_authenticator_attachment.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__webrtcdtls_cipher {

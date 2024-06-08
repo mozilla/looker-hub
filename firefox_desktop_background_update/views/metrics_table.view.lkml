@@ -821,6 +821,79 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__webauthn_create_failure {
+    sql: ${TABLE}.metrics.counter.webauthn_create_failure ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Create Failure"
+  }
+
+  dimension: metrics__counter__webauthn_create_passkey {
+    sql: ${TABLE}.metrics.counter.webauthn_create_passkey ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Create Passkey"
+  }
+
+  dimension: metrics__counter__webauthn_create_success {
+    sql: ${TABLE}.metrics.counter.webauthn_create_success ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Create Success"
+  }
+
+  dimension: metrics__counter__webauthn_get_failure {
+    sql: ${TABLE}.metrics.counter.webauthn_get_failure ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Get Failure"
+  }
+
+  dimension: metrics__counter__webauthn_get_success {
+    sql: ${TABLE}.metrics.counter.webauthn_get_success ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Get Success"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__count {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Brotli Saved Bytes"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Brotli Saved Bytes"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__values {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zlib_saved_bytes__count {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zlib_saved_bytes.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Zlib Saved Bytes"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zlib_saved_bytes__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zlib_saved_bytes.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Zlib Saved Bytes"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zlib_saved_bytes__values {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zlib_saved_bytes.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__count {
     sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_frame.count ;;
     type: number
@@ -1928,6 +2001,16 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__labeled_counter__cert_compression_failures {
+    sql: ${TABLE}.metrics.labeled_counter.cert_compression_failures ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__cert_compression_used {
+    sql: ${TABLE}.metrics.labeled_counter.cert_compression_used ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__cert_verifier_crlite_status {
     sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_status ;;
     hidden: yes
@@ -2588,6 +2671,16 @@ This metric appears in both the metrics and baseline pings.
     hidden: yes
     description: "The count of translation requests, along with their type.
 "
+  }
+
+  dimension: metrics__labeled_counter__webauthn_create_authenticator_attachment {
+    sql: ${TABLE}.metrics.labeled_counter.webauthn_create_authenticator_attachment ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__webauthn_get_authenticator_attachment {
+    sql: ${TABLE}.metrics.labeled_counter.webauthn_get_authenticator_attachment ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__webrtcdtls_cipher {
@@ -10615,6 +10708,30 @@ view: metrics_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cert_compression_brotli_saved_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cert_compression_zlib_saved_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
