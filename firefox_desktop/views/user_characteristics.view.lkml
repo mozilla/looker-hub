@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: user_characteristics {
+  dimension: metrics__text2__characteristics_audio_devices {
+    label: "Characteristics Audio Devices"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_audio_devices ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Audio Devices"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Audio Devices"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_audio_devices"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A JSON object containing sample rate and max channel count of every audio device, and output latency of default device
+"
+  }
+
   dimension: metrics__quantity__characteristics_avail_height {
     label: "Characteristics Avail Height"
     hidden: no
@@ -1031,6 +1049,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_media_devices {
+    label: "Characteristics Media Devices"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_media_devices ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Media Devices"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Media Devices"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_media_devices"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A JSON object containing the number of audio input/output, video input and the number of unique group ids.
+"
+  }
+
   dimension: metrics__text2__characteristics_missing_fonts {
     label: "Characteristics Missing Fonts"
     hidden: no
@@ -1622,6 +1658,24 @@ view: user_characteristics {
     }
 
     description: "What LookAndFeel(VideoDynamicRange) reports. Note that CSSVideoDynamicRange has an additional dependency on Color Depth.
+"
+  }
+
+  dimension: metrics__text2__characteristics_voices {
+    label: "Characteristics Voices"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_voices ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Voices"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Voices"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_voices"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Available speechSynthesis voices.
 "
   }
 

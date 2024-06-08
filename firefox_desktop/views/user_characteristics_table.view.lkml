@@ -1055,6 +1055,13 @@ for the purpose of experimentation enrollment.
     hidden: yes
   }
 
+  dimension: metrics__text__characteristics_audio_devices {
+    sql: ${TABLE}.metrics.text.characteristics_audio_devices ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Audio Devices"
+  }
+
   dimension: metrics__text__characteristics_canvasdata1 {
     sql: ${TABLE}.metrics.text.characteristics_canvasdata1 ;;
     type: string
@@ -1146,11 +1153,32 @@ for the purpose of experimentation enrollment.
     group_item_label: "Characteristics Canvasdata9"
   }
 
+  dimension: metrics__text__characteristics_media_devices {
+    sql: ${TABLE}.metrics.text.characteristics_media_devices ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Media Devices"
+  }
+
   dimension: metrics__text__characteristics_missing_fonts {
     sql: ${TABLE}.metrics.text.characteristics_missing_fonts ;;
     type: string
     group_label: "Metrics Text"
     group_item_label: "Characteristics Missing Fonts"
+  }
+
+  dimension: metrics__text__characteristics_voices {
+    sql: ${TABLE}.metrics.text.characteristics_voices ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Voices"
+  }
+
+  dimension: metrics__text2__characteristics_audio_devices {
+    sql: ${TABLE}.metrics.text2.characteristics_audio_devices ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Audio Devices"
   }
 
   dimension: metrics__text2__characteristics_canvasdata1 {
@@ -1270,6 +1298,13 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_media_devices {
+    sql: ${TABLE}.metrics.text2.characteristics_media_devices ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Media Devices"
+  }
+
   dimension: metrics__text2__characteristics_missing_fonts {
     sql: ${TABLE}.metrics.text2.characteristics_missing_fonts ;;
     type: string
@@ -1277,6 +1312,13 @@ for the purpose of experimentation enrollment.
     group_item_label: "Characteristics Missing Fonts"
     description: "If a Font List is available for the user's platform, this string_list contains the fonts that are missing from the user's computer.
 "
+  }
+
+  dimension: metrics__text2__characteristics_voices {
+    sql: ${TABLE}.metrics.text2.characteristics_voices ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Voices"
   }
 
   dimension: metrics__uuid__characteristics_client_identifier {
