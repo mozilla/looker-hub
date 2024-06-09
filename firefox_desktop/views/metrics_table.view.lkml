@@ -622,6 +622,30 @@ Migrated from Telemetry's
 "
   }
 
+  dimension: metrics__counter__crash_submission_failure {
+    sql: ${TABLE}.metrics.counter.crash_submission_failure ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Crash Submission Failure"
+    description: "The total number of successful calls to navigator.credentials.get."
+  }
+
+  dimension: metrics__counter__crash_submission_pending {
+    sql: ${TABLE}.metrics.counter.crash_submission_pending ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Crash Submission Pending"
+    description: "The total number of successful calls to navigator.credentials.get."
+  }
+
+  dimension: metrics__counter__crash_submission_success {
+    sql: ${TABLE}.metrics.counter.crash_submission_success ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Crash Submission Success"
+    description: "The total number of successful calls to navigator.credentials.get."
+  }
+
   dimension: metrics__counter__dotprint_android_dialog_requested {
     sql: ${TABLE}.metrics.counter.dotprint_android_dialog_requested ;;
     type: number
@@ -2326,6 +2350,12 @@ of the shopping experiment.
     hidden: yes
     description: "Counts the number of hit/miss of cookie banner rule lookups for every load. We collect three types of counters, including counters for overall rule lookup, counters for cookie rule lookup and counters for click rule lookup. We also divide the counter by top-level loads and iframe loads.
 "
+  }
+
+  dimension: metrics__labeled_counter__crash_submission_collector_errors {
+    sql: ${TABLE}.metrics.labeled_counter.crash_submission_collector_errors ;;
+    hidden: yes
+    description: "The number of times each certificate compression algorithm was used."
   }
 
   dimension: metrics__labeled_counter__dap_report_generation_status {

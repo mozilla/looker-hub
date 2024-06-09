@@ -332,6 +332,39 @@ view: metrics_table {
     description: "Set to true if the tasks that are queued prior to Glean initialization time out."
   }
 
+  dimension: metrics__counter__crash_submission_failure {
+    sql: ${TABLE}.metrics.counter.crash_submission_failure ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Crash Submission Failure"
+    description: "How many ping upload responses did we not record as a success or failure
+(in `glean.upload.send_success` or `glean.upload.send_failue`,
+respectively) due to an inconsistency in our internal bookkeeping?
+"
+  }
+
+  dimension: metrics__counter__crash_submission_pending {
+    sql: ${TABLE}.metrics.counter.crash_submission_pending ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Crash Submission Pending"
+    description: "How many ping upload responses did we not record as a success or failure
+(in `glean.upload.send_success` or `glean.upload.send_failue`,
+respectively) due to an inconsistency in our internal bookkeeping?
+"
+  }
+
+  dimension: metrics__counter__crash_submission_success {
+    sql: ${TABLE}.metrics.counter.crash_submission_success ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Crash Submission Success"
+    description: "How many ping upload responses did we not record as a success or failure
+(in `glean.upload.send_success` or `glean.upload.send_failue`,
+respectively) due to an inconsistency in our internal bookkeeping?
+"
+  }
+
   dimension: metrics__counter__glean_error_io {
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
@@ -430,6 +463,20 @@ This does not include deletion-request pings.
     type: string
     group_label: "Metrics Datetime"
     group_item_label: "Raw Glean Validation First Run Hour"
+  }
+
+  dimension: metrics__labeled_counter__crash_submission_collector_errors {
+    sql: ${TABLE}.metrics.labeled_counter.crash_submission_collector_errors ;;
+    hidden: yes
+    description: "A count of the pings submitted, by ping type.
+
+This metric appears in both the metrics and baseline pings.
+
+- On the metrics ping, the counts include the number of pings sent since
+  the last metrics ping (including the last metrics ping)
+- On the baseline ping, the counts include the number of pings send since
+  the last baseline ping (including the last baseline ping)
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {

@@ -491,6 +491,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_audio_fingerprint {
+    sql: ${TABLE}.metrics.quantity.characteristics_audio_fingerprint ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Audio Fingerprint"
+    description: "Audio fingerprint of the user. A float number multiplied by 10e7.
+"
+  }
+
   dimension: metrics__quantity__characteristics_avail_height {
     sql: ${TABLE}.metrics.quantity.characteristics_avail_height ;;
     type: number
@@ -770,6 +779,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_pixel_ratio {
+    sql: ${TABLE}.metrics.quantity.characteristics_pixel_ratio ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Pixel Ratio"
+    description: "The value of window.devicePixelRatio multiplied by 100 to include some of the decimal places
+"
+  }
+
   dimension: metrics__quantity__characteristics_posx {
     sql: ${TABLE}.metrics.quantity.characteristics_posx ;;
     type: number
@@ -875,6 +893,15 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Zoom Count"
     description: "Number of domains the users has a non-default zoom level.
+"
+  }
+
+  dimension: metrics__string__characteristics_changed_media_prefs {
+    sql: ${TABLE}.metrics.string.characteristics_changed_media_prefs ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Changed Media Prefs"
+    description: "Changed media prefs and their values.
 "
   }
 
@@ -1004,6 +1031,24 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_intl_locale {
+    sql: ${TABLE}.metrics.string.characteristics_intl_locale ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Intl Locale"
+    description: "Locale information provided by Intl
+"
+  }
+
+  dimension: metrics__string__characteristics_languages {
+    sql: ${TABLE}.metrics.string.characteristics_languages ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Languages"
+    description: "Languages the user set. Returns intl.accept_languages pref, if it is empty, returns the first matched OS's language or the default language.
+"
+  }
+
   dimension: metrics__string__characteristics_prefs_intl_accept_languages {
     sql: ${TABLE}.metrics.string.characteristics_prefs_intl_accept_languages ;;
     type: string
@@ -1028,6 +1073,15 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics String"
     group_item_label: "Characteristics System Locale"
     description: "The locale used by the host OS for localization.
+"
+  }
+
+  dimension: metrics__string__characteristics_text_anti_aliasing {
+    sql: ${TABLE}.metrics.string.characteristics_text_anti_aliasing ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Text Anti Aliasing"
+    description: "Font anti aliasing level
 "
   }
 
@@ -1153,6 +1207,20 @@ for the purpose of experimentation enrollment.
     group_item_label: "Characteristics Canvasdata9"
   }
 
+  dimension: metrics__text__characteristics_math_ops {
+    sql: ${TABLE}.metrics.text.characteristics_math_ops ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Math Ops"
+  }
+
+  dimension: metrics__text__characteristics_media_capabilities {
+    sql: ${TABLE}.metrics.text.characteristics_media_capabilities ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Media Capabilities"
+  }
+
   dimension: metrics__text__characteristics_media_devices {
     sql: ${TABLE}.metrics.text.characteristics_media_devices ;;
     type: string
@@ -1179,6 +1247,8 @@ for the purpose of experimentation enrollment.
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Audio Devices"
+    description: "A JSON object containing sample rate and max channel count of every audio device, and output latency of default device
+"
   }
 
   dimension: metrics__text2__characteristics_canvasdata1 {
@@ -1298,11 +1368,31 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_math_ops {
+    sql: ${TABLE}.metrics.text2.characteristics_math_ops ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Math Ops"
+    description: "Result of fingerprintable math operations
+"
+  }
+
+  dimension: metrics__text2__characteristics_media_capabilities {
+    sql: ${TABLE}.metrics.text2.characteristics_media_capabilities ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Media Capabilities"
+    description: "Which, if any, media types are not supported, and whether they can be run smoothly and power-efficiently.
+"
+  }
+
   dimension: metrics__text2__characteristics_media_devices {
     sql: ${TABLE}.metrics.text2.characteristics_media_devices ;;
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Media Devices"
+    description: "A JSON object containing the number of audio input/output, video input and the number of unique group ids.
+"
   }
 
   dimension: metrics__text2__characteristics_missing_fonts {
@@ -1319,6 +1409,8 @@ for the purpose of experimentation enrollment.
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Voices"
+    description: "Available speechSynthesis voices.
+"
   }
 
   dimension: metrics__uuid__characteristics_client_identifier {

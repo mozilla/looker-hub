@@ -403,6 +403,65 @@ Migrated from Telemetry's
 "
   }
 
+  dimension: metrics__labeled_counter__crash_submission_collector_errors {
+    label: "Crash Submission Collector Errors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.crash_submission_collector_errors ;;
+    group_label: "Crash Submission"
+    group_item_label: "Collector Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Collector Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_collector_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  dimension: metrics__counter__crash_submission_failure {
+    label: "Crash Submission Failure"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.crash_submission_failure ;;
+    type: number
+    group_label: "Crash Submission"
+    group_item_label: "Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  dimension: metrics__counter__crash_submission_pending {
+    label: "Crash Submission Pending"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.crash_submission_pending ;;
+    type: number
+    group_label: "Crash Submission"
+    group_item_label: "Pending"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Pending"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_pending"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  dimension: metrics__counter__crash_submission_success {
+    label: "Crash Submission Success"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.crash_submission_success ;;
+    type: number
+    group_label: "Crash Submission"
+    group_item_label: "Success"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   dimension: metrics__labeled_counter__dap_report_generation_status {
     label: "Dap Report Generation Status"
     hidden: yes
@@ -9842,6 +9901,81 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: crash_submission_failure {
+    type: sum
+    sql: ${metrics__counter__crash_submission_failure} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: crash_submission_failure_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__crash_submission_failure: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: crash_submission_pending {
+    type: sum
+    sql: ${metrics__counter__crash_submission_pending} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Pending"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_pending"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: crash_submission_pending_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__crash_submission_pending: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Pending"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_pending"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: crash_submission_success {
+    type: sum
+    sql: ${metrics__counter__crash_submission_success} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: crash_submission_success_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__crash_submission_success: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: messaging_system_glean_ping_for_ping_failures {
     type: sum
     sql: ${metrics__counter__messaging_system_glean_ping_for_ping_failures} ;;
@@ -12418,6 +12552,47 @@ view: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain {
 
 view: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load {
   label: "Cookie Banners - Rule Lookup By Load"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__crash_submission_collector_errors {
+  label: "Crash Submission - Collector Errors"
 
   dimension: document_id {
     type: string
