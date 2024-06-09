@@ -23,6 +23,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__quantity__characteristics_audio_fingerprint {
+    label: "Characteristics Audio Fingerprint"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_audio_fingerprint ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Audio Fingerprint"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Audio Fingerprint"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_audio_fingerprint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Audio fingerprint of the user. A float number multiplied by 10e7.
+"
+  }
+
   dimension: metrics__quantity__characteristics_avail_height {
     label: "Characteristics Avail Height"
     hidden: no
@@ -290,6 +308,24 @@ view: user_characteristics {
     }
 
     description: "The base64 encoded form of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
+"
+  }
+
+  dimension: metrics__string__characteristics_changed_media_prefs {
+    label: "Characteristics Changed Media Prefs"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_changed_media_prefs ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Changed Media Prefs"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Changed Media Prefs"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_changed_media_prefs"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Changed media prefs and their values.
 "
   }
 
@@ -1013,6 +1049,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_intl_locale {
+    label: "Characteristics Intl Locale"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_intl_locale ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Intl Locale"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Intl Locale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_intl_locale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Locale information provided by Intl
+"
+  }
+
   dimension: metrics__boolean__characteristics_inverted_colors {
     label: "Characteristics Inverted Colors"
     hidden: no
@@ -1031,6 +1085,42 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_languages {
+    label: "Characteristics Languages"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_languages ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Languages"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Languages"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_languages"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Languages the user set. Returns intl.accept_languages pref, if it is empty, returns the first matched OS's language or the default language.
+"
+  }
+
+  dimension: metrics__text2__characteristics_math_ops {
+    label: "Characteristics Math Ops"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_math_ops ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Math Ops"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Math Ops"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_math_ops"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Result of fingerprintable math operations
+"
+  }
+
   dimension: metrics__quantity__characteristics_max_touch_points {
     label: "Characteristics Max Touch Points"
     hidden: no
@@ -1046,6 +1136,24 @@ view: user_characteristics {
     }
 
     description: "The number of touch points we will report to the web. On Android, this is based on Android's FEATURE_TOUCHSCREEN* constants - Mozilla caps this at 5 as Android stops distinguishing between numbers greater than 5.  On Windows this comes from the SM_MAXIMUMTOUCHES System Metric.
+"
+  }
+
+  dimension: metrics__text2__characteristics_media_capabilities {
+    label: "Characteristics Media Capabilities"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_media_capabilities ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Media Capabilities"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Media Capabilities"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_media_capabilities"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which, if any, media types are not supported, and whether they can be run smoothly and power-efficiently.
 "
   }
 
@@ -1154,6 +1262,24 @@ view: user_characteristics {
     }
 
     description: "Screen pixel depth property
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pixel_ratio {
+    label: "Characteristics Pixel Ratio"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_pixel_ratio ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Pixel Ratio"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pixel Ratio"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pixel_ratio"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of window.devicePixelRatio multiplied by 100 to include some of the decimal places
 "
   }
 
@@ -1604,6 +1730,24 @@ view: user_characteristics {
     }
 
     description: "The target frame rate in frames-per-second.
+"
+  }
+
+  dimension: metrics__string__characteristics_text_anti_aliasing {
+    label: "Characteristics Text Anti Aliasing"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_text_anti_aliasing ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Text Anti Aliasing"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Text Anti Aliasing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_text_anti_aliasing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Font anti aliasing level
 "
   }
 
