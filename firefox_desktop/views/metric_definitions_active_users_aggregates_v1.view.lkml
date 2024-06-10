@@ -36,14 +36,15 @@ active_users_aggregates_v1_attribution_source,
 active_users_aggregates_v1_channel,
 active_users_aggregates_v1_city,
 active_users_aggregates_v1_country,
+active_users_aggregates_v1_daily_users,
 active_users_aggregates_v1_dau,
 active_users_aggregates_v1_distribution_id,
 active_users_aggregates_v1_first_seen_year,
 active_users_aggregates_v1_install_source,
 active_users_aggregates_v1_is_default_browser,
-active_users_aggregates_v1_language_name,
+active_users_aggregates_v1_locale,
 active_users_aggregates_v1_mau,
-active_users_aggregates_v1_new_profiles,
+active_users_aggregates_v1_monthly_users,
 active_users_aggregates_v1_os,
 active_users_aggregates_v1_os_grouped,
 active_users_aggregates_v1_os_version,
@@ -52,6 +53,7 @@ active_users_aggregates_v1_os_version_minor,
 active_users_aggregates_v1_segment,
 active_users_aggregates_v1_uri_count,
 active_users_aggregates_v1_wau,
+active_users_aggregates_v1_weekly_users,
 
                 NULL AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
@@ -110,14 +112,15 @@ active_users_aggregates_v1.attribution_source AS active_users_aggregates_v1_attr
 active_users_aggregates_v1.channel AS active_users_aggregates_v1_channel,
 active_users_aggregates_v1.city AS active_users_aggregates_v1_city,
 active_users_aggregates_v1.country AS active_users_aggregates_v1_country,
+active_users_aggregates_v1.daily_users AS active_users_aggregates_v1_daily_users,
 active_users_aggregates_v1.dau AS active_users_aggregates_v1_dau,
 active_users_aggregates_v1.distribution_id AS active_users_aggregates_v1_distribution_id,
 active_users_aggregates_v1.first_seen_year AS active_users_aggregates_v1_first_seen_year,
 active_users_aggregates_v1.install_source AS active_users_aggregates_v1_install_source,
 active_users_aggregates_v1.is_default_browser AS active_users_aggregates_v1_is_default_browser,
-active_users_aggregates_v1.language_name AS active_users_aggregates_v1_language_name,
+active_users_aggregates_v1.locale AS active_users_aggregates_v1_locale,
 active_users_aggregates_v1.mau AS active_users_aggregates_v1_mau,
-active_users_aggregates_v1.new_profiles AS active_users_aggregates_v1_new_profiles,
+active_users_aggregates_v1.monthly_users AS active_users_aggregates_v1_monthly_users,
 active_users_aggregates_v1.os AS active_users_aggregates_v1_os,
 active_users_aggregates_v1.os_grouped AS active_users_aggregates_v1_os_grouped,
 active_users_aggregates_v1.os_version AS active_users_aggregates_v1_os_version,
@@ -126,6 +129,7 @@ active_users_aggregates_v1.os_version_minor AS active_users_aggregates_v1_os_ver
 active_users_aggregates_v1.segment AS active_users_aggregates_v1_segment,
 active_users_aggregates_v1.uri_count AS active_users_aggregates_v1_uri_count,
 active_users_aggregates_v1.wau AS active_users_aggregates_v1_wau,
+active_users_aggregates_v1.weekly_users AS active_users_aggregates_v1_weekly_users,
 
                     FROM
                     (
@@ -193,14 +197,15 @@ active_users_aggregates_v1_attribution_source,
 active_users_aggregates_v1_channel,
 active_users_aggregates_v1_city,
 active_users_aggregates_v1_country,
+active_users_aggregates_v1_daily_users,
 active_users_aggregates_v1_dau,
 active_users_aggregates_v1_distribution_id,
 active_users_aggregates_v1_first_seen_year,
 active_users_aggregates_v1_install_source,
 active_users_aggregates_v1_is_default_browser,
-active_users_aggregates_v1_language_name,
+active_users_aggregates_v1_locale,
 active_users_aggregates_v1_mau,
-active_users_aggregates_v1_new_profiles,
+active_users_aggregates_v1_monthly_users,
 active_users_aggregates_v1_os,
 active_users_aggregates_v1_os_grouped,
 active_users_aggregates_v1_os_version,
@@ -209,6 +214,7 @@ active_users_aggregates_v1_os_version_minor,
 active_users_aggregates_v1_segment,
 active_users_aggregates_v1_uri_count,
 active_users_aggregates_v1_wau,
+active_users_aggregates_v1_weekly_users,
 
                 client_id,
                 analysis_basis ;;
@@ -402,6 +408,12 @@ active_users_aggregates_v1_wau,
     group_label: "Base Fields"
   }
 
+  dimension: daily_users {
+    sql: ${TABLE}.active_users_aggregates_v1_daily_users ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
   dimension: dau {
     sql: ${TABLE}.active_users_aggregates_v1_dau ;;
     type: number
@@ -420,20 +432,14 @@ active_users_aggregates_v1_wau,
     group_label: "Base Fields"
   }
 
-  dimension: language_name {
-    sql: ${TABLE}.active_users_aggregates_v1_language_name ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
   dimension: mau {
     sql: ${TABLE}.active_users_aggregates_v1_mau ;;
     type: number
     group_label: "Base Fields"
   }
 
-  dimension: new_profiles {
-    sql: ${TABLE}.active_users_aggregates_v1_new_profiles ;;
+  dimension: monthly_users {
+    sql: ${TABLE}.active_users_aggregates_v1_monthly_users ;;
     type: number
     group_label: "Base Fields"
   }
@@ -476,6 +482,12 @@ active_users_aggregates_v1_wau,
 
   dimension: wau {
     sql: ${TABLE}.active_users_aggregates_v1_wau ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: weekly_users {
+    sql: ${TABLE}.active_users_aggregates_v1_weekly_users ;;
     type: number
     group_label: "Base Fields"
   }

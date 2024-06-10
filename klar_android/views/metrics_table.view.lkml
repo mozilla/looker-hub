@@ -1070,6 +1070,86 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__counter__webauthn_create_failure {
+    sql: ${TABLE}.metrics.counter.webauthn_create_failure ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Create Failure"
+    description: "The total number of failed calls to navigator.credentials.create."
+  }
+
+  dimension: metrics__counter__webauthn_create_passkey {
+    sql: ${TABLE}.metrics.counter.webauthn_create_passkey ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Create Passkey"
+    description: "The number of client-side discoverable credentials (passkeys) created."
+  }
+
+  dimension: metrics__counter__webauthn_create_success {
+    sql: ${TABLE}.metrics.counter.webauthn_create_success ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Create Success"
+    description: "The total number of successful calls to navigator.credentials.create."
+  }
+
+  dimension: metrics__counter__webauthn_get_failure {
+    sql: ${TABLE}.metrics.counter.webauthn_get_failure ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Get Failure"
+    description: "The total number of failed calls to navigator.credentials.get."
+  }
+
+  dimension: metrics__counter__webauthn_get_success {
+    sql: ${TABLE}.metrics.counter.webauthn_get_success ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Get Success"
+    description: "The total number of successful calls to navigator.credentials.get."
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__count {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Brotli Saved Bytes"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Brotli Saved Bytes"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__values {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zlib_saved_bytes__count {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zlib_saved_bytes.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Zlib Saved Bytes"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zlib_saved_bytes__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zlib_saved_bytes.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Zlib Saved Bytes"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zlib_saved_bytes__values {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zlib_saved_bytes.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__count {
     sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_frame.count ;;
     type: number
@@ -2193,7 +2273,7 @@ the tracking protection settings panel from the toolbar.
   dimension: metrics__labeled_counter__bounce_tracking_protection_purge_count {
     sql: ${TABLE}.metrics.labeled_counter.bounce_tracking_protection_purge_count ;;
     hidden: yes
-    description: "Counts how often we purge trackers. Giving a high level overview about the effectivness of bounce tracking protection. Allows determining error rate with failed/success label. When in dry mode, we count the purges that would have happened under the dry label.
+    description: "Counts how often we purge trackers. Giving a high level overview about the effectivness of bounce tracking protection. Allows determining error rate with failure/success label. When in dry mode, we count the purges that would have happened under the dry label.
 "
   }
 
@@ -2246,6 +2326,18 @@ where:
 * `code` is set when the url matches any of the provider's code prefixes,
 * `channel` is set to the url \"channel\" query parameter.
 "
+  }
+
+  dimension: metrics__labeled_counter__cert_compression_failures {
+    sql: ${TABLE}.metrics.labeled_counter.cert_compression_failures ;;
+    hidden: yes
+    description: "The number of times each certificate compression algorithm returned an error."
+  }
+
+  dimension: metrics__labeled_counter__cert_compression_used {
+    sql: ${TABLE}.metrics.labeled_counter.cert_compression_used ;;
+    hidden: yes
+    description: "The number of times each certificate compression algorithm was used."
   }
 
   dimension: metrics__labeled_counter__cert_verifier_crlite_status {
@@ -2947,6 +3039,25 @@ It also indicates the screen it was removed from, home or browser.
     hidden: yes
     description: "The error that was returned from a failed TLS 1.3 handshake in which the client sent a Xyber key share (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
 "
+  }
+
+  dimension: metrics__labeled_counter__translations_request_count {
+    sql: ${TABLE}.metrics.labeled_counter.translations_request_count ;;
+    hidden: yes
+    description: "The count of translation requests, along with their type.
+"
+  }
+
+  dimension: metrics__labeled_counter__webauthn_create_authenticator_attachment {
+    sql: ${TABLE}.metrics.labeled_counter.webauthn_create_authenticator_attachment ;;
+    hidden: yes
+    description: "The number of successfully created credentials by authenticator attachment modality."
+  }
+
+  dimension: metrics__labeled_counter__webauthn_get_authenticator_attachment {
+    sql: ${TABLE}.metrics.labeled_counter.webauthn_get_authenticator_attachment ;;
+    hidden: yes
+    description: "The number of successfully asserted credentials by authenticator attachment modality."
   }
 
   dimension: metrics__labeled_counter__webrtcdtls_cipher {
@@ -11153,6 +11264,30 @@ view: metrics_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cert_compression_brotli_saved_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cert_compression_zlib_saved_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
