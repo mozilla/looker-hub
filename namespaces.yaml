@@ -182,6 +182,11 @@ activity_stream:
       type: ping_view
 ads:
   connection: bigquery-oauth
+  explores:
+    metric_definitions_admarketplace:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_admarketplace
   glean_app: false
   owners:
   - cmorales@mozilla.com
@@ -201,6 +206,8 @@ ads:
       tables:
       - table: mozdata.ads.consolidated_ad_metrics_hourly
       type: table_view
+    metric_definitions_admarketplace:
+      type: metric_definitions_view
     tiles_addressable_inventory_hourly:
       tables:
       - table: mozdata.ads.tiles_addressable_inventory_hourly
@@ -12767,6 +12774,11 @@ user_journey:
   pretty_name: User Journey
   spoke: looker-spoke-default
 websites:
+  explores:
+    metric_definitions_www_site_landing_page_metrics:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_www_site_landing_page_metrics
   glean_app: false
   owners:
   - kik@mozilla.com
@@ -12809,6 +12821,8 @@ websites:
       tables:
       - table: moz-fx-data-marketing-prod.google_search_console.search_impressions_by_site
       type: table_view
+    metric_definitions_www_site_landing_page_metrics:
+      type: metric_definitions_view
     moz_org_landing_page_metrics:
       tables:
       - table: moz-fx-data-marketing-prod.ga.www_site_landing_page_metrics
