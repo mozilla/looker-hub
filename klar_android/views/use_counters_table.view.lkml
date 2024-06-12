@@ -2340,6 +2340,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_inset_area {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_inset_area ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Inset Area"
+    description: "Whether a document used the CSS property inset-area. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_inset_block {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_inset_block ;;
     type: number
@@ -4005,6 +4014,33 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_position_try_options {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try_options ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Try Options"
+    description: "Whether a document used the CSS property position-try-options. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_position_try_order {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try_order ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Try Order"
+    description: "Whether a document used the CSS property position-try-order. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_position_visibility {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_visibility ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Visibility"
+    description: "Whether a document used the CSS property position-visibility. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_print_color_adjust {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_print_color_adjust ;;
     type: number
@@ -5352,6 +5388,15 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Doc Css Webkit Flex Wrap"
     description: "Whether a document used the CSS property -webkit-flex-wrap. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_webkit_font_smoothing {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_webkit_font_smoothing ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Webkit Font Smoothing"
+    description: "Whether a document used the CSS property -webkit-font-smoothing. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -8649,6 +8694,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_inset_area {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_inset_area ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Inset Area"
+    description: "Whether a page used the CSS property inset-area. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_inset_block {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_inset_block ;;
     type: number
@@ -10314,6 +10368,33 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_position_try_options {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try_options ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Try Options"
+    description: "Whether a page used the CSS property position-try-options. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_try_order {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try_order ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Try Order"
+    description: "Whether a page used the CSS property position-try-order. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_visibility {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_visibility ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Visibility"
+    description: "Whether a page used the CSS property position-visibility. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_print_color_adjust {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_print_color_adjust ;;
     type: number
@@ -11661,6 +11742,15 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Webkit Flex Wrap"
     description: "Whether a page used the CSS property -webkit-flex-wrap. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_webkit_font_smoothing {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_webkit_font_smoothing ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Webkit Font Smoothing"
+    description: "Whether a page used the CSS property -webkit-font-smoothing. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -13032,12 +13122,75 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domattr_modified {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domattr_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domattr Modified"
+    description: "Whether a document used DOMAttrModified. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domcharacter_data_modified {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domcharacter_data_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domcharacter Data Modified"
+    description: "Whether a document used DOMCharacterDataModified. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domnode_inserted {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domnode_inserted ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domnode Inserted"
+    description: "Whether a document used DOMNodeInserted. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domnode_inserted_into_document {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domnode_inserted_into_document ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domnode Inserted Into Document"
+    description: "Whether a document used DOMNodeInsertedIntoDocument. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domnode_removed {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domnode_removed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domnode Removed"
+    description: "Whether a document used DOMNodeRemoved. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domnode_removed_from_document {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domnode_removed_from_document ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domnode Removed From Document"
+    description: "Whether a document used DOMNodeRemovedFromDocument. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_domquad_bounds_attr {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domquad_bounds_attr ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Doc Domquad Bounds Attr"
     description: "Whether a document used DOMQuadBoundsAttr. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domsubtree_modified {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domsubtree_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domsubtree Modified"
+    description: "Whether a document used DOMSubtreeModified. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -13491,12 +13644,75 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domattr_modified {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domattr_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domattr Modified"
+    description: "Whether a page used DOMAttrModified. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domcharacter_data_modified {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domcharacter_data_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domcharacter Data Modified"
+    description: "Whether a page used DOMCharacterDataModified. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domnode_inserted {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domnode_inserted ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domnode Inserted"
+    description: "Whether a page used DOMNodeInserted. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domnode_inserted_into_document {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domnode_inserted_into_document ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domnode Inserted Into Document"
+    description: "Whether a page used DOMNodeInsertedIntoDocument. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domnode_removed {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domnode_removed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domnode Removed"
+    description: "Whether a page used DOMNodeRemoved. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domnode_removed_from_document {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domnode_removed_from_document ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domnode Removed From Document"
+    description: "Whether a page used DOMNodeRemovedFromDocument. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_page_domquad_bounds_attr {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domquad_bounds_attr ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Page Domquad Bounds Attr"
     description: "Whether a page used DOMQuadBoundsAttr. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domsubtree_modified {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domsubtree_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domsubtree Modified"
+    description: "Whether a page used DOMSubtreeModified. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -15108,6 +15324,96 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Late Weekday"
     description: "Whether a document parses a Date with day of week in an unexpected position. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_array_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Array Type 2"
+    description: "Whether a document Array is Type II subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_array_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Array Type 3"
+    description: "Whether a document Array is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_arraybuffer_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_arraybuffer_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Arraybuffer Type 3"
+    description: "Whether a document ArrayBuffer is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_promise_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_promise_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Promise Type 2"
+    description: "Whether a document Promise is Type II subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_promise_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_promise_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Promise Type 3"
+    description: "Whether a document Promise is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_regexp_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_regexp_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Regexp Type 3"
+    description: "Whether a document RegExp is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_regexp_type_4 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_regexp_type_4 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Regexp Type 4"
+    description: "Whether a document RegExp is Type IV subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_sharedarraybuffer_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_sharedarraybuffer_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Sharedarraybuffer Type 3"
+    description: "Whether a document SharedArrayBuffer is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_typedarray_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_typedarray_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Typedarray Type 2"
+    description: "Whether a document TypedArray is Type II subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_typedarray_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_typedarray_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Typedarray Type 3"
+    description: "Whether a document TypedArray is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -18330,6 +18636,96 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Late Weekday"
     description: "Whether a page parses a Date with day of week in an unexpected position. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_array_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_array_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Array Type 2"
+    description: "Whether a page Array is Type II subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_array_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_array_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Array Type 3"
+    description: "Whether a page Array is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_arraybuffer_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_arraybuffer_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Arraybuffer Type 3"
+    description: "Whether a page ArrayBuffer is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_promise_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_promise_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Promise Type 2"
+    description: "Whether a page Promise is Type II subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_promise_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_promise_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Promise Type 3"
+    description: "Whether a page Promise is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_regexp_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_regexp_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Regexp Type 3"
+    description: "Whether a page RegExp is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_regexp_type_4 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_regexp_type_4 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Regexp Type 4"
+    description: "Whether a page RegExp is Type IV subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_sharedarraybuffer_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_sharedarraybuffer_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Sharedarraybuffer Type 3"
+    description: "Whether a page SharedArrayBuffer is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_typedarray_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_typedarray_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Typedarray Type 2"
+    description: "Whether a page TypedArray is Type II subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_typedarray_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_typedarray_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Typedarray Type 3"
+    description: "Whether a page TypedArray is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

@@ -115,7 +115,7 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
         events.submission_date =
         looker_base_fields.submission_date
     
-            
+                
                     WHERE 
                     events.submission_date
                     BETWEEN

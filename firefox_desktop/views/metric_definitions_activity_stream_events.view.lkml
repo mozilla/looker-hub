@@ -131,7 +131,7 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
         activity_stream_events.submission_date =
         looker_base_fields.submission_date
     
-            
+                
                     WHERE 
                     activity_stream_events.submission_date
                     BETWEEN

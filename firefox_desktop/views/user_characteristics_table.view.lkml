@@ -491,6 +491,33 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_audio_fingerprint {
+    sql: ${TABLE}.metrics.quantity.characteristics_audio_fingerprint ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Audio Fingerprint"
+    description: "Audio fingerprint of the user. A float number multiplied by 10e7.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_avail_height {
+    sql: ${TABLE}.metrics.quantity.characteristics_avail_height ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Avail Height"
+    description: "Available height property
+"
+  }
+
+  dimension: metrics__quantity__characteristics_avail_width {
+    sql: ${TABLE}.metrics.quantity.characteristics_avail_width ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Avail Width"
+    description: "Available width property
+"
+  }
+
   dimension: metrics__quantity__characteristics_color_accentcolor {
     sql: ${TABLE}.metrics.quantity.characteristics_color_accentcolor ;;
     type: number
@@ -689,12 +716,93 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_inner_height {
+    sql: ${TABLE}.metrics.quantity.characteristics_inner_height ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Inner Height"
+    description: "Inner height of user's browser.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_inner_width {
+    sql: ${TABLE}.metrics.quantity.characteristics_inner_width ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Inner Width"
+    description: "Inner width of user's browser.
+"
+  }
+
   dimension: metrics__quantity__characteristics_max_touch_points {
     sql: ${TABLE}.metrics.quantity.characteristics_max_touch_points ;;
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Max Touch Points"
     description: "The number of touch points we will report to the web. On Android, this is based on Android's FEATURE_TOUCHSCREEN* constants - Mozilla caps this at 5 as Android stops distinguishing between numbers greater than 5.  On Windows this comes from the SM_MAXIMUMTOUCHES System Metric.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_orientation_angle {
+    sql: ${TABLE}.metrics.quantity.characteristics_orientation_angle ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Orientation Angle"
+    description: "Orientation angle of the screen
+"
+  }
+
+  dimension: metrics__quantity__characteristics_outer_height {
+    sql: ${TABLE}.metrics.quantity.characteristics_outer_height ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Outer Height"
+    description: "Outer height of user's browser.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_outer_width {
+    sql: ${TABLE}.metrics.quantity.characteristics_outer_width ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Outer Width"
+    description: "Outer width of user's browser.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pixel_depth {
+    sql: ${TABLE}.metrics.quantity.characteristics_pixel_depth ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Pixel Depth"
+    description: "Screen pixel depth property
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pixel_ratio {
+    sql: ${TABLE}.metrics.quantity.characteristics_pixel_ratio ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Pixel Ratio"
+    description: "The value of window.devicePixelRatio multiplied by 100 to include some of the decimal places
+"
+  }
+
+  dimension: metrics__quantity__characteristics_posx {
+    sql: ${TABLE}.metrics.quantity.characteristics_posx ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Posx"
+    description: "window.screen.left value. Provides us the position of the browser and the width of any possible task/menu bar
+"
+  }
+
+  dimension: metrics__quantity__characteristics_posy {
+    sql: ${TABLE}.metrics.quantity.characteristics_posy ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Posy"
+    description: "window.screen.top value. Provides us the position of the browser and the height of any possible task/menu bar
 "
   }
 
@@ -734,12 +842,30 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_screen_orientation {
+    sql: ${TABLE}.metrics.quantity.characteristics_screen_orientation ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Screen Orientation"
+    description: "Orientation of the primary screen.
+"
+  }
+
   dimension: metrics__quantity__characteristics_screen_width {
     sql: ${TABLE}.metrics.quantity.characteristics_screen_width ;;
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Screen Width"
     description: "Width of the primary screen in pixels.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_size_mode {
+    sql: ${TABLE}.metrics.quantity.characteristics_size_mode ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Size Mode"
+    description: "Whether window is maximized, minimized, normal or fullscreen
 "
   }
 
@@ -758,6 +884,24 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Target Frame Rate"
     description: "The target frame rate in frames-per-second.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_zoom_count {
+    sql: ${TABLE}.metrics.quantity.characteristics_zoom_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Zoom Count"
+    description: "Number of domains the users has a non-default zoom level.
+"
+  }
+
+  dimension: metrics__string__characteristics_changed_media_prefs {
+    sql: ${TABLE}.metrics.string.characteristics_changed_media_prefs ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Changed Media Prefs"
+    description: "Changed media prefs and their values.
 "
   }
 
@@ -887,6 +1031,24 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_intl_locale {
+    sql: ${TABLE}.metrics.string.characteristics_intl_locale ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Intl Locale"
+    description: "Locale information provided by Intl
+"
+  }
+
+  dimension: metrics__string__characteristics_languages {
+    sql: ${TABLE}.metrics.string.characteristics_languages ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Languages"
+    description: "Languages the user set. Returns intl.accept_languages pref, if it is empty, returns the first matched OS's language or the default language.
+"
+  }
+
   dimension: metrics__string__characteristics_prefs_intl_accept_languages {
     sql: ${TABLE}.metrics.string.characteristics_prefs_intl_accept_languages ;;
     type: string
@@ -896,12 +1058,30 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_scalings {
+    sql: ${TABLE}.metrics.string.characteristics_scalings ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Scalings"
+    description: "Screen(s) scaling/zoom level
+"
+  }
+
   dimension: metrics__string__characteristics_system_locale {
     sql: ${TABLE}.metrics.string.characteristics_system_locale ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Characteristics System Locale"
     description: "The locale used by the host OS for localization.
+"
+  }
+
+  dimension: metrics__string__characteristics_text_anti_aliasing {
+    sql: ${TABLE}.metrics.string.characteristics_text_anti_aliasing ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Text Anti Aliasing"
+    description: "Font anti aliasing level
 "
   }
 
@@ -929,11 +1109,290 @@ for the purpose of experimentation enrollment.
     hidden: yes
   }
 
+  dimension: metrics__text__characteristics_audio_devices {
+    sql: ${TABLE}.metrics.text.characteristics_audio_devices ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Audio Devices"
+  }
+
+  dimension: metrics__text__characteristics_canvasdata1 {
+    sql: ${TABLE}.metrics.text.characteristics_canvasdata1 ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Canvasdata1"
+  }
+
+  dimension: metrics__text__characteristics_canvasdata10 {
+    sql: ${TABLE}.metrics.text.characteristics_canvasdata10 ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Canvasdata10"
+  }
+
+  dimension: metrics__text__characteristics_canvasdata11_webgl {
+    sql: ${TABLE}.metrics.text.characteristics_canvasdata11_webgl ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Canvasdata11 Webgl"
+  }
+
+  dimension: metrics__text__characteristics_canvasdata12_fingerprintjs1 {
+    sql: ${TABLE}.metrics.text.characteristics_canvasdata12_fingerprintjs1 ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Canvasdata12 Fingerprintjs1"
+  }
+
+  dimension: metrics__text__characteristics_canvasdata13_fingerprintjs2 {
+    sql: ${TABLE}.metrics.text.characteristics_canvasdata13_fingerprintjs2 ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Canvasdata13 Fingerprintjs2"
+  }
+
+  dimension: metrics__text__characteristics_canvasdata2 {
+    sql: ${TABLE}.metrics.text.characteristics_canvasdata2 ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Canvasdata2"
+  }
+
+  dimension: metrics__text__characteristics_canvasdata3 {
+    sql: ${TABLE}.metrics.text.characteristics_canvasdata3 ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Canvasdata3"
+  }
+
+  dimension: metrics__text__characteristics_canvasdata4 {
+    sql: ${TABLE}.metrics.text.characteristics_canvasdata4 ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Canvasdata4"
+  }
+
+  dimension: metrics__text__characteristics_canvasdata5 {
+    sql: ${TABLE}.metrics.text.characteristics_canvasdata5 ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Canvasdata5"
+  }
+
+  dimension: metrics__text__characteristics_canvasdata6 {
+    sql: ${TABLE}.metrics.text.characteristics_canvasdata6 ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Canvasdata6"
+  }
+
+  dimension: metrics__text__characteristics_canvasdata7 {
+    sql: ${TABLE}.metrics.text.characteristics_canvasdata7 ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Canvasdata7"
+  }
+
+  dimension: metrics__text__characteristics_canvasdata8 {
+    sql: ${TABLE}.metrics.text.characteristics_canvasdata8 ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Canvasdata8"
+  }
+
+  dimension: metrics__text__characteristics_canvasdata9 {
+    sql: ${TABLE}.metrics.text.characteristics_canvasdata9 ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Canvasdata9"
+  }
+
+  dimension: metrics__text__characteristics_math_ops {
+    sql: ${TABLE}.metrics.text.characteristics_math_ops ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Math Ops"
+  }
+
+  dimension: metrics__text__characteristics_media_capabilities {
+    sql: ${TABLE}.metrics.text.characteristics_media_capabilities ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Media Capabilities"
+  }
+
+  dimension: metrics__text__characteristics_media_devices {
+    sql: ${TABLE}.metrics.text.characteristics_media_devices ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Media Devices"
+  }
+
   dimension: metrics__text__characteristics_missing_fonts {
     sql: ${TABLE}.metrics.text.characteristics_missing_fonts ;;
     type: string
     group_label: "Metrics Text"
     group_item_label: "Characteristics Missing Fonts"
+  }
+
+  dimension: metrics__text__characteristics_voices {
+    sql: ${TABLE}.metrics.text.characteristics_voices ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Voices"
+  }
+
+  dimension: metrics__text2__characteristics_audio_devices {
+    sql: ${TABLE}.metrics.text2.characteristics_audio_devices ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Audio Devices"
+    description: "A JSON object containing sample rate and max channel count of every audio device, and output latency of default device
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata1 {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata1 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Canvasdata1"
+    description: "The base64 encoded form of an image rendered on a canvas. The image is a simple organge box and used as a control image
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata10 {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata10 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Canvasdata10"
+    description: "The base64 encoded form of an image rendered on a canvas. The image is a font shipped with Firefox rendered with italics, rotation, and shadow-blur.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata11_webgl {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata11_webgl ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Canvasdata11 Webgl"
+    description: "The base64 encoded form of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata12_fingerprintjs1 {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata12_fingerprintjs1 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Canvasdata12 Fingerprintjs1"
+    description: "The base64 encoded form of an image rendered on a canvas, it is a copy of fingerprintjs' text canvas
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata13_fingerprintjs2 {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata13_fingerprintjs2 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Canvasdata13 Fingerprintjs2"
+    description: "The base64 encoded form of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata2 {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata2 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Canvasdata2"
+    description: "The base64 encoded form of an image rendered on a canvas. The image is a bordered triage, and used to test point interpolation
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata3 {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata3 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Canvasdata3"
+    description: "The base64 encoded form of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata4 {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata4 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Canvasdata4"
+    description: "The base64 encoded form of an image rendered on a canvas. The image is two rotated, semi-transparenct overlapping squares, used to test transparency and point interpolation.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata5 {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata5 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Canvasdata5"
+    description: "The base64 encoded form of an image rendered on a canvas. The image is a local font rendered normally.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata6 {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata6 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Canvasdata6"
+    description: "The base64 encoded form of an image rendered on a canvas. The image is a local font rendered with italics, rotation, and shadow-blur.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata7 {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata7 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Canvasdata7"
+    description: "The base64 encoded form of an image rendered on a canvas. The image is a system-ui font rendered normally.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata8 {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata8 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Canvasdata8"
+    description: "The base64 encoded form of an image rendered on a canvas. The image is a system-ui font rendered with italics, rotation, and shadow-blur.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata9 {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata9 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Canvasdata9"
+    description: "The base64 encoded form of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
+"
+  }
+
+  dimension: metrics__text2__characteristics_math_ops {
+    sql: ${TABLE}.metrics.text2.characteristics_math_ops ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Math Ops"
+    description: "Result of fingerprintable math operations
+"
+  }
+
+  dimension: metrics__text2__characteristics_media_capabilities {
+    sql: ${TABLE}.metrics.text2.characteristics_media_capabilities ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Media Capabilities"
+    description: "Which, if any, media types are not supported, and whether they can be run smoothly and power-efficiently.
+"
+  }
+
+  dimension: metrics__text2__characteristics_media_devices {
+    sql: ${TABLE}.metrics.text2.characteristics_media_devices ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Media Devices"
+    description: "A JSON object containing the number of audio input/output, video input and the number of unique group ids.
+"
   }
 
   dimension: metrics__text2__characteristics_missing_fonts {
@@ -942,6 +1401,15 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Missing Fonts"
     description: "If a Font List is available for the user's platform, this string_list contains the fonts that are missing from the user's computer.
+"
+  }
+
+  dimension: metrics__text2__characteristics_voices {
+    sql: ${TABLE}.metrics.text2.characteristics_voices ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Voices"
+    description: "Available speechSynthesis voices.
 "
   }
 

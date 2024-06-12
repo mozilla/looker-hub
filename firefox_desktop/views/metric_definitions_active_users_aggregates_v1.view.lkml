@@ -10,7 +10,19 @@ view: metric_definitions_active_users_aggregates_v1 {
                 SUM(dau) AS daily_active_users_v2,
 SUM(IF(FORMAT_DATE('%m-%d', submission_date) BETWEEN '11-18' AND '12-15', dau, 0)) / 28 AS desktop_dau_kpi_v2,
 
-                active_users_aggregates_v1_active_hours,
+                looker_base_fields_app_name,
+looker_base_fields_app_version,
+looker_base_fields_country,
+looker_base_fields_default_search_engine,
+looker_base_fields_distribution_id,
+looker_base_fields_is_default_browser,
+looker_base_fields_locale,
+looker_base_fields_normalized_channel,
+looker_base_fields_normalized_os_version,
+looker_base_fields_os,
+looker_base_fields_partner_id,
+looker_base_fields_sample_id,
+active_users_aggregates_v1_active_hours,
 active_users_aggregates_v1_adjust_network,
 active_users_aggregates_v1_app_name,
 active_users_aggregates_v1_app_version,
@@ -24,14 +36,15 @@ active_users_aggregates_v1_attribution_source,
 active_users_aggregates_v1_channel,
 active_users_aggregates_v1_city,
 active_users_aggregates_v1_country,
+active_users_aggregates_v1_daily_users,
 active_users_aggregates_v1_dau,
 active_users_aggregates_v1_distribution_id,
 active_users_aggregates_v1_first_seen_year,
 active_users_aggregates_v1_install_source,
 active_users_aggregates_v1_is_default_browser,
-active_users_aggregates_v1_language_name,
+active_users_aggregates_v1_locale,
 active_users_aggregates_v1_mau,
-active_users_aggregates_v1_new_profiles,
+active_users_aggregates_v1_monthly_users,
 active_users_aggregates_v1_os,
 active_users_aggregates_v1_os_grouped,
 active_users_aggregates_v1_os_version,
@@ -40,6 +53,7 @@ active_users_aggregates_v1_os_version_minor,
 active_users_aggregates_v1_segment,
 active_users_aggregates_v1_uri_count,
 active_users_aggregates_v1_wau,
+active_users_aggregates_v1_weekly_users,
 
                 NULL AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
@@ -72,7 +86,19 @@ active_users_aggregates_v1_wau,
                 (
                     SELECT
                         active_users_aggregates_v1.*,
-                        active_users_aggregates_v1.active_hours AS active_users_aggregates_v1_active_hours,
+                        looker_base_fields.app_name AS looker_base_fields_app_name,
+looker_base_fields.app_version AS looker_base_fields_app_version,
+looker_base_fields.country AS looker_base_fields_country,
+looker_base_fields.default_search_engine AS looker_base_fields_default_search_engine,
+looker_base_fields.distribution_id AS looker_base_fields_distribution_id,
+looker_base_fields.is_default_browser AS looker_base_fields_is_default_browser,
+looker_base_fields.locale AS looker_base_fields_locale,
+looker_base_fields.normalized_channel AS looker_base_fields_normalized_channel,
+looker_base_fields.normalized_os_version AS looker_base_fields_normalized_os_version,
+looker_base_fields.os AS looker_base_fields_os,
+looker_base_fields.partner_id AS looker_base_fields_partner_id,
+looker_base_fields.sample_id AS looker_base_fields_sample_id,
+active_users_aggregates_v1.active_hours AS active_users_aggregates_v1_active_hours,
 active_users_aggregates_v1.adjust_network AS active_users_aggregates_v1_adjust_network,
 active_users_aggregates_v1.app_name AS active_users_aggregates_v1_app_name,
 active_users_aggregates_v1.app_version AS active_users_aggregates_v1_app_version,
@@ -86,14 +112,15 @@ active_users_aggregates_v1.attribution_source AS active_users_aggregates_v1_attr
 active_users_aggregates_v1.channel AS active_users_aggregates_v1_channel,
 active_users_aggregates_v1.city AS active_users_aggregates_v1_city,
 active_users_aggregates_v1.country AS active_users_aggregates_v1_country,
+active_users_aggregates_v1.daily_users AS active_users_aggregates_v1_daily_users,
 active_users_aggregates_v1.dau AS active_users_aggregates_v1_dau,
 active_users_aggregates_v1.distribution_id AS active_users_aggregates_v1_distribution_id,
 active_users_aggregates_v1.first_seen_year AS active_users_aggregates_v1_first_seen_year,
 active_users_aggregates_v1.install_source AS active_users_aggregates_v1_install_source,
 active_users_aggregates_v1.is_default_browser AS active_users_aggregates_v1_is_default_browser,
-active_users_aggregates_v1.language_name AS active_users_aggregates_v1_language_name,
+active_users_aggregates_v1.locale AS active_users_aggregates_v1_locale,
 active_users_aggregates_v1.mau AS active_users_aggregates_v1_mau,
-active_users_aggregates_v1.new_profiles AS active_users_aggregates_v1_new_profiles,
+active_users_aggregates_v1.monthly_users AS active_users_aggregates_v1_monthly_users,
 active_users_aggregates_v1.os AS active_users_aggregates_v1_os,
 active_users_aggregates_v1.os_grouped AS active_users_aggregates_v1_os_grouped,
 active_users_aggregates_v1.os_version AS active_users_aggregates_v1_os_version,
@@ -102,6 +129,7 @@ active_users_aggregates_v1.os_version_minor AS active_users_aggregates_v1_os_ver
 active_users_aggregates_v1.segment AS active_users_aggregates_v1_segment,
 active_users_aggregates_v1.uri_count AS active_users_aggregates_v1_uri_count,
 active_users_aggregates_v1.wau AS active_users_aggregates_v1_wau,
+active_users_aggregates_v1.weekly_users AS active_users_aggregates_v1_weekly_users,
 
                     FROM
                     (
@@ -126,10 +154,36 @@ active_users_aggregates_v1.wau AS active_users_aggregates_v1_wau,
                         SAFE_CAST(
                             {% date_end submission_date %} AS DATE
                         ), CURRENT_DATE())
+                 AND 
+                    looker_base_fields.submission_date
+                    BETWEEN
+                    COALESCE(
+                        SAFE_CAST(
+                            {% date_start submission_date %} AS DATE
+                        ), CURRENT_DATE()) AND
+                    COALESCE(
+                        SAFE_CAST(
+                            {% date_end submission_date %} AS DATE
+                        ), CURRENT_DATE())
+                
+                    AND
+                        looker_base_fields.sample_id < {% parameter sampling %}
                 
                 )
             GROUP BY
-                active_users_aggregates_v1_active_hours,
+                looker_base_fields_app_name,
+looker_base_fields_app_version,
+looker_base_fields_country,
+looker_base_fields_default_search_engine,
+looker_base_fields_distribution_id,
+looker_base_fields_is_default_browser,
+looker_base_fields_locale,
+looker_base_fields_normalized_channel,
+looker_base_fields_normalized_os_version,
+looker_base_fields_os,
+looker_base_fields_partner_id,
+looker_base_fields_sample_id,
+active_users_aggregates_v1_active_hours,
 active_users_aggregates_v1_adjust_network,
 active_users_aggregates_v1_app_name,
 active_users_aggregates_v1_app_version,
@@ -143,14 +197,15 @@ active_users_aggregates_v1_attribution_source,
 active_users_aggregates_v1_channel,
 active_users_aggregates_v1_city,
 active_users_aggregates_v1_country,
+active_users_aggregates_v1_daily_users,
 active_users_aggregates_v1_dau,
 active_users_aggregates_v1_distribution_id,
 active_users_aggregates_v1_first_seen_year,
 active_users_aggregates_v1_install_source,
 active_users_aggregates_v1_is_default_browser,
-active_users_aggregates_v1_language_name,
+active_users_aggregates_v1_locale,
 active_users_aggregates_v1_mau,
-active_users_aggregates_v1_new_profiles,
+active_users_aggregates_v1_monthly_users,
 active_users_aggregates_v1_os,
 active_users_aggregates_v1_os_grouped,
 active_users_aggregates_v1_os_version,
@@ -159,6 +214,7 @@ active_users_aggregates_v1_os_version_minor,
 active_users_aggregates_v1_segment,
 active_users_aggregates_v1_uri_count,
 active_users_aggregates_v1_wau,
+active_users_aggregates_v1_weekly_users,
 
                 client_id,
                 analysis_basis ;;
@@ -207,6 +263,85 @@ active_users_aggregates_v1_wau,
     sql: ${TABLE}.desktop_dau_kpi_v2 ;;
   }
 
+  dimension: app_name {
+    sql: ${TABLE}.looker_base_fields_app_name ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version {
+    sql: ${TABLE}.looker_base_fields_app_version ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: country {
+    sql: ${TABLE}.looker_base_fields_country ;;
+    type: string
+    map_layer_name: countries
+    group_label: "Base Fields"
+  }
+
+  dimension: default_search_engine {
+    sql: ${TABLE}.looker_base_fields_default_search_engine ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: distribution_id {
+    sql: ${TABLE}.looker_base_fields_distribution_id ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: experiments {
+    sql: ${TABLE}.looker_base_fields_experiments ;;
+    hidden: yes
+    group_label: "Base Fields"
+  }
+
+  dimension: is_default_browser {
+    sql: ${TABLE}.looker_base_fields_is_default_browser ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: locale {
+    sql: ${TABLE}.looker_base_fields_locale ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: normalized_channel {
+    sql: ${TABLE}.looker_base_fields_normalized_channel ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: normalized_os_version {
+    sql: ${TABLE}.looker_base_fields_normalized_os_version ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: os {
+    sql: ${TABLE}.looker_base_fields_os ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: partner_id {
+    sql: ${TABLE}.looker_base_fields_partner_id ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: sample_id {
+    sql: ${TABLE}.looker_base_fields_sample_id ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
   dimension: active_hours {
     sql: ${TABLE}.active_users_aggregates_v1_active_hours ;;
     type: number
@@ -215,18 +350,6 @@ active_users_aggregates_v1_wau,
 
   dimension: adjust_network {
     sql: ${TABLE}.active_users_aggregates_v1_adjust_network ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: app_name {
-    sql: ${TABLE}.active_users_aggregates_v1_app_name ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: app_version {
-    sql: ${TABLE}.active_users_aggregates_v1_app_version ;;
     type: string
     group_label: "Base Fields"
   }
@@ -285,22 +408,15 @@ active_users_aggregates_v1_wau,
     group_label: "Base Fields"
   }
 
-  dimension: country {
-    sql: ${TABLE}.active_users_aggregates_v1_country ;;
-    type: string
-    map_layer_name: countries
+  dimension: daily_users {
+    sql: ${TABLE}.active_users_aggregates_v1_daily_users ;;
+    type: number
     group_label: "Base Fields"
   }
 
   dimension: dau {
     sql: ${TABLE}.active_users_aggregates_v1_dau ;;
     type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: distribution_id {
-    sql: ${TABLE}.active_users_aggregates_v1_distribution_id ;;
-    type: string
     group_label: "Base Fields"
   }
 
@@ -316,33 +432,15 @@ active_users_aggregates_v1_wau,
     group_label: "Base Fields"
   }
 
-  dimension: is_default_browser {
-    sql: ${TABLE}.active_users_aggregates_v1_is_default_browser ;;
-    type: yesno
-    group_label: "Base Fields"
-  }
-
-  dimension: language_name {
-    sql: ${TABLE}.active_users_aggregates_v1_language_name ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
   dimension: mau {
     sql: ${TABLE}.active_users_aggregates_v1_mau ;;
     type: number
     group_label: "Base Fields"
   }
 
-  dimension: new_profiles {
-    sql: ${TABLE}.active_users_aggregates_v1_new_profiles ;;
+  dimension: monthly_users {
+    sql: ${TABLE}.active_users_aggregates_v1_monthly_users ;;
     type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: os {
-    sql: ${TABLE}.active_users_aggregates_v1_os ;;
-    type: string
     group_label: "Base Fields"
   }
 
@@ -384,6 +482,12 @@ active_users_aggregates_v1_wau,
 
   dimension: wau {
     sql: ${TABLE}.active_users_aggregates_v1_wau ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: weekly_users {
+    sql: ${TABLE}.active_users_aggregates_v1_weekly_users ;;
     type: number
     group_label: "Base Fields"
   }
@@ -447,6 +551,6 @@ active_users_aggregates_v1_wau,
     label: "Sample of source data in %"
     type: unquoted
     default_value: "100"
-    hidden: yes
+    hidden: no
   }
 }

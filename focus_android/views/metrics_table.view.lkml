@@ -479,6 +479,13 @@ view: metrics_table {
     group_item_label: "Bloburl Resolve Stopped"
   }
 
+  dimension: metrics__counter__bounce_tracking_protection_purge_count_classified_tracker {
+    sql: ${TABLE}.metrics.counter.bounce_tracking_protection_purge_count_classified_tracker ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Bounce Tracking Protection Purge Count Classified Tracker"
+  }
+
   dimension: metrics__counter__browser_report_site_issue_counter {
     sql: ${TABLE}.metrics.counter.browser_report_site_issue_counter ;;
     type: number
@@ -822,6 +829,79 @@ view: metrics_table {
     group_item_label: "Translations Requests Count"
   }
 
+  dimension: metrics__counter__webauthn_create_failure {
+    sql: ${TABLE}.metrics.counter.webauthn_create_failure ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Create Failure"
+  }
+
+  dimension: metrics__counter__webauthn_create_passkey {
+    sql: ${TABLE}.metrics.counter.webauthn_create_passkey ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Create Passkey"
+  }
+
+  dimension: metrics__counter__webauthn_create_success {
+    sql: ${TABLE}.metrics.counter.webauthn_create_success ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Create Success"
+  }
+
+  dimension: metrics__counter__webauthn_get_failure {
+    sql: ${TABLE}.metrics.counter.webauthn_get_failure ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Get Failure"
+  }
+
+  dimension: metrics__counter__webauthn_get_success {
+    sql: ${TABLE}.metrics.counter.webauthn_get_success ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Get Success"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__count {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Brotli Saved Bytes"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Brotli Saved Bytes"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__values {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zlib_saved_bytes__count {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zlib_saved_bytes.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Zlib Saved Bytes"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zlib_saved_bytes__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zlib_saved_bytes.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Zlib Saved Bytes"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zlib_saved_bytes__values {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zlib_saved_bytes.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__count {
     sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_frame.count ;;
     type: number
@@ -1104,6 +1184,25 @@ view: metrics_table {
 
   dimension: metrics__custom_distribution__gfx_content_frame_time_without_upload__values {
     sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_upload.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__network_tls_early_data_bytes_written__count {
+    sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Network Tls Early Data Bytes Written"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__network_tls_early_data_bytes_written__sum {
+    sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Network Tls Early Data Bytes Written"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__network_tls_early_data_bytes_written__values {
+    sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.values ;;
     hidden: yes
   }
 
@@ -1832,6 +1931,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__bounce_tracking_protection_purge_count {
+    sql: ${TABLE}.metrics.labeled_counter.bounce_tracking_protection_purge_count ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     hidden: yes
@@ -1849,6 +1953,16 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__browser_search_with_ads {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__cert_compression_failures {
+    sql: ${TABLE}.metrics.labeled_counter.cert_compression_failures ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__cert_compression_used {
+    sql: ${TABLE}.metrics.labeled_counter.cert_compression_used ;;
     hidden: yes
   }
 
@@ -2092,6 +2206,16 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__network_tls_early_data_accepted {
+    sql: ${TABLE}.metrics.labeled_counter.network_tls_early_data_accepted ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__network_tls_early_data_negotiated {
+    sql: ${TABLE}.metrics.labeled_counter.network_tls_early_data_negotiated ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
     sql: ${TABLE}.metrics.labeled_counter.networking_cookie_timestamp_fixed_count ;;
     hidden: yes
@@ -2104,6 +2228,16 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_onstart_success_https_rr ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_http_redirect_to_scheme_subresource {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_redirect_to_scheme_subresource ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_http_redirect_to_scheme_top_level {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_redirect_to_scheme_top_level ;;
     hidden: yes
   }
 
@@ -2227,6 +2361,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__power_energy_per_process_type {
+    sql: ${TABLE}.metrics.labeled_counter.power_energy_per_process_type ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__power_gpu_time_per_process_type_ms {
     sql: ${TABLE}.metrics.labeled_counter.power_gpu_time_per_process_type_ms ;;
     hidden: yes
@@ -2294,6 +2433,21 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__tls_xyber_intolerance_reason {
     sql: ${TABLE}.metrics.labeled_counter.tls_xyber_intolerance_reason ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__translations_request_count {
+    sql: ${TABLE}.metrics.labeled_counter.translations_request_count ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__webauthn_create_authenticator_attachment {
+    sql: ${TABLE}.metrics.labeled_counter.webauthn_create_authenticator_attachment ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__webauthn_get_authenticator_attachment {
+    sql: ${TABLE}.metrics.labeled_counter.webauthn_get_authenticator_attachment ;;
     hidden: yes
   }
 
@@ -7708,6 +7862,65 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__networking_transaction_wait_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.bucket_count ;;
     type: number
@@ -10225,6 +10438,30 @@ view: metrics_table__events__extra {
   }
 }
 
+view: metrics_table__metrics__custom_distribution__cert_compression_brotli_saved_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cert_compression_zlib_saved_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -10394,6 +10631,18 @@ view: metrics_table__metrics__custom_distribution__gfx_content_frame_time_withou
 }
 
 view: metrics_table__metrics__custom_distribution__gfx_content_frame_time_without_upload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__network_tls_early_data_bytes_written__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -11834,6 +12083,18 @@ view: metrics_table__metrics__timing_distribution__networking_http_content_onsta
 }
 
 view: metrics_table__metrics__timing_distribution__networking_http_content_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_onstart_suspend_total_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

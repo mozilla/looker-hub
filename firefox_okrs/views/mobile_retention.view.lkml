@@ -51,6 +51,11 @@ view: mobile_retention {
     type: string
   }
 
+  dimension: is_mobile {
+    sql: ${TABLE}.is_mobile ;;
+    type: yesno
+  }
+
   dimension: is_suspicious_device_client {
     sql: ${TABLE}.is_suspicious_device_client ;;
     type: yesno
@@ -103,6 +108,11 @@ view: mobile_retention {
 
   dimension: play_store_attribution_source {
     sql: ${TABLE}.play_store_attribution_source ;;
+    type: string
+  }
+
+  dimension: product_name {
+    sql: ${TABLE}.product_name ;;
     type: string
   }
 

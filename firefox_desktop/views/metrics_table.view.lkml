@@ -425,6 +425,78 @@ To be used to validate GIFFT.
     description: "Set to true if the tasks that are queued prior to Glean initialization time out."
   }
 
+  dimension: metrics__boolean__installation_first_seen_admin_user {
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_admin_user ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Installation First Seen Admin User"
+    description: "Whether the installer is running from an elevated admin user
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_default_path {
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_default_path ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Installation First Seen Default Path"
+    description: "(optional, present if installer_type is \"full\") Whether the default path was used
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_from_msi {
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_from_msi ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Installation First Seen From Msi"
+    description: "(optional, present if installer_type is \"full\") Whether this was an MSI install
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_install_existed {
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_install_existed ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Installation First Seen Install Existed"
+    description: "Whether there was already an install in this location
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_other_inst {
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_other_inst ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Installation First Seen Other Inst"
+    description: "Whether there was already any non-MSIX install on this system
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_other_msix_inst {
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_other_msix_inst ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Installation First Seen Other Msix Inst"
+    description: "Whether there was already any MSIX install on this system
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_profdir_existed {
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_profdir_existed ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Installation First Seen Profdir Existed"
+    description: "Whether the top-level profile directory existed
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_silent {
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_silent ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Installation First Seen Silent"
+    description: "(optional, present if installer_type is \"full\") Whether this was a silent install
+"
+  }
+
   dimension: metrics__boolean__newtab_handoff_preference_enabled {
     sql: ${TABLE}.metrics.boolean.newtab_handoff_preference_enabled ;;
     type: yesno
@@ -502,6 +574,15 @@ in browser.
 "
   }
 
+  dimension: metrics__counter__bounce_tracking_protection_purge_count_classified_tracker {
+    sql: ${TABLE}.metrics.counter.bounce_tracking_protection_purge_count_classified_tracker ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Bounce Tracking Protection Purge Count Classified Tracker"
+    description: "Counts sites purged from BTP that are classified as trackers as part of the following lists: [emailtracking-protection, fingerprinting-protection, socialtracking-protection, tracking-protection]
+"
+  }
+
   dimension: metrics__counter__browser_engagement_active_ticks {
     sql: ${TABLE}.metrics.counter.browser_engagement_active_ticks ;;
     type: number
@@ -539,6 +620,30 @@ Migrated from Telemetry's
     group_item_label: "Cookie Banners Cookie Injection Fail"
     description: "Counts how often the cookie banner is still shown even if we have injected cookies.
 "
+  }
+
+  dimension: metrics__counter__crash_submission_failure {
+    sql: ${TABLE}.metrics.counter.crash_submission_failure ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Crash Submission Failure"
+    description: "The total number of successful calls to navigator.credentials.get."
+  }
+
+  dimension: metrics__counter__crash_submission_pending {
+    sql: ${TABLE}.metrics.counter.crash_submission_pending ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Crash Submission Pending"
+    description: "The total number of successful calls to navigator.credentials.get."
+  }
+
+  dimension: metrics__counter__crash_submission_success {
+    sql: ${TABLE}.metrics.counter.crash_submission_success ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Crash Submission Success"
+    description: "The total number of successful calls to navigator.credentials.get."
   }
 
   dimension: metrics__counter__dotprint_android_dialog_requested {
@@ -732,7 +837,7 @@ This does not include deletion-request pings.
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Httpsfirst Downgraded"
-    description: "How many regular HTTPS-First (`dom.security.https_first` enabled) upgrades get downgraded again.
+    description: "How many regular HTTPS-First (`dom.security.https_first` enabled) upgrades fail and get downgraded again.
 "
   }
 
@@ -741,7 +846,7 @@ This does not include deletion-request pings.
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Httpsfirst Downgraded Schemeless"
-    description: "How many schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrades get downgraded again.
+    description: "How many schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrades fail and get downgraded again.
 "
   }
 
@@ -750,7 +855,7 @@ This does not include deletion-request pings.
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Httpsfirst Upgraded"
-    description: "Counts how often a load is marked to be upgraded to HTTPS because of HTTPS-First (`dom.security.https_first` enabled).
+    description: "Counts how often a load is successfully upgraded to HTTPS because of HTTPS-First (`dom.security.https_first` enabled). This does not include loads that get downgraded again.
 "
   }
 
@@ -759,7 +864,7 @@ This does not include deletion-request pings.
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Httpsfirst Upgraded Schemeless"
-    description: "Counts how often a load is marked to be upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless).
+    description: "Counts how often a load is successfully upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless). This does not include loads that get downgraded again.
 "
   }
 
@@ -962,6 +1067,86 @@ of the shopping experiment.
     group_item_label: "Translations Requests Count"
     description: "The count of translation requests.
 "
+  }
+
+  dimension: metrics__counter__webauthn_create_failure {
+    sql: ${TABLE}.metrics.counter.webauthn_create_failure ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Create Failure"
+    description: "The total number of failed calls to navigator.credentials.create."
+  }
+
+  dimension: metrics__counter__webauthn_create_passkey {
+    sql: ${TABLE}.metrics.counter.webauthn_create_passkey ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Create Passkey"
+    description: "The number of client-side discoverable credentials (passkeys) created."
+  }
+
+  dimension: metrics__counter__webauthn_create_success {
+    sql: ${TABLE}.metrics.counter.webauthn_create_success ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Create Success"
+    description: "The total number of successful calls to navigator.credentials.create."
+  }
+
+  dimension: metrics__counter__webauthn_get_failure {
+    sql: ${TABLE}.metrics.counter.webauthn_get_failure ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Get Failure"
+    description: "The total number of failed calls to navigator.credentials.get."
+  }
+
+  dimension: metrics__counter__webauthn_get_success {
+    sql: ${TABLE}.metrics.counter.webauthn_get_success ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webauthn Get Success"
+    description: "The total number of successful calls to navigator.credentials.get."
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__count {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Brotli Saved Bytes"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Brotli Saved Bytes"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__values {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zlib_saved_bytes__count {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zlib_saved_bytes.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Zlib Saved Bytes"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zlib_saved_bytes__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zlib_saved_bytes.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Zlib Saved Bytes"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zlib_saved_bytes__values {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zlib_saved_bytes.values ;;
+    hidden: yes
   }
 
   dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__count {
@@ -1261,6 +1446,26 @@ of the shopping experiment.
 
   dimension: metrics__custom_distribution__gfx_content_frame_time_without_upload__values {
     sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_upload.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__network_tls_early_data_bytes_written__count {
+    sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Network Tls Early Data Bytes Written"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__network_tls_early_data_bytes_written__sum {
+    sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Network Tls Early Data Bytes Written"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__network_tls_early_data_bytes_written__values {
+    sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.values ;;
     hidden: yes
   }
 
@@ -2058,6 +2263,25 @@ of the shopping experiment.
 "
   }
 
+  dimension: metrics__labeled_counter__bounce_tracking_protection_purge_count {
+    sql: ${TABLE}.metrics.labeled_counter.bounce_tracking_protection_purge_count ;;
+    hidden: yes
+    description: "Counts how often we purge trackers. Giving a high level overview about the effectivness of bounce tracking protection. Allows determining error rate with failure/success label. When in dry mode, we count the purges that would have happened under the dry label.
+"
+  }
+
+  dimension: metrics__labeled_counter__cert_compression_failures {
+    sql: ${TABLE}.metrics.labeled_counter.cert_compression_failures ;;
+    hidden: yes
+    description: "The number of times each certificate compression algorithm returned an error."
+  }
+
+  dimension: metrics__labeled_counter__cert_compression_used {
+    sql: ${TABLE}.metrics.labeled_counter.cert_compression_used ;;
+    hidden: yes
+    description: "The number of times each certificate compression algorithm was used."
+  }
+
   dimension: metrics__labeled_counter__cert_verifier_crlite_status {
     sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_status ;;
     hidden: yes
@@ -2126,6 +2350,12 @@ of the shopping experiment.
     hidden: yes
     description: "Counts the number of hit/miss of cookie banner rule lookups for every load. We collect three types of counters, including counters for overall rule lookup, counters for cookie rule lookup and counters for click rule lookup. We also divide the counter by top-level loads and iframe loads.
 "
+  }
+
+  dimension: metrics__labeled_counter__crash_submission_collector_errors {
+    sql: ${TABLE}.metrics.labeled_counter.crash_submission_collector_errors ;;
+    hidden: yes
+    description: "The number of times each certificate compression algorithm was used."
   }
 
   dimension: metrics__labeled_counter__dap_report_generation_status {
@@ -2434,6 +2664,20 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__labeled_counter__network_tls_early_data_accepted {
+    sql: ${TABLE}.metrics.labeled_counter.network_tls_early_data_accepted ;;
+    hidden: yes
+    description: "TLS early data was used and it was accepted or rejected by the remote host.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_tls_early_data_negotiated {
+    sql: ${TABLE}.metrics.labeled_counter.network_tls_early_data_negotiated ;;
+    hidden: yes
+    description: "Sending TLS early data was not possible, possible and used, or possible but not used.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
     sql: ${TABLE}.metrics.labeled_counter.networking_cookie_timestamp_fixed_count ;;
     hidden: yes
@@ -2452,6 +2696,20 @@ If you're unsure, please ask in
     sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_onstart_success_https_rr ;;
     hidden: yes
     description: "Successfully started HTTP channels when HTTPS RR is used
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_redirect_to_scheme_subresource {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_redirect_to_scheme_subresource ;;
+    hidden: yes
+    description: "Count of the HTTP redirection that triggered by subresource, keyed by the URL scheme redirected to
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_redirect_to_scheme_top_level {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_redirect_to_scheme_top_level ;;
+    hidden: yes
+    description: "Count of the HTTP redirection that triggered by top-level document, keyed by the URL scheme redirected to
 "
   }
 
@@ -2632,6 +2890,13 @@ broken down by structured ingestion namespace.
 "
   }
 
+  dimension: metrics__labeled_counter__power_energy_per_process_type {
+    sql: ${TABLE}.metrics.labeled_counter.power_energy_per_process_type ;;
+    hidden: yes
+    description: "How much energy (in µWh) has been used, broken down by process type. Only available on Apple Silicon.
+"
+  }
+
   dimension: metrics__labeled_counter__power_gpu_time_per_process_type_ms {
     sql: ${TABLE}.metrics.labeled_counter.power_gpu_time_per_process_type_ms ;;
     hidden: yes
@@ -2747,6 +3012,25 @@ success - search service successfully initialized.
     hidden: yes
     description: "The error that was returned from a failed TLS 1.3 handshake in which the client sent a Xyber key share (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
 "
+  }
+
+  dimension: metrics__labeled_counter__translations_request_count {
+    sql: ${TABLE}.metrics.labeled_counter.translations_request_count ;;
+    hidden: yes
+    description: "The count of translation requests, along with their type.
+"
+  }
+
+  dimension: metrics__labeled_counter__webauthn_create_authenticator_attachment {
+    sql: ${TABLE}.metrics.labeled_counter.webauthn_create_authenticator_attachment ;;
+    hidden: yes
+    description: "The number of successfully created credentials by authenticator attachment modality."
+  }
+
+  dimension: metrics__labeled_counter__webauthn_get_authenticator_attachment {
+    sql: ${TABLE}.metrics.labeled_counter.webauthn_get_authenticator_attachment ;;
+    hidden: yes
+    description: "The number of successfully asserted credentials by authenticator attachment modality."
   }
 
   dimension: metrics__labeled_counter__webrtcdtls_cipher {
@@ -3806,6 +4090,33 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics String"
     group_item_label: "Gpu Process Feature Status"
     description: "Current status of the GPU process feature
+"
+  }
+
+  dimension: metrics__string__installation_first_seen_failure_reason {
+    sql: ${TABLE}.metrics.string.installation_first_seen_failure_reason ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Installation First Seen Failure Reason"
+    description: "Only sent if unable to collect firstSeen data. Can have value \"NotFoundError\" if file not found or other values depending on the failure reason.
+"
+  }
+
+  dimension: metrics__string__installation_first_seen_installer_type {
+    sql: ${TABLE}.metrics.string.installation_first_seen_installer_type ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Installation First Seen Installer Type"
+    description: "The type of installer used to install Firefox. The value is one of \"stub\", \"full\", or \"msix\"
+"
+  }
+
+  dimension: metrics__string__installation_first_seen_version {
+    sql: ${TABLE}.metrics.string.installation_first_seen_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Installation First Seen Version"
+    description: "The application version installed by the installer (not necessarily the current version)
 "
   }
 
@@ -8599,6 +8910,66 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__networking_transaction_wait_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.bucket_count ;;
     type: number
@@ -11334,6 +11705,30 @@ view: metrics_table__events__extra {
   }
 }
 
+view: metrics_table__metrics__custom_distribution__cert_compression_brotli_saved_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cert_compression_zlib_saved_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -11503,6 +11898,18 @@ view: metrics_table__metrics__custom_distribution__gfx_content_frame_time_withou
 }
 
 view: metrics_table__metrics__custom_distribution__gfx_content_frame_time_without_upload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__network_tls_early_data_bytes_written__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -12943,6 +13350,18 @@ view: metrics_table__metrics__timing_distribution__networking_http_content_onsta
 }
 
 view: metrics_table__metrics__timing_distribution__networking_http_content_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_onstart_suspend_total_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

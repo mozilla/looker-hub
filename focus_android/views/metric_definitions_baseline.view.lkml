@@ -143,7 +143,7 @@ looker_base_fields.user_agent.version AS looker_base_fields_user_agent__version,
         baseline.submission_date =
         looker_base_fields.submission_date
     
-            
+                
                     WHERE 
                     baseline.submission_date
                     BETWEEN

@@ -108,7 +108,7 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
         clients_first_seen_28_days_later.first_seen_date =
         looker_base_fields.submission_date
     
-            
+                
                     WHERE 
                     clients_first_seen_28_days_later.first_seen_date
                     BETWEEN

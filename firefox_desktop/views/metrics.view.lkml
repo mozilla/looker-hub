@@ -403,6 +403,65 @@ Migrated from Telemetry's
 "
   }
 
+  dimension: metrics__labeled_counter__crash_submission_collector_errors {
+    label: "Crash Submission Collector Errors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.crash_submission_collector_errors ;;
+    group_label: "Crash Submission"
+    group_item_label: "Collector Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Collector Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_collector_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  dimension: metrics__counter__crash_submission_failure {
+    label: "Crash Submission Failure"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.crash_submission_failure ;;
+    type: number
+    group_label: "Crash Submission"
+    group_item_label: "Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  dimension: metrics__counter__crash_submission_pending {
+    label: "Crash Submission Pending"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.crash_submission_pending ;;
+    type: number
+    group_label: "Crash Submission"
+    group_item_label: "Pending"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Pending"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_pending"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  dimension: metrics__counter__crash_submission_success {
+    label: "Crash Submission Success"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.crash_submission_success ;;
+    type: number
+    group_label: "Crash Submission"
+    group_item_label: "Success"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   dimension: metrics__labeled_counter__dap_report_generation_status {
     label: "Dap Report Generation Status"
     hidden: yes
@@ -633,6 +692,204 @@ when dynamic or static rulesets have been loaded from disk.
     }
 
     description: "The version of the Gecko engine, example: 74.0a1 (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_admin_user {
+    label: "Installation First Seen Admin User"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_admin_user ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Admin User"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Admin User"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_admin_user"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the installer is running from an elevated admin user
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_default_path {
+    label: "Installation First Seen Default Path"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_default_path ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Default Path"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Default Path"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_default_path"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "(optional, present if installer_type is \"full\") Whether the default path was used
+"
+  }
+
+  dimension: metrics__string__installation_first_seen_failure_reason {
+    label: "Installation First Seen Failure Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.string.installation_first_seen_failure_reason ;;
+    type: string
+    group_label: "Installation First Seen"
+    group_item_label: "Failure Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Failure Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_failure_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Only sent if unable to collect firstSeen data. Can have value \"NotFoundError\" if file not found or other values depending on the failure reason.
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_from_msi {
+    label: "Installation First Seen From Msi"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_from_msi ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "From Msi"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen From Msi"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_from_msi"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "(optional, present if installer_type is \"full\") Whether this was an MSI install
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_install_existed {
+    label: "Installation First Seen Install Existed"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_install_existed ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Install Existed"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Install Existed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_install_existed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether there was already an install in this location
+"
+  }
+
+  dimension: metrics__string__installation_first_seen_installer_type {
+    label: "Installation First Seen Installer Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.installation_first_seen_installer_type ;;
+    type: string
+    group_label: "Installation First Seen"
+    group_item_label: "Installer Type"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Installer Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_installer_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The type of installer used to install Firefox. The value is one of \"stub\", \"full\", or \"msix\"
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_other_inst {
+    label: "Installation First Seen Other Inst"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_other_inst ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Other Inst"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Other Inst"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_other_inst"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether there was already any non-MSIX install on this system
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_other_msix_inst {
+    label: "Installation First Seen Other Msix Inst"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_other_msix_inst ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Other Msix Inst"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Other Msix Inst"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_other_msix_inst"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether there was already any MSIX install on this system
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_profdir_existed {
+    label: "Installation First Seen Profdir Existed"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_profdir_existed ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Profdir Existed"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Profdir Existed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_profdir_existed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the top-level profile directory existed
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_silent {
+    label: "Installation First Seen Silent"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_silent ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Silent"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Silent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_silent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "(optional, present if installer_type is \"full\") Whether this was a silent install
+"
+  }
+
+  dimension: metrics__string__installation_first_seen_version {
+    label: "Installation First Seen Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.installation_first_seen_version ;;
+    type: string
+    group_label: "Installation First Seen"
+    group_item_label: "Version"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The application version installed by the installer (not necessarily the current version)
 "
   }
 
@@ -1688,6 +1945,41 @@ in browser.
 "
   }
 
+  dimension: metrics__labeled_counter__bounce_tracking_protection_purge_count {
+    label: "Bounce Tracking Protection Purge Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.bounce_tracking_protection_purge_count ;;
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Purge Count"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Purge Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/bounce_tracking_protection_purge_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often we purge trackers. Giving a high level overview about the effectivness of bounce tracking protection. Allows determining error rate with failure/success label. When in dry mode, we count the purges that would have happened under the dry label.
+"
+  }
+
+  dimension: metrics__counter__bounce_tracking_protection_purge_count_classified_tracker {
+    label: "Bounce Tracking Protection Purge Count Classified Tracker"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.bounce_tracking_protection_purge_count_classified_tracker ;;
+    type: number
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Purge Count Classified Tracker"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Purge Count Classified Tracker"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/bounce_tracking_protection_purge_count_classified_tracker"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts sites purged from BTP that are classified as trackers as part of the following lists: [emailtracking-protection, fingerprinting-protection, socialtracking-protection, tracking-protection]
+"
+  }
+
   dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__sum {
     label: "Bounce Tracking Protection Purge Duration Sum"
     hidden: no
@@ -1722,6 +2014,72 @@ in browser.
 
     description: "True if the Proton default theme is enabled.
 "
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__sum {
+    label: "Cert Compression Brotli Saved Bytes Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.sum ;;
+    type: number
+    group_label: "Cert Compression"
+    group_item_label: "Brotli Saved Bytes Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Compression Brotli Saved Bytes Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cert_compression_brotli_saved_bytes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The difference between the length of encoded certificate vs the actual certificate."
+  }
+
+  dimension: metrics__labeled_counter__cert_compression_failures {
+    label: "Cert Compression Failures"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cert_compression_failures ;;
+    group_label: "Cert Compression"
+    group_item_label: "Failures"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Compression Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cert_compression_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times each certificate compression algorithm returned an error."
+  }
+
+  dimension: metrics__labeled_counter__cert_compression_used {
+    label: "Cert Compression Used"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cert_compression_used ;;
+    group_label: "Cert Compression"
+    group_item_label: "Used"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Compression Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cert_compression_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times each certificate compression algorithm was used."
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zlib_saved_bytes__sum {
+    label: "Cert Compression Zlib Saved Bytes Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zlib_saved_bytes.sum ;;
+    type: number
+    group_label: "Cert Compression"
+    group_item_label: "Zlib Saved Bytes Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Compression Zlib Saved Bytes Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cert_compression_zlib_saved_bytes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The difference between the length of encoded certificate vs the actual certificate."
   }
 
   dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__sum {
@@ -1847,7 +2205,7 @@ in browser.
 
   dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__sum {
     label: "Cookie Banners Click Handle Duration Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.cookie_banners_click_handle_duration.sum ;;
     type: number
     group_label: "Cookie Banners Click"
@@ -1971,7 +2329,7 @@ in browser.
 
   dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__sum {
     label: "Cookie Banners Cmp Handle Duration Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.sum ;;
     type: number
     group_label: "Cookie Banners Cmp"
@@ -3864,7 +4222,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "If a HTTPS-First (`dom.security.https_first` enabled) upgrade isn't successful, measures the timespan between the navigation start and the downgrade. This does not include the case in which the https request times out and the http request sent after 3s gets a response faster.
+    description: "If a HTTPS-First (`dom.security.https_first` enabled) upgrade isn't successful, measures the timespan between the navigation start and the downgrade.
 "
   }
 
@@ -3882,7 +4240,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "If a schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrade isn't successful, measures the timespan between the navigation start and the downgrade. This does not include the case in which the https request times out and the http request sent after 3s gets a response faster.
+    description: "If a schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrade isn't successful, measures the timespan between the navigation start and the downgrade.
 "
   }
 
@@ -3900,7 +4258,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "How many regular HTTPS-First (`dom.security.https_first` enabled) upgrades get downgraded again.
+    description: "How many regular HTTPS-First (`dom.security.https_first` enabled) upgrades fail and get downgraded again.
 "
   }
 
@@ -3990,7 +4348,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "How many schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrades get downgraded again.
+    description: "How many schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrades fail and get downgraded again.
 "
   }
 
@@ -4008,7 +4366,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts how often a load is marked to be upgraded to HTTPS because of HTTPS-First (`dom.security.https_first` enabled).
+    description: "Counts how often a load is successfully upgraded to HTTPS because of HTTPS-First (`dom.security.https_first` enabled). This does not include loads that get downgraded again.
 "
   }
 
@@ -4026,7 +4384,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts how often a load is marked to be upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless).
+    description: "Counts how often a load is successfully upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless). This does not include loads that get downgraded again.
 "
   }
 
@@ -4745,6 +5103,58 @@ To be used to validate GIFFT.
     }
 
     description: "In the HTTP page channel, time from the TCP SYN packet is received to the connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_PAGE_TCP_CONNECTION_2 in Desktop (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__network_tls_early_data_accepted {
+    label: "Network Tls Early Data Accepted"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_tls_early_data_accepted ;;
+    group_label: "Network"
+    group_item_label: "Tls Early Data Accepted"
+
+    link: {
+      label: "Glean Dictionary reference for Network Tls Early Data Accepted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_tls_early_data_accepted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "TLS early data was used and it was accepted or rejected by the remote host.
+"
+  }
+
+  dimension: metrics__custom_distribution__network_tls_early_data_bytes_written__sum {
+    label: "Network Tls Early Data Bytes Written Sum"
+    hidden: yes
+    sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Tls Early Data Bytes Written Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Tls Early Data Bytes Written Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_tls_early_data_bytes_written"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of bytes sent using TLS early data at the start of a TLS connection for a given channel.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_tls_early_data_negotiated {
+    label: "Network Tls Early Data Negotiated"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_tls_early_data_negotiated ;;
+    group_label: "Network"
+    group_item_label: "Tls Early Data Negotiated"
+
+    link: {
+      label: "Glean Dictionary reference for Network Tls Early Data Negotiated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_tls_early_data_negotiated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sending TLS early data was not possible, possible and used, or possible but not used.
 "
   }
 
@@ -5552,6 +5962,58 @@ To be used to validate GIFFT.
     }
 
     description: "The time between dispatching OnStopRequest from the socket thread and processing it on the main thread (content process).
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__sum {
+    label: "Networking Http Onstart Suspend Total Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Onstart Suspend Total Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Onstart Suspend Total Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_onstart_suspend_total_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds that http channel spent suspended between AsyncOpen and OnStartRequest.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_redirect_to_scheme_subresource {
+    label: "Networking Http Redirect To Scheme Subresource"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_redirect_to_scheme_subresource ;;
+    group_label: "Networking"
+    group_item_label: "Http Redirect To Scheme Subresource"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Redirect To Scheme Subresource"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_redirect_to_scheme_subresource"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of the HTTP redirection that triggered by subresource, keyed by the URL scheme redirected to
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_redirect_to_scheme_top_level {
+    label: "Networking Http Redirect To Scheme Top Level"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_redirect_to_scheme_top_level ;;
+    group_label: "Networking"
+    group_item_label: "Http Redirect To Scheme Top Level"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Redirect To Scheme Top Level"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_redirect_to_scheme_top_level"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of the HTTP redirection that triggered by top-level document, keyed by the URL scheme redirected to
 "
   }
 
@@ -6791,6 +7253,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__power_energy_per_process_type {
+    label: "Power Energy Per Process Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_energy_per_process_type ;;
+    group_label: "Power"
+    group_item_label: "Energy Per Process Type"
+
+    link: {
+      label: "Glean Dictionary reference for Power Energy Per Process Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_energy_per_process_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How much energy (in µWh) has been used, broken down by process type. Only available on Apple Silicon.
+"
+  }
+
   dimension: metrics__counter__power_gpu_time_bogus_values {
     label: "Power Gpu Time Bogus Values"
     hidden: no
@@ -7677,6 +8156,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__translations_request_count {
+    label: "Translations Request Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.translations_request_count ;;
+    group_label: "Translations"
+    group_item_label: "Request Count"
+
+    link: {
+      label: "Glean Dictionary reference for Translations Request Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/translations_request_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of translation requests, along with their type.
+"
+  }
+
   dimension: metrics__counter__translations_requests_count {
     label: "Translations Requests Count"
     hidden: no
@@ -7873,6 +8369,123 @@ To be used to validate GIFFT.
 
     description: "How many successfully-built certificate chains used a certificate from the TLS handshake.
 "
+  }
+
+  dimension: metrics__labeled_counter__webauthn_create_authenticator_attachment {
+    label: "Webauthn Create Authenticator Attachment"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webauthn_create_authenticator_attachment ;;
+    group_label: "Webauthn Create"
+    group_item_label: "Authenticator Attachment"
+
+    link: {
+      label: "Glean Dictionary reference for Webauthn Create Authenticator Attachment"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/webauthn_create_authenticator_attachment"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of successfully created credentials by authenticator attachment modality."
+  }
+
+  dimension: metrics__counter__webauthn_create_failure {
+    label: "Webauthn Create Failure"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.webauthn_create_failure ;;
+    type: number
+    group_label: "Webauthn Create"
+    group_item_label: "Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Webauthn Create Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/webauthn_create_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of failed calls to navigator.credentials.create."
+  }
+
+  dimension: metrics__counter__webauthn_create_passkey {
+    label: "Webauthn Create Passkey"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.webauthn_create_passkey ;;
+    type: number
+    group_label: "Webauthn Create"
+    group_item_label: "Passkey"
+
+    link: {
+      label: "Glean Dictionary reference for Webauthn Create Passkey"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/webauthn_create_passkey"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of client-side discoverable credentials (passkeys) created."
+  }
+
+  dimension: metrics__counter__webauthn_create_success {
+    label: "Webauthn Create Success"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.webauthn_create_success ;;
+    type: number
+    group_label: "Webauthn Create"
+    group_item_label: "Success"
+
+    link: {
+      label: "Glean Dictionary reference for Webauthn Create Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/webauthn_create_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of successful calls to navigator.credentials.create."
+  }
+
+  dimension: metrics__labeled_counter__webauthn_get_authenticator_attachment {
+    label: "Webauthn Get Authenticator Attachment"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webauthn_get_authenticator_attachment ;;
+    group_label: "Webauthn Get"
+    group_item_label: "Authenticator Attachment"
+
+    link: {
+      label: "Glean Dictionary reference for Webauthn Get Authenticator Attachment"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/webauthn_get_authenticator_attachment"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of successfully asserted credentials by authenticator attachment modality."
+  }
+
+  dimension: metrics__counter__webauthn_get_failure {
+    label: "Webauthn Get Failure"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.webauthn_get_failure ;;
+    type: number
+    group_label: "Webauthn Get"
+    group_item_label: "Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Webauthn Get Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/webauthn_get_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of failed calls to navigator.credentials.get."
+  }
+
+  dimension: metrics__counter__webauthn_get_success {
+    label: "Webauthn Get Success"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.webauthn_get_success ;;
+    type: number
+    group_label: "Webauthn Get"
+    group_item_label: "Success"
+
+    link: {
+      label: "Glean Dictionary reference for Webauthn Get Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/webauthn_get_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of successful calls to navigator.credentials.get."
   }
 
   dimension: metrics__labeled_counter__webrtcdtls_cipher {
@@ -9288,6 +9901,81 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: crash_submission_failure {
+    type: sum
+    sql: ${metrics__counter__crash_submission_failure} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: crash_submission_failure_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__crash_submission_failure: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: crash_submission_pending {
+    type: sum
+    sql: ${metrics__counter__crash_submission_pending} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Pending"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_pending"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: crash_submission_pending_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__crash_submission_pending: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Pending"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_pending"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: crash_submission_success {
+    type: sum
+    sql: ${metrics__counter__crash_submission_success} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: crash_submission_success_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__crash_submission_success: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: messaging_system_glean_ping_for_ping_failures {
     type: sum
     sql: ${metrics__counter__messaging_system_glean_ping_for_ping_failures} ;;
@@ -9384,6 +10072,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Bloburl Resolve Stopped"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/bloburl_resolve_stopped"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: bounce_tracking_protection_purge_count_classified_tracker {
+    type: sum
+    sql: ${metrics__counter__bounce_tracking_protection_purge_count_classified_tracker} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Purge Count Classified Tracker"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/bounce_tracking_protection_purge_count_classified_tracker"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: bounce_tracking_protection_purge_count_classified_tracker_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__bounce_tracking_protection_purge_count_classified_tracker: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Purge Count Classified Tracker"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/bounce_tracking_protection_purge_count_classified_tracker"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -10184,6 +10897,131 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Translations Requests Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/translations_requests_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webauthn_create_failure {
+    type: sum
+    sql: ${metrics__counter__webauthn_create_failure} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webauthn Create Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/webauthn_create_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webauthn_create_failure_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__webauthn_create_failure: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webauthn Create Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/webauthn_create_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webauthn_create_passkey {
+    type: sum
+    sql: ${metrics__counter__webauthn_create_passkey} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webauthn Create Passkey"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/webauthn_create_passkey"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webauthn_create_passkey_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__webauthn_create_passkey: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webauthn Create Passkey"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/webauthn_create_passkey"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webauthn_create_success {
+    type: sum
+    sql: ${metrics__counter__webauthn_create_success} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webauthn Create Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/webauthn_create_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webauthn_create_success_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__webauthn_create_success: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webauthn Create Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/webauthn_create_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webauthn_get_failure {
+    type: sum
+    sql: ${metrics__counter__webauthn_get_failure} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webauthn Get Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/webauthn_get_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webauthn_get_failure_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__webauthn_get_failure: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webauthn Get Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/webauthn_get_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webauthn_get_success {
+    type: sum
+    sql: ${metrics__counter__webauthn_get_success} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webauthn Get Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/webauthn_get_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webauthn_get_success_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__webauthn_get_success: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webauthn Get Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/webauthn_get_success"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -11220,6 +12058,129 @@ view: metrics__metrics__labeled_counter__avif_yuv_color_space {
   }
 }
 
+view: metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count {
+  label: "Bounce Tracking Protection - Purge Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__cert_compression_failures {
+  label: "Cert Compression - Failures"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__cert_compression_used {
+  label: "Cert Compression - Used"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__cert_verifier_crlite_status {
   label: "Cert Verifier - Crlite Status"
 
@@ -11591,6 +12552,47 @@ view: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain {
 
 view: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load {
   label: "Cookie Banners - Rule Lookup By Load"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__crash_submission_collector_errors {
+  label: "Crash Submission - Collector Errors"
 
   dimension: document_id {
     type: string
@@ -13272,6 +14274,88 @@ view: metrics__metrics__labeled_counter__network_data_size_per_type {
   }
 }
 
+view: metrics__metrics__labeled_counter__network_tls_early_data_accepted {
+  label: "Network - Tls Early Data Accepted"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_tls_early_data_negotiated {
+  label: "Network - Tls Early Data Negotiated"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
   label: "Networking - Cookie Timestamp Fixed Count"
 
@@ -13392,6 +14476,88 @@ view: metrics__metrics__labeled_counter__networking_http_channel_onstart_success
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_redirect_to_scheme_subresource {
+  label: "Networking - Http Redirect To Scheme Subresource"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_redirect_to_scheme_top_level {
+  label: "Networking - Http Redirect To Scheme Top Level"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
   }
 }
 
@@ -14420,6 +15586,47 @@ view: metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms {
   }
 }
 
+view: metrics__metrics__labeled_counter__power_energy_per_process_type {
+  label: "Power - Energy Per Process Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {
   label: "Power - Gpu Time Per Process Type Ms"
 
@@ -15076,6 +16283,129 @@ view: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
   }
 }
 
+view: metrics__metrics__labeled_counter__translations_request_count {
+  label: "Translations - Request Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webauthn_create_authenticator_attachment {
+  label: "Webauthn Create - Authenticator Attachment"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webauthn_get_authenticator_attachment {
+  label: "Webauthn Get - Authenticator Attachment"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__webrtcdtls_cipher {
   label: "Webrtcdtls - Cipher"
 
@@ -15334,6 +16664,30 @@ view: metrics__events__extra {
   }
 }
 
+view: metrics__metrics__custom_distribution__cert_compression_brotli_saved_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cert_compression_zlib_saved_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -15503,6 +16857,18 @@ view: metrics__metrics__custom_distribution__gfx_content_frame_time_without_reso
 }
 
 view: metrics__metrics__custom_distribution__gfx_content_frame_time_without_upload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__network_tls_early_data_bytes_written__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -16943,6 +18309,18 @@ view: metrics__metrics__timing_distribution__networking_http_content_onstart_del
 }
 
 view: metrics__metrics__timing_distribution__networking_http_content_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_onstart_suspend_total_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

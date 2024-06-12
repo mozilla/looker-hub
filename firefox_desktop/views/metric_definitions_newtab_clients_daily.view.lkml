@@ -14,6 +14,7 @@ COALESCE(SUM(tagged_search_ad_impressions), 0) AS newtab_searches_with_ads,
 COALESCE(SUM(tagged_search_ad_clicks), 0) AS newtab_ad_clicks,
 SAFE_DIVIDE(COALESCE(SUM(tagged_search_ad_clicks), 0),  COALESCE(SUM(tagged_search_ad_impressions), 0)) AS newtab_ad_click_rate,
 COALESCE(SUM(organic_pocket_clicks), 0) AS organic_pocket_clicks,
+COALESCE(LOGICAL_OR(organic_pocket_clicks > 0), FALSE) AS any_organic_pocket_clicks,
 COALESCE(SUM(sponsored_pocket_clicks), 0) AS sponsored_pocket_clicks,
 COALESCE(SUM(organic_pocket_impressions), 0) AS organic_pocket_impressions,
 COALESCE(SUM(sponsored_pocket_impressions), 0) AS sponsored_pocket_impressions,
@@ -127,7 +128,7 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
         newtab_clients_daily.submission_date =
         looker_base_fields.submission_date
     
-            
+                
                     WHERE 
                     newtab_clients_daily.submission_date
                     BETWEEN
@@ -243,6 +244,15 @@ looker_base_fields_sample_id,
 "
     type: number
     sql: ${TABLE}.organic_pocket_clicks ;;
+  }
+
+  dimension: any_organic_pocket_clicks {
+    group_label: "Metrics"
+    label: "Any organic Pocket Clicks"
+    description: "Client had any Pocket clicks during the experiment.
+"
+    type: number
+    sql: ${TABLE}.any_organic_pocket_clicks ;;
   }
 
   dimension: sponsored_pocket_clicks {
@@ -474,6 +484,7 @@ looker_base_fields_sample_id,
       newtab_ad_clicks,
       newtab_ad_click_rate,
       organic_pocket_clicks,
+      any_organic_pocket_clicks,
       sponsored_pocket_clicks,
       organic_pocket_impressions,
       sponsored_pocket_impressions,
