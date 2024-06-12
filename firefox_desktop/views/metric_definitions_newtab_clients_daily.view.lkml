@@ -30,18 +30,59 @@ COALESCE(SUM(newtab_visit_count), 0) AS newtab_visits,
 COALESCE(SUM(visits_with_non_impression_engagement), 0) AS newtab_engaged_visits,
 COALESCE(SUM(visits_with_non_search_engagement), 0) AS newtab_non_search_engagement,
 
-                looker_base_fields_app_name,
-looker_base_fields_app_version,
-looker_base_fields_country,
-looker_base_fields_default_search_engine,
-looker_base_fields_distribution_id,
-looker_base_fields_is_default_browser,
-looker_base_fields_locale,
-looker_base_fields_normalized_channel,
-looker_base_fields_normalized_os_version,
-looker_base_fields_os,
-looker_base_fields_partner_id,
-looker_base_fields_sample_id,
+                countries_ads_value_tier,
+countries_code,
+countries_code_3,
+countries_mozilla_vpn_available,
+countries_name,
+countries_pocket_available_on_newtab,
+countries_region_name,
+countries_sponsored_tiles_available_on_newtab,
+countries_subregion_name,
+newtab_clients_daily_activity_segment,
+newtab_clients_daily_browser_name,
+newtab_clients_daily_browser_version,
+newtab_clients_daily_channel,
+newtab_clients_daily_country_code,
+newtab_clients_daily_default_private_search_engine,
+newtab_clients_daily_default_search_engine,
+newtab_clients_daily_follow_on_search_ad_clicks,
+newtab_clients_daily_follow_on_search_ad_impressions,
+newtab_clients_daily_is_new_profile,
+newtab_clients_daily_legacy_telemetry_client_id,
+newtab_clients_daily_locale,
+newtab_clients_daily_newtab_homepage_category,
+newtab_clients_daily_newtab_newtab_category,
+newtab_clients_daily_newtab_visit_count,
+newtab_clients_daily_normalized_os,
+newtab_clients_daily_normalized_os_version,
+newtab_clients_daily_organic_pocket_saves,
+newtab_clients_daily_organic_topsite_tile_clicks,
+newtab_clients_daily_organic_topsite_tile_dismissals,
+newtab_clients_daily_organic_topsite_tile_impressions,
+newtab_clients_daily_pocket_clicks,
+newtab_clients_daily_pocket_enabled,
+newtab_clients_daily_pocket_impressions,
+newtab_clients_daily_pocket_is_signed_in,
+newtab_clients_daily_pocket_saves,
+newtab_clients_daily_pocket_sponsored_stories_enabled,
+newtab_clients_daily_searches,
+newtab_clients_daily_sponsored_pocket_saves,
+newtab_clients_daily_sponsored_topsite_tile_clicks,
+newtab_clients_daily_sponsored_topsite_tile_dismissals,
+newtab_clients_daily_sponsored_topsite_tile_impressions,
+newtab_clients_daily_tagged_follow_on_search_ad_clicks,
+newtab_clients_daily_tagged_follow_on_search_ad_impressions,
+newtab_clients_daily_tagged_search_ad_clicks,
+newtab_clients_daily_tagged_search_ad_impressions,
+newtab_clients_daily_topsite_tile_clicks,
+newtab_clients_daily_topsite_tile_dismissals,
+newtab_clients_daily_topsite_tile_impressions,
+newtab_clients_daily_topsites_enabled,
+newtab_clients_daily_topsites_rows,
+newtab_clients_daily_topsites_sponsored_enabled,
+newtab_clients_daily_visits_with_non_impression_engagement,
+newtab_clients_daily_visits_with_non_search_engagement,
 
                 legacy_telemetry_client_id AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
@@ -74,18 +115,59 @@ looker_base_fields_sample_id,
                 (
                     SELECT
                         newtab_clients_daily.*,
-                        looker_base_fields.app_name AS looker_base_fields_app_name,
-looker_base_fields.app_version AS looker_base_fields_app_version,
-looker_base_fields.country AS looker_base_fields_country,
-looker_base_fields.default_search_engine AS looker_base_fields_default_search_engine,
-looker_base_fields.distribution_id AS looker_base_fields_distribution_id,
-looker_base_fields.is_default_browser AS looker_base_fields_is_default_browser,
-looker_base_fields.locale AS looker_base_fields_locale,
-looker_base_fields.normalized_channel AS looker_base_fields_normalized_channel,
-looker_base_fields.normalized_os_version AS looker_base_fields_normalized_os_version,
-looker_base_fields.os AS looker_base_fields_os,
-looker_base_fields.partner_id AS looker_base_fields_partner_id,
-looker_base_fields.sample_id AS looker_base_fields_sample_id,
+                        countries.ads_value_tier AS countries_ads_value_tier,
+countries.code AS countries_code,
+countries.code_3 AS countries_code_3,
+countries.mozilla_vpn_available AS countries_mozilla_vpn_available,
+countries.name AS countries_name,
+countries.pocket_available_on_newtab AS countries_pocket_available_on_newtab,
+countries.region_name AS countries_region_name,
+countries.sponsored_tiles_available_on_newtab AS countries_sponsored_tiles_available_on_newtab,
+countries.subregion_name AS countries_subregion_name,
+newtab_clients_daily.activity_segment AS newtab_clients_daily_activity_segment,
+newtab_clients_daily.browser_name AS newtab_clients_daily_browser_name,
+newtab_clients_daily.browser_version AS newtab_clients_daily_browser_version,
+newtab_clients_daily.channel AS newtab_clients_daily_channel,
+newtab_clients_daily.country_code AS newtab_clients_daily_country_code,
+newtab_clients_daily.default_private_search_engine AS newtab_clients_daily_default_private_search_engine,
+newtab_clients_daily.default_search_engine AS newtab_clients_daily_default_search_engine,
+newtab_clients_daily.follow_on_search_ad_clicks AS newtab_clients_daily_follow_on_search_ad_clicks,
+newtab_clients_daily.follow_on_search_ad_impressions AS newtab_clients_daily_follow_on_search_ad_impressions,
+newtab_clients_daily.is_new_profile AS newtab_clients_daily_is_new_profile,
+newtab_clients_daily.legacy_telemetry_client_id AS newtab_clients_daily_legacy_telemetry_client_id,
+newtab_clients_daily.locale AS newtab_clients_daily_locale,
+newtab_clients_daily.newtab_homepage_category AS newtab_clients_daily_newtab_homepage_category,
+newtab_clients_daily.newtab_newtab_category AS newtab_clients_daily_newtab_newtab_category,
+newtab_clients_daily.newtab_visit_count AS newtab_clients_daily_newtab_visit_count,
+newtab_clients_daily.normalized_os AS newtab_clients_daily_normalized_os,
+newtab_clients_daily.normalized_os_version AS newtab_clients_daily_normalized_os_version,
+newtab_clients_daily.organic_pocket_saves AS newtab_clients_daily_organic_pocket_saves,
+newtab_clients_daily.organic_topsite_tile_clicks AS newtab_clients_daily_organic_topsite_tile_clicks,
+newtab_clients_daily.organic_topsite_tile_dismissals AS newtab_clients_daily_organic_topsite_tile_dismissals,
+newtab_clients_daily.organic_topsite_tile_impressions AS newtab_clients_daily_organic_topsite_tile_impressions,
+newtab_clients_daily.pocket_clicks AS newtab_clients_daily_pocket_clicks,
+newtab_clients_daily.pocket_enabled AS newtab_clients_daily_pocket_enabled,
+newtab_clients_daily.pocket_impressions AS newtab_clients_daily_pocket_impressions,
+newtab_clients_daily.pocket_is_signed_in AS newtab_clients_daily_pocket_is_signed_in,
+newtab_clients_daily.pocket_saves AS newtab_clients_daily_pocket_saves,
+newtab_clients_daily.pocket_sponsored_stories_enabled AS newtab_clients_daily_pocket_sponsored_stories_enabled,
+newtab_clients_daily.searches AS newtab_clients_daily_searches,
+newtab_clients_daily.sponsored_pocket_saves AS newtab_clients_daily_sponsored_pocket_saves,
+newtab_clients_daily.sponsored_topsite_tile_clicks AS newtab_clients_daily_sponsored_topsite_tile_clicks,
+newtab_clients_daily.sponsored_topsite_tile_dismissals AS newtab_clients_daily_sponsored_topsite_tile_dismissals,
+newtab_clients_daily.sponsored_topsite_tile_impressions AS newtab_clients_daily_sponsored_topsite_tile_impressions,
+newtab_clients_daily.tagged_follow_on_search_ad_clicks AS newtab_clients_daily_tagged_follow_on_search_ad_clicks,
+newtab_clients_daily.tagged_follow_on_search_ad_impressions AS newtab_clients_daily_tagged_follow_on_search_ad_impressions,
+newtab_clients_daily.tagged_search_ad_clicks AS newtab_clients_daily_tagged_search_ad_clicks,
+newtab_clients_daily.tagged_search_ad_impressions AS newtab_clients_daily_tagged_search_ad_impressions,
+newtab_clients_daily.topsite_tile_clicks AS newtab_clients_daily_topsite_tile_clicks,
+newtab_clients_daily.topsite_tile_dismissals AS newtab_clients_daily_topsite_tile_dismissals,
+newtab_clients_daily.topsite_tile_impressions AS newtab_clients_daily_topsite_tile_impressions,
+newtab_clients_daily.topsites_enabled AS newtab_clients_daily_topsites_enabled,
+newtab_clients_daily.topsites_rows AS newtab_clients_daily_topsites_rows,
+newtab_clients_daily.topsites_sponsored_enabled AS newtab_clients_daily_topsites_sponsored_enabled,
+newtab_clients_daily.visits_with_non_impression_engagement AS newtab_clients_daily_visits_with_non_impression_engagement,
+newtab_clients_daily.visits_with_non_search_engagement AS newtab_clients_daily_visits_with_non_search_engagement,
 
                     FROM
                     (
@@ -94,39 +176,16 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
             FROM
                 moz-fx-data-shared-prod.telemetry.newtab_clients_daily
             ) AS newtab_clients_daily
-        JOIN
+        LEFT JOIN
     (
             SELECT
                 *
             FROM
-                (
-  SELECT
-    client_id,
-    submission_date,
-    sample_id,
-    app_name,
-    app_version,
-    normalized_channel,
-    country,
-    experiments,
-    os,
-    locale,
-    is_default_browser,
-    partner_id,
-    distribution_id,
-    default_search_engine,
-    normalized_os_version
-  FROM
-    `moz-fx-data-shared-prod`.telemetry_derived.clients_daily_v6
-)
-
-            ) AS looker_base_fields
+                mozdata.static.country_codes_v1
+            ) AS countries
         
     ON 
-    newtab_clients_daily.legacy_telemetry_client_id =
-        looker_base_fields.client_id AND
-        newtab_clients_daily.submission_date =
-        looker_base_fields.submission_date
+    newtab_clients_daily.country_code = countries.code
     
                 
                     WHERE 
@@ -140,35 +199,62 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
                         SAFE_CAST(
                             {% date_end submission_date %} AS DATE
                         ), CURRENT_DATE())
-                 AND 
-                    looker_base_fields.submission_date
-                    BETWEEN
-                    COALESCE(
-                        SAFE_CAST(
-                            {% date_start submission_date %} AS DATE
-                        ), CURRENT_DATE()) AND
-                    COALESCE(
-                        SAFE_CAST(
-                            {% date_end submission_date %} AS DATE
-                        ), CURRENT_DATE())
-                
-                    AND
-                        looker_base_fields.sample_id < {% parameter sampling %}
                 
                 )
             GROUP BY
-                looker_base_fields_app_name,
-looker_base_fields_app_version,
-looker_base_fields_country,
-looker_base_fields_default_search_engine,
-looker_base_fields_distribution_id,
-looker_base_fields_is_default_browser,
-looker_base_fields_locale,
-looker_base_fields_normalized_channel,
-looker_base_fields_normalized_os_version,
-looker_base_fields_os,
-looker_base_fields_partner_id,
-looker_base_fields_sample_id,
+                countries_ads_value_tier,
+countries_code,
+countries_code_3,
+countries_mozilla_vpn_available,
+countries_name,
+countries_pocket_available_on_newtab,
+countries_region_name,
+countries_sponsored_tiles_available_on_newtab,
+countries_subregion_name,
+newtab_clients_daily_activity_segment,
+newtab_clients_daily_browser_name,
+newtab_clients_daily_browser_version,
+newtab_clients_daily_channel,
+newtab_clients_daily_country_code,
+newtab_clients_daily_default_private_search_engine,
+newtab_clients_daily_default_search_engine,
+newtab_clients_daily_follow_on_search_ad_clicks,
+newtab_clients_daily_follow_on_search_ad_impressions,
+newtab_clients_daily_is_new_profile,
+newtab_clients_daily_legacy_telemetry_client_id,
+newtab_clients_daily_locale,
+newtab_clients_daily_newtab_homepage_category,
+newtab_clients_daily_newtab_newtab_category,
+newtab_clients_daily_newtab_visit_count,
+newtab_clients_daily_normalized_os,
+newtab_clients_daily_normalized_os_version,
+newtab_clients_daily_organic_pocket_saves,
+newtab_clients_daily_organic_topsite_tile_clicks,
+newtab_clients_daily_organic_topsite_tile_dismissals,
+newtab_clients_daily_organic_topsite_tile_impressions,
+newtab_clients_daily_pocket_clicks,
+newtab_clients_daily_pocket_enabled,
+newtab_clients_daily_pocket_impressions,
+newtab_clients_daily_pocket_is_signed_in,
+newtab_clients_daily_pocket_saves,
+newtab_clients_daily_pocket_sponsored_stories_enabled,
+newtab_clients_daily_searches,
+newtab_clients_daily_sponsored_pocket_saves,
+newtab_clients_daily_sponsored_topsite_tile_clicks,
+newtab_clients_daily_sponsored_topsite_tile_dismissals,
+newtab_clients_daily_sponsored_topsite_tile_impressions,
+newtab_clients_daily_tagged_follow_on_search_ad_clicks,
+newtab_clients_daily_tagged_follow_on_search_ad_impressions,
+newtab_clients_daily_tagged_search_ad_clicks,
+newtab_clients_daily_tagged_search_ad_impressions,
+newtab_clients_daily_topsite_tile_clicks,
+newtab_clients_daily_topsite_tile_dismissals,
+newtab_clients_daily_topsite_tile_impressions,
+newtab_clients_daily_topsites_enabled,
+newtab_clients_daily_topsites_rows,
+newtab_clients_daily_topsites_sponsored_enabled,
+newtab_clients_daily_visits_with_non_impression_engagement,
+newtab_clients_daily_visits_with_non_search_engagement,
 
                 client_id,
                 analysis_basis ;;
@@ -381,81 +467,326 @@ looker_base_fields_sample_id,
     sql: ${TABLE}.newtab_non_search_engagement ;;
   }
 
-  dimension: app_name {
-    sql: ${TABLE}.looker_base_fields_app_name ;;
+  dimension: ads_value_tier {
+    sql: ${TABLE}.countries_ads_value_tier ;;
     type: string
     group_label: "Base Fields"
   }
 
-  dimension: app_version {
-    sql: ${TABLE}.looker_base_fields_app_version ;;
+  dimension: code {
+    sql: ${TABLE}.countries_code ;;
     type: string
     group_label: "Base Fields"
   }
 
-  dimension: country {
-    sql: ${TABLE}.looker_base_fields_country ;;
+  dimension: code_3 {
+    sql: ${TABLE}.countries_code_3 ;;
     type: string
-    map_layer_name: countries
+    group_label: "Base Fields"
+  }
+
+  dimension: mozilla_vpn_available {
+    sql: ${TABLE}.countries_mozilla_vpn_available ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: name {
+    sql: ${TABLE}.countries_name ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: pocket_available_on_newtab {
+    sql: ${TABLE}.countries_pocket_available_on_newtab ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: region_name {
+    sql: ${TABLE}.countries_region_name ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsored_tiles_available_on_newtab {
+    sql: ${TABLE}.countries_sponsored_tiles_available_on_newtab ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: subregion_name {
+    sql: ${TABLE}.countries_subregion_name ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: activity_segment {
+    sql: ${TABLE}.newtab_clients_daily_activity_segment ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: browser_name {
+    sql: ${TABLE}.newtab_clients_daily_browser_name ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: browser_version {
+    sql: ${TABLE}.newtab_clients_daily_browser_version ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: channel {
+    sql: ${TABLE}.newtab_clients_daily_channel ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: country_code {
+    sql: ${TABLE}.newtab_clients_daily_country_code ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: default_private_search_engine {
+    sql: ${TABLE}.newtab_clients_daily_default_private_search_engine ;;
+    type: string
     group_label: "Base Fields"
   }
 
   dimension: default_search_engine {
-    sql: ${TABLE}.looker_base_fields_default_search_engine ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: distribution_id {
-    sql: ${TABLE}.looker_base_fields_distribution_id ;;
+    sql: ${TABLE}.newtab_clients_daily_default_search_engine ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: experiments {
-    sql: ${TABLE}.looker_base_fields_experiments ;;
+    sql: ${TABLE}.newtab_clients_daily_experiments ;;
     hidden: yes
     group_label: "Base Fields"
   }
 
-  dimension: is_default_browser {
-    sql: ${TABLE}.looker_base_fields_is_default_browser ;;
+  dimension: follow_on_search_ad_clicks {
+    sql: ${TABLE}.newtab_clients_daily_follow_on_search_ad_clicks ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: follow_on_search_ad_impressions {
+    sql: ${TABLE}.newtab_clients_daily_follow_on_search_ad_impressions ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: is_new_profile {
+    sql: ${TABLE}.newtab_clients_daily_is_new_profile ;;
     type: yesno
     group_label: "Base Fields"
   }
 
-  dimension: locale {
-    sql: ${TABLE}.looker_base_fields_locale ;;
+  dimension: legacy_telemetry_client_id {
+    sql: ${TABLE}.newtab_clients_daily_legacy_telemetry_client_id ;;
     type: string
     group_label: "Base Fields"
   }
 
-  dimension: normalized_channel {
-    sql: ${TABLE}.looker_base_fields_normalized_channel ;;
+  dimension: locale {
+    sql: ${TABLE}.newtab_clients_daily_locale ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: newtab_homepage_category {
+    sql: ${TABLE}.newtab_clients_daily_newtab_homepage_category ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: newtab_newtab_category {
+    sql: ${TABLE}.newtab_clients_daily_newtab_newtab_category ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: newtab_visit_count {
+    sql: ${TABLE}.newtab_clients_daily_newtab_visit_count ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: normalized_os {
+    sql: ${TABLE}.newtab_clients_daily_normalized_os ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: normalized_os_version {
-    sql: ${TABLE}.looker_base_fields_normalized_os_version ;;
+    sql: ${TABLE}.newtab_clients_daily_normalized_os_version ;;
     type: string
     group_label: "Base Fields"
   }
 
-  dimension: os {
-    sql: ${TABLE}.looker_base_fields_os ;;
-    type: string
+  dimension: organic_pocket_saves {
+    sql: ${TABLE}.newtab_clients_daily_organic_pocket_saves ;;
+    type: number
     group_label: "Base Fields"
   }
 
-  dimension: partner_id {
-    sql: ${TABLE}.looker_base_fields_partner_id ;;
-    type: string
+  dimension: organic_topsite_tile_clicks {
+    sql: ${TABLE}.newtab_clients_daily_organic_topsite_tile_clicks ;;
+    type: number
     group_label: "Base Fields"
   }
 
-  dimension: sample_id {
-    sql: ${TABLE}.looker_base_fields_sample_id ;;
+  dimension: organic_topsite_tile_dismissals {
+    sql: ${TABLE}.newtab_clients_daily_organic_topsite_tile_dismissals ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: organic_topsite_tile_impressions {
+    sql: ${TABLE}.newtab_clients_daily_organic_topsite_tile_impressions ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: pocket_clicks {
+    sql: ${TABLE}.newtab_clients_daily_pocket_clicks ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: pocket_enabled {
+    sql: ${TABLE}.newtab_clients_daily_pocket_enabled ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: pocket_impressions {
+    sql: ${TABLE}.newtab_clients_daily_pocket_impressions ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: pocket_is_signed_in {
+    sql: ${TABLE}.newtab_clients_daily_pocket_is_signed_in ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: pocket_saves {
+    sql: ${TABLE}.newtab_clients_daily_pocket_saves ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: pocket_sponsored_stories_enabled {
+    sql: ${TABLE}.newtab_clients_daily_pocket_sponsored_stories_enabled ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: searches {
+    sql: ${TABLE}.newtab_clients_daily_searches ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsored_pocket_saves {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_pocket_saves ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsored_topsite_tile_clicks {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_topsite_tile_clicks ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsored_topsite_tile_dismissals {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_topsite_tile_dismissals ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsored_topsite_tile_impressions {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_topsite_tile_impressions ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: tagged_follow_on_search_ad_clicks {
+    sql: ${TABLE}.newtab_clients_daily_tagged_follow_on_search_ad_clicks ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: tagged_follow_on_search_ad_impressions {
+    sql: ${TABLE}.newtab_clients_daily_tagged_follow_on_search_ad_impressions ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: tagged_search_ad_clicks {
+    sql: ${TABLE}.newtab_clients_daily_tagged_search_ad_clicks ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: tagged_search_ad_impressions {
+    sql: ${TABLE}.newtab_clients_daily_tagged_search_ad_impressions ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: topsite_tile_clicks {
+    sql: ${TABLE}.newtab_clients_daily_topsite_tile_clicks ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: topsite_tile_dismissals {
+    sql: ${TABLE}.newtab_clients_daily_topsite_tile_dismissals ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: topsite_tile_impressions {
+    sql: ${TABLE}.newtab_clients_daily_topsite_tile_impressions ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: topsites_enabled {
+    sql: ${TABLE}.newtab_clients_daily_topsites_enabled ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: topsites_rows {
+    sql: ${TABLE}.newtab_clients_daily_topsites_rows ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: topsites_sponsored_enabled {
+    sql: ${TABLE}.newtab_clients_daily_topsites_sponsored_enabled ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: visits_with_non_impression_engagement {
+    sql: ${TABLE}.newtab_clients_daily_visits_with_non_impression_engagement ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: visits_with_non_search_engagement {
+    sql: ${TABLE}.newtab_clients_daily_visits_with_non_search_engagement ;;
     type: number
     group_label: "Base Fields"
   }
@@ -473,6 +804,47 @@ looker_base_fields_sample_id,
       quarter,
       year,
     ]
+  }
+
+  measure: newtab_ad_click_rate_average {
+    type: average
+    sql: ${TABLE}.newtab_ad_click_rate ;;
+    label: "Newtab Ad Click Rate Average"
+    group_label: "Statistics"
+    description: "Average of Newtab Ad Click Rate"
+  }
+
+  measure: newtab_visits_sum {
+    type: sum
+    sql: ${TABLE}.newtab_visits*1 ;;
+    label: "Newtab Visit Count Sum"
+    group_label: "Statistics"
+    description: "Sum of Newtab Visit Count"
+  }
+
+  measure: newtab_visits_client_count_sampled {
+    type: count_distinct
+    label: "Newtab Visit Count Client Count"
+    group_label: "Statistics"
+    sql: IF(${TABLE}.newtab_visits > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
+    description: "Number of clients with Newtab Visit Count"
+    hidden: yes
+  }
+
+  measure: newtab_visits_client_count {
+    type: number
+    label: "Newtab Visit Count Client Count"
+    group_label: "Statistics"
+    sql: ${newtab_visits_client_count_sampled} *1 ;;
+    description: "Number of clients with Newtab Visit Count"
+  }
+
+  measure: newtab_engaged_visits_sum {
+    type: sum
+    sql: ${TABLE}.newtab_engaged_visits*1 ;;
+    label: "Newtab Engaged Visit Count Sum"
+    group_label: "Statistics"
+    description: "Sum of Newtab Engaged Visit Count"
   }
 
   set: metrics {
@@ -499,6 +871,11 @@ looker_base_fields_sample_id,
       newtab_visits,
       newtab_engaged_visits,
       newtab_non_search_engagement,
+      newtab_ad_click_rate_average,
+      newtab_visits_sum,
+      newtab_visits_client_count_sampled,
+      newtab_visits_client_count,
+      newtab_engaged_visits_sum,
     ]
   }
 
@@ -542,6 +919,6 @@ looker_base_fields_sample_id,
     label: "Sample of source data in %"
     type: unquoted
     default_value: "100"
-    hidden: no
+    hidden: yes
   }
 }
