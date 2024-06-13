@@ -2946,6 +2946,27 @@ broken down by structured ingestion namespace.
 "
   }
 
+  dimension: metrics__labeled_counter__private_attribution_database {
+    sql: ${TABLE}.metrics.labeled_counter.private_attribution_database ;;
+    hidden: yes
+    description: "The metrics for the attribution data stores
+"
+  }
+
+  dimension: metrics__labeled_counter__private_attribution_measure_conversion {
+    sql: ${TABLE}.metrics.labeled_counter.private_attribution_measure_conversion ;;
+    hidden: yes
+    description: "The count of outcomes for the measureConversion API
+"
+  }
+
+  dimension: metrics__labeled_counter__private_attribution_save_impression {
+    sql: ${TABLE}.metrics.labeled_counter.private_attribution_save_impression ;;
+    hidden: yes
+    description: "The count of outcomes for the saveImpression API
+"
+  }
+
   dimension: metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown {
     sql: ${TABLE}.metrics.labeled_counter.protocolhandler_mailto_handler_prompt_shown ;;
     hidden: yes
