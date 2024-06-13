@@ -405,6 +405,14 @@ view: new_profile {
     group_item_label: "Is Stub Profile"
   }
 
+  dimension: environment__profile__recovered_from_backup {
+    sql: ${TABLE}.environment.profile.recovered_from_backup ;;
+    type: number
+    group_label: "Environment Profile"
+    group_item_label: "Recovered From Backup"
+    description: "The date the user profile was recovered from a backup, as the integer number of days since UNIX epoch. This is optional."
+  }
+
   dimension: environment__profile__reset_date {
     sql: ${TABLE}.environment.profile.reset_date ;;
     type: number
