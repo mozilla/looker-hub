@@ -2866,6 +2866,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__network_byte_range_request {
+    sql: ${TABLE}.metrics.labeled_counter.network_byte_range_request ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__network_cors_authorization_header {
     sql: ${TABLE}.metrics.labeled_counter.network_cors_authorization_header ;;
     hidden: yes
@@ -3960,6 +3965,13 @@ view: metrics_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Extensions Quarantined Domains Remotehash"
+  }
+
+  dimension: metrics__string__first_session_install_source {
+    sql: ${TABLE}.metrics.string.first_session_install_source ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "First Session Install Source"
   }
 
   dimension: metrics__string__gecko_build_id {

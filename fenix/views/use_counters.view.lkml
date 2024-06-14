@@ -2797,7 +2797,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_doc_css_field_sizing {
     label: "Use Counter Css Doc Css Field Sizing"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_field_sizing ;;
     type: number
     group_label: "Use Counter Css Doc"
@@ -15523,7 +15523,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_page_css_field_sizing {
     label: "Use Counter Css Page Css Field Sizing"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_field_sizing ;;
     type: number
     group_label: "Use Counter Css Page"
