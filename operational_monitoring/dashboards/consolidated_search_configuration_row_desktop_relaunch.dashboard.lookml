@@ -47,74 +47,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: consolidated_search_configuration_row_desktop_relaunch
-    type: looker_line
-    fields: [
-      consolidated_search_configuration_row_desktop_relaunch.submission_date,
-      consolidated_search_configuration_row_desktop_relaunch.branch,
-      consolidated_search_configuration_row_desktop_relaunch.point
-    ]
-    pivots: [
-      consolidated_search_configuration_row_desktop_relaunch.branch
-    ]
-    filters:
-      consolidated_search_configuration_row_desktop_relaunch.metric: 'active_hours'
-      consolidated_search_configuration_row_desktop_relaunch.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: consolidated_search_configuration_row_desktop_relaunch.submission_date
-    field_y: consolidated_search_configuration_row_desktop_relaunch.point
-    log_scale: false
-    ci_lower: consolidated_search_configuration_row_desktop_relaunch.lower
-    ci_upper: consolidated_search_configuration_row_desktop_relaunch.upper
-    show_grid: true
-    listen:
-      Date: consolidated_search_configuration_row_desktop_relaunch.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: consolidated_search_configuration_row_desktop_relaunch
-    type: looker_line
-    fields: [
-      consolidated_search_configuration_row_desktop_relaunch.submission_date,
-      consolidated_search_configuration_row_desktop_relaunch.branch,
-      consolidated_search_configuration_row_desktop_relaunch.point
-    ]
-    pivots: [
-      consolidated_search_configuration_row_desktop_relaunch.branch
-    ]
-    filters:
-      consolidated_search_configuration_row_desktop_relaunch.metric: 'retained'
-      consolidated_search_configuration_row_desktop_relaunch.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: consolidated_search_configuration_row_desktop_relaunch.submission_date
-    field_y: consolidated_search_configuration_row_desktop_relaunch.point
-    log_scale: false
-    ci_lower: consolidated_search_configuration_row_desktop_relaunch.lower
-    ci_upper: consolidated_search_configuration_row_desktop_relaunch.upper
-    show_grid: true
-    listen:
-      Date: consolidated_search_configuration_row_desktop_relaunch.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -133,7 +65,7 @@
     filters:
       consolidated_search_configuration_row_desktop_relaunch.metric: 'ad_clicks'
       consolidated_search_configuration_row_desktop_relaunch.statistic: mean
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -167,7 +99,7 @@
     filters:
       consolidated_search_configuration_row_desktop_relaunch.metric: 'search_count'
       consolidated_search_configuration_row_desktop_relaunch.statistic: mean
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -201,7 +133,7 @@
     filters:
       consolidated_search_configuration_row_desktop_relaunch.metric: 'qualified_cumulative_days_of_use'
       consolidated_search_configuration_row_desktop_relaunch.statistic: mean
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -235,7 +167,7 @@
     filters:
       consolidated_search_configuration_row_desktop_relaunch.metric: 'uri_count'
       consolidated_search_configuration_row_desktop_relaunch.statistic: mean
-    row: 30
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -268,6 +200,74 @@
     ]
     filters:
       consolidated_search_configuration_row_desktop_relaunch.metric: 'days_of_use'
+      consolidated_search_configuration_row_desktop_relaunch.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: consolidated_search_configuration_row_desktop_relaunch.submission_date
+    field_y: consolidated_search_configuration_row_desktop_relaunch.point
+    log_scale: false
+    ci_lower: consolidated_search_configuration_row_desktop_relaunch.lower
+    ci_upper: consolidated_search_configuration_row_desktop_relaunch.upper
+    show_grid: true
+    listen:
+      Date: consolidated_search_configuration_row_desktop_relaunch.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: consolidated_search_configuration_row_desktop_relaunch
+    type: looker_line
+    fields: [
+      consolidated_search_configuration_row_desktop_relaunch.submission_date,
+      consolidated_search_configuration_row_desktop_relaunch.branch,
+      consolidated_search_configuration_row_desktop_relaunch.point
+    ]
+    pivots: [
+      consolidated_search_configuration_row_desktop_relaunch.branch
+    ]
+    filters:
+      consolidated_search_configuration_row_desktop_relaunch.metric: 'active_hours'
+      consolidated_search_configuration_row_desktop_relaunch.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: consolidated_search_configuration_row_desktop_relaunch.submission_date
+    field_y: consolidated_search_configuration_row_desktop_relaunch.point
+    log_scale: false
+    ci_lower: consolidated_search_configuration_row_desktop_relaunch.lower
+    ci_upper: consolidated_search_configuration_row_desktop_relaunch.upper
+    show_grid: true
+    listen:
+      Date: consolidated_search_configuration_row_desktop_relaunch.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: consolidated_search_configuration_row_desktop_relaunch
+    type: looker_line
+    fields: [
+      consolidated_search_configuration_row_desktop_relaunch.submission_date,
+      consolidated_search_configuration_row_desktop_relaunch.branch,
+      consolidated_search_configuration_row_desktop_relaunch.point
+    ]
+    pivots: [
+      consolidated_search_configuration_row_desktop_relaunch.branch
+    ]
+    filters:
+      consolidated_search_configuration_row_desktop_relaunch.metric: 'retained'
       consolidated_search_configuration_row_desktop_relaunch.statistic: mean
     row: 30
     col: 12

@@ -1085,6 +1085,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_keyboard_layout {
+    label: "Characteristics Keyboard Layout"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_keyboard_layout ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Keyboard Layout"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Keyboard Layout"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_keyboard_layout"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Name of the current keyboard layout.
+"
+  }
+
   dimension: metrics__string__characteristics_languages {
     label: "Characteristics Languages"
     hidden: no
