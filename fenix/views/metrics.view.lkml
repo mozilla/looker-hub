@@ -847,6 +847,24 @@ location.
 "
   }
 
+  dimension: metrics__string__first_session_install_source {
+    label: "First Session Install Source"
+    hidden: no
+    sql: ${TABLE}.metrics.string.first_session_install_source ;;
+    type: string
+    group_label: "First Session"
+    group_item_label: "Install Source"
+
+    link: {
+      label: "Glean Dictionary reference for First Session Install Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_install_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Used to identify the source the app was installed from.
+"
+  }
+
   dimension: metrics__counter__home_bookmarks_bookmark_clicked {
     label: "Home Bookmarks Bookmark Clicked"
     hidden: no
