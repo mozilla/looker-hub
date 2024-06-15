@@ -17,9 +17,6 @@ view: metrics {
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_tasks/metrics/crash_submission_collector_errors"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
-
-    description: "Amount and error name reported when performing crash submission.
-"
   }
 
   dimension: metrics__counter__crash_submission_failure {
@@ -35,9 +32,6 @@ view: metrics {
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_tasks/metrics/crash_submission_failure"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
-
-    description: "Number of failed crash report submissions
-"
   }
 
   dimension: metrics__counter__crash_submission_pending {
@@ -53,9 +47,6 @@ view: metrics {
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_tasks/metrics/crash_submission_pending"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
-
-    description: "Number of pending crash report submissions
-"
   }
 
   dimension: metrics__counter__crash_submission_success {
@@ -71,9 +62,6 @@ view: metrics {
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_tasks/metrics/crash_submission_success"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
-
-    description: "Number of successfull crash report submissions
-"
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
