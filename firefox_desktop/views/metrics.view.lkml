@@ -415,6 +415,9 @@ Migrated from Telemetry's
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_collector_errors"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
+
+    description: "Amount and error name reported when performing crash submission.
+"
   }
 
   dimension: metrics__counter__crash_submission_failure {
@@ -430,6 +433,9 @@ Migrated from Telemetry's
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_failure"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
+
+    description: "Number of failed crash report submissions
+"
   }
 
   dimension: metrics__counter__crash_submission_pending {
@@ -445,6 +451,9 @@ Migrated from Telemetry's
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_pending"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
+
+    description: "Number of pending crash report submissions
+"
   }
 
   dimension: metrics__counter__crash_submission_success {
@@ -460,6 +469,9 @@ Migrated from Telemetry's
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_success"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
+
+    description: "Number of successfull crash report submissions
+"
   }
 
   dimension: metrics__labeled_counter__dap_report_generation_status {
