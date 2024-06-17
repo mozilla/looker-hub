@@ -1040,6 +1040,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_keyboard_layout {
+    sql: ${TABLE}.metrics.string.characteristics_keyboard_layout ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Keyboard Layout"
+    description: "Name of the current keyboard layout.
+"
+  }
+
   dimension: metrics__string__characteristics_languages {
     sql: ${TABLE}.metrics.string.characteristics_languages ;;
     type: string

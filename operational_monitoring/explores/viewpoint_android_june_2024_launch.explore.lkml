@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/phc_10_test.view.lkml"
+include: "/looker-hub/operational_monitoring/views/viewpoint_android_june_2024_launch.view.lkml"
 
-explore: phc_10_test {
+explore: viewpoint_android_june_2024_launch {
   always_filter: {
     filters: [
       branch: "enabled, disabled",

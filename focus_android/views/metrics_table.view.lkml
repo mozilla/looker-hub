@@ -2191,6 +2191,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__network_byte_range_request {
+    sql: ${TABLE}.metrics.labeled_counter.network_byte_range_request ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__network_cors_authorization_header {
     sql: ${TABLE}.metrics.labeled_counter.network_cors_authorization_header ;;
     hidden: yes

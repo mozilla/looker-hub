@@ -2795,6 +2795,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_field_sizing {
+    label: "Use Counter Css Doc Css Field Sizing"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_field_sizing ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Field Sizing"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Field Sizing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_field_sizing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property field-sizing. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_fill {
     label: "Use Counter Css Doc Css Fill"
     hidden: no
@@ -15500,6 +15518,24 @@ view: use_counters {
     }
 
     description: "Whether a page used the CSS property empty-cells. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_field_sizing {
+    label: "Use Counter Css Page Css Field Sizing"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_field_sizing ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Field Sizing"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Field Sizing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_field_sizing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property field-sizing. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -46755,6 +46791,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_doc_css_field_sizing {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_field_sizing} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Field Sizing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_field_sizing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_field_sizing_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_field_sizing: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Field Sizing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_field_sizing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_doc_css_fill {
     type: sum
     sql: ${metrics__counter__use_counter_css_doc_css_fill} ;;
@@ -64401,6 +64462,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Page Css Empty Cells"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_empty_cells"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_field_sizing {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_field_sizing} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Field Sizing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_field_sizing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_field_sizing_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_field_sizing: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Field Sizing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_field_sizing"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

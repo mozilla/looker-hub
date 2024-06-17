@@ -2643,6 +2643,13 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__labeled_counter__network_byte_range_request {
+    sql: ${TABLE}.metrics.labeled_counter.network_byte_range_request ;;
+    hidden: yes
+    description: "Counts of cacheable/non-cacheable byte-range requests
+"
+  }
+
   dimension: metrics__labeled_counter__network_cors_authorization_header {
     sql: ${TABLE}.metrics.labeled_counter.network_cors_authorization_header ;;
     hidden: yes
@@ -2943,6 +2950,27 @@ broken down by structured ingestion namespace.
     sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_parent_inactive ;;
     hidden: yes
     description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__private_attribution_database {
+    sql: ${TABLE}.metrics.labeled_counter.private_attribution_database ;;
+    hidden: yes
+    description: "The metrics for the attribution data stores
+"
+  }
+
+  dimension: metrics__labeled_counter__private_attribution_measure_conversion {
+    sql: ${TABLE}.metrics.labeled_counter.private_attribution_measure_conversion ;;
+    hidden: yes
+    description: "The count of outcomes for the measureConversion API
+"
+  }
+
+  dimension: metrics__labeled_counter__private_attribution_save_impression {
+    sql: ${TABLE}.metrics.labeled_counter.private_attribution_save_impression ;;
+    hidden: yes
+    description: "The count of outcomes for the saveImpression API
 "
   }
 

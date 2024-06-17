@@ -368,6 +368,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_eh_link_type}) AS metrics__metrics__labeled_counter__netwerk_eh_link_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_eh_link_type.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__network_byte_range_request {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_byte_range_request}) AS metrics__metrics__labeled_counter__network_byte_range_request ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_byte_range_request.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__network_cors_authorization_header {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_cors_authorization_header}) AS metrics__metrics__labeled_counter__network_cors_authorization_header ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_cors_authorization_header.document_id} ;;
@@ -581,6 +586,21 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_parent_inactive}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__private_attribution_database {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__private_attribution_database}) AS metrics__metrics__labeled_counter__private_attribution_database ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__private_attribution_database.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__private_attribution_measure_conversion {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__private_attribution_measure_conversion}) AS metrics__metrics__labeled_counter__private_attribution_measure_conversion ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__private_attribution_measure_conversion.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__private_attribution_save_impression {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__private_attribution_save_impression}) AS metrics__metrics__labeled_counter__private_attribution_save_impression ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__private_attribution_save_impression.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown {

@@ -415,6 +415,9 @@ Migrated from Telemetry's
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_collector_errors"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
+
+    description: "Amount and error name reported when performing crash submission.
+"
   }
 
   dimension: metrics__counter__crash_submission_failure {
@@ -430,6 +433,9 @@ Migrated from Telemetry's
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_failure"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
+
+    description: "Number of failed crash report submissions
+"
   }
 
   dimension: metrics__counter__crash_submission_pending {
@@ -445,6 +451,9 @@ Migrated from Telemetry's
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_pending"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
+
+    description: "Number of pending crash report submissions
+"
   }
 
   dimension: metrics__counter__crash_submission_success {
@@ -460,6 +469,9 @@ Migrated from Telemetry's
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submission_success"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
+
+    description: "Number of successfull crash report submissions
+"
   }
 
   dimension: metrics__labeled_counter__dap_report_generation_status {
@@ -1048,6 +1060,57 @@ broken down by structured ingestion namespace.
 
     description: "The number of PingCentre send successes,
 broken down by structured ingestion namespace.
+"
+  }
+
+  dimension: metrics__labeled_counter__private_attribution_database {
+    label: "Private Attribution Database"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.private_attribution_database ;;
+    group_label: "Private Attribution"
+    group_item_label: "Database"
+
+    link: {
+      label: "Glean Dictionary reference for Private Attribution Database"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/private_attribution_database"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The metrics for the attribution data stores
+"
+  }
+
+  dimension: metrics__labeled_counter__private_attribution_measure_conversion {
+    label: "Private Attribution Measure Conversion"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.private_attribution_measure_conversion ;;
+    group_label: "Private Attribution"
+    group_item_label: "Measure Conversion"
+
+    link: {
+      label: "Glean Dictionary reference for Private Attribution Measure Conversion"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/private_attribution_measure_conversion"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of outcomes for the measureConversion API
+"
+  }
+
+  dimension: metrics__labeled_counter__private_attribution_save_impression {
+    label: "Private Attribution Save Impression"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.private_attribution_save_impression ;;
+    group_label: "Private Attribution"
+    group_item_label: "Save Impression"
+
+    link: {
+      label: "Glean Dictionary reference for Private Attribution Save Impression"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/private_attribution_save_impression"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of outcomes for the saveImpression API
 "
   }
 
@@ -4926,6 +4989,23 @@ To be used to validate GIFFT.
     }
 
     description: "Counts different type of link headers that are sent in early hint
+"
+  }
+
+  dimension: metrics__labeled_counter__network_byte_range_request {
+    label: "Network Byte Range Request"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_byte_range_request ;;
+    group_label: "Network"
+    group_item_label: "Byte Range Request"
+
+    link: {
+      label: "Glean Dictionary reference for Network Byte Range Request"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_byte_range_request"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts of cacheable/non-cacheable byte-range requests
 "
   }
 
@@ -14151,6 +14231,47 @@ view: metrics__metrics__labeled_counter__netwerk_eh_link_type {
   }
 }
 
+view: metrics__metrics__labeled_counter__network_byte_range_request {
+  label: "Network - Byte Range Request"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__network_cors_authorization_header {
   label: "Network - Cors Authorization Header"
 
@@ -15875,6 +15996,129 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active 
 
 view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
   label: "Power Wakeups Per Thread - Parent Inactive"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__private_attribution_database {
+  label: "Private Attribution - Database"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__private_attribution_measure_conversion {
+  label: "Private Attribution - Measure Conversion"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__private_attribution_save_impression {
+  label: "Private Attribution - Save Impression"
 
   dimension: document_id {
     type: string

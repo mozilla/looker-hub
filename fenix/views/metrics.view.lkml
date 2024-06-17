@@ -847,6 +847,24 @@ location.
 "
   }
 
+  dimension: metrics__string__first_session_install_source {
+    label: "First Session Install Source"
+    hidden: no
+    sql: ${TABLE}.metrics.string.first_session_install_source ;;
+    type: string
+    group_label: "First Session"
+    group_item_label: "Install Source"
+
+    link: {
+      label: "Glean Dictionary reference for First Session Install Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_install_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Used to identify the source the app was installed from.
+"
+  }
+
   dimension: metrics__counter__home_bookmarks_bookmark_clicked {
     label: "Home Bookmarks Bookmark Clicked"
     hidden: no
@@ -6916,6 +6934,23 @@ To be used to validate GIFFT.
     }
 
     description: "Counts different type of link headers that are sent in early hint
+"
+  }
+
+  dimension: metrics__labeled_counter__network_byte_range_request {
+    label: "Network Byte Range Request"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_byte_range_request ;;
+    group_label: "Network"
+    group_item_label: "Byte Range Request"
+
+    link: {
+      label: "Glean Dictionary reference for Network Byte Range Request"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_byte_range_request"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts of cacheable/non-cacheable byte-range requests
 "
   }
 
@@ -18607,6 +18642,47 @@ view: metrics__metrics__labeled_counter__netwerk_early_hints {
 
 view: metrics__metrics__labeled_counter__netwerk_eh_link_type {
   label: "Netwerk - Eh Link Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_byte_range_request {
+  label: "Network - Byte Range Request"
 
   dimension: document_id {
     type: string
