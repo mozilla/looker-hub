@@ -45,8 +45,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Dirty Startup
-    name: Dirty Startup_total_ratio
+  - title: Hang Exception
+    name: Hang Exception_total_ratio
     note_state: expanded
     note_display: above
     note_text: Total_Ratio
@@ -61,7 +61,7 @@
       firefox_ios_beta_health.branch
     ]
     filters:
-      firefox_ios_beta_health.metric: 'dirty_startup'
+      firefox_ios_beta_health.metric: 'hang_exception'
       firefox_ios_beta_health.statistic: total_ratio
     row: 0
     col: 12
@@ -80,8 +80,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Hang Exception
-    name: Hang Exception_total_ratio
+  - title: Dirty Startup
+    name: Dirty Startup_total_ratio
     note_state: expanded
     note_display: above
     note_text: Total_Ratio
@@ -96,7 +96,7 @@
       firefox_ios_beta_health.branch
     ]
     filters:
-      firefox_ios_beta_health.metric: 'hang_exception'
+      firefox_ios_beta_health.metric: 'dirty_startup'
       firefox_ios_beta_health.statistic: total_ratio
     row: 10
     col: 0
@@ -243,8 +243,8 @@
       - '123.0'
       - '122.0'
       - '39.0'
-      - '121.0'
       - '124.0'
+      - '121.0'
       - '117.0'
       - '115.0'
       - '119.0'
