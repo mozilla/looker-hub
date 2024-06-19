@@ -4538,7 +4538,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__custom_distribution__network_tls_early_data_bytes_written__sum {
     label: "Network Tls Early Data Bytes Written Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.sum ;;
     type: number
     group_label: "Network"
@@ -5142,6 +5142,142 @@ To be used to validate GIFFT.
     }
 
     description: "The upload throughput for http/3 request size between 50MB and 100MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition {
+    label: "Networking Http Channel Disposition"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition ;;
+    group_label: "Networking"
+    group_item_label: "Http Channel Disposition"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Disposition"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_channel_disposition"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Channel Disposition for HTTP and HTTPS: cancel, disk, net_ok, net_early_fail, and net_late_fail
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition_disabled_no_reason {
+    label: "Networking Http Channel Disposition Disabled No Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition_disabled_no_reason ;;
+    group_label: "Networking"
+    group_item_label: "Http Channel Disposition Disabled No Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Disposition Disabled No Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_channel_disposition_disabled_no_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Upgrading display content Channel Disposition (key: disabled_no_reason)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition_disabled_upgrade {
+    label: "Networking Http Channel Disposition Disabled Upgrade"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition_disabled_upgrade ;;
+    group_label: "Networking"
+    group_item_label: "Http Channel Disposition Disabled Upgrade"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Disposition Disabled Upgrade"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_channel_disposition_disabled_upgrade"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Upgrading display content Channel Disposition (key: disable_upgrade)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition_disabled_wont {
+    label: "Networking Http Channel Disposition Disabled Wont"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition_disabled_wont ;;
+    group_label: "Networking"
+    group_item_label: "Http Channel Disposition Disabled Wont"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Disposition Disabled Wont"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_channel_disposition_disabled_wont"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Upgrading display content Channel Disposition (key: disabled_wont)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition_enabled_no_reason {
+    label: "Networking Http Channel Disposition Enabled No Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition_enabled_no_reason ;;
+    group_label: "Networking"
+    group_item_label: "Http Channel Disposition Enabled No Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Disposition Enabled No Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_channel_disposition_enabled_no_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Upgrading display content Channel Disposition (key: enabled_no_reason)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition_enabled_upgrade {
+    label: "Networking Http Channel Disposition Enabled Upgrade"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition_enabled_upgrade ;;
+    group_label: "Networking"
+    group_item_label: "Http Channel Disposition Enabled Upgrade"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Disposition Enabled Upgrade"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_channel_disposition_enabled_upgrade"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Upgrading display content Channel Disposition (key: enable_upgrade)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition_enabled_wont {
+    label: "Networking Http Channel Disposition Enabled Wont"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition_enabled_wont ;;
+    group_label: "Networking"
+    group_item_label: "Http Channel Disposition Enabled Wont"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Disposition Enabled Wont"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_channel_disposition_enabled_wont"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Upgrading display content Channel Disposition (key: enabled_wont)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_onstart_status {
+    label: "Networking Http Channel Onstart Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_onstart_status ;;
+    group_label: "Networking"
+    group_item_label: "Http Channel Onstart Status"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Onstart Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_channel_onstart_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether successfully started HTTP channels
 "
   }
 
@@ -6277,6 +6413,96 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__sum {
+    label: "Performance Pageload Eh Fcp Preconnect Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Eh Fcp Preconnect Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Eh Fcp Preconnect Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_pageload_eh_fcp_preconnect"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between navigationStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. This is collected only on page load where the main document uses preconnect but did not use Early Hints preload.
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__sum {
+    label: "Performance Pageload Eh Fcp Preconnect Preload With Eh Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Eh Fcp Preconnect Preload With Eh Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Eh Fcp Preconnect Preload With Eh Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_pageload_eh_fcp_preconnect_preload_with_eh"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between navigationStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. This is collected on early page load where the main document uses preconnect and supports Early Hints preload.
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__sum {
+    label: "Performance Pageload Eh Fcp Preconnect Preload Without Eh Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Eh Fcp Preconnect Preload Without Eh Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Eh Fcp Preconnect Preload Without Eh Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_pageload_eh_fcp_preconnect_preload_without_eh"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between navigationStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. This is collected on early page load where the preconnected main document uses preconnect and preload without Early Hints.
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__sum {
+    label: "Performance Pageload Eh Fcp Preload With Eh Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Eh Fcp Preload With Eh Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Eh Fcp Preload With Eh Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_pageload_eh_fcp_preload_with_eh"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between navigationStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. This is collected only on page load where the main document uses or supports Early Hints preload.
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__sum {
+    label: "Performance Pageload Eh Fcp Preload Without Eh Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Eh Fcp Preload Without Eh Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Eh Fcp Preload Without Eh Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_pageload_eh_fcp_preload_without_eh"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between navigationStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. This is collected only on page load where the main document uses preload without Early Hints.
+"
+  }
+
   dimension: metrics__timing_distribution__performance_pageload_fcp__sum {
     label: "Performance Pageload Fcp Sum"
     hidden: no
@@ -6310,6 +6536,78 @@ To be used to validate GIFFT.
     }
 
     description: "The time between responseStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__sum {
+    label: "Performance Pageload H3P Fcp With Priority Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "H3P Fcp With Priority Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload H3P Fcp With Priority Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_pageload_h3p_fcp_with_priority"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between navigationStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. This is collected only on page load where the main document uses HTTP3. A \"priority\" header has been received.
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__sum {
+    label: "Performance Pageload Http3 Fcp Http3 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Http3 Fcp Http3 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Http3 Fcp Http3 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_pageload_http3_fcp_http3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between navigationStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. This is collected only on page load where the main document uses or suppports HTTP3.
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__sum {
+    label: "Performance Pageload Http3 Fcp Supports Http3 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Http3 Fcp Supports Http3 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Http3 Fcp Supports Http3 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_pageload_http3_fcp_supports_http3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between navigationStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. This is collected only on page load where the main document supports but is not using HTTP3.
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__sum {
+    label: "Performance Pageload Http3 Fcp Without Priority Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Http3 Fcp Without Priority Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Http3 Fcp Without Priority Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_pageload_http3_fcp_without_priority"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between navigationStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. This is collected only on page load where the main document uses HTTP3. A \"priority\" header has not been received.
 "
   }
 
@@ -13857,19 +14155,19 @@ view: metrics__metrics__labeled_counter__network_tls_early_data_accepted {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -13898,19 +14196,19 @@ view: metrics__metrics__labeled_counter__network_tls_early_data_negotiated {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -13957,6 +14255,334 @@ view: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count
 
 view: metrics__metrics__labeled_counter__networking_dns_native_count {
   label: "Networking - Dns Native Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_channel_disposition {
+  label: "Networking - Http Channel Disposition"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_no_reason {
+  label: "Networking - Http Channel Disposition Disabled No Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_upgrade {
+  label: "Networking - Http Channel Disposition Disabled Upgrade"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_wont {
+  label: "Networking - Http Channel Disposition Disabled Wont"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_no_reason {
+  label: "Networking - Http Channel Disposition Enabled No Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_upgrade {
+  label: "Networking - Http Channel Disposition Enabled Upgrade"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_wont {
+  label: "Networking - Http Channel Disposition Enabled Wont"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_channel_onstart_status {
+  label: "Networking - Http Channel Onstart Status"
 
   dimension: document_id {
     type: string
@@ -17923,6 +18549,66 @@ view: metrics__metrics__timing_distribution__performance_pageload_async_sheet_lo
   }
 }
 
+view: metrics__metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__performance_pageload_fcp__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -17936,6 +18622,54 @@ view: metrics__metrics__timing_distribution__performance_pageload_fcp__values {
 }
 
 view: metrics__metrics__timing_distribution__performance_pageload_fcp_responsestart__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_http3_fcp_http3__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
