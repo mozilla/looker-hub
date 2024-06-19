@@ -434,6 +434,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_eh_link_type}) AS metrics__metrics__labeled_counter__netwerk_eh_link_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_eh_link_type.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__network_byte_range_request {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_byte_range_request}) AS metrics__metrics__labeled_counter__network_byte_range_request ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_byte_range_request.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__network_cors_authorization_header {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_cors_authorization_header}) AS metrics__metrics__labeled_counter__network_cors_authorization_header ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_cors_authorization_header.document_id} ;;
@@ -467,6 +472,46 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__networking_dns_native_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_dns_native_count}) AS metrics__metrics__labeled_counter__networking_dns_native_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_dns_native_count.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_channel_disposition {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_disposition}) AS metrics__metrics__labeled_counter__networking_http_channel_disposition ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_disposition.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_no_reason {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_disposition_disabled_no_reason}) AS metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_no_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_no_reason.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_upgrade {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_disposition_disabled_upgrade}) AS metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_upgrade ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_upgrade.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_wont {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_disposition_disabled_wont}) AS metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_wont ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_wont.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_no_reason {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_disposition_enabled_no_reason}) AS metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_no_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_no_reason.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_upgrade {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_disposition_enabled_upgrade}) AS metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_upgrade ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_upgrade.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_wont {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_disposition_enabled_wont}) AS metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_wont ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_wont.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_channel_onstart_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_onstart_status}) AS metrics__metrics__labeled_counter__networking_http_channel_onstart_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_onstart_status.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {

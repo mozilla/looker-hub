@@ -23,12 +23,24 @@ COALESCE(SUM(sponsored_topsite_tile_clicks), 0) AS sponsored_tile_clicks,
 COALESCE(MAX(IF(newtab_newtab_category = 'enabled', 1, 0)), 0) AS newtab_newtab_enabled,
 COALESCE(MAX(IF(newtab_homepage_category = 'enabled', 1, 0)), 0) AS newtab_homepage_enabled,
 COALESCE(MAX(CAST(topsites_enabled AS INT)), 0) AS newtab_tiles_enabled,
+COALESCE(MAX(CAST(topsites_sponsored_enabled AS INT)), 0) AS newtab_sponsored_tiles_enabled,
 COALESCE(MAX(CAST(pocket_enabled AS INT)), 0) AS newtab_pocket_enabled,
 COALESCE(MAX(CAST(pocket_sponsored_stories_enabled AS INT)), 0) AS newtab_sponsored_pocket_stories_enabled,
 COALESCE(MAX(CASE WHEN visits_with_non_impression_engagement > 0 THEN 1 ELSE 0 END), 0) AS newtab_engagement,
 COALESCE(SUM(newtab_visit_count), 0) AS newtab_visits,
 COALESCE(SUM(visits_with_non_impression_engagement), 0) AS newtab_engaged_visits,
 COALESCE(SUM(visits_with_non_search_engagement), 0) AS newtab_non_search_engagement,
+COALESCE(SUM(wallpaper_clicks), 0) AS wallpaper_clicks,
+COALESCE(SUM(wallpaper_clicks_had_previous_wallpaper), 0) AS wallpaper_clicks_had_previous_wallpaper,
+COALESCE(SUM(wallpaper_clicks_first_selected_wallpaper), 0) AS wallpaper_clicks_first_selected_wallpaper,
+COALESCE(SUM(wallpaper_highlight_dismissals), 0) AS wallpaper_highlight_dismissals,
+COALESCE(SUM(wallpaper_highlight_cta_clicks), 0) AS wallpaper_highlight_cta_clicks,
+COALESCE(MAX(CAST(newtab_weather_widget_enabled AS INT)), 0) AS newtab_weather_widget_enabled,
+COALESCE(SUM(weather_widget_impressions), 0) AS weather_widget_impressions,
+COALESCE(SUM(weather_widget_clicks), 0) AS weather_widget_clicks,
+COALESCE(SUM(weather_widget_load_errors), 0) AS weather_widget_load_errors,
+COALESCE(SUM(weather_widget_change_display_to_detailed), 0) AS weather_widget_change_display_to_detailed,
+COALESCE(SUM(weather_widget_change_display_to_simple), 0) AS weather_widget_change_display_to_simple,
 
                 countries_ads_value_tier,
 countries_code,
@@ -81,8 +93,13 @@ newtab_clients_daily_topsite_tile_impressions,
 newtab_clients_daily_topsites_enabled,
 newtab_clients_daily_topsites_rows,
 newtab_clients_daily_topsites_sponsored_enabled,
+newtab_clients_daily_visits_with_default_ui,
+newtab_clients_daily_visits_with_default_ui_with_non_impression_engagement,
+newtab_clients_daily_visits_with_default_ui_with_non_search_engagement,
+newtab_clients_daily_visits_with_non_default_ui,
 newtab_clients_daily_visits_with_non_impression_engagement,
 newtab_clients_daily_visits_with_non_search_engagement,
+newtab_clients_daily_wallpaper_category_clicks,
 
                 legacy_telemetry_client_id AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
@@ -166,8 +183,13 @@ newtab_clients_daily.topsite_tile_impressions AS newtab_clients_daily_topsite_ti
 newtab_clients_daily.topsites_enabled AS newtab_clients_daily_topsites_enabled,
 newtab_clients_daily.topsites_rows AS newtab_clients_daily_topsites_rows,
 newtab_clients_daily.topsites_sponsored_enabled AS newtab_clients_daily_topsites_sponsored_enabled,
+newtab_clients_daily.visits_with_default_ui AS newtab_clients_daily_visits_with_default_ui,
+newtab_clients_daily.visits_with_default_ui_with_non_impression_engagement AS newtab_clients_daily_visits_with_default_ui_with_non_impression_engagement,
+newtab_clients_daily.visits_with_default_ui_with_non_search_engagement AS newtab_clients_daily_visits_with_default_ui_with_non_search_engagement,
+newtab_clients_daily.visits_with_non_default_ui AS newtab_clients_daily_visits_with_non_default_ui,
 newtab_clients_daily.visits_with_non_impression_engagement AS newtab_clients_daily_visits_with_non_impression_engagement,
 newtab_clients_daily.visits_with_non_search_engagement AS newtab_clients_daily_visits_with_non_search_engagement,
+newtab_clients_daily.wallpaper_category_clicks AS newtab_clients_daily_wallpaper_category_clicks,
 
                     FROM
                     (
@@ -253,8 +275,13 @@ newtab_clients_daily_topsite_tile_impressions,
 newtab_clients_daily_topsites_enabled,
 newtab_clients_daily_topsites_rows,
 newtab_clients_daily_topsites_sponsored_enabled,
+newtab_clients_daily_visits_with_default_ui,
+newtab_clients_daily_visits_with_default_ui_with_non_impression_engagement,
+newtab_clients_daily_visits_with_default_ui_with_non_search_engagement,
+newtab_clients_daily_visits_with_non_default_ui,
 newtab_clients_daily_visits_with_non_impression_engagement,
 newtab_clients_daily_visits_with_non_search_engagement,
+newtab_clients_daily_wallpaper_category_clicks,
 
                 client_id,
                 analysis_basis ;;
@@ -413,6 +440,15 @@ newtab_clients_daily_visits_with_non_search_engagement,
     sql: ${TABLE}.newtab_tiles_enabled ;;
   }
 
+  dimension: newtab_sponsored_tiles_enabled {
+    group_label: "Metrics"
+    label: "Newtab Sponsored Tiles Enabled"
+    description: "Whether or not sponsored tiles are enabled on the New Tab. Includes both sponsored and nonsponsored tiles.
+"
+    type: number
+    sql: ${TABLE}.newtab_sponsored_tiles_enabled ;;
+  }
+
   dimension: newtab_pocket_enabled {
     group_label: "Metrics"
     label: "Newtab Pocket Enabled"
@@ -465,6 +501,107 @@ newtab_clients_daily_visits_with_non_search_engagement,
 "
     type: number
     sql: ${TABLE}.newtab_non_search_engagement ;;
+  }
+
+  dimension: wallpaper_clicks {
+    group_label: "Metrics"
+    label: "Wallpaper Selection Clicks"
+    description: "Count of total clicks on wallpaper selections.
+"
+    type: number
+    sql: ${TABLE}.wallpaper_clicks ;;
+  }
+
+  dimension: wallpaper_clicks_had_previous_wallpaper {
+    group_label: "Metrics"
+    label: "Wallpaper Selection Clicks With Previous Wallpaper"
+    description: "Count of total clicks on wallpaper selections where the client had previously selected
+a wallpaper.
+"
+    type: number
+    sql: ${TABLE}.wallpaper_clicks_had_previous_wallpaper ;;
+  }
+
+  dimension: wallpaper_clicks_first_selected_wallpaper {
+    group_label: "Metrics"
+    label: "Wallpaper Selection Clicks With No Previous Wallpaper"
+    description: "Count of total clicks on wallpaper selections where the client had no previously selected
+a wallpaper.
+"
+    type: number
+    sql: ${TABLE}.wallpaper_clicks_first_selected_wallpaper ;;
+  }
+
+  dimension: wallpaper_highlight_dismissals {
+    group_label: "Metrics"
+    label: "Wallpaper Highlight Dismissals"
+    description: "Count of dismissals of the wallpaper highlight.
+"
+    type: number
+    sql: ${TABLE}.wallpaper_highlight_dismissals ;;
+  }
+
+  dimension: wallpaper_highlight_cta_clicks {
+    group_label: "Metrics"
+    label: "Wallpaper Highlight CTA Clicks"
+    description: "Count of total clicks on the CTA in the wallpaper feature highlight.
+"
+    type: number
+    sql: ${TABLE}.wallpaper_highlight_cta_clicks ;;
+  }
+
+  dimension: newtab_weather_widget_enabled {
+    group_label: "Metrics"
+    label: "Weather Widget Enabled"
+    description: "Whether or not the weather widget is enabled on the New Tab.
+"
+    type: number
+    sql: ${TABLE}.newtab_weather_widget_enabled ;;
+  }
+
+  dimension: weather_widget_impressions {
+    group_label: "Metrics"
+    label: "Weather Widget Impressions"
+    description: "Count of total impressions of the New Tab weather widget.
+"
+    type: number
+    sql: ${TABLE}.weather_widget_impressions ;;
+  }
+
+  dimension: weather_widget_clicks {
+    group_label: "Metrics"
+    label: "Weather Widget Clicks"
+    description: "Count of total clicks on the New Tab weather widget.
+"
+    type: number
+    sql: ${TABLE}.weather_widget_clicks ;;
+  }
+
+  dimension: weather_widget_load_errors {
+    group_label: "Metrics"
+    label: "Weather Widget Load Errors"
+    description: "Count of New Tab weather widget load errors.
+"
+    type: number
+    sql: ${TABLE}.weather_widget_load_errors ;;
+  }
+
+  dimension: weather_widget_change_display_to_detailed {
+    group_label: "Metrics"
+    label: "Weather Widget Change Display to Detailed"
+    description: "Count of events where the client changed the weather widget display type to Detailed.
+"
+    type: number
+    sql: ${TABLE}.weather_widget_change_display_to_detailed ;;
+  }
+
+  dimension: weather_widget_change_display_to_simple {
+    group_label: "Metrics"
+    label: "Weather Widget Change Display to Simple"
+    description: "Count of events where the client changed the weather widget display type to Simple.
+"
+    type: number
+    sql: ${TABLE}.weather_widget_change_display_to_simple ;;
   }
 
   dimension: ads_value_tier {
@@ -779,6 +916,30 @@ newtab_clients_daily_visits_with_non_search_engagement,
     group_label: "Base Fields"
   }
 
+  dimension: visits_with_default_ui {
+    sql: ${TABLE}.newtab_clients_daily_visits_with_default_ui ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: visits_with_default_ui_with_non_impression_engagement {
+    sql: ${TABLE}.newtab_clients_daily_visits_with_default_ui_with_non_impression_engagement ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: visits_with_default_ui_with_non_search_engagement {
+    sql: ${TABLE}.newtab_clients_daily_visits_with_default_ui_with_non_search_engagement ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: visits_with_non_default_ui {
+    sql: ${TABLE}.newtab_clients_daily_visits_with_non_default_ui ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
   dimension: visits_with_non_impression_engagement {
     sql: ${TABLE}.newtab_clients_daily_visits_with_non_impression_engagement ;;
     type: number
@@ -787,6 +948,12 @@ newtab_clients_daily_visits_with_non_search_engagement,
 
   dimension: visits_with_non_search_engagement {
     sql: ${TABLE}.newtab_clients_daily_visits_with_non_search_engagement ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: wallpaper_category_clicks {
+    sql: ${TABLE}.newtab_clients_daily_wallpaper_category_clicks ;;
     type: number
     group_label: "Base Fields"
   }
@@ -865,12 +1032,24 @@ newtab_clients_daily_visits_with_non_search_engagement,
       newtab_newtab_enabled,
       newtab_homepage_enabled,
       newtab_tiles_enabled,
+      newtab_sponsored_tiles_enabled,
       newtab_pocket_enabled,
       newtab_sponsored_pocket_stories_enabled,
       newtab_engagement,
       newtab_visits,
       newtab_engaged_visits,
       newtab_non_search_engagement,
+      wallpaper_clicks,
+      wallpaper_clicks_had_previous_wallpaper,
+      wallpaper_clicks_first_selected_wallpaper,
+      wallpaper_highlight_dismissals,
+      wallpaper_highlight_cta_clicks,
+      newtab_weather_widget_enabled,
+      weather_widget_impressions,
+      weather_widget_clicks,
+      weather_widget_load_errors,
+      weather_widget_change_display_to_detailed,
+      weather_widget_change_display_to_simple,
       newtab_ad_click_rate_average,
       newtab_visits_sum,
       newtab_visits_client_count_sampled,

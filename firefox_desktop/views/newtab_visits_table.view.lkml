@@ -80,6 +80,11 @@ view: newtab_visits_table {
     hidden: yes
   }
 
+  dimension: newtab_default_ui {
+    sql: ${TABLE}.newtab_default_ui ;;
+    type: string
+  }
+
   dimension: newtab_homepage_category {
     sql: ${TABLE}.newtab_homepage_category ;;
     type: string
@@ -113,6 +118,11 @@ view: newtab_visits_table {
   dimension: newtab_visit_started_at {
     sql: ${TABLE}.newtab_visit_started_at ;;
     type: number
+  }
+
+  dimension: newtab_weather_widget_enabled {
+    sql: ${TABLE}.newtab_weather_widget_enabled ;;
+    type: yesno
   }
 
   dimension: normalized_os {
@@ -168,6 +178,16 @@ view: newtab_visits_table {
   dimension: topsites_sponsored_enabled {
     sql: ${TABLE}.topsites_sponsored_enabled ;;
     type: yesno
+  }
+
+  dimension: wallpaper_interactions {
+    sql: ${TABLE}.wallpaper_interactions ;;
+    hidden: yes
+  }
+
+  dimension: weather_interactions {
+    sql: ${TABLE}.weather_interactions ;;
+    hidden: yes
   }
 
   dimension_group: submission {
@@ -242,6 +262,11 @@ view: newtab_visits_table__pocket_interactions {
     type: number
   }
 
+  dimension: pocket_recommendation_id {
+    sql: ${TABLE}.pocket_recommendation_id ;;
+    type: string
+  }
+
   dimension: pocket_saves {
     sql: ${TABLE}.pocket_saves ;;
     type: number
@@ -250,6 +275,11 @@ view: newtab_visits_table__pocket_interactions {
   dimension: pocket_story_position {
     sql: ${TABLE}.pocket_story_position ;;
     type: number
+  }
+
+  dimension: pocket_tile_id {
+    sql: ${TABLE}.pocket_tile_id ;;
+    type: string
   }
 
   dimension: sponsored_pocket_clicks {
@@ -383,6 +413,70 @@ view: newtab_visits_table__topsite_tile_interactions {
 
   dimension: topsite_tile_position {
     sql: ${TABLE}.topsite_tile_position ;;
+    type: number
+  }
+}
+
+view: newtab_visits_table__wallpaper_interactions {
+  dimension: wallpaper_category_clicks {
+    sql: ${TABLE}.wallpaper_category_clicks ;;
+    type: number
+  }
+
+  dimension: wallpaper_clicks {
+    sql: ${TABLE}.wallpaper_clicks ;;
+    type: number
+  }
+
+  dimension: wallpaper_clicks_first_selected_wallpaper {
+    sql: ${TABLE}.wallpaper_clicks_first_selected_wallpaper ;;
+    type: number
+  }
+
+  dimension: wallpaper_clicks_had_previous_wallpaper {
+    sql: ${TABLE}.wallpaper_clicks_had_previous_wallpaper ;;
+    type: number
+  }
+
+  dimension: wallpaper_highlight_cta_clicks {
+    sql: ${TABLE}.wallpaper_highlight_cta_clicks ;;
+    type: number
+  }
+
+  dimension: wallpaper_highlight_dismissals {
+    sql: ${TABLE}.wallpaper_highlight_dismissals ;;
+    type: number
+  }
+
+  dimension: wallpaper_selected_wallpaper {
+    sql: ${TABLE}.wallpaper_selected_wallpaper ;;
+    type: string
+  }
+}
+
+view: newtab_visits_table__weather_interactions {
+  dimension: weather_widget_change_display_to_detailed {
+    sql: ${TABLE}.weather_widget_change_display_to_detailed ;;
+    type: number
+  }
+
+  dimension: weather_widget_change_display_to_simple {
+    sql: ${TABLE}.weather_widget_change_display_to_simple ;;
+    type: number
+  }
+
+  dimension: weather_widget_clicks {
+    sql: ${TABLE}.weather_widget_clicks ;;
+    type: number
+  }
+
+  dimension: weather_widget_impressions {
+    sql: ${TABLE}.weather_widget_impressions ;;
+    type: number
+  }
+
+  dimension: weather_widget_load_errors {
+    sql: ${TABLE}.weather_widget_load_errors ;;
     type: number
   }
 }

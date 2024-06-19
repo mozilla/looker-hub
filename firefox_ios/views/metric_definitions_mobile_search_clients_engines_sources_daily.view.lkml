@@ -9,6 +9,7 @@ view: metric_definitions_mobile_search_clients_engines_sources_daily {
     sql: SELECT
                 COALESCE(SUM(organic), 0) AS organic_search_count,
 COALESCE(SUM(ad_click_organic), 0) AS ad_click_organic,
+COALESCE(SUM(search_with_ads_organic), 0) AS searches_with_ads_organic,
 COALESCE(SUM(search_count), 0) AS search_count,
 COALESCE(SUM(search_with_ads), 0) AS searches_with_ads,
 COALESCE(SUM(ad_click), 0) AS ad_clicks,
@@ -237,6 +238,14 @@ looker_base_fields_user_agent__version,
     description: "Total number of Organic Ad Click Counts"
     type: number
     sql: ${TABLE}.ad_click_organic ;;
+  }
+
+  dimension: searches_with_ads_organic {
+    group_label: "Metrics"
+    label: "Organic Search With Ads Count"
+    description: "Total number of Organic Search With Ads Counts"
+    type: number
+    sql: ${TABLE}.searches_with_ads_organic ;;
   }
 
   dimension: search_count {
@@ -540,6 +549,7 @@ looker_base_fields_user_agent__version,
     fields: [
       organic_search_count,
       ad_click_organic,
+      searches_with_ads_organic,
       search_count,
       searches_with_ads,
       ad_clicks,

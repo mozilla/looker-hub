@@ -2675,6 +2675,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__network_byte_range_request {
+    sql: ${TABLE}.metrics.labeled_counter.network_byte_range_request ;;
+    hidden: yes
+    description: "Counts of cacheable/non-cacheable byte-range requests
+"
+  }
+
   dimension: metrics__labeled_counter__network_cors_authorization_header {
     sql: ${TABLE}.metrics.labeled_counter.network_cors_authorization_header ;;
     hidden: yes
@@ -2721,6 +2728,62 @@ This metric appears in both the metrics and baseline pings.
     sql: ${TABLE}.metrics.labeled_counter.networking_dns_native_count ;;
     hidden: yes
     description: "The count of calls to the native DNS APIs
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition ;;
+    hidden: yes
+    description: "Channel Disposition for HTTP and HTTPS: cancel, disk, net_ok, net_early_fail, and net_late_fail
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition_disabled_no_reason {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition_disabled_no_reason ;;
+    hidden: yes
+    description: "Upgrading display content Channel Disposition (key: disabled_no_reason)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition_disabled_upgrade {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition_disabled_upgrade ;;
+    hidden: yes
+    description: "Upgrading display content Channel Disposition (key: disable_upgrade)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition_disabled_wont {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition_disabled_wont ;;
+    hidden: yes
+    description: "Upgrading display content Channel Disposition (key: disabled_wont)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition_enabled_no_reason {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition_enabled_no_reason ;;
+    hidden: yes
+    description: "Upgrading display content Channel Disposition (key: enabled_no_reason)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition_enabled_upgrade {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition_enabled_upgrade ;;
+    hidden: yes
+    description: "Upgrading display content Channel Disposition (key: enable_upgrade)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition_enabled_wont {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition_enabled_wont ;;
+    hidden: yes
+    description: "Upgrading display content Channel Disposition (key: enabled_wont)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_onstart_status {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_onstart_status ;;
+    hidden: yes
+    description: "Whether successfully started HTTP channels
 "
   }
 
@@ -9500,6 +9563,306 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload With Eh"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload With Eh"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload With Eh"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload With Eh"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload With Eh"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload With Eh"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload With Eh"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload Without Eh"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload Without Eh"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload Without Eh"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload Without Eh"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload Without Eh"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload Without Eh"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload Without Eh"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload With Eh"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload With Eh"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload With Eh"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload With Eh"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload With Eh"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload With Eh"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload With Eh"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload Without Eh"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload Without Eh"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload Without Eh"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload Without Eh"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload Without Eh"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload Without Eh"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload Without Eh"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__performance_pageload_fcp__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.bucket_count ;;
     type: number
@@ -9617,6 +9980,246 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__values {
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload H3P Fcp With Priority"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload H3P Fcp With Priority"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload H3P Fcp With Priority"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload H3P Fcp With Priority"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload H3P Fcp With Priority"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload H3P Fcp With Priority"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload H3P Fcp With Priority"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Http3"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Http3"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Http3"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Http3"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Http3"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Http3"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Http3"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Supports Http3"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Supports Http3"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Supports Http3"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Supports Http3"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Supports Http3"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Supports Http3"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Supports Http3"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Without Priority"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Without Priority"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Without Priority"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Without Priority"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Without Priority"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Without Priority"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Without Priority"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.values ;;
     hidden: yes
   }
 
@@ -13091,6 +13694,66 @@ view: metrics_table__metrics__timing_distribution__performance_pageload_async_sh
   }
 }
 
+view: metrics_table__metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__performance_pageload_fcp__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -13104,6 +13767,54 @@ view: metrics_table__metrics__timing_distribution__performance_pageload_fcp__val
 }
 
 view: metrics_table__metrics__timing_distribution__performance_pageload_fcp_responsestart__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_http3_fcp_http3__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
