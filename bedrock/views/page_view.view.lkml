@@ -7,7 +7,7 @@
 view: page_view {
   dimension: metrics__string__page_http_status {
     label: "Page Http Status"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.page_http_status ;;
     type: string
     group_label: "Page"
@@ -25,7 +25,7 @@ view: page_view {
 
   dimension: metrics__string__page_locale {
     label: "Page Locale"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.page_locale ;;
     type: string
     group_label: "Page"
@@ -43,7 +43,7 @@ view: page_view {
 
   dimension: metrics__string__page_path {
     label: "Page Path"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.page_path ;;
     type: string
     group_label: "Page"
@@ -61,7 +61,7 @@ view: page_view {
 
   dimension: metrics__labeled_string__page_query_params {
     label: "Page Query Params"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_string.page_query_params ;;
     type: string
     group_label: "Page"
@@ -80,7 +80,7 @@ the page that was viewed.
 
   dimension: metrics__string__page_referrer {
     label: "Page Referrer"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.page_referrer ;;
     type: string
     group_label: "Page"
@@ -584,7 +584,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension_group: metrics__datetime__page_viewed {
     label: "Page Viewed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.datetime.page_viewed ;;
     type: time
     timeframes: [
