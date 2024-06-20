@@ -53,7 +53,6 @@ looker_base_fields_normalized_country_code,
 looker_base_fields_normalized_os,
 looker_base_fields_normalized_os_version,
 looker_base_fields_sample_id,
-active_users_aggregates_v1_active_hours,
 active_users_aggregates_v1_adjust_network,
 active_users_aggregates_v1_app_name,
 active_users_aggregates_v1_app_version,
@@ -82,7 +81,6 @@ active_users_aggregates_v1_os_version,
 active_users_aggregates_v1_os_version_major,
 active_users_aggregates_v1_os_version_minor,
 active_users_aggregates_v1_segment,
-active_users_aggregates_v1_uri_count,
 active_users_aggregates_v1_wau,
 active_users_aggregates_v1_weekly_users,
 
@@ -161,7 +159,6 @@ looker_base_fields.normalized_country_code AS looker_base_fields_normalized_coun
 looker_base_fields.normalized_os AS looker_base_fields_normalized_os,
 looker_base_fields.normalized_os_version AS looker_base_fields_normalized_os_version,
 looker_base_fields.sample_id AS looker_base_fields_sample_id,
-active_users_aggregates_v1.active_hours AS active_users_aggregates_v1_active_hours,
 active_users_aggregates_v1.adjust_network AS active_users_aggregates_v1_adjust_network,
 active_users_aggregates_v1.app_name AS active_users_aggregates_v1_app_name,
 active_users_aggregates_v1.app_version AS active_users_aggregates_v1_app_version,
@@ -190,7 +187,6 @@ active_users_aggregates_v1.os_version AS active_users_aggregates_v1_os_version,
 active_users_aggregates_v1.os_version_major AS active_users_aggregates_v1_os_version_major,
 active_users_aggregates_v1.os_version_minor AS active_users_aggregates_v1_os_version_minor,
 active_users_aggregates_v1.segment AS active_users_aggregates_v1_segment,
-active_users_aggregates_v1.uri_count AS active_users_aggregates_v1_uri_count,
 active_users_aggregates_v1.wau AS active_users_aggregates_v1_wau,
 active_users_aggregates_v1.weekly_users AS active_users_aggregates_v1_weekly_users,
 
@@ -278,7 +274,6 @@ looker_base_fields_normalized_country_code,
 looker_base_fields_normalized_os,
 looker_base_fields_normalized_os_version,
 looker_base_fields_sample_id,
-active_users_aggregates_v1_active_hours,
 active_users_aggregates_v1_adjust_network,
 active_users_aggregates_v1_app_name,
 active_users_aggregates_v1_app_version,
@@ -307,7 +302,6 @@ active_users_aggregates_v1_os_version,
 active_users_aggregates_v1_os_version_major,
 active_users_aggregates_v1_os_version_minor,
 active_users_aggregates_v1_segment,
-active_users_aggregates_v1_uri_count,
 active_users_aggregates_v1_wau,
 active_users_aggregates_v1_weekly_users,
 
@@ -661,12 +655,6 @@ active_users_aggregates_v1_weekly_users,
     group_label: "Base Fields"
   }
 
-  dimension: active_hours {
-    sql: ${TABLE}.active_users_aggregates_v1_active_hours ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
   dimension: adjust_network {
     sql: ${TABLE}.active_users_aggregates_v1_adjust_network ;;
     type: string
@@ -836,12 +824,6 @@ active_users_aggregates_v1_weekly_users,
     group_label: "Base Fields"
   }
 
-  dimension: uri_count {
-    sql: ${TABLE}.active_users_aggregates_v1_uri_count ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
   dimension: wau {
     sql: ${TABLE}.active_users_aggregates_v1_wau ;;
     type: number
@@ -867,14 +849,6 @@ active_users_aggregates_v1_weekly_users,
       quarter,
       year,
     ]
-  }
-
-  measure: active_hours_average {
-    type: average
-    sql: ${TABLE}.active_hours ;;
-    label: "active_hours Average"
-    group_label: "Statistics"
-    description: "Average of active_hours"
   }
 
   set: metrics {
