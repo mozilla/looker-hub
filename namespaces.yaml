@@ -12832,11 +12832,11 @@ websites:
       type: table_view
     google_search_console_by_page:
       tables:
-      - table: moz-fx-data-marketing-prod.google_search_console.search_impressions_by_page
+      - table: mozdata.google_search_console.search_impressions_by_page
       type: table_view
     google_search_console_by_site:
       tables:
-      - table: moz-fx-data-marketing-prod.google_search_console.search_impressions_by_site
+      - table: mozdata.google_search_console.search_impressions_by_site
       type: table_view
     metric_definitions_www_site_landing_page_metrics:
       type: metric_definitions_view

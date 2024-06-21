@@ -187,5 +187,5 @@ This will be null for anonymized Discover impressions."
     description: "The day on which the search occurred (Pacific Time)."
   }
 
-  sql_table_name: `moz-fx-data-marketing-prod.google_search_console.search_impressions_by_page` ;;
+  sql_table_name: `mozdata.google_search_console.search_impressions_by_page` ;;
 }
