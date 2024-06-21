@@ -49,7 +49,7 @@ The `country_code`, `page_url`, and related fields will be null for anonymized D
   dimension: localized_site {
     sql: ${TABLE}.localized_site ;;
     type: string
-    description: "Description of the localized site language and/or country based on `localized_site_language_code` (if any).
+    description: "Description of the localized site language and/or country based on `localized_site_code` (if any).
 This will be null for anonymized Discover impressions."
   }
 

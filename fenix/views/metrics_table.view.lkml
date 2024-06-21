@@ -2966,6 +2966,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_http_to_https_upgrade_reason {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_to_https_upgrade_reason ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_https_rr_presented {
     sql: ${TABLE}.metrics.labeled_counter.networking_https_rr_presented ;;
     hidden: yes

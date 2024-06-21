@@ -6250,6 +6250,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_to_https_upgrade_reason {
+    label: "Networking Http To Https Upgrade Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_to_https_upgrade_reason ;;
+    group_label: "Networking"
+    group_item_label: "Http To Https Upgrade Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http To Https Upgrade Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_to_https_upgrade_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a top-level HTTP request gets upgraded to HTTPS and the reason for it
+"
+  }
+
   dimension: metrics__labeled_counter__networking_https_rr_presented {
     label: "Networking Https Rr Presented"
     hidden: yes
@@ -15346,6 +15363,47 @@ view: metrics__metrics__labeled_counter__networking_http_response_version {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_to_https_upgrade_reason {
+  label: "Networking - Http To Https Upgrade Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
   }
 }
 
