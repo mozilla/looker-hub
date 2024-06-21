@@ -2103,6 +2103,10 @@ firefox_desktop:
       type: funnel_analysis_explore
       views:
         base_view: funnel_analysis
+    fx_accounts:
+      type: glean_ping_explore
+      views:
+        base_view: fx_accounts
     glean_event_counts:
       type: events_explore
       views:
@@ -2426,6 +2430,15 @@ firefox_desktop:
         step_3: event_types
         step_4: event_types
       type: funnel_analysis_view
+    fx_accounts:
+      tables:
+      - table: mozdata.firefox_desktop.fx_accounts
+      type: glean_ping_view
+    fx_accounts_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.fx_accounts
+      type: table_view
     glean_events:
       tables:
       - base_table: mozdata.firefox_desktop.events_unnested
