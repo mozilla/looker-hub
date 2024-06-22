@@ -2521,6 +2521,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_to_https_upgrade_reason {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_to_https_upgrade_reason ;;
+    hidden: yes
+    description: "Whether a top-level HTTP request gets upgraded to HTTPS and the reason for it
+"
+  }
+
   dimension: metrics__labeled_counter__networking_https_rr_presented {
     sql: ${TABLE}.metrics.labeled_counter.networking_https_rr_presented ;;
     hidden: yes
