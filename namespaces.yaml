@@ -9967,130 +9967,16 @@ operational_monitoring:
         xaxis: submission_date
       title: Showing 3Rd Sponsored Tile On The Newtab Page Rollout To Non Release
       type: operational_monitoring_dashboard
-    spocs_endpoint_rollout_beta:
+    task_continuity_sync_after_tab_change_rollout_40:
       tables:
       - branches: &id307
         - enabled
         - disabled
         compact_visualization: false
         dimensions: &id308 {}
-        explore: spocs_endpoint_rollout_beta
-        group_by_dimension: null
-        summaries: &id309
-        - metric: search_count
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
-          metric_groups: []
-          statistic: mean
-        - metric: qualified_cumulative_days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
-          metric_groups: []
-          statistic: mean
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        table: moz-fx-data-shared-prod.operational_monitoring.spocs_endpoint_rollout_beta_statistics
-        xaxis: submission_date
-      title: Spocs Endpoint Rollout Beta
-      type: operational_monitoring_dashboard
-    spocs_endpoint_rollout_nightly:
-      tables:
-      - branches: &id310
-        - enabled
-        - disabled
-        compact_visualization: false
-        dimensions: &id311 {}
-        explore: spocs_endpoint_rollout_nightly
-        group_by_dimension: null
-        summaries: &id312
-        - metric: search_count
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
-          metric_groups: []
-          statistic: mean
-        - metric: qualified_cumulative_days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
-          metric_groups: []
-          statistic: mean
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        table: moz-fx-data-shared-prod.operational_monitoring.spocs_endpoint_rollout_nightly_statistics
-        xaxis: submission_date
-      title: Spocs Endpoint Rollout Nightly
-      type: operational_monitoring_dashboard
-    spocs_endpoint_rollout_release:
-      tables:
-      - branches: &id313
-        - enabled
-        - disabled
-        compact_visualization: false
-        dimensions: &id314 {}
-        explore: spocs_endpoint_rollout_release
-        group_by_dimension: null
-        summaries: &id315
-        - metric: search_count
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
-          metric_groups: []
-          statistic: mean
-        - metric: qualified_cumulative_days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
-          metric_groups: []
-          statistic: mean
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        table: moz-fx-data-shared-prod.operational_monitoring.spocs_endpoint_rollout_release_statistics
-        xaxis: submission_date
-      title: Spocs Endpoint Rollout Release
-      type: operational_monitoring_dashboard
-    task_continuity_sync_after_tab_change_rollout_40:
-      tables:
-      - branches: &id316
-        - enabled
-        - disabled
-        compact_visualization: false
-        dimensions: &id317 {}
         explore: task_continuity_sync_after_tab_change_rollout_40
         group_by_dimension: null
-        summaries: &id318
+        summaries: &id309
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -10115,14 +10001,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     task_continuity_sync_after_tab_change_rollout_60:
       tables:
-      - branches: &id319
+      - branches: &id310
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id320 {}
+        dimensions: &id311 {}
         explore: task_continuity_sync_after_tab_change_rollout_60
         group_by_dimension: null
-        summaries: &id321
+        summaries: &id312
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -10147,14 +10033,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles:
       tables:
-      - branches: &id322
+      - branches: &id313
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id323 {}
+        dimensions: &id314 {}
         explore: tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles
         group_by_dimension: null
-        summaries: &id324
+        summaries: &id315
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -10179,14 +10065,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles:
       tables:
-      - branches: &id325
+      - branches: &id316
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id326 {}
+        dimensions: &id317 {}
         explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
         group_by_dimension: null
-        summaries: &id327
+        summaries: &id318
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -10211,14 +10097,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles:
       tables:
-      - branches: &id328
+      - branches: &id319
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id329 {}
+        dimensions: &id320 {}
         explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
         group_by_dimension: null
-        summaries: &id330
+        summaries: &id321
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -10243,14 +10129,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles:
       tables:
-      - branches: &id331
+      - branches: &id322
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id332 {}
+        dimensions: &id323 {}
         explore: tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles
         group_by_dimension: null
-        summaries: &id333
+        summaries: &id324
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -10275,14 +10161,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles:
       tables:
-      - branches: &id334
+      - branches: &id325
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id335 {}
+        dimensions: &id326 {}
         explore: tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles
         group_by_dimension: null
-        summaries: &id336
+        summaries: &id327
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -10307,10 +10193,10 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     telemetry_alerts_prototype:
       tables:
-      - branches: &id337
+      - branches: &id328
         - active
         compact_visualization: true
-        dimensions: &id338
+        dimensions: &id329
           os:
             default: Linux
             options:
@@ -10319,7 +10205,7 @@ operational_monitoring:
             - Mac
         explore: telemetry_alerts_prototype
         group_by_dimension: null
-        summaries: &id339
+        summaries: &id330
         - metric: memory_total
           metric_groups: []
           statistic: percentile
@@ -10361,14 +10247,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users:
       tables:
-      - branches: &id340
+      - branches: &id331
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id341 {}
+        dimensions: &id332 {}
         explore: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
         group_by_dimension: null
-        summaries: &id342
+        summaries: &id333
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -10393,14 +10279,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default:
       tables:
-      - branches: &id343
+      - branches: &id334
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id344 {}
+        dimensions: &id335 {}
         explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
         group_by_dimension: null
-        summaries: &id345
+        summaries: &id336
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -10425,14 +10311,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     upgrade_spotlight_rollout:
       tables:
-      - branches: &id346
+      - branches: &id337
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id347 {}
+        dimensions: &id338 {}
         explore: upgrade_spotlight_rollout
         group_by_dimension: null
-        summaries: &id348
+        summaries: &id339
         - metric: days_of_use
           metric_groups: []
           statistic: mean
@@ -10463,14 +10349,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_android_april_2024_launch:
       tables:
-      - branches: &id349
+      - branches: &id340
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id350 {}
+        dimensions: &id341 {}
         explore: viewpoint_android_april_2024_launch
         group_by_dimension: null
-        summaries: &id351
+        summaries: &id342
         - metric: uri_count
           metric_groups: []
           statistic: mean
@@ -10498,14 +10384,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_android_june_2024_launch:
       tables:
-      - branches: &id352
+      - branches: &id343
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id353 {}
+        dimensions: &id344 {}
         explore: viewpoint_android_june_2024_launch
         group_by_dimension: null
-        summaries: &id354
+        summaries: &id345
         - metric: retained
           metric_groups: []
           statistic: mean
@@ -10533,14 +10419,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_android_may_2024_launch:
       tables:
-      - branches: &id355
+      - branches: &id346
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id356 {}
+        dimensions: &id347 {}
         explore: viewpoint_android_may_2024_launch
         group_by_dimension: null
-        summaries: &id357
+        summaries: &id348
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
@@ -10568,14 +10454,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_ios_april_2024_launch:
       tables:
-      - branches: &id358
+      - branches: &id349
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id359 {}
+        dimensions: &id350 {}
         explore: viewpoint_ios_april_2024_launch
         group_by_dimension: null
-        summaries: &id360
+        summaries: &id351
         - metric: active_hours
           metric_groups: []
           statistic: mean
@@ -10597,14 +10483,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_ios_june_2024_launch:
       tables:
-      - branches: &id361
+      - branches: &id352
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id362 {}
+        dimensions: &id353 {}
         explore: viewpoint_ios_june_2024_launch
         group_by_dimension: null
-        summaries: &id363
+        summaries: &id354
         - metric: retained
           metric_groups: []
           statistic: mean
@@ -10626,14 +10512,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_ios_may_2024_launch:
       tables:
-      - branches: &id364
+      - branches: &id355
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id365 {}
+        dimensions: &id356 {}
         explore: viewpoint_ios_may_2024_launch
         group_by_dimension: null
-        summaries: &id366
+        summaries: &id357
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
@@ -11482,90 +11368,66 @@ operational_monitoring:
       views:
         base_view: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release
       xaxis: submission_date
-    spocs_endpoint_rollout_beta:
+    task_continuity_sync_after_tab_change_rollout_40:
       branches: *id307
       dimensions: *id308
       summaries: *id309
       type: operational_monitoring_explore
       views:
-        base_view: spocs_endpoint_rollout_beta
+        base_view: task_continuity_sync_after_tab_change_rollout_40
       xaxis: submission_date
-    spocs_endpoint_rollout_nightly:
+    task_continuity_sync_after_tab_change_rollout_60:
       branches: *id310
       dimensions: *id311
       summaries: *id312
       type: operational_monitoring_explore
       views:
-        base_view: spocs_endpoint_rollout_nightly
+        base_view: task_continuity_sync_after_tab_change_rollout_60
       xaxis: submission_date
-    spocs_endpoint_rollout_release:
+    tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles:
       branches: *id313
       dimensions: *id314
       summaries: *id315
       type: operational_monitoring_explore
       views:
-        base_view: spocs_endpoint_rollout_release
+        base_view: tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles
       xaxis: submission_date
-    task_continuity_sync_after_tab_change_rollout_40:
+    tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles:
       branches: *id316
       dimensions: *id317
       summaries: *id318
       type: operational_monitoring_explore
       views:
-        base_view: task_continuity_sync_after_tab_change_rollout_40
+        base_view: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
       xaxis: submission_date
-    task_continuity_sync_after_tab_change_rollout_60:
+    tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles:
       branches: *id319
       dimensions: *id320
       summaries: *id321
       type: operational_monitoring_explore
       views:
-        base_view: task_continuity_sync_after_tab_change_rollout_60
+        base_view: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
       xaxis: submission_date
-    tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles:
+    tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles:
       branches: *id322
       dimensions: *id323
       summaries: *id324
       type: operational_monitoring_explore
       views:
-        base_view: tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles
+        base_view: tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles
       xaxis: submission_date
-    tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles:
+    tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles:
       branches: *id325
       dimensions: *id326
       summaries: *id327
       type: operational_monitoring_explore
       views:
-        base_view: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
-      xaxis: submission_date
-    tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles:
-      branches: *id328
-      dimensions: *id329
-      summaries: *id330
-      type: operational_monitoring_explore
-      views:
-        base_view: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
-      xaxis: submission_date
-    tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles:
-      branches: *id331
-      dimensions: *id332
-      summaries: *id333
-      type: operational_monitoring_explore
-      views:
-        base_view: tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles
-      xaxis: submission_date
-    tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles:
-      branches: *id334
-      dimensions: *id335
-      summaries: *id336
-      type: operational_monitoring_explore
-      views:
         base_view: tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles
       xaxis: submission_date
     telemetry_alerts_prototype:
-      branches: *id337
-      dimensions: *id338
-      summaries: *id339
+      branches: *id328
+      dimensions: *id329
+      summaries: *id330
       type: operational_monitoring_explore
       views:
         base_view: telemetry_alerts_prototype
@@ -11575,73 +11437,73 @@ operational_monitoring:
       views:
         base_view: telemetry_alerts_prototype_alerts
     total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users:
-      branches: *id340
-      dimensions: *id341
-      summaries: *id342
+      branches: *id331
+      dimensions: *id332
+      summaries: *id333
       type: operational_monitoring_explore
       views:
         base_view: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
       xaxis: submission_date
     total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default:
-      branches: *id343
-      dimensions: *id344
-      summaries: *id345
+      branches: *id334
+      dimensions: *id335
+      summaries: *id336
       type: operational_monitoring_explore
       views:
         base_view: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
       xaxis: submission_date
     upgrade_spotlight_rollout:
-      branches: *id346
-      dimensions: *id347
-      summaries: *id348
+      branches: *id337
+      dimensions: *id338
+      summaries: *id339
       type: operational_monitoring_explore
       views:
         base_view: upgrade_spotlight_rollout
       xaxis: submission_date
     viewpoint_android_april_2024_launch:
-      branches: *id349
-      dimensions: *id350
-      summaries: *id351
+      branches: *id340
+      dimensions: *id341
+      summaries: *id342
       type: operational_monitoring_explore
       views:
         base_view: viewpoint_android_april_2024_launch
       xaxis: submission_date
     viewpoint_android_june_2024_launch:
-      branches: *id352
-      dimensions: *id353
-      summaries: *id354
+      branches: *id343
+      dimensions: *id344
+      summaries: *id345
       type: operational_monitoring_explore
       views:
         base_view: viewpoint_android_june_2024_launch
       xaxis: submission_date
     viewpoint_android_may_2024_launch:
-      branches: *id355
-      dimensions: *id356
-      summaries: *id357
+      branches: *id346
+      dimensions: *id347
+      summaries: *id348
       type: operational_monitoring_explore
       views:
         base_view: viewpoint_android_may_2024_launch
       xaxis: submission_date
     viewpoint_ios_april_2024_launch:
-      branches: *id358
-      dimensions: *id359
-      summaries: *id360
+      branches: *id349
+      dimensions: *id350
+      summaries: *id351
       type: operational_monitoring_explore
       views:
         base_view: viewpoint_ios_april_2024_launch
       xaxis: submission_date
     viewpoint_ios_june_2024_launch:
-      branches: *id361
-      dimensions: *id362
-      summaries: *id363
+      branches: *id352
+      dimensions: *id353
+      summaries: *id354
       type: operational_monitoring_explore
       views:
         base_view: viewpoint_ios_june_2024_launch
       xaxis: submission_date
     viewpoint_ios_may_2024_launch:
-      branches: *id364
-      dimensions: *id365
-      summaries: *id366
+      branches: *id355
+      dimensions: *id356
+      summaries: *id357
       type: operational_monitoring_explore
       views:
         base_view: viewpoint_ios_may_2024_launch
@@ -12276,69 +12138,51 @@ operational_monitoring:
         table: moz-fx-data-shared-prod.operational_monitoring.showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release_statistics
         xaxis: submission_date
       type: operational_monitoring_view
-    spocs_endpoint_rollout_beta:
-      tables:
-      - dimensions: *id308
-        table: moz-fx-data-shared-prod.operational_monitoring.spocs_endpoint_rollout_beta_statistics
-        xaxis: submission_date
-      type: operational_monitoring_view
-    spocs_endpoint_rollout_nightly:
-      tables:
-      - dimensions: *id311
-        table: moz-fx-data-shared-prod.operational_monitoring.spocs_endpoint_rollout_nightly_statistics
-        xaxis: submission_date
-      type: operational_monitoring_view
-    spocs_endpoint_rollout_release:
-      tables:
-      - dimensions: *id314
-        table: moz-fx-data-shared-prod.operational_monitoring.spocs_endpoint_rollout_release_statistics
-        xaxis: submission_date
-      type: operational_monitoring_view
     task_continuity_sync_after_tab_change_rollout_40:
       tables:
-      - dimensions: *id317
+      - dimensions: *id308
         table: moz-fx-data-shared-prod.operational_monitoring.task_continuity_sync_after_tab_change_rollout_40_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     task_continuity_sync_after_tab_change_rollout_60:
       tables:
-      - dimensions: *id320
+      - dimensions: *id311
         table: moz-fx-data-shared-prod.operational_monitoring.task_continuity_sync_after_tab_change_rollout_60_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles:
       tables:
-      - dimensions: *id323
+      - dimensions: *id314
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles:
       tables:
-      - dimensions: *id326
+      - dimensions: *id317
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles:
       tables:
-      - dimensions: *id329
+      - dimensions: *id320
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles:
       tables:
-      - dimensions: *id332
+      - dimensions: *id323
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles:
       tables:
-      - dimensions: *id335
+      - dimensions: *id326
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     telemetry_alerts_prototype:
       tables:
-      - dimensions: *id338
+      - dimensions: *id329
         table: moz-fx-data-shared-prod.operational_monitoring.telemetry_alerts_prototype_statistics
         xaxis: build_id
       type: operational_monitoring_view
@@ -12348,55 +12192,55 @@ operational_monitoring:
       type: operational_monitoring_alerting_view
     total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users:
       tables:
-      - dimensions: *id341
+      - dimensions: *id332
         table: moz-fx-data-shared-prod.operational_monitoring.total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default:
       tables:
-      - dimensions: *id344
+      - dimensions: *id335
         table: moz-fx-data-shared-prod.operational_monitoring.total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     upgrade_spotlight_rollout:
       tables:
-      - dimensions: *id347
+      - dimensions: *id338
         table: moz-fx-data-shared-prod.operational_monitoring.upgrade_spotlight_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_android_april_2024_launch:
       tables:
-      - dimensions: *id350
+      - dimensions: *id341
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_android_april_2024_launch_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_android_june_2024_launch:
       tables:
-      - dimensions: *id353
+      - dimensions: *id344
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_android_june_2024_launch_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_android_may_2024_launch:
       tables:
-      - dimensions: *id356
+      - dimensions: *id347
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_android_may_2024_launch_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_ios_april_2024_launch:
       tables:
-      - dimensions: *id359
+      - dimensions: *id350
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_april_2024_launch_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_ios_june_2024_launch:
       tables:
-      - dimensions: *id362
+      - dimensions: *id353
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_june_2024_launch_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_ios_may_2024_launch:
       tables:
-      - dimensions: *id365
+      - dimensions: *id356
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_may_2024_launch_statistics
         xaxis: submission_date
       type: operational_monitoring_view
