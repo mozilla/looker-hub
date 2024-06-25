@@ -491,6 +491,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_any_pointer_type {
+    sql: ${TABLE}.metrics.quantity.characteristics_any_pointer_type ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Any Pointer Type"
+    description: "Union of pointers available. We apply union to determine if the user have both coarse and fine pointer.
+"
+  }
+
   dimension: metrics__quantity__characteristics_audio_fingerprint {
     sql: ${TABLE}.metrics.quantity.characteristics_audio_fingerprint ;;
     type: number
@@ -743,12 +752,66 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_motion_decimals {
+    sql: ${TABLE}.metrics.quantity.characteristics_motion_decimals ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Motion Decimals"
+    description: "devicemotion event's decimal places count
+"
+  }
+
+  dimension: metrics__quantity__characteristics_motion_freq {
+    sql: ${TABLE}.metrics.quantity.characteristics_motion_freq ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Motion Freq"
+    description: "devicemotion event's frequency
+"
+  }
+
   dimension: metrics__quantity__characteristics_orientation_angle {
     sql: ${TABLE}.metrics.quantity.characteristics_orientation_angle ;;
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Orientation Angle"
     description: "Orientation angle of the screen
+"
+  }
+
+  dimension: metrics__quantity__characteristics_orientation_decimals {
+    sql: ${TABLE}.metrics.quantity.characteristics_orientation_decimals ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Orientation Decimals"
+    description: "deviceorientation event's decimal places count
+"
+  }
+
+  dimension: metrics__quantity__characteristics_orientation_freq {
+    sql: ${TABLE}.metrics.quantity.characteristics_orientation_freq ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Orientation Freq"
+    description: "deviceorientation event's frequency
+"
+  }
+
+  dimension: metrics__quantity__characteristics_orientationabs_decimals {
+    sql: ${TABLE}.metrics.quantity.characteristics_orientationabs_decimals ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Orientationabs Decimals"
+    description: "deviceorientationabsolute event's decimal places count
+"
+  }
+
+  dimension: metrics__quantity__characteristics_orientationabs_freq {
+    sql: ${TABLE}.metrics.quantity.characteristics_orientationabs_freq ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Orientationabs Freq"
+    description: "deviceorientationabsolute event's frequency
 "
   }
 
@@ -785,6 +848,60 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Pixel Ratio"
     description: "The value of window.devicePixelRatio multiplied by 100 to include some of the decimal places
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pointer_height {
+    sql: ${TABLE}.metrics.quantity.characteristics_pointer_height ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Pointer Height"
+    description: "Height of user's pointer
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pointer_tiltx {
+    sql: ${TABLE}.metrics.quantity.characteristics_pointer_tiltx ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Pointer Tiltx"
+    description: "TiltX of user's pointer
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pointer_tilty {
+    sql: ${TABLE}.metrics.quantity.characteristics_pointer_tilty ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Pointer Tilty"
+    description: "TiltY of user's pointer
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pointer_twist {
+    sql: ${TABLE}.metrics.quantity.characteristics_pointer_twist ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Pointer Twist"
+    description: "Twist of user's pointer
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pointer_type {
+    sql: ${TABLE}.metrics.quantity.characteristics_pointer_type ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Pointer Type"
+    description: "Pointer type of the user's primary pointer device.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pointer_width {
+    sql: ${TABLE}.metrics.quantity.characteristics_pointer_width ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Pointer Width"
+    description: "Width of user's pointer
 "
   }
 
@@ -1058,6 +1175,24 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_pointer_pressure {
+    sql: ${TABLE}.metrics.string.characteristics_pointer_pressure ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Pointer Pressure"
+    description: "Pressure of user's pointer
+"
+  }
+
+  dimension: metrics__string__characteristics_pointer_tangentinal_pressure {
+    sql: ${TABLE}.metrics.string.characteristics_pointer_tangentinal_pressure ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Pointer Tangentinal Pressure"
+    description: "Tangential Pressure of user's pointer
+"
+  }
+
   dimension: metrics__string__characteristics_prefs_intl_accept_languages {
     sql: ${TABLE}.metrics.string.characteristics_prefs_intl_accept_languages ;;
     type: string
@@ -1100,6 +1235,15 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics String"
     group_item_label: "Characteristics Timezone"
     description: "The the current timezone of the system
+"
+  }
+
+  dimension: metrics__string__characteristics_touch_rotation_angle {
+    sql: ${TABLE}.metrics.string.characteristics_touch_rotation_angle ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Touch Rotation Angle"
+    description: "Rotation angle of user's touch
 "
   }
 
@@ -1214,6 +1358,27 @@ for the purpose of experimentation enrollment.
     type: string
     group_label: "Metrics Text"
     group_item_label: "Characteristics Canvasdata9"
+  }
+
+  dimension: metrics__text__characteristics_errors {
+    sql: ${TABLE}.metrics.text.characteristics_errors ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Errors"
+  }
+
+  dimension: metrics__text__characteristics_ice_foundations {
+    sql: ${TABLE}.metrics.text.characteristics_ice_foundations ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Ice Foundations"
+  }
+
+  dimension: metrics__text__characteristics_js_errors {
+    sql: ${TABLE}.metrics.text.characteristics_js_errors ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Js Errors"
   }
 
   dimension: metrics__text__characteristics_math_ops {
@@ -1374,6 +1539,33 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Canvasdata9"
     description: "The base64 encoded form of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
+"
+  }
+
+  dimension: metrics__text2__characteristics_errors {
+    sql: ${TABLE}.metrics.text2.characteristics_errors ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Errors"
+    description: "Errors occured on C++ side of data collection
+"
+  }
+
+  dimension: metrics__text2__characteristics_ice_foundations {
+    sql: ${TABLE}.metrics.text2.characteristics_ice_foundations ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Ice Foundations"
+    description: "Unique ICE foundations occurance count and the standard deviation of latencies
+"
+  }
+
+  dimension: metrics__text2__characteristics_js_errors {
+    sql: ${TABLE}.metrics.text2.characteristics_js_errors ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Js Errors"
+    description: "Errors occured on JavaScript side of data collection
 "
   }
 
