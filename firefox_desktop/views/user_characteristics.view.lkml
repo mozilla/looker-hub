@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: user_characteristics {
+  dimension: metrics__quantity__characteristics_any_pointer_type {
+    label: "Characteristics Any Pointer Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_any_pointer_type ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Any Pointer Type"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Any Pointer Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_any_pointer_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Union of pointers available. We apply union to determine if the user have both coarse and fine pointer.
+"
+  }
+
   dimension: metrics__text2__characteristics_audio_devices {
     label: "Characteristics Audio Devices"
     hidden: no
@@ -545,6 +563,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_errors {
+    label: "Characteristics Errors"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.characteristics_errors ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Errors occured on C++ side of data collection
+"
+  }
+
   dimension: metrics__string__characteristics_font_default_default_group {
     label: "Characteristics Font Default Default Group"
     hidden: no
@@ -1013,6 +1049,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_ice_foundations {
+    label: "Characteristics Ice Foundations"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.characteristics_ice_foundations ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Ice Foundations"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Ice Foundations"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_ice_foundations"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Unique ICE foundations occurance count and the standard deviation of latencies
+"
+  }
+
   dimension: metrics__quantity__characteristics_inner_height {
     label: "Characteristics Inner Height"
     hidden: no
@@ -1082,6 +1136,24 @@ view: user_characteristics {
     }
 
     description: "What LookAndFeel(InvertedColors) reports.
+"
+  }
+
+  dimension: metrics__text2__characteristics_js_errors {
+    label: "Characteristics Js Errors"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.characteristics_js_errors ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Js Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Js Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_js_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Errors occured on JavaScript side of data collection
 "
   }
 
@@ -1211,6 +1283,42 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__quantity__characteristics_motion_decimals {
+    label: "Characteristics Motion Decimals"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_motion_decimals ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Motion Decimals"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Motion Decimals"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_motion_decimals"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "devicemotion event's decimal places count
+"
+  }
+
+  dimension: metrics__quantity__characteristics_motion_freq {
+    label: "Characteristics Motion Freq"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_motion_freq ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Motion Freq"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Motion Freq"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_motion_freq"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "devicemotion event's frequency
+"
+  }
+
   dimension: metrics__quantity__characteristics_orientation_angle {
     label: "Characteristics Orientation Angle"
     hidden: no
@@ -1226,6 +1334,78 @@ view: user_characteristics {
     }
 
     description: "Orientation angle of the screen
+"
+  }
+
+  dimension: metrics__quantity__characteristics_orientation_decimals {
+    label: "Characteristics Orientation Decimals"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_orientation_decimals ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Orientation Decimals"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Orientation Decimals"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_orientation_decimals"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "deviceorientation event's decimal places count
+"
+  }
+
+  dimension: metrics__quantity__characteristics_orientation_freq {
+    label: "Characteristics Orientation Freq"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_orientation_freq ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Orientation Freq"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Orientation Freq"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_orientation_freq"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "deviceorientation event's frequency
+"
+  }
+
+  dimension: metrics__quantity__characteristics_orientationabs_decimals {
+    label: "Characteristics Orientationabs Decimals"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_orientationabs_decimals ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Orientationabs Decimals"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Orientationabs Decimals"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_orientationabs_decimals"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "deviceorientationabsolute event's decimal places count
+"
+  }
+
+  dimension: metrics__quantity__characteristics_orientationabs_freq {
+    label: "Characteristics Orientationabs Freq"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_orientationabs_freq ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Orientationabs Freq"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Orientationabs Freq"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_orientationabs_freq"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "deviceorientationabsolute event's frequency
 "
   }
 
@@ -1298,6 +1478,150 @@ view: user_characteristics {
     }
 
     description: "The value of window.devicePixelRatio multiplied by 100 to include some of the decimal places
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pointer_height {
+    label: "Characteristics Pointer Height"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_pointer_height ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Pointer Height"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pointer Height"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pointer_height"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Height of user's pointer
+"
+  }
+
+  dimension: metrics__string__characteristics_pointer_pressure {
+    label: "Characteristics Pointer Pressure"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_pointer_pressure ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Pointer Pressure"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pointer Pressure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pointer_pressure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Pressure of user's pointer
+"
+  }
+
+  dimension: metrics__string__characteristics_pointer_tangentinal_pressure {
+    label: "Characteristics Pointer Tangentinal Pressure"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_pointer_tangentinal_pressure ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Pointer Tangentinal Pressure"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pointer Tangentinal Pressure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pointer_tangentinal_pressure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Tangential Pressure of user's pointer
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pointer_tiltx {
+    label: "Characteristics Pointer Tiltx"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_pointer_tiltx ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Pointer Tiltx"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pointer Tiltx"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pointer_tiltx"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "TiltX of user's pointer
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pointer_tilty {
+    label: "Characteristics Pointer Tilty"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_pointer_tilty ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Pointer Tilty"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pointer Tilty"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pointer_tilty"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "TiltY of user's pointer
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pointer_twist {
+    label: "Characteristics Pointer Twist"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_pointer_twist ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Pointer Twist"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pointer Twist"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pointer_twist"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Twist of user's pointer
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pointer_type {
+    label: "Characteristics Pointer Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_pointer_type ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Pointer Type"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pointer Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pointer_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Pointer type of the user's primary pointer device.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pointer_width {
+    label: "Characteristics Pointer Width"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_pointer_width ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Pointer Width"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pointer Width"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pointer_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Width of user's pointer
 "
   }
 
@@ -1784,6 +2108,24 @@ view: user_characteristics {
     }
 
     description: "The the current timezone of the system
+"
+  }
+
+  dimension: metrics__string__characteristics_touch_rotation_angle {
+    label: "Characteristics Touch Rotation Angle"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_touch_rotation_angle ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Touch Rotation Angle"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Touch Rotation Angle"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_touch_rotation_angle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Rotation angle of user's touch
 "
   }
 
