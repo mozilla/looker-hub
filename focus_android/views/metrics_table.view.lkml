@@ -864,6 +864,25 @@ view: metrics_table {
     group_item_label: "Webauthn Get Success"
   }
 
+  dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__count {
+    sql: ${TABLE}.metrics.custom_distribution.bounce_tracking_protection_num_hosts_per_purge_run.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Bounce Tracking Protection Num Hosts Per Purge Run"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__sum {
+    sql: ${TABLE}.metrics.custom_distribution.bounce_tracking_protection_num_hosts_per_purge_run.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Bounce Tracking Protection Num Hosts Per Purge Run"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__values {
+    sql: ${TABLE}.metrics.custom_distribution.bounce_tracking_protection_num_hosts_per_purge_run.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__count {
     sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.count ;;
     type: number
@@ -2283,6 +2302,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__networking_http_redirect_to_scheme_top_level {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_redirect_to_scheme_top_level ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_http_response_status_code {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_response_status_code ;;
     hidden: yes
   }
 
@@ -11016,6 +11040,18 @@ view: metrics_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 

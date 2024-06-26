@@ -707,6 +707,60 @@ when dynamic or static rulesets have been loaded from disk.
 "
   }
 
+  dimension: metrics__boolean__genai_chatbot_enabled {
+    label: "Genai Chatbot Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.genai_chatbot_enabled ;;
+    type: yesno
+    group_label: "Genai Chatbot"
+    group_item_label: "Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Genai Chatbot Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/genai_chatbot_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if the chatbot feature is enabled.
+"
+  }
+
+  dimension: metrics__string__genai_chatbot_provider {
+    label: "Genai Chatbot Provider"
+    hidden: no
+    sql: ${TABLE}.metrics.string.genai_chatbot_provider ;;
+    type: string
+    group_label: "Genai Chatbot"
+    group_item_label: "Provider"
+
+    link: {
+      label: "Glean Dictionary reference for Genai Chatbot Provider"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/genai_chatbot_provider"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates id of activated chatbot provider or \"custom\" or \"none\"
+"
+  }
+
+  dimension: metrics__boolean__genai_chatbot_sidebar {
+    label: "Genai Chatbot Sidebar"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.genai_chatbot_sidebar ;;
+    type: yesno
+    group_label: "Genai Chatbot"
+    group_item_label: "Sidebar"
+
+    link: {
+      label: "Glean Dictionary reference for Genai Chatbot Sidebar"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/genai_chatbot_sidebar"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if the chatbot feature would open in sidebar.
+"
+  }
+
   dimension: metrics__boolean__installation_first_seen_admin_user {
     label: "Installation First Seen Admin User"
     hidden: no
@@ -2005,6 +2059,24 @@ in browser.
     }
 
     description: "Keeps track of whether the feature is enabled and running in dry-run mode at startup.
+"
+  }
+
+  dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__sum {
+    label: "Bounce Tracking Protection Num Hosts Per Purge Run Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.bounce_tracking_protection_num_hosts_per_purge_run.sum ;;
+    type: number
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Num Hosts Per Purge Run Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Num Hosts Per Purge Run Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/bounce_tracking_protection_num_hosts_per_purge_run"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of bounce trackers purged successfully per scheduled purge.
 "
   }
 
@@ -6230,6 +6302,23 @@ To be used to validate GIFFT.
     }
 
     description: "Count of the HTTP redirection that triggered by top-level document, keyed by the URL scheme redirected to
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_response_status_code {
+    label: "Networking Http Response Status Code"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_response_status_code ;;
+    group_label: "Networking"
+    group_item_label: "Http Response Status Code"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Response Status Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_response_status_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP Response Status Code (200, 301, 302, 304, 307, 308, 400, 401, 403, 404, 421, 425, 429, other 400 and 500)
 "
   }
 
@@ -15325,6 +15414,47 @@ view: metrics__metrics__labeled_counter__networking_http_redirect_to_scheme_top_
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_http_response_status_code {
+  label: "Networking - Http Response Status Code"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_http_response_version {
   label: "Networking - Http Response Version"
 
@@ -17589,6 +17719,18 @@ view: metrics__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics__metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 

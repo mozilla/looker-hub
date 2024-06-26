@@ -448,6 +448,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_redirect_to_scheme_top_level}) AS metrics__metrics__labeled_counter__networking_http_redirect_to_scheme_top_level ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_redirect_to_scheme_top_level.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_http_response_status_code {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_response_status_code}) AS metrics__metrics__labeled_counter__networking_http_response_status_code ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_response_status_code.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_http_response_version {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_response_version}) AS metrics__metrics__labeled_counter__networking_http_response_version ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_response_version.document_id} ;;

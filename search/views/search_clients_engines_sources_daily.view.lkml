@@ -176,6 +176,16 @@ view: search_clients_engines_sources_daily {
     type: string
   }
 
+  dimension: os_version_major {
+    sql: ${TABLE}.os_version_major ;;
+    type: string
+  }
+
+  dimension: os_version_minor {
+    sql: ${TABLE}.os_version_minor ;;
+    type: string
+  }
+
   dimension: policies_is_enterprise {
     sql: ${TABLE}.policies_is_enterprise ;;
     type: yesno

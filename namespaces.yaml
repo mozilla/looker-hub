@@ -218,6 +218,14 @@ ads:
       tables:
       - table: mozdata.ads.tiles_addressable_inventory_hourly
       type: table_view
+ads_backend:
+  explores: {}
+  glean_app: true
+  owners:
+  - gleonard@mozilla.com
+  pretty_name: Mozilla Ads Backend Service
+  spoke: looker-spoke-default
+  views: {}
 bedrock:
   explores:
     deletion_request:
