@@ -389,6 +389,24 @@ Child-process data will likely be absent, or incomplete.
 "
   }
 
+  dimension: metrics__boolean__genai_chatbot_enabled {
+    sql: ${TABLE}.metrics.boolean.genai_chatbot_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Genai Chatbot Enabled"
+    description: "Indicates if the chatbot feature is enabled.
+"
+  }
+
+  dimension: metrics__boolean__genai_chatbot_sidebar {
+    sql: ${TABLE}.metrics.boolean.genai_chatbot_sidebar ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Genai Chatbot Sidebar"
+    description: "Indicates if the chatbot feature would open in sidebar.
+"
+  }
+
   dimension: metrics__boolean__gfx_status_headless {
     sql: ${TABLE}.metrics.boolean.gfx_status_headless ;;
     type: yesno
@@ -1110,6 +1128,26 @@ of the shopping experiment.
     group_label: "Metrics Counter"
     group_item_label: "Webauthn Get Success"
     description: "The total number of successful calls to navigator.credentials.get."
+  }
+
+  dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__count {
+    sql: ${TABLE}.metrics.custom_distribution.bounce_tracking_protection_num_hosts_per_purge_run.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Bounce Tracking Protection Num Hosts Per Purge Run"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__sum {
+    sql: ${TABLE}.metrics.custom_distribution.bounce_tracking_protection_num_hosts_per_purge_run.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Bounce Tracking Protection Num Hosts Per Purge Run"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__values {
+    sql: ${TABLE}.metrics.custom_distribution.bounce_tracking_protection_num_hosts_per_purge_run.values ;;
+    hidden: yes
   }
 
   dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__count {
@@ -2780,6 +2818,13 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_response_status_code {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_response_status_code ;;
+    hidden: yes
+    description: "HTTP Response Status Code (200, 301, 302, 304, 307, 308, 400, 401, 403, 404, 421, 425, 429, other 400 and 500)
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_response_version {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_response_version ;;
     hidden: yes
@@ -4058,6 +4103,15 @@ API for the purposes of Validation (hence GVSV).
     group_label: "Metrics String"
     group_item_label: "Geckoview Validation Version"
     description: "The version of the Gecko engine, example: 74.0a1 Mirror of `geckoview.version` for validation of migrated data.
+"
+  }
+
+  dimension: metrics__string__genai_chatbot_provider {
+    sql: ${TABLE}.metrics.string.genai_chatbot_provider ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Genai Chatbot Provider"
+    description: "Indicates id of activated chatbot provider or \"custom\" or \"none\"
 "
   }
 
@@ -12337,6 +12391,18 @@ view: metrics_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 

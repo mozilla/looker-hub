@@ -251,7 +251,7 @@ The labels are the `category.name` identifier of the metric.
     }
 
     description: "A marketing campaign.  For example, if a user signs into FxA from selecting a
-Mozilla VPN plan on Mozilla VPN's product site, then value of this metric could
+Mozilla VPN plan on Mozilla VPN's product site, then the value of this metric could
 be 'vpn-product-page'.  The value has a max length of 128 characters with the
 alphanumeric characters, _ (underscore), forward slash (/), . (period), %
 (percentage sign), and - (hyphen) in the allowed set of characters.  The
