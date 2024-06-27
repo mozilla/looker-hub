@@ -3215,6 +3215,26 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__memory_distribution__browser_backup_total_backup_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.browser_backup_total_backup_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Browser Backup Total Backup Size"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__browser_backup_total_backup_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.browser_backup_total_backup_size.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Browser Backup Total Backup Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__browser_backup_total_backup_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.browser_backup_total_backup_size.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__memory_distribution__extensions_apis_dnr_startup_cache_read_size__count {
     sql: ${TABLE}.metrics.memory_distribution.extensions_apis_dnr_startup_cache_read_size.count ;;
     type: number
@@ -13051,6 +13071,18 @@ view: metrics_table__metrics__labeled_string__cookie_banners_google_gdpr_choice_
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__browser_backup_total_backup_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
