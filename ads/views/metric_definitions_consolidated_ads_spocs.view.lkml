@@ -21,27 +21,27 @@ consolidated_ads_spocs_targeted_country,
 
                 NULL AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
-                submission_timestamp AS analysis_basis
+                submission_date AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'week'  %}
                 (FORMAT_DATE(
                     '%F',
-                    DATE_TRUNC(submission_timestamp,
+                    DATE_TRUNC(submission_date,
                     WEEK(MONDAY)))
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'month'  %}
                 (FORMAT_DATE(
                     '%Y-%m',
-                    submission_timestamp)
+                    submission_date)
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'quarter'  %}
                 (FORMAT_DATE(
                     '%Y-%m',
-                    DATE_TRUNC(submission_timestamp,
+                    DATE_TRUNC(submission_date,
                     QUARTER))
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'year'  %}
                 (EXTRACT(
-                    YEAR FROM submission_timestamp)
+                    YEAR FROM submission_date)
                 ) AS analysis_basis
                 {% else %}
                 NULL as analysis_basis
@@ -65,21 +65,27 @@ consolidated_ads_spocs.targeted_country AS consolidated_ads_spocs_targeted_count
             FROM
                 (
   SELECT
-    submission_timestamp,
+    DATE(submission_timestamp) AS submission_date,
     advertiser,
     campaign_name,
     targeted_country,
     rate_type,
-    impressions,
-    clicks,
-    revenue
+    SUM(impressions) AS impressions,
+    SUM(clicks) AS clicks,
+    SUM(revenue) AS revenue
   FROM `mozdata.ads.consolidated_ad_metrics_hourly`
+  GROUP BY
+    submission_date,
+    advertiser,
+    campaign_name,
+    targeted_country,
+    rate_type
 )
 
             ) AS consolidated_ads_spocs
         
                     WHERE 
-                    consolidated_ads_spocs.submission_timestamp
+                    consolidated_ads_spocs.submission_date
                     BETWEEN
                     COALESCE(
                         SAFE_CAST(

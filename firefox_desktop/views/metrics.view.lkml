@@ -315,6 +315,24 @@ view: metrics {
 "
   }
 
+  dimension: metrics__memory_distribution__browser_backup_total_backup_size__sum {
+    label: "Browser Backup Total Backup Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.browser_backup_total_backup_size.sum ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Total Backup Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Total Backup Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_total_backup_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total uncompressed size of all profile data included in a completed backup. To reduce fingerprintability, we round to the nearest 1 mebibyte.
+"
+  }
+
   dimension: metrics__counter__browser_engagement_active_ticks {
     label: "Browser Engagement Active Ticks"
     hidden: no
@@ -18379,6 +18397,18 @@ view: metrics__metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics__metrics__memory_distribution__browser_backup_total_backup_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
