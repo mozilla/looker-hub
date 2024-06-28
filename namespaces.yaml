@@ -5283,6 +5283,14 @@ mdn_yari:
       - channel: null
         table: mozdata.mdn_yari.page
       type: table_view
+monitor_backend:
+  explores: {}
+  glean_app: true
+  owners:
+  - rhelmer@mozilla.com
+  pretty_name: Mozilla Monitor (Backend)
+  spoke: looker-spoke-default
+  views: {}
 monitor_frontend:
   explores:
     dashboard_user_journey_funnels:

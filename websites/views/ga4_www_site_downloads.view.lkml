@@ -20,6 +20,11 @@ view: ga4_www_site_downloads {
     type: string
   }
 
+  dimension: campaign_from_event_params {
+    sql: ${TABLE}.campaign_from_event_params ;;
+    type: string
+  }
+
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
