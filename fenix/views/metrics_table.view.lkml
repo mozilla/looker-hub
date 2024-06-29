@@ -1460,6 +1460,25 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__cert_compression_zstd_saved_bytes__count {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zstd_saved_bytes.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Zstd Saved Bytes"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zstd_saved_bytes__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zstd_saved_bytes.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Zstd Saved Bytes"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zstd_saved_bytes__values {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zstd_saved_bytes.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__count {
     sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_frame.count ;;
     type: number
@@ -2882,6 +2901,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__netwerk_eh_link_type {
     sql: ${TABLE}.metrics.labeled_counter.netwerk_eh_link_type ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__netwerk_eh_response_version {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_eh_response_version ;;
     hidden: yes
   }
 
@@ -15317,6 +15341,18 @@ view: metrics_table__metrics__custom_distribution__cert_compression_brotli_saved
 }
 
 view: metrics_table__metrics__custom_distribution__cert_compression_zlib_saved_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cert_compression_zstd_saved_bytes__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
