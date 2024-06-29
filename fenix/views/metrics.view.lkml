@@ -3909,6 +3909,23 @@ ensure it's not too expensive.  This value is only available on Android
     description: "The difference between the length of encoded certificate vs the actual certificate."
   }
 
+  dimension: metrics__custom_distribution__cert_compression_zstd_saved_bytes__sum {
+    label: "Cert Compression Zstd Saved Bytes Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zstd_saved_bytes.sum ;;
+    type: number
+    group_label: "Cert Compression"
+    group_item_label: "Zstd Saved Bytes Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Compression Zstd Saved Bytes Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cert_compression_zstd_saved_bytes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The difference between the length of encoded certificate vs the actual certificate."
+  }
+
   dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__sum {
     label: "Cert Verifier Cert Trust Evaluation Time Sum"
     hidden: no
@@ -6952,6 +6969,23 @@ To be used to validate GIFFT.
     }
 
     description: "Counts different type of link headers that are sent in early hint
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_eh_response_version {
+    label: "Netwerk Eh Response Version"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_eh_response_version ;;
+    group_label: "Netwerk"
+    group_item_label: "Eh Response Version"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk Eh Response Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/netwerk_eh_response_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP protocol version from Early Hints response
 "
   }
 
@@ -19031,6 +19065,47 @@ view: metrics__metrics__labeled_counter__netwerk_eh_link_type {
   }
 }
 
+view: metrics__metrics__labeled_counter__netwerk_eh_response_version {
+  label: "Netwerk - Eh Response Version"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__network_byte_range_request {
   label: "Network - Byte Range Request"
 
@@ -22102,6 +22177,18 @@ view: metrics__metrics__custom_distribution__cert_compression_brotli_saved_bytes
 }
 
 view: metrics__metrics__custom_distribution__cert_compression_zlib_saved_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cert_compression_zstd_saved_bytes__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -353,6 +353,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_eh_link_type}) AS metrics__metrics__labeled_counter__netwerk_eh_link_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_eh_link_type.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__netwerk_eh_response_version {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_eh_response_version}) AS metrics__metrics__labeled_counter__netwerk_eh_response_version ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_eh_response_version.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__network_byte_range_request {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_byte_range_request}) AS metrics__metrics__labeled_counter__network_byte_range_request ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_byte_range_request.document_id} ;;
