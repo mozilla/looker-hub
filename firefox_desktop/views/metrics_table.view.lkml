@@ -2433,6 +2433,13 @@ of the shopping experiment.
 "
   }
 
+  dimension: metrics__labeled_counter__crash_submission_channel_status {
+    sql: ${TABLE}.metrics.labeled_counter.crash_submission_channel_status ;;
+    hidden: yes
+    description: "Collecting XHR channel status on error code when statusCode == 0.
+"
+  }
+
   dimension: metrics__labeled_counter__crash_submission_collector_errors {
     sql: ${TABLE}.metrics.labeled_counter.crash_submission_collector_errors ;;
     hidden: yes

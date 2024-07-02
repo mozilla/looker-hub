@@ -337,9 +337,7 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Crash Submission Failure"
-    description: "How many ping upload responses did we not record as a success or failure
-(in `glean.upload.send_success` or `glean.upload.send_failue`,
-respectively) due to an inconsistency in our internal bookkeeping?
+    description: "Number of failed crash report submissions
 "
   }
 
@@ -348,9 +346,7 @@ respectively) due to an inconsistency in our internal bookkeeping?
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Crash Submission Pending"
-    description: "How many ping upload responses did we not record as a success or failure
-(in `glean.upload.send_success` or `glean.upload.send_failue`,
-respectively) due to an inconsistency in our internal bookkeeping?
+    description: "Number of pending crash report submissions
 "
   }
 
@@ -359,9 +355,7 @@ respectively) due to an inconsistency in our internal bookkeeping?
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Crash Submission Success"
-    description: "How many ping upload responses did we not record as a success or failure
-(in `glean.upload.send_success` or `glean.upload.send_failue`,
-respectively) due to an inconsistency in our internal bookkeeping?
+    description: "Number of successfull crash report submissions
 "
   }
 
@@ -465,17 +459,17 @@ This does not include deletion-request pings.
     group_item_label: "Raw Glean Validation First Run Hour"
   }
 
+  dimension: metrics__labeled_counter__crash_submission_channel_status {
+    sql: ${TABLE}.metrics.labeled_counter.crash_submission_channel_status ;;
+    hidden: yes
+    description: "Collecting XHR channel status on error code when statusCode == 0.
+"
+  }
+
   dimension: metrics__labeled_counter__crash_submission_collector_errors {
     sql: ${TABLE}.metrics.labeled_counter.crash_submission_collector_errors ;;
     hidden: yes
-    description: "A count of the pings submitted, by ping type.
-
-This metric appears in both the metrics and baseline pings.
-
-- On the metrics ping, the counts include the number of pings sent since
-  the last metrics ping (including the last metrics ping)
-- On the baseline ping, the counts include the number of pings send since
-  the last baseline ping (including the last baseline ping)
+    description: "Amount and error name reported when performing crash submission.
 "
   }
 

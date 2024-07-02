@@ -25,6 +25,23 @@ It is possible for a Firefox installation to not have a default profile, but in 
 "
   }
 
+  dimension: metrics__labeled_counter__crash_submission_channel_status {
+    label: "Crash Submission Channel Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.crash_submission_channel_status ;;
+    group_label: "Crash Submission"
+    group_item_label: "Channel Status"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submission Channel Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/crash_submission_channel_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Collecting XHR channel status on error code when statusCode == 0.
+"
+  }
+
   dimension: metrics__labeled_counter__crash_submission_collector_errors {
     label: "Crash Submission Collector Errors"
     hidden: yes
@@ -11472,6 +11489,47 @@ view: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain {
 
 view: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load {
   label: "Cookie Banners - Rule Lookup By Load"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__crash_submission_channel_status {
+  label: "Crash Submission - Channel Status"
 
   dimension: document_id {
     type: string
