@@ -7271,6 +7271,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__sum {
+    label: "Networking Cookie Chips Partition Limit Overflow Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_chips_partition_limit_overflow.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cookie Chips Partition Limit Overflow Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie Chips Partition Limit Overflow Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_cookie_chips_partition_limit_overflow"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of cookie bytes exceeding chips partition limit capacity for a single partition
+"
+  }
+
   dimension: metrics__custom_distribution__networking_cookie_count_part_by_key__sum {
     label: "Networking Cookie Count Part By Key Sum"
     hidden: no
@@ -22441,6 +22459,18 @@ view: metrics__metrics__custom_distribution__network_tls_early_data_bytes_writte
 }
 
 view: metrics__metrics__custom_distribution__networking_cookie_access_fixup_diff__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -1550,6 +1550,26 @@ of the shopping experiment.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_chips_partition_limit_overflow.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Chips Partition Limit Overflow"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_chips_partition_limit_overflow.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Chips Partition Limit Overflow"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_chips_partition_limit_overflow.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_cookie_count_part_by_key__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_part_by_key.count ;;
     type: number
@@ -3821,6 +3841,20 @@ API for the purposes of Validation (hence GVSV).
     sql: ${TABLE}.metrics.rate.networking_set_cookie_partitioned.numerator ;;
     type: number
     group_label: "Metrics Rate Networking Set Cookie Partitioned"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__private_browsing_window_open_during_teardown__denominator {
+    sql: ${TABLE}.metrics.rate.private_browsing_window_open_during_teardown.denominator ;;
+    type: number
+    group_label: "Metrics Rate Private Browsing Window Open During Teardown"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__private_browsing_window_open_during_teardown__numerator {
+    sql: ${TABLE}.metrics.rate.private_browsing_window_open_during_teardown.numerator ;;
+    type: number
+    group_label: "Metrics Rate Private Browsing Window Open During Teardown"
     group_item_label: "Numerator"
   }
 
@@ -12682,6 +12716,18 @@ view: metrics_table__metrics__custom_distribution__network_tls_early_data_bytes_
 }
 
 view: metrics_table__metrics__custom_distribution__networking_cookie_access_fixup_diff__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

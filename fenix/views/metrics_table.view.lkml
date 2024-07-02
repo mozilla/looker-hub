@@ -1878,6 +1878,25 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_chips_partition_limit_overflow.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Chips Partition Limit Overflow"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_chips_partition_limit_overflow.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Chips Partition Limit Overflow"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_chips_partition_limit_overflow.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_cookie_count_part_by_key__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_part_by_key.count ;;
     type: number
@@ -15605,6 +15624,18 @@ view: metrics_table__metrics__custom_distribution__network_tls_early_data_bytes_
 }
 
 view: metrics_table__metrics__custom_distribution__networking_cookie_access_fixup_diff__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
