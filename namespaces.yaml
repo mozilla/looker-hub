@@ -191,6 +191,10 @@ ads:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_consolidated_ads_spocs
+    metric_definitions_ppa_measurements:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_ppa_measurements
   glean_app: false
   owners:
   - cmorales@mozilla.com
@@ -213,6 +217,8 @@ ads:
     metric_definitions_admarketplace:
       type: metric_definitions_view
     metric_definitions_consolidated_ads_spocs:
+      type: metric_definitions_view
+    metric_definitions_ppa_measurements:
       type: metric_definitions_view
     tiles_addressable_inventory_hourly:
       tables:

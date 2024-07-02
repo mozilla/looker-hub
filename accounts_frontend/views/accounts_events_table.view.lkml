@@ -324,6 +324,15 @@ view: accounts_events_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__labeled_boolean__standard_marketing {
+    sql: ${TABLE}.metrics.labeled_boolean.standard_marketing ;;
+    hidden: yes
+    description: "The set of marketing options at the time of an account sign up (standard flow).
+For example, if the user only opted into getting 'news' then only news would be
+marked as true
+"
+  }
+
   dimension: metrics__labeled_boolean__sync_cwts {
     sql: ${TABLE}.metrics.labeled_boolean.sync_cwts ;;
     hidden: yes
@@ -681,6 +690,18 @@ view: accounts_events_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: accounts_events_table__metrics__labeled_boolean__standard_marketing {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
   }
 }
 
