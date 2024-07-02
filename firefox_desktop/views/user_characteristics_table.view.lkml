@@ -393,6 +393,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_build_date {
+    sql: ${TABLE}.metrics.quantity.characteristics_build_date ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Build Date"
+    description: "Firefox build's build date in unix time
+"
+  }
+
   dimension: metrics__quantity__characteristics_color_accentcolor {
     sql: ${TABLE}.metrics.quantity.characteristics_color_accentcolor ;;
     type: number
@@ -879,12 +888,147 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata1 {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata1 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata1"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a simple organge box and used as a control image
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata10 {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata10 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata10"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered with italics, rotation, and shadow-blur.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata11_webgl {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata11_webgl ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata11 Webgl"
+    description: "The sha1 hash of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata12_fingerprintjs1 {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata12_fingerprintjs1 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata12 Fingerprintjs1"
+    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' text canvas
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata13_fingerprintjs2 {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata13_fingerprintjs2 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata13 Fingerprintjs2"
+    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata2 {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata2 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata2"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a bordered triage, and used to test point interpolation
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3 {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata4 {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata4 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata4"
+    description: "The sha1 hash of an image rendered on a canvas. The image is two rotated, semi-transparenct overlapping squares, used to test transparency and point interpolation.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata5 {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata5 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata5"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered normally.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata6 {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata6 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata6"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered with italics, rotation, and shadow-blur.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata7 {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata7 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata7"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered normally.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata8 {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata8 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata8"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered with italics, rotation, and shadow-blur.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata9 {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata9 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata9"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
+"
+  }
+
   dimension: metrics__string__characteristics_changed_media_prefs {
     sql: ${TABLE}.metrics.string.characteristics_changed_media_prefs ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Characteristics Changed Media Prefs"
     description: "Changed media prefs and their values.
+"
+  }
+
+  dimension: metrics__string__characteristics_channel {
+    sql: ${TABLE}.metrics.string.characteristics_channel ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Channel"
+    description: "Firefox build channel
+"
+  }
+
+  dimension: metrics__string__characteristics_cpu_model {
+    sql: ${TABLE}.metrics.string.characteristics_cpu_model ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Cpu Model"
+    description: "CPU model of the user's device
 "
   }
 
@@ -1041,6 +1185,24 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_os_name {
+    sql: ${TABLE}.metrics.string.characteristics_os_name ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Os Name"
+    description: "User's OS name
+"
+  }
+
+  dimension: metrics__string__characteristics_os_version {
+    sql: ${TABLE}.metrics.string.characteristics_os_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Os Version"
+    description: "User's OS version
+"
+  }
+
   dimension: metrics__string__characteristics_pointer_pressure {
     sql: ${TABLE}.metrics.string.characteristics_pointer_pressure ;;
     type: string
@@ -1113,6 +1275,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_version {
+    sql: ${TABLE}.metrics.string.characteristics_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Version"
+    description: "Firefox build version
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
@@ -1142,7 +1313,7 @@ for the purpose of experimentation enrollment.
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Canvasdata1"
-    description: "The base64 encoded form of an image rendered on a canvas. The image is a simple organge box and used as a control image
+    description: "The sha1 hash of an image rendered on a canvas. The image is a simple organge box and used as a control image
 "
   }
 
@@ -1151,7 +1322,7 @@ for the purpose of experimentation enrollment.
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Canvasdata10"
-    description: "The base64 encoded form of an image rendered on a canvas. The image is a font shipped with Firefox rendered with italics, rotation, and shadow-blur.
+    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered with italics, rotation, and shadow-blur.
 "
   }
 
@@ -1160,7 +1331,7 @@ for the purpose of experimentation enrollment.
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Canvasdata11 Webgl"
-    description: "The base64 encoded form of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
+    description: "The sha1 hash of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
 "
   }
 
@@ -1169,7 +1340,7 @@ for the purpose of experimentation enrollment.
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Canvasdata12 Fingerprintjs1"
-    description: "The base64 encoded form of an image rendered on a canvas, it is a copy of fingerprintjs' text canvas
+    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' text canvas
 "
   }
 
@@ -1178,7 +1349,7 @@ for the purpose of experimentation enrollment.
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Canvasdata13 Fingerprintjs2"
-    description: "The base64 encoded form of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
+    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
 "
   }
 
@@ -1187,7 +1358,7 @@ for the purpose of experimentation enrollment.
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Canvasdata2"
-    description: "The base64 encoded form of an image rendered on a canvas. The image is a bordered triage, and used to test point interpolation
+    description: "The sha1 hash of an image rendered on a canvas. The image is a bordered triage, and used to test point interpolation
 "
   }
 
@@ -1196,7 +1367,7 @@ for the purpose of experimentation enrollment.
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Canvasdata3"
-    description: "The base64 encoded form of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
 "
   }
 
@@ -1205,7 +1376,7 @@ for the purpose of experimentation enrollment.
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Canvasdata4"
-    description: "The base64 encoded form of an image rendered on a canvas. The image is two rotated, semi-transparenct overlapping squares, used to test transparency and point interpolation.
+    description: "The sha1 hash of an image rendered on a canvas. The image is two rotated, semi-transparenct overlapping squares, used to test transparency and point interpolation.
 "
   }
 
@@ -1214,7 +1385,7 @@ for the purpose of experimentation enrollment.
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Canvasdata5"
-    description: "The base64 encoded form of an image rendered on a canvas. The image is a local font rendered normally.
+    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered normally.
 "
   }
 
@@ -1223,7 +1394,7 @@ for the purpose of experimentation enrollment.
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Canvasdata6"
-    description: "The base64 encoded form of an image rendered on a canvas. The image is a local font rendered with italics, rotation, and shadow-blur.
+    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered with italics, rotation, and shadow-blur.
 "
   }
 
@@ -1232,7 +1403,7 @@ for the purpose of experimentation enrollment.
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Canvasdata7"
-    description: "The base64 encoded form of an image rendered on a canvas. The image is a system-ui font rendered normally.
+    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered normally.
 "
   }
 
@@ -1241,7 +1412,7 @@ for the purpose of experimentation enrollment.
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Canvasdata8"
-    description: "The base64 encoded form of an image rendered on a canvas. The image is a system-ui font rendered with italics, rotation, and shadow-blur.
+    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered with italics, rotation, and shadow-blur.
 "
   }
 
@@ -1250,7 +1421,7 @@ for the purpose of experimentation enrollment.
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Canvasdata9"
-    description: "The base64 encoded form of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
+    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
 "
   }
 

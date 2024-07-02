@@ -1186,6 +1186,42 @@ broken down by structured ingestion namespace.
 "
   }
 
+  dimension: metrics__rate__private_browsing_window_open_during_teardown__numerator {
+    label: "Private Browsing Window Open During Teardown Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.private_browsing_window_open_during_teardown.numerator ;;
+    type: number
+    group_label: "Private Browsing"
+    group_item_label: "Window Open During Teardown Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Private Browsing Window Open During Teardown Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/private_browsing_window_open_during_teardown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Numerator: How often a new private browsing window is opened while the old private browsing session is still being shut down. Denominator: How many private browsing sessions (are fully exited). Rate: Of all private browsing sessions, how often do we run into the race condition.
+"
+  }
+
+  dimension: metrics__rate__private_browsing_window_open_during_teardown__denominator {
+    label: "Private Browsing Window Open During Teardown Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.private_browsing_window_open_during_teardown.denominator ;;
+    type: number
+    group_label: "Private Browsing"
+    group_item_label: "Window Open During Teardown Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Private Browsing Window Open During Teardown Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/private_browsing_window_open_during_teardown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Numerator: How often a new private browsing window is opened while the old private browsing session is still being shut down. Denominator: How many private browsing sessions (are fully exited). Rate: Of all private browsing sessions, how often do we run into the race condition.
+"
+  }
+
   dimension: metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown {
     label: "Protocolhandler Mailto Handler Prompt Shown"
     hidden: yes
@@ -5395,6 +5431,24 @@ To be used to validate GIFFT.
     }
 
     description: "If we fix up a cookie lastAccessed timestamp that is in the future this metric records the number of seconds that timestamp was off from NOW.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__sum {
+    label: "Networking Cookie Chips Partition Limit Overflow Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_chips_partition_limit_overflow.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cookie Chips Partition Limit Overflow Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie Chips Partition Limit Overflow Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_cookie_chips_partition_limit_overflow"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of cookie bytes exceeding chips partition limit capacity for a single partition
 "
   }
 
@@ -18056,6 +18110,18 @@ view: metrics__metrics__custom_distribution__network_tls_early_data_bytes_writte
 }
 
 view: metrics__metrics__custom_distribution__networking_cookie_access_fixup_diff__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
