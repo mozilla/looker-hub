@@ -291,9 +291,108 @@ view: events_stream_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics {
-    sql: ${TABLE}.metrics ;;
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string__account_user_id_sha256 {
+    sql: ${TABLE}.metrics.string.account_user_id_sha256 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Account User Id Sha256"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+  }
+
+  dimension: metrics__string__relying_party_oauth_client_id {
+    sql: ${TABLE}.metrics.string.relying_party_oauth_client_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Relying Party Oauth Client Id"
+  }
+
+  dimension: metrics__string__relying_party_service {
+    sql: ${TABLE}.metrics.string.relying_party_service ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Relying Party Service"
+  }
+
+  dimension: metrics__string__session_device_type {
+    sql: ${TABLE}.metrics.string.session_device_type ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Session Device Type"
+  }
+
+  dimension: metrics__string__session_entrypoint {
+    sql: ${TABLE}.metrics.string.session_entrypoint ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Session Entrypoint"
+  }
+
+  dimension: metrics__string__session_flow_id {
+    sql: ${TABLE}.metrics.string.session_flow_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Session Flow Id"
+  }
+
+  dimension: metrics__string__utm_campaign {
+    sql: ${TABLE}.metrics.string.utm_campaign ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Utm Campaign"
+  }
+
+  dimension: metrics__string__utm_content {
+    sql: ${TABLE}.metrics.string.utm_content ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Utm Content"
+  }
+
+  dimension: metrics__string__utm_medium {
+    sql: ${TABLE}.metrics.string.utm_medium ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Utm Medium"
+  }
+
+  dimension: metrics__string__utm_source {
+    sql: ${TABLE}.metrics.string.utm_source ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Utm Source"
+  }
+
+  dimension: metrics__string__utm_term {
+    sql: ${TABLE}.metrics.string.utm_term ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Utm Term"
   }
 
   dimension: normalized_app_name {
