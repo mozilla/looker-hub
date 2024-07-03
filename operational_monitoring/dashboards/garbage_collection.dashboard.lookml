@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Gc Budget Overrun
-    name: Gc Budget Overrun_percentile
+  - title: Gc Effectiveness
+    name: Gc Effectiveness_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -28,7 +28,7 @@
       garbage_collection.branch
     ]
     filters:
-      garbage_collection.metric: 'gc_budget_overrun'
+      garbage_collection.metric: 'gc_effectiveness'
       garbage_collection.statistic: percentile
     row: 0
     col: 0
@@ -84,8 +84,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Gc Effectiveness
-    name: Gc Effectiveness_percentile
+  - title: Gc Budget Overrun
+    name: Gc Budget Overrun_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -102,7 +102,7 @@
       garbage_collection.branch
     ]
     filters:
-      garbage_collection.metric: 'gc_effectiveness'
+      garbage_collection.metric: 'gc_budget_overrun'
       garbage_collection.statistic: percentile
     row: 10
     col: 0
@@ -219,8 +219,8 @@
       display: inline
       options:
       - 'Linux'
-      - 'Windows'
       - 'Mac'
+      - 'Windows'
       - 'Other'
       
   
