@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       rollout_of_tab_tray_refactor_ios.branch
     ]
     filters:
-      rollout_of_tab_tray_refactor_ios.metric: 'days_of_use'
+      rollout_of_tab_tray_refactor_ios.metric: 'active_hours'
       rollout_of_tab_tray_refactor_ios.statistic: mean
     row: 0
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       rollout_of_tab_tray_refactor_ios.branch
     ]
     filters:
-      rollout_of_tab_tray_refactor_ios.metric: 'active_hours'
+      rollout_of_tab_tray_refactor_ios.metric: 'days_of_use'
       rollout_of_tab_tray_refactor_ios.statistic: mean
     row: 10
     col: 12

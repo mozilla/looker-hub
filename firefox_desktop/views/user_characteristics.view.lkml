@@ -25,7 +25,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_audio_devices {
     label: "Characteristics Audio Devices"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.characteristics_audio_devices ;;
     type: string
     group_label: "Characteristics"
