@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       ios_password_autofill_rollout_v1240.branch
     ]
     filters:
-      ios_password_autofill_rollout_v1240.metric: 'days_of_use'
+      ios_password_autofill_rollout_v1240.metric: 'active_hours'
       ios_password_autofill_rollout_v1240.statistic: mean
     row: 0
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       ios_password_autofill_rollout_v1240.branch
     ]
     filters:
-      ios_password_autofill_rollout_v1240.metric: 'active_hours'
+      ios_password_autofill_rollout_v1240.metric: 'days_of_use'
       ios_password_autofill_rollout_v1240.statistic: mean
     row: 10
     col: 12

@@ -4704,7 +4704,7 @@ builds.
 
   dimension: metrics__string__extensions_quarantined_domains_listhash {
     label: "Extensions Quarantined Domains Listhash"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.extensions_quarantined_domains_listhash ;;
     type: string
     group_label: "Extensions Quarantined Domains"
@@ -4722,7 +4722,7 @@ builds.
 
   dimension: metrics__quantity__extensions_quarantined_domains_listsize {
     label: "Extensions Quarantined Domains Listsize"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.extensions_quarantined_domains_listsize ;;
     type: number
     group_label: "Extensions Quarantined Domains"
@@ -4740,7 +4740,7 @@ builds.
 
   dimension: metrics__string__extensions_quarantined_domains_remotehash {
     label: "Extensions Quarantined Domains Remotehash"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.extensions_quarantined_domains_remotehash ;;
     type: string
     group_label: "Extensions Quarantined Domains"
@@ -6986,6 +6986,24 @@ To be used to validate GIFFT.
     }
 
     description: "HTTP protocol version from Early Hints response
+"
+  }
+
+  dimension: metrics__counter__netwerk_parent_connect_timeout {
+    label: "Netwerk Parent Connect Timeout"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.netwerk_parent_connect_timeout ;;
+    type: number
+    group_label: "Netwerk"
+    group_item_label: "Parent Connect Timeout"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk Parent Connect Timeout"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/netwerk_parent_connect_timeout"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often the parent-connect-timeout timer is necessary to clear up EarlyHintPreloader
 "
   }
 
@@ -14588,6 +14606,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Httpsfirst Upgraded Schemeless"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/httpsfirst_upgraded_schemeless"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: netwerk_parent_connect_timeout {
+    type: sum
+    sql: ${metrics__counter__netwerk_parent_connect_timeout} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk Parent Connect Timeout"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/netwerk_parent_connect_timeout"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: netwerk_parent_connect_timeout_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__netwerk_parent_connect_timeout: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk Parent Connect Timeout"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/netwerk_parent_connect_timeout"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

@@ -1165,6 +1165,13 @@ view: metrics_table {
     group_item_label: "Metrics Top Sites Count"
   }
 
+  dimension: metrics__counter__netwerk_parent_connect_timeout {
+    sql: ${TABLE}.metrics.counter.netwerk_parent_connect_timeout ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Netwerk Parent Connect Timeout"
+  }
+
   dimension: metrics__counter__networking_residual_cache_folder_count {
     sql: ${TABLE}.metrics.counter.networking_residual_cache_folder_count ;;
     type: number
