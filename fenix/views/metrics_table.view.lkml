@@ -3699,6 +3699,13 @@ view: metrics_table {
     group_item_label: "Metrics Inactive Tabs Count"
   }
 
+  dimension: metrics__quantity__pkcs11_third_party_modules_loaded {
+    sql: ${TABLE}.metrics.quantity.pkcs11_third_party_modules_loaded ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Pkcs11 Third Party Modules Loaded"
+  }
+
   dimension: metrics__quantity__recent_bookmarks_recent_bookmarks_count {
     sql: ${TABLE}.metrics.quantity.recent_bookmarks_recent_bookmarks_count ;;
     type: number
@@ -3787,6 +3794,34 @@ view: metrics_table {
     sql: ${TABLE}.metrics.rate.networking_set_cookie_partitioned.numerator ;;
     type: number
     group_label: "Metrics Rate Networking Set Cookie Partitioned"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__pkcs11_built_in_roots_module__denominator {
+    sql: ${TABLE}.metrics.rate.pkcs11_built_in_roots_module.denominator ;;
+    type: number
+    group_label: "Metrics Rate Pkcs11 Built In Roots Module"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__pkcs11_built_in_roots_module__numerator {
+    sql: ${TABLE}.metrics.rate.pkcs11_built_in_roots_module.numerator ;;
+    type: number
+    group_label: "Metrics Rate Pkcs11 Built In Roots Module"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__pkcs11_nss_cert_db__denominator {
+    sql: ${TABLE}.metrics.rate.pkcs11_nss_cert_db.denominator ;;
+    type: number
+    group_label: "Metrics Rate Pkcs11 Nss Cert Db"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__pkcs11_nss_cert_db__numerator {
+    sql: ${TABLE}.metrics.rate.pkcs11_nss_cert_db.numerator ;;
+    type: number
+    group_label: "Metrics Rate Pkcs11 Nss Cert Db"
     group_item_label: "Numerator"
   }
 

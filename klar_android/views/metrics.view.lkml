@@ -6931,6 +6931,95 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__rate__pkcs11_built_in_roots_module__numerator {
+    label: "Pkcs11 Built In Roots Module Numerator"
+    hidden: yes
+    sql: ${TABLE}.metrics.rate.pkcs11_built_in_roots_module.numerator ;;
+    type: number
+    group_label: "Pkcs11"
+    group_item_label: "Built In Roots Module Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Pkcs11 Built In Roots Module Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pkcs11_built_in_roots_module"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the built-in roots module.
+"
+  }
+
+  dimension: metrics__rate__pkcs11_built_in_roots_module__denominator {
+    label: "Pkcs11 Built In Roots Module Denominator"
+    hidden: yes
+    sql: ${TABLE}.metrics.rate.pkcs11_built_in_roots_module.denominator ;;
+    type: number
+    group_label: "Pkcs11"
+    group_item_label: "Built In Roots Module Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Pkcs11 Built In Roots Module Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pkcs11_built_in_roots_module"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the built-in roots module.
+"
+  }
+
+  dimension: metrics__rate__pkcs11_nss_cert_db__numerator {
+    label: "Pkcs11 Nss Cert Db Numerator"
+    hidden: yes
+    sql: ${TABLE}.metrics.rate.pkcs11_nss_cert_db.numerator ;;
+    type: number
+    group_label: "Pkcs11"
+    group_item_label: "Nss Cert Db Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Pkcs11 Nss Cert Db Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pkcs11_nss_cert_db"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the NSS cert DB.
+"
+  }
+
+  dimension: metrics__rate__pkcs11_nss_cert_db__denominator {
+    label: "Pkcs11 Nss Cert Db Denominator"
+    hidden: yes
+    sql: ${TABLE}.metrics.rate.pkcs11_nss_cert_db.denominator ;;
+    type: number
+    group_label: "Pkcs11"
+    group_item_label: "Nss Cert Db Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Pkcs11 Nss Cert Db Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pkcs11_nss_cert_db"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the NSS cert DB.
+"
+  }
+
+  dimension: metrics__quantity__pkcs11_third_party_modules_loaded {
+    label: "Pkcs11 Third Party Modules Loaded"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.pkcs11_third_party_modules_loaded ;;
+    type: number
+    group_label: "Pkcs11"
+    group_item_label: "Third Party Modules Loaded"
+
+    link: {
+      label: "Glean Dictionary reference for Pkcs11 Third Party Modules Loaded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pkcs11_third_party_modules_loaded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of third-party PKCS#11 modules loaded."
+  }
+
   dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__sum {
     label: "Power Battery Percentage When User Active Sum"
     hidden: no

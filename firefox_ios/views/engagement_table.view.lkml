@@ -89,6 +89,11 @@ view: engagement_table {
     description: "Release channel of the app the profile is using."
   }
 
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.paid_vs_organic ;;
+    type: string
+  }
+
   dimension: wau {
     sql: ${TABLE}.wau ;;
     type: number
