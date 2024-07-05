@@ -366,12 +366,39 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_audio_channels {
+    sql: ${TABLE}.metrics.quantity.characteristics_audio_channels ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Audio Channels"
+    description: "Audio sampling rate
+"
+  }
+
   dimension: metrics__quantity__characteristics_audio_fingerprint {
     sql: ${TABLE}.metrics.quantity.characteristics_audio_fingerprint ;;
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Audio Fingerprint"
     description: "Audio fingerprint of the user. A float number multiplied by 10e7.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_audio_frames {
+    sql: ${TABLE}.metrics.quantity.characteristics_audio_frames ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Audio Frames"
+    description: "Audio frames
+"
+  }
+
+  dimension: metrics__quantity__characteristics_audio_rate {
+    sql: ${TABLE}.metrics.quantity.characteristics_audio_rate ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Audio Rate"
+    description: "Audio sampling rate
 "
   }
 
@@ -906,11 +933,29 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata10software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata10software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata10Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered with italics, rotation, and shadow-blur.
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata11_webgl {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata11_webgl ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Characteristics Canvasdata11 Webgl"
+    description: "The sha1 hash of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata11_webglsoftware {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata11_webglsoftware ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata11 Webglsoftware"
     description: "The sha1 hash of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
 "
   }
@@ -924,6 +969,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata12_fingerprintjs1software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata12_fingerprintjs1software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata12 Fingerprintjs1Software"
+    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' text canvas
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata13_fingerprintjs2 {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata13_fingerprintjs2 ;;
     type: string
@@ -933,11 +987,38 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata13_fingerprintjs2software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata13_fingerprintjs2software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata13 Fingerprintjs2Software"
+    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata1software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata1software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata1Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a simple organge box and used as a control image
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata2 {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata2 ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Characteristics Canvasdata2"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a bordered triage, and used to test point interpolation
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata2software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata2software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata2Software"
     description: "The sha1 hash of an image rendered on a canvas. The image is a bordered triage, and used to test point interpolation
 "
   }
@@ -951,11 +1032,29 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata3software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata4 {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata4 ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Characteristics Canvasdata4"
+    description: "The sha1 hash of an image rendered on a canvas. The image is two rotated, semi-transparenct overlapping squares, used to test transparency and point interpolation.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata4software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata4software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata4Software"
     description: "The sha1 hash of an image rendered on a canvas. The image is two rotated, semi-transparenct overlapping squares, used to test transparency and point interpolation.
 "
   }
@@ -969,11 +1068,29 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata5software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata5software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata5Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered normally.
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata6 {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata6 ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Characteristics Canvasdata6"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered with italics, rotation, and shadow-blur.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata6software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata6software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata6Software"
     description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered with italics, rotation, and shadow-blur.
 "
   }
@@ -987,6 +1104,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata7software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata7software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata7Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered normally.
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata8 {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata8 ;;
     type: string
@@ -996,11 +1122,29 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata8software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata8software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata8Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered with italics, rotation, and shadow-blur.
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata9 {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata9 ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Characteristics Canvasdata9"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata9software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata9software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata9Software"
     description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
 "
   }

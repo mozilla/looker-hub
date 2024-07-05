@@ -91,6 +91,11 @@ view: engagement_clients_table {
     type: string
   }
 
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.paid_vs_organic ;;
+    type: string
+  }
+
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number

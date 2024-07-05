@@ -57,6 +57,7 @@ view: retention_table {
   dimension: is_mobile {
     sql: ${TABLE}.is_mobile ;;
     type: yesno
+    description: "Indicates if this specific entry is used towards calculating mobile DAU."
   }
 
   dimension: is_suspicious_device_client {
@@ -86,6 +87,11 @@ view: retention_table {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     description: "Release channel of the app the profile is using."
+  }
+
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.paid_vs_organic ;;
+    type: string
   }
 
   dimension: ping_sent_metric_date {

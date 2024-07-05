@@ -38,6 +38,7 @@ desktop_engagement_v1_mau,
 desktop_engagement_v1_normalized_channel,
 desktop_engagement_v1_normalized_os,
 desktop_engagement_v1_normalized_os_version,
+desktop_engagement_v1_paid_vs_organic,
 desktop_engagement_v1_startup_profile_selection_reason,
 desktop_engagement_v1_wau,
 
@@ -99,6 +100,7 @@ desktop_engagement_v1.mau AS desktop_engagement_v1_mau,
 desktop_engagement_v1.normalized_channel AS desktop_engagement_v1_normalized_channel,
 desktop_engagement_v1.normalized_os AS desktop_engagement_v1_normalized_os,
 desktop_engagement_v1.normalized_os_version AS desktop_engagement_v1_normalized_os_version,
+desktop_engagement_v1.paid_vs_organic AS desktop_engagement_v1_paid_vs_organic,
 desktop_engagement_v1.startup_profile_selection_reason AS desktop_engagement_v1_startup_profile_selection_reason,
 desktop_engagement_v1.wau AS desktop_engagement_v1_wau,
 
@@ -162,6 +164,7 @@ desktop_engagement_v1_mau,
 desktop_engagement_v1_normalized_channel,
 desktop_engagement_v1_normalized_os,
 desktop_engagement_v1_normalized_os_version,
+desktop_engagement_v1_paid_vs_organic,
 desktop_engagement_v1_startup_profile_selection_reason,
 desktop_engagement_v1_wau,
 
@@ -361,6 +364,12 @@ desktop_engagement_v1_wau,
 
   dimension: normalized_os_version {
     sql: ${TABLE}.desktop_engagement_v1_normalized_os_version ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.desktop_engagement_v1_paid_vs_organic ;;
     type: string
     group_label: "Base Fields"
   }

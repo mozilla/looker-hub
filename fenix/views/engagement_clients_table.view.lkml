@@ -96,6 +96,11 @@ view: engagement_clients_table {
     type: string
   }
 
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.paid_vs_organic ;;
+    type: string
+  }
+
   dimension: play_store_attribution_campaign {
     sql: ${TABLE}.play_store_attribution_campaign ;;
     type: string
