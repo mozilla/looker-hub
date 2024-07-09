@@ -7182,10 +7182,10 @@ operational_monitoring:
             default: release
             options:
             - release
-            - nightly
-            - esr
-            - aurora
             - beta
+            - nightly
+            - aurora
+            - esr
             - default
             - nightly-pine
             - nightly-oak
@@ -8408,12 +8408,12 @@ operational_monitoring:
             default: Darwin - vpn_session
             options:
             - Darwin - vpn_session
-            - iOS - vpn_session
-            - Android - vpn_session
             - Linux - vpn_session
-            - iOS - daemon_session
             - Windows - vpn_session
+            - Android - vpn_session
             - Android - daemon_session
+            - iOS - vpn_session
+            - iOS - daemon_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id192
@@ -9130,11 +9130,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id236
           channel:
-            default: release
+            default: nightly
             options:
-            - release
             - nightly
             - beta
+            - release
           os:
             default: Windows_NT
             options:
