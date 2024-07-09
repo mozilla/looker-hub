@@ -11,13 +11,16 @@ view: metric_definitions_consolidated_ads_spocs {
 SUM(clicks) AS spoc_clicks,
 SUM(revenue) AS spoc_revenue,
 
-                consolidated_ads_spocs_advertiser,
-consolidated_ads_spocs_campaign_name,
+                consolidated_ads_spocs_campaign_name,
 consolidated_ads_spocs_clicks,
+consolidated_ads_spocs_client,
+consolidated_ads_spocs_image,
 consolidated_ads_spocs_impressions,
 consolidated_ads_spocs_rate_type,
 consolidated_ads_spocs_revenue,
 consolidated_ads_spocs_targeted_country,
+consolidated_ads_spocs_title,
+consolidated_ads_spocs_url,
 
                 NULL AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
@@ -50,13 +53,16 @@ consolidated_ads_spocs_targeted_country,
                 (
                     SELECT
                         consolidated_ads_spocs.*,
-                        consolidated_ads_spocs.advertiser AS consolidated_ads_spocs_advertiser,
-consolidated_ads_spocs.campaign_name AS consolidated_ads_spocs_campaign_name,
+                        consolidated_ads_spocs.campaign_name AS consolidated_ads_spocs_campaign_name,
 consolidated_ads_spocs.clicks AS consolidated_ads_spocs_clicks,
+consolidated_ads_spocs.client AS consolidated_ads_spocs_client,
+consolidated_ads_spocs.image AS consolidated_ads_spocs_image,
 consolidated_ads_spocs.impressions AS consolidated_ads_spocs_impressions,
 consolidated_ads_spocs.rate_type AS consolidated_ads_spocs_rate_type,
 consolidated_ads_spocs.revenue AS consolidated_ads_spocs_revenue,
 consolidated_ads_spocs.targeted_country AS consolidated_ads_spocs_targeted_country,
+consolidated_ads_spocs.title AS consolidated_ads_spocs_title,
+consolidated_ads_spocs.url AS consolidated_ads_spocs_url,
 
                     FROM
                     (
@@ -66,10 +72,13 @@ consolidated_ads_spocs.targeted_country AS consolidated_ads_spocs_targeted_count
                 (
   SELECT
     DATE(submission_timestamp) AS submission_date,
-    advertiser,
+    advertiser as client,
     campaign_name,
     targeted_country,
     rate_type,
+    creative_title as title,
+    creative_url as url,
+    image_url as image,
     SUM(impressions) AS impressions,
     SUM(clicks) AS clicks,
     SUM(revenue) AS revenue
@@ -79,7 +88,10 @@ consolidated_ads_spocs.targeted_country AS consolidated_ads_spocs_targeted_count
     advertiser,
     campaign_name,
     targeted_country,
-    rate_type
+    rate_type,
+    creative_title,
+    creative_url,
+    image_url
 )
 
             ) AS consolidated_ads_spocs
@@ -98,13 +110,16 @@ consolidated_ads_spocs.targeted_country AS consolidated_ads_spocs_targeted_count
                 
                 )
             GROUP BY
-                consolidated_ads_spocs_advertiser,
-consolidated_ads_spocs_campaign_name,
+                consolidated_ads_spocs_campaign_name,
 consolidated_ads_spocs_clicks,
+consolidated_ads_spocs_client,
+consolidated_ads_spocs_image,
 consolidated_ads_spocs_impressions,
 consolidated_ads_spocs_rate_type,
 consolidated_ads_spocs_revenue,
 consolidated_ads_spocs_targeted_country,
+consolidated_ads_spocs_title,
+consolidated_ads_spocs_url,
 
                 client_id,
                 analysis_basis ;;
@@ -143,12 +158,6 @@ consolidated_ads_spocs_targeted_country,
     sql: ${TABLE}.spoc_revenue ;;
   }
 
-  dimension: advertiser {
-    sql: ${TABLE}.consolidated_ads_spocs_advertiser ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
   dimension: campaign_name {
     sql: ${TABLE}.consolidated_ads_spocs_campaign_name ;;
     type: string
@@ -158,6 +167,18 @@ consolidated_ads_spocs_targeted_country,
   dimension: clicks {
     sql: ${TABLE}.consolidated_ads_spocs_clicks ;;
     type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: client {
+    sql: ${TABLE}.consolidated_ads_spocs_client ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: image {
+    sql: ${TABLE}.consolidated_ads_spocs_image ;;
+    type: string
     group_label: "Base Fields"
   }
 
@@ -181,6 +202,18 @@ consolidated_ads_spocs_targeted_country,
 
   dimension: targeted_country {
     sql: ${TABLE}.consolidated_ads_spocs_targeted_country ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: title {
+    sql: ${TABLE}.consolidated_ads_spocs_title ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: url {
+    sql: ${TABLE}.consolidated_ads_spocs_url ;;
     type: string
     group_label: "Base Fields"
   }

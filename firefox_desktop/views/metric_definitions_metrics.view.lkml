@@ -11,7 +11,9 @@ view: metric_definitions_metrics {
     (COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "freetext")) > 0, FALSE) OR
     COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "ink")) > 0, FALSE)) AND
     (COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "print")) > 0, FALSE) OR
-    COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "save")) > 0, FALSE))
+    COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "save")) > 0, FALSE)) AND
+    (COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing_highlight_kind, "highlight")) > 0, FALSE) OR
+    COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing_highlight_kind, "free_highlight")) > 0, FALSE))
 ) AS pdf_engagement,
 (
     COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "freetext")) > 0, FALSE)
@@ -28,6 +30,12 @@ view: metric_definitions_metrics {
 (
     COALESCE(SUM(metrics.counter.pdfjs_used) > 0, FALSE)
 ) AS pdf_opening,
+(
+    COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing_highlight_kind, "highlight")) > 0, FALSE)
+) AS pdf_highlight,
+(
+    COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing_highlight_kind, "free_highlight")) > 0, FALSE)
+) AS pdf_free_highlight,
 
                 looker_base_fields_app_name,
 looker_base_fields_app_version,
@@ -235,6 +243,22 @@ looker_base_fields_sample_id,
     sql: ${TABLE}.pdf_opening ;;
   }
 
+  dimension: pdf_highlight {
+    group_label: "Metrics"
+    label: "Pdf Highlight"
+    description: ""
+    type: number
+    sql: ${TABLE}.pdf_highlight ;;
+  }
+
+  dimension: pdf_free_highlight {
+    group_label: "Metrics"
+    label: "Pdf Free Highlight"
+    description: ""
+    type: number
+    sql: ${TABLE}.pdf_free_highlight ;;
+  }
+
   dimension: app_name {
     sql: ${TABLE}.looker_base_fields_app_name ;;
     type: string
@@ -337,6 +361,8 @@ looker_base_fields_sample_id,
       pdf_print,
       pdf_save,
       pdf_opening,
+      pdf_highlight,
+      pdf_free_highlight,
     ]
   }
 
