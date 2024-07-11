@@ -8351,6 +8351,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__networking_os_socket_limit_reached {
+    label: "Networking Os Socket Limit Reached"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.networking_os_socket_limit_reached ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Os Socket Limit Reached"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Os Socket Limit Reached"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_os_socket_limit_reached"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the os socket limit was reached. i.e. CanAttachSocket() returned false.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_proxy_info_type {
     label: "Networking Proxy Info Type"
     hidden: yes
@@ -11357,6 +11375,24 @@ for the purpose of experimentation enrollment.
     }
 
     description: "The size of the database file at startup.
+"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__sum {
+    label: "Glean Database Write Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.sum ;;
+    type: number
+    group_label: "Glean Database"
+    group_item_label: "Write Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Database Write Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_database_write_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time it takes for a write-commit for the Glean database.
 "
   }
 
@@ -14720,6 +14756,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Netwerk Parent Connect Timeout"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/netwerk_parent_connect_timeout"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_os_socket_limit_reached {
+    type: sum
+    sql: ${metrics__counter__networking_os_socket_limit_reached} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Os Socket Limit Reached"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_os_socket_limit_reached"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_os_socket_limit_reached_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__networking_os_socket_limit_reached: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Os Socket Limit Reached"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_os_socket_limit_reached"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -23635,6 +23696,18 @@ view: metrics__metrics__timing_distribution__gfx_webrender_scenebuild_time__valu
 }
 
 view: metrics__metrics__timing_distribution__gfx_webrender_sceneswap_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_database_write_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
