@@ -4641,6 +4641,186 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Favicons Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Favicons Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Browser Backup Favicons Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Favicons Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Favicons Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Browser Backup Favicons Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Favicons Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Places Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Places Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Browser Backup Places Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Places Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Places Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Browser Backup Places Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Places Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Total Backup Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Total Backup Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Browser Backup Total Backup Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Total Backup Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Total Backup Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Browser Backup Total Backup Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Total Backup Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.bucket_count ;;
     type: number
@@ -11601,6 +11781,66 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Urlbar Quick Suggest Ingest Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Urlbar Quick Suggest Ingest Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Urlbar Quick Suggest Ingest Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Urlbar Quick Suggest Ingest Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Urlbar Quick Suggest Ingest Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Urlbar Quick Suggest Ingest Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Urlbar Quick Suggest Ingest Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__wr_framebuild_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.bucket_count ;;
     type: number
@@ -13388,6 +13628,42 @@ view: metrics_table__metrics__timing_distribution__bounce_tracking_protection_pu
   }
 }
 
+view: metrics_table__metrics__timing_distribution__browser_backup_favicons_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_backup_places_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_backup_total_backup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -14769,6 +15045,18 @@ view: metrics_table__metrics__timing_distribution__search_service_startup_time__
 }
 
 view: metrics_table__metrics__timing_distribution__serp_categorization_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__urlbar_quick_suggest_ingest_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
