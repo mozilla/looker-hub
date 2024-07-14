@@ -153,6 +153,24 @@ view: metrics {
 "
   }
 
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__sum {
+    label: "Browser Backup Favicons Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.sum ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Favicons Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Favicons Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_favicons_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total time, in milliseconds, required to back up a profile's favicons database.
+"
+  }
+
   dimension: metrics__quantity__browser_backup_form_history_size {
     label: "Browser Backup Form History Size"
     hidden: no
@@ -204,6 +222,24 @@ view: metrics {
     }
 
     description: "The total file size of the places.sqlite db located in the current profile directory, in kilobytes.
+"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__sum {
+    label: "Browser Backup Places Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.sum ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Places Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Places Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_places_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total time, in milliseconds, required to back up a profile's places database.
 "
   }
 
@@ -330,6 +366,24 @@ view: metrics {
     }
 
     description: "The total uncompressed size of all profile data included in a completed backup. To reduce fingerprintability, we round to the nearest 1 mebibyte.
+"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__sum {
+    label: "Browser Backup Total Backup Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.sum ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Total Backup Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Total Backup Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_total_backup_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total time elapsed, in milliseconds, between the start and end of the profile backup creation process
 "
   }
 
@@ -1735,6 +1789,24 @@ in browser.
     }
 
     description: "The outcome after the app detected that it was running from DMG or an app translocated location and should offer to install and relaunch itself.
+"
+  }
+
+  dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__sum {
+    label: "Urlbar Quick Suggest Ingest Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.sum ;;
+    type: number
+    group_label: "Urlbar"
+    group_item_label: "Quick Suggest Ingest Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Quick Suggest Ingest Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_quick_suggest_ingest_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how long each successful ingest takes in the Firefox Suggest Rust component. Ingests that fail for whatever reason are not included.
 "
   }
 
@@ -18912,6 +18984,42 @@ view: metrics__metrics__timing_distribution__bounce_tracking_protection_purge_du
   }
 }
 
+view: metrics__metrics__timing_distribution__browser_backup_favicons_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__browser_backup_places_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__browser_backup_total_backup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -20293,6 +20401,18 @@ view: metrics__metrics__timing_distribution__search_service_startup_time__values
 }
 
 view: metrics__metrics__timing_distribution__serp_categorization_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__urlbar_quick_suggest_ingest_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
