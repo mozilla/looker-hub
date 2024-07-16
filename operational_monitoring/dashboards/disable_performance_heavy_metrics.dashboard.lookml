@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       disable_performance_heavy_metrics.branch
     ]
     filters:
-      disable_performance_heavy_metrics.metric: 'retained'
+      disable_performance_heavy_metrics.metric: 'active_hours'
       disable_performance_heavy_metrics.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       disable_performance_heavy_metrics.branch
     ]
     filters:
-      disable_performance_heavy_metrics.metric: 'days_of_use'
+      disable_performance_heavy_metrics.metric: 'retained'
       disable_performance_heavy_metrics.statistic: mean
     row: 0
     col: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       disable_performance_heavy_metrics.branch
     ]
     filters:
-      disable_performance_heavy_metrics.metric: 'tagged_sap_searches'
+      disable_performance_heavy_metrics.metric: 'days_of_use'
       disable_performance_heavy_metrics.statistic: mean
     row: 20
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       disable_performance_heavy_metrics.branch
     ]
     filters:
-      disable_performance_heavy_metrics.metric: 'active_hours'
+      disable_performance_heavy_metrics.metric: 'tagged_sap_searches'
       disable_performance_heavy_metrics.statistic: mean
     row: 30
     col: 0

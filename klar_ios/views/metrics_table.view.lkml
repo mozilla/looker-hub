@@ -817,6 +817,66 @@ then the value will be 'custom'.
 "
   }
 
+  dimension: metrics__timing_distribution__glean_database_write_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__glean_upload_send_failure__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.bucket_count ;;
     type: number
@@ -1391,6 +1451,18 @@ view: metrics_table__metrics__memory_distribution__glean_upload_discarded_exceed
 }
 
 view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__glean_database_write_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

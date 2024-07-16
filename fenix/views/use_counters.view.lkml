@@ -10157,6 +10157,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_webkit_font_feature_settings {
+    label: "Use Counter Css Doc Css Webkit Font Feature Settings"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_webkit_font_feature_settings ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Webkit Font Feature Settings"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Webkit Font Feature Settings"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_webkit_font_feature_settings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property -webkit-font-feature-settings. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_webkit_font_smoothing {
     label: "Use Counter Css Doc Css Webkit Font Smoothing"
     hidden: no
@@ -22880,6 +22898,24 @@ view: use_counters {
     }
 
     description: "Whether a page used the CSS property -webkit-flex-wrap. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_webkit_font_feature_settings {
+    label: "Use Counter Css Page Css Webkit Font Feature Settings"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_webkit_font_feature_settings ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Webkit Font Feature Settings"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Webkit Font Feature Settings"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_webkit_font_feature_settings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property -webkit-font-feature-settings. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -57016,6 +57052,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_doc_css_webkit_font_feature_settings {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_webkit_font_feature_settings} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Webkit Font Feature Settings"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_webkit_font_feature_settings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_webkit_font_feature_settings_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_webkit_font_feature_settings: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Webkit Font Feature Settings"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_webkit_font_feature_settings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_doc_css_webkit_font_smoothing {
     type: sum
     sql: ${metrics__counter__use_counter_css_doc_css_webkit_font_smoothing} ;;
@@ -74687,6 +74748,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Page Css Webkit Flex Wrap"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_webkit_flex_wrap"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_webkit_font_feature_settings {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_webkit_font_feature_settings} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Webkit Font Feature Settings"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_webkit_font_feature_settings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_webkit_font_feature_settings_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_webkit_font_feature_settings: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Webkit Font Feature Settings"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_webkit_font_feature_settings"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

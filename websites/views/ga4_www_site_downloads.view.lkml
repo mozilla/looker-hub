@@ -20,6 +20,11 @@ view: ga4_www_site_downloads {
     type: string
   }
 
+  dimension: campaign_from_event_params {
+    sql: ${TABLE}.campaign_from_event_params ;;
+    type: string
+  }
+
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
@@ -46,6 +51,16 @@ view: ga4_www_site_downloads {
     type: string
   }
 
+  dimension: manual_campaign_id {
+    sql: ${TABLE}.manual_campaign_id ;;
+    type: string
+  }
+
+  dimension: manual_term {
+    sql: ${TABLE}.manual_term ;;
+    type: string
+  }
+
   dimension: medium {
     sql: ${TABLE}.medium ;;
     type: string
@@ -63,6 +78,21 @@ view: ga4_www_site_downloads {
 
   dimension: source {
     sql: ${TABLE}.source ;;
+    type: string
+  }
+
+  dimension: traffic_source_medium {
+    sql: ${TABLE}.traffic_source_medium ;;
+    type: string
+  }
+
+  dimension: traffic_source_name {
+    sql: ${TABLE}.traffic_source_name ;;
+    type: string
+  }
+
+  dimension: traffic_source_source {
+    sql: ${TABLE}.traffic_source_source ;;
     type: string
   }
 

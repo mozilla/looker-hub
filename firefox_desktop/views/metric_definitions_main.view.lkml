@@ -28,6 +28,10 @@ SUM(
     mozfun.map.get_key(mozfun.hist.extract(payload.histograms.http_pageload_is_ssl).values, 1)
 ) AS ssl_loads_v1,
 COUNT(payload.histograms.http_pageload_is_ssl) / COUNT(*) AS http_pageload_is_ssl_ratio_v1,
+COALESCE(SUM(mozfun.map.get_key(payload.processes.parent.keyed_scalars.os_environment_invoked_to_handle, '.pdf')), 0) AS pdf_invoked_to_handle,
+COALESCE(SUM(mozfun.map.get_key(payload.processes.parent.keyed_scalars.os_environment_launched_to_handle, '.pdf')), 0) AS pdf_launched_to_handle,
+    COALESCE(SUM(mozfun.map.get_key(payload.processes.parent.keyed_scalars.os_environment_invoked_to_handle, '.pdf')), 0) +
+    COALESCE(SUM(mozfun.map.get_key(payload.processes.parent.keyed_scalars.os_environment_launched_to_handle, '.pdf')), 0) AS pdf_launched_or_invoked_to_handle,
 
                 looker_base_fields_app_name,
 looker_base_fields_app_version,
@@ -325,6 +329,30 @@ looker_base_fields_sample_id,
     sql: ${TABLE}.http_pageload_is_ssl_ratio_v1 ;;
   }
 
+  dimension: pdf_invoked_to_handle {
+    group_label: "Metrics"
+    label: "PDF Invoked to Handle"
+    description: "Firefox was invoked (i.e., was already running and was not launched) to handle a pdf file"
+    type: number
+    sql: ${TABLE}.pdf_invoked_to_handle ;;
+  }
+
+  dimension: pdf_launched_to_handle {
+    group_label: "Metrics"
+    label: "PDF Launched to Handle"
+    description: "Firefox was launched afresh (i.e., was not already running) to handle a pdf file"
+    type: number
+    sql: ${TABLE}.pdf_launched_to_handle ;;
+  }
+
+  dimension: pdf_launched_or_invoked_to_handle {
+    group_label: "Metrics"
+    label: "PDF Launched or Invoked"
+    description: "Firefox was launched or invoked to handle a pdf file"
+    type: number
+    sql: ${TABLE}.pdf_launched_or_invoked_to_handle ;;
+  }
+
   dimension: app_name {
     sql: ${TABLE}.looker_base_fields_app_name ;;
     type: string
@@ -438,6 +466,9 @@ looker_base_fields_sample_id,
       non_ssl_loads_v1,
       ssl_loads_v1,
       http_pageload_is_ssl_ratio_v1,
+      pdf_invoked_to_handle,
+      pdf_launched_to_handle,
+      pdf_launched_or_invoked_to_handle,
     ]
   }
 

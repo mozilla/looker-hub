@@ -107,6 +107,11 @@ view: desktop_retention {
     description: "Normalized OS Version"
   }
 
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.paid_vs_organic ;;
+    type: string
+  }
+
   dimension: ping_sent_metric_date {
     sql: ${TABLE}.ping_sent_metric_date ;;
     type: number

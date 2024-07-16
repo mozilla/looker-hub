@@ -661,6 +661,20 @@ view: metrics_table {
     group_item_label: "Httpsfirst Upgraded Schemeless"
   }
 
+  dimension: metrics__counter__netwerk_parent_connect_timeout {
+    sql: ${TABLE}.metrics.counter.netwerk_parent_connect_timeout ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Netwerk Parent Connect Timeout"
+  }
+
+  dimension: metrics__counter__networking_os_socket_limit_reached {
+    sql: ${TABLE}.metrics.counter.networking_os_socket_limit_reached ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Os Socket Limit Reached"
+  }
+
   dimension: metrics__counter__networking_residual_cache_folder_count {
     sql: ${TABLE}.metrics.counter.networking_residual_cache_folder_count ;;
     type: number
@@ -864,6 +878,25 @@ view: metrics_table {
     group_item_label: "Webauthn Get Success"
   }
 
+  dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__count {
+    sql: ${TABLE}.metrics.custom_distribution.bounce_tracking_protection_num_hosts_per_purge_run.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Bounce Tracking Protection Num Hosts Per Purge Run"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__sum {
+    sql: ${TABLE}.metrics.custom_distribution.bounce_tracking_protection_num_hosts_per_purge_run.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Bounce Tracking Protection Num Hosts Per Purge Run"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__values {
+    sql: ${TABLE}.metrics.custom_distribution.bounce_tracking_protection_num_hosts_per_purge_run.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__count {
     sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.count ;;
     type: number
@@ -899,6 +932,25 @@ view: metrics_table {
 
   dimension: metrics__custom_distribution__cert_compression_zlib_saved_bytes__values {
     sql: ${TABLE}.metrics.custom_distribution.cert_compression_zlib_saved_bytes.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zstd_saved_bytes__count {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zstd_saved_bytes.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Zstd Saved Bytes"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zstd_saved_bytes__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zstd_saved_bytes.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Zstd Saved Bytes"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zstd_saved_bytes__values {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zstd_saved_bytes.values ;;
     hidden: yes
   }
 
@@ -1222,6 +1274,25 @@ view: metrics_table {
 
   dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__values {
     sql: ${TABLE}.metrics.custom_distribution.networking_cookie_access_fixup_diff.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_chips_partition_limit_overflow.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Chips Partition Limit Overflow"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_chips_partition_limit_overflow.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Chips Partition Limit Overflow"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_chips_partition_limit_overflow.values ;;
     hidden: yes
   }
 
@@ -2191,6 +2262,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__netwerk_eh_response_version {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_eh_response_version ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__network_byte_range_request {
     sql: ${TABLE}.metrics.labeled_counter.network_byte_range_request ;;
     hidden: yes
@@ -2286,8 +2362,18 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_http_response_status_code {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_response_status_code ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_http_response_version {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_response_version ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_http_to_https_upgrade_reason {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_to_https_upgrade_reason ;;
     hidden: yes
   }
 
@@ -2783,6 +2869,13 @@ view: metrics_table {
     group_item_label: "Gpu Process Unstable Launch Attempts"
   }
 
+  dimension: metrics__quantity__pkcs11_third_party_modules_loaded {
+    sql: ${TABLE}.metrics.quantity.pkcs11_third_party_modules_loaded ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Pkcs11 Third Party Modules Loaded"
+  }
+
   dimension: metrics__quantity__shortcuts_shortcuts_on_home_number {
     sql: ${TABLE}.metrics.quantity.shortcuts_shortcuts_on_home_number ;;
     type: number
@@ -2871,6 +2964,34 @@ view: metrics_table {
     sql: ${TABLE}.metrics.rate.networking_set_cookie_partitioned.numerator ;;
     type: number
     group_label: "Metrics Rate Networking Set Cookie Partitioned"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__pkcs11_built_in_roots_module__denominator {
+    sql: ${TABLE}.metrics.rate.pkcs11_built_in_roots_module.denominator ;;
+    type: number
+    group_label: "Metrics Rate Pkcs11 Built In Roots Module"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__pkcs11_built_in_roots_module__numerator {
+    sql: ${TABLE}.metrics.rate.pkcs11_built_in_roots_module.numerator ;;
+    type: number
+    group_label: "Metrics Rate Pkcs11 Built In Roots Module"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__pkcs11_nss_cert_db__denominator {
+    sql: ${TABLE}.metrics.rate.pkcs11_nss_cert_db.denominator ;;
+    type: number
+    group_label: "Metrics Rate Pkcs11 Nss Cert Db"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__pkcs11_nss_cert_db__numerator {
+    sql: ${TABLE}.metrics.rate.pkcs11_nss_cert_db.numerator ;;
+    type: number
+    group_label: "Metrics Rate Pkcs11 Nss Cert Db"
     group_item_label: "Numerator"
   }
 
@@ -5190,6 +5311,65 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__gfx_scroll_present_latency__values {
     sql: ${TABLE}.metrics.timing_distribution.gfx_scroll_present_latency.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.values ;;
     hidden: yes
   }
 
@@ -11014,6 +11194,18 @@ view: metrics_table__events__extra {
   }
 }
 
+view: metrics_table__metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__cert_compression_brotli_saved_bytes__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -11027,6 +11219,18 @@ view: metrics_table__metrics__custom_distribution__cert_compression_brotli_saved
 }
 
 view: metrics_table__metrics__custom_distribution__cert_compression_zlib_saved_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cert_compression_zstd_saved_bytes__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -11231,6 +11435,18 @@ view: metrics_table__metrics__custom_distribution__network_tls_early_data_bytes_
 }
 
 view: metrics_table__metrics__custom_distribution__networking_cookie_access_fixup_diff__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -12107,6 +12323,18 @@ view: metrics_table__metrics__timing_distribution__gfx_content_paint_time__value
 }
 
 view: metrics_table__metrics__timing_distribution__gfx_scroll_present_latency__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__glean_database_write_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

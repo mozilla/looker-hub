@@ -5,6 +5,42 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: user_characteristics {
+  dimension: metrics__quantity__characteristics_any_pointer_type {
+    label: "Characteristics Any Pointer Type"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_any_pointer_type ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Any Pointer Type"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Any Pointer Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_any_pointer_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Union of pointers available. We apply union to determine if the user have both coarse and fine pointer.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_audio_channels {
+    label: "Characteristics Audio Channels"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_audio_channels ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Audio Channels"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Audio Channels"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_audio_channels"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Audio sampling rate
+"
+  }
+
   dimension: metrics__text2__characteristics_audio_devices {
     label: "Characteristics Audio Devices"
     hidden: no
@@ -38,6 +74,42 @@ view: user_characteristics {
     }
 
     description: "Audio fingerprint of the user. A float number multiplied by 10e7.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_audio_frames {
+    label: "Characteristics Audio Frames"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_audio_frames ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Audio Frames"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Audio Frames"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_audio_frames"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Audio frames
+"
+  }
+
+  dimension: metrics__quantity__characteristics_audio_rate {
+    label: "Characteristics Audio Rate"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_audio_rate ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Audio Rate"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Audio Rate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_audio_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Audio sampling rate
 "
   }
 
@@ -77,10 +149,28 @@ view: user_characteristics {
 "
   }
 
-  dimension: metrics__text2__characteristics_canvasdata1 {
+  dimension: metrics__quantity__characteristics_build_date {
+    label: "Characteristics Build Date"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_build_date ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Build Date"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Build Date"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_build_date"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Firefox build's build date in unix time
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata1 {
     label: "Characteristics Canvasdata1"
     hidden: no
-    sql: ${TABLE}.metrics.text2.characteristics_canvasdata1 ;;
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata1 ;;
     type: string
     group_label: "Characteristics"
     group_item_label: "Canvasdata1"
@@ -91,14 +181,14 @@ view: user_characteristics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The base64 encoded form of an image rendered on a canvas. The image is a simple organge box and used as a control image
+    description: "The sha1 hash of an image rendered on a canvas. The image is a simple organge box and used as a control image
 "
   }
 
-  dimension: metrics__text2__characteristics_canvasdata10 {
+  dimension: metrics__string__characteristics_canvasdata10 {
     label: "Characteristics Canvasdata10"
     hidden: no
-    sql: ${TABLE}.metrics.text2.characteristics_canvasdata10 ;;
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata10 ;;
     type: string
     group_label: "Characteristics"
     group_item_label: "Canvasdata10"
@@ -109,14 +199,32 @@ view: user_characteristics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The base64 encoded form of an image rendered on a canvas. The image is a font shipped with Firefox rendered with italics, rotation, and shadow-blur.
+    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered with italics, rotation, and shadow-blur.
 "
   }
 
-  dimension: metrics__text2__characteristics_canvasdata11_webgl {
+  dimension: metrics__string__characteristics_canvasdata10software {
+    label: "Characteristics Canvasdata10Software"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata10software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata10Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata10Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata10software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered with italics, rotation, and shadow-blur.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata11_webgl {
     label: "Characteristics Canvasdata11 Webgl"
     hidden: no
-    sql: ${TABLE}.metrics.text2.characteristics_canvasdata11_webgl ;;
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata11_webgl ;;
     type: string
     group_label: "Characteristics"
     group_item_label: "Canvasdata11 Webgl"
@@ -127,14 +235,32 @@ view: user_characteristics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The base64 encoded form of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
+    description: "The sha1 hash of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
 "
   }
 
-  dimension: metrics__text2__characteristics_canvasdata12_fingerprintjs1 {
+  dimension: metrics__string__characteristics_canvasdata11_webglsoftware {
+    label: "Characteristics Canvasdata11 Webglsoftware"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata11_webglsoftware ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata11 Webglsoftware"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata11 Webglsoftware"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata11_webglsoftware"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata12_fingerprintjs1 {
     label: "Characteristics Canvasdata12 Fingerprintjs1"
     hidden: no
-    sql: ${TABLE}.metrics.text2.characteristics_canvasdata12_fingerprintjs1 ;;
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata12_fingerprintjs1 ;;
     type: string
     group_label: "Characteristics"
     group_item_label: "Canvasdata12 Fingerprintjs1"
@@ -145,14 +271,32 @@ view: user_characteristics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The base64 encoded form of an image rendered on a canvas, it is a copy of fingerprintjs' text canvas
+    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' text canvas
 "
   }
 
-  dimension: metrics__text2__characteristics_canvasdata13_fingerprintjs2 {
+  dimension: metrics__string__characteristics_canvasdata12_fingerprintjs1software {
+    label: "Characteristics Canvasdata12 Fingerprintjs1Software"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata12_fingerprintjs1software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata12 Fingerprintjs1Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata12 Fingerprintjs1Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata12_fingerprintjs1software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' text canvas
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata13_fingerprintjs2 {
     label: "Characteristics Canvasdata13 Fingerprintjs2"
     hidden: no
-    sql: ${TABLE}.metrics.text2.characteristics_canvasdata13_fingerprintjs2 ;;
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata13_fingerprintjs2 ;;
     type: string
     group_label: "Characteristics"
     group_item_label: "Canvasdata13 Fingerprintjs2"
@@ -163,14 +307,50 @@ view: user_characteristics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The base64 encoded form of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
+    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
 "
   }
 
-  dimension: metrics__text2__characteristics_canvasdata2 {
+  dimension: metrics__string__characteristics_canvasdata13_fingerprintjs2software {
+    label: "Characteristics Canvasdata13 Fingerprintjs2Software"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata13_fingerprintjs2software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata13 Fingerprintjs2Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata13 Fingerprintjs2Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata13_fingerprintjs2software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata1software {
+    label: "Characteristics Canvasdata1Software"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata1software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata1Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata1Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata1software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a simple organge box and used as a control image
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata2 {
     label: "Characteristics Canvasdata2"
     hidden: no
-    sql: ${TABLE}.metrics.text2.characteristics_canvasdata2 ;;
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata2 ;;
     type: string
     group_label: "Characteristics"
     group_item_label: "Canvasdata2"
@@ -181,14 +361,32 @@ view: user_characteristics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The base64 encoded form of an image rendered on a canvas. The image is a bordered triage, and used to test point interpolation
+    description: "The sha1 hash of an image rendered on a canvas. The image is a bordered triage, and used to test point interpolation
 "
   }
 
-  dimension: metrics__text2__characteristics_canvasdata3 {
+  dimension: metrics__string__characteristics_canvasdata2software {
+    label: "Characteristics Canvasdata2Software"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata2software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata2Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata2Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata2software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a bordered triage, and used to test point interpolation
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3 {
     label: "Characteristics Canvasdata3"
     hidden: no
-    sql: ${TABLE}.metrics.text2.characteristics_canvasdata3 ;;
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3 ;;
     type: string
     group_label: "Characteristics"
     group_item_label: "Canvasdata3"
@@ -199,14 +397,32 @@ view: user_characteristics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The base64 encoded form of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
 "
   }
 
-  dimension: metrics__text2__characteristics_canvasdata4 {
+  dimension: metrics__string__characteristics_canvasdata3software {
+    label: "Characteristics Canvasdata3Software"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata3Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata3software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata4 {
     label: "Characteristics Canvasdata4"
     hidden: no
-    sql: ${TABLE}.metrics.text2.characteristics_canvasdata4 ;;
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata4 ;;
     type: string
     group_label: "Characteristics"
     group_item_label: "Canvasdata4"
@@ -217,14 +433,32 @@ view: user_characteristics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The base64 encoded form of an image rendered on a canvas. The image is two rotated, semi-transparenct overlapping squares, used to test transparency and point interpolation.
+    description: "The sha1 hash of an image rendered on a canvas. The image is two rotated, semi-transparenct overlapping squares, used to test transparency and point interpolation.
 "
   }
 
-  dimension: metrics__text2__characteristics_canvasdata5 {
+  dimension: metrics__string__characteristics_canvasdata4software {
+    label: "Characteristics Canvasdata4Software"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata4software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata4Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata4Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata4software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is two rotated, semi-transparenct overlapping squares, used to test transparency and point interpolation.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata5 {
     label: "Characteristics Canvasdata5"
     hidden: no
-    sql: ${TABLE}.metrics.text2.characteristics_canvasdata5 ;;
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata5 ;;
     type: string
     group_label: "Characteristics"
     group_item_label: "Canvasdata5"
@@ -235,14 +469,32 @@ view: user_characteristics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The base64 encoded form of an image rendered on a canvas. The image is a local font rendered normally.
+    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered normally.
 "
   }
 
-  dimension: metrics__text2__characteristics_canvasdata6 {
+  dimension: metrics__string__characteristics_canvasdata5software {
+    label: "Characteristics Canvasdata5Software"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata5software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata5Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata5Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata5software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered normally.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata6 {
     label: "Characteristics Canvasdata6"
     hidden: no
-    sql: ${TABLE}.metrics.text2.characteristics_canvasdata6 ;;
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata6 ;;
     type: string
     group_label: "Characteristics"
     group_item_label: "Canvasdata6"
@@ -253,14 +505,32 @@ view: user_characteristics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The base64 encoded form of an image rendered on a canvas. The image is a local font rendered with italics, rotation, and shadow-blur.
+    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered with italics, rotation, and shadow-blur.
 "
   }
 
-  dimension: metrics__text2__characteristics_canvasdata7 {
+  dimension: metrics__string__characteristics_canvasdata6software {
+    label: "Characteristics Canvasdata6Software"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata6software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata6Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata6Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata6software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered with italics, rotation, and shadow-blur.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata7 {
     label: "Characteristics Canvasdata7"
     hidden: no
-    sql: ${TABLE}.metrics.text2.characteristics_canvasdata7 ;;
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata7 ;;
     type: string
     group_label: "Characteristics"
     group_item_label: "Canvasdata7"
@@ -271,14 +541,32 @@ view: user_characteristics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The base64 encoded form of an image rendered on a canvas. The image is a system-ui font rendered normally.
+    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered normally.
 "
   }
 
-  dimension: metrics__text2__characteristics_canvasdata8 {
+  dimension: metrics__string__characteristics_canvasdata7software {
+    label: "Characteristics Canvasdata7Software"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata7software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata7Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata7Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata7software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered normally.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata8 {
     label: "Characteristics Canvasdata8"
     hidden: no
-    sql: ${TABLE}.metrics.text2.characteristics_canvasdata8 ;;
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata8 ;;
     type: string
     group_label: "Characteristics"
     group_item_label: "Canvasdata8"
@@ -289,14 +577,32 @@ view: user_characteristics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The base64 encoded form of an image rendered on a canvas. The image is a system-ui font rendered with italics, rotation, and shadow-blur.
+    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered with italics, rotation, and shadow-blur.
 "
   }
 
-  dimension: metrics__text2__characteristics_canvasdata9 {
+  dimension: metrics__string__characteristics_canvasdata8software {
+    label: "Characteristics Canvasdata8Software"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata8software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata8Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata8Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata8software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered with italics, rotation, and shadow-blur.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata9 {
     label: "Characteristics Canvasdata9"
     hidden: no
-    sql: ${TABLE}.metrics.text2.characteristics_canvasdata9 ;;
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata9 ;;
     type: string
     group_label: "Characteristics"
     group_item_label: "Canvasdata9"
@@ -307,7 +613,25 @@ view: user_characteristics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The base64 encoded form of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
+    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata9software {
+    label: "Characteristics Canvasdata9Software"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata9software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata9Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata9Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata9software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
 "
   }
 
@@ -326,6 +650,24 @@ view: user_characteristics {
     }
 
     description: "Changed media prefs and their values.
+"
+  }
+
+  dimension: metrics__string__characteristics_channel {
+    label: "Characteristics Channel"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_channel ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Channel"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Channel"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_channel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Firefox build channel
 "
   }
 
@@ -542,6 +884,42 @@ view: user_characteristics {
     }
 
     description: "The CSS system-color Selecteditemtext.
+"
+  }
+
+  dimension: metrics__string__characteristics_cpu_model {
+    label: "Characteristics Cpu Model"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_cpu_model ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Cpu Model"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Cpu Model"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_cpu_model"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "CPU model of the user's device
+"
+  }
+
+  dimension: metrics__text2__characteristics_errors {
+    label: "Characteristics Errors"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_errors ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Errors occured on C++ side of data collection
 "
   }
 
@@ -1013,6 +1391,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_ice_foundations {
+    label: "Characteristics Ice Foundations"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_ice_foundations ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Ice Foundations"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Ice Foundations"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_ice_foundations"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Unique ICE foundations occurance count and the standard deviation of latencies
+"
+  }
+
   dimension: metrics__quantity__characteristics_inner_height {
     label: "Characteristics Inner Height"
     hidden: no
@@ -1082,6 +1478,24 @@ view: user_characteristics {
     }
 
     description: "What LookAndFeel(InvertedColors) reports.
+"
+  }
+
+  dimension: metrics__text2__characteristics_js_errors {
+    label: "Characteristics Js Errors"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_js_errors ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Js Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Js Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_js_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Errors occured on JavaScript side of data collection
 "
   }
 
@@ -1211,6 +1625,42 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__quantity__characteristics_motion_decimals {
+    label: "Characteristics Motion Decimals"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_motion_decimals ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Motion Decimals"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Motion Decimals"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_motion_decimals"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "devicemotion event's decimal places count
+"
+  }
+
+  dimension: metrics__quantity__characteristics_motion_freq {
+    label: "Characteristics Motion Freq"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_motion_freq ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Motion Freq"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Motion Freq"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_motion_freq"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "devicemotion event's frequency
+"
+  }
+
   dimension: metrics__quantity__characteristics_orientation_angle {
     label: "Characteristics Orientation Angle"
     hidden: no
@@ -1226,6 +1676,114 @@ view: user_characteristics {
     }
 
     description: "Orientation angle of the screen
+"
+  }
+
+  dimension: metrics__quantity__characteristics_orientation_decimals {
+    label: "Characteristics Orientation Decimals"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_orientation_decimals ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Orientation Decimals"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Orientation Decimals"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_orientation_decimals"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "deviceorientation event's decimal places count
+"
+  }
+
+  dimension: metrics__quantity__characteristics_orientation_freq {
+    label: "Characteristics Orientation Freq"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_orientation_freq ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Orientation Freq"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Orientation Freq"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_orientation_freq"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "deviceorientation event's frequency
+"
+  }
+
+  dimension: metrics__quantity__characteristics_orientationabs_decimals {
+    label: "Characteristics Orientationabs Decimals"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_orientationabs_decimals ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Orientationabs Decimals"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Orientationabs Decimals"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_orientationabs_decimals"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "deviceorientationabsolute event's decimal places count
+"
+  }
+
+  dimension: metrics__quantity__characteristics_orientationabs_freq {
+    label: "Characteristics Orientationabs Freq"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_orientationabs_freq ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Orientationabs Freq"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Orientationabs Freq"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_orientationabs_freq"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "deviceorientationabsolute event's frequency
+"
+  }
+
+  dimension: metrics__string__characteristics_os_name {
+    label: "Characteristics Os Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_os_name ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Os Name"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Os Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_os_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "User's OS name
+"
+  }
+
+  dimension: metrics__string__characteristics_os_version {
+    label: "Characteristics Os Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_os_version ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Os Version"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Os Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_os_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "User's OS version
 "
   }
 
@@ -1298,6 +1856,150 @@ view: user_characteristics {
     }
 
     description: "The value of window.devicePixelRatio multiplied by 100 to include some of the decimal places
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pointer_height {
+    label: "Characteristics Pointer Height"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_pointer_height ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Pointer Height"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pointer Height"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pointer_height"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Height of user's pointer
+"
+  }
+
+  dimension: metrics__string__characteristics_pointer_pressure {
+    label: "Characteristics Pointer Pressure"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_pointer_pressure ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Pointer Pressure"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pointer Pressure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pointer_pressure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Pressure of user's pointer
+"
+  }
+
+  dimension: metrics__string__characteristics_pointer_tangentinal_pressure {
+    label: "Characteristics Pointer Tangentinal Pressure"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_pointer_tangentinal_pressure ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Pointer Tangentinal Pressure"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pointer Tangentinal Pressure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pointer_tangentinal_pressure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Tangential Pressure of user's pointer
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pointer_tiltx {
+    label: "Characteristics Pointer Tiltx"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_pointer_tiltx ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Pointer Tiltx"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pointer Tiltx"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pointer_tiltx"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "TiltX of user's pointer
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pointer_tilty {
+    label: "Characteristics Pointer Tilty"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_pointer_tilty ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Pointer Tilty"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pointer Tilty"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pointer_tilty"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "TiltY of user's pointer
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pointer_twist {
+    label: "Characteristics Pointer Twist"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_pointer_twist ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Pointer Twist"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pointer Twist"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pointer_twist"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Twist of user's pointer
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pointer_type {
+    label: "Characteristics Pointer Type"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_pointer_type ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Pointer Type"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pointer Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pointer_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Pointer type of the user's primary pointer device.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pointer_width {
+    label: "Characteristics Pointer Width"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_pointer_width ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Pointer Width"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pointer Width"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pointer_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Width of user's pointer
 "
   }
 
@@ -1787,6 +2489,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_touch_rotation_angle {
+    label: "Characteristics Touch Rotation Angle"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_touch_rotation_angle ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Touch Rotation Angle"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Touch Rotation Angle"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_touch_rotation_angle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Rotation angle of user's touch
+"
+  }
+
   dimension: metrics__boolean__characteristics_use_document_colors {
     label: "Characteristics Use Document Colors"
     hidden: no
@@ -1802,6 +2522,24 @@ view: user_characteristics {
     }
 
     description: "This is the derived PreferenceSheet::Prefs::mUseDocumentColors value.
+"
+  }
+
+  dimension: metrics__string__characteristics_version {
+    label: "Characteristics Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_version ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Version"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Firefox build version
 "
   }
 
@@ -1954,140 +2692,6 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
     description: "A JSON string containing any payload properties not present in the schema"
-  }
-
-  dimension: client_info__android_sdk_version {
-    sql: ${TABLE}.client_info.android_sdk_version ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "Android Sdk Version"
-    description: "The optional Android specific SDK version of the software running on this hardware device."
-  }
-
-  dimension: client_info__app_build {
-    sql: ${TABLE}.client_info.app_build ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "App Build"
-    description: "The build identifier generated by the CI system (e.g. \"1234/A\"). For language bindings that provide automatic detection for this value, (e.g. Android/Kotlin), in the unlikely event that the build identifier can not be retrieved from the OS, it is set to \"inaccessible\". For other language bindings, if the value was not provided through configuration, this metric gets set to `Unknown`."
-  }
-
-  dimension: client_info__app_channel {
-    sql: ${TABLE}.client_info.app_channel ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "App Channel"
-    description: "The channel the application is being distributed on."
-  }
-
-  dimension: client_info__app_display_version {
-    sql: ${TABLE}.client_info.app_display_version ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "App Display Version"
-    description: "The user visible version string (e.g. \"1.0.3\").  In the unlikely event that the display version can not be retrieved, it is set to \"inaccessible\"."
-  }
-
-  dimension: client_info__architecture {
-    sql: ${TABLE}.client_info.architecture ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "Architecture"
-    description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
-  }
-
-  dimension: client_info__build_date {
-    sql: ${TABLE}.client_info.build_date ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "Build Date"
-    description: "The date & time the application was built"
-  }
-
-  dimension: client_info__client_id {
-    sql: ${TABLE}.client_info.client_id ;;
-    hidden: yes
-    description: "A UUID uniquely identifying the client."
-  }
-
-  dimension: client_info__device_manufacturer {
-    sql: ${TABLE}.client_info.device_manufacturer ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "Device Manufacturer"
-    description: "The manufacturer of the device the application is running on. Not set if the device manufacturer can't be determined (e.g. on Desktop)."
-  }
-
-  dimension: client_info__device_model {
-    sql: ${TABLE}.client_info.device_model ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "Device Model"
-    description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
-  }
-
-  dimension: client_info__first_run_date {
-    sql: ${TABLE}.client_info.first_run_date ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "First Run Date"
-    description: "The date of the first run of the application."
-  }
-
-  dimension: client_info__locale {
-    sql: ${TABLE}.client_info.locale ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "Locale"
-    description: "The locale of the application during initialization (e.g. \"es-ES\"). If the locale can't be determined on the system, the value is [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers), to indicate \"undetermined\"."
-  }
-
-  dimension: client_info__os {
-    sql: ${TABLE}.client_info.os ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "Os"
-    description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
-  }
-
-  dimension: client_info__os_version {
-    sql: ${TABLE}.client_info.os_version ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "Os Version"
-    description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
-  }
-
-  dimension: client_info__session_count {
-    sql: ${TABLE}.client_info.session_count ;;
-    type: number
-    group_label: "Client Info"
-    group_item_label: "Session Count"
-    description: "An optional running counter of the number of sessions for a client."
-  }
-
-  dimension: client_info__session_id {
-    sql: ${TABLE}.client_info.session_id ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "Session Id"
-    description: "An optional UUID uniquely identifying the client's current session."
-  }
-
-  dimension: client_info__telemetry_sdk_build {
-    sql: ${TABLE}.client_info.telemetry_sdk_build ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "Telemetry Sdk Build"
-    description: "The version of the Glean SDK"
-  }
-
-  dimension: client_info__windows_build_number {
-    sql: ${TABLE}.client_info.windows_build_number ;;
-    type: number
-    group_label: "Client Info"
-    group_item_label: "Windows Build Number"
-    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
   }
 
   dimension: document_id {
@@ -2299,46 +2903,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
   }
 
-  dimension: ping_info__end_time {
-    sql: ${TABLE}.ping_info.end_time ;;
-    type: string
-    group_label: "Ping Info"
-    group_item_label: "End Time"
-  }
-
-  dimension: ping_info__experiments {
-    sql: ${TABLE}.ping_info.experiments ;;
-    hidden: yes
-  }
-
-  dimension: ping_info__ping_type {
-    sql: ${TABLE}.ping_info.ping_type ;;
-    type: string
-    group_label: "Ping Info"
-    group_item_label: "Ping Type"
-  }
-
-  dimension: ping_info__reason {
-    sql: ${TABLE}.ping_info.reason ;;
-    type: string
-    group_label: "Ping Info"
-    group_item_label: "Reason"
-  }
-
-  dimension: ping_info__seq {
-    sql: ${TABLE}.ping_info.seq ;;
-    type: number
-    group_label: "Ping Info"
-    group_item_label: "Seq"
-  }
-
-  dimension: ping_info__start_time {
-    sql: ${TABLE}.ping_info.start_time ;;
-    type: string
-    group_label: "Ping Info"
-    group_item_label: "Start Time"
-  }
-
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
@@ -2360,36 +2924,6 @@ The labels are the `category.name` identifier of the metric.
     label: "Metadata Header: Parsed Date"
   }
 
-  dimension_group: ping_info__parsed_end {
-    sql: ${TABLE}.ping_info.parsed_end_time ;;
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    label: "Ping Info: Parsed End Time"
-  }
-
-  dimension_group: ping_info__parsed_start {
-    sql: ${TABLE}.ping_info.parsed_start_time ;;
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    label: "Ping Info: Parsed Start Time"
-  }
-
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
@@ -2403,11 +2937,6 @@ The labels are the `category.name` identifier of the metric.
       year,
     ]
     description: "Time when the ingestion edge server accepted this message"
-  }
-
-  measure: clients {
-    type: count_distinct
-    sql: ${client_info__client_id} ;;
   }
 
   measure: ping_count {
@@ -2471,12 +3000,6 @@ view: user_characteristics__metrics__labeled_counter__glean_error_invalid_label 
     sql: ${value} ;;
     hidden: no
   }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${user_characteristics.client_info__client_id} end ;;
-    hidden: no
-  }
 }
 
 view: user_characteristics__metrics__labeled_counter__glean_error_invalid_overflow {
@@ -2510,12 +3033,6 @@ view: user_characteristics__metrics__labeled_counter__glean_error_invalid_overfl
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${user_characteristics.client_info__client_id} end ;;
     hidden: no
   }
 }
@@ -2553,12 +3070,6 @@ view: user_characteristics__metrics__labeled_counter__glean_error_invalid_state 
     sql: ${value} ;;
     hidden: no
   }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${user_characteristics.client_info__client_id} end ;;
-    hidden: no
-  }
 }
 
 view: user_characteristics__metrics__labeled_counter__glean_error_invalid_value {
@@ -2594,12 +3105,6 @@ view: user_characteristics__metrics__labeled_counter__glean_error_invalid_value 
     sql: ${value} ;;
     hidden: no
   }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${user_characteristics.client_info__client_id} end ;;
-    hidden: no
-  }
 }
 
 view: user_characteristics__events {
@@ -2633,33 +3138,5 @@ view: user_characteristics__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
-  }
-}
-
-view: user_characteristics__ping_info__experiments {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value__branch {
-    sql: ${TABLE}.value.branch ;;
-    type: string
-    group_label: "Value"
-    group_item_label: "Branch"
-  }
-
-  dimension: value__extra__enrollment_id {
-    sql: ${TABLE}.value.extra.enrollment_id ;;
-    type: string
-    group_label: "Value Extra"
-    group_item_label: "Enrollment Id"
-  }
-
-  dimension: value__extra__type {
-    sql: ${TABLE}.value.extra.type ;;
-    type: string
-    group_label: "Value Extra"
-    group_item_label: "Type"
   }
 }

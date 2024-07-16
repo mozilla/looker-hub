@@ -10,8 +10,7 @@ view: metric_definitions_mobile_active_users_aggregates_v1 {
                 SUM(dau) AS mobile_daily_active_users_v1,
 SUM(IF(FORMAT_DATE('%m-%d', submission_date) BETWEEN '11-18' AND '12-15', dau, 0)) / 28 AS mobile_dau_kpi_v1,
 
-                mobile_active_users_aggregates_v1_active_hours,
-mobile_active_users_aggregates_v1_adjust_network,
+                mobile_active_users_aggregates_v1_adjust_network,
 mobile_active_users_aggregates_v1_app_name,
 mobile_active_users_aggregates_v1_app_version,
 mobile_active_users_aggregates_v1_app_version_is_major_release,
@@ -39,7 +38,6 @@ mobile_active_users_aggregates_v1_os_version,
 mobile_active_users_aggregates_v1_os_version_major,
 mobile_active_users_aggregates_v1_os_version_minor,
 mobile_active_users_aggregates_v1_segment,
-mobile_active_users_aggregates_v1_uri_count,
 mobile_active_users_aggregates_v1_wau,
 mobile_active_users_aggregates_v1_weekly_users,
 
@@ -74,8 +72,7 @@ mobile_active_users_aggregates_v1_weekly_users,
                 (
                     SELECT
                         mobile_active_users_aggregates_v1.*,
-                        mobile_active_users_aggregates_v1.active_hours AS mobile_active_users_aggregates_v1_active_hours,
-mobile_active_users_aggregates_v1.adjust_network AS mobile_active_users_aggregates_v1_adjust_network,
+                        mobile_active_users_aggregates_v1.adjust_network AS mobile_active_users_aggregates_v1_adjust_network,
 mobile_active_users_aggregates_v1.app_name AS mobile_active_users_aggregates_v1_app_name,
 mobile_active_users_aggregates_v1.app_version AS mobile_active_users_aggregates_v1_app_version,
 mobile_active_users_aggregates_v1.app_version_is_major_release AS mobile_active_users_aggregates_v1_app_version_is_major_release,
@@ -103,7 +100,6 @@ mobile_active_users_aggregates_v1.os_version AS mobile_active_users_aggregates_v
 mobile_active_users_aggregates_v1.os_version_major AS mobile_active_users_aggregates_v1_os_version_major,
 mobile_active_users_aggregates_v1.os_version_minor AS mobile_active_users_aggregates_v1_os_version_minor,
 mobile_active_users_aggregates_v1.segment AS mobile_active_users_aggregates_v1_segment,
-mobile_active_users_aggregates_v1.uri_count AS mobile_active_users_aggregates_v1_uri_count,
 mobile_active_users_aggregates_v1.wau AS mobile_active_users_aggregates_v1_wau,
 mobile_active_users_aggregates_v1.weekly_users AS mobile_active_users_aggregates_v1_weekly_users,
 
@@ -133,8 +129,7 @@ mobile_active_users_aggregates_v1.weekly_users AS mobile_active_users_aggregates
                 
                 )
             GROUP BY
-                mobile_active_users_aggregates_v1_active_hours,
-mobile_active_users_aggregates_v1_adjust_network,
+                mobile_active_users_aggregates_v1_adjust_network,
 mobile_active_users_aggregates_v1_app_name,
 mobile_active_users_aggregates_v1_app_version,
 mobile_active_users_aggregates_v1_app_version_is_major_release,
@@ -162,7 +157,6 @@ mobile_active_users_aggregates_v1_os_version,
 mobile_active_users_aggregates_v1_os_version_major,
 mobile_active_users_aggregates_v1_os_version_minor,
 mobile_active_users_aggregates_v1_segment,
-mobile_active_users_aggregates_v1_uri_count,
 mobile_active_users_aggregates_v1_wau,
 mobile_active_users_aggregates_v1_weekly_users,
 
@@ -211,12 +205,6 @@ mobile_active_users_aggregates_v1_weekly_users,
 "
     type: number
     sql: ${TABLE}.mobile_dau_kpi_v1 ;;
-  }
-
-  dimension: active_hours {
-    sql: ${TABLE}.mobile_active_users_aggregates_v1_active_hours ;;
-    type: number
-    group_label: "Base Fields"
   }
 
   dimension: adjust_network {
@@ -385,12 +373,6 @@ mobile_active_users_aggregates_v1_weekly_users,
   dimension: segment {
     sql: ${TABLE}.mobile_active_users_aggregates_v1_segment ;;
     type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: uri_count {
-    sql: ${TABLE}.mobile_active_users_aggregates_v1_uri_count ;;
-    type: number
     group_label: "Base Fields"
   }
 

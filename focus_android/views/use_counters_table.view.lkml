@@ -4238,6 +4238,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css Webkit Flex Wrap"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_webkit_font_feature_settings {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_webkit_font_feature_settings ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Webkit Font Feature Settings"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_webkit_font_smoothing {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_webkit_font_smoothing ;;
     type: number
@@ -9185,6 +9192,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Webkit Flex Wrap"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_webkit_font_feature_settings {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_webkit_font_feature_settings ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Webkit Font Feature Settings"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_webkit_font_smoothing {

@@ -113,6 +113,11 @@ view: desktop_engagement {
     description: "Normalized Operating System Version"
   }
 
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.paid_vs_organic ;;
+    type: string
+  }
+
   dimension: startup_profile_selection_reason {
     sql: ${TABLE}.startup_profile_selection_reason ;;
     type: string

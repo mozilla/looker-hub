@@ -114,6 +114,24 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__timing_distribution__glean_database_write_time__sum {
+    label: "Glean Database Write Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.sum ;;
+    type: number
+    group_label: "Glean Database"
+    group_item_label: "Write Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Database Write Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/glean_database_write_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time it takes for a write-commit for the Glean database.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes
@@ -1512,6 +1530,18 @@ view: metrics__metrics__memory_distribution__glean_upload_discarded_exceeding_pi
 }
 
 view: metrics__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_database_write_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

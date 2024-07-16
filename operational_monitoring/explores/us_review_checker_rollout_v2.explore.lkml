@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/rollout_of_share_of_voice_for_sponsored_topsites.view.lkml"
+include: "/looker-hub/operational_monitoring/views/us_review_checker_rollout_v2.view.lkml"
 
-explore: rollout_of_share_of_voice_for_sponsored_topsites {
+explore: us_review_checker_rollout_v2 {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
