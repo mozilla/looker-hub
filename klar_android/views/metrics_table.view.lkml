@@ -1368,6 +1368,26 @@ the tracking protection settings panel from the toolbar.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__geolocation_accuracy__count {
+    sql: ${TABLE}.metrics.custom_distribution.geolocation_accuracy.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Geolocation Accuracy"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__geolocation_accuracy__sum {
+    sql: ${TABLE}.metrics.custom_distribution.geolocation_accuracy.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Geolocation Accuracy"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__geolocation_accuracy__values {
+    sql: ${TABLE}.metrics.custom_distribution.geolocation_accuracy.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__count {
     sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_peak_pixel_count.count ;;
     type: number
@@ -2203,6 +2223,13 @@ the tracking protection settings panel from the toolbar.
     description: "Indicates whether or not migration was successful for each nsIDataStorage."
   }
 
+  dimension: metrics__labeled_boolean__geolocation_linux_provider {
+    sql: ${TABLE}.metrics.labeled_boolean.geolocation_linux_provider ;;
+    hidden: yes
+    description: "Which system provider are we using on Linux
+"
+  }
+
   dimension: metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
     sql: ${TABLE}.metrics.labeled_boolean.media_playback_device_hardware_decoder_support ;;
     hidden: yes
@@ -2571,6 +2598,20 @@ Uses a single label due to only labeled counters being supported
     sql: ${TABLE}.metrics.labeled_counter.formautofill_form_submission_heuristic ;;
     hidden: yes
     description: "The heuristic that detected the form submission."
+  }
+
+  dimension: metrics__labeled_counter__geolocation_fallback {
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_fallback ;;
+    hidden: yes
+    description: "Whether the default provider falled back to NetworkGeolocationProvider.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_request_result {
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_request_result ;;
+    hidden: yes
+    description: "The result for each geolocation request. Success label will only happen once for each request, even if it's a watch request.
+"
   }
 
   dimension: metrics__labeled_counter__gfx_content_frame_time_reason {
@@ -12209,6 +12250,18 @@ view: metrics_table__metrics__custom_distribution__geckoview_per_document_site_o
   }
 }
 
+view: metrics_table__metrics__custom_distribution__geolocation_accuracy__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -12702,6 +12755,18 @@ view: metrics_table__metrics__labeled_boolean__cookie_banners_private_window_ser
 }
 
 view: metrics_table__metrics__labeled_boolean__data_storage_migration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__geolocation_linux_provider {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

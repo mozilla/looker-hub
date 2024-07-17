@@ -23,6 +23,12 @@ view: desktop_installs_table {
     description: "Attribution Download Source"
   }
 
+  dimension: attribution_dltoken {
+    sql: ${TABLE}.attribution_dltoken ;;
+    type: string
+    description: "Attribution Download Token - Unique token generated for the Firefox download"
+  }
+
   dimension: attribution_experiment {
     sql: ${TABLE}.attribution_experiment ;;
     type: string

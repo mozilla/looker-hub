@@ -1206,6 +1206,24 @@ broken down by structured ingestion namespace.
 "
   }
 
+  dimension: metrics__labeled_string__places_places_database_corruption_handling_stage {
+    label: "Places Places Database Corruption Handling Stage"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.places_places_database_corruption_handling_stage ;;
+    type: string
+    group_label: "Places"
+    group_item_label: "Places Database Corruption Handling Stage"
+
+    link: {
+      label: "Glean Dictionary reference for Places Places Database Corruption Handling Stage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_places_database_corruption_handling_stage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES - stage reached when trying to fix a database corruption, see Places::Database::eCorruptDBReplaceStage.
+"
+  }
+
   dimension: metrics__labeled_counter__private_attribution_database {
     label: "Private Attribution Database"
     hidden: yes
@@ -1620,6 +1638,23 @@ success - search service successfully initialized.
     }
 
     description: "The time duration it takes for the search service to start up.
+"
+  }
+
+  dimension: metrics__labeled_counter__serp_ads_blocked_count {
+    label: "Serp Ads Blocked Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.serp_ads_blocked_count ;;
+    group_label: "Serp"
+    group_item_label: "Ads Blocked Count"
+
+    link: {
+      label: "Glean Dictionary reference for Serp Ads Blocked Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/serp_ads_blocked_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the specific type of block.
 "
   }
 
@@ -3817,6 +3852,76 @@ API for the purposes of Validation (hence GVSV).
     }
 
     description: "The version of the Gecko engine, example: 74.0a1 Mirror of `geckoview.version` for validation of migrated data.
+"
+  }
+
+  dimension: metrics__custom_distribution__geolocation_accuracy__sum {
+    label: "Geolocation Accuracy Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.geolocation_accuracy.sum ;;
+    type: number
+    group_label: "Geolocation"
+    group_item_label: "Accuracy Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation Accuracy Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/geolocation_accuracy"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Accuracy returned by the Geolocation API
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_fallback {
+    label: "Geolocation Fallback"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_fallback ;;
+    group_label: "Geolocation"
+    group_item_label: "Fallback"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation Fallback"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/geolocation_fallback"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the default provider falled back to NetworkGeolocationProvider.
+"
+  }
+
+  dimension: metrics__labeled_boolean__geolocation_linux_provider {
+    label: "Geolocation Linux Provider"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.geolocation_linux_provider ;;
+    type: string
+    group_label: "Geolocation"
+    group_item_label: "Linux Provider"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation Linux Provider"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/geolocation_linux_provider"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which system provider are we using on Linux
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_request_result {
+    label: "Geolocation Request Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_request_result ;;
+    group_label: "Geolocation"
+    group_item_label: "Request Result"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation Request Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/geolocation_request_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The result for each geolocation request. Success label will only happen once for each request, even if it's a watch request.
 "
   }
 
@@ -14037,6 +14142,88 @@ view: metrics__metrics__labeled_counter__formautofill_form_submission_heuristic 
   }
 }
 
+view: metrics__metrics__labeled_counter__geolocation_fallback {
+  label: "Geolocation - Fallback"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_request_result {
+  label: "Geolocation - Request Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
   label: "Gfx Content Frame Time - Reason"
 
@@ -17770,6 +17957,47 @@ view: metrics__metrics__labeled_counter__search_service_initialization_status {
   }
 }
 
+view: metrics__metrics__labeled_counter__serp_ads_blocked_count {
+  label: "Serp - Ads Blocked Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
   label: "Tls - Xyber Intolerance Reason"
 
@@ -18336,6 +18564,18 @@ view: metrics__metrics__custom_distribution__geckoview_per_document_site_origins
   }
 }
 
+view: metrics__metrics__custom_distribution__geolocation_accuracy__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -18828,6 +19068,18 @@ view: metrics__metrics__labeled_boolean__data_storage_migration {
   }
 }
 
+view: metrics__metrics__labeled_boolean__geolocation_linux_provider {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics__metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -18865,6 +19117,18 @@ view: metrics__metrics__labeled_boolean__startup_run_from_dmg_install_outcome {
 }
 
 view: metrics__metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics__metrics__labeled_string__places_places_database_corruption_handling_stage {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -2956,6 +2956,76 @@ API for the purposes of Validation (hence GVSV).
 "
   }
 
+  dimension: metrics__custom_distribution__geolocation_accuracy__sum {
+    label: "Geolocation Accuracy Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.geolocation_accuracy.sum ;;
+    type: number
+    group_label: "Geolocation"
+    group_item_label: "Accuracy Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation Accuracy Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/geolocation_accuracy"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Accuracy returned by the Geolocation API
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_fallback {
+    label: "Geolocation Fallback"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_fallback ;;
+    group_label: "Geolocation"
+    group_item_label: "Fallback"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation Fallback"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/geolocation_fallback"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the default provider falled back to NetworkGeolocationProvider.
+"
+  }
+
+  dimension: metrics__labeled_boolean__geolocation_linux_provider {
+    label: "Geolocation Linux Provider"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.geolocation_linux_provider ;;
+    type: string
+    group_label: "Geolocation"
+    group_item_label: "Linux Provider"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation Linux Provider"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/geolocation_linux_provider"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which system provider are we using on Linux
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_request_result {
+    label: "Geolocation Request Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_request_result ;;
+    group_label: "Geolocation"
+    group_item_label: "Request Result"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation Request Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/geolocation_request_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The result for each geolocation request. Success label will only happen once for each request, even if it's a watch request.
+"
+  }
+
   dimension: metrics__string__gfx_adapter_primary_description {
     label: "Gfx Adapter Primary Description"
     hidden: no
@@ -13302,6 +13372,88 @@ view: metrics__metrics__labeled_counter__formautofill_form_submission_heuristic 
   }
 }
 
+view: metrics__metrics__labeled_counter__geolocation_fallback {
+  label: "Geolocation - Fallback"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_request_result {
+  label: "Geolocation - Request Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
   label: "Gfx Content Frame Time - Reason"
 
@@ -17314,6 +17466,18 @@ view: metrics__metrics__custom_distribution__geckoview_per_document_site_origins
   }
 }
 
+view: metrics__metrics__custom_distribution__geolocation_accuracy__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -17807,6 +17971,18 @@ view: metrics__metrics__labeled_boolean__cookie_banners_private_window_service_m
 }
 
 view: metrics__metrics__labeled_boolean__data_storage_migration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__geolocation_linux_provider {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
