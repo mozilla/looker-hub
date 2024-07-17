@@ -7405,7 +7405,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_doc_css_position_try_options {
     label: "Use Counter Css Doc Css Position Try Options"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try_options ;;
     type: number
     group_label: "Use Counter Css Doc"
@@ -20149,7 +20149,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_page_css_position_try_options {
     label: "Use Counter Css Page Css Position Try Options"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try_options ;;
     type: number
     group_label: "Use Counter Css Page"
