@@ -645,6 +645,96 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_mathml1 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml1 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml1"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__quantity__characteristics_mathml10 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml10 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml10"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__quantity__characteristics_mathml2 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml2 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml2"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__quantity__characteristics_mathml3 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml3 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml3"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__quantity__characteristics_mathml4 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml4 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml4"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__quantity__characteristics_mathml5 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml5 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml5"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__quantity__characteristics_mathml6 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml6 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml6"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__quantity__characteristics_mathml7 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml7 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml7"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__quantity__characteristics_mathml8 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml8 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml8"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__quantity__characteristics_mathml9 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml9 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml9"
+    description: "Width of the drawn MathML element
+"
+  }
+
   dimension: metrics__quantity__characteristics_max_touch_points {
     sql: ${TABLE}.metrics.quantity.characteristics_max_touch_points ;;
     type: number
