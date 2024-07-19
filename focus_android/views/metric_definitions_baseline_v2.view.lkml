@@ -246,7 +246,7 @@ looker_base_fields_user_agent__version,
     needs to be aggregated by `submission_date`. If it is not aggregated by `submission_date`, it is
     similar to a \"days of use\" metric, and not DAU.
     
-    For more information, refer to [the DAU description in the Mozilla Data Documentation](https://docs.telemetry.mozilla.org/concepts/terminology.html#dau).
+    For more information, refer to [the DAU description in Confluence](https://mozilla-hub.atlassian.net/wiki/spaces/DATA/pages/314704478/Daily+Active+Users+DAU+Metric).
     For questions please contact bochocki@mozilla.com or firefox-kpi@mozilla.com.
 "
     type: number

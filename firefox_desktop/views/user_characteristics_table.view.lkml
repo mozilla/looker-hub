@@ -208,6 +208,24 @@ view: user_characteristics_table {
 "
   }
 
+  dimension: metrics__boolean__characteristics_monochrome {
+    sql: ${TABLE}.metrics.boolean.characteristics_monochrome ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Monochrome"
+    description: "Whether the user's device is monochrome
+"
+  }
+
+  dimension: metrics__boolean__characteristics_pdf_viewer {
+    sql: ${TABLE}.metrics.boolean.characteristics_pdf_viewer ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Pdf Viewer"
+    description: "PDF viewer support reported by the navigator
+"
+  }
+
   dimension: metrics__boolean__characteristics_prefers_reduced_motion {
     sql: ${TABLE}.metrics.boolean.characteristics_prefers_reduced_motion ;;
     type: yesno
@@ -1434,6 +1452,24 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics String"
     group_item_label: "Characteristics Os Version"
     description: "User's OS version
+"
+  }
+
+  dimension: metrics__string__characteristics_oscpu {
+    sql: ${TABLE}.metrics.string.characteristics_oscpu ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Oscpu"
+    description: "User's OS CPU reported by the navigator
+"
+  }
+
+  dimension: metrics__string__characteristics_platform {
+    sql: ${TABLE}.metrics.string.characteristics_platform ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Platform"
+    description: "Platform reported by the navigator
 "
   }
 

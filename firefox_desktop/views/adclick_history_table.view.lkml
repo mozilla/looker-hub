@@ -17,12 +17,6 @@ view: adclick_history_table {
     description: "Unique ID for the client installation."
   }
 
-  dimension: sample_id {
-    sql: ${TABLE}.sample_id ;;
-    type: number
-    description: "Sample ID to limit query results during an analysis."
-  }
-
   sql_table_name: `mozdata.firefox_desktop.adclick_history` ;;
 }
 
