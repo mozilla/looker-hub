@@ -118,6 +118,11 @@ view: events_stream_table {
     hidden: yes
   }
 
+  dimension: event {
+    sql: ${TABLE}.event ;;
+    type: string
+  }
+
   dimension: event_category {
     sql: ${TABLE}.event_category ;;
     type: string

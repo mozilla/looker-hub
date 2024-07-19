@@ -208,6 +208,24 @@ view: user_characteristics_table {
 "
   }
 
+  dimension: metrics__boolean__characteristics_monochrome {
+    sql: ${TABLE}.metrics.boolean.characteristics_monochrome ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Monochrome"
+    description: "Whether the user's device is monochrome
+"
+  }
+
+  dimension: metrics__boolean__characteristics_pdf_viewer {
+    sql: ${TABLE}.metrics.boolean.characteristics_pdf_viewer ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Pdf Viewer"
+    description: "PDF viewer support reported by the navigator
+"
+  }
+
   dimension: metrics__boolean__characteristics_prefers_reduced_motion {
     sql: ${TABLE}.metrics.boolean.characteristics_prefers_reduced_motion ;;
     type: yesno
@@ -642,6 +660,96 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Inner Width"
     description: "Inner width of user's browser.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_mathml1 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml1 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml1"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__quantity__characteristics_mathml10 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml10 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml10"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__quantity__characteristics_mathml2 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml2 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml2"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__quantity__characteristics_mathml3 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml3 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml3"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__quantity__characteristics_mathml4 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml4 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml4"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__quantity__characteristics_mathml5 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml5 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml5"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__quantity__characteristics_mathml6 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml6 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml6"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__quantity__characteristics_mathml7 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml7 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml7"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__quantity__characteristics_mathml8 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml8 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml8"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__quantity__characteristics_mathml9 {
+    sql: ${TABLE}.metrics.quantity.characteristics_mathml9 ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Mathml9"
+    description: "Width of the drawn MathML element
 "
   }
 
@@ -1344,6 +1452,24 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics String"
     group_item_label: "Characteristics Os Version"
     description: "User's OS version
+"
+  }
+
+  dimension: metrics__string__characteristics_oscpu {
+    sql: ${TABLE}.metrics.string.characteristics_oscpu ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Oscpu"
+    description: "User's OS CPU reported by the navigator
+"
+  }
+
+  dimension: metrics__string__characteristics_platform {
+    sql: ${TABLE}.metrics.string.characteristics_platform ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Platform"
+    description: "Platform reported by the navigator
 "
   }
 

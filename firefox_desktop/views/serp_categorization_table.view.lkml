@@ -222,6 +222,13 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__object__serp_experiment_info {
+    sql: ${TABLE}.metrics.object.serp_experiment_info ;;
+    hidden: yes
+    description: "Whether the client is enrolled in a specified experiment and if so, which branch the client is assigned to. The target experiment is specified in the Nimbus config by creating a \"targetExperiment\" key and setting its value to the experiment's slug (and ensuring the featureId is \"search\").
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
