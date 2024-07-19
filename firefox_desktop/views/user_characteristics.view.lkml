@@ -1805,6 +1805,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__boolean__characteristics_monochrome {
+    label: "Characteristics Monochrome"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_monochrome ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Monochrome"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Monochrome"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_monochrome"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the user's device is monochrome
+"
+  }
+
   dimension: metrics__quantity__characteristics_motion_decimals {
     label: "Characteristics Motion Decimals"
     hidden: no
@@ -1967,6 +1985,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_oscpu {
+    label: "Characteristics Oscpu"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_oscpu ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Oscpu"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Oscpu"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_oscpu"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "User's OS CPU reported by the navigator
+"
+  }
+
   dimension: metrics__quantity__characteristics_outer_height {
     label: "Characteristics Outer Height"
     hidden: no
@@ -2003,6 +2039,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__boolean__characteristics_pdf_viewer {
+    label: "Characteristics Pdf Viewer"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_pdf_viewer ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Pdf Viewer"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pdf Viewer"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pdf_viewer"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PDF viewer support reported by the navigator
+"
+  }
+
   dimension: metrics__quantity__characteristics_pixel_depth {
     label: "Characteristics Pixel Depth"
     hidden: no
@@ -2036,6 +2090,24 @@ view: user_characteristics {
     }
 
     description: "The value of window.devicePixelRatio multiplied by 100 to include some of the decimal places
+"
+  }
+
+  dimension: metrics__string__characteristics_platform {
+    label: "Characteristics Platform"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_platform ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Platform"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Platform"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_platform"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Platform reported by the navigator
 "
   }
 

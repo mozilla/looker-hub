@@ -4,10 +4,11 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: metric_definitions_active_users_aggregates_v1 {
+view: metric_definitions_firefox_ios_retention_view {
   derived_table: {
     sql: SELECT
-                SUM(dau) AS daily_active_users_v2,
+                SUM(retained_week_4) / SUM(active_metric_date) AS retention_rate_v1,
+SUM(retained_week_4_new_profiles) / SUM(new_profiles_metric_date) AS new_profile_retention_rate_v1,
 
                 looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
@@ -40,60 +41,50 @@ looker_base_fields_sample_id,
 looker_base_fields_user_agent__browser,
 looker_base_fields_user_agent__os,
 looker_base_fields_user_agent__version,
-active_users_aggregates_v1_adjust_network,
-active_users_aggregates_v1_app_name,
-active_users_aggregates_v1_app_version,
-active_users_aggregates_v1_app_version_is_major_release,
-active_users_aggregates_v1_app_version_major,
-active_users_aggregates_v1_app_version_minor,
-active_users_aggregates_v1_app_version_patch_revision,
-active_users_aggregates_v1_attributed,
-active_users_aggregates_v1_attribution_medium,
-active_users_aggregates_v1_attribution_source,
-active_users_aggregates_v1_channel,
-active_users_aggregates_v1_city,
-active_users_aggregates_v1_country,
-active_users_aggregates_v1_daily_users,
-active_users_aggregates_v1_dau,
-active_users_aggregates_v1_distribution_id,
-active_users_aggregates_v1_first_seen_year,
-active_users_aggregates_v1_install_source,
-active_users_aggregates_v1_is_default_browser,
-active_users_aggregates_v1_locale,
-active_users_aggregates_v1_mau,
-active_users_aggregates_v1_monthly_users,
-active_users_aggregates_v1_os,
-active_users_aggregates_v1_os_grouped,
-active_users_aggregates_v1_os_version,
-active_users_aggregates_v1_os_version_major,
-active_users_aggregates_v1_os_version_minor,
-active_users_aggregates_v1_segment,
-active_users_aggregates_v1_wau,
-active_users_aggregates_v1_weekly_users,
+firefox_ios_retention_view_active_metric_date,
+firefox_ios_retention_view_adjust_ad_group,
+firefox_ios_retention_view_adjust_campaign,
+firefox_ios_retention_view_adjust_creative,
+firefox_ios_retention_view_adjust_network,
+firefox_ios_retention_view_app_name,
+firefox_ios_retention_view_app_version,
+firefox_ios_retention_view_country,
+firefox_ios_retention_view_is_mobile,
+firefox_ios_retention_view_is_suspicious_device_client,
+firefox_ios_retention_view_lifecycle_stage,
+firefox_ios_retention_view_locale,
+firefox_ios_retention_view_new_profiles_metric_date,
+firefox_ios_retention_view_normalized_channel,
+firefox_ios_retention_view_paid_vs_organic,
+firefox_ios_retention_view_ping_sent_metric_date,
+firefox_ios_retention_view_ping_sent_week_4,
+firefox_ios_retention_view_repeat_profiles,
+firefox_ios_retention_view_retained_week_4,
+firefox_ios_retention_view_retained_week_4_new_profiles,
 
                 NULL AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
-                submission_date AS analysis_basis
+                metric_date AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'week'  %}
                 (FORMAT_DATE(
                     '%F',
-                    DATE_TRUNC(submission_date,
+                    DATE_TRUNC(metric_date,
                     WEEK(MONDAY)))
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'month'  %}
                 (FORMAT_DATE(
                     '%Y-%m',
-                    submission_date)
+                    metric_date)
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'quarter'  %}
                 (FORMAT_DATE(
                     '%Y-%m',
-                    DATE_TRUNC(submission_date,
+                    DATE_TRUNC(metric_date,
                     QUARTER))
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'year'  %}
                 (EXTRACT(
-                    YEAR FROM submission_date)
+                    YEAR FROM metric_date)
                 ) AS analysis_basis
                 {% else %}
                 NULL as analysis_basis
@@ -101,7 +92,7 @@ active_users_aggregates_v1_weekly_users,
             FROM
                 (
                     SELECT
-                        active_users_aggregates_v1.*,
+                        firefox_ios_retention_view.*,
                         looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
 looker_base_fields.client_info.app_build AS looker_base_fields_client_info__app_build,
 looker_base_fields.client_info.app_channel AS looker_base_fields_client_info__app_channel,
@@ -133,36 +124,26 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
 looker_base_fields.user_agent.browser AS looker_base_fields_user_agent__browser,
 looker_base_fields.user_agent.os AS looker_base_fields_user_agent__os,
 looker_base_fields.user_agent.version AS looker_base_fields_user_agent__version,
-active_users_aggregates_v1.adjust_network AS active_users_aggregates_v1_adjust_network,
-active_users_aggregates_v1.app_name AS active_users_aggregates_v1_app_name,
-active_users_aggregates_v1.app_version AS active_users_aggregates_v1_app_version,
-active_users_aggregates_v1.app_version_is_major_release AS active_users_aggregates_v1_app_version_is_major_release,
-active_users_aggregates_v1.app_version_major AS active_users_aggregates_v1_app_version_major,
-active_users_aggregates_v1.app_version_minor AS active_users_aggregates_v1_app_version_minor,
-active_users_aggregates_v1.app_version_patch_revision AS active_users_aggregates_v1_app_version_patch_revision,
-active_users_aggregates_v1.attributed AS active_users_aggregates_v1_attributed,
-active_users_aggregates_v1.attribution_medium AS active_users_aggregates_v1_attribution_medium,
-active_users_aggregates_v1.attribution_source AS active_users_aggregates_v1_attribution_source,
-active_users_aggregates_v1.channel AS active_users_aggregates_v1_channel,
-active_users_aggregates_v1.city AS active_users_aggregates_v1_city,
-active_users_aggregates_v1.country AS active_users_aggregates_v1_country,
-active_users_aggregates_v1.daily_users AS active_users_aggregates_v1_daily_users,
-active_users_aggregates_v1.dau AS active_users_aggregates_v1_dau,
-active_users_aggregates_v1.distribution_id AS active_users_aggregates_v1_distribution_id,
-active_users_aggregates_v1.first_seen_year AS active_users_aggregates_v1_first_seen_year,
-active_users_aggregates_v1.install_source AS active_users_aggregates_v1_install_source,
-active_users_aggregates_v1.is_default_browser AS active_users_aggregates_v1_is_default_browser,
-active_users_aggregates_v1.locale AS active_users_aggregates_v1_locale,
-active_users_aggregates_v1.mau AS active_users_aggregates_v1_mau,
-active_users_aggregates_v1.monthly_users AS active_users_aggregates_v1_monthly_users,
-active_users_aggregates_v1.os AS active_users_aggregates_v1_os,
-active_users_aggregates_v1.os_grouped AS active_users_aggregates_v1_os_grouped,
-active_users_aggregates_v1.os_version AS active_users_aggregates_v1_os_version,
-active_users_aggregates_v1.os_version_major AS active_users_aggregates_v1_os_version_major,
-active_users_aggregates_v1.os_version_minor AS active_users_aggregates_v1_os_version_minor,
-active_users_aggregates_v1.segment AS active_users_aggregates_v1_segment,
-active_users_aggregates_v1.wau AS active_users_aggregates_v1_wau,
-active_users_aggregates_v1.weekly_users AS active_users_aggregates_v1_weekly_users,
+firefox_ios_retention_view.active_metric_date AS firefox_ios_retention_view_active_metric_date,
+firefox_ios_retention_view.adjust_ad_group AS firefox_ios_retention_view_adjust_ad_group,
+firefox_ios_retention_view.adjust_campaign AS firefox_ios_retention_view_adjust_campaign,
+firefox_ios_retention_view.adjust_creative AS firefox_ios_retention_view_adjust_creative,
+firefox_ios_retention_view.adjust_network AS firefox_ios_retention_view_adjust_network,
+firefox_ios_retention_view.app_name AS firefox_ios_retention_view_app_name,
+firefox_ios_retention_view.app_version AS firefox_ios_retention_view_app_version,
+firefox_ios_retention_view.country AS firefox_ios_retention_view_country,
+firefox_ios_retention_view.is_mobile AS firefox_ios_retention_view_is_mobile,
+firefox_ios_retention_view.is_suspicious_device_client AS firefox_ios_retention_view_is_suspicious_device_client,
+firefox_ios_retention_view.lifecycle_stage AS firefox_ios_retention_view_lifecycle_stage,
+firefox_ios_retention_view.locale AS firefox_ios_retention_view_locale,
+firefox_ios_retention_view.new_profiles_metric_date AS firefox_ios_retention_view_new_profiles_metric_date,
+firefox_ios_retention_view.normalized_channel AS firefox_ios_retention_view_normalized_channel,
+firefox_ios_retention_view.paid_vs_organic AS firefox_ios_retention_view_paid_vs_organic,
+firefox_ios_retention_view.ping_sent_metric_date AS firefox_ios_retention_view_ping_sent_metric_date,
+firefox_ios_retention_view.ping_sent_week_4 AS firefox_ios_retention_view_ping_sent_week_4,
+firefox_ios_retention_view.repeat_profiles AS firefox_ios_retention_view_repeat_profiles,
+firefox_ios_retention_view.retained_week_4 AS firefox_ios_retention_view_retained_week_4,
+firefox_ios_retention_view.retained_week_4_new_profiles AS firefox_ios_retention_view_retained_week_4_new_profiles,
 
                     FROM
                     (
@@ -171,13 +152,13 @@ active_users_aggregates_v1.weekly_users AS active_users_aggregates_v1_weekly_use
             FROM
                 (
     SELECT *
-     FROM `moz-fx-data-shared-prod.telemetry.active_users_aggregates`
-    WHERE app_name = 'Focus Android'
+     FROM `moz-fx-data-shared-prod.firefox_ios.retention`
+    WHERE is_mobile
 )
-            ) AS active_users_aggregates_v1
+            ) AS firefox_ios_retention_view
         
                     WHERE 
-                    active_users_aggregates_v1.submission_date
+                    firefox_ios_retention_view.metric_date
                     BETWEEN
                     COALESCE(
                         SAFE_CAST(
@@ -235,36 +216,26 @@ looker_base_fields_sample_id,
 looker_base_fields_user_agent__browser,
 looker_base_fields_user_agent__os,
 looker_base_fields_user_agent__version,
-active_users_aggregates_v1_adjust_network,
-active_users_aggregates_v1_app_name,
-active_users_aggregates_v1_app_version,
-active_users_aggregates_v1_app_version_is_major_release,
-active_users_aggregates_v1_app_version_major,
-active_users_aggregates_v1_app_version_minor,
-active_users_aggregates_v1_app_version_patch_revision,
-active_users_aggregates_v1_attributed,
-active_users_aggregates_v1_attribution_medium,
-active_users_aggregates_v1_attribution_source,
-active_users_aggregates_v1_channel,
-active_users_aggregates_v1_city,
-active_users_aggregates_v1_country,
-active_users_aggregates_v1_daily_users,
-active_users_aggregates_v1_dau,
-active_users_aggregates_v1_distribution_id,
-active_users_aggregates_v1_first_seen_year,
-active_users_aggregates_v1_install_source,
-active_users_aggregates_v1_is_default_browser,
-active_users_aggregates_v1_locale,
-active_users_aggregates_v1_mau,
-active_users_aggregates_v1_monthly_users,
-active_users_aggregates_v1_os,
-active_users_aggregates_v1_os_grouped,
-active_users_aggregates_v1_os_version,
-active_users_aggregates_v1_os_version_major,
-active_users_aggregates_v1_os_version_minor,
-active_users_aggregates_v1_segment,
-active_users_aggregates_v1_wau,
-active_users_aggregates_v1_weekly_users,
+firefox_ios_retention_view_active_metric_date,
+firefox_ios_retention_view_adjust_ad_group,
+firefox_ios_retention_view_adjust_campaign,
+firefox_ios_retention_view_adjust_creative,
+firefox_ios_retention_view_adjust_network,
+firefox_ios_retention_view_app_name,
+firefox_ios_retention_view_app_version,
+firefox_ios_retention_view_country,
+firefox_ios_retention_view_is_mobile,
+firefox_ios_retention_view_is_suspicious_device_client,
+firefox_ios_retention_view_lifecycle_stage,
+firefox_ios_retention_view_locale,
+firefox_ios_retention_view_new_profiles_metric_date,
+firefox_ios_retention_view_normalized_channel,
+firefox_ios_retention_view_paid_vs_organic,
+firefox_ios_retention_view_ping_sent_metric_date,
+firefox_ios_retention_view_ping_sent_week_4,
+firefox_ios_retention_view_repeat_profiles,
+firefox_ios_retention_view_retained_week_4,
+firefox_ios_retention_view_retained_week_4_new_profiles,
 
                 client_id,
                 analysis_basis ;;
@@ -279,21 +250,24 @@ active_users_aggregates_v1_weekly_users,
     description: "Unique client identifier"
   }
 
-  dimension: daily_active_users_v2 {
+  dimension: retention_rate_v1 {
     group_label: "Metrics"
-    label: "Focus Android DAU"
-    description: "    This is the official DAU reporting definition. The logic is
-    [defined in `bigquery-etl`](https://github.com/mozilla/bigquery-etl/blob/main/sql_generators/active_users/templates/focus_android_query.sql)
-    and is automatically cross-checked, actively monitored, and change controlled.
-    Whenever possible, this is the preferred DAU reporting definition to use for Focus Android.
-    This metric needs to be aggregated by `submission_date`. If it is not aggregated by `submission_date`,
-    it is similar to a \"days of use\" metric, and not DAU.
-    
-    For more information, refer to [the DAU description in Confluence](https://mozilla-hub.atlassian.net/wiki/spaces/DATA/pages/314704478/Daily+Active+Users+DAU+Metric).
-    For questions please contact bochocki@mozilla.com or firefox-kpi@mozilla.com.
+    label: "Firefox iOS Retention Rate"
+    description: "    The Retention Rate is calculated as the proportion of clients that are active on the 4th week after the metric date.
 "
     type: number
-    sql: ${TABLE}.daily_active_users_v2 ;;
+    sql: ${TABLE}.retention_rate_v1 ;;
+  }
+
+  dimension: new_profile_retention_rate_v1 {
+    group_label: "Metrics"
+    label: "Firefox iOS New Proflie Retention Rate"
+    description: "    The New Profile Retention Rate is calculated as the proportion of new profiles that are active on the 4th week after the metric date.
+    More information is provided on the
+    [New Profiles, Retention and Engagement Rate Confluence Page](https://mozilla-hub.atlassian.net/wiki/spaces/DATA/pages/814481685/Firefox+New+Profiles+Retention+and+Engagement#New-Profile-Retention).
+"
+    type: number
+    sql: ${TABLE}.new_profile_retention_rate_v1 ;;
   }
 
   dimension: client_info__android_sdk_version {
@@ -518,183 +492,117 @@ active_users_aggregates_v1_weekly_users,
     group_item_label: "Version"
   }
 
+  dimension: active_metric_date {
+    sql: ${TABLE}.firefox_ios_retention_view_active_metric_date ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: adjust_ad_group {
+    sql: ${TABLE}.firefox_ios_retention_view_adjust_ad_group ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: adjust_campaign {
+    sql: ${TABLE}.firefox_ios_retention_view_adjust_campaign ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: adjust_creative {
+    sql: ${TABLE}.firefox_ios_retention_view_adjust_creative ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
   dimension: adjust_network {
-    sql: ${TABLE}.active_users_aggregates_v1_adjust_network ;;
+    sql: ${TABLE}.firefox_ios_retention_view_adjust_network ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: app_name {
-    sql: ${TABLE}.active_users_aggregates_v1_app_name ;;
+    sql: ${TABLE}.firefox_ios_retention_view_app_name ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: app_version {
-    sql: ${TABLE}.active_users_aggregates_v1_app_version ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: app_version_is_major_release {
-    sql: ${TABLE}.active_users_aggregates_v1_app_version_is_major_release ;;
-    type: yesno
-    group_label: "Base Fields"
-  }
-
-  dimension: app_version_major {
-    sql: ${TABLE}.active_users_aggregates_v1_app_version_major ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: app_version_minor {
-    sql: ${TABLE}.active_users_aggregates_v1_app_version_minor ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: app_version_patch_revision {
-    sql: ${TABLE}.active_users_aggregates_v1_app_version_patch_revision ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: attributed {
-    sql: ${TABLE}.active_users_aggregates_v1_attributed ;;
-    type: yesno
-    group_label: "Base Fields"
-  }
-
-  dimension: attribution_medium {
-    sql: ${TABLE}.active_users_aggregates_v1_attribution_medium ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: attribution_source {
-    sql: ${TABLE}.active_users_aggregates_v1_attribution_source ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: channel {
-    sql: ${TABLE}.active_users_aggregates_v1_channel ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: city {
-    sql: ${TABLE}.active_users_aggregates_v1_city ;;
+    sql: ${TABLE}.firefox_ios_retention_view_app_version ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: country {
-    sql: ${TABLE}.active_users_aggregates_v1_country ;;
+    sql: ${TABLE}.firefox_ios_retention_view_country ;;
     type: string
     map_layer_name: countries
     group_label: "Base Fields"
   }
 
-  dimension: daily_users {
-    sql: ${TABLE}.active_users_aggregates_v1_daily_users ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: dau {
-    sql: ${TABLE}.active_users_aggregates_v1_dau ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: distribution_id {
-    sql: ${TABLE}.active_users_aggregates_v1_distribution_id ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: first_seen_year {
-    sql: ${TABLE}.active_users_aggregates_v1_first_seen_year ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: install_source {
-    sql: ${TABLE}.active_users_aggregates_v1_install_source ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: is_default_browser {
-    sql: ${TABLE}.active_users_aggregates_v1_is_default_browser ;;
+  dimension: is_mobile {
+    sql: ${TABLE}.firefox_ios_retention_view_is_mobile ;;
     type: yesno
     group_label: "Base Fields"
   }
 
+  dimension: is_suspicious_device_client {
+    sql: ${TABLE}.firefox_ios_retention_view_is_suspicious_device_client ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: lifecycle_stage {
+    sql: ${TABLE}.firefox_ios_retention_view_lifecycle_stage ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
   dimension: locale {
-    sql: ${TABLE}.active_users_aggregates_v1_locale ;;
+    sql: ${TABLE}.firefox_ios_retention_view_locale ;;
     type: string
     group_label: "Base Fields"
   }
 
-  dimension: mau {
-    sql: ${TABLE}.active_users_aggregates_v1_mau ;;
+  dimension: new_profiles_metric_date {
+    sql: ${TABLE}.firefox_ios_retention_view_new_profiles_metric_date ;;
     type: number
     group_label: "Base Fields"
   }
 
-  dimension: monthly_users {
-    sql: ${TABLE}.active_users_aggregates_v1_monthly_users ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: os {
-    sql: ${TABLE}.active_users_aggregates_v1_os ;;
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.firefox_ios_retention_view_paid_vs_organic ;;
     type: string
     group_label: "Base Fields"
   }
 
-  dimension: os_grouped {
-    sql: ${TABLE}.active_users_aggregates_v1_os_grouped ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: os_version {
-    sql: ${TABLE}.active_users_aggregates_v1_os_version ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: os_version_major {
-    sql: ${TABLE}.active_users_aggregates_v1_os_version_major ;;
+  dimension: ping_sent_metric_date {
+    sql: ${TABLE}.firefox_ios_retention_view_ping_sent_metric_date ;;
     type: number
     group_label: "Base Fields"
   }
 
-  dimension: os_version_minor {
-    sql: ${TABLE}.active_users_aggregates_v1_os_version_minor ;;
+  dimension: ping_sent_week_4 {
+    sql: ${TABLE}.firefox_ios_retention_view_ping_sent_week_4 ;;
     type: number
     group_label: "Base Fields"
   }
 
-  dimension: segment {
-    sql: ${TABLE}.active_users_aggregates_v1_segment ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: wau {
-    sql: ${TABLE}.active_users_aggregates_v1_wau ;;
+  dimension: repeat_profiles {
+    sql: ${TABLE}.firefox_ios_retention_view_repeat_profiles ;;
     type: number
     group_label: "Base Fields"
   }
 
-  dimension: weekly_users {
-    sql: ${TABLE}.active_users_aggregates_v1_weekly_users ;;
+  dimension: retained_week_4 {
+    sql: ${TABLE}.firefox_ios_retention_view_retained_week_4 ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: retained_week_4_new_profiles {
+    sql: ${TABLE}.firefox_ios_retention_view_retained_week_4_new_profiles ;;
     type: number
     group_label: "Base Fields"
   }
@@ -715,7 +623,7 @@ active_users_aggregates_v1_weekly_users,
   }
 
   set: metrics {
-    fields: [daily_active_users_v2]
+    fields: [retention_rate_v1, new_profile_retention_rate_v1]
   }
 
   parameter: aggregate_metrics_by {

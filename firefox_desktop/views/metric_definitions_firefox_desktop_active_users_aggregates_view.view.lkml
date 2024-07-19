@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: metric_definitions_active_users_aggregates_v1 {
+view: metric_definitions_firefox_desktop_active_users_aggregates_view {
   derived_table: {
     sql: SELECT
                 SUM(dau) AS daily_active_users_v2,
@@ -22,36 +22,36 @@ looker_base_fields_normalized_os_version,
 looker_base_fields_os,
 looker_base_fields_partner_id,
 looker_base_fields_sample_id,
-active_users_aggregates_v1_adjust_network,
-active_users_aggregates_v1_app_name,
-active_users_aggregates_v1_app_version,
-active_users_aggregates_v1_app_version_is_major_release,
-active_users_aggregates_v1_app_version_major,
-active_users_aggregates_v1_app_version_minor,
-active_users_aggregates_v1_app_version_patch_revision,
-active_users_aggregates_v1_attributed,
-active_users_aggregates_v1_attribution_medium,
-active_users_aggregates_v1_attribution_source,
-active_users_aggregates_v1_channel,
-active_users_aggregates_v1_city,
-active_users_aggregates_v1_country,
-active_users_aggregates_v1_daily_users,
-active_users_aggregates_v1_dau,
-active_users_aggregates_v1_distribution_id,
-active_users_aggregates_v1_first_seen_year,
-active_users_aggregates_v1_install_source,
-active_users_aggregates_v1_is_default_browser,
-active_users_aggregates_v1_locale,
-active_users_aggregates_v1_mau,
-active_users_aggregates_v1_monthly_users,
-active_users_aggregates_v1_os,
-active_users_aggregates_v1_os_grouped,
-active_users_aggregates_v1_os_version,
-active_users_aggregates_v1_os_version_major,
-active_users_aggregates_v1_os_version_minor,
-active_users_aggregates_v1_segment,
-active_users_aggregates_v1_wau,
-active_users_aggregates_v1_weekly_users,
+firefox_desktop_active_users_aggregates_view_adjust_network,
+firefox_desktop_active_users_aggregates_view_app_name,
+firefox_desktop_active_users_aggregates_view_app_version,
+firefox_desktop_active_users_aggregates_view_app_version_is_major_release,
+firefox_desktop_active_users_aggregates_view_app_version_major,
+firefox_desktop_active_users_aggregates_view_app_version_minor,
+firefox_desktop_active_users_aggregates_view_app_version_patch_revision,
+firefox_desktop_active_users_aggregates_view_attributed,
+firefox_desktop_active_users_aggregates_view_attribution_medium,
+firefox_desktop_active_users_aggregates_view_attribution_source,
+firefox_desktop_active_users_aggregates_view_channel,
+firefox_desktop_active_users_aggregates_view_city,
+firefox_desktop_active_users_aggregates_view_country,
+firefox_desktop_active_users_aggregates_view_daily_users,
+firefox_desktop_active_users_aggregates_view_dau,
+firefox_desktop_active_users_aggregates_view_distribution_id,
+firefox_desktop_active_users_aggregates_view_first_seen_year,
+firefox_desktop_active_users_aggregates_view_install_source,
+firefox_desktop_active_users_aggregates_view_is_default_browser,
+firefox_desktop_active_users_aggregates_view_locale,
+firefox_desktop_active_users_aggregates_view_mau,
+firefox_desktop_active_users_aggregates_view_monthly_users,
+firefox_desktop_active_users_aggregates_view_os,
+firefox_desktop_active_users_aggregates_view_os_grouped,
+firefox_desktop_active_users_aggregates_view_os_version,
+firefox_desktop_active_users_aggregates_view_os_version_major,
+firefox_desktop_active_users_aggregates_view_os_version_minor,
+firefox_desktop_active_users_aggregates_view_segment,
+firefox_desktop_active_users_aggregates_view_wau,
+firefox_desktop_active_users_aggregates_view_weekly_users,
 
                 NULL AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
@@ -83,7 +83,7 @@ active_users_aggregates_v1_weekly_users,
             FROM
                 (
                     SELECT
-                        active_users_aggregates_v1.*,
+                        firefox_desktop_active_users_aggregates_view.*,
                         looker_base_fields.app_name AS looker_base_fields_app_name,
 looker_base_fields.app_version AS looker_base_fields_app_version,
 looker_base_fields.country AS looker_base_fields_country,
@@ -96,36 +96,36 @@ looker_base_fields.normalized_os_version AS looker_base_fields_normalized_os_ver
 looker_base_fields.os AS looker_base_fields_os,
 looker_base_fields.partner_id AS looker_base_fields_partner_id,
 looker_base_fields.sample_id AS looker_base_fields_sample_id,
-active_users_aggregates_v1.adjust_network AS active_users_aggregates_v1_adjust_network,
-active_users_aggregates_v1.app_name AS active_users_aggregates_v1_app_name,
-active_users_aggregates_v1.app_version AS active_users_aggregates_v1_app_version,
-active_users_aggregates_v1.app_version_is_major_release AS active_users_aggregates_v1_app_version_is_major_release,
-active_users_aggregates_v1.app_version_major AS active_users_aggregates_v1_app_version_major,
-active_users_aggregates_v1.app_version_minor AS active_users_aggregates_v1_app_version_minor,
-active_users_aggregates_v1.app_version_patch_revision AS active_users_aggregates_v1_app_version_patch_revision,
-active_users_aggregates_v1.attributed AS active_users_aggregates_v1_attributed,
-active_users_aggregates_v1.attribution_medium AS active_users_aggregates_v1_attribution_medium,
-active_users_aggregates_v1.attribution_source AS active_users_aggregates_v1_attribution_source,
-active_users_aggregates_v1.channel AS active_users_aggregates_v1_channel,
-active_users_aggregates_v1.city AS active_users_aggregates_v1_city,
-active_users_aggregates_v1.country AS active_users_aggregates_v1_country,
-active_users_aggregates_v1.daily_users AS active_users_aggregates_v1_daily_users,
-active_users_aggregates_v1.dau AS active_users_aggregates_v1_dau,
-active_users_aggregates_v1.distribution_id AS active_users_aggregates_v1_distribution_id,
-active_users_aggregates_v1.first_seen_year AS active_users_aggregates_v1_first_seen_year,
-active_users_aggregates_v1.install_source AS active_users_aggregates_v1_install_source,
-active_users_aggregates_v1.is_default_browser AS active_users_aggregates_v1_is_default_browser,
-active_users_aggregates_v1.locale AS active_users_aggregates_v1_locale,
-active_users_aggregates_v1.mau AS active_users_aggregates_v1_mau,
-active_users_aggregates_v1.monthly_users AS active_users_aggregates_v1_monthly_users,
-active_users_aggregates_v1.os AS active_users_aggregates_v1_os,
-active_users_aggregates_v1.os_grouped AS active_users_aggregates_v1_os_grouped,
-active_users_aggregates_v1.os_version AS active_users_aggregates_v1_os_version,
-active_users_aggregates_v1.os_version_major AS active_users_aggregates_v1_os_version_major,
-active_users_aggregates_v1.os_version_minor AS active_users_aggregates_v1_os_version_minor,
-active_users_aggregates_v1.segment AS active_users_aggregates_v1_segment,
-active_users_aggregates_v1.wau AS active_users_aggregates_v1_wau,
-active_users_aggregates_v1.weekly_users AS active_users_aggregates_v1_weekly_users,
+firefox_desktop_active_users_aggregates_view.adjust_network AS firefox_desktop_active_users_aggregates_view_adjust_network,
+firefox_desktop_active_users_aggregates_view.app_name AS firefox_desktop_active_users_aggregates_view_app_name,
+firefox_desktop_active_users_aggregates_view.app_version AS firefox_desktop_active_users_aggregates_view_app_version,
+firefox_desktop_active_users_aggregates_view.app_version_is_major_release AS firefox_desktop_active_users_aggregates_view_app_version_is_major_release,
+firefox_desktop_active_users_aggregates_view.app_version_major AS firefox_desktop_active_users_aggregates_view_app_version_major,
+firefox_desktop_active_users_aggregates_view.app_version_minor AS firefox_desktop_active_users_aggregates_view_app_version_minor,
+firefox_desktop_active_users_aggregates_view.app_version_patch_revision AS firefox_desktop_active_users_aggregates_view_app_version_patch_revision,
+firefox_desktop_active_users_aggregates_view.attributed AS firefox_desktop_active_users_aggregates_view_attributed,
+firefox_desktop_active_users_aggregates_view.attribution_medium AS firefox_desktop_active_users_aggregates_view_attribution_medium,
+firefox_desktop_active_users_aggregates_view.attribution_source AS firefox_desktop_active_users_aggregates_view_attribution_source,
+firefox_desktop_active_users_aggregates_view.channel AS firefox_desktop_active_users_aggregates_view_channel,
+firefox_desktop_active_users_aggregates_view.city AS firefox_desktop_active_users_aggregates_view_city,
+firefox_desktop_active_users_aggregates_view.country AS firefox_desktop_active_users_aggregates_view_country,
+firefox_desktop_active_users_aggregates_view.daily_users AS firefox_desktop_active_users_aggregates_view_daily_users,
+firefox_desktop_active_users_aggregates_view.dau AS firefox_desktop_active_users_aggregates_view_dau,
+firefox_desktop_active_users_aggregates_view.distribution_id AS firefox_desktop_active_users_aggregates_view_distribution_id,
+firefox_desktop_active_users_aggregates_view.first_seen_year AS firefox_desktop_active_users_aggregates_view_first_seen_year,
+firefox_desktop_active_users_aggregates_view.install_source AS firefox_desktop_active_users_aggregates_view_install_source,
+firefox_desktop_active_users_aggregates_view.is_default_browser AS firefox_desktop_active_users_aggregates_view_is_default_browser,
+firefox_desktop_active_users_aggregates_view.locale AS firefox_desktop_active_users_aggregates_view_locale,
+firefox_desktop_active_users_aggregates_view.mau AS firefox_desktop_active_users_aggregates_view_mau,
+firefox_desktop_active_users_aggregates_view.monthly_users AS firefox_desktop_active_users_aggregates_view_monthly_users,
+firefox_desktop_active_users_aggregates_view.os AS firefox_desktop_active_users_aggregates_view_os,
+firefox_desktop_active_users_aggregates_view.os_grouped AS firefox_desktop_active_users_aggregates_view_os_grouped,
+firefox_desktop_active_users_aggregates_view.os_version AS firefox_desktop_active_users_aggregates_view_os_version,
+firefox_desktop_active_users_aggregates_view.os_version_major AS firefox_desktop_active_users_aggregates_view_os_version_major,
+firefox_desktop_active_users_aggregates_view.os_version_minor AS firefox_desktop_active_users_aggregates_view_os_version_minor,
+firefox_desktop_active_users_aggregates_view.segment AS firefox_desktop_active_users_aggregates_view_segment,
+firefox_desktop_active_users_aggregates_view.wau AS firefox_desktop_active_users_aggregates_view_wau,
+firefox_desktop_active_users_aggregates_view.weekly_users AS firefox_desktop_active_users_aggregates_view_weekly_users,
 
                     FROM
                     (
@@ -137,10 +137,10 @@ active_users_aggregates_v1.weekly_users AS active_users_aggregates_v1_weekly_use
      FROM `moz-fx-data-shared-prod.telemetry.active_users_aggregates`
     WHERE app_name = 'Firefox Desktop'
 )
-            ) AS active_users_aggregates_v1
+            ) AS firefox_desktop_active_users_aggregates_view
         
                     WHERE 
-                    active_users_aggregates_v1.submission_date
+                    firefox_desktop_active_users_aggregates_view.submission_date
                     BETWEEN
                     COALESCE(
                         SAFE_CAST(
@@ -179,36 +179,36 @@ looker_base_fields_normalized_os_version,
 looker_base_fields_os,
 looker_base_fields_partner_id,
 looker_base_fields_sample_id,
-active_users_aggregates_v1_adjust_network,
-active_users_aggregates_v1_app_name,
-active_users_aggregates_v1_app_version,
-active_users_aggregates_v1_app_version_is_major_release,
-active_users_aggregates_v1_app_version_major,
-active_users_aggregates_v1_app_version_minor,
-active_users_aggregates_v1_app_version_patch_revision,
-active_users_aggregates_v1_attributed,
-active_users_aggregates_v1_attribution_medium,
-active_users_aggregates_v1_attribution_source,
-active_users_aggregates_v1_channel,
-active_users_aggregates_v1_city,
-active_users_aggregates_v1_country,
-active_users_aggregates_v1_daily_users,
-active_users_aggregates_v1_dau,
-active_users_aggregates_v1_distribution_id,
-active_users_aggregates_v1_first_seen_year,
-active_users_aggregates_v1_install_source,
-active_users_aggregates_v1_is_default_browser,
-active_users_aggregates_v1_locale,
-active_users_aggregates_v1_mau,
-active_users_aggregates_v1_monthly_users,
-active_users_aggregates_v1_os,
-active_users_aggregates_v1_os_grouped,
-active_users_aggregates_v1_os_version,
-active_users_aggregates_v1_os_version_major,
-active_users_aggregates_v1_os_version_minor,
-active_users_aggregates_v1_segment,
-active_users_aggregates_v1_wau,
-active_users_aggregates_v1_weekly_users,
+firefox_desktop_active_users_aggregates_view_adjust_network,
+firefox_desktop_active_users_aggregates_view_app_name,
+firefox_desktop_active_users_aggregates_view_app_version,
+firefox_desktop_active_users_aggregates_view_app_version_is_major_release,
+firefox_desktop_active_users_aggregates_view_app_version_major,
+firefox_desktop_active_users_aggregates_view_app_version_minor,
+firefox_desktop_active_users_aggregates_view_app_version_patch_revision,
+firefox_desktop_active_users_aggregates_view_attributed,
+firefox_desktop_active_users_aggregates_view_attribution_medium,
+firefox_desktop_active_users_aggregates_view_attribution_source,
+firefox_desktop_active_users_aggregates_view_channel,
+firefox_desktop_active_users_aggregates_view_city,
+firefox_desktop_active_users_aggregates_view_country,
+firefox_desktop_active_users_aggregates_view_daily_users,
+firefox_desktop_active_users_aggregates_view_dau,
+firefox_desktop_active_users_aggregates_view_distribution_id,
+firefox_desktop_active_users_aggregates_view_first_seen_year,
+firefox_desktop_active_users_aggregates_view_install_source,
+firefox_desktop_active_users_aggregates_view_is_default_browser,
+firefox_desktop_active_users_aggregates_view_locale,
+firefox_desktop_active_users_aggregates_view_mau,
+firefox_desktop_active_users_aggregates_view_monthly_users,
+firefox_desktop_active_users_aggregates_view_os,
+firefox_desktop_active_users_aggregates_view_os_grouped,
+firefox_desktop_active_users_aggregates_view_os_version,
+firefox_desktop_active_users_aggregates_view_os_version_major,
+firefox_desktop_active_users_aggregates_view_os_version_minor,
+firefox_desktop_active_users_aggregates_view_segment,
+firefox_desktop_active_users_aggregates_view_wau,
+firefox_desktop_active_users_aggregates_view_weekly_users,
 
                 client_id,
                 analysis_basis ;;
@@ -227,7 +227,7 @@ active_users_aggregates_v1_weekly_users,
     group_label: "Metrics"
     label: "Firefox Desktop DAU"
     description: "    This is the official DAU reporting definition. The logic is
-    [defined in `bigquery-etl`](https://github.com/mozilla/bigquery-etl/blob/main/sql/moz-fx-data-shared-prod/telemetry_derived/active_users_aggregates_v1/query.sql#L64)
+    [detailed on the Confluence DAU page](https://mozilla-hub.atlassian.net/wiki/spaces/DATA/pages/314704478/Daily+Active+Users+DAU+Metric)
     and is automatically cross-checked, actively monitored, and change controlled.
     Whenever possible, this is the preferred DAU reporting definition to use for Desktop.
     This metric needs to be aggregated by `submission_date`. If it is not aggregated by `submission_date`,
@@ -244,8 +244,8 @@ active_users_aggregates_v1_weekly_users,
     group_label: "Metrics"
     label: "Firefox Desktop DAU KPI"
     description: "    The average [Firefox Desktop DAU](https://mozilla.github.io/metric-hub/metrics/firefox_desktop/#daily_active_users_v2)
-    in the 28-day period ending on December 15th. This is the official Desktop DAU KPI reporting definition. The logic for calculating DAU is
-    [defined in `bigquery-etl`](https://github.com/mozilla/bigquery-etl/blob/main/sql_generators/active_users/templates/desktop_query.sql)
+    in the 28-day period ending on December 15th. This is the official Desktop DAU KPI reporting definition. The logic is
+    [detailed on the Confluence DAU page](https://mozilla-hub.atlassian.net/wiki/spaces/DATA/pages/314704478/Daily+Active+Users+DAU+Metric)
     and is automatically cross-checked, actively monitored, and change controlled.
     To reconstruct the annual Desktop DAU KPI, this metric needs to be aggregated by
     `EXTRACT(YEAR FROM submission_date)`.
@@ -337,139 +337,139 @@ active_users_aggregates_v1_weekly_users,
   }
 
   dimension: adjust_network {
-    sql: ${TABLE}.active_users_aggregates_v1_adjust_network ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_adjust_network ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: app_version_is_major_release {
-    sql: ${TABLE}.active_users_aggregates_v1_app_version_is_major_release ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_app_version_is_major_release ;;
     type: yesno
     group_label: "Base Fields"
   }
 
   dimension: app_version_major {
-    sql: ${TABLE}.active_users_aggregates_v1_app_version_major ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_app_version_major ;;
     type: number
     group_label: "Base Fields"
   }
 
   dimension: app_version_minor {
-    sql: ${TABLE}.active_users_aggregates_v1_app_version_minor ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_app_version_minor ;;
     type: number
     group_label: "Base Fields"
   }
 
   dimension: app_version_patch_revision {
-    sql: ${TABLE}.active_users_aggregates_v1_app_version_patch_revision ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_app_version_patch_revision ;;
     type: number
     group_label: "Base Fields"
   }
 
   dimension: attributed {
-    sql: ${TABLE}.active_users_aggregates_v1_attributed ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_attributed ;;
     type: yesno
     group_label: "Base Fields"
   }
 
   dimension: attribution_medium {
-    sql: ${TABLE}.active_users_aggregates_v1_attribution_medium ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_attribution_medium ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: attribution_source {
-    sql: ${TABLE}.active_users_aggregates_v1_attribution_source ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_attribution_source ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: channel {
-    sql: ${TABLE}.active_users_aggregates_v1_channel ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_channel ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: city {
-    sql: ${TABLE}.active_users_aggregates_v1_city ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_city ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: daily_users {
-    sql: ${TABLE}.active_users_aggregates_v1_daily_users ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_daily_users ;;
     type: number
     group_label: "Base Fields"
   }
 
   dimension: dau {
-    sql: ${TABLE}.active_users_aggregates_v1_dau ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_dau ;;
     type: number
     group_label: "Base Fields"
   }
 
   dimension: first_seen_year {
-    sql: ${TABLE}.active_users_aggregates_v1_first_seen_year ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_first_seen_year ;;
     type: number
     group_label: "Base Fields"
   }
 
   dimension: install_source {
-    sql: ${TABLE}.active_users_aggregates_v1_install_source ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_install_source ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: mau {
-    sql: ${TABLE}.active_users_aggregates_v1_mau ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_mau ;;
     type: number
     group_label: "Base Fields"
   }
 
   dimension: monthly_users {
-    sql: ${TABLE}.active_users_aggregates_v1_monthly_users ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_monthly_users ;;
     type: number
     group_label: "Base Fields"
   }
 
   dimension: os_grouped {
-    sql: ${TABLE}.active_users_aggregates_v1_os_grouped ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_os_grouped ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: os_version {
-    sql: ${TABLE}.active_users_aggregates_v1_os_version ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_os_version ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: os_version_major {
-    sql: ${TABLE}.active_users_aggregates_v1_os_version_major ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_os_version_major ;;
     type: number
     group_label: "Base Fields"
   }
 
   dimension: os_version_minor {
-    sql: ${TABLE}.active_users_aggregates_v1_os_version_minor ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_os_version_minor ;;
     type: number
     group_label: "Base Fields"
   }
 
   dimension: segment {
-    sql: ${TABLE}.active_users_aggregates_v1_segment ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_segment ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: wau {
-    sql: ${TABLE}.active_users_aggregates_v1_wau ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_wau ;;
     type: number
     group_label: "Base Fields"
   }
 
   dimension: weekly_users {
-    sql: ${TABLE}.active_users_aggregates_v1_weekly_users ;;
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_weekly_users ;;
     type: number
     group_label: "Base Fields"
   }

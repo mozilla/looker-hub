@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/firefox_desktop/views/metric_definitions_active_users_aggregates_v1.view.lkml"
+include: "/looker-hub/focus_android/views/metric_definitions_focus_android_engagement_view.view.lkml"
 
-explore: metric_definitions_active_users_aggregates_v1 {
+explore: metric_definitions_focus_android_engagement_view {
   always_filter: {
     filters: [
       submission_date: "7 days",
