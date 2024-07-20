@@ -1522,7 +1522,7 @@ Value will be 0 if the feature is disabled.
 
   dimension: metrics__string__metrics_install_source {
     label: "Metrics Install Source"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.metrics_install_source ;;
     type: string
     group_label: "Metrics"
