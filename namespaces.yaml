@@ -825,6 +825,10 @@ fenix:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_fenix_active_users_aggregates_view
+    metric_definitions_fenix_active_users_view:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_fenix_active_users_view
     metric_definitions_fenix_engagement_view:
       type: metric_definitions_explore
       views:
@@ -1617,6 +1621,8 @@ fenix:
       type: metric_definitions_view
     metric_definitions_fenix_active_users_aggregates_view:
       type: metric_definitions_view
+    metric_definitions_fenix_active_users_view:
+      type: metric_definitions_view
     metric_definitions_fenix_engagement_view:
       type: metric_definitions_view
     metric_definitions_fenix_retention_view:
@@ -2237,6 +2243,10 @@ firefox_desktop:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_firefox_desktop_active_users_aggregates_view
+    metric_definitions_firefox_desktop_active_users_view:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_firefox_desktop_active_users_view
     metric_definitions_main:
       type: metric_definitions_explore
       views:
@@ -2399,6 +2409,11 @@ firefox_desktop:
       tables:
       - table: mozdata.telemetry.clients_daily
       type: client_counts_view
+    client_ltv_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.client_ltv
+      type: table_view
     clients_daily_joined_table:
       tables:
       - table: moz-fx-data-shared-prod.telemetry_derived.clients_daily_joined_v1
@@ -2578,6 +2593,8 @@ firefox_desktop:
     metric_definitions_events_memory:
       type: metric_definitions_view
     metric_definitions_firefox_desktop_active_users_aggregates_view:
+      type: metric_definitions_view
+    metric_definitions_firefox_desktop_active_users_view:
       type: metric_definitions_view
     metric_definitions_main:
       type: metric_definitions_view
@@ -3434,6 +3451,10 @@ firefox_ios:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_firefox_ios_active_users_aggregates_view
+    metric_definitions_firefox_ios_active_users_view:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_firefox_ios_active_users_view
     metric_definitions_firefox_ios_engagement_view:
       type: metric_definitions_explore
       views:
@@ -3889,6 +3910,8 @@ firefox_ios:
       type: metric_definitions_view
     metric_definitions_firefox_ios_active_users_aggregates_view:
       type: metric_definitions_view
+    metric_definitions_firefox_ios_active_users_view:
+      type: metric_definitions_view
     metric_definitions_firefox_ios_engagement_view:
       type: metric_definitions_view
     metric_definitions_firefox_ios_retention_view:
@@ -4286,6 +4309,10 @@ focus_android:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_focus_android_active_users_aggregates_view
+    metric_definitions_focus_android_active_users_view:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_focus_android_active_users_view
     metric_definitions_focus_android_engagement_view:
       type: metric_definitions_explore
       views:
@@ -4585,6 +4612,8 @@ focus_android:
       type: metric_definitions_view
     metric_definitions_focus_android_active_users_aggregates_view:
       type: metric_definitions_view
+    metric_definitions_focus_android_active_users_view:
+      type: metric_definitions_view
     metric_definitions_focus_android_engagement_view:
       type: metric_definitions_view
     metric_definitions_focus_android_retention_view:
@@ -4702,6 +4731,10 @@ focus_ios:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_focus_ios_active_users_aggregates_view
+    metric_definitions_focus_ios_active_users_view:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_focus_ios_active_users_view
     metric_definitions_focus_ios_engagement_view:
       type: metric_definitions_explore
       views:
@@ -4786,6 +4819,8 @@ focus_ios:
     metric_definitions_baseline_v2:
       type: metric_definitions_view
     metric_definitions_focus_ios_active_users_aggregates_view:
+      type: metric_definitions_view
+    metric_definitions_focus_ios_active_users_view:
       type: metric_definitions_view
     metric_definitions_focus_ios_engagement_view:
       type: metric_definitions_view
@@ -4965,6 +5000,10 @@ klar_android:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_baseline
+    metric_definitions_klar_android_active_users_view:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_klar_android_active_users_view
     metric_definitions_klar_android_engagement_view:
       type: metric_definitions_explore
       views:
@@ -5107,6 +5146,8 @@ klar_android:
       type: growth_accounting_view
     metric_definitions_baseline:
       type: metric_definitions_view
+    metric_definitions_klar_android_active_users_view:
+      type: metric_definitions_view
     metric_definitions_klar_android_engagement_view:
       type: metric_definitions_view
     metric_definitions_klar_android_retention_view:
@@ -5169,6 +5210,10 @@ klar_ios:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_baseline
+    metric_definitions_klar_ios_active_users_view:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_klar_ios_active_users_view
     metric_definitions_klar_ios_engagement_view:
       type: metric_definitions_explore
       views:
@@ -5248,6 +5293,8 @@ klar_ios:
       - table: mozdata.org_mozilla_ios_klar.baseline_clients_last_seen
       type: growth_accounting_view
     metric_definitions_baseline:
+      type: metric_definitions_view
+    metric_definitions_klar_ios_active_users_view:
       type: metric_definitions_view
     metric_definitions_klar_ios_engagement_view:
       type: metric_definitions_view

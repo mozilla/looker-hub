@@ -2061,8 +2061,18 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms {
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_cert_revocation_mechanisms ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__cert_verifier_crlite_status {
     sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_status ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__cert_verifier_crlite_vs_ocsp_result {
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_vs_ocsp_result ;;
     hidden: yes
   }
 

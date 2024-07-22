@@ -2445,10 +2445,24 @@ where:
     description: "The number of times each certificate compression algorithm was used."
   }
 
+  dimension: metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms {
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_cert_revocation_mechanisms ;;
+    hidden: yes
+    description: "Which revocation checking mechanisms were used in a TLS handshake?
+"
+  }
+
   dimension: metrics__labeled_counter__cert_verifier_crlite_status {
     sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_status ;;
     hidden: yes
     description: "Counts the number of times different CRLite statuses were returned.
+"
+  }
+
+  dimension: metrics__labeled_counter__cert_verifier_crlite_vs_ocsp_result {
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_vs_ocsp_result ;;
+    hidden: yes
+    description: "The OCSP result when CRLite claims a certificate is revoked.
 "
   }
 
