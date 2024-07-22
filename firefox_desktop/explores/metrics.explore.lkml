@@ -128,9 +128,19 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cert_compression_used}) AS metrics__metrics__labeled_counter__cert_compression_used ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cert_compression_used.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms}) AS metrics__metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__cert_verifier_crlite_status {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cert_verifier_crlite_status}) AS metrics__metrics__labeled_counter__cert_verifier_crlite_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cert_verifier_crlite_status.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__cert_verifier_crlite_vs_ocsp_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cert_verifier_crlite_vs_ocsp_result}) AS metrics__metrics__labeled_counter__cert_verifier_crlite_vs_ocsp_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cert_verifier_crlite_vs_ocsp_result.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
