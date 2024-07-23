@@ -112,7 +112,7 @@ looker_base_fields.user_agent.version AS looker_base_fields_user_agent__version,
                 (
     SELECT *
      FROM `moz-fx-data-shared-prod.klar_android.active_users`
-    WHERE is_mobile
+    WHERE app_name = "Klar Android"
 )
             ) AS klar_android_active_users_view
         JOIN
