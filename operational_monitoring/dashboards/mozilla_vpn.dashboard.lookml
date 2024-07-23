@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Subscribers - By app
-    name: Active Subscribers - By app_sum
+  - title: Session Count - By app
+    name: Session Count - By app_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,7 +26,7 @@
       mozilla_vpn.branch, mozilla_vpn.app
     ]
     filters:
-      mozilla_vpn.metric: 'active_subscribers'
+      mozilla_vpn.metric: 'session_count'
       mozilla_vpn.statistic: sum
     row: 0
     col: 0
@@ -149,8 +149,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Cnt Sessions Start And End - By app
-    name: Cnt Sessions Start And End - By app_sum
+  - title: Cnt Session Ends - By app
+    name: Cnt Session Ends - By app_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -165,7 +165,7 @@
       mozilla_vpn.branch, mozilla_vpn.app
     ]
     filters:
-      mozilla_vpn.metric: 'cnt_sessions_start_and_end'
+      mozilla_vpn.metric: 'cnt_session_ends'
       mozilla_vpn.statistic: sum
     row: 20
     col: 0
@@ -288,8 +288,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Cnt Session Ends - By app
-    name: Cnt Session Ends - By app_sum
+  - title: Cnt Sessions Start And End - By app
+    name: Cnt Sessions Start And End - By app_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -304,7 +304,7 @@
       mozilla_vpn.branch, mozilla_vpn.app
     ]
     filters:
-      mozilla_vpn.metric: 'cnt_session_ends'
+      mozilla_vpn.metric: 'cnt_sessions_start_and_end'
       mozilla_vpn.statistic: sum
     row: 40
     col: 0
@@ -322,8 +322,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Session Count - By app
-    name: Session Count - By app_sum
+  - title: Active Subscribers - By app
+    name: Active Subscribers - By app_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -338,7 +338,7 @@
       mozilla_vpn.branch, mozilla_vpn.app
     ]
     filters:
-      mozilla_vpn.metric: 'session_count'
+      mozilla_vpn.metric: 'active_subscribers'
       mozilla_vpn.statistic: sum
     row: 40
     col: 12
