@@ -324,6 +324,38 @@ view: events_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__string__monitor_plan_tier {
+    sql: ${TABLE}.metrics.string.monitor_plan_tier ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Monitor Plan Tier"
+    description: "Which tier of plan the user is on [Free, Plus]"
+  }
+
+  dimension: metrics__string__monitor_session_id {
+    sql: ${TABLE}.metrics.string.monitor_session_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Monitor Session Id"
+    description: "An ID that allows us to track “sessions” of the user experience within the product."
+  }
+
+  dimension: metrics__string__monitor_user_id {
+    sql: ${TABLE}.metrics.string.monitor_user_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Monitor User Id"
+    description: "Mozilla Monitor-specific user ID."
+  }
+
+  dimension: metrics__string__mozilla_account_id {
+    sql: ${TABLE}.metrics.string.mozilla_account_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Mozilla Account Id"
+    description: "Mozilla Accounts ID."
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
