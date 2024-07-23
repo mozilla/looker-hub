@@ -12899,6 +12899,10 @@ revenue:
       tables:
       - table: mozdata.ltv.fenix_client_ltv
       type: table_view
+    firefox_desktop_ltv:
+      tables:
+      - table: mozdata.ltv.firefox_desktop_client_ltv
+      type: table_view
     firefox_ios_ltv:
       tables:
       - table: mozdata.ltv.firefox_ios_client_ltv
