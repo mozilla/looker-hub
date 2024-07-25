@@ -100,6 +100,7 @@ newtab_clients_daily_visits_with_non_default_ui,
 newtab_clients_daily_visits_with_non_impression_engagement,
 newtab_clients_daily_visits_with_non_search_engagement,
 newtab_clients_daily_wallpaper_category_clicks,
+newtab_clients_daily_weather_widget_location_selected,
 
                 legacy_telemetry_client_id AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
@@ -190,6 +191,7 @@ newtab_clients_daily.visits_with_non_default_ui AS newtab_clients_daily_visits_w
 newtab_clients_daily.visits_with_non_impression_engagement AS newtab_clients_daily_visits_with_non_impression_engagement,
 newtab_clients_daily.visits_with_non_search_engagement AS newtab_clients_daily_visits_with_non_search_engagement,
 newtab_clients_daily.wallpaper_category_clicks AS newtab_clients_daily_wallpaper_category_clicks,
+newtab_clients_daily.weather_widget_location_selected AS newtab_clients_daily_weather_widget_location_selected,
 
                     FROM
                     (
@@ -282,6 +284,7 @@ newtab_clients_daily_visits_with_non_default_ui,
 newtab_clients_daily_visits_with_non_impression_engagement,
 newtab_clients_daily_visits_with_non_search_engagement,
 newtab_clients_daily_wallpaper_category_clicks,
+newtab_clients_daily_weather_widget_location_selected,
 
                 client_id,
                 analysis_basis ;;
@@ -954,6 +957,12 @@ a wallpaper.
 
   dimension: wallpaper_category_clicks {
     sql: ${TABLE}.newtab_clients_daily_wallpaper_category_clicks ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: weather_widget_location_selected {
+    sql: ${TABLE}.newtab_clients_daily_weather_widget_location_selected ;;
     type: number
     group_label: "Base Fields"
   }
