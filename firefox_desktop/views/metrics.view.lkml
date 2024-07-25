@@ -23,6 +23,24 @@ view: metrics {
 "
   }
 
+  dimension: metrics__memory_distribution__browser_backup_compressed_archive_size__sum {
+    label: "Browser Backup Compressed Archive Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.browser_backup_compressed_archive_size.sum ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Compressed Archive Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Compressed Archive Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_compressed_archive_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total compressed size of a single-file profile data backup archive. To reduce fingerprintability, we round to the nearest 1 mebibyte.
+"
+  }
+
   dimension: metrics__quantity__browser_backup_cookies_size {
     label: "Browser Backup Cookies Size"
     hidden: no
@@ -19253,6 +19271,18 @@ view: metrics__metrics__labeled_string__places_places_database_corruption_handli
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics__metrics__memory_distribution__browser_backup_compressed_archive_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
