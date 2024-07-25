@@ -5647,6 +5647,14 @@ monitoring:
       tables:
       - table: mozdata.static.monitoring_missing_document_namespaces_notes_v1
       type: table_view
+    mlops_job_cost_per_job:
+      tables:
+      - table: moz-fx-data-shared-prod.monitoring_derived.outerbounds_cost_per_flow_v1
+      type: table_view
+    mlops_job_cost_per_job_run:
+      tables:
+      - table: moz-fx-data-shared-prod.monitoring_derived.outerbounds_cost_per_flow_run_v1
+      type: table_view
     payload_bytes_error_all:
       tables:
       - table: mozdata.monitoring.payload_bytes_error_all
