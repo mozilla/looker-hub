@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: serp_categorization {
+  dimension: metrics__counter__serp_categorization_no_map_found {
+    label: "Serp Categorization No Map Found"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.serp_categorization_no_map_found ;;
+    type: number
+    group_label: "Serp"
+    group_item_label: "Categorization No Map Found"
+
+    link: {
+      label: "Glean Dictionary reference for Serp Categorization No Map Found"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/serp_categorization_no_map_found"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A count incremented upon a SERP categorization event being recorded without a corresponding impression event being recorded. This metric effectively counts missing impressions due to issues with the domain-to-categories map.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation Id"
     hidden: no
@@ -349,6 +367,17 @@ The labels are the `category.name` identifier of the metric.
 
   measure: ping_count {
     type: count
+  }
+
+  measure: serp_categorization_no_map_found {
+    type: sum
+    sql: ${metrics__counter__serp_categorization_no_map_found} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Serp Categorization No Map Found"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/serp_categorization_no_map_found"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   sql_table_name: `mozdata.firefox_desktop.serp_categorization` ;;
