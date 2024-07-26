@@ -4,14 +4,14 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/legacy_heartbeat_test_1_nightly_viewpoint.view.lkml"
+include: "/looker-hub/focus_ios/views/metric_definitions_focus_ios_active_users_view.view.lkml"
 
-explore: legacy_heartbeat_test_1_nightly_viewpoint {
+explore: metric_definitions_focus_ios_active_users_view {
   always_filter: {
     filters: [
-      branch: "enabled, disabled",
+      submission_date: "7 days",
     ]
   }
 
-  hidden: yes
+  fields: [ALL_FIELDS*]
 }

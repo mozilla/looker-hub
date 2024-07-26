@@ -1314,6 +1314,23 @@ the tracking protection settings panel from the toolbar.
     description: "The difference between the length of encoded certificate vs the actual certificate."
   }
 
+  dimension: metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms {
+    label: "Cert Verifier Cert Revocation Mechanisms"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_cert_revocation_mechanisms ;;
+    group_label: "Cert Verifier"
+    group_item_label: "Cert Revocation Mechanisms"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verifier Cert Revocation Mechanisms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_verifier_cert_revocation_mechanisms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which revocation checking mechanisms were used in a TLS handshake?
+"
+  }
+
   dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__sum {
     label: "Cert Verifier Cert Trust Evaluation Time Sum"
     hidden: no
@@ -1346,6 +1363,23 @@ the tracking protection settings panel from the toolbar.
     }
 
     description: "Counts the number of times different CRLite statuses were returned.
+"
+  }
+
+  dimension: metrics__labeled_counter__cert_verifier_crlite_vs_ocsp_result {
+    label: "Cert Verifier Crlite Vs Ocsp Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_vs_ocsp_result ;;
+    group_label: "Cert Verifier"
+    group_item_label: "Crlite Vs Ocsp Result"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verifier Crlite Vs Ocsp Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_verifier_crlite_vs_ocsp_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The OCSP result when CRLite claims a certificate is revoked.
 "
   }
 
@@ -12511,8 +12545,90 @@ view: metrics__metrics__labeled_counter__cert_compression_used {
   }
 }
 
+view: metrics__metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms {
+  label: "Cert Verifier - Cert Revocation Mechanisms"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__cert_verifier_crlite_status {
   label: "Cert Verifier - Crlite Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__cert_verifier_crlite_vs_ocsp_result {
+  label: "Cert Verifier - Crlite Vs Ocsp Result"
 
   dimension: document_id {
     type: string

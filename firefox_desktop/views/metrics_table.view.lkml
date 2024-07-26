@@ -2408,10 +2408,24 @@ of the shopping experiment.
     description: "The number of times each certificate compression algorithm was used."
   }
 
+  dimension: metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms {
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_cert_revocation_mechanisms ;;
+    hidden: yes
+    description: "Which revocation checking mechanisms were used in a TLS handshake?
+"
+  }
+
   dimension: metrics__labeled_counter__cert_verifier_crlite_status {
     sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_status ;;
     hidden: yes
     description: "Counts the number of times different CRLite statuses were returned.
+"
+  }
+
+  dimension: metrics__labeled_counter__cert_verifier_crlite_vs_ocsp_result {
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_vs_ocsp_result ;;
+    hidden: yes
+    description: "The OCSP result when CRLite claims a certificate is revoked.
 "
   }
 
@@ -3340,6 +3354,26 @@ success - search service successfully initialized.
     hidden: yes
     description: "PLACES - stage reached when trying to fix a database corruption, see Places::Database::eCorruptDBReplaceStage.
 "
+  }
+
+  dimension: metrics__memory_distribution__browser_backup_compressed_archive_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.browser_backup_compressed_archive_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Browser Backup Compressed Archive Size"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__browser_backup_compressed_archive_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.browser_backup_compressed_archive_size.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Browser Backup Compressed Archive Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__browser_backup_compressed_archive_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.browser_backup_compressed_archive_size.values ;;
+    hidden: yes
   }
 
   dimension: metrics__memory_distribution__browser_backup_total_backup_size__count {
@@ -13608,6 +13642,18 @@ view: metrics_table__metrics__labeled_string__places_places_database_corruption_
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__browser_backup_compressed_archive_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 

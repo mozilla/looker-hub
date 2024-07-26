@@ -363,6 +363,13 @@ view: baseline_table {
     hidden: yes
   }
 
+  dimension: metrics__string__first_session_install_source {
+    sql: ${TABLE}.metrics.string.first_session_install_source ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "First Session Install Source"
+  }
+
   dimension: metrics__string__glean_baseline_locale {
     sql: ${TABLE}.metrics.string.glean_baseline_locale ;;
     type: string

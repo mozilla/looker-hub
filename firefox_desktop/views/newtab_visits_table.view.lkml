@@ -479,4 +479,9 @@ view: newtab_visits_table__weather_interactions {
     sql: ${TABLE}.weather_widget_load_errors ;;
     type: number
   }
+
+  dimension: weather_widget_location_selected {
+    sql: ${TABLE}.weather_widget_location_selected ;;
+    type: number
+  }
 }
