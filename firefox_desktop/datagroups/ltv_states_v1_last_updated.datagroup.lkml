@@ -11,6 +11,6 @@ datagroup: ltv_states_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'firefox_desktop_derived'
     AND table_name = 'ltv_states_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:firefox_desktop_derived.ltv_states_v1 is modified."
+  description: "Updates when moz-fx-data-shared-prod.firefox_desktop_derived.ltv_states_v1 is modified."
   max_cache_age: "24 hours"
 }

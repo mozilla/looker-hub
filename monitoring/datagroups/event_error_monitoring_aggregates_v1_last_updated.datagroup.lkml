@@ -11,6 +11,6 @@ datagroup: event_error_monitoring_aggregates_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'monitoring_derived'
     AND table_name = 'event_error_monitoring_aggregates_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:monitoring_derived.event_error_monitoring_aggregates_v1 is modified."
+  description: "Updates when moz-fx-data-shared-prod.monitoring_derived.event_error_monitoring_aggregates_v1 is modified."
   max_cache_age: "24 hours"
 }

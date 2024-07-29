@@ -11,6 +11,6 @@ datagroup: query_cost_v1_last_updated {
     FROM `moz-fx-data-experiments`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'monitoring'
     AND table_name = 'query_cost_v1' ;;
-  description: "Updates when moz-fx-data-experiments:monitoring.query_cost_v1 is modified."
+  description: "Updates when moz-fx-data-experiments.monitoring.query_cost_v1 is modified."
   max_cache_age: "24 hours"
 }
