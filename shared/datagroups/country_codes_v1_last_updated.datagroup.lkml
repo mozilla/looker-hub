@@ -11,6 +11,6 @@ datagroup: country_codes_v1_last_updated {
     FROM `mozdata`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'static'
     AND table_name = 'country_codes_v1' ;;
-  description: "Updates when mozdata:static.country_codes_v1 is modified."
+  description: "Updates when mozdata.static.country_codes_v1 is modified."
   max_cache_age: "24 hours"
 }

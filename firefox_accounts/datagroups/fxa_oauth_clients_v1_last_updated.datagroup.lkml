@@ -11,6 +11,6 @@ datagroup: fxa_oauth_clients_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'accounts_db_external'
     AND table_name = 'fxa_oauth_clients_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:accounts_db_external.fxa_oauth_clients_v1 is modified."
+  description: "Updates when moz-fx-data-shared-prod.accounts_db_external.fxa_oauth_clients_v1 is modified."
   max_cache_age: "24 hours"
 }
