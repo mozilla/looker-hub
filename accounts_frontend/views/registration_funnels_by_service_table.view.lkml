@@ -5,9 +5,44 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: registration_funnels_by_service_table {
+  dimension: apple_deeplink {
+    sql: ${TABLE}.apple_deeplink ;;
+    type: number
+  }
+
+  dimension: apple_reg_complete {
+    sql: ${TABLE}.apple_reg_complete ;;
+    type: number
+  }
+
+  dimension: email_first_apple_start {
+    sql: ${TABLE}.email_first_apple_start ;;
+    type: number
+  }
+
+  dimension: email_first_google_start {
+    sql: ${TABLE}.email_first_google_start ;;
+    type: number
+  }
+
+  dimension: email_first_view {
+    sql: ${TABLE}.email_first_view ;;
+    type: number
+  }
+
   dimension: funnel {
     sql: ${TABLE}.funnel ;;
     type: string
+  }
+
+  dimension: google_deeplink {
+    sql: ${TABLE}.google_deeplink ;;
+    type: number
+  }
+
+  dimension: google_reg_complete {
+    sql: ${TABLE}.google_reg_complete ;;
+    type: number
   }
 
   dimension: reg_complete {
