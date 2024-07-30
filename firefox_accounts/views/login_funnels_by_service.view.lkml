@@ -20,11 +20,6 @@ view: login_funnels_by_service {
     type: number
   }
 
-  dimension: login_email_confirmation_success {
-    sql: ${TABLE}.login_email_confirmation_success ;;
-    type: number
-  }
-
   dimension: login_email_confirmation_view {
     sql: ${TABLE}.login_email_confirmation_view ;;
     type: number
@@ -35,18 +30,8 @@ view: login_funnels_by_service {
     type: number
   }
 
-  dimension: login_success {
-    sql: ${TABLE}.login_success ;;
-    type: number
-  }
-
   dimension: login_two_factor_submit {
     sql: ${TABLE}.login_two_factor_submit ;;
-    type: number
-  }
-
-  dimension: login_two_factor_success {
-    sql: ${TABLE}.login_two_factor_success ;;
     type: number
   }
 
