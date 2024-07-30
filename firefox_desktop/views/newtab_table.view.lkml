@@ -508,6 +508,11 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__string_list__newtab_selected_topics {
+    sql: ${TABLE}.metrics.string_list.newtab_selected_topics ;;
+    hidden: yes
+  }
+
   dimension: metrics__string_list__newtab_sov_allocation {
     sql: ${TABLE}.metrics.string_list.newtab_sov_allocation ;;
     hidden: yes

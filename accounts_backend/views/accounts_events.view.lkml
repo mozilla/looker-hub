@@ -219,6 +219,40 @@ The labels are the `category.name` identifier of the metric.
     description: "Entrypoint to the service"
   }
 
+  dimension: metrics__string__session_entrypoint_experiment {
+    label: "Session Entrypoint Experiment"
+    hidden: no
+    sql: ${TABLE}.metrics.string.session_entrypoint_experiment ;;
+    type: string
+    group_label: "Session"
+    group_item_label: "Entrypoint Experiment"
+
+    link: {
+      label: "Glean Dictionary reference for Session Entrypoint Experiment"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/session_entrypoint_experiment"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Identifier for the experiment the user is part of at the entrypoint"
+  }
+
+  dimension: metrics__string__session_entrypoint_variation {
+    label: "Session Entrypoint Variation"
+    hidden: no
+    sql: ${TABLE}.metrics.string.session_entrypoint_variation ;;
+    type: string
+    group_label: "Session"
+    group_item_label: "Entrypoint Variation"
+
+    link: {
+      label: "Glean Dictionary reference for Session Entrypoint Variation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/session_entrypoint_variation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Identifier for the experiment variation the user is part of at the entrypoint"
+  }
+
   dimension: metrics__string__session_flow_id {
     label: "Session Flow Id"
     hidden: no

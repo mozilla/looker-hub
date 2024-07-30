@@ -358,6 +358,20 @@ view: events_stream_table {
     group_item_label: "Session Entrypoint"
   }
 
+  dimension: metrics__string__session_entrypoint_experiment {
+    sql: ${TABLE}.metrics.string.session_entrypoint_experiment ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Session Entrypoint Experiment"
+  }
+
+  dimension: metrics__string__session_entrypoint_variation {
+    sql: ${TABLE}.metrics.string.session_entrypoint_variation ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Session Entrypoint Variation"
+  }
+
   dimension: metrics__string__session_flow_id {
     sql: ${TABLE}.metrics.string.session_flow_id ;;
     type: string

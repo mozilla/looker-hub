@@ -4129,6 +4129,59 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__sum {
+    label: "Networking Cache Metadata First Read Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cache Metadata First Read Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cache Metadata First Read Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_cache_metadata_first_read_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent to read the first part of the metadata from the cache entry file.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__sum {
+    label: "Networking Cache Metadata Second Read Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cache Metadata Second Read Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cache Metadata Second Read Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_cache_metadata_second_read_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent to read the missing part of the metadata from the cache entry file.
+"
+  }
+
+  dimension: metrics__memory_distribution__networking_cache_metadata_size__sum {
+    label: "Networking Cache Metadata Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.networking_cache_metadata_size.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cache Metadata Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cache Metadata Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_cache_metadata_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of the metadata in bytes parsed from the disk."
+  }
+
   dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__sum {
     label: "Networking Cookie Access Fixup Diff Sum"
     hidden: no
@@ -17213,6 +17266,18 @@ view: metrics__metrics__memory_distribution__glean_upload_pending_pings_director
   }
 }
 
+view: metrics__metrics__memory_distribution__networking_cache_metadata_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__memory_distribution__performance_clone_deserialize_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -17946,6 +18011,30 @@ view: metrics__metrics__timing_distribution__network_tcp_connection__values {
 }
 
 view: metrics__metrics__timing_distribution__network_tls_handshake__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_cache_metadata_first_read_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_cache_metadata_second_read_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
