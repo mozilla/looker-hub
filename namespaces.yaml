@@ -1965,6 +1965,10 @@ firefox_accounts:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
+    login_engagement_funnels_by_service:
+      type: table_explore
+      views:
+        base_view: login_engagement_funnels_by_service
     login_funnels_by_service:
       type: table_explore
       views:
@@ -2099,6 +2103,10 @@ firefox_accounts:
       tables:
       - table: mozdata.accounts_backend.users_services_last_seen
       type: growth_accounting_view
+    login_engagement_funnels_by_service:
+      tables:
+      - table: moz-fx-data-shared-prod.accounts_frontend_derived.login_engagement_funnel_v1
+      type: table_view
     login_funnels:
       tables:
       - table: moz-fx-data-shared-prod.firefox_accounts_derived.login_funnels_v1

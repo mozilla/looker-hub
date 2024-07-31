@@ -2451,6 +2451,24 @@ in browser.
     description: "The difference between the length of encoded certificate vs the actual certificate."
   }
 
+  dimension: metrics__memory_distribution__cert_storage_memory__sum {
+    label: "Cert Storage Memory Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.cert_storage_memory.sum ;;
+    type: number
+    group_label: "Cert Storage"
+    group_item_label: "Memory Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Storage Memory Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cert_storage_memory"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Heap memory used by cert_storage.
+"
+  }
+
   dimension: metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms {
     label: "Cert Verifier Cert Revocation Mechanisms"
     hidden: yes
@@ -19539,6 +19557,18 @@ view: metrics__metrics__memory_distribution__browser_backup_compressed_archive_s
 }
 
 view: metrics__metrics__memory_distribution__browser_backup_total_backup_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__cert_storage_memory__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
