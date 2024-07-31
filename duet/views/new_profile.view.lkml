@@ -491,6 +491,14 @@ view: new_profile {
     description: "Category of the source, such as 'organic' for a search engine."
   }
 
+  dimension: environment__settings__attribution__msstoresignedin {
+    sql: ${TABLE}.environment.settings.attribution.msstoresignedin ;;
+    type: yesno
+    group_label: "Environment Settings Attribution"
+    group_item_label: "Msstoresignedin"
+    description: " Optional, only present if the installation was done through the Microsoft Store, and was able to retrieve the \"campaign ID\" it was first installed with. This value is \"true\" if the user was signed into the Microsoft Store when they first installed, and false otherwise."
+  }
+
   dimension: environment__settings__attribution__source {
     sql: ${TABLE}.environment.settings.attribution.source ;;
     type: string

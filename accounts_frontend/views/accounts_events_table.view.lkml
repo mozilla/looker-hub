@@ -324,6 +324,14 @@ view: accounts_events_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__event_third_party_links {
+    sql: ${TABLE}.metrics.boolean.event_third_party_links ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Event Third Party Links"
+    description: "boolean, additional context-dependent (on event.name) info related to third party auth links"
+  }
+
   dimension: metrics__labeled_boolean__standard_marketing {
     sql: ${TABLE}.metrics.labeled_boolean.standard_marketing ;;
     hidden: yes
