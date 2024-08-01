@@ -45,6 +45,26 @@ view: registration_funnels_by_service_table {
     type: number
   }
 
+  dimension: login_apple_start {
+    sql: ${TABLE}.login_apple_start ;;
+    type: number
+  }
+
+  dimension: login_google_start {
+    sql: ${TABLE}.login_google_start ;;
+    type: number
+  }
+
+  dimension: login_view {
+    sql: ${TABLE}.login_view ;;
+    type: number
+  }
+
+  dimension: reg_apple_start {
+    sql: ${TABLE}.reg_apple_start ;;
+    type: number
+  }
+
   dimension: reg_complete {
     sql: ${TABLE}.reg_complete ;;
     type: number
@@ -52,6 +72,11 @@ view: registration_funnels_by_service_table {
 
   dimension: reg_email_code_view {
     sql: ${TABLE}.reg_email_code_view ;;
+    type: number
+  }
+
+  dimension: reg_google_start {
+    sql: ${TABLE}.reg_google_start ;;
     type: number
   }
 
