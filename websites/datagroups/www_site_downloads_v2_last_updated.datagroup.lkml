@@ -5,12 +5,12 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: review_checker_clients_v1_last_updated {
-  label: "Fenix review checker clients data Last Updated"
+datagroup: www_site_downloads_v2_last_updated {
+  label: "WWW Site Downloads V2 Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'org_mozilla_fenix_derived'
-    AND table_name = 'review_checker_clients_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod.org_mozilla_fenix_derived.review_checker_clients_v1 is modified."
+    WHERE table_schema = 'mozilla_org_derived'
+    AND table_name = 'www_site_downloads_v2' ;;
+  description: "Updates when moz-fx-data-shared-prod.mozilla_org_derived.www_site_downloads_v2 is modified."
   max_cache_age: "24 hours"
 }
