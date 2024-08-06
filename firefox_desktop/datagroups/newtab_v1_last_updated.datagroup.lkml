@@ -6,11 +6,11 @@
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
 datagroup: newtab_v1_last_updated {
-  label: "None Last Updated"
+  label: "newtab_v1 Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'firefox_desktop_live'
+    WHERE table_schema = 'firefox_desktop_stable'
     AND table_name = 'newtab_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod.firefox_desktop_live.newtab_v1 is modified."
+  description: "Updates when moz-fx-data-shared-prod.firefox_desktop_stable.newtab_v1 is modified."
   max_cache_age: "24 hours"
 }
