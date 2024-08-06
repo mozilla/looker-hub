@@ -6,7 +6,7 @@
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
 datagroup: budget_complete_2022_last_updated {
-  label: "None Last Updated"
+  label: "budget_complete_2022 Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM `mozdata`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'revenue_cat3_analysis'
