@@ -1676,6 +1676,63 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput 100"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_100.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_10_50__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_10_50.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput 10 50"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_10_50__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_10_50.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput 10 50"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_10_50__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_10_50.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_50_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_50_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput 50 100"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_50_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_50_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput 50 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_50_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_50_100.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_upload_throughput__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput.count ;;
     type: number
@@ -1928,6 +1985,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_boolean__oskeystore_self_test {
     sql: ${TABLE}.metrics.labeled_boolean.oskeystore_self_test ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_boolean__pdfjs_image_alt_text_edit {
+    sql: ${TABLE}.metrics.labeled_boolean.pdfjs_image_alt_text_edit ;;
     hidden: yes
   }
 
@@ -2491,6 +2553,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__pdfjs_image_added {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_image_added ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__pdfjs_stamp {
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_stamp ;;
     hidden: yes
@@ -2656,6 +2723,25 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__cert_storage_memory__count {
+    sql: ${TABLE}.metrics.memory_distribution.cert_storage_memory.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Cert Storage Memory"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__cert_storage_memory__sum {
+    sql: ${TABLE}.metrics.memory_distribution.cert_storage_memory.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Cert Storage Memory"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__cert_storage_memory__values {
+    sql: ${TABLE}.metrics.memory_distribution.cert_storage_memory.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__memory_distribution__extensions_apis_dnr_startup_cache_read_size__count {
     sql: ${TABLE}.metrics.memory_distribution.extensions_apis_dnr_startup_cache_read_size.count ;;
     type: number
@@ -2767,6 +2853,25 @@ view: metrics_table {
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_cache_metadata_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_cache_metadata_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Cache Metadata Size"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__networking_cache_metadata_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_cache_metadata_size.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Cache Metadata Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_cache_metadata_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_cache_metadata_size.values ;;
     hidden: yes
   }
 
@@ -7125,6 +7230,124 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__network_tls_handshake__values {
     sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata First Read Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata First Read Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Cache Metadata First Read Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata First Read Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata First Read Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Cache Metadata First Read Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata First Read Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata Second Read Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata Second Read Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Cache Metadata Second Read Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata Second Read Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata Second Read Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Cache Metadata Second Read Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata Second Read Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.values ;;
     hidden: yes
   }
 
@@ -11742,6 +11965,42 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_download_th
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_http_3_download_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_download_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_download_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -11934,6 +12193,18 @@ view: metrics_table__metrics__labeled_boolean__oskeystore_self_test {
   }
 }
 
+view: metrics_table__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics_table__metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -11943,6 +12214,18 @@ view: metrics_table__metrics__labeled_string__cookie_banners_google_gdpr_choice_
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__cert_storage_memory__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
@@ -12007,6 +12290,18 @@ view: metrics_table__metrics__memory_distribution__glean_upload_discarded_exceed
 }
 
 view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__networking_cache_metadata_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -12751,6 +13046,30 @@ view: metrics_table__metrics__timing_distribution__network_tcp_connection__value
 }
 
 view: metrics_table__metrics__timing_distribution__network_tls_handshake__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_cache_metadata_first_read_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_cache_metadata_second_read_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

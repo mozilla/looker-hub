@@ -190,6 +190,15 @@ view: serp_categorization_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__counter__serp_categorization_no_map_found {
+    sql: ${TABLE}.metrics.counter.serp_categorization_no_map_found ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Serp Categorization No Map Found"
+    description: "A count incremented upon a SERP categorization event being recorded without a corresponding impression event being recorded. This metric effectively counts missing impressions due to issues with the domain-to-categories map.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes

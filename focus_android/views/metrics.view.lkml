@@ -1314,6 +1314,24 @@ the tracking protection settings panel from the toolbar.
     description: "The difference between the length of encoded certificate vs the actual certificate."
   }
 
+  dimension: metrics__memory_distribution__cert_storage_memory__sum {
+    label: "Cert Storage Memory Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.cert_storage_memory.sum ;;
+    type: number
+    group_label: "Cert Storage"
+    group_item_label: "Memory Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Storage Memory Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/cert_storage_memory"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Heap memory used by cert_storage.
+"
+  }
+
   dimension: metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms {
     label: "Cert Verifier Cert Revocation Mechanisms"
     hidden: yes
@@ -4763,6 +4781,59 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__sum {
+    label: "Networking Cache Metadata First Read Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cache Metadata First Read Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cache Metadata First Read Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_cache_metadata_first_read_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent to read the first part of the metadata from the cache entry file.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__sum {
+    label: "Networking Cache Metadata Second Read Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cache Metadata Second Read Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cache Metadata Second Read Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_cache_metadata_second_read_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent to read the missing part of the metadata from the cache entry file.
+"
+  }
+
+  dimension: metrics__memory_distribution__networking_cache_metadata_size__sum {
+    label: "Networking Cache Metadata Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.networking_cache_metadata_size.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cache Metadata Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cache Metadata Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_cache_metadata_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of the metadata in bytes parsed from the disk."
+  }
+
   dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__sum {
     label: "Networking Cookie Access Fixup Diff Sum"
     hidden: no
@@ -5262,6 +5333,60 @@ To be used to validate GIFFT.
     }
 
     description: "The download throughput for http/3 requests larger than 10MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_100__sum {
+    label: "Networking Http 3 Download Throughput 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Download Throughput 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Download Throughput 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_3_download_throughput_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The download throughput for http/3 requests size larger than 100MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_10_50__sum {
+    label: "Networking Http 3 Download Throughput 10 50 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_10_50.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Download Throughput 10 50 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Download Throughput 10 50 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_3_download_throughput_10_50"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The download throughput for http/3 requests between 10MB and 50MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_50_100__sum {
+    label: "Networking Http 3 Download Throughput 50 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_50_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Download Throughput 50 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Download Throughput 50 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_3_download_throughput_50_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The download throughput for http/3 requests between 50MB and 100MB. Measured in megabits per second, Mbps.
 "
   }
 
@@ -6421,6 +6546,41 @@ To be used to validate GIFFT.
     }
 
     description: "Counts the number of times some actions are executed in the PDF viewer.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_image_added {
+    label: "Pdfjs Image Added"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_image_added ;;
+    group_label: "Pdfjs Image"
+    group_item_label: "Added"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Image Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/pdfjs_image_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of images added with/without alt text.
+"
+  }
+
+  dimension: metrics__labeled_boolean__pdfjs_image_alt_text_edit {
+    label: "Pdfjs Image Alt Text Edit"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.pdfjs_image_alt_text_edit ;;
+    type: string
+    group_label: "Pdfjs Image"
+    group_item_label: "Alt Text Edit"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Image Alt Text Edit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/pdfjs_image_alt_text_edit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Stores alt text modal settings for the user.
 "
   }
 
@@ -16048,6 +16208,47 @@ view: metrics__metrics__labeled_counter__pdfjs_geckoview {
   }
 }
 
+view: metrics__metrics__labeled_counter__pdfjs_image_added {
+  label: "Pdfjs Image - Added"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__pdfjs_stamp {
   label: "Pdfjs - Stamp"
 
@@ -17917,6 +18118,42 @@ view: metrics__metrics__custom_distribution__networking_http_3_download_throughp
   }
 }
 
+view: metrics__metrics__custom_distribution__networking_http_3_download_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_download_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_download_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -18109,6 +18346,18 @@ view: metrics__metrics__labeled_boolean__oskeystore_self_test {
   }
 }
 
+view: metrics__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics__metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -18118,6 +18367,18 @@ view: metrics__metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics__metrics__memory_distribution__cert_storage_memory__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
@@ -18182,6 +18443,18 @@ view: metrics__metrics__memory_distribution__glean_upload_discarded_exceeding_pi
 }
 
 view: metrics__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__networking_cache_metadata_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -18926,6 +19199,30 @@ view: metrics__metrics__timing_distribution__network_tcp_connection__values {
 }
 
 view: metrics__metrics__timing_distribution__network_tls_handshake__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_cache_metadata_first_read_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_cache_metadata_second_read_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

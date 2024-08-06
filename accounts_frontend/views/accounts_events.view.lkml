@@ -58,6 +58,23 @@ view: accounts_events {
     description: "additional context-dependent (on event.name) info, e.g. the cause of an error"
   }
 
+  dimension: metrics__boolean__event_third_party_links {
+    label: "Event Third Party Links"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.event_third_party_links ;;
+    type: yesno
+    group_label: "Event"
+    group_item_label: "Third Party Links"
+
+    link: {
+      label: "Glean Dictionary reference for Event Third Party Links"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/event_third_party_links"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "boolean, additional context-dependent (on event.name) info related to third party auth links"
+  }
+
   dimension: metrics__string__relying_party_oauth_client_id {
     label: "Relying Party Oauth Client Id"
     hidden: no

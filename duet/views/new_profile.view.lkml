@@ -491,6 +491,14 @@ view: new_profile {
     description: "Category of the source, such as 'organic' for a search engine."
   }
 
+  dimension: environment__settings__attribution__msstoresignedin {
+    sql: ${TABLE}.environment.settings.attribution.msstoresignedin ;;
+    type: yesno
+    group_label: "Environment Settings Attribution"
+    group_item_label: "Msstoresignedin"
+    description: " Optional, only present if the installation was done through the Microsoft Store, and was able to retrieve the \"campaign ID\" it was first installed with. This value is \"true\" if the user was signed into the Microsoft Store when they first installed, and false otherwise."
+  }
+
   dimension: environment__settings__attribution__source {
     sql: ${TABLE}.environment.settings.attribution.source ;;
     type: string
@@ -1085,6 +1093,14 @@ view: new_profile {
     group_label: "Environment System Gfx"
     group_item_label: "Target Frame Rate"
     description: "Frame rate in Hz, typically 60 or more, see bug 1840381"
+  }
+
+  dimension: environment__system__gfx__text_scale_factor {
+    sql: ${TABLE}.environment.system.gfx.text_scale_factor ;;
+    type: number
+    group_label: "Environment System Gfx"
+    group_item_label: "Text Scale Factor"
+    description: "Text scale supported by GTK and Windows. 1 corresponds to 100%."
   }
 
   dimension: environment__system__has_win_package_id {
@@ -1782,6 +1798,12 @@ view: new_profile {
     group_item_label: "Reason"
   }
 
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
+    description: "A UUID identifying the profile's group on a single device and allowing user-oriented correlation of data"
+  }
+
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
@@ -2158,6 +2180,18 @@ view: new_profile__environment__system__gfx__adapters {
 }
 
 view: new_profile__environment__system__gfx__monitors {
+  dimension: contents_scale_factor {
+    sql: ${TABLE}.contents_scale_factor ;;
+    type: number
+    description: "The number of device pixels per desktop pixel for this screen."
+  }
+
+  dimension: default_css_scale_factor {
+    sql: ${TABLE}.default_css_scale_factor ;;
+    type: number
+    description: "The default number of device pixels per unscaled CSS pixel for this screen."
+  }
+
   dimension: pseudo_display {
     sql: ${TABLE}.pseudo_display ;;
     type: yesno
