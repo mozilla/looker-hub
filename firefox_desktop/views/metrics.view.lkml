@@ -850,6 +850,42 @@ when dynamic or static rulesets have been loaded from disk.
 "
   }
 
+  dimension: metrics__boolean__genai_chatbot_shortcuts {
+    label: "Genai Chatbot Shortcuts"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.genai_chatbot_shortcuts ;;
+    type: yesno
+    group_label: "Genai Chatbot"
+    group_item_label: "Shortcuts"
+
+    link: {
+      label: "Glean Dictionary reference for Genai Chatbot Shortcuts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/genai_chatbot_shortcuts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if the chatbot feature would show shortcuts on selection.
+"
+  }
+
+  dimension: metrics__boolean__genai_chatbot_shortcuts_custom {
+    label: "Genai Chatbot Shortcuts Custom"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.genai_chatbot_shortcuts_custom ;;
+    type: yesno
+    group_label: "Genai Chatbot"
+    group_item_label: "Shortcuts Custom"
+
+    link: {
+      label: "Glean Dictionary reference for Genai Chatbot Shortcuts Custom"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/genai_chatbot_shortcuts_custom"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if the chatbot feature would show shortcuts custom input.
+"
+  }
+
   dimension: metrics__boolean__genai_chatbot_sidebar {
     label: "Genai Chatbot Sidebar"
     hidden: no

@@ -398,6 +398,24 @@ Child-process data will likely be absent, or incomplete.
 "
   }
 
+  dimension: metrics__boolean__genai_chatbot_shortcuts {
+    sql: ${TABLE}.metrics.boolean.genai_chatbot_shortcuts ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Genai Chatbot Shortcuts"
+    description: "Indicates if the chatbot feature would show shortcuts on selection.
+"
+  }
+
+  dimension: metrics__boolean__genai_chatbot_shortcuts_custom {
+    sql: ${TABLE}.metrics.boolean.genai_chatbot_shortcuts_custom ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Genai Chatbot Shortcuts Custom"
+    description: "Indicates if the chatbot feature would show shortcuts custom input.
+"
+  }
+
   dimension: metrics__boolean__genai_chatbot_sidebar {
     sql: ${TABLE}.metrics.boolean.genai_chatbot_sidebar ;;
     type: yesno
