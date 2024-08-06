@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,77 +26,9 @@
       enable_activation_telemetry_android.branch
     ]
     filters:
-      enable_activation_telemetry_android.metric: 'search_count'
+      enable_activation_telemetry_android.metric: 'days_of_use'
       enable_activation_telemetry_android.statistic: mean
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: enable_activation_telemetry_android.submission_date
-    field_y: enable_activation_telemetry_android.point
-    log_scale: false
-    ci_lower: enable_activation_telemetry_android.lower
-    ci_upper: enable_activation_telemetry_android.upper
-    show_grid: true
-    listen:
-      Date: enable_activation_telemetry_android.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: enable_activation_telemetry_android
-    type: looker_line
-    fields: [
-      enable_activation_telemetry_android.submission_date,
-      enable_activation_telemetry_android.branch,
-      enable_activation_telemetry_android.point
-    ]
-    pivots: [
-      enable_activation_telemetry_android.branch
-    ]
-    filters:
-      enable_activation_telemetry_android.metric: 'uri_count'
-      enable_activation_telemetry_android.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: enable_activation_telemetry_android.submission_date
-    field_y: enable_activation_telemetry_android.point
-    log_scale: false
-    ci_lower: enable_activation_telemetry_android.lower
-    ci_upper: enable_activation_telemetry_android.upper
-    show_grid: true
-    listen:
-      Date: enable_activation_telemetry_android.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: enable_activation_telemetry_android
-    type: looker_line
-    fields: [
-      enable_activation_telemetry_android.submission_date,
-      enable_activation_telemetry_android.branch,
-      enable_activation_telemetry_android.point
-    ]
-    pivots: [
-      enable_activation_telemetry_android.branch
-    ]
-    filters:
-      enable_activation_telemetry_android.metric: 'active_hours'
-      enable_activation_telemetry_android.statistic: mean
-    row: 10
     col: 0
     width: 12
     height: 8
@@ -129,6 +61,74 @@
     ]
     filters:
       enable_activation_telemetry_android.metric: 'ad_clicks'
+      enable_activation_telemetry_android.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: enable_activation_telemetry_android.submission_date
+    field_y: enable_activation_telemetry_android.point
+    log_scale: false
+    ci_lower: enable_activation_telemetry_android.lower
+    ci_upper: enable_activation_telemetry_android.upper
+    show_grid: true
+    listen:
+      Date: enable_activation_telemetry_android.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Uri Count
+    name: Uri Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: enable_activation_telemetry_android
+    type: looker_line
+    fields: [
+      enable_activation_telemetry_android.submission_date,
+      enable_activation_telemetry_android.branch,
+      enable_activation_telemetry_android.point
+    ]
+    pivots: [
+      enable_activation_telemetry_android.branch
+    ]
+    filters:
+      enable_activation_telemetry_android.metric: 'uri_count'
+      enable_activation_telemetry_android.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: enable_activation_telemetry_android.submission_date
+    field_y: enable_activation_telemetry_android.point
+    log_scale: false
+    ci_lower: enable_activation_telemetry_android.lower
+    ci_upper: enable_activation_telemetry_android.upper
+    show_grid: true
+    listen:
+      Date: enable_activation_telemetry_android.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: enable_activation_telemetry_android
+    type: looker_line
+    fields: [
+      enable_activation_telemetry_android.submission_date,
+      enable_activation_telemetry_android.branch,
+      enable_activation_telemetry_android.point
+    ]
+    pivots: [
+      enable_activation_telemetry_android.branch
+    ]
+    filters:
+      enable_activation_telemetry_android.metric: 'active_hours'
       enable_activation_telemetry_android.statistic: mean
     row: 10
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       enable_activation_telemetry_android.branch
     ]
     filters:
-      enable_activation_telemetry_android.metric: 'days_of_use'
+      enable_activation_telemetry_android.metric: 'search_count'
       enable_activation_telemetry_android.statistic: mean
     row: 30
     col: 0

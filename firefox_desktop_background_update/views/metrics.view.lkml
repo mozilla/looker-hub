@@ -680,6 +680,24 @@ It is possible for a Firefox installation to not have a default profile, but in 
     description: "The difference between the length of encoded certificate vs the actual certificate."
   }
 
+  dimension: metrics__memory_distribution__cert_storage_memory__sum {
+    label: "Cert Storage Memory Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.cert_storage_memory.sum ;;
+    type: number
+    group_label: "Cert Storage"
+    group_item_label: "Memory Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Storage Memory Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cert_storage_memory"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Heap memory used by cert_storage.
+"
+  }
+
   dimension: metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms {
     label: "Cert Verifier Cert Revocation Mechanisms"
     hidden: yes
@@ -4127,6 +4145,59 @@ To be used to validate GIFFT.
 
     description: "In the HTTP page channel, time from after the TCP SYN packet is received to the secure connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_PAGE_TLS_HANDSHAKE in Desktop. (Migrated from the geckoview metric of the same name).
 "
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__sum {
+    label: "Networking Cache Metadata First Read Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cache Metadata First Read Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cache Metadata First Read Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_cache_metadata_first_read_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent to read the first part of the metadata from the cache entry file.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__sum {
+    label: "Networking Cache Metadata Second Read Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cache Metadata Second Read Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cache Metadata Second Read Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_cache_metadata_second_read_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent to read the missing part of the metadata from the cache entry file.
+"
+  }
+
+  dimension: metrics__memory_distribution__networking_cache_metadata_size__sum {
+    label: "Networking Cache Metadata Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.networking_cache_metadata_size.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cache Metadata Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cache Metadata Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_cache_metadata_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of the metadata in bytes parsed from the disk."
   }
 
   dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__sum {
@@ -17141,6 +17212,18 @@ view: metrics__metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie
   }
 }
 
+view: metrics__metrics__memory_distribution__cert_storage_memory__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__memory_distribution__extensions_apis_dnr_startup_cache_read_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -17202,6 +17285,18 @@ view: metrics__metrics__memory_distribution__glean_upload_discarded_exceeding_pi
 }
 
 view: metrics__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__networking_cache_metadata_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -17946,6 +18041,30 @@ view: metrics__metrics__timing_distribution__network_tcp_connection__values {
 }
 
 view: metrics__metrics__timing_distribution__network_tls_handshake__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_cache_metadata_first_read_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_cache_metadata_second_read_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
