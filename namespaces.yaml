@@ -13749,6 +13749,14 @@ websites:
       tables:
       - table: mozdata.google_search_console.search_impressions_by_site
       type: table_view
+    limited_historical_google_search_console_by_page:
+      tables:
+      - table: mozdata.google_search_console.limited_historical_search_impressions_by_page
+      type: table_view
+    limited_historical_google_search_console_by_site:
+      tables:
+      - table: mozdata.google_search_console.limited_historical_search_impressions_by_site
+      type: table_view
     metric_definitions_www_site_landing_page_metrics:
       type: metric_definitions_view
     moz_org_landing_page_metrics:
