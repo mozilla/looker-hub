@@ -25,7 +25,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_audio_channels {
     label: "Characteristics Audio Channels"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_audio_channels ;;
     type: number
     group_label: "Characteristics"
@@ -43,7 +43,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_audio_devices {
     label: "Characteristics Audio Devices"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_audio_devices ;;
     type: string
     group_label: "Characteristics"
@@ -79,7 +79,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_audio_frames {
     label: "Characteristics Audio Frames"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_audio_frames ;;
     type: number
     group_label: "Characteristics"
@@ -97,7 +97,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_audio_rate {
     label: "Characteristics Audio Rate"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_audio_rate ;;
     type: number
     group_label: "Characteristics"
@@ -205,7 +205,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata10software {
     label: "Characteristics Canvasdata10Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata10software ;;
     type: string
     group_label: "Characteristics"
@@ -241,7 +241,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata11_webglsoftware {
     label: "Characteristics Canvasdata11 Webglsoftware"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata11_webglsoftware ;;
     type: string
     group_label: "Characteristics"
@@ -277,7 +277,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata12_fingerprintjs1software {
     label: "Characteristics Canvasdata12 Fingerprintjs1Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata12_fingerprintjs1software ;;
     type: string
     group_label: "Characteristics"
@@ -313,7 +313,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata13_fingerprintjs2software {
     label: "Characteristics Canvasdata13 Fingerprintjs2Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata13_fingerprintjs2software ;;
     type: string
     group_label: "Characteristics"
@@ -331,7 +331,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata1software {
     label: "Characteristics Canvasdata1Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata1software ;;
     type: string
     group_label: "Characteristics"
@@ -367,7 +367,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata2software {
     label: "Characteristics Canvasdata2Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata2software ;;
     type: string
     group_label: "Characteristics"
@@ -403,7 +403,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata3software {
     label: "Characteristics Canvasdata3Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata3software ;;
     type: string
     group_label: "Characteristics"
@@ -439,7 +439,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata4software {
     label: "Characteristics Canvasdata4Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata4software ;;
     type: string
     group_label: "Characteristics"
@@ -475,7 +475,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata5software {
     label: "Characteristics Canvasdata5Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata5software ;;
     type: string
     group_label: "Characteristics"
@@ -511,7 +511,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata6software {
     label: "Characteristics Canvasdata6Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata6software ;;
     type: string
     group_label: "Characteristics"
@@ -547,7 +547,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata7software {
     label: "Characteristics Canvasdata7Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata7software ;;
     type: string
     group_label: "Characteristics"
@@ -583,7 +583,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata8software {
     label: "Characteristics Canvasdata8Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata8software ;;
     type: string
     group_label: "Characteristics"
@@ -619,7 +619,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata9software {
     label: "Characteristics Canvasdata9Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata9software ;;
     type: string
     group_label: "Characteristics"
@@ -2828,24 +2828,6 @@ view: user_characteristics {
     }
 
     description: "Available speechSynthesis voices.
-"
-  }
-
-  dimension: metrics__text2__characteristics_webglinfo {
-    label: "Characteristics Webglinfo"
-    hidden: no
-    sql: ${TABLE}.metrics.text2.characteristics_webglinfo ;;
-    type: string
-    group_label: "Characteristics"
-    group_item_label: "Webglinfo"
-
-    link: {
-      label: "Glean Dictionary reference for Characteristics Webglinfo"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_webglinfo"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "A JSON blob that contains information about the graphics hardware exposed by WebGL.
 "
   }
 
