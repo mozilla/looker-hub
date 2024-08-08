@@ -2831,6 +2831,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_webglinfo {
+    label: "Characteristics Webglinfo"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_webglinfo ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Webglinfo"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Webglinfo"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_webglinfo"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A JSON blob that contains information about the graphics hardware exposed by WebGL.
+"
+  }
+
   dimension: metrics__quantity__characteristics_zoom_count {
     label: "Characteristics Zoom Count"
     hidden: no
