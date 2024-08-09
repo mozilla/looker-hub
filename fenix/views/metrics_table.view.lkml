@@ -353,6 +353,13 @@ view: metrics_table {
     group_item_label: "Cookie Banners Service Detect Only"
   }
 
+  dimension: metrics__boolean__customization_settings_dynamic_toolbar {
+    sql: ${TABLE}.metrics.boolean.customization_settings_dynamic_toolbar ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Customization Settings Dynamic Toolbar"
+  }
+
   dimension: metrics__boolean__customize_home_bookmarks {
     sql: ${TABLE}.metrics.boolean.customize_home_bookmarks ;;
     type: yesno

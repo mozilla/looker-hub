@@ -13836,6 +13836,185 @@ telemetry_dev_cycle:
       tables:
       - table: mozdata.telemetry_dev_cycle.telemetry_probes_stats
       type: table_view
+thunderbird_desktop:
+  explores:
+    baseline:
+      type: glean_ping_explore
+      views:
+        base_view: baseline
+    bounce_tracking_protection:
+      type: glean_ping_explore
+      views:
+        base_view: bounce_tracking_protection
+    broken_site_report:
+      type: glean_ping_explore
+      views:
+        base_view: broken_site_report
+    client_counts:
+      type: client_counts_explore
+      views:
+        base_view: client_counts
+        extended_view: baseline_clients_daily_table
+    deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: deletion_request
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
+    events_stream_table:
+      type: table_explore
+      views:
+        base_view: events_stream_table
+    fog_validation:
+      type: glean_ping_explore
+      views:
+        base_view: fog_validation
+    growth_accounting:
+      type: growth_accounting_explore
+      views:
+        base_view: growth_accounting
+    metrics:
+      type: glean_ping_explore
+      views:
+        base_view: metrics
+    pageload:
+      type: glean_ping_explore
+      views:
+        base_view: pageload
+    use_counters:
+      type: glean_ping_explore
+      views:
+        base_view: use_counters
+  glean_app: true
+  owners:
+  - alessandro@thunderbird.net
+  - sancus@thunderbird.net
+  pretty_name: Thunderbird
+  spoke: looker-spoke-default
+  views:
+    baseline:
+      tables:
+      - table: mozdata.thunderbird_desktop.baseline
+      type: glean_ping_view
+    baseline_clients_daily_table:
+      tables:
+      - channel: null
+        table: mozdata.thunderbird_desktop.baseline_clients_daily
+      type: table_view
+    baseline_clients_first_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.thunderbird_desktop.baseline_clients_first_seen
+      type: table_view
+    baseline_clients_last_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.thunderbird_desktop.baseline_clients_last_seen
+      type: table_view
+    baseline_table:
+      tables:
+      - channel: null
+        table: mozdata.thunderbird_desktop.baseline
+      type: table_view
+    bounce_tracking_protection:
+      tables:
+      - table: mozdata.thunderbird_desktop.bounce_tracking_protection
+      type: glean_ping_view
+    bounce_tracking_protection_table:
+      tables:
+      - channel: null
+        table: mozdata.thunderbird_desktop.bounce_tracking_protection
+      type: table_view
+    broken_site_report:
+      tables:
+      - table: mozdata.thunderbird_desktop.broken_site_report
+      type: glean_ping_view
+    broken_site_report_table:
+      tables:
+      - channel: null
+        table: mozdata.thunderbird_desktop.broken_site_report
+      type: table_view
+    client_counts:
+      tables:
+      - table: mozdata.thunderbird_desktop.baseline_clients_daily
+      type: client_counts_view
+    deletion_request:
+      tables:
+      - table: mozdata.thunderbird_desktop.deletion_request
+      type: glean_ping_view
+    deletion_request_table:
+      tables:
+      - channel: null
+        table: mozdata.thunderbird_desktop.deletion_request
+      type: table_view
+    events:
+      tables:
+      - base_table: mozdata.thunderbird_desktop.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
+    events_stream_table:
+      tables:
+      - channel: null
+        table: mozdata.thunderbird_desktop.events_stream
+      type: table_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.thunderbird_desktop.events
+      type: table_view
+    events_unnested_table:
+      tables:
+      - channel: null
+        table: mozdata.thunderbird_desktop.events_unnested
+      type: table_view
+    fog_validation:
+      tables:
+      - table: mozdata.thunderbird_desktop.fog_validation
+      type: glean_ping_view
+    fog_validation_table:
+      tables:
+      - channel: null
+        table: mozdata.thunderbird_desktop.fog_validation
+      type: table_view
+    growth_accounting:
+      tables:
+      - table: mozdata.thunderbird_desktop.baseline_clients_last_seen
+      type: growth_accounting_view
+    metrics:
+      tables:
+      - table: mozdata.thunderbird_desktop.metrics
+      type: glean_ping_view
+    metrics_clients_daily_table:
+      tables:
+      - channel: null
+        table: mozdata.thunderbird_desktop.metrics_clients_daily
+      type: table_view
+    metrics_table:
+      tables:
+      - channel: null
+        table: mozdata.thunderbird_desktop.metrics
+      type: table_view
+    pageload:
+      tables:
+      - table: mozdata.thunderbird_desktop.pageload
+      type: glean_ping_view
+    pageload_table:
+      tables:
+      - channel: null
+        table: mozdata.thunderbird_desktop.pageload
+      type: table_view
+    use_counters:
+      tables:
+      - table: mozdata.thunderbird_desktop.use_counters
+      type: glean_ping_view
+    use_counters_table:
+      tables:
+      - channel: null
+        table: mozdata.thunderbird_desktop.use_counters
+      type: table_view
 user_journey:
   glean_app: false
   owners:
