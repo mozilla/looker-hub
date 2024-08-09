@@ -411,6 +411,24 @@ manually by the user.
 "
   }
 
+  dimension: metrics__boolean__customization_settings_dynamic_toolbar {
+    label: "Customization Settings Dynamic Toolbar"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.customization_settings_dynamic_toolbar ;;
+    type: yesno
+    group_label: "Customization Settings"
+    group_item_label: "Dynamic Toolbar"
+
+    link: {
+      label: "Glean Dictionary reference for Customization Settings Dynamic Toolbar"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/customization_settings_dynamic_toolbar"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the user has dynamic toolbar enabled, false if the user has dynamic toolbar disabled.
+"
+  }
+
   dimension: metrics__boolean__customize_home_bookmarks {
     label: "Customize Home Bookmarks"
     hidden: no
