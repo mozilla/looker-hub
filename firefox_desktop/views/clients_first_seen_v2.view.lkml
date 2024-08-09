@@ -230,6 +230,12 @@ view: clients_first_seen_v2 {
     description: "The appliction platform version reported by the client."
   }
 
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
+    description: "A UUID identifying the profile's group on a single device and allowing user-oriented correlation of data"
+  }
+
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
