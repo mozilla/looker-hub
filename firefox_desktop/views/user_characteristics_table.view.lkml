@@ -1767,6 +1767,15 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_webglinfo {
+    sql: ${TABLE}.metrics.text2.characteristics_webglinfo ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Webglinfo"
+    description: "A JSON blob that contains information about the graphics hardware exposed by WebGL.
+"
+  }
+
   dimension: metrics__uuid__characteristics_client_identifier {
     sql: ${TABLE}.metrics.uuid.characteristics_client_identifier ;;
     type: string
