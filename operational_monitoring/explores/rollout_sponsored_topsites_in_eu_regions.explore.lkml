@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/enhanced_cross_platform_suggest_ios_beta.view.lkml"
+include: "/looker-hub/operational_monitoring/views/rollout_sponsored_topsites_in_eu_regions.view.lkml"
 
-explore: enhanced_cross_platform_suggest_ios_beta {
+explore: rollout_sponsored_topsites_in_eu_regions {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
