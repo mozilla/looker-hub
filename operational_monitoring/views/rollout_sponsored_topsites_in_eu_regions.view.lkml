@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: review_checker_continuity_rollout {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.review_checker_continuity_rollout_statistics ;;
+view: rollout_sponsored_topsites_in_eu_regions {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.rollout_sponsored_topsites_in_eu_regions_statistics ;;
 
   dimension: submission_date {
     type: date
