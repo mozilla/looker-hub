@@ -15,6 +15,11 @@ view: operating_system_usage {
     type: string
   }
 
+  dimension: location_name {
+    sql: ${TABLE}.location_name ;;
+    type: string
+  }
+
   dimension: normalization_type {
     sql: ${TABLE}.normalization_type ;;
     type: string
@@ -28,6 +33,11 @@ view: operating_system_usage {
   dimension: os_share {
     sql: ${TABLE}.os_share ;;
     type: number
+  }
+
+  dimension: region_name {
+    sql: ${TABLE}.region_name ;;
+    type: string
   }
 
   dimension_group: dte {

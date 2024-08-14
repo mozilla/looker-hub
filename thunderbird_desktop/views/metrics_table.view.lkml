@@ -435,6 +435,14 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__compose_mails_sent {
+    sql: ${TABLE}.metrics.counter.compose_mails_sent ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Compose Mails Sent"
+    description: "How many emails were sent by the user."
+  }
+
   dimension: metrics__counter__cookie_banners_cookie_injection_fail {
     sql: ${TABLE}.metrics.counter.cookie_banners_cookie_injection_fail ;;
     type: number
@@ -460,6 +468,14 @@ To be used to validate GIFFT.
     group_item_label: "Dotprint Requested"
     description: "How many times window.print was requested.
 "
+  }
+
+  dimension: metrics__counter__filelink_filelink_ignored {
+    sql: ${TABLE}.metrics.counter.filelink_filelink_ignored ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Filelink Filelink Ignored"
+    description: "How many times suggestion to use FileLink were ignored."
   }
 
   dimension: metrics__counter__fog_inits_during_shutdown {
@@ -648,6 +664,14 @@ This does not include deletion-request pings.
     group_item_label: "Httpsfirst Upgraded Schemeless"
     description: "Counts how often a load is successfully upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless). This does not include loads that get downgraded again.
 "
+  }
+
+  dimension: metrics__counter__mail_mails_read {
+    sql: ${TABLE}.metrics.counter.mail_mails_read ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Mail Mails Read"
+    description: "How many emails were read by the user."
   }
 
   dimension: metrics__counter__netwerk_parent_connect_timeout {
@@ -2021,6 +2045,18 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__labeled_boolean__mail_preferences_boolean {
+    sql: ${TABLE}.metrics.labeled_boolean.mail_preferences_boolean ;;
+    hidden: yes
+    description: "Values of boolean preferences."
+  }
+
+  dimension: metrics__labeled_boolean__mail_ui_configuration_pane_visibility {
+    sql: ${TABLE}.metrics.labeled_boolean.mail_ui_configuration_pane_visibility ;;
+    hidden: yes
+    description: "Configuration of the folder and message panes. Whether they are set to be shown or not."
+  }
+
   dimension: metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
     sql: ${TABLE}.metrics.labeled_boolean.media_playback_device_hardware_decoder_support ;;
     hidden: yes
@@ -2241,6 +2277,20 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__labeled_counter__compose_compose_format {
+    sql: ${TABLE}.metrics.labeled_counter.compose_compose_format ;;
+    hidden: yes
+    description: "How many times messages were written in HTML composition mode, vs. how many were written in plain text composition mode. Label names are from nsIMsgCompFormat.
+"
+  }
+
+  dimension: metrics__labeled_counter__compose_compose_type {
+    sql: ${TABLE}.metrics.labeled_counter.compose_compose_type ;;
+    hidden: yes
+    description: "How many times each message compose type was used when creating a message.
+"
+  }
+
   dimension: metrics__labeled_counter__cookie_banners_click_result {
     sql: ${TABLE}.metrics.labeled_counter.cookie_banners_click_result ;;
     hidden: yes
@@ -2326,6 +2376,13 @@ builds.
     hidden: yes
     description: "The number of times an unexpected error has been raised while reading
 the extensions StartupCache file.
+"
+  }
+
+  dimension: metrics__labeled_counter__filelink_uploaded_size {
+    sql: ${TABLE}.metrics.labeled_counter.filelink_uploaded_size ;;
+    hidden: yes
+    description: "Accumulated file size (bytes) uploaded to FileLink services, keyed by FileLink provider type.
 "
   }
 
@@ -2511,6 +2568,31 @@ This metric appears in both the metrics and baseline pings.
     hidden: yes
     description: "How many times each IPC message type was sent. Broken down by process type.
 "
+  }
+
+  dimension: metrics__labeled_counter__mail_failed_email_account_setup {
+    sql: ${TABLE}.metrics.labeled_counter.mail_failed_email_account_setup ;;
+    hidden: yes
+    description: "How many times email accounts setup failed, keyed by account config source."
+  }
+
+  dimension: metrics__labeled_counter__mail_folder_opened {
+    sql: ${TABLE}.metrics.labeled_counter.mail_folder_opened ;;
+    hidden: yes
+    description: "How many times folders of each type are opened.
+"
+  }
+
+  dimension: metrics__labeled_counter__mail_successful_email_account_setup {
+    sql: ${TABLE}.metrics.labeled_counter.mail_successful_email_account_setup ;;
+    hidden: yes
+    description: "How many times email accounts setup succeeded, keyed by account config source."
+  }
+
+  dimension: metrics__labeled_counter__mail_websearch_usage {
+    sql: ${TABLE}.metrics.labeled_counter.mail_websearch_usage ;;
+    hidden: yes
+    description: "How many times search the web was used, keyed by search engine name."
   }
 
   dimension: metrics__labeled_counter__media_audio_backend {
@@ -3020,10 +3102,75 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_string__addrbook_addressbook_count {
+    sql: ${TABLE}.metrics.labeled_string.addrbook_addressbook_count ;;
+    hidden: yes
+    description: "How many addressbooks were set up, keyed by addressbook directory URI scheme."
+  }
+
+  dimension: metrics__labeled_string__addrbook_contact_count {
+    sql: ${TABLE}.metrics.labeled_string.addrbook_contact_count ;;
+    hidden: yes
+    description: "Count of contacts in all addressbooks, keyed by addressbook directory URI scheme.
+"
+  }
+
+  dimension: metrics__labeled_string__calendar_calendar_count {
+    sql: ${TABLE}.metrics.labeled_string.calendar_calendar_count ;;
+    hidden: yes
+    description: "How many calendars were set up, keyed by calendar type Types are e.g. \"storage\", \"caldav\", \"ics\" and various types from add-ons.
+"
+  }
+
+  dimension: metrics__labeled_string__calendar_read_only_calendar_count {
+    sql: ${TABLE}.metrics.labeled_string.calendar_read_only_calendar_count ;;
+    hidden: yes
+    description: "How many read-only calendars were set up, keyed by calendar type. Types are e.g. \"storage\", \"caldav\", \"ics\" and various types from add-ons.
+"
+  }
+
   dimension: metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
     sql: ${TABLE}.metrics.labeled_string.cookie_banners_google_gdpr_choice_cookie ;;
     hidden: yes
     description: "Records the GDPR choice on Google Search based on the \"SOCS\" cookie of the Google Search domains. The value could be \"Accept\", \"Reject\" or \"Custom\". We use the label to record different choices on different Google domains. We only collect this if the default search engine is Google.
+"
+  }
+
+  dimension: metrics__labeled_string__mail_account_count {
+    sql: ${TABLE}.metrics.labeled_string.mail_account_count ;;
+    hidden: yes
+    description: "Count of how many accounts were set up, keyed by account type."
+  }
+
+  dimension: metrics__labeled_string__mail_folder_size_on_disk {
+    sql: ${TABLE}.metrics.labeled_string.mail_folder_size_on_disk ;;
+    hidden: yes
+    description: "How many bytes each type of folder takes on disk."
+  }
+
+  dimension: metrics__labeled_string__mail_folder_total_messages {
+    sql: ${TABLE}.metrics.labeled_string.mail_folder_total_messages ;;
+    hidden: yes
+    description: "How many messages each type of folder has."
+  }
+
+  dimension: metrics__labeled_string__mail_oauth2_provider_count {
+    sql: ${TABLE}.metrics.labeled_string.mail_oauth2_provider_count ;;
+    hidden: yes
+    description: "A count of incoming mail accounts using OAuth2 for authentication, keyed by OAuth2 issuer.
+"
+  }
+
+  dimension: metrics__labeled_string__mail_preferences_integer {
+    sql: ${TABLE}.metrics.labeled_string.mail_preferences_integer ;;
+    hidden: yes
+    description: "Values of integer preferences."
+  }
+
+  dimension: metrics__labeled_string__mail_ui_configuration_message_header {
+    sql: ${TABLE}.metrics.labeled_string.mail_ui_configuration_message_header ;;
+    hidden: yes
+    description: "Configuration of the message header display. Customization state; expected values are \"true\" or \"false\". For buttonStyle values are \"default\", \"only-icons\", \"only-text\".
 "
   }
 
@@ -3951,6 +4098,11 @@ for the purpose of experimentation enrollment.
 The specific values for reason are specific to each ping, and are
 documented in the ping's pings.yaml file.
 "
+  }
+
+  dimension: metrics__string_list__mail_ui_configuration_folder_tree_modes {
+    sql: ${TABLE}.metrics.string_list.mail_ui_configuration_folder_tree_modes ;;
+    hidden: yes
   }
 
   dimension: metrics__timespan__extensions_startup_cache_load_time__time_unit {
@@ -12494,6 +12646,30 @@ view: metrics_table__metrics__labeled_boolean__geolocation_linux_provider {
   }
 }
 
+view: metrics_table__metrics__labeled_boolean__mail_preferences_boolean {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__mail_ui_configuration_pane_visibility {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics_table__metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -12530,7 +12706,127 @@ view: metrics_table__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
   }
 }
 
+view: metrics_table__metrics__labeled_string__addrbook_addressbook_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics_table__metrics__labeled_string__addrbook_contact_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics_table__metrics__labeled_string__calendar_calendar_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics_table__metrics__labeled_string__calendar_read_only_calendar_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
 view: metrics_table__metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics_table__metrics__labeled_string__mail_account_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics_table__metrics__labeled_string__mail_folder_size_on_disk {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics_table__metrics__labeled_string__mail_folder_total_messages {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics_table__metrics__labeled_string__mail_oauth2_provider_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics_table__metrics__labeled_string__mail_preferences_integer {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics_table__metrics__labeled_string__mail_ui_configuration_message_header {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

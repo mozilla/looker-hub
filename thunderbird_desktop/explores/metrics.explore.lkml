@@ -163,6 +163,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__codec_stats_video_preferred_codec}) AS metrics__metrics__labeled_counter__codec_stats_video_preferred_codec ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__codec_stats_video_preferred_codec.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__compose_compose_format {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__compose_compose_format}) AS metrics__metrics__labeled_counter__compose_compose_format ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__compose_compose_format.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__compose_compose_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__compose_compose_type}) AS metrics__metrics__labeled_counter__compose_compose_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__compose_compose_type.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__cookie_banners_click_result {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cookie_banners_click_result}) AS metrics__metrics__labeled_counter__cookie_banners_click_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cookie_banners_click_result.document_id} ;;
@@ -221,6 +231,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_startup_cache_read_errors}) AS metrics__metrics__labeled_counter__extensions_startup_cache_read_errors ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_startup_cache_read_errors.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__filelink_uploaded_size {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__filelink_uploaded_size}) AS metrics__metrics__labeled_counter__filelink_uploaded_size ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__filelink_uploaded_size.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
@@ -341,6 +356,26 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ipc_sent_messages_parent_inactive}) AS metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__mail_failed_email_account_setup {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mail_failed_email_account_setup}) AS metrics__metrics__labeled_counter__mail_failed_email_account_setup ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mail_failed_email_account_setup.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__mail_folder_opened {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mail_folder_opened}) AS metrics__metrics__labeled_counter__mail_folder_opened ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mail_folder_opened.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__mail_successful_email_account_setup {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mail_successful_email_account_setup}) AS metrics__metrics__labeled_counter__mail_successful_email_account_setup ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mail_successful_email_account_setup.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__mail_websearch_usage {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mail_websearch_usage}) AS metrics__metrics__labeled_counter__mail_websearch_usage ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mail_websearch_usage.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__media_audio_backend {
