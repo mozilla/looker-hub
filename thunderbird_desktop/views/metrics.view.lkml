@@ -5,6 +5,382 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics {
+  dimension: metrics__labeled_string__addrbook_addressbook_count {
+    label: "Addrbook Addressbook Count"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.addrbook_addressbook_count ;;
+    type: string
+    group_label: "Addrbook"
+    group_item_label: "Addressbook Count"
+
+    link: {
+      label: "Glean Dictionary reference for Addrbook Addressbook Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/addrbook_addressbook_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many addressbooks were set up, keyed by addressbook directory URI scheme."
+  }
+
+  dimension: metrics__labeled_string__addrbook_contact_count {
+    label: "Addrbook Contact Count"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.addrbook_contact_count ;;
+    type: string
+    group_label: "Addrbook"
+    group_item_label: "Contact Count"
+
+    link: {
+      label: "Glean Dictionary reference for Addrbook Contact Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/addrbook_contact_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of contacts in all addressbooks, keyed by addressbook directory URI scheme.
+"
+  }
+
+  dimension: metrics__labeled_string__calendar_calendar_count {
+    label: "Calendar Calendar Count"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.calendar_calendar_count ;;
+    type: string
+    group_label: "Calendar"
+    group_item_label: "Calendar Count"
+
+    link: {
+      label: "Glean Dictionary reference for Calendar Calendar Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/calendar_calendar_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many calendars were set up, keyed by calendar type Types are e.g. \"storage\", \"caldav\", \"ics\" and various types from add-ons.
+"
+  }
+
+  dimension: metrics__labeled_string__calendar_read_only_calendar_count {
+    label: "Calendar Read Only Calendar Count"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.calendar_read_only_calendar_count ;;
+    type: string
+    group_label: "Calendar"
+    group_item_label: "Read Only Calendar Count"
+
+    link: {
+      label: "Glean Dictionary reference for Calendar Read Only Calendar Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/calendar_read_only_calendar_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many read-only calendars were set up, keyed by calendar type. Types are e.g. \"storage\", \"caldav\", \"ics\" and various types from add-ons.
+"
+  }
+
+  dimension: metrics__labeled_counter__compose_compose_format {
+    label: "Compose Compose Format"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.compose_compose_format ;;
+    group_label: "Compose"
+    group_item_label: "Compose Format"
+
+    link: {
+      label: "Glean Dictionary reference for Compose Compose Format"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/compose_compose_format"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times messages were written in HTML composition mode, vs. how many were written in plain text composition mode. Label names are from nsIMsgCompFormat.
+"
+  }
+
+  dimension: metrics__labeled_counter__compose_compose_type {
+    label: "Compose Compose Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.compose_compose_type ;;
+    group_label: "Compose"
+    group_item_label: "Compose Type"
+
+    link: {
+      label: "Glean Dictionary reference for Compose Compose Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/compose_compose_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each message compose type was used when creating a message.
+"
+  }
+
+  dimension: metrics__counter__compose_mails_sent {
+    label: "Compose Mails Sent"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.compose_mails_sent ;;
+    type: number
+    group_label: "Compose"
+    group_item_label: "Mails Sent"
+
+    link: {
+      label: "Glean Dictionary reference for Compose Mails Sent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/compose_mails_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many emails were sent by the user."
+  }
+
+  dimension: metrics__counter__filelink_filelink_ignored {
+    label: "Filelink Filelink Ignored"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.filelink_filelink_ignored ;;
+    type: number
+    group_label: "Filelink"
+    group_item_label: "Filelink Ignored"
+
+    link: {
+      label: "Glean Dictionary reference for Filelink Filelink Ignored"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/filelink_filelink_ignored"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times suggestion to use FileLink were ignored."
+  }
+
+  dimension: metrics__labeled_counter__filelink_uploaded_size {
+    label: "Filelink Uploaded Size"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.filelink_uploaded_size ;;
+    group_label: "Filelink"
+    group_item_label: "Uploaded Size"
+
+    link: {
+      label: "Glean Dictionary reference for Filelink Uploaded Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/filelink_uploaded_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Accumulated file size (bytes) uploaded to FileLink services, keyed by FileLink provider type.
+"
+  }
+
+  dimension: metrics__labeled_string__mail_account_count {
+    label: "Mail Account Count"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.mail_account_count ;;
+    type: string
+    group_label: "Mail"
+    group_item_label: "Account Count"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Account Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_account_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of how many accounts were set up, keyed by account type."
+  }
+
+  dimension: metrics__labeled_counter__mail_failed_email_account_setup {
+    label: "Mail Failed Email Account Setup"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.mail_failed_email_account_setup ;;
+    group_label: "Mail"
+    group_item_label: "Failed Email Account Setup"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Failed Email Account Setup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_failed_email_account_setup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times email accounts setup failed, keyed by account config source."
+  }
+
+  dimension: metrics__labeled_counter__mail_folder_opened {
+    label: "Mail Folder Opened"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.mail_folder_opened ;;
+    group_label: "Mail"
+    group_item_label: "Folder Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Folder Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_folder_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times folders of each type are opened.
+"
+  }
+
+  dimension: metrics__labeled_string__mail_folder_size_on_disk {
+    label: "Mail Folder Size On Disk"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.mail_folder_size_on_disk ;;
+    type: string
+    group_label: "Mail"
+    group_item_label: "Folder Size On Disk"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Folder Size On Disk"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_folder_size_on_disk"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many bytes each type of folder takes on disk."
+  }
+
+  dimension: metrics__labeled_string__mail_folder_total_messages {
+    label: "Mail Folder Total Messages"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.mail_folder_total_messages ;;
+    type: string
+    group_label: "Mail"
+    group_item_label: "Folder Total Messages"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Folder Total Messages"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_folder_total_messages"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many messages each type of folder has."
+  }
+
+  dimension: metrics__counter__mail_mails_read {
+    label: "Mail Mails Read"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.mail_mails_read ;;
+    type: number
+    group_label: "Mail"
+    group_item_label: "Mails Read"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Mails Read"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_mails_read"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many emails were read by the user."
+  }
+
+  dimension: metrics__labeled_string__mail_oauth2_provider_count {
+    label: "Mail Oauth2 Provider Count"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.mail_oauth2_provider_count ;;
+    type: string
+    group_label: "Mail"
+    group_item_label: "Oauth2 Provider Count"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Oauth2 Provider Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_oauth2_provider_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A count of incoming mail accounts using OAuth2 for authentication, keyed by OAuth2 issuer.
+"
+  }
+
+  dimension: metrics__labeled_boolean__mail_preferences_boolean {
+    label: "Mail Preferences Boolean"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.mail_preferences_boolean ;;
+    type: string
+    group_label: "Mail"
+    group_item_label: "Preferences Boolean"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Preferences Boolean"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_preferences_boolean"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Values of boolean preferences."
+  }
+
+  dimension: metrics__labeled_string__mail_preferences_integer {
+    label: "Mail Preferences Integer"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.mail_preferences_integer ;;
+    type: string
+    group_label: "Mail"
+    group_item_label: "Preferences Integer"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Preferences Integer"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_preferences_integer"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Values of integer preferences."
+  }
+
+  dimension: metrics__labeled_counter__mail_successful_email_account_setup {
+    label: "Mail Successful Email Account Setup"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.mail_successful_email_account_setup ;;
+    group_label: "Mail"
+    group_item_label: "Successful Email Account Setup"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Successful Email Account Setup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_successful_email_account_setup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times email accounts setup succeeded, keyed by account config source."
+  }
+
+  dimension: metrics__labeled_string__mail_ui_configuration_message_header {
+    label: "Mail Ui Configuration Message Header"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.mail_ui_configuration_message_header ;;
+    type: string
+    group_label: "Mail"
+    group_item_label: "Ui Configuration Message Header"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Ui Configuration Message Header"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_ui_configuration_message_header"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Configuration of the message header display. Customization state; expected values are \"true\" or \"false\". For buttonStyle values are \"default\", \"only-icons\", \"only-text\".
+"
+  }
+
+  dimension: metrics__labeled_boolean__mail_ui_configuration_pane_visibility {
+    label: "Mail Ui Configuration Pane Visibility"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.mail_ui_configuration_pane_visibility ;;
+    type: string
+    group_label: "Mail"
+    group_item_label: "Ui Configuration Pane Visibility"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Ui Configuration Pane Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_ui_configuration_pane_visibility"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Configuration of the folder and message panes. Whether they are set to be shown or not."
+  }
+
+  dimension: metrics__labeled_counter__mail_websearch_usage {
+    label: "Mail Websearch Usage"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.mail_websearch_usage ;;
+    group_label: "Mail"
+    group_item_label: "Websearch Usage"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Websearch Usage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_websearch_usage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times search the web was used, keyed by search engine name."
+  }
+
   dimension: metrics__labeled_counter__avif_a1lx {
     label: "Avif A1Lx"
     hidden: yes
@@ -9262,6 +9638,81 @@ documented in the ping's pings.yaml file.
     type: count
   }
 
+  measure: compose_mails_sent {
+    type: sum
+    sql: ${metrics__counter__compose_mails_sent} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Compose Mails Sent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/compose_mails_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: compose_mails_sent_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__compose_mails_sent: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Compose Mails Sent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/compose_mails_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: filelink_filelink_ignored {
+    type: sum
+    sql: ${metrics__counter__filelink_filelink_ignored} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Filelink Filelink Ignored"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/filelink_filelink_ignored"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: filelink_filelink_ignored_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__filelink_filelink_ignored: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Filelink Filelink Ignored"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/filelink_filelink_ignored"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: mail_mails_read {
+    type: sum
+    sql: ${metrics__counter__mail_mails_read} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Mail Mails Read"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_mails_read"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: mail_mails_read_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__mail_mails_read: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Mail Mails Read"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_mails_read"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: bloburl_resolve_stopped {
     type: sum
     sql: ${metrics__counter__bloburl_resolve_stopped} ;;
@@ -11679,6 +12130,88 @@ view: metrics__metrics__labeled_counter__codec_stats_video_preferred_codec {
   }
 }
 
+view: metrics__metrics__labeled_counter__compose_compose_format {
+  label: "Compose - Compose Format"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__compose_compose_type {
+  label: "Compose - Compose Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__cookie_banners_click_result {
   label: "Cookie Banners Click - Result"
 
@@ -12132,6 +12665,47 @@ view: metrics__metrics__labeled_counter__extensions_process_event {
 
 view: metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
   label: "Extensions - Startup Cache Read Errors"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__filelink_uploaded_size {
+  label: "Filelink - Uploaded Size"
 
   dimension: document_id {
     type: string
@@ -13154,6 +13728,170 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__mail_failed_email_account_setup {
+  label: "Mail - Failed Email Account Setup"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__mail_folder_opened {
+  label: "Mail - Folder Opened"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__mail_successful_email_account_setup {
+  label: "Mail - Successful Email Account Setup"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__mail_websearch_usage {
+  label: "Mail - Websearch Usage"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -16899,6 +17637,30 @@ view: metrics__metrics__labeled_boolean__geolocation_linux_provider {
   }
 }
 
+view: metrics__metrics__labeled_boolean__mail_preferences_boolean {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__mail_ui_configuration_pane_visibility {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics__metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -16935,7 +17697,127 @@ view: metrics__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
   }
 }
 
+view: metrics__metrics__labeled_string__addrbook_addressbook_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics__metrics__labeled_string__addrbook_contact_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics__metrics__labeled_string__calendar_calendar_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics__metrics__labeled_string__calendar_read_only_calendar_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
 view: metrics__metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics__metrics__labeled_string__mail_account_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics__metrics__labeled_string__mail_folder_size_on_disk {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics__metrics__labeled_string__mail_folder_total_messages {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics__metrics__labeled_string__mail_oauth2_provider_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics__metrics__labeled_string__mail_preferences_integer {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics__metrics__labeled_string__mail_ui_configuration_message_header {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
