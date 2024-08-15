@@ -816,7 +816,7 @@ when dynamic or static rulesets have been loaded from disk.
 
   dimension: metrics__boolean__genai_chatbot_enabled {
     label: "Genai Chatbot Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.genai_chatbot_enabled ;;
     type: yesno
     group_label: "Genai Chatbot"
@@ -834,7 +834,7 @@ when dynamic or static rulesets have been loaded from disk.
 
   dimension: metrics__string__genai_chatbot_provider {
     label: "Genai Chatbot Provider"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.genai_chatbot_provider ;;
     type: string
     group_label: "Genai Chatbot"
@@ -852,7 +852,7 @@ when dynamic or static rulesets have been loaded from disk.
 
   dimension: metrics__boolean__genai_chatbot_shortcuts {
     label: "Genai Chatbot Shortcuts"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.genai_chatbot_shortcuts ;;
     type: yesno
     group_label: "Genai Chatbot"
@@ -870,7 +870,7 @@ when dynamic or static rulesets have been loaded from disk.
 
   dimension: metrics__boolean__genai_chatbot_shortcuts_custom {
     label: "Genai Chatbot Shortcuts Custom"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.genai_chatbot_shortcuts_custom ;;
     type: yesno
     group_label: "Genai Chatbot"
@@ -888,7 +888,7 @@ when dynamic or static rulesets have been loaded from disk.
 
   dimension: metrics__boolean__genai_chatbot_sidebar {
     label: "Genai Chatbot Sidebar"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.genai_chatbot_sidebar ;;
     type: yesno
     group_label: "Genai Chatbot"
