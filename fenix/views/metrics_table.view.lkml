@@ -3095,6 +3095,16 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_fetch_keepalive_discard_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_fetch_keepalive_discard_count ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_fetch_keepalive_request_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_fetch_keepalive_request_count ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_http_channel_disposition {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition ;;
     hidden: yes
