@@ -7403,6 +7403,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_position_area {
+    label: "Use Counter Css Doc Css Position Area"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_area ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Position Area"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_position_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property position-area. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_position_try_fallbacks {
     label: "Use Counter Css Doc Css Position Try Fallbacks"
     hidden: no
@@ -20162,6 +20180,24 @@ view: use_counters {
     }
 
     description: "Whether a page used the CSS property position-anchor. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_area {
+    label: "Use Counter Css Page Css Position Area"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_area ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Position Area"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property position-area. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -53263,6 +53299,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_doc_css_position_area {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_position_area} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_position_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_position_area_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_position_area: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_position_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_doc_css_position_try_fallbacks {
     type: sum
     sql: ${metrics__counter__use_counter_css_doc_css_position_try_fallbacks} ;;
@@ -70984,6 +71045,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Page Css Position Anchor"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_anchor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_position_area {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_position_area} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_position_area_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_position_area: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_area"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
