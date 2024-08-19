@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: fox_doodle_set_to_default_early_day_user_en_treatment_a_rollout {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.fox_doodle_set_to_default_early_day_user_en_treatment_a_rollout_statistics ;;
+view: round_2_post_choice_in_product_survey_ios_h1_2024 {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.round_2_post_choice_in_product_survey_ios_h1_2024_statistics ;;
 
   dimension: submission_date {
     type: date

@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/views/round_2_post_choice_in_product_survey_ios_h1_2024.view.lkml"
 
-explore: fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout {
+explore: round_2_post_choice_in_product_survey_ios_h1_2024 {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
