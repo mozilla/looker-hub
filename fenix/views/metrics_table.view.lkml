@@ -353,6 +353,13 @@ view: metrics_table {
     group_item_label: "Cookie Banners Service Detect Only"
   }
 
+  dimension: metrics__boolean__customization_settings_dynamic_toolbar {
+    sql: ${TABLE}.metrics.boolean.customization_settings_dynamic_toolbar ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Customization Settings Dynamic Toolbar"
+  }
+
   dimension: metrics__boolean__customize_home_bookmarks {
     sql: ${TABLE}.metrics.boolean.customize_home_bookmarks ;;
     type: yesno
@@ -3085,6 +3092,16 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__networking_dns_native_count {
     sql: ${TABLE}.metrics.labeled_counter.networking_dns_native_count ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_fetch_keepalive_discard_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_fetch_keepalive_discard_count ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_fetch_keepalive_request_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_fetch_keepalive_request_count ;;
     hidden: yes
   }
 

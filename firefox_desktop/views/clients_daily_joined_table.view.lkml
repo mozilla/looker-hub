@@ -1059,6 +1059,12 @@ view: clients_daily_joined_table {
     type: string
   }
 
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
+    description: "A UUID identifying the profile's group on a single device and allowing user-oriented correlation of data"
+  }
+
   dimension: push_api_notify_sum {
     sql: ${TABLE}.push_api_notify_sum ;;
     type: number

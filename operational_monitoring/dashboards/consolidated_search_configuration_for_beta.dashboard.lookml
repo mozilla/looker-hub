@@ -10,24 +10,26 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: consolidated_search_configuration_for_beta
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       consolidated_search_configuration_for_beta.submission_date,
       consolidated_search_configuration_for_beta.branch,
+      consolidated_search_configuration_for_beta.upper,
+      consolidated_search_configuration_for_beta.lower,
       consolidated_search_configuration_for_beta.point
     ]
     pivots: [
       consolidated_search_configuration_for_beta.branch
     ]
     filters:
-      consolidated_search_configuration_for_beta.metric: 'retained'
-      consolidated_search_configuration_for_beta.statistic: mean
+      consolidated_search_configuration_for_beta.metric: 'memory_total'
+      consolidated_search_configuration_for_beta.statistic: percentile
     row: 0
     col: 0
     width: 12
@@ -40,6 +42,7 @@
     show_grid: true
     listen:
       Date: consolidated_search_configuration_for_beta.submission_date
+      Percentile: consolidated_search_configuration_for_beta.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -78,8 +81,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +97,7 @@
       consolidated_search_configuration_for_beta.branch
     ]
     filters:
-      consolidated_search_configuration_for_beta.metric: 'search_count'
+      consolidated_search_configuration_for_beta.metric: 'retained'
       consolidated_search_configuration_for_beta.statistic: mean
     row: 10
     col: 0
@@ -146,6 +149,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: consolidated_search_configuration_for_beta
+    type: looker_line
+    fields: [
+      consolidated_search_configuration_for_beta.submission_date,
+      consolidated_search_configuration_for_beta.branch,
+      consolidated_search_configuration_for_beta.point
+    ]
+    pivots: [
+      consolidated_search_configuration_for_beta.branch
+    ]
+    filters:
+      consolidated_search_configuration_for_beta.metric: 'qualified_cumulative_days_of_use'
+      consolidated_search_configuration_for_beta.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: consolidated_search_configuration_for_beta.submission_date
+    field_y: consolidated_search_configuration_for_beta.point
+    log_scale: false
+    ci_lower: consolidated_search_configuration_for_beta.lower
+    ci_upper: consolidated_search_configuration_for_beta.upper
+    show_grid: true
+    listen:
+      Date: consolidated_search_configuration_for_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -165,7 +202,7 @@
       consolidated_search_configuration_for_beta.metric: 'active_hours'
       consolidated_search_configuration_for_beta.statistic: mean
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: consolidated_search_configuration_for_beta.submission_date
@@ -198,40 +235,6 @@
     filters:
       consolidated_search_configuration_for_beta.metric: 'uri_count'
       consolidated_search_configuration_for_beta.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: consolidated_search_configuration_for_beta.submission_date
-    field_y: consolidated_search_configuration_for_beta.point
-    log_scale: false
-    ci_lower: consolidated_search_configuration_for_beta.lower
-    ci_upper: consolidated_search_configuration_for_beta.upper
-    show_grid: true
-    listen:
-      Date: consolidated_search_configuration_for_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: consolidated_search_configuration_for_beta
-    type: looker_line
-    fields: [
-      consolidated_search_configuration_for_beta.submission_date,
-      consolidated_search_configuration_for_beta.branch,
-      consolidated_search_configuration_for_beta.point
-    ]
-    pivots: [
-      consolidated_search_configuration_for_beta.branch
-    ]
-    filters:
-      consolidated_search_configuration_for_beta.metric: 'qualified_cumulative_days_of_use'
-      consolidated_search_configuration_for_beta.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: consolidated_search_configuration_for_beta
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       consolidated_search_configuration_for_beta.submission_date,
       consolidated_search_configuration_for_beta.branch,
-      consolidated_search_configuration_for_beta.upper,
-      consolidated_search_configuration_for_beta.lower,
       consolidated_search_configuration_for_beta.point
     ]
     pivots: [
       consolidated_search_configuration_for_beta.branch
     ]
     filters:
-      consolidated_search_configuration_for_beta.metric: 'memory_total'
-      consolidated_search_configuration_for_beta.statistic: percentile
+      consolidated_search_configuration_for_beta.metric: 'search_count'
+      consolidated_search_configuration_for_beta.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: consolidated_search_configuration_for_beta.submission_date
-      Percentile: consolidated_search_configuration_for_beta.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

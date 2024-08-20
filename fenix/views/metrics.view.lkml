@@ -411,6 +411,24 @@ manually by the user.
 "
   }
 
+  dimension: metrics__boolean__customization_settings_dynamic_toolbar {
+    label: "Customization Settings Dynamic Toolbar"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.customization_settings_dynamic_toolbar ;;
+    type: yesno
+    group_label: "Customization Settings"
+    group_item_label: "Dynamic Toolbar"
+
+    link: {
+      label: "Glean Dictionary reference for Customization Settings Dynamic Toolbar"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/customization_settings_dynamic_toolbar"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the user has dynamic toolbar enabled, false if the user has dynamic toolbar disabled.
+"
+  }
+
   dimension: metrics__boolean__customize_home_bookmarks {
     label: "Customize Home Bookmarks"
     hidden: no
@@ -7747,6 +7765,40 @@ To be used to validate GIFFT.
     }
 
     description: "Time for a DNS OS resolution (msec) used to get TTL | Migrated from Firefox Telemetry's `DNS_RENEWAL_TIME_FOR_TTL`.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_fetch_keepalive_discard_count {
+    label: "Networking Fetch Keepalive Discard Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_fetch_keepalive_discard_count ;;
+    group_label: "Networking"
+    group_item_label: "Fetch Keepalive Discard Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Fetch Keepalive Discard Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_fetch_keepalive_discard_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many fetch keepalive requests are dropped due to configured resource limits.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_fetch_keepalive_request_count {
+    label: "Networking Fetch Keepalive Request Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_fetch_keepalive_request_count ;;
+    group_label: "Networking"
+    group_item_label: "Fetch Keepalive Request Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Fetch Keepalive Request Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_fetch_keepalive_request_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many fetch keepalive requests are made. This counter helps us to understand the adoption of fetch keepalive for firefox.
 "
   }
 
@@ -20034,6 +20086,88 @@ view: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count
 
 view: metrics__metrics__labeled_counter__networking_dns_native_count {
   label: "Networking - Dns Native Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_fetch_keepalive_discard_count {
+  label: "Networking - Fetch Keepalive Discard Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_fetch_keepalive_request_count {
+  label: "Networking - Fetch Keepalive Request Count"
 
   dimension: document_id {
     type: string
