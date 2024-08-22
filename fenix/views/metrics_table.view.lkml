@@ -4867,6 +4867,124 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__cert_verification_time_failure__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Failure"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_failure__count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Failure"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_failure__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cert Verification Time Failure"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_failure__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Failure"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_failure__range {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_failure__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Failure"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_failure__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cert Verification Time Failure"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_failure__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Failure"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_failure__values {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Success"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Success"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cert Verification Time Success"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Success"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__range {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Success"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cert Verification Time Success"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Success"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__values {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.bucket_count ;;
     type: number
@@ -10646,6 +10764,183 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__values {
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Cancel"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__count {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Cancel"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ocsp Request Time Cancel"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Cancel"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__range {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__sum {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Cancel"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ocsp Request Time Cancel"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Cancel"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__values {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Failure"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__count {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Failure"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ocsp Request Time Failure"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Failure"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__range {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__sum {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Failure"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ocsp Request Time Failure"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Failure"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__values {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Success"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__count {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Success"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ocsp Request Time Success"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Success"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__range {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__sum {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Success"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ocsp Request Time Success"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Success"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__values {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.values ;;
     hidden: yes
   }
 
@@ -16699,6 +16994,30 @@ view: metrics_table__metrics__timing_distribution__bounce_tracking_protection_pu
   }
 }
 
+view: metrics_table__metrics__timing_distribution__cert_verification_time_failure__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cert_verification_time_success__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -17864,6 +18183,42 @@ view: metrics_table__metrics__timing_distribution__nimbus_health_apply_pending_e
 }
 
 view: metrics_table__metrics__timing_distribution__nimbus_health_fetch_experiments_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__ocsp_request_time_cancel__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__ocsp_request_time_failure__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__ocsp_request_time_success__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

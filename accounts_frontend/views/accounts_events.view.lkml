@@ -23,6 +23,44 @@ view: accounts_events {
 "
   }
 
+  dimension: metrics__string__entrypoint_experiment {
+    label: "Entrypoint Experiment"
+    hidden: no
+    sql: ${TABLE}.metrics.string.entrypoint_experiment ;;
+    type: string
+    group_label: "Entrypoint"
+    group_item_label: "Experiment"
+
+    link: {
+      label: "Glean Dictionary reference for Entrypoint Experiment"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/entrypoint_experiment"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The entrypoint experiment the user was assigned to. This value is specified
+by query parameter `entrypoint_experiment` in the URL.
+"
+  }
+
+  dimension: metrics__string__entrypoint_variation {
+    label: "Entrypoint Variation"
+    hidden: no
+    sql: ${TABLE}.metrics.string.entrypoint_variation ;;
+    type: string
+    group_label: "Entrypoint"
+    group_item_label: "Variation"
+
+    link: {
+      label: "Glean Dictionary reference for Entrypoint Variation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/entrypoint_variation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The entrypoint variation the user was assigned to. This value is specified
+by query parameter `entrypoint_variation` in the URL.
+"
+  }
+
   dimension: metrics__string__event_name {
     label: "Event Name"
     hidden: no
