@@ -966,6 +966,42 @@ view: metrics {
 "
   }
 
+  dimension: metrics__timing_distribution__cert_verification_time_failure__sum {
+    label: "Cert Verification Time Failure Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.sum ;;
+    type: number
+    group_label: "Cert Verification Time"
+    group_item_label: "Failure Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verification Time Failure Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/cert_verification_time_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time it takes to fail to verify a certificate in a TLS handshake.
+"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__sum {
+    label: "Cert Verification Time Success Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.sum ;;
+    type: number
+    group_label: "Cert Verification Time"
+    group_item_label: "Success Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verification Time Success Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/cert_verification_time_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time it takes to successfully verify a certificate in a TLS handshake.
+"
+  }
+
   dimension: metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms {
     label: "Cert Verifier Cert Revocation Mechanisms"
     hidden: yes
@@ -5916,6 +5952,60 @@ To be used to validate GIFFT.
     }
 
     description: "The count of successful TRR requests keyed by regular/private browsing
+"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__sum {
+    label: "Ocsp Request Time Cancel Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.sum ;;
+    type: number
+    group_label: "Ocsp Request Time"
+    group_item_label: "Cancel Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ocsp Request Time Cancel Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/ocsp_request_time_cancel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time it takes to make an OCSP request that was cancelled.
+"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__sum {
+    label: "Ocsp Request Time Failure Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.sum ;;
+    type: number
+    group_label: "Ocsp Request Time"
+    group_item_label: "Failure Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ocsp Request Time Failure Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/ocsp_request_time_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time it takes to make an OCSP request that failed.
+"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__sum {
+    label: "Ocsp Request Time Success Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.sum ;;
+    type: number
+    group_label: "Ocsp Request Time"
+    group_item_label: "Success Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ocsp Request Time Success Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/ocsp_request_time_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time it takes to make an OCSP request that succeeded.
 "
   }
 
@@ -18065,6 +18155,30 @@ view: metrics__metrics__timing_distribution__bounce_tracking_protection_purge_du
   }
 }
 
+view: metrics__metrics__timing_distribution__cert_verification_time_failure__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cert_verification_time_success__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -19038,6 +19152,42 @@ view: metrics__metrics__timing_distribution__networking_transaction_wait_time__v
 }
 
 view: metrics__metrics__timing_distribution__networking_transaction_wait_time_https_rr__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__ocsp_request_time_cancel__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__ocsp_request_time_failure__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__ocsp_request_time_success__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

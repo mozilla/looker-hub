@@ -7487,10 +7487,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 7
+            default: Windows 10
             options:
-            - Windows 7
             - Windows 10
+            - Windows 7
             - Windows 8
             - Windows 8.1
             - Windows 11
@@ -7526,13 +7526,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id107
           normalized_channel:
-            default: aurora
+            default: release
             options:
-            - aurora
             - release
-            - nightly
-            - beta
             - esr
+            - aurora
+            - beta
+            - nightly
             - default
             - nightly-pine
             - nightly-oak
@@ -7715,11 +7715,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id119
           normalized_channel:
-            default: aurora
+            default: nightly
             options:
-            - aurora
-            - beta
             - nightly
+            - beta
+            - aurora
             - release
             - esr
             - Other
@@ -8083,11 +8083,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id134
           os:
-            default: Windows
+            default: Mac
             options:
+            - Mac
             - Windows
             - Linux
-            - Mac
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -8898,15 +8898,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id209
           app:
-            default: Darwin - vpn_session
+            default: Linux - vpn_session
             options:
-            - Darwin - vpn_session
-            - iOS - daemon_session
-            - Android - vpn_session
-            - Windows - vpn_session
-            - Android - daemon_session
-            - iOS - vpn_session
             - Linux - vpn_session
+            - Windows - vpn_session
+            - iOS - daemon_session
+            - Android - daemon_session
+            - Darwin - vpn_session
+            - Android - vpn_session
+            - iOS - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id210
@@ -9623,10 +9623,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id254
           channel:
-            default: release
+            default: beta
             options:
-            - release
             - beta
+            - release
             - nightly
           os:
             default: Windows_NT
@@ -11181,51 +11181,16 @@ operational_monitoring:
         xaxis: submission_date
       title: Viewpoint Android June 2024 Launch
       type: operational_monitoring_dashboard
-    viewpoint_android_may_2024_launch:
+    viewpoint_ios_aug_2024_launch:
       tables:
       - branches: &id376
         - enabled
         - disabled
         compact_visualization: false
         dimensions: &id377 {}
-        explore: viewpoint_android_may_2024_launch
-        group_by_dimension: null
-        summaries: &id378
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
-          metric_groups: []
-          statistic: mean
-        - metric: tagged_sap_searches
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        - metric: search_count
-          metric_groups: []
-          statistic: mean
-        table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_android_may_2024_launch_statistics
-        xaxis: submission_date
-      title: Viewpoint Android May 2024 Launch
-      type: operational_monitoring_dashboard
-    viewpoint_ios_aug_2024_launch:
-      tables:
-      - branches: &id379
-        - enabled
-        - disabled
-        compact_visualization: false
-        dimensions: &id380 {}
         explore: viewpoint_ios_aug_2024_launch
         group_by_dimension: null
-        summaries: &id381
+        summaries: &id378
         - metric: days_of_use
           metric_groups: []
           statistic: mean
@@ -11247,14 +11212,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_ios_july_2024_launch:
       tables:
-      - branches: &id382
+      - branches: &id379
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id383 {}
+        dimensions: &id380 {}
         explore: viewpoint_ios_july_2024_launch
         group_by_dimension: null
-        summaries: &id384
+        summaries: &id381
         - metric: days_of_use
           metric_groups: []
           statistic: mean
@@ -11276,14 +11241,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_ios_june_2024_launch:
       tables:
-      - branches: &id385
+      - branches: &id382
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id386 {}
+        dimensions: &id383 {}
         explore: viewpoint_ios_june_2024_launch
         group_by_dimension: null
-        summaries: &id387
+        summaries: &id384
         - metric: retained
           metric_groups: []
           statistic: mean
@@ -11303,45 +11268,16 @@ operational_monitoring:
         xaxis: submission_date
       title: Viewpoint Ios June 2024 Launch
       type: operational_monitoring_dashboard
-    viewpoint_ios_may_2024_launch:
-      tables:
-      - branches: &id388
-        - enabled
-        - disabled
-        compact_visualization: false
-        dimensions: &id389 {}
-        explore: viewpoint_ios_may_2024_launch
-        group_by_dimension: null
-        summaries: &id390
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
-          metric_groups: []
-          statistic: mean
-        - metric: search_count
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_may_2024_launch_statistics
-        xaxis: submission_date
-      title: Viewpoint Ios May 2024 Launch
-      type: operational_monitoring_dashboard
     yelp_suggestions_rollout:
       tables:
-      - branches: &id391
+      - branches: &id385
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id392 {}
+        dimensions: &id386 {}
         explore: yelp_suggestions_rollout
         group_by_dimension: null
-        summaries: &id393
+        summaries: &id387
         - metric: days_of_use
           metric_groups: []
           statistic: mean
@@ -12387,50 +12323,34 @@ operational_monitoring:
       views:
         base_view: viewpoint_android_june_2024_launch
       xaxis: submission_date
-    viewpoint_android_may_2024_launch:
+    viewpoint_ios_aug_2024_launch:
       branches: *id376
       dimensions: *id377
       summaries: *id378
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_android_may_2024_launch
+        base_view: viewpoint_ios_aug_2024_launch
       xaxis: submission_date
-    viewpoint_ios_aug_2024_launch:
+    viewpoint_ios_july_2024_launch:
       branches: *id379
       dimensions: *id380
       summaries: *id381
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_ios_aug_2024_launch
+        base_view: viewpoint_ios_july_2024_launch
       xaxis: submission_date
-    viewpoint_ios_july_2024_launch:
+    viewpoint_ios_june_2024_launch:
       branches: *id382
       dimensions: *id383
       summaries: *id384
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_ios_july_2024_launch
+        base_view: viewpoint_ios_june_2024_launch
       xaxis: submission_date
-    viewpoint_ios_june_2024_launch:
+    yelp_suggestions_rollout:
       branches: *id385
       dimensions: *id386
       summaries: *id387
-      type: operational_monitoring_explore
-      views:
-        base_view: viewpoint_ios_june_2024_launch
-      xaxis: submission_date
-    viewpoint_ios_may_2024_launch:
-      branches: *id388
-      dimensions: *id389
-      summaries: *id390
-      type: operational_monitoring_explore
-      views:
-        base_view: viewpoint_ios_may_2024_launch
-      xaxis: submission_date
-    yelp_suggestions_rollout:
-      branches: *id391
-      dimensions: *id392
-      summaries: *id393
       type: operational_monitoring_explore
       views:
         base_view: yelp_suggestions_rollout
@@ -13207,39 +13127,27 @@ operational_monitoring:
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_android_june_2024_launch_statistics
         xaxis: submission_date
       type: operational_monitoring_view
-    viewpoint_android_may_2024_launch:
-      tables:
-      - dimensions: *id377
-        table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_android_may_2024_launch_statistics
-        xaxis: submission_date
-      type: operational_monitoring_view
     viewpoint_ios_aug_2024_launch:
       tables:
-      - dimensions: *id380
+      - dimensions: *id377
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_aug_2024_launch_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_ios_july_2024_launch:
       tables:
-      - dimensions: *id383
+      - dimensions: *id380
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_july_2024_launch_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_ios_june_2024_launch:
       tables:
-      - dimensions: *id386
+      - dimensions: *id383
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_june_2024_launch_statistics
-        xaxis: submission_date
-      type: operational_monitoring_view
-    viewpoint_ios_may_2024_launch:
-      tables:
-      - dimensions: *id389
-        table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_may_2024_launch_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     yelp_suggestions_rollout:
       tables:
-      - dimensions: *id392
+      - dimensions: *id386
         table: moz-fx-data-shared-prod.operational_monitoring.yelp_suggestions_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view

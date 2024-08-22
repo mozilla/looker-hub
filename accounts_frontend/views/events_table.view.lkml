@@ -384,6 +384,26 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__entrypoint_experiment {
+    sql: ${TABLE}.metrics.string.entrypoint_experiment ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Entrypoint Experiment"
+    description: "The entrypoint experiment the user was assigned to. This value is specified
+by query parameter `entrypoint_experiment` in the URL.
+"
+  }
+
+  dimension: metrics__string__entrypoint_variation {
+    sql: ${TABLE}.metrics.string.entrypoint_variation ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Entrypoint Variation"
+    description: "The entrypoint variation the user was assigned to. This value is specified
+by query parameter `entrypoint_variation` in the URL.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
