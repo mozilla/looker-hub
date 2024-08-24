@@ -5049,6 +5049,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_view_transition_name {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_view_transition_name ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css View Transition Name"
+    description: "Whether a document used the CSS property view-transition-name. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_visibility {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_visibility ;;
     type: number
@@ -11436,6 +11445,15 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css View Timeline Name"
     description: "Whether a page used the CSS property view-timeline-name. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_view_transition_name {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_view_transition_name ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css View Transition Name"
+    description: "Whether a page used the CSS property view-transition-name. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

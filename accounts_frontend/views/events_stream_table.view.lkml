@@ -484,6 +484,11 @@ view: events_stream_table {
     group_item_label: "Start Time"
   }
 
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
+  }
+
   dimension: reason {
     sql: ${TABLE}.reason ;;
     type: string
