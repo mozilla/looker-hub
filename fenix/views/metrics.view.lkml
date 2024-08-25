@@ -8455,7 +8455,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The time between dispatching OnDataFinished from the socket thread and processing it.
+    description: "The time between dispatching OnDataFinished from the socket thread and processing it on main/background thread.
 "
   }
 
