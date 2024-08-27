@@ -3075,6 +3075,36 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__network_system_channel_addon_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_addon_status ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_other_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_other_status ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_remote_settings_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_remote_settings_status ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_success_or_failure {
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_success_or_failure ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_telemetry_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_telemetry_status ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_update_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_update_status ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__network_tls_early_data_accepted {
     sql: ${TABLE}.metrics.labeled_counter.network_tls_early_data_accepted ;;
     hidden: yes
@@ -10233,6 +10263,65 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__values {
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.values ;;
     hidden: yes
   }
 
@@ -18075,6 +18164,18 @@ view: metrics_table__metrics__timing_distribution__networking_http_content_html5
 }
 
 view: metrics_table__metrics__timing_distribution__networking_http_content_ondatafinished_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
