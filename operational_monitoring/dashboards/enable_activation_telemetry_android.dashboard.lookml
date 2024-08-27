@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       enable_activation_telemetry_android.branch
     ]
     filters:
-      enable_activation_telemetry_android.metric: 'ad_clicks'
+      enable_activation_telemetry_android.metric: 'active_hours'
       enable_activation_telemetry_android.statistic: mean
     row: 10
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       enable_activation_telemetry_android.branch
     ]
     filters:
-      enable_activation_telemetry_android.metric: 'active_hours'
+      enable_activation_telemetry_android.metric: 'ad_clicks'
       enable_activation_telemetry_android.statistic: mean
     row: 30
     col: 0
