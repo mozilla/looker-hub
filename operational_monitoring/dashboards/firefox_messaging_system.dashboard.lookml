@@ -26,7 +26,7 @@
       firefox_messaging_system.branch, firefox_messaging_system.metric
     ]
     filters:
-      firefox_messaging_system.metric: '"unknown_keys_volume", "invalid_nested_data_volume"'
+      firefox_messaging_system.metric: '"invalid_nested_data_volume", "unknown_keys_volume"'
       firefox_messaging_system.statistic: sum
     row: 0
     col: 0
@@ -61,7 +61,7 @@
       firefox_messaging_system.branch, firefox_messaging_system.metric
     ]
     filters:
-      firefox_messaging_system.metric: '"whats_new_panel_ping_volume", "other_ping_volume", "moments_ping_volume", "cfr_ping_volume", "infobar_ping_volume", "null_ping_volume", "spotlight_ping_volume"'
+      firefox_messaging_system.metric: '"other_ping_volume", "whats_new_panel_ping_volume", "infobar_ping_volume", "cfr_ping_volume", "moments_ping_volume", "spotlight_ping_volume", "null_ping_volume"'
       firefox_messaging_system.statistic: sum
     row: 0
     col: 12
@@ -115,8 +115,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Undesired Events Ping Volume
-    name: Undesired Events Ping Volume_sum
+  - title: Ping Volume
+    name: Ping Volume_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -131,7 +131,7 @@
       firefox_messaging_system.branch
     ]
     filters:
-      firefox_messaging_system.metric: 'undesired_events_ping_volume'
+      firefox_messaging_system.metric: 'ping_volume'
       firefox_messaging_system.statistic: sum
     row: 10
     col: 12
@@ -150,8 +150,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Ping Volume
-    name: Ping Volume_sum
+  - title: Undesired Events Ping Volume
+    name: Undesired Events Ping Volume_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -166,7 +166,7 @@
       firefox_messaging_system.branch
     ]
     filters:
-      firefox_messaging_system.metric: 'ping_volume'
+      firefox_messaging_system.metric: 'undesired_events_ping_volume'
       firefox_messaging_system.statistic: sum
     row: 20
     col: 0
@@ -276,16 +276,16 @@
   - title: Normalized Channel
     name: Normalized Channel
     type: string_filter
-    default_value: 'nightly'
+    default_value: 'beta'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'nightly'
       - 'beta'
       - 'aurora'
+      - 'nightly'
       - 'release'
       - 'esr'
       - 'Other'

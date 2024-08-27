@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       viewpoint_android_aug_2024_launch.branch
     ]
     filters:
-      viewpoint_android_aug_2024_launch.metric: 'ad_clicks'
+      viewpoint_android_aug_2024_launch.metric: 'active_hours'
       viewpoint_android_aug_2024_launch.statistic: mean
     row: 10
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       viewpoint_android_aug_2024_launch.branch
     ]
     filters:
-      viewpoint_android_aug_2024_launch.metric: 'active_hours'
+      viewpoint_android_aug_2024_launch.metric: 'ad_clicks'
       viewpoint_android_aug_2024_launch.statistic: mean
     row: 30
     col: 0
