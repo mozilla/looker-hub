@@ -1089,6 +1089,11 @@ view: clients_daily_table {
     type: string
   }
 
+  dimension: profile_group_id_1 {
+    sql: ${TABLE}.profile_group_id_1 ;;
+    type: string
+  }
+
   dimension: push_api_notify_sum {
     sql: ${TABLE}.push_api_notify_sum ;;
     type: number

@@ -324,12 +324,30 @@ view: crash_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__crash_is_garbage_collecting {
+    sql: ${TABLE}.metrics.boolean.crash_is_garbage_collecting ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Crash Is Garbage Collecting"
+    description: "Indicates that the crash occurred while the garbage collector was running.
+"
+  }
+
   dimension: metrics__boolean__crash_startup {
     sql: ${TABLE}.metrics.boolean.crash_startup ;;
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Crash Startup"
     description: "If true, the crash occurred during process startup.
+"
+  }
+
+  dimension: metrics__boolean__environment_headless_mode {
+    sql: ${TABLE}.metrics.boolean.environment_headless_mode ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Environment Headless Mode"
+    description: "Whether the app was invoked in headless mode via `--headless` or `--backgroundtask`.
 "
   }
 
@@ -372,12 +390,247 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__object__crash_async_shutdown_timeout {
+    sql: ${TABLE}.metrics.object.crash_async_shutdown_timeout ;;
+    hidden: yes
+    description: "Present when a shutdown blocker failed to respond within a reasonable amount of time.
+"
+  }
+
+  dimension: metrics__object__crash_breadcrumbs {
+    sql: ${TABLE}.metrics.object.crash_breadcrumbs ;;
+    hidden: yes
+    description: "Crash breadcrumb information.
+"
+  }
+
+  dimension: metrics__object__crash_java_exception {
+    sql: ${TABLE}.metrics.object.crash_java_exception ;;
+    hidden: yes
+    description: "Error and stack trace information for a java exception.
+"
+  }
+
+  dimension: metrics__object__crash_quota_manager_shutdown_timeout {
+    sql: ${TABLE}.metrics.object.crash_quota_manager_shutdown_timeout ;;
+    hidden: yes
+    description: "Contains a list of shutdown steps and status of the quota manager clients.
+"
+  }
+
+  dimension: metrics__quantity__crash_event_loop_nesting_level {
+    sql: ${TABLE}.metrics.quantity.crash_event_loop_nesting_level ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Crash Event Loop Nesting Level"
+    description: "Indicates the nesting level of the event loop.
+"
+  }
+
+  dimension: metrics__quantity__crash_gpu_process_launch {
+    sql: ${TABLE}.metrics.quantity.crash_gpu_process_launch ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Crash Gpu Process Launch"
+    description: "The number of times that the GPU process was launched.
+"
+  }
+
+  dimension: metrics__quantity__memory_available_commit {
+    sql: ${TABLE}.metrics.quantity.memory_available_commit ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Available Commit"
+    description: "Available commit space.
+"
+  }
+
+  dimension: metrics__quantity__memory_available_physical {
+    sql: ${TABLE}.metrics.quantity.memory_available_physical ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Available Physical"
+    description: "Available physical memory.
+"
+  }
+
+  dimension: metrics__quantity__memory_available_swap {
+    sql: ${TABLE}.metrics.quantity.memory_available_swap ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Available Swap"
+    description: "Available swap memory.
+"
+  }
+
+  dimension: metrics__quantity__memory_available_virtual {
+    sql: ${TABLE}.metrics.quantity.memory_available_virtual ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Available Virtual"
+    description: "Available virtual memory.
+"
+  }
+
+  dimension: metrics__quantity__memory_low_physical {
+    sql: ${TABLE}.metrics.quantity.memory_low_physical ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Low Physical"
+    description: "The number of times the available memory tracker has detected that free physical memory is running low.
+"
+  }
+
+  dimension: metrics__quantity__memory_oom_allocation_size {
+    sql: ${TABLE}.metrics.quantity.memory_oom_allocation_size ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Oom Allocation Size"
+    description: "The size of the allocation that caused on OOM crash.
+"
+  }
+
+  dimension: metrics__quantity__memory_purgeable_physical {
+    sql: ${TABLE}.metrics.quantity.memory_purgeable_physical ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Purgeable Physical"
+    description: "The amount of memory that can be deallocated by the OS in case of memory pressure.
+"
+  }
+
+  dimension: metrics__quantity__memory_system_use_percentage {
+    sql: ${TABLE}.metrics.quantity.memory_system_use_percentage ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory System Use Percentage"
+    description: "The percentage of memory in use.
+"
+  }
+
+  dimension: metrics__quantity__memory_texture {
+    sql: ${TABLE}.metrics.quantity.memory_texture ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Texture"
+    description: "The amount of memory used in textures.
+"
+  }
+
+  dimension: metrics__quantity__memory_total_page_file {
+    sql: ${TABLE}.metrics.quantity.memory_total_page_file ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Total Page File"
+    description: "The total page file size.
+"
+  }
+
+  dimension: metrics__quantity__memory_total_physical {
+    sql: ${TABLE}.metrics.quantity.memory_total_physical ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Total Physical"
+    description: "The total physical memory.
+"
+  }
+
+  dimension: metrics__quantity__memory_total_virtual {
+    sql: ${TABLE}.metrics.quantity.memory_total_virtual ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Total Virtual"
+    description: "The total virtual memory.
+"
+  }
+
+  dimension: metrics__string__crash_app_build {
+    sql: ${TABLE}.metrics.string.crash_app_build ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash App Build"
+    description: "The build id of the application. This may differ from `client_info` because a main process crash may be reported later by a different (e.g. updated) client.
+"
+  }
+
+  dimension: metrics__string__crash_app_channel {
+    sql: ${TABLE}.metrics.string.crash_app_channel ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash App Channel"
+    description: "The release channel of the application. This may differ from `client_info` because a main process crash may be reported later by a different (e.g. updated) client.
+"
+  }
+
+  dimension: metrics__string__crash_app_display_version {
+    sql: ${TABLE}.metrics.string.crash_app_display_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash App Display Version"
+    description: "The version of the application. This may differ from `client_info` because a main process crash may be reported later by a different (e.g. updated) client.
+"
+  }
+
+  dimension: metrics__string__crash_background_task_name {
+    sql: ${TABLE}.metrics.string.crash_background_task_name ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Background Task Name"
+    description: "The name of the background task if launched as one.
+"
+  }
+
   dimension: metrics__string__crash_cause {
     sql: ${TABLE}.metrics.string.crash_cause ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Crash Cause"
     description: "The cause of the crash. May be one of `os_fault` or `java_exception`.
+"
+  }
+
+  dimension: metrics__string__crash_font_name {
+    sql: ${TABLE}.metrics.string.crash_font_name ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Font Name"
+    description: "The font family name that is being loaded when the crash occurred.
+"
+  }
+
+  dimension: metrics__string__crash_ipc_channel_error {
+    sql: ${TABLE}.metrics.string.crash_ipc_channel_error ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Ipc Channel Error"
+    description: "The error reason for an ipc-based content crash.
+"
+  }
+
+  dimension: metrics__string__crash_main_thread_runnable_name {
+    sql: ${TABLE}.metrics.string.crash_main_thread_runnable_name ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Main Thread Runnable Name"
+    description: "Name of the currently executing `nsIRunnable` on the main thread. Nightly-only.
+"
+  }
+
+  dimension: metrics__string__crash_minidump_sha256_hash {
+    sql: ${TABLE}.metrics.string.crash_minidump_sha256_hash ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Minidump Sha256 Hash"
+    description: "The SHA256 hash of the associated minidump file, if any.
+"
+  }
+
+  dimension: metrics__string__crash_moz_crash_reason {
+    sql: ${TABLE}.metrics.string.crash_moz_crash_reason ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Moz Crash Reason"
+    description: "Contains the string passed to `MOZ_CRASH()`.
 "
   }
 
@@ -390,12 +643,30 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__crash_profiler_child_shutdown_phase {
+    sql: ${TABLE}.metrics.string.crash_profiler_child_shutdown_phase ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Profiler Child Shutdown Phase"
+    description: "The shutdown phase of the profiler.
+"
+  }
+
   dimension: metrics__string__crash_remote_type {
     sql: ${TABLE}.metrics.string.crash_remote_type ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Crash Remote Type"
-    description: "Type of the child process, can be set to \"web\", \"file\" or \"extension\" but could also be unavailable.
+    description: "The type of the content process. See the full list of options [here](https://firefox-source-docs.mozilla.org/toolkit/components/telemetry/data/crash-ping.html#remote-process-types).
+"
+  }
+
+  dimension: metrics__string__crash_shutdown_progress {
+    sql: ${TABLE}.metrics.string.crash_shutdown_progress ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Shutdown Progress"
+    description: "The shutdown phase in which the crash occurred.
 "
   }
 
@@ -409,6 +680,11 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__string_list__environment_experimental_features {
+    sql: ${TABLE}.metrics.string_list.environment_experimental_features ;;
+    hidden: yes
+  }
+
   dimension: metrics__timespan__crash_uptime__time_unit {
     sql: ${TABLE}.metrics.timespan.crash_uptime.time_unit ;;
     type: string
@@ -420,6 +696,20 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.timespan.crash_uptime.value ;;
     type: number
     group_label: "Metrics Timespan Crash Uptime"
+    group_item_label: "Value"
+  }
+
+  dimension: metrics__timespan__environment_uptime__time_unit {
+    sql: ${TABLE}.metrics.timespan.environment_uptime.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Environment Uptime"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__environment_uptime__value {
+    sql: ${TABLE}.metrics.timespan.environment_uptime.value ;;
+    type: number
+    group_label: "Metrics Timespan Environment Uptime"
     group_item_label: "Value"
   }
 

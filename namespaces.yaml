@@ -13640,23 +13640,23 @@ websites:
   views:
     blogs_daily_summary:
       tables:
-      - table: moz-fx-data-marketing-prod.ga.blogs_daily_summary
+      - table: moz-fx-data-shared-prod.mozilla_org.blogs_daily_summary
       type: table_view
     blogs_landing_page_summary:
       tables:
-      - table: moz-fx-data-marketing-prod.ga.blogs_landing_page_summary
+      - table: moz-fx-data-shared-prod.mozilla_org.blogs_landing_page_summary
       type: table_view
     firefox_whatsnew_summary:
       tables:
-      - table: moz-fx-data-marketing-prod.ga.firefox_whatsnew_summary
+      - table: moz-fx-data-shared-prod.mozilla_org.firefox_whatsnew_summary
       type: table_view
     ga4_blogs_goals:
       tables:
-      - table: moz-fx-data-marketing-prod.ga.blogs_goals
+      - table: moz-fx-data-shared-prod.mozilla_org.blogs_goals
       type: table_view
     ga4_blogs_sessions:
       tables:
-      - table: moz-fx-data-marketing-prod.ga.blogs_sessions
+      - table: moz-fx-data-shared-prod.mozilla_org.blogs_sessions
       type: table_view
     ga4_sessions:
       tables:
@@ -13686,17 +13686,17 @@ websites:
       type: metric_definitions_view
     moz_org_landing_page_metrics:
       tables:
-      - table: moz-fx-data-marketing-prod.ga.www_site_landing_page_metrics
+      - table: moz-fx-data-shared-prod.mozilla_org.www_site_landing_page_metrics
       type: table_view
     moz_org_metrics_summary:
       tables:
-      - table: moz-fx-data-marketing-prod.ga.www_site_metrics_summary
+      - table: moz-fx-data-shared-prod.mozilla_org.www_site_metrics_summary
       type: table_view
     moz_org_page_metrics:
       tables:
-      - table: moz-fx-data-marketing-prod.ga.www_site_page_metrics
+      - table: moz-fx-data-shared-prod.mozilla_org.www_site_page_metrics
       type: table_view
     www_site_events_metrics:
       tables:
-      - table: moz-fx-data-marketing-prod.ga.www_site_events_metrics
+      - table: moz-fx-data-shared-prod.mozilla_org.www_site_events_metrics
       type: table_view
