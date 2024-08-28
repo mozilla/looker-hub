@@ -146,7 +146,7 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Type of the child process, can be set to \"web\", \"file\" or \"extension\" but could also be unavailable.
+    description: "The type of the content process. See the full list of options [here](https://firefox-source-docs.mozilla.org/toolkit/components/telemetry/data/crash-ping.html#remote-process-types).
 "
   }
 
@@ -170,7 +170,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__crash_uptime__value {
     label: "Crash Uptime Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.crash_uptime.value ;;
     type: number
     group_label: "Crash"
