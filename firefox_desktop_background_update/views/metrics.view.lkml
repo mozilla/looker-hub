@@ -4108,7 +4108,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts the status of succeeded and failed requests to .addons.mozilla.org
+    description: "Counts the status of succeeded and failed requests to addons.mozilla.org
 "
   }
 
@@ -5611,6 +5611,42 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__rate__networking_set_cookie_expired_without_server_time__numerator {
+    label: "Networking Set Cookie Expired Without Server Time Numerator"
+    hidden: yes
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_expired_without_server_time.numerator ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Set Cookie Expired Without Server Time Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie Expired Without Server Time Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_set_cookie_expired_without_server_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times a cookie is set already expires but it would not if we considered the server time.
+"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_expired_without_server_time__denominator {
+    label: "Networking Set Cookie Expired Without Server Time Denominator"
+    hidden: yes
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_expired_without_server_time.denominator ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Set Cookie Expired Without Server Time Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie Expired Without Server Time Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_set_cookie_expired_without_server_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times a cookie is set already expires but it would not if we considered the server time.
+"
+  }
+
   dimension: metrics__rate__networking_set_cookie_foreign__numerator {
     label: "Networking Set Cookie Foreign Numerator"
     hidden: no
@@ -6428,7 +6464,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__sum {
     label: "Performance Pageload Eh Fcp Preconnect Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -6446,7 +6482,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__sum {
     label: "Performance Pageload Eh Fcp Preconnect Preload With Eh Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -6464,7 +6500,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__sum {
     label: "Performance Pageload Eh Fcp Preconnect Preload Without Eh Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -6482,7 +6518,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__sum {
     label: "Performance Pageload Eh Fcp Preload With Eh Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -6500,7 +6536,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__sum {
     label: "Performance Pageload Eh Fcp Preload Without Eh Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -13813,19 +13849,19 @@ view: metrics__metrics__labeled_counter__netwerk_early_hints {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -13854,19 +13890,19 @@ view: metrics__metrics__labeled_counter__netwerk_eh_link_type {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -13895,19 +13931,19 @@ view: metrics__metrics__labeled_counter__netwerk_eh_response_version {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 

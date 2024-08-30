@@ -82,6 +82,7 @@ newtab_clients_daily_pocket_sponsored_stories_enabled,
 newtab_clients_daily_pocket_thumb_voting_events,
 newtab_clients_daily_pocket_thumbs_down,
 newtab_clients_daily_pocket_thumbs_up,
+newtab_clients_daily_profile_group_id,
 newtab_clients_daily_searches,
 newtab_clients_daily_sponsored_pocket_dismissals,
 newtab_clients_daily_sponsored_pocket_saves,
@@ -183,6 +184,7 @@ newtab_clients_daily.pocket_sponsored_stories_enabled AS newtab_clients_daily_po
 newtab_clients_daily.pocket_thumb_voting_events AS newtab_clients_daily_pocket_thumb_voting_events,
 newtab_clients_daily.pocket_thumbs_down AS newtab_clients_daily_pocket_thumbs_down,
 newtab_clients_daily.pocket_thumbs_up AS newtab_clients_daily_pocket_thumbs_up,
+newtab_clients_daily.profile_group_id AS newtab_clients_daily_profile_group_id,
 newtab_clients_daily.searches AS newtab_clients_daily_searches,
 newtab_clients_daily.sponsored_pocket_dismissals AS newtab_clients_daily_sponsored_pocket_dismissals,
 newtab_clients_daily.sponsored_pocket_saves AS newtab_clients_daily_sponsored_pocket_saves,
@@ -286,6 +288,7 @@ newtab_clients_daily_pocket_sponsored_stories_enabled,
 newtab_clients_daily_pocket_thumb_voting_events,
 newtab_clients_daily_pocket_thumbs_down,
 newtab_clients_daily_pocket_thumbs_up,
+newtab_clients_daily_profile_group_id,
 newtab_clients_daily_searches,
 newtab_clients_daily_sponsored_pocket_dismissals,
 newtab_clients_daily_sponsored_pocket_saves,
@@ -880,6 +883,12 @@ a wallpaper.
   dimension: pocket_thumbs_up {
     sql: ${TABLE}.newtab_clients_daily_pocket_thumbs_up ;;
     type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: profile_group_id {
+    sql: ${TABLE}.newtab_clients_daily_profile_group_id ;;
+    type: string
     group_label: "Base Fields"
   }
 
