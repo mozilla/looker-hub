@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,44 +26,10 @@
       review_checker_continuity_rollout_post_119.branch
     ]
     filters:
-      review_checker_continuity_rollout_post_119.metric: 'uri_count'
+      review_checker_continuity_rollout_post_119.metric: 'ad_clicks'
       review_checker_continuity_rollout_post_119.statistic: mean
     row: 0
     col: 0
-    width: 12
-    height: 8
-    field_x: review_checker_continuity_rollout_post_119.submission_date
-    field_y: review_checker_continuity_rollout_post_119.point
-    log_scale: false
-    ci_lower: review_checker_continuity_rollout_post_119.lower
-    ci_upper: review_checker_continuity_rollout_post_119.upper
-    show_grid: true
-    listen:
-      Date: review_checker_continuity_rollout_post_119.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: review_checker_continuity_rollout_post_119
-    type: looker_line
-    fields: [
-      review_checker_continuity_rollout_post_119.submission_date,
-      review_checker_continuity_rollout_post_119.branch,
-      review_checker_continuity_rollout_post_119.point
-    ]
-    pivots: [
-      review_checker_continuity_rollout_post_119.branch
-    ]
-    filters:
-      review_checker_continuity_rollout_post_119.metric: 'qualified_cumulative_days_of_use'
-      review_checker_continuity_rollout_post_119.statistic: mean
-    row: 0
-    col: 12
     width: 12
     height: 8
     field_x: review_checker_continuity_rollout_post_119.submission_date
@@ -96,8 +62,8 @@
     filters:
       review_checker_continuity_rollout_post_119.metric: 'active_hours'
       review_checker_continuity_rollout_post_119.statistic: mean
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: review_checker_continuity_rollout_post_119.submission_date
@@ -129,6 +95,40 @@
     ]
     filters:
       review_checker_continuity_rollout_post_119.metric: 'search_count'
+      review_checker_continuity_rollout_post_119.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: review_checker_continuity_rollout_post_119.submission_date
+    field_y: review_checker_continuity_rollout_post_119.point
+    log_scale: false
+    ci_lower: review_checker_continuity_rollout_post_119.lower
+    ci_upper: review_checker_continuity_rollout_post_119.upper
+    show_grid: true
+    listen:
+      Date: review_checker_continuity_rollout_post_119.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Uri Count
+    name: Uri Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: review_checker_continuity_rollout_post_119
+    type: looker_line
+    fields: [
+      review_checker_continuity_rollout_post_119.submission_date,
+      review_checker_continuity_rollout_post_119.branch,
+      review_checker_continuity_rollout_post_119.point
+    ]
+    pivots: [
+      review_checker_continuity_rollout_post_119.branch
+    ]
+    filters:
+      review_checker_continuity_rollout_post_119.metric: 'uri_count'
       review_checker_continuity_rollout_post_119.statistic: mean
     row: 10
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       review_checker_continuity_rollout_post_119.branch
     ]
     filters:
-      review_checker_continuity_rollout_post_119.metric: 'ad_clicks'
+      review_checker_continuity_rollout_post_119.metric: 'qualified_cumulative_days_of_use'
       review_checker_continuity_rollout_post_119.statistic: mean
     row: 30
     col: 0

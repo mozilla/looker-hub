@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,44 +26,10 @@
       https_as_default_protocoll_in_address_bar.branch
     ]
     filters:
-      https_as_default_protocoll_in_address_bar.metric: 'uri_count'
+      https_as_default_protocoll_in_address_bar.metric: 'ad_clicks'
       https_as_default_protocoll_in_address_bar.statistic: mean
     row: 0
     col: 0
-    width: 12
-    height: 8
-    field_x: https_as_default_protocoll_in_address_bar.submission_date
-    field_y: https_as_default_protocoll_in_address_bar.point
-    log_scale: false
-    ci_lower: https_as_default_protocoll_in_address_bar.lower
-    ci_upper: https_as_default_protocoll_in_address_bar.upper
-    show_grid: true
-    listen:
-      Date: https_as_default_protocoll_in_address_bar.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: https_as_default_protocoll_in_address_bar
-    type: looker_line
-    fields: [
-      https_as_default_protocoll_in_address_bar.submission_date,
-      https_as_default_protocoll_in_address_bar.branch,
-      https_as_default_protocoll_in_address_bar.point
-    ]
-    pivots: [
-      https_as_default_protocoll_in_address_bar.branch
-    ]
-    filters:
-      https_as_default_protocoll_in_address_bar.metric: 'qualified_cumulative_days_of_use'
-      https_as_default_protocoll_in_address_bar.statistic: mean
-    row: 0
-    col: 12
     width: 12
     height: 8
     field_x: https_as_default_protocoll_in_address_bar.submission_date
@@ -96,8 +62,8 @@
     filters:
       https_as_default_protocoll_in_address_bar.metric: 'active_hours'
       https_as_default_protocoll_in_address_bar.statistic: mean
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: https_as_default_protocoll_in_address_bar.submission_date
@@ -129,6 +95,40 @@
     ]
     filters:
       https_as_default_protocoll_in_address_bar.metric: 'search_count'
+      https_as_default_protocoll_in_address_bar.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: https_as_default_protocoll_in_address_bar.submission_date
+    field_y: https_as_default_protocoll_in_address_bar.point
+    log_scale: false
+    ci_lower: https_as_default_protocoll_in_address_bar.lower
+    ci_upper: https_as_default_protocoll_in_address_bar.upper
+    show_grid: true
+    listen:
+      Date: https_as_default_protocoll_in_address_bar.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Uri Count
+    name: Uri Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: https_as_default_protocoll_in_address_bar
+    type: looker_line
+    fields: [
+      https_as_default_protocoll_in_address_bar.submission_date,
+      https_as_default_protocoll_in_address_bar.branch,
+      https_as_default_protocoll_in_address_bar.point
+    ]
+    pivots: [
+      https_as_default_protocoll_in_address_bar.branch
+    ]
+    filters:
+      https_as_default_protocoll_in_address_bar.metric: 'uri_count'
       https_as_default_protocoll_in_address_bar.statistic: mean
     row: 10
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       https_as_default_protocoll_in_address_bar.branch
     ]
     filters:
-      https_as_default_protocoll_in_address_bar.metric: 'ad_clicks'
+      https_as_default_protocoll_in_address_bar.metric: 'qualified_cumulative_days_of_use'
       https_as_default_protocoll_in_address_bar.statistic: mean
     row: 30
     col: 0
