@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Exception Volume
-    name: Exception Volume_sum
+  - title: Ping Volume
+    name: Ping Volume_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,7 +26,7 @@
       firefox_background_update.branch
     ]
     filters:
-      firefox_background_update.metric: 'exception_volume'
+      firefox_background_update.metric: 'ping_volume'
       firefox_background_update.statistic: sum
     row: 0
     col: 0
@@ -80,11 +80,11 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Exception Rate
-    name: Exception Rate_mean
+  - title: Exception Volume
+    name: Exception Volume_sum
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Sum
     explore: firefox_background_update
     type: looker_line
     fields: [
@@ -96,8 +96,8 @@
       firefox_background_update.branch
     ]
     filters:
-      firefox_background_update.metric: 'exception_rate'
-      firefox_background_update.statistic: mean
+      firefox_background_update.metric: 'exception_volume'
+      firefox_background_update.statistic: sum
     row: 10
     col: 0
     width: 12
@@ -115,8 +115,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Ping Volume
-    name: Ping Volume_sum
+  - title: Crash Volume
+    name: Crash Volume_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -131,7 +131,7 @@
       firefox_background_update.branch
     ]
     filters:
-      firefox_background_update.metric: 'ping_volume'
+      firefox_background_update.metric: 'crash_volume'
       firefox_background_update.statistic: sum
     row: 10
     col: 12
@@ -185,11 +185,11 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Crash Volume
-    name: Crash Volume_sum
+  - title: Exception Rate
+    name: Exception Rate_mean
     note_state: expanded
     note_display: above
-    note_text: Sum
+    note_text: Mean
     explore: firefox_background_update
     type: looker_line
     fields: [
@@ -201,8 +201,8 @@
       firefox_background_update.branch
     ]
     filters:
-      firefox_background_update.metric: 'crash_volume'
-      firefox_background_update.statistic: sum
+      firefox_background_update.metric: 'exception_rate'
+      firefox_background_update.statistic: mean
     row: 20
     col: 12
     width: 12
@@ -271,15 +271,15 @@
   - title: Windows Version
     name: Windows Version
     type: string_filter
-    default_value: 'Windows 7'
+    default_value: 'Windows 10'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'Windows 7'
       - 'Windows 10'
+      - 'Windows 7'
       - 'Windows 8'
       - 'Windows 8.1'
       - 'Windows 11'

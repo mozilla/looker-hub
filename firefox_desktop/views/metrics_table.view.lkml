@@ -2928,7 +2928,14 @@ If you're unsure, please ask in
   dimension: metrics__labeled_counter__network_system_channel_addon_status {
     sql: ${TABLE}.metrics.labeled_counter.network_system_channel_addon_status ;;
     hidden: yes
-    description: "Counts the status of succeeded and failed requests to .addons.mozilla.org
+    description: "Counts the status of succeeded and failed requests to addons.mozilla.org
+"
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_addonversion_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_addonversion_status ;;
+    hidden: yes
+    description: "Counts the status of succeeded and failed requests to *.addons.mozilla.org
 "
   }
 
@@ -3721,6 +3728,13 @@ success - search service successfully initialized.
   dimension: metrics__memory_distribution__performance_clone_deserialize_size__values {
     sql: ${TABLE}.metrics.memory_distribution.performance_clone_deserialize_size.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__object__browser_ui_toolbar_widgets {
+    sql: ${TABLE}.metrics.object.browser_ui_toolbar_widgets ;;
+    hidden: yes
+    description: "What widgets are in which toolbars. Not dissimilar from Telemetry's `browser.ui.toolbar_widgets`, but in a friendlier format. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html for how widget ids and positions are determined.
+"
   }
 
   dimension: metrics__object__fog_validation_some_object {
