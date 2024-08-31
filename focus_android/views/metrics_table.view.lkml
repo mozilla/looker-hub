@@ -2398,6 +2398,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__network_system_channel_addonversion_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_addonversion_status ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__network_system_channel_other_status {
     sql: ${TABLE}.metrics.labeled_counter.network_system_channel_other_status ;;
     hidden: yes

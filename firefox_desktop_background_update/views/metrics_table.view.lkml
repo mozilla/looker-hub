@@ -2626,7 +2626,14 @@ This metric appears in both the metrics and baseline pings.
   dimension: metrics__labeled_counter__network_system_channel_addon_status {
     sql: ${TABLE}.metrics.labeled_counter.network_system_channel_addon_status ;;
     hidden: yes
-    description: "Counts the status of succeeded and failed requests to .addons.mozilla.org
+    description: "Counts the status of succeeded and failed requests to addons.mozilla.org
+"
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_addonversion_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_addonversion_status ;;
+    hidden: yes
+    description: "Counts the status of succeeded and failed requests to *.addons.mozilla.org
 "
   }
 
