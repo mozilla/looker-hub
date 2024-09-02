@@ -10,11 +10,11 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Exception Volume
-    name: Exception Volume_sum
+  - title: Success Rate
+    name: Success Rate_mean
     note_state: expanded
     note_display: above
-    note_text: Sum
+    note_text: Mean
     explore: firefox_background_update
     type: looker_line
     fields: [
@@ -26,8 +26,8 @@
       firefox_background_update.branch
     ]
     filters:
-      firefox_background_update.metric: 'exception_volume'
-      firefox_background_update.statistic: sum
+      firefox_background_update.metric: 'success_rate'
+      firefox_background_update.statistic: mean
     row: 0
     col: 0
     width: 12
@@ -80,11 +80,11 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Success Rate
-    name: Success Rate_mean
+  - title: Client Volume
+    name: Client Volume_sum
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Sum
     explore: firefox_background_update
     type: looker_line
     fields: [
@@ -96,8 +96,8 @@
       firefox_background_update.branch
     ]
     filters:
-      firefox_background_update.metric: 'success_rate'
-      firefox_background_update.statistic: mean
+      firefox_background_update.metric: 'client_volume'
+      firefox_background_update.statistic: sum
     row: 10
     col: 0
     width: 12
@@ -150,8 +150,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Client Volume
-    name: Client Volume_sum
+  - title: Exception Volume
+    name: Exception Volume_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -166,7 +166,7 @@
       firefox_background_update.branch
     ]
     filters:
-      firefox_background_update.metric: 'client_volume'
+      firefox_background_update.metric: 'exception_volume'
       firefox_background_update.statistic: sum
     row: 20
     col: 0
