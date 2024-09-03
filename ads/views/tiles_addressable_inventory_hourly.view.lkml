@@ -50,6 +50,12 @@ display_fail_reason = \"oversold\" corresponds to tiles we fail to display as al
     description: "Identifier for the corresponding Newtab visit"
   }
 
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
+    description: "A UUID identifying the profile's group on a single device and allowing user-oriented correlation of data"
+  }
+
   dimension: provider {
     sql: ${TABLE}.provider ;;
     type: string
