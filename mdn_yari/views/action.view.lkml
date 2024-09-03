@@ -62,7 +62,7 @@ view: action {
 
   dimension: metrics__string__navigator_user_agent {
     label: "Navigator User Agent"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.navigator_user_agent ;;
     type: string
     group_label: "Navigator"
@@ -99,7 +99,7 @@ one of \"xs\", \"sm\", \"md\",\"lg\", \"xl\" or \"xxl\".
 
   dimension: metrics__quantity__navigator_viewport_horizontal_coverage {
     label: "Navigator Viewport Horizontal Coverage"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.navigator_viewport_horizontal_coverage ;;
     type: number
     group_label: "Navigator"
@@ -117,7 +117,7 @@ one of \"xs\", \"sm\", \"md\",\"lg\", \"xl\" or \"xxl\".
 
   dimension: metrics__quantity__navigator_viewport_ratio {
     label: "Navigator Viewport Ratio"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.navigator_viewport_ratio ;;
     type: number
     group_label: "Navigator"
