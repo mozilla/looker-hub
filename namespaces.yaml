@@ -2217,6 +2217,10 @@ firefox_desktop:
       type: table_explore
       views:
         base_view: events_stream_table
+    fenix_distribution_deal:
+      type: table_explore
+      views:
+        base_view: fenix_distribution_deal
     first_startup:
       type: glean_ping_explore
       views:
@@ -2558,6 +2562,10 @@ firefox_desktop:
     feature_usage_table:
       tables:
       - table: mozdata.telemetry.feature_usage
+      type: table_view
+    fenix_distribution_deal:
+      tables:
+      - table: mozdata.analysis.fenix_distribution_deal_v1
       type: table_view
     firefox_desktop_use_counters_table:
       tables:
