@@ -7238,7 +7238,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__rate__networking_set_cookie_expired_without_server_time__numerator {
     label: "Networking Set Cookie Expired Without Server Time Numerator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.networking_set_cookie_expired_without_server_time.numerator ;;
     type: number
     group_label: "Networking"
@@ -7256,7 +7256,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__rate__networking_set_cookie_expired_without_server_time__denominator {
     label: "Networking Set Cookie Expired Without Server Time Denominator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.networking_set_cookie_expired_without_server_time.denominator ;;
     type: number
     group_label: "Networking"
