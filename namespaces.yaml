@@ -1931,6 +1931,14 @@ fenix:
       type: table_view
 firefox_accounts:
   explores:
+    account_settings_delete_account_funnel:
+      type: table_explore
+      views:
+        base_view: account_settings_delete_account_funnel
+    account_settings_page_engagement:
+      type: table_explore
+      views:
+        base_view: account_settings_page_engagement
     accounts_aggregates:
       type: table_explore
       views:
@@ -2021,6 +2029,14 @@ firefox_accounts:
   pretty_name: Firefox Accounts
   spoke: looker-spoke-default
   views:
+    account_settings_delete_account_funnel:
+      tables:
+      - table: moz-fx-data-shared-prod.accounts_frontend_derived.account_pref_delete_funnel_v1
+      type: table_view
+    account_settings_page_engagement:
+      tables:
+      - table: moz-fx-data-shared-prod.accounts_frontend_derived.accounts_pref_engagement_v1
+      type: table_view
     accounts_aggregates:
       tables:
       - table: moz-fx-data-shared-prod.accounts_db.accounts_aggregates
