@@ -116,8 +116,8 @@
       display: inline
       options:
       - 'last_scan_date'
-      - 'csat_survey'
       - 'petition_banner'
+      - 'csat_survey'
       
   
   
