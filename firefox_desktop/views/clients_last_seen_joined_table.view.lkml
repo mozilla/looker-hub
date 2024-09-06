@@ -30,6 +30,11 @@ view: clients_last_seen_joined_table {
     type: string
   }
 
+  dimension: baseline_profile_group_id {
+    sql: ${TABLE}.baseline_profile_group_id ;;
+    type: string
+  }
+
   dimension: city {
     sql: ${TABLE}.city ;;
     type: string
