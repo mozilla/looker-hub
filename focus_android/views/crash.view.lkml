@@ -380,7 +380,7 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The type of the content process. See the full list of options [here](https://firefox-source-docs.mozilla.org/toolkit/components/telemetry/data/crash-ping.html#remote-process-types).
+    description: "Type of the child process, can be set to \"web\", \"file\" or \"extension\" but could also be unavailable.
 "
   }
 

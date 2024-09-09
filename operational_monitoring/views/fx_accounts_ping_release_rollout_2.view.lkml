@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: mozillaaccounts_toolbar_button_default_visibility_existing_user {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.mozillaaccounts_toolbar_button_default_visibility_existing_user_statistics ;;
+view: fx_accounts_ping_release_rollout_2 {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.fx_accounts_ping_release_rollout_2_statistics ;;
 
   dimension: submission_date {
     type: date

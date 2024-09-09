@@ -953,6 +953,24 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__page_icon_fit_icon_count {
+    sql: ${TABLE}.metrics.counter.page_icon_fit_icon_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Page Icon Fit Icon Count"
+    description: "Number of times the page-icon protocol serves an icon equal to or larger than requested.
+"
+  }
+
+  dimension: metrics__counter__page_icon_small_icon_count {
+    sql: ${TABLE}.metrics.counter.page_icon_small_icon_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Page Icon Small Icon Count"
+    description: "Number of times the page-icon protocol serves an icon smaller than requested.
+"
+  }
+
   dimension: metrics__counter__pdfjs_editing_highlight_color_changed {
     sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_color_changed ;;
     type: number
@@ -3159,6 +3177,13 @@ If you're unsure, please ask in
     sql: ${TABLE}.metrics.labeled_counter.networking_trr_request_count ;;
     hidden: yes
     description: "The count of successful TRR requests keyed by regular/private browsing
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_trr_request_count_per_conn {
+    sql: ${TABLE}.metrics.labeled_counter.networking_trr_request_count_per_conn ;;
+    hidden: yes
+    description: "Number of DOH requests per connection keyed by HTTP version
 "
   }
 

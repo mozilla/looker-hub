@@ -1209,6 +1209,42 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__counter__page_icon_fit_icon_count {
+    label: "Page Icon Fit Icon Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.page_icon_fit_icon_count ;;
+    type: number
+    group_label: "Page Icon"
+    group_item_label: "Fit Icon Count"
+
+    link: {
+      label: "Glean Dictionary reference for Page Icon Fit Icon Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/page_icon_fit_icon_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the page-icon protocol serves an icon equal to or larger than requested.
+"
+  }
+
+  dimension: metrics__counter__page_icon_small_icon_count {
+    label: "Page Icon Small Icon Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.page_icon_small_icon_count ;;
+    type: number
+    group_label: "Page Icon"
+    group_item_label: "Small Icon Count"
+
+    link: {
+      label: "Glean Dictionary reference for Page Icon Small Icon Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/page_icon_small_icon_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the page-icon protocol serves an icon smaller than requested.
+"
+  }
+
   dimension: metrics__timing_distribution__performance_interaction_tab_switch_composite__sum {
     label: "Performance Interaction Tab Switch Composite Sum"
     hidden: no
@@ -7467,6 +7503,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_trr_request_count_per_conn {
+    label: "Networking Trr Request Count Per Conn"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_trr_request_count_per_conn ;;
+    group_label: "Networking"
+    group_item_label: "Trr Request Count Per Conn"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Trr Request Count Per Conn"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_trr_request_count_per_conn"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of DOH requests per connection keyed by HTTP version
+"
+  }
+
   dimension: metrics__timing_distribution__ocsp_request_time_cancel__sum {
     label: "Ocsp Request Time Cancel Sum"
     hidden: no
@@ -11489,6 +11542,56 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Messaging System Glean Ping For Ping Failures"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_glean_ping_for_ping_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: page_icon_fit_icon_count {
+    type: sum
+    sql: ${metrics__counter__page_icon_fit_icon_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Page Icon Fit Icon Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/page_icon_fit_icon_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: page_icon_fit_icon_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__page_icon_fit_icon_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Page Icon Fit Icon Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/page_icon_fit_icon_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: page_icon_small_icon_count {
+    type: sum
+    sql: ${metrics__counter__page_icon_small_icon_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Page Icon Small Icon Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/page_icon_small_icon_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: page_icon_small_icon_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__page_icon_small_icon_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Page Icon Small Icon Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/page_icon_small_icon_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -17458,6 +17561,47 @@ view: metrics__metrics__labeled_counter__networking_speculative_connection_outco
 
 view: metrics__metrics__labeled_counter__networking_trr_request_count {
   label: "Networking - Trr Request Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_trr_request_count_per_conn {
+  label: "Networking - Trr Request Count Per Conn"
 
   dimension: document_id {
     type: string
