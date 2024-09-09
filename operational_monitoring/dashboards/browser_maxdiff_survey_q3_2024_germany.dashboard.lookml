@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,10 +26,44 @@
       browser_maxdiff_survey_q3_2024_germany.branch
     ]
     filters:
-      browser_maxdiff_survey_q3_2024_germany.metric: 'uri_count'
+      browser_maxdiff_survey_q3_2024_germany.metric: 'search_count'
       browser_maxdiff_survey_q3_2024_germany.statistic: mean
     row: 0
     col: 0
+    width: 12
+    height: 8
+    field_x: browser_maxdiff_survey_q3_2024_germany.submission_date
+    field_y: browser_maxdiff_survey_q3_2024_germany.point
+    log_scale: false
+    ci_lower: browser_maxdiff_survey_q3_2024_germany.lower
+    ci_upper: browser_maxdiff_survey_q3_2024_germany.upper
+    show_grid: true
+    listen:
+      Date: browser_maxdiff_survey_q3_2024_germany.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: browser_maxdiff_survey_q3_2024_germany
+    type: looker_line
+    fields: [
+      browser_maxdiff_survey_q3_2024_germany.submission_date,
+      browser_maxdiff_survey_q3_2024_germany.branch,
+      browser_maxdiff_survey_q3_2024_germany.point
+    ]
+    pivots: [
+      browser_maxdiff_survey_q3_2024_germany.branch
+    ]
+    filters:
+      browser_maxdiff_survey_q3_2024_germany.metric: 'active_hours'
+      browser_maxdiff_survey_q3_2024_germany.statistic: mean
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: browser_maxdiff_survey_q3_2024_germany.submission_date
@@ -62,8 +96,8 @@
     filters:
       browser_maxdiff_survey_q3_2024_germany.metric: 'qualified_cumulative_days_of_use'
       browser_maxdiff_survey_q3_2024_germany.statistic: mean
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: browser_maxdiff_survey_q3_2024_germany.submission_date
@@ -99,41 +133,6 @@
       browser_maxdiff_survey_q3_2024_germany.metric: 'memory_total'
       browser_maxdiff_survey_q3_2024_germany.statistic: percentile
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: browser_maxdiff_survey_q3_2024_germany.submission_date
-    field_y: browser_maxdiff_survey_q3_2024_germany.point
-    log_scale: false
-    ci_lower: browser_maxdiff_survey_q3_2024_germany.lower
-    ci_upper: browser_maxdiff_survey_q3_2024_germany.upper
-    show_grid: true
-    listen:
-      Date: browser_maxdiff_survey_q3_2024_germany.submission_date
-      Percentile: browser_maxdiff_survey_q3_2024_germany.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: browser_maxdiff_survey_q3_2024_germany
-    type: looker_line
-    fields: [
-      browser_maxdiff_survey_q3_2024_germany.submission_date,
-      browser_maxdiff_survey_q3_2024_germany.branch,
-      browser_maxdiff_survey_q3_2024_germany.point
-    ]
-    pivots: [
-      browser_maxdiff_survey_q3_2024_germany.branch
-    ]
-    filters:
-      browser_maxdiff_survey_q3_2024_germany.metric: 'search_count'
-      browser_maxdiff_survey_q3_2024_germany.statistic: mean
-    row: 10
     col: 12
     width: 12
     height: 8
@@ -145,40 +144,7 @@
     show_grid: true
     listen:
       Date: browser_maxdiff_survey_q3_2024_germany.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: browser_maxdiff_survey_q3_2024_germany
-    type: looker_line
-    fields: [
-      browser_maxdiff_survey_q3_2024_germany.submission_date,
-      browser_maxdiff_survey_q3_2024_germany.branch,
-      browser_maxdiff_survey_q3_2024_germany.point
-    ]
-    pivots: [
-      browser_maxdiff_survey_q3_2024_germany.branch
-    ]
-    filters:
-      browser_maxdiff_survey_q3_2024_germany.metric: 'active_hours'
-      browser_maxdiff_survey_q3_2024_germany.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: browser_maxdiff_survey_q3_2024_germany.submission_date
-    field_y: browser_maxdiff_survey_q3_2024_germany.point
-    log_scale: false
-    ci_lower: browser_maxdiff_survey_q3_2024_germany.lower
-    ci_upper: browser_maxdiff_survey_q3_2024_germany.upper
-    show_grid: true
-    listen:
-      Date: browser_maxdiff_survey_q3_2024_germany.submission_date
+      Percentile: browser_maxdiff_survey_q3_2024_germany.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -202,7 +168,7 @@
       browser_maxdiff_survey_q3_2024_germany.metric: 'ad_clicks'
       browser_maxdiff_survey_q3_2024_germany.statistic: mean
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: browser_maxdiff_survey_q3_2024_germany.submission_date
@@ -235,8 +201,8 @@
     filters:
       browser_maxdiff_survey_q3_2024_germany.metric: 'days_of_use'
       browser_maxdiff_survey_q3_2024_germany.statistic: mean
-    row: 30
-    col: 0
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: browser_maxdiff_survey_q3_2024_germany.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       browser_maxdiff_survey_q3_2024_germany.metric: 'retained'
+      browser_maxdiff_survey_q3_2024_germany.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: browser_maxdiff_survey_q3_2024_germany.submission_date
+    field_y: browser_maxdiff_survey_q3_2024_germany.point
+    log_scale: false
+    ci_lower: browser_maxdiff_survey_q3_2024_germany.lower
+    ci_upper: browser_maxdiff_survey_q3_2024_germany.upper
+    show_grid: true
+    listen:
+      Date: browser_maxdiff_survey_q3_2024_germany.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Uri Count
+    name: Uri Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: browser_maxdiff_survey_q3_2024_germany
+    type: looker_line
+    fields: [
+      browser_maxdiff_survey_q3_2024_germany.submission_date,
+      browser_maxdiff_survey_q3_2024_germany.branch,
+      browser_maxdiff_survey_q3_2024_germany.point
+    ]
+    pivots: [
+      browser_maxdiff_survey_q3_2024_germany.branch
+    ]
+    filters:
+      browser_maxdiff_survey_q3_2024_germany.metric: 'uri_count'
       browser_maxdiff_survey_q3_2024_germany.statistic: mean
     row: 30
     col: 12
