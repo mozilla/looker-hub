@@ -50,6 +50,11 @@ view: events {
     type: number
   }
 
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
+  }
+
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number

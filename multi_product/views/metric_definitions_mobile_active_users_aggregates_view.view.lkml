@@ -182,9 +182,6 @@ mobile_active_users_aggregates_view_weekly_users,
     Whenever possible, this is the preferred DAU reporting definition to use for Mobile products.
     This metric needs to be aggregated by `submission_date`. If it is not aggregated by `submission_date`,
     it is similar to a \"days of use\" metric, and not DAU.
-    
-    For more information, refer to [the DAU description in Confluence](https://mozilla-hub.atlassian.net/wiki/spaces/DATA/pages/314704478/Daily+Active+Users+DAU+Metric).
-    For questions please contact bochocki@mozilla.com or firefox-kpi@mozilla.com.
 "
     type: number
     sql: ${TABLE}.mobile_daily_active_users_v1 ;;
@@ -193,15 +190,12 @@ mobile_active_users_aggregates_view_weekly_users,
   dimension: mobile_dau_kpi_v1 {
     group_label: "Metrics"
     label: "Mobile DAU KPI"
-    description: "    The average [Mobile DAU](https://mozilla.github.io/metric-hub/metrics/multi_product/#mobile_daily_active_users) in the 28-day period ending on December 15th. This is the official
-    Mobile DAU KPI reporting definition. The logic is
+    description: "    The average [Mobile DAU](https://mozilla.acryl.io/glossaryTerm/urn:li:glossaryTerm:Metric%20Hub.multi_product.mobile_daily_active_users_v1/Documentation?is_lineage_mode=false)
+    in the 28-day period ending on December 15th. This is the official Mobile DAU KPI reporting definition. The logic is
     [detailed on the Confluence DAU page](https://mozilla-hub.atlassian.net/wiki/spaces/DATA/pages/314704478/Daily+Active+Users+DAU+Metric)
     and is automatically cross-checked, actively monitored, and change controlled.
     To reconstruct the annual Mobile DAU KPI, this metric needs to be aggregated by
-    `EXTRACT(YEAR FROM submission_date)`.  
-
-    For more information, refer to [the DAU description in Confluence](https://mozilla-hub.atlassian.net/wiki/spaces/DATA/pages/314704478/Daily+Active+Users+DAU+Metric).
-    For questions please contact bochocki@mozilla.com or firefox-kpi@mozilla.com.
+    `EXTRACT(YEAR FROM submission_date)`.
 "
     type: number
     sql: ${TABLE}.mobile_dau_kpi_v1 ;;

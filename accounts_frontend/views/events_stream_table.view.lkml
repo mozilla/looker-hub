@@ -333,6 +333,20 @@ view: events_stream_table {
     group_item_label: "Account User Id Sha256"
   }
 
+  dimension: metrics__string__entrypoint_experiment {
+    sql: ${TABLE}.metrics.string.entrypoint_experiment ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Entrypoint Experiment"
+  }
+
+  dimension: metrics__string__entrypoint_variation {
+    sql: ${TABLE}.metrics.string.entrypoint_variation ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Entrypoint Variation"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
@@ -468,6 +482,11 @@ view: events_stream_table {
     type: string
     group_label: "Ping Info"
     group_item_label: "Start Time"
+  }
+
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
   }
 
   dimension: reason {

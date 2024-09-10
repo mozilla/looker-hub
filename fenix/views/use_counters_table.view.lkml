@@ -3965,6 +3965,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css View Timeline Name"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_view_transition_name {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_view_transition_name ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css View Transition Name"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_visibility {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_visibility ;;
     type: number
@@ -8933,6 +8940,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css View Timeline Name"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_view_transition_name {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_view_transition_name ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css View Transition Name"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_visibility {

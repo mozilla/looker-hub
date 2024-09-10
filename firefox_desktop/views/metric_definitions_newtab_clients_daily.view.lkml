@@ -68,6 +68,7 @@ newtab_clients_daily_newtab_newtab_category,
 newtab_clients_daily_newtab_visit_count,
 newtab_clients_daily_normalized_os,
 newtab_clients_daily_normalized_os_version,
+newtab_clients_daily_organic_pocket_dismissals,
 newtab_clients_daily_organic_pocket_saves,
 newtab_clients_daily_organic_topsite_tile_clicks,
 newtab_clients_daily_organic_topsite_tile_dismissals,
@@ -78,7 +79,12 @@ newtab_clients_daily_pocket_impressions,
 newtab_clients_daily_pocket_is_signed_in,
 newtab_clients_daily_pocket_saves,
 newtab_clients_daily_pocket_sponsored_stories_enabled,
+newtab_clients_daily_pocket_thumb_voting_events,
+newtab_clients_daily_pocket_thumbs_down,
+newtab_clients_daily_pocket_thumbs_up,
+newtab_clients_daily_profile_group_id,
 newtab_clients_daily_searches,
+newtab_clients_daily_sponsored_pocket_dismissals,
 newtab_clients_daily_sponsored_pocket_saves,
 newtab_clients_daily_sponsored_topsite_tile_clicks,
 newtab_clients_daily_sponsored_topsite_tile_dismissals,
@@ -87,6 +93,11 @@ newtab_clients_daily_tagged_follow_on_search_ad_clicks,
 newtab_clients_daily_tagged_follow_on_search_ad_impressions,
 newtab_clients_daily_tagged_search_ad_clicks,
 newtab_clients_daily_tagged_search_ad_impressions,
+newtab_clients_daily_topic_preferences_set,
+newtab_clients_daily_topic_selection_dismissals,
+newtab_clients_daily_topic_selection_opened,
+newtab_clients_daily_topic_selection_selected_topics_first_time,
+newtab_clients_daily_topic_selection_updates,
 newtab_clients_daily_topsite_tile_clicks,
 newtab_clients_daily_topsite_tile_dismissals,
 newtab_clients_daily_topsite_tile_impressions,
@@ -159,6 +170,7 @@ newtab_clients_daily.newtab_newtab_category AS newtab_clients_daily_newtab_newta
 newtab_clients_daily.newtab_visit_count AS newtab_clients_daily_newtab_visit_count,
 newtab_clients_daily.normalized_os AS newtab_clients_daily_normalized_os,
 newtab_clients_daily.normalized_os_version AS newtab_clients_daily_normalized_os_version,
+newtab_clients_daily.organic_pocket_dismissals AS newtab_clients_daily_organic_pocket_dismissals,
 newtab_clients_daily.organic_pocket_saves AS newtab_clients_daily_organic_pocket_saves,
 newtab_clients_daily.organic_topsite_tile_clicks AS newtab_clients_daily_organic_topsite_tile_clicks,
 newtab_clients_daily.organic_topsite_tile_dismissals AS newtab_clients_daily_organic_topsite_tile_dismissals,
@@ -169,7 +181,12 @@ newtab_clients_daily.pocket_impressions AS newtab_clients_daily_pocket_impressio
 newtab_clients_daily.pocket_is_signed_in AS newtab_clients_daily_pocket_is_signed_in,
 newtab_clients_daily.pocket_saves AS newtab_clients_daily_pocket_saves,
 newtab_clients_daily.pocket_sponsored_stories_enabled AS newtab_clients_daily_pocket_sponsored_stories_enabled,
+newtab_clients_daily.pocket_thumb_voting_events AS newtab_clients_daily_pocket_thumb_voting_events,
+newtab_clients_daily.pocket_thumbs_down AS newtab_clients_daily_pocket_thumbs_down,
+newtab_clients_daily.pocket_thumbs_up AS newtab_clients_daily_pocket_thumbs_up,
+newtab_clients_daily.profile_group_id AS newtab_clients_daily_profile_group_id,
 newtab_clients_daily.searches AS newtab_clients_daily_searches,
+newtab_clients_daily.sponsored_pocket_dismissals AS newtab_clients_daily_sponsored_pocket_dismissals,
 newtab_clients_daily.sponsored_pocket_saves AS newtab_clients_daily_sponsored_pocket_saves,
 newtab_clients_daily.sponsored_topsite_tile_clicks AS newtab_clients_daily_sponsored_topsite_tile_clicks,
 newtab_clients_daily.sponsored_topsite_tile_dismissals AS newtab_clients_daily_sponsored_topsite_tile_dismissals,
@@ -178,6 +195,11 @@ newtab_clients_daily.tagged_follow_on_search_ad_clicks AS newtab_clients_daily_t
 newtab_clients_daily.tagged_follow_on_search_ad_impressions AS newtab_clients_daily_tagged_follow_on_search_ad_impressions,
 newtab_clients_daily.tagged_search_ad_clicks AS newtab_clients_daily_tagged_search_ad_clicks,
 newtab_clients_daily.tagged_search_ad_impressions AS newtab_clients_daily_tagged_search_ad_impressions,
+newtab_clients_daily.topic_preferences_set AS newtab_clients_daily_topic_preferences_set,
+newtab_clients_daily.topic_selection_dismissals AS newtab_clients_daily_topic_selection_dismissals,
+newtab_clients_daily.topic_selection_opened AS newtab_clients_daily_topic_selection_opened,
+newtab_clients_daily.topic_selection_selected_topics_first_time AS newtab_clients_daily_topic_selection_selected_topics_first_time,
+newtab_clients_daily.topic_selection_updates AS newtab_clients_daily_topic_selection_updates,
 newtab_clients_daily.topsite_tile_clicks AS newtab_clients_daily_topsite_tile_clicks,
 newtab_clients_daily.topsite_tile_dismissals AS newtab_clients_daily_topsite_tile_dismissals,
 newtab_clients_daily.topsite_tile_impressions AS newtab_clients_daily_topsite_tile_impressions,
@@ -252,6 +274,7 @@ newtab_clients_daily_newtab_newtab_category,
 newtab_clients_daily_newtab_visit_count,
 newtab_clients_daily_normalized_os,
 newtab_clients_daily_normalized_os_version,
+newtab_clients_daily_organic_pocket_dismissals,
 newtab_clients_daily_organic_pocket_saves,
 newtab_clients_daily_organic_topsite_tile_clicks,
 newtab_clients_daily_organic_topsite_tile_dismissals,
@@ -262,7 +285,12 @@ newtab_clients_daily_pocket_impressions,
 newtab_clients_daily_pocket_is_signed_in,
 newtab_clients_daily_pocket_saves,
 newtab_clients_daily_pocket_sponsored_stories_enabled,
+newtab_clients_daily_pocket_thumb_voting_events,
+newtab_clients_daily_pocket_thumbs_down,
+newtab_clients_daily_pocket_thumbs_up,
+newtab_clients_daily_profile_group_id,
 newtab_clients_daily_searches,
+newtab_clients_daily_sponsored_pocket_dismissals,
 newtab_clients_daily_sponsored_pocket_saves,
 newtab_clients_daily_sponsored_topsite_tile_clicks,
 newtab_clients_daily_sponsored_topsite_tile_dismissals,
@@ -271,6 +299,11 @@ newtab_clients_daily_tagged_follow_on_search_ad_clicks,
 newtab_clients_daily_tagged_follow_on_search_ad_impressions,
 newtab_clients_daily_tagged_search_ad_clicks,
 newtab_clients_daily_tagged_search_ad_impressions,
+newtab_clients_daily_topic_preferences_set,
+newtab_clients_daily_topic_selection_dismissals,
+newtab_clients_daily_topic_selection_opened,
+newtab_clients_daily_topic_selection_selected_topics_first_time,
+newtab_clients_daily_topic_selection_updates,
 newtab_clients_daily_topsite_tile_clicks,
 newtab_clients_daily_topsite_tile_dismissals,
 newtab_clients_daily_topsite_tile_impressions,
@@ -769,6 +802,12 @@ a wallpaper.
     group_label: "Base Fields"
   }
 
+  dimension: organic_pocket_dismissals {
+    sql: ${TABLE}.newtab_clients_daily_organic_pocket_dismissals ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
   dimension: organic_pocket_saves {
     sql: ${TABLE}.newtab_clients_daily_organic_pocket_saves ;;
     type: number
@@ -829,8 +868,38 @@ a wallpaper.
     group_label: "Base Fields"
   }
 
+  dimension: pocket_thumb_voting_events {
+    sql: ${TABLE}.newtab_clients_daily_pocket_thumb_voting_events ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: pocket_thumbs_down {
+    sql: ${TABLE}.newtab_clients_daily_pocket_thumbs_down ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: pocket_thumbs_up {
+    sql: ${TABLE}.newtab_clients_daily_pocket_thumbs_up ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: profile_group_id {
+    sql: ${TABLE}.newtab_clients_daily_profile_group_id ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
   dimension: searches {
     sql: ${TABLE}.newtab_clients_daily_searches ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsored_pocket_dismissals {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_pocket_dismissals ;;
     type: number
     group_label: "Base Fields"
   }
@@ -879,6 +948,36 @@ a wallpaper.
 
   dimension: tagged_search_ad_impressions {
     sql: ${TABLE}.newtab_clients_daily_tagged_search_ad_impressions ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: topic_preferences_set {
+    sql: ${TABLE}.newtab_clients_daily_topic_preferences_set ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: topic_selection_dismissals {
+    sql: ${TABLE}.newtab_clients_daily_topic_selection_dismissals ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: topic_selection_opened {
+    sql: ${TABLE}.newtab_clients_daily_topic_selection_opened ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: topic_selection_selected_topics_first_time {
+    sql: ${TABLE}.newtab_clients_daily_topic_selection_selected_topics_first_time ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: topic_selection_updates {
+    sql: ${TABLE}.newtab_clients_daily_topic_selection_updates ;;
     type: number
     group_label: "Base Fields"
   }
