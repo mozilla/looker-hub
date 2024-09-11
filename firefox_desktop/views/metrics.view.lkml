@@ -1388,7 +1388,7 @@ broken down by structured ingestion namespace.
 
   dimension: metrics__rate__private_browsing_window_open_during_teardown__numerator {
     label: "Private Browsing Window Open During Teardown Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.private_browsing_window_open_during_teardown.numerator ;;
     type: number
     group_label: "Private Browsing"
@@ -1406,7 +1406,7 @@ broken down by structured ingestion namespace.
 
   dimension: metrics__rate__private_browsing_window_open_during_teardown__denominator {
     label: "Private Browsing Window Open During Teardown Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.private_browsing_window_open_during_teardown.denominator ;;
     type: number
     group_label: "Private Browsing"
