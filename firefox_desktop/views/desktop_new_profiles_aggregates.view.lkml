@@ -126,6 +126,12 @@ view: desktop_new_profiles_aggregates {
     description: "OS version - not normalized."
   }
 
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.paid_vs_organic ;;
+    type: string
+    description: "Is desktop client attribution organic or paid"
+  }
+
   dimension: windows_build_number {
     sql: ${TABLE}.windows_build_number ;;
     type: number
