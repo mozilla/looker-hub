@@ -570,6 +570,13 @@ view: metrics_table {
     group_item_label: "Metrics Start Reason Process Error"
   }
 
+  dimension: metrics__boolean__navigation_bar_os_navigation_uses_gestures {
+    sql: ${TABLE}.metrics.boolean.navigation_bar_os_navigation_uses_gestures ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Navigation Bar Os Navigation Uses Gestures"
+  }
+
   dimension: metrics__boolean__preferences_bookmarks_suggestion {
     sql: ${TABLE}.metrics.boolean.preferences_bookmarks_suggestion ;;
     type: yesno
@@ -3140,6 +3147,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_ecn_path_capability {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_ecn_path_capability ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_http_channel_disposition {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition ;;
     hidden: yes
@@ -3472,6 +3484,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__webrtcdtls_srtp_cipher {
     sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_srtp_cipher ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.networking_http_3_ecn_ce_ect0_ratio ;;
     hidden: yes
   }
 
@@ -4051,6 +4068,20 @@ view: metrics_table {
     sql: ${TABLE}.metrics.rate.networking_set_cookie_partitioned.numerator ;;
     type: number
     group_label: "Metrics Rate Networking Set Cookie Partitioned"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__parsing_svg_unusual_pcdata__denominator {
+    sql: ${TABLE}.metrics.rate.parsing_svg_unusual_pcdata.denominator ;;
+    type: number
+    group_label: "Metrics Rate Parsing Svg Unusual Pcdata"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__parsing_svg_unusual_pcdata__numerator {
+    sql: ${TABLE}.metrics.rate.parsing_svg_unusual_pcdata.numerator ;;
+    type: number
+    group_label: "Metrics Rate Parsing Svg Unusual Pcdata"
     group_item_label: "Numerator"
   }
 
@@ -16954,6 +16985,44 @@ view: metrics_table__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 

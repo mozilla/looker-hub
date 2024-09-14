@@ -3000,6 +3000,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_ecn_path_capability {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_ecn_path_capability ;;
+    hidden: yes
+    description: "Number of paths known to be ECN capable or not-capable.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_channel_disposition {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition ;;
     hidden: yes
@@ -3452,6 +3459,13 @@ It also indicates the screen it was removed from, home or browser.
     sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_srtp_cipher ;;
     hidden: yes
     description: "The SRTPProtectionProfile (see RFC 5764) used for each webrtc SRTP connection, as a string representation of the SRTPProtectionProfile's ID in 4 hex digits (eg; SRTP_AES128_CM_HMAC_SHA1_80 would be \"0x0001\")
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.networking_http_3_ecn_ce_ect0_ratio ;;
+    hidden: yes
+    description: "HTTP3: ECN CE to ECT0 ratio (multiply by 10000).
 "
   }
 
@@ -3956,6 +3970,20 @@ API for the purposes of Validation (hence GVSV).
     sql: ${TABLE}.metrics.rate.networking_set_cookie_partitioned.numerator ;;
     type: number
     group_label: "Metrics Rate Networking Set Cookie Partitioned"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__parsing_svg_unusual_pcdata__denominator {
+    sql: ${TABLE}.metrics.rate.parsing_svg_unusual_pcdata.denominator ;;
+    type: number
+    group_label: "Metrics Rate Parsing Svg Unusual Pcdata"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__parsing_svg_unusual_pcdata__numerator {
+    sql: ${TABLE}.metrics.rate.parsing_svg_unusual_pcdata.numerator ;;
+    type: number
+    group_label: "Metrics Rate Parsing Svg Unusual Pcdata"
     group_item_label: "Numerator"
   }
 
@@ -13580,6 +13608,45 @@ view: metrics_table__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 

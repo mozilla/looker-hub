@@ -108,15 +108,15 @@
   - title: Survey Id
     name: Survey Id
     type: string_filter
-    default_value: 'last_scan_date'
+    default_value: 'petition_banner'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'last_scan_date'
       - 'petition_banner'
+      - 'last_scan_date'
       - 'csat_survey'
       
   
