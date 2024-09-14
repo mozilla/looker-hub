@@ -5578,6 +5578,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_ecn_path_capability {
+    label: "Networking Http 3 Ecn Path Capability"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_ecn_path_capability ;;
+    group_label: "Networking"
+    group_item_label: "Http 3 Ecn Path Capability"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Ecn Path Capability"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_3_ecn_path_capability"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of paths known to be ECN capable or not-capable.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_upload_throughput__sum {
     label: "Networking Http 3 Upload Throughput Sum"
     hidden: no
@@ -6596,6 +6613,42 @@ To be used to validate GIFFT.
     }
 
     description: "The time to build a Gecko display list.
+"
+  }
+
+  dimension: metrics__rate__parsing_svg_unusual_pcdata__numerator {
+    label: "Parsing Svg Unusual Pcdata Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.parsing_svg_unusual_pcdata.numerator ;;
+    type: number
+    group_label: "Parsing"
+    group_item_label: "Svg Unusual Pcdata Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Parsing Svg Unusual Pcdata Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/parsing_svg_unusual_pcdata"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The rate of svg elements that have child elements during parsing, where their HTML counterpart would not have children.
+"
+  }
+
+  dimension: metrics__rate__parsing_svg_unusual_pcdata__denominator {
+    label: "Parsing Svg Unusual Pcdata Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.parsing_svg_unusual_pcdata.denominator ;;
+    type: number
+    group_label: "Parsing"
+    group_item_label: "Svg Unusual Pcdata Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Parsing Svg Unusual Pcdata Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/parsing_svg_unusual_pcdata"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The rate of svg elements that have child elements during parsing, where their HTML counterpart would not have children.
 "
   }
 
@@ -8633,7 +8686,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The error that was returned from a failed TLS 1.3 handshake in which the client sent a Xyber key share (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
+    description: "The error that was returned from a failed TLS 1.3 handshake in which the client sent a mlkem768x25519 key share (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
 "
   }
 
@@ -15742,6 +15795,47 @@ view: metrics__metrics__labeled_counter__networking_fetch_keepalive_request_coun
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_http_3_ecn_path_capability {
+  label: "Networking - Http 3 Ecn Path Capability"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_http_channel_disposition {
   label: "Networking - Http Channel Disposition"
 
@@ -19078,6 +19172,44 @@ view: metrics__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
