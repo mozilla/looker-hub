@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,10 +60,44 @@
       dual_browsers_q3_2024.branch
     ]
     filters:
-      dual_browsers_q3_2024.metric: 'ad_clicks'
+      dual_browsers_q3_2024.metric: 'active_hours'
       dual_browsers_q3_2024.statistic: mean
     row: 0
     col: 12
+    width: 12
+    height: 8
+    field_x: dual_browsers_q3_2024.submission_date
+    field_y: dual_browsers_q3_2024.point
+    log_scale: false
+    ci_lower: dual_browsers_q3_2024.lower
+    ci_upper: dual_browsers_q3_2024.upper
+    show_grid: true
+    listen:
+      Date: dual_browsers_q3_2024.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: dual_browsers_q3_2024
+    type: looker_line
+    fields: [
+      dual_browsers_q3_2024.submission_date,
+      dual_browsers_q3_2024.branch,
+      dual_browsers_q3_2024.point
+    ]
+    pivots: [
+      dual_browsers_q3_2024.branch
+    ]
+    filters:
+      dual_browsers_q3_2024.metric: 'retained'
+      dual_browsers_q3_2024.statistic: mean
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: dual_browsers_q3_2024.submission_date
@@ -97,6 +131,40 @@
       dual_browsers_q3_2024.metric: 'search_count'
       dual_browsers_q3_2024.statistic: mean
     row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: dual_browsers_q3_2024.submission_date
+    field_y: dual_browsers_q3_2024.point
+    log_scale: false
+    ci_lower: dual_browsers_q3_2024.lower
+    ci_upper: dual_browsers_q3_2024.upper
+    show_grid: true
+    listen:
+      Date: dual_browsers_q3_2024.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: dual_browsers_q3_2024
+    type: looker_line
+    fields: [
+      dual_browsers_q3_2024.submission_date,
+      dual_browsers_q3_2024.branch,
+      dual_browsers_q3_2024.point
+    ]
+    pivots: [
+      dual_browsers_q3_2024.branch
+    ]
+    filters:
+      dual_browsers_q3_2024.metric: 'days_of_use'
+      dual_browsers_q3_2024.statistic: mean
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -132,7 +200,7 @@
     filters:
       dual_browsers_q3_2024.metric: 'memory_total'
       dual_browsers_q3_2024.statistic: percentile
-    row: 10
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -145,40 +213,6 @@
     listen:
       Date: dual_browsers_q3_2024.submission_date
       Percentile: dual_browsers_q3_2024.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: dual_browsers_q3_2024
-    type: looker_line
-    fields: [
-      dual_browsers_q3_2024.submission_date,
-      dual_browsers_q3_2024.branch,
-      dual_browsers_q3_2024.point
-    ]
-    pivots: [
-      dual_browsers_q3_2024.branch
-    ]
-    filters:
-      dual_browsers_q3_2024.metric: 'retained'
-      dual_browsers_q3_2024.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: dual_browsers_q3_2024.submission_date
-    field_y: dual_browsers_q3_2024.point
-    log_scale: false
-    ci_lower: dual_browsers_q3_2024.lower
-    ci_upper: dual_browsers_q3_2024.upper
-    show_grid: true
-    listen:
-      Date: dual_browsers_q3_2024.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -201,40 +235,6 @@
     filters:
       dual_browsers_q3_2024.metric: 'uri_count'
       dual_browsers_q3_2024.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: dual_browsers_q3_2024.submission_date
-    field_y: dual_browsers_q3_2024.point
-    log_scale: false
-    ci_lower: dual_browsers_q3_2024.lower
-    ci_upper: dual_browsers_q3_2024.upper
-    show_grid: true
-    listen:
-      Date: dual_browsers_q3_2024.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: dual_browsers_q3_2024
-    type: looker_line
-    fields: [
-      dual_browsers_q3_2024.submission_date,
-      dual_browsers_q3_2024.branch,
-      dual_browsers_q3_2024.point
-    ]
-    pivots: [
-      dual_browsers_q3_2024.branch
-    ]
-    filters:
-      dual_browsers_q3_2024.metric: 'days_of_use'
-      dual_browsers_q3_2024.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       dual_browsers_q3_2024.branch
     ]
     filters:
-      dual_browsers_q3_2024.metric: 'active_hours'
+      dual_browsers_q3_2024.metric: 'ad_clicks'
       dual_browsers_q3_2024.statistic: mean
     row: 30
     col: 12
