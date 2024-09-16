@@ -45,5 +45,11 @@ view: worker_costs {
     datatype: date
   }
 
-  sql_table_name: `moz-fx-data-shared-prod.fxci_derived.worker_costs_v1` ;;
+  measure: total_cost {
+    sql: ${total_cost} ;;
+    type: sum
+    value_format_name: usd
+  }
+
+  sql_table_name: `moz-fx-data-shared-prod.fxci.worker_costs` ;;
 }

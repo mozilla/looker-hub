@@ -68,5 +68,11 @@ view: worker_metrics {
     datatype: date
   }
 
+  measure: total_uptime {
+    sql: ${uptime} ;;
+    type: sum
+    value_format_name: seconds
+  }
+
   sql_table_name: `moz-fx-data-shared-prod.fxci.worker_metrics_v1` ;;
 }
