@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,44 +26,10 @@
       rollout_sponsored_topsites_in_eu_regions.branch
     ]
     filters:
-      rollout_sponsored_topsites_in_eu_regions.metric: 'ad_clicks'
+      rollout_sponsored_topsites_in_eu_regions.metric: 'active_hours'
       rollout_sponsored_topsites_in_eu_regions.statistic: mean
     row: 0
     col: 0
-    width: 12
-    height: 8
-    field_x: rollout_sponsored_topsites_in_eu_regions.submission_date
-    field_y: rollout_sponsored_topsites_in_eu_regions.point
-    log_scale: false
-    ci_lower: rollout_sponsored_topsites_in_eu_regions.lower
-    ci_upper: rollout_sponsored_topsites_in_eu_regions.upper
-    show_grid: true
-    listen:
-      Date: rollout_sponsored_topsites_in_eu_regions.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: rollout_sponsored_topsites_in_eu_regions
-    type: looker_line
-    fields: [
-      rollout_sponsored_topsites_in_eu_regions.submission_date,
-      rollout_sponsored_topsites_in_eu_regions.branch,
-      rollout_sponsored_topsites_in_eu_regions.point
-    ]
-    pivots: [
-      rollout_sponsored_topsites_in_eu_regions.branch
-    ]
-    filters:
-      rollout_sponsored_topsites_in_eu_regions.metric: 'days_of_use'
-      rollout_sponsored_topsites_in_eu_regions.statistic: mean
-    row: 0
-    col: 12
     width: 12
     height: 8
     field_x: rollout_sponsored_topsites_in_eu_regions.submission_date
@@ -96,41 +62,7 @@
     filters:
       rollout_sponsored_topsites_in_eu_regions.metric: 'uri_count'
       rollout_sponsored_topsites_in_eu_regions.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: rollout_sponsored_topsites_in_eu_regions.submission_date
-    field_y: rollout_sponsored_topsites_in_eu_regions.point
-    log_scale: false
-    ci_lower: rollout_sponsored_topsites_in_eu_regions.lower
-    ci_upper: rollout_sponsored_topsites_in_eu_regions.upper
-    show_grid: true
-    listen:
-      Date: rollout_sponsored_topsites_in_eu_regions.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: rollout_sponsored_topsites_in_eu_regions
-    type: looker_line
-    fields: [
-      rollout_sponsored_topsites_in_eu_regions.submission_date,
-      rollout_sponsored_topsites_in_eu_regions.branch,
-      rollout_sponsored_topsites_in_eu_regions.point
-    ]
-    pivots: [
-      rollout_sponsored_topsites_in_eu_regions.branch
-    ]
-    filters:
-      rollout_sponsored_topsites_in_eu_regions.metric: 'active_hours'
-      rollout_sponsored_topsites_in_eu_regions.statistic: mean
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -164,7 +96,7 @@
     filters:
       rollout_sponsored_topsites_in_eu_regions.metric: 'retained'
       rollout_sponsored_topsites_in_eu_regions.statistic: mean
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -200,7 +132,7 @@
     filters:
       rollout_sponsored_topsites_in_eu_regions.metric: 'memory_total'
       rollout_sponsored_topsites_in_eu_regions.statistic: percentile
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -213,6 +145,40 @@
     listen:
       Date: rollout_sponsored_topsites_in_eu_regions.submission_date
       Percentile: rollout_sponsored_topsites_in_eu_regions.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: rollout_sponsored_topsites_in_eu_regions
+    type: looker_line
+    fields: [
+      rollout_sponsored_topsites_in_eu_regions.submission_date,
+      rollout_sponsored_topsites_in_eu_regions.branch,
+      rollout_sponsored_topsites_in_eu_regions.point
+    ]
+    pivots: [
+      rollout_sponsored_topsites_in_eu_regions.branch
+    ]
+    filters:
+      rollout_sponsored_topsites_in_eu_regions.metric: 'ad_clicks'
+      rollout_sponsored_topsites_in_eu_regions.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: rollout_sponsored_topsites_in_eu_regions.submission_date
+    field_y: rollout_sponsored_topsites_in_eu_regions.point
+    log_scale: false
+    ci_lower: rollout_sponsored_topsites_in_eu_regions.lower
+    ci_upper: rollout_sponsored_topsites_in_eu_regions.upper
+    show_grid: true
+    listen:
+      Date: rollout_sponsored_topsites_in_eu_regions.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -235,8 +201,8 @@
     filters:
       rollout_sponsored_topsites_in_eu_regions.metric: 'search_count'
       rollout_sponsored_topsites_in_eu_regions.statistic: mean
-    row: 30
-    col: 0
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: rollout_sponsored_topsites_in_eu_regions.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       rollout_sponsored_topsites_in_eu_regions.metric: 'qualified_cumulative_days_of_use'
+      rollout_sponsored_topsites_in_eu_regions.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: rollout_sponsored_topsites_in_eu_regions.submission_date
+    field_y: rollout_sponsored_topsites_in_eu_regions.point
+    log_scale: false
+    ci_lower: rollout_sponsored_topsites_in_eu_regions.lower
+    ci_upper: rollout_sponsored_topsites_in_eu_regions.upper
+    show_grid: true
+    listen:
+      Date: rollout_sponsored_topsites_in_eu_regions.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: rollout_sponsored_topsites_in_eu_regions
+    type: looker_line
+    fields: [
+      rollout_sponsored_topsites_in_eu_regions.submission_date,
+      rollout_sponsored_topsites_in_eu_regions.branch,
+      rollout_sponsored_topsites_in_eu_regions.point
+    ]
+    pivots: [
+      rollout_sponsored_topsites_in_eu_regions.branch
+    ]
+    filters:
+      rollout_sponsored_topsites_in_eu_regions.metric: 'days_of_use'
       rollout_sponsored_topsites_in_eu_regions.statistic: mean
     row: 30
     col: 12
