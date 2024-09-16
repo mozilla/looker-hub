@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: accounts_events {
+  dimension: metrics__string__account_user_id {
+    label: "Account User Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.account_user_id ;;
+    type: string
+    group_label: "Account"
+    group_item_label: "User Id"
+
+    link: {
+      label: "Glean Dictionary reference for Account User Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/account_user_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The firefox/mozilla account id
+"
+  }
+
   dimension: metrics__string__account_user_id_sha256 {
     label: "Account User Id Sha256"
     hidden: no
