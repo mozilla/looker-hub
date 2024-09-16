@@ -326,6 +326,13 @@ view: events_stream_table {
     hidden: yes
   }
 
+  dimension: metrics__string__account_user_id {
+    sql: ${TABLE}.metrics.string.account_user_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Account User Id"
+  }
+
   dimension: metrics__string__account_user_id_sha256 {
     sql: ${TABLE}.metrics.string.account_user_id_sha256 ;;
     type: string
