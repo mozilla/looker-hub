@@ -10225,7 +10225,7 @@ view: use_counters {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether a page used the CSS property -webkit-font-feature-settings. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a document used the CSS property -webkit-font-feature-settings. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -11779,7 +11779,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_doc_webkit_font_feature_settings {
     label: "Use Counter Css Doc Webkit Font Feature Settings"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_webkit_font_feature_settings ;;
     type: number
     group_label: "Use Counter Css Doc"
@@ -24577,7 +24577,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_page_webkit_font_feature_settings {
     label: "Use Counter Css Page Webkit Font Feature Settings"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_page_webkit_font_feature_settings ;;
     type: number
     group_label: "Use Counter Css Page"
@@ -26377,7 +26377,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_deprecated_ops_doc_size_to_content {
     label: "Use Counter Deprecated Ops Doc Size To Content"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_size_to_content ;;
     type: number
     group_label: "Use Counter Deprecated Ops Doc"
@@ -27277,7 +27277,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_deprecated_ops_page_size_to_content {
     label: "Use Counter Deprecated Ops Page Size To Content"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_size_to_content ;;
     type: number
     group_label: "Use Counter Deprecated Ops Page"

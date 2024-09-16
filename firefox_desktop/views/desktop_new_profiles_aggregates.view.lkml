@@ -78,12 +78,6 @@ view: desktop_new_profiles_aggregates {
     description: "The value of the `distribution.id` preference that identifies the Firefox distribution."
   }
 
-  dimension: first_seen_year {
-    sql: ${TABLE}.first_seen_year ;;
-    type: number
-    description: "Year when the the clients were first seen."
-  }
-
   dimension: is_dau {
     sql: ${TABLE}.is_dau ;;
     type: yesno
@@ -130,6 +124,12 @@ view: desktop_new_profiles_aggregates {
     sql: ${TABLE}.os_version ;;
     type: string
     description: "OS version - not normalized."
+  }
+
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.paid_vs_organic ;;
+    type: string
+    description: "Is desktop client attribution organic or paid"
   }
 
   dimension: windows_build_number {
