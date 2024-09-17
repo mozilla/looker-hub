@@ -5051,27 +5051,6 @@ fpa:
   pretty_name: FP&A
   spoke: looker-spoke-private
 fxci:
-  explores:
-    task_run_costs:
-      type: table_explore
-      views:
-        base_view: task_run_costs
-    task_runs:
-      type: table_explore
-      views:
-        base_view: task_runs
-    tasks:
-      type: table_explore
-      views:
-        base_view: tasks
-    worker_costs:
-      type: table_explore
-      views:
-        base_view: worker_costs
-    worker_metrics:
-      type: table_explore
-      views:
-        base_view: worker_metrics
   glean_app: false
   owners:
   - ahalberstadt@mozilla.com
@@ -5079,8 +5058,13 @@ fxci:
   spoke: looker-spoke-default
   views:
     task_run_costs:
+      measures:
+        total_cost:
+          sql: ${run_cost}
+          type: sum
+          value_format_name: usd
       tables:
-      - table: moz-fx-data-shared-prod.fxci_derived.task_run_costs_v1
+      - table: moz-fx-data-shared-prod.fxci.task_run_costs
       type: table_view
     task_runs:
       tables:
@@ -5091,10 +5075,20 @@ fxci:
       - table: moz-fx-data-shared-prod.fxci.tasks_v1
       type: table_view
     worker_costs:
+      measures:
+        total_cost:
+          sql: ${total_cost}
+          type: sum
+          value_format_name: usd
       tables:
-      - table: moz-fx-data-shared-prod.fxci_derived.worker_costs_v1
+      - table: moz-fx-data-shared-prod.fxci.worker_costs
       type: table_view
     worker_metrics:
+      measures:
+        total_uptime:
+          sql: ${uptime}
+          type: sum
+          value_format_name: seconds
       tables:
       - table: moz-fx-data-shared-prod.fxci.worker_metrics_v1
       type: table_view

@@ -375,6 +375,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__account_user_id {
+    sql: ${TABLE}.metrics.string.account_user_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Account User Id"
+    description: "The firefox/mozilla account id
+"
+  }
+
   dimension: metrics__string__account_user_id_sha256 {
     sql: ${TABLE}.metrics.string.account_user_id_sha256 ;;
     type: string

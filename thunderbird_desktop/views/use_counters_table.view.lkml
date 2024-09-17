@@ -4032,6 +4032,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_position_try {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Try"
+    description: "Whether a document used the CSS property position-try. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_position_try_fallbacks {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try_fallbacks ;;
     type: number
@@ -5432,7 +5441,7 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Doc Css Webkit Font Feature Settings"
-    description: "Whether a page used the CSS property -webkit-font-feature-settings. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a document used the CSS property -webkit-font-feature-settings. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -10428,6 +10437,15 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Position Area"
     description: "Whether a page used the CSS property position-area. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_try {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Try"
+    description: "Whether a page used the CSS property position-try. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

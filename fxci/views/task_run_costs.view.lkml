@@ -35,5 +35,11 @@ view: task_run_costs {
     datatype: date
   }
 
-  sql_table_name: `moz-fx-data-shared-prod.fxci_derived.task_run_costs_v1` ;;
+  measure: total_cost {
+    sql: ${run_cost} ;;
+    type: sum
+    value_format_name: usd
+  }
+
+  sql_table_name: `moz-fx-data-shared-prod.fxci.task_run_costs` ;;
 }

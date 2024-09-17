@@ -3174,6 +3174,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css Position Area"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_position_try {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Try"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_position_try_fallbacks {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try_fallbacks ;;
     type: number
@@ -8149,6 +8156,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Position Area"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_try {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Try"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_position_try_fallbacks {
