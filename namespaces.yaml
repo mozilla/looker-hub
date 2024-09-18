@@ -11405,51 +11405,16 @@ operational_monitoring:
         xaxis: submission_date
       title: Viewpoint Android July 2024 Launch
       type: operational_monitoring_dashboard
-    viewpoint_android_june_2024_launch:
+    viewpoint_desktop_2024:
       tables:
       - branches: &id379
         - enabled
         - disabled
         compact_visualization: false
         dimensions: &id380 {}
-        explore: viewpoint_android_june_2024_launch
-        group_by_dimension: null
-        summaries: &id381
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        - metric: tagged_sap_searches
-          metric_groups: []
-          statistic: mean
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
-          metric_groups: []
-          statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
-          metric_groups: []
-          statistic: mean
-        - metric: search_count
-          metric_groups: []
-          statistic: mean
-        table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_android_june_2024_launch_statistics
-        xaxis: submission_date
-      title: Viewpoint Android June 2024 Launch
-      type: operational_monitoring_dashboard
-    viewpoint_desktop_2024:
-      tables:
-      - branches: &id382
-        - enabled
-        - disabled
-        compact_visualization: false
-        dimensions: &id383 {}
         explore: viewpoint_desktop_2024
         group_by_dimension: null
-        summaries: &id384
+        summaries: &id381
         - metric: memory_total
           metric_groups: []
           statistic: percentile
@@ -11480,14 +11445,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_ios_aug_2024_launch:
       tables:
-      - branches: &id385
+      - branches: &id382
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id386 {}
+        dimensions: &id383 {}
         explore: viewpoint_ios_aug_2024_launch
         group_by_dimension: null
-        summaries: &id387
+        summaries: &id384
         - metric: days_of_use
           metric_groups: []
           statistic: mean
@@ -11509,14 +11474,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_ios_july_2024_launch:
       tables:
-      - branches: &id388
+      - branches: &id385
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id389 {}
+        dimensions: &id386 {}
         explore: viewpoint_ios_july_2024_launch
         group_by_dimension: null
-        summaries: &id390
+        summaries: &id387
         - metric: days_of_use
           metric_groups: []
           statistic: mean
@@ -11536,45 +11501,16 @@ operational_monitoring:
         xaxis: submission_date
       title: Viewpoint Ios July 2024 Launch
       type: operational_monitoring_dashboard
-    viewpoint_ios_june_2024_launch:
-      tables:
-      - branches: &id391
-        - enabled
-        - disabled
-        compact_visualization: false
-        dimensions: &id392 {}
-        explore: viewpoint_ios_june_2024_launch
-        group_by_dimension: null
-        summaries: &id393
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
-          metric_groups: []
-          statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: search_count
-          metric_groups: []
-          statistic: mean
-        table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_june_2024_launch_statistics
-        xaxis: submission_date
-      title: Viewpoint Ios June 2024 Launch
-      type: operational_monitoring_dashboard
     yelp_suggestions_rollout:
       tables:
-      - branches: &id394
+      - branches: &id388
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id395 {}
+        dimensions: &id389 {}
         explore: yelp_suggestions_rollout
         group_by_dimension: null
-        summaries: &id396
+        summaries: &id390
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
@@ -12628,50 +12564,34 @@ operational_monitoring:
       views:
         base_view: viewpoint_android_july_2024_launch
       xaxis: submission_date
-    viewpoint_android_june_2024_launch:
+    viewpoint_desktop_2024:
       branches: *id379
       dimensions: *id380
       summaries: *id381
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_android_june_2024_launch
+        base_view: viewpoint_desktop_2024
       xaxis: submission_date
-    viewpoint_desktop_2024:
+    viewpoint_ios_aug_2024_launch:
       branches: *id382
       dimensions: *id383
       summaries: *id384
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_desktop_2024
+        base_view: viewpoint_ios_aug_2024_launch
       xaxis: submission_date
-    viewpoint_ios_aug_2024_launch:
+    viewpoint_ios_july_2024_launch:
       branches: *id385
       dimensions: *id386
       summaries: *id387
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_ios_aug_2024_launch
+        base_view: viewpoint_ios_july_2024_launch
       xaxis: submission_date
-    viewpoint_ios_july_2024_launch:
+    yelp_suggestions_rollout:
       branches: *id388
       dimensions: *id389
       summaries: *id390
-      type: operational_monitoring_explore
-      views:
-        base_view: viewpoint_ios_july_2024_launch
-      xaxis: submission_date
-    viewpoint_ios_june_2024_launch:
-      branches: *id391
-      dimensions: *id392
-      summaries: *id393
-      type: operational_monitoring_explore
-      views:
-        base_view: viewpoint_ios_june_2024_launch
-      xaxis: submission_date
-    yelp_suggestions_rollout:
-      branches: *id394
-      dimensions: *id395
-      summaries: *id396
       type: operational_monitoring_explore
       views:
         base_view: yelp_suggestions_rollout
@@ -13454,39 +13374,27 @@ operational_monitoring:
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_android_july_2024_launch_statistics
         xaxis: submission_date
       type: operational_monitoring_view
-    viewpoint_android_june_2024_launch:
-      tables:
-      - dimensions: *id380
-        table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_android_june_2024_launch_statistics
-        xaxis: submission_date
-      type: operational_monitoring_view
     viewpoint_desktop_2024:
       tables:
-      - dimensions: *id383
+      - dimensions: *id380
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_desktop_2024_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_ios_aug_2024_launch:
       tables:
-      - dimensions: *id386
+      - dimensions: *id383
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_aug_2024_launch_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_ios_july_2024_launch:
       tables:
-      - dimensions: *id389
+      - dimensions: *id386
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_july_2024_launch_statistics
-        xaxis: submission_date
-      type: operational_monitoring_view
-    viewpoint_ios_june_2024_launch:
-      tables:
-      - dimensions: *id392
-        table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_june_2024_launch_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     yelp_suggestions_rollout:
       tables:
-      - dimensions: *id395
+      - dimensions: *id389
         table: moz-fx-data-shared-prod.operational_monitoring.yelp_suggestions_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view
