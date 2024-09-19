@@ -4244,6 +4244,15 @@ API for the purposes of Validation (hence GVSV).
     description: "The number of third-party PKCS#11 modules loaded."
   }
 
+  dimension: metrics__quantity__sidebar_width {
+    sql: ${TABLE}.metrics.quantity.sidebar_width ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Sidebar Width"
+    description: "Width of the sidebar, in pixels.
+"
+  }
+
   dimension: metrics__rate__cookie_banners_cmp_ratio_handled_by_cmp_rule__denominator {
     sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.denominator ;;
     type: number
@@ -5014,6 +5023,33 @@ the preferences `browser.search.separatePrivateDefault` and
 `browser.search.separatePrivateDefault.ui.enabled` are set to false.
 It is possible that the user selects the same private engine as for the
 default engine, and hence both versions of these fields will be filled in.
+"
+  }
+
+  dimension: metrics__string__sidebar_display_settings {
+    sql: ${TABLE}.metrics.string.sidebar_display_settings ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Sidebar Display Settings"
+    description: "Setting for sidebar display (either \"always\" or \"hide\").
+"
+  }
+
+  dimension: metrics__string__sidebar_position_settings {
+    sql: ${TABLE}.metrics.string.sidebar_position_settings ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Sidebar Position Settings"
+    description: "Setting for sidebar position (either \"left\" or \"right\").
+"
+  }
+
+  dimension: metrics__string__sidebar_tabs_layout {
+    sql: ${TABLE}.metrics.string.sidebar_tabs_layout ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Sidebar Tabs Layout"
+    description: "Setting for tabs orientation (either \"horizontal\" or \"vertical\").
 "
   }
 
