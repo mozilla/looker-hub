@@ -167,6 +167,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__quantity__characteristics_camera_count {
+    label: "Characteristics Camera Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_camera_count ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Camera Count"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Camera Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_camera_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of cameras available on the device.
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata1 {
     label: "Characteristics Canvasdata1"
     hidden: no
@@ -1391,6 +1409,330 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_gl_extensions {
+    label: "Characteristics Gl Extensions"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.characteristics_gl_extensions ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Extensions"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Extensions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_extensions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of OpenGL extensions supported by the user's system.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_extensions_raw {
+    label: "Characteristics Gl Extensions Raw"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.characteristics_gl_extensions_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Extensions Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Extensions Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_extensions_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw list of OpenGL extensions supported by the user's system.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_fragment_shader {
+    label: "Characteristics Gl Fragment Shader"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_gl_fragment_shader ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Fragment Shader"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Fragment Shader"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_fragment_shader"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Hash of the transformed source of the fragment shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_minimal_source {
+    label: "Characteristics Gl Minimal Source"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.characteristics_gl_minimal_source ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Minimal Source"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Minimal Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_minimal_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Transformed source of the minimal shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_params_extensions {
+    label: "Characteristics Gl Params Extensions"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_extensions ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Params Extensions"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Params Extensions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_params_extensions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of GL parameters of the extensions.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_params_v1 {
+    label: "Characteristics Gl Params V1"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_v1 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Params V1"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Params V1"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_params_v1"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of GL parameters of GL1.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_params_v2 {
+    label: "Characteristics Gl Params V2"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_v2 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Params V2"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Params V2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_params_v2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of GL parameters of GL2.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_precision_fragment {
+    label: "Characteristics Gl Precision Fragment"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.characteristics_gl_precision_fragment ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Precision Fragment"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Precision Fragment"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_precision_fragment"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Precisions of the fragment shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_precision_vertex {
+    label: "Characteristics Gl Precision Vertex"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.characteristics_gl_precision_vertex ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Precision Vertex"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Precision Vertex"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_precision_vertex"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Precisions of the vertex shader.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_renderer {
+    label: "Characteristics Gl Renderer"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_gl_renderer ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Renderer"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Renderer"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_renderer"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The OpenGL renderer string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_renderer_raw {
+    label: "Characteristics Gl Renderer Raw"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_gl_renderer_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Renderer Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Renderer Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_renderer_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw OpenGL renderer string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_vendor {
+    label: "Characteristics Gl Vendor"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_gl_vendor ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Vendor"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Vendor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_vendor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The OpenGL vendor string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_vendor_raw {
+    label: "Characteristics Gl Vendor Raw"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_gl_vendor_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Vendor Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Vendor Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_vendor_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw OpenGL vendor string.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_gl_version {
+    label: "Characteristics Gl Version"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_gl_version ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Gl Version"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of OpenGL supported by the user's system.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_version_raw {
+    label: "Characteristics Gl Version Raw"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_gl_version_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Version Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Version Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_version_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw OpenGL version string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_vertex_shader {
+    label: "Characteristics Gl Vertex Shader"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_gl_vertex_shader ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Vertex Shader"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Vertex Shader"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_vertex_shader"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Hash of the transformed source of the vertex shader.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_group_count {
+    label: "Characteristics Group Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_group_count ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Group Count"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Group Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_group_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of device groups reported by the device.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_group_count_wo_speakers {
+    label: "Characteristics Group Count Wo Speakers"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_group_count_wo_speakers ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Group Count Wo Speakers"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Group Count Wo Speakers"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_group_count_wo_speakers"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of device groups without speakers reported by the device.
+"
+  }
+
   dimension: metrics__text2__characteristics_ice_foundations {
     label: "Characteristics Ice Foundations"
     hidden: no
@@ -1406,6 +1748,42 @@ view: user_characteristics {
     }
 
     description: "Unique ICE foundations occurance count and the standard deviation of latencies
+"
+  }
+
+  dimension: metrics__quantity__characteristics_ice_order {
+    label: "Characteristics Ice Order"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_ice_order ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Ice Order"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Ice Order"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_ice_order"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Unique ICE foundations occurrence count
+"
+  }
+
+  dimension: metrics__quantity__characteristics_ice_sd {
+    label: "Characteristics Ice Sd"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_ice_sd ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Ice Sd"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Ice Sd"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_ice_sd"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "ICE foundation discovery latency standard deviation sum multiplied by 1000
 "
   }
 
@@ -1769,6 +2147,78 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_media_capabilities_h264 {
+    label: "Characteristics Media Capabilities H264"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.characteristics_media_capabilities_h264 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Media Capabilities H264"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Media Capabilities H264"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_media_capabilities_h264"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Levels of support for H264 codec.
+"
+  }
+
+  dimension: metrics__text2__characteristics_media_capabilities_not_efficient {
+    label: "Characteristics Media Capabilities Not Efficient"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.characteristics_media_capabilities_not_efficient ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Media Capabilities Not Efficient"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Media Capabilities Not Efficient"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_media_capabilities_not_efficient"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which, if any, media types are not power efficient.
+"
+  }
+
+  dimension: metrics__text2__characteristics_media_capabilities_not_smooth {
+    label: "Characteristics Media Capabilities Not Smooth"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.characteristics_media_capabilities_not_smooth ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Media Capabilities Not Smooth"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Media Capabilities Not Smooth"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_media_capabilities_not_smooth"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which, if any, media types are not smooth.
+"
+  }
+
+  dimension: metrics__text2__characteristics_media_capabilities_unsupported {
+    label: "Characteristics Media Capabilities Unsupported"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.characteristics_media_capabilities_unsupported ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Media Capabilities Unsupported"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Media Capabilities Unsupported"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_media_capabilities_unsupported"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which, if any, media types are not supported.
+"
+  }
+
   dimension: metrics__text2__characteristics_media_devices {
     label: "Characteristics Media Devices"
     hidden: no
@@ -1784,6 +2234,24 @@ view: user_characteristics {
     }
 
     description: "A JSON object containing the number of audio input/output, video input and the number of unique group ids.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_microphone_count {
+    label: "Characteristics Microphone Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_microphone_count ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Microphone Count"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Microphone Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_microphone_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of microphones available on the device.
 "
   }
 
@@ -2651,6 +3119,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__quantity__characteristics_speaker_count {
+    label: "Characteristics Speaker Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_speaker_count ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Speaker Count"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Speaker Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_speaker_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of speakers available on the device.
+"
+  }
+
   dimension: metrics__quantity__characteristics_submission_schema {
     label: "Characteristics Submission Schema"
     hidden: no
@@ -2828,6 +3314,150 @@ view: user_characteristics {
     }
 
     description: "Available speechSynthesis voices.
+"
+  }
+
+  dimension: metrics__string__characteristics_voices_all_ssdeep {
+    label: "Characteristics Voices All Ssdeep"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_voices_all_ssdeep ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Voices All Ssdeep"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Voices All Ssdeep"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_voices_all_ssdeep"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "ssdeep hash of all speechSynthesis voices.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_voices_count {
+    label: "Characteristics Voices Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_voices_count ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Voices Count"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Voices Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_voices_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of speechSynthesis voices available to the user.
+"
+  }
+
+  dimension: metrics__string__characteristics_voices_default {
+    label: "Characteristics Voices Default"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_voices_default ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Voices Default"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Voices Default"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_voices_default"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The default speechSynthesis voice.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_voices_local_count {
+    label: "Characteristics Voices Local Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.characteristics_voices_local_count ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Voices Local Count"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Voices Local Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_voices_local_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of local speechSynthesis voices available to the user.
+"
+  }
+
+  dimension: metrics__string__characteristics_voices_local_ssdeep {
+    label: "Characteristics Voices Local Ssdeep"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_voices_local_ssdeep ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Voices Local Ssdeep"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Voices Local Ssdeep"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_voices_local_ssdeep"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "ssdeep hash of local speechSynthesis voices.
+"
+  }
+
+  dimension: metrics__string__characteristics_voices_nonlocal_ssdeep {
+    label: "Characteristics Voices Nonlocal Ssdeep"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_voices_nonlocal_ssdeep ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Voices Nonlocal Ssdeep"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Voices Nonlocal Ssdeep"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_voices_nonlocal_ssdeep"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "ssdeep hash of non-local speechSynthesis voices.
+"
+  }
+
+  dimension: metrics__text2__characteristics_voices_sample {
+    label: "Characteristics Voices Sample"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.characteristics_voices_sample ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Voices Sample"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Voices Sample"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_voices_sample"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Names of 5 sample speechSynthesis voices.
+"
+  }
+
+  dimension: metrics__text2__characteristics_voices_sha1 {
+    label: "Characteristics Voices Sha1"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.characteristics_voices_sha1 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Voices Sha1"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Voices Sha1"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_voices_sha1"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA1 hash of all the voices.
 "
   }
 

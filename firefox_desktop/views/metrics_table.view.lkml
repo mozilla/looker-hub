@@ -592,6 +592,15 @@ in browser.
 "
   }
 
+  dimension: metrics__boolean__sslkeylogging_enabled {
+    sql: ${TABLE}.metrics.boolean.sslkeylogging_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Sslkeylogging Enabled"
+    description: "Records whether TLS key logging has been enabled via the environment variable SSLKEYLOGFILE.
+"
+  }
+
   dimension: metrics__boolean__startup_is_restored_by_macos {
     sql: ${TABLE}.metrics.boolean.startup_is_restored_by_macos ;;
     type: yesno
@@ -2935,6 +2944,34 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__labeled_counter__netwerk_http3_0rtt_state {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_0rtt_state ;;
+    hidden: yes
+    description: "Gather the outcome of 0-RTT usage: - \"not_used\": 0RTT_NOT_USED - \"succeeded\": 0RTT_USED_SUCCESS - \"rejected\": 0RTT_USED_REJECT - \"conn_error\": 0RTT_USED_CONN_ERROR - \"conn_closed_by_necko\": 0RTT_CONN_CLOSED_BY_NECKO
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_http3_ech_outcome_grease {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_ech_outcome_grease ;;
+    hidden: yes
+    description: "Success / Fail Rates for HTTP3 when a GREASE ECH Extension was sent
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_http3_ech_outcome_none {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_ech_outcome_none ;;
+    hidden: yes
+    description: "Success / Fail Rates for HTTP3 when No ECH Extension was sent
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_http3_ech_outcome_real {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_ech_outcome_real ;;
+    hidden: yes
+    description: "Success / Fail Rates for HTTP3 when a 'real' ECH Extension was sent
+"
+  }
+
   dimension: metrics__labeled_counter__network_byte_range_request {
     sql: ${TABLE}.metrics.labeled_counter.network_byte_range_request ;;
     hidden: yes
@@ -3569,6 +3606,13 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.netwerk_http3_0rtt_state_duration ;;
+    hidden: yes
+    description: "The time a connection was in the 0-RTT state
+"
+  }
+
   dimension: metrics__labeled_timing_distribution__network_http3_complete_load {
     sql: ${TABLE}.metrics.labeled_timing_distribution.network_http3_complete_load ;;
     hidden: yes
@@ -3609,6 +3653,24 @@ success - search service successfully initialized.
     hidden: yes
     description: "In the HTTP channel (keys: supports_http3_page, supports_http3_sub), time from TCP SYN to ready for HTTP
 "
+  }
+
+  dimension: metrics__labeled_timing_distribution__suggest_ingest_download_time {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.suggest_ingest_download_time ;;
+    hidden: yes
+    description: "Download time for ingestion, labelled by record type"
+  }
+
+  dimension: metrics__labeled_timing_distribution__suggest_ingest_time {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.suggest_ingest_time ;;
+    hidden: yes
+    description: "Time for ingestion (excluding download time), labelled by record type"
+  }
+
+  dimension: metrics__labeled_timing_distribution__suggest_query_time {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.suggest_query_time ;;
+    hidden: yes
+    description: "Time executing queries, labelled by provider type"
   }
 
   dimension: metrics__memory_distribution__browser_backup_compressed_archive_size__count {
@@ -14662,6 +14724,85 @@ view: metrics_table__metrics__labeled_string__places_places_database_corruption_
   }
 }
 
+view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__labeled_timing_distribution__network_http3_complete_load {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -15125,6 +15266,243 @@ view: metrics_table__metrics__labeled_timing_distribution__network_sup_http3_tcp
 }
 
 view: metrics_table__metrics__labeled_timing_distribution__network_sup_http3_tcp_connection__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_ingest_download_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_ingest_download_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_ingest_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_ingest_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_query_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_query_time__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

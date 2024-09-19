@@ -383,6 +383,26 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_eh_response_version}) AS metrics__metrics__labeled_counter__netwerk_eh_response_version ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_eh_response_version.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__netwerk_http3_0rtt_state {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_http3_0rtt_state}) AS metrics__metrics__labeled_counter__netwerk_http3_0rtt_state ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_http3_0rtt_state.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_grease {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_http3_ech_outcome_grease}) AS metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_grease ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_grease.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_none {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_http3_ech_outcome_none}) AS metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_none ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_none.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_real {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_http3_ech_outcome_real}) AS metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_real ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_real.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__network_byte_range_request {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_byte_range_request}) AS metrics__metrics__labeled_counter__network_byte_range_request ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_byte_range_request.document_id} ;;

@@ -332,6 +332,15 @@ view: metrics_table {
     description: "Set to true if the tasks that are queued prior to Glean initialization time out."
   }
 
+  dimension: metrics__boolean__sslkeylogging_enabled {
+    sql: ${TABLE}.metrics.boolean.sslkeylogging_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Sslkeylogging Enabled"
+    description: "Records whether TLS key logging has been enabled via the environment variable SSLKEYLOGFILE.
+"
+  }
+
   dimension: metrics__counter__crash_submission_failure {
     sql: ${TABLE}.metrics.counter.crash_submission_failure ;;
     type: number

@@ -368,6 +368,13 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Build Date"
   }
 
+  dimension: metrics__quantity__characteristics_camera_count {
+    sql: ${TABLE}.metrics.quantity.characteristics_camera_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Camera Count"
+  }
+
   dimension: metrics__quantity__characteristics_color_accentcolor {
     sql: ${TABLE}.metrics.quantity.characteristics_color_accentcolor ;;
     type: number
@@ -522,6 +529,41 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Font Size Variable Modified"
   }
 
+  dimension: metrics__quantity__characteristics_gl_version {
+    sql: ${TABLE}.metrics.quantity.characteristics_gl_version ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Gl Version"
+  }
+
+  dimension: metrics__quantity__characteristics_group_count {
+    sql: ${TABLE}.metrics.quantity.characteristics_group_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Group Count"
+  }
+
+  dimension: metrics__quantity__characteristics_group_count_wo_speakers {
+    sql: ${TABLE}.metrics.quantity.characteristics_group_count_wo_speakers ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Group Count Wo Speakers"
+  }
+
+  dimension: metrics__quantity__characteristics_ice_order {
+    sql: ${TABLE}.metrics.quantity.characteristics_ice_order ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Ice Order"
+  }
+
+  dimension: metrics__quantity__characteristics_ice_sd {
+    sql: ${TABLE}.metrics.quantity.characteristics_ice_sd ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Ice Sd"
+  }
+
   dimension: metrics__quantity__characteristics_inner_height {
     sql: ${TABLE}.metrics.quantity.characteristics_inner_height ;;
     type: number
@@ -611,6 +653,13 @@ view: user_characteristics_table {
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Max Touch Points"
+  }
+
+  dimension: metrics__quantity__characteristics_microphone_count {
+    sql: ${TABLE}.metrics.quantity.characteristics_microphone_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Microphone Count"
   }
 
   dimension: metrics__quantity__characteristics_motion_decimals {
@@ -795,6 +844,13 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Size Mode"
   }
 
+  dimension: metrics__quantity__characteristics_speaker_count {
+    sql: ${TABLE}.metrics.quantity.characteristics_speaker_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Speaker Count"
+  }
+
   dimension: metrics__quantity__characteristics_submission_schema {
     sql: ${TABLE}.metrics.quantity.characteristics_submission_schema ;;
     type: number
@@ -807,6 +863,20 @@ view: user_characteristics_table {
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Target Frame Rate"
+  }
+
+  dimension: metrics__quantity__characteristics_voices_count {
+    sql: ${TABLE}.metrics.quantity.characteristics_voices_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Voices Count"
+  }
+
+  dimension: metrics__quantity__characteristics_voices_local_count {
+    sql: ${TABLE}.metrics.quantity.characteristics_voices_local_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Voices Local Count"
   }
 
   dimension: metrics__quantity__characteristics_zoom_count {
@@ -1117,6 +1187,55 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Font Size Variable Western"
   }
 
+  dimension: metrics__string__characteristics_gl_fragment_shader {
+    sql: ${TABLE}.metrics.string.characteristics_gl_fragment_shader ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Fragment Shader"
+  }
+
+  dimension: metrics__string__characteristics_gl_renderer {
+    sql: ${TABLE}.metrics.string.characteristics_gl_renderer ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Renderer"
+  }
+
+  dimension: metrics__string__characteristics_gl_renderer_raw {
+    sql: ${TABLE}.metrics.string.characteristics_gl_renderer_raw ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Renderer Raw"
+  }
+
+  dimension: metrics__string__characteristics_gl_vendor {
+    sql: ${TABLE}.metrics.string.characteristics_gl_vendor ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Vendor"
+  }
+
+  dimension: metrics__string__characteristics_gl_vendor_raw {
+    sql: ${TABLE}.metrics.string.characteristics_gl_vendor_raw ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Vendor Raw"
+  }
+
+  dimension: metrics__string__characteristics_gl_version_raw {
+    sql: ${TABLE}.metrics.string.characteristics_gl_version_raw ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Version Raw"
+  }
+
+  dimension: metrics__string__characteristics_gl_vertex_shader {
+    sql: ${TABLE}.metrics.string.characteristics_gl_vertex_shader ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Vertex Shader"
+  }
+
   dimension: metrics__string__characteristics_intl_locale {
     sql: ${TABLE}.metrics.string.characteristics_intl_locale ;;
     type: string
@@ -1227,6 +1346,34 @@ view: user_characteristics_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Characteristics Version"
+  }
+
+  dimension: metrics__string__characteristics_voices_all_ssdeep {
+    sql: ${TABLE}.metrics.string.characteristics_voices_all_ssdeep ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Voices All Ssdeep"
+  }
+
+  dimension: metrics__string__characteristics_voices_default {
+    sql: ${TABLE}.metrics.string.characteristics_voices_default ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Voices Default"
+  }
+
+  dimension: metrics__string__characteristics_voices_local_ssdeep {
+    sql: ${TABLE}.metrics.string.characteristics_voices_local_ssdeep ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Voices Local Ssdeep"
+  }
+
+  dimension: metrics__string__characteristics_voices_nonlocal_ssdeep {
+    sql: ${TABLE}.metrics.string.characteristics_voices_nonlocal_ssdeep ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Voices Nonlocal Ssdeep"
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
@@ -1346,6 +1493,62 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Errors"
   }
 
+  dimension: metrics__text2__characteristics_gl_extensions {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_extensions ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Extensions"
+  }
+
+  dimension: metrics__text2__characteristics_gl_extensions_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_extensions_raw ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Extensions Raw"
+  }
+
+  dimension: metrics__text2__characteristics_gl_minimal_source {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_minimal_source ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Minimal Source"
+  }
+
+  dimension: metrics__text2__characteristics_gl_params_extensions {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_extensions ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Params Extensions"
+  }
+
+  dimension: metrics__text2__characteristics_gl_params_v1 {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_v1 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Params V1"
+  }
+
+  dimension: metrics__text2__characteristics_gl_params_v2 {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_v2 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Params V2"
+  }
+
+  dimension: metrics__text2__characteristics_gl_precision_fragment {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_precision_fragment ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Precision Fragment"
+  }
+
+  dimension: metrics__text2__characteristics_gl_precision_vertex {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_precision_vertex ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Precision Vertex"
+  }
+
   dimension: metrics__text2__characteristics_ice_foundations {
     sql: ${TABLE}.metrics.text2.characteristics_ice_foundations ;;
     type: string
@@ -1374,6 +1577,34 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Media Capabilities"
   }
 
+  dimension: metrics__text2__characteristics_media_capabilities_h264 {
+    sql: ${TABLE}.metrics.text2.characteristics_media_capabilities_h264 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Media Capabilities H264"
+  }
+
+  dimension: metrics__text2__characteristics_media_capabilities_not_efficient {
+    sql: ${TABLE}.metrics.text2.characteristics_media_capabilities_not_efficient ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Media Capabilities Not Efficient"
+  }
+
+  dimension: metrics__text2__characteristics_media_capabilities_not_smooth {
+    sql: ${TABLE}.metrics.text2.characteristics_media_capabilities_not_smooth ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Media Capabilities Not Smooth"
+  }
+
+  dimension: metrics__text2__characteristics_media_capabilities_unsupported {
+    sql: ${TABLE}.metrics.text2.characteristics_media_capabilities_unsupported ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Media Capabilities Unsupported"
+  }
+
   dimension: metrics__text2__characteristics_media_devices {
     sql: ${TABLE}.metrics.text2.characteristics_media_devices ;;
     type: string
@@ -1393,6 +1624,20 @@ view: user_characteristics_table {
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Voices"
+  }
+
+  dimension: metrics__text2__characteristics_voices_sample {
+    sql: ${TABLE}.metrics.text2.characteristics_voices_sample ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Voices Sample"
+  }
+
+  dimension: metrics__text2__characteristics_voices_sha1 {
+    sql: ${TABLE}.metrics.text2.characteristics_voices_sha1 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Voices Sha1"
   }
 
   dimension: metrics__text2__characteristics_webglinfo {
