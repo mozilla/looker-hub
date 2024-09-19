@@ -1902,6 +1902,78 @@ in browser.
 "
   }
 
+  dimension: metrics__string__sidebar_display_settings {
+    label: "Sidebar Display Settings"
+    hidden: no
+    sql: ${TABLE}.metrics.string.sidebar_display_settings ;;
+    type: string
+    group_label: "Sidebar"
+    group_item_label: "Display Settings"
+
+    link: {
+      label: "Glean Dictionary reference for Sidebar Display Settings"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/sidebar_display_settings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Setting for sidebar display (either \"always\" or \"hide\").
+"
+  }
+
+  dimension: metrics__string__sidebar_position_settings {
+    label: "Sidebar Position Settings"
+    hidden: no
+    sql: ${TABLE}.metrics.string.sidebar_position_settings ;;
+    type: string
+    group_label: "Sidebar"
+    group_item_label: "Position Settings"
+
+    link: {
+      label: "Glean Dictionary reference for Sidebar Position Settings"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/sidebar_position_settings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Setting for sidebar position (either \"left\" or \"right\").
+"
+  }
+
+  dimension: metrics__string__sidebar_tabs_layout {
+    label: "Sidebar Tabs Layout"
+    hidden: no
+    sql: ${TABLE}.metrics.string.sidebar_tabs_layout ;;
+    type: string
+    group_label: "Sidebar"
+    group_item_label: "Tabs Layout"
+
+    link: {
+      label: "Glean Dictionary reference for Sidebar Tabs Layout"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/sidebar_tabs_layout"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Setting for tabs orientation (either \"horizontal\" or \"vertical\").
+"
+  }
+
+  dimension: metrics__quantity__sidebar_width {
+    label: "Sidebar Width"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.sidebar_width ;;
+    type: number
+    group_label: "Sidebar"
+    group_item_label: "Width"
+
+    link: {
+      label: "Glean Dictionary reference for Sidebar Width"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/sidebar_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Width of the sidebar, in pixels.
+"
+  }
+
   dimension: metrics__boolean__startup_is_restored_by_macos {
     label: "Startup Is Restored By Macos"
     hidden: yes
