@@ -169,7 +169,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_camera_count {
     label: "Characteristics Camera Count"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.characteristics_camera_count ;;
     type: number
     group_label: "Characteristics"
@@ -1411,7 +1411,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_extensions {
     label: "Characteristics Gl Extensions"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_gl_extensions ;;
     type: string
     group_label: "Characteristics"
@@ -1429,7 +1429,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_extensions_raw {
     label: "Characteristics Gl Extensions Raw"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_gl_extensions_raw ;;
     type: string
     group_label: "Characteristics"
@@ -1447,7 +1447,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_gl_fragment_shader {
     label: "Characteristics Gl Fragment Shader"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_gl_fragment_shader ;;
     type: string
     group_label: "Characteristics"
@@ -1465,7 +1465,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_minimal_source {
     label: "Characteristics Gl Minimal Source"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_gl_minimal_source ;;
     type: string
     group_label: "Characteristics"
@@ -1483,7 +1483,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_params_extensions {
     label: "Characteristics Gl Params Extensions"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_gl_params_extensions ;;
     type: string
     group_label: "Characteristics"
@@ -1501,7 +1501,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_params_v1 {
     label: "Characteristics Gl Params V1"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_gl_params_v1 ;;
     type: string
     group_label: "Characteristics"
@@ -1519,7 +1519,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_params_v2 {
     label: "Characteristics Gl Params V2"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_gl_params_v2 ;;
     type: string
     group_label: "Characteristics"
@@ -1537,7 +1537,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_precision_fragment {
     label: "Characteristics Gl Precision Fragment"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_gl_precision_fragment ;;
     type: string
     group_label: "Characteristics"
@@ -1555,7 +1555,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_precision_vertex {
     label: "Characteristics Gl Precision Vertex"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_gl_precision_vertex ;;
     type: string
     group_label: "Characteristics"
@@ -1573,7 +1573,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_gl_renderer {
     label: "Characteristics Gl Renderer"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_gl_renderer ;;
     type: string
     group_label: "Characteristics"
@@ -1591,7 +1591,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_gl_renderer_raw {
     label: "Characteristics Gl Renderer Raw"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_gl_renderer_raw ;;
     type: string
     group_label: "Characteristics"
@@ -1609,7 +1609,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_gl_vendor {
     label: "Characteristics Gl Vendor"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_gl_vendor ;;
     type: string
     group_label: "Characteristics"
@@ -1627,7 +1627,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_gl_vendor_raw {
     label: "Characteristics Gl Vendor Raw"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_gl_vendor_raw ;;
     type: string
     group_label: "Characteristics"
@@ -1645,7 +1645,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_gl_version {
     label: "Characteristics Gl Version"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.characteristics_gl_version ;;
     type: number
     group_label: "Characteristics"
@@ -1663,7 +1663,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_gl_version_raw {
     label: "Characteristics Gl Version Raw"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_gl_version_raw ;;
     type: string
     group_label: "Characteristics"
@@ -1681,7 +1681,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_gl_vertex_shader {
     label: "Characteristics Gl Vertex Shader"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_gl_vertex_shader ;;
     type: string
     group_label: "Characteristics"
@@ -1699,7 +1699,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_group_count {
     label: "Characteristics Group Count"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.characteristics_group_count ;;
     type: number
     group_label: "Characteristics"
@@ -1717,7 +1717,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_group_count_wo_speakers {
     label: "Characteristics Group Count Wo Speakers"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.characteristics_group_count_wo_speakers ;;
     type: number
     group_label: "Characteristics"
@@ -1753,7 +1753,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_ice_order {
     label: "Characteristics Ice Order"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.characteristics_ice_order ;;
     type: number
     group_label: "Characteristics"
@@ -1771,7 +1771,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_ice_sd {
     label: "Characteristics Ice Sd"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.characteristics_ice_sd ;;
     type: number
     group_label: "Characteristics"
@@ -2149,7 +2149,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_media_capabilities_h264 {
     label: "Characteristics Media Capabilities H264"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_media_capabilities_h264 ;;
     type: string
     group_label: "Characteristics"
@@ -2167,7 +2167,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_media_capabilities_not_efficient {
     label: "Characteristics Media Capabilities Not Efficient"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_media_capabilities_not_efficient ;;
     type: string
     group_label: "Characteristics"
@@ -2185,7 +2185,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_media_capabilities_not_smooth {
     label: "Characteristics Media Capabilities Not Smooth"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_media_capabilities_not_smooth ;;
     type: string
     group_label: "Characteristics"
@@ -2203,7 +2203,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_media_capabilities_unsupported {
     label: "Characteristics Media Capabilities Unsupported"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_media_capabilities_unsupported ;;
     type: string
     group_label: "Characteristics"
@@ -2239,7 +2239,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_microphone_count {
     label: "Characteristics Microphone Count"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.characteristics_microphone_count ;;
     type: number
     group_label: "Characteristics"
@@ -3121,7 +3121,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_speaker_count {
     label: "Characteristics Speaker Count"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.characteristics_speaker_count ;;
     type: number
     group_label: "Characteristics"
@@ -3319,7 +3319,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_voices_all_ssdeep {
     label: "Characteristics Voices All Ssdeep"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_voices_all_ssdeep ;;
     type: string
     group_label: "Characteristics"
@@ -3337,7 +3337,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_voices_count {
     label: "Characteristics Voices Count"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.characteristics_voices_count ;;
     type: number
     group_label: "Characteristics"
@@ -3355,7 +3355,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_voices_default {
     label: "Characteristics Voices Default"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_voices_default ;;
     type: string
     group_label: "Characteristics"
@@ -3373,7 +3373,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_voices_local_count {
     label: "Characteristics Voices Local Count"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.characteristics_voices_local_count ;;
     type: number
     group_label: "Characteristics"
@@ -3391,7 +3391,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_voices_local_ssdeep {
     label: "Characteristics Voices Local Ssdeep"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_voices_local_ssdeep ;;
     type: string
     group_label: "Characteristics"
@@ -3409,7 +3409,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_voices_nonlocal_ssdeep {
     label: "Characteristics Voices Nonlocal Ssdeep"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_voices_nonlocal_ssdeep ;;
     type: string
     group_label: "Characteristics"
@@ -3427,7 +3427,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_voices_sample {
     label: "Characteristics Voices Sample"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_voices_sample ;;
     type: string
     group_label: "Characteristics"
@@ -3445,7 +3445,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_voices_sha1 {
     label: "Characteristics Voices Sha1"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_voices_sha1 ;;
     type: string
     group_label: "Characteristics"

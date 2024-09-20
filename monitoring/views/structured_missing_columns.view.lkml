@@ -5,6 +5,11 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: structured_missing_columns {
+  dimension: column_exists_in_schema {
+    sql: ${TABLE}.column_exists_in_schema ;;
+    type: yesno
+  }
+
   dimension: document_namespace {
     sql: ${TABLE}.document_namespace ;;
     type: string
