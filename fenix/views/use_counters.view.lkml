@@ -29941,7 +29941,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_2 {
     label: "Use Counter Doc Js Subclassing Array Type 2"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_array_type_2 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -29959,7 +29959,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_3 {
     label: "Use Counter Doc Js Subclassing Array Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_array_type_3 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -29977,7 +29977,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_arraybuffer_type_3 {
     label: "Use Counter Doc Js Subclassing Arraybuffer Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_arraybuffer_type_3 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -29995,7 +29995,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_promise_type_2 {
     label: "Use Counter Doc Js Subclassing Promise Type 2"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_promise_type_2 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -30013,7 +30013,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_promise_type_3 {
     label: "Use Counter Doc Js Subclassing Promise Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_promise_type_3 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -30031,7 +30031,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_regexp_type_3 {
     label: "Use Counter Doc Js Subclassing Regexp Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_regexp_type_3 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -30049,7 +30049,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_regexp_type_4 {
     label: "Use Counter Doc Js Subclassing Regexp Type 4"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_regexp_type_4 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -30067,7 +30067,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_sharedarraybuffer_type_3 {
     label: "Use Counter Doc Js Subclassing Sharedarraybuffer Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_sharedarraybuffer_type_3 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -30085,7 +30085,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_typedarray_type_2 {
     label: "Use Counter Doc Js Subclassing Typedarray Type 2"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_typedarray_type_2 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -30103,7 +30103,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_typedarray_type_3 {
     label: "Use Counter Doc Js Subclassing Typedarray Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_typedarray_type_3 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -36582,7 +36582,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_array_type_2 {
     label: "Use Counter Page Js Subclassing Array Type 2"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_array_type_2 ;;
     type: number
     group_label: "Use Counter Page"
@@ -36600,7 +36600,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_array_type_3 {
     label: "Use Counter Page Js Subclassing Array Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_array_type_3 ;;
     type: number
     group_label: "Use Counter Page"
@@ -36618,7 +36618,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_arraybuffer_type_3 {
     label: "Use Counter Page Js Subclassing Arraybuffer Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_arraybuffer_type_3 ;;
     type: number
     group_label: "Use Counter Page"
@@ -36636,7 +36636,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_promise_type_2 {
     label: "Use Counter Page Js Subclassing Promise Type 2"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_promise_type_2 ;;
     type: number
     group_label: "Use Counter Page"
@@ -36654,7 +36654,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_promise_type_3 {
     label: "Use Counter Page Js Subclassing Promise Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_promise_type_3 ;;
     type: number
     group_label: "Use Counter Page"
@@ -36672,7 +36672,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_regexp_type_3 {
     label: "Use Counter Page Js Subclassing Regexp Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_regexp_type_3 ;;
     type: number
     group_label: "Use Counter Page"
@@ -36690,7 +36690,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_regexp_type_4 {
     label: "Use Counter Page Js Subclassing Regexp Type 4"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_regexp_type_4 ;;
     type: number
     group_label: "Use Counter Page"
@@ -36708,7 +36708,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_sharedarraybuffer_type_3 {
     label: "Use Counter Page Js Subclassing Sharedarraybuffer Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_sharedarraybuffer_type_3 ;;
     type: number
     group_label: "Use Counter Page"
@@ -36726,7 +36726,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_typedarray_type_2 {
     label: "Use Counter Page Js Subclassing Typedarray Type 2"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_typedarray_type_2 ;;
     type: number
     group_label: "Use Counter Page"
@@ -36744,7 +36744,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_typedarray_type_3 {
     label: "Use Counter Page Js Subclassing Typedarray Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_typedarray_type_3 ;;
     type: number
     group_label: "Use Counter Page"
