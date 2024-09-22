@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       pref_flip_experiment_nimbus_diagnostic_v129_release.branch
     ]
     filters:
-      pref_flip_experiment_nimbus_diagnostic_v129_release.metric: 'search_count'
+      pref_flip_experiment_nimbus_diagnostic_v129_release.metric: 'qualified_cumulative_days_of_use'
       pref_flip_experiment_nimbus_diagnostic_v129_release.statistic: mean
     row: 0
     col: 0
@@ -78,24 +78,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: pref_flip_experiment_nimbus_diagnostic_v129_release
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       pref_flip_experiment_nimbus_diagnostic_v129_release.submission_date,
       pref_flip_experiment_nimbus_diagnostic_v129_release.branch,
+      pref_flip_experiment_nimbus_diagnostic_v129_release.upper,
+      pref_flip_experiment_nimbus_diagnostic_v129_release.lower,
       pref_flip_experiment_nimbus_diagnostic_v129_release.point
     ]
     pivots: [
       pref_flip_experiment_nimbus_diagnostic_v129_release.branch
     ]
     filters:
-      pref_flip_experiment_nimbus_diagnostic_v129_release.metric: 'active_hours'
-      pref_flip_experiment_nimbus_diagnostic_v129_release.statistic: mean
+      pref_flip_experiment_nimbus_diagnostic_v129_release.metric: 'memory_total'
+      pref_flip_experiment_nimbus_diagnostic_v129_release.statistic: percentile
     row: 10
     col: 0
     width: 12
@@ -108,6 +110,7 @@
     show_grid: true
     listen:
       Date: pref_flip_experiment_nimbus_diagnostic_v129_release.submission_date
+      Percentile: pref_flip_experiment_nimbus_diagnostic_v129_release.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -146,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,80 +165,9 @@
       pref_flip_experiment_nimbus_diagnostic_v129_release.branch
     ]
     filters:
-      pref_flip_experiment_nimbus_diagnostic_v129_release.metric: 'ad_clicks'
+      pref_flip_experiment_nimbus_diagnostic_v129_release.metric: 'search_count'
       pref_flip_experiment_nimbus_diagnostic_v129_release.statistic: mean
     row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: pref_flip_experiment_nimbus_diagnostic_v129_release.submission_date
-    field_y: pref_flip_experiment_nimbus_diagnostic_v129_release.point
-    log_scale: false
-    ci_lower: pref_flip_experiment_nimbus_diagnostic_v129_release.lower
-    ci_upper: pref_flip_experiment_nimbus_diagnostic_v129_release.upper
-    show_grid: true
-    listen:
-      Date: pref_flip_experiment_nimbus_diagnostic_v129_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: pref_flip_experiment_nimbus_diagnostic_v129_release
-    type: "ci-line-chart"
-    fields: [
-      pref_flip_experiment_nimbus_diagnostic_v129_release.submission_date,
-      pref_flip_experiment_nimbus_diagnostic_v129_release.branch,
-      pref_flip_experiment_nimbus_diagnostic_v129_release.upper,
-      pref_flip_experiment_nimbus_diagnostic_v129_release.lower,
-      pref_flip_experiment_nimbus_diagnostic_v129_release.point
-    ]
-    pivots: [
-      pref_flip_experiment_nimbus_diagnostic_v129_release.branch
-    ]
-    filters:
-      pref_flip_experiment_nimbus_diagnostic_v129_release.metric: 'memory_total'
-      pref_flip_experiment_nimbus_diagnostic_v129_release.statistic: percentile
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: pref_flip_experiment_nimbus_diagnostic_v129_release.submission_date
-    field_y: pref_flip_experiment_nimbus_diagnostic_v129_release.point
-    log_scale: false
-    ci_lower: pref_flip_experiment_nimbus_diagnostic_v129_release.lower
-    ci_upper: pref_flip_experiment_nimbus_diagnostic_v129_release.upper
-    show_grid: true
-    listen:
-      Date: pref_flip_experiment_nimbus_diagnostic_v129_release.submission_date
-      Percentile: pref_flip_experiment_nimbus_diagnostic_v129_release.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: pref_flip_experiment_nimbus_diagnostic_v129_release
-    type: looker_line
-    fields: [
-      pref_flip_experiment_nimbus_diagnostic_v129_release.submission_date,
-      pref_flip_experiment_nimbus_diagnostic_v129_release.branch,
-      pref_flip_experiment_nimbus_diagnostic_v129_release.point
-    ]
-    pivots: [
-      pref_flip_experiment_nimbus_diagnostic_v129_release.branch
-    ]
-    filters:
-      pref_flip_experiment_nimbus_diagnostic_v129_release.metric: 'qualified_cumulative_days_of_use'
-      pref_flip_experiment_nimbus_diagnostic_v129_release.statistic: mean
-    row: 30
     col: 0
     width: 12
     height: 8
@@ -268,6 +200,74 @@
     ]
     filters:
       pref_flip_experiment_nimbus_diagnostic_v129_release.metric: 'uri_count'
+      pref_flip_experiment_nimbus_diagnostic_v129_release.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: pref_flip_experiment_nimbus_diagnostic_v129_release.submission_date
+    field_y: pref_flip_experiment_nimbus_diagnostic_v129_release.point
+    log_scale: false
+    ci_lower: pref_flip_experiment_nimbus_diagnostic_v129_release.lower
+    ci_upper: pref_flip_experiment_nimbus_diagnostic_v129_release.upper
+    show_grid: true
+    listen:
+      Date: pref_flip_experiment_nimbus_diagnostic_v129_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: pref_flip_experiment_nimbus_diagnostic_v129_release
+    type: looker_line
+    fields: [
+      pref_flip_experiment_nimbus_diagnostic_v129_release.submission_date,
+      pref_flip_experiment_nimbus_diagnostic_v129_release.branch,
+      pref_flip_experiment_nimbus_diagnostic_v129_release.point
+    ]
+    pivots: [
+      pref_flip_experiment_nimbus_diagnostic_v129_release.branch
+    ]
+    filters:
+      pref_flip_experiment_nimbus_diagnostic_v129_release.metric: 'active_hours'
+      pref_flip_experiment_nimbus_diagnostic_v129_release.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: pref_flip_experiment_nimbus_diagnostic_v129_release.submission_date
+    field_y: pref_flip_experiment_nimbus_diagnostic_v129_release.point
+    log_scale: false
+    ci_lower: pref_flip_experiment_nimbus_diagnostic_v129_release.lower
+    ci_upper: pref_flip_experiment_nimbus_diagnostic_v129_release.upper
+    show_grid: true
+    listen:
+      Date: pref_flip_experiment_nimbus_diagnostic_v129_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: pref_flip_experiment_nimbus_diagnostic_v129_release
+    type: looker_line
+    fields: [
+      pref_flip_experiment_nimbus_diagnostic_v129_release.submission_date,
+      pref_flip_experiment_nimbus_diagnostic_v129_release.branch,
+      pref_flip_experiment_nimbus_diagnostic_v129_release.point
+    ]
+    pivots: [
+      pref_flip_experiment_nimbus_diagnostic_v129_release.branch
+    ]
+    filters:
+      pref_flip_experiment_nimbus_diagnostic_v129_release.metric: 'ad_clicks'
       pref_flip_experiment_nimbus_diagnostic_v129_release.statistic: mean
     row: 30
     col: 12

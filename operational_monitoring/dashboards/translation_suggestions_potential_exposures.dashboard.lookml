@@ -10,108 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: translation_suggestions_potential_exposures
-    type: looker_line
-    fields: [
-      translation_suggestions_potential_exposures.submission_date,
-      translation_suggestions_potential_exposures.branch,
-      translation_suggestions_potential_exposures.point
-    ]
-    pivots: [
-      translation_suggestions_potential_exposures.branch
-    ]
-    filters:
-      translation_suggestions_potential_exposures.metric: 'search_count'
-      translation_suggestions_potential_exposures.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: translation_suggestions_potential_exposures.submission_date
-    field_y: translation_suggestions_potential_exposures.point
-    log_scale: false
-    ci_lower: translation_suggestions_potential_exposures.lower
-    ci_upper: translation_suggestions_potential_exposures.upper
-    show_grid: true
-    listen:
-      Date: translation_suggestions_potential_exposures.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: translation_suggestions_potential_exposures
-    type: looker_line
-    fields: [
-      translation_suggestions_potential_exposures.submission_date,
-      translation_suggestions_potential_exposures.branch,
-      translation_suggestions_potential_exposures.point
-    ]
-    pivots: [
-      translation_suggestions_potential_exposures.branch
-    ]
-    filters:
-      translation_suggestions_potential_exposures.metric: 'retained'
-      translation_suggestions_potential_exposures.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: translation_suggestions_potential_exposures.submission_date
-    field_y: translation_suggestions_potential_exposures.point
-    log_scale: false
-    ci_lower: translation_suggestions_potential_exposures.lower
-    ci_upper: translation_suggestions_potential_exposures.upper
-    show_grid: true
-    listen:
-      Date: translation_suggestions_potential_exposures.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: translation_suggestions_potential_exposures
-    type: looker_line
-    fields: [
-      translation_suggestions_potential_exposures.submission_date,
-      translation_suggestions_potential_exposures.branch,
-      translation_suggestions_potential_exposures.point
-    ]
-    pivots: [
-      translation_suggestions_potential_exposures.branch
-    ]
-    filters:
-      translation_suggestions_potential_exposures.metric: 'active_hours'
-      translation_suggestions_potential_exposures.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: translation_suggestions_potential_exposures.submission_date
-    field_y: translation_suggestions_potential_exposures.point
-    log_scale: false
-    ci_lower: translation_suggestions_potential_exposures.lower
-    ci_upper: translation_suggestions_potential_exposures.upper
-    show_grid: true
-    listen:
-      Date: translation_suggestions_potential_exposures.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -130,8 +28,8 @@
     filters:
       translation_suggestions_potential_exposures.metric: 'days_of_use'
       translation_suggestions_potential_exposures.statistic: mean
-    row: 10
-    col: 12
+    row: 0
+    col: 0
     width: 12
     height: 8
     field_x: translation_suggestions_potential_exposures.submission_date
@@ -164,8 +62,76 @@
     filters:
       translation_suggestions_potential_exposures.metric: 'ad_clicks'
       translation_suggestions_potential_exposures.statistic: mean
-    row: 20
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: translation_suggestions_potential_exposures.submission_date
+    field_y: translation_suggestions_potential_exposures.point
+    log_scale: false
+    ci_lower: translation_suggestions_potential_exposures.lower
+    ci_upper: translation_suggestions_potential_exposures.upper
+    show_grid: true
+    listen:
+      Date: translation_suggestions_potential_exposures.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: translation_suggestions_potential_exposures
+    type: looker_line
+    fields: [
+      translation_suggestions_potential_exposures.submission_date,
+      translation_suggestions_potential_exposures.branch,
+      translation_suggestions_potential_exposures.point
+    ]
+    pivots: [
+      translation_suggestions_potential_exposures.branch
+    ]
+    filters:
+      translation_suggestions_potential_exposures.metric: 'retained'
+      translation_suggestions_potential_exposures.statistic: mean
+    row: 10
     col: 0
+    width: 12
+    height: 8
+    field_x: translation_suggestions_potential_exposures.submission_date
+    field_y: translation_suggestions_potential_exposures.point
+    log_scale: false
+    ci_lower: translation_suggestions_potential_exposures.lower
+    ci_upper: translation_suggestions_potential_exposures.upper
+    show_grid: true
+    listen:
+      Date: translation_suggestions_potential_exposures.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: translation_suggestions_potential_exposures
+    type: looker_line
+    fields: [
+      translation_suggestions_potential_exposures.submission_date,
+      translation_suggestions_potential_exposures.branch,
+      translation_suggestions_potential_exposures.point
+    ]
+    pivots: [
+      translation_suggestions_potential_exposures.branch
+    ]
+    filters:
+      translation_suggestions_potential_exposures.metric: 'qualified_cumulative_days_of_use'
+      translation_suggestions_potential_exposures.statistic: mean
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: translation_suggestions_potential_exposures.submission_date
@@ -201,7 +167,7 @@
       translation_suggestions_potential_exposures.metric: 'memory_total'
       translation_suggestions_potential_exposures.statistic: percentile
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: translation_suggestions_potential_exposures.submission_date
@@ -217,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +199,41 @@
       translation_suggestions_potential_exposures.branch
     ]
     filters:
-      translation_suggestions_potential_exposures.metric: 'qualified_cumulative_days_of_use'
+      translation_suggestions_potential_exposures.metric: 'search_count'
+      translation_suggestions_potential_exposures.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: translation_suggestions_potential_exposures.submission_date
+    field_y: translation_suggestions_potential_exposures.point
+    log_scale: false
+    ci_lower: translation_suggestions_potential_exposures.lower
+    ci_upper: translation_suggestions_potential_exposures.upper
+    show_grid: true
+    listen:
+      Date: translation_suggestions_potential_exposures.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: translation_suggestions_potential_exposures
+    type: looker_line
+    fields: [
+      translation_suggestions_potential_exposures.submission_date,
+      translation_suggestions_potential_exposures.branch,
+      translation_suggestions_potential_exposures.point
+    ]
+    pivots: [
+      translation_suggestions_potential_exposures.branch
+    ]
+    filters:
+      translation_suggestions_potential_exposures.metric: 'active_hours'
       translation_suggestions_potential_exposures.statistic: mean
     row: 30
     col: 0
