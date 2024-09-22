@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: round_2_post_choice_in_product_survey_ios_h1_2024
-    type: looker_line
-    fields: [
-      round_2_post_choice_in_product_survey_ios_h1_2024.submission_date,
-      round_2_post_choice_in_product_survey_ios_h1_2024.branch,
-      round_2_post_choice_in_product_survey_ios_h1_2024.point
-    ]
-    pivots: [
-      round_2_post_choice_in_product_survey_ios_h1_2024.branch
-    ]
-    filters:
-      round_2_post_choice_in_product_survey_ios_h1_2024.metric: 'retained'
-      round_2_post_choice_in_product_survey_ios_h1_2024.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: round_2_post_choice_in_product_survey_ios_h1_2024.submission_date
-    field_y: round_2_post_choice_in_product_survey_ios_h1_2024.point
-    log_scale: false
-    ci_lower: round_2_post_choice_in_product_survey_ios_h1_2024.lower
-    ci_upper: round_2_post_choice_in_product_survey_ios_h1_2024.upper
-    show_grid: true
-    listen:
-      Date: round_2_post_choice_in_product_survey_ios_h1_2024.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -61,6 +27,40 @@
     ]
     filters:
       round_2_post_choice_in_product_survey_ios_h1_2024.metric: 'days_of_use'
+      round_2_post_choice_in_product_survey_ios_h1_2024.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: round_2_post_choice_in_product_survey_ios_h1_2024.submission_date
+    field_y: round_2_post_choice_in_product_survey_ios_h1_2024.point
+    log_scale: false
+    ci_lower: round_2_post_choice_in_product_survey_ios_h1_2024.lower
+    ci_upper: round_2_post_choice_in_product_survey_ios_h1_2024.upper
+    show_grid: true
+    listen:
+      Date: round_2_post_choice_in_product_survey_ios_h1_2024.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: round_2_post_choice_in_product_survey_ios_h1_2024
+    type: looker_line
+    fields: [
+      round_2_post_choice_in_product_survey_ios_h1_2024.submission_date,
+      round_2_post_choice_in_product_survey_ios_h1_2024.branch,
+      round_2_post_choice_in_product_survey_ios_h1_2024.point
+    ]
+    pivots: [
+      round_2_post_choice_in_product_survey_ios_h1_2024.branch
+    ]
+    filters:
+      round_2_post_choice_in_product_survey_ios_h1_2024.metric: 'ad_clicks'
       round_2_post_choice_in_product_survey_ios_h1_2024.statistic: mean
     row: 0
     col: 12
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       round_2_post_choice_in_product_survey_ios_h1_2024.branch
     ]
     filters:
-      round_2_post_choice_in_product_survey_ios_h1_2024.metric: 'ad_clicks'
+      round_2_post_choice_in_product_survey_ios_h1_2024.metric: 'retained'
       round_2_post_choice_in_product_survey_ios_h1_2024.statistic: mean
     row: 20
     col: 0
