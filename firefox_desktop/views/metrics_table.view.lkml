@@ -592,6 +592,15 @@ in browser.
 "
   }
 
+  dimension: metrics__boolean__sslkeylogging_enabled {
+    sql: ${TABLE}.metrics.boolean.sslkeylogging_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Sslkeylogging Enabled"
+    description: "Records whether TLS key logging has been enabled via the environment variable SSLKEYLOGFILE.
+"
+  }
+
   dimension: metrics__boolean__startup_is_restored_by_macos {
     sql: ${TABLE}.metrics.boolean.startup_is_restored_by_macos ;;
     type: yesno
@@ -2084,6 +2093,26 @@ of the shopping experiment.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_received.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Udp Datagram Segments Received"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_received.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Udp Datagram Segments Received"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_received.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_upload_throughput__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput.count ;;
     type: number
@@ -2915,6 +2944,34 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__labeled_counter__netwerk_http3_0rtt_state {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_0rtt_state ;;
+    hidden: yes
+    description: "Gather the outcome of 0-RTT usage: - \"not_used\": 0RTT_NOT_USED - \"succeeded\": 0RTT_USED_SUCCESS - \"rejected\": 0RTT_USED_REJECT - \"conn_error\": 0RTT_USED_CONN_ERROR - \"conn_closed_by_necko\": 0RTT_CONN_CLOSED_BY_NECKO
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_http3_ech_outcome_grease {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_ech_outcome_grease ;;
+    hidden: yes
+    description: "Success / Fail Rates for HTTP3 when a GREASE ECH Extension was sent
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_http3_ech_outcome_none {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_ech_outcome_none ;;
+    hidden: yes
+    description: "Success / Fail Rates for HTTP3 when No ECH Extension was sent
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_http3_ech_outcome_real {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_ech_outcome_real ;;
+    hidden: yes
+    description: "Success / Fail Rates for HTTP3 when a 'real' ECH Extension was sent
+"
+  }
+
   dimension: metrics__labeled_counter__network_byte_range_request {
     sql: ${TABLE}.metrics.labeled_counter.network_byte_range_request ;;
     hidden: yes
@@ -3470,7 +3527,7 @@ success - search service successfully initialized.
   dimension: metrics__labeled_counter__tls_xyber_intolerance_reason {
     sql: ${TABLE}.metrics.labeled_counter.tls_xyber_intolerance_reason ;;
     hidden: yes
-    description: "The error that was returned from a failed TLS 1.3 handshake in which the client sent a Xyber key share (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
+    description: "The error that was returned from a failed TLS 1.3 handshake in which the client sent a mlkem768x25519 key share (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
 "
   }
 
@@ -3549,6 +3606,13 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.netwerk_http3_0rtt_state_duration ;;
+    hidden: yes
+    description: "The time a connection was in the 0-RTT state
+"
+  }
+
   dimension: metrics__labeled_timing_distribution__network_http3_complete_load {
     sql: ${TABLE}.metrics.labeled_timing_distribution.network_http3_complete_load ;;
     hidden: yes
@@ -3589,6 +3653,24 @@ success - search service successfully initialized.
     hidden: yes
     description: "In the HTTP channel (keys: supports_http3_page, supports_http3_sub), time from TCP SYN to ready for HTTP
 "
+  }
+
+  dimension: metrics__labeled_timing_distribution__suggest_ingest_download_time {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.suggest_ingest_download_time ;;
+    hidden: yes
+    description: "Download time for ingestion, labelled by record type"
+  }
+
+  dimension: metrics__labeled_timing_distribution__suggest_ingest_time {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.suggest_ingest_time ;;
+    hidden: yes
+    description: "Time for ingestion (excluding download time), labelled by record type"
+  }
+
+  dimension: metrics__labeled_timing_distribution__suggest_query_time {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.suggest_query_time ;;
+    hidden: yes
+    description: "Time executing queries, labelled by provider type"
   }
 
   dimension: metrics__memory_distribution__browser_backup_compressed_archive_size__count {
@@ -3788,6 +3870,66 @@ success - search service successfully initialized.
 
   dimension: metrics__memory_distribution__networking_cache_metadata_size__values {
     sql: ${TABLE}.metrics.memory_distribution.networking_cache_metadata_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_received.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Segment Size Received"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_received.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Segment Size Received"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_received.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_sent__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_sent.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Segment Size Sent"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_sent__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_sent.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Segment Size Sent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_sent__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_sent.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_received__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_received.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Size Received"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_received__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_received.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Size Received"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_received__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_received.values ;;
     hidden: yes
   }
 
@@ -4162,6 +4304,15 @@ API for the purposes of Validation (hence GVSV).
     group_label: "Metrics Quantity"
     group_item_label: "Pkcs11 Third Party Modules Loaded"
     description: "The number of third-party PKCS#11 modules loaded."
+  }
+
+  dimension: metrics__quantity__sidebar_width {
+    sql: ${TABLE}.metrics.quantity.sidebar_width ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Sidebar Width"
+    description: "Width of the sidebar, in pixels.
+"
   }
 
   dimension: metrics__rate__cookie_banners_cmp_ratio_handled_by_cmp_rule__denominator {
@@ -4934,6 +5085,33 @@ the preferences `browser.search.separatePrivateDefault` and
 `browser.search.separatePrivateDefault.ui.enabled` are set to false.
 It is possible that the user selects the same private engine as for the
 default engine, and hence both versions of these fields will be filled in.
+"
+  }
+
+  dimension: metrics__string__sidebar_display_settings {
+    sql: ${TABLE}.metrics.string.sidebar_display_settings ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Sidebar Display Settings"
+    description: "Setting for sidebar display (either \"always\" or \"hide\").
+"
+  }
+
+  dimension: metrics__string__sidebar_position_settings {
+    sql: ${TABLE}.metrics.string.sidebar_position_settings ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Sidebar Position Settings"
+    description: "Setting for sidebar position (either \"left\" or \"right\").
+"
+  }
+
+  dimension: metrics__string__sidebar_tabs_layout {
+    sql: ${TABLE}.metrics.string.sidebar_tabs_layout ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Sidebar Tabs Layout"
+    description: "Setting for tabs orientation (either \"horizontal\" or \"vertical\").
 "
   }
 
@@ -14267,6 +14445,18 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_download_th
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -14531,6 +14721,85 @@ view: metrics_table__metrics__labeled_string__places_places_database_corruption_
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
@@ -15008,6 +15277,243 @@ view: metrics_table__metrics__labeled_timing_distribution__network_sup_http3_tcp
   }
 }
 
+view: metrics_table__metrics__labeled_timing_distribution__suggest_ingest_download_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_ingest_download_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_ingest_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_ingest_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_query_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_query_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__memory_distribution__browser_backup_compressed_archive_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -15117,6 +15623,42 @@ view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_di
 }
 
 view: metrics_table__metrics__memory_distribution__networking_cache_metadata_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagram_size_received__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

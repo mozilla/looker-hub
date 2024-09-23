@@ -1733,6 +1733,25 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_received.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Udp Datagram Segments Received"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_received.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Udp Datagram Segments Received"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_received.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_upload_throughput__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput.count ;;
     type: number
@@ -2373,6 +2392,26 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__netwerk_http3_0rtt_state {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_0rtt_state ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__netwerk_http3_ech_outcome_grease {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_ech_outcome_grease ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__netwerk_http3_ech_outcome_none {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_ech_outcome_none ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__netwerk_http3_ech_outcome_real {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_ech_outcome_real ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__network_byte_range_request {
     sql: ${TABLE}.metrics.labeled_counter.network_byte_range_request ;;
     hidden: yes
@@ -2783,6 +2822,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.netwerk_http3_0rtt_state_duration ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_timing_distribution__network_http3_complete_load {
     sql: ${TABLE}.metrics.labeled_timing_distribution.network_http3_complete_load ;;
     hidden: yes
@@ -2962,6 +3006,63 @@ view: metrics_table {
 
   dimension: metrics__memory_distribution__networking_cache_metadata_size__values {
     sql: ${TABLE}.metrics.memory_distribution.networking_cache_metadata_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_received.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Segment Size Received"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_received.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Segment Size Received"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_received.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_sent__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_sent.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Segment Size Sent"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_sent__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_sent.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Segment Size Sent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_sent__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_sent.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_received__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_received.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Size Received"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_received__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_received.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Size Received"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_received__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_received.values ;;
     hidden: yes
   }
 
@@ -12473,6 +12574,18 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_download_th
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -12724,6 +12837,84 @@ view: metrics_table__metrics__labeled_string__cookie_banners_google_gdpr_choice_
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
@@ -13280,6 +13471,42 @@ view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_di
 }
 
 view: metrics_table__metrics__memory_distribution__networking_cache_metadata_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagram_size_received__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

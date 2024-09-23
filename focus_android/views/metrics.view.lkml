@@ -4535,6 +4535,74 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__netwerk_http3_0rtt_state {
+    label: "Netwerk Http3 0Rtt State"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_0rtt_state ;;
+    group_label: "Netwerk"
+    group_item_label: "Http3 0Rtt State"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk Http3 0Rtt State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/netwerk_http3_0rtt_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gather the outcome of 0-RTT usage: - \"not_used\": 0RTT_NOT_USED - \"succeeded\": 0RTT_USED_SUCCESS - \"rejected\": 0RTT_USED_REJECT - \"conn_error\": 0RTT_USED_CONN_ERROR - \"conn_closed_by_necko\": 0RTT_CONN_CLOSED_BY_NECKO
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_http3_ech_outcome_grease {
+    label: "Netwerk Http3 Ech Outcome Grease"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_ech_outcome_grease ;;
+    group_label: "Netwerk"
+    group_item_label: "Http3 Ech Outcome Grease"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk Http3 Ech Outcome Grease"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/netwerk_http3_ech_outcome_grease"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Success / Fail Rates for HTTP3 when a GREASE ECH Extension was sent
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_http3_ech_outcome_none {
+    label: "Netwerk Http3 Ech Outcome None"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_ech_outcome_none ;;
+    group_label: "Netwerk"
+    group_item_label: "Http3 Ech Outcome None"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk Http3 Ech Outcome None"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/netwerk_http3_ech_outcome_none"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Success / Fail Rates for HTTP3 when No ECH Extension was sent
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_http3_ech_outcome_real {
+    label: "Netwerk Http3 Ech Outcome Real"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_ech_outcome_real ;;
+    group_label: "Netwerk"
+    group_item_label: "Http3 Ech Outcome Real"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk Http3 Ech Outcome Real"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/netwerk_http3_ech_outcome_real"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Success / Fail Rates for HTTP3 when a 'real' ECH Extension was sent
+"
+  }
+
   dimension: metrics__counter__netwerk_parent_connect_timeout {
     label: "Netwerk Parent Connect Timeout"
     hidden: no
@@ -5592,6 +5660,78 @@ To be used to validate GIFFT.
     }
 
     description: "Number of paths known to be ECN capable or not-capable.
+"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__sum {
+    label: "Networking Http 3 Udp Datagram Segment Size Received Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_received.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Udp Datagram Segment Size Received Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Udp Datagram Segment Size Received Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_3_udp_datagram_segment_size_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3 UDP datagram size received.
+"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_sent__sum {
+    label: "Networking Http 3 Udp Datagram Segment Size Sent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_sent.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Udp Datagram Segment Size Sent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Udp Datagram Segment Size Sent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_3_udp_datagram_segment_size_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3 UDP datagram segment size sent.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__sum {
+    label: "Networking Http 3 Udp Datagram Segments Received Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_received.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Udp Datagram Segments Received Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Udp Datagram Segments Received Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_3_udp_datagram_segments_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3 UDP number of segments per datagram received.
+"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_received__sum {
+    label: "Networking Http 3 Udp Datagram Size Received Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_received.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Udp Datagram Size Received Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Udp Datagram Size Received Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_3_udp_datagram_size_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3 UDP datagram size received.
 "
   }
 
@@ -15098,6 +15238,170 @@ view: metrics__metrics__labeled_counter__netwerk_eh_response_version {
   }
 }
 
+view: metrics__metrics__labeled_counter__netwerk_http3_0rtt_state {
+  label: "Netwerk - Http3 0Rtt State"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_grease {
+  label: "Netwerk - Http3 Ech Outcome Grease"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_none {
+  label: "Netwerk - Http3 Ech Outcome None"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_real {
+  label: "Netwerk - Http3 Ech Outcome Real"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
 view: metrics__metrics__labeled_counter__network_byte_range_request {
   label: "Network - Byte Range Request"
 
@@ -18971,6 +19275,18 @@ view: metrics__metrics__custom_distribution__networking_http_3_download_throughp
   }
 }
 
+view: metrics__metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -19222,6 +19538,84 @@ view: metrics__metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
@@ -19778,6 +20172,42 @@ view: metrics__metrics__memory_distribution__glean_upload_pending_pings_director
 }
 
 view: metrics__metrics__memory_distribution__networking_cache_metadata_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__networking_http_3_udp_datagram_size_received__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
