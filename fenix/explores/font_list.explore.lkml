@@ -58,15 +58,3 @@ explore: font_list {
 explore: suggest__font_list__metrics__labeled_counter__glean_error_invalid_label {
   hidden: yes
 }
-
-explore: suggest__font_list__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__font_list__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__font_list__metrics__labeled_counter__glean_error_invalid_value {
-  hidden: yes
-}

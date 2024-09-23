@@ -136,6 +136,16 @@ view: mobile_search_clients_engines_sources_daily {
     type: string
   }
 
+  dimension: os_version_major {
+    sql: ${TABLE}.os_version_major ;;
+    type: number
+  }
+
+  dimension: os_version_minor {
+    sql: ${TABLE}.os_version_minor ;;
+    type: number
+  }
+
   dimension: profile_age_in_days {
     sql: ${TABLE}.profile_age_in_days ;;
     type: number
@@ -163,6 +173,11 @@ view: mobile_search_clients_engines_sources_daily {
 
   dimension: search_with_ads {
     sql: ${TABLE}.search_with_ads ;;
+    type: number
+  }
+
+  dimension: search_with_ads_organic {
+    sql: ${TABLE}.search_with_ads_organic ;;
     type: number
   }
 

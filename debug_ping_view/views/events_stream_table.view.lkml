@@ -92,6 +92,20 @@ view: events_stream_table {
     group_item_label: "Os Version"
   }
 
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+  }
+
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
@@ -102,6 +116,11 @@ view: events_stream_table {
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+  }
+
+  dimension: event {
+    sql: ${TABLE}.event ;;
+    type: string
   }
 
   dimension: event_category {
@@ -333,6 +352,11 @@ view: events_stream_table {
     type: string
     group_label: "Ping Info"
     group_item_label: "Start Time"
+  }
+
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
   }
 
   dimension: reason {

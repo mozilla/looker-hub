@@ -198,6 +198,22 @@ view: new_profile {
     description: "Indicates what scope the theme is installed in, per profile, user, system, or application."
   }
 
+  dimension: environment__addons__theme__signed_state {
+    sql: ${TABLE}.environment.addons.theme.signed_state ;;
+    type: number
+    group_label: "Environment Addons Theme"
+    group_item_label: "Signed State"
+    description: "The state of the signature of the theme."
+  }
+
+  dimension: environment__addons__theme__signed_types {
+    sql: ${TABLE}.environment.addons.theme.signed_types ;;
+    type: string
+    group_label: "Environment Addons Theme"
+    group_item_label: "Signed Types"
+    description: "A JSON-stringified array of signature types found for the theme."
+  }
+
   dimension: environment__addons__theme__update_day {
     sql: ${TABLE}.environment.addons.theme.update_day ;;
     type: number
@@ -389,6 +405,14 @@ view: new_profile {
     group_item_label: "Is Stub Profile"
   }
 
+  dimension: environment__profile__recovered_from_backup {
+    sql: ${TABLE}.environment.profile.recovered_from_backup ;;
+    type: number
+    group_label: "Environment Profile"
+    group_item_label: "Recovered From Backup"
+    description: "The date the user profile was recovered from a backup, as the integer number of days since UNIX epoch. This is optional."
+  }
+
   dimension: environment__profile__reset_date {
     sql: ${TABLE}.environment.profile.reset_date ;;
     type: number
@@ -465,6 +489,14 @@ view: new_profile {
     group_label: "Environment Settings Attribution"
     group_item_label: "Medium"
     description: "Category of the source, such as 'organic' for a search engine."
+  }
+
+  dimension: environment__settings__attribution__msstoresignedin {
+    sql: ${TABLE}.environment.settings.attribution.msstoresignedin ;;
+    type: yesno
+    group_label: "Environment Settings Attribution"
+    group_item_label: "Msstoresignedin"
+    description: " Optional, only present if the installation was done through the Microsoft Store, and was able to retrieve the \"campaign ID\" it was first installed with. This value is \"true\" if the user was signed into the Microsoft Store when they first installed, and false otherwise."
   }
 
   dimension: environment__settings__attribution__source {
@@ -1063,6 +1095,14 @@ view: new_profile {
     description: "Frame rate in Hz, typically 60 or more, see bug 1840381"
   }
 
+  dimension: environment__system__gfx__text_scale_factor {
+    sql: ${TABLE}.environment.system.gfx.text_scale_factor ;;
+    type: number
+    group_label: "Environment System Gfx"
+    group_item_label: "Text Scale Factor"
+    description: "Text scale supported by GTK and Windows. 1 corresponds to 100%."
+  }
+
   dimension: environment__system__has_win_package_id {
     sql: ${TABLE}.environment.system.has_win_package_id ;;
     type: yesno
@@ -1603,6 +1643,105 @@ view: new_profile {
 "
   }
 
+  dimension: payload__processes__parent__scalars__installation_first_seen_admin_user {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_admin_user ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Admin User"
+    description: "Whether the installer is running from an elevated admin user
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_default_path {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_default_path ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Default Path"
+    description: "(optional, present if installer_type is \"full\") Whether the default path was used
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_failure_reason {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_failure_reason ;;
+    type: string
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Failure Reason"
+    description: "Only sent if unable to collect firstSeen data. Can have value \"NotFoundError\" if file not found or other values depending on the failure reason.
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_from_msi {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_from_msi ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen From Msi"
+    description: "(optional, present if installer_type is \"full\") Whether this was an MSI install
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_install_existed {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_install_existed ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Install Existed"
+    description: "'Whether there was already an install in this location'
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_installer_type {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_installer_type ;;
+    type: string
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Installer Type"
+    description: "The type of installer used to install Firefox. The value is one of \"stub\", \"full\", or \"msix\"
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_other_inst {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_other_inst ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Other Inst"
+    description: "'Whether there was already any non-MSIX install on this system'
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_other_msix_inst {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_other_msix_inst ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Other Msix Inst"
+    description: "'Whether there was already any MSIX install on this system'
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_profdir_existed {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_profdir_existed ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Profdir Existed"
+    description: "'Whether the top-level profile directory existed'
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_silent {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_silent ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Silent"
+    description: "(optional, present if installer_type is \"full\") Whether this was a silent install
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_version {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_version ;;
+    type: string
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Version"
+    description: "The application version installed by the installer (not necessarily the current version)
+"
+  }
+
   dimension: payload__processes__parent__scalars__startup_profile_count {
     sql: ${TABLE}.payload.processes.parent.scalars.startup_profile_count ;;
     type: number
@@ -1657,6 +1796,12 @@ view: new_profile {
     type: string
     group_label: "Payload"
     group_item_label: "Reason"
+  }
+
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
+    description: "A UUID identifying the profile's group on a single device and allowing user-oriented correlation of data"
   }
 
   dimension: sample_id {
@@ -1831,6 +1976,14 @@ view: new_profile__environment__addons__active_addons {
     group_label: "Value"
     group_item_label: "Signed State"
     description: "The state of the signature of the add-on. This field is only available after the 'sessionstore-windows-restored' topic is notified."
+  }
+
+  dimension: value__signed_types {
+    sql: ${TABLE}.value.signed_types ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Signed Types"
+    description: "A JSON-stringified array of signature types found for the add-on."
   }
 
   dimension: value__type {
@@ -2027,6 +2180,18 @@ view: new_profile__environment__system__gfx__adapters {
 }
 
 view: new_profile__environment__system__gfx__monitors {
+  dimension: contents_scale_factor {
+    sql: ${TABLE}.contents_scale_factor ;;
+    type: number
+    description: "The number of device pixels per desktop pixel for this screen."
+  }
+
+  dimension: default_css_scale_factor {
+    sql: ${TABLE}.default_css_scale_factor ;;
+    type: number
+    description: "The default number of device pixels per unscaled CSS pixel for this screen."
+  }
+
   dimension: pseudo_display {
     sql: ${TABLE}.pseudo_display ;;
     type: yesno

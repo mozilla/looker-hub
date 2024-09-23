@@ -356,6 +356,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__account_user_id {
+    sql: ${TABLE}.metrics.string.account_user_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Account User Id"
+    description: "The firefox/mozilla account id
+"
+  }
+
   dimension: metrics__string__account_user_id_sha256 {
     sql: ${TABLE}.metrics.string.account_user_id_sha256 ;;
     type: string
@@ -423,7 +432,23 @@ for the purpose of experimentation enrollment.
     type: string
     group_label: "Metrics String"
     group_item_label: "Session Entrypoint"
-    description: "entrypoint to the service"
+    description: "Entrypoint to the service"
+  }
+
+  dimension: metrics__string__session_entrypoint_experiment {
+    sql: ${TABLE}.metrics.string.session_entrypoint_experiment ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Session Entrypoint Experiment"
+    description: "Identifier for the experiment the user is part of at the entrypoint"
+  }
+
+  dimension: metrics__string__session_entrypoint_variation {
+    sql: ${TABLE}.metrics.string.session_entrypoint_variation ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Session Entrypoint Variation"
+    description: "Identifier for the experiment variation the user is part of at the entrypoint"
   }
 
   dimension: metrics__string__session_flow_id {
@@ -440,7 +465,7 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics String"
     group_item_label: "Utm Campaign"
     description: "A marketing campaign.  For example, if a user signs into FxA from selecting a
-Mozilla VPN plan on Mozilla VPN's product site, then value of this metric could
+Mozilla VPN plan on Mozilla VPN's product site, then the value of this metric could
 be 'vpn-product-page'.  The value has a max length of 128 characters with the
 alphanumeric characters, _ (underscore), forward slash (/), . (period), %
 (percentage sign), and - (hyphen) in the allowed set of characters.  The
@@ -481,7 +506,7 @@ has a max length of 128 characters with the alphanumeric characters, _
     group_label: "Metrics String"
     group_item_label: "Utm Source"
     description: "The source from where the user started.  For example, if the user clicked on a
-link on the Firefox accounts web site, this value could be 'fx-website'.  The
+link on the Mozilla accounts web site, this value could be 'fx-website'.  The
 value has a max length of 128 characters with the alphanumeric characters, _
 (underscore), forward slash (/), . (period), % (percentage sign), and -
 (hyphen) in the allowed set of characters.

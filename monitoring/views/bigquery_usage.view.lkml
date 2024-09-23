@@ -10,6 +10,11 @@ view: bigquery_usage {
     type: yesno
   }
 
+  dimension: cost {
+    sql: ${TABLE}.cost ;;
+    type: number
+  }
+
   dimension: destination_dataset_id {
     sql: ${TABLE}.destination_dataset_id ;;
     type: string

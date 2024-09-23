@@ -15,6 +15,11 @@ view: serp_events_table {
     type: yesno
   }
 
+  dimension: ad_components {
+    sql: ${TABLE}.ad_components ;;
+    hidden: yes
+  }
+
   dimension: browser_version_info__is_major_release {
     sql: ${TABLE}.browser_version_info.is_major_release ;;
     type: yesno
@@ -50,11 +55,6 @@ view: serp_events_table {
     group_item_label: "Version"
   }
 
-  dimension: component {
-    sql: ${TABLE}.component ;;
-    type: string
-  }
-
   dimension: event_timestamp {
     sql: ${TABLE}.event_timestamp ;;
     type: number
@@ -70,28 +70,23 @@ view: serp_events_table {
     type: string
   }
 
-  dimension: has_ads_loaded {
-    sql: ${TABLE}.has_ads_loaded ;;
-    type: yesno
-  }
-
   dimension: impression_id {
     sql: ${TABLE}.impression_id ;;
     type: string
   }
 
-  dimension: is_ad_component {
-    sql: ${TABLE}.is_ad_component ;;
-    type: yesno
-  }
-
-  dimension: is_engaged {
-    sql: ${TABLE}.is_engaged ;;
+  dimension: is_private {
+    sql: ${TABLE}.is_private ;;
     type: yesno
   }
 
   dimension: is_shopping_page {
     sql: ${TABLE}.is_shopping_page ;;
+    type: yesno
+  }
+
+  dimension: is_signed_in {
+    sql: ${TABLE}.is_signed_in ;;
     type: yesno
   }
 
@@ -105,6 +100,16 @@ view: serp_events_table {
     type: string
   }
 
+  dimension: non_ad_engagements {
+    sql: ${TABLE}.non_ad_engagements ;;
+    hidden: yes
+  }
+
+  dimension: non_ad_impressions {
+    sql: ${TABLE}.non_ad_impressions ;;
+    hidden: yes
+  }
+
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
@@ -115,13 +120,18 @@ view: serp_events_table {
     type: string
   }
 
-  dimension: num_ads_hidden_reported {
-    sql: ${TABLE}.num_ads_hidden_reported ;;
+  dimension: num_ad_clicks {
+    sql: ${TABLE}.num_ad_clicks ;;
     type: number
   }
 
-  dimension: num_ads_loaded_reported {
-    sql: ${TABLE}.num_ads_loaded_reported ;;
+  dimension: num_ads_blocked {
+    sql: ${TABLE}.num_ads_blocked ;;
+    type: number
+  }
+
+  dimension: num_ads_loaded {
+    sql: ${TABLE}.num_ads_loaded ;;
     type: number
   }
 
@@ -130,28 +140,18 @@ view: serp_events_table {
     type: number
   }
 
-  dimension: num_ads_showing {
-    sql: ${TABLE}.num_ads_showing ;;
+  dimension: num_ads_visible {
+    sql: ${TABLE}.num_ads_visible ;;
     type: number
   }
 
-  dimension: num_ads_visible_reported {
-    sql: ${TABLE}.num_ads_visible_reported ;;
+  dimension: num_non_ad_link_clicks {
+    sql: ${TABLE}.num_non_ad_link_clicks ;;
     type: number
   }
 
-  dimension: num_clicks {
-    sql: ${TABLE}.num_clicks ;;
-    type: number
-  }
-
-  dimension: num_expands {
-    sql: ${TABLE}.num_expands ;;
-    type: number
-  }
-
-  dimension: num_submits {
-    sql: ${TABLE}.num_submits ;;
+  dimension: num_other_engagements {
+    sql: ${TABLE}.num_other_engagements ;;
     type: number
   }
 
@@ -163,6 +163,11 @@ view: serp_events_table {
   dimension: ping_seq {
     sql: ${TABLE}.ping_seq ;;
     type: number
+  }
+
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
   }
 
   dimension: sample_id {
@@ -198,6 +203,48 @@ view: serp_events_table {
   sql_table_name: `mozdata.firefox_desktop.serp_events` ;;
 }
 
+view: serp_events_table__ad_components {
+  dimension: blocker_inferred {
+    sql: ${TABLE}.blocker_inferred ;;
+    type: yesno
+  }
+
+  dimension: component {
+    sql: ${TABLE}.component ;;
+    type: string
+  }
+
+  dimension: num_blocked {
+    sql: ${TABLE}.num_blocked ;;
+    type: number
+  }
+
+  dimension: num_clicks {
+    sql: ${TABLE}.num_clicks ;;
+    type: number
+  }
+
+  dimension: num_loaded {
+    sql: ${TABLE}.num_loaded ;;
+    type: number
+  }
+
+  dimension: num_notshowing {
+    sql: ${TABLE}.num_notshowing ;;
+    type: number
+  }
+
+  dimension: num_other_engagements {
+    sql: ${TABLE}.num_other_engagements ;;
+    type: number
+  }
+
+  dimension: num_visible {
+    sql: ${TABLE}.num_visible ;;
+    type: number
+  }
+}
+
 view: serp_events_table__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -223,5 +270,49 @@ view: serp_events_table__experiments {
     type: string
     group_label: "Value Extra"
     group_item_label: "Type"
+  }
+}
+
+view: serp_events_table__non_ad_engagements {
+  dimension: action {
+    sql: ${TABLE}.action ;;
+    type: string
+  }
+
+  dimension: component {
+    sql: ${TABLE}.component ;;
+    type: string
+  }
+
+  dimension: num_engagements {
+    sql: ${TABLE}.num_engagements ;;
+    type: number
+  }
+}
+
+view: serp_events_table__non_ad_impressions {
+  dimension: component {
+    sql: ${TABLE}.component ;;
+    type: string
+  }
+
+  dimension: num_elements_blocked {
+    sql: ${TABLE}.num_elements_blocked ;;
+    type: number
+  }
+
+  dimension: num_elements_loaded {
+    sql: ${TABLE}.num_elements_loaded ;;
+    type: number
+  }
+
+  dimension: num_elements_notshowing {
+    sql: ${TABLE}.num_elements_notshowing ;;
+    type: number
+  }
+
+  dimension: num_elements_visible {
+    sql: ${TABLE}.num_elements_visible ;;
+    type: number
   }
 }

@@ -291,6 +291,13 @@ view: stripe_subscriptions {
     group_item_label: "Appliedpromotioncode"
   }
 
+  dimension: metadata__cancellation_reason {
+    sql: ${TABLE}.metadata.cancellation_reason ;;
+    type: string
+    group_label: "Metadata"
+    group_item_label: "Cancellation Reason"
+  }
+
   dimension: metadata__previous_plan_id {
     sql: ${TABLE}.metadata.previous_plan_id ;;
     type: string

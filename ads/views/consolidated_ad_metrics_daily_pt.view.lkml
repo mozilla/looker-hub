@@ -20,6 +20,11 @@ view: consolidated_ad_metrics_daily_pt {
     type: number
   }
 
+  dimension: campaign_id {
+    sql: ${TABLE}.campaign_id ;;
+    type: number
+  }
+
   dimension: campaign_name {
     sql: ${TABLE}.campaign_name ;;
     type: string
@@ -61,6 +66,11 @@ view: consolidated_ad_metrics_daily_pt {
     type: number
   }
 
+  dimension: image_url {
+    sql: ${TABLE}.image_url ;;
+    type: string
+  }
+
   dimension: impressions {
     sql: ${TABLE}.impressions ;;
     type: number
@@ -81,6 +91,11 @@ view: consolidated_ad_metrics_daily_pt {
     type: string
   }
 
+  dimension: rate_type {
+    sql: ${TABLE}.rate_type ;;
+    type: string
+  }
+
   dimension: revenue {
     sql: ${TABLE}.revenue ;;
     type: number
@@ -88,6 +103,11 @@ view: consolidated_ad_metrics_daily_pt {
 
   dimension: surface {
     sql: ${TABLE}.surface ;;
+    type: string
+  }
+
+  dimension: targeted_country {
+    sql: ${TABLE}.targeted_country ;;
     type: string
   }
 

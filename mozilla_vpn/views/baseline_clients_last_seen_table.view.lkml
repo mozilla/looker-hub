@@ -46,6 +46,11 @@ view: baseline_clients_last_seen_table {
     map_layer_name: countries
   }
 
+  dimension: days_active_bits {
+    sql: ${TABLE}.days_active_bits ;;
+    type: number
+  }
+
   dimension: days_created_profile_bits {
     sql: ${TABLE}.days_created_profile_bits ;;
     type: number
@@ -63,6 +68,11 @@ view: baseline_clients_last_seen_table {
 
   dimension: days_seen_session_start_bits {
     sql: ${TABLE}.days_seen_session_start_bits ;;
+    type: number
+  }
+
+  dimension: days_since_active {
+    sql: ${TABLE}.days_since_active ;;
     type: number
   }
 
@@ -96,9 +106,19 @@ view: baseline_clients_last_seen_table {
     type: string
   }
 
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+  }
+
   dimension: durations {
     sql: ${TABLE}.durations ;;
     type: number
+  }
+
+  dimension: geo_subdivision {
+    sql: ${TABLE}.geo_subdivision ;;
+    type: string
   }
 
   dimension: is_new_profile {
@@ -133,6 +153,11 @@ view: baseline_clients_last_seen_table {
 
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
+    type: string
+  }
+
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
     type: string
   }
 

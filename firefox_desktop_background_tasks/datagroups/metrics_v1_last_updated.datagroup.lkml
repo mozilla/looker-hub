@@ -11,6 +11,6 @@ datagroup: metrics_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'firefox_desktop_background_tasks_stable'
     AND table_name = 'metrics_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:firefox_desktop_background_tasks_stable.metrics_v1 is modified."
+  description: "Updates when moz-fx-data-shared-prod.firefox_desktop_background_tasks_stable.metrics_v1 is modified."
   max_cache_age: "24 hours"
 }

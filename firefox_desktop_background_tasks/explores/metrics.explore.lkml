@@ -18,6 +18,16 @@ explore: metrics {
     ]
   }
 
+  join: metrics__metrics__labeled_counter__crash_submission_channel_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__crash_submission_channel_status}) AS metrics__metrics__labeled_counter__crash_submission_channel_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__crash_submission_channel_status.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__crash_submission_collector_errors {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__crash_submission_collector_errors}) AS metrics__metrics__labeled_counter__crash_submission_collector_errors ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__crash_submission_collector_errors.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__glean_error_invalid_label}) AS metrics__metrics__labeled_counter__glean_error_invalid_label ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -65,25 +75,5 @@ explore: metrics {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failure {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted {
   hidden: yes
 }

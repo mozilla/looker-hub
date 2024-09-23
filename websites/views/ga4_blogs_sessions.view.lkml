@@ -100,5 +100,5 @@ view: ga4_blogs_sessions {
     description: "Date of the visit"
   }
 
-  sql_table_name: `moz-fx-data-marketing-prod.ga_derived.blogs_sessions_v2` ;;
+  sql_table_name: `moz-fx-data-shared-prod.mozilla_org.blogs_sessions` ;;
 }

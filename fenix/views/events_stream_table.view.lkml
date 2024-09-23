@@ -92,6 +92,20 @@ view: events_stream_table {
     group_item_label: "Os Version"
   }
 
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+  }
+
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
@@ -102,6 +116,11 @@ view: events_stream_table {
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+  }
+
+  dimension: event {
+    sql: ${TABLE}.event ;;
+    type: string
   }
 
   dimension: event_category {
@@ -282,6 +301,11 @@ view: events_stream_table {
     hidden: yes
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -333,6 +357,11 @@ view: events_stream_table {
     type: string
     group_label: "Ping Info"
     group_item_label: "Start Time"
+  }
+
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
   }
 
   dimension: reason {
@@ -418,5 +447,35 @@ view: events_stream_table {
     ]
   }
 
-  sql_table_name: `mozdata.org_mozilla_fenix.events_stream` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.fenix.events_stream"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.fenix.events_stream"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.events_stream"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.events_stream"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.events_stream"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.events_stream"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }

@@ -11,6 +11,6 @@ datagroup: desktop_mobile_search_clients_monthly_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'search_derived'
     AND table_name = 'desktop_mobile_search_clients_monthly_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:search_derived.desktop_mobile_search_clients_monthly_v1 is modified."
+  description: "Updates when moz-fx-data-shared-prod.search_derived.desktop_mobile_search_clients_monthly_v1 is modified."
   max_cache_age: "24 hours"
 }

@@ -11,6 +11,6 @@ datagroup: funnel_retention_week_4_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'firefox_ios_derived'
     AND table_name = 'funnel_retention_week_4_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:firefox_ios_derived.funnel_retention_week_4_v1 is modified."
+  description: "Updates when moz-fx-data-shared-prod.firefox_ios_derived.funnel_retention_week_4_v1 is modified."
   max_cache_age: "24 hours"
 }

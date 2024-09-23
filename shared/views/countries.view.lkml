@@ -5,6 +5,12 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: countries {
+  dimension: ads_value_tier {
+    sql: ${TABLE}.ads_value_tier ;;
+    type: string
+    description: "Lowercase label detailing the monetary value tier that Mozilla Ads assign to that region based on market size and our existing products, e.g., tier 1, tier 2, etc."
+  }
+
   dimension: code {
     sql: ${TABLE}.code ;;
     type: string
@@ -15,12 +21,6 @@ view: countries {
     sql: ${TABLE}.code_3 ;;
     type: string
     description: "ISO 3166 alpha-3 country code"
-  }
-
-  dimension: intermediate_region_name {
-    sql: ${TABLE}.intermediate_region_name ;;
-    type: string
-    description: "The UNSD intermediate region name."
   }
 
   dimension: mozilla_vpn_available {
@@ -44,7 +44,7 @@ view: countries {
   dimension: region_name {
     sql: ${TABLE}.region_name ;;
     type: string
-    description: "The UNSD region name."
+    description: "Region name. These are based on the UN Statistics Division standard country or area codes for statistical use (M49), but with the \"Americas\" region split into \"North America\" and \"South America\"."
   }
 
   dimension: sponsored_tiles_available_on_newtab {
@@ -56,7 +56,7 @@ view: countries {
   dimension: subregion_name {
     sql: ${TABLE}.subregion_name ;;
     type: string
-    description: "The UNSD sub-region name."
+    description: "Sub-region name. These are based on UN Statistics Division standard country or area codes for statistical use (M49), but with the \"Latin America and the Caribbean\" and \"Sub-Saharan Africa\" sub-regions split into more specific sub-regions."
   }
 
   sql_table_name: `mozdata.static.country_codes_v1` ;;

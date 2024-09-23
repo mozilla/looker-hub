@@ -12,136 +12,197 @@ MIN(client_info.first_run_date) AS first_run_date,
 COALESCE(SUM(metrics.timespan.glean_baseline_duration.value), 0) / 3600.0 AS active_hours,
 COUNT(DISTINCT DATE(submission_timestamp)) AS days_of_use,
 
-                base_android_sdk_version AS android_sdk_version,
-base.base_app_build AS app_build,
-base.base_app_channel AS app_channel,
-base.base_app_display_version AS app_display_version,
-base.base_architecture AS architecture,
-base.base_city AS city,
-base.base_country AS country,
-base.base_days_seen_session_end_bits AS days_seen_session_end_bits,
-base.base_days_seen_session_start_bits AS days_seen_session_start_bits,
-base.base_device_manufacturer AS device_manufacturer,
-base.base_device_model AS device_model,
-base.base_durations AS durations,
-base.base_is_new_profile AS is_new_profile,
-base.base_isp AS isp,
-base.base_locale AS locale,
-base.base_normalized_channel AS normalized_channel,
-base.base_normalized_os AS normalized_os,
-base.base_normalized_os_version AS normalized_os_version,
-base.base_sample_id AS sample_id,
-base.base_telemetry_sdk_build AS telemetry_sdk_build,
+                looker_base_fields_client_info__android_sdk_version,
+looker_base_fields_client_info__app_build,
+looker_base_fields_client_info__app_channel,
+looker_base_fields_client_info__app_display_version,
+looker_base_fields_client_info__architecture,
+looker_base_fields_client_info__build_date,
+looker_base_fields_client_info__device_manufacturer,
+looker_base_fields_client_info__device_model,
+looker_base_fields_client_info__first_run_date,
+looker_base_fields_client_info__locale,
+looker_base_fields_client_info__os,
+looker_base_fields_client_info__os_version,
+looker_base_fields_client_info__session_count,
+looker_base_fields_client_info__session_id,
+looker_base_fields_client_info__telemetry_sdk_build,
+looker_base_fields_client_info__windows_build_number,
+looker_base_fields_geo__city,
+looker_base_fields_geo__country,
+looker_base_fields_geo__db_version,
+looker_base_fields_geo__subdivision1,
+looker_base_fields_geo__subdivision2,
+looker_base_fields_normalized_app_id,
+looker_base_fields_normalized_app_name,
+looker_base_fields_normalized_channel,
+looker_base_fields_normalized_country_code,
+looker_base_fields_normalized_os,
+looker_base_fields_normalized_os_version,
+looker_base_fields_sample_id,
+looker_base_fields_user_agent__browser,
+looker_base_fields_user_agent__os,
+looker_base_fields_user_agent__version,
 
-                m.client_info.client_id AS client_id,
+                client_info.client_id AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
-                m.submission_date AS analysis_basis
+                submission_date AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'week'  %}
                 (FORMAT_DATE(
                     '%F',
-                    DATE_TRUNC(m.submission_date,
+                    DATE_TRUNC(submission_date,
                     WEEK(MONDAY)))
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'month'  %}
                 (FORMAT_DATE(
                     '%Y-%m',
-                    m.submission_date)
+                    submission_date)
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'quarter'  %}
                 (FORMAT_DATE(
                     '%Y-%m',
-                    DATE_TRUNC(m.submission_date,
+                    DATE_TRUNC(submission_date,
                     QUARTER))
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'year'  %}
                 (EXTRACT(
-                    YEAR FROM m.submission_date)
+                    YEAR FROM submission_date)
                 ) AS analysis_basis
                 {% else %}
                 NULL as analysis_basis
                 {% endif %}
             FROM
                 (
-    SELECT
-        *
-    FROM
-        (
+                    SELECT
+                        baseline.*,
+                        looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
+looker_base_fields.client_info.app_build AS looker_base_fields_client_info__app_build,
+looker_base_fields.client_info.app_channel AS looker_base_fields_client_info__app_channel,
+looker_base_fields.client_info.app_display_version AS looker_base_fields_client_info__app_display_version,
+looker_base_fields.client_info.architecture AS looker_base_fields_client_info__architecture,
+looker_base_fields.client_info.build_date AS looker_base_fields_client_info__build_date,
+looker_base_fields.client_info.device_manufacturer AS looker_base_fields_client_info__device_manufacturer,
+looker_base_fields.client_info.device_model AS looker_base_fields_client_info__device_model,
+looker_base_fields.client_info.first_run_date AS looker_base_fields_client_info__first_run_date,
+looker_base_fields.client_info.locale AS looker_base_fields_client_info__locale,
+looker_base_fields.client_info.os AS looker_base_fields_client_info__os,
+looker_base_fields.client_info.os_version AS looker_base_fields_client_info__os_version,
+looker_base_fields.client_info.session_count AS looker_base_fields_client_info__session_count,
+looker_base_fields.client_info.session_id AS looker_base_fields_client_info__session_id,
+looker_base_fields.client_info.telemetry_sdk_build AS looker_base_fields_client_info__telemetry_sdk_build,
+looker_base_fields.client_info.windows_build_number AS looker_base_fields_client_info__windows_build_number,
+looker_base_fields.geo.city AS looker_base_fields_geo__city,
+looker_base_fields.geo.country AS looker_base_fields_geo__country,
+looker_base_fields.geo.db_version AS looker_base_fields_geo__db_version,
+looker_base_fields.geo.subdivision1 AS looker_base_fields_geo__subdivision1,
+looker_base_fields.geo.subdivision2 AS looker_base_fields_geo__subdivision2,
+looker_base_fields.normalized_app_id AS looker_base_fields_normalized_app_id,
+looker_base_fields.normalized_app_name AS looker_base_fields_normalized_app_name,
+looker_base_fields.normalized_channel AS looker_base_fields_normalized_channel,
+looker_base_fields.normalized_country_code AS looker_base_fields_normalized_country_code,
+looker_base_fields.normalized_os AS looker_base_fields_normalized_os,
+looker_base_fields.normalized_os_version AS looker_base_fields_normalized_os_version,
+looker_base_fields.sample_id AS looker_base_fields_sample_id,
+looker_base_fields.user_agent.browser AS looker_base_fields_user_agent__browser,
+looker_base_fields.user_agent.os AS looker_base_fields_user_agent__os,
+looker_base_fields.user_agent.version AS looker_base_fields_user_agent__version,
+
+                    FROM
+                    (
+            SELECT
+                *
+            FROM
+                (
     SELECT
         p.*,
         DATE(p.submission_timestamp) AS submission_date
     FROM `moz-fx-data-shared-prod.klar_ios.baseline` p
 )
-    )
-            AS m
-            
-            INNER JOIN (
-                SELECT
-                client_id AS base_client_id,
-                submission_date AS base_submission_date,
-                android_sdk_version AS base_android_sdk_version,
-app_build AS base_app_build,
-app_channel AS base_app_channel,
-app_display_version AS base_app_display_version,
-architecture AS base_architecture,
-city AS base_city,
-country AS base_country,
-days_seen_session_end_bits AS base_days_seen_session_end_bits,
-days_seen_session_start_bits AS base_days_seen_session_start_bits,
-device_manufacturer AS base_device_manufacturer,
-device_model AS base_device_model,
-durations AS base_durations,
-is_new_profile AS base_is_new_profile,
-isp AS base_isp,
-locale AS base_locale,
-normalized_channel AS base_normalized_channel,
-normalized_os AS base_normalized_os,
-normalized_os_version AS base_normalized_os_version,
-sample_id AS base_sample_id,
-telemetry_sdk_build AS base_telemetry_sdk_build,
+            ) AS baseline
+        JOIN
+    (
+            SELECT
+                *
+            FROM
+                (
+  SELECT
+    client_info.client_id AS client_id,
+    DATE(submission_timestamp) AS submission_date,
+    metadata.geo AS geo,
+    metadata.user_agent AS user_agent,
+    * EXCEPT(ping_info, metrics, events, additional_properties, metadata)
+  FROM
+    `moz-fx-data-shared-prod`.klar_ios.baseline
+)
 
-                FROM
-                mozdata.org_mozilla_ios_klar.baseline_clients_daily
-            ) base
-            ON
-                base.base_submission_date = m.submission_date
-                 AND base.base_client_id = m.client_info.client_id
-            WHERE base.base_submission_date BETWEEN
-                SAFE_CAST(
-                    {% date_start submission_date %} AS DATE
-                ) AND
-                SAFE_CAST(
-                    {% date_end submission_date %} AS DATE
-                ) AND
-                base.base_sample_id < {% parameter sampling %}
-            
-            AND m.submission_date BETWEEN
-                SAFE_CAST(
-                    {% date_start submission_date %} AS DATE
-                ) AND
-                SAFE_CAST(
-                    {% date_end submission_date %} AS DATE
+            ) AS looker_base_fields
+        
+    ON 
+    baseline.client_info.client_id =
+        looker_base_fields.client_id AND
+        baseline.submission_date =
+        looker_base_fields.submission_date
+    
+                
+                    WHERE 
+                    baseline.submission_date
+                    BETWEEN
+                    COALESCE(
+                        SAFE_CAST(
+                            {% date_start submission_date %} AS DATE
+                        ), CURRENT_DATE()) AND
+                    COALESCE(
+                        SAFE_CAST(
+                            {% date_end submission_date %} AS DATE
+                        ), CURRENT_DATE())
+                 AND 
+                    looker_base_fields.submission_date
+                    BETWEEN
+                    COALESCE(
+                        SAFE_CAST(
+                            {% date_start submission_date %} AS DATE
+                        ), CURRENT_DATE()) AND
+                    COALESCE(
+                        SAFE_CAST(
+                            {% date_end submission_date %} AS DATE
+                        ), CURRENT_DATE())
+                
+                    AND
+                        looker_base_fields.sample_id < {% parameter sampling %}
+                
                 )
             GROUP BY
-                android_sdk_version,
-app_build,
-app_channel,
-app_display_version,
-architecture,
-city,
-country,
-days_seen_session_end_bits,
-days_seen_session_start_bits,
-device_manufacturer,
-device_model,
-durations,
-is_new_profile,
-isp,
-locale,
-normalized_channel,
-normalized_os,
-normalized_os_version,
-sample_id,
-telemetry_sdk_build,
+                looker_base_fields_client_info__android_sdk_version,
+looker_base_fields_client_info__app_build,
+looker_base_fields_client_info__app_channel,
+looker_base_fields_client_info__app_display_version,
+looker_base_fields_client_info__architecture,
+looker_base_fields_client_info__build_date,
+looker_base_fields_client_info__device_manufacturer,
+looker_base_fields_client_info__device_model,
+looker_base_fields_client_info__first_run_date,
+looker_base_fields_client_info__locale,
+looker_base_fields_client_info__os,
+looker_base_fields_client_info__os_version,
+looker_base_fields_client_info__session_count,
+looker_base_fields_client_info__session_id,
+looker_base_fields_client_info__telemetry_sdk_build,
+looker_base_fields_client_info__windows_build_number,
+looker_base_fields_geo__city,
+looker_base_fields_geo__country,
+looker_base_fields_geo__db_version,
+looker_base_fields_geo__subdivision1,
+looker_base_fields_geo__subdivision2,
+looker_base_fields_normalized_app_id,
+looker_base_fields_normalized_app_name,
+looker_base_fields_normalized_channel,
+looker_base_fields_normalized_country_code,
+looker_base_fields_normalized_os,
+looker_base_fields_normalized_os_version,
+looker_base_fields_sample_id,
+looker_base_fields_user_agent__browser,
+looker_base_fields_user_agent__os,
+looker_base_fields_user_agent__version,
 
                 client_id,
                 analysis_basis ;;
@@ -188,125 +249,226 @@ telemetry_sdk_build,
     sql: ${TABLE}.days_of_use ;;
   }
 
-  dimension: android_sdk_version {
-    sql: ${TABLE}.android_sdk_version ;;
+  dimension: client_info__android_sdk_version {
+    sql: ${TABLE}.looker_base_fields_client_info__android_sdk_version ;;
     type: string
+    group_label: "Base Fields"
+    group_item_label: "Android Sdk Version"
+  }
+
+  dimension: client_info__app_build {
+    sql: ${TABLE}.looker_base_fields_client_info__app_build ;;
+    type: string
+    group_label: "Base Fields"
+    group_item_label: "App Build"
+  }
+
+  dimension: client_info__app_channel {
+    sql: ${TABLE}.looker_base_fields_client_info__app_channel ;;
+    type: string
+    group_label: "Base Fields"
+    group_item_label: "App Channel"
+  }
+
+  dimension: client_info__app_display_version {
+    sql: ${TABLE}.looker_base_fields_client_info__app_display_version ;;
+    type: string
+    group_label: "Base Fields"
+    group_item_label: "App Display Version"
+  }
+
+  dimension: client_info__architecture {
+    sql: ${TABLE}.looker_base_fields_client_info__architecture ;;
+    type: string
+    group_label: "Base Fields"
+    group_item_label: "Architecture"
+  }
+
+  dimension: client_info__build_date {
+    sql: ${TABLE}.looker_base_fields_client_info__build_date ;;
+    type: string
+    group_label: "Base Fields"
+    group_item_label: "Build Date"
+  }
+
+  dimension: client_info__client_id {
+    sql: ${TABLE}.looker_base_fields_client_info__client_id ;;
+    hidden: yes
     group_label: "Base Fields"
   }
 
-  dimension: app_build {
-    sql: ${TABLE}.app_build ;;
+  dimension: client_info__device_manufacturer {
+    sql: ${TABLE}.looker_base_fields_client_info__device_manufacturer ;;
     type: string
     group_label: "Base Fields"
+    group_item_label: "Device Manufacturer"
   }
 
-  dimension: app_channel {
-    sql: ${TABLE}.app_channel ;;
+  dimension: client_info__device_model {
+    sql: ${TABLE}.looker_base_fields_client_info__device_model ;;
     type: string
     group_label: "Base Fields"
+    group_item_label: "Device Model"
   }
 
-  dimension: app_display_version {
-    sql: ${TABLE}.app_display_version ;;
+  dimension: client_info__first_run_date {
+    sql: ${TABLE}.looker_base_fields_client_info__first_run_date ;;
     type: string
     group_label: "Base Fields"
+    group_item_label: "First Run Date"
   }
 
-  dimension: architecture {
-    sql: ${TABLE}.architecture ;;
+  dimension: client_info__locale {
+    sql: ${TABLE}.looker_base_fields_client_info__locale ;;
     type: string
     group_label: "Base Fields"
+    group_item_label: "Locale"
   }
 
-  dimension: city {
-    sql: ${TABLE}.city ;;
+  dimension: client_info__os {
+    sql: ${TABLE}.looker_base_fields_client_info__os ;;
     type: string
     group_label: "Base Fields"
+    group_item_label: "Os"
   }
 
-  dimension: country {
-    sql: ${TABLE}.country ;;
+  dimension: client_info__os_version {
+    sql: ${TABLE}.looker_base_fields_client_info__os_version ;;
     type: string
-    map_layer_name: countries
     group_label: "Base Fields"
+    group_item_label: "Os Version"
   }
 
-  dimension: days_seen_session_end_bits {
-    sql: ${TABLE}.days_seen_session_end_bits ;;
+  dimension: client_info__session_count {
+    sql: ${TABLE}.looker_base_fields_client_info__session_count ;;
     type: number
     group_label: "Base Fields"
+    group_item_label: "Session Count"
   }
 
-  dimension: days_seen_session_start_bits {
-    sql: ${TABLE}.days_seen_session_start_bits ;;
+  dimension: client_info__session_id {
+    sql: ${TABLE}.looker_base_fields_client_info__session_id ;;
+    type: string
+    group_label: "Base Fields"
+    group_item_label: "Session Id"
+  }
+
+  dimension: client_info__telemetry_sdk_build {
+    sql: ${TABLE}.looker_base_fields_client_info__telemetry_sdk_build ;;
+    type: string
+    group_label: "Base Fields"
+    group_item_label: "Telemetry Sdk Build"
+  }
+
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.looker_base_fields_client_info__windows_build_number ;;
     type: number
     group_label: "Base Fields"
+    group_item_label: "Windows Build Number"
   }
 
-  dimension: device_manufacturer {
-    sql: ${TABLE}.device_manufacturer ;;
+  dimension: document_id {
+    sql: ${TABLE}.looker_base_fields_document_id ;;
+    hidden: yes
+    group_label: "Base Fields"
+  }
+
+  dimension: geo__city {
+    sql: ${TABLE}.looker_base_fields_geo__city ;;
+    type: string
+    group_label: "Base Fields"
+    group_item_label: "City"
+  }
+
+  dimension: geo__country {
+    sql: ${TABLE}.looker_base_fields_geo__country ;;
+    type: string
+    group_label: "Base Fields"
+    group_item_label: "Country"
+  }
+
+  dimension: geo__db_version {
+    sql: ${TABLE}.looker_base_fields_geo__db_version ;;
+    type: string
+    group_label: "Base Fields"
+    group_item_label: "Db Version"
+  }
+
+  dimension: geo__subdivision1 {
+    sql: ${TABLE}.looker_base_fields_geo__subdivision1 ;;
+    type: string
+    group_label: "Base Fields"
+    group_item_label: "Subdivision1"
+  }
+
+  dimension: geo__subdivision2 {
+    sql: ${TABLE}.looker_base_fields_geo__subdivision2 ;;
+    type: string
+    group_label: "Base Fields"
+    group_item_label: "Subdivision2"
+  }
+
+  dimension: normalized_app_id {
+    sql: ${TABLE}.looker_base_fields_normalized_app_id ;;
     type: string
     group_label: "Base Fields"
   }
 
-  dimension: device_model {
-    sql: ${TABLE}.device_model ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: durations {
-    sql: ${TABLE}.durations ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: is_new_profile {
-    sql: ${TABLE}.is_new_profile ;;
-    type: yesno
-    group_label: "Base Fields"
-  }
-
-  dimension: isp {
-    sql: ${TABLE}.isp ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: locale {
-    sql: ${TABLE}.locale ;;
+  dimension: normalized_app_name {
+    sql: ${TABLE}.looker_base_fields_normalized_app_name ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: normalized_channel {
-    sql: ${TABLE}.normalized_channel ;;
+    sql: ${TABLE}.looker_base_fields_normalized_channel ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: normalized_country_code {
+    sql: ${TABLE}.looker_base_fields_normalized_country_code ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: normalized_os {
-    sql: ${TABLE}.normalized_os ;;
+    sql: ${TABLE}.looker_base_fields_normalized_os ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: normalized_os_version {
-    sql: ${TABLE}.normalized_os_version ;;
+    sql: ${TABLE}.looker_base_fields_normalized_os_version ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: sample_id {
-    sql: ${TABLE}.sample_id ;;
+    sql: ${TABLE}.looker_base_fields_sample_id ;;
     type: number
     group_label: "Base Fields"
   }
 
-  dimension: telemetry_sdk_build {
-    sql: ${TABLE}.telemetry_sdk_build ;;
+  dimension: user_agent__browser {
+    sql: ${TABLE}.looker_base_fields_user_agent__browser ;;
     type: string
     group_label: "Base Fields"
+    group_item_label: "Browser"
+  }
+
+  dimension: user_agent__os {
+    sql: ${TABLE}.looker_base_fields_user_agent__os ;;
+    type: string
+    group_label: "Base Fields"
+    group_item_label: "Os"
+  }
+
+  dimension: user_agent__version {
+    sql: ${TABLE}.looker_base_fields_user_agent__version ;;
+    type: string
+    group_label: "Base Fields"
+    group_item_label: "Version"
   }
 
   dimension_group: submission {
@@ -322,22 +484,6 @@ telemetry_sdk_build,
       quarter,
       year,
     ]
-  }
-
-  dimension_group: first_seen {
-    sql: ${TABLE}.first_seen_date ;;
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    convert_tz: no
-    datatype: date
-    group_label: "Base Fields"
   }
 
   set: metrics {

@@ -11,6 +11,6 @@ datagroup: users_services_last_seen_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'accounts_backend_derived'
     AND table_name = 'users_services_last_seen_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:accounts_backend_derived.users_services_last_seen_v1 is modified."
+  description: "Updates when moz-fx-data-shared-prod.accounts_backend_derived.users_services_last_seen_v1 is modified."
   max_cache_age: "24 hours"
 }

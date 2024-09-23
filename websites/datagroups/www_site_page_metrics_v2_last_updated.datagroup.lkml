@@ -8,9 +8,9 @@
 datagroup: www_site_page_metrics_v2_last_updated {
   label: "WWW Site Page Metrics V2 Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
-    FROM `moz-fx-data-marketing-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'ga_derived'
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'mozilla_org_derived'
     AND table_name = 'www_site_page_metrics_v2' ;;
-  description: "Updates when moz-fx-data-marketing-prod:ga_derived.www_site_page_metrics_v2 is modified."
+  description: "Updates when moz-fx-data-shared-prod.mozilla_org_derived.www_site_page_metrics_v2 is modified."
   max_cache_age: "24 hours"
 }

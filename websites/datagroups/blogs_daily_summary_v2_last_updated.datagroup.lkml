@@ -8,9 +8,9 @@
 datagroup: blogs_daily_summary_v2_last_updated {
   label: "Blogs Daily Summary V2 Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
-    FROM `moz-fx-data-marketing-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'ga_derived'
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'mozilla_org_derived'
     AND table_name = 'blogs_daily_summary_v2' ;;
-  description: "Updates when moz-fx-data-marketing-prod:ga_derived.blogs_daily_summary_v2 is modified."
+  description: "Updates when moz-fx-data-shared-prod.mozilla_org_derived.blogs_daily_summary_v2 is modified."
   max_cache_age: "24 hours"
 }

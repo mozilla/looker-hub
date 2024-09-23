@@ -5,6 +5,16 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: feature_usage_metrics {
+  dimension: addresses_saved_all {
+    sql: ${TABLE}.addresses_saved_all ;;
+    type: number
+  }
+
+  dimension: addresses_saved_all_users {
+    sql: ${TABLE}.addresses_saved_all_users ;;
+    type: number
+  }
+
   dimension: adjust_network {
     sql: ${TABLE}.adjust_network ;;
     type: string

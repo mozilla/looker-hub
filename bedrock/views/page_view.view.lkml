@@ -7,7 +7,7 @@
 view: page_view {
   dimension: metrics__string__page_http_status {
     label: "Page Http Status"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.page_http_status ;;
     type: string
     group_label: "Page"
@@ -25,7 +25,7 @@ view: page_view {
 
   dimension: metrics__string__page_locale {
     label: "Page Locale"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.page_locale ;;
     type: string
     group_label: "Page"
@@ -43,7 +43,7 @@ view: page_view {
 
   dimension: metrics__string__page_path {
     label: "Page Path"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.page_path ;;
     type: string
     group_label: "Page"
@@ -61,7 +61,7 @@ view: page_view {
 
   dimension: metrics__labeled_string__page_query_params {
     label: "Page Query Params"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_string.page_query_params ;;
     type: string
     group_label: "Page"
@@ -80,7 +80,7 @@ the page that was viewed.
 
   dimension: metrics__string__page_referrer {
     label: "Page Referrer"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.page_referrer ;;
     type: string
     group_label: "Page"
@@ -584,7 +584,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension_group: metrics__datetime__page_viewed {
     label: "Page Viewed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.datetime.page_viewed ;;
     type: time
     timeframes: [
@@ -688,18 +688,18 @@ view: page_view__metrics__labeled_counter__glean_error_invalid_label {
     hidden: yes
   }
 
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__page_view__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__page_view__metrics__labeled_counter__glean_error_invalid_label.key
     hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
   }
 
   measure: count {
@@ -731,18 +731,16 @@ view: page_view__metrics__labeled_counter__glean_error_invalid_overflow {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__page_view__metrics__labeled_counter__glean_error_invalid_overflow
-    suggest_dimension: suggest__page_view__metrics__labeled_counter__glean_error_invalid_overflow.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -774,18 +772,16 @@ view: page_view__metrics__labeled_counter__glean_error_invalid_state {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__page_view__metrics__labeled_counter__glean_error_invalid_state
-    suggest_dimension: suggest__page_view__metrics__labeled_counter__glean_error_invalid_state.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -817,18 +813,16 @@ view: page_view__metrics__labeled_counter__glean_error_invalid_value {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__page_view__metrics__labeled_counter__glean_error_invalid_value
-    suggest_dimension: suggest__page_view__metrics__labeled_counter__glean_error_invalid_value.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -851,63 +845,6 @@ view: suggest__page_view__metrics__labeled_counter__glean_error_invalid_label {
     count(*) as n
 from mozdata.bedrock.page_view as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__page_view__metrics__labeled_counter__glean_error_invalid_overflow {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.bedrock.page_view as t,
-unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__page_view__metrics__labeled_counter__glean_error_invalid_state {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.bedrock.page_view as t,
-unnest(metrics.labeled_counter.glean_error_invalid_state) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__page_view__metrics__labeled_counter__glean_error_invalid_value {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.bedrock.page_view as t,
-unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

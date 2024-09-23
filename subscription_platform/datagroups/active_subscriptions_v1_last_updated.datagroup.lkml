@@ -11,6 +11,6 @@ datagroup: active_subscriptions_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'subscription_platform_derived'
     AND table_name = 'active_subscriptions_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:subscription_platform_derived.active_subscriptions_v1 is modified."
+  description: "Updates when moz-fx-data-shared-prod.subscription_platform_derived.active_subscriptions_v1 is modified."
   max_cache_age: "24 hours"
 }

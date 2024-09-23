@@ -30,6 +30,11 @@ view: clients_last_seen_joined_table {
     type: string
   }
 
+  dimension: baseline_profile_group_id {
+    sql: ${TABLE}.baseline_profile_group_id ;;
+    type: string
+  }
+
   dimension: city {
     sql: ${TABLE}.city ;;
     type: string
@@ -44,6 +49,11 @@ view: clients_last_seen_joined_table {
     sql: ${TABLE}.country ;;
     type: string
     map_layer_name: countries
+  }
+
+  dimension: days_active_bits {
+    sql: ${TABLE}.days_active_bits ;;
+    type: number
   }
 
   dimension: days_created_profile_bits {
@@ -68,6 +78,11 @@ view: clients_last_seen_joined_table {
 
   dimension: days_sent_metrics_ping_bits {
     sql: ${TABLE}.days_sent_metrics_ping_bits ;;
+    type: number
+  }
+
+  dimension: days_since_active {
+    sql: ${TABLE}.days_since_active ;;
     type: number
   }
 
@@ -101,9 +116,19 @@ view: clients_last_seen_joined_table {
     type: string
   }
 
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+  }
+
   dimension: durations {
     sql: ${TABLE}.durations ;;
     type: number
+  }
+
+  dimension: geo_subdivision {
+    sql: ${TABLE}.geo_subdivision ;;
+    type: string
   }
 
   dimension: is_default_browser {
@@ -148,6 +173,11 @@ view: clients_last_seen_joined_table {
 
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
+    type: string
+  }
+
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
     type: string
   }
 

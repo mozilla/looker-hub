@@ -324,6 +324,15 @@ view: first_startup_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__first_startup_new_profile {
+    sql: ${TABLE}.metrics.boolean.first_startup_new_profile ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "First Startup New Profile"
+    description: "True if FirstStartup was initted after a new profile was just created. If false, this means that FirstStartup was initted with a pre-existing profile, which is a no-op.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes

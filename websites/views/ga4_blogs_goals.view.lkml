@@ -45,5 +45,5 @@ view: ga4_blogs_goals {
     description: "Date of the visit"
   }
 
-  sql_table_name: `moz-fx-data-marketing-prod.ga_derived.blogs_goals_v2` ;;
+  sql_table_name: `moz-fx-data-shared-prod.mozilla_org.blogs_goals` ;;
 }

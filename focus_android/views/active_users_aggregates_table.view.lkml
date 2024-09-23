@@ -116,6 +116,16 @@ view: active_users_aggregates_table {
     type: string
   }
 
+  dimension: locale {
+    sql: ${TABLE}.locale ;;
+    type: string
+  }
+
+  dimension: mau {
+    sql: ${TABLE}.mau ;;
+    type: number
+  }
+
   dimension: monthly_users {
     sql: ${TABLE}.monthly_users ;;
     type: number
@@ -173,6 +183,11 @@ view: active_users_aggregates_table {
 
   dimension: uri_count {
     sql: ${TABLE}.uri_count ;;
+    type: number
+  }
+
+  dimension: wau {
+    sql: ${TABLE}.wau ;;
     type: number
   }
 

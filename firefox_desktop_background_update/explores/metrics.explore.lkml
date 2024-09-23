@@ -113,6 +113,36 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_yuv_color_space}) AS metrics__metrics__labeled_counter__avif_yuv_color_space ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_yuv_color_space.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__bounce_tracking_protection_purge_count}) AS metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__cert_compression_failures {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cert_compression_failures}) AS metrics__metrics__labeled_counter__cert_compression_failures ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cert_compression_failures.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__cert_compression_used {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cert_compression_used}) AS metrics__metrics__labeled_counter__cert_compression_used ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cert_compression_used.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms}) AS metrics__metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__cert_verifier_crlite_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cert_verifier_crlite_status}) AS metrics__metrics__labeled_counter__cert_verifier_crlite_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cert_verifier_crlite_status.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__cert_verifier_crlite_vs_ocsp_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cert_verifier_crlite_vs_ocsp_result}) AS metrics__metrics__labeled_counter__cert_verifier_crlite_vs_ocsp_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cert_verifier_crlite_vs_ocsp_result.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__codec_stats_audio_preferred_codec}) AS metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec.document_id} ;;
@@ -156,6 +186,16 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cookie_banners_rule_lookup_by_load}) AS metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__crash_submission_channel_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__crash_submission_channel_status}) AS metrics__metrics__labeled_counter__crash_submission_channel_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__crash_submission_channel_status.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__crash_submission_collector_errors {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__crash_submission_collector_errors}) AS metrics__metrics__labeled_counter__crash_submission_collector_errors ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__crash_submission_collector_errors.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__data_storage_entries {
@@ -206,6 +246,16 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__formautofill_form_submission_heuristic {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__formautofill_form_submission_heuristic}) AS metrics__metrics__labeled_counter__formautofill_form_submission_heuristic ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__formautofill_form_submission_heuristic.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__geolocation_fallback {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_fallback}) AS metrics__metrics__labeled_counter__geolocation_fallback ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_fallback.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__geolocation_request_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_request_result}) AS metrics__metrics__labeled_counter__geolocation_request_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_request_result.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
@@ -313,6 +363,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_audio_init_failure}) AS metrics__metrics__labeled_counter__media_audio_init_failure ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_audio_init_failure.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__media_playback_not_supported_video_per_mime_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_playback_not_supported_video_per_mime_type}) AS metrics__metrics__labeled_counter__media_playback_not_supported_video_per_mime_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_playback_not_supported_video_per_mime_type.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__netwerk_early_hints {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_early_hints}) AS metrics__metrics__labeled_counter__netwerk_early_hints ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_early_hints.document_id} ;;
@@ -321,6 +376,36 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__netwerk_eh_link_type {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_eh_link_type}) AS metrics__metrics__labeled_counter__netwerk_eh_link_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_eh_link_type.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__netwerk_eh_response_version {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_eh_response_version}) AS metrics__metrics__labeled_counter__netwerk_eh_response_version ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_eh_response_version.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__netwerk_http3_0rtt_state {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_http3_0rtt_state}) AS metrics__metrics__labeled_counter__netwerk_http3_0rtt_state ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_http3_0rtt_state.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_grease {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_http3_ech_outcome_grease}) AS metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_grease ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_grease.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_none {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_http3_ech_outcome_none}) AS metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_none ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_none.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_real {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_http3_ech_outcome_real}) AS metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_real ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_real.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__network_byte_range_request {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_byte_range_request}) AS metrics__metrics__labeled_counter__network_byte_range_request ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_byte_range_request.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__network_cors_authorization_header {
@@ -338,6 +423,51 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_data_size_per_type}) AS metrics__metrics__labeled_counter__network_data_size_per_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_data_size_per_type.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__network_system_channel_addon_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_system_channel_addon_status}) AS metrics__metrics__labeled_counter__network_system_channel_addon_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_system_channel_addon_status.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__network_system_channel_addonversion_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_system_channel_addonversion_status}) AS metrics__metrics__labeled_counter__network_system_channel_addonversion_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_system_channel_addonversion_status.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__network_system_channel_other_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_system_channel_other_status}) AS metrics__metrics__labeled_counter__network_system_channel_other_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_system_channel_other_status.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__network_system_channel_remote_settings_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_system_channel_remote_settings_status}) AS metrics__metrics__labeled_counter__network_system_channel_remote_settings_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_system_channel_remote_settings_status.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__network_system_channel_success_or_failure {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_system_channel_success_or_failure}) AS metrics__metrics__labeled_counter__network_system_channel_success_or_failure ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_system_channel_success_or_failure.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__network_system_channel_telemetry_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_system_channel_telemetry_status}) AS metrics__metrics__labeled_counter__network_system_channel_telemetry_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_system_channel_telemetry_status.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__network_system_channel_update_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_system_channel_update_status}) AS metrics__metrics__labeled_counter__network_system_channel_update_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_system_channel_update_status.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__network_tls_early_data_accepted {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_tls_early_data_accepted}) AS metrics__metrics__labeled_counter__network_tls_early_data_accepted ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_tls_early_data_accepted.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__network_tls_early_data_negotiated {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_tls_early_data_negotiated}) AS metrics__metrics__labeled_counter__network_tls_early_data_negotiated ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_tls_early_data_negotiated.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_cookie_timestamp_fixed_count}) AS metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count.document_id} ;;
@@ -348,14 +478,89 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_dns_native_count}) AS metrics__metrics__labeled_counter__networking_dns_native_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_dns_native_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_fetch_keepalive_discard_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_fetch_keepalive_discard_count}) AS metrics__metrics__labeled_counter__networking_fetch_keepalive_discard_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_fetch_keepalive_discard_count.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_fetch_keepalive_request_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_fetch_keepalive_request_count}) AS metrics__metrics__labeled_counter__networking_fetch_keepalive_request_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_fetch_keepalive_request_count.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_3_ecn_path_capability {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_ecn_path_capability}) AS metrics__metrics__labeled_counter__networking_http_3_ecn_path_capability ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_ecn_path_capability.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_channel_disposition {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_disposition}) AS metrics__metrics__labeled_counter__networking_http_channel_disposition ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_disposition.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_no_reason {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_disposition_disabled_no_reason}) AS metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_no_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_no_reason.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_upgrade {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_disposition_disabled_upgrade}) AS metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_upgrade ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_upgrade.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_wont {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_disposition_disabled_wont}) AS metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_wont ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_disposition_disabled_wont.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_no_reason {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_disposition_enabled_no_reason}) AS metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_no_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_no_reason.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_upgrade {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_disposition_enabled_upgrade}) AS metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_upgrade ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_upgrade.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_wont {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_disposition_enabled_wont}) AS metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_wont ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_disposition_enabled_wont.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_channel_onstart_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_onstart_status}) AS metrics__metrics__labeled_counter__networking_http_channel_onstart_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_onstart_status.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_onstart_success_https_rr}) AS metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_http_redirect_to_scheme_subresource {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_redirect_to_scheme_subresource}) AS metrics__metrics__labeled_counter__networking_http_redirect_to_scheme_subresource ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_redirect_to_scheme_subresource.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_redirect_to_scheme_top_level {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_redirect_to_scheme_top_level}) AS metrics__metrics__labeled_counter__networking_http_redirect_to_scheme_top_level ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_redirect_to_scheme_top_level.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_response_status_code {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_response_status_code}) AS metrics__metrics__labeled_counter__networking_http_response_status_code ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_response_status_code.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_http_response_version {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_response_version}) AS metrics__metrics__labeled_counter__networking_http_response_version ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_response_version.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_to_https_upgrade_reason {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_to_https_upgrade_reason}) AS metrics__metrics__labeled_counter__networking_http_to_https_upgrade_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_to_https_upgrade_reason.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__networking_https_rr_presented {
@@ -393,6 +598,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_trr_request_count}) AS metrics__metrics__labeled_counter__networking_trr_request_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_trr_request_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_trr_request_count_per_conn {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_trr_request_count_per_conn}) AS metrics__metrics__labeled_counter__networking_trr_request_count_per_conn ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_trr_request_count_per_conn.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__pdfjs_buttons {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_buttons}) AS metrics__metrics__labeled_counter__pdfjs_buttons ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_buttons.document_id} ;;
@@ -426,6 +636,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__pdfjs_geckoview {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_geckoview}) AS metrics__metrics__labeled_counter__pdfjs_geckoview ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_geckoview.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__pdfjs_image_added {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_image_added}) AS metrics__metrics__labeled_counter__pdfjs_image_added ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_image_added.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__pdfjs_stamp {
@@ -466,6 +681,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_time_per_tracker_type_ms}) AS metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_energy_per_process_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_energy_per_process_type}) AS metrics__metrics__labeled_counter__power_energy_per_process_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_energy_per_process_type.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {
@@ -533,6 +753,46 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tls_xyber_intolerance_reason}) AS metrics__metrics__labeled_counter__tls_xyber_intolerance_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tls_xyber_intolerance_reason.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__translations_request_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__translations_request_count}) AS metrics__metrics__labeled_counter__translations_request_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__translations_request_count.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webauthn_create_authenticator_attachment {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webauthn_create_authenticator_attachment}) AS metrics__metrics__labeled_counter__webauthn_create_authenticator_attachment ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webauthn_create_authenticator_attachment.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webauthn_get_authenticator_attachment {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webauthn_get_authenticator_attachment}) AS metrics__metrics__labeled_counter__webauthn_get_authenticator_attachment ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webauthn_get_authenticator_attachment.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webrtcdtls_cipher {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webrtcdtls_cipher}) AS metrics__metrics__labeled_counter__webrtcdtls_cipher ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webrtcdtls_cipher.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webrtcdtls_client_handshake_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webrtcdtls_client_handshake_result}) AS metrics__metrics__labeled_counter__webrtcdtls_client_handshake_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webrtcdtls_client_handshake_result.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webrtcdtls_protocol_version {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webrtcdtls_protocol_version}) AS metrics__metrics__labeled_counter__webrtcdtls_protocol_version ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webrtcdtls_protocol_version.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webrtcdtls_server_handshake_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webrtcdtls_server_handshake_result}) AS metrics__metrics__labeled_counter__webrtcdtls_server_handshake_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webrtcdtls_server_handshake_result.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webrtcdtls_srtp_cipher {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webrtcdtls_srtp_cipher}) AS metrics__metrics__labeled_counter__webrtcdtls_srtp_cipher ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webrtcdtls_srtp_cipher.document_id} ;;
+  }
+
   join: metrics__events {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.events}) AS metrics__events ;;
@@ -549,414 +809,6 @@ explore: metrics {
   }
 }
 
-explore: suggest__metrics__metrics__labeled_counter__avif_a1lx {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__avif_a1op {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__avif_alpha {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__avif_aom_decode_error {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__avif_bit_depth {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__avif_cicp_cp {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__avif_cicp_mc {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__avif_cicp_tc {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__avif_clap {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__avif_colr {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__avif_decode_result {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__avif_decoder {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__avif_grid {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__avif_ipro {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__avif_ispe {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__avif_lsel {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__avif_pasp {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__avif_pixi {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__avif_yuv_color_space {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__codec_stats_other_fec_signaled {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__codec_stats_video_preferred_codec {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_result {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__data_storage_entries {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__dotprint_failure {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__extensions_process_event {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__formautofill_form_submission_heuristic {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
-  hidden: yes
-}
-
 explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failure {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__gpu_process_crash_fallbacks {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_background {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_foreground {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_gpu_process {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_active {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_background {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_active {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__media_audio_backend {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__media_audio_init_failure {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__netwerk_early_hints {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__network_cors_authorization_header {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__network_data_size_pb_per_type {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__network_data_size_per_type {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__networking_dns_native_count {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__networking_http_response_version {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__networking_https_rr_presented {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__networking_proxy_info_type {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__networking_residual_cache_folder_removal {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__networking_speculative_connect_outcome {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__networking_speculative_connection_outcome {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__networking_trr_request_count {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__pdfjs_buttons {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_color {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_method {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__pdfjs_geckoview {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__pdfjs_stamp {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_process_type {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__pwmgr_form_autofill_result {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_getparameters {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_transactionid {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
   hidden: yes
 }

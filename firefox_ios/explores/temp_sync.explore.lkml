@@ -63,19 +63,3 @@ explore: temp_sync {
 explore: suggest__temp_sync__metrics__labeled_counter__glean_error_invalid_label {
   hidden: yes
 }
-
-explore: suggest__temp_sync__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__temp_sync__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__temp_sync__metrics__labeled_counter__glean_error_invalid_value {
-  hidden: yes
-}
-
-explore: suggest__temp_sync__metrics__labeled_counter__sync_failure_reason {
-  hidden: yes
-}

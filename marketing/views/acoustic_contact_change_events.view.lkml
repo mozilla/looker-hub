@@ -74,6 +74,7 @@ view: acoustic_contact_change_events {
   dimension: recipient_id {
     sql: ${TABLE}.recipient_id ;;
     type: number
+    description: "Recipient's ID"
   }
 
   dimension: relay_waitlist_geo {
@@ -261,5 +262,5 @@ view: acoustic_contact_change_events {
     description: "Correspnds to Airflow's exec date. \ Means when at the time the job run, that was \ most recently when the contact was updated."
   }
 
-  sql_table_name: `moz-fx-data-marketing-prod.acoustic.contact_v1` ;;
+  sql_table_name: `mozdata.acoustic.contact` ;;
 }

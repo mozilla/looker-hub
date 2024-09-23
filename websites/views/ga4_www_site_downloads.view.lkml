@@ -8,7 +8,7 @@ view: ga4_www_site_downloads {
   dimension: ad_content {
     sql: ${TABLE}.ad_content ;;
     type: string
-    description: "Ad Content - Indicates the particular link within a campaign"
+    description: "Ad Content - Indicates the particular link within a campaign  (comes from collected traffic source)"
   }
 
   dimension: browser {
@@ -20,7 +20,13 @@ view: ga4_www_site_downloads {
   dimension: campaign {
     sql: ${TABLE}.campaign ;;
     type: string
-    description: "Campaign - Identifier for the marketing campaign"
+    description: "Campaign - Identifier for the marketing campaign (comes from collected traffic source)"
+  }
+
+  dimension: campaign_from_event_params {
+    sql: ${TABLE}.campaign_from_event_params ;;
+    type: string
+    description: "Campaign From Event Params - Parsed from nested event_params key = campaign"
   }
 
   dimension: country {
@@ -48,16 +54,34 @@ view: ga4_www_site_downloads {
     description: "Downloads; in GA3, if someone downloaded multiple times in 1 session, it only counted 1x; but in GA4, all downloads count"
   }
 
+  dimension: first_campaign_from_event_params_in_session {
+    sql: ${TABLE}.first_campaign_from_event_params_in_session ;;
+    type: string
+    description: "First Campaign From Event Params In Session - Parsed from nested event_params key = campaign"
+  }
+
   dimension: language {
     sql: ${TABLE}.language ;;
     type: string
     description: "Language - Language of visitor's device"
   }
 
+  dimension: manual_campaign_id {
+    sql: ${TABLE}.manual_campaign_id ;;
+    type: string
+    description: "Manual Campaign ID (comes from collected traffic source)"
+  }
+
+  dimension: manual_term {
+    sql: ${TABLE}.manual_term ;;
+    type: string
+    description: "Manual Term (comes from collected traffic source)"
+  }
+
   dimension: medium {
     sql: ${TABLE}.medium ;;
     type: string
-    description: "Medium - Category of the source, such as 'organic' for a search engine"
+    description: "Medium - Category of the source, such as 'organic' for a search engine (comes from collected traffic source)"
   }
 
   dimension: non_fx_downloads {
@@ -75,7 +99,25 @@ view: ga4_www_site_downloads {
   dimension: source {
     sql: ${TABLE}.source ;;
     type: string
-    description: "Source - Referring partner domain"
+    description: "Source - Referring partner domain (comes from collected traffic source)"
+  }
+
+  dimension: traffic_source_medium {
+    sql: ${TABLE}.traffic_source_medium ;;
+    type: string
+    description: "Traffic Source - Medium"
+  }
+
+  dimension: traffic_source_name {
+    sql: ${TABLE}.traffic_source_name ;;
+    type: string
+    description: "Traffic Source - Name"
+  }
+
+  dimension: traffic_source_source {
+    sql: ${TABLE}.traffic_source_source ;;
+    type: string
+    description: "Traffic Source - Source"
   }
 
   dimension: visit_identifier {
@@ -100,5 +142,5 @@ view: ga4_www_site_downloads {
     description: "Date of the visit"
   }
 
-  sql_table_name: `moz-fx-data-marketing-prod.ga_derived.www_site_downloads_v2` ;;
+  sql_table_name: `moz-fx-data-shared-prod.mozilla_org.www_site_downloads` ;;
 }

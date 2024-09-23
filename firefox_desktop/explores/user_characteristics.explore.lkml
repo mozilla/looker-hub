@@ -47,25 +47,8 @@ explore: user_characteristics {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${user_characteristics__events.extra}) AS user_characteristics__events__extra ;;
   }
-
-  join: user_characteristics__ping_info__experiments {
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${user_characteristics.ping_info__experiments}) AS user_characteristics__ping_info__experiments ;;
-  }
 }
 
 explore: suggest__user_characteristics__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}
-
-explore: suggest__user_characteristics__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__user_characteristics__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__user_characteristics__metrics__labeled_counter__glean_error_invalid_value {
   hidden: yes
 }

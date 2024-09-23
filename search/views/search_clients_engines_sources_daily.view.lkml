@@ -176,6 +176,21 @@ view: search_clients_engines_sources_daily {
     type: string
   }
 
+  dimension: os_version_major {
+    sql: ${TABLE}.os_version_major ;;
+    type: string
+  }
+
+  dimension: os_version_minor {
+    sql: ${TABLE}.os_version_minor ;;
+    type: string
+  }
+
+  dimension: policies_is_enterprise {
+    sql: ${TABLE}.policies_is_enterprise ;;
+    type: yesno
+  }
+
   dimension: profile_age_in_days {
     sql: ${TABLE}.profile_age_in_days ;;
     type: number
@@ -184,6 +199,11 @@ view: search_clients_engines_sources_daily {
   dimension: profile_creation_date {
     sql: ${TABLE}.profile_creation_date ;;
     type: number
+  }
+
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
   }
 
   dimension: sample_id {
