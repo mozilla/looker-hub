@@ -105,6 +105,11 @@ view: newtab_visits_table {
     type: yesno
   }
 
+  dimension: newtab_selected_topics {
+    sql: ${TABLE}.newtab_selected_topics ;;
+    hidden: yes
+  }
+
   dimension: newtab_visit_ended_at {
     sql: ${TABLE}.newtab_visit_ended_at ;;
     type: number
@@ -155,8 +160,19 @@ view: newtab_visits_table {
     type: yesno
   }
 
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
+    description: "A UUID identifying the profile's group on a single device and allowing user-oriented correlation of data"
+  }
+
   dimension: search_interactions {
     sql: ${TABLE}.search_interactions ;;
+    hidden: yes
+  }
+
+  dimension: topic_selection_interactions {
+    sql: ${TABLE}.topic_selection_interactions ;;
     hidden: yes
   }
 
@@ -242,6 +258,11 @@ view: newtab_visits_table__pocket_interactions {
     type: number
   }
 
+  dimension: organic_pocket_dismissals {
+    sql: ${TABLE}.organic_pocket_dismissals ;;
+    type: number
+  }
+
   dimension: organic_pocket_impressions {
     sql: ${TABLE}.organic_pocket_impressions ;;
     type: number
@@ -262,6 +283,16 @@ view: newtab_visits_table__pocket_interactions {
     type: number
   }
 
+  dimension: pocket_matches_selected_topic {
+    sql: ${TABLE}.pocket_matches_selected_topic ;;
+    type: string
+  }
+
+  dimension: pocket_received_rank {
+    sql: ${TABLE}.pocket_received_rank ;;
+    type: number
+  }
+
   dimension: pocket_recommendation_id {
     sql: ${TABLE}.pocket_recommendation_id ;;
     type: string
@@ -272,8 +303,23 @@ view: newtab_visits_table__pocket_interactions {
     type: number
   }
 
+  dimension: pocket_scheduled_corpus_item_id {
+    sql: ${TABLE}.pocket_scheduled_corpus_item_id ;;
+    type: string
+  }
+
   dimension: pocket_story_position {
     sql: ${TABLE}.pocket_story_position ;;
+    type: number
+  }
+
+  dimension: pocket_thumbs_down {
+    sql: ${TABLE}.pocket_thumbs_down ;;
+    type: number
+  }
+
+  dimension: pocket_thumbs_up {
+    sql: ${TABLE}.pocket_thumbs_up ;;
     type: number
   }
 
@@ -282,8 +328,18 @@ view: newtab_visits_table__pocket_interactions {
     type: string
   }
 
+  dimension: pocket_topic {
+    sql: ${TABLE}.pocket_topic ;;
+    type: string
+  }
+
   dimension: sponsored_pocket_clicks {
     sql: ${TABLE}.sponsored_pocket_clicks ;;
+    type: number
+  }
+
+  dimension: sponsored_pocket_dismissals {
+    sql: ${TABLE}.sponsored_pocket_dismissals ;;
     type: number
   }
 
@@ -342,6 +398,38 @@ view: newtab_visits_table__search_interactions {
   dimension: tagged_search_ad_impressions {
     sql: ${TABLE}.tagged_search_ad_impressions ;;
     type: number
+  }
+}
+
+view: newtab_visits_table__topic_selection_interactions {
+  dimension: previous_topics {
+    sql: ${TABLE}.previous_topics ;;
+    type: string
+  }
+
+  dimension: topic_selection_dismiss {
+    sql: ${TABLE}.topic_selection_dismiss ;;
+    type: number
+  }
+
+  dimension: topic_selection_open {
+    sql: ${TABLE}.topic_selection_open ;;
+    type: number
+  }
+
+  dimension: topic_selection_topics_first_saved {
+    sql: ${TABLE}.topic_selection_topics_first_saved ;;
+    type: number
+  }
+
+  dimension: topic_selection_topics_updated {
+    sql: ${TABLE}.topic_selection_topics_updated ;;
+    type: number
+  }
+
+  dimension: topics {
+    sql: ${TABLE}.topics ;;
+    type: string
   }
 }
 

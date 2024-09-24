@@ -20,6 +20,11 @@ view: device_usage {
     type: string
   }
 
+  dimension: location_name {
+    sql: ${TABLE}.location_name ;;
+    type: string
+  }
+
   dimension: mobile_usage_pct {
     sql: ${TABLE}.mobile_usage_pct ;;
     type: number
@@ -33,6 +38,11 @@ view: device_usage {
   dimension: other_usage_pct {
     sql: ${TABLE}.other_usage_pct ;;
     type: number
+  }
+
+  dimension: region_name {
+    sql: ${TABLE}.region_name ;;
+    type: string
   }
 
   dimension: user_type {

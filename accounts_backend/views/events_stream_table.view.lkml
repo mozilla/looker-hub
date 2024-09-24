@@ -316,6 +316,13 @@ view: events_stream_table {
     hidden: yes
   }
 
+  dimension: metrics__string__account_user_id {
+    sql: ${TABLE}.metrics.string.account_user_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Account User Id"
+  }
+
   dimension: metrics__string__account_user_id_sha256 {
     sql: ${TABLE}.metrics.string.account_user_id_sha256 ;;
     type: string
@@ -465,6 +472,11 @@ view: events_stream_table {
     type: string
     group_label: "Ping Info"
     group_item_label: "Start Time"
+  }
+
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
   }
 
   dimension: reason {

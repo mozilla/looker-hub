@@ -346,6 +346,20 @@ view: broken_site_report_table {
     group_item_label: "Broken Site Report Browser Info Prefs Software Webrender"
   }
 
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled {
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled"
+  }
+
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm {
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled In Pbm"
+  }
+
   dimension: metrics__boolean__broken_site_report_browser_info_system_is_tablet {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_system_is_tablet ;;
     type: yesno

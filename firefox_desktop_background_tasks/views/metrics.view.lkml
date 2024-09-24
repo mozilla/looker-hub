@@ -93,6 +93,24 @@ view: metrics {
 "
   }
 
+  dimension: metrics__boolean__sslkeylogging_enabled {
+    label: "Sslkeylogging Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.sslkeylogging_enabled ;;
+    type: yesno
+    group_label: "Sslkeylogging"
+    group_item_label: "Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Sslkeylogging Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_tasks/metrics/sslkeylogging_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records whether TLS key logging has been enabled via the environment variable SSLKEYLOGFILE.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation Id"
     hidden: no

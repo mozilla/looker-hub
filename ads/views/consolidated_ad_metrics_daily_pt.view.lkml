@@ -20,6 +20,11 @@ view: consolidated_ad_metrics_daily_pt {
     type: number
   }
 
+  dimension: campaign_id {
+    sql: ${TABLE}.campaign_id ;;
+    type: number
+  }
+
   dimension: campaign_name {
     sql: ${TABLE}.campaign_name ;;
     type: string

@@ -293,6 +293,42 @@ view: broken_site_report {
 "
   }
 
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled {
+    label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled ;;
+    type: yesno
+    group_label: "Broken Site Report Browser Info Prefs"
+    group_item_label: "Third Party Cookie Blocking Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of `network.cookie.cookieBehavior.optInPartitioning`
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm {
+    label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled In Pbm"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm ;;
+    type: yesno
+    group_label: "Broken Site Report Browser Info Prefs"
+    group_item_label: "Third Party Cookie Blocking Enabled In Pbm"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled In Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of `network.cookie.cookieBehavior.optInPartitioning.pbmode`
+"
+  }
+
   dimension: metrics__boolean__broken_site_report_browser_info_system_is_tablet {
     label: "Broken Site Report Browser Info System Is Tablet"
     hidden: no

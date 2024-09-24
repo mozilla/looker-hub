@@ -4057,7 +4057,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_doc_css_inset_area {
     label: "Use Counter Css Doc Css Inset Area"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_inset_area ;;
     type: number
     group_label: "Use Counter Css Doc"
@@ -7403,6 +7403,42 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_position_area {
+    label: "Use Counter Css Doc Css Position Area"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_area ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Position Area"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_position_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property position-area. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_position_try {
+    label: "Use Counter Css Doc Css Position Try"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Position Try"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Try"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_position_try"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property position-try. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_position_try_fallbacks {
     label: "Use Counter Css Doc Css Position Try Fallbacks"
     hidden: no
@@ -9437,6 +9473,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_view_transition_name {
+    label: "Use Counter Css Doc Css View Transition Name"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_view_transition_name ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css View Transition Name"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css View Transition Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_view_transition_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property view-transition-name. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_visibility {
     label: "Use Counter Css Doc Css Visibility"
     hidden: no
@@ -10189,7 +10243,7 @@ view: use_counters {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether a page used the CSS property -webkit-font-feature-settings. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a document used the CSS property -webkit-font-feature-settings. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -11743,7 +11797,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_doc_webkit_font_feature_settings {
     label: "Use Counter Css Doc Webkit Font Feature Settings"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_webkit_font_feature_settings ;;
     type: number
     group_label: "Use Counter Css Doc"
@@ -16819,7 +16873,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_page_css_inset_area {
     label: "Use Counter Css Page Css Inset Area"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_inset_area ;;
     type: number
     group_label: "Use Counter Css Page"
@@ -20165,6 +20219,42 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_position_area {
+    label: "Use Counter Css Page Css Position Area"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_area ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Position Area"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property position-area. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_try {
+    label: "Use Counter Css Page Css Position Try"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Position Try"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Try"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_try"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property position-try. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_position_try_fallbacks {
     label: "Use Counter Css Page Css Position Try Fallbacks"
     hidden: no
@@ -22196,6 +22286,24 @@ view: use_counters {
     }
 
     description: "Whether a page used the CSS property view-timeline-name. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_view_transition_name {
+    label: "Use Counter Css Page Css View Transition Name"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_view_transition_name ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css View Transition Name"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css View Transition Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_view_transition_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property view-transition-name. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -24505,7 +24613,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_page_webkit_font_feature_settings {
     label: "Use Counter Css Page Webkit Font Feature Settings"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_page_webkit_font_feature_settings ;;
     type: number
     group_label: "Use Counter Css Page"
@@ -26305,7 +26413,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_deprecated_ops_doc_size_to_content {
     label: "Use Counter Deprecated Ops Doc Size To Content"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_size_to_content ;;
     type: number
     group_label: "Use Counter Deprecated Ops Doc"
@@ -27205,7 +27313,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_deprecated_ops_page_size_to_content {
     label: "Use Counter Deprecated Ops Page Size To Content"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_size_to_content ;;
     type: number
     group_label: "Use Counter Deprecated Ops Page"
@@ -29833,7 +29941,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_2 {
     label: "Use Counter Doc Js Subclassing Array Type 2"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_array_type_2 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -29851,7 +29959,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_3 {
     label: "Use Counter Doc Js Subclassing Array Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_array_type_3 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -29869,7 +29977,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_arraybuffer_type_3 {
     label: "Use Counter Doc Js Subclassing Arraybuffer Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_arraybuffer_type_3 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -29887,7 +29995,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_promise_type_2 {
     label: "Use Counter Doc Js Subclassing Promise Type 2"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_promise_type_2 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -29905,7 +30013,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_promise_type_3 {
     label: "Use Counter Doc Js Subclassing Promise Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_promise_type_3 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -29923,7 +30031,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_regexp_type_3 {
     label: "Use Counter Doc Js Subclassing Regexp Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_regexp_type_3 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -29941,7 +30049,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_regexp_type_4 {
     label: "Use Counter Doc Js Subclassing Regexp Type 4"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_regexp_type_4 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -29959,7 +30067,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_sharedarraybuffer_type_3 {
     label: "Use Counter Doc Js Subclassing Sharedarraybuffer Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_sharedarraybuffer_type_3 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -29977,7 +30085,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_typedarray_type_2 {
     label: "Use Counter Doc Js Subclassing Typedarray Type 2"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_typedarray_type_2 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -29995,7 +30103,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_typedarray_type_3 {
     label: "Use Counter Doc Js Subclassing Typedarray Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_typedarray_type_3 ;;
     type: number
     group_label: "Use Counter Doc"
@@ -36474,7 +36582,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_array_type_2 {
     label: "Use Counter Page Js Subclassing Array Type 2"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_array_type_2 ;;
     type: number
     group_label: "Use Counter Page"
@@ -36492,7 +36600,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_array_type_3 {
     label: "Use Counter Page Js Subclassing Array Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_array_type_3 ;;
     type: number
     group_label: "Use Counter Page"
@@ -36510,7 +36618,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_arraybuffer_type_3 {
     label: "Use Counter Page Js Subclassing Arraybuffer Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_arraybuffer_type_3 ;;
     type: number
     group_label: "Use Counter Page"
@@ -36528,7 +36636,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_promise_type_2 {
     label: "Use Counter Page Js Subclassing Promise Type 2"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_promise_type_2 ;;
     type: number
     group_label: "Use Counter Page"
@@ -36546,7 +36654,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_promise_type_3 {
     label: "Use Counter Page Js Subclassing Promise Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_promise_type_3 ;;
     type: number
     group_label: "Use Counter Page"
@@ -36564,7 +36672,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_regexp_type_3 {
     label: "Use Counter Page Js Subclassing Regexp Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_regexp_type_3 ;;
     type: number
     group_label: "Use Counter Page"
@@ -36582,7 +36690,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_regexp_type_4 {
     label: "Use Counter Page Js Subclassing Regexp Type 4"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_regexp_type_4 ;;
     type: number
     group_label: "Use Counter Page"
@@ -36600,7 +36708,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_sharedarraybuffer_type_3 {
     label: "Use Counter Page Js Subclassing Sharedarraybuffer Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_sharedarraybuffer_type_3 ;;
     type: number
     group_label: "Use Counter Page"
@@ -36618,7 +36726,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_typedarray_type_2 {
     label: "Use Counter Page Js Subclassing Typedarray Type 2"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_typedarray_type_2 ;;
     type: number
     group_label: "Use Counter Page"
@@ -36636,7 +36744,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_subclassing_typedarray_type_3 {
     label: "Use Counter Page Js Subclassing Typedarray Type 3"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_typedarray_type_3 ;;
     type: number
     group_label: "Use Counter Page"
@@ -53263,6 +53371,56 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_doc_css_position_area {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_position_area} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_position_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_position_area_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_position_area: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_position_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_position_try {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_position_try} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Try"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_position_try"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_position_try_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_position_try: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Try"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_position_try"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_doc_css_position_try_fallbacks {
     type: sum
     sql: ${metrics__counter__use_counter_css_doc_css_position_try_fallbacks} ;;
@@ -56084,6 +56242,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Doc Css View Timeline Name"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_view_timeline_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_view_transition_name {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_view_transition_name} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css View Transition Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_view_transition_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_view_transition_name_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_view_transition_name: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css View Transition Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_view_transition_name"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -70988,6 +71171,56 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_page_css_position_area {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_position_area} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_position_area_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_position_area: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_position_try {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_position_try} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Try"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_try"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_position_try_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_position_try: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Try"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_try"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_page_css_position_try_fallbacks {
     type: sum
     sql: ${metrics__counter__use_counter_css_page_css_position_try_fallbacks} ;;
@@ -73809,6 +74042,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Page Css View Timeline Name"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_view_timeline_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_view_transition_name {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_view_transition_name} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css View Transition Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_view_transition_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_view_transition_name_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_view_transition_name: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css View Transition Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_view_transition_name"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

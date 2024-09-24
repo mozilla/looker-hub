@@ -26,7 +26,7 @@
       firefox_messaging_system.branch, firefox_messaging_system.metric
     ]
     filters:
-      firefox_messaging_system.metric: '"null_ping_volume", "other_ping_volume", "spotlight_ping_volume", "whats_new_panel_ping_volume", "infobar_ping_volume", "moments_ping_volume", "cfr_ping_volume"'
+      firefox_messaging_system.metric: '"spotlight_ping_volume", "infobar_ping_volume", "toast_notification_ping_volume", "toolbar_badge_ping_volume", "moments_ping_volume", "null_ping_volume", "other_ping_volume", "cfr_ping_volume", "whats_new_panel_ping_volume"'
       firefox_messaging_system.statistic: sum
     row: 0
     col: 0

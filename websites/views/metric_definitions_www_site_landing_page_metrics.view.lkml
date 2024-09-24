@@ -57,7 +57,7 @@ www_site_landing_page_metrics.operating_system AS www_site_landing_page_metrics_
     operating_system,
     downloads
   FROM
-    `moz-fx-data-marketing-prod.ga.www_site_landing_page_metrics`
+    `moz-fx-data-shared-prod.mozilla_org.www_site_landing_page_metrics`
 )
 
             ) AS www_site_landing_page_metrics

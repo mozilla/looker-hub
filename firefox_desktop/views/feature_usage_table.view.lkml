@@ -451,6 +451,11 @@ view: feature_usage_table {
     type: string
   }
 
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
+  }
+
   dimension: protections_popup {
     sql: ${TABLE}.protections_popup ;;
     type: number
