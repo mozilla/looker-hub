@@ -794,6 +794,13 @@ view: metrics_table {
     group_item_label: "Bounce Tracking Protection Purge Count Classified Tracker"
   }
 
+  dimension: metrics__counter__cert_signature_cache_total {
+    sql: ${TABLE}.metrics.counter.cert_signature_cache_total ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Cert Signature Cache Total"
+  }
+
   dimension: metrics__counter__cookie_banners_cookie_injection_fail {
     sql: ${TABLE}.metrics.counter.cookie_banners_cookie_injection_fail ;;
     type: number
@@ -1352,6 +1359,13 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Rtcrtpsender Count Setparameters Compat"
+  }
+
+  dimension: metrics__counter__sct_signature_cache_total {
+    sql: ${TABLE}.metrics.counter.sct_signature_cache_total ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Sct Signature Cache Total"
   }
 
   dimension: metrics__counter__settings_sign_into_sync {
@@ -4096,6 +4110,20 @@ view: metrics_table {
     group_item_label: "Recent Bookmarks Recent Bookmarks Count"
   }
 
+  dimension: metrics__rate__cert_signature_cache_hits__denominator {
+    sql: ${TABLE}.metrics.rate.cert_signature_cache_hits.denominator ;;
+    type: number
+    group_label: "Metrics Rate Cert Signature Cache Hits"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__cert_signature_cache_hits__numerator {
+    sql: ${TABLE}.metrics.rate.cert_signature_cache_hits.numerator ;;
+    type: number
+    group_label: "Metrics Rate Cert Signature Cache Hits"
+    group_item_label: "Numerator"
+  }
+
   dimension: metrics__rate__cookie_banners_cmp_ratio_handled_by_cmp_rule__denominator {
     sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.denominator ;;
     type: number
@@ -4415,6 +4443,20 @@ view: metrics_table {
     sql: ${TABLE}.metrics.rate.rtcrtpsender_used_sendencodings.numerator ;;
     type: number
     group_label: "Metrics Rate Rtcrtpsender Used Sendencodings"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__sct_signature_cache_hits__denominator {
+    sql: ${TABLE}.metrics.rate.sct_signature_cache_hits.denominator ;;
+    type: number
+    group_label: "Metrics Rate Sct Signature Cache Hits"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__sct_signature_cache_hits__numerator {
+    sql: ${TABLE}.metrics.rate.sct_signature_cache_hits.numerator ;;
+    type: number
+    group_label: "Metrics Rate Sct Signature Cache Hits"
     group_item_label: "Numerator"
   }
 
