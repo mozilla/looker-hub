@@ -680,6 +680,60 @@ It is possible for a Firefox installation to not have a default profile, but in 
     description: "The difference between the length of encoded certificate vs the actual certificate."
   }
 
+  dimension: metrics__rate__cert_signature_cache_hits__numerator {
+    label: "Cert Signature Cache Hits Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.cert_signature_cache_hits.numerator ;;
+    type: number
+    group_label: "Cert Signature Cache"
+    group_item_label: "Hits Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Signature Cache Hits Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cert_signature_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often a certificate signature to be verified is in the cache already.
+"
+  }
+
+  dimension: metrics__rate__cert_signature_cache_hits__denominator {
+    label: "Cert Signature Cache Hits Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.cert_signature_cache_hits.denominator ;;
+    type: number
+    group_label: "Cert Signature Cache"
+    group_item_label: "Hits Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Signature Cache Hits Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cert_signature_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often a certificate signature to be verified is in the cache already.
+"
+  }
+
+  dimension: metrics__counter__cert_signature_cache_total {
+    label: "Cert Signature Cache Total"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.cert_signature_cache_total ;;
+    type: number
+    group_label: "Cert Signature Cache"
+    group_item_label: "Total"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Signature Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cert_signature_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many certificate signature verifications are performed.
+"
+  }
+
   dimension: metrics__memory_distribution__cert_storage_memory__sum {
     label: "Cert Storage Memory Sum"
     hidden: no
@@ -8143,6 +8197,60 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__rate__sct_signature_cache_hits__numerator {
+    label: "Sct Signature Cache Hits Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.sct_signature_cache_hits.numerator ;;
+    type: number
+    group_label: "Sct Signature Cache"
+    group_item_label: "Hits Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Sct Signature Cache Hits Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/sct_signature_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often an SCT signature to be verified is in the cache already.
+"
+  }
+
+  dimension: metrics__rate__sct_signature_cache_hits__denominator {
+    label: "Sct Signature Cache Hits Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.sct_signature_cache_hits.denominator ;;
+    type: number
+    group_label: "Sct Signature Cache"
+    group_item_label: "Hits Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Sct Signature Cache Hits Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/sct_signature_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often an SCT signature to be verified is in the cache already.
+"
+  }
+
+  dimension: metrics__counter__sct_signature_cache_total {
+    label: "Sct Signature Cache Total"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.sct_signature_cache_total ;;
+    type: number
+    group_label: "Sct Signature Cache"
+    group_item_label: "Total"
+
+    link: {
+      label: "Glean Dictionary reference for Sct Signature Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/sct_signature_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many SCT signature verifications are performed.
+"
+  }
+
   dimension: metrics__custom_distribution__timer_thread_timers_fired_per_wakeup__sum {
     label: "Timer Thread Timers Fired Per Wakeup Sum"
     hidden: no
@@ -10070,6 +10178,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: cert_signature_cache_total {
+    type: sum
+    sql: ${metrics__counter__cert_signature_cache_total} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Cert Signature Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cert_signature_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: cert_signature_cache_total_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__cert_signature_cache_total: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Cert Signature Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cert_signature_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: cookie_banners_cookie_injection_fail {
     type: sum
     sql: ${metrics__counter__cookie_banners_cookie_injection_fail} ;;
@@ -10866,6 +10999,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Rtcrtpsender Count Setparameters Compat"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_count_setparameters_compat"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: sct_signature_cache_total {
+    type: sum
+    sql: ${metrics__counter__sct_signature_cache_total} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Sct Signature Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/sct_signature_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: sct_signature_cache_total_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__sct_signature_cache_total: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Sct Signature Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/sct_signature_cache_total"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

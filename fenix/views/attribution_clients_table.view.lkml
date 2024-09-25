@@ -33,11 +33,15 @@ view: attribution_clients_table {
   dimension: distribution_id {
     sql: ${TABLE}.distribution_id ;;
     type: string
+    description: "A string containing the distribution identifier.
+"
   }
 
   dimension: install_source {
     sql: ${TABLE}.install_source ;;
     type: string
+    description: "The source of a profile installation.
+"
   }
 
   dimension: meta_attribution_app {
@@ -55,6 +59,16 @@ view: attribution_clients_table {
     type: string
   }
 
+  dimension: play_store_attribution_content {
+    sql: ${TABLE}.play_store_attribution_content ;;
+    type: string
+  }
+
+  dimension: play_store_attribution_install_referrer_response {
+    sql: ${TABLE}.play_store_attribution_install_referrer_response ;;
+    type: string
+  }
+
   dimension: play_store_attribution_medium {
     sql: ${TABLE}.play_store_attribution_medium ;;
     type: string
@@ -62,6 +76,11 @@ view: attribution_clients_table {
 
   dimension: play_store_attribution_source {
     sql: ${TABLE}.play_store_attribution_source ;;
+    type: string
+  }
+
+  dimension: play_store_attribution_term {
+    sql: ${TABLE}.play_store_attribution_term ;;
     type: string
   }
 
