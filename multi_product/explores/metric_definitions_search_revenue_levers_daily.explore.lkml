@@ -10,6 +10,7 @@ explore: metric_definitions_search_revenue_levers_daily {
   always_filter: {
     filters: [
       submission_date: "7 days",
+      sampling: "1",
     ]
   }
 
