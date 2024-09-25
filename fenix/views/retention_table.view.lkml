@@ -54,6 +54,12 @@ view: retention_table {
     description: "Client's country on the metric date."
   }
 
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+    description: "A string containing the distribution identifier."
+  }
+
   dimension: install_source {
     sql: ${TABLE}.install_source ;;
     type: string

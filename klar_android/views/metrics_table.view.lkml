@@ -1088,6 +1088,15 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__counter__web_notification_insecure_context_permission_request {
+    sql: ${TABLE}.metrics.counter.web_notification_insecure_context_permission_request ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Web Notification Insecure Context Permission Request"
+    description: "Whether we saw a permission request from an insecure context.
+"
+  }
+
   dimension: metrics__counter__webauthn_create_failure {
     sql: ${TABLE}.metrics.counter.webauthn_create_failure ;;
     type: number
@@ -3460,6 +3469,27 @@ It also indicates the screen it was removed from, home or browser.
     sql: ${TABLE}.metrics.labeled_counter.translations_request_count ;;
     hidden: yes
     description: "The count of translation requests, along with their type.
+"
+  }
+
+  dimension: metrics__labeled_counter__web_notification_permission_origin {
+    sql: ${TABLE}.metrics.labeled_counter.web_notification_permission_origin ;;
+    hidden: yes
+    description: "The category of the origin that retrieves Notification.permission.
+"
+  }
+
+  dimension: metrics__labeled_counter__web_notification_request_permission_origin {
+    sql: ${TABLE}.metrics.labeled_counter.web_notification_request_permission_origin ;;
+    hidden: yes
+    description: "The category of the origin that calls Notification.requestPermission().
+"
+  }
+
+  dimension: metrics__labeled_counter__web_notification_show_origin {
+    sql: ${TABLE}.metrics.labeled_counter.web_notification_show_origin ;;
+    hidden: yes
+    description: "The category of the origin that calls new Notification/showNotification().
 "
   }
 
