@@ -930,6 +930,24 @@ This does not include deletion-request pings.
     description: "The total number of successful calls to navigator.credentials.get."
   }
 
+  dimension: metrics__counter__webrtcdtls_client_handshake_started_counter {
+    sql: ${TABLE}.metrics.counter.webrtcdtls_client_handshake_started_counter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webrtcdtls Client Handshake Started Counter"
+    description: "The number of webrtc transports that have started a DTLS handshake as the client.
+"
+  }
+
+  dimension: metrics__counter__webrtcdtls_server_handshake_started_counter {
+    sql: ${TABLE}.metrics.counter.webrtcdtls_server_handshake_started_counter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webrtcdtls Server Handshake Started Counter"
+    description: "The number of webrtc transports that have started a DTLS handshake as the server.
+"
+  }
+
   dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__count {
     sql: ${TABLE}.metrics.custom_distribution.bounce_tracking_protection_num_hosts_per_purge_run.count ;;
     type: number
@@ -1827,6 +1845,26 @@ This does not include deletion-request pings.
 
   dimension: metrics__custom_distribution__networking_http_3_download_throughput_50_100__values {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_50_100.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_loss_ratio__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Loss Ratio"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_loss_ratio__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Loss Ratio"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_loss_ratio__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio.values ;;
     hidden: yes
   }
 
@@ -2896,6 +2934,13 @@ This metric appears in both the metrics and baseline pings.
     sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_onstart_success_https_rr ;;
     hidden: yes
     description: "Successfully started HTTP channels when HTTPS RR is used
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_ip_addr_any_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_ip_addr_any_count ;;
+    hidden: yes
+    description: "The number of times we see the IP address 0.0.0.0 or its IPv6 equivalent.
 "
   }
 
@@ -13183,6 +13228,18 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_download_th
 }
 
 view: metrics_table__metrics__custom_distribution__networking_http_3_download_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_loss_ratio__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
