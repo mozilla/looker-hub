@@ -5717,6 +5717,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_loss_ratio__sum {
+    label: "Networking Http 3 Loss Ratio Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Loss Ratio Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Loss Ratio Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_3_loss_ratio"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: packet loss ratio (multiply by 10000).
+"
+  }
+
   dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__sum {
     label: "Networking Http 3 Udp Datagram Segment Size Received Sum"
     hidden: no
@@ -6245,6 +6263,23 @@ To be used to validate GIFFT.
     }
 
     description: "The time between dispatching OnStopRequest from the socket thread and processing it on the main thread (content process).
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_ip_addr_any_count {
+    label: "Networking Http Ip Addr Any Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_ip_addr_any_count ;;
+    group_label: "Networking"
+    group_item_label: "Http Ip Addr Any Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Ip Addr Any Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_ip_addr_any_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we see the IP address 0.0.0.0 or its IPv6 equivalent.
 "
   }
 
@@ -9409,6 +9444,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__webrtcdtls_client_handshake_started_counter {
+    label: "Webrtcdtls Client Handshake Started Counter"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.webrtcdtls_client_handshake_started_counter ;;
+    type: number
+    group_label: "Webrtcdtls"
+    group_item_label: "Client Handshake Started Counter"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Client Handshake Started Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtcdtls_client_handshake_started_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of webrtc transports that have started a DTLS handshake as the client.
+"
+  }
+
   dimension: metrics__labeled_counter__webrtcdtls_protocol_version {
     label: "Webrtcdtls Protocol Version"
     hidden: yes
@@ -9440,6 +9493,24 @@ To be used to validate GIFFT.
     }
 
     description: "The result of each webrtc server DTLS handshake, as the name of the error code (eg; SSL_ERROR_BAD_CERTIFICATE), the empty string for successful handshakes, ALPN_FAILURE when ALPN negotiation fails, or CERT_FAILURE when cert validation fails.
+"
+  }
+
+  dimension: metrics__counter__webrtcdtls_server_handshake_started_counter {
+    label: "Webrtcdtls Server Handshake Started Counter"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.webrtcdtls_server_handshake_started_counter ;;
+    type: number
+    group_label: "Webrtcdtls"
+    group_item_label: "Server Handshake Started Counter"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Server Handshake Started Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtcdtls_server_handshake_started_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of webrtc transports that have started a DTLS handshake as the server.
 "
   }
 
@@ -12140,6 +12211,56 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Webauthn Get Success"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webauthn_get_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webrtcdtls_client_handshake_started_counter {
+    type: sum
+    sql: ${metrics__counter__webrtcdtls_client_handshake_started_counter} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Client Handshake Started Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtcdtls_client_handshake_started_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webrtcdtls_client_handshake_started_counter_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__webrtcdtls_client_handshake_started_counter: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Client Handshake Started Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtcdtls_client_handshake_started_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webrtcdtls_server_handshake_started_counter {
+    type: sum
+    sql: ${metrics__counter__webrtcdtls_server_handshake_started_counter} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Server Handshake Started Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtcdtls_server_handshake_started_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webrtcdtls_server_handshake_started_counter_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__webrtcdtls_server_handshake_started_counter: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Server Handshake Started Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtcdtls_server_handshake_started_counter"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -16786,6 +16907,47 @@ view: metrics__metrics__labeled_counter__networking_http_channel_onstart_success
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_http_ip_addr_any_count {
+  label: "Networking - Http Ip Addr Any Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_http_redirect_to_scheme_subresource {
   label: "Networking - Http Redirect To Scheme Subresource"
 
@@ -19664,6 +19826,18 @@ view: metrics__metrics__custom_distribution__networking_http_3_download_throughp
 }
 
 view: metrics__metrics__custom_distribution__networking_http_3_download_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_loss_ratio__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

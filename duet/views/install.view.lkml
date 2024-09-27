@@ -548,6 +548,12 @@ view: install {
     description: "Version of the installed product. May be different from installer_version for a stub install. Absent for a failed stub installation."
   }
 
+  dimension: windows_ubr {
+    sql: ${TABLE}.windows_ubr ;;
+    type: number
+    description: "The Windows Update Build Revision of the installation device, 0 if it does not exist"
+  }
+
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
