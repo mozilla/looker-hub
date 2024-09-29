@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Uri Count
-    name: Uri Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: newtab_recommendations_merino_migration_global
-    type: looker_line
-    fields: [
-      newtab_recommendations_merino_migration_global.submission_date,
-      newtab_recommendations_merino_migration_global.branch,
-      newtab_recommendations_merino_migration_global.point
-    ]
-    pivots: [
-      newtab_recommendations_merino_migration_global.branch
-    ]
-    filters:
-      newtab_recommendations_merino_migration_global.metric: 'uri_count'
-      newtab_recommendations_merino_migration_global.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: newtab_recommendations_merino_migration_global.submission_date
-    field_y: newtab_recommendations_merino_migration_global.point
-    log_scale: false
-    ci_lower: newtab_recommendations_merino_migration_global.lower
-    ci_upper: newtab_recommendations_merino_migration_global.upper
-    show_grid: true
-    listen:
-      Date: newtab_recommendations_merino_migration_global.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -63,7 +29,7 @@
       newtab_recommendations_merino_migration_global.metric: 'ad_clicks'
       newtab_recommendations_merino_migration_global.statistic: mean
     row: 0
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: newtab_recommendations_merino_migration_global.submission_date
@@ -95,6 +61,40 @@
     ]
     filters:
       newtab_recommendations_merino_migration_global.metric: 'retained'
+      newtab_recommendations_merino_migration_global.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: newtab_recommendations_merino_migration_global.submission_date
+    field_y: newtab_recommendations_merino_migration_global.point
+    log_scale: false
+    ci_lower: newtab_recommendations_merino_migration_global.lower
+    ci_upper: newtab_recommendations_merino_migration_global.upper
+    show_grid: true
+    listen:
+      Date: newtab_recommendations_merino_migration_global.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Uri Count
+    name: Uri Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: newtab_recommendations_merino_migration_global
+    type: looker_line
+    fields: [
+      newtab_recommendations_merino_migration_global.submission_date,
+      newtab_recommendations_merino_migration_global.branch,
+      newtab_recommendations_merino_migration_global.point
+    ]
+    pivots: [
+      newtab_recommendations_merino_migration_global.branch
+    ]
+    filters:
+      newtab_recommendations_merino_migration_global.metric: 'uri_count'
       newtab_recommendations_merino_migration_global.statistic: mean
     row: 10
     col: 0
@@ -180,6 +180,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: newtab_recommendations_merino_migration_global
+    type: looker_line
+    fields: [
+      newtab_recommendations_merino_migration_global.submission_date,
+      newtab_recommendations_merino_migration_global.branch,
+      newtab_recommendations_merino_migration_global.point
+    ]
+    pivots: [
+      newtab_recommendations_merino_migration_global.branch
+    ]
+    filters:
+      newtab_recommendations_merino_migration_global.metric: 'search_count'
+      newtab_recommendations_merino_migration_global.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: newtab_recommendations_merino_migration_global.submission_date
+    field_y: newtab_recommendations_merino_migration_global.point
+    log_scale: false
+    ci_lower: newtab_recommendations_merino_migration_global.lower
+    ci_upper: newtab_recommendations_merino_migration_global.upper
+    show_grid: true
+    listen:
+      Date: newtab_recommendations_merino_migration_global.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -198,8 +232,8 @@
     filters:
       newtab_recommendations_merino_migration_global.metric: 'days_of_use'
       newtab_recommendations_merino_migration_global.statistic: mean
-    row: 20
-    col: 12
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: newtab_recommendations_merino_migration_global.submission_date
@@ -235,41 +269,6 @@
       newtab_recommendations_merino_migration_global.metric: 'memory_total'
       newtab_recommendations_merino_migration_global.statistic: percentile
     row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: newtab_recommendations_merino_migration_global.submission_date
-    field_y: newtab_recommendations_merino_migration_global.point
-    log_scale: false
-    ci_lower: newtab_recommendations_merino_migration_global.lower
-    ci_upper: newtab_recommendations_merino_migration_global.upper
-    show_grid: true
-    listen:
-      Date: newtab_recommendations_merino_migration_global.submission_date
-      Percentile: newtab_recommendations_merino_migration_global.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: newtab_recommendations_merino_migration_global
-    type: looker_line
-    fields: [
-      newtab_recommendations_merino_migration_global.submission_date,
-      newtab_recommendations_merino_migration_global.branch,
-      newtab_recommendations_merino_migration_global.point
-    ]
-    pivots: [
-      newtab_recommendations_merino_migration_global.branch
-    ]
-    filters:
-      newtab_recommendations_merino_migration_global.metric: 'search_count'
-      newtab_recommendations_merino_migration_global.statistic: mean
-    row: 30
     col: 12
     width: 12
     height: 8
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: newtab_recommendations_merino_migration_global.submission_date
+      Percentile: newtab_recommendations_merino_migration_global.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
