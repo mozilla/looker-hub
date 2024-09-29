@@ -8276,10 +8276,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id161
           os:
-            default: Windows
+            default: Mac
             options:
-            - Windows
             - Mac
+            - Windows
             - Linux
             - Other
         explore: garbage_collection
@@ -9065,12 +9065,12 @@ operational_monitoring:
             default: iOS - daemon_session
             options:
             - iOS - daemon_session
+            - Android - daemon_session
             - Android - vpn_session
-            - Darwin - vpn_session
             - Linux - vpn_session
             - iOS - vpn_session
+            - Darwin - vpn_session
             - Windows - vpn_session
-            - Android - daemon_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id234
