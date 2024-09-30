@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: desktop_new_profiles_aggregates {
+view: desktop_new_profiles {
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
     type: string
@@ -160,5 +160,5 @@ view: desktop_new_profiles_aggregates {
     description: "Date when clients were first seen."
   }
 
-  sql_table_name: `moz-fx-data-shared-prod.telemetry_derived.desktop_new_profiles_aggregates_v1` ;;
+  sql_table_name: `moz-fx-data-shared-prod.telemetry.desktop_new_profiles` ;;
 }
