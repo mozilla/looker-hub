@@ -2637,9 +2637,9 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.desktop_installs
       type: table_view
-    desktop_new_profiles_aggregates:
+    desktop_new_profiles:
       tables:
-      - table: moz-fx-data-shared-prod.telemetry_derived.desktop_new_profiles_aggregates_v1
+      - table: moz-fx-data-shared-prod.telemetry.desktop_new_profiles
       type: table_view
     events:
       tables:
