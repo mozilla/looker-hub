@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_address_autofill_ios_release_rollout
+    type: looker_line
+    fields: [
+      ios_address_autofill_ios_release_rollout.submission_date,
+      ios_address_autofill_ios_release_rollout.branch,
+      ios_address_autofill_ios_release_rollout.point
+    ]
+    pivots: [
+      ios_address_autofill_ios_release_rollout.branch
+    ]
+    filters:
+      ios_address_autofill_ios_release_rollout.metric: 'active_hours'
+      ios_address_autofill_ios_release_rollout.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: ios_address_autofill_ios_release_rollout.submission_date
+    field_y: ios_address_autofill_ios_release_rollout.point
+    log_scale: false
+    ci_lower: ios_address_autofill_ios_release_rollout.lower
+    ci_upper: ios_address_autofill_ios_release_rollout.upper
+    show_grid: true
+    listen:
+      Date: ios_address_autofill_ios_release_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -29,6 +63,40 @@
       ios_address_autofill_ios_release_rollout.metric: 'ad_clicks'
       ios_address_autofill_ios_release_rollout.statistic: mean
     row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: ios_address_autofill_ios_release_rollout.submission_date
+    field_y: ios_address_autofill_ios_release_rollout.point
+    log_scale: false
+    ci_lower: ios_address_autofill_ios_release_rollout.lower
+    ci_upper: ios_address_autofill_ios_release_rollout.upper
+    show_grid: true
+    listen:
+      Date: ios_address_autofill_ios_release_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_address_autofill_ios_release_rollout
+    type: looker_line
+    fields: [
+      ios_address_autofill_ios_release_rollout.submission_date,
+      ios_address_autofill_ios_release_rollout.branch,
+      ios_address_autofill_ios_release_rollout.point
+    ]
+    pivots: [
+      ios_address_autofill_ios_release_rollout.branch
+    ]
+    filters:
+      ios_address_autofill_ios_release_rollout.metric: 'search_count'
+      ios_address_autofill_ios_release_rollout.statistic: mean
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -62,7 +130,7 @@
     filters:
       ios_address_autofill_ios_release_rollout.metric: 'retained'
       ios_address_autofill_ios_release_rollout.statistic: mean
-    row: 0
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -95,74 +163,6 @@
     ]
     filters:
       ios_address_autofill_ios_release_rollout.metric: 'days_of_use'
-      ios_address_autofill_ios_release_rollout.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: ios_address_autofill_ios_release_rollout.submission_date
-    field_y: ios_address_autofill_ios_release_rollout.point
-    log_scale: false
-    ci_lower: ios_address_autofill_ios_release_rollout.lower
-    ci_upper: ios_address_autofill_ios_release_rollout.upper
-    show_grid: true
-    listen:
-      Date: ios_address_autofill_ios_release_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ios_address_autofill_ios_release_rollout
-    type: looker_line
-    fields: [
-      ios_address_autofill_ios_release_rollout.submission_date,
-      ios_address_autofill_ios_release_rollout.branch,
-      ios_address_autofill_ios_release_rollout.point
-    ]
-    pivots: [
-      ios_address_autofill_ios_release_rollout.branch
-    ]
-    filters:
-      ios_address_autofill_ios_release_rollout.metric: 'active_hours'
-      ios_address_autofill_ios_release_rollout.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: ios_address_autofill_ios_release_rollout.submission_date
-    field_y: ios_address_autofill_ios_release_rollout.point
-    log_scale: false
-    ci_lower: ios_address_autofill_ios_release_rollout.lower
-    ci_upper: ios_address_autofill_ios_release_rollout.upper
-    show_grid: true
-    listen:
-      Date: ios_address_autofill_ios_release_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ios_address_autofill_ios_release_rollout
-    type: looker_line
-    fields: [
-      ios_address_autofill_ios_release_rollout.submission_date,
-      ios_address_autofill_ios_release_rollout.branch,
-      ios_address_autofill_ios_release_rollout.point
-    ]
-    pivots: [
-      ios_address_autofill_ios_release_rollout.branch
-    ]
-    filters:
-      ios_address_autofill_ios_release_rollout.metric: 'search_count'
       ios_address_autofill_ios_release_rollout.statistic: mean
     row: 20
     col: 0
