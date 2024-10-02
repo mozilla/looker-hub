@@ -44,108 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: pref_flip_experiment_nimbus_diagnostic_v130_release
-    type: looker_line
-    fields: [
-      pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date,
-      pref_flip_experiment_nimbus_diagnostic_v130_release.branch,
-      pref_flip_experiment_nimbus_diagnostic_v130_release.point
-    ]
-    pivots: [
-      pref_flip_experiment_nimbus_diagnostic_v130_release.branch
-    ]
-    filters:
-      pref_flip_experiment_nimbus_diagnostic_v130_release.metric: 'retained'
-      pref_flip_experiment_nimbus_diagnostic_v130_release.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date
-    field_y: pref_flip_experiment_nimbus_diagnostic_v130_release.point
-    log_scale: false
-    ci_lower: pref_flip_experiment_nimbus_diagnostic_v130_release.lower
-    ci_upper: pref_flip_experiment_nimbus_diagnostic_v130_release.upper
-    show_grid: true
-    listen:
-      Date: pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: pref_flip_experiment_nimbus_diagnostic_v130_release
-    type: looker_line
-    fields: [
-      pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date,
-      pref_flip_experiment_nimbus_diagnostic_v130_release.branch,
-      pref_flip_experiment_nimbus_diagnostic_v130_release.point
-    ]
-    pivots: [
-      pref_flip_experiment_nimbus_diagnostic_v130_release.branch
-    ]
-    filters:
-      pref_flip_experiment_nimbus_diagnostic_v130_release.metric: 'ad_clicks'
-      pref_flip_experiment_nimbus_diagnostic_v130_release.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date
-    field_y: pref_flip_experiment_nimbus_diagnostic_v130_release.point
-    log_scale: false
-    ci_lower: pref_flip_experiment_nimbus_diagnostic_v130_release.lower
-    ci_upper: pref_flip_experiment_nimbus_diagnostic_v130_release.upper
-    show_grid: true
-    listen:
-      Date: pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: pref_flip_experiment_nimbus_diagnostic_v130_release
-    type: looker_line
-    fields: [
-      pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date,
-      pref_flip_experiment_nimbus_diagnostic_v130_release.branch,
-      pref_flip_experiment_nimbus_diagnostic_v130_release.point
-    ]
-    pivots: [
-      pref_flip_experiment_nimbus_diagnostic_v130_release.branch
-    ]
-    filters:
-      pref_flip_experiment_nimbus_diagnostic_v130_release.metric: 'days_of_use'
-      pref_flip_experiment_nimbus_diagnostic_v130_release.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date
-    field_y: pref_flip_experiment_nimbus_diagnostic_v130_release.point
-    log_scale: false
-    ci_lower: pref_flip_experiment_nimbus_diagnostic_v130_release.lower
-    ci_upper: pref_flip_experiment_nimbus_diagnostic_v130_release.upper
-    show_grid: true
-    listen:
-      Date: pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Qualified Cumulative Days Of Use
     name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
@@ -164,8 +62,8 @@
     filters:
       pref_flip_experiment_nimbus_diagnostic_v130_release.metric: 'qualified_cumulative_days_of_use'
       pref_flip_experiment_nimbus_diagnostic_v130_release.statistic: mean
-    row: 20
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date
@@ -198,8 +96,8 @@
     filters:
       pref_flip_experiment_nimbus_diagnostic_v130_release.metric: 'active_hours'
       pref_flip_experiment_nimbus_diagnostic_v130_release.statistic: mean
-    row: 20
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date
@@ -234,8 +132,8 @@
     filters:
       pref_flip_experiment_nimbus_diagnostic_v130_release.metric: 'memory_total'
       pref_flip_experiment_nimbus_diagnostic_v130_release.statistic: percentile
-    row: 30
-    col: 0
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date
@@ -247,6 +145,40 @@
     listen:
       Date: pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date
       Percentile: pref_flip_experiment_nimbus_diagnostic_v130_release.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: pref_flip_experiment_nimbus_diagnostic_v130_release
+    type: looker_line
+    fields: [
+      pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date,
+      pref_flip_experiment_nimbus_diagnostic_v130_release.branch,
+      pref_flip_experiment_nimbus_diagnostic_v130_release.point
+    ]
+    pivots: [
+      pref_flip_experiment_nimbus_diagnostic_v130_release.branch
+    ]
+    filters:
+      pref_flip_experiment_nimbus_diagnostic_v130_release.metric: 'ad_clicks'
+      pref_flip_experiment_nimbus_diagnostic_v130_release.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date
+    field_y: pref_flip_experiment_nimbus_diagnostic_v130_release.point
+    log_scale: false
+    ci_lower: pref_flip_experiment_nimbus_diagnostic_v130_release.lower
+    ci_upper: pref_flip_experiment_nimbus_diagnostic_v130_release.upper
+    show_grid: true
+    listen:
+      Date: pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -268,6 +200,74 @@
     ]
     filters:
       pref_flip_experiment_nimbus_diagnostic_v130_release.metric: 'search_count'
+      pref_flip_experiment_nimbus_diagnostic_v130_release.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date
+    field_y: pref_flip_experiment_nimbus_diagnostic_v130_release.point
+    log_scale: false
+    ci_lower: pref_flip_experiment_nimbus_diagnostic_v130_release.lower
+    ci_upper: pref_flip_experiment_nimbus_diagnostic_v130_release.upper
+    show_grid: true
+    listen:
+      Date: pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: pref_flip_experiment_nimbus_diagnostic_v130_release
+    type: looker_line
+    fields: [
+      pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date,
+      pref_flip_experiment_nimbus_diagnostic_v130_release.branch,
+      pref_flip_experiment_nimbus_diagnostic_v130_release.point
+    ]
+    pivots: [
+      pref_flip_experiment_nimbus_diagnostic_v130_release.branch
+    ]
+    filters:
+      pref_flip_experiment_nimbus_diagnostic_v130_release.metric: 'retained'
+      pref_flip_experiment_nimbus_diagnostic_v130_release.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date
+    field_y: pref_flip_experiment_nimbus_diagnostic_v130_release.point
+    log_scale: false
+    ci_lower: pref_flip_experiment_nimbus_diagnostic_v130_release.lower
+    ci_upper: pref_flip_experiment_nimbus_diagnostic_v130_release.upper
+    show_grid: true
+    listen:
+      Date: pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: pref_flip_experiment_nimbus_diagnostic_v130_release
+    type: looker_line
+    fields: [
+      pref_flip_experiment_nimbus_diagnostic_v130_release.submission_date,
+      pref_flip_experiment_nimbus_diagnostic_v130_release.branch,
+      pref_flip_experiment_nimbus_diagnostic_v130_release.point
+    ]
+    pivots: [
+      pref_flip_experiment_nimbus_diagnostic_v130_release.branch
+    ]
+    filters:
+      pref_flip_experiment_nimbus_diagnostic_v130_release.metric: 'days_of_use'
       pref_flip_experiment_nimbus_diagnostic_v130_release.statistic: mean
     row: 30
     col: 12

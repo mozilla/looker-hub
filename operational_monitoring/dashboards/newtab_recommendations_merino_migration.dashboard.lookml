@@ -44,108 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: newtab_recommendations_merino_migration
-    type: looker_line
-    fields: [
-      newtab_recommendations_merino_migration.submission_date,
-      newtab_recommendations_merino_migration.branch,
-      newtab_recommendations_merino_migration.point
-    ]
-    pivots: [
-      newtab_recommendations_merino_migration.branch
-    ]
-    filters:
-      newtab_recommendations_merino_migration.metric: 'retained'
-      newtab_recommendations_merino_migration.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: newtab_recommendations_merino_migration.submission_date
-    field_y: newtab_recommendations_merino_migration.point
-    log_scale: false
-    ci_lower: newtab_recommendations_merino_migration.lower
-    ci_upper: newtab_recommendations_merino_migration.upper
-    show_grid: true
-    listen:
-      Date: newtab_recommendations_merino_migration.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: newtab_recommendations_merino_migration
-    type: looker_line
-    fields: [
-      newtab_recommendations_merino_migration.submission_date,
-      newtab_recommendations_merino_migration.branch,
-      newtab_recommendations_merino_migration.point
-    ]
-    pivots: [
-      newtab_recommendations_merino_migration.branch
-    ]
-    filters:
-      newtab_recommendations_merino_migration.metric: 'ad_clicks'
-      newtab_recommendations_merino_migration.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: newtab_recommendations_merino_migration.submission_date
-    field_y: newtab_recommendations_merino_migration.point
-    log_scale: false
-    ci_lower: newtab_recommendations_merino_migration.lower
-    ci_upper: newtab_recommendations_merino_migration.upper
-    show_grid: true
-    listen:
-      Date: newtab_recommendations_merino_migration.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: newtab_recommendations_merino_migration
-    type: looker_line
-    fields: [
-      newtab_recommendations_merino_migration.submission_date,
-      newtab_recommendations_merino_migration.branch,
-      newtab_recommendations_merino_migration.point
-    ]
-    pivots: [
-      newtab_recommendations_merino_migration.branch
-    ]
-    filters:
-      newtab_recommendations_merino_migration.metric: 'days_of_use'
-      newtab_recommendations_merino_migration.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: newtab_recommendations_merino_migration.submission_date
-    field_y: newtab_recommendations_merino_migration.point
-    log_scale: false
-    ci_lower: newtab_recommendations_merino_migration.lower
-    ci_upper: newtab_recommendations_merino_migration.upper
-    show_grid: true
-    listen:
-      Date: newtab_recommendations_merino_migration.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Qualified Cumulative Days Of Use
     name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
@@ -164,8 +62,8 @@
     filters:
       newtab_recommendations_merino_migration.metric: 'qualified_cumulative_days_of_use'
       newtab_recommendations_merino_migration.statistic: mean
-    row: 20
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: newtab_recommendations_merino_migration.submission_date
@@ -198,8 +96,8 @@
     filters:
       newtab_recommendations_merino_migration.metric: 'active_hours'
       newtab_recommendations_merino_migration.statistic: mean
-    row: 20
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: newtab_recommendations_merino_migration.submission_date
@@ -234,8 +132,8 @@
     filters:
       newtab_recommendations_merino_migration.metric: 'memory_total'
       newtab_recommendations_merino_migration.statistic: percentile
-    row: 30
-    col: 0
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: newtab_recommendations_merino_migration.submission_date
@@ -247,6 +145,40 @@
     listen:
       Date: newtab_recommendations_merino_migration.submission_date
       Percentile: newtab_recommendations_merino_migration.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: newtab_recommendations_merino_migration
+    type: looker_line
+    fields: [
+      newtab_recommendations_merino_migration.submission_date,
+      newtab_recommendations_merino_migration.branch,
+      newtab_recommendations_merino_migration.point
+    ]
+    pivots: [
+      newtab_recommendations_merino_migration.branch
+    ]
+    filters:
+      newtab_recommendations_merino_migration.metric: 'ad_clicks'
+      newtab_recommendations_merino_migration.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: newtab_recommendations_merino_migration.submission_date
+    field_y: newtab_recommendations_merino_migration.point
+    log_scale: false
+    ci_lower: newtab_recommendations_merino_migration.lower
+    ci_upper: newtab_recommendations_merino_migration.upper
+    show_grid: true
+    listen:
+      Date: newtab_recommendations_merino_migration.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -268,6 +200,74 @@
     ]
     filters:
       newtab_recommendations_merino_migration.metric: 'search_count'
+      newtab_recommendations_merino_migration.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: newtab_recommendations_merino_migration.submission_date
+    field_y: newtab_recommendations_merino_migration.point
+    log_scale: false
+    ci_lower: newtab_recommendations_merino_migration.lower
+    ci_upper: newtab_recommendations_merino_migration.upper
+    show_grid: true
+    listen:
+      Date: newtab_recommendations_merino_migration.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: newtab_recommendations_merino_migration
+    type: looker_line
+    fields: [
+      newtab_recommendations_merino_migration.submission_date,
+      newtab_recommendations_merino_migration.branch,
+      newtab_recommendations_merino_migration.point
+    ]
+    pivots: [
+      newtab_recommendations_merino_migration.branch
+    ]
+    filters:
+      newtab_recommendations_merino_migration.metric: 'retained'
+      newtab_recommendations_merino_migration.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: newtab_recommendations_merino_migration.submission_date
+    field_y: newtab_recommendations_merino_migration.point
+    log_scale: false
+    ci_lower: newtab_recommendations_merino_migration.lower
+    ci_upper: newtab_recommendations_merino_migration.upper
+    show_grid: true
+    listen:
+      Date: newtab_recommendations_merino_migration.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: newtab_recommendations_merino_migration
+    type: looker_line
+    fields: [
+      newtab_recommendations_merino_migration.submission_date,
+      newtab_recommendations_merino_migration.branch,
+      newtab_recommendations_merino_migration.point
+    ]
+    pivots: [
+      newtab_recommendations_merino_migration.branch
+    ]
+    filters:
+      newtab_recommendations_merino_migration.metric: 'days_of_use'
       newtab_recommendations_merino_migration.statistic: mean
     row: 30
     col: 12
