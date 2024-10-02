@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       ios_search_bar_placement_v2_treatment_a_rollout.branch
     ]
     filters:
-      ios_search_bar_placement_v2_treatment_a_rollout.metric: 'active_hours'
+      ios_search_bar_placement_v2_treatment_a_rollout.metric: 'retained'
       ios_search_bar_placement_v2_treatment_a_rollout.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       ios_search_bar_placement_v2_treatment_a_rollout.branch
     ]
     filters:
-      ios_search_bar_placement_v2_treatment_a_rollout.metric: 'search_count'
+      ios_search_bar_placement_v2_treatment_a_rollout.metric: 'active_hours'
       ios_search_bar_placement_v2_treatment_a_rollout.statistic: mean
     row: 10
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       ios_search_bar_placement_v2_treatment_a_rollout.branch
     ]
     filters:
-      ios_search_bar_placement_v2_treatment_a_rollout.metric: 'retained'
+      ios_search_bar_placement_v2_treatment_a_rollout.metric: 'search_count'
       ios_search_bar_placement_v2_treatment_a_rollout.statistic: mean
     row: 10
     col: 12
