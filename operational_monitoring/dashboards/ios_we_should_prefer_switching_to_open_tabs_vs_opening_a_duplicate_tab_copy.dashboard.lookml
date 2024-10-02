@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       ios_we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_copy.branch
     ]
     filters:
-      ios_we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_copy.metric: 'active_hours'
+      ios_we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_copy.metric: 'retained'
       ios_we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_copy.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       ios_we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_copy.branch
     ]
     filters:
-      ios_we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_copy.metric: 'search_count'
+      ios_we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_copy.metric: 'active_hours'
       ios_we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_copy.statistic: mean
     row: 10
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       ios_we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_copy.branch
     ]
     filters:
-      ios_we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_copy.metric: 'retained'
+      ios_we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_copy.metric: 'search_count'
       ios_we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_copy.statistic: mean
     row: 10
     col: 12
