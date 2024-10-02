@@ -500,6 +500,13 @@ view: metrics_table {
     group_item_label: "Browser Total Uri Count"
   }
 
+  dimension: metrics__counter__cert_signature_cache_total {
+    sql: ${TABLE}.metrics.counter.cert_signature_cache_total ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Cert Signature Cache Total"
+  }
+
   dimension: metrics__counter__cookie_banners_cookie_injection_fail {
     sql: ${TABLE}.metrics.counter.cookie_banners_cookie_injection_fail ;;
     type: number
@@ -661,6 +668,20 @@ view: metrics_table {
     group_item_label: "Httpsfirst Upgraded Schemeless"
   }
 
+  dimension: metrics__counter__ls_request_recv_cancellation {
+    sql: ${TABLE}.metrics.counter.ls_request_recv_cancellation ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Ls Request Recv Cancellation"
+  }
+
+  dimension: metrics__counter__ls_request_send_cancellation {
+    sql: ${TABLE}.metrics.counter.ls_request_send_cancellation ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Ls Request Send Cancellation"
+  }
+
   dimension: metrics__counter__netwerk_parent_connect_timeout {
     sql: ${TABLE}.metrics.counter.netwerk_parent_connect_timeout ;;
     type: number
@@ -794,6 +815,13 @@ view: metrics_table {
     group_item_label: "Rtcrtpsender Count Setparameters Compat"
   }
 
+  dimension: metrics__counter__sct_signature_cache_total {
+    sql: ${TABLE}.metrics.counter.sct_signature_cache_total ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Sct Signature Cache Total"
+  }
+
   dimension: metrics__counter__settings_screen_autocomplete_domain_added {
     sql: ${TABLE}.metrics.counter.settings_screen_autocomplete_domain_added ;;
     type: number
@@ -843,6 +871,13 @@ view: metrics_table {
     group_item_label: "Translations Requests Count"
   }
 
+  dimension: metrics__counter__web_notification_insecure_context_permission_request {
+    sql: ${TABLE}.metrics.counter.web_notification_insecure_context_permission_request ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Web Notification Insecure Context Permission Request"
+  }
+
   dimension: metrics__counter__webauthn_create_failure {
     sql: ${TABLE}.metrics.counter.webauthn_create_failure ;;
     type: number
@@ -876,6 +911,20 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Webauthn Get Success"
+  }
+
+  dimension: metrics__counter__webrtcdtls_client_handshake_started_counter {
+    sql: ${TABLE}.metrics.counter.webrtcdtls_client_handshake_started_counter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webrtcdtls Client Handshake Started Counter"
+  }
+
+  dimension: metrics__counter__webrtcdtls_server_handshake_started_counter {
+    sql: ${TABLE}.metrics.counter.webrtcdtls_server_handshake_started_counter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webrtcdtls Server Handshake Started Counter"
   }
 
   dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__count {
@@ -1733,6 +1782,63 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_received__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_received.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Ecn Ce Ect0 Ratio Received"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_received__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_received.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Ecn Ce Ect0 Ratio Received"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_received__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_received.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_sent__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_sent.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Ecn Ce Ect0 Ratio Sent"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_sent__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_sent.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Ecn Ce Ect0 Ratio Sent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_sent__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_sent.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_loss_ratio__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Loss Ratio"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_loss_ratio__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Loss Ratio"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_loss_ratio__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_received.count ;;
     type: number
@@ -2547,6 +2653,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_http_ip_addr_any_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_ip_addr_any_count ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_http_redirect_to_scheme_subresource {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_redirect_to_scheme_subresource ;;
     hidden: yes
@@ -2774,6 +2885,21 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__translations_request_count {
     sql: ${TABLE}.metrics.labeled_counter.translations_request_count ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__web_notification_permission_origin {
+    sql: ${TABLE}.metrics.labeled_counter.web_notification_permission_origin ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__web_notification_request_permission_origin {
+    sql: ${TABLE}.metrics.labeled_counter.web_notification_request_permission_origin ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__web_notification_show_origin {
+    sql: ${TABLE}.metrics.labeled_counter.web_notification_show_origin ;;
     hidden: yes
   }
 
@@ -3223,6 +3349,20 @@ view: metrics_table {
     group_item_label: "Shortcuts Shortcuts On Home Number"
   }
 
+  dimension: metrics__rate__cert_signature_cache_hits__denominator {
+    sql: ${TABLE}.metrics.rate.cert_signature_cache_hits.denominator ;;
+    type: number
+    group_label: "Metrics Rate Cert Signature Cache Hits"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__cert_signature_cache_hits__numerator {
+    sql: ${TABLE}.metrics.rate.cert_signature_cache_hits.numerator ;;
+    type: number
+    group_label: "Metrics Rate Cert Signature Cache Hits"
+    group_item_label: "Numerator"
+  }
+
   dimension: metrics__rate__cookie_banners_cmp_ratio_handled_by_cmp_rule__denominator {
     sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.denominator ;;
     type: number
@@ -3542,6 +3682,20 @@ view: metrics_table {
     sql: ${TABLE}.metrics.rate.rtcrtpsender_used_sendencodings.numerator ;;
     type: number
     group_label: "Metrics Rate Rtcrtpsender Used Sendencodings"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__sct_signature_cache_hits__denominator {
+    sql: ${TABLE}.metrics.rate.sct_signature_cache_hits.denominator ;;
+    type: number
+    group_label: "Metrics Rate Sct Signature Cache Hits"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__sct_signature_cache_hits__numerator {
+    sql: ${TABLE}.metrics.rate.sct_signature_cache_hits.numerator ;;
+    type: number
+    group_label: "Metrics Rate Sct Signature Cache Hits"
     group_item_label: "Numerator"
   }
 
@@ -7095,6 +7249,124 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__values {
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparedatastore Processing Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparedatastore Processing Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ls Preparedatastore Processing Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparedatastore Processing Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparedatastore Processing Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ls Preparedatastore Processing Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparedatastore Processing Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparelsdatabase Processing Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparelsdatabase Processing Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ls Preparelsdatabase Processing Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparelsdatabase Processing Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparelsdatabase Processing Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ls Preparelsdatabase Processing Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparelsdatabase Processing Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.values ;;
     hidden: yes
   }
 
@@ -12574,6 +12846,42 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_download_th
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_loss_ratio__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -14179,6 +14487,30 @@ view: metrics_table__metrics__timing_distribution__javascript_pageload_protect_t
 }
 
 view: metrics_table__metrics__timing_distribution__javascript_pageload_xdr_encode_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__ls_preparedatastore_processing_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__ls_preparelsdatabase_processing_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

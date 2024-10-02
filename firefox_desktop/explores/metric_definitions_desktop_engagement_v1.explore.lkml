@@ -10,6 +10,7 @@ explore: metric_definitions_desktop_engagement_v1 {
   always_filter: {
     filters: [
       submission_date: "7 days",
+      sampling: "1",
     ]
   }
 

@@ -553,6 +553,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_onstart_success_https_rr}) AS metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_http_ip_addr_any_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_ip_addr_any_count}) AS metrics__metrics__labeled_counter__networking_http_ip_addr_any_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_ip_addr_any_count.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_http_redirect_to_scheme_subresource {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_redirect_to_scheme_subresource}) AS metrics__metrics__labeled_counter__networking_http_redirect_to_scheme_subresource ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_redirect_to_scheme_subresource.document_id} ;;
@@ -781,6 +786,21 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__translations_request_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__translations_request_count}) AS metrics__metrics__labeled_counter__translations_request_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__translations_request_count.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__web_notification_permission_origin {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__web_notification_permission_origin}) AS metrics__metrics__labeled_counter__web_notification_permission_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__web_notification_permission_origin.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__web_notification_request_permission_origin {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__web_notification_request_permission_origin}) AS metrics__metrics__labeled_counter__web_notification_request_permission_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__web_notification_request_permission_origin.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__web_notification_show_origin {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__web_notification_show_origin}) AS metrics__metrics__labeled_counter__web_notification_show_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__web_notification_show_origin.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__webauthn_create_authenticator_attachment {

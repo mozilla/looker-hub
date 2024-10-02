@@ -680,6 +680,60 @@ It is possible for a Firefox installation to not have a default profile, but in 
     description: "The difference between the length of encoded certificate vs the actual certificate."
   }
 
+  dimension: metrics__rate__cert_signature_cache_hits__numerator {
+    label: "Cert Signature Cache Hits Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.cert_signature_cache_hits.numerator ;;
+    type: number
+    group_label: "Cert Signature Cache"
+    group_item_label: "Hits Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Signature Cache Hits Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cert_signature_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often a certificate signature to be verified is in the cache already.
+"
+  }
+
+  dimension: metrics__rate__cert_signature_cache_hits__denominator {
+    label: "Cert Signature Cache Hits Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.cert_signature_cache_hits.denominator ;;
+    type: number
+    group_label: "Cert Signature Cache"
+    group_item_label: "Hits Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Signature Cache Hits Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cert_signature_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often a certificate signature to be verified is in the cache already.
+"
+  }
+
+  dimension: metrics__counter__cert_signature_cache_total {
+    label: "Cert Signature Cache Total"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.cert_signature_cache_total ;;
+    type: number
+    group_label: "Cert Signature Cache"
+    group_item_label: "Total"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Signature Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cert_signature_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many certificate signature verifications are performed.
+"
+  }
+
   dimension: metrics__memory_distribution__cert_storage_memory__sum {
     label: "Cert Storage Memory Sum"
     hidden: no
@@ -3783,6 +3837,78 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__sum {
+    label: "Ls Preparedatastore Processing Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.sum ;;
+    type: number
+    group_label: "Ls Preparedatastore"
+    group_item_label: "Processing Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ls Preparedatastore Processing Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/ls_preparedatastore_processing_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time it took for the parent process to prepare a Datastore. This duration can be significantly affected by Datastore preloading, which is triggered when a page begins to load. When a Datastore is already preloaded, the preparation is usually fast since it doesn't need to do any I/O. If an error occurs, the time is not recorded. In future, we might want to introduce additional separate metrics for different types of datastore preparations (data needs to be loaded from disk, data already available, etc.)
+"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__sum {
+    label: "Ls Preparelsdatabase Processing Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.sum ;;
+    type: number
+    group_label: "Ls Preparelsdatabase"
+    group_item_label: "Processing Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ls Preparelsdatabase Processing Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/ls_preparelsdatabase_processing_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time it took for the content process to fully prepare a new LSDatabase, including any time required to prepare a Datastore in the parent. This duration can be significantly affected by Datastore preloading, which is triggered when a page begins to load. If an error occurs, the time is not recorded.
+"
+  }
+
+  dimension: metrics__counter__ls_request_recv_cancellation {
+    label: "Ls Request Recv Cancellation"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.ls_request_recv_cancellation ;;
+    type: number
+    group_label: "Ls Request"
+    group_item_label: "Recv Cancellation"
+
+    link: {
+      label: "Glean Dictionary reference for Ls Request Recv Cancellation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/ls_request_recv_cancellation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Upticks whenever a LS request cancellation message is received. This includes requests for ensuring either LSDatabase or LSObserver in the child.
+"
+  }
+
+  dimension: metrics__counter__ls_request_send_cancellation {
+    label: "Ls Request Send Cancellation"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.ls_request_send_cancellation ;;
+    type: number
+    group_label: "Ls Request"
+    group_item_label: "Send Cancellation"
+
+    link: {
+      label: "Glean Dictionary reference for Ls Request Send Cancellation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/ls_request_send_cancellation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Upticks whenever a LS request cancellation message is sent. This includes requests for ensuring either LSDatabase or LSObserver.
+"
+  }
+
   dimension: metrics__labeled_counter__media_audio_backend {
     label: "Media Audio Backend"
     hidden: yes
@@ -5012,6 +5138,42 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_received__sum {
+    label: "Networking Http 3 Ecn Ce Ect0 Ratio Received Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_received.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Ecn Ce Ect0 Ratio Received Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Ecn Ce Ect0 Ratio Received Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_http_3_ecn_ce_ect0_ratio_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: ECN CE to ECT0 ratio (multiply by 10000) received.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_sent__sum {
+    label: "Networking Http 3 Ecn Ce Ect0 Ratio Sent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_sent.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Ecn Ce Ect0 Ratio Sent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Ecn Ce Ect0 Ratio Sent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_http_3_ecn_ce_ect0_ratio_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: ECN CE to ECT0 ratio (multiply by 10000) sent.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_ecn_path_capability {
     label: "Networking Http 3 Ecn Path Capability"
     hidden: yes
@@ -5026,6 +5188,24 @@ To be used to validate GIFFT.
     }
 
     description: "Number of paths known to be ECN capable or not-capable.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_loss_ratio__sum {
+    label: "Networking Http 3 Loss Ratio Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Loss Ratio Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Loss Ratio Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_http_3_loss_ratio"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: packet loss ratio (multiply by 10000).
 "
   }
 
@@ -5557,6 +5737,23 @@ To be used to validate GIFFT.
     }
 
     description: "The time between dispatching OnStopRequest from the socket thread and processing it on the main thread (content process).
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_ip_addr_any_count {
+    label: "Networking Http Ip Addr Any Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_ip_addr_any_count ;;
+    group_label: "Networking"
+    group_item_label: "Http Ip Addr Any Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Ip Addr Any Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_http_ip_addr_any_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we see the IP address 0.0.0.0 or its IPv6 equivalent.
 "
   }
 
@@ -8143,6 +8340,60 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__rate__sct_signature_cache_hits__numerator {
+    label: "Sct Signature Cache Hits Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.sct_signature_cache_hits.numerator ;;
+    type: number
+    group_label: "Sct Signature Cache"
+    group_item_label: "Hits Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Sct Signature Cache Hits Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/sct_signature_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often an SCT signature to be verified is in the cache already.
+"
+  }
+
+  dimension: metrics__rate__sct_signature_cache_hits__denominator {
+    label: "Sct Signature Cache Hits Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.sct_signature_cache_hits.denominator ;;
+    type: number
+    group_label: "Sct Signature Cache"
+    group_item_label: "Hits Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Sct Signature Cache Hits Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/sct_signature_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often an SCT signature to be verified is in the cache already.
+"
+  }
+
+  dimension: metrics__counter__sct_signature_cache_total {
+    label: "Sct Signature Cache Total"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.sct_signature_cache_total ;;
+    type: number
+    group_label: "Sct Signature Cache"
+    group_item_label: "Total"
+
+    link: {
+      label: "Glean Dictionary reference for Sct Signature Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/sct_signature_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many SCT signature verifications are performed.
+"
+  }
+
   dimension: metrics__custom_distribution__timer_thread_timers_fired_per_wakeup__sum {
     label: "Timer Thread Timers Fired Per Wakeup Sum"
     hidden: no
@@ -8447,6 +8698,75 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__web_notification_insecure_context_permission_request {
+    label: "Web Notification Insecure Context Permission Request"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.web_notification_insecure_context_permission_request ;;
+    type: number
+    group_label: "Web Notification"
+    group_item_label: "Insecure Context Permission Request"
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification Insecure Context Permission Request"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/web_notification_insecure_context_permission_request"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether we saw a permission request from an insecure context.
+"
+  }
+
+  dimension: metrics__labeled_counter__web_notification_permission_origin {
+    label: "Web Notification Permission Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.web_notification_permission_origin ;;
+    group_label: "Web Notification"
+    group_item_label: "Permission Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification Permission Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/web_notification_permission_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The category of the origin that retrieves Notification.permission.
+"
+  }
+
+  dimension: metrics__labeled_counter__web_notification_request_permission_origin {
+    label: "Web Notification Request Permission Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.web_notification_request_permission_origin ;;
+    group_label: "Web Notification"
+    group_item_label: "Request Permission Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification Request Permission Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/web_notification_request_permission_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The category of the origin that calls Notification.requestPermission().
+"
+  }
+
+  dimension: metrics__labeled_counter__web_notification_show_origin {
+    label: "Web Notification Show Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.web_notification_show_origin ;;
+    group_label: "Web Notification"
+    group_item_label: "Show Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification Show Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/web_notification_show_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The category of the origin that calls new Notification/showNotification().
+"
+  }
+
   dimension: metrics__labeled_counter__webauthn_create_authenticator_attachment {
     label: "Webauthn Create Authenticator Attachment"
     hidden: yes
@@ -8598,6 +8918,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__webrtcdtls_client_handshake_started_counter {
+    label: "Webrtcdtls Client Handshake Started Counter"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.webrtcdtls_client_handshake_started_counter ;;
+    type: number
+    group_label: "Webrtcdtls"
+    group_item_label: "Client Handshake Started Counter"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Client Handshake Started Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/webrtcdtls_client_handshake_started_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of webrtc transports that have started a DTLS handshake as the client.
+"
+  }
+
   dimension: metrics__labeled_counter__webrtcdtls_protocol_version {
     label: "Webrtcdtls Protocol Version"
     hidden: yes
@@ -8629,6 +8967,24 @@ To be used to validate GIFFT.
     }
 
     description: "The result of each webrtc server DTLS handshake, as the name of the error code (eg; SSL_ERROR_BAD_CERTIFICATE), the empty string for successful handshakes, ALPN_FAILURE when ALPN negotiation fails, or CERT_FAILURE when cert validation fails.
+"
+  }
+
+  dimension: metrics__counter__webrtcdtls_server_handshake_started_counter {
+    label: "Webrtcdtls Server Handshake Started Counter"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.webrtcdtls_server_handshake_started_counter ;;
+    type: number
+    group_label: "Webrtcdtls"
+    group_item_label: "Server Handshake Started Counter"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Server Handshake Started Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/webrtcdtls_server_handshake_started_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of webrtc transports that have started a DTLS handshake as the server.
 "
   }
 
@@ -10001,6 +10357,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: cert_signature_cache_total {
+    type: sum
+    sql: ${metrics__counter__cert_signature_cache_total} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Cert Signature Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cert_signature_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: cert_signature_cache_total_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__cert_signature_cache_total: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Cert Signature Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cert_signature_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: cookie_banners_cookie_injection_fail {
     type: sum
     sql: ${metrics__counter__cookie_banners_cookie_injection_fail} ;;
@@ -10322,6 +10703,56 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Httpsfirst Upgraded Schemeless"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/httpsfirst_upgraded_schemeless"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ls_request_recv_cancellation {
+    type: sum
+    sql: ${metrics__counter__ls_request_recv_cancellation} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ls Request Recv Cancellation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/ls_request_recv_cancellation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ls_request_recv_cancellation_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__ls_request_recv_cancellation: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ls Request Recv Cancellation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/ls_request_recv_cancellation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ls_request_send_cancellation {
+    type: sum
+    sql: ${metrics__counter__ls_request_send_cancellation} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ls Request Send Cancellation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/ls_request_send_cancellation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ls_request_send_cancellation_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__ls_request_send_cancellation: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ls Request Send Cancellation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/ls_request_send_cancellation"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -10801,6 +11232,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: sct_signature_cache_total {
+    type: sum
+    sql: ${metrics__counter__sct_signature_cache_total} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Sct Signature Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/sct_signature_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: sct_signature_cache_total_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__sct_signature_cache_total: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Sct Signature Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/sct_signature_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: tls_certificate_verifications {
     type: sum
     sql: ${metrics__counter__tls_certificate_verifications} ;;
@@ -10847,6 +11303,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Translations Requests Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/translations_requests_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_notification_insecure_context_permission_request {
+    type: sum
+    sql: ${metrics__counter__web_notification_insecure_context_permission_request} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification Insecure Context Permission Request"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/web_notification_insecure_context_permission_request"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_notification_insecure_context_permission_request_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__web_notification_insecure_context_permission_request: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification Insecure Context Permission Request"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/web_notification_insecure_context_permission_request"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -10972,6 +11453,56 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Webauthn Get Success"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/webauthn_get_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webrtcdtls_client_handshake_started_counter {
+    type: sum
+    sql: ${metrics__counter__webrtcdtls_client_handshake_started_counter} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Client Handshake Started Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/webrtcdtls_client_handshake_started_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webrtcdtls_client_handshake_started_counter_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__webrtcdtls_client_handshake_started_counter: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Client Handshake Started Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/webrtcdtls_client_handshake_started_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webrtcdtls_server_handshake_started_counter {
+    type: sum
+    sql: ${metrics__counter__webrtcdtls_server_handshake_started_counter} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Server Handshake Started Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/webrtcdtls_server_handshake_started_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webrtcdtls_server_handshake_started_counter_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__webrtcdtls_server_handshake_started_counter: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Server Handshake Started Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/webrtcdtls_server_handshake_started_counter"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -15445,6 +15976,47 @@ view: metrics__metrics__labeled_counter__networking_http_channel_onstart_success
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_http_ip_addr_any_count {
+  label: "Networking - Http Ip Addr Any Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_http_redirect_to_scheme_subresource {
   label: "Networking - Http Redirect To Scheme Subresource"
 
@@ -17249,6 +17821,129 @@ view: metrics__metrics__labeled_counter__translations_request_count {
   }
 }
 
+view: metrics__metrics__labeled_counter__web_notification_permission_origin {
+  label: "Web Notification - Permission Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__web_notification_request_permission_origin {
+  label: "Web Notification - Request Permission Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__web_notification_show_origin {
+  label: "Web Notification - Show Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__webauthn_create_authenticator_attachment {
   label: "Webauthn Create - Authenticator Attachment"
 
@@ -18118,6 +18813,42 @@ view: metrics__metrics__custom_distribution__networking_http_3_download_throughp
 }
 
 view: metrics__metrics__custom_distribution__networking_http_3_download_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_loss_ratio__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -19730,6 +20461,30 @@ view: metrics__metrics__timing_distribution__javascript_pageload_protect_time__v
 }
 
 view: metrics__metrics__timing_distribution__javascript_pageload_xdr_encode_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__ls_preparedatastore_processing_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__ls_preparelsdatabase_processing_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

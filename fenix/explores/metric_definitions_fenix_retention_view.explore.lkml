@@ -10,6 +10,7 @@ explore: metric_definitions_fenix_retention_view {
   always_filter: {
     filters: [
       submission_date: "7 days",
+      sampling: "1",
     ]
   }
 
