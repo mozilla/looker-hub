@@ -131,6 +131,20 @@ view: retention_clients_table {
     type: number
   }
 
+  dimension_group: adjust_attribution {
+    sql: ${TABLE}.adjust_attribution_timestamp ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time

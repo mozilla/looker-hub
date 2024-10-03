@@ -27,6 +27,19 @@ search_revenue_levers_daily_partner,
 search_revenue_levers_daily_sap,
 search_revenue_levers_daily_search_with_ads,
 search_revenue_levers_daily_search_with_ads_organic,
+search_revenue_levers_daily_serp_events_ad_click,
+search_revenue_levers_daily_serp_events_ad_click_organic,
+search_revenue_levers_daily_serp_events_client_count,
+search_revenue_levers_daily_serp_events_clients_with_ad_blocker_inferred,
+search_revenue_levers_daily_serp_events_num_ads_blocked,
+search_revenue_levers_daily_serp_events_num_ads_visible,
+search_revenue_levers_daily_serp_events_organic,
+search_revenue_levers_daily_serp_events_sap,
+search_revenue_levers_daily_serp_events_sap_with_ad_blocker_inferred,
+search_revenue_levers_daily_serp_events_search_with_ads,
+search_revenue_levers_daily_serp_events_search_with_ads_organic,
+search_revenue_levers_daily_serp_events_tagged_follow_on,
+search_revenue_levers_daily_serp_events_tagged_sap,
 search_revenue_levers_daily_tagged_follow_on,
 search_revenue_levers_daily_tagged_sap,
 
@@ -75,6 +88,19 @@ search_revenue_levers_daily.partner AS search_revenue_levers_daily_partner,
 search_revenue_levers_daily.sap AS search_revenue_levers_daily_sap,
 search_revenue_levers_daily.search_with_ads AS search_revenue_levers_daily_search_with_ads,
 search_revenue_levers_daily.search_with_ads_organic AS search_revenue_levers_daily_search_with_ads_organic,
+search_revenue_levers_daily.serp_events_ad_click AS search_revenue_levers_daily_serp_events_ad_click,
+search_revenue_levers_daily.serp_events_ad_click_organic AS search_revenue_levers_daily_serp_events_ad_click_organic,
+search_revenue_levers_daily.serp_events_client_count AS search_revenue_levers_daily_serp_events_client_count,
+search_revenue_levers_daily.serp_events_clients_with_ad_blocker_inferred AS search_revenue_levers_daily_serp_events_clients_with_ad_blocker_inferred,
+search_revenue_levers_daily.serp_events_num_ads_blocked AS search_revenue_levers_daily_serp_events_num_ads_blocked,
+search_revenue_levers_daily.serp_events_num_ads_visible AS search_revenue_levers_daily_serp_events_num_ads_visible,
+search_revenue_levers_daily.serp_events_organic AS search_revenue_levers_daily_serp_events_organic,
+search_revenue_levers_daily.serp_events_sap AS search_revenue_levers_daily_serp_events_sap,
+search_revenue_levers_daily.serp_events_sap_with_ad_blocker_inferred AS search_revenue_levers_daily_serp_events_sap_with_ad_blocker_inferred,
+search_revenue_levers_daily.serp_events_search_with_ads AS search_revenue_levers_daily_serp_events_search_with_ads,
+search_revenue_levers_daily.serp_events_search_with_ads_organic AS search_revenue_levers_daily_serp_events_search_with_ads_organic,
+search_revenue_levers_daily.serp_events_tagged_follow_on AS search_revenue_levers_daily_serp_events_tagged_follow_on,
+search_revenue_levers_daily.serp_events_tagged_sap AS search_revenue_levers_daily_serp_events_tagged_sap,
 search_revenue_levers_daily.tagged_follow_on AS search_revenue_levers_daily_tagged_follow_on,
 search_revenue_levers_daily.tagged_sap AS search_revenue_levers_daily_tagged_sap,
 
@@ -114,6 +140,19 @@ search_revenue_levers_daily_partner,
 search_revenue_levers_daily_sap,
 search_revenue_levers_daily_search_with_ads,
 search_revenue_levers_daily_search_with_ads_organic,
+search_revenue_levers_daily_serp_events_ad_click,
+search_revenue_levers_daily_serp_events_ad_click_organic,
+search_revenue_levers_daily_serp_events_client_count,
+search_revenue_levers_daily_serp_events_clients_with_ad_blocker_inferred,
+search_revenue_levers_daily_serp_events_num_ads_blocked,
+search_revenue_levers_daily_serp_events_num_ads_visible,
+search_revenue_levers_daily_serp_events_organic,
+search_revenue_levers_daily_serp_events_sap,
+search_revenue_levers_daily_serp_events_sap_with_ad_blocker_inferred,
+search_revenue_levers_daily_serp_events_search_with_ads,
+search_revenue_levers_daily_serp_events_search_with_ads_organic,
+search_revenue_levers_daily_serp_events_tagged_follow_on,
+search_revenue_levers_daily_serp_events_tagged_sap,
 search_revenue_levers_daily_tagged_follow_on,
 search_revenue_levers_daily_tagged_sap,
 
@@ -260,6 +299,84 @@ search_revenue_levers_daily_tagged_sap,
 
   dimension: search_with_ads_organic {
     sql: ${TABLE}.search_revenue_levers_daily_search_with_ads_organic ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: serp_events_ad_click {
+    sql: ${TABLE}.search_revenue_levers_daily_serp_events_ad_click ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: serp_events_ad_click_organic {
+    sql: ${TABLE}.search_revenue_levers_daily_serp_events_ad_click_organic ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: serp_events_client_count {
+    sql: ${TABLE}.search_revenue_levers_daily_serp_events_client_count ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: serp_events_clients_with_ad_blocker_inferred {
+    sql: ${TABLE}.search_revenue_levers_daily_serp_events_clients_with_ad_blocker_inferred ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: serp_events_num_ads_blocked {
+    sql: ${TABLE}.search_revenue_levers_daily_serp_events_num_ads_blocked ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: serp_events_num_ads_visible {
+    sql: ${TABLE}.search_revenue_levers_daily_serp_events_num_ads_visible ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: serp_events_organic {
+    sql: ${TABLE}.search_revenue_levers_daily_serp_events_organic ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: serp_events_sap {
+    sql: ${TABLE}.search_revenue_levers_daily_serp_events_sap ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: serp_events_sap_with_ad_blocker_inferred {
+    sql: ${TABLE}.search_revenue_levers_daily_serp_events_sap_with_ad_blocker_inferred ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: serp_events_search_with_ads {
+    sql: ${TABLE}.search_revenue_levers_daily_serp_events_search_with_ads ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: serp_events_search_with_ads_organic {
+    sql: ${TABLE}.search_revenue_levers_daily_serp_events_search_with_ads_organic ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: serp_events_tagged_follow_on {
+    sql: ${TABLE}.search_revenue_levers_daily_serp_events_tagged_follow_on ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: serp_events_tagged_sap {
+    sql: ${TABLE}.search_revenue_levers_daily_serp_events_tagged_sap ;;
     type: number
     group_label: "Base Fields"
   }

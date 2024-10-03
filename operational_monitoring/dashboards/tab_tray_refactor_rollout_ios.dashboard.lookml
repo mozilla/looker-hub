@@ -78,40 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: tab_tray_refactor_rollout_ios
-    type: looker_line
-    fields: [
-      tab_tray_refactor_rollout_ios.submission_date,
-      tab_tray_refactor_rollout_ios.branch,
-      tab_tray_refactor_rollout_ios.point
-    ]
-    pivots: [
-      tab_tray_refactor_rollout_ios.branch
-    ]
-    filters:
-      tab_tray_refactor_rollout_ios.metric: 'active_hours'
-      tab_tray_refactor_rollout_ios.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: tab_tray_refactor_rollout_ios.submission_date
-    field_y: tab_tray_refactor_rollout_ios.point
-    log_scale: false
-    ci_lower: tab_tray_refactor_rollout_ios.lower
-    ci_upper: tab_tray_refactor_rollout_ios.upper
-    show_grid: true
-    listen:
-      Date: tab_tray_refactor_rollout_ios.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -129,6 +95,40 @@
     ]
     filters:
       tab_tray_refactor_rollout_ios.metric: 'search_count'
+      tab_tray_refactor_rollout_ios.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: tab_tray_refactor_rollout_ios.submission_date
+    field_y: tab_tray_refactor_rollout_ios.point
+    log_scale: false
+    ci_lower: tab_tray_refactor_rollout_ios.lower
+    ci_upper: tab_tray_refactor_rollout_ios.upper
+    show_grid: true
+    listen:
+      Date: tab_tray_refactor_rollout_ios.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: tab_tray_refactor_rollout_ios
+    type: looker_line
+    fields: [
+      tab_tray_refactor_rollout_ios.submission_date,
+      tab_tray_refactor_rollout_ios.branch,
+      tab_tray_refactor_rollout_ios.point
+    ]
+    pivots: [
+      tab_tray_refactor_rollout_ios.branch
+    ]
+    filters:
+      tab_tray_refactor_rollout_ios.metric: 'active_hours'
       tab_tray_refactor_rollout_ios.statistic: mean
     row: 10
     col: 12
