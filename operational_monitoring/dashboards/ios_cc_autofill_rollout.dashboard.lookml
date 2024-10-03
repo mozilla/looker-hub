@@ -78,40 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ios_cc_autofill_rollout
-    type: looker_line
-    fields: [
-      ios_cc_autofill_rollout.submission_date,
-      ios_cc_autofill_rollout.branch,
-      ios_cc_autofill_rollout.point
-    ]
-    pivots: [
-      ios_cc_autofill_rollout.branch
-    ]
-    filters:
-      ios_cc_autofill_rollout.metric: 'active_hours'
-      ios_cc_autofill_rollout.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: ios_cc_autofill_rollout.submission_date
-    field_y: ios_cc_autofill_rollout.point
-    log_scale: false
-    ci_lower: ios_cc_autofill_rollout.lower
-    ci_upper: ios_cc_autofill_rollout.upper
-    show_grid: true
-    listen:
-      Date: ios_cc_autofill_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -129,6 +95,40 @@
     ]
     filters:
       ios_cc_autofill_rollout.metric: 'search_count'
+      ios_cc_autofill_rollout.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: ios_cc_autofill_rollout.submission_date
+    field_y: ios_cc_autofill_rollout.point
+    log_scale: false
+    ci_lower: ios_cc_autofill_rollout.lower
+    ci_upper: ios_cc_autofill_rollout.upper
+    show_grid: true
+    listen:
+      Date: ios_cc_autofill_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_cc_autofill_rollout
+    type: looker_line
+    fields: [
+      ios_cc_autofill_rollout.submission_date,
+      ios_cc_autofill_rollout.branch,
+      ios_cc_autofill_rollout.point
+    ]
+    pivots: [
+      ios_cc_autofill_rollout.branch
+    ]
+    filters:
+      ios_cc_autofill_rollout.metric: 'active_hours'
       ios_cc_autofill_rollout.statistic: mean
     row: 10
     col: 12
