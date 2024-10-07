@@ -115,8 +115,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Large File Write
-    name: Large File Write_total_ratio
+  - title: Cpu Exception
+    name: Cpu Exception_total_ratio
     note_state: expanded
     note_display: above
     note_text: Total_Ratio
@@ -131,7 +131,7 @@
       firefox_ios_beta_health.branch
     ]
     filters:
-      firefox_ios_beta_health.metric: 'large_file_write'
+      firefox_ios_beta_health.metric: 'cpu_exception'
       firefox_ios_beta_health.statistic: total_ratio
     row: 10
     col: 12
@@ -150,8 +150,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Cpu Exception
-    name: Cpu Exception_total_ratio
+  - title: Large File Write
+    name: Large File Write_total_ratio
     note_state: expanded
     note_display: above
     note_text: Total_Ratio
@@ -166,7 +166,7 @@
       firefox_ios_beta_health.branch
     ]
     filters:
-      firefox_ios_beta_health.metric: 'cpu_exception'
+      firefox_ios_beta_health.metric: 'large_file_write'
       firefox_ios_beta_health.statistic: total_ratio
     row: 20
     col: 0
@@ -247,8 +247,8 @@
       - '117.0'
       - '125.0'
       - '121.0'
-      - '126.0'
       - '119.0'
+      - '126.0'
       - '115.0'
       
   
