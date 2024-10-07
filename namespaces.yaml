@@ -13831,7 +13831,6 @@ search_private:
 shared:
   glean_app: false
   owners:
-  - anicholson@mozilla.com
   - ascholtz@mozilla.com
   pretty_name: Shared
   spoke: looker-spoke-default
@@ -13847,6 +13846,17 @@ shared:
     data_incidents:
       tables:
       - table: mozdata.static.data_incidents_v1
+      type: table_view
+shared_private:
+  glean_app: false
+  owners:
+  - ascholtz@mozilla.com
+  pretty_name: Shared Private
+  spoke: looker-spoke-private
+  views:
+    countries:
+      tables:
+      - table: mozdata.static.country_codes_v1
       type: table_view
 subscription_platform:
   explores:
