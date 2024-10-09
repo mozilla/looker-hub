@@ -13718,6 +13718,19 @@ relay:
       tables:
       - table: mozdata.relay.subscriptions
       type: table_view
+relay_backend:
+  explores: {}
+  glean_app: true
+  owners:
+  - jwhitlock@mozilla.com
+  pretty_name: Firefox Relay Backend
+  spoke: looker-spoke-default
+  views:
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.relay_backend.events
+      type: table_view
 revenue:
   connection: bigquery-oauth
   glean_app: false
