@@ -1422,8 +1422,9 @@ ping and 0 bookmarks, please see `has_desktop_bookmarks`.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A string containing the distribution identifier. This is currently used
-to identify installs from Mozilla Online.
+    description: "A string containing the distribution identifier. This was used
+to identify installs from Mozilla Online, but now also identifies
+partnership deal distributions
 "
   }
 
