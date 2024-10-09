@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       newtab_recommendations_merino_migration_global.branch
     ]
     filters:
-      newtab_recommendations_merino_migration_global.metric: 'ad_clicks'
+      newtab_recommendations_merino_migration_global.metric: 'days_of_use'
       newtab_recommendations_merino_migration_global.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       newtab_recommendations_merino_migration_global.branch
     ]
     filters:
-      newtab_recommendations_merino_migration_global.metric: 'uri_count'
+      newtab_recommendations_merino_migration_global.metric: 'qualified_cumulative_days_of_use'
       newtab_recommendations_merino_migration_global.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       newtab_recommendations_merino_migration_global.branch
     ]
     filters:
-      newtab_recommendations_merino_migration_global.metric: 'days_of_use'
+      newtab_recommendations_merino_migration_global.metric: 'active_hours'
       newtab_recommendations_merino_migration_global.statistic: mean
     row: 10
     col: 12
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       newtab_recommendations_merino_migration_global.branch
     ]
     filters:
-      newtab_recommendations_merino_migration_global.metric: 'retained'
+      newtab_recommendations_merino_migration_global.metric: 'ad_clicks'
       newtab_recommendations_merino_migration_global.statistic: mean
     row: 20
     col: 0
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       newtab_recommendations_merino_migration_global.branch
     ]
     filters:
-      newtab_recommendations_merino_migration_global.metric: 'active_hours'
+      newtab_recommendations_merino_migration_global.metric: 'retained'
       newtab_recommendations_merino_migration_global.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       newtab_recommendations_merino_migration_global.branch
     ]
     filters:
-      newtab_recommendations_merino_migration_global.metric: 'qualified_cumulative_days_of_use'
+      newtab_recommendations_merino_migration_global.metric: 'uri_count'
       newtab_recommendations_merino_migration_global.statistic: mean
     row: 30
     col: 12
