@@ -7122,7 +7122,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__sum {
     label: "Performance Pageload Req Anim Frame Callback Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_req_anim_frame_callback.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -7140,7 +7140,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__sum {
     label: "Performance Responsiveness Req Anim Frame Callback Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_responsiveness_req_anim_frame_callback.sum ;;
     type: number
     group_label: "Performance Responsiveness"
