@@ -130,6 +130,16 @@ view: newtab_visits_table {
     type: yesno
   }
 
+  dimension: newtab_window_inner_height {
+    sql: ${TABLE}.newtab_window_inner_height ;;
+    type: number
+  }
+
+  dimension: newtab_window_inner_width {
+    sql: ${TABLE}.newtab_window_inner_width ;;
+    type: number
+  }
+
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
@@ -253,6 +263,46 @@ view: newtab_visits_table__experiments {
 }
 
 view: newtab_visits_table__pocket_interactions {
+  dimension: list_card_clicks {
+    sql: ${TABLE}.list_card_clicks ;;
+    type: number
+  }
+
+  dimension: list_card_dismissals {
+    sql: ${TABLE}.list_card_dismissals ;;
+    type: number
+  }
+
+  dimension: list_card_impressions {
+    sql: ${TABLE}.list_card_impressions ;;
+    type: number
+  }
+
+  dimension: list_card_saves {
+    sql: ${TABLE}.list_card_saves ;;
+    type: number
+  }
+
+  dimension: organic_list_card_clicks {
+    sql: ${TABLE}.organic_list_card_clicks ;;
+    type: number
+  }
+
+  dimension: organic_list_card_dismissals {
+    sql: ${TABLE}.organic_list_card_dismissals ;;
+    type: number
+  }
+
+  dimension: organic_list_card_impressions {
+    sql: ${TABLE}.organic_list_card_impressions ;;
+    type: number
+  }
+
+  dimension: organic_list_card_saves {
+    sql: ${TABLE}.organic_list_card_saves ;;
+    type: number
+  }
+
   dimension: organic_pocket_clicks {
     sql: ${TABLE}.organic_pocket_clicks ;;
     type: number
@@ -331,6 +381,26 @@ view: newtab_visits_table__pocket_interactions {
   dimension: pocket_topic {
     sql: ${TABLE}.pocket_topic ;;
     type: string
+  }
+
+  dimension: sponsored_list_card_clicks {
+    sql: ${TABLE}.sponsored_list_card_clicks ;;
+    type: number
+  }
+
+  dimension: sponsored_list_card_dismissals {
+    sql: ${TABLE}.sponsored_list_card_dismissals ;;
+    type: number
+  }
+
+  dimension: sponsored_list_card_impressions {
+    sql: ${TABLE}.sponsored_list_card_impressions ;;
+    type: number
+  }
+
+  dimension: sponsored_list_card_saves {
+    sql: ${TABLE}.sponsored_list_card_saves ;;
+    type: number
   }
 
   dimension: sponsored_pocket_clicks {
