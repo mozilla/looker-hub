@@ -9086,6 +9086,124 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Block Main Thread"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Block Main Thread"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Block Main Thread"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Block Main Thread"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Block Main Thread"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Block Main Thread"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Block Main Thread"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Time To Block Main Thread"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Time To Block Main Thread"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Time To Block Main Thread"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Time To Block Main Thread"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Time To Block Main Thread"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Time To Block Main Thread"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Time To Block Main Thread"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__networking_transaction_wait_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.bucket_count ;;
     type: number
@@ -14942,6 +15060,30 @@ view: metrics_table__metrics__timing_distribution__networking_http_content_onsto
 }
 
 view: metrics_table__metrics__timing_distribution__networking_http_onstart_suspend_total_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

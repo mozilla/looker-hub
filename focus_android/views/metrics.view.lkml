@@ -6794,6 +6794,42 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__sum {
+    label: "Networking Sqlite Cookies Block Main Thread Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Sqlite Cookies Block Main Thread Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Sqlite Cookies Block Main Thread Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_sqlite_cookies_block_main_thread"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent on blocking main thread by startup cookie database read (in milliseconds), only for blocking case
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__sum {
+    label: "Networking Sqlite Cookies Time To Block Main Thread Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Sqlite Cookies Time To Block Main Thread Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Sqlite Cookies Time To Block Main Thread Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_sqlite_cookies_time_to_block_main_thread"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long (in milliseconds) after we finished reading the cookie db until the first cookie request came in (0 implies we blocked the main thread)
+"
+  }
+
   dimension: metrics__timing_distribution__networking_transaction_wait_time__sum {
     label: "Networking Transaction Wait Time Sum"
     hidden: no
@@ -22061,6 +22097,30 @@ view: metrics__metrics__timing_distribution__networking_http_content_onstop_dela
 }
 
 view: metrics__metrics__timing_distribution__networking_http_onstart_suspend_total_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
