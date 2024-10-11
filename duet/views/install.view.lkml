@@ -524,6 +524,12 @@ view: install {
     description: "True if the installer was run in silent mode (either from an MSI or with command-line parameters)"
   }
 
+  dimension: stub_build_id {
+    sql: ${TABLE}.stub_build_id ;;
+    type: string
+    description: "Build ID of the stub installer"
+  }
+
   dimension: succeeded {
     sql: ${TABLE}.succeeded ;;
     type: yesno
