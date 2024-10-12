@@ -14,7 +14,7 @@ explore: dau_reporting {
 
   always_filter: {
     filters: [
-      channel: "beta",
+      channel: "release",
       submission_date: "28 days",
     ]
   }
