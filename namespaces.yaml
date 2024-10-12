@@ -3636,6 +3636,8 @@ firefox_ios:
       type: table_view
     dau_reporting:
       tables:
+      - channel: release
+        table: mozdata.firefox_ios.dau_reporting
       - channel: beta
         table: mozdata.org_mozilla_ios_firefoxbeta.dau_reporting
       - channel: nightly
@@ -3643,6 +3645,8 @@ firefox_ios:
       type: glean_ping_view
     dau_reporting_table:
       tables:
+      - channel: release
+        table: mozdata.firefox_ios.dau_reporting
       - channel: beta
         table: mozdata.org_mozilla_ios_firefoxbeta.dau_reporting
       - channel: nightly
@@ -7606,10 +7610,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 7
+            default: Windows 10
             options:
-            - Windows 7
             - Windows 10
+            - Windows 7
             - Windows 8
             - Windows 8.1
             - Windows 11
@@ -8325,11 +8329,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id164
           os:
-            default: Mac
+            default: Windows
             options:
-            - Mac
             - Windows
             - Linux
+            - Mac
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -9120,15 +9124,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id236
           app:
-            default: Darwin - vpn_session
+            default: Windows - vpn_session
             options:
+            - Windows - vpn_session
+            - iOS - vpn_session
+            - iOS - daemon_session
             - Darwin - vpn_session
             - Android - daemon_session
             - Linux - vpn_session
-            - iOS - vpn_session
-            - iOS - daemon_session
             - Android - vpn_session
-            - Windows - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id237
@@ -9898,17 +9902,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id284
           channel:
-            default: beta
+            default: release
             options:
-            - beta
             - release
+            - beta
             - nightly
           os:
-            default: Linux
+            default: Darwin
             options:
-            - Linux
             - Darwin
             - Windows_NT
+            - Linux
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id285

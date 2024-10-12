@@ -45,10 +45,30 @@ view: consolidated_ad_metrics_hourly {
     type: number
   }
 
+  dimension: content_url {
+    sql: ${TABLE}.content_url ;;
+    type: string
+  }
+
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
     map_layer_name: countries
+  }
+
+  dimension: creative_id {
+    sql: ${TABLE}.creative_id ;;
+    type: number
+  }
+
+  dimension: creative_title {
+    sql: ${TABLE}.creative_title ;;
+    type: string
+  }
+
+  dimension: creative_url {
+    sql: ${TABLE}.creative_url ;;
+    type: string
   }
 
   dimension: dismissals {
