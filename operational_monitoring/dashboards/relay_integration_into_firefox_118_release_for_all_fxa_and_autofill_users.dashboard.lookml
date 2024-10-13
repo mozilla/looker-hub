@@ -10,26 +10,24 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.submission_date,
       relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.branch,
-      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.upper,
-      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.lower,
       relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.point
     ]
     pivots: [
       relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.branch
     ]
     filters:
-      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.metric: 'memory_total'
-      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.statistic: percentile
+      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.metric: 'uri_count'
+      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.statistic: mean
     row: 0
     col: 0
     width: 12
@@ -42,7 +40,6 @@
     show_grid: true
     listen:
       Date: relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.submission_date
-      Percentile: relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -81,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -97,7 +94,7 @@
       relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.branch
     ]
     filters:
-      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.metric: 'uri_count'
+      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.metric: 'retained'
       relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.statistic: mean
     row: 10
     col: 0
@@ -149,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,7 +162,7 @@
       relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.branch
     ]
     filters:
-      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.metric: 'qualified_cumulative_days_of_use'
+      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.metric: 'search_count'
       relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.statistic: mean
     row: 20
     col: 0
@@ -183,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.submission_date,
       relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.branch,
+      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.upper,
+      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.lower,
       relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.point
     ]
     pivots: [
       relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.branch
     ]
     filters:
-      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.metric: 'retained'
-      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.statistic: mean
+      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.metric: 'memory_total'
+      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -213,6 +212,7 @@
     show_grid: true
     listen:
       Date: relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.submission_date
+      Percentile: relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.branch
     ]
     filters:
-      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.metric: 'search_count'
+      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.metric: 'qualified_cumulative_days_of_use'
       relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.statistic: mean
     row: 30
     col: 12
