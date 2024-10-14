@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/awesome_bar_result_menu_rollout_phase_1.view.lkml"
+include: "/looker-hub/operational_monitoring/views/newtab_topic_labels.view.lkml"
 
-explore: awesome_bar_result_menu_rollout_phase_1 {
+explore: newtab_topic_labels {
   always_filter: {
     filters: [
       branch: "enabled, disabled",

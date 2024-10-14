@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: enhanced_cross_platform_suggest_android_relaunch_rollout {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.enhanced_cross_platform_suggest_android_relaunch_rollout_statistics ;;
+view: address_autofill_phase_2_rollout_release {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.address_autofill_phase_2_rollout_release_statistics ;;
 
   dimension: submission_date {
     type: date

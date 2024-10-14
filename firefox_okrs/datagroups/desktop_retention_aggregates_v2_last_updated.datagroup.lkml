@@ -5,12 +5,12 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: desktop_retention_v1_last_updated {
+datagroup: desktop_retention_aggregates_v2_last_updated {
   label: "Desktop Retention - Aggregate Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'telemetry_derived'
-    AND table_name = 'desktop_retention_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod.telemetry_derived.desktop_retention_v1 is modified."
+    AND table_name = 'desktop_retention_aggregates_v2' ;;
+  description: "Updates when moz-fx-data-shared-prod.telemetry_derived.desktop_retention_aggregates_v2 is modified."
   max_cache_age: "24 hours"
 }

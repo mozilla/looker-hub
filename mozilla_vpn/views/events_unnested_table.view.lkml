@@ -364,6 +364,11 @@ view: events_unnested_table {
     type: number
   }
 
+  dimension: source_ping {
+    sql: ${TABLE}.source_ping ;;
+    type: string
+  }
+
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
