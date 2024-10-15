@@ -709,6 +709,11 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__string_list__crash_utility_actors_name {
+    sql: ${TABLE}.metrics.string_list.crash_utility_actors_name ;;
+    hidden: yes
+  }
+
   dimension: metrics__string_list__dll_blocklist_list {
     sql: ${TABLE}.metrics.string_list.dll_blocklist_list ;;
     hidden: yes
