@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,77 +60,9 @@
       us_review_checker_rollout_v3_transition_stop_gap.branch
     ]
     filters:
-      us_review_checker_rollout_v3_transition_stop_gap.metric: 'ad_clicks'
+      us_review_checker_rollout_v3_transition_stop_gap.metric: 'uri_count'
       us_review_checker_rollout_v3_transition_stop_gap.statistic: mean
     row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: us_review_checker_rollout_v3_transition_stop_gap.submission_date
-    field_y: us_review_checker_rollout_v3_transition_stop_gap.point
-    log_scale: false
-    ci_lower: us_review_checker_rollout_v3_transition_stop_gap.lower
-    ci_upper: us_review_checker_rollout_v3_transition_stop_gap.upper
-    show_grid: true
-    listen:
-      Date: us_review_checker_rollout_v3_transition_stop_gap.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: us_review_checker_rollout_v3_transition_stop_gap
-    type: looker_line
-    fields: [
-      us_review_checker_rollout_v3_transition_stop_gap.submission_date,
-      us_review_checker_rollout_v3_transition_stop_gap.branch,
-      us_review_checker_rollout_v3_transition_stop_gap.point
-    ]
-    pivots: [
-      us_review_checker_rollout_v3_transition_stop_gap.branch
-    ]
-    filters:
-      us_review_checker_rollout_v3_transition_stop_gap.metric: 'days_of_use'
-      us_review_checker_rollout_v3_transition_stop_gap.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: us_review_checker_rollout_v3_transition_stop_gap.submission_date
-    field_y: us_review_checker_rollout_v3_transition_stop_gap.point
-    log_scale: false
-    ci_lower: us_review_checker_rollout_v3_transition_stop_gap.lower
-    ci_upper: us_review_checker_rollout_v3_transition_stop_gap.upper
-    show_grid: true
-    listen:
-      Date: us_review_checker_rollout_v3_transition_stop_gap.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: us_review_checker_rollout_v3_transition_stop_gap
-    type: looker_line
-    fields: [
-      us_review_checker_rollout_v3_transition_stop_gap.submission_date,
-      us_review_checker_rollout_v3_transition_stop_gap.branch,
-      us_review_checker_rollout_v3_transition_stop_gap.point
-    ]
-    pivots: [
-      us_review_checker_rollout_v3_transition_stop_gap.branch
-    ]
-    filters:
-      us_review_checker_rollout_v3_transition_stop_gap.metric: 'search_count'
-      us_review_checker_rollout_v3_transition_stop_gap.statistic: mean
-    row: 10
     col: 12
     width: 12
     height: 8
@@ -164,7 +96,7 @@
     filters:
       us_review_checker_rollout_v3_transition_stop_gap.metric: 'retained'
       us_review_checker_rollout_v3_transition_stop_gap.statistic: mean
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -197,6 +129,74 @@
     ]
     filters:
       us_review_checker_rollout_v3_transition_stop_gap.metric: 'active_hours'
+      us_review_checker_rollout_v3_transition_stop_gap.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: us_review_checker_rollout_v3_transition_stop_gap.submission_date
+    field_y: us_review_checker_rollout_v3_transition_stop_gap.point
+    log_scale: false
+    ci_lower: us_review_checker_rollout_v3_transition_stop_gap.lower
+    ci_upper: us_review_checker_rollout_v3_transition_stop_gap.upper
+    show_grid: true
+    listen:
+      Date: us_review_checker_rollout_v3_transition_stop_gap.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: us_review_checker_rollout_v3_transition_stop_gap
+    type: looker_line
+    fields: [
+      us_review_checker_rollout_v3_transition_stop_gap.submission_date,
+      us_review_checker_rollout_v3_transition_stop_gap.branch,
+      us_review_checker_rollout_v3_transition_stop_gap.point
+    ]
+    pivots: [
+      us_review_checker_rollout_v3_transition_stop_gap.branch
+    ]
+    filters:
+      us_review_checker_rollout_v3_transition_stop_gap.metric: 'search_count'
+      us_review_checker_rollout_v3_transition_stop_gap.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: us_review_checker_rollout_v3_transition_stop_gap.submission_date
+    field_y: us_review_checker_rollout_v3_transition_stop_gap.point
+    log_scale: false
+    ci_lower: us_review_checker_rollout_v3_transition_stop_gap.lower
+    ci_upper: us_review_checker_rollout_v3_transition_stop_gap.upper
+    show_grid: true
+    listen:
+      Date: us_review_checker_rollout_v3_transition_stop_gap.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: us_review_checker_rollout_v3_transition_stop_gap
+    type: looker_line
+    fields: [
+      us_review_checker_rollout_v3_transition_stop_gap.submission_date,
+      us_review_checker_rollout_v3_transition_stop_gap.branch,
+      us_review_checker_rollout_v3_transition_stop_gap.point
+    ]
+    pivots: [
+      us_review_checker_rollout_v3_transition_stop_gap.branch
+    ]
+    filters:
+      us_review_checker_rollout_v3_transition_stop_gap.metric: 'ad_clicks'
       us_review_checker_rollout_v3_transition_stop_gap.statistic: mean
     row: 20
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       us_review_checker_rollout_v3_transition_stop_gap.branch
     ]
     filters:
-      us_review_checker_rollout_v3_transition_stop_gap.metric: 'uri_count'
+      us_review_checker_rollout_v3_transition_stop_gap.metric: 'days_of_use'
       us_review_checker_rollout_v3_transition_stop_gap.statistic: mean
     row: 30
     col: 12
