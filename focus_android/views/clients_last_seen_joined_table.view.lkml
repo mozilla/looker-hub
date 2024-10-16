@@ -131,6 +131,11 @@ view: clients_last_seen_joined_table {
     type: string
   }
 
+  dimension: install_source {
+    sql: ${TABLE}.install_source ;;
+    type: string
+  }
+
   dimension: is_default_browser {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno

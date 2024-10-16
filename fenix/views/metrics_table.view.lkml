@@ -4639,6 +4639,13 @@ view: metrics_table {
     group_item_label: "Numerator"
   }
 
+  dimension: metrics__string__blocklist_mlbf_softblocks_source {
+    sql: ${TABLE}.metrics.string.blocklist_mlbf_softblocks_source ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Blocklist Mlbf Softblocks Source"
+  }
+
   dimension: metrics__string__blocklist_mlbf_source {
     sql: ${TABLE}.metrics.string.blocklist_mlbf_source ;;
     type: string

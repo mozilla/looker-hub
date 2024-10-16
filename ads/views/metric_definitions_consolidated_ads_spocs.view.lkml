@@ -19,6 +19,8 @@ consolidated_ads_spocs_impressions,
 consolidated_ads_spocs_rate_type,
 consolidated_ads_spocs_revenue,
 consolidated_ads_spocs_targeted_country,
+consolidated_ads_spocs_title,
+consolidated_ads_spocs_url,
 
                 NULL AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
@@ -59,6 +61,8 @@ consolidated_ads_spocs.impressions AS consolidated_ads_spocs_impressions,
 consolidated_ads_spocs.rate_type AS consolidated_ads_spocs_rate_type,
 consolidated_ads_spocs.revenue AS consolidated_ads_spocs_revenue,
 consolidated_ads_spocs.targeted_country AS consolidated_ads_spocs_targeted_country,
+consolidated_ads_spocs.title AS consolidated_ads_spocs_title,
+consolidated_ads_spocs.url AS consolidated_ads_spocs_url,
 
                     FROM
                     (
@@ -72,6 +76,8 @@ consolidated_ads_spocs.targeted_country AS consolidated_ads_spocs_targeted_count
     campaign_name,
     targeted_country,
     rate_type,
+    creative_title as title,
+    creative_url as url,
     image_url as image,
     SUM(impressions) AS impressions,
     SUM(clicks) AS clicks,
@@ -83,6 +89,8 @@ consolidated_ads_spocs.targeted_country AS consolidated_ads_spocs_targeted_count
     campaign_name,
     targeted_country,
     rate_type,
+    creative_title,
+    creative_url,
     image_url
 )
 
@@ -110,6 +118,8 @@ consolidated_ads_spocs_impressions,
 consolidated_ads_spocs_rate_type,
 consolidated_ads_spocs_revenue,
 consolidated_ads_spocs_targeted_country,
+consolidated_ads_spocs_title,
+consolidated_ads_spocs_url,
 
                 client_id,
                 analysis_basis ;;
@@ -192,6 +202,18 @@ consolidated_ads_spocs_targeted_country,
 
   dimension: targeted_country {
     sql: ${TABLE}.consolidated_ads_spocs_targeted_country ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: title {
+    sql: ${TABLE}.consolidated_ads_spocs_title ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: url {
+    sql: ${TABLE}.consolidated_ads_spocs_url ;;
     type: string
     group_label: "Base Fields"
   }
