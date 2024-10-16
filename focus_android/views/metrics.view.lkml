@@ -1088,6 +1088,24 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__string__blocklist_mlbf_softblocks_source {
+    label: "Blocklist Mlbf Softblocks Source"
+    hidden: no
+    sql: ${TABLE}.metrics.string.blocklist_mlbf_softblocks_source ;;
+    type: string
+    group_label: "Blocklist"
+    group_item_label: "Mlbf Softblocks Source"
+
+    link: {
+      label: "Glean Dictionary reference for Blocklist Mlbf Softblocks Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/blocklist_mlbf_softblocks_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The source of the RemoteSettings attachment that holds the bloom filter. Possible values are \"dump_match\", \"cache_match\", \"remote_match\",\"dump_fallback\", \"cache_fallback\", \"unknown\". \"dump_match\", \"cache_match\" and \"remote_match\" are expected known-good values, and means that the loaded bloomfilter matches the blocklist record in the RemoteSettings collection. The prefix denotes the immediate source of the loaded data: \"dump\" means packaged with the application, \"remote\" means a freshly downloaded bloomfilter, \"cache\" means a previously downloaded bloomfilter. \"dump_fallback\" and \"cache_fallback\" means that the last known bloomfilter was used, despite it not matching the latest record in the RemoteSettings collection. In this case the outdated bloomfilter is used as a fallback (e.g. because the latest version cannot be downloaded). \"unknown\"  means that the bloomfilter cannot be loaded at all. This can happen if the blocklist is disabled via preferences or enterprise policies.
+"
+  }
+
   dimension: metrics__string__blocklist_mlbf_source {
     label: "Blocklist Mlbf Source"
     hidden: no

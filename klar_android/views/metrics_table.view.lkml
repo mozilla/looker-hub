@@ -2385,6 +2385,13 @@ the tracking protection settings panel from the toolbar.
     group_item_label: "Raw Blocklist Mlbf Generation Time"
   }
 
+  dimension: metrics__datetime__raw_blocklist_mlbf_softblocks_generation_time {
+    sql: ${TABLE}.metrics.datetime.raw_blocklist_mlbf_softblocks_generation_time ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Blocklist Mlbf Softblocks Generation Time"
+  }
+
   dimension: metrics__datetime__raw_blocklist_mlbf_stash_time_newest {
     sql: ${TABLE}.metrics.datetime.raw_blocklist_mlbf_stash_time_newest ;;
     type: string
@@ -4580,6 +4587,15 @@ API for the purposes of Validation (hence GVSV).
     type: number
     group_label: "Metrics Rate Verification Used Cert From Tls Handshake"
     group_item_label: "Numerator"
+  }
+
+  dimension: metrics__string__blocklist_mlbf_softblocks_source {
+    sql: ${TABLE}.metrics.string.blocklist_mlbf_softblocks_source ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Blocklist Mlbf Softblocks Source"
+    description: "The source of the RemoteSettings attachment that holds the bloom filter. Possible values are \"dump_match\", \"cache_match\", \"remote_match\",\"dump_fallback\", \"cache_fallback\", \"unknown\". \"dump_match\", \"cache_match\" and \"remote_match\" are expected known-good values, and means that the loaded bloomfilter matches the blocklist record in the RemoteSettings collection. The prefix denotes the immediate source of the loaded data: \"dump\" means packaged with the application, \"remote\" means a freshly downloaded bloomfilter, \"cache\" means a previously downloaded bloomfilter. \"dump_fallback\" and \"cache_fallback\" means that the last known bloomfilter was used, despite it not matching the latest record in the RemoteSettings collection. In this case the outdated bloomfilter is used as a fallback (e.g. because the latest version cannot be downloaded). \"unknown\"  means that the bloomfilter cannot be loaded at all. This can happen if the blocklist is disabled via preferences or enterprise policies.
+"
   }
 
   dimension: metrics__string__blocklist_mlbf_source {
@@ -13271,6 +13287,23 @@ documented in the ping's pings.yaml file.
       year,
     ]
     label: "Metrics Datetime: Blocklist Mlbf Generation Time"
+    description: "Keep track of the generation time of the addon blocklist's bloom filter. This marks the point in time until which signed add-ons are recognized by the selected bloom filter from the addons-bloomfilters collection.
+"
+  }
+
+  dimension_group: metrics__datetime__blocklist_mlbf_softblocks_generation {
+    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_softblocks_generation_time ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Blocklist Mlbf Softblocks Generation Time"
     description: "Keep track of the generation time of the addon blocklist's bloom filter. This marks the point in time until which signed add-ons are recognized by the selected bloom filter from the addons-bloomfilters collection.
 "
   }
