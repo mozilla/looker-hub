@@ -2062,6 +2062,13 @@ view: metrics_table {
     group_item_label: "Raw Blocklist Mlbf Generation Time"
   }
 
+  dimension: metrics__datetime__raw_blocklist_mlbf_softblocks_generation_time {
+    sql: ${TABLE}.metrics.datetime.raw_blocklist_mlbf_softblocks_generation_time ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Blocklist Mlbf Softblocks Generation Time"
+  }
+
   dimension: metrics__datetime__raw_blocklist_mlbf_stash_time_newest {
     sql: ${TABLE}.metrics.datetime.raw_blocklist_mlbf_stash_time_newest ;;
     type: string
@@ -12288,6 +12295,21 @@ view: metrics_table {
       year,
     ]
     label: "Metrics Datetime: Blocklist Mlbf Generation Time"
+  }
+
+  dimension_group: metrics__datetime__blocklist_mlbf_softblocks_generation {
+    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_softblocks_generation_time ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Blocklist Mlbf Softblocks Generation Time"
   }
 
   dimension_group: metrics__datetime__blocklist_mlbf_stash_time_newest {
