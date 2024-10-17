@@ -5630,17 +5630,32 @@ mdn_yari:
         table: mozdata.mdn_yari.page
       type: table_view
 monitor_backend:
-  explores: {}
+  explores:
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
   glean_app: true
   owners:
   - rhelmer@mozilla.com
   pretty_name: Mozilla Monitor (Backend)
   spoke: looker-spoke-default
   views:
+    events:
+      tables:
+      - base_table: mozdata.monitor_backend.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
     events_table:
       tables:
       - channel: null
         table: mozdata.monitor_backend.events
+      type: table_view
+    events_unnested_table:
+      tables:
+      - channel: null
+        table: mozdata.monitor_backend.events_unnested
       type: table_view
 monitor_frontend:
   explores:
@@ -14014,17 +14029,41 @@ relay:
       - table: mozdata.relay.subscriptions
       type: table_view
 relay_backend:
-  explores: {}
+  explores:
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
+    events_stream_table:
+      type: table_explore
+      views:
+        base_view: events_stream_table
   glean_app: true
   owners:
   - jwhitlock@mozilla.com
   pretty_name: Firefox Relay Backend
   spoke: looker-spoke-default
   views:
+    events:
+      tables:
+      - base_table: mozdata.relay_backend.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
+    events_stream_table:
+      tables:
+      - channel: null
+        table: mozdata.relay_backend.events_stream
+      type: table_view
     events_table:
       tables:
       - channel: null
         table: mozdata.relay_backend.events
+      type: table_view
+    events_unnested_table:
+      tables:
+      - channel: null
+        table: mozdata.relay_backend.events_unnested
       type: table_view
 revenue:
   connection: bigquery-oauth
