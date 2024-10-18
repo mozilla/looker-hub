@@ -447,5 +447,5 @@ view: events_stream_table {
     ]
   }
 
-  sql_table_name: `mozdata.relay_backend.events_stream` ;;
+  sql_table_name: `mozdata.monitor_backend.events_stream` ;;
 }
