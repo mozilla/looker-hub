@@ -493,6 +493,44 @@ Migrated from Telemetry's
 "
   }
 
+  dimension: metrics__quantity__browser_startup_abouthome_cache_result {
+    label: "Browser Startup Abouthome Cache Result"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.browser_startup_abouthome_cache_result ;;
+    type: number
+    group_label: "Browser Startup"
+    group_item_label: "Abouthome Cache Result"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Startup Abouthome Cache Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_startup_abouthome_cache_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How the about:home startup cache functioned on startup.
+0: Result value was never set (error case) 1: Cache did not exist 2: Cache page stream was corrupt / inaccessible 3: Cache script stream was corrupt / inaccessible 4: Cache was invalidated by a version bump 5: Cache was valid, but read too late to be useful. 6: Cache was valid and used. 7: Cache is disabled. 8: User did not load about:home on its own by default. 9: Cache is disabled because about:newtab preloading is disabled.
+This metric was generated to correspond to the Legacy Telemetry scalar browser.startup.abouthome_cache_result.
+"
+  }
+
+  dimension: metrics__boolean__browser_startup_abouthome_cache_shutdownwrite {
+    label: "Browser Startup Abouthome Cache Shutdownwrite"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.browser_startup_abouthome_cache_shutdownwrite ;;
+    type: yesno
+    group_label: "Browser Startup"
+    group_item_label: "Abouthome Cache Shutdownwrite"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Startup Abouthome Cache Shutdownwrite"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_startup_abouthome_cache_shutdownwrite"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the about:home startup cache was written via the AsyncShutdown blocker. This metric was generated to correspond to the Legacy Telemetry scalar browser.startup.abouthome_cache_shutdownwrite.
+"
+  }
+
   dimension: metrics__labeled_counter__crash_submission_channel_status {
     label: "Crash Submission Channel Status"
     hidden: yes
@@ -612,6 +650,222 @@ Migrated from Telemetry's
     }
 
     description: "The result of trying to upload a report to the DAP server.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_cache {
+    label: "Datasanitization Privacy Clear On Shutdown Cache"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_cache ;;
+    type: yesno
+    group_label: "Datasanitization"
+    group_item_label: "Privacy Clear On Shutdown Cache"
+
+    link: {
+      label: "Glean Dictionary reference for Datasanitization Privacy Clear On Shutdown Cache"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/datasanitization_privacy_clear_on_shutdown_cache"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.cache pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_cache.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_cookies {
+    label: "Datasanitization Privacy Clear On Shutdown Cookies"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_cookies ;;
+    type: yesno
+    group_label: "Datasanitization"
+    group_item_label: "Privacy Clear On Shutdown Cookies"
+
+    link: {
+      label: "Glean Dictionary reference for Datasanitization Privacy Clear On Shutdown Cookies"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/datasanitization_privacy_clear_on_shutdown_cookies"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.cookies pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_cookies.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_downloads {
+    label: "Datasanitization Privacy Clear On Shutdown Downloads"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_downloads ;;
+    type: yesno
+    group_label: "Datasanitization"
+    group_item_label: "Privacy Clear On Shutdown Downloads"
+
+    link: {
+      label: "Glean Dictionary reference for Datasanitization Privacy Clear On Shutdown Downloads"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/datasanitization_privacy_clear_on_shutdown_downloads"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.downloads pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_downloads.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_formdata {
+    label: "Datasanitization Privacy Clear On Shutdown Formdata"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_formdata ;;
+    type: yesno
+    group_label: "Datasanitization"
+    group_item_label: "Privacy Clear On Shutdown Formdata"
+
+    link: {
+      label: "Glean Dictionary reference for Datasanitization Privacy Clear On Shutdown Formdata"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/datasanitization_privacy_clear_on_shutdown_formdata"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.formdata pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_formdata.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_history {
+    label: "Datasanitization Privacy Clear On Shutdown History"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_history ;;
+    type: yesno
+    group_label: "Datasanitization"
+    group_item_label: "Privacy Clear On Shutdown History"
+
+    link: {
+      label: "Glean Dictionary reference for Datasanitization Privacy Clear On Shutdown History"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/datasanitization_privacy_clear_on_shutdown_history"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.history pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_history.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_offline_apps {
+    label: "Datasanitization Privacy Clear On Shutdown Offline Apps"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_offline_apps ;;
+    type: yesno
+    group_label: "Datasanitization"
+    group_item_label: "Privacy Clear On Shutdown Offline Apps"
+
+    link: {
+      label: "Glean Dictionary reference for Datasanitization Privacy Clear On Shutdown Offline Apps"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/datasanitization_privacy_clear_on_shutdown_offline_apps"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.offlineApps pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_offlineApps.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_open_windows {
+    label: "Datasanitization Privacy Clear On Shutdown Open Windows"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_open_windows ;;
+    type: yesno
+    group_label: "Datasanitization"
+    group_item_label: "Privacy Clear On Shutdown Open Windows"
+
+    link: {
+      label: "Glean Dictionary reference for Datasanitization Privacy Clear On Shutdown Open Windows"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/datasanitization_privacy_clear_on_shutdown_open_windows"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.openWindows pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_openWindows.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_sessions {
+    label: "Datasanitization Privacy Clear On Shutdown Sessions"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_sessions ;;
+    type: yesno
+    group_label: "Datasanitization"
+    group_item_label: "Privacy Clear On Shutdown Sessions"
+
+    link: {
+      label: "Glean Dictionary reference for Datasanitization Privacy Clear On Shutdown Sessions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/datasanitization_privacy_clear_on_shutdown_sessions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.sessions pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_sessions.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_site_settings {
+    label: "Datasanitization Privacy Clear On Shutdown Site Settings"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_site_settings ;;
+    type: yesno
+    group_label: "Datasanitization"
+    group_item_label: "Privacy Clear On Shutdown Site Settings"
+
+    link: {
+      label: "Glean Dictionary reference for Datasanitization Privacy Clear On Shutdown Site Settings"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/datasanitization_privacy_clear_on_shutdown_site_settings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.siteSettings pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_siteSettings.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_sanitize_sanitize_on_shutdown {
+    label: "Datasanitization Privacy Sanitize Sanitize On Shutdown"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_sanitize_sanitize_on_shutdown ;;
+    type: yesno
+    group_label: "Datasanitization"
+    group_item_label: "Privacy Sanitize Sanitize On Shutdown"
+
+    link: {
+      label: "Glean Dictionary reference for Datasanitization Privacy Sanitize Sanitize On Shutdown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/datasanitization_privacy_sanitize_sanitize_on_shutdown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A boolean reporting the value of the privacy.sanitize.sanitizeOnShutdown pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_sanitize_sanitizeOnShutdown.
+"
+  }
+
+  dimension: metrics__quantity__datasanitization_session_permission_exceptions {
+    label: "Datasanitization Session Permission Exceptions"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.datasanitization_session_permission_exceptions ;;
+    type: number
+    group_label: "Datasanitization"
+    group_item_label: "Session Permission Exceptions"
+
+    link: {
+      label: "Glean Dictionary reference for Datasanitization Session Permission Exceptions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/datasanitization_session_permission_exceptions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A count of how many \"session\" cookie exceptions a user has set. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.session_permission_exceptions.
+"
+  }
+
+  dimension: metrics__counter__downloads_panel_shown {
+    label: "Downloads Panel Shown"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.downloads_panel_shown ;;
+    type: number
+    group_label: "Downloads"
+    group_item_label: "Panel Shown"
+
+    link: {
+      label: "Glean Dictionary reference for Downloads Panel Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/downloads_panel_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of how many times the downloads panel was shown per session. This metric was generated to correspond to the Legacy Telemetry scalar downloads.panel_shown.
 "
   }
 
@@ -1145,6 +1399,57 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 Might not always have a value due to being too early for it to have
 loaded.
 Does not need to be sent in the Glean \"deletion-request\" ping.
+"
+  }
+
+  dimension: metrics__labeled_counter__library_link {
+    label: "Library Link"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.library_link ;;
+    group_label: "Library"
+    group_item_label: "Link"
+
+    link: {
+      label: "Glean Dictionary reference for Library Link"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/library_link"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of history or bookmark items opened from the Library window This metric was generated to correspond to the Legacy Telemetry scalar library.link.
+"
+  }
+
+  dimension: metrics__labeled_counter__library_opened {
+    label: "Library Opened"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.library_opened ;;
+    group_label: "Library"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Library Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/library_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times the Library window was opened, keyed by 'history' or 'bookmarks' This metric was generated to correspond to the Legacy Telemetry scalar library.opened.
+"
+  }
+
+  dimension: metrics__labeled_counter__library_search {
+    label: "Library Search"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.library_search ;;
+    group_label: "Library"
+    group_item_label: "Search"
+
+    link: {
+      label: "Glean Dictionary reference for Library Search"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/library_search"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of history-specific or bookmark-specific searches made from the Library window This metric was generated to correspond to the Legacy Telemetry scalar library.search.
 "
   }
 
@@ -1920,6 +2225,23 @@ in browser.
 "
   }
 
+  dimension: metrics__labeled_counter__sidebar_link {
+    label: "Sidebar Link"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.sidebar_link ;;
+    group_label: "Sidebar"
+    group_item_label: "Link"
+
+    link: {
+      label: "Glean Dictionary reference for Sidebar Link"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/sidebar_link"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of history items opened from the History sidebar. This metric was generated to correspond to the Legacy Telemetry scalar sidebar.link.
+"
+  }
+
   dimension: metrics__string__sidebar_position_settings {
     label: "Sidebar Position Settings"
     hidden: no
@@ -1935,6 +2257,23 @@ in browser.
     }
 
     description: "Setting for sidebar position (either \"left\" or \"right\").
+"
+  }
+
+  dimension: metrics__labeled_counter__sidebar_search {
+    label: "Sidebar Search"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.sidebar_search ;;
+    group_label: "Sidebar"
+    group_item_label: "Search"
+
+    link: {
+      label: "Glean Dictionary reference for Sidebar Search"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/sidebar_search"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of searches from the sidebar, per view (e.g.: bookmarks, history). This metric was generated to correspond to the Legacy Telemetry scalar sidebar.search.
 "
   }
 
@@ -2043,6 +2382,168 @@ in browser.
     }
 
     description: "Counts how long each successful ingest takes in the Firefox Suggest Rust component. Ingests that fail for whatever reason are not included.
+"
+  }
+
+  dimension: metrics__boolean__a11y_always_underline_links {
+    label: "A11Y Always Underline Links"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.a11y_always_underline_links ;;
+    type: yesno
+    group_label: "A11Y"
+    group_item_label: "Always Underline Links"
+
+    link: {
+      label: "Glean Dictionary reference for A11Y Always Underline Links"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/a11y_always_underline_links"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Bool tracking if the user has always underline links enabled in firefox. This metric was generated to correspond to the Legacy Telemetry scalar a11y.always_underline_links.
+"
+  }
+
+  dimension: metrics__boolean__a11y_backplate {
+    label: "A11Y Backplate"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.a11y_backplate ;;
+    type: yesno
+    group_label: "A11Y"
+    group_item_label: "Backplate"
+
+    link: {
+      label: "Glean Dictionary reference for A11Y Backplate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/a11y_backplate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Boolean tracking if the user has the backplate preference enabled or disabled. This metric was generated to correspond to the Legacy Telemetry scalar a11y.backplate.
+"
+  }
+
+  dimension: metrics__quantity__a11y_hcm_background {
+    label: "A11Y Hcm Background"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.a11y_hcm_background ;;
+    type: number
+    group_label: "A11Y"
+    group_item_label: "Hcm Background"
+
+    link: {
+      label: "Glean Dictionary reference for A11Y Hcm Background"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/a11y_hcm_background"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Unsigned int tracking the user's prefered background color \ (logged when HCM is enabled). This metric was generated to correspond to the Legacy Telemetry scalar a11y.HCM_background.
+"
+  }
+
+  dimension: metrics__quantity__a11y_hcm_foreground {
+    label: "A11Y Hcm Foreground"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.a11y_hcm_foreground ;;
+    type: number
+    group_label: "A11Y"
+    group_item_label: "Hcm Foreground"
+
+    link: {
+      label: "Glean Dictionary reference for A11Y Hcm Foreground"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/a11y_hcm_foreground"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Unsigned int tracking the user's prefered foreground color \ (logged when HCM is enabled). This metric was generated to correspond to the Legacy Telemetry scalar a11y.HCM_foreground.
+"
+  }
+
+  dimension: metrics__string__a11y_instantiators {
+    label: "A11Y Instantiators"
+    hidden: no
+    sql: ${TABLE}.metrics.string.a11y_instantiators ;;
+    type: string
+    group_label: "A11Y"
+    group_item_label: "Instantiators"
+
+    link: {
+      label: "Glean Dictionary reference for A11Y Instantiators"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/a11y_instantiators"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The leaf name and version number of the binary for the process responsible for remotely instantiating a11y. This metric was generated to correspond to the Legacy Telemetry scalar a11y.instantiators.
+"
+  }
+
+  dimension: metrics__boolean__a11y_invert_colors {
+    label: "A11Y Invert Colors"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.a11y_invert_colors ;;
+    type: yesno
+    group_label: "A11Y"
+    group_item_label: "Invert Colors"
+
+    link: {
+      label: "Glean Dictionary reference for A11Y Invert Colors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/a11y_invert_colors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Boolean tracking if the user has an invert colors OS setting enabled. This metric was generated to correspond to the Legacy Telemetry scalar a11y.invert_colors.
+"
+  }
+
+  dimension: metrics__labeled_boolean__a11y_theme {
+    label: "A11Y Theme"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.a11y_theme ;;
+    type: string
+    group_label: "A11Y"
+    group_item_label: "Theme"
+
+    link: {
+      label: "Glean Dictionary reference for A11Y Theme"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/a11y_theme"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "OS high contrast or other accessibility theme is enabled. The result is split into keys which represent the values of browser.display.document_color_use: \"default\", \"always\", or \"never\". This metric was generated to correspond to the Legacy Telemetry scalar a11y.theme.
+"
+  }
+
+  dimension: metrics__boolean__a11y_use_system_colors {
+    label: "A11Y Use System Colors"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.a11y_use_system_colors ;;
+    type: yesno
+    group_label: "A11Y"
+    group_item_label: "Use System Colors"
+
+    link: {
+      label: "Glean Dictionary reference for A11Y Use System Colors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/a11y_use_system_colors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Bool tracking if the user has system colors enabled in firefox. This metric was generated to correspond to the Legacy Telemetry scalar a11y.use_system_colors.
+"
+  }
+
+  dimension: metrics__counter__apz_scrollwheel_overshoot {
+    label: "Apz Scrollwheel Overshoot"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.apz_scrollwheel_overshoot ;;
+    type: number
+    group_label: "Apz"
+    group_item_label: "Scrollwheel Overshoot"
+
+    link: {
+      label: "Glean Dictionary reference for Apz Scrollwheel Overshoot"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/apz_scrollwheel_overshoot"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of overshoot events, where the user reverses scrollwheel direction soon after the last scrollwheel input. This metric was generated to correspond to the Legacy Telemetry scalar apz.scrollwheel_overshoot.
 "
   }
 
@@ -3350,6 +3851,24 @@ in browser.
 "
   }
 
+  dimension: metrics__counter__downloads_file_opened {
+    label: "Downloads File Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.downloads_file_opened ;;
+    type: number
+    group_label: "Downloads"
+    group_item_label: "File Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Downloads File Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/downloads_file_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of how many times files were opened from the download panel. This metric was generated to correspond to the Legacy Telemetry scalar downloads.file_opened.
+"
+  }
+
   dimension: metrics__labeled_counter__extensions_counters_browser_action_preload_result {
     label: "Extensions Counters Browser Action Preload Result"
     hidden: yes
@@ -3710,6 +4229,132 @@ startup function is called to when the startup promise resolves.
     }
 
     description: "Corresponds to the value of `extensions.webextensions.remote` pref.
+"
+  }
+
+  dimension: metrics__counter__findbar_find_next {
+    label: "Findbar Find Next"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.findbar_find_next ;;
+    type: number
+    group_label: "Findbar"
+    group_item_label: "Find Next"
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Find Next"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_find_next"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of how many times the find next button was used per session. This metric was generated to correspond to the Legacy Telemetry scalar findbar.find_next.
+"
+  }
+
+  dimension: metrics__counter__findbar_find_prev {
+    label: "Findbar Find Prev"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.findbar_find_prev ;;
+    type: number
+    group_label: "Findbar"
+    group_item_label: "Find Prev"
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Find Prev"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_find_prev"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of how many times the find previous button was used per session. This metric was generated to correspond to the Legacy Telemetry scalar findbar.find_prev.
+"
+  }
+
+  dimension: metrics__counter__findbar_highlight_all {
+    label: "Findbar Highlight All"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.findbar_highlight_all ;;
+    type: number
+    group_label: "Findbar"
+    group_item_label: "Highlight All"
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Highlight All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_highlight_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of how many times the \"Highlight All\" button was used in find toolbar. This metric was generated to correspond to the Legacy Telemetry scalar findbar.highlight_all.
+"
+  }
+
+  dimension: metrics__counter__findbar_match_case {
+    label: "Findbar Match Case"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.findbar_match_case ;;
+    type: number
+    group_label: "Findbar"
+    group_item_label: "Match Case"
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Match Case"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_match_case"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of how many times the \"Match Case\" button was used in find toolbar. This metric was generated to correspond to the Legacy Telemetry scalar findbar.match_case.
+"
+  }
+
+  dimension: metrics__counter__findbar_match_diacritics {
+    label: "Findbar Match Diacritics"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.findbar_match_diacritics ;;
+    type: number
+    group_label: "Findbar"
+    group_item_label: "Match Diacritics"
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Match Diacritics"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_match_diacritics"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of how many times the \"Match Diacritics\" button was used in find toolbar. This metric was generated to correspond to the Legacy Telemetry scalar findbar.match_diacritics.
+"
+  }
+
+  dimension: metrics__counter__findbar_shown {
+    label: "Findbar Shown"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.findbar_shown ;;
+    type: number
+    group_label: "Findbar"
+    group_item_label: "Shown"
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of how many times the \"Find toolbar\" was shown per session. This metric was generated to correspond to the Legacy Telemetry scalar findbar.shown.
+"
+  }
+
+  dimension: metrics__counter__findbar_whole_words {
+    label: "Findbar Whole Words"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.findbar_whole_words ;;
+    type: number
+    group_label: "Findbar"
+    group_item_label: "Whole Words"
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Whole Words"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_whole_words"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of how many times the \"Whole Words\" button was used in find toolbar. This metric was generated to correspond to the Legacy Telemetry scalar findbar.whole_words.
 "
   }
 
@@ -4753,6 +5398,60 @@ API for the purposes of Validation (hence GVSV).
 "
   }
 
+  dimension: metrics__quantity__gfx_hdr_windows_display_colorspace_bitfield {
+    label: "Gfx Hdr Windows Display Colorspace Bitfield"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gfx_hdr_windows_display_colorspace_bitfield ;;
+    type: number
+    group_label: "Gfx Hdr"
+    group_item_label: "Windows Display Colorspace Bitfield"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Hdr Windows Display Colorspace Bitfield"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/gfx_hdr_windows_display_colorspace_bitfield"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A bitfield representation of the available DXGI color spaces of the connected displays on Windows. See (https://docs.microsoft.com/en- us/windows/desktop/api/dxgicommon/ne-dxgicommon- dxgi_color_space_type) for definitions of color spaces. Each N'th bit of this scalar indicates whether the DXGI color space with index 'N' is available on at least one connected monitor. This metric was generated to correspond to the Legacy Telemetry scalar gfx.hdr.windows_display_colorspace_bitfield.
+"
+  }
+
+  dimension: metrics__string__gfx_linux_window_protocol {
+    label: "Gfx Linux Window Protocol"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_linux_window_protocol ;;
+    type: string
+    group_label: "Gfx"
+    group_item_label: "Linux Window Protocol"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Linux Window Protocol"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/gfx_linux_window_protocol"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Windowing protocol on Linux. Can be Wayland, WaylandDRM, XWayland, or X11 This metric was generated to correspond to the Legacy Telemetry scalar gfx.linux_window_protocol.
+"
+  }
+
+  dimension: metrics__boolean__gfx_os_compositor {
+    label: "Gfx Os Compositor"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.gfx_os_compositor ;;
+    type: yesno
+    group_label: "Gfx"
+    group_item_label: "Os Compositor"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Os Compositor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/gfx_os_compositor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Boolean indicating whether the os compositor is being used by WebRender. Only collected in the first subsession. This metric was generated to correspond to the Legacy Telemetry scalar gfx.os_compositor.
+"
+  }
+
   dimension: metrics__timing_distribution__gfx_scroll_present_latency__sum {
     label: "Gfx Scroll Present Latency Sum"
     hidden: no
@@ -4768,6 +5467,24 @@ API for the purposes of Validation (hence GVSV).
     }
 
     description: "Time between receiving a scroll event on the event loop and compositing its result onto the screen (ms). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__counter__gfx_skipped_composites {
+    label: "Gfx Skipped Composites"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.gfx_skipped_composites ;;
+    type: number
+    group_label: "Gfx"
+    group_item_label: "Skipped Composites"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Skipped Composites"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/gfx_skipped_composites"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of skipped composites, happening when rendering is too slow to keep up with content. This metric was generated to correspond to the Legacy Telemetry scalar gfx.skipped_composites.
 "
   }
 
@@ -4822,6 +5539,42 @@ API for the purposes of Validation (hence GVSV).
     }
 
     description: "The gecko version at the last time a compositor was initialized, and therefore when gfx_status_compositor was last updated. Due to gfx_status_compositor's user lifetime we see lots of unexpected values for the current gecko version. We believe this is because the user has not opened a tab since they were updated to a version where webrender should be enabled on their device. This can be used to verify that theory. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__boolean__gfx_supports_hdr {
+    label: "Gfx Supports Hdr"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.gfx_supports_hdr ;;
+    type: yesno
+    group_label: "Gfx"
+    group_item_label: "Supports Hdr"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Supports Hdr"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/gfx_supports_hdr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Does the hardware support accurate display of HDR content This metric was generated to correspond to the Legacy Telemetry scalar gfx.supports_hdr.
+"
+  }
+
+  dimension: metrics__boolean__gfx_tmp_writable {
+    label: "Gfx Tmp Writable"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.gfx_tmp_writable ;;
+    type: yesno
+    group_label: "Gfx"
+    group_item_label: "Tmp Writable"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Tmp Writable"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/gfx_tmp_writable"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Is the system temporary directory writable This metric was generated to correspond to the Legacy Telemetry scalar gfx.tmp_writable.
 "
   }
 
@@ -6088,7 +6841,8 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts the status of succeeded and failed requests to other mozilla.org domains"
+    description: "Counts the status of succeeded and failed requests to other mozilla.org domains
+"
   }
 
   dimension: metrics__labeled_counter__network_system_channel_remote_settings_status {
@@ -9522,6 +10276,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__boolean__preferences_prefs_file_was_invalid {
+    label: "Preferences Prefs File Was Invalid"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_prefs_file_was_invalid ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Prefs File Was Invalid"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Prefs File Was Invalid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/preferences_prefs_file_was_invalid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to true if a failure occurred reading profile/prefs.js. This metric was generated to correspond to the Legacy Telemetry scalar preferences.prefs_file_was_invalid.
+"
+  }
+
   dimension: metrics__timing_distribution__privacy_sanitize_load_time__sum {
     label: "Privacy Sanitize Load Time Sum"
     hidden: no
@@ -12214,6 +12986,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: downloads_panel_shown {
+    type: sum
+    sql: ${metrics__counter__downloads_panel_shown} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Downloads Panel Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/downloads_panel_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: downloads_panel_shown_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__downloads_panel_shown: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Downloads Panel Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/downloads_panel_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: messaging_system_glean_ping_for_ping_failures {
     type: sum
     sql: ${metrics__counter__messaging_system_glean_ping_for_ping_failures} ;;
@@ -12335,6 +13132,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Shopping Product Page Visits"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/shopping_product_page_visits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: apz_scrollwheel_overshoot {
+    type: sum
+    sql: ${metrics__counter__apz_scrollwheel_overshoot} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Apz Scrollwheel Overshoot"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/apz_scrollwheel_overshoot"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: apz_scrollwheel_overshoot_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__apz_scrollwheel_overshoot: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Apz Scrollwheel Overshoot"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/apz_scrollwheel_overshoot"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -12489,6 +13311,206 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: downloads_file_opened {
+    type: sum
+    sql: ${metrics__counter__downloads_file_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Downloads File Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/downloads_file_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: downloads_file_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__downloads_file_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Downloads File Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/downloads_file_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_find_next {
+    type: sum
+    sql: ${metrics__counter__findbar_find_next} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Find Next"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_find_next"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_find_next_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__findbar_find_next: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Find Next"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_find_next"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_find_prev {
+    type: sum
+    sql: ${metrics__counter__findbar_find_prev} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Find Prev"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_find_prev"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_find_prev_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__findbar_find_prev: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Find Prev"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_find_prev"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_highlight_all {
+    type: sum
+    sql: ${metrics__counter__findbar_highlight_all} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Highlight All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_highlight_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_highlight_all_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__findbar_highlight_all: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Highlight All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_highlight_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_match_case {
+    type: sum
+    sql: ${metrics__counter__findbar_match_case} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Match Case"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_match_case"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_match_case_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__findbar_match_case: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Match Case"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_match_case"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_match_diacritics {
+    type: sum
+    sql: ${metrics__counter__findbar_match_diacritics} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Match Diacritics"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_match_diacritics"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_match_diacritics_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__findbar_match_diacritics: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Match Diacritics"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_match_diacritics"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_shown {
+    type: sum
+    sql: ${metrics__counter__findbar_shown} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_shown_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__findbar_shown: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_whole_words {
+    type: sum
+    sql: ${metrics__counter__findbar_whole_words} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Whole Words"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_whole_words"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_whole_words_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__findbar_whole_words: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Whole Words"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/findbar_whole_words"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: fog_inits_during_shutdown {
     type: sum
     sql: ${metrics__counter__fog_inits_during_shutdown} ;;
@@ -12585,6 +13607,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Fog Ipc Shutdown Registration Failures"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_ipc_shutdown_registration_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: gfx_skipped_composites {
+    type: sum
+    sql: ${metrics__counter__gfx_skipped_composites} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Skipped Composites"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/gfx_skipped_composites"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: gfx_skipped_composites_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__gfx_skipped_composites: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Skipped Composites"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/gfx_skipped_composites"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -16623,6 +17670,129 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
   }
 }
 
+view: metrics__metrics__labeled_counter__library_link {
+  label: "Library - Link"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__library_opened {
+  label: "Library - Opened"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__library_search {
+  label: "Library - Search"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__media_audio_backend {
   label: "Media Audio - Backend"
 
@@ -20313,6 +21483,88 @@ view: metrics__metrics__labeled_counter__serp_ads_blocked_count {
   }
 }
 
+view: metrics__metrics__labeled_counter__sidebar_link {
+  label: "Sidebar - Link"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__sidebar_search {
+  label: "Sidebar - Search"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
   label: "Tls - Xyber Intolerance Reason"
 
@@ -21551,6 +22803,18 @@ view: metrics__metrics__custom_distribution__timer_thread_timers_fired_per_wakeu
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+  }
+}
+
+view: metrics__metrics__labeled_boolean__a11y_theme {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
   }
 }
 

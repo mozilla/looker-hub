@@ -324,6 +324,57 @@ view: dau_reporting_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__labeled_counter__browser_search_ad_clicks {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages.
+The key format is
+`<provider-name>.in-content.[sap|sap-follow-on|organic].[code|none](.[channel])?`,
+where:
+
+* `provider-name` is the name of the provider,
+* `sap|sap-follow-on|organic` is the search access point,
+* `code` is set when the url matches any of the provider's code prefixes,
+* `channel` is set to the url \"channel\" query parameter.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_in_content {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
+    hidden: yes
+    description: "Records the type of interaction a user has on SERP pages.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_search_count {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_search_count ;;
+    hidden: yes
+    description: "The labels for this counter are `<search-engine-name>.<source>`.
+
+If the search engine is bundled with Focus `search-engine-name` will be
+the name of the search engine. If it's a custom search engine (defined:
+https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
+`custom`.
+
+`source` will be: `action`, `suggestion`
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_with_ads {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
+    hidden: yes
+    description: "Records counts of SERP pages with adverts displayed.
+The key format is
+`<provider-name>.in-content.[sap|sap-follow-on|organic].[code|none](.[channel])?`,
+where:
+
+* `provider-name` is the name of the provider,
+* `sap|sap-follow-on|organic` is the search access point,
+* `code` is set when the url matches any of the provider's code prefixes,
+* `channel` is set to the url \"channel\" query parameter.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes

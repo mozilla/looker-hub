@@ -324,6 +324,42 @@ view: metrics_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__a11y_always_underline_links {
+    sql: ${TABLE}.metrics.boolean.a11y_always_underline_links ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "A11Y Always Underline Links"
+    description: "Bool tracking if the user has always underline links enabled in firefox. This metric was generated to correspond to the Legacy Telemetry scalar a11y.always_underline_links.
+"
+  }
+
+  dimension: metrics__boolean__a11y_backplate {
+    sql: ${TABLE}.metrics.boolean.a11y_backplate ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "A11Y Backplate"
+    description: "Boolean tracking if the user has the backplate preference enabled or disabled. This metric was generated to correspond to the Legacy Telemetry scalar a11y.backplate.
+"
+  }
+
+  dimension: metrics__boolean__a11y_invert_colors {
+    sql: ${TABLE}.metrics.boolean.a11y_invert_colors ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "A11Y Invert Colors"
+    description: "Boolean tracking if the user has an invert colors OS setting enabled. This metric was generated to correspond to the Legacy Telemetry scalar a11y.invert_colors.
+"
+  }
+
+  dimension: metrics__boolean__a11y_use_system_colors {
+    sql: ${TABLE}.metrics.boolean.a11y_use_system_colors ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "A11Y Use System Colors"
+    description: "Bool tracking if the user has system colors enabled in firefox. This metric was generated to correspond to the Legacy Telemetry scalar a11y.use_system_colors.
+"
+  }
+
   dimension: metrics__boolean__bounce_tracking_protection_enabled_at_startup {
     sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_at_startup ;;
     type: yesno
@@ -342,6 +378,15 @@ view: metrics_table {
 "
   }
 
+  dimension: metrics__boolean__browser_startup_abouthome_cache_shutdownwrite {
+    sql: ${TABLE}.metrics.boolean.browser_startup_abouthome_cache_shutdownwrite ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Browser Startup Abouthome Cache Shutdownwrite"
+    description: "True if the about:home startup cache was written via the AsyncShutdown blocker. This metric was generated to correspond to the Legacy Telemetry scalar browser.startup.abouthome_cache_shutdownwrite.
+"
+  }
+
   dimension: metrics__boolean__browser_ui_proton_enabled {
     sql: ${TABLE}.metrics.boolean.browser_ui_proton_enabled ;;
     type: yesno
@@ -357,6 +402,96 @@ view: metrics_table {
     group_label: "Metrics Boolean"
     group_item_label: "Cookie Banners Service Detect Only"
     description: "Tracks the value of the cookiebanners.service.detectOnly pref.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_cache {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_cache ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Cache"
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.cache pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_cache.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_cookies {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_cookies ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Cookies"
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.cookies pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_cookies.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_downloads {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_downloads ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Downloads"
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.downloads pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_downloads.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_formdata {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_formdata ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Formdata"
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.formdata pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_formdata.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_history {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_history ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown History"
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.history pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_history.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_offline_apps {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_offline_apps ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Offline Apps"
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.offlineApps pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_offlineApps.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_open_windows {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_open_windows ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Open Windows"
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.openWindows pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_openWindows.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_sessions {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_sessions ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Sessions"
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.sessions pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_sessions.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_site_settings {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_site_settings ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Site Settings"
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.siteSettings pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_siteSettings.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_sanitize_sanitize_on_shutdown {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_sanitize_sanitize_on_shutdown ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Sanitize Sanitize On Shutdown"
+    description: "A boolean reporting the value of the privacy.sanitize.sanitizeOnShutdown pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_sanitize_sanitizeOnShutdown.
 "
   }
 
@@ -425,12 +560,39 @@ Child-process data will likely be absent, or incomplete.
 "
   }
 
+  dimension: metrics__boolean__gfx_os_compositor {
+    sql: ${TABLE}.metrics.boolean.gfx_os_compositor ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Gfx Os Compositor"
+    description: "Boolean indicating whether the os compositor is being used by WebRender. Only collected in the first subsession. This metric was generated to correspond to the Legacy Telemetry scalar gfx.os_compositor.
+"
+  }
+
   dimension: metrics__boolean__gfx_status_headless {
     sql: ${TABLE}.metrics.boolean.gfx_status_headless ;;
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Gfx Status Headless"
     description: "Boolean indicated whether graphics is running in headless (no display) mode (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__boolean__gfx_supports_hdr {
+    sql: ${TABLE}.metrics.boolean.gfx_supports_hdr ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Gfx Supports Hdr"
+    description: "Does the hardware support accurate display of HDR content This metric was generated to correspond to the Legacy Telemetry scalar gfx.supports_hdr.
+"
+  }
+
+  dimension: metrics__boolean__gfx_tmp_writable {
+    sql: ${TABLE}.metrics.boolean.gfx_tmp_writable ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Gfx Tmp Writable"
+    description: "Is the system temporary directory writable This metric was generated to correspond to the Legacy Telemetry scalar gfx.tmp_writable.
 "
   }
 
@@ -542,6 +704,15 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__boolean__preferences_prefs_file_was_invalid {
+    sql: ${TABLE}.metrics.boolean.preferences_prefs_file_was_invalid ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Prefs File Was Invalid"
+    description: "Set to true if a failure occurred reading profile/prefs.js. This metric was generated to correspond to the Legacy Telemetry scalar preferences.prefs_file_was_invalid.
+"
+  }
+
   dimension: metrics__boolean__shopping_settings_auto_open_user_disabled {
     sql: ${TABLE}.metrics.boolean.shopping_settings_auto_open_user_disabled ;;
     type: yesno
@@ -607,6 +778,15 @@ in browser.
     group_label: "Metrics Boolean"
     group_item_label: "Startup Is Restored By Macos"
     description: "Recorded on every launch of a Firefox install on macOS, with a boolean value indicating whether Firefox was restored by macOS or if it was manually launched by a user.
+"
+  }
+
+  dimension: metrics__counter__apz_scrollwheel_overshoot {
+    sql: ${TABLE}.metrics.counter.apz_scrollwheel_overshoot ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Apz Scrollwheel Overshoot"
+    description: "Count of overshoot events, where the user reverses scrollwheel direction soon after the last scrollwheel input. This metric was generated to correspond to the Legacy Telemetry scalar apz.scrollwheel_overshoot.
 "
   }
 
@@ -721,6 +901,87 @@ Migrated from Telemetry's
 "
   }
 
+  dimension: metrics__counter__downloads_file_opened {
+    sql: ${TABLE}.metrics.counter.downloads_file_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Downloads File Opened"
+    description: "The count of how many times files were opened from the download panel. This metric was generated to correspond to the Legacy Telemetry scalar downloads.file_opened.
+"
+  }
+
+  dimension: metrics__counter__downloads_panel_shown {
+    sql: ${TABLE}.metrics.counter.downloads_panel_shown ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Downloads Panel Shown"
+    description: "The count of how many times the downloads panel was shown per session. This metric was generated to correspond to the Legacy Telemetry scalar downloads.panel_shown.
+"
+  }
+
+  dimension: metrics__counter__findbar_find_next {
+    sql: ${TABLE}.metrics.counter.findbar_find_next ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Findbar Find Next"
+    description: "The count of how many times the find next button was used per session. This metric was generated to correspond to the Legacy Telemetry scalar findbar.find_next.
+"
+  }
+
+  dimension: metrics__counter__findbar_find_prev {
+    sql: ${TABLE}.metrics.counter.findbar_find_prev ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Findbar Find Prev"
+    description: "The count of how many times the find previous button was used per session. This metric was generated to correspond to the Legacy Telemetry scalar findbar.find_prev.
+"
+  }
+
+  dimension: metrics__counter__findbar_highlight_all {
+    sql: ${TABLE}.metrics.counter.findbar_highlight_all ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Findbar Highlight All"
+    description: "The count of how many times the \"Highlight All\" button was used in find toolbar. This metric was generated to correspond to the Legacy Telemetry scalar findbar.highlight_all.
+"
+  }
+
+  dimension: metrics__counter__findbar_match_case {
+    sql: ${TABLE}.metrics.counter.findbar_match_case ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Findbar Match Case"
+    description: "The count of how many times the \"Match Case\" button was used in find toolbar. This metric was generated to correspond to the Legacy Telemetry scalar findbar.match_case.
+"
+  }
+
+  dimension: metrics__counter__findbar_match_diacritics {
+    sql: ${TABLE}.metrics.counter.findbar_match_diacritics ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Findbar Match Diacritics"
+    description: "The count of how many times the \"Match Diacritics\" button was used in find toolbar. This metric was generated to correspond to the Legacy Telemetry scalar findbar.match_diacritics.
+"
+  }
+
+  dimension: metrics__counter__findbar_shown {
+    sql: ${TABLE}.metrics.counter.findbar_shown ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Findbar Shown"
+    description: "The count of how many times the \"Find toolbar\" was shown per session. This metric was generated to correspond to the Legacy Telemetry scalar findbar.shown.
+"
+  }
+
+  dimension: metrics__counter__findbar_whole_words {
+    sql: ${TABLE}.metrics.counter.findbar_whole_words ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Findbar Whole Words"
+    description: "The count of how many times the \"Whole Words\" button was used in find toolbar. This metric was generated to correspond to the Legacy Telemetry scalar findbar.whole_words.
+"
+  }
+
   dimension: metrics__counter__fog_inits_during_shutdown {
     sql: ${TABLE}.metrics.counter.fog_inits_during_shutdown ;;
     type: number
@@ -766,6 +1027,15 @@ Large or rising number of clients experiencing this indicates we should
 perhaps refactor content child shutdown in FOG to try harder to register
 flush operations.
 Will likely be obsoleted by bug 1641989.
+"
+  }
+
+  dimension: metrics__counter__gfx_skipped_composites {
+    sql: ${TABLE}.metrics.counter.gfx_skipped_composites ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Gfx Skipped Composites"
+    description: "Number of skipped composites, happening when rendering is too slow to keep up with content. This metric was generated to correspond to the Legacy Telemetry scalar gfx.skipped_composites.
 "
   }
 
@@ -2465,6 +2735,13 @@ of the shopping experiment.
     group_item_label: "Raw Glean Validation First Run Hour"
   }
 
+  dimension: metrics__labeled_boolean__a11y_theme {
+    sql: ${TABLE}.metrics.labeled_boolean.a11y_theme ;;
+    hidden: yes
+    description: "OS high contrast or other accessibility theme is enabled. The result is split into keys which represent the values of browser.display.document_color_use: \"default\", \"always\", or \"never\". This metric was generated to correspond to the Legacy Telemetry scalar a11y.theme.
+"
+  }
+
   dimension: metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
     sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_normal_window_service_mode ;;
     hidden: yes
@@ -3016,6 +3293,27 @@ This metric appears in both the metrics and baseline pings.
     sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_parent_inactive ;;
     hidden: yes
     description: "How many times each IPC message type was sent. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__library_link {
+    sql: ${TABLE}.metrics.labeled_counter.library_link ;;
+    hidden: yes
+    description: "The number of history or bookmark items opened from the Library window This metric was generated to correspond to the Legacy Telemetry scalar library.link.
+"
+  }
+
+  dimension: metrics__labeled_counter__library_opened {
+    sql: ${TABLE}.metrics.labeled_counter.library_opened ;;
+    hidden: yes
+    description: "The number of times the Library window was opened, keyed by 'history' or 'bookmarks' This metric was generated to correspond to the Legacy Telemetry scalar library.opened.
+"
+  }
+
+  dimension: metrics__labeled_counter__library_search {
+    sql: ${TABLE}.metrics.labeled_counter.library_search ;;
+    hidden: yes
+    description: "The number of history-specific or bookmark-specific searches made from the Library window This metric was generated to correspond to the Legacy Telemetry scalar library.search.
 "
   }
 
@@ -3661,6 +3959,20 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__labeled_counter__sidebar_link {
+    sql: ${TABLE}.metrics.labeled_counter.sidebar_link ;;
+    hidden: yes
+    description: "The number of history items opened from the History sidebar. This metric was generated to correspond to the Legacy Telemetry scalar sidebar.link.
+"
+  }
+
+  dimension: metrics__labeled_counter__sidebar_search {
+    sql: ${TABLE}.metrics.labeled_counter.sidebar_search ;;
+    hidden: yes
+    description: "The number of searches from the sidebar, per view (e.g.: bookmarks, history). This metric was generated to correspond to the Legacy Telemetry scalar sidebar.search.
+"
+  }
+
   dimension: metrics__labeled_counter__tls_xyber_intolerance_reason {
     sql: ${TABLE}.metrics.labeled_counter.tls_xyber_intolerance_reason ;;
     hidden: yes
@@ -4132,6 +4444,24 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__quantity__a11y_hcm_background {
+    sql: ${TABLE}.metrics.quantity.a11y_hcm_background ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "A11Y Hcm Background"
+    description: "Unsigned int tracking the user's prefered background color \ (logged when HCM is enabled). This metric was generated to correspond to the Legacy Telemetry scalar a11y.HCM_background.
+"
+  }
+
+  dimension: metrics__quantity__a11y_hcm_foreground {
+    sql: ${TABLE}.metrics.quantity.a11y_hcm_foreground ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "A11Y Hcm Foreground"
+    description: "Unsigned int tracking the user's prefered foreground color \ (logged when HCM is enabled). This metric was generated to correspond to the Legacy Telemetry scalar a11y.HCM_foreground.
+"
+  }
+
   dimension: metrics__quantity__browser_backup_browser_extension_data_size {
     sql: ${TABLE}.metrics.quantity.browser_backup_browser_extension_data_size ;;
     type: number
@@ -4311,6 +4641,17 @@ count. Unset on other platforms.
 "
   }
 
+  dimension: metrics__quantity__browser_startup_abouthome_cache_result {
+    sql: ${TABLE}.metrics.quantity.browser_startup_abouthome_cache_result ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Startup Abouthome Cache Result"
+    description: "How the about:home startup cache functioned on startup.
+0: Result value was never set (error case) 1: Cache did not exist 2: Cache page stream was corrupt / inaccessible 3: Cache script stream was corrupt / inaccessible 4: Cache was invalidated by a version bump 5: Cache was valid, but read too late to be useful. 6: Cache was valid and used. 7: Cache is disabled. 8: User did not load about:home on its own by default. 9: Cache is disabled because about:newtab preloading is disabled.
+This metric was generated to correspond to the Legacy Telemetry scalar browser.startup.abouthome_cache_result.
+"
+  }
+
   dimension: metrics__quantity__cert_verifier_trust_obj_count {
     sql: ${TABLE}.metrics.quantity.cert_verifier_trust_obj_count ;;
     type: number
@@ -4342,6 +4683,15 @@ count. Unset on other platforms.
     group_label: "Metrics Quantity"
     group_item_label: "Data Storage Site Security Service State"
     description: "The number of entries stored in the SiteSecurityServiceState nsIDataStorage"
+  }
+
+  dimension: metrics__quantity__datasanitization_session_permission_exceptions {
+    sql: ${TABLE}.metrics.quantity.datasanitization_session_permission_exceptions ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Datasanitization Session Permission Exceptions"
+    description: "A count of how many \"session\" cookie exceptions a user has set. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.session_permission_exceptions.
+"
   }
 
   dimension: metrics__quantity__extensions_apis_dnr_evaluate_rules_count_max {
@@ -4442,6 +4792,15 @@ API for the purposes of Validation (hence GVSV).
     group_label: "Metrics Quantity"
     group_item_label: "Gfx Display Primary Width"
     description: "Width of the primary display, takes device rotation into account. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_hdr_windows_display_colorspace_bitfield {
+    sql: ${TABLE}.metrics.quantity.gfx_hdr_windows_display_colorspace_bitfield ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Gfx Hdr Windows Display Colorspace Bitfield"
+    description: "A bitfield representation of the available DXGI color spaces of the connected displays on Windows. See (https://docs.microsoft.com/en- us/windows/desktop/api/dxgicommon/ne-dxgicommon- dxgi_color_space_type) for definitions of color spaces. Each N'th bit of this scalar indicates whether the DXGI color space with index 'N' is available on at least one connected monitor. This metric was generated to correspond to the Legacy Telemetry scalar gfx.hdr.windows_display_colorspace_bitfield.
 "
   }
 
@@ -4928,6 +5287,15 @@ API for the purposes of Validation (hence GVSV).
     group_item_label: "Numerator"
   }
 
+  dimension: metrics__string__a11y_instantiators {
+    sql: ${TABLE}.metrics.string.a11y_instantiators ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "A11Y Instantiators"
+    description: "The leaf name and version number of the binary for the process responsible for remotely instantiating a11y. This metric was generated to correspond to the Legacy Telemetry scalar a11y.instantiators.
+"
+  }
+
   dimension: metrics__string__blocklist_mlbf_softblocks_source {
     sql: ${TABLE}.metrics.string.blocklist_mlbf_softblocks_source ;;
     type: string
@@ -5087,6 +5455,15 @@ API for the purposes of Validation (hence GVSV).
     group_label: "Metrics String"
     group_item_label: "Gfx Feature Webrender"
     description: "Whether webrender is enabled or disabled, and why. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_linux_window_protocol {
+    sql: ${TABLE}.metrics.string.gfx_linux_window_protocol ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gfx Linux Window Protocol"
+    description: "Windowing protocol on Linux. Can be Wayland, WaylandDRM, XWayland, or X11 This metric was generated to correspond to the Legacy Telemetry scalar gfx.linux_window_protocol.
 "
   }
 
@@ -15057,6 +15434,18 @@ view: metrics_table__metrics__custom_distribution__timer_thread_timers_fired_per
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__a11y_theme {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
   }
 }
 

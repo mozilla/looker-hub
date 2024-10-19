@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       android_ship_nightly_rollout.branch
     ]
     filters:
-      android_ship_nightly_rollout.metric: 'tagged_sap_searches'
+      android_ship_nightly_rollout.metric: 'retained'
       android_ship_nightly_rollout.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       android_ship_nightly_rollout.branch
     ]
     filters:
-      android_ship_nightly_rollout.metric: 'uri_count'
+      android_ship_nightly_rollout.metric: 'tagged_sap_searches'
       android_ship_nightly_rollout.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       android_ship_nightly_rollout.branch
     ]
     filters:
-      android_ship_nightly_rollout.metric: 'days_of_use'
+      android_ship_nightly_rollout.metric: 'uri_count'
       android_ship_nightly_rollout.statistic: mean
     row: 10
     col: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       android_ship_nightly_rollout.branch
     ]
     filters:
-      android_ship_nightly_rollout.metric: 'retained'
+      android_ship_nightly_rollout.metric: 'days_of_use'
       android_ship_nightly_rollout.statistic: mean
     row: 20
     col: 12

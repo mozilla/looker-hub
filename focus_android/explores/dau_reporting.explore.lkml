@@ -19,6 +19,26 @@ explore: dau_reporting {
     ]
   }
 
+  join: dau_reporting__metrics__labeled_counter__browser_search_ad_clicks {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${dau_reporting.metrics__labeled_counter__browser_search_ad_clicks}) AS dau_reporting__metrics__labeled_counter__browser_search_ad_clicks ON ${dau_reporting.document_id} = ${dau_reporting__metrics__labeled_counter__browser_search_ad_clicks.document_id} ;;
+  }
+
+  join: dau_reporting__metrics__labeled_counter__browser_search_in_content {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${dau_reporting.metrics__labeled_counter__browser_search_in_content}) AS dau_reporting__metrics__labeled_counter__browser_search_in_content ON ${dau_reporting.document_id} = ${dau_reporting__metrics__labeled_counter__browser_search_in_content.document_id} ;;
+  }
+
+  join: dau_reporting__metrics__labeled_counter__browser_search_search_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${dau_reporting.metrics__labeled_counter__browser_search_search_count}) AS dau_reporting__metrics__labeled_counter__browser_search_search_count ON ${dau_reporting.document_id} = ${dau_reporting__metrics__labeled_counter__browser_search_search_count.document_id} ;;
+  }
+
+  join: dau_reporting__metrics__labeled_counter__browser_search_with_ads {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${dau_reporting.metrics__labeled_counter__browser_search_with_ads}) AS dau_reporting__metrics__labeled_counter__browser_search_with_ads ON ${dau_reporting.document_id} = ${dau_reporting__metrics__labeled_counter__browser_search_with_ads.document_id} ;;
+  }
+
   join: dau_reporting__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${dau_reporting.metrics__labeled_counter__glean_error_invalid_label}) AS dau_reporting__metrics__labeled_counter__glean_error_invalid_label ON ${dau_reporting.document_id} = ${dau_reporting__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
