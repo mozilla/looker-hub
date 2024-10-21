@@ -28,8 +28,7 @@ This will be null for Discover impressions."
   dimension: has_good_page_experience {
     sql: ${TABLE}.has_good_page_experience ;;
     type: yesno
-    description: "Whether Google Search considers the page to be providing a good page experience.
-This will be null when the source data wasn't exported directly to BigQuery by Google."
+    description: "Whether Google Search considers the page to be providing a good page experience."
   }
 
   dimension: impressions {
@@ -116,8 +115,7 @@ This will be null for all Discover and Google News search impressions."
   dimension: search_appearance {
     sql: ${TABLE}.search_appearance ;;
     type: string
-    description: "How the search result appeared (e.g. normal result, translated result, video).
-This will be null when the source data wasn't exported directly to BigQuery by Google."
+    description: "How the search result appeared (e.g. normal result, translated result, video)."
   }
 
   dimension: search_type {

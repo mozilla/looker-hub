@@ -46,6 +46,11 @@ view: engagement_clients_table {
     map_layer_name: countries
   }
 
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+  }
+
   dimension: install_source {
     sql: ${TABLE}.install_source ;;
     type: string
@@ -106,6 +111,16 @@ view: engagement_clients_table {
     type: string
   }
 
+  dimension: play_store_attribution_content {
+    sql: ${TABLE}.play_store_attribution_content ;;
+    type: string
+  }
+
+  dimension: play_store_attribution_install_referrer_response {
+    sql: ${TABLE}.play_store_attribution_install_referrer_response ;;
+    type: string
+  }
+
   dimension: play_store_attribution_medium {
     sql: ${TABLE}.play_store_attribution_medium ;;
     type: string
@@ -116,9 +131,28 @@ view: engagement_clients_table {
     type: string
   }
 
+  dimension: play_store_attribution_term {
+    sql: ${TABLE}.play_store_attribution_term ;;
+    type: string
+  }
+
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+  }
+
+  dimension_group: adjust_attribution {
+    sql: ${TABLE}.adjust_attribution_timestamp ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
   }
 
   dimension_group: first_seen {
@@ -134,6 +168,34 @@ view: engagement_clients_table {
     ]
     convert_tz: no
     datatype: date
+  }
+
+  dimension_group: meta_attribution {
+    sql: ${TABLE}.meta_attribution_timestamp ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
+  dimension_group: play_store_attribution {
+    sql: ${TABLE}.play_store_attribution_timestamp ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
   }
 
   dimension_group: submission {

@@ -131,6 +131,11 @@ view: active_users_table {
     type: string
   }
 
+  dimension: install_source {
+    sql: ${TABLE}.install_source ;;
+    type: string
+  }
+
   dimension: is_daily_user {
     sql: ${TABLE}.is_daily_user ;;
     type: yesno
@@ -198,6 +203,11 @@ view: active_users_table {
 
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
+    type: string
+  }
+
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
     type: string
   }
 
