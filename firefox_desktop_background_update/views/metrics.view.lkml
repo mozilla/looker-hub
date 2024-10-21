@@ -113,6 +113,94 @@ It is possible for a Firefox installation to not have a default profile, but in 
 "
   }
 
+  dimension: metrics__labeled_counter__update_bitshresult {
+    label: "Update Bitshresult"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_bitshresult ;;
+    group_label: "Update"
+    group_item_label: "Bitshresult"
+
+    link: {
+      label: "Glean Dictionary reference for Update Bitshresult"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/update_bitshresult"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If a BITS download fails on the Windows side (that is to say, BITS ecounters an error rather than Firefox failing to interact with BITS), it will likely give an hresult error indicating what happened. This probe reports those error codes to allow us to see if BITS is commonly failing on some systems. This probe is keyed on the type of update download, either \"PARTIAL\" or \"COMPLETE\". This metric was generated to correspond to the Legacy Telemetry scalar update.bitshresult.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_move_result {
+    label: "Update Move Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_move_result ;;
+    group_label: "Update"
+    group_item_label: "Move Result"
+
+    link: {
+      label: "Glean Dictionary reference for Update Move Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/update_move_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Firefox keeps downloading updates in a different place from updates that are ready to install. Once the download completes, the resulting file has to be moved from the downloading update directory to the ready update directory. This probe counts the results that we get when attempting to perform this file move. Valid values for the keys for this probe are stored in the MOVE_RESULT_* values in UpdateTelemetry.sys.mjs. This metric was generated to correspond to the Legacy Telemetry scalar update.move_result.
+"
+  }
+
+  dimension: metrics__counter__update_no_window_auto_restarts {
+    label: "Update No Window Auto Restarts"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_no_window_auto_restarts ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "No Window Auto Restarts"
+
+    link: {
+      label: "Glean Dictionary reference for Update No Window Auto Restarts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/update_no_window_auto_restarts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "On macOS, all browser windows can be closed without exiting Firefox. If there is an update pending in that case, and we can install it silently, we restart automatically in order to do so. This probe counts the number of times the browser restarts to silently install a pending update. This metric was generated to correspond to the Legacy Telemetry scalar update.no_window_auto_restarts.
+"
+  }
+
+  dimension: metrics__boolean__update_suppress_prompts {
+    label: "Update Suppress Prompts"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.update_suppress_prompts ;;
+    type: yesno
+    group_label: "Update"
+    group_item_label: "Suppress Prompts"
+
+    link: {
+      label: "Glean Dictionary reference for Update Suppress Prompts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/update_suppress_prompts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "When an update is available and app.update.auto is disabled, a popup is opened prompting the user to download and install the update. The pref app.update.suppressPrompts causes Firefox Nightly to wait up to 7 days before showing the prompt, instead showing a badge and banner in the meantime. It also prevents Nightly from showing update restart prompts, instead showing a badge and banner immediately. This value is set for the users who set this pref to true. This metric was generated to correspond to the Legacy Telemetry scalar update.suppress_prompts.
+"
+  }
+
+  dimension: metrics__string__update_version_pin {
+    label: "Update Version Pin"
+    hidden: no
+    sql: ${TABLE}.metrics.string.update_version_pin ;;
+    type: string
+    group_label: "Update"
+    group_item_label: "Version Pin"
+
+    link: {
+      label: "Glean Dictionary reference for Update Version Pin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/update_version_pin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The AppUpdatePin Enterprise Policy controls the maximum version that the browser can update to. If the policy is set, this probe will report the policy's value. The possible policy values are \"X.\" and \"X.Y.\", where X is the pinned major version and Y is the pinned minor version. This metric was generated to correspond to the Legacy Telemetry scalar update.version_pin.
+"
+  }
+
   dimension: metrics__boolean__a11y_always_underline_links {
     label: "A11Y Always Underline Links"
     hidden: no
@@ -4375,6 +4463,41 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__media_decode_error_per_mime_type {
+    label: "Media Decode Error Per Mime Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_decode_error_per_mime_type ;;
+    group_label: "Media"
+    group_item_label: "Decode Error Per Mime Type"
+
+    link: {
+      label: "Glean Dictionary reference for Media Decode Error Per Mime Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/media_decode_error_per_mime_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count the number of times the media with a specific mime type (Eg. audio/vorbis, that would be used as the key) encounters a decode error during playback. This metric was generated to correspond to the Legacy Telemetry scalar media.decode_error_per_mime_type.
+"
+  }
+
+  dimension: metrics__counter__media_element_in_page_count {
+    label: "Media Element In Page Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.media_element_in_page_count ;;
+    type: number
+    group_label: "Media"
+    group_item_label: "Element In Page Count"
+
+    link: {
+      label: "Glean Dictionary reference for Media Element In Page Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/media_element_in_page_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times a document hierarchy contained at least one HTMLMediaElement. In addition, the telemetry probe 'MIXED_CONTENT_UNBLOCK_COUNTER' records the total number of loaded top level content documents, which can help us calculate the result of the percentage of documents using media. This metric was generated to correspond to the Legacy Telemetry scalar media.element_in_page_count.
+"
+  }
+
   dimension: metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
     label: "Media Playback Device Hardware Decoder Support"
     hidden: no
@@ -4406,6 +4529,42 @@ To be used to validate GIFFT.
     }
 
     description: "Count the amount of times where video playback is failed to start due to the mime type is not supported by Firefox. The result is accumulated per mime type, eg. video/hevc."
+  }
+
+  dimension: metrics__labeled_boolean__media_video_hardware_decoding_support {
+    label: "Media Video Hardware Decoding Support"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.media_video_hardware_decoding_support ;;
+    type: string
+    group_label: "Media"
+    group_item_label: "Video Hardware Decoding Support"
+
+    link: {
+      label: "Glean Dictionary reference for Media Video Hardware Decoding Support"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/media_video_hardware_decoding_support"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record whether hardware decoding is supported for the specific video codec. The key is the type of video codec, eg. video/vp9. This metric was generated to correspond to the Legacy Telemetry scalar media.video_hardware_decoding_support.
+"
+  }
+
+  dimension: metrics__labeled_boolean__media_video_hd_hardware_decoding_support {
+    label: "Media Video Hd Hardware Decoding Support"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.media_video_hd_hardware_decoding_support ;;
+    type: string
+    group_label: "Media"
+    group_item_label: "Video Hd Hardware Decoding Support"
+
+    link: {
+      label: "Glean Dictionary reference for Media Video Hd Hardware Decoding Support"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/media_video_hd_hardware_decoding_support"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record whether hardware decoding is supported for the specific video codec, this only records video in HD (1280*720) or higher resultion. The key is the type of video codec, eg. video/vp9. This metric was generated to correspond to the Legacy Telemetry scalar media.video_hd_hardware_decoding_support.
+"
   }
 
   dimension: metrics__labeled_counter__netwerk_early_hints {
@@ -4580,6 +4739,78 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__network_cache_read_time__sum {
+    label: "Network Cache Read Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_read_time.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Cache Read Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Cache Read Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_cache_read_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection cache read start to cache read end. Corresponds to Legacy histogram HTTP_PAGE_CACHE_READ_TIME_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load__sum {
+    label: "Network Complete Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Complete Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Complete Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_complete_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection open to complete load (cache read end/until the last byte received) Corresponds to Legacy histogram HTTP_PAGE_COMPLETE_LOAD_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_cached__sum {
+    label: "Network Complete Load Cached Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_cached.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Complete Load Cached Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Complete Load Cached Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_complete_load_cached"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection open to cache read end. Corresponds to Legacy histogram HTTP_PAGE_COMPLETE_LOAD_CACHED_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_net__sum {
+    label: "Network Complete Load Net Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_net.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Complete Load Net Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Complete Load Net Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_complete_load_net"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection open to the last byte received. Corresponds to Legacy histogram HTTP_PAGE_COMPLETE_LOAD_NET_V2 in Desktop.
+"
+  }
+
   dimension: metrics__labeled_counter__network_cors_authorization_header {
     label: "Network Cors Authorization Header"
     hidden: yes
@@ -4685,6 +4916,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__network_first_sent_to_last_received__sum {
+    label: "Network First Sent To Last Received Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_first_sent_to_last_received.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "First Sent To Last Received Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network First Sent To Last Received Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_first_sent_to_last_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from first byte of request sent to the last byte received. Corresponds to Legacy histogram HTTP_PAGE_FIRST_SENT_TO_LAST_RECEIVED in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__timing_distribution__network_font_download_end__sum {
     label: "Network Font Download End Sum"
     hidden: no
@@ -4703,6 +4952,60 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__network_http_revalidation__sum {
+    label: "Network Http Revalidation Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_http_revalidation.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Http Revalidation Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Http Revalidation Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_http_revalidation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time for positive cache validation Corresponds to Legacy histogram HTTP_PAGE_REVALIDATION in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_received__sum {
+    label: "Network Open To First Received Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_received.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Open To First Received Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Open To First Received Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_open_to_first_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel,time from connection open to the first byte received. Corresponds to Legacy histogram HTTP_PAGE_OPEN_TO_FIRST_RECEIVED in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_sent__sum {
+    label: "Network Open To First Sent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_sent.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Open To First Sent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Open To First Sent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_open_to_first_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection open to the first byte of requst sent. Corresponds to Legacy histogram HTTP_PAGE_OPEN_TO_FIRST_SENT in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__sum {
     label: "Network Open To Transaction Pending Sum"
     hidden: yes
@@ -4718,6 +5021,240 @@ To be used to validate GIFFT.
     }
 
     description: "The time spent from HttpChannelChild::AsyncOpen to adding the transaction to the nsHttpConnectionMgr
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_cache_read_time__sum {
+    label: "Network Sub Cache Read Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_cache_read_time.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Cache Read Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Cache Read Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_sub_cache_read_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from connection cache read start to cache read end. Corresponds to Legacy histogram HTTP_SUB_CACHE_READ_TIME_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load__sum {
+    label: "Network Sub Complete Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Complete Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Complete Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_sub_complete_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from connection open to complete load (cache read end/until the last byte received) Corresponds to Legacy histogram HTTP_SUB_COMPLETE_LOAD_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_cached__sum {
+    label: "Network Sub Complete Load Cached Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_cached.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Complete Load Cached Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Complete Load Cached Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_sub_complete_load_cached"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from connection open to cache read end. Corresponds to Legacy histogram HTTP_SUB_COMPLETE_LOAD_CACHED_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_net__sum {
+    label: "Network Sub Complete Load Net Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_net.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Complete Load Net Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Complete Load Net Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_sub_complete_load_net"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from connection open to the last byte received. Corresponds to Legacy histogram HTTP_SUB_COMPLETE_LOAD_NET_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_end__sum {
+    label: "Network Sub Dns End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_end.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Dns End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Dns End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_sub_dns_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from the DNS request being issued to the response. Corresponds to Legacy histogram HTTP_SUB_DNS_LOOKUP_TIME in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_start__sum {
+    label: "Network Sub Dns Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_start.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Dns Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Dns Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_sub_dns_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from connection open to the DNS request being issued. Corresponds to Legacy histogram HTTP_SUB_DNS_ISSUE_TIME in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_from_cache__sum {
+    label: "Network Sub First From Cache Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_from_cache.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub First From Cache Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub First From Cache Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_sub_first_from_cache"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from connection open to cache read start. Corresponds to Legacy histogram HTTP_SUB_OPEN_TO_FIRST_FROM_CACHE_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_sent_to_last_received__sum {
+    label: "Network Sub First Sent To Last Received Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_sent_to_last_received.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub First Sent To Last Received Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub First Sent To Last Received Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_sub_first_sent_to_last_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from first byte of request sent to the last byte received. Corresponds to Legacy histogram HTTP_SUB_FIRST_SENT_TO_LAST_RECEIVED in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_http_revalidation__sum {
+    label: "Network Sub Http Revalidation Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_http_revalidation.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Http Revalidation Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Http Revalidation Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_sub_http_revalidation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time for positive cache validation Corresponds to Legacy histogram HTTP_SUB_REVALIDATION in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_received__sum {
+    label: "Network Sub Open To First Received Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_received.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Open To First Received Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Open To First Received Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_sub_open_to_first_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from connection open to the first byte received. Corresponds to Legacy histogram HTTP_SUB_OPEN_TO_FIRST_RECEIVED in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_sent__sum {
+    label: "Network Sub Open To First Sent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_sent.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Open To First Sent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Open To First Sent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_sub_open_to_first_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from connection open to the first byte of requst sent. Corresponds to Legacy histogram HTTP_SUB_OPEN_TO_FIRST_SENT in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tcp_connection__sum {
+    label: "Network Sub Tcp Connection Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tcp_connection.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Tcp Connection Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Tcp Connection Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_sub_tcp_connection"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from the TCP SYN packet is received to the connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_SUB_TCP_CONNECTION_2 in Desktop (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tls_handshake__sum {
+    label: "Network Sub Tls Handshake Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tls_handshake.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Tls Handshake Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Tls Handshake Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_sub_tls_handshake"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from after the TCP SYN packet is received to the secure connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_SUB_TLS_HANDSHAKE in Desktop. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -5178,6 +5715,56 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_data_transferred_v3_kb {
+    label: "Networking Data Transferred V3 Kb"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_data_transferred_v3_kb ;;
+    group_label: "Networking"
+    group_item_label: "Data Transferred V3 Kb"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Data Transferred V3 Kb"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_data_transferred_v3_kb"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many KB of HTTP data transferred by type, there are some categories separated by keys based on 5 parameters:
+  1. normal browsing or private browsing
+  2. system principal or not
+  3. first party or third party
+  4. class of service (Leader/Background/Others)
+  5. tracking classification (Basic/Content/FingerprintingContent)
+
+Available keys are:
+  \"Y0_N1Sys\",
+  \"Y1_N1\",
+  \"Y2_N3Oth\",
+  \"Y3_N3BasicLead\",
+  \"Y4_N3BasicBg\",
+  \"Y5_N3BasicOth\",
+  \"Y6_N3ContentLead\",
+  \"Y7_N3ContentBg\",
+  \"Y8_N3ContentOth\",
+  \"Y9_N3FpLead\",
+  \"Y10_N3FpBg\",
+  \"Y11_N3FpOth\",
+  \"Y12_P1Sys\",
+  \"Y13_P1\",
+  \"Y14_P3Oth\",
+  \"Y15_P3BasicLead\",
+  \"Y16_P3BasicBg\",
+  \"Y17_P3BasicOth\",
+  \"Y18_P3ContentLead\",
+  \"Y19_P3ContentBg\",
+  \"Y20_P3ContentOth\",
+  \"Y21_P3FpLead\",
+  \"Y22_P3FpBg\",
+  \"Y23_P3FpOth\"
+
+This metric was generated to correspond to the Legacy Telemetry scalar networking.data_transferred_v3_kb.
+"
+  }
+
   dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__sum {
     label: "Networking Dns Failed Lookup Time Sum"
     hidden: no
@@ -5316,6 +5903,24 @@ To be used to validate GIFFT.
     }
 
     description: "Counts how many fetch keepalive requests are made. This counter helps us to understand the adoption of fetch keepalive for firefox.
+"
+  }
+
+  dimension: metrics__boolean__networking_http3_enabled {
+    label: "Networking Http3 Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.networking_http3_enabled ;;
+    type: yesno
+    group_label: "Networking"
+    group_item_label: "Http3 Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http3 Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_http3_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if HTTP3 is enabled at the start of a session. This metric was generated to correspond to the Legacy Telemetry scalar networking.http3_enabled.
 "
   }
 
@@ -6293,6 +6898,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__quantity__networking_https_rr_prefs_usage {
+    label: "Networking Https Rr Prefs Usage"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.networking_https_rr_prefs_usage ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Https Rr Prefs Usage"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Https Rr Prefs Usage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_https_rr_prefs_usage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A bitfield representation for the usage of HTTPS RR prefs. bit 0: network.dns.upgrade_with_https_rr is enabled or not. bit 1: network.dns.use_https_rr_as_altsvc is enabled or not. bit 2: network.dns.echconfig.enabled is enabled or not. This metric was generated to correspond to the Legacy Telemetry scalar networking.https_rr_prefs_usage.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_https_rr_presented {
     label: "Networking Https Rr Presented"
     hidden: yes
@@ -6324,6 +6947,42 @@ To be used to validate GIFFT.
     }
 
     description: "Whether an HTTP request gets upgraded to HTTPS because of HTTPS RR
+"
+  }
+
+  dimension: metrics__timespan__networking_loading_certs_task__value {
+    label: "Networking Loading Certs Task Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.networking_loading_certs_task.value ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Loading Certs Task Value"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Loading Certs Task Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_loading_certs_task"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time in milliseconds to load any external certificates. This occurs off of the main-thread, but can block main-thread operations. This metric was generated to correspond to the Legacy Telemetry scalar networking.loading_certs_task.
+"
+  }
+
+  dimension: metrics__timespan__networking_nss_initialization__value {
+    label: "Networking Nss Initialization Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.networking_nss_initialization.value ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Nss Initialization Value"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Nss Initialization Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_nss_initialization"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time in milliseconds to initialize the NSS component in the parent process. This metric was generated to correspond to the Legacy Telemetry scalar networking.nss_initialization.
 "
   }
 
@@ -6665,6 +7324,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_trr_connection_cycle_count {
+    label: "Networking Trr Connection Cycle Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_trr_connection_cycle_count ;;
+    group_label: "Networking"
+    group_item_label: "Trr Connection Cycle Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Trr Connection Cycle Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_trr_connection_cycle_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times we cycled the TRR connection during a subsession. Keyed by TRR provider URL. This metric was generated to correspond to the Legacy Telemetry scalar networking.trr_connection_cycle_count.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_trr_request_count {
     label: "Networking Trr Request Count"
     hidden: yes
@@ -6750,6 +7426,60 @@ To be used to validate GIFFT.
     }
 
     description: "The time it takes to make an OCSP request that succeeded.
+"
+  }
+
+  dimension: metrics__counter__opaque_response_blocking_cross_origin_opaque_response_count {
+    label: "Opaque Response Blocking Cross Origin Opaque Response Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.opaque_response_blocking_cross_origin_opaque_response_count ;;
+    type: number
+    group_label: "Opaque Response Blocking"
+    group_item_label: "Cross Origin Opaque Response Count"
+
+    link: {
+      label: "Glean Dictionary reference for Opaque Response Blocking Cross Origin Opaque Response Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/opaque_response_blocking_cross_origin_opaque_response_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of loads of cross origin opaque resources. This metric was generated to correspond to the Legacy Telemetry scalar opaque.response.blocking.cross_origin_opaque_response_count.
+"
+  }
+
+  dimension: metrics__counter__opaque_response_blocking_javascript_validation_count {
+    label: "Opaque Response Blocking Javascript Validation Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.opaque_response_blocking_javascript_validation_count ;;
+    type: number
+    group_label: "Opaque Response Blocking"
+    group_item_label: "Javascript Validation Count"
+
+    link: {
+      label: "Glean Dictionary reference for Opaque Response Blocking Javascript Validation Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/opaque_response_blocking_javascript_validation_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we run the JS validator. This metric was generated to correspond to the Legacy Telemetry scalar opaque.response.blocking.javascript_validation_count.
+"
+  }
+
+  dimension: metrics__boolean__os_environment_is_admin_without_uac {
+    label: "Os Environment Is Admin Without Uac"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.os_environment_is_admin_without_uac ;;
+    type: yesno
+    group_label: "Os Environment"
+    group_item_label: "Is Admin Without Uac"
+
+    link: {
+      label: "Glean Dictionary reference for Os Environment Is Admin Without Uac"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/os_environment_is_admin_without_uac"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates that the process is lauched with Admin privileges but without UAC. This metric was generated to correspond to the Legacy Telemetry scalar os.environment.is_admin_without_uac.
 "
   }
 
@@ -8255,6 +8985,24 @@ To be used to validate GIFFT.
     description: "The result of auto-filling a login form."
   }
 
+  dimension: metrics__quantity__pwmgr_potentially_breached_passwords {
+    label: "Pwmgr Potentially Breached Passwords"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.pwmgr_potentially_breached_passwords ;;
+    type: number
+    group_label: "Pwmgr"
+    group_item_label: "Potentially Breached Passwords"
+
+    link: {
+      label: "Glean Dictionary reference for Pwmgr Potentially Breached Passwords"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/pwmgr_potentially_breached_passwords"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of potentially breached passwords, as determined by LoginBreaches.getPotentialBreachesByLoginGUID. This metric was generated to correspond to the Legacy Telemetry scalar pwmgr.potentially_breached_passwords.
+"
+  }
+
   dimension: metrics__counter__rtcrtpsender_count {
     label: "Rtcrtpsender Count"
     hidden: no
@@ -8881,6 +9629,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__security_client_auth_cert_usage {
+    label: "Security Client Auth Cert Usage"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.security_client_auth_cert_usage ;;
+    group_label: "Security"
+    group_item_label: "Client Auth Cert Usage"
+
+    link: {
+      label: "Glean Dictionary reference for Security Client Auth Cert Usage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/security_client_auth_cert_usage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures how many servers have requested a client authentication certificate (key: \"requested\") and how many times the user has opted to send one in response (key: \"sent\"). This metric was generated to correspond to the Legacy Telemetry scalar security.client_auth_cert_usage.
+"
+  }
+
   dimension: metrics__custom_distribution__timer_thread_timers_fired_per_wakeup__sum {
     label: "Timer Thread Timers Fired Per Wakeup Sum"
     hidden: no
@@ -9369,6 +10134,40 @@ To be used to validate GIFFT.
     }
 
     description: "The total number of successful calls to navigator.credentials.get."
+  }
+
+  dimension: metrics__labeled_counter__webrtc_video_recv_codec_used {
+    label: "Webrtc Video Recv Codec Used"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_video_recv_codec_used ;;
+    group_label: "Webrtc Video"
+    group_item_label: "Recv Codec Used"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Video Recv Codec Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/webrtc_video_recv_codec_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The video codec used for receiving video on a WebRTC call. This metric was generated to correspond to the Legacy Telemetry scalar webrtc.video.recv_codec_used.
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtc_video_send_codec_used {
+    label: "Webrtc Video Send Codec Used"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_video_send_codec_used ;;
+    group_label: "Webrtc Video"
+    group_item_label: "Send Codec Used"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Video Send Codec Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/webrtc_video_send_codec_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The video codec used for sending video on a WebRTC call. This metric was generated to correspond to the Legacy Telemetry scalar webrtc.video.send_codec_used.
+"
   }
 
   dimension: metrics__labeled_counter__webrtcdtls_cipher {
@@ -10794,6 +11593,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: update_no_window_auto_restarts {
+    type: sum
+    sql: ${metrics__counter__update_no_window_auto_restarts} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update No Window Auto Restarts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/update_no_window_auto_restarts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_no_window_auto_restarts_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_no_window_auto_restarts: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update No Window Auto Restarts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/update_no_window_auto_restarts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: apz_scrollwheel_overshoot {
     type: sum
     sql: ${metrics__counter__apz_scrollwheel_overshoot} ;;
@@ -11494,6 +12318,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: media_element_in_page_count {
+    type: sum
+    sql: ${metrics__counter__media_element_in_page_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Media Element In Page Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/media_element_in_page_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: media_element_in_page_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__media_element_in_page_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Media Element In Page Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/media_element_in_page_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: netwerk_parent_connect_timeout {
     type: sum
     sql: ${metrics__counter__netwerk_parent_connect_timeout} ;;
@@ -11590,6 +12439,56 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Networking Set Cookie"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_set_cookie"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: opaque_response_blocking_cross_origin_opaque_response_count {
+    type: sum
+    sql: ${metrics__counter__opaque_response_blocking_cross_origin_opaque_response_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Opaque Response Blocking Cross Origin Opaque Response Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/opaque_response_blocking_cross_origin_opaque_response_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: opaque_response_blocking_cross_origin_opaque_response_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__opaque_response_blocking_cross_origin_opaque_response_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Opaque Response Blocking Cross Origin Opaque Response Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/opaque_response_blocking_cross_origin_opaque_response_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: opaque_response_blocking_javascript_validation_count {
+    type: sum
+    sql: ${metrics__counter__opaque_response_blocking_javascript_validation_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Opaque Response Blocking Javascript Validation Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/opaque_response_blocking_javascript_validation_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: opaque_response_blocking_javascript_validation_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__opaque_response_blocking_javascript_validation_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Opaque Response Blocking Javascript Validation Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/opaque_response_blocking_javascript_validation_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -15278,6 +16177,47 @@ view: metrics__metrics__labeled_counter__media_audio_init_failure {
   }
 }
 
+view: metrics__metrics__labeled_counter__media_decode_error_per_mime_type {
+  label: "Media - Decode Error Per Mime Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__media_playback_not_supported_video_per_mime_type {
   label: "Media Playback - Not Supported Video Per Mime Type"
 
@@ -16141,6 +17081,47 @@ view: metrics__metrics__labeled_counter__network_tls_early_data_negotiated {
 
 view: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
   label: "Networking - Cookie Timestamp Fixed Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_data_transferred_v3_kb {
+  label: "Networking - Data Transferred V3 Kb"
 
   dimension: document_id {
     type: string
@@ -17202,6 +18183,47 @@ view: metrics__metrics__labeled_counter__networking_speculative_connection_outco
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_trr_connection_cycle_count {
+  label: "Networking - Trr Connection Cycle Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -18476,6 +19498,47 @@ view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_
   }
 }
 
+view: metrics__metrics__labeled_counter__security_client_auth_cert_usage {
+  label: "Security - Client Auth Cert Usage"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
   label: "Tls - Xyber Intolerance Reason"
 
@@ -18519,6 +19582,88 @@ view: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
 
 view: metrics__metrics__labeled_counter__translations_request_count {
   label: "Translations - Request Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__update_bitshresult {
+  label: "Update - Bitshresult"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__update_move_result {
+  label: "Update - Move Result"
 
   dimension: document_id {
     type: string
@@ -18724,6 +19869,88 @@ view: metrics__metrics__labeled_counter__webauthn_create_authenticator_attachmen
 
 view: metrics__metrics__labeled_counter__webauthn_get_authenticator_attachment {
   label: "Webauthn Get - Authenticator Attachment"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webrtc_video_recv_codec_used {
+  label: "Webrtc Video - Recv Codec Used"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webrtc_video_send_codec_used {
+  label: "Webrtc Video - Send Codec Used"
 
   dimension: document_id {
     type: string
@@ -19778,6 +21005,30 @@ view: metrics__metrics__labeled_boolean__geolocation_linux_provider {
 }
 
 view: metrics__metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__media_video_hardware_decoding_support {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__media_video_hd_hardware_decoding_support {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -21336,6 +22587,54 @@ view: metrics__metrics__timing_distribution__network_cache_hit_time__values {
   }
 }
 
+view: metrics__metrics__timing_distribution__network_cache_read_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_complete_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_complete_load_cached__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_complete_load_net__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__network_dns_end__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -21372,6 +22671,18 @@ view: metrics__metrics__timing_distribution__network_first_from_cache__values {
   }
 }
 
+view: metrics__metrics__timing_distribution__network_first_sent_to_last_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__network_font_download_end__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -21384,7 +22695,199 @@ view: metrics__metrics__timing_distribution__network_font_download_end__values {
   }
 }
 
+view: metrics__metrics__timing_distribution__network_http_revalidation__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_open_to_first_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_open_to_first_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__network_open_to_transaction_pending__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_cache_read_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_complete_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_complete_load_cached__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_complete_load_net__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_dns_end__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_dns_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_first_from_cache__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_first_sent_to_last_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_http_revalidation__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_open_to_first_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_open_to_first_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_tcp_connection__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_tls_handshake__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
