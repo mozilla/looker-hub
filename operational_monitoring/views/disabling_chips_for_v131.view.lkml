@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: android_add_ons_extension_process_beta {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.android_add_ons_extension_process_beta_statistics ;;
+view: disabling_chips_for_v131 {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.disabling_chips_for_v131_statistics ;;
 
   dimension: submission_date {
     type: date

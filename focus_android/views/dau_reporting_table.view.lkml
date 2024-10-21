@@ -290,6 +290,26 @@ view: dau_reporting_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__labeled_counter__browser_search_ad_clicks {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_in_content {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_search_count {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_search_count ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_with_ads {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes

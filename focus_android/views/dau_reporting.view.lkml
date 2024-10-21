@@ -5,6 +5,97 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: dau_reporting {
+  dimension: metrics__labeled_counter__browser_search_ad_clicks {
+    label: "Browser Search Ad Clicks"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
+    group_label: "Browser Search"
+    group_item_label: "Ad Clicks"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Ad Clicks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/browser_search_ad_clicks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records clicks of adverts on SERP pages.
+The key format is
+`<provider-name>.in-content.[sap|sap-follow-on|organic].[code|none](.[channel])?`,
+where:
+
+* `provider-name` is the name of the provider,
+* `sap|sap-follow-on|organic` is the search access point,
+* `code` is set when the url matches any of the provider's code prefixes,
+* `channel` is set to the url \"channel\" query parameter.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_in_content {
+    label: "Browser Search In Content"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
+    group_label: "Browser Search"
+    group_item_label: "In Content"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search In Content"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/browser_search_in_content"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the type of interaction a user has on SERP pages.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_search_count {
+    label: "Browser Search Search Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_search_count ;;
+    group_label: "Browser Search"
+    group_item_label: "Search Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Search Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/browser_search_search_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The labels for this counter are `<search-engine-name>.<source>`.
+
+If the search engine is bundled with Focus `search-engine-name` will be
+the name of the search engine. If it's a custom search engine (defined:
+https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
+`custom`.
+
+`source` will be: `action`, `suggestion`
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_with_ads {
+    label: "Browser Search With Ads"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
+    group_label: "Browser Search"
+    group_item_label: "With Ads"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search With Ads"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/browser_search_with_ads"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records counts of SERP pages with adverts displayed.
+The key format is
+`<provider-name>.in-content.[sap|sap-follow-on|organic].[code|none](.[channel])?`,
+where:
+
+* `provider-name` is the name of the provider,
+* `sap|sap-follow-on|organic` is the search access point,
+* `code` is set when the url matches any of the provider's code prefixes,
+* `channel` is set to the url \"channel\" query parameter.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation Id"
     hidden: no
@@ -536,6 +627,170 @@ The labels are the `category.name` identifier of the metric.
   }
 
   sql_table_name: `mozdata.focus_android.dau_reporting` ;;
+}
+
+view: dau_reporting__metrics__labeled_counter__browser_search_ad_clicks {
+  label: "Browser Search - Ad Clicks"
+
+  dimension: document_id {
+    type: string
+    sql: ${dau_reporting.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${dau_reporting.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: dau_reporting__metrics__labeled_counter__browser_search_in_content {
+  label: "Browser Search - In Content"
+
+  dimension: document_id {
+    type: string
+    sql: ${dau_reporting.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${dau_reporting.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: dau_reporting__metrics__labeled_counter__browser_search_search_count {
+  label: "Browser Search - Search Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${dau_reporting.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${dau_reporting.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: dau_reporting__metrics__labeled_counter__browser_search_with_ads {
+  label: "Browser Search - With Ads"
+
+  dimension: document_id {
+    type: string
+    sql: ${dau_reporting.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${dau_reporting.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
+    hidden: no
+  }
 }
 
 view: dau_reporting__metrics__labeled_counter__glean_error_invalid_label {
