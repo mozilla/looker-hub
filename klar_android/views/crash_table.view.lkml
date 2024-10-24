@@ -11,6 +11,21 @@ view: crash_table {
     description: "A JSON string containing any payload properties not present in the schema"
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -657,7 +672,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metrics String"
     group_item_label: "Crash Remote Type"
-    description: "The type of the content process. See the full list of options [here](https://firefox-source-docs.mozilla.org/toolkit/components/telemetry/data/crash-ping.html#remote-process-types).
+    description: "Type of the child process, can be set to \"web\", \"file\" or \"extension\" but could also be unavailable.
 "
   }
 
