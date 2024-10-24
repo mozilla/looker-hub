@@ -104,6 +104,7 @@ newtab_clients_daily_topsite_tile_impressions,
 newtab_clients_daily_topsites_enabled,
 newtab_clients_daily_topsites_rows,
 newtab_clients_daily_topsites_sponsored_enabled,
+newtab_clients_daily_topsites_sponsored_tiles_configured,
 newtab_clients_daily_visits_with_default_ui,
 newtab_clients_daily_visits_with_default_ui_with_non_impression_engagement,
 newtab_clients_daily_visits_with_default_ui_with_non_search_engagement,
@@ -206,6 +207,7 @@ newtab_clients_daily.topsite_tile_impressions AS newtab_clients_daily_topsite_ti
 newtab_clients_daily.topsites_enabled AS newtab_clients_daily_topsites_enabled,
 newtab_clients_daily.topsites_rows AS newtab_clients_daily_topsites_rows,
 newtab_clients_daily.topsites_sponsored_enabled AS newtab_clients_daily_topsites_sponsored_enabled,
+newtab_clients_daily.topsites_sponsored_tiles_configured AS newtab_clients_daily_topsites_sponsored_tiles_configured,
 newtab_clients_daily.visits_with_default_ui AS newtab_clients_daily_visits_with_default_ui,
 newtab_clients_daily.visits_with_default_ui_with_non_impression_engagement AS newtab_clients_daily_visits_with_default_ui_with_non_impression_engagement,
 newtab_clients_daily.visits_with_default_ui_with_non_search_engagement AS newtab_clients_daily_visits_with_default_ui_with_non_search_engagement,
@@ -310,6 +312,7 @@ newtab_clients_daily_topsite_tile_impressions,
 newtab_clients_daily_topsites_enabled,
 newtab_clients_daily_topsites_rows,
 newtab_clients_daily_topsites_sponsored_enabled,
+newtab_clients_daily_topsites_sponsored_tiles_configured,
 newtab_clients_daily_visits_with_default_ui,
 newtab_clients_daily_visits_with_default_ui_with_non_impression_engagement,
 newtab_clients_daily_visits_with_default_ui_with_non_search_engagement,
@@ -1015,6 +1018,12 @@ a wallpaper.
   dimension: topsites_sponsored_enabled {
     sql: ${TABLE}.newtab_clients_daily_topsites_sponsored_enabled ;;
     type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: topsites_sponsored_tiles_configured {
+    sql: ${TABLE}.newtab_clients_daily_topsites_sponsored_tiles_configured ;;
+    type: number
     group_label: "Base Fields"
   }
 

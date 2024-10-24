@@ -11,6 +11,21 @@ view: metrics_table {
     description: "A JSON string containing any payload properties not present in the schema"
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -387,6 +402,24 @@ view: metrics_table {
 "
   }
 
+  dimension: metrics__boolean__contentblocking_cryptomining_blocking_enabled {
+    sql: ${TABLE}.metrics.boolean.contentblocking_cryptomining_blocking_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Contentblocking Cryptomining Blocking Enabled"
+    description: "True if cryptominer blocking is enabled globally at startup. This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.cryptomining_blocking_enabled.
+"
+  }
+
+  dimension: metrics__boolean__contentblocking_fingerprinting_blocking_enabled {
+    sql: ${TABLE}.metrics.boolean.contentblocking_fingerprinting_blocking_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Contentblocking Fingerprinting Blocking Enabled"
+    description: "True if fingerprinter blocking is enabled globally at startup. This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.fingerprinting_blocking_enabled.
+"
+  }
+
   dimension: metrics__boolean__cookie_banners_service_detect_only {
     sql: ${TABLE}.metrics.boolean.cookie_banners_service_detect_only ;;
     type: yesno
@@ -498,6 +531,15 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__boolean__policies_is_enterprise {
+    sql: ${TABLE}.metrics.boolean.policies_is_enterprise ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Policies Is Enterprise"
+    description: "Attempt to determine if the user is an enterprise user based on various signals. This metric was generated to correspond to the Legacy Telemetry scalar policies.is_enterprise.
+"
+  }
+
   dimension: metrics__boolean__preferences_prefs_file_was_invalid {
     sql: ${TABLE}.metrics.boolean.preferences_prefs_file_was_invalid ;;
     type: yesno
@@ -543,12 +585,30 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__cert_trust_cache_total {
+    sql: ${TABLE}.metrics.counter.cert_trust_cache_total ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Cert Trust Cache Total"
+    description: "How many certificate trust lookups are performed.
+"
+  }
+
   dimension: metrics__counter__compose_mails_sent {
     sql: ${TABLE}.metrics.counter.compose_mails_sent ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Compose Mails Sent"
     description: "How many emails were sent by the user."
+  }
+
+  dimension: metrics__counter__contentblocking_trackers_blocked_count {
+    sql: ${TABLE}.metrics.counter.contentblocking_trackers_blocked_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Contentblocking Trackers Blocked Count"
+    description: "A count of the number of tracking events blocked. This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.trackers_blocked_count.
+"
   }
 
   dimension: metrics__counter__cookie_banners_cookie_injection_fail {
@@ -899,6 +959,15 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__networking_cookie_count_invalid_first_party_partitioned_in_db {
+    sql: ${TABLE}.metrics.counter.networking_cookie_count_invalid_first_party_partitioned_in_db ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Cookie Count Invalid First Party Partitioned In Db"
+    description: "This counts the number of invalid first-party partitioned cookies that don't have the partitioned cookie attribution(CHIPS).
+"
+  }
+
   dimension: metrics__counter__networking_os_socket_limit_reached {
     sql: ${TABLE}.metrics.counter.networking_os_socket_limit_reached ;;
     type: number
@@ -923,6 +992,15 @@ This does not include deletion-request pings.
     group_label: "Metrics Counter"
     group_item_label: "Networking Set Cookie"
     description: "This counts the number of times we set a cookie. Introduced as a denomenator for measuring CHIPS adoption.
+"
+  }
+
+  dimension: metrics__counter__networking_set_invalid_first_party_partitioned_cookie {
+    sql: ${TABLE}.metrics.counter.networking_set_invalid_first_party_partitioned_cookie ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Set Invalid First Party Partitioned Cookie"
+    description: "This counts the number of times we set an invalid first-party partitioned cookie.
 "
   }
 
@@ -1058,6 +1136,51 @@ This does not include deletion-request pings.
     group_label: "Metrics Counter"
     group_item_label: "Power Total Thread Wakeups"
     description: "How many times threads woke up and could have woken up a CPU core.
+"
+  }
+
+  dimension: metrics__counter__printing_dialog_opened_via_preview_tm {
+    sql: ${TABLE}.metrics.counter.printing_dialog_opened_via_preview_tm ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Printing Dialog Opened Via Preview Tm"
+    description: "A counter incremented every time a user opens the system print dialog from the print preview interface. This metric was generated to correspond to the Legacy Telemetry scalar printing.dialog_opened_via_preview_tm.
+"
+  }
+
+  dimension: metrics__counter__printing_dialog_via_preview_cancelled_tm {
+    sql: ${TABLE}.metrics.counter.printing_dialog_via_preview_cancelled_tm ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Printing Dialog Via Preview Cancelled Tm"
+    description: "A counter incremented every time a user cancels a system print dialog that they opened from the print preview interface. This metric was generated to correspond to the Legacy Telemetry scalar printing.dialog_via_preview_cancelled_tm.
+"
+  }
+
+  dimension: metrics__counter__printing_preview_cancelled_tm {
+    sql: ${TABLE}.metrics.counter.printing_preview_cancelled_tm ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Printing Preview Cancelled Tm"
+    description: "A counter incremented every time a user exits print preview without printing. This metric was generated to correspond to the Legacy Telemetry scalar printing.preview_cancelled_tm.
+"
+  }
+
+  dimension: metrics__counter__printing_preview_opened_tm {
+    sql: ${TABLE}.metrics.counter.printing_preview_opened_tm ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Printing Preview Opened Tm"
+    description: "A counter incremented every time a user opens print preview. This metric was generated to correspond to the Legacy Telemetry scalar printing.preview_opened_tm.
+"
+  }
+
+  dimension: metrics__counter__printing_silent_print {
+    sql: ${TABLE}.metrics.counter.printing_silent_print ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Printing Silent Print"
+    description: "A counter incremented every time a silent print (a print without a print settings dialog being opened) is initiated.  This happens when extensions invoke ExtensionAPI.tabs.saveAsPDF, for example, or when the print.always_print_silent pref is set. This metric was generated to correspond to the Legacy Telemetry scalar printing.silent_print.
 "
   }
 
@@ -3551,6 +3674,27 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__printing_error {
+    sql: ${TABLE}.metrics.labeled_counter.printing_error ;;
+    hidden: yes
+    description: "A counter incremented every time the user encounters an error printing. The result is split into keys which represent the values of error codes related to printing. Possible values are listed in 'keys'. \"FAILURE\" is a catch-all code for an error we don't recognize. This metric was generated to correspond to the Legacy Telemetry scalar printing.error.
+"
+  }
+
+  dimension: metrics__labeled_counter__printing_settings_changed {
+    sql: ${TABLE}.metrics.labeled_counter.printing_settings_changed ;;
+    hidden: yes
+    description: "A count of how many times the user changed a setting in print preview, broken down per setting. This metric was generated to correspond to the Legacy Telemetry scalar printing.settings_changed.
+"
+  }
+
+  dimension: metrics__labeled_counter__printing_target_type {
+    sql: ${TABLE}.metrics.labeled_counter.printing_target_type ;;
+    hidden: yes
+    description: "A counter incremented every time the user prints to a certain target type.  The 'pdf_unknown' count is for printers with names that we don't know about/check for, but that have 'pdf' in their name, and is mainly a sanity check that we're not missing significant counts in 'pdf_file'. For the most part, the 'unknown' count will be prints to a physical printer, but we can't know for sure since third party drivers could also be print to file drivers that we don't otherwise catch in the other counts. This metric was generated to correspond to the Legacy Telemetry scalar printing.target_type.
+"
+  }
+
   dimension: metrics__labeled_counter__pwmgr_form_autofill_result {
     sql: ${TABLE}.metrics.labeled_counter.pwmgr_form_autofill_result ;;
     hidden: yes
@@ -4097,6 +4241,15 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__quantity__contentblocking_category {
+    sql: ${TABLE}.metrics.quantity.contentblocking_category ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Contentblocking Category"
+    description: "This scalar reports the value of the content blocking category pref (0 = \"standard\", 1 = \"strict\", 2 = \"custom\", 3 = some other value, this is not supported). This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.category.
+"
+  }
+
   dimension: metrics__quantity__data_storage_alternate_services {
     sql: ${TABLE}.metrics.quantity.data_storage_alternate_services ;;
     type: number
@@ -4266,12 +4419,30 @@ API for the purposes of Validation (hence GVSV).
     description: "The number of third-party PKCS#11 modules loaded."
   }
 
+  dimension: metrics__quantity__policies_count {
+    sql: ${TABLE}.metrics.quantity.policies_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Policies Count"
+    description: "A uint with the number of active enterprise policies, collected once at startup. This metric was generated to correspond to the Legacy Telemetry scalar policies.count.
+"
+  }
+
   dimension: metrics__quantity__pwmgr_potentially_breached_passwords {
     sql: ${TABLE}.metrics.quantity.pwmgr_potentially_breached_passwords ;;
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Pwmgr Potentially Breached Passwords"
     description: "The number of potentially breached passwords, as determined by LoginBreaches.getPotentialBreachesByLoginGUID. This metric was generated to correspond to the Legacy Telemetry scalar pwmgr.potentially_breached_passwords.
+"
+  }
+
+  dimension: metrics__quantity__startup_profile_count {
+    sql: ${TABLE}.metrics.quantity.startup_profile_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Startup Profile Count"
+    description: "This records the number of known profiles after startup completes. This includes any profiles that were created during startup. This metric was generated to correspond to the Legacy Telemetry scalar startup.profile_count.
 "
   }
 
@@ -4286,6 +4457,20 @@ API for the purposes of Validation (hence GVSV).
     sql: ${TABLE}.metrics.rate.cert_signature_cache_hits.numerator ;;
     type: number
     group_label: "Metrics Rate Cert Signature Cache Hits"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__cert_trust_cache_hits__denominator {
+    sql: ${TABLE}.metrics.rate.cert_trust_cache_hits.denominator ;;
+    type: number
+    group_label: "Metrics Rate Cert Trust Cache Hits"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__cert_trust_cache_hits__numerator {
+    sql: ${TABLE}.metrics.rate.cert_trust_cache_hits.numerator ;;
+    type: number
+    group_label: "Metrics Rate Cert Trust Cache Hits"
     group_item_label: "Numerator"
   }
 
@@ -4935,6 +5120,47 @@ for the purpose of experimentation enrollment.
 The specific values for reason are specific to each ping, and are
 documented in the ping's pings.yaml file.
 "
+  }
+
+  dimension: metrics__string__startup_profile_database_version {
+    sql: ${TABLE}.metrics.string.startup_profile_database_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Startup Profile Database Version"
+    description: "The version of the profiles.ini database loaded during startup. A value of \"0\" is used to indicate that no file was present during startup. This metric was generated to correspond to the Legacy Telemetry scalar startup.profile_database_version.
+"
+  }
+
+  dimension: metrics__string__startup_profile_selection_reason {
+    sql: ${TABLE}.metrics.string.startup_profile_selection_reason ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Startup Profile Selection Reason"
+    description: "How the profile was selected during startup. One of the following reasons:
+  unknown:
+    Generally should not happen, set as a default in case no other reason
+    occured.
+  profile-manager:
+    The profile was selected by the profile manager.
+  profile-selector:
+    The profile was selected by the profile selector window.
+  profile-reset:
+    The profile was selected for reset, normally this would mean a restart.
+  restart:
+    The user restarted the application, the same profile as previous will
+    be used.
+  argument-profile:
+    The profile was selected by the --profile command line argument.
+  argument-p:
+    The profile was selected by the -p command line argument.
+  firstrun-claimed-default:
+    A first run of a dedicated profiles build chose the old default
+    profile to be the default for this install.
+  firstrun-skipped-default:
+    A first run of a dedicated profiles build skipped over the old default
+    profile and created a new profile.
+  restart-claimed-default:
+    A first run of a dedicate"
   }
 
   dimension: metrics__string_list__mail_ui_configuration_folder_tree_modes {

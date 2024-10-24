@@ -11,7 +11,10 @@ view: metric_definitions_funnel_retention {
 SUM(repeat_user) AS repeat_users,
 SUM(retained_week_4) AS week_4_retained_users,
 
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -83,7 +86,10 @@ funnel_retention_retained_week_4,
                 (
                     SELECT
                         funnel_retention.*,
-                        looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
+                        looker_base_fields.app_version_major AS looker_base_fields_app_version_major,
+looker_base_fields.app_version_minor AS looker_base_fields_app_version_minor,
+looker_base_fields.app_version_patch AS looker_base_fields_app_version_patch,
+looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
 looker_base_fields.client_info.app_build AS looker_base_fields_client_info__app_build,
 looker_base_fields.client_info.app_channel AS looker_base_fields_client_info__app_channel,
 looker_base_fields.client_info.app_display_version AS looker_base_fields_client_info__app_display_version,
@@ -163,7 +169,10 @@ funnel_retention.retained_week_4 AS funnel_retention_retained_week_4,
                 
                 )
             GROUP BY
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -251,6 +260,24 @@ funnel_retention_retained_week_4,
 "
     type: number
     sql: ${TABLE}.week_4_retained_users ;;
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.looker_base_fields_app_version_major ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.looker_base_fields_app_version_minor ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.looker_base_fields_app_version_patch ;;
+    type: number
+    group_label: "Base Fields"
   }
 
   dimension: client_info__android_sdk_version {
