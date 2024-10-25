@@ -33,6 +33,8 @@ view: attribution_clients_table {
   dimension: is_suspicious_device_client {
     sql: ${TABLE}.is_suspicious_device_client ;;
     type: yesno
+    description: "Flag to identify suspicious device users, see bug-1846554 for more info.
+"
   }
 
   dimension: paid_vs_organic {

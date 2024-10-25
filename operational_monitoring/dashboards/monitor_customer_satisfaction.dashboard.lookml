@@ -78,15 +78,15 @@
   - title: Experiment Branch
     name: Experiment Branch
     type: string_filter
-    default_value: 'control'
+    default_value: 'treatment'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'control'
       - 'treatment'
+      - 'control'
       
   
   
@@ -116,8 +116,9 @@
       display: inline
       options:
       - 'petition_banner'
-      - 'last_scan_date'
       - 'csat_survey'
+      - 'last_scan_date'
+      - 'removal_time_estimates_banner'
       
   
   

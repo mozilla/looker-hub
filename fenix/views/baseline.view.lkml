@@ -148,8 +148,9 @@ location.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A string containing the distribution identifier. This is currently used
-to identify installs from Mozilla Online.
+    description: "A string containing the distribution identifier. This was used
+to identify installs from Mozilla Online, but now also identifies
+partnership deal distributions
 "
   }
 
@@ -395,6 +396,21 @@ This metric appears in both the metrics and baseline pings.
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
   }
 
   dimension: client_info__android_sdk_version {

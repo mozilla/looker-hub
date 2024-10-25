@@ -131,6 +131,11 @@ view: active_users_table {
     type: string
   }
 
+  dimension: install_source {
+    sql: ${TABLE}.install_source ;;
+    type: string
+  }
+
   dimension: is_daily_user {
     sql: ${TABLE}.is_daily_user ;;
     type: yesno

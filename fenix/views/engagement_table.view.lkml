@@ -54,6 +54,12 @@ view: engagement_table {
     description: "DAU - Daily Active Users"
   }
 
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+    description: "A string containing the distribution identifier."
+  }
+
   dimension: install_source {
     sql: ${TABLE}.install_source ;;
     type: string

@@ -76,6 +76,71 @@ view: search_revenue_levers_daily {
     type: number
   }
 
+  dimension: serp_events_ad_click {
+    sql: ${TABLE}.serp_events_ad_click ;;
+    type: number
+  }
+
+  dimension: serp_events_ad_click_organic {
+    sql: ${TABLE}.serp_events_ad_click_organic ;;
+    type: number
+  }
+
+  dimension: serp_events_client_count {
+    sql: ${TABLE}.serp_events_client_count ;;
+    type: number
+  }
+
+  dimension: serp_events_clients_with_ad_blocker_inferred {
+    sql: ${TABLE}.serp_events_clients_with_ad_blocker_inferred ;;
+    type: number
+  }
+
+  dimension: serp_events_num_ads_blocked {
+    sql: ${TABLE}.serp_events_num_ads_blocked ;;
+    type: number
+  }
+
+  dimension: serp_events_num_ads_visible {
+    sql: ${TABLE}.serp_events_num_ads_visible ;;
+    type: number
+  }
+
+  dimension: serp_events_organic {
+    sql: ${TABLE}.serp_events_organic ;;
+    type: number
+  }
+
+  dimension: serp_events_sap {
+    sql: ${TABLE}.serp_events_sap ;;
+    type: number
+  }
+
+  dimension: serp_events_sap_with_ad_blocker_inferred {
+    sql: ${TABLE}.serp_events_sap_with_ad_blocker_inferred ;;
+    type: number
+  }
+
+  dimension: serp_events_search_with_ads {
+    sql: ${TABLE}.serp_events_search_with_ads ;;
+    type: number
+  }
+
+  dimension: serp_events_search_with_ads_organic {
+    sql: ${TABLE}.serp_events_search_with_ads_organic ;;
+    type: number
+  }
+
+  dimension: serp_events_tagged_follow_on {
+    sql: ${TABLE}.serp_events_tagged_follow_on ;;
+    type: number
+  }
+
+  dimension: serp_events_tagged_sap {
+    sql: ${TABLE}.serp_events_tagged_sap ;;
+    type: number
+  }
+
   dimension: tagged_follow_on {
     sql: ${TABLE}.tagged_follow_on ;;
     type: number

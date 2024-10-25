@@ -11,6 +11,21 @@ view: default_agent_table {
     description: "A JSON string containing any payload properties not present in the schema"
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -362,6 +377,15 @@ The labels are the `category.name` identifier of the metric.
     hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__quantity__defaultagent_days_since_last_app_launch {
+    sql: ${TABLE}.metrics.quantity.defaultagent_days_since_last_app_launch ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Defaultagent Days Since Last App Launch"
+    description: "Number of days since the app last launched. Once this reaches 90 days, the installation will stop running the default browser agent.
 "
   }
 

@@ -121,6 +121,11 @@ view: baseline_clients_last_seen {
     type: string
   }
 
+  dimension: install_source {
+    sql: ${TABLE}.install_source ;;
+    type: string
+  }
+
   dimension: is_new_profile {
     sql: ${TABLE}.is_new_profile ;;
     type: yesno

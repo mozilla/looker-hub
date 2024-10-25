@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       round_2_post_choice_in_product_survey_ios_h1_2024.branch
     ]
     filters:
-      round_2_post_choice_in_product_survey_ios_h1_2024.metric: 'active_hours'
+      round_2_post_choice_in_product_survey_ios_h1_2024.metric: 'retained'
       round_2_post_choice_in_product_survey_ios_h1_2024.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       round_2_post_choice_in_product_survey_ios_h1_2024.branch
     ]
     filters:
-      round_2_post_choice_in_product_survey_ios_h1_2024.metric: 'retained'
+      round_2_post_choice_in_product_survey_ios_h1_2024.metric: 'active_hours'
       round_2_post_choice_in_product_survey_ios_h1_2024.statistic: mean
     row: 10
     col: 12

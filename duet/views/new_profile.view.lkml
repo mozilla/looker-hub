@@ -1771,6 +1771,8 @@ view: new_profile {
     occured.
   profile-manager:
     The profile was selected by the profile manager.
+  profile-selector:
+    The profile was selected by the profile selector window.
   profile-reset:
     The profile was selected for reset, normally this would mean a restart.
   restart:
@@ -1787,8 +1789,7 @@ view: new_profile {
     A first run of a dedicated profiles build skipped over the old default
     profile and created a new profile.
   restart-claimed-default:
-    A first run of a dedicated profiles build after a restart chose the
-    old defaul…"
+    A…"
   }
 
   dimension: payload__reason {

@@ -10,6 +10,24 @@ view: pageload_nightly_table {
     hidden: yes
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+    description: "The major version parsed from client_info.app_display_version, for example, 130.0.3 would return 130"
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+    description: "The minor version parsed from client_info.app_display_version, for example, 130.0.3 would return 0"
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+    description: "The patch number parsed from client_info.app_display_version, for example, 130.0.3 would return 3."
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string

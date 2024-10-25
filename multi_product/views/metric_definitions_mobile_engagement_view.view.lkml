@@ -17,6 +17,7 @@ mobile_engagement_view_app_name,
 mobile_engagement_view_app_version,
 mobile_engagement_view_country,
 mobile_engagement_view_dau,
+mobile_engagement_view_distribution_id,
 mobile_engagement_view_install_source,
 mobile_engagement_view_is_mobile,
 mobile_engagement_view_is_suspicious_device_client,
@@ -71,6 +72,7 @@ mobile_engagement_view.app_name AS mobile_engagement_view_app_name,
 mobile_engagement_view.app_version AS mobile_engagement_view_app_version,
 mobile_engagement_view.country AS mobile_engagement_view_country,
 mobile_engagement_view.dau AS mobile_engagement_view_dau,
+mobile_engagement_view.distribution_id AS mobile_engagement_view_distribution_id,
 mobile_engagement_view.install_source AS mobile_engagement_view_install_source,
 mobile_engagement_view.is_mobile AS mobile_engagement_view_is_mobile,
 mobile_engagement_view.is_suspicious_device_client AS mobile_engagement_view_is_suspicious_device_client,
@@ -120,6 +122,7 @@ mobile_engagement_view_app_name,
 mobile_engagement_view_app_version,
 mobile_engagement_view_country,
 mobile_engagement_view_dau,
+mobile_engagement_view_distribution_id,
 mobile_engagement_view_install_source,
 mobile_engagement_view_is_mobile,
 mobile_engagement_view_is_suspicious_device_client,
@@ -206,6 +209,12 @@ mobile_engagement_view_wau,
   dimension: dau {
     sql: ${TABLE}.mobile_engagement_view_dau ;;
     type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: distribution_id {
+    sql: ${TABLE}.mobile_engagement_view_distribution_id ;;
+    type: string
     group_label: "Base Fields"
   }
 
