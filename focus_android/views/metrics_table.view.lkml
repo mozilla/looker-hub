@@ -382,6 +382,13 @@ view: metrics_table {
     group_item_label: "Cookie Banners Service Detect Only"
   }
 
+  dimension: metrics__boolean__dom_parentprocess_private_window_used {
+    sql: ${TABLE}.metrics.boolean.dom_parentprocess_private_window_used ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Dom Parentprocess Private Window Used"
+  }
+
   dimension: metrics__boolean__extensions_use_remote_policy {
     sql: ${TABLE}.metrics.boolean.extensions_use_remote_policy ;;
     type: yesno
@@ -641,6 +648,41 @@ view: metrics_table {
     group_item_label: "Cookie Banners Cookie Injection Fail"
   }
 
+  dimension: metrics__counter__dom_contentprocess_build_id_mismatch {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_build_id_mismatch ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Build Id Mismatch"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_build_id_mismatch_false_positive {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_build_id_mismatch_false_positive ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Build Id Mismatch False Positive"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_os_priority_change_considered {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_os_priority_change_considered ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Os Priority Change Considered"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_os_priority_lowered {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_os_priority_lowered ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Os Priority Lowered"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_os_priority_raised {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_os_priority_raised ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Os Priority Raised"
+  }
+
   dimension: metrics__counter__dotprint_android_dialog_requested {
     sql: ${TABLE}.metrics.counter.dotprint_android_dialog_requested ;;
     type: number
@@ -870,6 +912,13 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Ls Request Send Cancellation"
+  }
+
+  dimension: metrics__counter__mathml_doc_count {
+    sql: ${TABLE}.metrics.counter.mathml_doc_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Mathml Doc Count"
   }
 
   dimension: metrics__counter__media_element_in_page_count {
@@ -2597,6 +2646,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__data_storage_entries {
     sql: ${TABLE}.metrics.labeled_counter.data_storage_entries ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__dom_parentprocess_process_launch_errors {
+    sql: ${TABLE}.metrics.labeled_counter.dom_parentprocess_process_launch_errors ;;
     hidden: yes
   }
 
