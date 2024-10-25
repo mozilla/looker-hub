@@ -333,6 +333,44 @@ view: vpnsession_table {
     group_item_label: "Session Connection Health Stable Count"
   }
 
+  dimension: metrics__custom_distribution__connection_health_data_transferred_rx__count {
+    sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_rx.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Connection Health Data Transferred Rx"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__connection_health_data_transferred_rx__sum {
+    sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_rx.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Connection Health Data Transferred Rx"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__connection_health_data_transferred_rx__values {
+    sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_rx.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__connection_health_data_transferred_tx__count {
+    sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_tx.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Connection Health Data Transferred Tx"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__connection_health_data_transferred_tx__sum {
+    sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_tx.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Connection Health Data Transferred Tx"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__connection_health_data_transferred_tx__values {
+    sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_tx.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__datetime__raw_session_session_end {
     sql: ${TABLE}.metrics.datetime.raw_session_session_end ;;
     type: string
@@ -779,6 +817,30 @@ view: vpnsession_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: vpnsession_table__metrics__custom_distribution__connection_health_data_transferred_rx__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: vpnsession_table__metrics__custom_distribution__connection_health_data_transferred_tx__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
