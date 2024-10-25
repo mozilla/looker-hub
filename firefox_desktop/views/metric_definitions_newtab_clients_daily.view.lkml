@@ -63,9 +63,11 @@ newtab_clients_daily_follow_on_search_ad_impressions,
 newtab_clients_daily_is_new_profile,
 newtab_clients_daily_legacy_telemetry_client_id,
 newtab_clients_daily_locale,
+newtab_clients_daily_newtab_dismissal_count,
 newtab_clients_daily_newtab_homepage_category,
 newtab_clients_daily_newtab_newtab_category,
 newtab_clients_daily_newtab_visit_count,
+newtab_clients_daily_non_search_engagement_count,
 newtab_clients_daily_normalized_os,
 newtab_clients_daily_normalized_os_version,
 newtab_clients_daily_organic_pocket_dismissals,
@@ -166,9 +168,11 @@ newtab_clients_daily.follow_on_search_ad_impressions AS newtab_clients_daily_fol
 newtab_clients_daily.is_new_profile AS newtab_clients_daily_is_new_profile,
 newtab_clients_daily.legacy_telemetry_client_id AS newtab_clients_daily_legacy_telemetry_client_id,
 newtab_clients_daily.locale AS newtab_clients_daily_locale,
+newtab_clients_daily.newtab_dismissal_count AS newtab_clients_daily_newtab_dismissal_count,
 newtab_clients_daily.newtab_homepage_category AS newtab_clients_daily_newtab_homepage_category,
 newtab_clients_daily.newtab_newtab_category AS newtab_clients_daily_newtab_newtab_category,
 newtab_clients_daily.newtab_visit_count AS newtab_clients_daily_newtab_visit_count,
+newtab_clients_daily.non_search_engagement_count AS newtab_clients_daily_non_search_engagement_count,
 newtab_clients_daily.normalized_os AS newtab_clients_daily_normalized_os,
 newtab_clients_daily.normalized_os_version AS newtab_clients_daily_normalized_os_version,
 newtab_clients_daily.organic_pocket_dismissals AS newtab_clients_daily_organic_pocket_dismissals,
@@ -271,9 +275,11 @@ newtab_clients_daily_follow_on_search_ad_impressions,
 newtab_clients_daily_is_new_profile,
 newtab_clients_daily_legacy_telemetry_client_id,
 newtab_clients_daily_locale,
+newtab_clients_daily_newtab_dismissal_count,
 newtab_clients_daily_newtab_homepage_category,
 newtab_clients_daily_newtab_newtab_category,
 newtab_clients_daily_newtab_visit_count,
+newtab_clients_daily_non_search_engagement_count,
 newtab_clients_daily_normalized_os,
 newtab_clients_daily_normalized_os_version,
 newtab_clients_daily_organic_pocket_dismissals,
@@ -775,6 +781,12 @@ a wallpaper.
     group_label: "Base Fields"
   }
 
+  dimension: newtab_dismissal_count {
+    sql: ${TABLE}.newtab_clients_daily_newtab_dismissal_count ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
   dimension: newtab_homepage_category {
     sql: ${TABLE}.newtab_clients_daily_newtab_homepage_category ;;
     type: string
@@ -789,6 +801,12 @@ a wallpaper.
 
   dimension: newtab_visit_count {
     sql: ${TABLE}.newtab_clients_daily_newtab_visit_count ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: non_search_engagement_count {
+    sql: ${TABLE}.newtab_clients_daily_non_search_engagement_count ;;
     type: number
     group_label: "Base Fields"
   }
