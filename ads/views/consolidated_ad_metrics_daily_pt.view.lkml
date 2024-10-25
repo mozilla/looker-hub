@@ -199,6 +199,8 @@ view: consolidated_ad_metrics_daily_pt {
       date,
       week,
       month,
+      month_num,
+      month_name,
       quarter,
       year,
     ]
