@@ -429,6 +429,15 @@ view: metrics_table {
 "
   }
 
+  dimension: metrics__boolean__dom_parentprocess_private_window_used {
+    sql: ${TABLE}.metrics.boolean.dom_parentprocess_private_window_used ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Dom Parentprocess Private Window Used"
+    description: "Whether a private browsing window has been used in the session. This metric was generated to correspond to the Legacy Telemetry scalar dom.parentprocess.private_window_used.
+"
+  }
+
   dimension: metrics__boolean__extensions_use_remote_policy {
     sql: ${TABLE}.metrics.boolean.extensions_use_remote_policy ;;
     type: yesno
@@ -645,6 +654,51 @@ To be used to validate GIFFT.
     group_label: "Metrics Counter"
     group_item_label: "Crash Submission Success"
     description: "Number of successfull crash report submissions
+"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_build_id_mismatch {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_build_id_mismatch ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Build Id Mismatch"
+    description: "The number of times the about:restartrequired page appeared due to a buildID mismatch between the parent and the content processes. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.buildID_mismatch.
+"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_build_id_mismatch_false_positive {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_build_id_mismatch_false_positive ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Build Id Mismatch False Positive"
+    description: "The number of times a process crashed early but we could verify it was not because of buildID mismatch between the parent and the content processes. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.buildID_mismatch_false_positive.
+"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_os_priority_change_considered {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_os_priority_change_considered ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Os Priority Change Considered"
+    description: "The number of times we've had the opportunity to change content process priority due to a tab switch or a tab being opened. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_change_considered.
+"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_os_priority_lowered {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_os_priority_lowered ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Os Priority Lowered"
+    description: "The number of times a content process has had its OS priority lowered due to only containing background tabs without audible media playing. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_lowered.
+"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_os_priority_raised {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_os_priority_raised ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Os Priority Raised"
+    description: "The number of times a content process has had its OS priority raised due to containing at least one foregrounded tab, or a tab with audible media has started playing in it. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_raised.
 "
   }
 
@@ -950,6 +1004,15 @@ This does not include deletion-request pings.
     group_label: "Metrics Counter"
     group_item_label: "Ls Request Send Cancellation"
     description: "Upticks whenever a LS request cancellation message is sent. This includes requests for ensuring either LSDatabase or LSObserver.
+"
+  }
+
+  dimension: metrics__counter__mathml_doc_count {
+    sql: ${TABLE}.metrics.counter.mathml_doc_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Mathml Doc Count"
+    description: "The number of documents that contained enabled MathML elements. This metric was generated to correspond to the Legacy Telemetry scalar mathml.doc_count.
 "
   }
 
@@ -2840,6 +2903,13 @@ This does not include deletion-request pings.
     sql: ${TABLE}.metrics.labeled_counter.data_storage_entries ;;
     hidden: yes
     description: "Counts the number of entries stored in each nsIDataStorage."
+  }
+
+  dimension: metrics__labeled_counter__dom_parentprocess_process_launch_errors {
+    sql: ${TABLE}.metrics.labeled_counter.dom_parentprocess_process_launch_errors ;;
+    hidden: yes
+    description: "Collect precise set of error code and calling site upon process creation failure path. This metric was generated to correspond to the Legacy Telemetry scalar dom.parentprocess.process_launch_errors.
+"
   }
 
   dimension: metrics__labeled_counter__dotprint_failure {

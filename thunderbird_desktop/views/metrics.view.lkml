@@ -1920,6 +1920,131 @@ view: metrics {
     description: "The number of entries stored in the SiteSecurityServiceState nsIDataStorage"
   }
 
+  dimension: metrics__counter__dom_contentprocess_build_id_mismatch {
+    label: "Dom Contentprocess Build Id Mismatch"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_build_id_mismatch ;;
+    type: number
+    group_label: "Dom Contentprocess"
+    group_item_label: "Build Id Mismatch"
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Build Id Mismatch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/dom_contentprocess_build_id_mismatch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times the about:restartrequired page appeared due to a buildID mismatch between the parent and the content processes. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.buildID_mismatch.
+"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_build_id_mismatch_false_positive {
+    label: "Dom Contentprocess Build Id Mismatch False Positive"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_build_id_mismatch_false_positive ;;
+    type: number
+    group_label: "Dom Contentprocess"
+    group_item_label: "Build Id Mismatch False Positive"
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Build Id Mismatch False Positive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/dom_contentprocess_build_id_mismatch_false_positive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times a process crashed early but we could verify it was not because of buildID mismatch between the parent and the content processes. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.buildID_mismatch_false_positive.
+"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_os_priority_change_considered {
+    label: "Dom Contentprocess Os Priority Change Considered"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_os_priority_change_considered ;;
+    type: number
+    group_label: "Dom Contentprocess"
+    group_item_label: "Os Priority Change Considered"
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Os Priority Change Considered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/dom_contentprocess_os_priority_change_considered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we've had the opportunity to change content process priority due to a tab switch or a tab being opened. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_change_considered.
+"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_os_priority_lowered {
+    label: "Dom Contentprocess Os Priority Lowered"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_os_priority_lowered ;;
+    type: number
+    group_label: "Dom Contentprocess"
+    group_item_label: "Os Priority Lowered"
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Os Priority Lowered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/dom_contentprocess_os_priority_lowered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times a content process has had its OS priority lowered due to only containing background tabs without audible media playing. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_lowered.
+"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_os_priority_raised {
+    label: "Dom Contentprocess Os Priority Raised"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_os_priority_raised ;;
+    type: number
+    group_label: "Dom Contentprocess"
+    group_item_label: "Os Priority Raised"
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Os Priority Raised"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/dom_contentprocess_os_priority_raised"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times a content process has had its OS priority raised due to containing at least one foregrounded tab, or a tab with audible media has started playing in it. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_raised.
+"
+  }
+
+  dimension: metrics__boolean__dom_parentprocess_private_window_used {
+    label: "Dom Parentprocess Private Window Used"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.dom_parentprocess_private_window_used ;;
+    type: yesno
+    group_label: "Dom Parentprocess"
+    group_item_label: "Private Window Used"
+
+    link: {
+      label: "Glean Dictionary reference for Dom Parentprocess Private Window Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/dom_parentprocess_private_window_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a private browsing window has been used in the session. This metric was generated to correspond to the Legacy Telemetry scalar dom.parentprocess.private_window_used.
+"
+  }
+
+  dimension: metrics__labeled_counter__dom_parentprocess_process_launch_errors {
+    label: "Dom Parentprocess Process Launch Errors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.dom_parentprocess_process_launch_errors ;;
+    group_label: "Dom Parentprocess"
+    group_item_label: "Process Launch Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Dom Parentprocess Process Launch Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/dom_parentprocess_process_launch_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Collect precise set of error code and calling site upon process creation failure path. This metric was generated to correspond to the Legacy Telemetry scalar dom.parentprocess.process_launch_errors.
+"
+  }
+
   dimension: metrics__counter__dotprint_android_dialog_requested {
     label: "Dotprint Android Dialog Requested"
     hidden: yes
@@ -4732,6 +4857,24 @@ To be used to validate GIFFT.
     }
 
     description: "Upticks whenever a LS request cancellation message is sent. This includes requests for ensuring either LSDatabase or LSObserver.
+"
+  }
+
+  dimension: metrics__counter__mathml_doc_count {
+    label: "Mathml Doc Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.mathml_doc_count ;;
+    type: number
+    group_label: "Mathml"
+    group_item_label: "Doc Count"
+
+    link: {
+      label: "Glean Dictionary reference for Mathml Doc Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mathml_doc_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of documents that contained enabled MathML elements. This metric was generated to correspond to the Legacy Telemetry scalar mathml.doc_count.
 "
   }
 
@@ -12389,6 +12532,131 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: dom_contentprocess_build_id_mismatch {
+    type: sum
+    sql: ${metrics__counter__dom_contentprocess_build_id_mismatch} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Build Id Mismatch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/dom_contentprocess_build_id_mismatch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dom_contentprocess_build_id_mismatch_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__dom_contentprocess_build_id_mismatch: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Build Id Mismatch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/dom_contentprocess_build_id_mismatch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dom_contentprocess_build_id_mismatch_false_positive {
+    type: sum
+    sql: ${metrics__counter__dom_contentprocess_build_id_mismatch_false_positive} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Build Id Mismatch False Positive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/dom_contentprocess_build_id_mismatch_false_positive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dom_contentprocess_build_id_mismatch_false_positive_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__dom_contentprocess_build_id_mismatch_false_positive: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Build Id Mismatch False Positive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/dom_contentprocess_build_id_mismatch_false_positive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dom_contentprocess_os_priority_change_considered {
+    type: sum
+    sql: ${metrics__counter__dom_contentprocess_os_priority_change_considered} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Os Priority Change Considered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/dom_contentprocess_os_priority_change_considered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dom_contentprocess_os_priority_change_considered_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__dom_contentprocess_os_priority_change_considered: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Os Priority Change Considered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/dom_contentprocess_os_priority_change_considered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dom_contentprocess_os_priority_lowered {
+    type: sum
+    sql: ${metrics__counter__dom_contentprocess_os_priority_lowered} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Os Priority Lowered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/dom_contentprocess_os_priority_lowered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dom_contentprocess_os_priority_lowered_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__dom_contentprocess_os_priority_lowered: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Os Priority Lowered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/dom_contentprocess_os_priority_lowered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dom_contentprocess_os_priority_raised {
+    type: sum
+    sql: ${metrics__counter__dom_contentprocess_os_priority_raised} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Os Priority Raised"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/dom_contentprocess_os_priority_raised"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dom_contentprocess_os_priority_raised_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__dom_contentprocess_os_priority_raised: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Os Priority Raised"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/dom_contentprocess_os_priority_raised"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: dotprint_android_dialog_requested {
     type: sum
     sql: ${metrics__counter__dotprint_android_dialog_requested} ;;
@@ -12960,6 +13228,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Ls Request Send Cancellation"
       url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/ls_request_send_cancellation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: mathml_doc_count {
+    type: sum
+    sql: ${metrics__counter__mathml_doc_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Mathml Doc Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mathml_doc_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: mathml_doc_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__mathml_doc_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Mathml Doc Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mathml_doc_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -15681,6 +15974,47 @@ view: metrics__metrics__labeled_counter__data_storage_entries {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__dom_parentprocess_process_launch_errors {
+  label: "Dom Parentprocess - Process Launch Errors"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
