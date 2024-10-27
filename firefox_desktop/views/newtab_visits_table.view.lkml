@@ -206,6 +206,12 @@ view: newtab_visits_table {
     type: yesno
   }
 
+  dimension: topsites_sponsored_tiles_configured {
+    sql: ${TABLE}.topsites_sponsored_tiles_configured ;;
+    type: number
+    description: "An integer from client configuration that determines how many tiles the client can see. This telemetry released in Fx123 (2024/02/20), so it should only be considered for clients with Fx123+."
+  }
+
   dimension: wallpaper_interactions {
     sql: ${TABLE}.wallpaper_interactions ;;
     hidden: yes

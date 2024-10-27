@@ -10,6 +10,21 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -346,11 +361,32 @@ view: metrics_table {
     group_item_label: "Browser Ui Proton Enabled"
   }
 
+  dimension: metrics__boolean__contentblocking_cryptomining_blocking_enabled {
+    sql: ${TABLE}.metrics.boolean.contentblocking_cryptomining_blocking_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Contentblocking Cryptomining Blocking Enabled"
+  }
+
+  dimension: metrics__boolean__contentblocking_fingerprinting_blocking_enabled {
+    sql: ${TABLE}.metrics.boolean.contentblocking_fingerprinting_blocking_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Contentblocking Fingerprinting Blocking Enabled"
+  }
+
   dimension: metrics__boolean__cookie_banners_service_detect_only {
     sql: ${TABLE}.metrics.boolean.cookie_banners_service_detect_only ;;
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Cookie Banners Service Detect Only"
+  }
+
+  dimension: metrics__boolean__dom_parentprocess_private_window_used {
+    sql: ${TABLE}.metrics.boolean.dom_parentprocess_private_window_used ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Dom Parentprocess Private Window Used"
   }
 
   dimension: metrics__boolean__extensions_use_remote_policy {
@@ -479,6 +515,13 @@ view: metrics_table {
     group_item_label: "Os Environment Is Admin Without Uac"
   }
 
+  dimension: metrics__boolean__policies_is_enterprise {
+    sql: ${TABLE}.metrics.boolean.policies_is_enterprise ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Policies Is Enterprise"
+  }
+
   dimension: metrics__boolean__preferences_prefs_file_was_invalid {
     sql: ${TABLE}.metrics.boolean.preferences_prefs_file_was_invalid ;;
     type: yesno
@@ -584,11 +627,60 @@ view: metrics_table {
     group_item_label: "Cert Signature Cache Total"
   }
 
+  dimension: metrics__counter__cert_trust_cache_total {
+    sql: ${TABLE}.metrics.counter.cert_trust_cache_total ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Cert Trust Cache Total"
+  }
+
+  dimension: metrics__counter__contentblocking_trackers_blocked_count {
+    sql: ${TABLE}.metrics.counter.contentblocking_trackers_blocked_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Contentblocking Trackers Blocked Count"
+  }
+
   dimension: metrics__counter__cookie_banners_cookie_injection_fail {
     sql: ${TABLE}.metrics.counter.cookie_banners_cookie_injection_fail ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Cookie Banners Cookie Injection Fail"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_build_id_mismatch {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_build_id_mismatch ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Build Id Mismatch"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_build_id_mismatch_false_positive {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_build_id_mismatch_false_positive ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Build Id Mismatch False Positive"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_os_priority_change_considered {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_os_priority_change_considered ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Os Priority Change Considered"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_os_priority_lowered {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_os_priority_lowered ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Os Priority Lowered"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_os_priority_raised {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_os_priority_raised ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Os Priority Raised"
   }
 
   dimension: metrics__counter__dotprint_android_dialog_requested {
@@ -822,6 +914,13 @@ view: metrics_table {
     group_item_label: "Ls Request Send Cancellation"
   }
 
+  dimension: metrics__counter__mathml_doc_count {
+    sql: ${TABLE}.metrics.counter.mathml_doc_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Mathml Doc Count"
+  }
+
   dimension: metrics__counter__media_element_in_page_count {
     sql: ${TABLE}.metrics.counter.media_element_in_page_count ;;
     type: number
@@ -834,6 +933,13 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Netwerk Parent Connect Timeout"
+  }
+
+  dimension: metrics__counter__networking_cookie_count_invalid_first_party_partitioned_in_db {
+    sql: ${TABLE}.metrics.counter.networking_cookie_count_invalid_first_party_partitioned_in_db ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Cookie Count Invalid First Party Partitioned In Db"
   }
 
   dimension: metrics__counter__networking_os_socket_limit_reached {
@@ -855,6 +961,13 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Networking Set Cookie"
+  }
+
+  dimension: metrics__counter__networking_set_invalid_first_party_partitioned_cookie {
+    sql: ${TABLE}.metrics.counter.networking_set_invalid_first_party_partitioned_cookie ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Set Invalid First Party Partitioned Cookie"
   }
 
   dimension: metrics__counter__opaque_response_blocking_cross_origin_opaque_response_count {
@@ -960,6 +1073,41 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Power Total Thread Wakeups"
+  }
+
+  dimension: metrics__counter__printing_dialog_opened_via_preview_tm {
+    sql: ${TABLE}.metrics.counter.printing_dialog_opened_via_preview_tm ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Printing Dialog Opened Via Preview Tm"
+  }
+
+  dimension: metrics__counter__printing_dialog_via_preview_cancelled_tm {
+    sql: ${TABLE}.metrics.counter.printing_dialog_via_preview_cancelled_tm ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Printing Dialog Via Preview Cancelled Tm"
+  }
+
+  dimension: metrics__counter__printing_preview_cancelled_tm {
+    sql: ${TABLE}.metrics.counter.printing_preview_cancelled_tm ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Printing Preview Cancelled Tm"
+  }
+
+  dimension: metrics__counter__printing_preview_opened_tm {
+    sql: ${TABLE}.metrics.counter.printing_preview_opened_tm ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Printing Preview Opened Tm"
+  }
+
+  dimension: metrics__counter__printing_silent_print {
+    sql: ${TABLE}.metrics.counter.printing_silent_print ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Printing Silent Print"
   }
 
   dimension: metrics__counter__rtcrtpsender_count {
@@ -2501,6 +2649,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__dom_parentprocess_process_launch_errors {
+    sql: ${TABLE}.metrics.labeled_counter.dom_parentprocess_process_launch_errors ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__dotprint_failure {
     sql: ${TABLE}.metrics.labeled_counter.dotprint_failure ;;
     hidden: yes
@@ -3046,6 +3199,21 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__printing_error {
+    sql: ${TABLE}.metrics.labeled_counter.printing_error ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__printing_settings_changed {
+    sql: ${TABLE}.metrics.labeled_counter.printing_settings_changed ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__printing_target_type {
+    sql: ${TABLE}.metrics.labeled_counter.printing_target_type ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__pwmgr_form_autofill_result {
     sql: ${TABLE}.metrics.labeled_counter.pwmgr_form_autofill_result ;;
     hidden: yes
@@ -3455,6 +3623,13 @@ view: metrics_table {
     group_item_label: "Cert Verifier Trust Obj Count"
   }
 
+  dimension: metrics__quantity__contentblocking_category {
+    sql: ${TABLE}.metrics.quantity.contentblocking_category ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Contentblocking Category"
+  }
+
   dimension: metrics__quantity__data_storage_alternate_services {
     sql: ${TABLE}.metrics.quantity.data_storage_alternate_services ;;
     type: number
@@ -3588,6 +3763,13 @@ view: metrics_table {
     group_item_label: "Pkcs11 Third Party Modules Loaded"
   }
 
+  dimension: metrics__quantity__policies_count {
+    sql: ${TABLE}.metrics.quantity.policies_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Policies Count"
+  }
+
   dimension: metrics__quantity__pwmgr_potentially_breached_passwords {
     sql: ${TABLE}.metrics.quantity.pwmgr_potentially_breached_passwords ;;
     type: number
@@ -3602,6 +3784,13 @@ view: metrics_table {
     group_item_label: "Shortcuts Shortcuts On Home Number"
   }
 
+  dimension: metrics__quantity__startup_profile_count {
+    sql: ${TABLE}.metrics.quantity.startup_profile_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Startup Profile Count"
+  }
+
   dimension: metrics__rate__cert_signature_cache_hits__denominator {
     sql: ${TABLE}.metrics.rate.cert_signature_cache_hits.denominator ;;
     type: number
@@ -3613,6 +3802,20 @@ view: metrics_table {
     sql: ${TABLE}.metrics.rate.cert_signature_cache_hits.numerator ;;
     type: number
     group_label: "Metrics Rate Cert Signature Cache Hits"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__cert_trust_cache_hits__denominator {
+    sql: ${TABLE}.metrics.rate.cert_trust_cache_hits.denominator ;;
+    type: number
+    group_label: "Metrics Rate Cert Trust Cache Hits"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__cert_trust_cache_hits__numerator {
+    sql: ${TABLE}.metrics.rate.cert_trust_cache_hits.numerator ;;
+    type: number
+    group_label: "Metrics Rate Cert Trust Cache Hits"
     group_item_label: "Numerator"
   }
 
@@ -4237,6 +4440,20 @@ view: metrics_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Preferences User Theme"
+  }
+
+  dimension: metrics__string__startup_profile_database_version {
+    sql: ${TABLE}.metrics.string.startup_profile_database_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Startup Profile Database Version"
+  }
+
+  dimension: metrics__string__startup_profile_selection_reason {
+    sql: ${TABLE}.metrics.string.startup_profile_selection_reason ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Startup Profile Selection Reason"
   }
 
   dimension: metrics__timespan__extensions_startup_cache_load_time__time_unit {

@@ -118,6 +118,366 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__bounce_tracking_protection_purge_count}) AS metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_engagement_navigation_about_home {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_about_home}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_about_home ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_about_home.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_engagement_navigation_about_newtab {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_about_newtab}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_about_newtab ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_about_newtab.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_engagement_navigation_contextmenu {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_contextmenu}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_contextmenu ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_contextmenu.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_engagement_navigation_searchbar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_searchbar}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_searchbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_searchbar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_urlbar}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar_handoff {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_urlbar_handoff}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar_handoff ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar_handoff.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar_persisted {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_urlbar_persisted}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar_persisted ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar_persisted.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar_searchmode {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_urlbar_searchmode}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar_searchmode ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar_searchmode.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_engagement_navigation_webextension {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_webextension}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_webextension ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_webextension.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_adclicks_about_home {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_about_home}) AS metrics__metrics__labeled_counter__browser_search_adclicks_about_home ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_about_home.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_adclicks_about_newtab {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_about_newtab}) AS metrics__metrics__labeled_counter__browser_search_adclicks_about_newtab ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_about_newtab.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_adclicks_contextmenu {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_contextmenu}) AS metrics__metrics__labeled_counter__browser_search_adclicks_contextmenu ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_contextmenu.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_adclicks_reload {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_reload}) AS metrics__metrics__labeled_counter__browser_search_adclicks_reload ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_reload.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_adclicks_searchbar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_searchbar}) AS metrics__metrics__labeled_counter__browser_search_adclicks_searchbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_searchbar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_adclicks_system {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_system}) AS metrics__metrics__labeled_counter__browser_search_adclicks_system ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_system.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_adclicks_tabhistory {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_tabhistory}) AS metrics__metrics__labeled_counter__browser_search_adclicks_tabhistory ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_tabhistory.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_adclicks_unknown {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_unknown}) AS metrics__metrics__labeled_counter__browser_search_adclicks_unknown ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_unknown.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_adclicks_urlbar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_urlbar}) AS metrics__metrics__labeled_counter__browser_search_adclicks_urlbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_urlbar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_adclicks_urlbar_handoff {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_urlbar_handoff}) AS metrics__metrics__labeled_counter__browser_search_adclicks_urlbar_handoff ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_urlbar_handoff.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_adclicks_urlbar_persisted {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_urlbar_persisted}) AS metrics__metrics__labeled_counter__browser_search_adclicks_urlbar_persisted ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_urlbar_persisted.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_adclicks_urlbar_searchmode {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_urlbar_searchmode}) AS metrics__metrics__labeled_counter__browser_search_adclicks_urlbar_searchmode ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_urlbar_searchmode.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_adclicks_webextension {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_webextension}) AS metrics__metrics__labeled_counter__browser_search_adclicks_webextension ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_webextension.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_content_about_home {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_about_home}) AS metrics__metrics__labeled_counter__browser_search_content_about_home ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_about_home.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_content_about_newtab {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_about_newtab}) AS metrics__metrics__labeled_counter__browser_search_content_about_newtab ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_about_newtab.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_content_contextmenu {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_contextmenu}) AS metrics__metrics__labeled_counter__browser_search_content_contextmenu ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_contextmenu.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_content_reload {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_reload}) AS metrics__metrics__labeled_counter__browser_search_content_reload ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_reload.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_content_searchbar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_searchbar}) AS metrics__metrics__labeled_counter__browser_search_content_searchbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_searchbar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_content_system {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_system}) AS metrics__metrics__labeled_counter__browser_search_content_system ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_system.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_content_tabhistory {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_tabhistory}) AS metrics__metrics__labeled_counter__browser_search_content_tabhistory ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_tabhistory.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_content_unknown {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_unknown}) AS metrics__metrics__labeled_counter__browser_search_content_unknown ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_unknown.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_content_urlbar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_urlbar}) AS metrics__metrics__labeled_counter__browser_search_content_urlbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_urlbar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_content_urlbar_handoff {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_urlbar_handoff}) AS metrics__metrics__labeled_counter__browser_search_content_urlbar_handoff ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_urlbar_handoff.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_content_urlbar_persisted {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_urlbar_persisted}) AS metrics__metrics__labeled_counter__browser_search_content_urlbar_persisted ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_urlbar_persisted.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_content_urlbar_searchmode {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_urlbar_searchmode}) AS metrics__metrics__labeled_counter__browser_search_content_urlbar_searchmode ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_urlbar_searchmode.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_content_webextension {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_webextension}) AS metrics__metrics__labeled_counter__browser_search_content_webextension ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_webextension.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_withads_about_home {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_about_home}) AS metrics__metrics__labeled_counter__browser_search_withads_about_home ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_about_home.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_withads_about_newtab {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_about_newtab}) AS metrics__metrics__labeled_counter__browser_search_withads_about_newtab ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_about_newtab.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_withads_contextmenu {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_contextmenu}) AS metrics__metrics__labeled_counter__browser_search_withads_contextmenu ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_contextmenu.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_withads_reload {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_reload}) AS metrics__metrics__labeled_counter__browser_search_withads_reload ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_reload.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_withads_searchbar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_searchbar}) AS metrics__metrics__labeled_counter__browser_search_withads_searchbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_searchbar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_withads_system {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_system}) AS metrics__metrics__labeled_counter__browser_search_withads_system ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_system.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_withads_tabhistory {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_tabhistory}) AS metrics__metrics__labeled_counter__browser_search_withads_tabhistory ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_tabhistory.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_withads_unknown {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_unknown}) AS metrics__metrics__labeled_counter__browser_search_withads_unknown ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_unknown.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_withads_urlbar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_urlbar}) AS metrics__metrics__labeled_counter__browser_search_withads_urlbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_urlbar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_withads_urlbar_handoff {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_urlbar_handoff}) AS metrics__metrics__labeled_counter__browser_search_withads_urlbar_handoff ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_urlbar_handoff.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_withads_urlbar_persisted {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_urlbar_persisted}) AS metrics__metrics__labeled_counter__browser_search_withads_urlbar_persisted ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_urlbar_persisted.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_withads_urlbar_searchmode {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_urlbar_searchmode}) AS metrics__metrics__labeled_counter__browser_search_withads_urlbar_searchmode ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_urlbar_searchmode.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_withads_webextension {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_webextension}) AS metrics__metrics__labeled_counter__browser_search_withads_webextension ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_webextension.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_app_menu {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_app_menu}) AS metrics__metrics__labeled_counter__browser_ui_interaction_app_menu ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_app_menu.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_bookmarks_bar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_bookmarks_bar}) AS metrics__metrics__labeled_counter__browser_ui_interaction_bookmarks_bar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_bookmarks_bar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_content_context {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_content_context}) AS metrics__metrics__labeled_counter__browser_ui_interaction_content_context ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_content_context.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_menu_bar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_menu_bar}) AS metrics__metrics__labeled_counter__browser_ui_interaction_menu_bar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_menu_bar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_nav_bar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_nav_bar}) AS metrics__metrics__labeled_counter__browser_ui_interaction_nav_bar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_nav_bar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_overflow_menu {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_overflow_menu}) AS metrics__metrics__labeled_counter__browser_ui_interaction_overflow_menu ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_overflow_menu.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_pageaction_panel {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_pageaction_panel}) AS metrics__metrics__labeled_counter__browser_ui_interaction_pageaction_panel ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_pageaction_panel.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_pageaction_urlbar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_pageaction_urlbar}) AS metrics__metrics__labeled_counter__browser_ui_interaction_pageaction_urlbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_pageaction_urlbar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_pinned_overflow_menu {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_pinned_overflow_menu}) AS metrics__metrics__labeled_counter__browser_ui_interaction_pinned_overflow_menu ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_pinned_overflow_menu.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_experimental {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_experimental}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_experimental ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_experimental.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_general {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_general}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_general ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_general.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_home {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_home}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_home ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_home.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_more_from_mozilla {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_more_from_mozilla}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_more_from_mozilla ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_more_from_mozilla.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_privacy {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_privacy}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_privacy ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_privacy.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_search {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_search}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_search ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_search.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_search_results {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_search_results}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_search_results ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_search_results.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_sync {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_sync}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_sync ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_sync.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_unknown {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_unknown}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_unknown ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_unknown.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_tabs_bar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_tabs_bar}) AS metrics__metrics__labeled_counter__browser_ui_interaction_tabs_bar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_tabs_bar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_tabs_context {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_tabs_context}) AS metrics__metrics__labeled_counter__browser_ui_interaction_tabs_context ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_tabs_context.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_tabs_context_entrypoint {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_tabs_context_entrypoint}) AS metrics__metrics__labeled_counter__browser_ui_interaction_tabs_context_entrypoint ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_tabs_context_entrypoint.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_unified_extensions_area {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_unified_extensions_area}) AS metrics__metrics__labeled_counter__browser_ui_interaction_unified_extensions_area ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_unified_extensions_area.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_vertical_tabs_container {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_vertical_tabs_container}) AS metrics__metrics__labeled_counter__browser_ui_interaction_vertical_tabs_container ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_vertical_tabs_container.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__cert_compression_failures {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cert_compression_failures}) AS metrics__metrics__labeled_counter__cert_compression_failures ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cert_compression_failures.document_id} ;;
@@ -211,6 +571,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__data_storage_entries {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__data_storage_entries}) AS metrics__metrics__labeled_counter__data_storage_entries ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__data_storage_entries.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__dom_parentprocess_process_launch_errors {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dom_parentprocess_process_launch_errors}) AS metrics__metrics__labeled_counter__dom_parentprocess_process_launch_errors ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dom_parentprocess_process_launch_errors.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__dotprint_failure {
@@ -798,6 +1163,21 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_parent_inactive}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__printing_error {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__printing_error}) AS metrics__metrics__labeled_counter__printing_error ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__printing_error.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__printing_settings_changed {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__printing_settings_changed}) AS metrics__metrics__labeled_counter__printing_settings_changed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__printing_settings_changed.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__printing_target_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__printing_target_type}) AS metrics__metrics__labeled_counter__printing_target_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__printing_target_type.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__private_attribution_database {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__private_attribution_database}) AS metrics__metrics__labeled_counter__private_attribution_database ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__private_attribution_database.document_id} ;;
@@ -873,6 +1253,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__sidebar_search}) AS metrics__metrics__labeled_counter__sidebar_search ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__sidebar_search.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__suggest_relevance_outcome {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__suggest_relevance_outcome}) AS metrics__metrics__labeled_counter__suggest_relevance_outcome ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__suggest_relevance_outcome.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__suggest_relevance_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__suggest_relevance_status}) AS metrics__metrics__labeled_counter__suggest_relevance_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__suggest_relevance_status.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tls_xyber_intolerance_reason}) AS metrics__metrics__labeled_counter__tls_xyber_intolerance_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tls_xyber_intolerance_reason.document_id} ;;
@@ -881,6 +1271,81 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__translations_request_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__translations_request_count}) AS metrics__metrics__labeled_counter__translations_request_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__translations_request_count.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlbar_searchmode_bookmarkmenu {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_searchmode_bookmarkmenu}) AS metrics__metrics__labeled_counter__urlbar_searchmode_bookmarkmenu ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_searchmode_bookmarkmenu.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlbar_searchmode_handoff {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_searchmode_handoff}) AS metrics__metrics__labeled_counter__urlbar_searchmode_handoff ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_searchmode_handoff.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlbar_searchmode_historymenu {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_searchmode_historymenu}) AS metrics__metrics__labeled_counter__urlbar_searchmode_historymenu ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_searchmode_historymenu.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlbar_searchmode_keywordoffer {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_searchmode_keywordoffer}) AS metrics__metrics__labeled_counter__urlbar_searchmode_keywordoffer ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_searchmode_keywordoffer.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlbar_searchmode_oneoff {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_searchmode_oneoff}) AS metrics__metrics__labeled_counter__urlbar_searchmode_oneoff ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_searchmode_oneoff.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlbar_searchmode_other {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_searchmode_other}) AS metrics__metrics__labeled_counter__urlbar_searchmode_other ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_searchmode_other.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlbar_searchmode_searchbutton {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_searchmode_searchbutton}) AS metrics__metrics__labeled_counter__urlbar_searchmode_searchbutton ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_searchmode_searchbutton.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlbar_searchmode_shortcut {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_searchmode_shortcut}) AS metrics__metrics__labeled_counter__urlbar_searchmode_shortcut ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_searchmode_shortcut.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlbar_searchmode_tabmenu {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_searchmode_tabmenu}) AS metrics__metrics__labeled_counter__urlbar_searchmode_tabmenu ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_searchmode_tabmenu.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlbar_searchmode_tabtosearch {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_searchmode_tabtosearch}) AS metrics__metrics__labeled_counter__urlbar_searchmode_tabtosearch ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_searchmode_tabtosearch.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlbar_searchmode_tabtosearch_onboard {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_searchmode_tabtosearch_onboard}) AS metrics__metrics__labeled_counter__urlbar_searchmode_tabtosearch_onboard ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_searchmode_tabtosearch_onboard.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlbar_searchmode_topsites_newtab {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_searchmode_topsites_newtab}) AS metrics__metrics__labeled_counter__urlbar_searchmode_topsites_newtab ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_searchmode_topsites_newtab.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlbar_searchmode_topsites_urlbar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_searchmode_topsites_urlbar}) AS metrics__metrics__labeled_counter__urlbar_searchmode_topsites_urlbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_searchmode_topsites_urlbar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlbar_searchmode_touchbar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_searchmode_touchbar}) AS metrics__metrics__labeled_counter__urlbar_searchmode_touchbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_searchmode_touchbar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlbar_searchmode_typed {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_searchmode_typed}) AS metrics__metrics__labeled_counter__urlbar_searchmode_typed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_searchmode_typed.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__web_notification_permission_origin {

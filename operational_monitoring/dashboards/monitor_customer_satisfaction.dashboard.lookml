@@ -118,6 +118,7 @@
       - 'petition_banner'
       - 'csat_survey'
       - 'last_scan_date'
+      - 'removal_time_estimates_banner'
       
   
   

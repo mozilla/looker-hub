@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       fx_accounts_ping_release_rollout_2.branch
     ]
     filters:
-      fx_accounts_ping_release_rollout_2.metric: 'uri_count'
+      fx_accounts_ping_release_rollout_2.metric: 'days_of_use'
       fx_accounts_ping_release_rollout_2.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,77 +94,9 @@
       fx_accounts_ping_release_rollout_2.branch
     ]
     filters:
-      fx_accounts_ping_release_rollout_2.metric: 'active_hours'
+      fx_accounts_ping_release_rollout_2.metric: 'uri_count'
       fx_accounts_ping_release_rollout_2.statistic: mean
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: fx_accounts_ping_release_rollout_2.submission_date
-    field_y: fx_accounts_ping_release_rollout_2.point
-    log_scale: false
-    ci_lower: fx_accounts_ping_release_rollout_2.lower
-    ci_upper: fx_accounts_ping_release_rollout_2.upper
-    show_grid: true
-    listen:
-      Date: fx_accounts_ping_release_rollout_2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: fx_accounts_ping_release_rollout_2
-    type: looker_line
-    fields: [
-      fx_accounts_ping_release_rollout_2.submission_date,
-      fx_accounts_ping_release_rollout_2.branch,
-      fx_accounts_ping_release_rollout_2.point
-    ]
-    pivots: [
-      fx_accounts_ping_release_rollout_2.branch
-    ]
-    filters:
-      fx_accounts_ping_release_rollout_2.metric: 'retained'
-      fx_accounts_ping_release_rollout_2.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: fx_accounts_ping_release_rollout_2.submission_date
-    field_y: fx_accounts_ping_release_rollout_2.point
-    log_scale: false
-    ci_lower: fx_accounts_ping_release_rollout_2.lower
-    ci_upper: fx_accounts_ping_release_rollout_2.upper
-    show_grid: true
-    listen:
-      Date: fx_accounts_ping_release_rollout_2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: fx_accounts_ping_release_rollout_2
-    type: looker_line
-    fields: [
-      fx_accounts_ping_release_rollout_2.submission_date,
-      fx_accounts_ping_release_rollout_2.branch,
-      fx_accounts_ping_release_rollout_2.point
-    ]
-    pivots: [
-      fx_accounts_ping_release_rollout_2.branch
-    ]
-    filters:
-      fx_accounts_ping_release_rollout_2.metric: 'days_of_use'
-      fx_accounts_ping_release_rollout_2.statistic: mean
-    row: 20
     col: 0
     width: 12
     height: 8
@@ -198,8 +130,42 @@
     filters:
       fx_accounts_ping_release_rollout_2.metric: 'ad_clicks'
       fx_accounts_ping_release_rollout_2.statistic: mean
-    row: 20
+    row: 10
     col: 12
+    width: 12
+    height: 8
+    field_x: fx_accounts_ping_release_rollout_2.submission_date
+    field_y: fx_accounts_ping_release_rollout_2.point
+    log_scale: false
+    ci_lower: fx_accounts_ping_release_rollout_2.lower
+    ci_upper: fx_accounts_ping_release_rollout_2.upper
+    show_grid: true
+    listen:
+      Date: fx_accounts_ping_release_rollout_2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: fx_accounts_ping_release_rollout_2
+    type: looker_line
+    fields: [
+      fx_accounts_ping_release_rollout_2.submission_date,
+      fx_accounts_ping_release_rollout_2.branch,
+      fx_accounts_ping_release_rollout_2.point
+    ]
+    pivots: [
+      fx_accounts_ping_release_rollout_2.branch
+    ]
+    filters:
+      fx_accounts_ping_release_rollout_2.metric: 'active_hours'
+      fx_accounts_ping_release_rollout_2.statistic: mean
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: fx_accounts_ping_release_rollout_2.submission_date
@@ -234,8 +200,8 @@
     filters:
       fx_accounts_ping_release_rollout_2.metric: 'memory_total'
       fx_accounts_ping_release_rollout_2.statistic: percentile
-    row: 30
-    col: 0
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: fx_accounts_ping_release_rollout_2.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       fx_accounts_ping_release_rollout_2.metric: 'search_count'
+      fx_accounts_ping_release_rollout_2.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: fx_accounts_ping_release_rollout_2.submission_date
+    field_y: fx_accounts_ping_release_rollout_2.point
+    log_scale: false
+    ci_lower: fx_accounts_ping_release_rollout_2.lower
+    ci_upper: fx_accounts_ping_release_rollout_2.upper
+    show_grid: true
+    listen:
+      Date: fx_accounts_ping_release_rollout_2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: fx_accounts_ping_release_rollout_2
+    type: looker_line
+    fields: [
+      fx_accounts_ping_release_rollout_2.submission_date,
+      fx_accounts_ping_release_rollout_2.branch,
+      fx_accounts_ping_release_rollout_2.point
+    ]
+    pivots: [
+      fx_accounts_ping_release_rollout_2.branch
+    ]
+    filters:
+      fx_accounts_ping_release_rollout_2.metric: 'retained'
       fx_accounts_ping_release_rollout_2.statistic: mean
     row: 30
     col: 12
