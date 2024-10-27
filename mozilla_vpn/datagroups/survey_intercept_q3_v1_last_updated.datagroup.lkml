@@ -11,6 +11,6 @@ datagroup: survey_intercept_q3_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'mozilla_vpn_derived'
     AND table_name = 'survey_intercept_q3_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:mozilla_vpn_derived.survey_intercept_q3_v1 is modified."
+  description: "Updates when moz-fx-data-shared-prod.mozilla_vpn_derived.survey_intercept_q3_v1 is modified."
   max_cache_age: "24 hours"
 }

@@ -78,31 +78,3 @@ explore: logins_sync {
 explore: suggest__logins_sync__metrics__labeled_counter__glean_error_invalid_label {
   hidden: yes
 }
-
-explore: suggest__logins_sync__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__logins_sync__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__logins_sync__metrics__labeled_counter__glean_error_invalid_value {
-  hidden: yes
-}
-
-explore: suggest__logins_sync__metrics__labeled_counter__logins_sync_incoming {
-  hidden: yes
-}
-
-explore: suggest__logins_sync__metrics__labeled_counter__logins_sync_outgoing {
-  hidden: yes
-}
-
-explore: suggest__logins_sync__metrics__labeled_counter__logins_sync_v2_incoming {
-  hidden: yes
-}
-
-explore: suggest__logins_sync__metrics__labeled_counter__logins_sync_v2_outgoing {
-  hidden: yes
-}

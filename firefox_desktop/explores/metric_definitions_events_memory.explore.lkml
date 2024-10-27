@@ -10,6 +10,7 @@ explore: metric_definitions_events_memory {
   always_filter: {
     filters: [
       submission_date: "7 days",
+      sampling: "1",
     ]
   }
 

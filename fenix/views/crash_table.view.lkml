@@ -290,11 +290,25 @@ view: crash_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__crash_is_garbage_collecting {
+    sql: ${TABLE}.metrics.boolean.crash_is_garbage_collecting ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Crash Is Garbage Collecting"
+  }
+
   dimension: metrics__boolean__crash_startup {
     sql: ${TABLE}.metrics.boolean.crash_startup ;;
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Crash Startup"
+  }
+
+  dimension: metrics__boolean__environment_headless_mode {
+    sql: ${TABLE}.metrics.boolean.environment_headless_mode ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Environment Headless Mode"
   }
 
   dimension: metrics__datetime__raw_crash_time {
@@ -324,11 +338,192 @@ view: crash_table {
     hidden: yes
   }
 
+  dimension: metrics__object__crash_async_shutdown_timeout {
+    sql: ${TABLE}.metrics.object.crash_async_shutdown_timeout ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__crash_breadcrumbs {
+    sql: ${TABLE}.metrics.object.crash_breadcrumbs ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__crash_java_exception {
+    sql: ${TABLE}.metrics.object.crash_java_exception ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__crash_quota_manager_shutdown_timeout {
+    sql: ${TABLE}.metrics.object.crash_quota_manager_shutdown_timeout ;;
+    hidden: yes
+  }
+
+  dimension: metrics__quantity__crash_event_loop_nesting_level {
+    sql: ${TABLE}.metrics.quantity.crash_event_loop_nesting_level ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Crash Event Loop Nesting Level"
+  }
+
+  dimension: metrics__quantity__crash_gpu_process_launch {
+    sql: ${TABLE}.metrics.quantity.crash_gpu_process_launch ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Crash Gpu Process Launch"
+  }
+
+  dimension: metrics__quantity__memory_available_commit {
+    sql: ${TABLE}.metrics.quantity.memory_available_commit ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Available Commit"
+  }
+
+  dimension: metrics__quantity__memory_available_physical {
+    sql: ${TABLE}.metrics.quantity.memory_available_physical ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Available Physical"
+  }
+
+  dimension: metrics__quantity__memory_available_swap {
+    sql: ${TABLE}.metrics.quantity.memory_available_swap ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Available Swap"
+  }
+
+  dimension: metrics__quantity__memory_available_virtual {
+    sql: ${TABLE}.metrics.quantity.memory_available_virtual ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Available Virtual"
+  }
+
+  dimension: metrics__quantity__memory_low_physical {
+    sql: ${TABLE}.metrics.quantity.memory_low_physical ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Low Physical"
+  }
+
+  dimension: metrics__quantity__memory_oom_allocation_size {
+    sql: ${TABLE}.metrics.quantity.memory_oom_allocation_size ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Oom Allocation Size"
+  }
+
+  dimension: metrics__quantity__memory_purgeable_physical {
+    sql: ${TABLE}.metrics.quantity.memory_purgeable_physical ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Purgeable Physical"
+  }
+
+  dimension: metrics__quantity__memory_system_use_percentage {
+    sql: ${TABLE}.metrics.quantity.memory_system_use_percentage ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory System Use Percentage"
+  }
+
+  dimension: metrics__quantity__memory_texture {
+    sql: ${TABLE}.metrics.quantity.memory_texture ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Texture"
+  }
+
+  dimension: metrics__quantity__memory_total_page_file {
+    sql: ${TABLE}.metrics.quantity.memory_total_page_file ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Total Page File"
+  }
+
+  dimension: metrics__quantity__memory_total_physical {
+    sql: ${TABLE}.metrics.quantity.memory_total_physical ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Total Physical"
+  }
+
+  dimension: metrics__quantity__memory_total_virtual {
+    sql: ${TABLE}.metrics.quantity.memory_total_virtual ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Memory Total Virtual"
+  }
+
+  dimension: metrics__string__crash_app_build {
+    sql: ${TABLE}.metrics.string.crash_app_build ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash App Build"
+  }
+
+  dimension: metrics__string__crash_app_channel {
+    sql: ${TABLE}.metrics.string.crash_app_channel ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash App Channel"
+  }
+
+  dimension: metrics__string__crash_app_display_version {
+    sql: ${TABLE}.metrics.string.crash_app_display_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash App Display Version"
+  }
+
+  dimension: metrics__string__crash_background_task_name {
+    sql: ${TABLE}.metrics.string.crash_background_task_name ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Background Task Name"
+  }
+
   dimension: metrics__string__crash_cause {
     sql: ${TABLE}.metrics.string.crash_cause ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Crash Cause"
+  }
+
+  dimension: metrics__string__crash_font_name {
+    sql: ${TABLE}.metrics.string.crash_font_name ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Font Name"
+  }
+
+  dimension: metrics__string__crash_ipc_channel_error {
+    sql: ${TABLE}.metrics.string.crash_ipc_channel_error ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Ipc Channel Error"
+  }
+
+  dimension: metrics__string__crash_main_thread_runnable_name {
+    sql: ${TABLE}.metrics.string.crash_main_thread_runnable_name ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Main Thread Runnable Name"
+  }
+
+  dimension: metrics__string__crash_minidump_sha256_hash {
+    sql: ${TABLE}.metrics.string.crash_minidump_sha256_hash ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Minidump Sha256 Hash"
+  }
+
+  dimension: metrics__string__crash_moz_crash_reason {
+    sql: ${TABLE}.metrics.string.crash_moz_crash_reason ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Moz Crash Reason"
   }
 
   dimension: metrics__string__crash_process_type {
@@ -338,6 +533,13 @@ view: crash_table {
     group_item_label: "Crash Process Type"
   }
 
+  dimension: metrics__string__crash_profiler_child_shutdown_phase {
+    sql: ${TABLE}.metrics.string.crash_profiler_child_shutdown_phase ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Profiler Child Shutdown Phase"
+  }
+
   dimension: metrics__string__crash_remote_type {
     sql: ${TABLE}.metrics.string.crash_remote_type ;;
     type: string
@@ -345,11 +547,23 @@ view: crash_table {
     group_item_label: "Crash Remote Type"
   }
 
+  dimension: metrics__string__crash_shutdown_progress {
+    sql: ${TABLE}.metrics.string.crash_shutdown_progress ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Shutdown Progress"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Glean Client Annotation Experimentation Id"
+  }
+
+  dimension: metrics__string_list__environment_experimental_features {
+    sql: ${TABLE}.metrics.string_list.environment_experimental_features ;;
+    hidden: yes
   }
 
   dimension: metrics__timespan__crash_uptime__time_unit {
@@ -363,6 +577,20 @@ view: crash_table {
     sql: ${TABLE}.metrics.timespan.crash_uptime.value ;;
     type: number
     group_label: "Metrics Timespan Crash Uptime"
+    group_item_label: "Value"
+  }
+
+  dimension: metrics__timespan__environment_uptime__time_unit {
+    sql: ${TABLE}.metrics.timespan.environment_uptime.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Environment Uptime"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__environment_uptime__value {
+    sql: ${TABLE}.metrics.timespan.environment_uptime.value ;;
+    type: number
+    group_label: "Metrics Timespan Environment Uptime"
     group_item_label: "Value"
   }
 

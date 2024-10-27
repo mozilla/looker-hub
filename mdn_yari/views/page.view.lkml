@@ -62,7 +62,7 @@ view: page {
 
   dimension: metrics__string__navigator_user_agent {
     label: "Navigator User Agent"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.navigator_user_agent ;;
     type: string
     group_label: "Navigator"
@@ -99,7 +99,7 @@ one of \"xs\", \"sm\", \"md\",\"lg\", \"xl\" or \"xxl\".
 
   dimension: metrics__quantity__navigator_viewport_horizontal_coverage {
     label: "Navigator Viewport Horizontal Coverage"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.navigator_viewport_horizontal_coverage ;;
     type: number
     group_label: "Navigator"
@@ -117,7 +117,7 @@ one of \"xs\", \"sm\", \"md\",\"lg\", \"xl\" or \"xxl\".
 
   dimension: metrics__quantity__navigator_viewport_ratio {
     label: "Navigator Viewport Ratio"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.navigator_viewport_ratio ;;
     type: number
     group_label: "Navigator"
@@ -807,18 +807,18 @@ view: page__metrics__labeled_counter__glean_error_invalid_label {
     hidden: yes
   }
 
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__page__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__page__metrics__labeled_counter__glean_error_invalid_label.key
     hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
   }
 
   measure: count {
@@ -850,18 +850,16 @@ view: page__metrics__labeled_counter__glean_error_invalid_overflow {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__page__metrics__labeled_counter__glean_error_invalid_overflow
-    suggest_dimension: suggest__page__metrics__labeled_counter__glean_error_invalid_overflow.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -893,18 +891,16 @@ view: page__metrics__labeled_counter__glean_error_invalid_state {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__page__metrics__labeled_counter__glean_error_invalid_state
-    suggest_dimension: suggest__page__metrics__labeled_counter__glean_error_invalid_state.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -936,18 +932,16 @@ view: page__metrics__labeled_counter__glean_error_invalid_value {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__page__metrics__labeled_counter__glean_error_invalid_value
-    suggest_dimension: suggest__page__metrics__labeled_counter__glean_error_invalid_value.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -970,63 +964,6 @@ view: suggest__page__metrics__labeled_counter__glean_error_invalid_label {
     count(*) as n
 from mozdata.mdn_yari.page as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__page__metrics__labeled_counter__glean_error_invalid_overflow {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.mdn_yari.page as t,
-unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__page__metrics__labeled_counter__glean_error_invalid_state {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.mdn_yari.page as t,
-unnest(metrics.labeled_counter.glean_error_invalid_state) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__page__metrics__labeled_counter__glean_error_invalid_value {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.mdn_yari.page as t,
-unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

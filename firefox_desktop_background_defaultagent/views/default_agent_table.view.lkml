@@ -365,6 +365,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__defaultagent_days_since_last_app_launch {
+    sql: ${TABLE}.metrics.quantity.defaultagent_days_since_last_app_launch ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Defaultagent Days Since Last App Launch"
+    description: "Number of days since the app last launched. Once this reaches 90 days, the installation will stop running the default browser agent.
+"
+  }
+
   dimension: metrics__string__do_task_implementation {
     sql: ${TABLE}.metrics.string.do_task_implementation ;;
     type: string

@@ -381,6 +381,20 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css All"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_anchor_name {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_anchor_name ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Anchor Name"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_anchor_scope {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_anchor_scope ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Anchor Scope"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_animation {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_animation ;;
     type: number
@@ -1361,6 +1375,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css Empty Cells"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_field_sizing {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_field_sizing ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Field Sizing"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_fill {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_fill ;;
     type: number
@@ -1842,6 +1863,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Doc Css Inset"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_inset_area {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_inset_area ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Inset Area"
   }
 
   dimension: metrics__counter__use_counter_css_doc_css_inset_block {
@@ -3132,6 +3160,55 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css Position"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_position_anchor {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_anchor ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Anchor"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_position_area {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_area ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Area"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_position_try {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Try"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_position_try_fallbacks {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try_fallbacks ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Try Fallbacks"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_position_try_options {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try_options ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Try Options"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_position_try_order {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try_order ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Try Order"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_position_visibility {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_visibility ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Visibility"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_print_color_adjust {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_print_color_adjust ;;
     type: number
@@ -3895,6 +3972,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css View Timeline Name"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_view_transition_name {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_view_transition_name ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css View Transition Name"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_visibility {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_visibility ;;
     type: number
@@ -4180,6 +4264,20 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Doc Css Webkit Flex Wrap"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_webkit_font_feature_settings {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_webkit_font_feature_settings ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Webkit Font Feature Settings"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_webkit_font_smoothing {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_webkit_font_smoothing ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Webkit Font Smoothing"
   }
 
   dimension: metrics__counter__use_counter_css_doc_css_webkit_justify_content {
@@ -5267,6 +5365,20 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Page Css All"
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_anchor_name {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_anchor_name ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Anchor Name"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_anchor_scope {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_anchor_scope ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Anchor Scope"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_animation {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_animation ;;
     type: number
@@ -6247,6 +6359,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Page Css Empty Cells"
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_field_sizing {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_field_sizing ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Field Sizing"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_fill {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_fill ;;
     type: number
@@ -6728,6 +6847,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Inset"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_inset_area {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_inset_area ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Inset Area"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_inset_block {
@@ -8018,6 +8144,55 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Page Css Position"
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_position_anchor {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_anchor ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Anchor"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_area {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_area ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Area"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_try {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Try"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_try_fallbacks {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try_fallbacks ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Try Fallbacks"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_try_options {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try_options ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Try Options"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_try_order {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try_order ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Try Order"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_visibility {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_visibility ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Visibility"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_print_color_adjust {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_print_color_adjust ;;
     type: number
@@ -8781,6 +8956,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Page Css View Timeline Name"
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_view_transition_name {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_view_transition_name ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css View Transition Name"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_visibility {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_visibility ;;
     type: number
@@ -9066,6 +9248,20 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Webkit Flex Wrap"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_webkit_font_feature_settings {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_webkit_font_feature_settings ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Webkit Font Feature Settings"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_webkit_font_smoothing {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_webkit_font_smoothing ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Webkit Font Smoothing"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_webkit_justify_content {
@@ -10132,11 +10328,60 @@ view: use_counters_table {
     group_item_label: "Use Counter Deprecated Ops Doc Document Release Capture"
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domattr_modified {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domattr_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domattr Modified"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domcharacter_data_modified {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domcharacter_data_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domcharacter Data Modified"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domnode_inserted {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domnode_inserted ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domnode Inserted"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domnode_inserted_into_document {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domnode_inserted_into_document ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domnode Inserted Into Document"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domnode_removed {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domnode_removed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domnode Removed"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domnode_removed_from_document {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domnode_removed_from_document ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domnode Removed From Document"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_domquad_bounds_attr {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domquad_bounds_attr ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Doc Domquad Bounds Attr"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domsubtree_modified {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domsubtree_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domsubtree Modified"
   }
 
   dimension: metrics__counter__use_counter_deprecated_ops_doc_draw_window_canvas_rendering_context2_d {
@@ -10489,11 +10734,60 @@ view: use_counters_table {
     group_item_label: "Use Counter Deprecated Ops Page Document Release Capture"
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domattr_modified {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domattr_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domattr Modified"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domcharacter_data_modified {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domcharacter_data_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domcharacter Data Modified"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domnode_inserted {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domnode_inserted ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domnode Inserted"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domnode_inserted_into_document {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domnode_inserted_into_document ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domnode Inserted Into Document"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domnode_removed {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domnode_removed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domnode Removed"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domnode_removed_from_document {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domnode_removed_from_document ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domnode Removed From Document"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_page_domquad_bounds_attr {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domquad_bounds_attr ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Page Domquad Bounds Attr"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domsubtree_modified {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domsubtree_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domsubtree Modified"
   }
 
   dimension: metrics__counter__use_counter_deprecated_ops_page_draw_window_canvas_rendering_context2_d {
@@ -11747,6 +12041,76 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Late Weekday"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_array_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Array Type 2"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_array_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Array Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_arraybuffer_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_arraybuffer_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Arraybuffer Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_promise_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_promise_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Promise Type 2"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_promise_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_promise_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Promise Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_regexp_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_regexp_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Regexp Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_regexp_type_4 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_regexp_type_4 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Regexp Type 4"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_sharedarraybuffer_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_sharedarraybuffer_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Sharedarraybuffer Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_typedarray_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_typedarray_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Typedarray Type 2"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_typedarray_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_typedarray_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Typedarray Type 3"
   }
 
   dimension: metrics__counter__use_counter_doc_js_wasm {
@@ -14253,6 +14617,76 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Late Weekday"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_array_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_array_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Array Type 2"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_array_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_array_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Array Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_arraybuffer_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_arraybuffer_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Arraybuffer Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_promise_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_promise_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Promise Type 2"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_promise_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_promise_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Promise Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_regexp_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_regexp_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Regexp Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_regexp_type_4 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_regexp_type_4 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Regexp Type 4"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_sharedarraybuffer_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_sharedarraybuffer_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Sharedarraybuffer Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_typedarray_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_typedarray_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Typedarray Type 2"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_typedarray_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_typedarray_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Typedarray Type 3"
   }
 
   dimension: metrics__counter__use_counter_page_js_wasm {

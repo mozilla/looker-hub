@@ -5,6 +5,11 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: schema_error_counts {
+  dimension: channel {
+    sql: ${TABLE}.channel ;;
+    type: string
+  }
+
   dimension: document_namespace {
     sql: ${TABLE}.document_namespace ;;
     type: string

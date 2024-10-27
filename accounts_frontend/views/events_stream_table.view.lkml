@@ -118,6 +118,11 @@ view: events_stream_table {
     hidden: yes
   }
 
+  dimension: event {
+    sql: ${TABLE}.event ;;
+    type: string
+  }
+
   dimension: event_category {
     sql: ${TABLE}.event_category ;;
     type: string
@@ -136,6 +141,11 @@ view: events_stream_table {
   dimension: experiments {
     sql: ${TABLE}.experiments ;;
     hidden: yes
+  }
+
+  dimension: legacy_telemetry_client_id {
+    sql: ${TABLE}.legacy_telemetry_client_id ;;
+    type: string
   }
 
   dimension: metadata__geo__city {
@@ -291,9 +301,146 @@ view: events_stream_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics {
-    sql: ${TABLE}.metrics ;;
+  dimension: metrics__labeled_boolean__standard_marketing {
+    sql: ${TABLE}.metrics.labeled_boolean.standard_marketing ;;
     hidden: yes
+  }
+
+  dimension: metrics__labeled_boolean__sync_cwts {
+    sql: ${TABLE}.metrics.labeled_boolean.sync_cwts ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string__account_user_id {
+    sql: ${TABLE}.metrics.string.account_user_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Account User Id"
+  }
+
+  dimension: metrics__string__account_user_id_sha256 {
+    sql: ${TABLE}.metrics.string.account_user_id_sha256 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Account User Id Sha256"
+  }
+
+  dimension: metrics__string__entrypoint_experiment {
+    sql: ${TABLE}.metrics.string.entrypoint_experiment ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Entrypoint Experiment"
+  }
+
+  dimension: metrics__string__entrypoint_variation {
+    sql: ${TABLE}.metrics.string.entrypoint_variation ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Entrypoint Variation"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+  }
+
+  dimension: metrics__string__relying_party_oauth_client_id {
+    sql: ${TABLE}.metrics.string.relying_party_oauth_client_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Relying Party Oauth Client Id"
+  }
+
+  dimension: metrics__string__relying_party_service {
+    sql: ${TABLE}.metrics.string.relying_party_service ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Relying Party Service"
+  }
+
+  dimension: metrics__string__session_device_type {
+    sql: ${TABLE}.metrics.string.session_device_type ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Session Device Type"
+  }
+
+  dimension: metrics__string__session_entrypoint {
+    sql: ${TABLE}.metrics.string.session_entrypoint ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Session Entrypoint"
+  }
+
+  dimension: metrics__string__session_flow_id {
+    sql: ${TABLE}.metrics.string.session_flow_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Session Flow Id"
+  }
+
+  dimension: metrics__string__utm_campaign {
+    sql: ${TABLE}.metrics.string.utm_campaign ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Utm Campaign"
+  }
+
+  dimension: metrics__string__utm_content {
+    sql: ${TABLE}.metrics.string.utm_content ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Utm Content"
+  }
+
+  dimension: metrics__string__utm_medium {
+    sql: ${TABLE}.metrics.string.utm_medium ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Utm Medium"
+  }
+
+  dimension: metrics__string__utm_source {
+    sql: ${TABLE}.metrics.string.utm_source ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Utm Source"
+  }
+
+  dimension: metrics__string__utm_term {
+    sql: ${TABLE}.metrics.string.utm_term ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Utm Term"
+  }
+
+  dimension: metrics__uuid__glean_page_id {
+    sql: ${TABLE}.metrics.uuid.glean_page_id ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Glean Page Id"
   }
 
   dimension: normalized_app_name {
@@ -347,6 +494,11 @@ view: events_stream_table {
     type: string
     group_label: "Ping Info"
     group_item_label: "Start Time"
+  }
+
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
   }
 
   dimension: reason {
@@ -433,4 +585,28 @@ view: events_stream_table {
   }
 
   sql_table_name: `mozdata.accounts_frontend.events_stream` ;;
+}
+
+view: events_stream_table__metrics__labeled_boolean__standard_marketing {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: events_stream_table__metrics__labeled_boolean__sync_cwts {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
 }

@@ -139,6 +139,11 @@ view: events_stream {
     hidden: yes
   }
 
+  dimension: legacy_telemetry_client_id {
+    sql: ${TABLE}.legacy_telemetry_client_id ;;
+    type: string
+  }
+
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
@@ -353,6 +358,11 @@ view: events_stream {
     type: string
     group_label: "Ping Info"
     group_item_label: "Start Time"
+  }
+
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
   }
 
   dimension: reason {

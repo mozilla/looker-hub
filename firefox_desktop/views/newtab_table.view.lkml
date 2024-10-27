@@ -333,6 +333,15 @@ view: newtab_table {
 "
   }
 
+  dimension: metrics__boolean__newtab_weather_enabled {
+    sql: ${TABLE}.metrics.boolean.newtab_weather_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Newtab Weather Enabled"
+    description: "Whether the weather widget is enabled on the newtab. Corresponds to the value of the `browser.newtabpage.activity-stream.showWeather` pref.
+"
+  }
+
   dimension: metrics__boolean__pocket_enabled {
     sql: ${TABLE}.metrics.boolean.pocket_enabled ;;
     type: yesno
@@ -499,6 +508,11 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__string_list__newtab_selected_topics {
+    sql: ${TABLE}.metrics.string_list.newtab_selected_topics ;;
+    hidden: yes
+  }
+
   dimension: metrics__string_list__newtab_sov_allocation {
     sql: ${TABLE}.metrics.string_list.newtab_sov_allocation ;;
     hidden: yes
@@ -532,6 +546,18 @@ Value may be the canary client id `c0ffeec0-ffee-c0ff-eec0-ffeec0ffeec0`
 in pings near when the data upload pref is disabled (if Telemetry gets
 to go first), or between when a client_id has been removed and when it
 has been regenerated.
+Does not need to be sent in the Glean \"deletion-request\" ping.
+"
+  }
+
+  dimension: metrics__uuid__legacy_telemetry_profile_group_id {
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_profile_group_id ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Legacy Telemetry Profile Group Id"
+    description: "The profile_group_id according to Telemetry.
+Might not always have a value due to being too early for it to have
+loaded.
 Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }

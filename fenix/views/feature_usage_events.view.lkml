@@ -311,6 +311,11 @@ view: feature_usage_events {
     type: number
   }
 
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+  }
+
   dimension: etp_setting_changed {
     sql: ${TABLE}.etp_setting_changed ;;
     type: number
@@ -863,6 +868,26 @@ view: feature_usage_events {
 
   dimension: tab_tray_private_mode_tapped_users {
     sql: ${TABLE}.tab_tray_private_mode_tapped_users ;;
+    type: number
+  }
+
+  dimension: top_sites_contile_click {
+    sql: ${TABLE}.top_sites_contile_click ;;
+    type: number
+  }
+
+  dimension: top_sites_contile_click_users {
+    sql: ${TABLE}.top_sites_contile_click_users ;;
+    type: number
+  }
+
+  dimension: top_sites_contile_impression {
+    sql: ${TABLE}.top_sites_contile_impression ;;
+    type: number
+  }
+
+  dimension: top_sites_contile_impression_users {
+    sql: ${TABLE}.top_sites_contile_impression_users ;;
     type: number
   }
 

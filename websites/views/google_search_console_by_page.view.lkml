@@ -28,8 +28,7 @@ This will be null for Discover impressions."
   dimension: has_good_page_experience {
     sql: ${TABLE}.has_good_page_experience ;;
     type: yesno
-    description: "Whether Google Search considers the page to be providing a good page experience.
-This will be null when the source data wasn't exported directly to BigQuery by Google."
+    description: "Whether Google Search considers the page to be providing a good page experience."
   }
 
   dimension: impressions {
@@ -49,7 +48,7 @@ The `country_code`, `page_url`, and related fields will be null for anonymized D
   dimension: localized_site {
     sql: ${TABLE}.localized_site ;;
     type: string
-    description: "Localized site description based on `localized_site_language` and `localized_site_country` (if any).
+    description: "Description of the localized site language and/or country based on `localized_site_code` (if any).
 This will be null for anonymized Discover impressions."
   }
 
@@ -57,20 +56,6 @@ This will be null for anonymized Discover impressions."
     sql: ${TABLE}.localized_site_code ;;
     type: string
     description: "Localized site code such as `en-US` or `de` found in the first segment of the page URL path (if any).
-This will be null for anonymized Discover impressions."
-  }
-
-  dimension: localized_site_country {
-    sql: ${TABLE}.localized_site_country ;;
-    type: string
-    description: "Localized site country based on `localized_site_country_code` (if any).
-This will be null for anonymized Discover impressions."
-  }
-
-  dimension: localized_site_country_code {
-    sql: ${TABLE}.localized_site_country_code ;;
-    type: string
-    description: "Localized site country code in ISO-3166-1-alpha-2 format found in the first segment of the page URL path (if any).
 This will be null for anonymized Discover impressions."
   }
 
@@ -130,8 +115,7 @@ This will be null for all Discover and Google News search impressions."
   dimension: search_appearance {
     sql: ${TABLE}.search_appearance ;;
     type: string
-    description: "How the search result appeared (e.g. normal result, translated result, video).
-This will be null when the source data wasn't exported directly to BigQuery by Google."
+    description: "How the search result appeared (e.g. normal result, translated result, video)."
   }
 
   dimension: search_type {
@@ -173,6 +157,18 @@ This will be null for anonymized Discover impressions."
 This will be null for anonymized Discover impressions."
   }
 
+  dimension: user_region {
+    sql: ${TABLE}.user_region ;;
+    type: string
+    description: "Region from which the user was searching."
+  }
+
+  dimension: user_subregion {
+    sql: ${TABLE}.user_subregion ;;
+    type: string
+    description: "Sub-region from which the user was searching."
+  }
+
   dimension_group: date {
     sql: ${TABLE}.date ;;
     type: time
@@ -189,5 +185,5 @@ This will be null for anonymized Discover impressions."
     description: "The day on which the search occurred (Pacific Time)."
   }
 
-  sql_table_name: `moz-fx-data-marketing-prod.google_search_console.search_impressions_by_page` ;;
+  sql_table_name: `mozdata.google_search_console.search_impressions_by_page` ;;
 }

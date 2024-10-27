@@ -293,6 +293,42 @@ view: broken_site_report {
 "
   }
 
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled {
+    label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled ;;
+    type: yesno
+    group_label: "Broken Site Report Browser Info Prefs"
+    group_item_label: "Third Party Cookie Blocking Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of `network.cookie.cookieBehavior.optInPartitioning`
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm {
+    label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled In Pbm"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm ;;
+    type: yesno
+    group_label: "Broken Site Report Browser Info Prefs"
+    group_item_label: "Third Party Cookie Blocking Enabled In Pbm"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled In Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of `network.cookie.cookieBehavior.optInPartitioning.pbmode`
+"
+  }
+
   dimension: metrics__boolean__broken_site_report_browser_info_system_is_tablet {
     label: "Broken Site Report Browser Info System Is Tablet"
     hidden: no
@@ -1076,18 +1112,18 @@ view: broken_site_report__metrics__labeled_counter__glean_error_invalid_label {
     hidden: yes
   }
 
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__broken_site_report__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__broken_site_report__metrics__labeled_counter__glean_error_invalid_label.key
     hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
   }
 
   measure: count {
@@ -1119,18 +1155,16 @@ view: broken_site_report__metrics__labeled_counter__glean_error_invalid_overflow
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__broken_site_report__metrics__labeled_counter__glean_error_invalid_overflow
-    suggest_dimension: suggest__broken_site_report__metrics__labeled_counter__glean_error_invalid_overflow.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -1162,18 +1196,16 @@ view: broken_site_report__metrics__labeled_counter__glean_error_invalid_state {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__broken_site_report__metrics__labeled_counter__glean_error_invalid_state
-    suggest_dimension: suggest__broken_site_report__metrics__labeled_counter__glean_error_invalid_state.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -1205,18 +1237,16 @@ view: broken_site_report__metrics__labeled_counter__glean_error_invalid_value {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__broken_site_report__metrics__labeled_counter__glean_error_invalid_value
-    suggest_dimension: suggest__broken_site_report__metrics__labeled_counter__glean_error_invalid_value.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -1239,63 +1269,6 @@ view: suggest__broken_site_report__metrics__labeled_counter__glean_error_invalid
     count(*) as n
 from mozdata.focus_android.broken_site_report as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__broken_site_report__metrics__labeled_counter__glean_error_invalid_overflow {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.focus_android.broken_site_report as t,
-unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__broken_site_report__metrics__labeled_counter__glean_error_invalid_state {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.focus_android.broken_site_report as t,
-unnest(metrics.labeled_counter.glean_error_invalid_state) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__broken_site_report__metrics__labeled_counter__glean_error_invalid_value {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.focus_android.broken_site_report as t,
-unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

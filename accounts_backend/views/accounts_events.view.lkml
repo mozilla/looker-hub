@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: accounts_events {
+  dimension: metrics__string__account_user_id {
+    label: "Account User Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.account_user_id ;;
+    type: string
+    group_label: "Account"
+    group_item_label: "User Id"
+
+    link: {
+      label: "Glean Dictionary reference for Account User Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/account_user_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The firefox/mozilla account id
+"
+  }
+
   dimension: metrics__string__account_user_id_sha256 {
     label: "Account User Id Sha256"
     hidden: no
@@ -56,6 +74,97 @@ view: accounts_events {
     }
 
     description: "additional context-dependent (on event.name) info, e.g. the cause of an error"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    label: "Glean Error Invalid Label"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Label"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Label"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_error_invalid_label"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set with an invalid label.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    label: "Glean Error Invalid Overflow"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Overflow"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_error_invalid_overflow"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set a value that overflowed.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    label: "Glean Error Invalid State"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid State"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_error_invalid_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a timing metric was used incorrectly.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    label: "Glean Error Invalid Value"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Value"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_error_invalid_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set to an invalid value.
+The labels are the `category.name` identifier of the metric.
+"
   }
 
   dimension: metrics__string__relying_party_oauth_client_id {
@@ -125,7 +234,41 @@ view: accounts_events {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "entrypoint to the service"
+    description: "Entrypoint to the service"
+  }
+
+  dimension: metrics__string__session_entrypoint_experiment {
+    label: "Session Entrypoint Experiment"
+    hidden: no
+    sql: ${TABLE}.metrics.string.session_entrypoint_experiment ;;
+    type: string
+    group_label: "Session"
+    group_item_label: "Entrypoint Experiment"
+
+    link: {
+      label: "Glean Dictionary reference for Session Entrypoint Experiment"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/session_entrypoint_experiment"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Identifier for the experiment the user is part of at the entrypoint"
+  }
+
+  dimension: metrics__string__session_entrypoint_variation {
+    label: "Session Entrypoint Variation"
+    hidden: no
+    sql: ${TABLE}.metrics.string.session_entrypoint_variation ;;
+    type: string
+    group_label: "Session"
+    group_item_label: "Entrypoint Variation"
+
+    link: {
+      label: "Glean Dictionary reference for Session Entrypoint Variation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/session_entrypoint_variation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Identifier for the experiment variation the user is part of at the entrypoint"
   }
 
   dimension: metrics__string__session_flow_id {
@@ -160,7 +303,7 @@ view: accounts_events {
     }
 
     description: "A marketing campaign.  For example, if a user signs into FxA from selecting a
-Mozilla VPN plan on Mozilla VPN's product site, then value of this metric could
+Mozilla VPN plan on Mozilla VPN's product site, then the value of this metric could
 be 'vpn-product-page'.  The value has a max length of 128 characters with the
 alphanumeric characters, _ (underscore), forward slash (/), . (period), %
 (percentage sign), and - (hyphen) in the allowed set of characters.  The
@@ -255,97 +398,6 @@ could be 'aboutwelcome-default-screen'.  The value has a max length of 128
 characters with the alphanumeric characters, _ (underscore), forward slash (/),
 . (period), % (percentage sign), and - (hyphen) in the allowed set of
 characters.
-"
-  }
-
-  dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation Id"
-    hidden: no
-    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
-    type: string
-    group_label: "Glean Client Annotation"
-    group_item_label: "Experimentation Id"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
-      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_client_annotation_experimentation_id"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "An experimentation identifier derived and provided by the application
-for the purpose of experimentation enrollment.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_label {
-    label: "Glean Error Invalid Label"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
-    group_label: "Glean Error"
-    group_item_label: "Invalid Label"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Label"
-      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_error_invalid_label"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times a metric was set with an invalid label.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    label: "Glean Error Invalid Overflow"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
-    group_label: "Glean Error"
-    group_item_label: "Invalid Overflow"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
-      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_error_invalid_overflow"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times a metric was set a value that overflowed.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_state {
-    label: "Glean Error Invalid State"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
-    group_label: "Glean Error"
-    group_item_label: "Invalid State"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Error Invalid State"
-      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_error_invalid_state"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times a timing metric was used incorrectly.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_value {
-    label: "Glean Error Invalid Value"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
-    group_label: "Glean Error"
-    group_item_label: "Invalid Value"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Value"
-      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_error_invalid_value"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times a metric was set to an invalid value.
-The labels are the `category.name` identifier of the metric.
 "
   }
 
@@ -832,18 +884,18 @@ view: accounts_events__metrics__labeled_counter__glean_error_invalid_label {
     hidden: yes
   }
 
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_label.key
     hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
   }
 
   measure: count {
@@ -875,18 +927,16 @@ view: accounts_events__metrics__labeled_counter__glean_error_invalid_overflow {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_overflow
-    suggest_dimension: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_overflow.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -918,18 +968,16 @@ view: accounts_events__metrics__labeled_counter__glean_error_invalid_state {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_state
-    suggest_dimension: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_state.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -961,18 +1009,16 @@ view: accounts_events__metrics__labeled_counter__glean_error_invalid_value {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_value
-    suggest_dimension: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_value.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -995,63 +1041,6 @@ view: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_la
     count(*) as n
 from mozdata.accounts_backend.accounts_events as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_overflow {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.accounts_backend.accounts_events as t,
-unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_state {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.accounts_backend.accounts_events as t,
-unnest(metrics.labeled_counter.glean_error_invalid_state) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_value {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.accounts_backend.accounts_events as t,
-unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

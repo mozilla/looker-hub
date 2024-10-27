@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: default_agent {
+  dimension: metrics__quantity__defaultagent_days_since_last_app_launch {
+    label: "Defaultagent Days Since Last App Launch"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.defaultagent_days_since_last_app_launch ;;
+    type: number
+    group_label: "Defaultagent"
+    group_item_label: "Days Since Last App Launch"
+
+    link: {
+      label: "Glean Dictionary reference for Defaultagent Days Since Last App Launch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_defaultagent/metrics/defaultagent_days_since_last_app_launch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of days since the app last launched. Once this reaches 90 days, the installation will stop running the default browser agent.
+"
+  }
+
   dimension: metrics__string__do_task_implementation {
     label: "Do Task Implementation"
     hidden: yes
@@ -737,18 +755,18 @@ view: default_agent__metrics__labeled_counter__glean_error_invalid_label {
     hidden: yes
   }
 
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__default_agent__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__default_agent__metrics__labeled_counter__glean_error_invalid_label.key
     hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
   }
 
   measure: count {
@@ -780,18 +798,16 @@ view: default_agent__metrics__labeled_counter__glean_error_invalid_overflow {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__default_agent__metrics__labeled_counter__glean_error_invalid_overflow
-    suggest_dimension: suggest__default_agent__metrics__labeled_counter__glean_error_invalid_overflow.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -823,18 +839,16 @@ view: default_agent__metrics__labeled_counter__glean_error_invalid_state {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__default_agent__metrics__labeled_counter__glean_error_invalid_state
-    suggest_dimension: suggest__default_agent__metrics__labeled_counter__glean_error_invalid_state.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -866,18 +880,16 @@ view: default_agent__metrics__labeled_counter__glean_error_invalid_value {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__default_agent__metrics__labeled_counter__glean_error_invalid_value
-    suggest_dimension: suggest__default_agent__metrics__labeled_counter__glean_error_invalid_value.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -900,63 +912,6 @@ view: suggest__default_agent__metrics__labeled_counter__glean_error_invalid_labe
     count(*) as n
 from mozdata.firefox_desktop_background_defaultagent.default_agent as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__default_agent__metrics__labeled_counter__glean_error_invalid_overflow {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop_background_defaultagent.default_agent as t,
-unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__default_agent__metrics__labeled_counter__glean_error_invalid_state {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop_background_defaultagent.default_agent as t,
-unnest(metrics.labeled_counter.glean_error_invalid_state) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__default_agent__metrics__labeled_counter__glean_error_invalid_value {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop_background_defaultagent.default_agent as t,
-unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

@@ -537,6 +537,24 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__timing_distribution__glean_database_write_time__sum {
+    label: "Glean Database Write Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.sum ;;
+    type: number
+    group_label: "Glean Database"
+    group_item_label: "Write Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Database Write Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_database_write_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time it takes for a write-commit for the Glean database.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes
@@ -1946,18 +1964,16 @@ view: metrics__metrics__labeled_counter__browser_search_ad_clicks {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -1989,18 +2005,16 @@ view: metrics__metrics__labeled_counter__browser_search_in_content {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_in_content
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_in_content.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -2032,18 +2046,16 @@ view: metrics__metrics__labeled_counter__browser_search_search_count {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_search_count
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_search_count.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -2075,18 +2087,16 @@ view: metrics__metrics__labeled_counter__browser_search_with_ads {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_with_ads
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_with_ads.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -2118,18 +2128,18 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_label {
     hidden: yes
   }
 
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label.key
     hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
   }
 
   measure: count {
@@ -2161,18 +2171,16 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_overflow {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -2204,18 +2212,16 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_state {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -2247,18 +2253,16 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_value {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -2290,18 +2294,16 @@ view: metrics__metrics__labeled_counter__glean_upload_ping_upload_failure {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failure
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failure.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -2333,18 +2335,16 @@ view: metrics__metrics__labeled_counter__glean_validation_pings_submitted {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -2376,18 +2376,16 @@ view: metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -2403,82 +2401,6 @@ view: metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter {
   }
 }
 
-view: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_ios_focus.metrics as t,
-unnest(metrics.labeled_counter.browser_search_ad_clicks) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__browser_search_in_content {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_ios_focus.metrics as t,
-unnest(metrics.labeled_counter.browser_search_in_content) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__browser_search_search_count {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_ios_focus.metrics as t,
-unnest(metrics.labeled_counter.browser_search_search_count) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__browser_search_with_ads {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_ios_focus.metrics as t,
-unnest(metrics.labeled_counter.browser_search_with_ads) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
 view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
   derived_table: {
     sql: select
@@ -2486,120 +2408,6 @@ view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
     count(*) as n
 from mozdata.org_mozilla_ios_focus.metrics as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_ios_focus.metrics as t,
-unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_ios_focus.metrics as t,
-unnest(metrics.labeled_counter.glean_error_invalid_state) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_ios_focus.metrics as t,
-unnest(metrics.labeled_counter.glean_error_invalid_value) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failure {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_ios_focus.metrics as t,
-unnest(metrics.labeled_counter.glean_upload_ping_upload_failure) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_ios_focus.metrics as t,
-unnest(metrics.labeled_counter.glean_validation_pings_submitted) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_ios_focus.metrics as t,
-unnest(metrics.labeled_counter.shortcuts_shortcut_removed_counter) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -2671,6 +2479,18 @@ view: metrics__metrics__memory_distribution__glean_upload_discarded_exceeding_pi
 }
 
 view: metrics__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_database_write_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -20,6 +20,11 @@ view: browser_usage {
     type: string
   }
 
+  dimension: location_name {
+    sql: ${TABLE}.location_name ;;
+    type: string
+  }
+
   dimension: normalization {
     sql: ${TABLE}.normalization ;;
     type: string
@@ -33,6 +38,11 @@ view: browser_usage {
   dimension: percent_share {
     sql: ${TABLE}.percent_share ;;
     type: number
+  }
+
+  dimension: region_name {
+    sql: ${TABLE}.region_name ;;
+    type: string
   }
 
   dimension: user_type {

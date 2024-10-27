@@ -345,6 +345,13 @@ view: first_session_table {
     group_item_label: "First Session Distribution Id"
   }
 
+  dimension: metrics__string__first_session_install_source {
+    sql: ${TABLE}.metrics.string.first_session_install_source ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "First Session Install Source"
+  }
+
   dimension: metrics__string__first_session_network {
     sql: ${TABLE}.metrics.string.first_session_network ;;
     type: string

@@ -8,7 +8,6 @@ view: firefox_android_clients_table {
   dimension: activated {
     sql: ${TABLE}.activated ;;
     type: yesno
-    description: "Determines if a client is activated based on the activation metric and a 7 day lag."
   }
 
   dimension: ad_group_id {
@@ -19,31 +18,26 @@ view: firefox_android_clients_table {
   dimension: adjust_ad_group {
     sql: ${TABLE}.adjust_ad_group ;;
     type: string
-    description: "Structure parameter for the the ad group of a campaign."
   }
 
   dimension: adjust_campaign {
     sql: ${TABLE}.adjust_campaign ;;
     type: string
-    description: "Structure parameter for the campaign name."
   }
 
   dimension: adjust_creative {
     sql: ${TABLE}.adjust_creative ;;
     type: string
-    description: "Structure parameter for the creative content of a campaign."
   }
 
   dimension: adjust_network {
     sql: ${TABLE}.adjust_network ;;
     type: string
-    description: "Structure parameter for the network of a campaign."
   }
 
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
     type: string
-    description: "App display version for this client installation."
   }
 
   dimension: campaign_id {
@@ -54,109 +48,96 @@ view: firefox_android_clients_table {
   dimension: channel {
     sql: ${TABLE}.channel ;;
     type: string
-    description: "Channel where the browser is released."
   }
 
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
-    description: "Unique ID for the client installation."
   }
 
   dimension: device_manufacturer {
     sql: ${TABLE}.device_manufacturer ;;
     type: string
-    description: "Manufacturer of the device where the client is installed."
   }
 
   dimension: device_model {
     sql: ${TABLE}.device_model ;;
     type: string
-    description: "Model of the device where the client is installed."
   }
 
   dimension: distribution_id {
     sql: ${TABLE}.distribution_id ;;
     type: string
-    description: "The id of the browser distribution made available in installation sources."
   }
 
   dimension: first_reported_country {
     sql: ${TABLE}.first_reported_country ;;
     type: string
-    description: "First reported country for the client installation"
   }
 
   dimension: first_reported_isp {
     sql: ${TABLE}.first_reported_isp ;;
     type: string
-    description: "Name of the first reported isp (Internet Service Provider)."
   }
 
   dimension: install_source {
     sql: ${TABLE}.install_source ;;
     type: string
-    description: "The source of a client installation."
   }
 
   dimension: last_reported_adjust_ad_group {
     sql: ${TABLE}.last_reported_adjust_ad_group ;;
     type: string
-    description: "Last reported campaign ad group."
   }
 
   dimension: last_reported_adjust_campaign {
     sql: ${TABLE}.last_reported_adjust_campaign ;;
     type: string
-    description: "Last reported campaign name."
   }
 
   dimension: last_reported_adjust_creative {
     sql: ${TABLE}.last_reported_adjust_creative ;;
     type: string
-    description: "Last reported campaign name."
   }
 
   dimension: last_reported_adjust_network {
     sql: ${TABLE}.last_reported_adjust_network ;;
     type: string
-    description: "Last reported client campaign network."
   }
 
   dimension: last_reported_channel {
     sql: ${TABLE}.last_reported_channel ;;
     type: string
-    description: "Last reported client channel."
   }
 
   dimension: last_reported_country {
     sql: ${TABLE}.last_reported_country ;;
     type: string
-    description: "Last reported client country."
   }
 
   dimension: last_reported_device_manufacturer {
     sql: ${TABLE}.last_reported_device_manufacturer ;;
     type: string
-    description: "Last reported client device manufacturer."
   }
 
   dimension: last_reported_device_model {
     sql: ${TABLE}.last_reported_device_model ;;
     type: string
-    description: "Last reported client device model."
   }
 
   dimension: last_reported_locale {
     sql: ${TABLE}.last_reported_locale ;;
     type: string
-    description: "Last reported client locale."
   }
 
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
-    description: "Client locale."
+  }
+
+  dimension: meta_attribution_app {
+    sql: ${TABLE}.meta_attribution_app ;;
+    type: string
   }
 
   dimension: metadata__adjust_network__source_ping {
@@ -164,7 +145,6 @@ view: firefox_android_clients_table {
     type: string
     group_label: "Metadata"
     group_item_label: "Adjust Network  Source Ping"
-    description: "Name of the ping that reported the first adjust_network value."
   }
 
   dimension: metadata__install_source__source_ping {
@@ -172,7 +152,6 @@ view: firefox_android_clients_table {
     type: string
     group_label: "Metadata"
     group_item_label: "Install Source  Source Ping"
-    description: "Name of the ping that reports the install_source value."
   }
 
   dimension: metadata__reported_baseline_ping {
@@ -180,7 +159,6 @@ view: firefox_android_clients_table {
     type: yesno
     group_label: "Metadata"
     group_item_label: "Reported Baseline Ping"
-    description: "True if the client ever reported a baseline ping."
   }
 
   dimension: metadata__reported_first_session_ping {
@@ -188,7 +166,6 @@ view: firefox_android_clients_table {
     type: yesno
     group_label: "Metadata"
     group_item_label: "Reported First Session Ping"
-    description: "True if the client ever reported a first_session ping."
   }
 
   dimension: metadata__reported_metrics_ping {
@@ -196,55 +173,46 @@ view: firefox_android_clients_table {
     type: yesno
     group_label: "Metadata"
     group_item_label: "Reported Metrics Ping"
-    description: "True if the client ever reported a metrics ping."
   }
 
   dimension: os_version {
     sql: ${TABLE}.os_version ;;
     type: string
-    description: "Version of the Operating System where the client is originally installed."
   }
 
   dimension: play_store_attribution_campaign {
     sql: ${TABLE}.play_store_attribution_campaign ;;
     type: string
-    description: "The utm_campaign this install is attributed to. Reported by the install referrer service, not Adjust."
   }
 
   dimension: play_store_attribution_content {
     sql: ${TABLE}.play_store_attribution_content ;;
     type: string
-    description: "The utm_content this install is attributed to. Reported by the install referrer service, not Adjust."
   }
 
   dimension: play_store_attribution_install_referrer_response {
     sql: ${TABLE}.play_store_attribution_install_referrer_response ;;
     type: string
-    description: "The full install referrer response."
   }
 
   dimension: play_store_attribution_medium {
     sql: ${TABLE}.play_store_attribution_medium ;;
     type: string
-    description: "The utm_medium this install is attributed to. Reported by the install referrer service, not Adjust."
   }
 
   dimension: play_store_attribution_source {
     sql: ${TABLE}.play_store_attribution_source ;;
     type: string
-    description: "The utm_source this install is attributed to. Reported by the install referrer service, not Adjust."
   }
 
   dimension: play_store_attribution_term {
     sql: ${TABLE}.play_store_attribution_term ;;
     type: string
-    description: "The utm_term this install is attributed to. Reported by the install referrer service, not Adjust."
   }
 
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
-    description: "Sample ID to limit query results during an analysis."
   }
 
   dimension_group: first_run {
@@ -260,7 +228,6 @@ view: firefox_android_clients_table {
     ]
     convert_tz: no
     datatype: date
-    description: "Date when the browser first ran."
   }
 
   dimension_group: first_seen {
@@ -276,7 +243,6 @@ view: firefox_android_clients_table {
     ]
     convert_tz: no
     datatype: date
-    description: "Date when the app first reported a baseline ping for the client."
   }
 
   dimension_group: last_reported {
@@ -292,7 +258,6 @@ view: firefox_android_clients_table {
     ]
     convert_tz: no
     datatype: date
-    description: "Last date client seen."
   }
 
   dimension_group: metadata__adjust_network__source_ping_datetime {
@@ -308,7 +273,6 @@ view: firefox_android_clients_table {
       year,
     ]
     label: "Metadata: Adjust Network  Source Ping Datetime"
-    description: "Datetime of the ping that reported the first adjust_network value."
   }
 
   dimension_group: metadata__install_source__source_ping_datetime {
@@ -324,7 +288,21 @@ view: firefox_android_clients_table {
       year,
     ]
     label: "Metadata: Install Source  Source Ping Datetime"
-    description: "Datetime of the ping that reported the first install_source value."
+  }
+
+  dimension_group: metadata__meta_attribution_app__ping_datetime {
+    sql: ${TABLE}.metadata.meta_attribution_app__ping_datetime ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metadata: Meta Attribution App  Ping Datetime"
   }
 
   dimension_group: metadata__min_first_session_ping_run {
@@ -341,7 +319,6 @@ view: firefox_android_clients_table {
     convert_tz: no
     datatype: date
     label: "Metadata: Min First Session Ping Run Date"
-    description: "Date of first app run as reported in the earliest first_session ping."
   }
 
   dimension_group: metadata__min_first_session_ping_submission {
@@ -358,7 +335,6 @@ view: firefox_android_clients_table {
     convert_tz: no
     datatype: date
     label: "Metadata: Min First Session Ping Submission Date"
-    description: "Date when the first reported first_sessin ping is received by the server."
   }
 
   dimension_group: metadata__min_metrics_ping_submission {
@@ -375,7 +351,6 @@ view: firefox_android_clients_table {
     convert_tz: no
     datatype: date
     label: "Metadata: Min Metrics Ping Submission Date"
-    description: "Date when the first reported metrics ping is received by the server."
   }
 
   dimension_group: metadata__play_store_attribution_campaign__ping_datetime {
@@ -391,7 +366,6 @@ view: firefox_android_clients_table {
       year,
     ]
     label: "Metadata: Play Store Attribution Campaign  Ping Datetime"
-    description: "Datetime of the ping that reported the first play_store_attribution_campaign__ping_datetime value."
   }
 
   dimension_group: metadata__play_store_attribution_content__ping_datetime {
@@ -407,7 +381,6 @@ view: firefox_android_clients_table {
       year,
     ]
     label: "Metadata: Play Store Attribution Content  Ping Datetime"
-    description: "Datetime of the ping that reported the first play_store_attribution_content__ping_datetime value."
   }
 
   dimension_group: metadata__play_store_attribution_install_referrer_response__ping_datetime {
@@ -423,7 +396,6 @@ view: firefox_android_clients_table {
       year,
     ]
     label: "Metadata: Play Store Attribution Install Referrer Response  Ping Datetime"
-    description: "Datetime of the ping that reported the first play_store_attribution_install_referrer_response__ping_datetime value."
   }
 
   dimension_group: metadata__play_store_attribution_medium__ping_datetime {
@@ -439,7 +411,6 @@ view: firefox_android_clients_table {
       year,
     ]
     label: "Metadata: Play Store Attribution Medium  Ping Datetime"
-    description: "Datetime of the ping that reported the first play_store_attribution_medium__ping_datetime value."
   }
 
   dimension_group: metadata__play_store_attribution_source__ping_datetime {
@@ -455,7 +426,6 @@ view: firefox_android_clients_table {
       year,
     ]
     label: "Metadata: Play Store Attribution Source  Ping Datetime"
-    description: "Datetime of the ping that reported the first play_store_attribution_source__ping_datetime value."
   }
 
   dimension_group: metadata__play_store_attribution_term__ping_datetime {
@@ -471,7 +441,6 @@ view: firefox_android_clients_table {
       year,
     ]
     label: "Metadata: Play Store Attribution Term  Ping Datetime"
-    description: "Datetime of the ping that reported the first play_store_attribution_term__ping_datetime value."
   }
 
   dimension_group: submission {
@@ -487,7 +456,6 @@ view: firefox_android_clients_table {
     ]
     convert_tz: no
     datatype: date
-    description: "Date when the server first received a baseline ping for the client."
   }
 
   sql_table_name: `mozdata.fenix.firefox_android_clients` ;;

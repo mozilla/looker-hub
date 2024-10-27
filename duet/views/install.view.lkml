@@ -71,6 +71,11 @@ view: install {
     description: "ID of partner distribution, defaulting to 0 for Mozilla distributions"
   }
 
+  dimension: distribution_model {
+    sql: ${TABLE}.distribution_model ;;
+    type: string
+  }
+
   dimension: distribution_version {
     sql: ${TABLE}.distribution_version ;;
     type: string
@@ -130,6 +135,11 @@ view: install {
     sql: ${TABLE}.from_msi ;;
     type: yesno
     description: "True if the install was launched from an MSI wrapper"
+  }
+
+  dimension: funnel_derived {
+    sql: ${TABLE}.funnel_derived ;;
+    type: string
   }
 
   dimension: funnelcake {
@@ -443,6 +453,11 @@ view: install {
     description: "True if the installation failed because the download had to be retried too many times (currently 10)"
   }
 
+  dimension: partner_org {
+    sql: ${TABLE}.partner_org ;;
+    type: string
+  }
+
   dimension: ping_version {
     sql: ${TABLE}.ping_version ;;
     type: string
@@ -509,6 +524,12 @@ view: install {
     description: "True if the installer was run in silent mode (either from an MSI or with command-line parameters)"
   }
 
+  dimension: stub_build_id {
+    sql: ${TABLE}.stub_build_id ;;
+    type: string
+    description: "Build ID of the stub installer"
+  }
+
   dimension: succeeded {
     sql: ${TABLE}.succeeded ;;
     type: yesno
@@ -531,6 +552,12 @@ view: install {
     sql: ${TABLE}.version ;;
     type: string
     description: "Version of the installed product. May be different from installer_version for a stub install. Absent for a failed stub installation."
+  }
+
+  dimension: windows_ubr {
+    sql: ${TABLE}.windows_ubr ;;
+    type: number
+    description: "The Windows Update Build Revision of the installation device, 0 if it does not exist"
   }
 
   dimension_group: metadata__header__parsed {

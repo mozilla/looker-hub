@@ -11,6 +11,6 @@ datagroup: search_clients_daily_v8_last_updated {
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'search_derived'
     AND table_name = 'search_clients_daily_v8' ;;
-  description: "Updates when moz-fx-data-shared-prod:search_derived.search_clients_daily_v8 is modified."
+  description: "Updates when moz-fx-data-shared-prod.search_derived.search_clients_daily_v8 is modified."
   max_cache_age: "24 hours"
 }

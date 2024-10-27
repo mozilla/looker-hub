@@ -106,9 +106,24 @@ view: growth_accounting {
     type: string
   }
 
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+  }
+
   dimension: durations {
     sql: ${TABLE}.durations ;;
     type: number
+  }
+
+  dimension: geo_subdivision {
+    sql: ${TABLE}.geo_subdivision ;;
+    type: string
+  }
+
+  dimension: install_source {
+    sql: ${TABLE}.install_source ;;
+    type: string
   }
 
   dimension: is_new_profile {
@@ -143,6 +158,11 @@ view: growth_accounting {
 
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
+    type: string
+  }
+
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
     type: string
   }
 

@@ -5,11 +5,6 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: active_users_aggregates {
-  dimension: active_hours {
-    sql: ${TABLE}.active_hours ;;
-    type: number
-  }
-
   dimension: adjust_network {
     sql: ${TABLE}.adjust_network ;;
     type: string
@@ -76,6 +71,11 @@ view: active_users_aggregates {
     map_layer_name: countries
   }
 
+  dimension: daily_users {
+    sql: ${TABLE}.daily_users ;;
+    type: number
+  }
+
   dimension: dau {
     sql: ${TABLE}.dau ;;
     type: number
@@ -101,8 +101,8 @@ view: active_users_aggregates {
     type: yesno
   }
 
-  dimension: language_name {
-    sql: ${TABLE}.language_name ;;
+  dimension: locale {
+    sql: ${TABLE}.locale ;;
     type: string
   }
 
@@ -111,8 +111,8 @@ view: active_users_aggregates {
     type: number
   }
 
-  dimension: new_profiles {
-    sql: ${TABLE}.new_profiles ;;
+  dimension: monthly_users {
+    sql: ${TABLE}.monthly_users ;;
     type: number
   }
 
@@ -146,13 +146,13 @@ view: active_users_aggregates {
     type: string
   }
 
-  dimension: uri_count {
-    sql: ${TABLE}.uri_count ;;
+  dimension: wau {
+    sql: ${TABLE}.wau ;;
     type: number
   }
 
-  dimension: wau {
-    sql: ${TABLE}.wau ;;
+  dimension: weekly_users {
+    sql: ${TABLE}.weekly_users ;;
     type: number
   }
 

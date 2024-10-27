@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: serp_categorization {
+  dimension: metrics__counter__serp_categorization_no_map_found {
+    label: "Serp Categorization No Map Found"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.serp_categorization_no_map_found ;;
+    type: number
+    group_label: "Serp"
+    group_item_label: "Categorization No Map Found"
+
+    link: {
+      label: "Glean Dictionary reference for Serp Categorization No Map Found"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/serp_categorization_no_map_found"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A count incremented upon a SERP categorization event being recorded without a corresponding impression event being recorded. This metric effectively counts missing impressions due to issues with the domain-to-categories map.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation Id"
     hidden: no
@@ -351,6 +369,17 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
+  measure: serp_categorization_no_map_found {
+    type: sum
+    sql: ${metrics__counter__serp_categorization_no_map_found} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Serp Categorization No Map Found"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/serp_categorization_no_map_found"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   sql_table_name: `mozdata.firefox_desktop.serp_categorization` ;;
 }
 
@@ -370,18 +399,18 @@ view: serp_categorization__metrics__labeled_counter__glean_error_invalid_label {
     hidden: yes
   }
 
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__serp_categorization__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__serp_categorization__metrics__labeled_counter__glean_error_invalid_label.key
     hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
   }
 
   measure: count {
@@ -407,18 +436,16 @@ view: serp_categorization__metrics__labeled_counter__glean_error_invalid_overflo
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__serp_categorization__metrics__labeled_counter__glean_error_invalid_overflow
-    suggest_dimension: suggest__serp_categorization__metrics__labeled_counter__glean_error_invalid_overflow.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -444,18 +471,16 @@ view: serp_categorization__metrics__labeled_counter__glean_error_invalid_state {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__serp_categorization__metrics__labeled_counter__glean_error_invalid_state
-    suggest_dimension: suggest__serp_categorization__metrics__labeled_counter__glean_error_invalid_state.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -481,18 +506,16 @@ view: serp_categorization__metrics__labeled_counter__glean_error_invalid_value {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__serp_categorization__metrics__labeled_counter__glean_error_invalid_value
-    suggest_dimension: suggest__serp_categorization__metrics__labeled_counter__glean_error_invalid_value.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -509,63 +532,6 @@ view: suggest__serp_categorization__metrics__labeled_counter__glean_error_invali
     count(*) as n
 from mozdata.firefox_desktop.serp_categorization as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__serp_categorization__metrics__labeled_counter__glean_error_invalid_overflow {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.serp_categorization as t,
-unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__serp_categorization__metrics__labeled_counter__glean_error_invalid_state {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.serp_categorization as t,
-unnest(metrics.labeled_counter.glean_error_invalid_state) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__serp_categorization__metrics__labeled_counter__glean_error_invalid_value {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.serp_categorization as t,
-unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

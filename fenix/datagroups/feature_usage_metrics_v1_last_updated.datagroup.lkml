@@ -11,6 +11,6 @@ datagroup: feature_usage_metrics_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'fenix_derived'
     AND table_name = 'feature_usage_metrics_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:fenix_derived.feature_usage_metrics_v1 is modified."
+  description: "Updates when moz-fx-data-shared-prod.fenix_derived.feature_usage_metrics_v1 is modified."
   max_cache_age: "24 hours"
 }

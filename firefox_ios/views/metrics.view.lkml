@@ -3724,6 +3724,24 @@ widget opens firefox for regular search
 "
   }
 
+  dimension: metrics__quantity__windows_ipad_window_count {
+    label: "Windows Ipad Window Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.windows_ipad_window_count ;;
+    type: number
+    group_label: "Windows"
+    group_item_label: "Ipad Window Count"
+
+    link: {
+      label: "Glean Dictionary reference for Windows Ipad Window Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/windows_ipad_window_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A snapshot of how many windows the user has opened on iPad.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation Id"
     hidden: no
@@ -3776,6 +3794,24 @@ for the purpose of experimentation enrollment.
     }
 
     description: "The size of the database file at startup.
+"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__sum {
+    label: "Glean Database Write Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.sum ;;
+    type: number
+    group_label: "Glean Database"
+    group_item_label: "Write Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Database Write Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_database_write_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time it takes for a write-commit for the Glean database.
 "
   }
 
@@ -8020,18 +8056,16 @@ view: metrics__metrics__labeled_counter__bookmarks_add {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__bookmarks_add
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__bookmarks_add.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8063,18 +8097,16 @@ view: metrics__metrics__labeled_counter__bookmarks_delete {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__bookmarks_delete
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__bookmarks_delete.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8106,18 +8138,16 @@ view: metrics__metrics__labeled_counter__bookmarks_edit {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__bookmarks_edit
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__bookmarks_edit.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8149,18 +8179,16 @@ view: metrics__metrics__labeled_counter__bookmarks_open {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__bookmarks_open
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__bookmarks_open.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8192,18 +8220,16 @@ view: metrics__metrics__labeled_counter__bookmarks_view_list {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__bookmarks_view_list
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__bookmarks_view_list.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8235,18 +8261,16 @@ view: metrics__metrics__labeled_counter__browser_search_ad_clicks {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8278,18 +8302,16 @@ view: metrics__metrics__labeled_counter__browser_search_with_ads {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_with_ads
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_with_ads.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8321,18 +8343,16 @@ view: metrics__metrics__labeled_counter__firefox_home_page_firefox_homepage_orig
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_firefox_homepage_origin
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_firefox_homepage_origin.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8364,18 +8384,16 @@ view: metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_group_op
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_group_open_origin
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_group_open_origin.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8407,18 +8425,16 @@ view: metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_show_all
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_show_all_origin
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_show_all_origin.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8450,18 +8466,16 @@ view: metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_tab_open
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_tab_opened_origin
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_tab_opened_origin.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8493,18 +8507,16 @@ view: metrics__metrics__labeled_counter__firefox_home_page_recently_saved_bookma
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_bookmark_origin
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_bookmark_origin.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8536,18 +8548,16 @@ view: metrics__metrics__labeled_counter__firefox_home_page_recently_saved_read_o
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_read_origin
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_read_origin.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8579,18 +8589,16 @@ view: metrics__metrics__labeled_counter__firefox_home_page_recently_saved_show_a
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_show_all_origin
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_show_all_origin.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8622,18 +8630,16 @@ view: metrics__metrics__labeled_counter__firefox_home_page_synced_tab_opened_ori
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_synced_tab_opened_origin
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_synced_tab_opened_origin.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8665,18 +8671,16 @@ view: metrics__metrics__labeled_counter__firefox_home_page_synced_tab_show_all_o
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_synced_tab_show_all_origin
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_synced_tab_show_all_origin.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8708,17 +8712,15 @@ view: metrics__metrics__labeled_counter__firefox_home_page_your_library {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_your_library
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_your_library.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -8751,18 +8753,18 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_label {
     hidden: yes
   }
 
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label.key
     hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
   }
 
   measure: count {
@@ -8794,18 +8796,16 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_overflow {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8837,18 +8837,16 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_state {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8880,18 +8878,16 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_value {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8923,18 +8919,16 @@ view: metrics__metrics__labeled_counter__glean_upload_ping_upload_failure {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failure
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failure.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -8966,18 +8960,16 @@ view: metrics__metrics__labeled_counter__glean_validation_pings_submitted {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -9009,18 +9001,16 @@ view: metrics__metrics__labeled_counter__history_selected_item {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__history_selected_item
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__history_selected_item.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -9052,18 +9042,16 @@ view: metrics__metrics__labeled_counter__library_panel_pressed {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__library_panel_pressed
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__library_panel_pressed.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -9095,18 +9083,16 @@ view: metrics__metrics__labeled_counter__logins_store_read_query_error_count {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__logins_store_read_query_error_count
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__logins_store_read_query_error_count.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -9138,17 +9124,15 @@ view: metrics__metrics__labeled_counter__logins_store_unlock_error_count {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_count
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_count.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -9181,18 +9165,16 @@ view: metrics__metrics__labeled_counter__logins_store_write_query_error_count {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error_count
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error_count.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -9224,18 +9206,16 @@ view: metrics__metrics__labeled_counter__pocket_open_story_origin {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__pocket_open_story_origin
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__pocket_open_story_origin.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -9267,18 +9247,16 @@ view: metrics__metrics__labeled_counter__pocket_open_story_position {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__pocket_open_story_position
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__pocket_open_story_position.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -9310,18 +9288,16 @@ view: metrics__metrics__labeled_counter__reading_list_add {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__reading_list_add
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__reading_list_add.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -9353,18 +9329,16 @@ view: metrics__metrics__labeled_counter__reading_list_delete {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__reading_list_delete
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__reading_list_delete.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -9396,18 +9370,16 @@ view: metrics__metrics__labeled_counter__search_counts {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__search_counts
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__search_counts.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -9439,18 +9411,16 @@ view: metrics__metrics__labeled_counter__search_google_topsite_pressed {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__search_google_topsite_pressed
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__search_google_topsite_pressed.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -9482,18 +9452,16 @@ view: metrics__metrics__labeled_counter__search_in_content {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__search_in_content
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__search_in_content.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -9525,18 +9493,16 @@ view: metrics__metrics__labeled_counter__tabs_close {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__tabs_close
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__tabs_close.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -9568,18 +9534,16 @@ view: metrics__metrics__labeled_counter__tabs_close_all {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__tabs_close_all
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__tabs_close_all.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -9611,18 +9575,16 @@ view: metrics__metrics__labeled_counter__tabs_open {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__tabs_open
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__tabs_open.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -9654,17 +9616,15 @@ view: metrics__metrics__labeled_counter__top_site_pressed_tile_origin {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__top_site_pressed_tile_origin
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__top_site_pressed_tile_origin.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -9697,18 +9657,16 @@ view: metrics__metrics__labeled_counter__top_sites_pressed_tile_origin {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__top_sites_pressed_tile_origin
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__top_sites_pressed_tile_origin.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -9740,18 +9698,16 @@ view: metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -9767,329 +9723,6 @@ view: metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper {
   }
 }
 
-view: suggest__metrics__metrics__labeled_counter__bookmarks_add {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.bookmarks_add) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__bookmarks_delete {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.bookmarks_delete) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__bookmarks_edit {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.bookmarks_edit) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__bookmarks_open {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.bookmarks_open) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__bookmarks_view_list {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.bookmarks_view_list) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.browser_search_ad_clicks) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__browser_search_with_ads {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.browser_search_with_ads) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__firefox_home_page_firefox_homepage_origin {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.firefox_home_page_firefox_homepage_origin) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_group_open_origin {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.firefox_home_page_jump_back_in_group_open_origin) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_show_all_origin {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.firefox_home_page_jump_back_in_show_all_origin) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_tab_opened_origin {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.firefox_home_page_jump_back_in_tab_opened_origin) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_bookmark_origin {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.firefox_home_page_recently_saved_bookmark_origin) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_read_origin {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.firefox_home_page_recently_saved_read_origin) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_show_all_origin {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.firefox_home_page_recently_saved_show_all_origin) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__firefox_home_page_synced_tab_opened_origin {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.firefox_home_page_synced_tab_opened_origin) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__firefox_home_page_synced_tab_show_all_origin {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.firefox_home_page_synced_tab_show_all_origin) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__firefox_home_page_your_library {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.firefox_home_page_your_library) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
 view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
   derived_table: {
     sql: select
@@ -10097,443 +9730,6 @@ view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
     count(*) as n
 from mozdata.firefox_ios.metrics as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.glean_error_invalid_state) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.glean_error_invalid_value) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failure {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.glean_upload_ping_upload_failure) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.glean_validation_pings_submitted) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__history_selected_item {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.history_selected_item) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__library_panel_pressed {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.library_panel_pressed) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__logins_store_read_query_error_count {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.logins_store_read_query_error_count) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_count {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.logins_store_unlock_error_count) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error_count {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.logins_store_write_query_error_count) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__pocket_open_story_origin {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.pocket_open_story_origin) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__pocket_open_story_position {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.pocket_open_story_position) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__reading_list_add {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.reading_list_add) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__reading_list_delete {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.reading_list_delete) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__search_counts {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.search_counts) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__search_google_topsite_pressed {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.search_google_topsite_pressed) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__search_in_content {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.search_in_content) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__tabs_close {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.tabs_close) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__tabs_close_all {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.tabs_close_all) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__tabs_open {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.tabs_open) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__top_site_pressed_tile_origin {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.top_site_pressed_tile_origin) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__top_sites_pressed_tile_origin {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.top_sites_pressed_tile_origin) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.wallpaper_analytics_themed_wallpaper) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -10617,6 +9813,18 @@ view: metrics__metrics__memory_distribution__glean_upload_pending_pings_director
 }
 
 view: metrics__metrics__timing_distribution__awesomebar_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_database_write_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

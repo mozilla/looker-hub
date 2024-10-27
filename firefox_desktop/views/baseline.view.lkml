@@ -78,6 +78,27 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__uuid__legacy_telemetry_profile_group_id {
+    label: "Legacy Telemetry Profile Group Id"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_profile_group_id ;;
+    type: string
+    group_label: "Legacy Telemetry"
+    group_item_label: "Profile Group Id"
+
+    link: {
+      label: "Glean Dictionary reference for Legacy Telemetry Profile Group Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/legacy_telemetry_profile_group_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The profile_group_id according to Telemetry.
+Might not always have a value due to being too early for it to have
+loaded.
+Does not need to be sent in the Glean \"deletion-request\" ping.
+"
+  }
+
   dimension: metrics__timespan__glean_baseline_duration__value {
     label: "Glean Baseline Duration Value"
     hidden: no
@@ -825,18 +846,18 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_label {
     hidden: yes
   }
 
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_error_invalid_label.key
     hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
   }
 
   measure: count {
@@ -868,18 +889,16 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_overflow {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_overflow
-    suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_error_invalid_overflow.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -911,18 +930,16 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_state {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_state
-    suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_error_invalid_state.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -954,18 +971,16 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_value {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_value
-    suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_error_invalid_value.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -997,18 +1012,16 @@ view: baseline__metrics__labeled_counter__glean_validation_pings_submitted {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__baseline__metrics__labeled_counter__glean_validation_pings_submitted
-    suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_validation_pings_submitted.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -1031,82 +1044,6 @@ view: suggest__baseline__metrics__labeled_counter__glean_error_invalid_label {
     count(*) as n
 from mozdata.firefox_desktop.baseline as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__baseline__metrics__labeled_counter__glean_error_invalid_overflow {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.baseline as t,
-unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__baseline__metrics__labeled_counter__glean_error_invalid_state {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.baseline as t,
-unnest(metrics.labeled_counter.glean_error_invalid_state) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__baseline__metrics__labeled_counter__glean_error_invalid_value {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.baseline as t,
-unnest(metrics.labeled_counter.glean_error_invalid_value) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__baseline__metrics__labeled_counter__glean_validation_pings_submitted {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.baseline as t,
-unnest(metrics.labeled_counter.glean_validation_pings_submitted) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

@@ -11,6 +11,6 @@ datagroup: revenue_forecast_review_long_last_updated {
     FROM `mozdata`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'revenue_cat3_analysis'
     AND table_name = 'revenue_forecast_review_long' ;;
-  description: "Updates when mozdata:revenue_cat3_analysis.revenue_forecast_review_long is modified."
+  description: "Updates when mozdata.revenue_cat3_analysis.revenue_forecast_review_long is modified."
   max_cache_age: "24 hours"
 }

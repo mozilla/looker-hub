@@ -190,6 +190,15 @@ view: serp_categorization_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__counter__serp_categorization_no_map_found {
+    sql: ${TABLE}.metrics.counter.serp_categorization_no_map_found ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Serp Categorization No Map Found"
+    description: "A count incremented upon a SERP categorization event being recorded without a corresponding impression event being recorded. This metric effectively counts missing impressions due to issues with the domain-to-categories map.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -219,6 +228,13 @@ The labels are the `category.name` identifier of the metric.
     hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__object__serp_experiment_info {
+    sql: ${TABLE}.metrics.object.serp_experiment_info ;;
+    hidden: yes
+    description: "Whether the client is enrolled in a specified experiment and if so, which branch the client is assigned to. The target experiment is specified in the Nimbus config by creating a \"targetExperiment\" key and setting its value to the experiment's slug (and ensuring the featureId is \"search\").
 "
   }
 

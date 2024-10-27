@@ -11,6 +11,6 @@ datagroup: firefox_mobile_installs_v1_last_updated {
     FROM `moz-fx-data-marketing-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'adjust_derived'
     AND table_name = 'firefox_mobile_installs_v1' ;;
-  description: "Updates when moz-fx-data-marketing-prod:adjust_derived.firefox_mobile_installs_v1 is modified."
+  description: "Updates when moz-fx-data-marketing-prod.adjust_derived.firefox_mobile_installs_v1 is modified."
   max_cache_age: "24 hours"
 }

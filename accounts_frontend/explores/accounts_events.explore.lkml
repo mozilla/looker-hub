@@ -7,6 +7,7 @@
 include: "/looker-hub/accounts_frontend/views/accounts_events.view.lkml"
 
 explore: accounts_events {
+  hidden: yes
   sql_always_where: ${accounts_events.submission_date} >= '2010-01-01' ;;
   view_label: " Accounts_Events"
   description: "Explore for the accounts_events ping. An account event"
@@ -55,17 +56,5 @@ explore: accounts_events {
 }
 
 explore: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}
-
-explore: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_value {
   hidden: yes
 }

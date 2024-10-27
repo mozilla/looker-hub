@@ -10,6 +10,7 @@ explore: metric_definitions_feature_usage_metrics_v1 {
   always_filter: {
     filters: [
       submission_date: "7 days",
+      sampling: "1",
     ]
   }
 

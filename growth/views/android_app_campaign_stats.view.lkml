@@ -17,6 +17,11 @@ view: android_app_campaign_stats {
     description: "Name of the Ad Group."
   }
 
+  dimension: ad_group_segments {
+    sql: ${TABLE}.ad_group_segments ;;
+    hidden: yes
+  }
+
   dimension: campaign {
     sql: ${TABLE}.campaign ;;
     type: string
@@ -39,6 +44,11 @@ view: android_app_campaign_stats {
     sql: ${TABLE}.campaign_region ;;
     type: string
     description: "Region the campaign ran in."
+  }
+
+  dimension: campaign_segments {
+    sql: ${TABLE}.campaign_segments ;;
+    hidden: yes
   }
 
   dimension: clicks {
@@ -65,10 +75,22 @@ view: android_app_campaign_stats {
     description: "Number of new profiles reported for this ad group on this day."
   }
 
+  dimension: repeat_users {
+    sql: ${TABLE}.repeat_users ;;
+    type: number
+    description: "Number of repeat users on this day."
+  }
+
   dimension: spend {
     sql: ${TABLE}.spend ;;
     type: number
     description: "Spend in US dollars attributed to this ad group on this day."
+  }
+
+  dimension: week_4_retained_users {
+    sql: ${TABLE}.week_4_retained_users ;;
+    type: number
+    description: "Number of week 4 retained users on this day."
   }
 
   dimension_group: date {
@@ -88,4 +110,28 @@ view: android_app_campaign_stats {
   }
 
   sql_table_name: `moz-fx-data-shared-prod.google_ads_derived.android_app_campaign_stats_v1` ;;
+}
+
+view: android_app_campaign_stats__ad_group_segments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: android_app_campaign_stats__campaign_segments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
 }
