@@ -2569,6 +2569,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__browser_ui_interaction_keyboard {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_keyboard ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__cert_compression_failures {
     sql: ${TABLE}.metrics.labeled_counter.cert_compression_failures ;;
     hidden: yes
