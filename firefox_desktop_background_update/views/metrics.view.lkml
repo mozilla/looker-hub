@@ -847,6 +847,23 @@ It is possible for a Firefox installation to not have a default profile, but in 
 "
   }
 
+  dimension: metrics__labeled_counter__browser_ui_interaction_keyboard {
+    label: "Browser Ui Interaction Keyboard"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_keyboard ;;
+    group_label: "Browser Ui Interaction"
+    group_item_label: "Keyboard"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Ui Interaction Keyboard"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/browser_ui_interaction_keyboard"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records a count of interactions with keyboard shortcuts. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.keyboard.
+"
+  }
+
   dimension: metrics__boolean__browser_ui_proton_enabled {
     label: "Browser Ui Proton Enabled"
     hidden: yes
@@ -15086,6 +15103,47 @@ view: metrics__metrics__labeled_counter__avif_yuv_color_space {
 
 view: metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count {
   label: "Bounce Tracking Protection - Purge Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_ui_interaction_keyboard {
+  label: "Browser Ui Interaction - Keyboard"
 
   dimension: document_id {
     type: string
