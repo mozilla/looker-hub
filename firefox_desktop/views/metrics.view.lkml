@@ -1365,6 +1365,58 @@ This metric was generated to correspond to the Legacy Telemetry scalar browser.s
 "
   }
 
+  dimension: metrics__labeled_counter__browser_ui_customized_widgets {
+    label: "Browser Ui Customized Widgets"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_customized_widgets ;;
+    group_label: "Browser Ui"
+    group_item_label: "Customized Widgets"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Ui Customized Widgets"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_customized_widgets"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records when widgets are added, removed or moved in the UI. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.customized_widgets.
+"
+  }
+
+  dimension: metrics__counter__browser_ui_interaction_all_tabs_panel_dragstart_tab_event_count {
+    label: "Browser Ui Interaction All Tabs Panel Dragstart Tab Event Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_ui_interaction_all_tabs_panel_dragstart_tab_event_count ;;
+    type: number
+    group_label: "Browser Ui Interaction"
+    group_item_label: "All Tabs Panel Dragstart Tab Event Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Ui Interaction All Tabs Panel Dragstart Tab Event Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_all_tabs_panel_dragstart_tab_event_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records a count of how many times a drag event started for a tab within the All Tabs panel. This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.all_tabs_panel_dragstart_tab_event_count.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_all_tabs_panel_entrypoint {
+    label: "Browser Ui Interaction All Tabs Panel Entrypoint"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_all_tabs_panel_entrypoint ;;
+    group_label: "Browser Ui Interaction"
+    group_item_label: "All Tabs Panel Entrypoint"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Ui Interaction All Tabs Panel Entrypoint"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_all_tabs_panel_entrypoint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records a count of how many times the All Tabs Panel was opened, keyed on a string describing the entrypoint. This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.all_tabs_panel_entrypoint.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_ui_interaction_app_menu {
     label: "Browser Ui Interaction App Menu"
     hidden: yes
@@ -1739,6 +1791,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar browser.s
 "
   }
 
+  dimension: metrics__counter__browser_ui_interaction_textrecognition_error {
+    label: "Browser Ui Interaction Textrecognition Error"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_ui_interaction_textrecognition_error ;;
+    type: number
+    group_label: "Browser Ui Interaction"
+    group_item_label: "Textrecognition Error"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Ui Interaction Textrecognition Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_textrecognition_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded when text recognition in images fails for some unknown reason. This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.textrecognition_error.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_ui_interaction_unified_extensions_area {
     label: "Browser Ui Interaction Unified Extensions Area"
     hidden: yes
@@ -1770,6 +1840,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar browser.s
     }
 
     description: "Records a count of interactions with items in the vertical tab bar. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.vertical_tabs_container.
+"
+  }
+
+  dimension: metrics__labeled_boolean__browser_ui_mirror_for_toolbar_widgets {
+    label: "Browser Ui Mirror For Toolbar Widgets"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.browser_ui_mirror_for_toolbar_widgets ;;
+    type: string
+    group_label: "Browser Ui"
+    group_item_label: "Mirror For Toolbar Widgets"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Ui Mirror For Toolbar Widgets"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_mirror_for_toolbar_widgets"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The widgets in the toolbars. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.toolbar_widgets.
 "
   }
 
@@ -3656,6 +3744,60 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__quantity__security_global_privacy_control_enabled {
+    label: "Security Global Privacy Control Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.security_global_privacy_control_enabled ;;
+    type: number
+    group_label: "Security"
+    group_item_label: "Global Privacy Control Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Security Global Privacy Control Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/security_global_privacy_control_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures user retention of the Global Privacy Control. 0 = never enabled, 1 = enabled, 2 = disabled (but was enabled) This metric was generated to correspond to the Legacy Telemetry scalar security.global_privacy_control_enabled.
+"
+  }
+
+  dimension: metrics__quantity__security_https_only_mode_enabled {
+    label: "Security Https Only Mode Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.security_https_only_mode_enabled ;;
+    type: number
+    group_label: "Security"
+    group_item_label: "Https Only Mode Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Security Https Only Mode Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/security_https_only_mode_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures user retention of the HTTPS-Only Mode. 0 = never enabled, 1 = enabled, 2 = disabled (but was enabled) This metric was generated to correspond to the Legacy Telemetry scalar security.https_only_mode_enabled.
+"
+  }
+
+  dimension: metrics__quantity__security_https_only_mode_enabled_pbm {
+    label: "Security Https Only Mode Enabled Pbm"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.security_https_only_mode_enabled_pbm ;;
+    type: number
+    group_label: "Security"
+    group_item_label: "Https Only Mode Enabled Pbm"
+
+    link: {
+      label: "Glean Dictionary reference for Security Https Only Mode Enabled Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/security_https_only_mode_enabled_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures user retention of the HTTPS-Only Mode in Private Browsing. 0 = https-only never enabled in PBM, 1 = https-only enabled in PBM, 2 = https-only disabled in PBM (but was enabled) This metric was generated to correspond to the Legacy Telemetry scalar security.https_only_mode_enabled_pbm.
+"
+  }
+
   dimension: metrics__labeled_counter__serp_ads_blocked_count {
     label: "Serp Ads Blocked Count"
     hidden: yes
@@ -5078,6 +5220,23 @@ in browser.
     }
 
     description: "For every purge that is scheduled, we call the ClearDataService to purge persistent storage for each detected bounce tracker. This may do some blocking work on main thread and dispatch some cleanups to other threads. Collect telemetry on how long it takes to clear in the wild to determine whether we need to improve performance here.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_keyboard {
+    label: "Browser Ui Interaction Keyboard"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_keyboard ;;
+    group_label: "Browser Ui Interaction"
+    group_item_label: "Keyboard"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Ui Interaction Keyboard"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_keyboard"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records a count of interactions with keyboard shortcuts. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.keyboard.
 "
   }
 
@@ -16281,6 +16440,56 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: browser_ui_interaction_all_tabs_panel_dragstart_tab_event_count {
+    type: sum
+    sql: ${metrics__counter__browser_ui_interaction_all_tabs_panel_dragstart_tab_event_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Ui Interaction All Tabs Panel Dragstart Tab Event Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_all_tabs_panel_dragstart_tab_event_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_ui_interaction_all_tabs_panel_dragstart_tab_event_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_ui_interaction_all_tabs_panel_dragstart_tab_event_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Ui Interaction All Tabs Panel Dragstart Tab Event Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_all_tabs_panel_dragstart_tab_event_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_ui_interaction_textrecognition_error {
+    type: sum
+    sql: ${metrics__counter__browser_ui_interaction_textrecognition_error} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Ui Interaction Textrecognition Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_textrecognition_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_ui_interaction_textrecognition_error_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_ui_interaction_textrecognition_error: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Ui Interaction Textrecognition Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_textrecognition_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: crash_submission_failure {
     type: sum
     sql: ${metrics__counter__crash_submission_failure} ;;
@@ -21522,6 +21731,88 @@ view: metrics__metrics__labeled_counter__browser_search_withads_webextension {
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_ui_customized_widgets {
+  label: "Browser Ui - Customized Widgets"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_ui_interaction_all_tabs_panel_entrypoint {
+  label: "Browser Ui Interaction - All Tabs Panel Entrypoint"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_ui_interaction_app_menu {
   label: "Browser Ui Interaction - App Menu"
 
@@ -21606,6 +21897,47 @@ view: metrics__metrics__labeled_counter__browser_ui_interaction_bookmarks_bar {
 
 view: metrics__metrics__labeled_counter__browser_ui_interaction_content_context {
   label: "Browser Ui Interaction - Content Context"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_ui_interaction_keyboard {
+  label: "Browser Ui Interaction - Keyboard"
 
   dimension: document_id {
     type: string
@@ -30884,6 +31216,18 @@ view: metrics__metrics__custom_distribution__timer_thread_timers_fired_per_wakeu
 }
 
 view: metrics__metrics__labeled_boolean__a11y_theme {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__browser_ui_mirror_for_toolbar_widgets {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

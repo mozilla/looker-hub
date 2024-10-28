@@ -988,6 +988,24 @@ Migrated from Telemetry's
 "
   }
 
+  dimension: metrics__counter__browser_ui_interaction_all_tabs_panel_dragstart_tab_event_count {
+    sql: ${TABLE}.metrics.counter.browser_ui_interaction_all_tabs_panel_dragstart_tab_event_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Ui Interaction All Tabs Panel Dragstart Tab Event Count"
+    description: "Records a count of how many times a drag event started for a tab within the All Tabs panel. This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.all_tabs_panel_dragstart_tab_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_ui_interaction_textrecognition_error {
+    sql: ${TABLE}.metrics.counter.browser_ui_interaction_textrecognition_error ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Ui Interaction Textrecognition Error"
+    description: "Recorded when text recognition in images fails for some unknown reason. This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.textrecognition_error.
+"
+  }
+
   dimension: metrics__counter__cert_signature_cache_total {
     sql: ${TABLE}.metrics.counter.cert_signature_cache_total ;;
     type: number
@@ -3081,6 +3099,13 @@ of the shopping experiment.
 "
   }
 
+  dimension: metrics__labeled_boolean__browser_ui_mirror_for_toolbar_widgets {
+    sql: ${TABLE}.metrics.labeled_boolean.browser_ui_mirror_for_toolbar_widgets ;;
+    hidden: yes
+    description: "The widgets in the toolbars. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.toolbar_widgets.
+"
+  }
+
   dimension: metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
     sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_normal_window_service_mode ;;
     hidden: yes
@@ -3666,6 +3691,20 @@ of the shopping experiment.
 "
   }
 
+  dimension: metrics__labeled_counter__browser_ui_customized_widgets {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_customized_widgets ;;
+    hidden: yes
+    description: "Records when widgets are added, removed or moved in the UI. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.customized_widgets.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_all_tabs_panel_entrypoint {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_all_tabs_panel_entrypoint ;;
+    hidden: yes
+    description: "Records a count of how many times the All Tabs Panel was opened, keyed on a string describing the entrypoint. This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.all_tabs_panel_entrypoint.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_ui_interaction_app_menu {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_app_menu ;;
     hidden: yes
@@ -3684,6 +3723,13 @@ of the shopping experiment.
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_content_context ;;
     hidden: yes
     description: "Records a count of interactions with items in the content context menu. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.content_context.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_keyboard {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_keyboard ;;
+    hidden: yes
+    description: "Records a count of interactions with keyboard shortcuts. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.keyboard.
 "
   }
 
@@ -6042,6 +6088,33 @@ API for the purposes of Validation (hence GVSV).
     group_label: "Metrics Quantity"
     group_item_label: "Pwmgr Potentially Breached Passwords"
     description: "The number of potentially breached passwords, as determined by LoginBreaches.getPotentialBreachesByLoginGUID. This metric was generated to correspond to the Legacy Telemetry scalar pwmgr.potentially_breached_passwords.
+"
+  }
+
+  dimension: metrics__quantity__security_global_privacy_control_enabled {
+    sql: ${TABLE}.metrics.quantity.security_global_privacy_control_enabled ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Security Global Privacy Control Enabled"
+    description: "Measures user retention of the Global Privacy Control. 0 = never enabled, 1 = enabled, 2 = disabled (but was enabled) This metric was generated to correspond to the Legacy Telemetry scalar security.global_privacy_control_enabled.
+"
+  }
+
+  dimension: metrics__quantity__security_https_only_mode_enabled {
+    sql: ${TABLE}.metrics.quantity.security_https_only_mode_enabled ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Security Https Only Mode Enabled"
+    description: "Measures user retention of the HTTPS-Only Mode. 0 = never enabled, 1 = enabled, 2 = disabled (but was enabled) This metric was generated to correspond to the Legacy Telemetry scalar security.https_only_mode_enabled.
+"
+  }
+
+  dimension: metrics__quantity__security_https_only_mode_enabled_pbm {
+    sql: ${TABLE}.metrics.quantity.security_https_only_mode_enabled_pbm ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Security Https Only Mode Enabled Pbm"
+    description: "Measures user retention of the HTTPS-Only Mode in Private Browsing. 0 = https-only never enabled in PBM, 1 = https-only enabled in PBM, 2 = https-only disabled in PBM (but was enabled) This metric was generated to correspond to the Legacy Telemetry scalar security.https_only_mode_enabled_pbm.
 "
   }
 
@@ -18055,6 +18128,18 @@ view: metrics_table__metrics__custom_distribution__timer_thread_timers_fired_per
 }
 
 view: metrics_table__metrics__labeled_boolean__a11y_theme {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__browser_ui_mirror_for_toolbar_widgets {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
