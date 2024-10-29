@@ -3845,7 +3845,7 @@ API for the purposes of Validation (hence GVSV).
 
   dimension: metrics__boolean__gfx_tmp_writable {
     label: "Gfx Tmp Writable"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.gfx_tmp_writable ;;
     type: yesno
     group_label: "Gfx"
