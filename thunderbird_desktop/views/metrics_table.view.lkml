@@ -1759,6 +1759,26 @@ This does not include deletion-request pings.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__mail_compact_bytes_recovered__count {
+    sql: ${TABLE}.metrics.custom_distribution.mail_compact_bytes_recovered.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Mail Compact Bytes Recovered"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__mail_compact_bytes_recovered__sum {
+    sql: ${TABLE}.metrics.custom_distribution.mail_compact_bytes_recovered.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Mail Compact Bytes Recovered"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__mail_compact_bytes_recovered__values {
+    sql: ${TABLE}.metrics.custom_distribution.mail_compact_bytes_recovered.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__network_tls_early_data_bytes_written__count {
     sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.count ;;
     type: number
@@ -3148,6 +3168,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__mail_compact_result {
+    sql: ${TABLE}.metrics.labeled_counter.mail_compact_result ;;
+    hidden: yes
+    description: "Counts the number of folder compactions that happen and how they ended.
+"
+  }
+
   dimension: metrics__labeled_counter__mail_failed_email_account_setup {
     sql: ${TABLE}.metrics.labeled_counter.mail_failed_email_account_setup ;;
     hidden: yes
@@ -3992,6 +4019,13 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     sql: ${TABLE}.metrics.labeled_timing_distribution.netwerk_http3_0rtt_state_duration ;;
     hidden: yes
     description: "The time a connection was in the 0-RTT state
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse_idle_connection {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.netwerk_http3_time_to_reuse_idle_connection ;;
+    hidden: yes
+    description: "The time to reuse an idle connection in HTTP3 (ms); keyed by the transaction reusing an idle connection has succeeded or failed
 "
   }
 
@@ -8718,6 +8752,66 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__values {
     sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__mail_compact_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.mail_compact_duration.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Mail Compact Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__mail_compact_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.mail_compact_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Mail Compact Duration"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__mail_compact_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.mail_compact_duration.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Mail Compact Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__mail_compact_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.mail_compact_duration.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Mail Compact Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__mail_compact_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.mail_compact_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__mail_compact_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.mail_compact_duration.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Mail Compact Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__mail_compact_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.mail_compact_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Mail Compact Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__mail_compact_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.mail_compact_duration.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Mail Compact Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__mail_compact_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.mail_compact_duration.values ;;
     hidden: yes
   }
 
@@ -15235,6 +15329,18 @@ view: metrics_table__metrics__custom_distribution__gfx_content_frame_time_withou
   }
 }
 
+view: metrics_table__metrics__custom_distribution__mail_compact_bytes_recovered__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__network_tls_early_data_bytes_written__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -16074,6 +16180,85 @@ view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_0rtt_st
 }
 
 view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse_idle_connection {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse_idle_connection__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -17455,6 +17640,18 @@ view: metrics_table__metrics__timing_distribution__ls_preparedatastore_processin
 }
 
 view: metrics_table__metrics__timing_distribution__ls_preparelsdatabase_processing_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__mail_compact_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
