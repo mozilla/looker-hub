@@ -368,6 +368,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ipc_sent_messages_parent_inactive}) AS metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__mail_compact_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mail_compact_result}) AS metrics__metrics__labeled_counter__mail_compact_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mail_compact_result.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__mail_failed_email_account_setup {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mail_failed_email_account_setup}) AS metrics__metrics__labeled_counter__mail_failed_email_account_setup ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mail_failed_email_account_setup.document_id} ;;
