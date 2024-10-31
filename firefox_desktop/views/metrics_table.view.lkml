@@ -5815,6 +5815,51 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__quantity__browser_engagement_max_concurrent_tab_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_tab_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Tab Count"
+    description: "The count of maximum number of tabs open during a subsession, across all windows, including tabs in private windows and restored at startup. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_tab_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_max_concurrent_tab_pinned_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_tab_pinned_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Tab Pinned Count"
+    description: "The count of maximum number of pinned tabs open during a subsession. This includes private windows and the ones opened when starting the browser. Starting Firefox 85 this includes number of restored pinned tabs at startup. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_tab_pinned_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_max_concurrent_vertical_tab_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_vertical_tab_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Vertical Tab Count"
+    description: "The count of maximum number of tabs with vertical tabs enabled. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_vertical_tab_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_max_concurrent_vertical_tab_pinned_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_vertical_tab_pinned_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Vertical Tab Pinned Count"
+    description: "The count of maximum number of pinned tabs with vertical tabs enabled. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_vertical_tab_pinned_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_max_concurrent_window_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_window_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Window Count"
+    description: "The count of maximum number of browser windows open during a subsession. This includes private windows and the ones opened when starting the browser. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_window_count.
+"
+  }
+
   dimension: metrics__quantity__browser_engagement_profile_count {
     sql: ${TABLE}.metrics.quantity.browser_engagement_profile_count ;;
     type: number
@@ -10651,6 +10696,66 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__values {
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.values ;;
     hidden: yes
   }
 
@@ -20214,6 +20319,18 @@ view: metrics_table__metrics__timing_distribution__javascript_pageload_protect_t
 }
 
 view: metrics_table__metrics__timing_distribution__javascript_pageload_xdr_encode_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -8882,6 +8882,66 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.bucket_count ;;
     type: number
@@ -17789,6 +17849,18 @@ view: metrics_table__metrics__timing_distribution__javascript_pageload_protect_t
 }
 
 view: metrics_table__metrics__timing_distribution__javascript_pageload_xdr_encode_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

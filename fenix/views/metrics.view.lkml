@@ -7820,6 +7820,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__sum {
+    label: "Localstorage Database Request Allow To Close Response Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.sum ;;
+    type: number
+    group_label: "Localstorage Database"
+    group_item_label: "Request Allow To Close Response Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Localstorage Database Request Allow To Close Response Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/localstorage_database_request_allow_to_close_response_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time it took between sending PBackgroundLSDatabase::RequestAllowToClose and receiving PBackgroundLSDatabase::AllowToClose message. These messages are issued when QuotaManager is shutting down or is aborting operations for a particular origin or process.
+"
+  }
+
   dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__sum {
     label: "Ls Preparedatastore Processing Time Sum"
     hidden: no
@@ -10446,42 +10464,6 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "Whether an HTTP request gets upgraded to HTTPS because of HTTPS RR
-"
-  }
-
-  dimension: metrics__timespan__networking_loading_certs_task__value {
-    label: "Networking Loading Certs Task Value"
-    hidden: no
-    sql: ${TABLE}.metrics.timespan.networking_loading_certs_task.value ;;
-    type: number
-    group_label: "Networking"
-    group_item_label: "Loading Certs Task Value"
-
-    link: {
-      label: "Glean Dictionary reference for Networking Loading Certs Task Value"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_loading_certs_task"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time in milliseconds to load any external certificates. This occurs off of the main-thread, but can block main-thread operations. This metric was generated to correspond to the Legacy Telemetry scalar networking.loading_certs_task.
-"
-  }
-
-  dimension: metrics__timespan__networking_nss_initialization__value {
-    label: "Networking Nss Initialization Value"
-    hidden: no
-    sql: ${TABLE}.metrics.timespan.networking_nss_initialization.value ;;
-    type: number
-    group_label: "Networking"
-    group_item_label: "Nss Initialization Value"
-
-    link: {
-      label: "Glean Dictionary reference for Networking Nss Initialization Value"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_nss_initialization"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time in milliseconds to initialize the NSS component in the parent process. This metric was generated to correspond to the Legacy Telemetry scalar networking.nss_initialization.
 "
   }
 
@@ -30224,6 +30206,18 @@ view: metrics__metrics__timing_distribution__javascript_pageload_xdr_encode_time
 }
 
 view: metrics__metrics__timing_distribution__js_bytecode_caching_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
