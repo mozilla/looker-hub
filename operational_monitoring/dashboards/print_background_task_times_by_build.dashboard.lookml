@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Print Error Breakdown
-    name: Print Error Breakdown_sum
+  - title: Print Error By Ui
+    name: Print Error By Ui_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,7 +26,7 @@
       print_background_task_times_by_build.branch, print_background_task_times_by_build.metric
     ]
     filters:
-      print_background_task_times_by_build.metric: '"notimplemented", "oom", "start_page", "not_available", "cannot_open_file", "name_not_found", "abort", "enddoc", "gfx_printer_doc_is_busy", "startdoc", "unexpected", "print_failure", "no_printer"'
+      print_background_task_times_by_build.metric: '"total_printing_errors_old_ui", "total_printing_errors_new_ui"'
       print_background_task_times_by_build.statistic: sum
     row: 0
     col: 0
@@ -45,8 +45,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Print Error By Ui
-    name: Print Error By Ui_sum
+  - title: Print Error Breakdown
+    name: Print Error Breakdown_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -61,7 +61,7 @@
       print_background_task_times_by_build.branch, print_background_task_times_by_build.metric
     ]
     filters:
-      print_background_task_times_by_build.metric: '"total_printing_errors_new_ui", "total_printing_errors_old_ui"'
+      print_background_task_times_by_build.metric: '"notimplemented", "not_available", "oom", "enddoc", "print_failure", "cannot_open_file", "start_page", "startdoc", "unexpected", "gfx_printer_doc_is_busy", "abort", "name_not_found", "no_printer"'
       print_background_task_times_by_build.statistic: sum
     row: 0
     col: 12

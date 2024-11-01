@@ -3215,6 +3215,13 @@ of the shopping experiment.
 "
   }
 
+  dimension: metrics__labeled_boolean__widget_pointing_devices {
+    sql: ${TABLE}.metrics.labeled_boolean.widget_pointing_devices ;;
+    hidden: yes
+    description: "Whether the system has any matching pointing device for each label.
+"
+  }
+
   dimension: metrics__labeled_counter__avif_a1lx {
     sql: ${TABLE}.metrics.labeled_counter.avif_a1lx ;;
     hidden: yes
@@ -5251,6 +5258,13 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.quotamanager_initialize_repository_number_of_iterations ;;
+    hidden: yes
+    description: "This metric logs the count of directory entries iterated within the QuotaManager::InitializeRepository function for each repository type. Each instance of this metric is labeled with one of three repository types: \"persistent\", \"temporary\" or \"default\" (there's also \"private\" repository but that should never be iterated by the function). The main purpose is to track and analyze iteration counts during the initialization process of each repository type, helping to identify performance trends or potential inefficiencies across these repositories. This can provide insight into the impacts of specific code changes, including potential optimizations or regressions.
+"
+  }
+
   dimension: metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
     sql: ${TABLE}.metrics.labeled_string.cookie_banners_google_gdpr_choice_cookie ;;
     hidden: yes
@@ -6087,6 +6101,24 @@ API for the purposes of Validation (hence GVSV).
     group_label: "Metrics Quantity"
     group_item_label: "Networking Https Rr Prefs Usage"
     description: "A bitfield representation for the usage of HTTPS RR prefs. bit 0: network.dns.upgrade_with_https_rr is enabled or not. bit 1: network.dns.use_https_rr_as_altsvc is enabled or not. bit 2: network.dns.echconfig.enabled is enabled or not. This metric was generated to correspond to the Legacy Telemetry scalar networking.https_rr_prefs_usage.
+"
+  }
+
+  dimension: metrics__quantity__networking_loading_certs_task {
+    sql: ${TABLE}.metrics.quantity.networking_loading_certs_task ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Networking Loading Certs Task"
+    description: "The time in milliseconds to load any external certificates. This occurs off of the main-thread, but can block main-thread operations. This metric was generated to correspond to the Legacy Telemetry scalar networking.loading_certs_task.
+"
+  }
+
+  dimension: metrics__quantity__networking_nss_initialization {
+    sql: ${TABLE}.metrics.quantity.networking_nss_initialization ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Networking Nss Initialization"
+    description: "The time in milliseconds to initialize the NSS component in the parent process. This metric was generated to correspond to the Legacy Telemetry scalar networking.nss_initialization.
 "
   }
 
@@ -18455,6 +18487,18 @@ view: metrics_table__metrics__labeled_boolean__widget_ime_name_on_windows_insert
   }
 }
 
+view: metrics_table__metrics__labeled_boolean__widget_pointing_devices {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -18483,6 +18527,45 @@ view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn
 }
 
 view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

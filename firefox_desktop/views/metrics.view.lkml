@@ -4667,6 +4667,24 @@ in browser.
 "
   }
 
+  dimension: metrics__labeled_boolean__widget_pointing_devices {
+    label: "Widget Pointing Devices"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.widget_pointing_devices ;;
+    type: string
+    group_label: "Widget"
+    group_item_label: "Pointing Devices"
+
+    link: {
+      label: "Glean Dictionary reference for Widget Pointing Devices"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/widget_pointing_devices"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the system has any matching pointing device for each label.
+"
+  }
+
   dimension: metrics__boolean__a11y_always_underline_links {
     label: "A11Y Always Underline Links"
     hidden: no
@@ -11536,6 +11554,42 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "Whether an HTTP request gets upgraded to HTTPS because of HTTPS RR
+"
+  }
+
+  dimension: metrics__quantity__networking_loading_certs_task {
+    label: "Networking Loading Certs Task"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.networking_loading_certs_task ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Loading Certs Task"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Loading Certs Task"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_loading_certs_task"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time in milliseconds to load any external certificates. This occurs off of the main-thread, but can block main-thread operations. This metric was generated to correspond to the Legacy Telemetry scalar networking.loading_certs_task.
+"
+  }
+
+  dimension: metrics__quantity__networking_nss_initialization {
+    label: "Networking Nss Initialization"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.networking_nss_initialization ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Nss Initialization"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Nss Initialization"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_nss_initialization"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time in milliseconds to initialize the NSS component in the parent process. This metric was generated to correspond to the Legacy Telemetry scalar networking.nss_initialization.
 "
   }
 
@@ -31503,6 +31557,18 @@ view: metrics__metrics__labeled_boolean__widget_ime_name_on_windows_inserted_crl
   }
 }
 
+view: metrics__metrics__labeled_boolean__widget_pointing_devices {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -31531,6 +31597,45 @@ view: metrics__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ec
 }
 
 view: metrics__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
