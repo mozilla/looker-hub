@@ -3435,6 +3435,13 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_connection_close_reason {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_connection_close_reason ;;
+    hidden: yes
+    description: "Number of HTTP3 connections closed, labeled by reason.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_ecn_path_capability {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_3_ecn_path_capability ;;
     hidden: yes
@@ -3968,6 +3975,12 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     hidden: yes
     description: "How many calendars were set up, keyed by calendar type Types are e.g. \"storage\", \"caldav\", \"ics\" and various types from add-ons.
 "
+  }
+
+  dimension: metrics__labeled_string__calendar_google_token_type {
+    sql: ${TABLE}.metrics.labeled_string.calendar_google_token_type ;;
+    hidden: yes
+    description: "How Google calendar OAuth tokens are stored. There is a variety of old formats we would like to remove, but migration is difficult and may not be worth attempting for some formats. See MailGlue.sys.mjs for a description of each label."
   }
 
   dimension: metrics__labeled_string__calendar_read_only_calendar_count {
@@ -16129,6 +16142,18 @@ view: metrics_table__metrics__labeled_string__addrbook_contact_count {
 }
 
 view: metrics_table__metrics__labeled_string__calendar_calendar_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics_table__metrics__labeled_string__calendar_google_token_type {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

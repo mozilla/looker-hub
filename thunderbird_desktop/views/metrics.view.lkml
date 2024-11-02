@@ -58,6 +58,23 @@ view: metrics {
 "
   }
 
+  dimension: metrics__labeled_string__calendar_google_token_type {
+    label: "Calendar Google Token Type"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.calendar_google_token_type ;;
+    type: string
+    group_label: "Calendar"
+    group_item_label: "Google Token Type"
+
+    link: {
+      label: "Glean Dictionary reference for Calendar Google Token Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/calendar_google_token_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How Google calendar OAuth tokens are stored. There is a variety of old formats we would like to remove, but migration is difficult and may not be worth attempting for some formats. See MailGlue.sys.mjs for a description of each label."
+  }
+
   dimension: metrics__labeled_string__calendar_read_only_calendar_count {
     label: "Calendar Read Only Calendar Count"
     hidden: no
@@ -6656,6 +6673,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "The upload throughput for http/2 request size between 50MB and 100MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_connection_close_reason {
+    label: "Networking Http 3 Connection Close Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_connection_close_reason ;;
+    group_label: "Networking"
+    group_item_label: "Http 3 Connection Close Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Connection Close Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/networking_http_3_connection_close_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of HTTP3 connections closed, labeled by reason.
 "
   }
 
@@ -18814,6 +18848,47 @@ view: metrics__metrics__labeled_counter__networking_fetch_keepalive_request_coun
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_http_3_connection_close_reason {
+  label: "Networking - Http 3 Connection Close Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_http_3_ecn_path_capability {
   label: "Networking - Http 3 Ecn Path Capability"
 
@@ -22774,6 +22849,18 @@ view: metrics__metrics__labeled_string__addrbook_contact_count {
 }
 
 view: metrics__metrics__labeled_string__calendar_calendar_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics__metrics__labeled_string__calendar_google_token_type {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
