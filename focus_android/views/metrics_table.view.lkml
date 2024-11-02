@@ -2954,6 +2954,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_connection_close_reason {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_connection_close_reason ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_ecn_path_capability {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_3_ecn_path_capability ;;
     hidden: yes
