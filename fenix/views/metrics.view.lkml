@@ -13835,6 +13835,58 @@ This metric was generated to correspond to the Legacy Telemetry scalar startup.p
 "
   }
 
+  dimension: metrics__labeled_counter__web_push_content_encoding {
+    label: "Web Push Content Encoding"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.web_push_content_encoding ;;
+    group_label: "Web Push"
+    group_item_label: "Content Encoding"
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Content Encoding"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/web_push_content_encoding"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which content encoding is being used for push.
+"
+  }
+
+  dimension: metrics__counter__web_push_detected_duplicated_message_ids {
+    label: "Web Push Detected Duplicated Message Ids"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.web_push_detected_duplicated_message_ids ;;
+    type: number
+    group_label: "Web Push"
+    group_item_label: "Detected Duplicated Message Ids"
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Detected Duplicated Message Ids"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/web_push_detected_duplicated_message_ids"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the duplicated IDs from the server. The ability to detect depends on the pref `dom.push.maxRecentMessageIDsPerSubscription`.
+"
+  }
+
+  dimension: metrics__labeled_counter__web_push_error_code {
+    label: "Web Push Error Code"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.web_push_error_code ;;
+    group_label: "Web Push"
+    group_item_label: "Error Code"
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Error Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/web_push_error_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The code indicating why the push message couldn't be processed.
+"
+  }
+
   dimension: metrics__labeled_counter__webauthn_create_authenticator_attachment {
     label: "Webauthn Create Authenticator Attachment"
     hidden: yes
@@ -19078,6 +19130,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Web Notification Insecure Context Permission Request"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/web_notification_insecure_context_permission_request"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_push_detected_duplicated_message_ids {
+    type: sum
+    sql: ${metrics__counter__web_push_detected_duplicated_message_ids} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Detected Duplicated Message Ids"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/web_push_detected_duplicated_message_ids"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_push_detected_duplicated_message_ids_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__web_push_detected_duplicated_message_ids: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Detected Duplicated Message Ids"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/web_push_detected_duplicated_message_ids"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -27250,6 +27327,88 @@ view: metrics__metrics__labeled_counter__web_notification_request_permission_ori
 
 view: metrics__metrics__labeled_counter__web_notification_show_origin {
   label: "Web Notification - Show Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__web_push_content_encoding {
+  label: "Web Push - Content Encoding"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__web_push_error_code {
+  label: "Web Push - Error Code"
 
   dimension: document_id {
     type: string
