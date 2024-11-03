@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: home_and_newtab_wallpapers_v1_rollout_global {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.home_and_newtab_wallpapers_v1_rollout_global_statistics ;;
+view: viewpoint_follow_up_q4_2024 {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.viewpoint_follow_up_q4_2024_statistics ;;
 
   dimension: submission_date {
     type: date

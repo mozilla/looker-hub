@@ -1187,6 +1187,13 @@ view: metrics_table {
     group_item_label: "Web Notification Insecure Context Permission Request"
   }
 
+  dimension: metrics__counter__web_push_detected_duplicated_message_ids {
+    sql: ${TABLE}.metrics.counter.web_push_detected_duplicated_message_ids ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Web Push Detected Duplicated Message Ids"
+  }
+
   dimension: metrics__counter__webauthn_create_failure {
     sql: ${TABLE}.metrics.counter.webauthn_create_failure ;;
     type: number
@@ -3281,6 +3288,16 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__web_notification_show_origin {
     sql: ${TABLE}.metrics.labeled_counter.web_notification_show_origin ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__web_push_content_encoding {
+    sql: ${TABLE}.metrics.labeled_counter.web_push_content_encoding ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__web_push_error_code {
+    sql: ${TABLE}.metrics.labeled_counter.web_push_error_code ;;
     hidden: yes
   }
 
