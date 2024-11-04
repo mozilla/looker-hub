@@ -5898,6 +5898,14 @@ monitoring:
       tables:
       - table: mozdata.static.monitoring_schema_errors_notes_v1
       type: table_view
+    shredder_per_job_stats:
+      tables:
+      - table: mozdata.monitoring.shredder_per_job_stats
+      type: table_view
+    shredder_targets_new_mismatched_targets:
+      tables:
+      - table: moz-fx-data-shared-prod.monitoring_derived.shredder_targets_new_mismatched_v1
+      type: table_view
     stable_and_derived_table_sizes:
       tables:
       - table: mozdata.monitoring.stable_and_derived_table_sizes
@@ -5910,6 +5918,10 @@ monitoring:
       tables:
       - table: mozdata.monitoring.structured_missing_columns
       type: ping_view
+    table_partition_expirations:
+      tables:
+      - table: moz-fx-data-shared-prod.monitoring_derived.table_partition_expirations_v1
+      type: table_view
     telemetry_missing_columns:
       tables:
       - table: mozdata.monitoring.telemetry_missing_columns
