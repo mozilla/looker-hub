@@ -992,7 +992,7 @@ view: metrics {
 
   dimension: metrics__boolean__bounce_tracking_protection_enabled_at_startup {
     label: "Bounce Tracking Protection Enabled At Startup"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_at_startup ;;
     type: yesno
     group_label: "Bounce Tracking Protection"
@@ -1010,7 +1010,7 @@ view: metrics {
 
   dimension: metrics__boolean__bounce_tracking_protection_enabled_dry_run_mode_at_startup {
     label: "Bounce Tracking Protection Enabled Dry Run Mode At Startup"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_dry_run_mode_at_startup ;;
     type: yesno
     group_label: "Bounce Tracking Protection"
