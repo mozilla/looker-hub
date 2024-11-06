@@ -5702,6 +5702,15 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__quantity__bounce_tracking_protection_mode {
+    sql: ${TABLE}.metrics.quantity.bounce_tracking_protection_mode ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Bounce Tracking Protection Mode"
+    description: "Records the pref value of privacy.bounceTrackingProtection.mode. Values are any of nsIBounceTrackingProtection#Modes.
+"
+  }
+
   dimension: metrics__quantity__browser_backup_browser_extension_data_size {
     sql: ${TABLE}.metrics.quantity.browser_backup_browser_extension_data_size ;;
     type: number

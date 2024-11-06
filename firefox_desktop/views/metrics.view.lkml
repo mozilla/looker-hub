@@ -5260,6 +5260,24 @@ in browser.
 "
   }
 
+  dimension: metrics__quantity__bounce_tracking_protection_mode {
+    label: "Bounce Tracking Protection Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.bounce_tracking_protection_mode ;;
+    type: number
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/bounce_tracking_protection_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the pref value of privacy.bounceTrackingProtection.mode. Values are any of nsIBounceTrackingProtection#Modes.
+"
+  }
+
   dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__sum {
     label: "Bounce Tracking Protection Num Hosts Per Purge Run Sum"
     hidden: no

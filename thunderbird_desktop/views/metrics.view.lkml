@@ -332,6 +332,23 @@ view: metrics {
     description: "How many emails were read by the user."
   }
 
+  dimension: metrics__labeled_counter__mail_mbox_read_errors {
+    label: "Mail Mbox Read Errors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.mail_mbox_read_errors ;;
+    group_label: "Mail"
+    group_item_label: "Mbox Read Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Mbox Read Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_mbox_read_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts mbox read failures by type.
+"
+  }
+
   dimension: metrics__labeled_string__mail_oauth2_provider_count {
     label: "Mail Oauth2 Provider Count"
     hidden: no
@@ -1023,6 +1040,24 @@ view: metrics {
     }
 
     description: "Keeps track of whether the feature is enabled and running in dry-run mode at startup.
+"
+  }
+
+  dimension: metrics__quantity__bounce_tracking_protection_mode {
+    label: "Bounce Tracking Protection Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.bounce_tracking_protection_mode ;;
+    type: number
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/bounce_tracking_protection_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the pref value of privacy.bounceTrackingProtection.mode. Values are any of nsIBounceTrackingProtection#Modes.
 "
   }
 
@@ -17615,6 +17650,47 @@ view: metrics__metrics__labeled_counter__mail_failed_email_account_setup {
 
 view: metrics__metrics__labeled_counter__mail_folder_opened {
   label: "Mail - Folder Opened"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__mail_mbox_read_errors {
+  label: "Mail - Mbox Read Errors"
 
   dimension: document_id {
     type: string
