@@ -3197,6 +3197,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__mail_mbox_read_errors {
+    sql: ${TABLE}.metrics.labeled_counter.mail_mbox_read_errors ;;
+    hidden: yes
+    description: "Counts mbox read failures by type.
+"
+  }
+
   dimension: metrics__labeled_counter__mail_successful_email_account_setup {
     sql: ${TABLE}.metrics.labeled_counter.mail_successful_email_account_setup ;;
     hidden: yes
@@ -4383,6 +4390,15 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     group_label: "Metrics Quantity"
     group_item_label: "A11Y Hcm Foreground"
     description: "Unsigned int tracking the user's prefered foreground color \ (logged when HCM is enabled). This metric was generated to correspond to the Legacy Telemetry scalar a11y.HCM_foreground.
+"
+  }
+
+  dimension: metrics__quantity__bounce_tracking_protection_mode {
+    sql: ${TABLE}.metrics.quantity.bounce_tracking_protection_mode ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Bounce Tracking Protection Mode"
+    description: "Records the pref value of privacy.bounceTrackingProtection.mode. Values are any of nsIBounceTrackingProtection#Modes.
 "
   }
 
