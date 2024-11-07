@@ -695,6 +695,167 @@ count. Unset on other platforms.
 "
   }
 
+  dimension: metrics__quantity__browser_engagement_session_time_excluding_suspend {
+    label: "Browser Engagement Session Time Excluding Suspend"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.browser_engagement_session_time_excluding_suspend ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Session Time Excluding Suspend"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Session Time Excluding Suspend"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_session_time_excluding_suspend"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The duration of the session in milliseconds, excluding the time the device was suspended. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.session_time_excluding_suspend.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_session_time_including_suspend {
+    label: "Browser Engagement Session Time Including Suspend"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.browser_engagement_session_time_including_suspend ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Session Time Including Suspend"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Session Time Including Suspend"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_session_time_including_suspend"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The duration of the session in milliseconds, including the time the device was suspended. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.session_time_including_suspend.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_sessionrestore_interstitial {
+    label: "Browser Engagement Sessionrestore Interstitial"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_sessionrestore_interstitial ;;
+    group_label: "Browser Engagement"
+    group_item_label: "Sessionrestore Interstitial"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Sessionrestore Interstitial"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_sessionrestore_interstitial"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether we show about:sessionrestore or not. Split by key, which indicates why we showed the item or not. Specifically, 'deferred_restore' means we didn't autorestore and thus didn't show the interstitial; 'autorestore' indicates we autorestored without showing the interstitial. 'shown_old_session', 'shown_only_about_welcomeback', 'shown_many_crashes', 'shown_many_crashes_old_session' all indicate we did show the interstitial because of a crash, and the text after 'shown' indicates what secondary reason there was to show this page (as we don't show it for 'just' one crash). This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.sessionrestore_interstitial.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_open_event_count {
+    label: "Browser Engagement Tab Open Event Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_open_event_count ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Tab Open Event Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Tab Open Event Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_tab_open_event_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of tab open events per subsession, across all windows, after the session has been restored. This includes tab open events from private windows and from manual session restorations (i.e. after crashes and from about:home), but excludes tabs opened vertically. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_open_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_pinned_event_count {
+    label: "Browser Engagement Tab Pinned Event Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_pinned_event_count ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Tab Pinned Event Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Tab Pinned Event Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_tab_pinned_event_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of tab pinned events per subsession, across all windows, after the session has been restored. This includes tab pinned events from private windows. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_pinned_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_reload_count {
+    label: "Browser Engagement Tab Reload Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_reload_count ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Tab Reload Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Tab Reload Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_tab_reload_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of tab reload events by the user after unloaded. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_reload_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_unload_count {
+    label: "Browser Engagement Tab Unload Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_unload_count ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Tab Unload Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Tab Unload Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_tab_unload_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of tab unload events by TabUnloader due to a low-memory situation. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_unload_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_unfiltered_uri_count {
+    label: "Browser Engagement Unfiltered Uri Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_unfiltered_uri_count ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Unfiltered Uri Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Unfiltered Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_unfiltered_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of the total non-unique URIs visited in a subsession, not restricted to a specific protocol, including page reloads and about:* pages (other than initial pages such as about:blank, ...), after the session has been restored. This does not include background page requests and URIs from embedded pages or private browsing. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.unfiltered_uri_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_unique_domains_count {
+    label: "Browser Engagement Unique Domains Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.browser_engagement_unique_domains_count ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Unique Domains Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Unique Domains Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_unique_domains_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of the unique domains visited in a subsession, after the session has been restored. Subdomains under eTLD are aggregated after the first level (i.e. test.example.com and other.example.com are only counted once). This does not include background page requests and domains from embedded pages or private browsing. The count is limited to 100 unique domains. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.unique_domains_count.
+"
+  }
+
   dimension: metrics__counter__browser_engagement_uri_count {
     label: "Browser Engagement Uri Count"
     hidden: no
@@ -733,6 +894,60 @@ Migrated from Telemetry's
     }
 
     description: "The count of the total non-unique http(s) URIs visited in a subsession, including page reloads, after the session has been restored. URIs on minimized or background tabs may also be counted towards this. Private browsing is not included in this count. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.total_uri_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_vertical_tab_open_event_count {
+    label: "Browser Engagement Vertical Tab Open Event Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_vertical_tab_open_event_count ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Vertical Tab Open Event Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Vertical Tab Open Event Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_vertical_tab_open_event_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of tab open events with vertical tabs enabled. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.vertical_tab_open_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_vertical_tab_pinned_event_count {
+    label: "Browser Engagement Vertical Tab Pinned Event Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_vertical_tab_pinned_event_count ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Vertical Tab Pinned Event Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Vertical Tab Pinned Event Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_vertical_tab_pinned_event_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of tab pinned events with vertical tabs enabled. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.vertical_tab_pinned_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_window_open_event_count {
+    label: "Browser Engagement Window Open Event Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_window_open_event_count ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Window Open Event Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Window Open Event Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_window_open_event_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of browser window open events per subsession, after the session has been restored. The count includes private windows and the ones from manual session restorations (i.e. after crashes and from about:home). This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.window_open_event_count.
 "
   }
 
@@ -4286,6 +4501,1053 @@ in browser.
 "
   }
 
+  dimension: metrics__counter__urlbar_abandonment_count {
+    label: "Urlbar Abandonment Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.urlbar_abandonment_count ;;
+    type: number
+    group_label: "Urlbar"
+    group_item_label: "Abandonment Count"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Abandonment Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_abandonment_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A uint recording the number of abandoned engagements in the urlbar. An abandonment occurs when the user begins using the urlbar but stops before completing the engagement. This can happen when the user clicks outside the urlbar to focus a different part of the window. It can also happen when the user switches to another window while the urlbar is focused. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.abandonment.
+"
+  }
+
+  dimension: metrics__counter__urlbar_autofill_deletion {
+    label: "Urlbar Autofill Deletion"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.urlbar_autofill_deletion ;;
+    type: number
+    group_label: "Urlbar"
+    group_item_label: "Autofill Deletion"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Autofill Deletion"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_autofill_deletion"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A uint recording the deletion count for autofilled string in the urlbar. This occurs when the user deletes whole autofilled string by BACKSPACE or DELETE key while the autofilled string is selected. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.autofill_deletion.
+"
+  }
+
+  dimension: metrics__counter__urlbar_engagement_count {
+    label: "Urlbar Engagement Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.urlbar_engagement_count ;;
+    type: number
+    group_label: "Urlbar"
+    group_item_label: "Engagement Count"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Engagement Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_engagement_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A uint recording the number of engagements the user completes in the urlbar.  An engagement occurs when the user navigates to a page using the urlbar, for example by picking a result in the urlbar panel or typing a search term or URL in the urlbar and pressing the enter key. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.engagement.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_about {
+    label: "Urlbar Impression Autofill About"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_about ;;
+    type: number
+    group_label: "Urlbar Impression"
+    group_item_label: "Autofill About"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Impression Autofill About"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_impression_autofill_about"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times about-page type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_about.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_adaptive {
+    label: "Urlbar Impression Autofill Adaptive"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_adaptive ;;
+    type: number
+    group_label: "Urlbar Impression"
+    group_item_label: "Autofill Adaptive"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Impression Autofill Adaptive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_impression_autofill_adaptive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times adaptive history type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_adaptive.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_origin {
+    label: "Urlbar Impression Autofill Origin"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_origin ;;
+    type: number
+    group_label: "Urlbar Impression"
+    group_item_label: "Autofill Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Impression Autofill Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_impression_autofill_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times origin type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_origin.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_other {
+    label: "Urlbar Impression Autofill Other"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_other ;;
+    type: number
+    group_label: "Urlbar Impression"
+    group_item_label: "Autofill Other"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Impression Autofill Other"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_impression_autofill_other"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times other type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_other.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_url {
+    label: "Urlbar Impression Autofill Url"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_url ;;
+    type: number
+    group_label: "Urlbar Impression"
+    group_item_label: "Autofill Url"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Impression Autofill Url"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_impression_autofill_url"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times url type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_url.
+"
+  }
+
+  dimension: metrics__counter__urlbar_persistedsearchterms_revert_by_popup_count {
+    label: "Urlbar Persistedsearchterms Revert By Popup Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.urlbar_persistedsearchterms_revert_by_popup_count ;;
+    type: number
+    group_label: "Urlbar Persistedsearchterms"
+    group_item_label: "Revert By Popup Count"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Persistedsearchterms Revert By Popup Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_persistedsearchterms_revert_by_popup_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of the number of times search terms were removed from the urlbar due to a shown PopupNotification. This event can happen when a user loads a SERP and a PopupNotification is shown, as well as when a user switches away from a tab on a SERP showing a PopupNotification and switches back to it. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.persistedsearchterms.revert_by_popup_count.
+"
+  }
+
+  dimension: metrics__counter__urlbar_persistedsearchterms_view_count {
+    label: "Urlbar Persistedsearchterms View Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.urlbar_persistedsearchterms_view_count ;;
+    type: number
+    group_label: "Urlbar Persistedsearchterms"
+    group_item_label: "View Count"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Persistedsearchterms View Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_persistedsearchterms_view_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of the number of times search terms persisted in the Urlbar. This gets recorded after a user loads a SERP that persists search terms, or switches back to an existing tab that should be showing the persisted search terms in the Urlbar, regardless of whether PopupNotification cleared the search terms from the Urlbar. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.persistedsearchterms.view_count.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_about {
+    label: "Urlbar Picked Autofill About"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_about ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Autofill About"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Autofill About"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_autofill_about"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times an about-page autofill result (e.g., \"about:config\") was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_about.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_adaptive {
+    label: "Urlbar Picked Autofill Adaptive"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_adaptive ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Autofill Adaptive"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Autofill Adaptive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_autofill_adaptive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_adaptive.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_origin {
+    label: "Urlbar Picked Autofill Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_origin ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Autofill Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Autofill Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_autofill_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times an origin (domain) autofill result (e.g., \"mozilla.org\") was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_origin.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_other {
+    label: "Urlbar Picked Autofill Other"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_other ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Autofill Other"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Autofill Other"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_autofill_other"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times some other type of autofill result that does not have a specific keyed scalar was picked at a given index. This is a fallback that is used when the code is not properly setting a specific autofill type, and it should not normally be used. If it appears in the data, it means we need to investigate and fix the code that is not properly setting a specific autofill type. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_other.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_url {
+    label: "Urlbar Picked Autofill Url"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_url ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Autofill Url"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Autofill Url"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_autofill_url"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times a URL autofill result (e.g., \"mozilla.org/firefox\") was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_url.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_bookmark {
+    label: "Urlbar Picked Bookmark"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_bookmark ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Bookmark"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Bookmark"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_bookmark"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.bookmark.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_bookmark_adaptive {
+    label: "Urlbar Picked Bookmark Adaptive"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_bookmark_adaptive ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Bookmark Adaptive"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Bookmark Adaptive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_bookmark_adaptive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.bookmark_adaptive.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_clipboard {
+    label: "Urlbar Picked Clipboard"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_clipboard ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Clipboard"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Clipboard"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_clipboard"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.clipboard.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_dynamic {
+    label: "Urlbar Picked Dynamic"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_dynamic ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Dynamic"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Dynamic"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_dynamic"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.dynamic.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_dynamic_wikipedia {
+    label: "Urlbar Picked Dynamic Wikipedia"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_dynamic_wikipedia ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Dynamic Wikipedia"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Dynamic Wikipedia"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_dynamic_wikipedia"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.dynamic_wikipedia.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_extension {
+    label: "Urlbar Picked Extension"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_extension ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Extension"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Extension"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_extension"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.extension.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_formhistory {
+    label: "Urlbar Picked Formhistory"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_formhistory ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Formhistory"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Formhistory"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_formhistory"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.formhistory.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_history {
+    label: "Urlbar Picked History"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_history ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "History"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked History"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_history"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.history.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_history_adaptive {
+    label: "Urlbar Picked History Adaptive"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_history_adaptive ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "History Adaptive"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked History Adaptive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_history_adaptive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.history_adaptive.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_keyword {
+    label: "Urlbar Picked Keyword"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_keyword ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Keyword"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Keyword"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_keyword"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.keyword.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_navigational {
+    label: "Urlbar Picked Navigational"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_navigational ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Navigational"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Navigational"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_navigational"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.navigational.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_quickaction {
+    label: "Urlbar Picked Quickaction"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_quickaction ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Quickaction"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Quickaction"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_quickaction"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.quickaction.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_quicksuggest {
+    label: "Urlbar Picked Quicksuggest"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_quicksuggest ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Quicksuggest"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Quicksuggest"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_quicksuggest"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.quicksuggest.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_recent_search {
+    label: "Urlbar Picked Recent Search"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_recent_search ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Recent Search"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Recent Search"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_recent_search"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.recent_search.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_remotetab {
+    label: "Urlbar Picked Remotetab"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_remotetab ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Remotetab"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Remotetab"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_remotetab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.remotetab.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_restrict_keyword_actions {
+    label: "Urlbar Picked Restrict Keyword Actions"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_restrict_keyword_actions ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Restrict Keyword Actions"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Restrict Keyword Actions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_restrict_keyword_actions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this restrict actions result was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.restrict_keyword_actions.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_restrict_keyword_bookmarks {
+    label: "Urlbar Picked Restrict Keyword Bookmarks"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_restrict_keyword_bookmarks ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Restrict Keyword Bookmarks"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Restrict Keyword Bookmarks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_restrict_keyword_bookmarks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this restrict bookmarks result was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.restrict_keyword_bookmarks.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_restrict_keyword_history {
+    label: "Urlbar Picked Restrict Keyword History"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_restrict_keyword_history ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Restrict Keyword History"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Restrict Keyword History"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_restrict_keyword_history"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this restrict history result was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.restrict_keyword_history.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_restrict_keyword_tabs {
+    label: "Urlbar Picked Restrict Keyword Tabs"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_restrict_keyword_tabs ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Restrict Keyword Tabs"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Restrict Keyword Tabs"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_restrict_keyword_tabs"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this restrict tabs result was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.restrict_keyword_tabs.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchengine {
+    label: "Urlbar Picked Searchengine"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchengine ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Searchengine"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Searchengine"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_searchengine"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchengine.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_bookmarkmenu {
+    label: "Urlbar Picked Searchmode Bookmarkmenu"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_bookmarkmenu ;;
+    group_label: "Urlbar Picked Searchmode"
+    group_item_label: "Bookmarkmenu"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Searchmode Bookmarkmenu"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_searchmode_bookmarkmenu"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode from the Search Bookmarks menu item in the Library menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.bookmarkmenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_handoff {
+    label: "Urlbar Picked Searchmode Handoff"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_handoff ;;
+    group_label: "Urlbar Picked Searchmode"
+    group_item_label: "Handoff"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Searchmode Handoff"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_searchmode_handoff"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by being handed off from the search bar on the new tab page. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.handoff.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_historymenu {
+    label: "Urlbar Picked Searchmode Historymenu"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_historymenu ;;
+    group_label: "Urlbar Picked Searchmode"
+    group_item_label: "Historymenu"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Searchmode Historymenu"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_searchmode_historymenu"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode from the Search History menu item in a History menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.historymenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_keywordoffer {
+    label: "Urlbar Picked Searchmode Keywordoffer"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_keywordoffer ;;
+    group_label: "Urlbar Picked Searchmode"
+    group_item_label: "Keywordoffer"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Searchmode Keywordoffer"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_searchmode_keywordoffer"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a keyword offer result. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.keywordoffer.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_oneoff {
+    label: "Urlbar Picked Searchmode Oneoff"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_oneoff ;;
+    group_label: "Urlbar Picked Searchmode"
+    group_item_label: "Oneoff"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Searchmode Oneoff"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_searchmode_oneoff"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a one-off. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.oneoff.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_other {
+    label: "Urlbar Picked Searchmode Other"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_other ;;
+    group_label: "Urlbar Picked Searchmode"
+    group_item_label: "Other"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Searchmode Other"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_searchmode_other"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode from an unknown entry point. If values appear for this probe in Telemetry, we should review the entry points to search mode. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.other.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_searchbutton {
+    label: "Urlbar Picked Searchmode Searchbutton"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_searchbutton ;;
+    group_label: "Urlbar Picked Searchmode"
+    group_item_label: "Searchbutton"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Searchmode Searchbutton"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_searchmode_searchbutton"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A keyed uint recording how many times the user entered a particular search mode by unified search button. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.searchbutton.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_shortcut {
+    label: "Urlbar Picked Searchmode Shortcut"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_shortcut ;;
+    group_label: "Urlbar Picked Searchmode"
+    group_item_label: "Shortcut"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Searchmode Shortcut"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_searchmode_shortcut"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by pressing a keyboard shortcut. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.shortcut.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_tabmenu {
+    label: "Urlbar Picked Searchmode Tabmenu"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_tabmenu ;;
+    group_label: "Urlbar Picked Searchmode"
+    group_item_label: "Tabmenu"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Searchmode Tabmenu"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_searchmode_tabmenu"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting the Search Tabs menu item in the Tab Overflow menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.tabmenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_tabtosearch {
+    label: "Urlbar Picked Searchmode Tabtosearch"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_tabtosearch ;;
+    group_label: "Urlbar Picked Searchmode"
+    group_item_label: "Tabtosearch"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Searchmode Tabtosearch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_searchmode_tabtosearch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a tab-to-search result. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.tabtosearch.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_tabtosearch_onboard {
+    label: "Urlbar Picked Searchmode Tabtosearch Onboard"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_tabtosearch_onboard ;;
+    group_label: "Urlbar Picked Searchmode"
+    group_item_label: "Tabtosearch Onboard"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Searchmode Tabtosearch Onboard"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_searchmode_tabtosearch_onboard"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a tab-to-search onboarding result. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.tabtosearch_onboard.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_topsites_newtab {
+    label: "Urlbar Picked Searchmode Topsites Newtab"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_topsites_newtab ;;
+    group_label: "Urlbar Picked Searchmode"
+    group_item_label: "Topsites Newtab"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Searchmode Topsites Newtab"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_searchmode_topsites_newtab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a search shortcut Top Site on the New Tab Page. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.topsites_newtab.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_topsites_urlbar {
+    label: "Urlbar Picked Searchmode Topsites Urlbar"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_topsites_urlbar ;;
+    group_label: "Urlbar Picked Searchmode"
+    group_item_label: "Topsites Urlbar"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Searchmode Topsites Urlbar"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_searchmode_topsites_urlbar"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a search shortcut Top Site in the Urlbar. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.topsites_urlbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_touchbar {
+    label: "Urlbar Picked Searchmode Touchbar"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_touchbar ;;
+    group_label: "Urlbar Picked Searchmode"
+    group_item_label: "Touchbar"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Searchmode Touchbar"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_searchmode_touchbar"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a search shortcut on the macOS Touch Bar. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.touchbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_typed {
+    label: "Urlbar Picked Searchmode Typed"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_typed ;;
+    group_label: "Urlbar Picked Searchmode"
+    group_item_label: "Typed"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Searchmode Typed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_searchmode_typed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by typing an alias. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.typed.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchsuggestion {
+    label: "Urlbar Picked Searchsuggestion"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchsuggestion ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Searchsuggestion"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Searchsuggestion"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_searchsuggestion"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchsuggestion.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchsuggestion_rich {
+    label: "Urlbar Picked Searchsuggestion Rich"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchsuggestion_rich ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Searchsuggestion Rich"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Searchsuggestion Rich"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_searchsuggestion_rich"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchsuggestion_rich.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_switchtab {
+    label: "Urlbar Picked Switchtab"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_switchtab ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Switchtab"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Switchtab"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_switchtab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.switchtab.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_tabtosearch {
+    label: "Urlbar Picked Tabtosearch"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_tabtosearch ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Tabtosearch"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Tabtosearch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_tabtosearch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.tabtosearch.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_tip {
+    label: "Urlbar Picked Tip"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_tip ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Tip"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Tip"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_tip"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.tip.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_topsite {
+    label: "Urlbar Picked Topsite"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_topsite ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Topsite"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Topsite"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_topsite"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.topsite.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_trending {
+    label: "Urlbar Picked Trending"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_trending ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Trending"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Trending"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_trending"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.trending.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_trending_rich {
+    label: "Urlbar Picked Trending Rich"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_trending_rich ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Trending Rich"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Trending Rich"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_trending_rich"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.trending_rich.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_unknown {
+    label: "Urlbar Picked Unknown"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_unknown ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Unknown"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Unknown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_unknown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times an unknown result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.unknown.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_visiturl {
+    label: "Urlbar Picked Visiturl"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_visiturl ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Visiturl"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Visiturl"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_visiturl"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.visiturl.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_weather {
+    label: "Urlbar Picked Weather"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_weather ;;
+    group_label: "Urlbar Picked"
+    group_item_label: "Weather"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Picked Weather"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_picked_weather"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.weather.
+"
+  }
+
   dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__sum {
     label: "Urlbar Quick Suggest Ingest Time Sum"
     hidden: no
@@ -4556,6 +5818,129 @@ in browser.
     }
 
     description: "A keyed uint recording how many times the user entered a particular search mode after typing an alias. The scalar keys for local search modes entered by typing a restrict keyword will be suffixed with \"keyword\". For example: tabs_keyword, bookmarks_keyword, history_keyword, and actions_keyword. If instead search mode was entered by typing a restrict symbol the key will be suffixed with \"symbol\" (e.g. typing \"%\" will generate \"tabs_symbol\"). This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.typed.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_tabtosearch_impressions {
+    label: "Urlbar Tabtosearch Impressions"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_tabtosearch_impressions ;;
+    group_label: "Urlbar Tabtosearch"
+    group_item_label: "Impressions"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Tabtosearch Impressions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_tabtosearch_impressions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A keyed uint recording how many times non-onboarding tab-to-search results are shown in the Urlbar for a particular search engine. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.tabtosearch.impressions.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_tabtosearch_impressions_onboarding {
+    label: "Urlbar Tabtosearch Impressions Onboarding"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_tabtosearch_impressions_onboarding ;;
+    group_label: "Urlbar Tabtosearch"
+    group_item_label: "Impressions Onboarding"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Tabtosearch Impressions Onboarding"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_tabtosearch_impressions_onboarding"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A keyed uint recording how many times onboarding tab-to-search results are shown in the Urlbar for a particular search engine. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.tabtosearch.impressions_onboarding.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_tips {
+    label: "Urlbar Tips"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_tips ;;
+    group_label: "Urlbar"
+    group_item_label: "Tips"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Tips"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_tips"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A keyed uint recording how many times particular tips are shown in the Urlbar and how often their confirm and help buttons are pressed. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.tips.
+"
+  }
+
+  dimension: metrics__counter__urlbar_trending_block {
+    label: "Urlbar Trending Block"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.urlbar_trending_block ;;
+    type: number
+    group_label: "Urlbar Trending"
+    group_item_label: "Block"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Trending Block"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_trending_block"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "User has blocked seeing trending results. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.trending.block.
+"
+  }
+
+  dimension: metrics__counter__urlbar_zeroprefix_abandonment {
+    label: "Urlbar Zeroprefix Abandonment"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.urlbar_zeroprefix_abandonment ;;
+    type: number
+    group_label: "Urlbar Zeroprefix"
+    group_item_label: "Abandonment"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Zeroprefix Abandonment"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_zeroprefix_abandonment"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times the zero-prefix urlbar results panel was abandoned. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.zeroprefix.abandonment.
+"
+  }
+
+  dimension: metrics__counter__urlbar_zeroprefix_engagement {
+    label: "Urlbar Zeroprefix Engagement"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.urlbar_zeroprefix_engagement ;;
+    type: number
+    group_label: "Urlbar Zeroprefix"
+    group_item_label: "Engagement"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Zeroprefix Engagement"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_zeroprefix_engagement"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times a result was picked in the zero-prefix urlbar results panel. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.zeroprefix.engagement.
+"
+  }
+
+  dimension: metrics__counter__urlbar_zeroprefix_exposure {
+    label: "Urlbar Zeroprefix Exposure"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.urlbar_zeroprefix_exposure ;;
+    type: number
+    group_label: "Urlbar Zeroprefix"
+    group_item_label: "Exposure"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Zeroprefix Exposure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_zeroprefix_exposure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times the zero-prefix urlbar results panel was shown to the user. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.zeroprefix.exposure.
 "
   }
 
@@ -5346,6 +6731,42 @@ in browser.
     }
 
     description: "For every purge that is scheduled, we call the ClearDataService to purge persistent storage for each detected bounce tracker. This may do some blocking work on main thread and dispatch some cleanups to other threads. Collect telemetry on how long it takes to clear in the wild to determine whether we need to improve performance here.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_added {
+    label: "Browser Engagement Bookmarks Toolbar Bookmark Added"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_bookmarks_toolbar_bookmark_added ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Bookmarks Toolbar Bookmark Added"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_bookmarks_toolbar_bookmark_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of bookmarks added to the bookmarks toolbar. This counts bookmarks created on the bookmarks toolbar and bookmarks moved to the bookmarks toolbar. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.bookmarks_toolbar_bookmark_added.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_opened {
+    label: "Browser Engagement Bookmarks Toolbar Bookmark Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_bookmarks_toolbar_bookmark_opened ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Bookmarks Toolbar Bookmark Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_bookmarks_toolbar_bookmark_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of bookmarks opened from the Bookmarks Toolbar. This counts bookmarks opened on the toolbar and bookmarks opened from the 'symlinked' Other Bookmarks folder on the Bookmarks Toolbar. It does not count Bookmarks Toolbar bookmarks opened via the Library, Bookmarks Menu, or other UI since the goal is to measure interactions that pass through the toolbar. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.bookmarks_toolbar_bookmark_opened.
 "
   }
 
@@ -16603,6 +18024,131 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: browser_engagement_tab_open_event_count {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_tab_open_event_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Tab Open Event Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_tab_open_event_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_tab_open_event_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_tab_open_event_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Tab Open Event Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_tab_open_event_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_tab_pinned_event_count {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_tab_pinned_event_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Tab Pinned Event Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_tab_pinned_event_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_tab_pinned_event_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_tab_pinned_event_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Tab Pinned Event Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_tab_pinned_event_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_tab_reload_count {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_tab_reload_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Tab Reload Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_tab_reload_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_tab_reload_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_tab_reload_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Tab Reload Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_tab_reload_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_tab_unload_count {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_tab_unload_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Tab Unload Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_tab_unload_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_tab_unload_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_tab_unload_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Tab Unload Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_tab_unload_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_unfiltered_uri_count {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_unfiltered_uri_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Unfiltered Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_unfiltered_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_unfiltered_uri_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_unfiltered_uri_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Unfiltered Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_unfiltered_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: browser_engagement_uri_count {
     type: sum
     sql: ${metrics__counter__browser_engagement_uri_count} ;;
@@ -16649,6 +18195,81 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Browser Engagement Uri Count Normal Mode"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_uri_count_normal_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_vertical_tab_open_event_count {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_vertical_tab_open_event_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Vertical Tab Open Event Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_vertical_tab_open_event_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_vertical_tab_open_event_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_vertical_tab_open_event_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Vertical Tab Open Event Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_vertical_tab_open_event_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_vertical_tab_pinned_event_count {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_vertical_tab_pinned_event_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Vertical Tab Pinned Event Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_vertical_tab_pinned_event_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_vertical_tab_pinned_event_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_vertical_tab_pinned_event_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Vertical Tab Pinned Event Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_vertical_tab_pinned_event_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_window_open_event_count {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_window_open_event_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Window Open Event Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_window_open_event_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_window_open_event_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_window_open_event_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Window Open Event Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_window_open_event_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -17003,6 +18624,356 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: urlbar_abandonment_count {
+    type: sum
+    sql: ${metrics__counter__urlbar_abandonment_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Abandonment Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_abandonment_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_abandonment_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__urlbar_abandonment_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Abandonment Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_abandonment_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_autofill_deletion {
+    type: sum
+    sql: ${metrics__counter__urlbar_autofill_deletion} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Autofill Deletion"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_autofill_deletion"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_autofill_deletion_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__urlbar_autofill_deletion: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Autofill Deletion"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_autofill_deletion"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_engagement_count {
+    type: sum
+    sql: ${metrics__counter__urlbar_engagement_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Engagement Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_engagement_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_engagement_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__urlbar_engagement_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Engagement Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_engagement_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_impression_autofill_about {
+    type: sum
+    sql: ${metrics__counter__urlbar_impression_autofill_about} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Impression Autofill About"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_impression_autofill_about"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_impression_autofill_about_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__urlbar_impression_autofill_about: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Impression Autofill About"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_impression_autofill_about"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_impression_autofill_adaptive {
+    type: sum
+    sql: ${metrics__counter__urlbar_impression_autofill_adaptive} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Impression Autofill Adaptive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_impression_autofill_adaptive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_impression_autofill_adaptive_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__urlbar_impression_autofill_adaptive: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Impression Autofill Adaptive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_impression_autofill_adaptive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_impression_autofill_origin {
+    type: sum
+    sql: ${metrics__counter__urlbar_impression_autofill_origin} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Impression Autofill Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_impression_autofill_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_impression_autofill_origin_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__urlbar_impression_autofill_origin: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Impression Autofill Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_impression_autofill_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_impression_autofill_other {
+    type: sum
+    sql: ${metrics__counter__urlbar_impression_autofill_other} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Impression Autofill Other"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_impression_autofill_other"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_impression_autofill_other_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__urlbar_impression_autofill_other: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Impression Autofill Other"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_impression_autofill_other"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_impression_autofill_url {
+    type: sum
+    sql: ${metrics__counter__urlbar_impression_autofill_url} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Impression Autofill Url"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_impression_autofill_url"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_impression_autofill_url_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__urlbar_impression_autofill_url: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Impression Autofill Url"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_impression_autofill_url"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_persistedsearchterms_revert_by_popup_count {
+    type: sum
+    sql: ${metrics__counter__urlbar_persistedsearchterms_revert_by_popup_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Persistedsearchterms Revert By Popup Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_persistedsearchterms_revert_by_popup_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_persistedsearchterms_revert_by_popup_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__urlbar_persistedsearchterms_revert_by_popup_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Persistedsearchterms Revert By Popup Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_persistedsearchterms_revert_by_popup_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_persistedsearchterms_view_count {
+    type: sum
+    sql: ${metrics__counter__urlbar_persistedsearchterms_view_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Persistedsearchterms View Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_persistedsearchterms_view_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_persistedsearchterms_view_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__urlbar_persistedsearchterms_view_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Persistedsearchterms View Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_persistedsearchterms_view_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_trending_block {
+    type: sum
+    sql: ${metrics__counter__urlbar_trending_block} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Trending Block"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_trending_block"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_trending_block_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__urlbar_trending_block: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Trending Block"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_trending_block"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_zeroprefix_abandonment {
+    type: sum
+    sql: ${metrics__counter__urlbar_zeroprefix_abandonment} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Zeroprefix Abandonment"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_zeroprefix_abandonment"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_zeroprefix_abandonment_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__urlbar_zeroprefix_abandonment: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Zeroprefix Abandonment"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_zeroprefix_abandonment"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_zeroprefix_engagement {
+    type: sum
+    sql: ${metrics__counter__urlbar_zeroprefix_engagement} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Zeroprefix Engagement"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_zeroprefix_engagement"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_zeroprefix_engagement_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__urlbar_zeroprefix_engagement: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Zeroprefix Engagement"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_zeroprefix_engagement"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_zeroprefix_exposure {
+    type: sum
+    sql: ${metrics__counter__urlbar_zeroprefix_exposure} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Zeroprefix Exposure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_zeroprefix_exposure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_zeroprefix_exposure_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__urlbar_zeroprefix_exposure: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Zeroprefix Exposure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_zeroprefix_exposure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: apz_scrollwheel_overshoot {
     type: sum
     sql: ${metrics__counter__apz_scrollwheel_overshoot} ;;
@@ -17074,6 +19045,56 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Bounce Tracking Protection Purge Count Classified Tracker"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/bounce_tracking_protection_purge_count_classified_tracker"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_bookmarks_toolbar_bookmark_added {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_added} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_bookmarks_toolbar_bookmark_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_bookmarks_toolbar_bookmark_added_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_added: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_bookmarks_toolbar_bookmark_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_bookmarks_toolbar_bookmark_opened {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_bookmarks_toolbar_bookmark_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_bookmarks_toolbar_bookmark_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_bookmarks_toolbar_bookmark_opened"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -20331,6 +22352,47 @@ view: metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar_se
 
 view: metrics__metrics__labeled_counter__browser_engagement_navigation_webextension {
   label: "Browser Engagement Navigation - Webextension"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_engagement_sessionrestore_interstitial {
+  label: "Browser Engagement - Sessionrestore Interstitial"
 
   dimension: document_id {
     type: string
@@ -29638,6 +31700,2097 @@ view: metrics__metrics__labeled_counter__translations_request_count {
   }
 }
 
+view: metrics__metrics__labeled_counter__urlbar_picked_autofill_about {
+  label: "Urlbar Picked - Autofill About"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_autofill_adaptive {
+  label: "Urlbar Picked - Autofill Adaptive"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_autofill_origin {
+  label: "Urlbar Picked - Autofill Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_autofill_other {
+  label: "Urlbar Picked - Autofill Other"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_autofill_url {
+  label: "Urlbar Picked - Autofill Url"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_bookmark {
+  label: "Urlbar Picked - Bookmark"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_bookmark_adaptive {
+  label: "Urlbar Picked - Bookmark Adaptive"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_clipboard {
+  label: "Urlbar Picked - Clipboard"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_dynamic {
+  label: "Urlbar Picked - Dynamic"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_dynamic_wikipedia {
+  label: "Urlbar Picked - Dynamic Wikipedia"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_extension {
+  label: "Urlbar Picked - Extension"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_formhistory {
+  label: "Urlbar Picked - Formhistory"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_history {
+  label: "Urlbar Picked - History"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_history_adaptive {
+  label: "Urlbar Picked - History Adaptive"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_keyword {
+  label: "Urlbar Picked - Keyword"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_navigational {
+  label: "Urlbar Picked - Navigational"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_quickaction {
+  label: "Urlbar Picked - Quickaction"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_quicksuggest {
+  label: "Urlbar Picked - Quicksuggest"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_recent_search {
+  label: "Urlbar Picked - Recent Search"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_remotetab {
+  label: "Urlbar Picked - Remotetab"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_restrict_keyword_actions {
+  label: "Urlbar Picked - Restrict Keyword Actions"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_restrict_keyword_bookmarks {
+  label: "Urlbar Picked - Restrict Keyword Bookmarks"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_restrict_keyword_history {
+  label: "Urlbar Picked - Restrict Keyword History"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_restrict_keyword_tabs {
+  label: "Urlbar Picked - Restrict Keyword Tabs"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_searchengine {
+  label: "Urlbar Picked - Searchengine"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_searchmode_bookmarkmenu {
+  label: "Urlbar Picked Searchmode - Bookmarkmenu"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_searchmode_handoff {
+  label: "Urlbar Picked Searchmode - Handoff"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_searchmode_historymenu {
+  label: "Urlbar Picked Searchmode - Historymenu"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_searchmode_keywordoffer {
+  label: "Urlbar Picked Searchmode - Keywordoffer"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_searchmode_oneoff {
+  label: "Urlbar Picked Searchmode - Oneoff"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_searchmode_other {
+  label: "Urlbar Picked Searchmode - Other"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_searchmode_searchbutton {
+  label: "Urlbar Picked Searchmode - Searchbutton"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_searchmode_shortcut {
+  label: "Urlbar Picked Searchmode - Shortcut"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_searchmode_tabmenu {
+  label: "Urlbar Picked Searchmode - Tabmenu"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_searchmode_tabtosearch {
+  label: "Urlbar Picked Searchmode - Tabtosearch"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_searchmode_tabtosearch_onboard {
+  label: "Urlbar Picked Searchmode - Tabtosearch Onboard"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_searchmode_topsites_newtab {
+  label: "Urlbar Picked Searchmode - Topsites Newtab"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_searchmode_topsites_urlbar {
+  label: "Urlbar Picked Searchmode - Topsites Urlbar"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_searchmode_touchbar {
+  label: "Urlbar Picked Searchmode - Touchbar"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_searchmode_typed {
+  label: "Urlbar Picked Searchmode - Typed"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_searchsuggestion {
+  label: "Urlbar Picked - Searchsuggestion"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_searchsuggestion_rich {
+  label: "Urlbar Picked - Searchsuggestion Rich"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_switchtab {
+  label: "Urlbar Picked - Switchtab"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_tabtosearch {
+  label: "Urlbar Picked - Tabtosearch"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_tip {
+  label: "Urlbar Picked - Tip"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_topsite {
+  label: "Urlbar Picked - Topsite"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_trending {
+  label: "Urlbar Picked - Trending"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_trending_rich {
+  label: "Urlbar Picked - Trending Rich"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_unknown {
+  label: "Urlbar Picked - Unknown"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_visiturl {
+  label: "Urlbar Picked - Visiturl"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_picked_weather {
+  label: "Urlbar Picked - Weather"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__urlbar_searchmode_bookmarkmenu {
   label: "Urlbar Searchmode - Bookmarkmenu"
 
@@ -30214,6 +34367,129 @@ view: metrics__metrics__labeled_counter__urlbar_searchmode_touchbar {
 
 view: metrics__metrics__labeled_counter__urlbar_searchmode_typed {
   label: "Urlbar Searchmode - Typed"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_tabtosearch_impressions {
+  label: "Urlbar Tabtosearch - Impressions"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_tabtosearch_impressions_onboarding {
+  label: "Urlbar Tabtosearch - Impressions Onboarding"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_tips {
+  label: "Urlbar - Tips"
 
   dimension: document_id {
     type: string
