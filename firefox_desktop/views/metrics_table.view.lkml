@@ -965,6 +965,69 @@ Migrated from Telemetry's `browser.engagement.active_ticks`.
 "
   }
 
+  dimension: metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_added {
+    sql: ${TABLE}.metrics.counter.browser_engagement_bookmarks_toolbar_bookmark_added ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Bookmarks Toolbar Bookmark Added"
+    description: "The count of bookmarks added to the bookmarks toolbar. This counts bookmarks created on the bookmarks toolbar and bookmarks moved to the bookmarks toolbar. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.bookmarks_toolbar_bookmark_added.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_opened {
+    sql: ${TABLE}.metrics.counter.browser_engagement_bookmarks_toolbar_bookmark_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Bookmarks Toolbar Bookmark Opened"
+    description: "The count of bookmarks opened from the Bookmarks Toolbar. This counts bookmarks opened on the toolbar and bookmarks opened from the 'symlinked' Other Bookmarks folder on the Bookmarks Toolbar. It does not count Bookmarks Toolbar bookmarks opened via the Library, Bookmarks Menu, or other UI since the goal is to measure interactions that pass through the toolbar. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.bookmarks_toolbar_bookmark_opened.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_open_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_open_event_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Tab Open Event Count"
+    description: "The count of tab open events per subsession, across all windows, after the session has been restored. This includes tab open events from private windows and from manual session restorations (i.e. after crashes and from about:home), but excludes tabs opened vertically. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_open_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_pinned_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_pinned_event_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Tab Pinned Event Count"
+    description: "The count of tab pinned events per subsession, across all windows, after the session has been restored. This includes tab pinned events from private windows. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_pinned_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_reload_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_reload_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Tab Reload Count"
+    description: "The count of tab reload events by the user after unloaded. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_reload_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_unload_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_unload_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Tab Unload Count"
+    description: "The count of tab unload events by TabUnloader due to a low-memory situation. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_unload_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_unfiltered_uri_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_unfiltered_uri_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Unfiltered Uri Count"
+    description: "The count of the total non-unique URIs visited in a subsession, not restricted to a specific protocol, including page reloads and about:* pages (other than initial pages such as about:blank, ...), after the session has been restored. This does not include background page requests and URIs from embedded pages or private browsing. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.unfiltered_uri_count.
+"
+  }
+
   dimension: metrics__counter__browser_engagement_uri_count {
     sql: ${TABLE}.metrics.counter.browser_engagement_uri_count ;;
     type: number
@@ -985,6 +1048,33 @@ Migrated from Telemetry's
     group_label: "Metrics Counter"
     group_item_label: "Browser Engagement Uri Count Normal Mode"
     description: "The count of the total non-unique http(s) URIs visited in a subsession, including page reloads, after the session has been restored. URIs on minimized or background tabs may also be counted towards this. Private browsing is not included in this count. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.total_uri_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_vertical_tab_open_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_vertical_tab_open_event_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Vertical Tab Open Event Count"
+    description: "The count of tab open events with vertical tabs enabled. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.vertical_tab_open_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_vertical_tab_pinned_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_vertical_tab_pinned_event_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Vertical Tab Pinned Event Count"
+    description: "The count of tab pinned events with vertical tabs enabled. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.vertical_tab_pinned_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_window_open_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_window_open_event_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Window Open Event Count"
+    description: "The count of browser window open events per subsession, after the session has been restored. The count includes private windows and the ones from manual session restorations (i.e. after crashes and from about:home). This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.window_open_event_count.
 "
   }
 
@@ -1813,6 +1903,132 @@ of the shopping experiment.
     group_label: "Metrics Counter"
     group_item_label: "Translations Requests Count"
     description: "The count of translation requests.
+"
+  }
+
+  dimension: metrics__counter__urlbar_abandonment_count {
+    sql: ${TABLE}.metrics.counter.urlbar_abandonment_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Abandonment Count"
+    description: "A uint recording the number of abandoned engagements in the urlbar. An abandonment occurs when the user begins using the urlbar but stops before completing the engagement. This can happen when the user clicks outside the urlbar to focus a different part of the window. It can also happen when the user switches to another window while the urlbar is focused. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.abandonment.
+"
+  }
+
+  dimension: metrics__counter__urlbar_autofill_deletion {
+    sql: ${TABLE}.metrics.counter.urlbar_autofill_deletion ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Autofill Deletion"
+    description: "A uint recording the deletion count for autofilled string in the urlbar. This occurs when the user deletes whole autofilled string by BACKSPACE or DELETE key while the autofilled string is selected. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.autofill_deletion.
+"
+  }
+
+  dimension: metrics__counter__urlbar_engagement_count {
+    sql: ${TABLE}.metrics.counter.urlbar_engagement_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Engagement Count"
+    description: "A uint recording the number of engagements the user completes in the urlbar.  An engagement occurs when the user navigates to a page using the urlbar, for example by picking a result in the urlbar panel or typing a search term or URL in the urlbar and pressing the enter key. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.engagement.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_about {
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_about ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Impression Autofill About"
+    description: "Counts how many times about-page type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_about.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_adaptive {
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_adaptive ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Impression Autofill Adaptive"
+    description: "Counts how many times adaptive history type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_adaptive.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_origin {
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_origin ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Impression Autofill Origin"
+    description: "Counts how many times origin type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_origin.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_other {
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_other ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Impression Autofill Other"
+    description: "Counts how many times other type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_other.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_url {
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_url ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Impression Autofill Url"
+    description: "Counts how many times url type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_url.
+"
+  }
+
+  dimension: metrics__counter__urlbar_persistedsearchterms_revert_by_popup_count {
+    sql: ${TABLE}.metrics.counter.urlbar_persistedsearchterms_revert_by_popup_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Persistedsearchterms Revert By Popup Count"
+    description: "The count of the number of times search terms were removed from the urlbar due to a shown PopupNotification. This event can happen when a user loads a SERP and a PopupNotification is shown, as well as when a user switches away from a tab on a SERP showing a PopupNotification and switches back to it. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.persistedsearchterms.revert_by_popup_count.
+"
+  }
+
+  dimension: metrics__counter__urlbar_persistedsearchterms_view_count {
+    sql: ${TABLE}.metrics.counter.urlbar_persistedsearchterms_view_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Persistedsearchterms View Count"
+    description: "The count of the number of times search terms persisted in the Urlbar. This gets recorded after a user loads a SERP that persists search terms, or switches back to an existing tab that should be showing the persisted search terms in the Urlbar, regardless of whether PopupNotification cleared the search terms from the Urlbar. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.persistedsearchterms.view_count.
+"
+  }
+
+  dimension: metrics__counter__urlbar_trending_block {
+    sql: ${TABLE}.metrics.counter.urlbar_trending_block ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Trending Block"
+    description: "User has blocked seeing trending results. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.trending.block.
+"
+  }
+
+  dimension: metrics__counter__urlbar_zeroprefix_abandonment {
+    sql: ${TABLE}.metrics.counter.urlbar_zeroprefix_abandonment ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Zeroprefix Abandonment"
+    description: "Counts how many times the zero-prefix urlbar results panel was abandoned. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.zeroprefix.abandonment.
+"
+  }
+
+  dimension: metrics__counter__urlbar_zeroprefix_engagement {
+    sql: ${TABLE}.metrics.counter.urlbar_zeroprefix_engagement ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Zeroprefix Engagement"
+    description: "Counts how many times a result was picked in the zero-prefix urlbar results panel. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.zeroprefix.engagement.
+"
+  }
+
+  dimension: metrics__counter__urlbar_zeroprefix_exposure {
+    sql: ${TABLE}.metrics.counter.urlbar_zeroprefix_exposure ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Zeroprefix Exposure"
+    description: "Counts how many times the zero-prefix urlbar results panel was shown to the user. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.zeroprefix.exposure.
 "
   }
 
@@ -3431,6 +3647,13 @@ of the shopping experiment.
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_webextension ;;
     hidden: yes
     description: "The count URI loads triggered in a subsession from a webextension. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.webextension.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_sessionrestore_interstitial {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_sessionrestore_interstitial ;;
+    hidden: yes
+    description: "Whether we show about:sessionrestore or not. Split by key, which indicates why we showed the item or not. Specifically, 'deferred_restore' means we didn't autorestore and thus didn't show the interstitial; 'autorestore' indicates we autorestored without showing the interstitial. 'shown_old_session', 'shown_only_about_welcomeback', 'shown_many_crashes', 'shown_many_crashes_old_session' all indicate we did show the interstitial because of a crash, and the text after 'shown' indicates what secondary reason there was to show this page (as we don't show it for 'just' one crash). This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.sessionrestore_interstitial.
 "
   }
 
@@ -5080,6 +5303,363 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_about {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_about ;;
+    hidden: yes
+    description: "Counts how many times an about-page autofill result (e.g., \"about:config\") was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_about.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_adaptive {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_adaptive ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_adaptive.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_origin {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_origin ;;
+    hidden: yes
+    description: "Counts how many times an origin (domain) autofill result (e.g., \"mozilla.org\") was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_origin.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_other {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_other ;;
+    hidden: yes
+    description: "Counts how many times some other type of autofill result that does not have a specific keyed scalar was picked at a given index. This is a fallback that is used when the code is not properly setting a specific autofill type, and it should not normally be used. If it appears in the data, it means we need to investigate and fix the code that is not properly setting a specific autofill type. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_other.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_url {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_url ;;
+    hidden: yes
+    description: "Counts how many times a URL autofill result (e.g., \"mozilla.org/firefox\") was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_url.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_bookmark {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_bookmark ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.bookmark.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_bookmark_adaptive {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_bookmark_adaptive ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.bookmark_adaptive.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_clipboard {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_clipboard ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.clipboard.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_dynamic {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_dynamic ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.dynamic.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_dynamic_wikipedia {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_dynamic_wikipedia ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.dynamic_wikipedia.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_extension {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_extension ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.extension.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_formhistory {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_formhistory ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.formhistory.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_history {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_history ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.history.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_history_adaptive {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_history_adaptive ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.history_adaptive.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_keyword {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_keyword ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.keyword.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_navigational {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_navigational ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.navigational.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_quickaction {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_quickaction ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.quickaction.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_quicksuggest {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_quicksuggest ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.quicksuggest.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_recent_search {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_recent_search ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.recent_search.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_remotetab {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_remotetab ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.remotetab.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_restrict_keyword_actions {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_restrict_keyword_actions ;;
+    hidden: yes
+    description: "Counts how many times this restrict actions result was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.restrict_keyword_actions.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_restrict_keyword_bookmarks {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_restrict_keyword_bookmarks ;;
+    hidden: yes
+    description: "Counts how many times this restrict bookmarks result was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.restrict_keyword_bookmarks.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_restrict_keyword_history {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_restrict_keyword_history ;;
+    hidden: yes
+    description: "Counts how many times this restrict history result was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.restrict_keyword_history.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_restrict_keyword_tabs {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_restrict_keyword_tabs ;;
+    hidden: yes
+    description: "Counts how many times this restrict tabs result was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.restrict_keyword_tabs.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchengine {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchengine ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchengine.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_bookmarkmenu {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_bookmarkmenu ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode from the Search Bookmarks menu item in the Library menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.bookmarkmenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_handoff {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_handoff ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by being handed off from the search bar on the new tab page. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.handoff.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_historymenu {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_historymenu ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode from the Search History menu item in a History menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.historymenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_keywordoffer {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_keywordoffer ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a keyword offer result. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.keywordoffer.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_oneoff {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_oneoff ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a one-off. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.oneoff.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_other {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_other ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode from an unknown entry point. If values appear for this probe in Telemetry, we should review the entry points to search mode. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.other.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_searchbutton {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_searchbutton ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode by unified search button. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.searchbutton.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_shortcut {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_shortcut ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by pressing a keyboard shortcut. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.shortcut.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_tabmenu {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_tabmenu ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting the Search Tabs menu item in the Tab Overflow menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.tabmenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_tabtosearch {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_tabtosearch ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a tab-to-search result. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.tabtosearch.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_tabtosearch_onboard {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_tabtosearch_onboard ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a tab-to-search onboarding result. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.tabtosearch_onboard.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_topsites_newtab {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_topsites_newtab ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a search shortcut Top Site on the New Tab Page. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.topsites_newtab.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_topsites_urlbar {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_topsites_urlbar ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a search shortcut Top Site in the Urlbar. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.topsites_urlbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_touchbar {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_touchbar ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a search shortcut on the macOS Touch Bar. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.touchbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_typed {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_typed ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by typing an alias. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.typed.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchsuggestion {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchsuggestion ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchsuggestion.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchsuggestion_rich {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchsuggestion_rich ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchsuggestion_rich.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_switchtab {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_switchtab ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.switchtab.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_tabtosearch {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_tabtosearch ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.tabtosearch.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_tip {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_tip ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.tip.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_topsite {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_topsite ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.topsite.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_trending {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_trending ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.trending.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_trending_rich {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_trending_rich ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.trending_rich.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_unknown {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_unknown ;;
+    hidden: yes
+    description: "Counts how many times an unknown result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.unknown.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_visiturl {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_visiturl ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.visiturl.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_weather {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_weather ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.weather.
+"
+  }
+
   dimension: metrics__labeled_counter__urlbar_searchmode_bookmarkmenu {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_bookmarkmenu ;;
     hidden: yes
@@ -5182,6 +5762,27 @@ success - search service successfully initialized.
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_typed ;;
     hidden: yes
     description: "A keyed uint recording how many times the user entered a particular search mode after typing an alias. The scalar keys for local search modes entered by typing a restrict keyword will be suffixed with \"keyword\". For example: tabs_keyword, bookmarks_keyword, history_keyword, and actions_keyword. If instead search mode was entered by typing a restrict symbol the key will be suffixed with \"symbol\" (e.g. typing \"%\" will generate \"tabs_symbol\"). This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.typed.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_tabtosearch_impressions {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_tabtosearch_impressions ;;
+    hidden: yes
+    description: "A keyed uint recording how many times non-onboarding tab-to-search results are shown in the Urlbar for a particular search engine. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.tabtosearch.impressions.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_tabtosearch_impressions_onboarding {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_tabtosearch_impressions_onboarding ;;
+    hidden: yes
+    description: "A keyed uint recording how many times onboarding tab-to-search results are shown in the Urlbar for a particular search engine. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.tabtosearch.impressions_onboarding.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_tips {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_tips ;;
+    hidden: yes
+    description: "A keyed uint recording how many times particular tips are shown in the Urlbar and how often their confirm and help buttons are pressed. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.tips.
 "
   }
 
@@ -5923,6 +6524,33 @@ counts profiles that have been used across all Windows user accounts on
 machine since this probe was added. The value persists across installs.
 A value of 0 is reported if there is an error determining the correct
 count. Unset on other platforms.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_session_time_excluding_suspend {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_session_time_excluding_suspend ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Session Time Excluding Suspend"
+    description: "The duration of the session in milliseconds, excluding the time the device was suspended. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.session_time_excluding_suspend.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_session_time_including_suspend {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_session_time_including_suspend ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Session Time Including Suspend"
+    description: "The duration of the session in milliseconds, including the time the device was suspended. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.session_time_including_suspend.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_unique_domains_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_unique_domains_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Unique Domains Count"
+    description: "The count of the unique domains visited in a subsession, after the session has been restored. Subdomains under eTLD are aggregated after the first level (i.e. test.example.com and other.example.com are only counted once). This does not include background page requests and domains from embedded pages or private browsing. The count is limited to 100 unique domains. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.unique_domains_count.
 "
   }
 

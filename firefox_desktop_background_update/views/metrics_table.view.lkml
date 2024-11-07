@@ -594,6 +594,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_added {
+    sql: ${TABLE}.metrics.counter.browser_engagement_bookmarks_toolbar_bookmark_added ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Bookmarks Toolbar Bookmark Added"
+    description: "The count of bookmarks added to the bookmarks toolbar. This counts bookmarks created on the bookmarks toolbar and bookmarks moved to the bookmarks toolbar. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.bookmarks_toolbar_bookmark_added.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_opened {
+    sql: ${TABLE}.metrics.counter.browser_engagement_bookmarks_toolbar_bookmark_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Bookmarks Toolbar Bookmark Opened"
+    description: "The count of bookmarks opened from the Bookmarks Toolbar. This counts bookmarks opened on the toolbar and bookmarks opened from the 'symlinked' Other Bookmarks folder on the Bookmarks Toolbar. It does not count Bookmarks Toolbar bookmarks opened via the Library, Bookmarks Menu, or other UI since the goal is to measure interactions that pass through the toolbar. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.bookmarks_toolbar_bookmark_opened.
+"
+  }
+
   dimension: metrics__counter__cert_signature_cache_total {
     sql: ${TABLE}.metrics.counter.cert_signature_cache_total ;;
     type: number

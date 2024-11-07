@@ -1411,6 +1411,42 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_added {
+    label: "Browser Engagement Bookmarks Toolbar Bookmark Added"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_bookmarks_toolbar_bookmark_added ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Bookmarks Toolbar Bookmark Added"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/browser_engagement_bookmarks_toolbar_bookmark_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of bookmarks added to the bookmarks toolbar. This counts bookmarks created on the bookmarks toolbar and bookmarks moved to the bookmarks toolbar. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.bookmarks_toolbar_bookmark_added.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_opened {
+    label: "Browser Engagement Bookmarks Toolbar Bookmark Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_bookmarks_toolbar_bookmark_opened ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Bookmarks Toolbar Bookmark Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/browser_engagement_bookmarks_toolbar_bookmark_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of bookmarks opened from the Bookmarks Toolbar. This counts bookmarks opened on the toolbar and bookmarks opened from the 'symlinked' Other Bookmarks folder on the Bookmarks Toolbar. It does not count Bookmarks Toolbar bookmarks opened via the Library, Bookmarks Menu, or other UI since the goal is to measure interactions that pass through the toolbar. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.bookmarks_toolbar_bookmark_opened.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_ui_interaction_keyboard {
     label: "Browser Ui Interaction Keyboard"
     hidden: yes
@@ -13198,6 +13234,56 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Bounce Tracking Protection Purge Count Classified Tracker"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/bounce_tracking_protection_purge_count_classified_tracker"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_bookmarks_toolbar_bookmark_added {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_added} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/browser_engagement_bookmarks_toolbar_bookmark_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_bookmarks_toolbar_bookmark_added_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_added: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/browser_engagement_bookmarks_toolbar_bookmark_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_bookmarks_toolbar_bookmark_opened {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/browser_engagement_bookmarks_toolbar_bookmark_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_bookmarks_toolbar_bookmark_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/browser_engagement_bookmarks_toolbar_bookmark_opened"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
