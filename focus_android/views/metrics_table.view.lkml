@@ -2890,6 +2890,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__network_cache_hit_miss_stat_per_cache_size {
+    sql: ${TABLE}.metrics.labeled_counter.network_cache_hit_miss_stat_per_cache_size ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__network_cors_authorization_header {
     sql: ${TABLE}.metrics.labeled_counter.network_cors_authorization_header ;;
     hidden: yes
@@ -3357,6 +3362,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__webrtcdtls_srtp_cipher {
     sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_srtp_cipher ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.network_cache_hit_rate_per_cache_size ;;
     hidden: yes
   }
 
@@ -8076,6 +8086,65 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__network_cache_hit_time__values {
     sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.values ;;
     hidden: yes
   }
 
@@ -15156,6 +15225,44 @@ view: metrics_table__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
   }
 }
 
+view: metrics_table__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -16787,6 +16894,18 @@ view: metrics_table__metrics__timing_distribution__ls_preparelsdatabase_processi
 }
 
 view: metrics_table__metrics__timing_distribution__network_cache_hit_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_cache_miss_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
