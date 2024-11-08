@@ -77,6 +77,24 @@ view: metrics {
 "
   }
 
+  dimension: metrics__boolean__browser_backup_enabled {
+    label: "Browser Backup Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.browser_backup_enabled ;;
+    type: yesno
+    group_label: "Browser Backup"
+    group_item_label: "Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the BackupService is enabled by default.
+"
+  }
+
   dimension: metrics__quantity__browser_backup_extension_store_permissions_data_size {
     label: "Browser Backup Extension Store Permissions Data Size"
     hidden: no
@@ -207,6 +225,24 @@ view: metrics {
 "
   }
 
+  dimension: metrics__quantity__browser_backup_location_on_device {
+    label: "Browser Backup Location On Device"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.browser_backup_location_on_device ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Location On Device"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Location On Device"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_location_on_device"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "1 = the default location, 2 = a non-default location
+"
+  }
+
   dimension: metrics__quantity__browser_backup_misc_data_size {
     label: "Browser Backup Misc Data Size"
     hidden: no
@@ -294,6 +330,42 @@ view: metrics {
     }
 
     description: "The total disk space available on the storage device that the profile directory is stored on. To reduce fingerprintability, we round to the nearest 10 megabytes and return the result in kilobytes.
+"
+  }
+
+  dimension: metrics__boolean__browser_backup_pswd_encrypted {
+    label: "Browser Backup Pswd Encrypted"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.browser_backup_pswd_encrypted ;;
+    type: yesno
+    group_label: "Browser Backup"
+    group_item_label: "Pswd Encrypted"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Pswd Encrypted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_pswd_encrypted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the BackupService is configured to encrypt backups.
+"
+  }
+
+  dimension: metrics__boolean__browser_backup_scheduler_enabled {
+    label: "Browser Backup Scheduler Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.browser_backup_scheduler_enabled ;;
+    type: yesno
+    group_label: "Browser Backup"
+    group_item_label: "Scheduler Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Scheduler Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_scheduler_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the BackupService is configured to automatically create backups in the background.
 "
   }
 
@@ -5946,7 +6018,7 @@ in browser.
 
   dimension: metrics__boolean__widget_dark_mode {
     label: "Widget Dark Mode"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.widget_dark_mode ;;
     type: yesno
     group_label: "Widget"
@@ -6054,7 +6126,7 @@ in browser.
 
   dimension: metrics__labeled_boolean__widget_pointing_devices {
     label: "Widget Pointing Devices"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_boolean.widget_pointing_devices ;;
     type: string
     group_label: "Widget"
@@ -10749,6 +10821,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__network_cache_hit_miss_stat_per_cache_size {
+    label: "Network Cache Hit Miss Stat Per Cache Size"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_cache_hit_miss_stat_per_cache_size ;;
+    group_label: "Network"
+    group_item_label: "Cache Hit Miss Stat Per Cache Size"
+
+    link: {
+      label: "Glean Dictionary reference for Network Cache Hit Miss Stat Per Cache Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_cache_hit_miss_stat_per_cache_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Hit/Miss count split by cache size in file count Hit 0-5000, Miss 0-5000, Hit 5001-10000, ...
+"
+  }
+
   dimension: metrics__timing_distribution__network_cache_hit_time__sum {
     label: "Network Cache Hit Time Sum"
     hidden: no
@@ -10764,6 +10853,24 @@ To be used to validate GIFFT.
     }
 
     description: "Time to open existing cache entry file. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__sum {
+    label: "Network Cache Miss Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Cache Miss Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Cache Miss Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_cache_miss_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent to find out a cache entry file is missing. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -27887,6 +27994,47 @@ view: metrics__metrics__labeled_counter__network_byte_range_request {
   }
 }
 
+view: metrics__metrics__labeled_counter__network_cache_hit_miss_stat_per_cache_size {
+  label: "Network - Cache Hit Miss Stat Per Cache Size"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__network_cors_authorization_header {
   label: "Network - Cors Authorization Header"
 
@@ -36080,6 +36228,45 @@ view: metrics__metrics__labeled_boolean__widget_pointing_devices {
   }
 }
 
+view: metrics__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -38031,6 +38218,18 @@ view: metrics__metrics__timing_distribution__ls_preparelsdatabase_processing_tim
 }
 
 view: metrics__metrics__timing_distribution__network_cache_hit_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_cache_miss_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
