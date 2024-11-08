@@ -3260,6 +3260,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__network_cache_hit_miss_stat_per_cache_size {
+    sql: ${TABLE}.metrics.labeled_counter.network_cache_hit_miss_stat_per_cache_size ;;
+    hidden: yes
+    description: "Hit/Miss count split by cache size in file count Hit 0-5000, Miss 0-5000, Hit 5001-10000, ...
+"
+  }
+
   dimension: metrics__labeled_counter__network_cors_authorization_header {
     sql: ${TABLE}.metrics.labeled_counter.network_cors_authorization_header ;;
     hidden: yes
@@ -3945,6 +3952,13 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_srtp_cipher ;;
     hidden: yes
     description: "The SRTPProtectionProfile (see RFC 5764) used for each webrtc SRTP connection, as a string representation of the SRTPProtectionProfile's ID in 4 hex digits (eg; SRTP_AES128_CM_HMAC_SHA1_80 would be \"0x0001\")
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.network_cache_hit_rate_per_cache_size ;;
+    hidden: yes
+    description: "Hit rate for a specific cache size in file count. The hit rate is split into 20 buckets. The key is the cacheSize (20 buckets) and the value is between 0 and 100.
 "
   }
 
@@ -8857,6 +8871,66 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__network_cache_hit_time__values {
     sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.values ;;
     hidden: yes
   }
 
@@ -15901,6 +15975,45 @@ view: metrics_table__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
   }
 }
 
+view: metrics_table__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -17543,6 +17656,18 @@ view: metrics_table__metrics__timing_distribution__ls_preparelsdatabase_processi
 }
 
 view: metrics_table__metrics__timing_distribution__network_cache_hit_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_cache_miss_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

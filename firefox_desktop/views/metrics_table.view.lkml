@@ -393,6 +393,33 @@ view: metrics_table {
 "
   }
 
+  dimension: metrics__boolean__browser_backup_enabled {
+    sql: ${TABLE}.metrics.boolean.browser_backup_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Browser Backup Enabled"
+    description: "True if the BackupService is enabled by default.
+"
+  }
+
+  dimension: metrics__boolean__browser_backup_pswd_encrypted {
+    sql: ${TABLE}.metrics.boolean.browser_backup_pswd_encrypted ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Browser Backup Pswd Encrypted"
+    description: "True if the BackupService is configured to encrypt backups.
+"
+  }
+
+  dimension: metrics__boolean__browser_backup_scheduler_enabled {
+    sql: ${TABLE}.metrics.boolean.browser_backup_scheduler_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Browser Backup Scheduler Enabled"
+    description: "True if the BackupService is configured to automatically create backups in the background.
+"
+  }
+
   dimension: metrics__boolean__browser_startup_abouthome_cache_shutdownwrite {
     sql: ${TABLE}.metrics.boolean.browser_startup_abouthome_cache_shutdownwrite ;;
     type: yesno
@@ -4612,6 +4639,13 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__labeled_counter__network_cache_hit_miss_stat_per_cache_size {
+    sql: ${TABLE}.metrics.labeled_counter.network_cache_hit_miss_stat_per_cache_size ;;
+    hidden: yes
+    description: "Hit/Miss count split by cache size in file count Hit 0-5000, Miss 0-5000, Hit 5001-10000, ...
+"
+  }
+
   dimension: metrics__labeled_counter__network_cors_authorization_header {
     sql: ${TABLE}.metrics.labeled_counter.network_cors_authorization_header ;;
     hidden: yes
@@ -5882,6 +5916,13 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.network_cache_hit_rate_per_cache_size ;;
+    hidden: yes
+    description: "Hit rate for a specific cache size in file count. The hit rate is split into 20 buckets. The key is the cacheSize (20 buckets) and the value is between 0 and 100.
+"
+  }
+
   dimension: metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio {
     sql: ${TABLE}.metrics.labeled_custom_distribution.networking_http_3_ecn_ce_ect0_ratio ;;
     hidden: yes
@@ -6394,6 +6435,15 @@ success - search service successfully initialized.
     group_label: "Metrics Quantity"
     group_item_label: "Browser Backup Form History Size"
     description: "The file size of the formhistory.sqlite db located in the current profile directory, in kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_location_on_device {
+    sql: ${TABLE}.metrics.quantity.browser_backup_location_on_device ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Location On Device"
+    description: "1 = the default location, 2 = a non-default location
 "
   }
 
@@ -11635,6 +11685,66 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__network_cache_hit_time__values {
     sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.values ;;
     hidden: yes
   }
 
@@ -19166,6 +19276,45 @@ view: metrics_table__metrics__labeled_boolean__widget_pointing_devices {
   }
 }
 
+view: metrics_table__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -21117,6 +21266,18 @@ view: metrics_table__metrics__timing_distribution__ls_preparelsdatabase_processi
 }
 
 view: metrics_table__metrics__timing_distribution__network_cache_hit_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_cache_miss_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
