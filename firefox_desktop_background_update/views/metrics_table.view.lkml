@@ -567,6 +567,15 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__boolean__widget_dark_mode {
+    sql: ${TABLE}.metrics.boolean.widget_dark_mode ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Widget Dark Mode"
+    description: "Whether the OS theme is dark. This metric was generated to correspond to the Legacy Telemetry scalar widget.dark_mode.
+"
+  }
+
   dimension: metrics__counter__apz_scrollwheel_overshoot {
     sql: ${TABLE}.metrics.counter.apz_scrollwheel_overshoot ;;
     type: number
@@ -2663,6 +2672,13 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__labeled_boolean__mediadrm_decryption {
+    sql: ${TABLE}.metrics.labeled_boolean.mediadrm_decryption ;;
+    hidden: yes
+    description: "Record the statuses related with the media decryption.
+"
+  }
+
   dimension: metrics__labeled_boolean__oskeystore_self_test {
     sql: ${TABLE}.metrics.labeled_boolean.oskeystore_self_test ;;
     hidden: yes
@@ -2673,6 +2689,13 @@ This does not include deletion-request pings.
     sql: ${TABLE}.metrics.labeled_boolean.pdfjs_image_alt_text_edit ;;
     hidden: yes
     description: "Stores alt text modal settings for the user.
+"
+  }
+
+  dimension: metrics__labeled_boolean__widget_pointing_devices {
+    sql: ${TABLE}.metrics.labeled_boolean.widget_pointing_devices ;;
+    hidden: yes
+    description: "Whether the system has any matching pointing device for each label.
 "
   }
 
@@ -15951,6 +15974,18 @@ view: metrics_table__metrics__labeled_boolean__media_video_hd_hardware_decoding_
   }
 }
 
+view: metrics_table__metrics__labeled_boolean__mediadrm_decryption {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics_table__metrics__labeled_boolean__oskeystore_self_test {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -15964,6 +15999,18 @@ view: metrics_table__metrics__labeled_boolean__oskeystore_self_test {
 }
 
 view: metrics_table__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__widget_pointing_devices {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

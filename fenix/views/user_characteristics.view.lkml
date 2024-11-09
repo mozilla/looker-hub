@@ -1411,7 +1411,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_gl_context_type {
     label: "Characteristics Gl Context Type"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_gl_context_type ;;
     type: string
     group_label: "Characteristics"
@@ -1429,7 +1429,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_gl_context_type_software {
     label: "Characteristics Gl Context Type Software"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_gl_context_type_software ;;
     type: string
     group_label: "Characteristics"
@@ -1483,7 +1483,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_extensions_raw_software {
     label: "Characteristics Gl Extensions Raw Software"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_gl_extensions_raw_software ;;
     type: string
     group_label: "Characteristics"
@@ -1501,7 +1501,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_extensions_software {
     label: "Characteristics Gl Extensions Software"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_gl_extensions_software ;;
     type: string
     group_label: "Characteristics"
@@ -1537,7 +1537,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_gl_fragment_shader_software {
     label: "Characteristics Gl Fragment Shader Software"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_gl_fragment_shader_software ;;
     type: string
     group_label: "Characteristics"
@@ -1573,7 +1573,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_minimal_source_software {
     label: "Characteristics Gl Minimal Source Software"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_gl_minimal_source_software ;;
     type: string
     group_label: "Characteristics"
@@ -1609,7 +1609,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_params_extensions_software {
     label: "Characteristics Gl Params Extensions Software"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_gl_params_extensions_software ;;
     type: string
     group_label: "Characteristics"
@@ -1645,7 +1645,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_params_v1_software {
     label: "Characteristics Gl Params V1 Software"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_gl_params_v1_software ;;
     type: string
     group_label: "Characteristics"
@@ -1681,7 +1681,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_params_v2_software {
     label: "Characteristics Gl Params V2 Software"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_gl_params_v2_software ;;
     type: string
     group_label: "Characteristics"
@@ -1717,7 +1717,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_precision_fragment_software {
     label: "Characteristics Gl Precision Fragment Software"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_gl_precision_fragment_software ;;
     type: string
     group_label: "Characteristics"
@@ -1753,7 +1753,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_precision_vertex_software {
     label: "Characteristics Gl Precision Vertex Software"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.characteristics_gl_precision_vertex_software ;;
     type: string
     group_label: "Characteristics"
@@ -1807,7 +1807,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_gl_renderer_raw_software {
     label: "Characteristics Gl Renderer Raw Software"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_gl_renderer_raw_software ;;
     type: string
     group_label: "Characteristics"
@@ -1825,7 +1825,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_gl_renderer_software {
     label: "Characteristics Gl Renderer Software"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_gl_renderer_software ;;
     type: string
     group_label: "Characteristics"
@@ -1879,7 +1879,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_gl_vendor_raw_software {
     label: "Characteristics Gl Vendor Raw Software"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_gl_vendor_raw_software ;;
     type: string
     group_label: "Characteristics"
@@ -1897,7 +1897,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_gl_vendor_software {
     label: "Characteristics Gl Vendor Software"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_gl_vendor_software ;;
     type: string
     group_label: "Characteristics"
@@ -1951,7 +1951,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_gl_version_raw_software {
     label: "Characteristics Gl Version Raw Software"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_gl_version_raw_software ;;
     type: string
     group_label: "Characteristics"
@@ -1969,7 +1969,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_gl_version_software {
     label: "Characteristics Gl Version Software"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.characteristics_gl_version_software ;;
     type: number
     group_label: "Characteristics"
@@ -2005,7 +2005,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_gl_vertex_shader_software {
     label: "Characteristics Gl Vertex Shader Software"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_gl_vertex_shader_software ;;
     type: string
     group_label: "Characteristics"

@@ -439,6 +439,16 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__uuid__usage_profile_id {
+    sql: ${TABLE}.metrics.uuid.usage_profile_id ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Usage Profile Id"
+    description: "A UUID uniquely identifying the profile,
+not shared with other telemetry data.
+"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string

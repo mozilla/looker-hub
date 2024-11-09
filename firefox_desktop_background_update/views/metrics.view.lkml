@@ -4925,6 +4925,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_boolean__mediadrm_decryption {
+    label: "Mediadrm Decryption"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.mediadrm_decryption ;;
+    type: string
+    group_label: "Mediadrm"
+    group_item_label: "Decryption"
+
+    link: {
+      label: "Glean Dictionary reference for Mediadrm Decryption"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/mediadrm_decryption"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record the statuses related with the media decryption.
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_early_hints {
     label: "Netwerk Early Hints"
     hidden: yes
@@ -11050,6 +11068,42 @@ This metric was generated to correspond to the Legacy Telemetry scalar startup.p
     }
 
     description: "The SRTPProtectionProfile (see RFC 5764) used for each webrtc SRTP connection, as a string representation of the SRTPProtectionProfile's ID in 4 hex digits (eg; SRTP_AES128_CM_HMAC_SHA1_80 would be \"0x0001\")
+"
+  }
+
+  dimension: metrics__boolean__widget_dark_mode {
+    label: "Widget Dark Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.widget_dark_mode ;;
+    type: yesno
+    group_label: "Widget"
+    group_item_label: "Dark Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Widget Dark Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/widget_dark_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the OS theme is dark. This metric was generated to correspond to the Legacy Telemetry scalar widget.dark_mode.
+"
+  }
+
+  dimension: metrics__labeled_boolean__widget_pointing_devices {
+    label: "Widget Pointing Devices"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.widget_pointing_devices ;;
+    type: string
+    group_label: "Widget"
+    group_item_label: "Pointing Devices"
+
+    link: {
+      label: "Glean Dictionary reference for Widget Pointing Devices"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/widget_pointing_devices"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the system has any matching pointing device for each label.
 "
   }
 
@@ -22636,6 +22690,18 @@ view: metrics__metrics__labeled_boolean__media_video_hd_hardware_decoding_suppor
   }
 }
 
+view: metrics__metrics__labeled_boolean__mediadrm_decryption {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics__metrics__labeled_boolean__oskeystore_self_test {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -22649,6 +22715,18 @@ view: metrics__metrics__labeled_boolean__oskeystore_self_test {
 }
 
 view: metrics__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__widget_pointing_devices {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

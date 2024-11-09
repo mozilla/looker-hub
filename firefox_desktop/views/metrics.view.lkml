@@ -10667,6 +10667,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_boolean__mediadrm_decryption {
+    label: "Mediadrm Decryption"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.mediadrm_decryption ;;
+    type: string
+    group_label: "Mediadrm"
+    group_item_label: "Decryption"
+
+    link: {
+      label: "Glean Dictionary reference for Mediadrm Decryption"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/mediadrm_decryption"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record the statuses related with the media decryption.
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_early_hints {
     label: "Netwerk Early Hints"
     hidden: yes
@@ -36097,6 +36115,18 @@ view: metrics__metrics__labeled_boolean__media_video_hardware_decoding_support {
 }
 
 view: metrics__metrics__labeled_boolean__media_video_hd_hardware_decoding_support {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__mediadrm_decryption {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
