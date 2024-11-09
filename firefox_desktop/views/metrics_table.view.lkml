@@ -3405,6 +3405,13 @@ of the shopping experiment.
 "
   }
 
+  dimension: metrics__labeled_boolean__mediadrm_decryption {
+    sql: ${TABLE}.metrics.labeled_boolean.mediadrm_decryption ;;
+    hidden: yes
+    description: "Record the statuses related with the media decryption.
+"
+  }
+
   dimension: metrics__labeled_boolean__networking_doh_heuristic_ever_tripped {
     sql: ${TABLE}.metrics.labeled_boolean.networking_doh_heuristic_ever_tripped ;;
     hidden: yes
@@ -19145,6 +19152,18 @@ view: metrics_table__metrics__labeled_boolean__media_video_hardware_decoding_sup
 }
 
 view: metrics_table__metrics__labeled_boolean__media_video_hd_hardware_decoding_support {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__mediadrm_decryption {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
