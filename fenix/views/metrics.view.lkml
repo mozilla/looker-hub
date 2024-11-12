@@ -5006,6 +5006,60 @@ ensure it's not too expensive.  This value is only available on Android
     description: "The number of entries stored in the SiteSecurityServiceState nsIDataStorage"
   }
 
+  dimension: metrics__counter__devtools_accessibility_opened_count {
+    label: "Devtools Accessibility Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_opened_count ;;
+    type: number
+    group_label: "Devtools Accessibility"
+    group_item_label: "Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_accessibility_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Accessibility tool has been opened. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.opened_count.
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_picker_used_count {
+    label: "Devtools Accessibility Picker Used Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_picker_used_count ;;
+    type: number
+    group_label: "Devtools Accessibility"
+    group_item_label: "Picker Used Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Picker Used Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_accessibility_picker_used_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the picker tool has been used in DevTools Accessibility panel. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.picker_used_count.
+"
+  }
+
+  dimension: metrics__counter__devtools_changesview_opened_count {
+    label: "Devtools Changesview Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_changesview_opened_count ;;
+    type: number
+    group_label: "Devtools Changesview"
+    group_item_label: "Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Changesview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_changesview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the Changes panel has been opened. This metric was generated to correspond to the Legacy Telemetry scalar devtools.changesview.opened_count.
+"
+  }
+
   dimension: metrics__counter__dom_contentprocess_build_id_mismatch {
     label: "Dom Contentprocess Build Id Mismatch"
     hidden: no
@@ -17773,6 +17827,81 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Cookie Banners Cookie Injection Fail"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cookie_banners_cookie_injection_fail"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_accessibility_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_accessibility_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_accessibility_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_accessibility_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_picker_used_count {
+    type: sum
+    sql: ${metrics__counter__devtools_accessibility_picker_used_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Picker Used Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_accessibility_picker_used_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_picker_used_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_accessibility_picker_used_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Picker Used Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_accessibility_picker_used_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_changesview_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_changesview_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Changesview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_changesview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_changesview_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_changesview_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Changesview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_changesview_opened_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
