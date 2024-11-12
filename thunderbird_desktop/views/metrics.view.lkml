@@ -75,6 +75,23 @@ view: metrics {
     description: "How Google calendar OAuth tokens are stored. There is a variety of old formats we would like to remove, but migration is difficult and may not be worth attempting for some formats. See MailGlue.sys.mjs for a description of each label."
   }
 
+  dimension: metrics__labeled_boolean__calendar_preferences_boolean {
+    label: "Calendar Preferences Boolean"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.calendar_preferences_boolean ;;
+    type: string
+    group_label: "Calendar"
+    group_item_label: "Preferences Boolean"
+
+    link: {
+      label: "Glean Dictionary reference for Calendar Preferences Boolean"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/calendar_preferences_boolean"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Values of boolean preferences."
+  }
+
   dimension: metrics__labeled_string__calendar_read_only_calendar_count {
     label: "Calendar Read Only Calendar Count"
     hidden: no
@@ -23183,6 +23200,18 @@ view: metrics__metrics__custom_distribution__timer_thread_timers_fired_per_wakeu
 }
 
 view: metrics__metrics__labeled_boolean__a11y_theme {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__calendar_preferences_boolean {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

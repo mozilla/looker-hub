@@ -2651,6 +2651,12 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__labeled_boolean__calendar_preferences_boolean {
+    sql: ${TABLE}.metrics.labeled_boolean.calendar_preferences_boolean ;;
+    hidden: yes
+    description: "Values of boolean preferences."
+  }
+
   dimension: metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
     sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_normal_window_service_mode ;;
     hidden: yes
@@ -16077,6 +16083,18 @@ view: metrics_table__metrics__custom_distribution__timer_thread_timers_fired_per
 }
 
 view: metrics_table__metrics__labeled_boolean__a11y_theme {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__calendar_preferences_boolean {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
