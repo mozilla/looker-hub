@@ -831,6 +831,33 @@ that programmatically redirect to a new location.
 "
   }
 
+  dimension: metrics__counter__devtools_accessibility_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_opened_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Accessibility Opened Count"
+    description: "Number of times the DevTools Accessibility tool has been opened. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.opened_count.
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_picker_used_count {
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_picker_used_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Accessibility Picker Used Count"
+    description: "Number of times the picker tool has been used in DevTools Accessibility panel. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.picker_used_count.
+"
+  }
+
+  dimension: metrics__counter__devtools_changesview_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_changesview_opened_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Changesview Opened Count"
+    description: "Number of times the Changes panel has been opened. This metric was generated to correspond to the Legacy Telemetry scalar devtools.changesview.opened_count.
+"
+  }
+
   dimension: metrics__counter__dom_contentprocess_build_id_mismatch {
     sql: ${TABLE}.metrics.counter.dom_contentprocess_build_id_mismatch ;;
     type: number

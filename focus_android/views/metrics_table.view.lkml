@@ -669,6 +669,27 @@ view: metrics_table {
     group_item_label: "Cookie Banners Cookie Injection Fail"
   }
 
+  dimension: metrics__counter__devtools_accessibility_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_opened_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Accessibility Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_picker_used_count {
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_picker_used_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Accessibility Picker Used Count"
+  }
+
+  dimension: metrics__counter__devtools_changesview_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_changesview_opened_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Changesview Opened Count"
+  }
+
   dimension: metrics__counter__dom_contentprocess_build_id_mismatch {
     sql: ${TABLE}.metrics.counter.dom_contentprocess_build_id_mismatch ;;
     type: number
