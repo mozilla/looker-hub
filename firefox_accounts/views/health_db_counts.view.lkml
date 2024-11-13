@@ -30,9 +30,5 @@ view: health_db_counts {
     datatype: date
   }
 
-  measure: count {
-    type: count
-  }
-
   sql_table_name: `mozdata.analysis.wclouser_fxa_health_db_counts` ;;
 }
