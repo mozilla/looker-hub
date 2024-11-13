@@ -1975,10 +1975,38 @@ firefox_accounts:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
+    health_cost:
+      type: table_explore
+      views:
+        base_view: health_cost
+    health_counts:
+      type: table_explore
+      views:
+        base_view: health_counts
+    health_db_counts:
+      type: table_explore
+      views:
+        base_view: health_db_counts
     health_issues:
       type: table_explore
       views:
         base_view: health_issues
+    health_pagerduty:
+      type: table_explore
+      views:
+        base_view: health_pagerduty
+    health_prs:
+      type: table_explore
+      views:
+        base_view: health_prs
+    health_tags:
+      type: table_explore
+      views:
+        base_view: health_tags
+    health_velocity:
+      type: table_explore
+      views:
+        base_view: health_velocity
     login_engagement_funnels_by_service:
       type: table_explore
       views:
@@ -2125,9 +2153,61 @@ firefox_accounts:
       tables:
       - table: mozdata.accounts_backend.users_services_last_seen
       type: growth_accounting_view
+    health_cost:
+      measures:
+        count:
+          type: count
+      tables:
+      - table: mozdata.analysis.wclouser_fxa_health_cost
+      type: table_view
+    health_counts:
+      measures:
+        count:
+          type: count
+      tables:
+      - table: mozdata.analysis.wclouser_fxa_health_counts
+      type: table_view
+    health_db_counts:
+      measures:
+        count:
+          type: count
+      tables:
+      - table: mozdata.analysis.wclouser_fxa_health_db_counts
+      type: table_view
     health_issues:
+      measures:
+        count:
+          type: count
       tables:
       - table: mozdata.analysis.wclouser_fxa_health_issues
+      type: table_view
+    health_pagerduty:
+      measures:
+        count:
+          type: count
+      tables:
+      - table: mozdata.analysis.wclouser_fxa_health_pagerduty
+      type: table_view
+    health_prs:
+      measures:
+        count:
+          type: count
+      tables:
+      - table: mozdata.analysis.wclouser_fxa_health_prs
+      type: table_view
+    health_tags:
+      measures:
+        count:
+          type: count
+      tables:
+      - table: mozdata.analysis.wclouser_fxa_health_tags
+      type: table_view
+    health_velocity:
+      measures:
+        count:
+          type: count
+      tables:
+      - table: mozdata.analysis.wclouser_fxa_health_velocity
       type: table_view
     login_engagement_funnels_by_service:
       tables:
