@@ -1409,6 +1409,42 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_gl_context_type {
+    label: "Characteristics Gl Context Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_context_type ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Context Type"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Context Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_context_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The type of the GL context (EGL, GLX, WGL, etc).
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_context_type_software {
+    label: "Characteristics Gl Context Type Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_context_type_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Context Type Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Context Type Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_context_type_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The type of the GL context (EGL, GLX, WGL, etc).
+"
+  }
+
   dimension: metrics__text2__characteristics_gl_extensions {
     label: "Characteristics Gl Extensions"
     hidden: no
@@ -1445,6 +1481,42 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_gl_extensions_raw_software {
+    label: "Characteristics Gl Extensions Raw Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl_extensions_raw_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Extensions Raw Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Extensions Raw Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_extensions_raw_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw list of OpenGL extensions supported by the user's system.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_extensions_software {
+    label: "Characteristics Gl Extensions Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl_extensions_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Extensions Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Extensions Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_extensions_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of OpenGL extensions supported by the user's system.
+"
+  }
+
   dimension: metrics__string__characteristics_gl_fragment_shader {
     label: "Characteristics Gl Fragment Shader"
     hidden: no
@@ -1456,6 +1528,24 @@ view: user_characteristics {
     link: {
       label: "Glean Dictionary reference for Characteristics Gl Fragment Shader"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_fragment_shader"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Hash of the transformed source of the fragment shader.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_fragment_shader_software {
+    label: "Characteristics Gl Fragment Shader Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_fragment_shader_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Fragment Shader Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Fragment Shader Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_fragment_shader_software"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -1481,6 +1571,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_gl_minimal_source_software {
+    label: "Characteristics Gl Minimal Source Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl_minimal_source_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Minimal Source Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Minimal Source Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_minimal_source_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Transformed source of the minimal shader.
+"
+  }
+
   dimension: metrics__text2__characteristics_gl_params_extensions {
     label: "Characteristics Gl Params Extensions"
     hidden: no
@@ -1492,6 +1600,24 @@ view: user_characteristics {
     link: {
       label: "Glean Dictionary reference for Characteristics Gl Params Extensions"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_params_extensions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of GL parameters of the extensions.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_params_extensions_software {
+    label: "Characteristics Gl Params Extensions Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_extensions_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Params Extensions Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Params Extensions Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_params_extensions_software"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -1517,6 +1643,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_gl_params_v1_software {
+    label: "Characteristics Gl Params V1 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_v1_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Params V1 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Params V1 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_params_v1_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of GL parameters of GL1.
+"
+  }
+
   dimension: metrics__text2__characteristics_gl_params_v2 {
     label: "Characteristics Gl Params V2"
     hidden: no
@@ -1528,6 +1672,24 @@ view: user_characteristics {
     link: {
       label: "Glean Dictionary reference for Characteristics Gl Params V2"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_params_v2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of GL parameters of GL2.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_params_v2_software {
+    label: "Characteristics Gl Params V2 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_v2_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Params V2 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Params V2 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_params_v2_software"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -1553,6 +1715,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_gl_precision_fragment_software {
+    label: "Characteristics Gl Precision Fragment Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl_precision_fragment_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Precision Fragment Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Precision Fragment Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_precision_fragment_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Precisions of the fragment shader.
+"
+  }
+
   dimension: metrics__text2__characteristics_gl_precision_vertex {
     label: "Characteristics Gl Precision Vertex"
     hidden: no
@@ -1564,6 +1744,24 @@ view: user_characteristics {
     link: {
       label: "Glean Dictionary reference for Characteristics Gl Precision Vertex"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_precision_vertex"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Precisions of the vertex shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_precision_vertex_software {
+    label: "Characteristics Gl Precision Vertex Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl_precision_vertex_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Precision Vertex Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Precision Vertex Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_precision_vertex_software"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -1607,6 +1805,42 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_gl_renderer_raw_software {
+    label: "Characteristics Gl Renderer Raw Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_renderer_raw_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Renderer Raw Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Renderer Raw Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_renderer_raw_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw OpenGL renderer string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_renderer_software {
+    label: "Characteristics Gl Renderer Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_renderer_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Renderer Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Renderer Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_renderer_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The OpenGL renderer string.
+"
+  }
+
   dimension: metrics__string__characteristics_gl_vendor {
     label: "Characteristics Gl Vendor"
     hidden: no
@@ -1640,6 +1874,42 @@ view: user_characteristics {
     }
 
     description: "The raw OpenGL vendor string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_vendor_raw_software {
+    label: "Characteristics Gl Vendor Raw Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_vendor_raw_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Vendor Raw Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Vendor Raw Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_vendor_raw_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw OpenGL vendor string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_vendor_software {
+    label: "Characteristics Gl Vendor Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_vendor_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Vendor Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Vendor Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_vendor_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The OpenGL vendor string.
 "
   }
 
@@ -1679,6 +1949,42 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_gl_version_raw_software {
+    label: "Characteristics Gl Version Raw Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_version_raw_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Version Raw Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Version Raw Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_version_raw_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw OpenGL version string.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_gl_version_software {
+    label: "Characteristics Gl Version Software"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_gl_version_software ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Gl Version Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Version Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_version_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of OpenGL supported by the user's system.
+"
+  }
+
   dimension: metrics__string__characteristics_gl_vertex_shader {
     label: "Characteristics Gl Vertex Shader"
     hidden: no
@@ -1690,6 +1996,24 @@ view: user_characteristics {
     link: {
       label: "Glean Dictionary reference for Characteristics Gl Vertex Shader"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_vertex_shader"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Hash of the transformed source of the vertex shader.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_vertex_shader_software {
+    label: "Characteristics Gl Vertex Shader Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_vertex_shader_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Vertex Shader Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Vertex Shader Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_gl_vertex_shader_software"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 

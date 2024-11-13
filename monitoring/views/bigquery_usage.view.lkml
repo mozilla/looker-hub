@@ -98,6 +98,11 @@ view: bigquery_usage {
     description: "The ID of the table referenced by the job"
   }
 
+  dimension: referenced_table_number {
+    sql: ${TABLE}.referenced_table_number ;;
+    type: number
+  }
+
   dimension: reservation_id {
     sql: ${TABLE}.reservation_id ;;
     type: string
@@ -132,6 +137,11 @@ view: bigquery_usage {
     sql: ${TABLE}.task_duration ;;
     hidden: yes
     description: "The time it took to run the job"
+  }
+
+  dimension: total_slot_hours {
+    sql: ${TABLE}.total_slot_hours ;;
+    type: number
   }
 
   dimension: total_slot_ms {

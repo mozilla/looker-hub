@@ -373,6 +373,11 @@ view: crash_table {
     hidden: yes
   }
 
+  dimension: metrics__object__crash_stack_traces {
+    sql: ${TABLE}.metrics.object.crash_stack_traces ;;
+    hidden: yes
+  }
+
   dimension: metrics__quantity__crash_event_loop_nesting_level {
     sql: ${TABLE}.metrics.quantity.crash_event_loop_nesting_level ;;
     type: number

@@ -2113,6 +2113,42 @@ from the page action menu.
 "
   }
 
+  dimension: metrics__counter__password_generator_filled {
+    label: "Password Generator Filled"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.password_generator_filled ;;
+    type: number
+    group_label: "Password Generator"
+    group_item_label: "Filled"
+
+    link: {
+      label: "Glean Dictionary reference for Password Generator Filled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/password_generator_filled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The \"use password button\" of the password generator bottom sheet was clicked.
+"
+  }
+
+  dimension: metrics__counter__password_generator_shown {
+    label: "Password Generator Shown"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.password_generator_shown ;;
+    type: number
+    group_label: "Password Generator"
+    group_item_label: "Shown"
+
+    link: {
+      label: "Glean Dictionary reference for Password Generator Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/password_generator_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The password generator bottom sheet was shown and is visible
+"
+  }
+
   dimension: metrics__timing_distribution__places_history_migration_duration__sum {
     label: "Places History Migration Duration Sum"
     hidden: no
@@ -6815,6 +6851,56 @@ startup, as part of the initialization sequence.
     link: {
       label: "Glean Dictionary reference for Page Action Menu View History Panel"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/page_action_menu_view_history_panel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: password_generator_filled {
+    type: sum
+    sql: ${metrics__counter__password_generator_filled} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Password Generator Filled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/password_generator_filled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: password_generator_filled_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__password_generator_filled: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Password Generator Filled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/password_generator_filled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: password_generator_shown {
+    type: sum
+    sql: ${metrics__counter__password_generator_shown} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Password Generator Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/password_generator_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: password_generator_shown_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__password_generator_shown: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Password Generator Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/password_generator_shown"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

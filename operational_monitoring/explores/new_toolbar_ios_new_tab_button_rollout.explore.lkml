@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/browser_value_survey_z_q3_2024.view.lkml"
+include: "/looker-hub/operational_monitoring/views/new_toolbar_ios_new_tab_button_rollout.view.lkml"
 
-explore: browser_value_survey_z_q3_2024 {
+explore: new_toolbar_ios_new_tab_button_rollout {
   always_filter: {
     filters: [
       branch: "enabled, disabled",

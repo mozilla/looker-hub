@@ -1145,6 +1145,20 @@ view: metrics_table {
     group_item_label: "Page Action Menu View History Panel"
   }
 
+  dimension: metrics__counter__password_generator_filled {
+    sql: ${TABLE}.metrics.counter.password_generator_filled ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Password Generator Filled"
+  }
+
+  dimension: metrics__counter__password_generator_shown {
+    sql: ${TABLE}.metrics.counter.password_generator_shown ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Password Generator Shown"
+  }
+
   dimension: metrics__counter__pocket_open_story {
     sql: ${TABLE}.metrics.counter.pocket_open_story ;;
     type: number
