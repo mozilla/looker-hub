@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: viewpoint_follow_up_q4_2024_ro
-    type: looker_line
-    fields: [
-      viewpoint_follow_up_q4_2024_ro.submission_date,
-      viewpoint_follow_up_q4_2024_ro.branch,
-      viewpoint_follow_up_q4_2024_ro.point
-    ]
-    pivots: [
-      viewpoint_follow_up_q4_2024_ro.branch
-    ]
-    filters:
-      viewpoint_follow_up_q4_2024_ro.metric: 'search_count'
-      viewpoint_follow_up_q4_2024_ro.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: viewpoint_follow_up_q4_2024_ro.submission_date
-    field_y: viewpoint_follow_up_q4_2024_ro.point
-    log_scale: false
-    ci_lower: viewpoint_follow_up_q4_2024_ro.lower
-    ci_upper: viewpoint_follow_up_q4_2024_ro.upper
-    show_grid: true
-    listen:
-      Date: viewpoint_follow_up_q4_2024_ro.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -63,7 +29,7 @@
       viewpoint_follow_up_q4_2024_ro.metric: 'days_of_use'
       viewpoint_follow_up_q4_2024_ro.statistic: mean
     row: 0
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: viewpoint_follow_up_q4_2024_ro.submission_date
@@ -96,41 +62,7 @@
     filters:
       viewpoint_follow_up_q4_2024_ro.metric: 'retained'
       viewpoint_follow_up_q4_2024_ro.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: viewpoint_follow_up_q4_2024_ro.submission_date
-    field_y: viewpoint_follow_up_q4_2024_ro.point
-    log_scale: false
-    ci_lower: viewpoint_follow_up_q4_2024_ro.lower
-    ci_upper: viewpoint_follow_up_q4_2024_ro.upper
-    show_grid: true
-    listen:
-      Date: viewpoint_follow_up_q4_2024_ro.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: viewpoint_follow_up_q4_2024_ro
-    type: looker_line
-    fields: [
-      viewpoint_follow_up_q4_2024_ro.submission_date,
-      viewpoint_follow_up_q4_2024_ro.branch,
-      viewpoint_follow_up_q4_2024_ro.point
-    ]
-    pivots: [
-      viewpoint_follow_up_q4_2024_ro.branch
-    ]
-    filters:
-      viewpoint_follow_up_q4_2024_ro.metric: 'active_hours'
-      viewpoint_follow_up_q4_2024_ro.statistic: mean
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -146,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,10 +94,44 @@
       viewpoint_follow_up_q4_2024_ro.branch
     ]
     filters:
-      viewpoint_follow_up_q4_2024_ro.metric: 'uri_count'
+      viewpoint_follow_up_q4_2024_ro.metric: 'search_count'
       viewpoint_follow_up_q4_2024_ro.statistic: mean
-    row: 20
+    row: 10
     col: 0
+    width: 12
+    height: 8
+    field_x: viewpoint_follow_up_q4_2024_ro.submission_date
+    field_y: viewpoint_follow_up_q4_2024_ro.point
+    log_scale: false
+    ci_lower: viewpoint_follow_up_q4_2024_ro.lower
+    ci_upper: viewpoint_follow_up_q4_2024_ro.upper
+    show_grid: true
+    listen:
+      Date: viewpoint_follow_up_q4_2024_ro.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: viewpoint_follow_up_q4_2024_ro
+    type: looker_line
+    fields: [
+      viewpoint_follow_up_q4_2024_ro.submission_date,
+      viewpoint_follow_up_q4_2024_ro.branch,
+      viewpoint_follow_up_q4_2024_ro.point
+    ]
+    pivots: [
+      viewpoint_follow_up_q4_2024_ro.branch
+    ]
+    filters:
+      viewpoint_follow_up_q4_2024_ro.metric: 'qualified_cumulative_days_of_use'
+      viewpoint_follow_up_q4_2024_ro.statistic: mean
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: viewpoint_follow_up_q4_2024_ro.submission_date
@@ -199,40 +165,6 @@
       viewpoint_follow_up_q4_2024_ro.metric: 'ad_clicks'
       viewpoint_follow_up_q4_2024_ro.statistic: mean
     row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: viewpoint_follow_up_q4_2024_ro.submission_date
-    field_y: viewpoint_follow_up_q4_2024_ro.point
-    log_scale: false
-    ci_lower: viewpoint_follow_up_q4_2024_ro.lower
-    ci_upper: viewpoint_follow_up_q4_2024_ro.upper
-    show_grid: true
-    listen:
-      Date: viewpoint_follow_up_q4_2024_ro.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: viewpoint_follow_up_q4_2024_ro
-    type: looker_line
-    fields: [
-      viewpoint_follow_up_q4_2024_ro.submission_date,
-      viewpoint_follow_up_q4_2024_ro.branch,
-      viewpoint_follow_up_q4_2024_ro.point
-    ]
-    pivots: [
-      viewpoint_follow_up_q4_2024_ro.branch
-    ]
-    filters:
-      viewpoint_follow_up_q4_2024_ro.metric: 'qualified_cumulative_days_of_use'
-      viewpoint_follow_up_q4_2024_ro.statistic: mean
-    row: 30
     col: 0
     width: 12
     height: 8
@@ -268,7 +200,7 @@
     filters:
       viewpoint_follow_up_q4_2024_ro.metric: 'memory_total'
       viewpoint_follow_up_q4_2024_ro.statistic: percentile
-    row: 30
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -281,6 +213,74 @@
     listen:
       Date: viewpoint_follow_up_q4_2024_ro.submission_date
       Percentile: viewpoint_follow_up_q4_2024_ro.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: viewpoint_follow_up_q4_2024_ro
+    type: looker_line
+    fields: [
+      viewpoint_follow_up_q4_2024_ro.submission_date,
+      viewpoint_follow_up_q4_2024_ro.branch,
+      viewpoint_follow_up_q4_2024_ro.point
+    ]
+    pivots: [
+      viewpoint_follow_up_q4_2024_ro.branch
+    ]
+    filters:
+      viewpoint_follow_up_q4_2024_ro.metric: 'active_hours'
+      viewpoint_follow_up_q4_2024_ro.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: viewpoint_follow_up_q4_2024_ro.submission_date
+    field_y: viewpoint_follow_up_q4_2024_ro.point
+    log_scale: false
+    ci_lower: viewpoint_follow_up_q4_2024_ro.lower
+    ci_upper: viewpoint_follow_up_q4_2024_ro.upper
+    show_grid: true
+    listen:
+      Date: viewpoint_follow_up_q4_2024_ro.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Uri Count
+    name: Uri Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: viewpoint_follow_up_q4_2024_ro
+    type: looker_line
+    fields: [
+      viewpoint_follow_up_q4_2024_ro.submission_date,
+      viewpoint_follow_up_q4_2024_ro.branch,
+      viewpoint_follow_up_q4_2024_ro.point
+    ]
+    pivots: [
+      viewpoint_follow_up_q4_2024_ro.branch
+    ]
+    filters:
+      viewpoint_follow_up_q4_2024_ro.metric: 'uri_count'
+      viewpoint_follow_up_q4_2024_ro.statistic: mean
+    row: 30
+    col: 12
+    width: 12
+    height: 8
+    field_x: viewpoint_follow_up_q4_2024_ro.submission_date
+    field_y: viewpoint_follow_up_q4_2024_ro.point
+    log_scale: false
+    ci_lower: viewpoint_follow_up_q4_2024_ro.lower
+    ci_upper: viewpoint_follow_up_q4_2024_ro.upper
+    show_grid: true
+    listen:
+      Date: viewpoint_follow_up_q4_2024_ro.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

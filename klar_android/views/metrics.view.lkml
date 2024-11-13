@@ -2357,6 +2357,76 @@ the tracking protection settings panel from the toolbar.
     description: "The number of entries stored in the SiteSecurityServiceState nsIDataStorage"
   }
 
+  dimension: metrics__labeled_counter__devtools_accessibility_accessible_context_menu_item_activated {
+    label: "Devtools Accessibility Accessible Context Menu Item Activated"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_accessible_context_menu_item_activated ;;
+    group_label: "Devtools Accessibility"
+    group_item_label: "Accessible Context Menu Item Activated"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Accessible Context Menu Item Activated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_accessible_context_menu_item_activated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a context menu item for an accessible object was activated (with mouse or keyboard) from the context menu opened in the accessibility tree. Keyed by the id of the context menu item. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.accessible_context_menu_item_activated.
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_accessible_context_menu_opened {
+    label: "Devtools Accessibility Accessible Context Menu Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_accessible_context_menu_opened ;;
+    type: number
+    group_label: "Devtools Accessibility"
+    group_item_label: "Accessible Context Menu Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Accessible Context Menu Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_accessible_context_menu_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a context menu was opened for an accessible object in the accessibility tree. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.accessible_context_menu_opened.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_audit_activated {
+    label: "Devtools Accessibility Audit Activated"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_audit_activated ;;
+    group_label: "Devtools Accessibility"
+    group_item_label: "Audit Activated"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Audit Activated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_audit_activated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times accessibility audit was activated (with mouse or keyboard) from the accessibility panel's toolbar. Keyed by the audit filter type (e.g. \"CONTRAST\"). This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.audit_activated.
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_node_inspected_count {
+    label: "Devtools Accessibility Node Inspected Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_node_inspected_count ;;
+    type: number
+    group_label: "Devtools Accessibility"
+    group_item_label: "Node Inspected Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Node Inspected Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_node_inspected_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a DOM node was inspected from within the Accessibility tool. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.node_inspected_count.
+"
+  }
+
   dimension: metrics__counter__devtools_accessibility_opened_count {
     label: "Devtools Accessibility Opened Count"
     hidden: no
@@ -2393,6 +2463,40 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__labeled_counter__devtools_accessibility_select_accessible_for_node {
+    label: "Devtools Accessibility Select Accessible For Node"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_select_accessible_for_node ;;
+    group_label: "Devtools Accessibility"
+    group_item_label: "Select Accessible For Node"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Select Accessible For Node"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_select_accessible_for_node"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times an accessible object was inspected from outside the Accessibility tool (navigation to Accessibility panel). Keyed by the source of user action (inspector context menu, browser context menu, etc). This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.select_accessible_for_node.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_simulation_activated {
+    label: "Devtools Accessibility Simulation Activated"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_simulation_activated ;;
+    group_label: "Devtools Accessibility"
+    group_item_label: "Simulation Activated"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Simulation Activated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_simulation_activated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times accessibility simulation was activated (with mouse or keyboard) from the accessibility panel's toolbar. Keyed by the simulation type (e.g. \"DEUTERANOPIA\"). This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.simulation_activated.
+"
+  }
+
   dimension: metrics__counter__devtools_changesview_opened_count {
     label: "Devtools Changesview Opened Count"
     hidden: no
@@ -2408,6 +2512,325 @@ the tracking protection settings panel from the toolbar.
     }
 
     description: "Number of times the Changes panel has been opened. This metric was generated to correspond to the Legacy Telemetry scalar devtools.changesview.opened_count.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_current_theme {
+    label: "Devtools Current Theme"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_current_theme ;;
+    group_label: "Devtools"
+    group_item_label: "Current Theme"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Current Theme"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_current_theme"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times DevTools was opened, keyed by theme. This metric was generated to correspond to the Legacy Telemetry scalar devtools.current_theme.
+"
+  }
+
+  dimension: metrics__counter__devtools_grid_gridinspector_opened {
+    label: "Devtools Grid Gridinspector Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_grid_gridinspector_opened ;;
+    type: number
+    group_label: "Devtools Grid Gridinspector"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Grid Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_grid_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools grid inspector was opened from the grid view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.grid.gridinspector.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_inspector_node_selection_count {
+    label: "Devtools Inspector Node Selection Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_inspector_node_selection_count ;;
+    type: number
+    group_label: "Devtools Inspector"
+    group_item_label: "Node Selection Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Inspector Node Selection Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_inspector_node_selection_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a different node is marked as selected in the Inspector regardless of the cause: context menu, manual selection in markup view, etc. This metric was generated to correspond to the Legacy Telemetry scalar devtools.inspector.node_selection_count.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_inspector_three_pane_enabled {
+    label: "Devtools Inspector Three Pane Enabled"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_inspector_three_pane_enabled ;;
+    group_label: "Devtools Inspector"
+    group_item_label: "Three Pane Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Inspector Three Pane Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_inspector_three_pane_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools inspector was opened with the 3 pane inspector enabled, keyed by true/false. This metric was generated to correspond to the Legacy Telemetry scalar devtools.inspector.three_pane_enabled.
+"
+  }
+
+  dimension: metrics__counter__devtools_layout_flexboxhighlighter_opened {
+    label: "Devtools Layout Flexboxhighlighter Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_layout_flexboxhighlighter_opened ;;
+    type: number
+    group_label: "Devtools Layout Flexboxhighlighter"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Layout Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_layout_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools flexbox highlighter was activated from the layout view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.layout.flexboxhighlighter.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_markup_flexboxhighlighter_opened {
+    label: "Devtools Markup Flexboxhighlighter Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_markup_flexboxhighlighter_opened ;;
+    type: number
+    group_label: "Devtools Markup Flexboxhighlighter"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_markup_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools flexbox highlighter was activated from the markup view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.markup.flexboxhighlighter.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_markup_gridinspector_opened {
+    label: "Devtools Markup Gridinspector Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_markup_gridinspector_opened ;;
+    type: number
+    group_label: "Devtools Markup Gridinspector"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_markup_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools grid inspector was opened from the markup view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.markup.gridinspector.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_markup_scrollable_badge_clicked {
+    label: "Devtools Markup Scrollable Badge Clicked"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_markup_scrollable_badge_clicked ;;
+    type: number
+    group_label: "Devtools Markup Scrollable Badge"
+    group_item_label: "Clicked"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Scrollable Badge Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_markup_scrollable_badge_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the scrollable inspector badge has been clicked. This metric was generated to correspond to the Legacy Telemetry scalar devtools.markup.scrollable.badge.clicked.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_responsive_open_trigger {
+    label: "Devtools Responsive Open Trigger"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_responsive_open_trigger ;;
+    group_label: "Devtools Responsive"
+    group_item_label: "Open Trigger"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Responsive Open Trigger"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_responsive_open_trigger"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Responsive Design Mode opens keyed by the UI entry point used. This metric was generated to correspond to the Legacy Telemetry scalar devtools.responsive.open_trigger.
+"
+  }
+
+  dimension: metrics__counter__devtools_responsive_toolbox_opened_first {
+    label: "Devtools Responsive Toolbox Opened First"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_responsive_toolbox_opened_first ;;
+    type: number
+    group_label: "Devtools Responsive"
+    group_item_label: "Toolbox Opened First"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Responsive Toolbox Opened First"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_responsive_toolbox_opened_first"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Responsive Design Mode opens with a toolbox already open. This metric was generated to correspond to the Legacy Telemetry scalar devtools.responsive.toolbox_opened_first.
+"
+  }
+
+  dimension: metrics__counter__devtools_rules_flexboxhighlighter_opened {
+    label: "Devtools Rules Flexboxhighlighter Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_rules_flexboxhighlighter_opened ;;
+    type: number
+    group_label: "Devtools Rules Flexboxhighlighter"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Rules Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_rules_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools flexbox highlighter was activated from the rules view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.rules.flexboxhighlighter.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_rules_gridinspector_opened {
+    label: "Devtools Rules Gridinspector Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_rules_gridinspector_opened ;;
+    type: number
+    group_label: "Devtools Rules Gridinspector"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Rules Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_rules_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools grid inspector was opened from the rules view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.rules.gridinspector.opened.
+"
+  }
+
+  dimension: metrics__boolean__devtools_shadowdom_reveal_link_clicked {
+    label: "Devtools Shadowdom Reveal Link Clicked"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.devtools_shadowdom_reveal_link_clicked ;;
+    type: yesno
+    group_label: "Devtools Shadowdom"
+    group_item_label: "Reveal Link Clicked"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Shadowdom Reveal Link Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_shadowdom_reveal_link_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the user clicked on any \"reveal\" link. \"reveal\" links are displayed in shadow dom trees in the markup view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.shadowdom.reveal_link_clicked.
+"
+  }
+
+  dimension: metrics__boolean__devtools_shadowdom_shadow_root_displayed {
+    label: "Devtools Shadowdom Shadow Root Displayed"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.devtools_shadowdom_shadow_root_displayed ;;
+    type: yesno
+    group_label: "Devtools Shadowdom"
+    group_item_label: "Shadow Root Displayed"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Shadowdom Shadow Root Displayed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_shadowdom_shadow_root_displayed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the markup view displayed any #shadow-root element in the UI. This metric was generated to correspond to the Legacy Telemetry scalar devtools.shadowdom.shadow_root_displayed.
+"
+  }
+
+  dimension: metrics__boolean__devtools_shadowdom_shadow_root_expanded {
+    label: "Devtools Shadowdom Shadow Root Expanded"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.devtools_shadowdom_shadow_root_expanded ;;
+    type: yesno
+    group_label: "Devtools Shadowdom"
+    group_item_label: "Shadow Root Expanded"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Shadowdom Shadow Root Expanded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_shadowdom_shadow_root_expanded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the user expanded any #shadow-root element. This metric was generated to correspond to the Legacy Telemetry scalar devtools.shadowdom.shadow_root_expanded.
+"
+  }
+
+  dimension: metrics__labeled_boolean__devtools_tool_registered {
+    label: "Devtools Tool Registered"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.devtools_tool_registered ;;
+    type: string
+    group_label: "Devtools Tool"
+    group_item_label: "Registered"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Tool Registered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_tool_registered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded on enable tool checkbox check/uncheck in Developer Tools options panel. Boolean stating if the tool was enabled or disabled by the user. Keyed by tool id. Current default tools with their id's are defined in https://searchfox.org/mozilla- central/source/devtools/client/definitions.js This metric was generated to correspond to the Legacy Telemetry scalar devtools.tool.registered.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_toolbox_tabs_reordered {
+    label: "Devtools Toolbox Tabs Reordered"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_toolbox_tabs_reordered ;;
+    group_label: "Devtools Toolbox"
+    group_item_label: "Tabs Reordered"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Toolbox Tabs Reordered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_toolbox_tabs_reordered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools tab was reordered. Keyed by tab's id. This metric was generated to correspond to the Legacy Telemetry scalar devtools.toolbox.tabs_reordered.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_tooltip_shown {
+    label: "Devtools Tooltip Shown"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_tooltip_shown ;;
+    group_label: "Devtools Tooltip"
+    group_item_label: "Shown"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Tooltip Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_tooltip_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a tooltip was shown, keyed by tooltip type. Currently supported types are \"image\", \"font-family\", \"inactive- css\", \"css-compatibility\", \"css-query-container\" and \"variable.\" This metric was generated to correspond to the Legacy Telemetry scalar devtools.tooltip.shown.
 "
   }
 
@@ -7290,6 +7713,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "HTTP3: packet loss ratio (multiply by 10000).
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_quic_frame_count {
+    label: "Networking Http 3 Quic Frame Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_quic_frame_count ;;
+    group_label: "Networking"
+    group_item_label: "Http 3 Quic Frame Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Quic Frame Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_3_quic_frame_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of QUIC frames send and received by type.
 "
   }
 
@@ -13531,6 +13971,56 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: devtools_accessibility_accessible_context_menu_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_accessibility_accessible_context_menu_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Accessible Context Menu Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_accessible_context_menu_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_accessible_context_menu_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_accessibility_accessible_context_menu_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Accessible Context Menu Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_accessible_context_menu_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_node_inspected_count {
+    type: sum
+    sql: ${metrics__counter__devtools_accessibility_node_inspected_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Node Inspected Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_node_inspected_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_node_inspected_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_accessibility_node_inspected_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Node Inspected Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_node_inspected_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: devtools_accessibility_opened_count {
     type: sum
     sql: ${metrics__counter__devtools_accessibility_opened_count} ;;
@@ -13602,6 +14092,231 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Devtools Changesview Opened Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_changesview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_grid_gridinspector_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_grid_gridinspector_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Grid Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_grid_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_grid_gridinspector_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_grid_gridinspector_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Grid Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_grid_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_inspector_node_selection_count {
+    type: sum
+    sql: ${metrics__counter__devtools_inspector_node_selection_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Inspector Node Selection Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_inspector_node_selection_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_inspector_node_selection_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_inspector_node_selection_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Inspector Node Selection Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_inspector_node_selection_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_layout_flexboxhighlighter_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_layout_flexboxhighlighter_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Layout Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_layout_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_layout_flexboxhighlighter_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_layout_flexboxhighlighter_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Layout Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_layout_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_markup_flexboxhighlighter_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_markup_flexboxhighlighter_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_markup_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_markup_flexboxhighlighter_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_markup_flexboxhighlighter_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_markup_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_markup_gridinspector_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_markup_gridinspector_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_markup_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_markup_gridinspector_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_markup_gridinspector_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_markup_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_markup_scrollable_badge_clicked {
+    type: sum
+    sql: ${metrics__counter__devtools_markup_scrollable_badge_clicked} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Scrollable Badge Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_markup_scrollable_badge_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_markup_scrollable_badge_clicked_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_markup_scrollable_badge_clicked: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Scrollable Badge Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_markup_scrollable_badge_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_responsive_toolbox_opened_first {
+    type: sum
+    sql: ${metrics__counter__devtools_responsive_toolbox_opened_first} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Responsive Toolbox Opened First"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_responsive_toolbox_opened_first"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_responsive_toolbox_opened_first_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_responsive_toolbox_opened_first: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Responsive Toolbox Opened First"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_responsive_toolbox_opened_first"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_rules_flexboxhighlighter_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_rules_flexboxhighlighter_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Rules Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_rules_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_rules_flexboxhighlighter_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_rules_flexboxhighlighter_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Rules Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_rules_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_rules_gridinspector_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_rules_gridinspector_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Rules Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_rules_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_rules_gridinspector_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_rules_gridinspector_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Rules Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_rules_gridinspector_opened"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -17290,6 +18005,375 @@ view: metrics__metrics__labeled_counter__data_storage_entries {
   }
 }
 
+view: metrics__metrics__labeled_counter__devtools_accessibility_accessible_context_menu_item_activated {
+  label: "Devtools Accessibility - Accessible Context Menu Item Activated"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_accessibility_audit_activated {
+  label: "Devtools Accessibility - Audit Activated"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_accessibility_select_accessible_for_node {
+  label: "Devtools Accessibility - Select Accessible For Node"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_accessibility_simulation_activated {
+  label: "Devtools Accessibility - Simulation Activated"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_current_theme {
+  label: "Devtools - Current Theme"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_inspector_three_pane_enabled {
+  label: "Devtools Inspector - Three Pane Enabled"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_responsive_open_trigger {
+  label: "Devtools Responsive - Open Trigger"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_toolbox_tabs_reordered {
+  label: "Devtools Toolbox - Tabs Reordered"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_tooltip_shown {
+  label: "Devtools Tooltip - Shown"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__dom_parentprocess_process_launch_errors {
   label: "Dom Parentprocess - Process Launch Errors"
 
@@ -19836,6 +20920,47 @@ view: metrics__metrics__labeled_counter__networking_http_3_connection_close_reas
 
 view: metrics__metrics__labeled_counter__networking_http_3_ecn_path_capability {
   label: "Networking - Http 3 Ecn Path Capability"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_3_quic_frame_count {
+  label: "Networking - Http 3 Quic Frame Count"
 
   dimension: document_id {
     type: string
@@ -23748,6 +24873,18 @@ view: metrics__metrics__labeled_boolean__cookie_banners_private_window_service_m
 }
 
 view: metrics__metrics__labeled_boolean__data_storage_migration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__devtools_tool_registered {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
