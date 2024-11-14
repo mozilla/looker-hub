@@ -8156,8 +8156,8 @@ operational_monitoring:
             - '117.0'
             - '124.0'
             - '125.0'
-            - '126.0'
             - '121.0'
+            - '126.0'
             - '119.0'
             - '115.0'
         explore: firefox_ios_beta_health
@@ -8217,11 +8217,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id143
           normalized_channel:
-            default: aurora
+            default: nightly
             options:
-            - aurora
-            - beta
             - nightly
+            - beta
+            - aurora
             - release
             - esr
             - Other
@@ -8711,8 +8711,8 @@ operational_monitoring:
             default: Windows
             options:
             - Windows
-            - Linux
             - Mac
+            - Linux
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -9672,15 +9672,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id257
           app:
-            default: Linux - vpn_session
+            default: Android - vpn_session
             options:
-            - Linux - vpn_session
-            - Darwin - vpn_session
+            - Android - vpn_session
             - Windows - vpn_session
             - iOS - vpn_session
-            - iOS - daemon_session
-            - Android - vpn_session
+            - Linux - vpn_session
             - Android - daemon_session
+            - iOS - daemon_session
+            - Darwin - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id258
@@ -10517,17 +10517,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id311
           channel:
-            default: release
+            default: beta
             options:
+            - beta
             - release
             - nightly
-            - beta
           os:
-            default: Windows_NT
+            default: Darwin
             options:
-            - Windows_NT
             - Darwin
             - Linux
+            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id312
