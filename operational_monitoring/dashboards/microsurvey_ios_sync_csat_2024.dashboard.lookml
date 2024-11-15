@@ -112,40 +112,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: microsurvey_ios_sync_csat_2024
-    type: looker_line
-    fields: [
-      microsurvey_ios_sync_csat_2024.submission_date,
-      microsurvey_ios_sync_csat_2024.branch,
-      microsurvey_ios_sync_csat_2024.point
-    ]
-    pivots: [
-      microsurvey_ios_sync_csat_2024.branch
-    ]
-    filters:
-      microsurvey_ios_sync_csat_2024.metric: 'ad_clicks'
-      microsurvey_ios_sync_csat_2024.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: microsurvey_ios_sync_csat_2024.submission_date
-    field_y: microsurvey_ios_sync_csat_2024.point
-    log_scale: false
-    ci_lower: microsurvey_ios_sync_csat_2024.lower
-    ci_upper: microsurvey_ios_sync_csat_2024.upper
-    show_grid: true
-    listen:
-      Date: microsurvey_ios_sync_csat_2024.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -163,6 +129,40 @@
     ]
     filters:
       microsurvey_ios_sync_csat_2024.metric: 'search_count'
+      microsurvey_ios_sync_csat_2024.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: microsurvey_ios_sync_csat_2024.submission_date
+    field_y: microsurvey_ios_sync_csat_2024.point
+    log_scale: false
+    ci_lower: microsurvey_ios_sync_csat_2024.lower
+    ci_upper: microsurvey_ios_sync_csat_2024.upper
+    show_grid: true
+    listen:
+      Date: microsurvey_ios_sync_csat_2024.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: microsurvey_ios_sync_csat_2024
+    type: looker_line
+    fields: [
+      microsurvey_ios_sync_csat_2024.submission_date,
+      microsurvey_ios_sync_csat_2024.branch,
+      microsurvey_ios_sync_csat_2024.point
+    ]
+    pivots: [
+      microsurvey_ios_sync_csat_2024.branch
+    ]
+    filters:
+      microsurvey_ios_sync_csat_2024.metric: 'ad_clicks'
       microsurvey_ios_sync_csat_2024.statistic: mean
     row: 20
     col: 0

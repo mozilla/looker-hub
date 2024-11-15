@@ -112,40 +112,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: microsurvey_ios_search_csat_2024_test
-    type: looker_line
-    fields: [
-      microsurvey_ios_search_csat_2024_test.submission_date,
-      microsurvey_ios_search_csat_2024_test.branch,
-      microsurvey_ios_search_csat_2024_test.point
-    ]
-    pivots: [
-      microsurvey_ios_search_csat_2024_test.branch
-    ]
-    filters:
-      microsurvey_ios_search_csat_2024_test.metric: 'ad_clicks'
-      microsurvey_ios_search_csat_2024_test.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: microsurvey_ios_search_csat_2024_test.submission_date
-    field_y: microsurvey_ios_search_csat_2024_test.point
-    log_scale: false
-    ci_lower: microsurvey_ios_search_csat_2024_test.lower
-    ci_upper: microsurvey_ios_search_csat_2024_test.upper
-    show_grid: true
-    listen:
-      Date: microsurvey_ios_search_csat_2024_test.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -163,6 +129,40 @@
     ]
     filters:
       microsurvey_ios_search_csat_2024_test.metric: 'search_count'
+      microsurvey_ios_search_csat_2024_test.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: microsurvey_ios_search_csat_2024_test.submission_date
+    field_y: microsurvey_ios_search_csat_2024_test.point
+    log_scale: false
+    ci_lower: microsurvey_ios_search_csat_2024_test.lower
+    ci_upper: microsurvey_ios_search_csat_2024_test.upper
+    show_grid: true
+    listen:
+      Date: microsurvey_ios_search_csat_2024_test.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: microsurvey_ios_search_csat_2024_test
+    type: looker_line
+    fields: [
+      microsurvey_ios_search_csat_2024_test.submission_date,
+      microsurvey_ios_search_csat_2024_test.branch,
+      microsurvey_ios_search_csat_2024_test.point
+    ]
+    pivots: [
+      microsurvey_ios_search_csat_2024_test.branch
+    ]
+    filters:
+      microsurvey_ios_search_csat_2024_test.metric: 'ad_clicks'
       microsurvey_ios_search_csat_2024_test.statistic: mean
     row: 20
     col: 0
