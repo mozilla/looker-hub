@@ -4673,6 +4673,12 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__object__mail_account_preferences {
+    sql: ${TABLE}.metrics.object.mail_account_preferences ;;
+    hidden: yes
+    description: "Values of basic account preferences."
+  }
+
   dimension: metrics__quantity__a11y_hcm_background {
     sql: ${TABLE}.metrics.quantity.a11y_hcm_background ;;
     type: number
