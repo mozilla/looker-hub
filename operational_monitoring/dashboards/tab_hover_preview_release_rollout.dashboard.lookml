@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       tab_hover_preview_release_rollout.branch
     ]
     filters:
-      tab_hover_preview_release_rollout.metric: 'retained'
+      tab_hover_preview_release_rollout.metric: 'search_count'
       tab_hover_preview_release_rollout.statistic: mean
     row: 0
     col: 0
@@ -81,40 +81,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: tab_hover_preview_release_rollout
-    type: looker_line
-    fields: [
-      tab_hover_preview_release_rollout.submission_date,
-      tab_hover_preview_release_rollout.branch,
-      tab_hover_preview_release_rollout.point
-    ]
-    pivots: [
-      tab_hover_preview_release_rollout.branch
-    ]
-    filters:
-      tab_hover_preview_release_rollout.metric: 'days_of_use'
-      tab_hover_preview_release_rollout.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: tab_hover_preview_release_rollout.submission_date
-    field_y: tab_hover_preview_release_rollout.point
-    log_scale: false
-    ci_lower: tab_hover_preview_release_rollout.lower
-    ci_upper: tab_hover_preview_release_rollout.upper
-    show_grid: true
-    listen:
-      Date: tab_hover_preview_release_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Qualified Cumulative Days Of Use
     name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
@@ -132,6 +98,40 @@
     ]
     filters:
       tab_hover_preview_release_rollout.metric: 'qualified_cumulative_days_of_use'
+      tab_hover_preview_release_rollout.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: tab_hover_preview_release_rollout.submission_date
+    field_y: tab_hover_preview_release_rollout.point
+    log_scale: false
+    ci_lower: tab_hover_preview_release_rollout.lower
+    ci_upper: tab_hover_preview_release_rollout.upper
+    show_grid: true
+    listen:
+      Date: tab_hover_preview_release_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: tab_hover_preview_release_rollout
+    type: looker_line
+    fields: [
+      tab_hover_preview_release_rollout.submission_date,
+      tab_hover_preview_release_rollout.branch,
+      tab_hover_preview_release_rollout.point
+    ]
+    pivots: [
+      tab_hover_preview_release_rollout.branch
+    ]
+    filters:
+      tab_hover_preview_release_rollout.metric: 'active_hours'
       tab_hover_preview_release_rollout.statistic: mean
     row: 10
     col: 12
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       tab_hover_preview_release_rollout.branch
     ]
     filters:
-      tab_hover_preview_release_rollout.metric: 'ad_clicks'
+      tab_hover_preview_release_rollout.metric: 'retained'
       tab_hover_preview_release_rollout.statistic: mean
     row: 20
     col: 12
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       tab_hover_preview_release_rollout.branch
     ]
     filters:
-      tab_hover_preview_release_rollout.metric: 'search_count'
+      tab_hover_preview_release_rollout.metric: 'days_of_use'
       tab_hover_preview_release_rollout.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       tab_hover_preview_release_rollout.branch
     ]
     filters:
-      tab_hover_preview_release_rollout.metric: 'active_hours'
+      tab_hover_preview_release_rollout.metric: 'ad_clicks'
       tab_hover_preview_release_rollout.statistic: mean
     row: 30
     col: 12

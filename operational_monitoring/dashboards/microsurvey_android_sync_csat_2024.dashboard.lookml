@@ -10,6 +10,74 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: microsurvey_android_sync_csat_2024
+    type: looker_line
+    fields: [
+      microsurvey_android_sync_csat_2024.submission_date,
+      microsurvey_android_sync_csat_2024.branch,
+      microsurvey_android_sync_csat_2024.point
+    ]
+    pivots: [
+      microsurvey_android_sync_csat_2024.branch
+    ]
+    filters:
+      microsurvey_android_sync_csat_2024.metric: 'search_count'
+      microsurvey_android_sync_csat_2024.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: microsurvey_android_sync_csat_2024.submission_date
+    field_y: microsurvey_android_sync_csat_2024.point
+    log_scale: false
+    ci_lower: microsurvey_android_sync_csat_2024.lower
+    ci_upper: microsurvey_android_sync_csat_2024.upper
+    show_grid: true
+    listen:
+      Date: microsurvey_android_sync_csat_2024.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: microsurvey_android_sync_csat_2024
+    type: looker_line
+    fields: [
+      microsurvey_android_sync_csat_2024.submission_date,
+      microsurvey_android_sync_csat_2024.branch,
+      microsurvey_android_sync_csat_2024.point
+    ]
+    pivots: [
+      microsurvey_android_sync_csat_2024.branch
+    ]
+    filters:
+      microsurvey_android_sync_csat_2024.metric: 'active_hours'
+      microsurvey_android_sync_csat_2024.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: microsurvey_android_sync_csat_2024.submission_date
+    field_y: microsurvey_android_sync_csat_2024.point
+    log_scale: false
+    ci_lower: microsurvey_android_sync_csat_2024.lower
+    ci_upper: microsurvey_android_sync_csat_2024.upper
+    show_grid: true
+    listen:
+      Date: microsurvey_android_sync_csat_2024.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Tagged Sap Searches
     name: Tagged Sap Searches_mean
     note_state: expanded
@@ -28,7 +96,7 @@
     filters:
       microsurvey_android_sync_csat_2024.metric: 'tagged_sap_searches'
       microsurvey_android_sync_csat_2024.statistic: mean
-    row: 0
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -62,42 +130,8 @@
     filters:
       microsurvey_android_sync_csat_2024.metric: 'retained'
       microsurvey_android_sync_csat_2024.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: microsurvey_android_sync_csat_2024.submission_date
-    field_y: microsurvey_android_sync_csat_2024.point
-    log_scale: false
-    ci_lower: microsurvey_android_sync_csat_2024.lower
-    ci_upper: microsurvey_android_sync_csat_2024.upper
-    show_grid: true
-    listen:
-      Date: microsurvey_android_sync_csat_2024.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: microsurvey_android_sync_csat_2024
-    type: looker_line
-    fields: [
-      microsurvey_android_sync_csat_2024.submission_date,
-      microsurvey_android_sync_csat_2024.branch,
-      microsurvey_android_sync_csat_2024.point
-    ]
-    pivots: [
-      microsurvey_android_sync_csat_2024.branch
-    ]
-    filters:
-      microsurvey_android_sync_csat_2024.metric: 'days_of_use'
-      microsurvey_android_sync_csat_2024.statistic: mean
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: microsurvey_android_sync_csat_2024.submission_date
@@ -130,7 +164,41 @@
     filters:
       microsurvey_android_sync_csat_2024.metric: 'uri_count'
       microsurvey_android_sync_csat_2024.statistic: mean
-    row: 10
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: microsurvey_android_sync_csat_2024.submission_date
+    field_y: microsurvey_android_sync_csat_2024.point
+    log_scale: false
+    ci_lower: microsurvey_android_sync_csat_2024.lower
+    ci_upper: microsurvey_android_sync_csat_2024.upper
+    show_grid: true
+    listen:
+      Date: microsurvey_android_sync_csat_2024.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: microsurvey_android_sync_csat_2024
+    type: looker_line
+    fields: [
+      microsurvey_android_sync_csat_2024.submission_date,
+      microsurvey_android_sync_csat_2024.branch,
+      microsurvey_android_sync_csat_2024.point
+    ]
+    pivots: [
+      microsurvey_android_sync_csat_2024.branch
+    ]
+    filters:
+      microsurvey_android_sync_csat_2024.metric: 'days_of_use'
+      microsurvey_android_sync_csat_2024.statistic: mean
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -163,74 +231,6 @@
     ]
     filters:
       microsurvey_android_sync_csat_2024.metric: 'ad_clicks'
-      microsurvey_android_sync_csat_2024.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: microsurvey_android_sync_csat_2024.submission_date
-    field_y: microsurvey_android_sync_csat_2024.point
-    log_scale: false
-    ci_lower: microsurvey_android_sync_csat_2024.lower
-    ci_upper: microsurvey_android_sync_csat_2024.upper
-    show_grid: true
-    listen:
-      Date: microsurvey_android_sync_csat_2024.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: microsurvey_android_sync_csat_2024
-    type: looker_line
-    fields: [
-      microsurvey_android_sync_csat_2024.submission_date,
-      microsurvey_android_sync_csat_2024.branch,
-      microsurvey_android_sync_csat_2024.point
-    ]
-    pivots: [
-      microsurvey_android_sync_csat_2024.branch
-    ]
-    filters:
-      microsurvey_android_sync_csat_2024.metric: 'search_count'
-      microsurvey_android_sync_csat_2024.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: microsurvey_android_sync_csat_2024.submission_date
-    field_y: microsurvey_android_sync_csat_2024.point
-    log_scale: false
-    ci_lower: microsurvey_android_sync_csat_2024.lower
-    ci_upper: microsurvey_android_sync_csat_2024.upper
-    show_grid: true
-    listen:
-      Date: microsurvey_android_sync_csat_2024.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: microsurvey_android_sync_csat_2024
-    type: looker_line
-    fields: [
-      microsurvey_android_sync_csat_2024.submission_date,
-      microsurvey_android_sync_csat_2024.branch,
-      microsurvey_android_sync_csat_2024.point
-    ]
-    pivots: [
-      microsurvey_android_sync_csat_2024.branch
-    ]
-    filters:
-      microsurvey_android_sync_csat_2024.metric: 'active_hours'
       microsurvey_android_sync_csat_2024.statistic: mean
     row: 30
     col: 0
