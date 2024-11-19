@@ -13956,6 +13956,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_https_record_state {
+    label: "Networking Https Record State"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_record_state ;;
+    group_label: "Networking"
+    group_item_label: "Https Record State"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Https Record State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_https_record_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gather the outcome of checking if a HTTPS record can be used: - \"invalid\" - \"succeeded\" - \"unmatched_cname\" - \"all_excluded\" - \"no_default_alpn\" - \"others\"
+"
+  }
+
   dimension: metrics__quantity__networking_https_rr_prefs_usage {
     label: "Networking Https Rr Prefs Usage"
     hidden: no
@@ -17019,6 +17036,42 @@ This metric was generated to correspond to the Legacy Telemetry scalar startup.p
     }
 
     description: "How many timers were processed in a single wake-up of the Timer Thread.
+"
+  }
+
+  dimension: metrics__quantity__timestamps_first_paint {
+    label: "Timestamps First Paint"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.timestamps_first_paint ;;
+    type: number
+    group_label: "Timestamps"
+    group_item_label: "First Paint"
+
+    link: {
+      label: "Glean Dictionary reference for Timestamps First Paint"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/timestamps_first_paint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record the timestamp of the first content window paint, in milliseconds since process start. This metric was generated to correspond to the Legacy Telemetry scalar timestamps.first_paint.
+"
+  }
+
+  dimension: metrics__quantity__timestamps_first_paint_two {
+    label: "Timestamps First Paint Two"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.timestamps_first_paint_two ;;
+    type: number
+    group_label: "Timestamps"
+    group_item_label: "First Paint Two"
+
+    link: {
+      label: "Glean Dictionary reference for Timestamps First Paint Two"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/timestamps_first_paint_two"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record the timestamp of the first main window paint, in milliseconds since process start. Intended to replace first_paint since first_paint is broken. This metric was generated to correspond to the Legacy Telemetry scalar timestamps.first_paint_two.
 "
   }
 
@@ -31436,6 +31489,47 @@ view: metrics__metrics__labeled_counter__networking_http_response_version {
 
 view: metrics__metrics__labeled_counter__networking_http_to_https_upgrade_reason {
   label: "Networking - Http To Https Upgrade Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_https_record_state {
+  label: "Networking - Https Record State"
 
   dimension: document_id {
     type: string
