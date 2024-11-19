@@ -504,6 +504,15 @@ Child-process data will likely be absent, or incomplete.
 "
   }
 
+  dimension: metrics__boolean__formautofill_availability {
+    sql: ${TABLE}.metrics.boolean.formautofill_availability ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Formautofill Availability"
+    description: "A boolean sent once per session to represent whether the formautofill is available in the build This metric was generated to correspond to the Legacy Telemetry scalar formautofill.availability.
+"
+  }
+
   dimension: metrics__boolean__gfx_os_compositor {
     sql: ${TABLE}.metrics.boolean.gfx_os_compositor ;;
     type: yesno
@@ -1167,6 +1176,42 @@ Will likely be obsoleted by bug 1641989.
 "
   }
 
+  dimension: metrics__counter__formautofill_addresses_detected_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_addresses_detected_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Addresses Detected Sections Count"
+    description: "Count at detection time number of address form sections. A single form can contain more than one address form section. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.addresses.detected_sections_count.
+"
+  }
+
+  dimension: metrics__counter__formautofill_addresses_submitted_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_addresses_submitted_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Addresses Submitted Sections Count"
+    description: "Count at submission time number of credit card form sections submitted. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.addresses.submitted_sections_count.
+"
+  }
+
+  dimension: metrics__counter__formautofill_credit_cards_detected_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_credit_cards_detected_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Credit Cards Detected Sections Count"
+    description: "Count at detection time number of credit card form sections. A single form can contain more than one credit card form section. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.creditCards.detected_sections_count.
+"
+  }
+
+  dimension: metrics__counter__formautofill_credit_cards_submitted_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_credit_cards_submitted_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Credit Cards Submitted Sections Count"
+    description: "Count at submission time number of credit card form sections submitted. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.creditCards.submitted_sections_count.
+"
+  }
+
   dimension: metrics__counter__gfx_skipped_composites {
     sql: ${TABLE}.metrics.counter.gfx_skipped_composites ;;
     type: number
@@ -1374,6 +1419,24 @@ This does not include deletion-request pings.
     group_label: "Metrics Counter"
     group_item_label: "Netwerk Parent Connect Timeout"
     description: "Counts how often the parent-connect-timeout timer is necessary to clear up EarlyHintPreloader
+"
+  }
+
+  dimension: metrics__counter__network_sso_total_entra_uses {
+    sql: ${TABLE}.metrics.counter.network_sso_total_entra_uses ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Network Sso Total Entra Uses"
+    description: "Counts how often Entra SSO is used (macOS only).
+"
+  }
+
+  dimension: metrics__counter__networking_captive_portal_banner_displayed {
+    sql: ${TABLE}.metrics.counter.networking_captive_portal_banner_displayed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Captive Portal Banner Displayed"
+    description: "Number of times the captive portal banner was displayed in this session. This metric was generated to correspond to the Legacy Telemetry scalar networking.captive_portal_banner_displayed.
 "
   }
 
@@ -1617,6 +1680,15 @@ This does not include deletion-request pings.
     group_label: "Metrics Counter"
     group_item_label: "Rtcrtpsender Count Setparameters Compat"
     description: "The number of RTCRtpSenders created that use the compatibility mode for setParameters.
+"
+  }
+
+  dimension: metrics__counter__script_preloader_mainthread_recompile {
+    sql: ${TABLE}.metrics.counter.script_preloader_mainthread_recompile ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Script Preloader Mainthread Recompile"
+    description: "How many times we ended up recompiling a script from the script preloader on the main thread. This metric was generated to correspond to the Legacy Telemetry scalar script.preloader.mainthread_recompile.
 "
   }
 
@@ -3803,6 +3875,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__network_sso_entra_success {
+    sql: ${TABLE}.metrics.labeled_counter.network_sso_entra_success ;;
+    hidden: yes
+    description: "Counts how often Entra SSO succeeded/failed (macOS only). Labels are ordered in reverse chronological relation to SSO success, meaning the labels higher up are closer to the SSO success. device_headers_missing: only device_headers is missing in the SSO cookie. prt_headers_missing: only prt_headers is missing in the SSO cookie. both_headers_missing: both prt_headers and device_headers are missing in the SSO cookie. invalid_cookie: Failed to parse SSO cookie (could be a null cookie/format is incorrect). no_credential: ASAuthorizationSingleSignOnCredential is not present broker_error: An error from Microsoft's broker. invalid_controller_setup: ASAuthorizationController is setup incorrectly.
+"
+  }
+
   dimension: metrics__labeled_counter__network_system_channel_addon_status {
     sql: ${TABLE}.metrics.labeled_counter.network_system_channel_addon_status ;;
     hidden: yes
@@ -3863,6 +3942,17 @@ This metric appears in both the metrics and baseline pings.
     sql: ${TABLE}.metrics.labeled_counter.network_tls_early_data_negotiated ;;
     hidden: yes
     description: "Sending TLS early data was not possible, possible and used, or possible but not used.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_captive_portal_banner_display_time {
+    sql: ${TABLE}.metrics.labeled_counter.networking_captive_portal_banner_display_time ;;
+    hidden: yes
+    description: "Number of seconds the captive portal banner was displayed for, keyed by close reason:
+  \"success\" - the portal login was completed
+  \"abort\"   - the portal login was aborted (e.g. loss of network)
+  \"dismiss\" - the user dismissed the banner
+This metric was generated to correspond to the Legacy Telemetry scalar networking.captive_portal_banner_display_time.
 "
   }
 
@@ -4968,6 +5058,15 @@ API for the purposes of Validation (hence GVSV).
     group_item_label: "Fog Validation Gvsv Primary Width"
     description: "Primary display pixel width, recorded alongside the GeckoView Streaming
 API for the purposes of Validation (hence GVSV).
+"
+  }
+
+  dimension: metrics__quantity__formautofill_addresses_autofill_profiles_count {
+    sql: ${TABLE}.metrics.quantity.formautofill_addresses_autofill_profiles_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Formautofill Addresses Autofill Profiles Count"
+    description: "Count at store time how many address autofill profiles user has. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.addresses.autofill_profiles_count.
 "
   }
 
@@ -8815,6 +8914,66 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__javascript_gc_total_time__values {
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.values ;;
     hidden: yes
   }
 
@@ -18374,6 +18533,18 @@ view: metrics_table__metrics__timing_distribution__javascript_gc_sweep_time__val
 }
 
 view: metrics_table__metrics__timing_distribution__javascript_gc_total_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_ion_compile_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: deletion_request_table {
+view: events_unnested_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -128,22 +128,6 @@ view: deletion_request_table {
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
-  dimension: client_info__session_count {
-    sql: ${TABLE}.client_info.session_count ;;
-    type: number
-    group_label: "Client Info"
-    group_item_label: "Session Count"
-    description: "An optional running counter of the number of sessions for a client."
-  }
-
-  dimension: client_info__session_id {
-    sql: ${TABLE}.client_info.session_id ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "Session Id"
-    description: "An optional UUID uniquely identifying the client's current session."
-  }
-
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
@@ -152,23 +136,35 @@ view: deletion_request_table {
     description: "The version of the Glean SDK"
   }
 
-  dimension: client_info__windows_build_number {
-    sql: ${TABLE}.client_info.windows_build_number ;;
-    type: number
-    group_label: "Client Info"
-    group_item_label: "Windows Build Number"
-    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
-  }
-
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
     description: "The document ID specified in the URI when the client sent this message"
   }
 
-  dimension: events {
-    sql: ${TABLE}.events ;;
+  dimension: event_category {
+    sql: ${TABLE}.event_category ;;
+    type: string
+  }
+
+  dimension: event_extra {
+    sql: ${TABLE}.event_extra ;;
     hidden: yes
+  }
+
+  dimension: event_id {
+    sql: ${TABLE}.event_id ;;
+    type: string
+  }
+
+  dimension: event_name {
+    sql: ${TABLE}.event_name ;;
+    type: string
+  }
+
+  dimension: event_timestamp {
+    sql: ${TABLE}.event_timestamp ;;
+    type: number
   }
 
   dimension: metadata__geo__city {
@@ -339,64 +335,9 @@ view: deletion_request_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__labeled_counter__glean_error_invalid_label {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
-    hidden: yes
-    description: "Counts the number of times a metric was set with an invalid label.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
-    hidden: yes
-    description: "Counts the number of times a metric was set a value that overflowed.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_state {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
-    hidden: yes
-    description: "Counts the number of times a timing metric was used incorrectly.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_value {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
-    hidden: yes
-    description: "Counts the number of times a metric was set to an invalid value.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__string__deletion_request_sync_device_id {
-    sql: ${TABLE}.metrics.string.deletion_request_sync_device_id ;;
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
     type: string
-    group_label: "Metrics String"
-    group_item_label: "Deletion Request Sync Device Id"
-    description: "An identifier used by sync ping, to identify the current Firefox profile for a specific Account. This metric was generated to correspond to the Legacy Telemetry scalar deletion.request.sync_device_id.
-"
-  }
-
-  dimension: metrics__string__glean_client_annotation_experimentation_id {
-    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
-    type: string
-    group_label: "Metrics String"
-    group_item_label: "Glean Client Annotation Experimentation Id"
-    description: "An experimentation identifier derived and provided by the application
-for the purpose of experimentation enrollment.
-"
-  }
-
-  dimension: metrics__uuid__characteristics_client_identifier {
-    sql: ${TABLE}.metrics.uuid.characteristics_client_identifier ;;
-    type: string
-    group_label: "Metrics Uuid"
-    group_item_label: "Characteristics Client Identifier"
-    description: "A unique identifier for a user, not the same as the normal Telemetry client_id, but needed so we can deduplicate reports and only take the most recent one per user.
-"
   }
 
   dimension: normalized_app_name {
@@ -534,32 +475,10 @@ for the purpose of experimentation enrollment.
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  sql_table_name: `mozdata.firefox_desktop_background_update.deletion_request` ;;
+  sql_table_name: `mozdata.syncstorage.events_unnested` ;;
 }
 
-view: deletion_request_table__events {
-  dimension: category {
-    sql: ${TABLE}.category ;;
-    type: string
-  }
-
-  dimension: extra {
-    sql: ${TABLE}.extra ;;
-    hidden: yes
-  }
-
-  dimension: name {
-    sql: ${TABLE}.name ;;
-    type: string
-  }
-
-  dimension: timestamp {
-    sql: ${TABLE}.timestamp ;;
-    type: number
-  }
-}
-
-view: deletion_request_table__events__extra {
+view: events_unnested_table__event_extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -571,7 +490,7 @@ view: deletion_request_table__events__extra {
   }
 }
 
-view: deletion_request_table__ping_info__experiments {
+view: events_unnested_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
