@@ -431,6 +431,13 @@ view: metrics_table {
     group_item_label: "Fog Failed Idle Registration"
   }
 
+  dimension: metrics__boolean__formautofill_availability {
+    sql: ${TABLE}.metrics.boolean.formautofill_availability ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Formautofill Availability"
+  }
+
   dimension: metrics__boolean__gfx_os_compositor {
     sql: ${TABLE}.metrics.boolean.gfx_os_compositor ;;
     type: yesno
@@ -921,6 +928,34 @@ view: metrics_table {
     group_item_label: "Fog Ipc Shutdown Registration Failures"
   }
 
+  dimension: metrics__counter__formautofill_addresses_detected_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_addresses_detected_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Addresses Detected Sections Count"
+  }
+
+  dimension: metrics__counter__formautofill_addresses_submitted_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_addresses_submitted_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Addresses Submitted Sections Count"
+  }
+
+  dimension: metrics__counter__formautofill_credit_cards_detected_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_credit_cards_detected_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Credit Cards Detected Sections Count"
+  }
+
+  dimension: metrics__counter__formautofill_credit_cards_submitted_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_credit_cards_submitted_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Credit Cards Submitted Sections Count"
+  }
+
   dimension: metrics__counter__gfx_skipped_composites {
     sql: ${TABLE}.metrics.counter.gfx_skipped_composites ;;
     type: number
@@ -1073,6 +1108,20 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Netwerk Parent Connect Timeout"
+  }
+
+  dimension: metrics__counter__network_sso_total_entra_uses {
+    sql: ${TABLE}.metrics.counter.network_sso_total_entra_uses ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Network Sso Total Entra Uses"
+  }
+
+  dimension: metrics__counter__networking_captive_portal_banner_displayed {
+    sql: ${TABLE}.metrics.counter.networking_captive_portal_banner_displayed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Captive Portal Banner Displayed"
   }
 
   dimension: metrics__counter__networking_cookie_count_invalid_first_party_partitioned_in_db {
@@ -1262,6 +1311,13 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Rtcrtpsender Count Setparameters Compat"
+  }
+
+  dimension: metrics__counter__script_preloader_mainthread_recompile {
+    sql: ${TABLE}.metrics.counter.script_preloader_mainthread_recompile ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Script Preloader Mainthread Recompile"
   }
 
   dimension: metrics__counter__sct_signature_cache_total {
@@ -3096,6 +3152,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__network_sso_entra_success {
+    sql: ${TABLE}.metrics.labeled_counter.network_sso_entra_success ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__network_system_channel_addon_status {
     sql: ${TABLE}.metrics.labeled_counter.network_system_channel_addon_status ;;
     hidden: yes
@@ -3138,6 +3199,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__network_tls_early_data_negotiated {
     sql: ${TABLE}.metrics.labeled_counter.network_tls_early_data_negotiated ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_captive_portal_banner_display_time {
+    sql: ${TABLE}.metrics.labeled_counter.networking_captive_portal_banner_display_time ;;
     hidden: yes
   }
 
@@ -3955,6 +4021,13 @@ view: metrics_table {
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Fog Validation Gvsv Primary Width"
+  }
+
+  dimension: metrics__quantity__formautofill_addresses_autofill_profiles_count {
+    sql: ${TABLE}.metrics.quantity.formautofill_addresses_autofill_profiles_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Formautofill Addresses Autofill Profiles Count"
   }
 
   dimension: metrics__quantity__formautofill_creditcards_autofill_profiles_count {
@@ -7633,6 +7706,65 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__javascript_gc_total_time__values {
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.values ;;
     hidden: yes
   }
 
@@ -17072,6 +17204,18 @@ view: metrics_table__metrics__timing_distribution__javascript_gc_sweep_time__val
 }
 
 view: metrics_table__metrics__timing_distribution__javascript_gc_total_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_ion_compile_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

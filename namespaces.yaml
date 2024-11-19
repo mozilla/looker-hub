@@ -15309,14 +15309,43 @@ subscription_platform:
       - table: moz-fx-data-shared-prod.subscription_platform_derived.stripe_subscriptions_v1
       type: table_view
 syncstorage:
-  explores: {}
+  explores:
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
+    events_stream_table:
+      type: table_explore
+      views:
+        base_view: events_stream_table
   glean_app: true
   owners:
   - tlong@mozilla.com
   - sync-backend@mozilla.com
   pretty_name: Sync Storage
   spoke: looker-spoke-default
-  views: {}
+  views:
+    events:
+      tables:
+      - base_table: mozdata.syncstorage.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
+    events_stream_table:
+      tables:
+      - channel: null
+        table: mozdata.syncstorage.events_stream
+      type: table_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.syncstorage.events
+      type: table_view
+    events_unnested_table:
+      tables:
+      - channel: null
+        table: mozdata.syncstorage.events_unnested
+      type: table_view
 telemetry_dev_cycle:
   glean_app: false
   owners:
