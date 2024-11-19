@@ -4011,6 +4011,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_https_record_state {
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_record_state ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_https_rr_presented {
     sql: ${TABLE}.metrics.labeled_counter.networking_https_rr_presented ;;
     hidden: yes
@@ -4991,6 +4996,20 @@ view: metrics_table {
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Startup Profile Count"
+  }
+
+  dimension: metrics__quantity__timestamps_first_paint {
+    sql: ${TABLE}.metrics.quantity.timestamps_first_paint ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Timestamps First Paint"
+  }
+
+  dimension: metrics__quantity__timestamps_first_paint_two {
+    sql: ${TABLE}.metrics.quantity.timestamps_first_paint_two ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Timestamps First Paint Two"
   }
 
   dimension: metrics__rate__cert_signature_cache_hits__denominator {
