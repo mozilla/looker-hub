@@ -60,7 +60,7 @@ view: metrics {
 
   dimension: metrics__labeled_string__calendar_google_token_type {
     label: "Calendar Google Token Type"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_string.calendar_google_token_type ;;
     type: string
     group_label: "Calendar"
