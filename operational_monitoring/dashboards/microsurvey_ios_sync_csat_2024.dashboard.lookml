@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       microsurvey_ios_sync_csat_2024.branch
     ]
     filters:
-      microsurvey_ios_sync_csat_2024.metric: 'days_of_use'
+      microsurvey_ios_sync_csat_2024.metric: 'active_hours'
       microsurvey_ios_sync_csat_2024.statistic: mean
     row: 0
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       microsurvey_ios_sync_csat_2024.branch
     ]
     filters:
-      microsurvey_ios_sync_csat_2024.metric: 'active_hours'
+      microsurvey_ios_sync_csat_2024.metric: 'days_of_use'
       microsurvey_ios_sync_csat_2024.statistic: mean
     row: 10
     col: 12
