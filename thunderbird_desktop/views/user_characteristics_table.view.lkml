@@ -334,6 +334,15 @@ view: user_characteristics_table {
 "
   }
 
+  dimension: metrics__boolean__characteristics_using_accelerated_canvas {
+    sql: ${TABLE}.metrics.boolean.characteristics_using_accelerated_canvas ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Using Accelerated Canvas"
+    description: "Whether the user's device is using accelerated canvas
+"
+  }
+
   dimension: metrics__boolean__characteristics_video_dynamic_range {
     sql: ${TABLE}.metrics.boolean.characteristics_video_dynamic_range ;;
     type: yesno

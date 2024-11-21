@@ -6299,6 +6299,20 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__labeled_quantity__browser_searchinit_engine_invalid_webextension {
+    sql: ${TABLE}.metrics.labeled_quantity.browser_searchinit_engine_invalid_webextension ;;
+    hidden: yes
+    description: "Records the WebExtension ID of a search engine where the WebExtension is not installed (= 1), disabled (= 2), search engine no longer specified (= 4), a different name (= 5), where the submission URL is different between the search engine and the WebExtension (= 6). The value '3' has been replaced by '6' to distinguish newer entries. This metric was generated to correspond to the Legacy Telemetry scalar browser.searchinit.engine_invalid_webextension.
+"
+  }
+
+  dimension: metrics__labeled_quantity__normandy_recipe_freshness {
+    sql: ${TABLE}.metrics.labeled_quantity.normandy_recipe_freshness ;;
+    hidden: yes
+    description: "For each recipe ID seen by the Normandy client, its last_modified. This metric was generated to correspond to the Legacy Telemetry scalar normandy.recipe_freshness.
+"
+  }
+
   dimension: metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
     sql: ${TABLE}.metrics.labeled_string.cookie_banners_google_gdpr_choice_cookie ;;
     hidden: yes
@@ -19916,6 +19930,30 @@ view: metrics_table__metrics__labeled_custom_distribution__quotamanager_initiali
 }
 
 view: metrics_table__metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__browser_searchinit_engine_invalid_webextension {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__normandy_recipe_freshness {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -15441,12 +15441,30 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_js_is_htmldda_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_is_htmldda_fuse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Is Htmldda Fuse"
+    description: "Whether a document has used the document.all getter (popping the EmulatesUndefined Fuse). Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_late_weekday {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_late_weekday ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Late Weekday"
     description: "Whether a document parses a Date with day of week in an unexpected position. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_optimize_get_iterator_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_optimize_get_iterator_fuse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Optimize Get Iterator Fuse"
+    description: "Whether a document has modified any builtins such that the GetIterator fuse is popped. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -18753,12 +18771,30 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_js_is_htmldda_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_is_htmldda_fuse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Is Htmldda Fuse"
+    description: "Whether a page has used the document.all getter (popping the EmulatesUndefined Fuse). Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_js_late_weekday {
     sql: ${TABLE}.metrics.counter.use_counter_page_js_late_weekday ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Late Weekday"
     description: "Whether a page parses a Date with day of week in an unexpected position. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_optimize_get_iterator_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_optimize_get_iterator_fuse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Optimize Get Iterator Fuse"
+    description: "Whether a page has modified any builtins such that the GetIterator fuse is popped. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

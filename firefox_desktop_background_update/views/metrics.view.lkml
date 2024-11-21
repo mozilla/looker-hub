@@ -8550,6 +8550,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_quantity__normandy_recipe_freshness {
+    label: "Normandy Recipe Freshness"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_quantity.normandy_recipe_freshness ;;
+    type: string
+    group_label: "Normandy"
+    group_item_label: "Recipe Freshness"
+
+    link: {
+      label: "Glean Dictionary reference for Normandy Recipe Freshness"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/normandy_recipe_freshness"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "For each recipe ID seen by the Normandy client, its last_modified. This metric was generated to correspond to the Legacy Telemetry scalar normandy.recipe_freshness.
+"
+  }
+
   dimension: metrics__timing_distribution__ocsp_request_time_cancel__sum {
     label: "Ocsp Request Time Cancel Sum"
     hidden: no
@@ -24679,6 +24697,18 @@ view: metrics__metrics__labeled_custom_distribution__quotamanager_initialize_rep
 }
 
 view: metrics__metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_quantity__normandy_recipe_freshness {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

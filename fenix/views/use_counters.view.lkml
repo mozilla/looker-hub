@@ -6253,7 +6253,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_doc_css_moz_user_modify {
     label: "Use Counter Css Doc Css Moz User Modify"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_moz_user_modify ;;
     type: number
     group_label: "Use Counter Css Doc"
@@ -19069,7 +19069,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_page_css_moz_user_modify {
     label: "Use Counter Css Page Css Moz User Modify"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_moz_user_modify ;;
     type: number
     group_label: "Use Counter Css Page"
@@ -29921,6 +29921,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_js_is_htmldda_fuse {
+    label: "Use Counter Doc Js Is Htmldda Fuse"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_is_htmldda_fuse ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Is Htmldda Fuse"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Is Htmldda Fuse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_is_htmldda_fuse"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has used the document.all getter (popping the EmulatesUndefined Fuse). Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_late_weekday {
     label: "Use Counter Doc Js Late Weekday"
     hidden: yes
@@ -36559,6 +36577,24 @@ view: use_counters {
     }
 
     description: "Whether a page uses asm.js. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_is_htmldda_fuse {
+    label: "Use Counter Page Js Is Htmldda Fuse"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_is_htmldda_fuse ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Is Htmldda Fuse"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Is Htmldda Fuse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_is_htmldda_fuse"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has used the document.all getter (popping the EmulatesUndefined Fuse). Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -84661,6 +84697,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_doc_js_is_htmldda_fuse {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_is_htmldda_fuse} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Is Htmldda Fuse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_is_htmldda_fuse"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_is_htmldda_fuse_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_is_htmldda_fuse: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Is Htmldda Fuse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_js_is_htmldda_fuse"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_doc_js_late_weekday {
     type: sum
     sql: ${metrics__counter__use_counter_doc_js_late_weekday} ;;
@@ -93857,6 +93918,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Page Js Asmjs"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_asmjs"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_is_htmldda_fuse {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_is_htmldda_fuse} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Is Htmldda Fuse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_is_htmldda_fuse"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_is_htmldda_fuse_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_is_htmldda_fuse: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Is Htmldda Fuse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_js_is_htmldda_fuse"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
