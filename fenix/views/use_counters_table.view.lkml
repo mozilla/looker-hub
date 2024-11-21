@@ -12051,11 +12051,25 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Js Asmjs"
   }
 
+  dimension: metrics__counter__use_counter_doc_js_is_htmldda_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_is_htmldda_fuse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Is Htmldda Fuse"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_late_weekday {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_late_weekday ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Late Weekday"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_optimize_get_iterator_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_optimize_get_iterator_fuse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Optimize Get Iterator Fuse"
   }
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_2 {
@@ -14627,11 +14641,25 @@ view: use_counters_table {
     group_item_label: "Use Counter Page Js Asmjs"
   }
 
+  dimension: metrics__counter__use_counter_page_js_is_htmldda_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_is_htmldda_fuse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Is Htmldda Fuse"
+  }
+
   dimension: metrics__counter__use_counter_page_js_late_weekday {
     sql: ${TABLE}.metrics.counter.use_counter_page_js_late_weekday ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Late Weekday"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_optimize_get_iterator_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_optimize_get_iterator_fuse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Optimize Get Iterator Fuse"
   }
 
   dimension: metrics__counter__use_counter_page_js_subclassing_array_type_2 {

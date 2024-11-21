@@ -3587,6 +3587,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__boolean__characteristics_using_accelerated_canvas {
+    label: "Characteristics Using Accelerated Canvas"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_using_accelerated_canvas ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Using Accelerated Canvas"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Using Accelerated Canvas"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_using_accelerated_canvas"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the user's device is using accelerated canvas
+"
+  }
+
   dimension: metrics__string__characteristics_version {
     label: "Characteristics Version"
     hidden: no
