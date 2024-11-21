@@ -5,6 +5,42 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: deletion_request {
+  dimension: metrics__string__deletion_request_context_id {
+    label: "Deletion Request Context Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.deletion_request_context_id ;;
+    type: string
+    group_label: "Deletion Request"
+    group_item_label: "Context Id"
+
+    link: {
+      label: "Glean Dictionary reference for Deletion Request Context Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/deletion_request_context_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An identifier to identify users for Contextual Services user interaction pings. This metric was generated to correspond to the Legacy Telemetry scalar deletion.request.context_id.
+"
+  }
+
+  dimension: metrics__string__deletion_request_impression_id {
+    label: "Deletion Request Impression Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.deletion_request_impression_id ;;
+    type: string
+    group_label: "Deletion Request"
+    group_item_label: "Impression Id"
+
+    link: {
+      label: "Glean Dictionary reference for Deletion Request Impression Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/deletion_request_impression_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An identifier used by user interaction pings in Pocket/newtab and Messaging System. This metric was generated to correspond to the Legacy Telemetry scalar deletion.request.impression_id.
+"
+  }
+
   dimension: metrics__uuid__characteristics_client_identifier {
     label: "Characteristics Client Identifier"
     hidden: no
@@ -20,6 +56,24 @@ view: deletion_request {
     }
 
     description: "A unique identifier for a user, not the same as the normal Telemetry client_id, but needed so we can deduplicate reports and only take the most recent one per user.
+"
+  }
+
+  dimension: metrics__string__deletion_request_sync_device_id {
+    label: "Deletion Request Sync Device Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.deletion_request_sync_device_id ;;
+    type: string
+    group_label: "Deletion Request"
+    group_item_label: "Sync Device Id"
+
+    link: {
+      label: "Glean Dictionary reference for Deletion Request Sync Device Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/deletion_request_sync_device_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An identifier used by sync ping, to identify the current Firefox profile for a specific Account. This metric was generated to correspond to the Legacy Telemetry scalar deletion.request.sync_device_id.
 "
   }
 

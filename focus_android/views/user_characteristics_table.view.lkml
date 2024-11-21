@@ -285,6 +285,13 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Use Document Colors"
   }
 
+  dimension: metrics__boolean__characteristics_using_accelerated_canvas {
+    sql: ${TABLE}.metrics.boolean.characteristics_using_accelerated_canvas ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Using Accelerated Canvas"
+  }
+
   dimension: metrics__boolean__characteristics_video_dynamic_range {
     sql: ${TABLE}.metrics.boolean.characteristics_video_dynamic_range ;;
     type: yesno

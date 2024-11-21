@@ -34,9 +34,5 @@ view: health_counts {
     ]
   }
 
-  measure: count {
-    type: count
-  }
-
   sql_table_name: `mozdata.analysis.wclouser_fxa_health_counts` ;;
 }
