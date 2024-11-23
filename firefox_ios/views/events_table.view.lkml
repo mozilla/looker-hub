@@ -319,6 +319,13 @@ view: events_table {
     group_item_label: "Tabs Grouped Tab Closed"
   }
 
+  dimension: metrics__counter__tabs_pull_to_refresh {
+    sql: ${TABLE}.metrics.counter.tabs_pull_to_refresh ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Tabs Pull To Refresh"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
