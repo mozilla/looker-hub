@@ -3778,6 +3778,10 @@ firefox_ios:
       type: glean_ping_explore
       views:
         base_view: topsites_impression
+    usage_reporting:
+      type: glean_ping_explore
+      views:
+        base_view: usage_reporting
   glean_app: true
   owners:
   - tlong@mozilla.com
@@ -3820,6 +3824,11 @@ firefox_ios:
         table: mozdata.org_mozilla_ios_firefoxbeta.addresses_sync
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.addresses_sync
+      type: table_view
+    app_store_choice_screen_engagement_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.app_store_choice_screen_engagement
       type: table_view
     app_store_funnel_table:
       tables:
@@ -4457,6 +4466,24 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.topsites_impression
       type: table_view
+    usage_reporting:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.usage_reporting
+      - channel: beta
+        table: mozdata.org_mozilla_ios_firefoxbeta.usage_reporting
+      - channel: nightly
+        table: mozdata.org_mozilla_ios_fennec.usage_reporting
+      type: glean_ping_view
+    usage_reporting_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.usage_reporting
+      - channel: beta
+        table: mozdata.org_mozilla_ios_firefoxbeta.usage_reporting
+      - channel: nightly
+        table: mozdata.org_mozilla_ios_fennec.usage_reporting
+      type: table_view
 firefox_metrics:
   glean_app: false
   owners:
@@ -5065,6 +5092,10 @@ focus_ios:
       views:
         base_view: client_counts
         extended_view: baseline_clients_daily_table
+    dau_reporting:
+      type: glean_ping_explore
+      views:
+        base_view: dau_reporting
     deletion_request:
       type: glean_ping_explore
       views:
@@ -5113,6 +5144,10 @@ focus_ios:
       type: glean_ping_explore
       views:
         base_view: metrics
+    usage_reporting:
+      type: glean_ping_explore
+      views:
+        base_view: usage_reporting
   glean_app: true
   owners:
   - sarentz@mozilla.com
@@ -5148,6 +5183,15 @@ focus_ios:
       tables:
       - table: mozdata.org_mozilla_ios_focus.baseline_clients_daily
       type: client_counts_view
+    dau_reporting:
+      tables:
+      - table: mozdata.org_mozilla_ios_focus.dau_reporting
+      type: glean_ping_view
+    dau_reporting_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_ios_focus.dau_reporting
+      type: table_view
     deletion_request:
       tables:
       - table: mozdata.org_mozilla_ios_focus.deletion_request
@@ -5195,6 +5239,15 @@ focus_ios:
       tables:
       - channel: null
         table: mozdata.org_mozilla_ios_focus.metrics
+      type: table_view
+    usage_reporting:
+      tables:
+      - table: mozdata.org_mozilla_ios_focus.usage_reporting
+      type: glean_ping_view
+    usage_reporting_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_ios_focus.usage_reporting
       type: table_view
 fpa:
   connection: bigquery-oauth
@@ -5563,6 +5616,10 @@ klar_ios:
       views:
         base_view: client_counts
         extended_view: baseline_clients_daily_table
+    dau_reporting:
+      type: glean_ping_explore
+      views:
+        base_view: dau_reporting
     deletion_request:
       type: glean_ping_explore
       views:
@@ -5603,6 +5660,10 @@ klar_ios:
       type: glean_ping_explore
       views:
         base_view: metrics
+    usage_reporting:
+      type: glean_ping_explore
+      views:
+        base_view: usage_reporting
   glean_app: true
   owners:
   - sarentz@mozilla.com
@@ -5638,6 +5699,15 @@ klar_ios:
       tables:
       - table: mozdata.org_mozilla_ios_klar.baseline_clients_daily
       type: client_counts_view
+    dau_reporting:
+      tables:
+      - table: mozdata.org_mozilla_ios_klar.dau_reporting
+      type: glean_ping_view
+    dau_reporting_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_ios_klar.dau_reporting
+      type: table_view
     deletion_request:
       tables:
       - table: mozdata.org_mozilla_ios_klar.deletion_request
@@ -5681,6 +5751,15 @@ klar_ios:
       tables:
       - channel: null
         table: mozdata.org_mozilla_ios_klar.metrics
+      type: table_view
+    usage_reporting:
+      tables:
+      - table: mozdata.org_mozilla_ios_klar.usage_reporting
+      type: glean_ping_view
+    usage_reporting_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_ios_klar.usage_reporting
       type: table_view
 kpi:
   explores:
