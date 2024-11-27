@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/https_as_default_protocoll_in_address_bar.view.lkml"
+include: "/looker-hub/operational_monitoring/views/https_first_in_release.view.lkml"
 
-explore: https_as_default_protocoll_in_address_bar {
+explore: https_first_in_release {
   always_filter: {
     filters: [
       branch: "enabled, disabled",

@@ -3348,25 +3348,6 @@ closes the application.
 "
   }
 
-  dimension: metrics__counter__tabs_pull_to_refresh {
-    label: "Tabs Pull To Refresh"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.tabs_pull_to_refresh ;;
-    type: number
-    group_label: "Tabs"
-    group_item_label: "Pull To Refresh"
-
-    link: {
-      label: "Glean Dictionary reference for Tabs Pull To Refresh"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_pull_to_refresh"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Record the number of times a user pulls down
-on a page to reload.
-"
-  }
-
   dimension: metrics__counter__tabs_reload_from_url_bar {
     label: "Tabs Reload From Url Bar"
     hidden: no
@@ -7476,31 +7457,6 @@ startup, as part of the initialization sequence.
     link: {
       label: "Glean Dictionary reference for Tabs Normal And Private Uri Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_normal_and_private_uri_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: tabs_pull_to_refresh {
-    type: sum
-    sql: ${metrics__counter__tabs_pull_to_refresh} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Tabs Pull To Refresh"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_pull_to_refresh"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: tabs_pull_to_refresh_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__tabs_pull_to_refresh: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Tabs Pull To Refresh"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_pull_to_refresh"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

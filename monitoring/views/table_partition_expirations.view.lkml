@@ -10,6 +10,12 @@ view: table_partition_expirations {
     type: string
   }
 
+  dimension: expiration_changed {
+    sql: ${TABLE}.expiration_changed ;;
+    type: yesno
+    description: "True if the partition expiration value has changed in the past day"
+  }
+
   dimension: first_partition_row_count {
     sql: ${TABLE}.first_partition_row_count ;;
     type: number
@@ -20,6 +26,11 @@ view: table_partition_expirations {
     sql: ${TABLE}.partition_expiration_days ;;
     type: number
     description: "Maximum age of a partition before it is deleted"
+  }
+
+  dimension: previous_partition_expiration_days {
+    sql: ${TABLE}.previous_partition_expiration_days ;;
+    type: number
   }
 
   dimension: project_id {
