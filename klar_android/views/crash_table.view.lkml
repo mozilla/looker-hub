@@ -433,6 +433,13 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__object__crash_stack_traces {
+    sql: ${TABLE}.metrics.object.crash_stack_traces ;;
+    hidden: yes
+    description: "Stack trace and module information of the crashing process.
+"
+  }
+
   dimension: metrics__quantity__crash_event_loop_nesting_level {
     sql: ${TABLE}.metrics.quantity.crash_event_loop_nesting_level ;;
     type: number

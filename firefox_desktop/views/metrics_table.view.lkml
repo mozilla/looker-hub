@@ -393,6 +393,33 @@ view: metrics_table {
 "
   }
 
+  dimension: metrics__boolean__browser_backup_enabled {
+    sql: ${TABLE}.metrics.boolean.browser_backup_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Browser Backup Enabled"
+    description: "True if the BackupService is enabled by default.
+"
+  }
+
+  dimension: metrics__boolean__browser_backup_pswd_encrypted {
+    sql: ${TABLE}.metrics.boolean.browser_backup_pswd_encrypted ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Browser Backup Pswd Encrypted"
+    description: "True if the BackupService is configured to encrypt backups.
+"
+  }
+
+  dimension: metrics__boolean__browser_backup_scheduler_enabled {
+    sql: ${TABLE}.metrics.boolean.browser_backup_scheduler_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Browser Backup Scheduler Enabled"
+    description: "True if the BackupService is configured to automatically create backups in the background.
+"
+  }
+
   dimension: metrics__boolean__browser_startup_abouthome_cache_shutdownwrite {
     sql: ${TABLE}.metrics.boolean.browser_startup_abouthome_cache_shutdownwrite ;;
     type: yesno
@@ -528,6 +555,33 @@ view: metrics_table {
 "
   }
 
+  dimension: metrics__boolean__devtools_shadowdom_reveal_link_clicked {
+    sql: ${TABLE}.metrics.boolean.devtools_shadowdom_reveal_link_clicked ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Devtools Shadowdom Reveal Link Clicked"
+    description: "Whether the user clicked on any \"reveal\" link. \"reveal\" links are displayed in shadow dom trees in the markup view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.shadowdom.reveal_link_clicked.
+"
+  }
+
+  dimension: metrics__boolean__devtools_shadowdom_shadow_root_displayed {
+    sql: ${TABLE}.metrics.boolean.devtools_shadowdom_shadow_root_displayed ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Devtools Shadowdom Shadow Root Displayed"
+    description: "Whether the markup view displayed any #shadow-root element in the UI. This metric was generated to correspond to the Legacy Telemetry scalar devtools.shadowdom.shadow_root_displayed.
+"
+  }
+
+  dimension: metrics__boolean__devtools_shadowdom_shadow_root_expanded {
+    sql: ${TABLE}.metrics.boolean.devtools_shadowdom_shadow_root_expanded ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Devtools Shadowdom Shadow Root Expanded"
+    description: "Whether the user expanded any #shadow-root element. This metric was generated to correspond to the Legacy Telemetry scalar devtools.shadowdom.shadow_root_expanded.
+"
+  }
+
   dimension: metrics__boolean__dom_parentprocess_private_window_used {
     sql: ${TABLE}.metrics.boolean.dom_parentprocess_private_window_used ;;
     type: yesno
@@ -563,6 +617,15 @@ view: metrics_table {
     description: "True if we failed to register with the idle service. Absent otherwise.
 Means IPC probably isn't working well.
 Child-process data will likely be absent, or incomplete.
+"
+  }
+
+  dimension: metrics__boolean__formautofill_availability {
+    sql: ${TABLE}.metrics.boolean.formautofill_availability ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Formautofill Availability"
+    description: "A boolean sent once per session to represent whether the formautofill is available in the build This metric was generated to correspond to the Legacy Telemetry scalar formautofill.availability.
 "
   }
 
@@ -965,6 +1028,69 @@ Migrated from Telemetry's `browser.engagement.active_ticks`.
 "
   }
 
+  dimension: metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_added {
+    sql: ${TABLE}.metrics.counter.browser_engagement_bookmarks_toolbar_bookmark_added ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Bookmarks Toolbar Bookmark Added"
+    description: "The count of bookmarks added to the bookmarks toolbar. This counts bookmarks created on the bookmarks toolbar and bookmarks moved to the bookmarks toolbar. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.bookmarks_toolbar_bookmark_added.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_opened {
+    sql: ${TABLE}.metrics.counter.browser_engagement_bookmarks_toolbar_bookmark_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Bookmarks Toolbar Bookmark Opened"
+    description: "The count of bookmarks opened from the Bookmarks Toolbar. This counts bookmarks opened on the toolbar and bookmarks opened from the 'symlinked' Other Bookmarks folder on the Bookmarks Toolbar. It does not count Bookmarks Toolbar bookmarks opened via the Library, Bookmarks Menu, or other UI since the goal is to measure interactions that pass through the toolbar. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.bookmarks_toolbar_bookmark_opened.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_open_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_open_event_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Tab Open Event Count"
+    description: "The count of tab open events per subsession, across all windows, after the session has been restored. This includes tab open events from private windows and from manual session restorations (i.e. after crashes and from about:home), but excludes tabs opened vertically. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_open_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_pinned_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_pinned_event_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Tab Pinned Event Count"
+    description: "The count of tab pinned events per subsession, across all windows, after the session has been restored. This includes tab pinned events from private windows. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_pinned_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_reload_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_reload_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Tab Reload Count"
+    description: "The count of tab reload events by the user after unloaded. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_reload_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_unload_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_unload_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Tab Unload Count"
+    description: "The count of tab unload events by TabUnloader due to a low-memory situation. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_unload_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_unfiltered_uri_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_unfiltered_uri_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Unfiltered Uri Count"
+    description: "The count of the total non-unique URIs visited in a subsession, not restricted to a specific protocol, including page reloads and about:* pages (other than initial pages such as about:blank, ...), after the session has been restored. This does not include background page requests and URIs from embedded pages or private browsing. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.unfiltered_uri_count.
+"
+  }
+
   dimension: metrics__counter__browser_engagement_uri_count {
     sql: ${TABLE}.metrics.counter.browser_engagement_uri_count ;;
     type: number
@@ -985,6 +1111,51 @@ Migrated from Telemetry's
     group_label: "Metrics Counter"
     group_item_label: "Browser Engagement Uri Count Normal Mode"
     description: "The count of the total non-unique http(s) URIs visited in a subsession, including page reloads, after the session has been restored. URIs on minimized or background tabs may also be counted towards this. Private browsing is not included in this count. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.total_uri_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_vertical_tab_open_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_vertical_tab_open_event_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Vertical Tab Open Event Count"
+    description: "The count of tab open events with vertical tabs enabled. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.vertical_tab_open_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_vertical_tab_pinned_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_vertical_tab_pinned_event_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Vertical Tab Pinned Event Count"
+    description: "The count of tab pinned events with vertical tabs enabled. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.vertical_tab_pinned_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_window_open_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_window_open_event_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Window Open Event Count"
+    description: "The count of browser window open events per subsession, after the session has been restored. The count includes private windows and the ones from manual session restorations (i.e. after crashes and from about:home). This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.window_open_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_ui_interaction_all_tabs_panel_dragstart_tab_event_count {
+    sql: ${TABLE}.metrics.counter.browser_ui_interaction_all_tabs_panel_dragstart_tab_event_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Ui Interaction All Tabs Panel Dragstart Tab Event Count"
+    description: "Records a count of how many times a drag event started for a tab within the All Tabs panel. This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.all_tabs_panel_dragstart_tab_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_ui_interaction_textrecognition_error {
+    sql: ${TABLE}.metrics.counter.browser_ui_interaction_textrecognition_error ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Ui Interaction Textrecognition Error"
+    description: "Recorded when text recognition in images fails for some unknown reason. This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.textrecognition_error.
 "
   }
 
@@ -1048,6 +1219,132 @@ Migrated from Telemetry's
     group_label: "Metrics Counter"
     group_item_label: "Crash Submission Success"
     description: "Number of successfull crash report submissions
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_accessible_context_menu_opened {
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_accessible_context_menu_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Accessibility Accessible Context Menu Opened"
+    description: "Number of times a context menu was opened for an accessible object in the accessibility tree. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.accessible_context_menu_opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_node_inspected_count {
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_node_inspected_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Accessibility Node Inspected Count"
+    description: "Number of times a DOM node was inspected from within the Accessibility tool. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.node_inspected_count.
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_opened_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Accessibility Opened Count"
+    description: "Number of times the DevTools Accessibility tool has been opened. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.opened_count.
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_picker_used_count {
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_picker_used_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Accessibility Picker Used Count"
+    description: "Number of times the picker tool has been used in DevTools Accessibility panel. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.picker_used_count.
+"
+  }
+
+  dimension: metrics__counter__devtools_changesview_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_changesview_opened_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Changesview Opened Count"
+    description: "Number of times the Changes panel has been opened. This metric was generated to correspond to the Legacy Telemetry scalar devtools.changesview.opened_count.
+"
+  }
+
+  dimension: metrics__counter__devtools_grid_gridinspector_opened {
+    sql: ${TABLE}.metrics.counter.devtools_grid_gridinspector_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Grid Gridinspector Opened"
+    description: "Number of times the DevTools grid inspector was opened from the grid view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.grid.gridinspector.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_inspector_node_selection_count {
+    sql: ${TABLE}.metrics.counter.devtools_inspector_node_selection_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Inspector Node Selection Count"
+    description: "Number of times a different node is marked as selected in the Inspector regardless of the cause: context menu, manual selection in markup view, etc. This metric was generated to correspond to the Legacy Telemetry scalar devtools.inspector.node_selection_count.
+"
+  }
+
+  dimension: metrics__counter__devtools_layout_flexboxhighlighter_opened {
+    sql: ${TABLE}.metrics.counter.devtools_layout_flexboxhighlighter_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Layout Flexboxhighlighter Opened"
+    description: "Number of times the DevTools flexbox highlighter was activated from the layout view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.layout.flexboxhighlighter.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_markup_flexboxhighlighter_opened {
+    sql: ${TABLE}.metrics.counter.devtools_markup_flexboxhighlighter_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Markup Flexboxhighlighter Opened"
+    description: "Number of times the DevTools flexbox highlighter was activated from the markup view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.markup.flexboxhighlighter.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_markup_gridinspector_opened {
+    sql: ${TABLE}.metrics.counter.devtools_markup_gridinspector_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Markup Gridinspector Opened"
+    description: "Number of times the DevTools grid inspector was opened from the markup view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.markup.gridinspector.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_markup_scrollable_badge_clicked {
+    sql: ${TABLE}.metrics.counter.devtools_markup_scrollable_badge_clicked ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Markup Scrollable Badge Clicked"
+    description: "Number of times the scrollable inspector badge has been clicked. This metric was generated to correspond to the Legacy Telemetry scalar devtools.markup.scrollable.badge.clicked.
+"
+  }
+
+  dimension: metrics__counter__devtools_responsive_toolbox_opened_first {
+    sql: ${TABLE}.metrics.counter.devtools_responsive_toolbox_opened_first ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Responsive Toolbox Opened First"
+    description: "Number of Responsive Design Mode opens with a toolbox already open. This metric was generated to correspond to the Legacy Telemetry scalar devtools.responsive.toolbox_opened_first.
+"
+  }
+
+  dimension: metrics__counter__devtools_rules_flexboxhighlighter_opened {
+    sql: ${TABLE}.metrics.counter.devtools_rules_flexboxhighlighter_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Rules Flexboxhighlighter Opened"
+    description: "Number of times the DevTools flexbox highlighter was activated from the rules view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.rules.flexboxhighlighter.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_rules_gridinspector_opened {
+    sql: ${TABLE}.metrics.counter.devtools_rules_gridinspector_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Rules Gridinspector Opened"
+    description: "Number of times the DevTools grid inspector was opened from the rules view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.rules.gridinspector.opened.
 "
   }
 
@@ -1240,6 +1537,42 @@ Large or rising number of clients experiencing this indicates we should
 perhaps refactor content child shutdown in FOG to try harder to register
 flush operations.
 Will likely be obsoleted by bug 1641989.
+"
+  }
+
+  dimension: metrics__counter__formautofill_addresses_detected_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_addresses_detected_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Addresses Detected Sections Count"
+    description: "Count at detection time number of address form sections. A single form can contain more than one address form section. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.addresses.detected_sections_count.
+"
+  }
+
+  dimension: metrics__counter__formautofill_addresses_submitted_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_addresses_submitted_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Addresses Submitted Sections Count"
+    description: "Count at submission time number of credit card form sections submitted. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.addresses.submitted_sections_count.
+"
+  }
+
+  dimension: metrics__counter__formautofill_credit_cards_detected_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_credit_cards_detected_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Credit Cards Detected Sections Count"
+    description: "Count at detection time number of credit card form sections. A single form can contain more than one credit card form section. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.creditCards.detected_sections_count.
+"
+  }
+
+  dimension: metrics__counter__formautofill_credit_cards_submitted_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_credit_cards_submitted_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Credit Cards Submitted Sections Count"
+    description: "Count at submission time number of credit card form sections submitted. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.creditCards.submitted_sections_count.
 "
   }
 
@@ -1460,6 +1793,24 @@ This does not include deletion-request pings.
     group_label: "Metrics Counter"
     group_item_label: "Netwerk Parent Connect Timeout"
     description: "Counts how often the parent-connect-timeout timer is necessary to clear up EarlyHintPreloader
+"
+  }
+
+  dimension: metrics__counter__network_sso_total_entra_uses {
+    sql: ${TABLE}.metrics.counter.network_sso_total_entra_uses ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Network Sso Total Entra Uses"
+    description: "Counts how often Entra SSO is used (macOS only).
+"
+  }
+
+  dimension: metrics__counter__networking_captive_portal_banner_displayed {
+    sql: ${TABLE}.metrics.counter.networking_captive_portal_banner_displayed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Captive Portal Banner Displayed"
+    description: "Number of times the captive portal banner was displayed in this session. This metric was generated to correspond to the Legacy Telemetry scalar networking.captive_portal_banner_displayed.
 "
   }
 
@@ -1760,6 +2111,15 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__script_preloader_mainthread_recompile {
+    sql: ${TABLE}.metrics.counter.script_preloader_mainthread_recompile ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Script Preloader Mainthread Recompile"
+    description: "How many times we ended up recompiling a script from the script preloader on the main thread. This metric was generated to correspond to the Legacy Telemetry scalar script.preloader.mainthread_recompile.
+"
+  }
+
   dimension: metrics__counter__sct_signature_cache_total {
     sql: ${TABLE}.metrics.counter.sct_signature_cache_total ;;
     type: number
@@ -1798,12 +2158,147 @@ of the shopping experiment.
 "
   }
 
+  dimension: metrics__counter__urlbar_abandonment_count {
+    sql: ${TABLE}.metrics.counter.urlbar_abandonment_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Abandonment Count"
+    description: "A uint recording the number of abandoned engagements in the urlbar. An abandonment occurs when the user begins using the urlbar but stops before completing the engagement. This can happen when the user clicks outside the urlbar to focus a different part of the window. It can also happen when the user switches to another window while the urlbar is focused. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.abandonment.
+"
+  }
+
+  dimension: metrics__counter__urlbar_autofill_deletion {
+    sql: ${TABLE}.metrics.counter.urlbar_autofill_deletion ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Autofill Deletion"
+    description: "A uint recording the deletion count for autofilled string in the urlbar. This occurs when the user deletes whole autofilled string by BACKSPACE or DELETE key while the autofilled string is selected. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.autofill_deletion.
+"
+  }
+
+  dimension: metrics__counter__urlbar_engagement_count {
+    sql: ${TABLE}.metrics.counter.urlbar_engagement_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Engagement Count"
+    description: "A uint recording the number of engagements the user completes in the urlbar.  An engagement occurs when the user navigates to a page using the urlbar, for example by picking a result in the urlbar panel or typing a search term or URL in the urlbar and pressing the enter key. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.engagement.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_about {
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_about ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Impression Autofill About"
+    description: "Counts how many times about-page type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_about.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_adaptive {
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_adaptive ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Impression Autofill Adaptive"
+    description: "Counts how many times adaptive history type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_adaptive.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_origin {
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_origin ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Impression Autofill Origin"
+    description: "Counts how many times origin type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_origin.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_other {
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_other ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Impression Autofill Other"
+    description: "Counts how many times other type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_other.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_url {
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_url ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Impression Autofill Url"
+    description: "Counts how many times url type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_url.
+"
+  }
+
+  dimension: metrics__counter__urlbar_persistedsearchterms_revert_by_popup_count {
+    sql: ${TABLE}.metrics.counter.urlbar_persistedsearchterms_revert_by_popup_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Persistedsearchterms Revert By Popup Count"
+    description: "The count of the number of times search terms were removed from the urlbar due to a shown PopupNotification. This event can happen when a user loads a SERP and a PopupNotification is shown, as well as when a user switches away from a tab on a SERP showing a PopupNotification and switches back to it. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.persistedsearchterms.revert_by_popup_count.
+"
+  }
+
+  dimension: metrics__counter__urlbar_persistedsearchterms_view_count {
+    sql: ${TABLE}.metrics.counter.urlbar_persistedsearchterms_view_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Persistedsearchterms View Count"
+    description: "The count of the number of times search terms persisted in the Urlbar. This gets recorded after a user loads a SERP that persists search terms, or switches back to an existing tab that should be showing the persisted search terms in the Urlbar, regardless of whether PopupNotification cleared the search terms from the Urlbar. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.persistedsearchterms.view_count.
+"
+  }
+
+  dimension: metrics__counter__urlbar_trending_block {
+    sql: ${TABLE}.metrics.counter.urlbar_trending_block ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Trending Block"
+    description: "User has blocked seeing trending results. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.trending.block.
+"
+  }
+
+  dimension: metrics__counter__urlbar_zeroprefix_abandonment {
+    sql: ${TABLE}.metrics.counter.urlbar_zeroprefix_abandonment ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Zeroprefix Abandonment"
+    description: "Counts how many times the zero-prefix urlbar results panel was abandoned. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.zeroprefix.abandonment.
+"
+  }
+
+  dimension: metrics__counter__urlbar_zeroprefix_engagement {
+    sql: ${TABLE}.metrics.counter.urlbar_zeroprefix_engagement ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Zeroprefix Engagement"
+    description: "Counts how many times a result was picked in the zero-prefix urlbar results panel. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.zeroprefix.engagement.
+"
+  }
+
+  dimension: metrics__counter__urlbar_zeroprefix_exposure {
+    sql: ${TABLE}.metrics.counter.urlbar_zeroprefix_exposure ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Zeroprefix Exposure"
+    description: "Counts how many times the zero-prefix urlbar results panel was shown to the user. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.zeroprefix.exposure.
+"
+  }
+
   dimension: metrics__counter__web_notification_insecure_context_permission_request {
     sql: ${TABLE}.metrics.counter.web_notification_insecure_context_permission_request ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Web Notification Insecure Context Permission Request"
     description: "Whether we saw a permission request from an insecure context.
+"
+  }
+
+  dimension: metrics__counter__web_push_detected_duplicated_message_ids {
+    sql: ${TABLE}.metrics.counter.web_push_detected_duplicated_message_ids ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Web Push Detected Duplicated Message Ids"
+    description: "Counts the duplicated IDs from the server. The ability to detect depends on the pref `dom.push.maxRecentMessageIDsPerSubscription`.
 "
   }
 
@@ -3081,6 +3576,13 @@ of the shopping experiment.
 "
   }
 
+  dimension: metrics__labeled_boolean__browser_ui_mirror_for_toolbar_widgets {
+    sql: ${TABLE}.metrics.labeled_boolean.browser_ui_mirror_for_toolbar_widgets ;;
+    hidden: yes
+    description: "The widgets in the toolbars. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.toolbar_widgets.
+"
+  }
+
   dimension: metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
     sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_normal_window_service_mode ;;
     hidden: yes
@@ -3099,6 +3601,13 @@ of the shopping experiment.
     sql: ${TABLE}.metrics.labeled_boolean.data_storage_migration ;;
     hidden: yes
     description: "Indicates whether or not migration was successful for each nsIDataStorage."
+  }
+
+  dimension: metrics__labeled_boolean__devtools_tool_registered {
+    sql: ${TABLE}.metrics.labeled_boolean.devtools_tool_registered ;;
+    hidden: yes
+    description: "Recorded on enable tool checkbox check/uncheck in Developer Tools options panel. Boolean stating if the tool was enabled or disabled by the user. Keyed by tool id. Current default tools with their id's are defined in https://searchfox.org/mozilla- central/source/devtools/client/definitions.js This metric was generated to correspond to the Legacy Telemetry scalar devtools.tool.registered.
+"
   }
 
   dimension: metrics__labeled_boolean__geolocation_linux_provider {
@@ -3125,6 +3634,13 @@ of the shopping experiment.
     sql: ${TABLE}.metrics.labeled_boolean.media_video_hd_hardware_decoding_support ;;
     hidden: yes
     description: "Record whether hardware decoding is supported for the specific video codec, this only records video in HD (1280*720) or higher resultion. The key is the type of video codec, eg. video/vp9. This metric was generated to correspond to the Legacy Telemetry scalar media.video_hd_hardware_decoding_support.
+"
+  }
+
+  dimension: metrics__labeled_boolean__mediadrm_decryption {
+    sql: ${TABLE}.metrics.labeled_boolean.mediadrm_decryption ;;
+    hidden: yes
+    description: "Record the statuses related with the media decryption.
 "
   }
 
@@ -3187,6 +3703,13 @@ of the shopping experiment.
     sql: ${TABLE}.metrics.labeled_boolean.widget_ime_name_on_windows_inserted_crlf ;;
     hidden: yes
     description: "Same data as ime_name_on_windows, but only collecting IME names which inserted CRLF to check whether the feature works. This metric was generated to correspond to the Legacy Telemetry scalar widget.ime_name_on_windows_inserted_crlf.
+"
+  }
+
+  dimension: metrics__labeled_boolean__widget_pointing_devices {
+    sql: ${TABLE}.metrics.labeled_boolean.widget_pointing_devices ;;
+    hidden: yes
+    description: "Whether the system has any matching pointing device for each label.
 "
   }
 
@@ -3390,6 +3913,13 @@ of the shopping experiment.
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_webextension ;;
     hidden: yes
     description: "The count URI loads triggered in a subsession from a webextension. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.webextension.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_sessionrestore_interstitial {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_sessionrestore_interstitial ;;
+    hidden: yes
+    description: "Whether we show about:sessionrestore or not. Split by key, which indicates why we showed the item or not. Specifically, 'deferred_restore' means we didn't autorestore and thus didn't show the interstitial; 'autorestore' indicates we autorestored without showing the interstitial. 'shown_old_session', 'shown_only_about_welcomeback', 'shown_many_crashes', 'shown_many_crashes_old_session' all indicate we did show the interstitial because of a crash, and the text after 'shown' indicates what secondary reason there was to show this page (as we don't show it for 'just' one crash). This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.sessionrestore_interstitial.
 "
   }
 
@@ -3666,6 +4196,20 @@ of the shopping experiment.
 "
   }
 
+  dimension: metrics__labeled_counter__browser_ui_customized_widgets {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_customized_widgets ;;
+    hidden: yes
+    description: "Records when widgets are added, removed or moved in the UI. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.customized_widgets.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_all_tabs_panel_entrypoint {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_all_tabs_panel_entrypoint ;;
+    hidden: yes
+    description: "Records a count of how many times the All Tabs Panel was opened, keyed on a string describing the entrypoint. This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.all_tabs_panel_entrypoint.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_ui_interaction_app_menu {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_app_menu ;;
     hidden: yes
@@ -3684,6 +4228,13 @@ of the shopping experiment.
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_content_context ;;
     hidden: yes
     description: "Records a count of interactions with items in the content context menu. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.content_context.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_keyboard {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_keyboard ;;
+    hidden: yes
+    description: "Records a count of interactions with keyboard shortcuts. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.keyboard.
 "
   }
 
@@ -3895,6 +4446,20 @@ of the shopping experiment.
 "
   }
 
+  dimension: metrics__labeled_counter__contextual_services_topsites_click {
+    sql: ${TABLE}.metrics.labeled_counter.contextual_services_topsites_click ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user has clicked on the sponsored TopSites on the newtab page. The key is a combination of the source and the placement of the TopSites tile (1-based). such as 'urlbar_1', 'newtab_2'. This metric was generated to correspond to the Legacy Telemetry scalar contextual.services.topsites.click.
+"
+  }
+
+  dimension: metrics__labeled_counter__contextual_services_topsites_impression {
+    sql: ${TABLE}.metrics.labeled_counter.contextual_services_topsites_impression ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user has viewed the sponsored TopSites on the newtab page. The key is a combination of the source and the placement of the TopSites tile (1-based). such as 'urlbar_1', 'newtab_2'. This metric was generated to correspond to the Legacy Telemetry scalar contextual.services.topsites.impression.
+"
+  }
+
   dimension: metrics__labeled_counter__cookie_banners_click_result {
     sql: ${TABLE}.metrics.labeled_counter.cookie_banners_click_result ;;
     hidden: yes
@@ -3962,6 +4527,69 @@ of the shopping experiment.
     sql: ${TABLE}.metrics.labeled_counter.data_storage_entries ;;
     hidden: yes
     description: "Counts the number of entries stored in each nsIDataStorage."
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_accessible_context_menu_item_activated {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_accessible_context_menu_item_activated ;;
+    hidden: yes
+    description: "Number of times a context menu item for an accessible object was activated (with mouse or keyboard) from the context menu opened in the accessibility tree. Keyed by the id of the context menu item. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.accessible_context_menu_item_activated.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_audit_activated {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_audit_activated ;;
+    hidden: yes
+    description: "Number of times accessibility audit was activated (with mouse or keyboard) from the accessibility panel's toolbar. Keyed by the audit filter type (e.g. \"CONTRAST\"). This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.audit_activated.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_select_accessible_for_node {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_select_accessible_for_node ;;
+    hidden: yes
+    description: "Number of times an accessible object was inspected from outside the Accessibility tool (navigation to Accessibility panel). Keyed by the source of user action (inspector context menu, browser context menu, etc). This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.select_accessible_for_node.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_simulation_activated {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_simulation_activated ;;
+    hidden: yes
+    description: "Number of times accessibility simulation was activated (with mouse or keyboard) from the accessibility panel's toolbar. Keyed by the simulation type (e.g. \"DEUTERANOPIA\"). This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.simulation_activated.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_current_theme {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_current_theme ;;
+    hidden: yes
+    description: "Number of times DevTools was opened, keyed by theme. This metric was generated to correspond to the Legacy Telemetry scalar devtools.current_theme.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_inspector_three_pane_enabled {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_inspector_three_pane_enabled ;;
+    hidden: yes
+    description: "Number of times the DevTools inspector was opened with the 3 pane inspector enabled, keyed by true/false. This metric was generated to correspond to the Legacy Telemetry scalar devtools.inspector.three_pane_enabled.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_responsive_open_trigger {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_responsive_open_trigger ;;
+    hidden: yes
+    description: "Number of Responsive Design Mode opens keyed by the UI entry point used. This metric was generated to correspond to the Legacy Telemetry scalar devtools.responsive.open_trigger.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_toolbox_tabs_reordered {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_toolbox_tabs_reordered ;;
+    hidden: yes
+    description: "Number of times the DevTools tab was reordered. Keyed by tab's id. This metric was generated to correspond to the Legacy Telemetry scalar devtools.toolbox.tabs_reordered.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_tooltip_shown {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_tooltip_shown ;;
+    hidden: yes
+    description: "Number of times a tooltip was shown, keyed by tooltip type. Currently supported types are \"image\", \"font-family\", \"inactive- css\", \"css-compatibility\", \"css-query-container\" and \"variable.\" This metric was generated to correspond to the Legacy Telemetry scalar devtools.tooltip.shown.
+"
   }
 
   dimension: metrics__labeled_counter__dom_parentprocess_process_launch_errors {
@@ -4271,6 +4899,13 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__labeled_counter__mozstorage_sqlitejsm_transaction_timeout {
+    sql: ${TABLE}.metrics.labeled_counter.mozstorage_sqlitejsm_transaction_timeout ;;
+    hidden: yes
+    description: "Collection of javascript modules that created a Sqlite.sys.mjs transaction taking too long and timing out. This can be used to identify and optimize those modules transactions. This metric was generated to correspond to the Legacy Telemetry scalar mozstorage.sqlitejsm_transaction_timeout.
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_early_hints {
     sql: ${TABLE}.metrics.labeled_counter.netwerk_early_hints ;;
     hidden: yes
@@ -4327,6 +4962,13 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__labeled_counter__network_cache_hit_miss_stat_per_cache_size {
+    sql: ${TABLE}.metrics.labeled_counter.network_cache_hit_miss_stat_per_cache_size ;;
+    hidden: yes
+    description: "Hit/Miss count split by cache size in file count Hit 0-5000, Miss 0-5000, Hit 5001-10000, ...
+"
+  }
+
   dimension: metrics__labeled_counter__network_cors_authorization_header {
     sql: ${TABLE}.metrics.labeled_counter.network_cors_authorization_header ;;
     hidden: yes
@@ -4345,6 +4987,13 @@ If you're unsure, please ask in
     sql: ${TABLE}.metrics.labeled_counter.network_data_size_per_type ;;
     hidden: yes
     description: "Number of KB we transferred keyed by \"contentType\"
+"
+  }
+
+  dimension: metrics__labeled_counter__network_sso_entra_success {
+    sql: ${TABLE}.metrics.labeled_counter.network_sso_entra_success ;;
+    hidden: yes
+    description: "Counts how often Entra SSO succeeded/failed (macOS only). Labels are ordered in reverse chronological relation to SSO success, meaning the labels higher up are closer to the SSO success. device_headers_missing: only device_headers is missing in the SSO cookie. prt_headers_missing: only prt_headers is missing in the SSO cookie. both_headers_missing: both prt_headers and device_headers are missing in the SSO cookie. invalid_cookie: Failed to parse SSO cookie (could be a null cookie/format is incorrect). no_credential: ASAuthorizationSingleSignOnCredential is not present broker_error: An error from Microsoft's broker. invalid_controller_setup: ASAuthorizationController is setup incorrectly.
 "
   }
 
@@ -4408,6 +5057,17 @@ If you're unsure, please ask in
     sql: ${TABLE}.metrics.labeled_counter.network_tls_early_data_negotiated ;;
     hidden: yes
     description: "Sending TLS early data was not possible, possible and used, or possible but not used.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_captive_portal_banner_display_time {
+    sql: ${TABLE}.metrics.labeled_counter.networking_captive_portal_banner_display_time ;;
+    hidden: yes
+    description: "Number of seconds the captive portal banner was displayed for, keyed by close reason:
+  \"success\" - the portal login was completed
+  \"abort\"   - the portal login was aborted (e.g. loss of network)
+  \"dismiss\" - the user dismissed the banner
+This metric was generated to correspond to the Legacy Telemetry scalar networking.captive_portal_banner_display_time.
 "
   }
 
@@ -4479,10 +5139,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_connection_close_reason {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_connection_close_reason ;;
+    hidden: yes
+    description: "Number of HTTP3 connections closed, labeled by reason.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_ecn_path_capability {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_3_ecn_path_capability ;;
     hidden: yes
     description: "Number of paths known to be ECN capable or not-capable.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_quic_frame_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_quic_frame_count ;;
+    hidden: yes
+    description: "Number of QUIC frames send and received by type.
 "
   }
 
@@ -4588,6 +5262,13 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     sql: ${TABLE}.metrics.labeled_counter.networking_http_to_https_upgrade_reason ;;
     hidden: yes
     description: "Whether a top-level HTTP request gets upgraded to HTTPS and the reason for it
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_https_record_state {
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_record_state ;;
+    hidden: yes
+    description: "Gather the outcome of checking if a HTTPS record can be used: - \"invalid\" - \"succeeded\" - \"unmatched_cname\" - \"all_excluded\" - \"no_default_alpn\" - \"others\"
 "
   }
 
@@ -5011,6 +5692,370 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_about {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_about ;;
+    hidden: yes
+    description: "Counts how many times an about-page autofill result (e.g., \"about:config\") was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_about.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_adaptive {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_adaptive ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_adaptive.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_origin {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_origin ;;
+    hidden: yes
+    description: "Counts how many times an origin (domain) autofill result (e.g., \"mozilla.org\") was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_origin.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_other {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_other ;;
+    hidden: yes
+    description: "Counts how many times some other type of autofill result that does not have a specific keyed scalar was picked at a given index. This is a fallback that is used when the code is not properly setting a specific autofill type, and it should not normally be used. If it appears in the data, it means we need to investigate and fix the code that is not properly setting a specific autofill type. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_other.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_url {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_url ;;
+    hidden: yes
+    description: "Counts how many times a URL autofill result (e.g., \"mozilla.org/firefox\") was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_url.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_bookmark {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_bookmark ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.bookmark.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_bookmark_adaptive {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_bookmark_adaptive ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.bookmark_adaptive.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_clipboard {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_clipboard ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.clipboard.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_dynamic {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_dynamic ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.dynamic.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_dynamic_wikipedia {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_dynamic_wikipedia ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.dynamic_wikipedia.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_extension {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_extension ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.extension.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_formhistory {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_formhistory ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.formhistory.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_history {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_history ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.history.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_history_adaptive {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_history_adaptive ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.history_adaptive.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_keyword {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_keyword ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.keyword.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_navigational {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_navigational ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.navigational.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_quickaction {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_quickaction ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.quickaction.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_quicksuggest {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_quicksuggest ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.quicksuggest.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_recent_search {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_recent_search ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.recent_search.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_remotetab {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_remotetab ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.remotetab.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_restrict_keyword_actions {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_restrict_keyword_actions ;;
+    hidden: yes
+    description: "Counts how many times this restrict actions result was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.restrict_keyword_actions.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_restrict_keyword_bookmarks {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_restrict_keyword_bookmarks ;;
+    hidden: yes
+    description: "Counts how many times this restrict bookmarks result was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.restrict_keyword_bookmarks.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_restrict_keyword_history {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_restrict_keyword_history ;;
+    hidden: yes
+    description: "Counts how many times this restrict history result was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.restrict_keyword_history.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_restrict_keyword_tabs {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_restrict_keyword_tabs ;;
+    hidden: yes
+    description: "Counts how many times this restrict tabs result was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.restrict_keyword_tabs.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchengine {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchengine ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchengine.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_bookmarkmenu {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_bookmarkmenu ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode from the Search Bookmarks menu item in the Library menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.bookmarkmenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_handoff {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_handoff ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by being handed off from the search bar on the new tab page. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.handoff.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_historymenu {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_historymenu ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode from the Search History menu item in a History menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.historymenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_keywordoffer {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_keywordoffer ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a keyword offer result. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.keywordoffer.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_oneoff {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_oneoff ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a one-off. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.oneoff.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_other {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_other ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode from an unknown entry point. If values appear for this probe in Telemetry, we should review the entry points to search mode. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.other.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_searchbutton {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_searchbutton ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode by unified search button. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.searchbutton.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_shortcut {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_shortcut ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by pressing a keyboard shortcut. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.shortcut.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_tabmenu {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_tabmenu ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting the Search Tabs menu item in the Tab Overflow menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.tabmenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_tabtosearch {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_tabtosearch ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a tab-to-search result. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.tabtosearch.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_tabtosearch_onboard {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_tabtosearch_onboard ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a tab-to-search onboarding result. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.tabtosearch_onboard.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_topsites_newtab {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_topsites_newtab ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a search shortcut Top Site on the New Tab Page. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.topsites_newtab.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_topsites_urlbar {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_topsites_urlbar ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a search shortcut Top Site in the Urlbar. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.topsites_urlbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_touchbar {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_touchbar ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a search shortcut on the macOS Touch Bar. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.touchbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_typed {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_typed ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by typing an alias. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.typed.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchsuggestion {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchsuggestion ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchsuggestion.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchsuggestion_rich {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchsuggestion_rich ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchsuggestion_rich.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_switchtab {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_switchtab ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.switchtab.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_tabtosearch {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_tabtosearch ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.tabtosearch.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_tip {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_tip ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.tip.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_topsite {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_topsite ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.topsite.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_trending {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_trending ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.trending.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_trending_rich {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_trending_rich ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.trending_rich.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_unknown {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_unknown ;;
+    hidden: yes
+    description: "Counts how many times an unknown result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.unknown.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_visiturl {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_visiturl ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.visiturl.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_weather {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_weather ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.weather.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_quickaction_picked {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_quickaction_picked ;;
+    hidden: yes
+    description: "Counts how many times quickaction results were selected. The key is the in the form \"actionkey-N\" where N is the number of characters the user typed to be shown the action. This metric was generated to correspond to the Legacy Telemetry scalar quickaction.picked.
+"
+  }
+
   dimension: metrics__labeled_counter__urlbar_searchmode_bookmarkmenu {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_bookmarkmenu ;;
     hidden: yes
@@ -5116,6 +6161,27 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__labeled_counter__urlbar_tabtosearch_impressions {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_tabtosearch_impressions ;;
+    hidden: yes
+    description: "A keyed uint recording how many times non-onboarding tab-to-search results are shown in the Urlbar for a particular search engine. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.tabtosearch.impressions.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_tabtosearch_impressions_onboarding {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_tabtosearch_impressions_onboarding ;;
+    hidden: yes
+    description: "A keyed uint recording how many times onboarding tab-to-search results are shown in the Urlbar for a particular search engine. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.tabtosearch.impressions_onboarding.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_tips {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_tips ;;
+    hidden: yes
+    description: "A keyed uint recording how many times particular tips are shown in the Urlbar and how often their confirm and help buttons are pressed. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.tips.
+"
+  }
+
   dimension: metrics__labeled_counter__web_notification_permission_origin {
     sql: ${TABLE}.metrics.labeled_counter.web_notification_permission_origin ;;
     hidden: yes
@@ -5134,6 +6200,20 @@ success - search service successfully initialized.
     sql: ${TABLE}.metrics.labeled_counter.web_notification_show_origin ;;
     hidden: yes
     description: "The category of the origin that calls new Notification/showNotification().
+"
+  }
+
+  dimension: metrics__labeled_counter__web_push_content_encoding {
+    sql: ${TABLE}.metrics.labeled_counter.web_push_content_encoding ;;
+    hidden: yes
+    description: "Which content encoding is being used for push.
+"
+  }
+
+  dimension: metrics__labeled_counter__web_push_error_code {
+    sql: ${TABLE}.metrics.labeled_counter.web_push_error_code ;;
+    hidden: yes
+    description: "The code indicating why the push message couldn't be processed.
 "
   }
 
@@ -5198,10 +6278,38 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.network_cache_hit_rate_per_cache_size ;;
+    hidden: yes
+    description: "Hit rate for a specific cache size in file count. The hit rate is split into 20 buckets. The key is the cacheSize (20 buckets) and the value is between 0 and 100.
+"
+  }
+
   dimension: metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio {
     sql: ${TABLE}.metrics.labeled_custom_distribution.networking_http_3_ecn_ce_ect0_ratio ;;
     hidden: yes
     description: "HTTP3: ECN CE to ECT0 ratio (multiply by 10000).
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.quotamanager_initialize_repository_number_of_iterations ;;
+    hidden: yes
+    description: "This metric logs the count of directory entries iterated within the QuotaManager::InitializeRepository function for each repository type. Each instance of this metric is labeled with one of three repository types: \"persistent\", \"temporary\" or \"default\" (there's also \"private\" repository but that should never be iterated by the function). The main purpose is to track and analyze iteration counts during the initialization process of each repository type, helping to identify performance trends or potential inefficiencies across these repositories. This can provide insight into the impacts of specific code changes, including potential optimizations or regressions.
+"
+  }
+
+  dimension: metrics__labeled_quantity__browser_searchinit_engine_invalid_webextension {
+    sql: ${TABLE}.metrics.labeled_quantity.browser_searchinit_engine_invalid_webextension ;;
+    hidden: yes
+    description: "Records the WebExtension ID of a search engine where the WebExtension is not installed (= 1), disabled (= 2), search engine no longer specified (= 4), a different name (= 5), where the submission URL is different between the search engine and the WebExtension (= 6). The value '3' has been replaced by '6' to distinguish newer entries. This metric was generated to correspond to the Legacy Telemetry scalar browser.searchinit.engine_invalid_webextension.
+"
+  }
+
+  dimension: metrics__labeled_quantity__normandy_recipe_freshness {
+    sql: ${TABLE}.metrics.labeled_quantity.normandy_recipe_freshness ;;
+    hidden: yes
+    description: "For each recipe ID seen by the Normandy client, its last_modified. This metric was generated to correspond to the Legacy Telemetry scalar normandy.recipe_freshness.
 "
   }
 
@@ -5223,6 +6331,20 @@ success - search service successfully initialized.
     sql: ${TABLE}.metrics.labeled_timing_distribution.netwerk_http3_0rtt_state_duration ;;
     hidden: yes
     description: "The time a connection was in the 0-RTT state
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse_idle_connection {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.netwerk_http3_time_to_reuse_idle_connection ;;
+    hidden: yes
+    description: "The time to reuse an idle connection in HTTP3 (ms); keyed by the transaction reusing an idle connection has succeeded or failed
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__network_http3_avg_read_interval {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.network_http3_avg_read_interval ;;
+    hidden: yes
+    description: "The average time between read operations in a HTTP/3 connection, keyed by the server header
 "
   }
 
@@ -5605,6 +6727,15 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__quantity__bounce_tracking_protection_mode {
+    sql: ${TABLE}.metrics.quantity.bounce_tracking_protection_mode ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Bounce Tracking Protection Mode"
+    description: "Records the pref value of privacy.bounceTrackingProtection.mode. Values are any of nsIBounceTrackingProtection#Modes.
+"
+  }
+
   dimension: metrics__quantity__browser_backup_browser_extension_data_size {
     sql: ${TABLE}.metrics.quantity.browser_backup_browser_extension_data_size ;;
     type: number
@@ -5690,6 +6821,15 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__quantity__browser_backup_location_on_device {
+    sql: ${TABLE}.metrics.quantity.browser_backup_location_on_device ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Location On Device"
+    description: "1 = the default location, 2 = a non-default location
+"
+  }
+
   dimension: metrics__quantity__browser_backup_misc_data_size {
     sql: ${TABLE}.metrics.quantity.browser_backup_misc_data_size ;;
     type: number
@@ -5762,6 +6902,51 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__quantity__browser_engagement_max_concurrent_tab_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_tab_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Tab Count"
+    description: "The count of maximum number of tabs open during a subsession, across all windows, including tabs in private windows and restored at startup. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_tab_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_max_concurrent_tab_pinned_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_tab_pinned_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Tab Pinned Count"
+    description: "The count of maximum number of pinned tabs open during a subsession. This includes private windows and the ones opened when starting the browser. Starting Firefox 85 this includes number of restored pinned tabs at startup. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_tab_pinned_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_max_concurrent_vertical_tab_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_vertical_tab_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Vertical Tab Count"
+    description: "The count of maximum number of tabs with vertical tabs enabled. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_vertical_tab_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_max_concurrent_vertical_tab_pinned_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_vertical_tab_pinned_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Vertical Tab Pinned Count"
+    description: "The count of maximum number of pinned tabs with vertical tabs enabled. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_vertical_tab_pinned_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_max_concurrent_window_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_window_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Window Count"
+    description: "The count of maximum number of browser windows open during a subsession. This includes private windows and the ones opened when starting the browser. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_window_count.
+"
+  }
+
   dimension: metrics__quantity__browser_engagement_profile_count {
     sql: ${TABLE}.metrics.quantity.browser_engagement_profile_count ;;
     type: number
@@ -5775,12 +6960,75 @@ count. Unset on other platforms.
 "
   }
 
+  dimension: metrics__quantity__browser_engagement_session_time_excluding_suspend {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_session_time_excluding_suspend ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Session Time Excluding Suspend"
+    description: "The duration of the session in milliseconds, excluding the time the device was suspended. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.session_time_excluding_suspend.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_session_time_including_suspend {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_session_time_including_suspend ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Session Time Including Suspend"
+    description: "The duration of the session in milliseconds, including the time the device was suspended. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.session_time_including_suspend.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_unique_domains_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_unique_domains_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Unique Domains Count"
+    description: "The count of the unique domains visited in a subsession, after the session has been restored. Subdomains under eTLD are aggregated after the first level (i.e. test.example.com and other.example.com are only counted once). This does not include background page requests and domains from embedded pages or private browsing. The count is limited to 100 unique domains. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.unique_domains_count.
+"
+  }
+
   dimension: metrics__quantity__browser_link_open_newwindow_restriction {
     sql: ${TABLE}.metrics.quantity.browser_link_open_newwindow_restriction ;;
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Browser Link Open Newwindow Restriction"
     description: "browser.link.open_newwindow.restriction preference value, that is one of 0, 1, or 2, where 2 is desktop default
+"
+  }
+
+  dimension: metrics__quantity__browser_searchinit_insecure_opensearch_engine_count {
+    sql: ${TABLE}.metrics.quantity.browser_searchinit_insecure_opensearch_engine_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Searchinit Insecure Opensearch Engine Count"
+    description: "Records the number of insecure (i.e., using http) OpenSearch search engines a given user has installed. This metric was generated to correspond to the Legacy Telemetry scalar browser.searchinit.insecure_opensearch_engine_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_searchinit_insecure_opensearch_update_count {
+    sql: ${TABLE}.metrics.quantity.browser_searchinit_insecure_opensearch_update_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Searchinit Insecure Opensearch Update Count"
+    description: "Records the number of OpenSearch search engines with insecure updates enabled (i.e., using http) a given user has installed. This metric was generated to correspond to the Legacy Telemetry scalar browser.searchinit.insecure_opensearch_update_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_searchinit_secure_opensearch_engine_count {
+    sql: ${TABLE}.metrics.quantity.browser_searchinit_secure_opensearch_engine_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Searchinit Secure Opensearch Engine Count"
+    description: "Records the number of secure (i.e., using https) OpenSearch search engines a given user has installed. This metric was generated to correspond to the Legacy Telemetry scalar browser.searchinit.secure_opensearch_engine_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_searchinit_secure_opensearch_update_count {
+    sql: ${TABLE}.metrics.quantity.browser_searchinit_secure_opensearch_update_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Searchinit Secure Opensearch Update Count"
+    description: "Records the number of OpenSearch search engines with secure updates enabled (i.e., using https) a given user has installed. This metric was generated to correspond to the Legacy Telemetry scalar browser.searchinit.secure_opensearch_update_count.
 "
   }
 
@@ -5792,6 +7040,15 @@ count. Unset on other platforms.
     description: "How the about:home startup cache functioned on startup.
 0: Result value was never set (error case) 1: Cache did not exist 2: Cache page stream was corrupt / inaccessible 3: Cache script stream was corrupt / inaccessible 4: Cache was invalidated by a version bump 5: Cache was valid, but read too late to be useful. 6: Cache was valid and used. 7: Cache is disabled. 8: User did not load about:home on its own by default. 9: Cache is disabled because about:newtab preloading is disabled.
 This metric was generated to correspond to the Legacy Telemetry scalar browser.startup.abouthome_cache_result.
+"
+  }
+
+  dimension: metrics__quantity__browser_timings_last_shutdown {
+    sql: ${TABLE}.metrics.quantity.browser_timings_last_shutdown ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Timings Last Shutdown"
+    description: "The time, in milliseconds, it took to complete the last shutdown. On successful shutdown, Telemetry saves this to disk into Telemetry.ShutdownTime.txt. On the next startup this is loaded and recorded. This metric was generated to correspond to the Legacy Telemetry scalar browser.timings.last_shutdown.
 "
   }
 
@@ -5902,6 +7159,15 @@ API for the purposes of Validation (hence GVSV).
 "
   }
 
+  dimension: metrics__quantity__formautofill_addresses_autofill_profiles_count {
+    sql: ${TABLE}.metrics.quantity.formautofill_addresses_autofill_profiles_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Formautofill Addresses Autofill Profiles Count"
+    description: "Count at store time how many address autofill profiles user has. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.addresses.autofill_profiles_count.
+"
+  }
+
   dimension: metrics__quantity__formautofill_creditcards_autofill_profiles_count {
     sql: ${TABLE}.metrics.quantity.formautofill_creditcards_autofill_profiles_count ;;
     type: number
@@ -5992,6 +7258,24 @@ API for the purposes of Validation (hence GVSV).
 "
   }
 
+  dimension: metrics__quantity__networking_loading_certs_task {
+    sql: ${TABLE}.metrics.quantity.networking_loading_certs_task ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Networking Loading Certs Task"
+    description: "The time in milliseconds to load any external certificates. This occurs off of the main-thread, but can block main-thread operations. This metric was generated to correspond to the Legacy Telemetry scalar networking.loading_certs_task.
+"
+  }
+
+  dimension: metrics__quantity__networking_nss_initialization {
+    sql: ${TABLE}.metrics.quantity.networking_nss_initialization ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Networking Nss Initialization"
+    description: "The time in milliseconds to initialize the NSS component in the parent process. This metric was generated to correspond to the Legacy Telemetry scalar networking.nss_initialization.
+"
+  }
+
   dimension: metrics__quantity__pictureinpicture_most_concurrent_players {
     sql: ${TABLE}.metrics.quantity.pictureinpicture_most_concurrent_players ;;
     type: number
@@ -6045,6 +7329,33 @@ API for the purposes of Validation (hence GVSV).
 "
   }
 
+  dimension: metrics__quantity__security_global_privacy_control_enabled {
+    sql: ${TABLE}.metrics.quantity.security_global_privacy_control_enabled ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Security Global Privacy Control Enabled"
+    description: "Measures user retention of the Global Privacy Control. 0 = never enabled, 1 = enabled, 2 = disabled (but was enabled) This metric was generated to correspond to the Legacy Telemetry scalar security.global_privacy_control_enabled.
+"
+  }
+
+  dimension: metrics__quantity__security_https_only_mode_enabled {
+    sql: ${TABLE}.metrics.quantity.security_https_only_mode_enabled ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Security Https Only Mode Enabled"
+    description: "Measures user retention of the HTTPS-Only Mode. 0 = never enabled, 1 = enabled, 2 = disabled (but was enabled) This metric was generated to correspond to the Legacy Telemetry scalar security.https_only_mode_enabled.
+"
+  }
+
+  dimension: metrics__quantity__security_https_only_mode_enabled_pbm {
+    sql: ${TABLE}.metrics.quantity.security_https_only_mode_enabled_pbm ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Security Https Only Mode Enabled Pbm"
+    description: "Measures user retention of the HTTPS-Only Mode in Private Browsing. 0 = https-only never enabled in PBM, 1 = https-only enabled in PBM, 2 = https-only disabled in PBM (but was enabled) This metric was generated to correspond to the Legacy Telemetry scalar security.https_only_mode_enabled_pbm.
+"
+  }
+
   dimension: metrics__quantity__sidebar_width {
     sql: ${TABLE}.metrics.quantity.sidebar_width ;;
     type: number
@@ -6069,6 +7380,33 @@ API for the purposes of Validation (hence GVSV).
     group_label: "Metrics Quantity"
     group_item_label: "Startup Seconds Since Last Os Restart"
     description: "The time in seconds between the first browser window loading, and the time the OS started. This can give us an indication of whether starting the browser may have been the first thing the user did after starting their computer. This metric was generated to correspond to the Legacy Telemetry scalar startup.seconds_since_last_os_restart.
+"
+  }
+
+  dimension: metrics__quantity__timestamps_about_home_topsites_first_paint {
+    sql: ${TABLE}.metrics.quantity.timestamps_about_home_topsites_first_paint ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Timestamps About Home Topsites First Paint"
+    description: "Record the timestamp of when the first about:home's Topsites are painted. Only records if about:home is set as the default homepage, and if sessions are not being restored by default. This metric was generated to correspond to the Legacy Telemetry scalar timestamps.about_home_topsites_first_paint.
+"
+  }
+
+  dimension: metrics__quantity__timestamps_first_paint {
+    sql: ${TABLE}.metrics.quantity.timestamps_first_paint ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Timestamps First Paint"
+    description: "Record the timestamp of the first content window paint, in milliseconds since process start. This metric was generated to correspond to the Legacy Telemetry scalar timestamps.first_paint.
+"
+  }
+
+  dimension: metrics__quantity__timestamps_first_paint_two {
+    sql: ${TABLE}.metrics.quantity.timestamps_first_paint_two ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Timestamps First Paint Two"
+    description: "Record the timestamp of the first main window paint, in milliseconds since process start. Intended to replace first_paint since first_paint is broken. This metric was generated to correspond to the Legacy Telemetry scalar timestamps.first_paint_two.
 "
   }
 
@@ -10154,6 +11492,66 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.bucket_count ;;
     type: number
@@ -10574,6 +11972,66 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.bucket_count ;;
     type: number
@@ -10751,6 +12209,66 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__network_cache_hit_time__values {
     sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.values ;;
     hidden: yes
   }
 
@@ -18066,6 +19584,18 @@ view: metrics_table__metrics__labeled_boolean__a11y_theme {
   }
 }
 
+view: metrics_table__metrics__labeled_boolean__browser_ui_mirror_for_toolbar_widgets {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics_table__metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -18091,6 +19621,18 @@ view: metrics_table__metrics__labeled_boolean__cookie_banners_private_window_ser
 }
 
 view: metrics_table__metrics__labeled_boolean__data_storage_migration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__devtools_tool_registered {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -18139,6 +19681,18 @@ view: metrics_table__metrics__labeled_boolean__media_video_hardware_decoding_sup
 }
 
 view: metrics_table__metrics__labeled_boolean__media_video_hd_hardware_decoding_support {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__mediadrm_decryption {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -18258,6 +19812,57 @@ view: metrics_table__metrics__labeled_boolean__widget_ime_name_on_windows_insert
   }
 }
 
+view: metrics_table__metrics__labeled_boolean__widget_pointing_devices {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -18286,6 +19891,69 @@ view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn
 }
 
 view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__browser_searchinit_engine_invalid_webextension {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__normandy_recipe_freshness {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -18389,6 +20057,164 @@ view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_0rtt_st
 }
 
 view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse_idle_connection {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse_idle_connection__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http3_avg_read_interval {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http3_avg_read_interval__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -19970,6 +21796,18 @@ view: metrics_table__metrics__timing_distribution__javascript_gc_total_time__val
   }
 }
 
+view: metrics_table__metrics__timing_distribution__javascript_ion_compile_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__javascript_pageload_baseline_compile_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -20054,6 +21892,18 @@ view: metrics_table__metrics__timing_distribution__javascript_pageload_xdr_encod
   }
 }
 
+view: metrics_table__metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__ls_preparedatastore_processing_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -20079,6 +21929,18 @@ view: metrics_table__metrics__timing_distribution__ls_preparelsdatabase_processi
 }
 
 view: metrics_table__metrics__timing_distribution__network_cache_hit_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_cache_miss_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

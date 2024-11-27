@@ -371,6 +371,33 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__deletion_request_context_id {
+    sql: ${TABLE}.metrics.string.deletion_request_context_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Deletion Request Context Id"
+    description: "An identifier to identify users for Contextual Services user interaction pings. This metric was generated to correspond to the Legacy Telemetry scalar deletion.request.context_id.
+"
+  }
+
+  dimension: metrics__string__deletion_request_impression_id {
+    sql: ${TABLE}.metrics.string.deletion_request_impression_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Deletion Request Impression Id"
+    description: "An identifier used by user interaction pings in Pocket/newtab and Messaging System. This metric was generated to correspond to the Legacy Telemetry scalar deletion.request.impression_id.
+"
+  }
+
+  dimension: metrics__string__deletion_request_sync_device_id {
+    sql: ${TABLE}.metrics.string.deletion_request_sync_device_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Deletion Request Sync Device Id"
+    description: "An identifier used by sync ping, to identify the current Firefox profile for a specific Account. This metric was generated to correspond to the Legacy Telemetry scalar deletion.request.sync_device_id.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string

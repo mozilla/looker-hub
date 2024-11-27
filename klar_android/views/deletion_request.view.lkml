@@ -42,6 +42,24 @@ view: deletion_request {
 "
   }
 
+  dimension: metrics__string__deletion_request_sync_device_id {
+    label: "Deletion Request Sync Device Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.deletion_request_sync_device_id ;;
+    type: string
+    group_label: "Deletion Request"
+    group_item_label: "Sync Device Id"
+
+    link: {
+      label: "Glean Dictionary reference for Deletion Request Sync Device Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/deletion_request_sync_device_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An identifier used by sync ping, to identify the current Firefox profile for a specific Account. This metric was generated to correspond to the Legacy Telemetry scalar deletion.request.sync_device_id.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation Id"
     hidden: no

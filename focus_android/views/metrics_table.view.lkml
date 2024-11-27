@@ -382,6 +382,27 @@ view: metrics_table {
     group_item_label: "Cookie Banners Service Detect Only"
   }
 
+  dimension: metrics__boolean__devtools_shadowdom_reveal_link_clicked {
+    sql: ${TABLE}.metrics.boolean.devtools_shadowdom_reveal_link_clicked ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Devtools Shadowdom Reveal Link Clicked"
+  }
+
+  dimension: metrics__boolean__devtools_shadowdom_shadow_root_displayed {
+    sql: ${TABLE}.metrics.boolean.devtools_shadowdom_shadow_root_displayed ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Devtools Shadowdom Shadow Root Displayed"
+  }
+
+  dimension: metrics__boolean__devtools_shadowdom_shadow_root_expanded {
+    sql: ${TABLE}.metrics.boolean.devtools_shadowdom_shadow_root_expanded ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Devtools Shadowdom Shadow Root Expanded"
+  }
+
   dimension: metrics__boolean__dom_parentprocess_private_window_used {
     sql: ${TABLE}.metrics.boolean.dom_parentprocess_private_window_used ;;
     type: yesno
@@ -408,6 +429,13 @@ view: metrics_table {
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Fog Failed Idle Registration"
+  }
+
+  dimension: metrics__boolean__formautofill_availability {
+    sql: ${TABLE}.metrics.boolean.formautofill_availability ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Formautofill Availability"
   }
 
   dimension: metrics__boolean__gfx_os_compositor {
@@ -564,6 +592,13 @@ view: metrics_table {
     group_item_label: "Tracking Protection Has Social Blocked"
   }
 
+  dimension: metrics__boolean__widget_dark_mode {
+    sql: ${TABLE}.metrics.boolean.widget_dark_mode ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Widget Dark Mode"
+  }
+
   dimension: metrics__counter__apz_scrollwheel_overshoot {
     sql: ${TABLE}.metrics.counter.apz_scrollwheel_overshoot ;;
     type: number
@@ -606,6 +641,20 @@ view: metrics_table {
     group_item_label: "Bounce Tracking Protection Purge Count Classified Tracker"
   }
 
+  dimension: metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_added {
+    sql: ${TABLE}.metrics.counter.browser_engagement_bookmarks_toolbar_bookmark_added ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Bookmarks Toolbar Bookmark Added"
+  }
+
+  dimension: metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_opened {
+    sql: ${TABLE}.metrics.counter.browser_engagement_bookmarks_toolbar_bookmark_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Bookmarks Toolbar Bookmark Opened"
+  }
+
   dimension: metrics__counter__browser_report_site_issue_counter {
     sql: ${TABLE}.metrics.counter.browser_report_site_issue_counter ;;
     type: number
@@ -646,6 +695,104 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Cookie Banners Cookie Injection Fail"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_accessible_context_menu_opened {
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_accessible_context_menu_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Accessibility Accessible Context Menu Opened"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_node_inspected_count {
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_node_inspected_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Accessibility Node Inspected Count"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_opened_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Accessibility Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_picker_used_count {
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_picker_used_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Accessibility Picker Used Count"
+  }
+
+  dimension: metrics__counter__devtools_changesview_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_changesview_opened_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Changesview Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_grid_gridinspector_opened {
+    sql: ${TABLE}.metrics.counter.devtools_grid_gridinspector_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Grid Gridinspector Opened"
+  }
+
+  dimension: metrics__counter__devtools_inspector_node_selection_count {
+    sql: ${TABLE}.metrics.counter.devtools_inspector_node_selection_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Inspector Node Selection Count"
+  }
+
+  dimension: metrics__counter__devtools_layout_flexboxhighlighter_opened {
+    sql: ${TABLE}.metrics.counter.devtools_layout_flexboxhighlighter_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Layout Flexboxhighlighter Opened"
+  }
+
+  dimension: metrics__counter__devtools_markup_flexboxhighlighter_opened {
+    sql: ${TABLE}.metrics.counter.devtools_markup_flexboxhighlighter_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Markup Flexboxhighlighter Opened"
+  }
+
+  dimension: metrics__counter__devtools_markup_gridinspector_opened {
+    sql: ${TABLE}.metrics.counter.devtools_markup_gridinspector_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Markup Gridinspector Opened"
+  }
+
+  dimension: metrics__counter__devtools_markup_scrollable_badge_clicked {
+    sql: ${TABLE}.metrics.counter.devtools_markup_scrollable_badge_clicked ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Markup Scrollable Badge Clicked"
+  }
+
+  dimension: metrics__counter__devtools_responsive_toolbox_opened_first {
+    sql: ${TABLE}.metrics.counter.devtools_responsive_toolbox_opened_first ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Responsive Toolbox Opened First"
+  }
+
+  dimension: metrics__counter__devtools_rules_flexboxhighlighter_opened {
+    sql: ${TABLE}.metrics.counter.devtools_rules_flexboxhighlighter_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Rules Flexboxhighlighter Opened"
+  }
+
+  dimension: metrics__counter__devtools_rules_gridinspector_opened {
+    sql: ${TABLE}.metrics.counter.devtools_rules_gridinspector_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Rules Gridinspector Opened"
   }
 
   dimension: metrics__counter__dom_contentprocess_build_id_mismatch {
@@ -779,6 +926,34 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Fog Ipc Shutdown Registration Failures"
+  }
+
+  dimension: metrics__counter__formautofill_addresses_detected_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_addresses_detected_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Addresses Detected Sections Count"
+  }
+
+  dimension: metrics__counter__formautofill_addresses_submitted_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_addresses_submitted_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Addresses Submitted Sections Count"
+  }
+
+  dimension: metrics__counter__formautofill_credit_cards_detected_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_credit_cards_detected_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Credit Cards Detected Sections Count"
+  }
+
+  dimension: metrics__counter__formautofill_credit_cards_submitted_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_credit_cards_submitted_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Credit Cards Submitted Sections Count"
   }
 
   dimension: metrics__counter__gfx_skipped_composites {
@@ -933,6 +1108,20 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Netwerk Parent Connect Timeout"
+  }
+
+  dimension: metrics__counter__network_sso_total_entra_uses {
+    sql: ${TABLE}.metrics.counter.network_sso_total_entra_uses ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Network Sso Total Entra Uses"
+  }
+
+  dimension: metrics__counter__networking_captive_portal_banner_displayed {
+    sql: ${TABLE}.metrics.counter.networking_captive_portal_banner_displayed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Captive Portal Banner Displayed"
   }
 
   dimension: metrics__counter__networking_cookie_count_invalid_first_party_partitioned_in_db {
@@ -1124,6 +1313,13 @@ view: metrics_table {
     group_item_label: "Rtcrtpsender Count Setparameters Compat"
   }
 
+  dimension: metrics__counter__script_preloader_mainthread_recompile {
+    sql: ${TABLE}.metrics.counter.script_preloader_mainthread_recompile ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Script Preloader Mainthread Recompile"
+  }
+
   dimension: metrics__counter__sct_signature_cache_total {
     sql: ${TABLE}.metrics.counter.sct_signature_cache_total ;;
     type: number
@@ -1185,6 +1381,13 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Web Notification Insecure Context Permission Request"
+  }
+
+  dimension: metrics__counter__web_push_detected_duplicated_message_ids {
+    sql: ${TABLE}.metrics.counter.web_push_detected_duplicated_message_ids ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Web Push Detected Duplicated Message Ids"
   }
 
   dimension: metrics__counter__webauthn_create_failure {
@@ -2419,6 +2622,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_boolean__devtools_tool_registered {
+    sql: ${TABLE}.metrics.labeled_boolean.devtools_tool_registered ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_boolean__geolocation_linux_provider {
     sql: ${TABLE}.metrics.labeled_boolean.geolocation_linux_provider ;;
     hidden: yes
@@ -2439,6 +2647,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_boolean__mediadrm_decryption {
+    sql: ${TABLE}.metrics.labeled_boolean.mediadrm_decryption ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_boolean__oskeystore_self_test {
     sql: ${TABLE}.metrics.labeled_boolean.oskeystore_self_test ;;
     hidden: yes
@@ -2446,6 +2659,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_boolean__pdfjs_image_alt_text_edit {
     sql: ${TABLE}.metrics.labeled_boolean.pdfjs_image_alt_text_edit ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_boolean__widget_pointing_devices {
+    sql: ${TABLE}.metrics.labeled_boolean.widget_pointing_devices ;;
     hidden: yes
   }
 
@@ -2569,6 +2787,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__browser_ui_interaction_keyboard {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_keyboard ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__cert_compression_failures {
     sql: ${TABLE}.metrics.labeled_counter.cert_compression_failures ;;
     hidden: yes
@@ -2646,6 +2869,51 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__data_storage_entries {
     sql: ${TABLE}.metrics.labeled_counter.data_storage_entries ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_accessible_context_menu_item_activated {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_accessible_context_menu_item_activated ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_audit_activated {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_audit_activated ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_select_accessible_for_node {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_select_accessible_for_node ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_simulation_activated {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_simulation_activated ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__devtools_current_theme {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_current_theme ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__devtools_inspector_three_pane_enabled {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_inspector_three_pane_enabled ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__devtools_responsive_open_trigger {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_responsive_open_trigger ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__devtools_toolbox_tabs_reordered {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_toolbox_tabs_reordered ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__devtools_tooltip_shown {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_tooltip_shown ;;
     hidden: yes
   }
 
@@ -2864,6 +3132,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__network_cache_hit_miss_stat_per_cache_size {
+    sql: ${TABLE}.metrics.labeled_counter.network_cache_hit_miss_stat_per_cache_size ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__network_cors_authorization_header {
     sql: ${TABLE}.metrics.labeled_counter.network_cors_authorization_header ;;
     hidden: yes
@@ -2876,6 +3149,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__network_data_size_per_type {
     sql: ${TABLE}.metrics.labeled_counter.network_data_size_per_type ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__network_sso_entra_success {
+    sql: ${TABLE}.metrics.labeled_counter.network_sso_entra_success ;;
     hidden: yes
   }
 
@@ -2924,6 +3202,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_captive_portal_banner_display_time {
+    sql: ${TABLE}.metrics.labeled_counter.networking_captive_portal_banner_display_time ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
     sql: ${TABLE}.metrics.labeled_counter.networking_cookie_timestamp_fixed_count ;;
     hidden: yes
@@ -2949,8 +3232,18 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_connection_close_reason {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_connection_close_reason ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_ecn_path_capability {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_3_ecn_path_capability ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_quic_frame_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_quic_frame_count ;;
     hidden: yes
   }
 
@@ -3026,6 +3319,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__networking_http_to_https_upgrade_reason {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_to_https_upgrade_reason ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_https_record_state {
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_record_state ;;
     hidden: yes
   }
 
@@ -3274,6 +3572,16 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__web_push_content_encoding {
+    sql: ${TABLE}.metrics.labeled_counter.web_push_content_encoding ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__web_push_error_code {
+    sql: ${TABLE}.metrics.labeled_counter.web_push_error_code ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__webauthn_create_authenticator_attachment {
     sql: ${TABLE}.metrics.labeled_counter.webauthn_create_authenticator_attachment ;;
     hidden: yes
@@ -3319,8 +3627,23 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.network_cache_hit_rate_per_cache_size ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio {
     sql: ${TABLE}.metrics.labeled_custom_distribution.networking_http_3_ecn_ce_ect0_ratio ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.quotamanager_initialize_repository_number_of_iterations ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_quantity__normandy_recipe_freshness {
+    sql: ${TABLE}.metrics.labeled_quantity.normandy_recipe_freshness ;;
     hidden: yes
   }
 
@@ -3331,6 +3654,16 @@ view: metrics_table {
 
   dimension: metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration {
     sql: ${TABLE}.metrics.labeled_timing_distribution.netwerk_http3_0rtt_state_duration ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse_idle_connection {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.netwerk_http3_time_to_reuse_idle_connection ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__network_http3_avg_read_interval {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.network_http3_avg_read_interval ;;
     hidden: yes
   }
 
@@ -3616,6 +3949,13 @@ view: metrics_table {
     group_item_label: "A11Y Hcm Foreground"
   }
 
+  dimension: metrics__quantity__bounce_tracking_protection_mode {
+    sql: ${TABLE}.metrics.quantity.bounce_tracking_protection_mode ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Bounce Tracking Protection Mode"
+  }
+
   dimension: metrics__quantity__cert_verifier_trust_obj_count {
     sql: ${TABLE}.metrics.quantity.cert_verifier_trust_obj_count ;;
     type: number
@@ -3693,6 +4033,13 @@ view: metrics_table {
     group_item_label: "Fog Validation Gvsv Primary Width"
   }
 
+  dimension: metrics__quantity__formautofill_addresses_autofill_profiles_count {
+    sql: ${TABLE}.metrics.quantity.formautofill_addresses_autofill_profiles_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Formautofill Addresses Autofill Profiles Count"
+  }
+
   dimension: metrics__quantity__formautofill_creditcards_autofill_profiles_count {
     sql: ${TABLE}.metrics.quantity.formautofill_creditcards_autofill_profiles_count ;;
     type: number
@@ -3756,6 +4103,20 @@ view: metrics_table {
     group_item_label: "Networking Https Rr Prefs Usage"
   }
 
+  dimension: metrics__quantity__networking_loading_certs_task {
+    sql: ${TABLE}.metrics.quantity.networking_loading_certs_task ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Networking Loading Certs Task"
+  }
+
+  dimension: metrics__quantity__networking_nss_initialization {
+    sql: ${TABLE}.metrics.quantity.networking_nss_initialization ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Networking Nss Initialization"
+  }
+
   dimension: metrics__quantity__pkcs11_third_party_modules_loaded {
     sql: ${TABLE}.metrics.quantity.pkcs11_third_party_modules_loaded ;;
     type: number
@@ -3789,6 +4150,20 @@ view: metrics_table {
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Startup Profile Count"
+  }
+
+  dimension: metrics__quantity__timestamps_first_paint {
+    sql: ${TABLE}.metrics.quantity.timestamps_first_paint ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Timestamps First Paint"
+  }
+
+  dimension: metrics__quantity__timestamps_first_paint_two {
+    sql: ${TABLE}.metrics.quantity.timestamps_first_paint_two ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Timestamps First Paint Two"
   }
 
   dimension: metrics__rate__cert_signature_cache_hits__denominator {
@@ -7358,6 +7733,65 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.bucket_count ;;
     type: number
@@ -7771,6 +8205,65 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.bucket_count ;;
     type: number
@@ -7945,6 +8438,65 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__network_cache_hit_time__values {
     sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.values ;;
     hidden: yes
   }
 
@@ -14953,6 +15505,18 @@ view: metrics_table__metrics__labeled_boolean__data_storage_migration {
   }
 }
 
+view: metrics_table__metrics__labeled_boolean__devtools_tool_registered {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics_table__metrics__labeled_boolean__geolocation_linux_provider {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -15001,6 +15565,18 @@ view: metrics_table__metrics__labeled_boolean__media_video_hd_hardware_decoding_
   }
 }
 
+view: metrics_table__metrics__labeled_boolean__mediadrm_decryption {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics_table__metrics__labeled_boolean__oskeystore_self_test {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -15022,6 +15598,56 @@ view: metrics_table__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__widget_pointing_devices {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
@@ -15052,6 +15678,56 @@ view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn
 }
 
 view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__normandy_recipe_freshness {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -15142,6 +15818,162 @@ view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_0rtt_st
 }
 
 view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse_idle_connection {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse_idle_connection__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http3_avg_read_interval {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http3_avg_read_interval__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -16419,6 +17251,18 @@ view: metrics_table__metrics__timing_distribution__javascript_gc_total_time__val
   }
 }
 
+view: metrics_table__metrics__timing_distribution__javascript_ion_compile_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__javascript_pageload_baseline_compile_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -16503,6 +17347,18 @@ view: metrics_table__metrics__timing_distribution__javascript_pageload_xdr_encod
   }
 }
 
+view: metrics_table__metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__ls_preparedatastore_processing_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -16528,6 +17384,18 @@ view: metrics_table__metrics__timing_distribution__ls_preparelsdatabase_processi
 }
 
 view: metrics_table__metrics__timing_distribution__network_cache_hit_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_cache_miss_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

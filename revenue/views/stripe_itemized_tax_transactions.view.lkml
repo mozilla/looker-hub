@@ -57,7 +57,7 @@ view: stripe_itemized_tax_transactions {
 
   dimension: filing_exchange_rate {
     sql: ${TABLE}.filing_exchange_rate ;;
-    type: number
+    type: string
   }
 
   dimension: filing_non_taxable_amount {

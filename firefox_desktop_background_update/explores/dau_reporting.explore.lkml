@@ -9,7 +9,7 @@ include: "/looker-hub/firefox_desktop_background_update/views/dau_reporting.view
 explore: dau_reporting {
   sql_always_where: ${dau_reporting.submission_date} >= '2010-01-01' ;;
   view_label: " Dau_Reporting"
-  description: "Explore for the dau_reporting ping. Minimal ping to measure DAU. Sent on the baseline schedule."
+  description: "Explore for the dau_reporting ping. Minimal ping to measure DAU. Sent on the baseline schedule. **NOTE**: This ping is deprecated and replaced by the `usage-reporting` ping."
   view_name: dau_reporting
 
   always_filter: {

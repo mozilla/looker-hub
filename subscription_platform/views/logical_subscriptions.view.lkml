@@ -20,6 +20,21 @@ view: logical_subscriptions {
     type: string
   }
 
+  dimension: current_period_discount_amount {
+    sql: ${TABLE}.current_period_discount_amount ;;
+    type: number
+  }
+
+  dimension: current_period_discount_name {
+    sql: ${TABLE}.current_period_discount_name ;;
+    type: string
+  }
+
+  dimension: current_period_discount_promotion_code {
+    sql: ${TABLE}.current_period_discount_promotion_code ;;
+    type: string
+  }
+
   dimension: customer_subscription_number {
     sql: ${TABLE}.customer_subscription_number ;;
     type: number
@@ -93,6 +108,16 @@ view: logical_subscriptions {
 
   dimension: id {
     sql: ${TABLE}.id ;;
+    type: string
+  }
+
+  dimension: initial_discount_name {
+    sql: ${TABLE}.initial_discount_name ;;
+    type: string
+  }
+
+  dimension: initial_discount_promotion_code {
+    sql: ${TABLE}.initial_discount_promotion_code ;;
     type: string
   }
 
@@ -174,6 +199,21 @@ view: logical_subscriptions {
 
   dimension: mozilla_account_id_sha256 {
     sql: ${TABLE}.mozilla_account_id_sha256 ;;
+    type: string
+  }
+
+  dimension: ongoing_discount_amount {
+    sql: ${TABLE}.ongoing_discount_amount ;;
+    type: number
+  }
+
+  dimension: ongoing_discount_name {
+    sql: ${TABLE}.ongoing_discount_name ;;
+    type: string
+  }
+
+  dimension: ongoing_discount_promotion_code {
+    sql: ${TABLE}.ongoing_discount_promotion_code ;;
     type: string
   }
 
@@ -346,6 +386,20 @@ view: logical_subscriptions {
       year,
     ]
     label: "Last Touch Attribution: Impression At"
+  }
+
+  dimension_group: ongoing_discount_ends_at {
+    sql: ${TABLE}.ongoing_discount_ends_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
   }
 
   dimension_group: provider_subscription_created_at {

@@ -58,6 +58,40 @@ view: metrics {
 "
   }
 
+  dimension: metrics__labeled_string__calendar_google_token_type {
+    label: "Calendar Google Token Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_string.calendar_google_token_type ;;
+    type: string
+    group_label: "Calendar"
+    group_item_label: "Google Token Type"
+
+    link: {
+      label: "Glean Dictionary reference for Calendar Google Token Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/calendar_google_token_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How Google calendar OAuth tokens are stored. There is a variety of old formats we would like to remove, but migration is difficult and may not be worth attempting for some formats. See MailGlue.sys.mjs for a description of each label."
+  }
+
+  dimension: metrics__labeled_boolean__calendar_preferences_boolean {
+    label: "Calendar Preferences Boolean"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.calendar_preferences_boolean ;;
+    type: string
+    group_label: "Calendar"
+    group_item_label: "Preferences Boolean"
+
+    link: {
+      label: "Glean Dictionary reference for Calendar Preferences Boolean"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/calendar_preferences_boolean"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Values of boolean preferences."
+  }
+
   dimension: metrics__labeled_string__calendar_read_only_calendar_count {
     label: "Calendar Read Only Calendar Count"
     hidden: no
@@ -178,6 +212,59 @@ view: metrics {
     description: "Count of how many accounts were set up, keyed by account type."
   }
 
+  dimension: metrics__custom_distribution__mail_compact_bytes_recovered__sum {
+    label: "Mail Compact Bytes Recovered Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.mail_compact_bytes_recovered.sum ;;
+    type: number
+    group_label: "Mail"
+    group_item_label: "Compact Bytes Recovered Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Compact Bytes Recovered Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_compact_bytes_recovered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of bytes recovered by compaction.
+"
+  }
+
+  dimension: metrics__timing_distribution__mail_compact_duration__sum {
+    label: "Mail Compact Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.mail_compact_duration.sum ;;
+    type: number
+    group_label: "Mail"
+    group_item_label: "Compact Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Compact Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_compact_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how long each folder compaction takes.
+"
+  }
+
+  dimension: metrics__labeled_counter__mail_compact_result {
+    label: "Mail Compact Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.mail_compact_result ;;
+    group_label: "Mail"
+    group_item_label: "Compact Result"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Compact Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_compact_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of folder compactions that happen and how they ended.
+"
+  }
+
   dimension: metrics__labeled_counter__mail_failed_email_account_setup {
     label: "Mail Failed Email Account Setup"
     hidden: yes
@@ -260,6 +347,23 @@ view: metrics {
     }
 
     description: "How many emails were read by the user."
+  }
+
+  dimension: metrics__labeled_counter__mail_mbox_read_errors {
+    label: "Mail Mbox Read Errors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.mail_mbox_read_errors ;;
+    group_label: "Mail"
+    group_item_label: "Mbox Read Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Mbox Read Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_mbox_read_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts mbox read failures by type.
+"
   }
 
   dimension: metrics__labeled_string__mail_oauth2_provider_count {
@@ -922,7 +1026,7 @@ view: metrics {
 
   dimension: metrics__boolean__bounce_tracking_protection_enabled_at_startup {
     label: "Bounce Tracking Protection Enabled At Startup"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_at_startup ;;
     type: yesno
     group_label: "Bounce Tracking Protection"
@@ -940,7 +1044,7 @@ view: metrics {
 
   dimension: metrics__boolean__bounce_tracking_protection_enabled_dry_run_mode_at_startup {
     label: "Bounce Tracking Protection Enabled Dry Run Mode At Startup"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_dry_run_mode_at_startup ;;
     type: yesno
     group_label: "Bounce Tracking Protection"
@@ -953,6 +1057,24 @@ view: metrics {
     }
 
     description: "Keeps track of whether the feature is enabled and running in dry-run mode at startup.
+"
+  }
+
+  dimension: metrics__quantity__bounce_tracking_protection_mode {
+    label: "Bounce Tracking Protection Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.bounce_tracking_protection_mode ;;
+    type: number
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/bounce_tracking_protection_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the pref value of privacy.bounceTrackingProtection.mode. Values are any of nsIBounceTrackingProtection#Modes.
 "
   }
 
@@ -1024,6 +1146,59 @@ view: metrics {
     }
 
     description: "For every purge that is scheduled, we call the ClearDataService to purge persistent storage for each detected bounce tracker. This may do some blocking work on main thread and dispatch some cleanups to other threads. Collect telemetry on how long it takes to clear in the wild to determine whether we need to improve performance here.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_added {
+    label: "Browser Engagement Bookmarks Toolbar Bookmark Added"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_bookmarks_toolbar_bookmark_added ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Bookmarks Toolbar Bookmark Added"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/browser_engagement_bookmarks_toolbar_bookmark_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of bookmarks added to the bookmarks toolbar. This counts bookmarks created on the bookmarks toolbar and bookmarks moved to the bookmarks toolbar. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.bookmarks_toolbar_bookmark_added.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_opened {
+    label: "Browser Engagement Bookmarks Toolbar Bookmark Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_bookmarks_toolbar_bookmark_opened ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Bookmarks Toolbar Bookmark Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/browser_engagement_bookmarks_toolbar_bookmark_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of bookmarks opened from the Bookmarks Toolbar. This counts bookmarks opened on the toolbar and bookmarks opened from the 'symlinked' Other Bookmarks folder on the Bookmarks Toolbar. It does not count Bookmarks Toolbar bookmarks opened via the Library, Bookmarks Menu, or other UI since the goal is to measure interactions that pass through the toolbar. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.bookmarks_toolbar_bookmark_opened.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_keyboard {
+    label: "Browser Ui Interaction Keyboard"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_keyboard ;;
+    group_label: "Browser Ui Interaction"
+    group_item_label: "Keyboard"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Ui Interaction Keyboard"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/browser_ui_interaction_keyboard"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records a count of interactions with keyboard shortcuts. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.keyboard.
 "
   }
 
@@ -1537,7 +1712,7 @@ view: metrics {
 
   dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__sum {
     label: "Cookie Banners Click Query Selector Run Count Per Window Frame Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_frame.sum ;;
     type: number
     group_label: "Cookie Banners Click"
@@ -1555,7 +1730,7 @@ view: metrics {
 
   dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_top_level__sum {
     label: "Cookie Banners Click Query Selector Run Count Per Window Top Level Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_top_level.sum ;;
     type: number
     group_label: "Cookie Banners Click"
@@ -1573,7 +1748,7 @@ view: metrics {
 
   dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_frame__sum {
     label: "Cookie Banners Click Query Selector Run Duration Per Window Frame Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_frame.sum ;;
     type: number
     group_label: "Cookie Banners Click"
@@ -1591,7 +1766,7 @@ view: metrics {
 
   dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__sum {
     label: "Cookie Banners Click Query Selector Run Duration Per Window Top Level Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_top_level.sum ;;
     type: number
     group_label: "Cookie Banners Click"
@@ -1661,7 +1836,7 @@ view: metrics {
 
   dimension: metrics__rate__cookie_banners_cmp_ratio_handled_by_cmp_rule__numerator {
     label: "Cookie Banners Cmp Ratio Handled By Cmp Rule Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.numerator ;;
     type: number
     group_label: "Cookie Banners Cmp"
@@ -1679,7 +1854,7 @@ view: metrics {
 
   dimension: metrics__rate__cookie_banners_cmp_ratio_handled_by_cmp_rule__denominator {
     label: "Cookie Banners Cmp Ratio Handled By Cmp Rule Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.denominator ;;
     type: number
     group_label: "Cookie Banners Cmp"
@@ -1714,7 +1889,7 @@ view: metrics {
 
   dimension: metrics__counter__cookie_banners_cookie_injection_fail {
     label: "Cookie Banners Cookie Injection Fail"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.cookie_banners_cookie_injection_fail ;;
     type: number
     group_label: "Cookie Banners"
@@ -1918,6 +2093,483 @@ view: metrics {
     }
 
     description: "The number of entries stored in the SiteSecurityServiceState nsIDataStorage"
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_accessible_context_menu_item_activated {
+    label: "Devtools Accessibility Accessible Context Menu Item Activated"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_accessible_context_menu_item_activated ;;
+    group_label: "Devtools Accessibility"
+    group_item_label: "Accessible Context Menu Item Activated"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Accessible Context Menu Item Activated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_accessibility_accessible_context_menu_item_activated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a context menu item for an accessible object was activated (with mouse or keyboard) from the context menu opened in the accessibility tree. Keyed by the id of the context menu item. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.accessible_context_menu_item_activated.
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_accessible_context_menu_opened {
+    label: "Devtools Accessibility Accessible Context Menu Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_accessible_context_menu_opened ;;
+    type: number
+    group_label: "Devtools Accessibility"
+    group_item_label: "Accessible Context Menu Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Accessible Context Menu Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_accessibility_accessible_context_menu_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a context menu was opened for an accessible object in the accessibility tree. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.accessible_context_menu_opened.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_audit_activated {
+    label: "Devtools Accessibility Audit Activated"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_audit_activated ;;
+    group_label: "Devtools Accessibility"
+    group_item_label: "Audit Activated"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Audit Activated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_accessibility_audit_activated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times accessibility audit was activated (with mouse or keyboard) from the accessibility panel's toolbar. Keyed by the audit filter type (e.g. \"CONTRAST\"). This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.audit_activated.
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_node_inspected_count {
+    label: "Devtools Accessibility Node Inspected Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_node_inspected_count ;;
+    type: number
+    group_label: "Devtools Accessibility"
+    group_item_label: "Node Inspected Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Node Inspected Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_accessibility_node_inspected_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a DOM node was inspected from within the Accessibility tool. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.node_inspected_count.
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_opened_count {
+    label: "Devtools Accessibility Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_opened_count ;;
+    type: number
+    group_label: "Devtools Accessibility"
+    group_item_label: "Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_accessibility_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Accessibility tool has been opened. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.opened_count.
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_picker_used_count {
+    label: "Devtools Accessibility Picker Used Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_picker_used_count ;;
+    type: number
+    group_label: "Devtools Accessibility"
+    group_item_label: "Picker Used Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Picker Used Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_accessibility_picker_used_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the picker tool has been used in DevTools Accessibility panel. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.picker_used_count.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_select_accessible_for_node {
+    label: "Devtools Accessibility Select Accessible For Node"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_select_accessible_for_node ;;
+    group_label: "Devtools Accessibility"
+    group_item_label: "Select Accessible For Node"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Select Accessible For Node"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_accessibility_select_accessible_for_node"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times an accessible object was inspected from outside the Accessibility tool (navigation to Accessibility panel). Keyed by the source of user action (inspector context menu, browser context menu, etc). This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.select_accessible_for_node.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_simulation_activated {
+    label: "Devtools Accessibility Simulation Activated"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_simulation_activated ;;
+    group_label: "Devtools Accessibility"
+    group_item_label: "Simulation Activated"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Simulation Activated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_accessibility_simulation_activated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times accessibility simulation was activated (with mouse or keyboard) from the accessibility panel's toolbar. Keyed by the simulation type (e.g. \"DEUTERANOPIA\"). This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.simulation_activated.
+"
+  }
+
+  dimension: metrics__counter__devtools_changesview_opened_count {
+    label: "Devtools Changesview Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_changesview_opened_count ;;
+    type: number
+    group_label: "Devtools Changesview"
+    group_item_label: "Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Changesview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_changesview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the Changes panel has been opened. This metric was generated to correspond to the Legacy Telemetry scalar devtools.changesview.opened_count.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_current_theme {
+    label: "Devtools Current Theme"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_current_theme ;;
+    group_label: "Devtools"
+    group_item_label: "Current Theme"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Current Theme"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_current_theme"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times DevTools was opened, keyed by theme. This metric was generated to correspond to the Legacy Telemetry scalar devtools.current_theme.
+"
+  }
+
+  dimension: metrics__counter__devtools_grid_gridinspector_opened {
+    label: "Devtools Grid Gridinspector Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_grid_gridinspector_opened ;;
+    type: number
+    group_label: "Devtools Grid Gridinspector"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Grid Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_grid_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools grid inspector was opened from the grid view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.grid.gridinspector.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_inspector_node_selection_count {
+    label: "Devtools Inspector Node Selection Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_inspector_node_selection_count ;;
+    type: number
+    group_label: "Devtools Inspector"
+    group_item_label: "Node Selection Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Inspector Node Selection Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_inspector_node_selection_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a different node is marked as selected in the Inspector regardless of the cause: context menu, manual selection in markup view, etc. This metric was generated to correspond to the Legacy Telemetry scalar devtools.inspector.node_selection_count.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_inspector_three_pane_enabled {
+    label: "Devtools Inspector Three Pane Enabled"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_inspector_three_pane_enabled ;;
+    group_label: "Devtools Inspector"
+    group_item_label: "Three Pane Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Inspector Three Pane Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_inspector_three_pane_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools inspector was opened with the 3 pane inspector enabled, keyed by true/false. This metric was generated to correspond to the Legacy Telemetry scalar devtools.inspector.three_pane_enabled.
+"
+  }
+
+  dimension: metrics__counter__devtools_layout_flexboxhighlighter_opened {
+    label: "Devtools Layout Flexboxhighlighter Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_layout_flexboxhighlighter_opened ;;
+    type: number
+    group_label: "Devtools Layout Flexboxhighlighter"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Layout Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_layout_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools flexbox highlighter was activated from the layout view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.layout.flexboxhighlighter.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_markup_flexboxhighlighter_opened {
+    label: "Devtools Markup Flexboxhighlighter Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_markup_flexboxhighlighter_opened ;;
+    type: number
+    group_label: "Devtools Markup Flexboxhighlighter"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_markup_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools flexbox highlighter was activated from the markup view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.markup.flexboxhighlighter.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_markup_gridinspector_opened {
+    label: "Devtools Markup Gridinspector Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_markup_gridinspector_opened ;;
+    type: number
+    group_label: "Devtools Markup Gridinspector"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_markup_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools grid inspector was opened from the markup view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.markup.gridinspector.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_markup_scrollable_badge_clicked {
+    label: "Devtools Markup Scrollable Badge Clicked"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_markup_scrollable_badge_clicked ;;
+    type: number
+    group_label: "Devtools Markup Scrollable Badge"
+    group_item_label: "Clicked"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Scrollable Badge Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_markup_scrollable_badge_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the scrollable inspector badge has been clicked. This metric was generated to correspond to the Legacy Telemetry scalar devtools.markup.scrollable.badge.clicked.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_responsive_open_trigger {
+    label: "Devtools Responsive Open Trigger"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_responsive_open_trigger ;;
+    group_label: "Devtools Responsive"
+    group_item_label: "Open Trigger"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Responsive Open Trigger"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_responsive_open_trigger"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Responsive Design Mode opens keyed by the UI entry point used. This metric was generated to correspond to the Legacy Telemetry scalar devtools.responsive.open_trigger.
+"
+  }
+
+  dimension: metrics__counter__devtools_responsive_toolbox_opened_first {
+    label: "Devtools Responsive Toolbox Opened First"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_responsive_toolbox_opened_first ;;
+    type: number
+    group_label: "Devtools Responsive"
+    group_item_label: "Toolbox Opened First"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Responsive Toolbox Opened First"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_responsive_toolbox_opened_first"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Responsive Design Mode opens with a toolbox already open. This metric was generated to correspond to the Legacy Telemetry scalar devtools.responsive.toolbox_opened_first.
+"
+  }
+
+  dimension: metrics__counter__devtools_rules_flexboxhighlighter_opened {
+    label: "Devtools Rules Flexboxhighlighter Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_rules_flexboxhighlighter_opened ;;
+    type: number
+    group_label: "Devtools Rules Flexboxhighlighter"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Rules Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_rules_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools flexbox highlighter was activated from the rules view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.rules.flexboxhighlighter.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_rules_gridinspector_opened {
+    label: "Devtools Rules Gridinspector Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_rules_gridinspector_opened ;;
+    type: number
+    group_label: "Devtools Rules Gridinspector"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Rules Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_rules_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools grid inspector was opened from the rules view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.rules.gridinspector.opened.
+"
+  }
+
+  dimension: metrics__boolean__devtools_shadowdom_reveal_link_clicked {
+    label: "Devtools Shadowdom Reveal Link Clicked"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.devtools_shadowdom_reveal_link_clicked ;;
+    type: yesno
+    group_label: "Devtools Shadowdom"
+    group_item_label: "Reveal Link Clicked"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Shadowdom Reveal Link Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_shadowdom_reveal_link_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the user clicked on any \"reveal\" link. \"reveal\" links are displayed in shadow dom trees in the markup view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.shadowdom.reveal_link_clicked.
+"
+  }
+
+  dimension: metrics__boolean__devtools_shadowdom_shadow_root_displayed {
+    label: "Devtools Shadowdom Shadow Root Displayed"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.devtools_shadowdom_shadow_root_displayed ;;
+    type: yesno
+    group_label: "Devtools Shadowdom"
+    group_item_label: "Shadow Root Displayed"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Shadowdom Shadow Root Displayed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_shadowdom_shadow_root_displayed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the markup view displayed any #shadow-root element in the UI. This metric was generated to correspond to the Legacy Telemetry scalar devtools.shadowdom.shadow_root_displayed.
+"
+  }
+
+  dimension: metrics__boolean__devtools_shadowdom_shadow_root_expanded {
+    label: "Devtools Shadowdom Shadow Root Expanded"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.devtools_shadowdom_shadow_root_expanded ;;
+    type: yesno
+    group_label: "Devtools Shadowdom"
+    group_item_label: "Shadow Root Expanded"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Shadowdom Shadow Root Expanded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_shadowdom_shadow_root_expanded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the user expanded any #shadow-root element. This metric was generated to correspond to the Legacy Telemetry scalar devtools.shadowdom.shadow_root_expanded.
+"
+  }
+
+  dimension: metrics__labeled_boolean__devtools_tool_registered {
+    label: "Devtools Tool Registered"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.devtools_tool_registered ;;
+    type: string
+    group_label: "Devtools Tool"
+    group_item_label: "Registered"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Tool Registered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_tool_registered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded on enable tool checkbox check/uncheck in Developer Tools options panel. Boolean stating if the tool was enabled or disabled by the user. Keyed by tool id. Current default tools with their id's are defined in https://searchfox.org/mozilla- central/source/devtools/client/definitions.js This metric was generated to correspond to the Legacy Telemetry scalar devtools.tool.registered.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_toolbox_tabs_reordered {
+    label: "Devtools Toolbox Tabs Reordered"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_toolbox_tabs_reordered ;;
+    group_label: "Devtools Toolbox"
+    group_item_label: "Tabs Reordered"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Toolbox Tabs Reordered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_toolbox_tabs_reordered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools tab was reordered. Keyed by tab's id. This metric was generated to correspond to the Legacy Telemetry scalar devtools.toolbox.tabs_reordered.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_tooltip_shown {
+    label: "Devtools Tooltip Shown"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_tooltip_shown ;;
+    group_label: "Devtools Tooltip"
+    group_item_label: "Shown"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Tooltip Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_tooltip_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a tooltip was shown, keyed by tooltip type. Currently supported types are \"image\", \"font-family\", \"inactive- css\", \"css-compatibility\", \"css-query-container\" and \"variable.\" This metric was generated to correspond to the Legacy Telemetry scalar devtools.tooltip.shown.
+"
   }
 
   dimension: metrics__counter__dom_contentprocess_build_id_mismatch {
@@ -3075,6 +3727,114 @@ API for the purposes of Validation (hence GVSV).
 "
   }
 
+  dimension: metrics__quantity__formautofill_addresses_autofill_profiles_count {
+    label: "Formautofill Addresses Autofill Profiles Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.formautofill_addresses_autofill_profiles_count ;;
+    type: number
+    group_label: "Formautofill Addresses"
+    group_item_label: "Autofill Profiles Count"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Addresses Autofill Profiles Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/formautofill_addresses_autofill_profiles_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count at store time how many address autofill profiles user has. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.addresses.autofill_profiles_count.
+"
+  }
+
+  dimension: metrics__counter__formautofill_addresses_detected_sections_count {
+    label: "Formautofill Addresses Detected Sections Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.formautofill_addresses_detected_sections_count ;;
+    type: number
+    group_label: "Formautofill Addresses"
+    group_item_label: "Detected Sections Count"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Addresses Detected Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/formautofill_addresses_detected_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count at detection time number of address form sections. A single form can contain more than one address form section. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.addresses.detected_sections_count.
+"
+  }
+
+  dimension: metrics__counter__formautofill_addresses_submitted_sections_count {
+    label: "Formautofill Addresses Submitted Sections Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.formautofill_addresses_submitted_sections_count ;;
+    type: number
+    group_label: "Formautofill Addresses"
+    group_item_label: "Submitted Sections Count"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Addresses Submitted Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/formautofill_addresses_submitted_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count at submission time number of credit card form sections submitted. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.addresses.submitted_sections_count.
+"
+  }
+
+  dimension: metrics__boolean__formautofill_availability {
+    label: "Formautofill Availability"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.formautofill_availability ;;
+    type: yesno
+    group_label: "Formautofill"
+    group_item_label: "Availability"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Availability"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/formautofill_availability"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A boolean sent once per session to represent whether the formautofill is available in the build This metric was generated to correspond to the Legacy Telemetry scalar formautofill.availability.
+"
+  }
+
+  dimension: metrics__counter__formautofill_credit_cards_detected_sections_count {
+    label: "Formautofill Credit Cards Detected Sections Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.formautofill_credit_cards_detected_sections_count ;;
+    type: number
+    group_label: "Formautofill Credit Cards"
+    group_item_label: "Detected Sections Count"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Credit Cards Detected Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/formautofill_credit_cards_detected_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count at detection time number of credit card form sections. A single form can contain more than one credit card form section. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.creditCards.detected_sections_count.
+"
+  }
+
+  dimension: metrics__counter__formautofill_credit_cards_submitted_sections_count {
+    label: "Formautofill Credit Cards Submitted Sections Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.formautofill_credit_cards_submitted_sections_count ;;
+    type: number
+    group_label: "Formautofill Credit Cards"
+    group_item_label: "Submitted Sections Count"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Credit Cards Submitted Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/formautofill_credit_cards_submitted_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count at submission time number of credit card form sections submitted. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.creditCards.submitted_sections_count.
+"
+  }
+
   dimension: metrics__quantity__formautofill_creditcards_autofill_profiles_count {
     label: "Formautofill Creditcards Autofill Profiles Count"
     hidden: no
@@ -4008,7 +4768,7 @@ API for the purposes of Validation (hence GVSV).
 
   dimension: metrics__boolean__gfx_tmp_writable {
     label: "Gfx Tmp Writable"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.gfx_tmp_writable ;;
     type: yesno
     group_label: "Gfx"
@@ -4662,6 +5422,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__sum {
+    label: "Javascript Ion Compile Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.sum ;;
+    type: number
+    group_label: "Javascript Ion"
+    group_item_label: "Compile Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Ion Compile Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/javascript_ion_compile_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in microseconds of an Ion compilation.
+"
+  }
+
   dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__sum {
     label: "Javascript Pageload Baseline Compile Time Sum"
     hidden: no
@@ -4785,6 +5563,24 @@ To be used to validate GIFFT.
     }
 
     description: "Time spent during page load XDR encoding Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__sum {
+    label: "Localstorage Database Request Allow To Close Response Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.sum ;;
+    type: number
+    group_label: "Localstorage Database"
+    group_item_label: "Request Allow To Close Response Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Localstorage Database Request Allow To Close Response Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/localstorage_database_request_allow_to_close_response_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time it took between sending PBackgroundLSDatabase::RequestAllowToClose and receiving PBackgroundLSDatabase::AllowToClose message. These messages are issued when QuotaManager is shutting down or is aborting operations for a particular origin or process.
 "
   }
 
@@ -5016,6 +5812,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_boolean__mediadrm_decryption {
+    label: "Mediadrm Decryption"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.mediadrm_decryption ;;
+    type: string
+    group_label: "Mediadrm"
+    group_item_label: "Decryption"
+
+    link: {
+      label: "Glean Dictionary reference for Mediadrm Decryption"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mediadrm_decryption"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record the statuses related with the media decryption.
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_early_hints {
     label: "Netwerk Early Hints"
     hidden: yes
@@ -5170,6 +5984,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__network_cache_hit_miss_stat_per_cache_size {
+    label: "Network Cache Hit Miss Stat Per Cache Size"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_cache_hit_miss_stat_per_cache_size ;;
+    group_label: "Network"
+    group_item_label: "Cache Hit Miss Stat Per Cache Size"
+
+    link: {
+      label: "Glean Dictionary reference for Network Cache Hit Miss Stat Per Cache Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/network_cache_hit_miss_stat_per_cache_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Hit/Miss count split by cache size in file count Hit 0-5000, Miss 0-5000, Hit 5001-10000, ...
+"
+  }
+
   dimension: metrics__timing_distribution__network_cache_hit_time__sum {
     label: "Network Cache Hit Time Sum"
     hidden: no
@@ -5185,6 +6016,24 @@ To be used to validate GIFFT.
     }
 
     description: "Time to open existing cache entry file. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__sum {
+    label: "Network Cache Miss Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Cache Miss Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Cache Miss Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/network_cache_miss_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent to find out a cache entry file is missing. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -5470,6 +6319,41 @@ To be used to validate GIFFT.
     }
 
     description: "The time spent from HttpChannelChild::AsyncOpen to adding the transaction to the nsHttpConnectionMgr
+"
+  }
+
+  dimension: metrics__labeled_counter__network_sso_entra_success {
+    label: "Network Sso Entra Success"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_sso_entra_success ;;
+    group_label: "Network Sso"
+    group_item_label: "Entra Success"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sso Entra Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/network_sso_entra_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often Entra SSO succeeded/failed (macOS only). Labels are ordered in reverse chronological relation to SSO success, meaning the labels higher up are closer to the SSO success. device_headers_missing: only device_headers is missing in the SSO cookie. prt_headers_missing: only prt_headers is missing in the SSO cookie. both_headers_missing: both prt_headers and device_headers are missing in the SSO cookie. invalid_cookie: Failed to parse SSO cookie (could be a null cookie/format is incorrect). no_credential: ASAuthorizationSingleSignOnCredential is not present broker_error: An error from Microsoft's broker. invalid_controller_setup: ASAuthorizationController is setup incorrectly.
+"
+  }
+
+  dimension: metrics__counter__network_sso_total_entra_uses {
+    label: "Network Sso Total Entra Uses"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.network_sso_total_entra_uses ;;
+    type: number
+    group_label: "Network Sso"
+    group_item_label: "Total Entra Uses"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sso Total Entra Uses"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/network_sso_total_entra_uses"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often Entra SSO is used (macOS only).
 "
   }
 
@@ -5967,6 +6851,45 @@ To be used to validate GIFFT.
     description: "Size of the metadata in bytes parsed from the disk."
   }
 
+  dimension: metrics__labeled_counter__networking_captive_portal_banner_display_time {
+    label: "Networking Captive Portal Banner Display Time"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_captive_portal_banner_display_time ;;
+    group_label: "Networking"
+    group_item_label: "Captive Portal Banner Display Time"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Captive Portal Banner Display Time"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/networking_captive_portal_banner_display_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of seconds the captive portal banner was displayed for, keyed by close reason:
+  \"success\" - the portal login was completed
+  \"abort\"   - the portal login was aborted (e.g. loss of network)
+  \"dismiss\" - the user dismissed the banner
+This metric was generated to correspond to the Legacy Telemetry scalar networking.captive_portal_banner_display_time.
+"
+  }
+
+  dimension: metrics__counter__networking_captive_portal_banner_displayed {
+    label: "Networking Captive Portal Banner Displayed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.networking_captive_portal_banner_displayed ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Captive Portal Banner Displayed"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Captive Portal Banner Displayed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/networking_captive_portal_banner_displayed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the captive portal banner was displayed in this session. This metric was generated to correspond to the Legacy Telemetry scalar networking.captive_portal_banner_displayed.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__sum {
     label: "Networking Cookie Access Fixup Diff Sum"
     hidden: no
@@ -6005,7 +6928,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__counter__networking_cookie_count_invalid_first_party_partitioned_in_db {
     label: "Networking Cookie Count Invalid First Party Partitioned In Db"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.networking_cookie_count_invalid_first_party_partitioned_in_db ;;
     type: number
     group_label: "Networking"
@@ -6571,6 +7494,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_connection_close_reason {
+    label: "Networking Http 3 Connection Close Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_connection_close_reason ;;
+    group_label: "Networking"
+    group_item_label: "Http 3 Connection Close Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Connection Close Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/networking_http_3_connection_close_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of HTTP3 connections closed, labeled by reason.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_download_throughput__sum {
     label: "Networking Http 3 Download Throughput Sum"
     hidden: no
@@ -6711,6 +7651,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "HTTP3: packet loss ratio (multiply by 10000).
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_quic_frame_count {
+    label: "Networking Http 3 Quic Frame Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_quic_frame_count ;;
+    group_label: "Networking"
+    group_item_label: "Http 3 Quic Frame Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Quic Frame Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/networking_http_3_quic_frame_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of QUIC frames send and received by type.
 "
   }
 
@@ -7365,6 +8322,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_https_record_state {
+    label: "Networking Https Record State"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_record_state ;;
+    group_label: "Networking"
+    group_item_label: "Https Record State"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Https Record State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/networking_https_record_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gather the outcome of checking if a HTTPS record can be used: - \"invalid\" - \"succeeded\" - \"unmatched_cname\" - \"all_excluded\" - \"no_default_alpn\" - \"others\"
+"
+  }
+
   dimension: metrics__quantity__networking_https_rr_prefs_usage {
     label: "Networking Https Rr Prefs Usage"
     hidden: no
@@ -7417,16 +8391,16 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
-  dimension: metrics__timespan__networking_loading_certs_task__value {
-    label: "Networking Loading Certs Task Value"
+  dimension: metrics__quantity__networking_loading_certs_task {
+    label: "Networking Loading Certs Task"
     hidden: no
-    sql: ${TABLE}.metrics.timespan.networking_loading_certs_task.value ;;
+    sql: ${TABLE}.metrics.quantity.networking_loading_certs_task ;;
     type: number
     group_label: "Networking"
-    group_item_label: "Loading Certs Task Value"
+    group_item_label: "Loading Certs Task"
 
     link: {
-      label: "Glean Dictionary reference for Networking Loading Certs Task Value"
+      label: "Glean Dictionary reference for Networking Loading Certs Task"
       url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/networking_loading_certs_task"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -7435,16 +8409,16 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
-  dimension: metrics__timespan__networking_nss_initialization__value {
-    label: "Networking Nss Initialization Value"
+  dimension: metrics__quantity__networking_nss_initialization {
+    label: "Networking Nss Initialization"
     hidden: no
-    sql: ${TABLE}.metrics.timespan.networking_nss_initialization.value ;;
+    sql: ${TABLE}.metrics.quantity.networking_nss_initialization ;;
     type: number
     group_label: "Networking"
-    group_item_label: "Nss Initialization Value"
+    group_item_label: "Nss Initialization"
 
     link: {
-      label: "Glean Dictionary reference for Networking Nss Initialization Value"
+      label: "Glean Dictionary reference for Networking Nss Initialization"
       url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/networking_nss_initialization"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -7687,7 +8661,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__counter__networking_set_invalid_first_party_partitioned_cookie {
     label: "Networking Set Invalid First Party Partitioned Cookie"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.networking_set_invalid_first_party_partitioned_cookie ;;
     type: number
     group_label: "Networking"
@@ -7857,6 +8831,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "Number of DOH requests per connection keyed by HTTP version
+"
+  }
+
+  dimension: metrics__labeled_quantity__normandy_recipe_freshness {
+    label: "Normandy Recipe Freshness"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_quantity.normandy_recipe_freshness ;;
+    type: string
+    group_label: "Normandy"
+    group_item_label: "Recipe Freshness"
+
+    link: {
+      label: "Glean Dictionary reference for Normandy Recipe Freshness"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/normandy_recipe_freshness"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "For each recipe ID seen by the Normandy client, its last_modified. This metric was generated to correspond to the Legacy Telemetry scalar normandy.recipe_freshness.
 "
   }
 
@@ -10237,6 +11229,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__counter__script_preloader_mainthread_recompile {
+    label: "Script Preloader Mainthread Recompile"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.script_preloader_mainthread_recompile ;;
+    type: number
+    group_label: "Script Preloader"
+    group_item_label: "Mainthread Recompile"
+
+    link: {
+      label: "Glean Dictionary reference for Script Preloader Mainthread Recompile"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/script_preloader_mainthread_recompile"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times we ended up recompiling a script from the script preloader on the main thread. This metric was generated to correspond to the Legacy Telemetry scalar script.preloader.mainthread_recompile.
+"
+  }
+
   dimension: metrics__rate__sct_signature_cache_hits__numerator {
     label: "Sct Signature Cache Hits Numerator"
     hidden: no
@@ -10410,6 +11420,42 @@ This metric was generated to correspond to the Legacy Telemetry scalar startup.p
     }
 
     description: "How many timers were processed in a single wake-up of the Timer Thread.
+"
+  }
+
+  dimension: metrics__quantity__timestamps_first_paint {
+    label: "Timestamps First Paint"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.timestamps_first_paint ;;
+    type: number
+    group_label: "Timestamps"
+    group_item_label: "First Paint"
+
+    link: {
+      label: "Glean Dictionary reference for Timestamps First Paint"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/timestamps_first_paint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record the timestamp of the first content window paint, in milliseconds since process start. This metric was generated to correspond to the Legacy Telemetry scalar timestamps.first_paint.
+"
+  }
+
+  dimension: metrics__quantity__timestamps_first_paint_two {
+    label: "Timestamps First Paint Two"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.timestamps_first_paint_two ;;
+    type: number
+    group_label: "Timestamps"
+    group_item_label: "First Paint Two"
+
+    link: {
+      label: "Glean Dictionary reference for Timestamps First Paint Two"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/timestamps_first_paint_two"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record the timestamp of the first main window paint, in milliseconds since process start. Intended to replace first_paint since first_paint is broken. This metric was generated to correspond to the Legacy Telemetry scalar timestamps.first_paint_two.
 "
   }
 
@@ -10768,6 +11814,58 @@ This metric was generated to correspond to the Legacy Telemetry scalar startup.p
 "
   }
 
+  dimension: metrics__labeled_counter__web_push_content_encoding {
+    label: "Web Push Content Encoding"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.web_push_content_encoding ;;
+    group_label: "Web Push"
+    group_item_label: "Content Encoding"
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Content Encoding"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/web_push_content_encoding"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which content encoding is being used for push.
+"
+  }
+
+  dimension: metrics__counter__web_push_detected_duplicated_message_ids {
+    label: "Web Push Detected Duplicated Message Ids"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.web_push_detected_duplicated_message_ids ;;
+    type: number
+    group_label: "Web Push"
+    group_item_label: "Detected Duplicated Message Ids"
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Detected Duplicated Message Ids"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/web_push_detected_duplicated_message_ids"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the duplicated IDs from the server. The ability to detect depends on the pref `dom.push.maxRecentMessageIDsPerSubscription`.
+"
+  }
+
+  dimension: metrics__labeled_counter__web_push_error_code {
+    label: "Web Push Error Code"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.web_push_error_code ;;
+    group_label: "Web Push"
+    group_item_label: "Error Code"
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Error Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/web_push_error_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The code indicating why the push message couldn't be processed.
+"
+  }
+
   dimension: metrics__labeled_counter__webauthn_create_authenticator_attachment {
     label: "Webauthn Create Authenticator Attachment"
     hidden: yes
@@ -11037,6 +12135,42 @@ This metric was generated to correspond to the Legacy Telemetry scalar startup.p
     }
 
     description: "The SRTPProtectionProfile (see RFC 5764) used for each webrtc SRTP connection, as a string representation of the SRTPProtectionProfile's ID in 4 hex digits (eg; SRTP_AES128_CM_HMAC_SHA1_80 would be \"0x0001\")
+"
+  }
+
+  dimension: metrics__boolean__widget_dark_mode {
+    label: "Widget Dark Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.widget_dark_mode ;;
+    type: yesno
+    group_label: "Widget"
+    group_item_label: "Dark Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Widget Dark Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/widget_dark_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the OS theme is dark. This metric was generated to correspond to the Legacy Telemetry scalar widget.dark_mode.
+"
+  }
+
+  dimension: metrics__labeled_boolean__widget_pointing_devices {
+    label: "Widget Pointing Devices"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.widget_pointing_devices ;;
+    type: string
+    group_label: "Widget"
+    group_item_label: "Pointing Devices"
+
+    link: {
+      label: "Glean Dictionary reference for Widget Pointing Devices"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/widget_pointing_devices"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the system has any matching pointing device for each label.
 "
   }
 
@@ -12432,6 +13566,56 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: browser_engagement_bookmarks_toolbar_bookmark_added {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_added} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/browser_engagement_bookmarks_toolbar_bookmark_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_bookmarks_toolbar_bookmark_added_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_added: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/browser_engagement_bookmarks_toolbar_bookmark_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_bookmarks_toolbar_bookmark_opened {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/browser_engagement_bookmarks_toolbar_bookmark_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_bookmarks_toolbar_bookmark_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/browser_engagement_bookmarks_toolbar_bookmark_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: cert_signature_cache_total {
     type: sum
     sql: ${metrics__counter__cert_signature_cache_total} ;;
@@ -12528,6 +13712,356 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Cookie Banners Cookie Injection Fail"
       url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/cookie_banners_cookie_injection_fail"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_accessible_context_menu_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_accessibility_accessible_context_menu_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Accessible Context Menu Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_accessibility_accessible_context_menu_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_accessible_context_menu_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_accessibility_accessible_context_menu_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Accessible Context Menu Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_accessibility_accessible_context_menu_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_node_inspected_count {
+    type: sum
+    sql: ${metrics__counter__devtools_accessibility_node_inspected_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Node Inspected Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_accessibility_node_inspected_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_node_inspected_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_accessibility_node_inspected_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Node Inspected Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_accessibility_node_inspected_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_accessibility_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_accessibility_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_accessibility_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_accessibility_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_picker_used_count {
+    type: sum
+    sql: ${metrics__counter__devtools_accessibility_picker_used_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Picker Used Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_accessibility_picker_used_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_picker_used_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_accessibility_picker_used_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Picker Used Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_accessibility_picker_used_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_changesview_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_changesview_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Changesview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_changesview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_changesview_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_changesview_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Changesview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_changesview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_grid_gridinspector_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_grid_gridinspector_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Grid Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_grid_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_grid_gridinspector_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_grid_gridinspector_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Grid Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_grid_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_inspector_node_selection_count {
+    type: sum
+    sql: ${metrics__counter__devtools_inspector_node_selection_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Inspector Node Selection Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_inspector_node_selection_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_inspector_node_selection_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_inspector_node_selection_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Inspector Node Selection Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_inspector_node_selection_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_layout_flexboxhighlighter_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_layout_flexboxhighlighter_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Layout Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_layout_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_layout_flexboxhighlighter_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_layout_flexboxhighlighter_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Layout Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_layout_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_markup_flexboxhighlighter_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_markup_flexboxhighlighter_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_markup_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_markup_flexboxhighlighter_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_markup_flexboxhighlighter_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_markup_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_markup_gridinspector_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_markup_gridinspector_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_markup_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_markup_gridinspector_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_markup_gridinspector_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_markup_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_markup_scrollable_badge_clicked {
+    type: sum
+    sql: ${metrics__counter__devtools_markup_scrollable_badge_clicked} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Scrollable Badge Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_markup_scrollable_badge_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_markup_scrollable_badge_clicked_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_markup_scrollable_badge_clicked: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Scrollable Badge Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_markup_scrollable_badge_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_responsive_toolbox_opened_first {
+    type: sum
+    sql: ${metrics__counter__devtools_responsive_toolbox_opened_first} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Responsive Toolbox Opened First"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_responsive_toolbox_opened_first"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_responsive_toolbox_opened_first_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_responsive_toolbox_opened_first: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Responsive Toolbox Opened First"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_responsive_toolbox_opened_first"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_rules_flexboxhighlighter_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_rules_flexboxhighlighter_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Rules Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_rules_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_rules_flexboxhighlighter_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_rules_flexboxhighlighter_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Rules Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_rules_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_rules_gridinspector_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_rules_gridinspector_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Rules Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_rules_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_rules_gridinspector_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_rules_gridinspector_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Rules Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/devtools_rules_gridinspector_opened"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -13007,6 +14541,106 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: formautofill_addresses_detected_sections_count {
+    type: sum
+    sql: ${metrics__counter__formautofill_addresses_detected_sections_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Addresses Detected Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/formautofill_addresses_detected_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: formautofill_addresses_detected_sections_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__formautofill_addresses_detected_sections_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Addresses Detected Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/formautofill_addresses_detected_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: formautofill_addresses_submitted_sections_count {
+    type: sum
+    sql: ${metrics__counter__formautofill_addresses_submitted_sections_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Addresses Submitted Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/formautofill_addresses_submitted_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: formautofill_addresses_submitted_sections_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__formautofill_addresses_submitted_sections_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Addresses Submitted Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/formautofill_addresses_submitted_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: formautofill_credit_cards_detected_sections_count {
+    type: sum
+    sql: ${metrics__counter__formautofill_credit_cards_detected_sections_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Credit Cards Detected Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/formautofill_credit_cards_detected_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: formautofill_credit_cards_detected_sections_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__formautofill_credit_cards_detected_sections_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Credit Cards Detected Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/formautofill_credit_cards_detected_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: formautofill_credit_cards_submitted_sections_count {
+    type: sum
+    sql: ${metrics__counter__formautofill_credit_cards_submitted_sections_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Credit Cards Submitted Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/formautofill_credit_cards_submitted_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: formautofill_credit_cards_submitted_sections_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__formautofill_credit_cards_submitted_sections_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Credit Cards Submitted Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/formautofill_credit_cards_submitted_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: gfx_skipped_composites {
     type: sum
     sql: ${metrics__counter__gfx_skipped_composites} ;;
@@ -13303,6 +14937,56 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Netwerk Parent Connect Timeout"
       url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/netwerk_parent_connect_timeout"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_sso_total_entra_uses {
+    type: sum
+    sql: ${metrics__counter__network_sso_total_entra_uses} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network Sso Total Entra Uses"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/network_sso_total_entra_uses"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_sso_total_entra_uses_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__network_sso_total_entra_uses: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network Sso Total Entra Uses"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/network_sso_total_entra_uses"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_captive_portal_banner_displayed {
+    type: sum
+    sql: ${metrics__counter__networking_captive_portal_banner_displayed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Captive Portal Banner Displayed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/networking_captive_portal_banner_displayed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_captive_portal_banner_displayed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__networking_captive_portal_banner_displayed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Captive Portal Banner Displayed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/networking_captive_portal_banner_displayed"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -13982,6 +15666,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: script_preloader_mainthread_recompile {
+    type: sum
+    sql: ${metrics__counter__script_preloader_mainthread_recompile} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Script Preloader Mainthread Recompile"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/script_preloader_mainthread_recompile"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: script_preloader_mainthread_recompile_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__script_preloader_mainthread_recompile: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Script Preloader Mainthread Recompile"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/script_preloader_mainthread_recompile"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: sct_signature_cache_total {
     type: sum
     sql: ${metrics__counter__sct_signature_cache_total} ;;
@@ -14078,6 +15787,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Web Notification Insecure Context Permission Request"
       url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/web_notification_insecure_context_permission_request"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_push_detected_duplicated_message_ids {
+    type: sum
+    sql: ${metrics__counter__web_push_detected_duplicated_message_ids} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Detected Duplicated Message Ids"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/web_push_detected_duplicated_message_ids"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_push_detected_duplicated_message_ids_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__web_push_detected_duplicated_message_ids: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Detected Duplicated Message Ids"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/web_push_detected_duplicated_message_ids"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -15280,6 +17014,47 @@ view: metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count 
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_ui_interaction_keyboard {
+  label: "Browser Ui Interaction - Keyboard"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__cert_compression_failures {
   label: "Cert Compression - Failures"
 
@@ -15756,19 +17531,19 @@ view: metrics__metrics__labeled_counter__cookie_banners_click_result {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -15797,19 +17572,19 @@ view: metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -15838,19 +17613,19 @@ view: metrics__metrics__labeled_counter__cookie_banners_cmp_result {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -15879,19 +17654,19 @@ view: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -15920,19 +17695,19 @@ view: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -15974,6 +17749,375 @@ view: metrics__metrics__labeled_counter__data_storage_entries {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_accessibility_accessible_context_menu_item_activated {
+  label: "Devtools Accessibility - Accessible Context Menu Item Activated"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_accessibility_audit_activated {
+  label: "Devtools Accessibility - Audit Activated"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_accessibility_select_accessible_for_node {
+  label: "Devtools Accessibility - Select Accessible For Node"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_accessibility_simulation_activated {
+  label: "Devtools Accessibility - Simulation Activated"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_current_theme {
+  label: "Devtools - Current Theme"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_inspector_three_pane_enabled {
+  label: "Devtools Inspector - Three Pane Enabled"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_responsive_open_trigger {
+  label: "Devtools Responsive - Open Trigger"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_toolbox_tabs_reordered {
+  label: "Devtools Toolbox - Tabs Reordered"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_tooltip_shown {
+  label: "Devtools Tooltip - Shown"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -17291,6 +19435,47 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
   }
 }
 
+view: metrics__metrics__labeled_counter__mail_compact_result {
+  label: "Mail - Compact Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__mail_failed_email_account_setup {
   label: "Mail - Failed Email Account Setup"
 
@@ -17334,6 +19519,47 @@ view: metrics__metrics__labeled_counter__mail_failed_email_account_setup {
 
 view: metrics__metrics__labeled_counter__mail_folder_opened {
   label: "Mail - Folder Opened"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__mail_mbox_read_errors {
+  label: "Mail - Mbox Read Errors"
 
   dimension: document_id {
     type: string
@@ -17562,19 +19788,19 @@ view: metrics__metrics__labeled_counter__media_decode_error_per_mime_type {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -17947,6 +20173,47 @@ view: metrics__metrics__labeled_counter__network_byte_range_request {
   }
 }
 
+view: metrics__metrics__labeled_counter__network_cache_hit_miss_stat_per_cache_size {
+  label: "Network - Cache Hit Miss Stat Per Cache Size"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__network_cors_authorization_header {
   label: "Network - Cors Authorization Header"
 
@@ -18067,6 +20334,47 @@ view: metrics__metrics__labeled_counter__network_data_size_per_type {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_sso_entra_success {
+  label: "Network Sso - Entra Success"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -18439,6 +20747,47 @@ view: metrics__metrics__labeled_counter__network_tls_early_data_negotiated {
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_captive_portal_banner_display_time {
+  label: "Networking - Captive Portal Banner Display Time"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
   label: "Networking - Cookie Timestamp Fixed Count"
 
@@ -18644,8 +20993,90 @@ view: metrics__metrics__labeled_counter__networking_fetch_keepalive_request_coun
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_http_3_connection_close_reason {
+  label: "Networking - Http 3 Connection Close Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_http_3_ecn_path_capability {
   label: "Networking - Http 3 Ecn Path Capability"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_3_quic_frame_count {
+  label: "Networking - Http 3 Quic Frame Count"
 
   dimension: document_id {
     type: string
@@ -19261,6 +21692,47 @@ view: metrics__metrics__labeled_counter__networking_http_response_version {
 
 view: metrics__metrics__labeled_counter__networking_http_to_https_upgrade_reason {
   label: "Networking - Http To Https Upgrade Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_https_record_state {
+  label: "Networking - Https Record State"
 
   dimension: document_id {
     type: string
@@ -21227,6 +23699,88 @@ view: metrics__metrics__labeled_counter__web_notification_show_origin {
   }
 }
 
+view: metrics__metrics__labeled_counter__web_push_content_encoding {
+  label: "Web Push - Content Encoding"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__web_push_error_code {
+  label: "Web Push - Error Code"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__webauthn_create_authenticator_attachment {
   label: "Webauthn Create - Authenticator Attachment"
 
@@ -21889,6 +24443,18 @@ view: metrics__metrics__custom_distribution__gfx_content_frame_time_without_uplo
   }
 }
 
+view: metrics__metrics__custom_distribution__mail_compact_bytes_recovered__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__network_tls_early_data_bytes_written__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -22357,6 +24923,18 @@ view: metrics__metrics__labeled_boolean__a11y_theme {
   }
 }
 
+view: metrics__metrics__labeled_boolean__calendar_preferences_boolean {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics__metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -22382,6 +24960,18 @@ view: metrics__metrics__labeled_boolean__cookie_banners_private_window_service_m
 }
 
 view: metrics__metrics__labeled_boolean__data_storage_migration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__devtools_tool_registered {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -22465,6 +25055,18 @@ view: metrics__metrics__labeled_boolean__media_video_hd_hardware_decoding_suppor
   }
 }
 
+view: metrics__metrics__labeled_boolean__mediadrm_decryption {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics__metrics__labeled_boolean__oskeystore_self_test {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -22486,6 +25088,57 @@ view: metrics__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__widget_pointing_devices {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
@@ -22528,6 +25181,57 @@ view: metrics__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ec
   }
 }
 
+view: metrics__metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_quantity__normandy_recipe_freshness {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__labeled_string__addrbook_addressbook_count {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -22553,6 +25257,18 @@ view: metrics__metrics__labeled_string__addrbook_contact_count {
 }
 
 view: metrics__metrics__labeled_string__calendar_calendar_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics__metrics__labeled_string__calendar_google_token_type {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -22728,6 +25444,164 @@ view: metrics__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_du
 }
 
 view: metrics__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse_idle_connection {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse_idle_connection__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_http3_avg_read_interval {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_http3_avg_read_interval__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -24012,6 +26886,18 @@ view: metrics__metrics__timing_distribution__javascript_gc_total_time__values {
   }
 }
 
+view: metrics__metrics__timing_distribution__javascript_ion_compile_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__javascript_pageload_baseline_compile_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -24096,6 +26982,18 @@ view: metrics__metrics__timing_distribution__javascript_pageload_xdr_encode_time
   }
 }
 
+view: metrics__metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__ls_preparedatastore_processing_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -24120,7 +27018,31 @@ view: metrics__metrics__timing_distribution__ls_preparelsdatabase_processing_tim
   }
 }
 
+view: metrics__metrics__timing_distribution__mail_compact_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__network_cache_hit_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_cache_miss_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

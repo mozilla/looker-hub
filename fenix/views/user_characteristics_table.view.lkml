@@ -285,6 +285,13 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Use Document Colors"
   }
 
+  dimension: metrics__boolean__characteristics_using_accelerated_canvas {
+    sql: ${TABLE}.metrics.boolean.characteristics_using_accelerated_canvas ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Using Accelerated Canvas"
+  }
+
   dimension: metrics__boolean__characteristics_video_dynamic_range {
     sql: ${TABLE}.metrics.boolean.characteristics_video_dynamic_range ;;
     type: yesno
@@ -534,6 +541,13 @@ view: user_characteristics_table {
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Gl Version"
+  }
+
+  dimension: metrics__quantity__characteristics_gl_version_software {
+    sql: ${TABLE}.metrics.quantity.characteristics_gl_version_software ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Gl Version Software"
   }
 
   dimension: metrics__quantity__characteristics_group_count {
@@ -1187,11 +1201,32 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Font Size Variable Western"
   }
 
+  dimension: metrics__string__characteristics_gl_context_type {
+    sql: ${TABLE}.metrics.string.characteristics_gl_context_type ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Context Type"
+  }
+
+  dimension: metrics__string__characteristics_gl_context_type_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl_context_type_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Context Type Software"
+  }
+
   dimension: metrics__string__characteristics_gl_fragment_shader {
     sql: ${TABLE}.metrics.string.characteristics_gl_fragment_shader ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Characteristics Gl Fragment Shader"
+  }
+
+  dimension: metrics__string__characteristics_gl_fragment_shader_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl_fragment_shader_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Fragment Shader Software"
   }
 
   dimension: metrics__string__characteristics_gl_renderer {
@@ -1208,6 +1243,20 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Gl Renderer Raw"
   }
 
+  dimension: metrics__string__characteristics_gl_renderer_raw_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl_renderer_raw_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Renderer Raw Software"
+  }
+
+  dimension: metrics__string__characteristics_gl_renderer_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl_renderer_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Renderer Software"
+  }
+
   dimension: metrics__string__characteristics_gl_vendor {
     sql: ${TABLE}.metrics.string.characteristics_gl_vendor ;;
     type: string
@@ -1222,6 +1271,20 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Gl Vendor Raw"
   }
 
+  dimension: metrics__string__characteristics_gl_vendor_raw_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl_vendor_raw_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Vendor Raw Software"
+  }
+
+  dimension: metrics__string__characteristics_gl_vendor_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl_vendor_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Vendor Software"
+  }
+
   dimension: metrics__string__characteristics_gl_version_raw {
     sql: ${TABLE}.metrics.string.characteristics_gl_version_raw ;;
     type: string
@@ -1229,11 +1292,25 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Gl Version Raw"
   }
 
+  dimension: metrics__string__characteristics_gl_version_raw_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl_version_raw_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Version Raw Software"
+  }
+
   dimension: metrics__string__characteristics_gl_vertex_shader {
     sql: ${TABLE}.metrics.string.characteristics_gl_vertex_shader ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Characteristics Gl Vertex Shader"
+  }
+
+  dimension: metrics__string__characteristics_gl_vertex_shader_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl_vertex_shader_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Vertex Shader Software"
   }
 
   dimension: metrics__string__characteristics_intl_locale {
@@ -1507,11 +1584,32 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Gl Extensions Raw"
   }
 
+  dimension: metrics__text2__characteristics_gl_extensions_raw_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_extensions_raw_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Extensions Raw Software"
+  }
+
+  dimension: metrics__text2__characteristics_gl_extensions_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_extensions_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Extensions Software"
+  }
+
   dimension: metrics__text2__characteristics_gl_minimal_source {
     sql: ${TABLE}.metrics.text2.characteristics_gl_minimal_source ;;
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Gl Minimal Source"
+  }
+
+  dimension: metrics__text2__characteristics_gl_minimal_source_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_minimal_source_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Minimal Source Software"
   }
 
   dimension: metrics__text2__characteristics_gl_params_extensions {
@@ -1521,11 +1619,25 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Gl Params Extensions"
   }
 
+  dimension: metrics__text2__characteristics_gl_params_extensions_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_extensions_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Params Extensions Software"
+  }
+
   dimension: metrics__text2__characteristics_gl_params_v1 {
     sql: ${TABLE}.metrics.text2.characteristics_gl_params_v1 ;;
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Gl Params V1"
+  }
+
+  dimension: metrics__text2__characteristics_gl_params_v1_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_v1_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Params V1 Software"
   }
 
   dimension: metrics__text2__characteristics_gl_params_v2 {
@@ -1535,6 +1647,13 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Gl Params V2"
   }
 
+  dimension: metrics__text2__characteristics_gl_params_v2_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_v2_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Params V2 Software"
+  }
+
   dimension: metrics__text2__characteristics_gl_precision_fragment {
     sql: ${TABLE}.metrics.text2.characteristics_gl_precision_fragment ;;
     type: string
@@ -1542,11 +1661,25 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Gl Precision Fragment"
   }
 
+  dimension: metrics__text2__characteristics_gl_precision_fragment_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_precision_fragment_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Precision Fragment Software"
+  }
+
   dimension: metrics__text2__characteristics_gl_precision_vertex {
     sql: ${TABLE}.metrics.text2.characteristics_gl_precision_vertex ;;
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Gl Precision Vertex"
+  }
+
+  dimension: metrics__text2__characteristics_gl_precision_vertex_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_precision_vertex_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Precision Vertex Software"
   }
 
   dimension: metrics__text2__characteristics_ice_foundations {
