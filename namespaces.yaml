@@ -5336,6 +5336,54 @@ growth:
       tables:
       - table: mozdata.telemetry.segmented_dau_28_day_rolling
       type: table_view
+jira_service_desk:
+  explores:
+    issue:
+      type: table_explore
+      views:
+        base_view: issue
+    issue_type:
+      type: table_explore
+      views:
+        base_view: issue_type
+    project:
+      type: table_explore
+      views:
+        base_view: project
+    resolution:
+      type: table_explore
+      views:
+        base_view: resolution
+    status:
+      type: table_explore
+      views:
+        base_view: status
+  glean_app: false
+  owners:
+  - rantwan@mozilla.com
+  pretty_name: Jira Service Desk
+  spoke: looker-spoke-default
+  views:
+    issue:
+      tables:
+      - table: moz-fx-data-shared-prod.jira_service_desk.issue
+      type: table_view
+    issue_type:
+      tables:
+      - table: moz-fx-data-shared-prod.jira_service_desk.issue_type
+      type: table_view
+    project:
+      tables:
+      - table: moz-fx-data-shared-prod.jira_service_desk.project
+      type: table_view
+    resolution:
+      tables:
+      - table: moz-fx-data-shared-prod.jira_service_desk.resolution
+      type: table_view
+    status:
+      tables:
+      - table: moz-fx-data-shared-prod.jira_service_desk.status
+      type: table_view
 klar_android:
   explores:
     activation:
