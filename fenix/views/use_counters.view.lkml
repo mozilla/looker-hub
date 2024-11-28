@@ -6379,7 +6379,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_doc_css_moz_window_transform_origin {
     label: "Use Counter Css Doc Css Moz Window Transform Origin"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_moz_window_transform_origin ;;
     type: number
     group_label: "Use Counter Css Doc"
@@ -19195,7 +19195,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_page_css_moz_window_transform_origin {
     label: "Use Counter Css Page Css Moz Window Transform Origin"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_moz_window_transform_origin ;;
     type: number
     group_label: "Use Counter Css Page"
