@@ -207,6 +207,13 @@ view: usage_reporting_table {
     group_item_label: "Metrics Distribution Id"
   }
 
+  dimension: metrics__uuid__usage_profile_id {
+    sql: ${TABLE}.metrics.uuid.usage_profile_id ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Usage Profile Id"
+  }
+
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string

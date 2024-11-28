@@ -339,6 +339,46 @@ view: events_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__string__syncstorage_device_family {
+    sql: ${TABLE}.metrics.string.syncstorage_device_family ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Syncstorage Device Family"
+    description: "Device family from which sync action was initiated.
+Desktop PC, Tablet, Mobile, and Other.
+"
+  }
+
+  dimension: metrics__string__syncstorage_hashed_device_id {
+    sql: ${TABLE}.metrics.string.syncstorage_hashed_device_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Syncstorage Hashed Device Id"
+    description: "Hashed device id that is associated with a given account. This is used
+entirely to associate opt-out or removal requests, as they make use of 
+the \"deletion-request\" ping associated with the client side of Sync.
+"
+  }
+
+  dimension: metrics__string__syncstorage_hashed_fxa_uid {
+    sql: ${TABLE}.metrics.string.syncstorage_hashed_fxa_uid ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Syncstorage Hashed Fxa Uid"
+    description: "User identifier. Uses `hashed_fxa_uid` for accurate count of sync actions. Used to determine which user has initiated sync activity. This is the Firefox Accounts (FxA) User Identifier (UID) value passed through a SHA-256 hash to render a value that is unique, but ensures the privacy of the original UID. A single user could make numerous sync actions in a given time and this id is required to ensure only a single count of daily active use is made, given a number of actions. Sync_id is not used due to possibility of new keys being generated during resets or timeouts, whenever encryption keys change.
+"
+  }
+
+  dimension: metrics__string__syncstorage_platform {
+    sql: ${TABLE}.metrics.string.syncstorage_platform ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Syncstorage Platform"
+    description: "Platform from which sync action was initiated.
+Firefox Desktop, Fenix, or Firefox iOS.
+"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
