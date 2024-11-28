@@ -5,6 +5,25 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: usage_reporting {
+  dimension: metrics__uuid__usage_profile_id {
+    label: "Usage Profile Id"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.usage_profile_id ;;
+    type: string
+    group_label: "Usage"
+    group_item_label: "Profile Id"
+
+    link: {
+      label: "Glean Dictionary reference for Usage Profile Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/usage_profile_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A UUID uniquely identifying the profile,
+not shared with other telemetry data.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation Id"
     hidden: no
