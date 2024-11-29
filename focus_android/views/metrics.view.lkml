@@ -4009,7 +4009,7 @@ API for the purposes of Validation (hence GVSV).
 
   dimension: metrics__counter__formautofill_addresses_detected_sections_count {
     label: "Formautofill Addresses Detected Sections Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.formautofill_addresses_detected_sections_count ;;
     type: number
     group_label: "Formautofill Addresses"
@@ -4027,7 +4027,7 @@ API for the purposes of Validation (hence GVSV).
 
   dimension: metrics__counter__formautofill_addresses_submitted_sections_count {
     label: "Formautofill Addresses Submitted Sections Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.formautofill_addresses_submitted_sections_count ;;
     type: number
     group_label: "Formautofill Addresses"
@@ -4063,7 +4063,7 @@ API for the purposes of Validation (hence GVSV).
 
   dimension: metrics__counter__formautofill_credit_cards_detected_sections_count {
     label: "Formautofill Credit Cards Detected Sections Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.formautofill_credit_cards_detected_sections_count ;;
     type: number
     group_label: "Formautofill Credit Cards"
@@ -4081,7 +4081,7 @@ API for the purposes of Validation (hence GVSV).
 
   dimension: metrics__counter__formautofill_credit_cards_submitted_sections_count {
     label: "Formautofill Credit Cards Submitted Sections Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.formautofill_credit_cards_submitted_sections_count ;;
     type: number
     group_label: "Formautofill Credit Cards"
