@@ -438,6 +438,15 @@ view: broken_site_report_table {
 "
   }
 
+  dimension: metrics__boolean__broken_site_report_tab_info_antitracking_btp_has_purged_site {
+    sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_btp_has_purged_site ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Broken Site Report Tab Info Antitracking Btp Has Purged Site"
+    description: "Whether the site in the current tab has recently been purged by Bounce Tracking Protection.
+"
+  }
+
   dimension: metrics__boolean__broken_site_report_tab_info_antitracking_has_mixed_active_content_blocked {
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_has_mixed_active_content_blocked ;;
     type: yesno

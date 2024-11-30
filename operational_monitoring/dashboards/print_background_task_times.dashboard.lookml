@@ -61,7 +61,7 @@
       print_background_task_times.branch, print_background_task_times.metric
     ]
     filters:
-      print_background_task_times.metric: '"printing_dialog_opened_without_preview", "printing_silent_print", "printing_dialog_opened_via_preview_tm", "printing_dialog_opened_via_preview", "printing_preview_opened", "printing_preview_opened_tm"'
+      print_background_task_times.metric: '"printing_silent_print", "printing_preview_opened_tm", "printing_dialog_opened_without_preview", "printing_preview_opened", "printing_dialog_opened_via_preview_tm", "printing_dialog_opened_via_preview"'
       print_background_task_times.statistic: sum
     row: 0
     col: 12
@@ -185,32 +185,32 @@
   - title: Channel
     name: Channel
     type: string_filter
-    default_value: 'beta'
+    default_value: 'nightly'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'beta'
-      - 'release'
       - 'nightly'
+      - 'release'
+      - 'beta'
       
   
   
   - title: Os
     name: Os
     type: string_filter
-    default_value: 'Darwin'
+    default_value: 'Linux'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'Darwin'
       - 'Linux'
       - 'Windows_NT'
+      - 'Darwin'
       
   
   
