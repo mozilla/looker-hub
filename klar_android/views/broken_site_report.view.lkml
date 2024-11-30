@@ -401,6 +401,24 @@ view: broken_site_report {
 "
   }
 
+  dimension: metrics__boolean__broken_site_report_tab_info_antitracking_btp_has_purged_site {
+    label: "Broken Site Report Tab Info Antitracking Btp Has Purged Site"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_btp_has_purged_site ;;
+    type: yesno
+    group_label: "Broken Site Report Tab Info Antitracking"
+    group_item_label: "Btp Has Purged Site"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking Btp Has Purged Site"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/broken_site_report_tab_info_antitracking_btp_has_purged_site"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the site in the current tab has recently been purged by Bounce Tracking Protection.
+"
+  }
+
   dimension: metrics__boolean__broken_site_report_tab_info_antitracking_has_mixed_active_content_blocked {
     label: "Broken Site Report Tab Info Antitracking Has Mixed Active Content Blocked"
     hidden: no
