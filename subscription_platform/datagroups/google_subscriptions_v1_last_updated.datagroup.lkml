@@ -6,11 +6,11 @@
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
 datagroup: google_subscriptions_v1_last_updated {
-  label: "Google Subscriptions Last Updated"
+  label: "google_subscriptions_v1 Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'subscription_platform_derived'
     AND table_name = 'google_subscriptions_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod.subscription_platform_derived.google_subscriptions_v1 is modified."
+  description: "Updates for google_subscriptions_v1 when moz-fx-data-shared-prod.subscription_platform_derived.google_subscriptions_v1 is modified."
   max_cache_age: "24 hours"
 }

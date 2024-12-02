@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/fenix_distribution_deal.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/fenix_distribution_deal_last_updated.datagroup.lkml"
 
 explore: fenix_distribution_deal {
   sql_always_where: ${fenix_distribution_deal.submission_date} >= '2010-01-01' ;;
@@ -15,4 +16,6 @@ explore: fenix_distribution_deal {
       submission_date: "28 days",
     ]
   }
+
+  persist_with: fenix_distribution_deal_last_updated
 }
