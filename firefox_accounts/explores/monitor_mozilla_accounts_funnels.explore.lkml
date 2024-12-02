@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_accounts/views/monitor_mozilla_accounts_funnels.view.lkml"
+include: "/looker-hub/firefox_accounts/datagroups/monitor_mozilla_accounts_funnels_last_updated.datagroup.lkml"
 
 explore: monitor_mozilla_accounts_funnels {
   sql_always_where: ${monitor_mozilla_accounts_funnels.submission_date} >= '2010-01-01' ;;
@@ -15,4 +16,6 @@ explore: monitor_mozilla_accounts_funnels {
       submission_date: "28 days",
     ]
   }
+
+  persist_with: monitor_mozilla_accounts_funnels_last_updated
 }
