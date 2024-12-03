@@ -3825,10 +3825,6 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.addresses_sync
       type: table_view
-    app_store_choice_screen_engagement:
-      tables:
-      - table: moz-fx-data-shared-prod.firefox_ios.app_store_choice_screen_engagement
-      type: table_view
     app_store_choice_screen_engagement_table:
       tables:
       - channel: release
