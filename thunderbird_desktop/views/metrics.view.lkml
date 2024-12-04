@@ -3438,6 +3438,24 @@ startup function is called to when the startup promise resolves.
 "
   }
 
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__sum {
+    label: "Fingerprinting Protection Canvas Noise Calculate Time Ns Sum"
+    hidden: yes
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.sum ;;
+    type: number
+    group_label: "Fingerprinting Protection"
+    group_item_label: "Canvas Noise Calculate Time Ns Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fingerprinting Protection Canvas Noise Calculate Time Ns Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/fingerprinting_protection_canvas_noise_calculate_time_ns"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how long to generate canvas random noises.
+"
+  }
+
   dimension: metrics__boolean__fog_failed_idle_registration {
     label: "Fog Failed Idle Registration"
     hidden: no
@@ -27513,6 +27531,18 @@ view: metrics__metrics__timing_distribution__extensions_timing_storage_local_set
 }
 
 view: metrics__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
