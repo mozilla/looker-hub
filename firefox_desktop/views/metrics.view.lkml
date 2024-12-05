@@ -9110,7 +9110,7 @@ startup function is called to when the startup promise resolves.
 
   dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__sum {
     label: "Fingerprinting Protection Canvas Noise Calculate Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.sum ;;
     type: number
     group_label: "Fingerprinting Protection"
