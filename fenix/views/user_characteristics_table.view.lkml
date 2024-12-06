@@ -991,11 +991,67 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Canvasdata3"
   }
 
+  dimension: metrics__string__characteristics_canvasdata3avif {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3avif ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Avif"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3avifsoftware {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3avifsoftware ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Avifsoftware"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3cspsafe {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3cspsafe ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Cspsafe"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3cspsafesoftware {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3cspsafesoftware ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Cspsafesoftware"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3png {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3png ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Png"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3pngsoftware {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3pngsoftware ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Pngsoftware"
+  }
+
   dimension: metrics__string__characteristics_canvasdata3software {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata3software ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Characteristics Canvasdata3Software"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3webp {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3webp ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Webp"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3webpsoftware {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3webpsoftware ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Webpsoftware"
   }
 
   dimension: metrics__string__characteristics_canvasdata4 {
