@@ -4,24 +4,19 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: health_counts {
-  dimension: count {
-    sql: ${TABLE}.count ;;
+view: status_category {
+  dimension: id {
+    sql: ${TABLE}.id ;;
     type: number
   }
 
-  dimension: state {
-    sql: ${TABLE}.state ;;
+  dimension: name {
+    sql: ${TABLE}.name ;;
     type: string
   }
 
-  dimension: type {
-    sql: ${TABLE}.type ;;
-    type: string
-  }
-
-  dimension_group: date {
-    sql: ${TABLE}.date ;;
+  dimension_group: _fivetran_synced {
+    sql: ${TABLE}._fivetran_synced ;;
     type: time
     timeframes: [
       raw,
@@ -34,10 +29,5 @@ view: health_counts {
     ]
   }
 
-  measure: count_sum {
-    sql: ${count} ;;
-    type: sum
-  }
-
-  sql_table_name: `mozdata.analysis.wclouser_fxa_health_counts` ;;
+  sql_table_name: `moz-fx-data-shared-prod.jira_service_desk.status_category` ;;
 }
