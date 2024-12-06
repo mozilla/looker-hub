@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       fenix_homescreen_activation_event_validation.branch
     ]
     filters:
-      fenix_homescreen_activation_event_validation.metric: 'retained'
+      fenix_homescreen_activation_event_validation.metric: 'active_hours'
       fenix_homescreen_activation_event_validation.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       fenix_homescreen_activation_event_validation.branch
     ]
     filters:
-      fenix_homescreen_activation_event_validation.metric: 'days_of_use'
+      fenix_homescreen_activation_event_validation.metric: 'search_count'
       fenix_homescreen_activation_event_validation.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       fenix_homescreen_activation_event_validation.branch
     ]
     filters:
-      fenix_homescreen_activation_event_validation.metric: 'search_count'
+      fenix_homescreen_activation_event_validation.metric: 'days_of_use'
       fenix_homescreen_activation_event_validation.statistic: mean
     row: 20
     col: 0
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       fenix_homescreen_activation_event_validation.branch
     ]
     filters:
-      fenix_homescreen_activation_event_validation.metric: 'active_hours'
+      fenix_homescreen_activation_event_validation.metric: 'retained'
       fenix_homescreen_activation_event_validation.statistic: mean
     row: 30
     col: 0
