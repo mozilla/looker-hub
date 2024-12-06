@@ -55,6 +55,11 @@ accounts_backend:
       - channel: null
         table: mozdata.accounts_backend.events_unnested
       type: table_view
+    monitoring_db_counts_table:
+      tables:
+      - channel: null
+        table: mozdata.accounts_backend.monitoring_db_counts
+      type: table_view
     nonprod_accounts_table:
       tables:
       - channel: null
@@ -2010,6 +2015,10 @@ firefox_accounts:
       views:
         base_view: content_auth_stdout_events
         extended_view: fxa_content_auth_stdout_events_table
+    database_counts:
+      type: table_explore
+      views:
+        base_view: database_counts
     email_first_funnels:
       type: table_explore
       views:
@@ -2039,10 +2048,6 @@ firefox_accounts:
       type: table_explore
       views:
         base_view: health_counts
-    health_db_counts:
-      type: table_explore
-      views:
-        base_view: health_db_counts
     health_issues:
       type: table_explore
       views:
@@ -2141,6 +2146,14 @@ firefox_accounts:
       - base_table: mozdata.firefox_accounts.fxa_content_auth_stdout_events
         events_table_view: fxa_content_auth_stdout_events_table
       type: events_view
+    database_counts:
+      measures:
+        total_rows_sum:
+          sql: ${total_rows}
+          type: sum
+      tables:
+      - table: moz-fx-data-shared-prod.accounts_backend.monitoring_db_counts
+      type: table_view
     email_first_funnels:
       tables:
       - table: moz-fx-data-shared-prod.accounts_frontend_derived.email_first_reg_login_funnels_v1
@@ -2217,12 +2230,12 @@ firefox_accounts:
       - table: mozdata.analysis.wclouser_fxa_health_cost
       type: table_view
     health_counts:
+      measures:
+        count_sum:
+          sql: ${count}
+          type: sum
       tables:
       - table: mozdata.analysis.wclouser_fxa_health_counts
-      type: table_view
-    health_db_counts:
-      tables:
-      - table: mozdata.analysis.wclouser_fxa_health_db_counts
       type: table_view
     health_issues:
       measures:
@@ -5334,10 +5347,18 @@ growth:
       type: table_view
 jira_service_desk:
   explores:
+    field:
+      type: table_explore
+      views:
+        base_view: field
     issue:
       type: table_explore
       views:
         base_view: issue
+    issue_field_history:
+      type: table_explore
+      views:
+        base_view: issue_field_history
     issue_type:
       type: table_explore
       views:
@@ -5346,6 +5367,14 @@ jira_service_desk:
       type: table_explore
       views:
         base_view: project
+    request:
+      type: table_explore
+      views:
+        base_view: request
+    request_type:
+      type: table_explore
+      views:
+        base_view: request_type
     resolution:
       type: table_explore
       views:
@@ -5354,15 +5383,27 @@ jira_service_desk:
       type: table_explore
       views:
         base_view: status
+    status_category:
+      type: table_explore
+      views:
+        base_view: status_category
   glean_app: false
   owners:
   - rantwan@mozilla.com
   pretty_name: Jira Service Desk
   spoke: looker-spoke-default
   views:
+    field:
+      tables:
+      - table: moz-fx-data-shared-prod.jira_service_desk.field
+      type: table_view
     issue:
       tables:
       - table: moz-fx-data-shared-prod.jira_service_desk.issue
+      type: table_view
+    issue_field_history:
+      tables:
+      - table: moz-fx-data-shared-prod.jira_service_desk.issue_field_history
       type: table_view
     issue_type:
       tables:
@@ -5372,6 +5413,14 @@ jira_service_desk:
       tables:
       - table: moz-fx-data-shared-prod.jira_service_desk.project
       type: table_view
+    request:
+      tables:
+      - table: moz-fx-data-shared-prod.jira_service_desk.request
+      type: table_view
+    request_type:
+      tables:
+      - table: moz-fx-data-shared-prod.jira_service_desk.request_type
+      type: table_view
     resolution:
       tables:
       - table: moz-fx-data-shared-prod.jira_service_desk.resolution
@@ -5379,6 +5428,10 @@ jira_service_desk:
     status:
       tables:
       - table: moz-fx-data-shared-prod.jira_service_desk.status
+      type: table_view
+    status_category:
+      tables:
+      - table: moz-fx-data-shared-prod.jira_service_desk.status_category
       type: table_view
 klar_android:
   explores:
