@@ -1248,11 +1248,83 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata3avif {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3avif ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Avif"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3avifsoftware {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3avifsoftware ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Avifsoftware"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3cspsafe {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3cspsafe ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Cspsafe"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3cspsafesoftware {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3cspsafesoftware ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Cspsafesoftware"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3png {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3png ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Png"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3pngsoftware {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3pngsoftware ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Pngsoftware"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata3software {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata3software ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Characteristics Canvasdata3Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3webp {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3webp ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Webp"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3webpsoftware {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3webpsoftware ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Webpsoftware"
     description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
 "
   }

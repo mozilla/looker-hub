@@ -419,6 +419,114 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata3avif {
+    label: "Characteristics Canvasdata3Avif"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3avif ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3Avif"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata3Avif"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/characteristics_canvasdata3avif"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3avifsoftware {
+    label: "Characteristics Canvasdata3Avifsoftware"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3avifsoftware ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3Avifsoftware"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata3Avifsoftware"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/characteristics_canvasdata3avifsoftware"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3cspsafe {
+    label: "Characteristics Canvasdata3Cspsafe"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3cspsafe ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3Cspsafe"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata3Cspsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/characteristics_canvasdata3cspsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3cspsafesoftware {
+    label: "Characteristics Canvasdata3Cspsafesoftware"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3cspsafesoftware ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3Cspsafesoftware"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata3Cspsafesoftware"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/characteristics_canvasdata3cspsafesoftware"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3png {
+    label: "Characteristics Canvasdata3Png"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3png ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3Png"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata3Png"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/characteristics_canvasdata3png"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3pngsoftware {
+    label: "Characteristics Canvasdata3Pngsoftware"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3pngsoftware ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3Pngsoftware"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata3Pngsoftware"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/characteristics_canvasdata3pngsoftware"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata3software {
     label: "Characteristics Canvasdata3Software"
     hidden: no
@@ -430,6 +538,42 @@ view: user_characteristics {
     link: {
       label: "Glean Dictionary reference for Characteristics Canvasdata3Software"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/characteristics_canvasdata3software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3webp {
+    label: "Characteristics Canvasdata3Webp"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3webp ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3Webp"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata3Webp"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/characteristics_canvasdata3webp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3webpsoftware {
+    label: "Characteristics Canvasdata3Webpsoftware"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3webpsoftware ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3Webpsoftware"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata3Webpsoftware"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/characteristics_canvasdata3webpsoftware"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
