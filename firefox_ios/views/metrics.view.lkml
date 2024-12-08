@@ -99,6 +99,42 @@ Firefox-iOS.
 "
   }
 
+  dimension: metrics__boolean__app_choice_screen_acquisition {
+    label: "App Choice Screen Acquisition"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.app_choice_screen_acquisition ;;
+    type: yesno
+    group_label: "App"
+    group_item_label: "Choice Screen Acquisition"
+
+    link: {
+      label: "Glean Dictionary reference for App Choice Screen Acquisition"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/app_choice_screen_acquisition"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The user installed the app via the browser choice screen
+"
+  }
+
+  dimension: metrics__boolean__app_default_browser {
+    label: "App Default Browser"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.app_default_browser ;;
+    type: yesno
+    group_label: "App"
+    group_item_label: "Default Browser"
+
+    link: {
+      label: "Glean Dictionary reference for App Default Browser"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/app_default_browser"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Is Firefox the default browser
+"
+  }
+
   dimension: metrics__counter__app_opened_as_default_browser {
     label: "App Opened As Default Browser"
     hidden: no

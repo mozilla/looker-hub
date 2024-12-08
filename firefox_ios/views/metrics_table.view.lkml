@@ -305,6 +305,20 @@ view: metrics_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__app_choice_screen_acquisition {
+    sql: ${TABLE}.metrics.boolean.app_choice_screen_acquisition ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "App Choice Screen Acquisition"
+  }
+
+  dimension: metrics__boolean__app_default_browser {
+    sql: ${TABLE}.metrics.boolean.app_default_browser ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "App Default Browser"
+  }
+
   dimension: metrics__boolean__application_services_bookmark_highlights_visible {
     sql: ${TABLE}.metrics.boolean.application_services_bookmark_highlights_visible ;;
     type: yesno
