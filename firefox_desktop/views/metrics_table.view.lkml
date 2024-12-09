@@ -5805,6 +5805,13 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__labeled_counter__telemetry_clamping_time_hgrams {
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_clamping_time_hgrams ;;
+    hidden: yes
+    description: "How often do which histograms that use `Telemetry::AccumulateTimeDelta` have clamped samples due to underflow?
+"
+  }
+
   dimension: metrics__labeled_counter__tls_xyber_intolerance_reason {
     sql: ${TABLE}.metrics.labeled_counter.tls_xyber_intolerance_reason ;;
     hidden: yes
