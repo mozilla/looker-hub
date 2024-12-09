@@ -4714,6 +4714,23 @@ in browser.
 "
   }
 
+  dimension: metrics__labeled_counter__telemetry_clamping_time_hgrams {
+    label: "Telemetry Clamping Time Hgrams"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_clamping_time_hgrams ;;
+    group_label: "Telemetry"
+    group_item_label: "Clamping Time Hgrams"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Clamping Time Hgrams"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_clamping_time_hgrams"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often do which histograms that use `Telemetry::AccumulateTimeDelta` have clamped samples due to underflow?
+"
+  }
+
   dimension: metrics__boolean__telemetry_data_upload_optin {
     label: "Telemetry Data Upload Optin"
     hidden: no
@@ -34267,6 +34284,47 @@ view: metrics__metrics__labeled_counter__suggest_relevance_outcome {
 
 view: metrics__metrics__labeled_counter__suggest_relevance_status {
   label: "Suggest Relevance - Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__telemetry_clamping_time_hgrams {
+  label: "Telemetry - Clamping Time Hgrams"
 
   dimension: document_id {
     type: string
