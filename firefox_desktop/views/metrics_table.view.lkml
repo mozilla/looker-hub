@@ -5385,6 +5385,13 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_https_http_or_local {
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_http_or_local ;;
+    hidden: yes
+    description: "Whether a top-level request is HTTPS, HTTP, or HTTP for local domain
+"
+  }
+
   dimension: metrics__labeled_counter__networking_https_record_state {
     sql: ${TABLE}.metrics.labeled_counter.networking_https_record_state ;;
     hidden: yes
@@ -5795,6 +5802,13 @@ success - search service successfully initialized.
     sql: ${TABLE}.metrics.labeled_counter.suggest_relevance_status ;;
     hidden: yes
     description: "Count the successful / failed attempts of relevance scoring in Firefox Suggest.
+"
+  }
+
+  dimension: metrics__labeled_counter__telemetry_clamping_time_hgrams {
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_clamping_time_hgrams ;;
+    hidden: yes
+    description: "How often do which histograms that use `Telemetry::AccumulateTimeDelta` have clamped samples due to underflow?
 "
   }
 
@@ -9985,6 +9999,126 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__values {
     sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time 2"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__count {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time 2"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time 2"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time 2"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__range {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time 2"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time 2"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time 2"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__values {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time Ns"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__count {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time Ns"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time Ns"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time Ns"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__range {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time Ns"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time Ns"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time Ns"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__values {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.values ;;
     hidden: yes
   }
 
@@ -22869,6 +23003,30 @@ view: metrics_table__metrics__timing_distribution__extensions_timing_storage_loc
 }
 
 view: metrics_table__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

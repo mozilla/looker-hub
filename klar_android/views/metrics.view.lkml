@@ -3684,7 +3684,7 @@ startup function is called to when the startup promise resolves.
 
   dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__sum {
     label: "Fingerprinting Protection Canvas Noise Calculate Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.sum ;;
     type: number
     group_label: "Fingerprinting Protection"
@@ -3693,6 +3693,42 @@ startup function is called to when the startup promise resolves.
     link: {
       label: "Glean Dictionary reference for Fingerprinting Protection Canvas Noise Calculate Time Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fingerprinting_protection_canvas_noise_calculate_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how long to generate canvas random noises.
+"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__sum {
+    label: "Fingerprinting Protection Canvas Noise Calculate Time 2 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.sum ;;
+    type: number
+    group_label: "Fingerprinting Protection"
+    group_item_label: "Canvas Noise Calculate Time 2 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fingerprinting Protection Canvas Noise Calculate Time 2 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fingerprinting_protection_canvas_noise_calculate_time_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how long to generate canvas random noises.
+"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__sum {
+    label: "Fingerprinting Protection Canvas Noise Calculate Time Ns Sum"
+    hidden: yes
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.sum ;;
+    type: number
+    group_label: "Fingerprinting Protection"
+    group_item_label: "Canvas Noise Calculate Time Ns Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fingerprinting Protection Canvas Noise Calculate Time Ns Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fingerprinting_protection_canvas_noise_calculate_time_ns"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -8851,6 +8887,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "Whether a top-level HTTP request gets upgraded to HTTPS and the reason for it
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_https_http_or_local {
+    label: "Networking Https Http Or Local"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_http_or_local ;;
+    group_label: "Networking"
+    group_item_label: "Https Http Or Local"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Https Http Or Local"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_https_http_or_local"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a top-level request is HTTPS, HTTP, or HTTP for local domain
 "
   }
 
@@ -22431,6 +22484,47 @@ view: metrics__metrics__labeled_counter__networking_http_to_https_upgrade_reason
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_https_http_or_local {
+  label: "Networking - Https Http Or Local"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_https_record_state {
   label: "Networking - Https Record State"
 
@@ -27857,6 +27951,30 @@ view: metrics__metrics__timing_distribution__extensions_timing_storage_local_set
 }
 
 view: metrics__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

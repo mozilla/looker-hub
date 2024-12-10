@@ -34,5 +34,10 @@ view: health_counts {
     ]
   }
 
+  measure: count_sum {
+    sql: ${count} ;;
+    type: sum
+  }
+
   sql_table_name: `mozdata.analysis.wclouser_fxa_health_counts` ;;
 }

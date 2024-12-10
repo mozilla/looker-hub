@@ -6,7 +6,7 @@
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
 datagroup: android_app_campaign_stats_v1_last_updated {
-  label: "android_app_campaign_stats_v1 Last Updated"
+  label: "Android App Campaign Stats Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'google_ads_derived'

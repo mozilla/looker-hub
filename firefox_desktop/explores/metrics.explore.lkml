@@ -1083,6 +1083,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_to_https_upgrade_reason}) AS metrics__metrics__labeled_counter__networking_http_to_https_upgrade_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_to_https_upgrade_reason.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_https_http_or_local {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_https_http_or_local}) AS metrics__metrics__labeled_counter__networking_https_http_or_local ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_https_http_or_local.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_https_record_state {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_https_record_state}) AS metrics__metrics__labeled_counter__networking_https_record_state ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_https_record_state.document_id} ;;
@@ -1371,6 +1376,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__suggest_relevance_status {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__suggest_relevance_status}) AS metrics__metrics__labeled_counter__suggest_relevance_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__suggest_relevance_status.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__telemetry_clamping_time_hgrams {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__telemetry_clamping_time_hgrams}) AS metrics__metrics__labeled_counter__telemetry_clamping_time_hgrams ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__telemetry_clamping_time_hgrams.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
