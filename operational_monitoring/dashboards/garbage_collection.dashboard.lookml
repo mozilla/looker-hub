@@ -10,43 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Gc Ms
-    name: Gc Ms_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: garbage_collection
-    type: "ci-line-chart"
-    fields: [
-      garbage_collection.submission_date,
-      garbage_collection.branch,
-      garbage_collection.upper,
-      garbage_collection.lower,
-      garbage_collection.point
-    ]
-    pivots: [
-      garbage_collection.branch
-    ]
-    filters:
-      garbage_collection.metric: 'gc_ms'
-      garbage_collection.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: garbage_collection.submission_date
-    field_y: garbage_collection.point
-    log_scale: false
-    ci_lower: garbage_collection.lower
-    ci_upper: garbage_collection.upper
-    show_grid: true
-    listen:
-      Date: garbage_collection.submission_date
-      Percentile: garbage_collection.parameter
-      Os: garbage_collection.os
-      
-    active: "#3FE1B0"
-    defaults_version: 0
   - title: Gc Effectiveness
     name: Gc Effectiveness_percentile
     note_state: expanded
@@ -68,7 +31,7 @@
       garbage_collection.metric: 'gc_effectiveness'
       garbage_collection.statistic: percentile
     row: 0
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: garbage_collection.submission_date
@@ -103,6 +66,43 @@
     ]
     filters:
       garbage_collection.metric: 'gc_budget_overrun'
+      garbage_collection.statistic: percentile
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: garbage_collection.submission_date
+    field_y: garbage_collection.point
+    log_scale: false
+    ci_lower: garbage_collection.lower
+    ci_upper: garbage_collection.upper
+    show_grid: true
+    listen:
+      Date: garbage_collection.submission_date
+      Percentile: garbage_collection.parameter
+      Os: garbage_collection.os
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Gc Ms
+    name: Gc Ms_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: garbage_collection
+    type: "ci-line-chart"
+    fields: [
+      garbage_collection.submission_date,
+      garbage_collection.branch,
+      garbage_collection.upper,
+      garbage_collection.lower,
+      garbage_collection.point
+    ]
+    pivots: [
+      garbage_collection.branch
+    ]
+    filters:
+      garbage_collection.metric: 'gc_ms'
       garbage_collection.statistic: percentile
     row: 10
     col: 0
@@ -211,16 +211,16 @@
   - title: Os
     name: Os
     type: string_filter
-    default_value: 'Linux'
+    default_value: 'Windows'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'Linux'
-      - 'Mac'
       - 'Windows'
+      - 'Mac'
+      - 'Linux'
       - 'Other'
       
   

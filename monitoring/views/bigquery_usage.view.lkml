@@ -69,6 +69,12 @@ view: bigquery_usage {
     description: "The type of the job"
   }
 
+  dimension: labels {
+    sql: ${TABLE}.labels ;;
+    hidden: yes
+    description: "Array of labels applied to the job as key-value pairs."
+  }
+
   dimension: query_id {
     sql: ${TABLE}.query_id ;;
     type: string
@@ -212,4 +218,18 @@ view: bigquery_usage {
   }
 
   sql_table_name: `moz-fx-data-shared-prod.monitoring.bigquery_usage` ;;
+}
+
+view: bigquery_usage__labels {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    description: "Label key."
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    description: "Label value."
+  }
 }
