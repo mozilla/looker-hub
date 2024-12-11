@@ -6179,19 +6179,19 @@ monitoring:
       type: table_view
     bigeye_usage:
       measures:
-        cost:
+        cost_sum:
           sql: ${cost}
           type: sum
-        task_duration:
+        task_duration_sum:
           sql: ${task_duration}
           type: sum
-        total_slot_ms:
+        total_slot_ms_sum:
           sql: ${total_slot_ms}
           type: sum
-        total_terabytes_billed:
+        total_terabytes_billed_sum:
           sql: ${total_terabytes_billed}
           type: sum
-        total_terabytes_processed:
+        total_terabytes_processed_sum:
           sql: ${total_terabytes_processed}
           type: sum
       tables:
