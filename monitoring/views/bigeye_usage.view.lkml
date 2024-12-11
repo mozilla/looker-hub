@@ -90,27 +90,27 @@ view: bigeye_usage {
     datatype: date
   }
 
-  measure: cost {
+  measure: cost_sum {
     sql: ${cost} ;;
     type: sum
   }
 
-  measure: task_duration {
+  measure: task_duration_sum {
     sql: ${task_duration} ;;
     type: sum
   }
 
-  measure: total_slot_ms {
+  measure: total_slot_ms_sum {
     sql: ${total_slot_ms} ;;
     type: sum
   }
 
-  measure: total_terabytes_billed {
+  measure: total_terabytes_billed_sum {
     sql: ${total_terabytes_billed} ;;
     type: sum
   }
 
-  measure: total_terabytes_processed {
+  measure: total_terabytes_processed_sum {
     sql: ${total_terabytes_processed} ;;
     type: sum
   }
