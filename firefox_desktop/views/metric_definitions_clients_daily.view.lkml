@@ -34,6 +34,7 @@ COALESCE(SUM(pings_aggregated_by_this_row), 0) > 0 AS retained,
 SUM(socket_crash_count) AS socket_crash_count_v1,
 SUM(IF(socket_crash_count > 0, active_hours_sum, 0)) AS socket_crash_active_hours_v1,
 COUNTIF(socket_crash_count > 0) AS socket_crash_dau_v1,
+LOGICAL_OR(COALESCE(sync_count_mobile_mean > 0, FALSE)) AS sync_to_mobile,
 
                 looker_base_fields_app_name,
 looker_base_fields_app_version,
@@ -377,6 +378,14 @@ looker_base_fields_sample_id,
     sql: ${TABLE}.socket_crash_dau_v1 ;;
   }
 
+  dimension: sync_to_mobile {
+    group_label: "Metrics"
+    label: "Desktop Sync to Mobile"
+    description: "Did a desktop user sync to mobile"
+    type: number
+    sql: ${TABLE}.sync_to_mobile ;;
+  }
+
   dimension: app_name {
     sql: ${TABLE}.looker_base_fields_app_name ;;
     type: string
@@ -546,6 +555,7 @@ looker_base_fields_sample_id,
       socket_crash_count_v1,
       socket_crash_active_hours_v1,
       socket_crash_dau_v1,
+      sync_to_mobile,
       days_of_use_average,
       socket_crash_count_v1_sum,
       socket_crash_count_v1_ratio,
