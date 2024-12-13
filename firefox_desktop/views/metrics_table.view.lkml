@@ -890,6 +890,15 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__boolean__primary_password_enabled {
+    sql: ${TABLE}.metrics.boolean.primary_password_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Primary Password Enabled"
+    description: "If a primary-password is enabled for this profile. Set soon after browser startup. Does not update if a primary password is added or removed after startup.
+"
+  }
+
   dimension: metrics__boolean__shopping_settings_auto_open_user_disabled {
     sql: ${TABLE}.metrics.boolean.shopping_settings_auto_open_user_disabled ;;
     type: yesno
