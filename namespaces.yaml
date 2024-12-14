@@ -8314,10 +8314,10 @@ operational_monitoring:
             default: release
             options:
             - release
-            - esr
             - aurora
             - nightly
             - beta
+            - esr
             - default
             - nightly-pine
             - nightly-oak
@@ -9030,11 +9030,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id170
           os:
-            default: Windows
+            default: Linux
             options:
-            - Windows
-            - Mac
             - Linux
+            - Mac
+            - Windows
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -10784,14 +10784,14 @@ operational_monitoring:
             default: release
             options:
             - release
-            - beta
             - nightly
+            - beta
           os:
-            default: Windows_NT
+            default: Darwin
             options:
-            - Windows_NT
             - Darwin
             - Linux
+            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id309

@@ -185,6 +185,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_canvas_feature_status {
+    label: "Characteristics Canvas Feature Status"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvas_feature_status ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvas Feature Status"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvas Feature Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvas_feature_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Status of and failure id (if failed) of ACCELERATED_CANVAS2D feature
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata1 {
     label: "Characteristics Canvasdata1"
     hidden: no
