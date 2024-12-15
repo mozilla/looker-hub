@@ -10,11 +10,11 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Dirty Startup
-    name: Dirty Startup_total_ratio
+  - title: Total Baseline Pings
+    name: Total Baseline Pings_sum
     note_state: expanded
     note_display: above
-    note_text: Total_Ratio
+    note_text: Sum
     explore: firefox_ios_health
     type: looker_line
     fields: [
@@ -26,8 +26,8 @@
       firefox_ios_health.branch
     ]
     filters:
-      firefox_ios_health.metric: 'dirty_startup'
-      firefox_ios_health.statistic: total_ratio
+      firefox_ios_health.metric: 'total_baseline_pings'
+      firefox_ios_health.statistic: sum
     row: 0
     col: 0
     width: 12
@@ -142,11 +142,11 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Total Baseline Pings
-    name: Total Baseline Pings_sum
+  - title: Dirty Startup
+    name: Dirty Startup_total_ratio
     note_state: expanded
     note_display: above
-    note_text: Sum
+    note_text: Total_Ratio
     explore: firefox_ios_health
     type: looker_line
     fields: [
@@ -158,8 +158,8 @@
       firefox_ios_health.branch
     ]
     filters:
-      firefox_ios_health.metric: 'total_baseline_pings'
-      firefox_ios_health.statistic: sum
+      firefox_ios_health.metric: 'dirty_startup'
+      firefox_ios_health.statistic: total_ratio
     row: 20
     col: 0
     width: 12
