@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       bloomberg_suggestions_potential_exposures.branch
     ]
     filters:
-      bloomberg_suggestions_potential_exposures.metric: 'days_of_use'
+      bloomberg_suggestions_potential_exposures.metric: 'search_count'
       bloomberg_suggestions_potential_exposures.statistic: mean
     row: 10
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       bloomberg_suggestions_potential_exposures.branch
     ]
     filters:
-      bloomberg_suggestions_potential_exposures.metric: 'qualified_cumulative_days_of_use'
+      bloomberg_suggestions_potential_exposures.metric: 'uri_count'
       bloomberg_suggestions_potential_exposures.statistic: mean
     row: 10
     col: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,44 +196,10 @@
       bloomberg_suggestions_potential_exposures.branch
     ]
     filters:
-      bloomberg_suggestions_potential_exposures.metric: 'search_count'
+      bloomberg_suggestions_potential_exposures.metric: 'qualified_cumulative_days_of_use'
       bloomberg_suggestions_potential_exposures.statistic: mean
     row: 20
     col: 12
-    width: 12
-    height: 8
-    field_x: bloomberg_suggestions_potential_exposures.submission_date
-    field_y: bloomberg_suggestions_potential_exposures.point
-    log_scale: false
-    ci_lower: bloomberg_suggestions_potential_exposures.lower
-    ci_upper: bloomberg_suggestions_potential_exposures.upper
-    show_grid: true
-    listen:
-      Date: bloomberg_suggestions_potential_exposures.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: bloomberg_suggestions_potential_exposures
-    type: looker_line
-    fields: [
-      bloomberg_suggestions_potential_exposures.submission_date,
-      bloomberg_suggestions_potential_exposures.branch,
-      bloomberg_suggestions_potential_exposures.point
-    ]
-    pivots: [
-      bloomberg_suggestions_potential_exposures.branch
-    ]
-    filters:
-      bloomberg_suggestions_potential_exposures.metric: 'uri_count'
-      bloomberg_suggestions_potential_exposures.statistic: mean
-    row: 30
-    col: 0
     width: 12
     height: 8
     field_x: bloomberg_suggestions_potential_exposures.submission_date
@@ -269,7 +235,7 @@
       bloomberg_suggestions_potential_exposures.metric: 'memory_total'
       bloomberg_suggestions_potential_exposures.statistic: percentile
     row: 30
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: bloomberg_suggestions_potential_exposures.submission_date
@@ -281,6 +247,40 @@
     listen:
       Date: bloomberg_suggestions_potential_exposures.submission_date
       Percentile: bloomberg_suggestions_potential_exposures.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: bloomberg_suggestions_potential_exposures
+    type: looker_line
+    fields: [
+      bloomberg_suggestions_potential_exposures.submission_date,
+      bloomberg_suggestions_potential_exposures.branch,
+      bloomberg_suggestions_potential_exposures.point
+    ]
+    pivots: [
+      bloomberg_suggestions_potential_exposures.branch
+    ]
+    filters:
+      bloomberg_suggestions_potential_exposures.metric: 'days_of_use'
+      bloomberg_suggestions_potential_exposures.statistic: mean
+    row: 30
+    col: 12
+    width: 12
+    height: 8
+    field_x: bloomberg_suggestions_potential_exposures.submission_date
+    field_y: bloomberg_suggestions_potential_exposures.point
+    log_scale: false
+    ci_lower: bloomberg_suggestions_potential_exposures.lower
+    ci_upper: bloomberg_suggestions_potential_exposures.upper
+    show_grid: true
+    listen:
+      Date: bloomberg_suggestions_potential_exposures.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
