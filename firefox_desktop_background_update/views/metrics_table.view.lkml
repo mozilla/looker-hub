@@ -4336,6 +4336,12 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__update_skip_startup_update_reason {
+    sql: ${TABLE}.metrics.labeled_counter.update_skip_startup_update_reason ;;
+    hidden: yes
+    description: "We usually install pending updates at startup, but there are a couple of reasons we might not. This value will be set to \"none\" if there was no reason not to install updates. If the value is \"DevToolsLaunching\", that means that we skipped applying updates because the application startup was actually a startup of the Browser Toolbox, not the browser itself. If the value is \"NotAnUpdatingTask\", that means that the browser launch is a background task other than the background update task, (which have update capabilities disabled). If the value is \"OtherInstanceRunning\", that means that the background update task was launched, but it didn't install an update in order to avoid interfering with other application instances. If the value is \"FirstStartup\", we didn't install any updates because the browser was launched by the installer. If the value is \"MultiSessionInstallLockout\", there are other browser instances running and the Multi Session Install Lockout timeout has not expired yet. Note that, for updates to be "
+  }
+
   dimension: metrics__labeled_counter__web_notification_permission_origin {
     sql: ${TABLE}.metrics.labeled_counter.web_notification_permission_origin ;;
     hidden: yes
