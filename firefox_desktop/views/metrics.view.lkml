@@ -3863,6 +3863,24 @@ broken down by structured ingestion namespace.
 "
   }
 
+  dimension: metrics__boolean__primary_password_enabled {
+    label: "Primary Password Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.primary_password_enabled ;;
+    type: yesno
+    group_label: "Primary Password"
+    group_item_label: "Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Primary Password Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/primary_password_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If a primary-password is enabled for this profile. Set soon after browser startup. Does not update if a primary password is added or removed after startup.
+"
+  }
+
   dimension: metrics__labeled_counter__private_attribution_database {
     label: "Private Attribution Database"
     hidden: yes

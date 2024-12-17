@@ -4,14 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/dual_browsers_q3_2024.view.lkml"
+include: "/looker-hub/jira_service_desk/views/issue_multiselect_history.view.lkml"
 
-explore: dual_browsers_q3_2024 {
-  always_filter: {
-    filters: [
-      branch: "enabled, disabled",
-    ]
-  }
-
-  hidden: yes
+explore: issue_multiselect_history {
+  view_name: issue_multiselect_history
 }

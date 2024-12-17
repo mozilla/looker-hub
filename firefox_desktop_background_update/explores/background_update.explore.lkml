@@ -38,6 +38,11 @@ explore: background_update {
     sql: LEFT JOIN UNNEST(${background_update.metrics__labeled_counter__glean_error_invalid_value}) AS background_update__metrics__labeled_counter__glean_error_invalid_value ON ${background_update.document_id} = ${background_update__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
 
+  join: background_update__metrics__labeled_counter__update_skip_startup_update_reason {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${background_update.metrics__labeled_counter__update_skip_startup_update_reason}) AS background_update__metrics__labeled_counter__update_skip_startup_update_reason ON ${background_update.document_id} = ${background_update__metrics__labeled_counter__update_skip_startup_update_reason.document_id} ;;
+  }
+
   join: background_update__events {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${background_update.events}) AS background_update__events ;;

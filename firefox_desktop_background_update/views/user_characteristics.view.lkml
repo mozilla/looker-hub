@@ -185,6 +185,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_canvas_feature_status {
+    label: "Characteristics Canvas Feature Status"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvas_feature_status ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvas Feature Status"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvas Feature Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/characteristics_canvas_feature_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Status of and failure id (if failed) of ACCELERATED_CANVAS2D feature
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata1 {
     label: "Characteristics Canvasdata1"
     hidden: no
@@ -421,7 +439,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata3avif {
     label: "Characteristics Canvasdata3Avif"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata3avif ;;
     type: string
     group_label: "Characteristics"
@@ -439,7 +457,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata3avifsoftware {
     label: "Characteristics Canvasdata3Avifsoftware"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata3avifsoftware ;;
     type: string
     group_label: "Characteristics"
@@ -457,7 +475,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata3cspsafe {
     label: "Characteristics Canvasdata3Cspsafe"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata3cspsafe ;;
     type: string
     group_label: "Characteristics"
@@ -475,7 +493,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata3cspsafesoftware {
     label: "Characteristics Canvasdata3Cspsafesoftware"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata3cspsafesoftware ;;
     type: string
     group_label: "Characteristics"
@@ -493,7 +511,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata3png {
     label: "Characteristics Canvasdata3Png"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata3png ;;
     type: string
     group_label: "Characteristics"
@@ -511,7 +529,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata3pngsoftware {
     label: "Characteristics Canvasdata3Pngsoftware"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata3pngsoftware ;;
     type: string
     group_label: "Characteristics"
@@ -547,7 +565,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata3webp {
     label: "Characteristics Canvasdata3Webp"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata3webp ;;
     type: string
     group_label: "Characteristics"
@@ -565,7 +583,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata3webpsoftware {
     label: "Characteristics Canvasdata3Webpsoftware"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata3webpsoftware ;;
     type: string
     group_label: "Characteristics"

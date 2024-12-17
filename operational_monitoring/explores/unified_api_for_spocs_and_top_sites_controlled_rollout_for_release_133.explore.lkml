@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/ios_password_autofill_rollout_v1240.view.lkml"
+include: "/looker-hub/operational_monitoring/views/unified_api_for_spocs_and_top_sites_controlled_rollout_for_release_133.view.lkml"
 
-explore: ios_password_autofill_rollout_v1240 {
+explore: unified_api_for_spocs_and_top_sites_controlled_rollout_for_release_133 {
   always_filter: {
     filters: [
       branch: "enabled, disabled",

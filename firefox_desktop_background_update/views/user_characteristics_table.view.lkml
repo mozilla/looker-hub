@@ -1131,6 +1131,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvas_feature_status {
+    sql: ${TABLE}.metrics.string.characteristics_canvas_feature_status ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvas Feature Status"
+    description: "Status of and failure id (if failed) of ACCELERATED_CANVAS2D feature
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata1 {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata1 ;;
     type: string

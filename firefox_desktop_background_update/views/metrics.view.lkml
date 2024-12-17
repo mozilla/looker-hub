@@ -165,6 +165,23 @@ It is possible for a Firefox installation to not have a default profile, but in 
 "
   }
 
+  dimension: metrics__labeled_counter__update_skip_startup_update_reason {
+    label: "Update Skip Startup Update Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_skip_startup_update_reason ;;
+    group_label: "Update"
+    group_item_label: "Skip Startup Update Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Update Skip Startup Update Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/update_skip_startup_update_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "We usually install pending updates at startup, but there are a couple of reasons we might not. This value will be set to \"none\" if there was no reason not to install updates. If the value is \"DevToolsLaunching\", that means that we skipped applying updates because the application startup was actually a startup of the Browser Toolbox, not the browser itself. If the value is \"NotAnUpdatingTask\", that means that the browser launch is a background task other than the background update task, (which have update capabilities disabled). If the value is \"OtherInstanceRunning\", that means that the background update task was launched, but it didn't install an update in order to avoid interfering with other application instances. If the value is \"FirstStartup\", we didn't install any updates because the browser was launched by the installer. If the value is \"MultiSessionInstallLockout\", there are other browser instances running and the Multi Session Install Lockout timeout has not expired yet. Note that, for updates to be installed, the browser launches, sees the update, runs the updater, and exits. The updater then relaunches the browser when it completes. Naturally, the first launch is what decides if the update should be installed. But, if we are installing an update, the browser exits too early to send telemetry so it isn't sent until the second launch. It may be technically possible (though very unlikely) for the value sent on the second launch to not be \"none\".
+"
+  }
+
   dimension: metrics__boolean__update_suppress_prompts {
     label: "Update Suppress Prompts"
     hidden: no
@@ -23437,6 +23454,47 @@ view: metrics__metrics__labeled_counter__update_bitshresult {
 
 view: metrics__metrics__labeled_counter__update_move_result {
   label: "Update - Move Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__update_skip_startup_update_reason {
+  label: "Update - Skip Startup Update Reason"
 
   dimension: document_id {
     type: string
