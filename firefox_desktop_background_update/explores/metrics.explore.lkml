@@ -898,6 +898,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__update_move_result}) AS metrics__metrics__labeled_counter__update_move_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__update_move_result.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__update_skip_startup_update_reason {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__update_skip_startup_update_reason}) AS metrics__metrics__labeled_counter__update_skip_startup_update_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__update_skip_startup_update_reason.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__web_notification_permission_origin {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__web_notification_permission_origin}) AS metrics__metrics__labeled_counter__web_notification_permission_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__web_notification_permission_origin.document_id} ;;
