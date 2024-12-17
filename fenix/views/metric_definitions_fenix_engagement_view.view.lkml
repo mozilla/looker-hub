@@ -9,7 +9,10 @@ view: metric_definitions_fenix_engagement_view {
     sql: SELECT
                 SUM(dau) / SUM(mau) AS engagement_rate_v1,
 
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -61,6 +64,7 @@ fenix_engagement_view_app_name,
 fenix_engagement_view_app_version,
 fenix_engagement_view_country,
 fenix_engagement_view_dau,
+fenix_engagement_view_distribution_id,
 fenix_engagement_view_install_source,
 fenix_engagement_view_is_mobile,
 fenix_engagement_view_lifecycle_stage,
@@ -105,7 +109,10 @@ fenix_engagement_view_wau,
                 (
                     SELECT
                         fenix_engagement_view.*,
-                        looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
+                        looker_base_fields.app_version_major AS looker_base_fields_app_version_major,
+looker_base_fields.app_version_minor AS looker_base_fields_app_version_minor,
+looker_base_fields.app_version_patch AS looker_base_fields_app_version_patch,
+looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
 looker_base_fields.client_info.app_build AS looker_base_fields_client_info__app_build,
 looker_base_fields.client_info.app_channel AS looker_base_fields_client_info__app_channel,
 looker_base_fields.client_info.app_display_version AS looker_base_fields_client_info__app_display_version,
@@ -157,6 +164,7 @@ fenix_engagement_view.app_name AS fenix_engagement_view_app_name,
 fenix_engagement_view.app_version AS fenix_engagement_view_app_version,
 fenix_engagement_view.country AS fenix_engagement_view_country,
 fenix_engagement_view.dau AS fenix_engagement_view_dau,
+fenix_engagement_view.distribution_id AS fenix_engagement_view_distribution_id,
 fenix_engagement_view.install_source AS fenix_engagement_view_install_source,
 fenix_engagement_view.is_mobile AS fenix_engagement_view_is_mobile,
 fenix_engagement_view.lifecycle_stage AS fenix_engagement_view_lifecycle_stage,
@@ -210,7 +218,10 @@ fenix_engagement_view.wau AS fenix_engagement_view_wau,
                 
                 )
             GROUP BY
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -262,6 +273,7 @@ fenix_engagement_view_app_name,
 fenix_engagement_view_app_version,
 fenix_engagement_view_country,
 fenix_engagement_view_dau,
+fenix_engagement_view_distribution_id,
 fenix_engagement_view_install_source,
 fenix_engagement_view_is_mobile,
 fenix_engagement_view_lifecycle_stage,
@@ -298,6 +310,24 @@ fenix_engagement_view_wau,
 "
     type: number
     sql: ${TABLE}.engagement_rate_v1 ;;
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.looker_base_fields_app_version_major ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.looker_base_fields_app_version_minor ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.looker_base_fields_app_version_patch ;;
+    type: number
+    group_label: "Base Fields"
   }
 
   dimension: client_info__android_sdk_version {
@@ -666,6 +696,12 @@ fenix_engagement_view_wau,
   dimension: dau {
     sql: ${TABLE}.fenix_engagement_view_dau ;;
     type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: distribution_id {
+    sql: ${TABLE}.fenix_engagement_view_distribution_id ;;
+    type: string
     group_label: "Base Fields"
   }
 

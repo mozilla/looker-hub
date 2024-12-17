@@ -66,6 +66,12 @@ view: desktop_retention {
     description: "Country"
   }
 
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+    description: "Distribution ID"
+  }
+
   dimension: is_desktop {
     sql: ${TABLE}.is_desktop ;;
     type: yesno

@@ -11,6 +11,21 @@ view: deletion_request_table {
     description: "A JSON string containing any payload properties not present in the schema"
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -353,6 +368,15 @@ The labels are the `category.name` identifier of the metric.
     hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__string__deletion_request_sync_device_id {
+    sql: ${TABLE}.metrics.string.deletion_request_sync_device_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Deletion Request Sync Device Id"
+    description: "An identifier used by sync ping, to identify the current Firefox profile for a specific Account. This metric was generated to correspond to the Legacy Telemetry scalar deletion.request.sync_device_id.
 "
   }
 

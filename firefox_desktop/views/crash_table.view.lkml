@@ -11,6 +11,21 @@ view: crash_table {
     description: "A JSON string containing any payload properties not present in the schema"
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -707,6 +722,11 @@ for the purpose of experimentation enrollment.
     group_item_label: "Windows Package Family Name"
     description: "The Package Family Name of Firefox, if installed through an MSIX package.
 "
+  }
+
+  dimension: metrics__string_list__crash_utility_actors_name {
+    sql: ${TABLE}.metrics.string_list.crash_utility_actors_name ;;
+    hidden: yes
   }
 
   dimension: metrics__string_list__dll_blocklist_list {

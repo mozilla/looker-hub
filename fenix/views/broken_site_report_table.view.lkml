@@ -10,6 +10,21 @@ view: broken_site_report_table {
     hidden: yes
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -365,6 +380,13 @@ view: broken_site_report_table {
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Broken Site Report Browser Info System Is Tablet"
+  }
+
+  dimension: metrics__boolean__broken_site_report_tab_info_antitracking_btp_has_purged_site {
+    sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_btp_has_purged_site ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Broken Site Report Tab Info Antitracking Btp Has Purged Site"
   }
 
   dimension: metrics__boolean__broken_site_report_tab_info_antitracking_has_mixed_active_content_blocked {

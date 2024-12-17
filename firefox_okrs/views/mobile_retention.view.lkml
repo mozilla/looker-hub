@@ -46,6 +46,11 @@ view: mobile_retention {
     map_layer_name: countries
   }
 
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+  }
+
   dimension: install_source {
     sql: ${TABLE}.install_source ;;
     type: string

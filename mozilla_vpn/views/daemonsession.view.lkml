@@ -5,6 +5,58 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: daemonsession {
+  dimension: metrics__custom_distribution__connection_health_data_transferred_rx__sum {
+    label: "Connection Health Data Transferred Rx Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_rx.sum ;;
+    type: number
+    group_label: "Connection Health"
+    group_item_label: "Data Transferred Rx Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health Data Transferred Rx Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_data_transferred_rx"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The amount of data received through the VPN tunnel.
+
+This metric is accumulated periodically on a 3hr interval
+while the VPN is turned on.
+
+This metric is not collected on iOS.
+
+> **Note**: This metric is recorded on the vpnsession ping for
+> desktop platforms and on the daemonsession ping for mobile platforms.
+"
+  }
+
+  dimension: metrics__custom_distribution__connection_health_data_transferred_tx__sum {
+    label: "Connection Health Data Transferred Tx Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_tx.sum ;;
+    type: number
+    group_label: "Connection Health"
+    group_item_label: "Data Transferred Tx Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health Data Transferred Tx Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_data_transferred_tx"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The amount of data sent through the VPN tunnel.
+
+This metric is accumulated periodically on a 3hr interval
+while the VPN is turned on.
+
+This metric is not collected on iOS.
+
+> **Note**: This metric is recorded on the vpnsession ping for
+> desktop platforms and on the daemonsession ping for mobile platforms.
+"
+  }
+
   dimension: metrics__counter__connection_health_no_signal_count {
     label: "Connection Health No Signal Count"
     hidden: no
@@ -363,6 +415,21 @@ The labels are the `category.name` identifier of the metric.
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
   }
 
   dimension: client_info__android_sdk_version {
@@ -1173,6 +1240,30 @@ view: daemonsession__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: daemonsession__metrics__custom_distribution__connection_health_data_transferred_rx__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: daemonsession__metrics__custom_distribution__connection_health_data_transferred_tx__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 

@@ -56,6 +56,11 @@ view: new_profile_clients_table {
     type: string
   }
 
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+  }
+
   dimension: install_source {
     sql: ${TABLE}.install_source ;;
     type: string
@@ -106,6 +111,16 @@ view: new_profile_clients_table {
     type: string
   }
 
+  dimension: play_store_attribution_content {
+    sql: ${TABLE}.play_store_attribution_content ;;
+    type: string
+  }
+
+  dimension: play_store_attribution_install_referrer_response {
+    sql: ${TABLE}.play_store_attribution_install_referrer_response ;;
+    type: string
+  }
+
   dimension: play_store_attribution_medium {
     sql: ${TABLE}.play_store_attribution_medium ;;
     type: string
@@ -114,6 +129,25 @@ view: new_profile_clients_table {
   dimension: play_store_attribution_source {
     sql: ${TABLE}.play_store_attribution_source ;;
     type: string
+  }
+
+  dimension: play_store_attribution_term {
+    sql: ${TABLE}.play_store_attribution_term ;;
+    type: string
+  }
+
+  dimension_group: adjust_attribution {
+    sql: ${TABLE}.adjust_attribution_timestamp ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
   }
 
   dimension_group: first_seen {
@@ -129,6 +163,34 @@ view: new_profile_clients_table {
     ]
     convert_tz: no
     datatype: date
+  }
+
+  dimension_group: meta_attribution {
+    sql: ${TABLE}.meta_attribution_timestamp ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
+  dimension_group: play_store_attribution {
+    sql: ${TABLE}.play_store_attribution_timestamp ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
   }
 
   sql_table_name: `mozdata.fenix.new_profile_clients` ;;

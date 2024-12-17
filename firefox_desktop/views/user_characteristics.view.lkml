@@ -419,6 +419,114 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata3avif {
+    label: "Characteristics Canvasdata3Avif"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3avif ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3Avif"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata3Avif"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata3avif"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3avifsoftware {
+    label: "Characteristics Canvasdata3Avifsoftware"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3avifsoftware ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3Avifsoftware"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata3Avifsoftware"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata3avifsoftware"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3cspsafe {
+    label: "Characteristics Canvasdata3Cspsafe"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3cspsafe ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3Cspsafe"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata3Cspsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata3cspsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3cspsafesoftware {
+    label: "Characteristics Canvasdata3Cspsafesoftware"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3cspsafesoftware ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3Cspsafesoftware"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata3Cspsafesoftware"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata3cspsafesoftware"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3png {
+    label: "Characteristics Canvasdata3Png"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3png ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3Png"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata3Png"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata3png"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3pngsoftware {
+    label: "Characteristics Canvasdata3Pngsoftware"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3pngsoftware ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3Pngsoftware"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata3Pngsoftware"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata3pngsoftware"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata3software {
     label: "Characteristics Canvasdata3Software"
     hidden: no
@@ -430,6 +538,42 @@ view: user_characteristics {
     link: {
       label: "Glean Dictionary reference for Characteristics Canvasdata3Software"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata3software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3webp {
+    label: "Characteristics Canvasdata3Webp"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3webp ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3Webp"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata3Webp"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata3webp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3webpsoftware {
+    label: "Characteristics Canvasdata3Webpsoftware"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3webpsoftware ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3Webpsoftware"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvasdata3Webpsoftware"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_canvasdata3webpsoftware"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -1409,6 +1553,42 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_gl_context_type {
+    label: "Characteristics Gl Context Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_context_type ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Context Type"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Context Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_context_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The type of the GL context (EGL, GLX, WGL, etc).
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_context_type_software {
+    label: "Characteristics Gl Context Type Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_context_type_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Context Type Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Context Type Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_context_type_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The type of the GL context (EGL, GLX, WGL, etc).
+"
+  }
+
   dimension: metrics__text2__characteristics_gl_extensions {
     label: "Characteristics Gl Extensions"
     hidden: no
@@ -1445,6 +1625,42 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_gl_extensions_raw_software {
+    label: "Characteristics Gl Extensions Raw Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl_extensions_raw_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Extensions Raw Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Extensions Raw Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_extensions_raw_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw list of OpenGL extensions supported by the user's system.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_extensions_software {
+    label: "Characteristics Gl Extensions Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl_extensions_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Extensions Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Extensions Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_extensions_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of OpenGL extensions supported by the user's system.
+"
+  }
+
   dimension: metrics__string__characteristics_gl_fragment_shader {
     label: "Characteristics Gl Fragment Shader"
     hidden: no
@@ -1456,6 +1672,24 @@ view: user_characteristics {
     link: {
       label: "Glean Dictionary reference for Characteristics Gl Fragment Shader"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_fragment_shader"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Hash of the transformed source of the fragment shader.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_fragment_shader_software {
+    label: "Characteristics Gl Fragment Shader Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_fragment_shader_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Fragment Shader Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Fragment Shader Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_fragment_shader_software"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -1481,6 +1715,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_gl_minimal_source_software {
+    label: "Characteristics Gl Minimal Source Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl_minimal_source_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Minimal Source Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Minimal Source Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_minimal_source_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Transformed source of the minimal shader.
+"
+  }
+
   dimension: metrics__text2__characteristics_gl_params_extensions {
     label: "Characteristics Gl Params Extensions"
     hidden: no
@@ -1492,6 +1744,24 @@ view: user_characteristics {
     link: {
       label: "Glean Dictionary reference for Characteristics Gl Params Extensions"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_params_extensions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of GL parameters of the extensions.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_params_extensions_software {
+    label: "Characteristics Gl Params Extensions Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_extensions_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Params Extensions Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Params Extensions Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_params_extensions_software"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -1517,6 +1787,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_gl_params_v1_software {
+    label: "Characteristics Gl Params V1 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_v1_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Params V1 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Params V1 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_params_v1_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of GL parameters of GL1.
+"
+  }
+
   dimension: metrics__text2__characteristics_gl_params_v2 {
     label: "Characteristics Gl Params V2"
     hidden: no
@@ -1528,6 +1816,24 @@ view: user_characteristics {
     link: {
       label: "Glean Dictionary reference for Characteristics Gl Params V2"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_params_v2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of GL parameters of GL2.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_params_v2_software {
+    label: "Characteristics Gl Params V2 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_v2_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Params V2 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Params V2 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_params_v2_software"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -1553,6 +1859,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_gl_precision_fragment_software {
+    label: "Characteristics Gl Precision Fragment Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl_precision_fragment_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Precision Fragment Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Precision Fragment Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_precision_fragment_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Precisions of the fragment shader.
+"
+  }
+
   dimension: metrics__text2__characteristics_gl_precision_vertex {
     label: "Characteristics Gl Precision Vertex"
     hidden: no
@@ -1564,6 +1888,24 @@ view: user_characteristics {
     link: {
       label: "Glean Dictionary reference for Characteristics Gl Precision Vertex"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_precision_vertex"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Precisions of the vertex shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_precision_vertex_software {
+    label: "Characteristics Gl Precision Vertex Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl_precision_vertex_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Precision Vertex Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Precision Vertex Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_precision_vertex_software"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -1607,6 +1949,42 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_gl_renderer_raw_software {
+    label: "Characteristics Gl Renderer Raw Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_renderer_raw_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Renderer Raw Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Renderer Raw Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_renderer_raw_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw OpenGL renderer string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_renderer_software {
+    label: "Characteristics Gl Renderer Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_renderer_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Renderer Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Renderer Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_renderer_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The OpenGL renderer string.
+"
+  }
+
   dimension: metrics__string__characteristics_gl_vendor {
     label: "Characteristics Gl Vendor"
     hidden: no
@@ -1640,6 +2018,42 @@ view: user_characteristics {
     }
 
     description: "The raw OpenGL vendor string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_vendor_raw_software {
+    label: "Characteristics Gl Vendor Raw Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_vendor_raw_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Vendor Raw Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Vendor Raw Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_vendor_raw_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw OpenGL vendor string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_vendor_software {
+    label: "Characteristics Gl Vendor Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_vendor_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Vendor Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Vendor Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_vendor_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The OpenGL vendor string.
 "
   }
 
@@ -1679,6 +2093,42 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_gl_version_raw_software {
+    label: "Characteristics Gl Version Raw Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_version_raw_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Version Raw Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Version Raw Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_version_raw_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw OpenGL version string.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_gl_version_software {
+    label: "Characteristics Gl Version Software"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_gl_version_software ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Gl Version Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Version Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_version_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of OpenGL supported by the user's system.
+"
+  }
+
   dimension: metrics__string__characteristics_gl_vertex_shader {
     label: "Characteristics Gl Vertex Shader"
     hidden: no
@@ -1690,6 +2140,24 @@ view: user_characteristics {
     link: {
       label: "Glean Dictionary reference for Characteristics Gl Vertex Shader"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_vertex_shader"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Hash of the transformed source of the vertex shader.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_vertex_shader_software {
+    label: "Characteristics Gl Vertex Shader Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_vertex_shader_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Vertex Shader Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Vertex Shader Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_gl_vertex_shader_software"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -3260,6 +3728,24 @@ view: user_characteristics {
     }
 
     description: "This is the derived PreferenceSheet::Prefs::mUseDocumentColors value.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_using_accelerated_canvas {
+    label: "Characteristics Using Accelerated Canvas"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_using_accelerated_canvas ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Using Accelerated Canvas"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Using Accelerated Canvas"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_using_accelerated_canvas"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the user's device is using accelerated canvas
 "
   }
 

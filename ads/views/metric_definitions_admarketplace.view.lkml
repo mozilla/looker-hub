@@ -7,7 +7,15 @@
 view: metric_definitions_admarketplace {
   derived_table: {
     sql: SELECT
-                SUM(billed_revenue) AS billed_revenue,
+                AVG(avg_pub_cpc) AS amp_avg_cpc,
+SUM(billed_revenue) AS amp_revenue,
+SUM(valid_clicks) AS amp_valid_clicks,
+SUM(valid_impressions) AS amp_valid_impressions,
+AVG(rpm_rate) AS amp_rpm_rate,
+SAFE_DIVIDE(SUM(billed_revenue), SUM(valid_clicks)) AS amp_cpc_rate,
+SAFE_DIVIDE(SUM(billed_revenue), SUM(valid_impressions)) * 1000 AS amp_revenue_per_thousand_impressions,
+SUM(alternative_revenue) AS amp_alternative_revenue,
+SUM(billed_revenue) AS billed_revenue,
 
                 admarketplace_advertiser,
 admarketplace_alternative_revenue,
@@ -124,6 +132,70 @@ admarketplace_valid_impressions,
     primary_key: yes
     group_label: "Base Fields"
     description: "Unique client identifier"
+  }
+
+  dimension: amp_avg_cpc {
+    group_label: "Metrics"
+    label: "Average Publisher CPC"
+    description: "Average cost per click (paid to Mozilla, in USD). Calculated as CPC payout divided by valid clicks."
+    type: number
+    sql: ${TABLE}.amp_avg_cpc ;;
+  }
+
+  dimension: amp_revenue {
+    group_label: "Metrics"
+    label: "Billed Revenue"
+    description: "Total amount paid to Mozilla in USD."
+    type: number
+    sql: ${TABLE}.amp_revenue ;;
+  }
+
+  dimension: amp_valid_clicks {
+    group_label: "Metrics"
+    label: "Total Valid Clicks"
+    description: "Total number of valid clicks recorded."
+    type: number
+    sql: ${TABLE}.amp_valid_clicks ;;
+  }
+
+  dimension: amp_valid_impressions {
+    group_label: "Metrics"
+    label: "Total Valid Impressions"
+    description: "Total number of valid impressions recorded."
+    type: number
+    sql: ${TABLE}.amp_valid_impressions ;;
+  }
+
+  dimension: amp_rpm_rate {
+    group_label: "Metrics"
+    label: "RPM Rate"
+    description: "Average revenue per thousand impressions (paid to Mozilla, in USD), calculated as RPM payout divided by valid impressions times 1000."
+    type: number
+    sql: ${TABLE}.amp_rpm_rate ;;
+  }
+
+  dimension: amp_cpc_rate {
+    group_label: "Metrics"
+    label: "CPC Rate"
+    description: "Calculated as total payout divided by the number of valid clicks. Returns NULL if number of billed clicks is zero."
+    type: number
+    sql: ${TABLE}.amp_cpc_rate ;;
+  }
+
+  dimension: amp_revenue_per_thousand_impressions {
+    group_label: "Metrics"
+    label: "Revenue Per Thousand Impressions"
+    description: "RPM Payout divided by the number of valid impressions times 1000. Returns NULL if number of valid impressions is zero."
+    type: number
+    sql: ${TABLE}.amp_revenue_per_thousand_impressions ;;
+  }
+
+  dimension: amp_alternative_revenue {
+    group_label: "Metrics"
+    label: "Alternative Revenue"
+    description: "Potential Revenue from the other report. Note that this is zero for all revenue coming from CPC since we don't get data for RPM for mobile tiles or instant suggestions."
+    type: number
+    sql: ${TABLE}.amp_alternative_revenue ;;
   }
 
   dimension: billed_revenue {
@@ -254,7 +326,18 @@ admarketplace_valid_impressions,
   }
 
   set: metrics {
-    fields: [billed_revenue, billed_revenue_sum]
+    fields: [
+      amp_avg_cpc,
+      amp_revenue,
+      amp_valid_clicks,
+      amp_valid_impressions,
+      amp_rpm_rate,
+      amp_cpc_rate,
+      amp_revenue_per_thousand_impressions,
+      amp_alternative_revenue,
+      billed_revenue,
+      billed_revenue_sum,
+    ]
   }
 
   parameter: aggregate_metrics_by {

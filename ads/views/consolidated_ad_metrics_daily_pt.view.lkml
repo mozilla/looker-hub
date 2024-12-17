@@ -20,6 +20,16 @@ view: consolidated_ad_metrics_daily_pt {
     type: number
   }
 
+  dimension: all_site_ids {
+    sql: ${TABLE}.all_site_ids ;;
+    type: string
+  }
+
+  dimension: all_site_names {
+    sql: ${TABLE}.all_site_names ;;
+    type: string
+  }
+
   dimension: campaign_id {
     sql: ${TABLE}.campaign_id ;;
     type: number
@@ -33,6 +43,11 @@ view: consolidated_ad_metrics_daily_pt {
   dimension: clicks {
     sql: ${TABLE}.clicks ;;
     type: number
+  }
+
+  dimension: content_url {
+    sql: ${TABLE}.content_url ;;
+    type: string
   }
 
   dimension: country {
@@ -66,6 +81,11 @@ view: consolidated_ad_metrics_daily_pt {
     type: number
   }
 
+  dimension: flight_name {
+    sql: ${TABLE}.flight_name ;;
+    type: string
+  }
+
   dimension: image_url {
     sql: ${TABLE}.image_url ;;
     type: string
@@ -78,6 +98,11 @@ view: consolidated_ad_metrics_daily_pt {
 
   dimension: position {
     sql: ${TABLE}.position ;;
+    type: number
+  }
+
+  dimension: price {
+    sql: ${TABLE}.price ;;
     type: number
   }
 
@@ -101,14 +126,69 @@ view: consolidated_ad_metrics_daily_pt {
     type: number
   }
 
+  dimension: site_id {
+    sql: ${TABLE}.site_id ;;
+    type: number
+  }
+
+  dimension: site_id_count {
+    sql: ${TABLE}.site_id_count ;;
+    type: number
+  }
+
+  dimension: site_name {
+    sql: ${TABLE}.site_name ;;
+    type: string
+  }
+
   dimension: surface {
     sql: ${TABLE}.surface ;;
     type: string
   }
 
+  dimension: targeted_against_default_site {
+    sql: ${TABLE}.targeted_against_default_site ;;
+    type: number
+  }
+
+  dimension: targeted_against_default_zone {
+    sql: ${TABLE}.targeted_against_default_zone ;;
+    type: number
+  }
+
   dimension: targeted_country {
     sql: ${TABLE}.targeted_country ;;
     type: string
+  }
+
+  dimension: zone_id {
+    sql: ${TABLE}.zone_id ;;
+    type: number
+  }
+
+  dimension: zone_id_count {
+    sql: ${TABLE}.zone_id_count ;;
+    type: number
+  }
+
+  dimension: zone_name {
+    sql: ${TABLE}.zone_name ;;
+    type: string
+  }
+
+  dimension_group: kevel_metadata_updated_at {
+    sql: ${TABLE}.kevel_metadata_updated_at ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
   }
 
   dimension_group: submission {

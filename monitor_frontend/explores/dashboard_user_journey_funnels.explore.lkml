@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/monitor_frontend/views/dashboard_user_journey_funnels.view.lkml"
+include: "/looker-hub/monitor_frontend/datagroups/dashboard_user_journey_funnels_last_updated.datagroup.lkml"
 
 explore: dashboard_user_journey_funnels {
   sql_always_where: ${dashboard_user_journey_funnels.submission_date} >= '2010-01-01' ;;
@@ -15,4 +16,6 @@ explore: dashboard_user_journey_funnels {
       submission_date: "28 days",
     ]
   }
+
+  persist_with: dashboard_user_journey_funnels_last_updated
 }

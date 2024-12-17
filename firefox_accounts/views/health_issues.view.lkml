@@ -132,5 +132,9 @@ view: health_issues {
     ]
   }
 
+  measure: count {
+    type: count
+  }
+
   sql_table_name: `mozdata.analysis.wclouser_fxa_health_issues` ;;
 }
