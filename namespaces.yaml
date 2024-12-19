@@ -5386,6 +5386,10 @@ jira_service_desk:
       type: table_explore
       views:
         base_view: status_category
+    user:
+      type: table_explore
+      views:
+        base_view: user
   glean_app: false
   owners:
   - rantwan@mozilla.com
@@ -5435,6 +5439,10 @@ jira_service_desk:
     status_category:
       tables:
       - table: moz-fx-data-shared-prod.jira_service_desk.status_category
+      type: table_view
+    user:
+      tables:
+      - table: moz-fx-data-shared-prod.jira_service_desk.user
       type: table_view
 klar_android:
   explores:
