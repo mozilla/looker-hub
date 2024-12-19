@@ -1678,6 +1678,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__object__nimbus_system_recorded_nimbus_context {
+    sql: ${TABLE}.metrics.object.nimbus_system_recorded_nimbus_context ;;
+    hidden: yes
+  }
+
   dimension: metrics__quantity__addresses_saved_all {
     sql: ${TABLE}.metrics.quantity.addresses_saved_all ;;
     type: number
