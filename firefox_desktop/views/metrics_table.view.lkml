@@ -2266,6 +2266,15 @@ of the shopping experiment.
 "
   }
 
+  dimension: metrics__counter__urlbar_unifiedsearchbutton_opened {
+    sql: ${TABLE}.metrics.counter.urlbar_unifiedsearchbutton_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Unifiedsearchbutton Opened"
+    description: "Counts how many times Unified Search Button popup is opened. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.unifiedsearchbutton.opened.
+"
+  }
+
   dimension: metrics__counter__urlbar_zeroprefix_abandonment {
     sql: ${TABLE}.metrics.counter.urlbar_zeroprefix_abandonment ;;
     type: number
@@ -5359,6 +5368,13 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_ip_addr_any_hostnames {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_ip_addr_any_hostnames ;;
+    hidden: yes
+    description: "The number of times we see the IP address 0.0.0.0 or its IPv6 equivalent used as hostnames
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_redirect_to_scheme_subresource {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_redirect_to_scheme_subresource ;;
     hidden: yes
@@ -5768,6 +5784,7 @@ failedFetchEngines - failed to load or parse the configuration from remote
                      settings.
 failedLoadEngines - failed to create all the search engines from the
                     configuration or user installed engines.
+failedLoadSettingsAddonManager - the addon manager ready promise was rejected. (from FF135)
 success - search service successfully initialized.
 "
   }
@@ -6322,6 +6339,13 @@ success - search service successfully initialized.
     sql: ${TABLE}.metrics.labeled_counter.urlbar_tips ;;
     hidden: yes
     description: "A keyed uint recording how many times particular tips are shown in the Urlbar and how often their confirm and help buttons are pressed. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.tips.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_unifiedsearchbutton_picked {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_unifiedsearchbutton_picked ;;
+    hidden: yes
+    description: "Counts how many times Unified Search Button items were selected. The key is followings. * builtin_search: Builtin search engine. * addon_search: Addon search engine. * local_search: Local search engine such as Bookmarks. * settings: Settings menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.unifiedsearchbutton.picked.
 "
   }
 
