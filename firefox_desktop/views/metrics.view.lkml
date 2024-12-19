@@ -4276,6 +4276,7 @@ failedFetchEngines - failed to load or parse the configuration from remote
                      settings.
 failedLoadEngines - failed to create all the search engines from the
                     configuration or user installed engines.
+failedLoadSettingsAddonManager - the addon manager ready promise was rejected. (from FF135)
 success - search service successfully initialized.
 "
   }
