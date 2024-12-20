@@ -3411,6 +3411,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_http_ip_addr_any_hostnames {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_ip_addr_any_hostnames ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_http_redirect_to_scheme_subresource {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_redirect_to_scheme_subresource ;;
     hidden: yes

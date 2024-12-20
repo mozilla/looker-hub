@@ -4100,6 +4100,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_http_ip_addr_any_hostnames {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_ip_addr_any_hostnames ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_http_redirect_to_scheme_subresource {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_redirect_to_scheme_subresource ;;
     hidden: yes
@@ -6186,6 +6191,48 @@ view: metrics_table {
     sql: ${TABLE}.metrics.timespan.logins_store_migration_total_duration.value ;;
     type: number
     group_label: "Metrics Timespan Logins Store Migration Total Duration"
+    group_item_label: "Value"
+  }
+
+  dimension: metrics__timespan__navigation_bar_browser_initialize_timespan__time_unit {
+    sql: ${TABLE}.metrics.timespan.navigation_bar_browser_initialize_timespan.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Navigation Bar Browser Initialize Timespan"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__navigation_bar_browser_initialize_timespan__value {
+    sql: ${TABLE}.metrics.timespan.navigation_bar_browser_initialize_timespan.value ;;
+    type: number
+    group_label: "Metrics Timespan Navigation Bar Browser Initialize Timespan"
+    group_item_label: "Value"
+  }
+
+  dimension: metrics__timespan__navigation_bar_custom_tab_initialize_timespan__time_unit {
+    sql: ${TABLE}.metrics.timespan.navigation_bar_custom_tab_initialize_timespan.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Navigation Bar Custom Tab Initialize Timespan"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__navigation_bar_custom_tab_initialize_timespan__value {
+    sql: ${TABLE}.metrics.timespan.navigation_bar_custom_tab_initialize_timespan.value ;;
+    type: number
+    group_label: "Metrics Timespan Navigation Bar Custom Tab Initialize Timespan"
+    group_item_label: "Value"
+  }
+
+  dimension: metrics__timespan__navigation_bar_home_initialize_timespan__time_unit {
+    sql: ${TABLE}.metrics.timespan.navigation_bar_home_initialize_timespan.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Navigation Bar Home Initialize Timespan"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__navigation_bar_home_initialize_timespan__value {
+    sql: ${TABLE}.metrics.timespan.navigation_bar_home_initialize_timespan.value ;;
+    type: number
+    group_label: "Metrics Timespan Navigation Bar Home Initialize Timespan"
     group_item_label: "Value"
   }
 

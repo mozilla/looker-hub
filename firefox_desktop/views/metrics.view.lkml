@@ -6192,6 +6192,41 @@ in browser.
 "
   }
 
+  dimension: metrics__counter__urlbar_unifiedsearchbutton_opened {
+    label: "Urlbar Unifiedsearchbutton Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.urlbar_unifiedsearchbutton_opened ;;
+    type: number
+    group_label: "Urlbar Unifiedsearchbutton"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Unifiedsearchbutton Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_unifiedsearchbutton_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times Unified Search Button popup is opened. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.unifiedsearchbutton.opened.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_unifiedsearchbutton_picked {
+    label: "Urlbar Unifiedsearchbutton Picked"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_unifiedsearchbutton_picked ;;
+    group_label: "Urlbar Unifiedsearchbutton"
+    group_item_label: "Picked"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Unifiedsearchbutton Picked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_unifiedsearchbutton_picked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times Unified Search Button items were selected. The key is followings. * builtin_search: Builtin search engine. * addon_search: Addon search engine. * local_search: Local search engine such as Bookmarks. * settings: Settings menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.unifiedsearchbutton.picked.
+"
+  }
+
   dimension: metrics__counter__urlbar_zeroprefix_abandonment {
     label: "Urlbar Zeroprefix Abandonment"
     hidden: no
@@ -7109,7 +7144,7 @@ in browser.
 
   dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__sum {
     label: "Cert Compression Brotli Saved Bytes Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.sum ;;
     type: number
     group_label: "Cert Compression"
@@ -7158,7 +7193,7 @@ in browser.
 
   dimension: metrics__custom_distribution__cert_compression_zlib_saved_bytes__sum {
     label: "Cert Compression Zlib Saved Bytes Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cert_compression_zlib_saved_bytes.sum ;;
     type: number
     group_label: "Cert Compression"
@@ -7175,7 +7210,7 @@ in browser.
 
   dimension: metrics__custom_distribution__cert_compression_zstd_saved_bytes__sum {
     label: "Cert Compression Zstd Saved Bytes Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cert_compression_zstd_saved_bytes.sum ;;
     type: number
     group_label: "Cert Compression"
@@ -14213,6 +14248,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_ip_addr_any_hostnames {
+    label: "Networking Http Ip Addr Any Hostnames"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_ip_addr_any_hostnames ;;
+    group_label: "Networking"
+    group_item_label: "Http Ip Addr Any Hostnames"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Ip Addr Any Hostnames"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_ip_addr_any_hostnames"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we see the IP address 0.0.0.0 or its IPv6 equivalent used as hostnames
+"
+  }
+
   dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__sum {
     label: "Networking Http Onstart Suspend Total Time Sum"
     hidden: no
@@ -20356,6 +20408,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Urlbar Trending Block"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_trending_block"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_unifiedsearchbutton_opened {
+    type: sum
+    sql: ${metrics__counter__urlbar_unifiedsearchbutton_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Unifiedsearchbutton Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_unifiedsearchbutton_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: urlbar_unifiedsearchbutton_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__urlbar_unifiedsearchbutton_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Unifiedsearchbutton Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_unifiedsearchbutton_opened"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -27190,19 +27267,19 @@ view: metrics__metrics__labeled_counter__cert_compression_used {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -31679,6 +31756,47 @@ view: metrics__metrics__labeled_counter__networking_http_channel_onstart_success
 
 view: metrics__metrics__labeled_counter__networking_http_ip_addr_any_count {
   label: "Networking - Http Ip Addr Any Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_ip_addr_any_hostnames {
+  label: "Networking - Http Ip Addr Any Hostnames"
 
   dimension: document_id {
     type: string
@@ -37296,6 +37414,47 @@ view: metrics__metrics__labeled_counter__urlbar_tabtosearch_impressions_onboardi
 
 view: metrics__metrics__labeled_counter__urlbar_tips {
   label: "Urlbar - Tips"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_unifiedsearchbutton_picked {
+  label: "Urlbar Unifiedsearchbutton - Picked"
 
   dimension: document_id {
     type: string

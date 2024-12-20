@@ -1222,7 +1222,7 @@ view: metrics {
 
   dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__sum {
     label: "Cert Compression Brotli Saved Bytes Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.sum ;;
     type: number
     group_label: "Cert Compression"
@@ -1271,7 +1271,7 @@ view: metrics {
 
   dimension: metrics__custom_distribution__cert_compression_zlib_saved_bytes__sum {
     label: "Cert Compression Zlib Saved Bytes Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cert_compression_zlib_saved_bytes.sum ;;
     type: number
     group_label: "Cert Compression"
@@ -1288,7 +1288,7 @@ view: metrics {
 
   dimension: metrics__custom_distribution__cert_compression_zstd_saved_bytes__sum {
     label: "Cert Compression Zstd Saved Bytes Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cert_compression_zstd_saved_bytes.sum ;;
     type: number
     group_label: "Cert Compression"
@@ -8522,6 +8522,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "The number of times we see the IP address 0.0.0.0 or its IPv6 equivalent.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_ip_addr_any_hostnames {
+    label: "Networking Http Ip Addr Any Hostnames"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_ip_addr_any_hostnames ;;
+    group_label: "Networking"
+    group_item_label: "Http Ip Addr Any Hostnames"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Ip Addr Any Hostnames"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/networking_http_ip_addr_any_hostnames"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we see the IP address 0.0.0.0 or its IPv6 equivalent used as hostnames
 "
   }
 
@@ -17444,19 +17461,19 @@ view: metrics__metrics__labeled_counter__cert_compression_used {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -21810,6 +21827,47 @@ view: metrics__metrics__labeled_counter__networking_http_channel_onstart_success
 
 view: metrics__metrics__labeled_counter__networking_http_ip_addr_any_count {
   label: "Networking - Http Ip Addr Any Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_ip_addr_any_hostnames {
+  label: "Networking - Http Ip Addr Any Hostnames"
 
   dimension: document_id {
     type: string
