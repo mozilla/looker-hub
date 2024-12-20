@@ -15,8 +15,28 @@ view: user {
     type: string
   }
 
+  dimension: account_type {
+    sql: ${TABLE}.account_type ;;
+    type: string
+  }
+
+  dimension: email_address {
+    sql: ${TABLE}.email_address ;;
+    type: string
+  }
+
+  dimension: locale {
+    sql: ${TABLE}.locale ;;
+    type: string
+  }
+
   dimension: name {
     sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: time_zone {
+    sql: ${TABLE}.time_zone ;;
     type: string
   }
 

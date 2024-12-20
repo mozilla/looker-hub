@@ -4187,7 +4187,7 @@ ensure it's not too expensive.  This value is only available on Android
 
   dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__sum {
     label: "Cert Compression Brotli Saved Bytes Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.sum ;;
     type: number
     group_label: "Cert Compression"
@@ -4236,7 +4236,7 @@ ensure it's not too expensive.  This value is only available on Android
 
   dimension: metrics__custom_distribution__cert_compression_zlib_saved_bytes__sum {
     label: "Cert Compression Zlib Saved Bytes Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cert_compression_zlib_saved_bytes.sum ;;
     type: number
     group_label: "Cert Compression"
@@ -4253,7 +4253,7 @@ ensure it's not too expensive.  This value is only available on Android
 
   dimension: metrics__custom_distribution__cert_compression_zstd_saved_bytes__sum {
     label: "Cert Compression Zstd Saved Bytes Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cert_compression_zstd_saved_bytes.sum ;;
     type: number
     group_label: "Cert Compression"
@@ -22847,19 +22847,19 @@ view: metrics__metrics__labeled_counter__cert_compression_used {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 

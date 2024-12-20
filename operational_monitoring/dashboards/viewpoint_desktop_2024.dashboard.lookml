@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       viewpoint_desktop_2024.branch
     ]
     filters:
-      viewpoint_desktop_2024.metric: 'days_of_use'
+      viewpoint_desktop_2024.metric: 'search_count'
       viewpoint_desktop_2024.statistic: mean
     row: 0
     col: 12
@@ -78,45 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: viewpoint_desktop_2024
-    type: "ci-line-chart"
-    fields: [
-      viewpoint_desktop_2024.submission_date,
-      viewpoint_desktop_2024.branch,
-      viewpoint_desktop_2024.upper,
-      viewpoint_desktop_2024.lower,
-      viewpoint_desktop_2024.point
-    ]
-    pivots: [
-      viewpoint_desktop_2024.branch
-    ]
-    filters:
-      viewpoint_desktop_2024.metric: 'memory_total'
-      viewpoint_desktop_2024.statistic: percentile
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: viewpoint_desktop_2024.submission_date
-    field_y: viewpoint_desktop_2024.point
-    log_scale: false
-    ci_lower: viewpoint_desktop_2024.lower
-    ci_upper: viewpoint_desktop_2024.upper
-    show_grid: true
-    listen:
-      Date: viewpoint_desktop_2024.submission_date
-      Percentile: viewpoint_desktop_2024.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,10 +94,10 @@
       viewpoint_desktop_2024.branch
     ]
     filters:
-      viewpoint_desktop_2024.metric: 'retained'
+      viewpoint_desktop_2024.metric: 'qualified_cumulative_days_of_use'
       viewpoint_desktop_2024.statistic: mean
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: viewpoint_desktop_2024.submission_date
@@ -166,6 +129,40 @@
     ]
     filters:
       viewpoint_desktop_2024.metric: 'ad_clicks'
+      viewpoint_desktop_2024.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: viewpoint_desktop_2024.submission_date
+    field_y: viewpoint_desktop_2024.point
+    log_scale: false
+    ci_lower: viewpoint_desktop_2024.lower
+    ci_upper: viewpoint_desktop_2024.upper
+    show_grid: true
+    listen:
+      Date: viewpoint_desktop_2024.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: viewpoint_desktop_2024
+    type: looker_line
+    fields: [
+      viewpoint_desktop_2024.submission_date,
+      viewpoint_desktop_2024.branch,
+      viewpoint_desktop_2024.point
+    ]
+    pivots: [
+      viewpoint_desktop_2024.branch
+    ]
+    filters:
+      viewpoint_desktop_2024.metric: 'days_of_use'
       viewpoint_desktop_2024.statistic: mean
     row: 20
     col: 0
@@ -217,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +230,7 @@
       viewpoint_desktop_2024.branch
     ]
     filters:
-      viewpoint_desktop_2024.metric: 'search_count'
+      viewpoint_desktop_2024.metric: 'retained'
       viewpoint_desktop_2024.statistic: mean
     row: 30
     col: 0
@@ -251,24 +248,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: viewpoint_desktop_2024
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       viewpoint_desktop_2024.submission_date,
       viewpoint_desktop_2024.branch,
+      viewpoint_desktop_2024.upper,
+      viewpoint_desktop_2024.lower,
       viewpoint_desktop_2024.point
     ]
     pivots: [
       viewpoint_desktop_2024.branch
     ]
     filters:
-      viewpoint_desktop_2024.metric: 'qualified_cumulative_days_of_use'
-      viewpoint_desktop_2024.statistic: mean
+      viewpoint_desktop_2024.metric: 'memory_total'
+      viewpoint_desktop_2024.statistic: percentile
     row: 30
     col: 12
     width: 12
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: viewpoint_desktop_2024.submission_date
+      Percentile: viewpoint_desktop_2024.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

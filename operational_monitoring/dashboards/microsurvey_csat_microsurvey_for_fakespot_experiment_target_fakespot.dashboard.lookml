@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.branch
     ]
     filters:
-      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.metric: 'days_of_use'
+      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.metric: 'search_count'
       microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.statistic: mean
     row: 0
     col: 12
@@ -78,45 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot
-    type: "ci-line-chart"
-    fields: [
-      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.submission_date,
-      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.branch,
-      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.upper,
-      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.lower,
-      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.point
-    ]
-    pivots: [
-      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.branch
-    ]
-    filters:
-      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.metric: 'memory_total'
-      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.statistic: percentile
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.submission_date
-    field_y: microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.point
-    log_scale: false
-    ci_lower: microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.lower
-    ci_upper: microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.upper
-    show_grid: true
-    listen:
-      Date: microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.submission_date
-      Percentile: microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,10 +94,10 @@
       microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.branch
     ]
     filters:
-      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.metric: 'retained'
+      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.metric: 'qualified_cumulative_days_of_use'
       microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.statistic: mean
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.submission_date
@@ -166,6 +129,40 @@
     ]
     filters:
       microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.metric: 'ad_clicks'
+      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.submission_date
+    field_y: microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.point
+    log_scale: false
+    ci_lower: microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.lower
+    ci_upper: microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.upper
+    show_grid: true
+    listen:
+      Date: microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot
+    type: looker_line
+    fields: [
+      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.submission_date,
+      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.branch,
+      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.point
+    ]
+    pivots: [
+      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.branch
+    ]
+    filters:
+      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.metric: 'days_of_use'
       microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.statistic: mean
     row: 20
     col: 0
@@ -217,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +230,7 @@
       microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.branch
     ]
     filters:
-      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.metric: 'search_count'
+      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.metric: 'retained'
       microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.statistic: mean
     row: 30
     col: 0
@@ -251,24 +248,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.submission_date,
       microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.branch,
+      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.upper,
+      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.lower,
       microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.point
     ]
     pivots: [
       microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.branch
     ]
     filters:
-      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.metric: 'qualified_cumulative_days_of_use'
-      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.statistic: mean
+      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.metric: 'memory_total'
+      microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.statistic: percentile
     row: 30
     col: 12
     width: 12
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.submission_date
+      Percentile: microsurvey_csat_microsurvey_for_fakespot_experiment_target_fakespot.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
