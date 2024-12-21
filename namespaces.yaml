@@ -10888,17 +10888,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id317
           channel:
-            default: beta
+            default: release
             options:
-            - beta
             - release
+            - beta
             - nightly
           os:
-            default: Windows_NT
+            default: Darwin
             options:
-            - Windows_NT
             - Darwin
             - Linux
+            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id318
