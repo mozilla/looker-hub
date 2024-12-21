@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,77 +60,9 @@
       android_ship_beta_rollout.branch
     ]
     filters:
-      android_ship_beta_rollout.metric: 'days_of_use'
+      android_ship_beta_rollout.metric: 'search_count'
       android_ship_beta_rollout.statistic: mean
     row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: android_ship_beta_rollout.submission_date
-    field_y: android_ship_beta_rollout.point
-    log_scale: false
-    ci_lower: android_ship_beta_rollout.lower
-    ci_upper: android_ship_beta_rollout.upper
-    show_grid: true
-    listen:
-      Date: android_ship_beta_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: android_ship_beta_rollout
-    type: looker_line
-    fields: [
-      android_ship_beta_rollout.submission_date,
-      android_ship_beta_rollout.branch,
-      android_ship_beta_rollout.point
-    ]
-    pivots: [
-      android_ship_beta_rollout.branch
-    ]
-    filters:
-      android_ship_beta_rollout.metric: 'retained'
-      android_ship_beta_rollout.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: android_ship_beta_rollout.submission_date
-    field_y: android_ship_beta_rollout.point
-    log_scale: false
-    ci_lower: android_ship_beta_rollout.lower
-    ci_upper: android_ship_beta_rollout.upper
-    show_grid: true
-    listen:
-      Date: android_ship_beta_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: android_ship_beta_rollout
-    type: looker_line
-    fields: [
-      android_ship_beta_rollout.submission_date,
-      android_ship_beta_rollout.branch,
-      android_ship_beta_rollout.point
-    ]
-    pivots: [
-      android_ship_beta_rollout.branch
-    ]
-    filters:
-      android_ship_beta_rollout.metric: 'tagged_sap_searches'
-      android_ship_beta_rollout.statistic: mean
-    row: 10
     col: 12
     width: 12
     height: 8
@@ -163,6 +95,74 @@
     ]
     filters:
       android_ship_beta_rollout.metric: 'ad_clicks'
+      android_ship_beta_rollout.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: android_ship_beta_rollout.submission_date
+    field_y: android_ship_beta_rollout.point
+    log_scale: false
+    ci_lower: android_ship_beta_rollout.lower
+    ci_upper: android_ship_beta_rollout.upper
+    show_grid: true
+    listen:
+      Date: android_ship_beta_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: android_ship_beta_rollout
+    type: looker_line
+    fields: [
+      android_ship_beta_rollout.submission_date,
+      android_ship_beta_rollout.branch,
+      android_ship_beta_rollout.point
+    ]
+    pivots: [
+      android_ship_beta_rollout.branch
+    ]
+    filters:
+      android_ship_beta_rollout.metric: 'days_of_use'
+      android_ship_beta_rollout.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: android_ship_beta_rollout.submission_date
+    field_y: android_ship_beta_rollout.point
+    log_scale: false
+    ci_lower: android_ship_beta_rollout.lower
+    ci_upper: android_ship_beta_rollout.upper
+    show_grid: true
+    listen:
+      Date: android_ship_beta_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: android_ship_beta_rollout
+    type: looker_line
+    fields: [
+      android_ship_beta_rollout.submission_date,
+      android_ship_beta_rollout.branch,
+      android_ship_beta_rollout.point
+    ]
+    pivots: [
+      android_ship_beta_rollout.branch
+    ]
+    filters:
+      android_ship_beta_rollout.metric: 'tagged_sap_searches'
       android_ship_beta_rollout.statistic: mean
     row: 20
     col: 0
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       android_ship_beta_rollout.branch
     ]
     filters:
-      android_ship_beta_rollout.metric: 'search_count'
+      android_ship_beta_rollout.metric: 'retained'
       android_ship_beta_rollout.statistic: mean
     row: 30
     col: 0
