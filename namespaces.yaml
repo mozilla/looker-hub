@@ -8345,10 +8345,10 @@ operational_monitoring:
             default: release
             options:
             - release
-            - esr
             - aurora
-            - beta
             - nightly
+            - esr
+            - beta
             - default
             - nightly-pine
             - nightly-oak
@@ -8532,10 +8532,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id146
           normalized_channel:
-            default: aurora
+            default: nightly
             options:
-            - aurora
             - nightly
+            - aurora
             - beta
             - release
             - esr
@@ -9064,8 +9064,8 @@ operational_monitoring:
             default: Linux
             options:
             - Linux
-            - Windows
             - Mac
+            - Windows
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -10888,17 +10888,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id317
           channel:
-            default: beta
+            default: release
             options:
-            - beta
             - release
+            - beta
             - nightly
           os:
-            default: Windows_NT
+            default: Darwin
             options:
-            - Windows_NT
             - Darwin
             - Linux
+            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id318
