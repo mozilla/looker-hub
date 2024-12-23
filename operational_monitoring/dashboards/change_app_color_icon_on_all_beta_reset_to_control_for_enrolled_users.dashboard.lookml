@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       change_app_color_icon_on_all_beta_reset_to_control_for_enrolled_users.branch
     ]
     filters:
-      change_app_color_icon_on_all_beta_reset_to_control_for_enrolled_users.metric: 'search_count'
+      change_app_color_icon_on_all_beta_reset_to_control_for_enrolled_users.metric: 'retained'
       change_app_color_icon_on_all_beta_reset_to_control_for_enrolled_users.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       change_app_color_icon_on_all_beta_reset_to_control_for_enrolled_users.branch
     ]
     filters:
-      change_app_color_icon_on_all_beta_reset_to_control_for_enrolled_users.metric: 'retained'
+      change_app_color_icon_on_all_beta_reset_to_control_for_enrolled_users.metric: 'uri_count'
       change_app_color_icon_on_all_beta_reset_to_control_for_enrolled_users.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       change_app_color_icon_on_all_beta_reset_to_control_for_enrolled_users.branch
     ]
     filters:
-      change_app_color_icon_on_all_beta_reset_to_control_for_enrolled_users.metric: 'active_hours'
+      change_app_color_icon_on_all_beta_reset_to_control_for_enrolled_users.metric: 'search_count'
       change_app_color_icon_on_all_beta_reset_to_control_for_enrolled_users.statistic: mean
     row: 20
     col: 0
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       change_app_color_icon_on_all_beta_reset_to_control_for_enrolled_users.branch
     ]
     filters:
-      change_app_color_icon_on_all_beta_reset_to_control_for_enrolled_users.metric: 'uri_count'
+      change_app_color_icon_on_all_beta_reset_to_control_for_enrolled_users.metric: 'active_hours'
       change_app_color_icon_on_all_beta_reset_to_control_for_enrolled_users.statistic: mean
     row: 20
     col: 12
