@@ -8231,10 +8231,10 @@ operational_monitoring:
             default: release
             options:
             - release
+            - beta
+            - aurora
             - nightly
             - esr
-            - aurora
-            - beta
             - default
             - nightly-pine
             - nightly-oak
@@ -8355,8 +8355,8 @@ operational_monitoring:
             - '123.0'
             - '122.0'
             - '117.0'
-            - '124.0'
             - '126.0'
+            - '124.0'
             - '125.0'
             - '121.0'
             - '119.0'
@@ -8421,8 +8421,8 @@ operational_monitoring:
             default: beta
             options:
             - beta
-            - nightly
             - aurora
+            - nightly
             - release
             - esr
             - Other
@@ -8947,11 +8947,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id164
           os:
-            default: Linux
+            default: Windows
             options:
-            - Linux
             - Windows
             - Mac
+            - Linux
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -9891,15 +9891,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id251
           app:
-            default: Linux - vpn_session
+            default: Android - daemon_session
             options:
-            - Linux - vpn_session
             - Android - daemon_session
-            - iOS - daemon_session
-            - Windows - vpn_session
-            - Darwin - vpn_session
             - Android - vpn_session
+            - Darwin - vpn_session
             - iOS - vpn_session
+            - iOS - daemon_session
+            - Linux - vpn_session
+            - Windows - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id252
@@ -10739,14 +10739,14 @@ operational_monitoring:
             default: release
             options:
             - release
-            - nightly
             - beta
+            - nightly
           os:
             default: Darwin
             options:
             - Darwin
-            - Windows_NT
             - Linux
+            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id306
