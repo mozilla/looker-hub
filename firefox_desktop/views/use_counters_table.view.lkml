@@ -14244,6 +14244,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_components_shim_resolved {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_components_shim_resolved ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Components Shim Resolved"
+    description: "Whether a document resolves the components shim.. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_console_assert {
     sql: ${TABLE}.metrics.counter.use_counter_doc_console_assert ;;
     type: number
@@ -17715,6 +17724,15 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Clipboard Write"
     description: "Whether a page called called Clipboard.write. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_components_shim_resolved {
+    sql: ${TABLE}.metrics.counter.use_counter_page_components_shim_resolved ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Components Shim Resolved"
+    description: "Whether a page resolves the components shim.. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
