@@ -8231,10 +8231,10 @@ operational_monitoring:
             default: release
             options:
             - release
-            - aurora
-            - beta
-            - nightly
             - esr
+            - beta
+            - aurora
+            - nightly
             - default
             - nightly-pine
             - nightly-oak
@@ -8355,8 +8355,8 @@ operational_monitoring:
             - '123.0'
             - '122.0'
             - '117.0'
-            - '124.0'
             - '126.0'
+            - '124.0'
             - '125.0'
             - '121.0'
             - '119.0'
@@ -8418,11 +8418,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id137
           normalized_channel:
-            default: aurora
+            default: beta
             options:
-            - aurora
-            - nightly
             - beta
+            - nightly
+            - aurora
             - release
             - esr
             - Other
@@ -8947,10 +8947,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id164
           os:
-            default: Linux
+            default: Mac
             options:
-            - Linux
             - Mac
+            - Linux
             - Windows
             - Other
         explore: garbage_collection
@@ -9891,14 +9891,14 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id251
           app:
-            default: Android - daemon_session
+            default: Windows - vpn_session
             options:
-            - Android - daemon_session
-            - Android - vpn_session
-            - iOS - daemon_session
-            - iOS - vpn_session
-            - Darwin - vpn_session
             - Windows - vpn_session
+            - iOS - vpn_session
+            - Android - vpn_session
+            - Android - daemon_session
+            - Darwin - vpn_session
+            - iOS - daemon_session
             - Linux - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
@@ -10736,16 +10736,16 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id305
           channel:
-            default: nightly
+            default: release
             options:
-            - nightly
             - release
             - beta
+            - nightly
           os:
-            default: Windows_NT
+            default: Darwin
             options:
-            - Windows_NT
             - Darwin
+            - Windows_NT
             - Linux
         explore: print_background_task_times
         group_by_dimension: null
