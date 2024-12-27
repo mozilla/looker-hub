@@ -8232,9 +8232,9 @@ operational_monitoring:
             options:
             - release
             - esr
-            - beta
             - aurora
             - nightly
+            - beta
             - default
             - nightly-pine
             - nightly-oak
@@ -8950,8 +8950,8 @@ operational_monitoring:
             default: Mac
             options:
             - Mac
-            - Linux
             - Windows
+            - Linux
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -10736,17 +10736,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id305
           channel:
-            default: release
+            default: beta
             options:
-            - release
             - beta
             - nightly
+            - release
           os:
-            default: Darwin
+            default: Linux
             options:
+            - Linux
             - Darwin
             - Windows_NT
-            - Linux
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id306
