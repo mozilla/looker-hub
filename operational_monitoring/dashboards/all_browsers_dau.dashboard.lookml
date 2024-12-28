@@ -10,6 +10,39 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Firefox Desktop Daily Active Users V2
+    name: Firefox Desktop Daily Active Users V2_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: all_browsers_dau
+    type: looker_line
+    fields: [
+      all_browsers_dau.submission_date,
+      all_browsers_dau.branch,
+      all_browsers_dau.point
+    ]
+    pivots: [
+      all_browsers_dau.branch
+    ]
+    filters:
+      all_browsers_dau.metric: 'firefox_desktop_daily_active_users_v2'
+      all_browsers_dau.statistic: sum
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: all_browsers_dau.submission_date
+    field_y: all_browsers_dau.point
+    log_scale: false
+    ci_lower: all_browsers_dau.lower
+    ci_upper: all_browsers_dau.upper
+    show_grid: true
+    listen:
+      Date: all_browsers_dau.submission_date
+      
+    active: "#3FE1B0"
+    defaults_version: 0
   - title: Focus Android Daily Active Users V2
     name: Focus Android Daily Active Users V2_sum
     note_state: expanded
@@ -29,73 +62,7 @@
       all_browsers_dau.metric: 'focus_android_daily_active_users_v2'
       all_browsers_dau.statistic: sum
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: all_browsers_dau.submission_date
-    field_y: all_browsers_dau.point
-    log_scale: false
-    ci_lower: all_browsers_dau.lower
-    ci_upper: all_browsers_dau.upper
-    show_grid: true
-    listen:
-      Date: all_browsers_dau.submission_date
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Focus Ios Daily Active Users V2
-    name: Focus Ios Daily Active Users V2_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: all_browsers_dau
-    type: looker_line
-    fields: [
-      all_browsers_dau.submission_date,
-      all_browsers_dau.branch,
-      all_browsers_dau.point
-    ]
-    pivots: [
-      all_browsers_dau.branch
-    ]
-    filters:
-      all_browsers_dau.metric: 'focus_ios_daily_active_users_v2'
-      all_browsers_dau.statistic: sum
-    row: 0
     col: 12
-    width: 12
-    height: 8
-    field_x: all_browsers_dau.submission_date
-    field_y: all_browsers_dau.point
-    log_scale: false
-    ci_lower: all_browsers_dau.lower
-    ci_upper: all_browsers_dau.upper
-    show_grid: true
-    listen:
-      Date: all_browsers_dau.submission_date
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Firefox Ios Daily Active Users V2
-    name: Firefox Ios Daily Active Users V2_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: all_browsers_dau
-    type: looker_line
-    fields: [
-      all_browsers_dau.submission_date,
-      all_browsers_dau.branch,
-      all_browsers_dau.point
-    ]
-    pivots: [
-      all_browsers_dau.branch
-    ]
-    filters:
-      all_browsers_dau.metric: 'firefox_ios_daily_active_users_v2'
-      all_browsers_dau.statistic: sum
-    row: 10
-    col: 0
     width: 12
     height: 8
     field_x: all_browsers_dau.submission_date
@@ -128,7 +95,7 @@
       all_browsers_dau.metric: 'fenix_daily_active_users_v2'
       all_browsers_dau.statistic: sum
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: all_browsers_dau.submission_date
@@ -142,8 +109,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Firefox Desktop Daily Active Users V2
-    name: Firefox Desktop Daily Active Users V2_sum
+  - title: Focus Ios Daily Active Users V2
+    name: Focus Ios Daily Active Users V2_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -158,7 +125,40 @@
       all_browsers_dau.branch
     ]
     filters:
-      all_browsers_dau.metric: 'firefox_desktop_daily_active_users_v2'
+      all_browsers_dau.metric: 'focus_ios_daily_active_users_v2'
+      all_browsers_dau.statistic: sum
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: all_browsers_dau.submission_date
+    field_y: all_browsers_dau.point
+    log_scale: false
+    ci_lower: all_browsers_dau.lower
+    ci_upper: all_browsers_dau.upper
+    show_grid: true
+    listen:
+      Date: all_browsers_dau.submission_date
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Firefox Ios Daily Active Users V2
+    name: Firefox Ios Daily Active Users V2_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: all_browsers_dau
+    type: looker_line
+    fields: [
+      all_browsers_dau.submission_date,
+      all_browsers_dau.branch,
+      all_browsers_dau.point
+    ]
+    pivots: [
+      all_browsers_dau.branch
+    ]
+    filters:
+      all_browsers_dau.metric: 'firefox_ios_daily_active_users_v2'
       all_browsers_dau.statistic: sum
     row: 20
     col: 0
