@@ -5,12 +5,12 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: bigquery_table_storage_v1_last_updated {
-  label: "bigquery_table_storage_v1 Last Updated"
+datagroup: captcha_detection_table_last_updated {
+  label: "captcha_detection_table Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'monitoring_derived'
-    AND table_name = 'bigquery_table_storage_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod.monitoring_derived.bigquery_table_storage_v1 is modified."
+    WHERE table_schema = 'firefox_desktop_stable'
+    AND table_name = 'captcha_detection_v1' ;;
+  description: "Updates for captcha_detection_table when moz-fx-data-shared-prod.firefox_desktop_stable.captcha_detection_v1 is modified."
   max_cache_age: "24 hours"
 }
