@@ -198,10 +198,10 @@ ads:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_consolidated_ads_spocs
-    metric_definitions_ppa_measurements:
+    metric_definitions_native_desktop_ad_metrics_hourly:
       type: metric_definitions_explore
       views:
-        base_view: metric_definitions_ppa_measurements
+        base_view: metric_definitions_native_desktop_ad_metrics_hourly
   glean_app: false
   owners:
   - cmorales@mozilla.com
@@ -227,7 +227,7 @@ ads:
       type: metric_definitions_view
     metric_definitions_consolidated_ads_spocs:
       type: metric_definitions_view
-    metric_definitions_ppa_measurements:
+    metric_definitions_native_desktop_ad_metrics_hourly:
       type: metric_definitions_view
     tiles_addressable_inventory_hourly:
       tables:
@@ -8249,10 +8249,10 @@ operational_monitoring:
             default: release
             options:
             - release
-            - beta
-            - esr
-            - nightly
             - aurora
+            - esr
+            - beta
+            - nightly
             - default
             - nightly-pine
             - nightly-oak
@@ -8965,10 +8965,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id164
           os:
-            default: Mac
+            default: Windows
             options:
-            - Mac
             - Windows
+            - Mac
             - Linux
             - Other
         explore: garbage_collection
@@ -10760,11 +10760,11 @@ operational_monitoring:
             - release
             - beta
           os:
-            default: Darwin
+            default: Windows_NT
             options:
-            - Darwin
-            - Linux
             - Windows_NT
+            - Linux
+            - Darwin
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id306
