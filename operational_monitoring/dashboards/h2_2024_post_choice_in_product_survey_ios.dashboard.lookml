@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       h2_2024_post_choice_in_product_survey_ios.branch
     ]
     filters:
-      h2_2024_post_choice_in_product_survey_ios.metric: 'active_hours'
+      h2_2024_post_choice_in_product_survey_ios.metric: 'search_count'
       h2_2024_post_choice_in_product_survey_ios.statistic: mean
     row: 0
     col: 12
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       h2_2024_post_choice_in_product_survey_ios.branch
     ]
     filters:
-      h2_2024_post_choice_in_product_survey_ios.metric: 'search_count'
+      h2_2024_post_choice_in_product_survey_ios.metric: 'active_hours'
       h2_2024_post_choice_in_product_survey_ios.statistic: mean
     row: 20
     col: 0
