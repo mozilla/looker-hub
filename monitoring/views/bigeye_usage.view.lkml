@@ -45,6 +45,11 @@ view: bigeye_usage {
     hidden: yes
   }
 
+  dimension: task_duration_seconds {
+    sql: ${TABLE}.task_duration_seconds ;;
+    type: number
+  }
+
   dimension: total_slot_ms {
     sql: ${TABLE}.total_slot_ms ;;
     type: number
@@ -95,8 +100,8 @@ view: bigeye_usage {
     type: sum
   }
 
-  measure: task_duration_sum {
-    sql: ${task_duration} ;;
+  measure: task_duration_seconds_sum {
+    sql: ${task_duration_seconds} ;;
     type: sum
   }
 

@@ -4,15 +4,14 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/ads/views/metric_definitions_ppa_measurements.view.lkml"
+include: "/looker-hub/operational_monitoring/views/h2_2024_post_choice_in_product_survey_ios.view.lkml"
 
-explore: metric_definitions_ppa_measurements {
+explore: h2_2024_post_choice_in_product_survey_ios {
   always_filter: {
     filters: [
-      submission_date: "7 days",
-      sampling: "1",
+      branch: "enabled, disabled",
     ]
   }
 
-  fields: [ALL_FIELDS*]
+  hidden: yes
 }

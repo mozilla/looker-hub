@@ -11120,6 +11120,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Clipboard Write"
   }
 
+  dimension: metrics__counter__use_counter_doc_components_shim_resolved {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_components_shim_resolved ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Components Shim Resolved"
+  }
+
   dimension: metrics__counter__use_counter_doc_console_assert {
     sql: ${TABLE}.metrics.counter.use_counter_doc_console_assert ;;
     type: number
@@ -13820,6 +13827,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Clipboard Write"
+  }
+
+  dimension: metrics__counter__use_counter_page_components_shim_resolved {
+    sql: ${TABLE}.metrics.counter.use_counter_page_components_shim_resolved ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Components Shim Resolved"
   }
 
   dimension: metrics__counter__use_counter_page_console_assert {
