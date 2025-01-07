@@ -6206,8 +6206,8 @@ monitoring:
         cost_sum:
           sql: ${cost}
           type: sum
-        task_duration_sum:
-          sql: ${task_duration}
+        task_duration_seconds_sum:
+          sql: ${task_duration_seconds}
           type: sum
         total_slot_ms_sum:
           sql: ${total_slot_ms}
