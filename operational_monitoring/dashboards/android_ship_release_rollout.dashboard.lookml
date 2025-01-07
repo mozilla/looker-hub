@@ -146,6 +146,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: android_ship_release_rollout
+    type: looker_line
+    fields: [
+      android_ship_release_rollout.submission_date,
+      android_ship_release_rollout.branch,
+      android_ship_release_rollout.point
+    ]
+    pivots: [
+      android_ship_release_rollout.branch
+    ]
+    filters:
+      android_ship_release_rollout.metric: 'active_hours'
+      android_ship_release_rollout.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: android_ship_release_rollout.submission_date
+    field_y: android_ship_release_rollout.point
+    log_scale: false
+    ci_lower: android_ship_release_rollout.lower
+    ci_upper: android_ship_release_rollout.upper
+    show_grid: true
+    listen:
+      Date: android_ship_release_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -165,7 +199,7 @@
       android_ship_release_rollout.metric: 'retained'
       android_ship_release_rollout.statistic: mean
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: android_ship_release_rollout.submission_date
@@ -197,40 +231,6 @@
     ]
     filters:
       android_ship_release_rollout.metric: 'ad_clicks'
-      android_ship_release_rollout.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: android_ship_release_rollout.submission_date
-    field_y: android_ship_release_rollout.point
-    log_scale: false
-    ci_lower: android_ship_release_rollout.lower
-    ci_upper: android_ship_release_rollout.upper
-    show_grid: true
-    listen:
-      Date: android_ship_release_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: android_ship_release_rollout
-    type: looker_line
-    fields: [
-      android_ship_release_rollout.submission_date,
-      android_ship_release_rollout.branch,
-      android_ship_release_rollout.point
-    ]
-    pivots: [
-      android_ship_release_rollout.branch
-    ]
-    filters:
-      android_ship_release_rollout.metric: 'active_hours'
       android_ship_release_rollout.statistic: mean
     row: 30
     col: 0
