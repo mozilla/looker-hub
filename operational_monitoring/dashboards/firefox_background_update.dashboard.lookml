@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Crash Volume
-    name: Crash Volume_sum
+  - title: Exception Volume
+    name: Exception Volume_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,45 +26,10 @@
       firefox_background_update.branch
     ]
     filters:
-      firefox_background_update.metric: 'crash_volume'
+      firefox_background_update.metric: 'exception_volume'
       firefox_background_update.statistic: sum
     row: 0
     col: 0
-    width: 12
-    height: 8
-    field_x: firefox_background_update.submission_date
-    field_y: firefox_background_update.point
-    log_scale: false
-    ci_lower: firefox_background_update.lower
-    ci_upper: firefox_background_update.upper
-    show_grid: true
-    listen:
-      Date: firefox_background_update.submission_date
-      Normalized Channel: firefox_background_update.normalized_channel
-      Windows Version: firefox_background_update.windows_version
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Success Rate
-    name: Success Rate_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: firefox_background_update
-    type: looker_line
-    fields: [
-      firefox_background_update.submission_date,
-      firefox_background_update.branch,
-      firefox_background_update.point
-    ]
-    pivots: [
-      firefox_background_update.branch
-    ]
-    filters:
-      firefox_background_update.metric: 'success_rate'
-      firefox_background_update.statistic: mean
-    row: 0
-    col: 12
     width: 12
     height: 8
     field_x: firefox_background_update.submission_date
@@ -98,78 +63,8 @@
     filters:
       firefox_background_update.metric: 'client_volume'
       firefox_background_update.statistic: sum
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: firefox_background_update.submission_date
-    field_y: firefox_background_update.point
-    log_scale: false
-    ci_lower: firefox_background_update.lower
-    ci_upper: firefox_background_update.upper
-    show_grid: true
-    listen:
-      Date: firefox_background_update.submission_date
-      Normalized Channel: firefox_background_update.normalized_channel
-      Windows Version: firefox_background_update.windows_version
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Exception Volume
-    name: Exception Volume_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: firefox_background_update
-    type: looker_line
-    fields: [
-      firefox_background_update.submission_date,
-      firefox_background_update.branch,
-      firefox_background_update.point
-    ]
-    pivots: [
-      firefox_background_update.branch
-    ]
-    filters:
-      firefox_background_update.metric: 'exception_volume'
-      firefox_background_update.statistic: sum
-    row: 10
+    row: 0
     col: 12
-    width: 12
-    height: 8
-    field_x: firefox_background_update.submission_date
-    field_y: firefox_background_update.point
-    log_scale: false
-    ci_lower: firefox_background_update.lower
-    ci_upper: firefox_background_update.upper
-    show_grid: true
-    listen:
-      Date: firefox_background_update.submission_date
-      Normalized Channel: firefox_background_update.normalized_channel
-      Windows Version: firefox_background_update.windows_version
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Ping Volume
-    name: Ping Volume_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: firefox_background_update
-    type: looker_line
-    fields: [
-      firefox_background_update.submission_date,
-      firefox_background_update.branch,
-      firefox_background_update.point
-    ]
-    pivots: [
-      firefox_background_update.branch
-    ]
-    filters:
-      firefox_background_update.metric: 'ping_volume'
-      firefox_background_update.statistic: sum
-    row: 20
-    col: 0
     width: 12
     height: 8
     field_x: firefox_background_update.submission_date
@@ -203,6 +98,111 @@
     filters:
       firefox_background_update.metric: 'exception_rate'
       firefox_background_update.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: firefox_background_update.submission_date
+    field_y: firefox_background_update.point
+    log_scale: false
+    ci_lower: firefox_background_update.lower
+    ci_upper: firefox_background_update.upper
+    show_grid: true
+    listen:
+      Date: firefox_background_update.submission_date
+      Normalized Channel: firefox_background_update.normalized_channel
+      Windows Version: firefox_background_update.windows_version
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Ping Volume
+    name: Ping Volume_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: firefox_background_update
+    type: looker_line
+    fields: [
+      firefox_background_update.submission_date,
+      firefox_background_update.branch,
+      firefox_background_update.point
+    ]
+    pivots: [
+      firefox_background_update.branch
+    ]
+    filters:
+      firefox_background_update.metric: 'ping_volume'
+      firefox_background_update.statistic: sum
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: firefox_background_update.submission_date
+    field_y: firefox_background_update.point
+    log_scale: false
+    ci_lower: firefox_background_update.lower
+    ci_upper: firefox_background_update.upper
+    show_grid: true
+    listen:
+      Date: firefox_background_update.submission_date
+      Normalized Channel: firefox_background_update.normalized_channel
+      Windows Version: firefox_background_update.windows_version
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Success Rate
+    name: Success Rate_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: firefox_background_update
+    type: looker_line
+    fields: [
+      firefox_background_update.submission_date,
+      firefox_background_update.branch,
+      firefox_background_update.point
+    ]
+    pivots: [
+      firefox_background_update.branch
+    ]
+    filters:
+      firefox_background_update.metric: 'success_rate'
+      firefox_background_update.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: firefox_background_update.submission_date
+    field_y: firefox_background_update.point
+    log_scale: false
+    ci_lower: firefox_background_update.lower
+    ci_upper: firefox_background_update.upper
+    show_grid: true
+    listen:
+      Date: firefox_background_update.submission_date
+      Normalized Channel: firefox_background_update.normalized_channel
+      Windows Version: firefox_background_update.windows_version
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Crash Volume
+    name: Crash Volume_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: firefox_background_update
+    type: looker_line
+    fields: [
+      firefox_background_update.submission_date,
+      firefox_background_update.branch,
+      firefox_background_update.point
+    ]
+    pivots: [
+      firefox_background_update.branch
+    ]
+    filters:
+      firefox_background_update.metric: 'crash_volume'
+      firefox_background_update.statistic: sum
     row: 20
     col: 12
     width: 12
@@ -271,15 +271,15 @@
   - title: Windows Version
     name: Windows Version
     type: string_filter
-    default_value: 'Windows 10'
+    default_value: 'Windows 7'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'Windows 10'
       - 'Windows 7'
+      - 'Windows 10'
       - 'Windows 8'
       - 'Windows 8.1'
       - 'Windows 11'
