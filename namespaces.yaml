@@ -574,12 +574,21 @@ duet:
         table: mozdata.telemetry.new_profile
       type: ping_view
 experimentation:
+  explores:
+    experiment_crash_rates:
+      type: table_explore
+      views:
+        base_view: experiment_crash_rates
   glean_app: false
   owners:
   - ascholtz@mozilla.com
   pretty_name: Experimentation
   spoke: looker-spoke-default
   views:
+    experiment_crash_rates:
+      tables:
+      - table: moz-fx-data-shared-prod.telemetry.experiment_crash_rates_live
+      type: table_view
     experiment_enrollment_cumulative_population_estimate:
       tables:
       - channel: release
