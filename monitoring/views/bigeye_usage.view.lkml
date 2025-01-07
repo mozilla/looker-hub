@@ -100,8 +100,8 @@ view: bigeye_usage {
     type: sum
   }
 
-  measure: task_duration_sum {
-    sql: ${task_duration} ;;
+  measure: task_duration_seconds_sum {
+    sql: ${task_duration_seconds} ;;
     type: sum
   }
 
