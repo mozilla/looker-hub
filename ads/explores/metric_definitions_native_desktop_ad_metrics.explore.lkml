@@ -4,14 +4,15 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/newtab_recommendations_merino_migration_global.view.lkml"
+include: "/looker-hub/ads/views/metric_definitions_native_desktop_ad_metrics.view.lkml"
 
-explore: newtab_recommendations_merino_migration_global {
+explore: metric_definitions_native_desktop_ad_metrics {
   always_filter: {
     filters: [
-      branch: "enabled, disabled",
+      submission_date: "7 days",
+      sampling: "1",
     ]
   }
 
-  hidden: yes
+  fields: [ALL_FIELDS*]
 }
