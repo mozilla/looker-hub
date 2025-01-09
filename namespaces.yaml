@@ -8544,11 +8544,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id137
           normalized_channel:
-            default: beta
+            default: nightly
             options:
+            - nightly
             - beta
             - aurora
-            - nightly
             - release
             - esr
             - Other
@@ -10719,17 +10719,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id293
           channel:
-            default: beta
+            default: nightly
             options:
-            - beta
             - nightly
+            - beta
             - release
           os:
-            default: Darwin
+            default: Linux
             options:
-            - Darwin
-            - Windows_NT
             - Linux
+            - Windows_NT
+            - Darwin
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id294

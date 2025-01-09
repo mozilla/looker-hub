@@ -35,6 +35,11 @@ view: issue {
     type: string
   }
 
+  dimension: author_id {
+    sql: ${TABLE}.author_id ;;
+    type: string
+  }
+
   dimension: creator {
     sql: ${TABLE}.creator ;;
     type: string
@@ -45,8 +50,43 @@ view: issue {
     type: string
   }
 
+  dimension: dimension_table {
+    sql: ${TABLE}.dimension_table ;;
+    type: string
+  }
+
   dimension: environment {
     sql: ${TABLE}.environment ;;
+    type: string
+  }
+
+  dimension: field_description {
+    sql: ${TABLE}.field_description ;;
+    type: string
+  }
+
+  dimension: field_id {
+    sql: ${TABLE}.field_id ;;
+    type: string
+  }
+
+  dimension: field_name {
+    sql: ${TABLE}.field_name ;;
+    type: string
+  }
+
+  dimension: field_option_id {
+    sql: ${TABLE}.field_option_id ;;
+    type: number
+  }
+
+  dimension: field_option_name {
+    sql: ${TABLE}.field_option_name ;;
+    type: string
+  }
+
+  dimension: help_text {
+    sql: ${TABLE}.help_text ;;
     type: string
   }
 
@@ -55,8 +95,28 @@ view: issue {
     type: number
   }
 
+  dimension: is_active {
+    sql: ${TABLE}.is_active ;;
+    type: yesno
+  }
+
+  dimension: is_array {
+    sql: ${TABLE}.is_array ;;
+    type: yesno
+  }
+
+  dimension: is_custom {
+    sql: ${TABLE}.is_custom ;;
+    type: yesno
+  }
+
   dimension: issue_type {
     sql: ${TABLE}.issue_type ;;
+    type: number
+  }
+
+  dimension: issue_type_id {
+    sql: ${TABLE}.issue_type_id ;;
     type: number
   }
 
@@ -65,13 +125,18 @@ view: issue {
     type: string
   }
 
-  dimension: original_estimate {
-    sql: ${TABLE}.original_estimate ;;
-    type: number
+  dimension: link {
+    sql: ${TABLE}.link ;;
+    type: string
   }
 
-  dimension: parent_id {
-    sql: ${TABLE}.parent_id ;;
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: original_estimate {
+    sql: ${TABLE}.original_estimate ;;
     type: number
   }
 
@@ -90,6 +155,11 @@ view: issue {
     type: number
   }
 
+  dimension: project_id {
+    sql: ${TABLE}.project_id ;;
+    type: number
+  }
+
   dimension: remaining_estimate {
     sql: ${TABLE}.remaining_estimate ;;
     type: number
@@ -98,6 +168,21 @@ view: issue {
   dimension: reporter {
     sql: ${TABLE}.reporter ;;
     type: string
+  }
+
+  dimension: request_description {
+    sql: ${TABLE}.request_description ;;
+    type: string
+  }
+
+  dimension: request_id {
+    sql: ${TABLE}.request_id ;;
+    type: number
+  }
+
+  dimension: request_type_id {
+    sql: ${TABLE}.request_type_id ;;
+    type: number
   }
 
   dimension: resolution {
@@ -112,6 +197,11 @@ view: issue {
 
   dimension: security_level {
     sql: ${TABLE}.security_level ;;
+    type: number
+  }
+
+  dimension: service_desk_id {
+    sql: ${TABLE}.service_desk_id ;;
     type: number
   }
 
@@ -132,6 +222,11 @@ view: issue {
 
   dimension: time_tracking {
     sql: ${TABLE}.time_tracking ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
     type: string
   }
 
@@ -218,6 +313,20 @@ view: issue {
 
   dimension_group: status_category_changed {
     sql: ${TABLE}.status_category_changed ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
+  dimension_group: time {
+    sql: ${TABLE}.time ;;
     type: time
     timeframes: [
       raw,
