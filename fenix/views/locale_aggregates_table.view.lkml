@@ -4,12 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: active_users_aggregates {
-  dimension: adjust_network {
-    sql: ${TABLE}.adjust_network ;;
-    type: string
-  }
-
+view: locale_aggregates_table {
   dimension: app_name {
     sql: ${TABLE}.app_name ;;
     type: string
@@ -17,41 +12,6 @@ view: active_users_aggregates {
 
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
-    type: string
-  }
-
-  dimension: app_version_is_major_release {
-    sql: ${TABLE}.app_version_is_major_release ;;
-    type: yesno
-  }
-
-  dimension: app_version_major {
-    sql: ${TABLE}.app_version_major ;;
-    type: number
-  }
-
-  dimension: app_version_minor {
-    sql: ${TABLE}.app_version_minor ;;
-    type: number
-  }
-
-  dimension: app_version_patch_revision {
-    sql: ${TABLE}.app_version_patch_revision ;;
-    type: number
-  }
-
-  dimension: attributed {
-    sql: ${TABLE}.attributed ;;
-    type: yesno
-  }
-
-  dimension: attribution_medium {
-    sql: ${TABLE}.attribution_medium ;;
-    type: string
-  }
-
-  dimension: attribution_source {
-    sql: ${TABLE}.attribution_source ;;
     type: string
   }
 
@@ -81,21 +41,6 @@ view: active_users_aggregates {
     type: number
   }
 
-  dimension: distribution_id {
-    sql: ${TABLE}.distribution_id ;;
-    type: string
-  }
-
-  dimension: first_seen_year {
-    sql: ${TABLE}.first_seen_year ;;
-    type: number
-  }
-
-  dimension: install_source {
-    sql: ${TABLE}.install_source ;;
-    type: string
-  }
-
   dimension: is_default_browser {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno
@@ -121,33 +66,8 @@ view: active_users_aggregates {
     type: string
   }
 
-  dimension: os_grouped {
-    sql: ${TABLE}.os_grouped ;;
-    type: string
-  }
-
   dimension: os_version {
     sql: ${TABLE}.os_version ;;
-    type: string
-  }
-
-  dimension: os_version_major {
-    sql: ${TABLE}.os_version_major ;;
-    type: number
-  }
-
-  dimension: os_version_minor {
-    sql: ${TABLE}.os_version_minor ;;
-    type: number
-  }
-
-  dimension: partnership {
-    sql: ${TABLE}.partnership ;;
-    type: string
-  }
-
-  dimension: segment {
-    sql: ${TABLE}.segment ;;
     type: string
   }
 
@@ -176,5 +96,5 @@ view: active_users_aggregates {
     datatype: date
   }
 
-  sql_table_name: `moz-fx-data-shared-prod.telemetry.active_users_aggregates` ;;
+  sql_table_name: `mozdata.fenix.locale_aggregates` ;;
 }

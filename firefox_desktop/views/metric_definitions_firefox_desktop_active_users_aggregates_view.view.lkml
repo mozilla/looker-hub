@@ -49,6 +49,7 @@ firefox_desktop_active_users_aggregates_view_os_grouped,
 firefox_desktop_active_users_aggregates_view_os_version,
 firefox_desktop_active_users_aggregates_view_os_version_major,
 firefox_desktop_active_users_aggregates_view_os_version_minor,
+firefox_desktop_active_users_aggregates_view_partnership,
 firefox_desktop_active_users_aggregates_view_segment,
 firefox_desktop_active_users_aggregates_view_wau,
 firefox_desktop_active_users_aggregates_view_weekly_users,
@@ -123,6 +124,7 @@ firefox_desktop_active_users_aggregates_view.os_grouped AS firefox_desktop_activ
 firefox_desktop_active_users_aggregates_view.os_version AS firefox_desktop_active_users_aggregates_view_os_version,
 firefox_desktop_active_users_aggregates_view.os_version_major AS firefox_desktop_active_users_aggregates_view_os_version_major,
 firefox_desktop_active_users_aggregates_view.os_version_minor AS firefox_desktop_active_users_aggregates_view_os_version_minor,
+firefox_desktop_active_users_aggregates_view.partnership AS firefox_desktop_active_users_aggregates_view_partnership,
 firefox_desktop_active_users_aggregates_view.segment AS firefox_desktop_active_users_aggregates_view_segment,
 firefox_desktop_active_users_aggregates_view.wau AS firefox_desktop_active_users_aggregates_view_wau,
 firefox_desktop_active_users_aggregates_view.weekly_users AS firefox_desktop_active_users_aggregates_view_weekly_users,
@@ -206,6 +208,7 @@ firefox_desktop_active_users_aggregates_view_os_grouped,
 firefox_desktop_active_users_aggregates_view_os_version,
 firefox_desktop_active_users_aggregates_view_os_version_major,
 firefox_desktop_active_users_aggregates_view_os_version_minor,
+firefox_desktop_active_users_aggregates_view_partnership,
 firefox_desktop_active_users_aggregates_view_segment,
 firefox_desktop_active_users_aggregates_view_wau,
 firefox_desktop_active_users_aggregates_view_weekly_users,
@@ -447,6 +450,12 @@ firefox_desktop_active_users_aggregates_view_weekly_users,
   dimension: os_version_minor {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_os_version_minor ;;
     type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: partnership {
+    sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_partnership ;;
+    type: string
     group_label: "Base Fields"
   }
 
