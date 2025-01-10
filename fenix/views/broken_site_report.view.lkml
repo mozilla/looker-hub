@@ -511,7 +511,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_forced_accelerated_layers {
     label: "Broken Site Report Browser Info Prefs Forced Accelerated Layers"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_forced_accelerated_layers ;;
     type: yesno
     group_label: "Broken Site Report Browser Info Prefs"
@@ -529,7 +529,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled {
     label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled ;;
     type: yesno
     group_label: "Broken Site Report Browser Info Prefs"
@@ -547,7 +547,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm {
     label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled In Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm ;;
     type: yesno
     group_label: "Broken Site Report Browser Info Prefs"
@@ -565,7 +565,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_browser_info_system_is_tablet {
     label: "Broken Site Report Browser Info System Is Tablet"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_system_is_tablet ;;
     type: yesno
     group_label: "Broken Site Report Browser Info System"

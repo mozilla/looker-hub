@@ -70,6 +70,7 @@ firefox_ios_active_users_aggregates_view_os_grouped,
 firefox_ios_active_users_aggregates_view_os_version,
 firefox_ios_active_users_aggregates_view_os_version_major,
 firefox_ios_active_users_aggregates_view_os_version_minor,
+firefox_ios_active_users_aggregates_view_partnership,
 firefox_ios_active_users_aggregates_view_segment,
 firefox_ios_active_users_aggregates_view_wau,
 firefox_ios_active_users_aggregates_view_weekly_users,
@@ -166,6 +167,7 @@ firefox_ios_active_users_aggregates_view.os_grouped AS firefox_ios_active_users_
 firefox_ios_active_users_aggregates_view.os_version AS firefox_ios_active_users_aggregates_view_os_version,
 firefox_ios_active_users_aggregates_view.os_version_major AS firefox_ios_active_users_aggregates_view_os_version_major,
 firefox_ios_active_users_aggregates_view.os_version_minor AS firefox_ios_active_users_aggregates_view_os_version_minor,
+firefox_ios_active_users_aggregates_view.partnership AS firefox_ios_active_users_aggregates_view_partnership,
 firefox_ios_active_users_aggregates_view.segment AS firefox_ios_active_users_aggregates_view_segment,
 firefox_ios_active_users_aggregates_view.wau AS firefox_ios_active_users_aggregates_view_wau,
 firefox_ios_active_users_aggregates_view.weekly_users AS firefox_ios_active_users_aggregates_view_weekly_users,
@@ -271,6 +273,7 @@ firefox_ios_active_users_aggregates_view_os_grouped,
 firefox_ios_active_users_aggregates_view_os_version,
 firefox_ios_active_users_aggregates_view_os_version_major,
 firefox_ios_active_users_aggregates_view_os_version_minor,
+firefox_ios_active_users_aggregates_view_partnership,
 firefox_ios_active_users_aggregates_view_segment,
 firefox_ios_active_users_aggregates_view_wau,
 firefox_ios_active_users_aggregates_view_weekly_users,
@@ -693,6 +696,12 @@ firefox_ios_active_users_aggregates_view_weekly_users,
   dimension: os_version_minor {
     sql: ${TABLE}.firefox_ios_active_users_aggregates_view_os_version_minor ;;
     type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: partnership {
+    sql: ${TABLE}.firefox_ios_active_users_aggregates_view_partnership ;;
+    type: string
     group_label: "Base Fields"
   }
 

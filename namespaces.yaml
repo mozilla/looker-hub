@@ -1597,6 +1597,11 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.installation
       type: table_view
+    locale_aggregates_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.locale_aggregates
+      type: table_view
     logins_sync:
       tables:
       - channel: release
@@ -2942,6 +2947,11 @@ firefox_desktop:
       tables:
       - table: mozdata.telemetry.clients_last_seen
       type: growth_accounting_view
+    locale_aggregates_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.locale_aggregates
+      type: table_view
     ltv_states_table:
       tables:
       - channel: null
@@ -8358,9 +8368,9 @@ operational_monitoring:
             options:
             - release
             - aurora
+            - nightly
             - esr
             - beta
-            - nightly
             - default
             - nightly-pine
             - nightly-oak
@@ -8544,11 +8554,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id137
           normalized_channel:
-            default: nightly
+            default: aurora
             options:
+            - aurora
             - nightly
             - beta
-            - aurora
             - release
             - esr
             - Other
@@ -9073,11 +9083,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id164
           os:
-            default: Mac
+            default: Linux
             options:
-            - Mac
             - Linux
             - Windows
+            - Mac
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -9950,14 +9960,14 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id245
           app:
-            default: Android - vpn_session
+            default: iOS - daemon_session
             options:
+            - iOS - daemon_session
+            - Darwin - vpn_session
             - Android - vpn_session
+            - Android - daemon_session
             - iOS - vpn_session
             - Windows - vpn_session
-            - iOS - daemon_session
-            - Android - daemon_session
-            - Darwin - vpn_session
             - Linux - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
@@ -10719,17 +10729,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id293
           channel:
-            default: nightly
+            default: release
             options:
+            - release
             - nightly
             - beta
-            - release
           os:
-            default: Linux
+            default: Darwin
             options:
+            - Darwin
             - Linux
             - Windows_NT
-            - Darwin
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id294
