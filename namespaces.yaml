@@ -2058,10 +2058,6 @@ firefox_accounts:
       views:
         base_view: events
         extended_view: fxa_events_table
-    funnel_analysis:
-      type: funnel_analysis_explore
-      views:
-        base_view: funnel_analysis
     growth_accounting:
       type: growth_accounting_explore
       views:
@@ -2189,20 +2185,6 @@ firefox_accounts:
       - base_table: mozdata.firefox_accounts.fxa_content_auth_oauth_events
         events_table_view: fxa_events_table
       type: events_view
-    events_daily_table:
-      tables:
-      - channel: release
-        table: mozdata.firefox_accounts.events_daily
-      type: table_view
-    funnel_analysis:
-      tables:
-      - event_types: mozdata.firefox_accounts.event_types
-        funnel_analysis: events_daily_table
-        step_1: event_types
-        step_2: event_types
-        step_3: event_types
-        step_4: event_types
-      type: funnel_analysis_view
     fxa_auth_events_table:
       tables:
       - channel: release

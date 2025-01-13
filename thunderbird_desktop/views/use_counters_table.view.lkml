@@ -15468,6 +15468,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_js_legacy_lang_subtag {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_legacy_lang_subtag ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Legacy Lang Subtag"
+    description: "Whether a document uses a 5-to-8-character language subtag in Intl.Locale constructor. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_optimize_get_iterator_fuse {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_optimize_get_iterator_fuse ;;
     type: number
@@ -18975,6 +18984,15 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Late Weekday"
     description: "Whether a page parses a Date with day of week in an unexpected position. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_legacy_lang_subtag {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_legacy_lang_subtag ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Legacy Lang Subtag"
+    description: "Whether a page uses a 5-to-8-character language subtag in Intl.Locale constructor. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
