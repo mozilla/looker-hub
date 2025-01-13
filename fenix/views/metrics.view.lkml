@@ -3450,6 +3450,24 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
+  dimension: metrics__string__webcompatreporting_reason_dropdown {
+    label: "Webcompatreporting Reason Dropdown"
+    hidden: no
+    sql: ${TABLE}.metrics.string.webcompatreporting_reason_dropdown ;;
+    type: string
+    group_label: "Webcompatreporting"
+    group_item_label: "Reason Dropdown"
+
+    link: {
+      label: "Glean Dictionary reference for Webcompatreporting Reason Dropdown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/webcompatreporting_reason_dropdown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record whether the user chooses an option from the dropdown.
+"
+  }
+
   dimension: metrics__boolean__a11y_always_underline_links {
     label: "A11Y Always Underline Links"
     hidden: no
@@ -16102,7 +16120,7 @@ though the counts appear in the next successfully sent `metrics` ping.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A count of the pings submitted, by ping type.
+    description: "A count of the built-in pings submitted, by ping type.
 
 This metric appears in both the metrics and baseline pings.
 
@@ -16110,6 +16128,9 @@ This metric appears in both the metrics and baseline pings.
   the last metrics ping (including the last metrics ping)
 - On the baseline ping, the counts include the number of pings send since
   the last baseline ping (including the last baseline ping)
+
+Note: Previously this also recorded the number of submitted custom pings.
+Now it only records counts for the Glean built-in pings.
 "
   }
 

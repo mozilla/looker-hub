@@ -6005,6 +6005,13 @@ view: metrics_table {
     group_item_label: "Startup Profile Selection Reason"
   }
 
+  dimension: metrics__string__webcompatreporting_reason_dropdown {
+    sql: ${TABLE}.metrics.string.webcompatreporting_reason_dropdown ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Webcompatreporting Reason Dropdown"
+  }
+
   dimension: metrics__string_list__addons_enabled_addons {
     sql: ${TABLE}.metrics.string_list.addons_enabled_addons ;;
     hidden: yes

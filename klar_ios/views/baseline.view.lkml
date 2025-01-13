@@ -267,7 +267,7 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A count of the pings submitted, by ping type.
+    description: "A count of the built-in pings submitted, by ping type.
 
 This metric appears in both the metrics and baseline pings.
 
@@ -275,6 +275,9 @@ This metric appears in both the metrics and baseline pings.
   the last metrics ping (including the last metrics ping)
 - On the baseline ping, the counts include the number of pings send since
   the last baseline ping (including the last baseline ping)
+
+Note: Previously this also recorded the number of submitted custom pings.
+Now it only records counts for the Glean built-in pings.
 "
   }
 
