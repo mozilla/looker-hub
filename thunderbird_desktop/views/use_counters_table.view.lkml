@@ -15567,6 +15567,33 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_js_thenable {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_thenable ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Thenable"
+    description: "Whether a document resolved a promise using thenable support rather than builtin methods. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_thenable_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_thenable_proto ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Thenable Proto"
+    description: "Whether a document resolved a promise using thenable on prototype. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_thenable_standard_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_thenable_standard_proto ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Thenable Standard Proto"
+    description: "Whether a document resolved a promise using thenable on a standard prototype. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_wasm {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_wasm ;;
     type: number
@@ -19047,6 +19074,33 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Subclassing Typedarray Type 3"
     description: "Whether a page TypedArray is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_thenable {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_thenable ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Thenable"
+    description: "Whether a page resolved a promise using thenable support rather than builtin methods. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_thenable_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_thenable_proto ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Thenable Proto"
+    description: "Whether a page resolved a promise using thenable on prototype. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_thenable_standard_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_thenable_standard_proto ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Thenable Standard Proto"
+    description: "Whether a page resolved a promise using thenable on a standard prototype. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

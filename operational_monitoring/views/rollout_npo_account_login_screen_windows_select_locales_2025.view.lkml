@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: microsurvey_sync_csat_2024 {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.microsurvey_sync_csat_2024_statistics ;;
+view: rollout_npo_account_login_screen_windows_select_locales_2025 {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.rollout_npo_account_login_screen_windows_select_locales_2025_statistics ;;
 
   dimension: submission_date {
     type: date

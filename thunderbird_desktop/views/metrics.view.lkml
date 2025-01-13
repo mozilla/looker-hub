@@ -214,7 +214,7 @@ view: metrics {
 
   dimension: metrics__custom_distribution__mail_compact_bytes_recovered__sum {
     label: "Mail Compact Bytes Recovered Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.mail_compact_bytes_recovered.sum ;;
     type: number
     group_label: "Mail"
@@ -363,6 +363,23 @@ view: metrics {
     }
 
     description: "Counts mbox read failures by type.
+"
+  }
+
+  dimension: metrics__labeled_counter__mail_mbox_write_errors {
+    label: "Mail Mbox Write Errors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.mail_mbox_write_errors ;;
+    group_label: "Mail"
+    group_item_label: "Mbox Write Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Mbox Write Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_mbox_write_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts mbox write oddities which might indicate problems.
 "
   }
 
@@ -13137,7 +13154,7 @@ though the counts appear in the next successfully sent `metrics` ping.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A count of the pings submitted, by ping type.
+    description: "A count of the built-in pings submitted, by ping type.
 
 This metric appears in both the metrics and baseline pings.
 
@@ -13145,6 +13162,9 @@ This metric appears in both the metrics and baseline pings.
   the last metrics ping (including the last metrics ping)
 - On the baseline ping, the counts include the number of pings send since
   the last baseline ping (including the last baseline ping)
+
+Note: Previously this also recorded the number of submitted custom pings.
+Now it only records counts for the Glean built-in pings.
 "
   }
 
@@ -19900,6 +19920,47 @@ view: metrics__metrics__labeled_counter__mail_folder_opened {
 
 view: metrics__metrics__labeled_counter__mail_mbox_read_errors {
   label: "Mail - Mbox Read Errors"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__mail_mbox_write_errors {
+  label: "Mail - Mbox Write Errors"
 
   dimension: document_id {
     type: string

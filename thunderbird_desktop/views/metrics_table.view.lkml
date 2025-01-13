@@ -3666,6 +3666,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__mail_mbox_write_errors {
+    sql: ${TABLE}.metrics.labeled_counter.mail_mbox_write_errors ;;
+    hidden: yes
+    description: "Counts mbox write oddities which might indicate problems.
+"
+  }
+
   dimension: metrics__labeled_counter__mail_successful_email_account_setup {
     sql: ${TABLE}.metrics.labeled_counter.mail_successful_email_account_setup ;;
     hidden: yes

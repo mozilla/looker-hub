@@ -12072,6 +12072,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Js Late Weekday"
   }
 
+  dimension: metrics__counter__use_counter_doc_js_legacy_lang_subtag {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_legacy_lang_subtag ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Legacy Lang Subtag"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_optimize_get_iterator_fuse {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_optimize_get_iterator_fuse ;;
     type: number
@@ -12147,6 +12154,27 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Subclassing Typedarray Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_thenable {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_thenable ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Thenable"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_thenable_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_thenable_proto ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Thenable Proto"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_thenable_standard_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_thenable_standard_proto ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Thenable Standard Proto"
   }
 
   dimension: metrics__counter__use_counter_doc_js_wasm {
@@ -14781,6 +14809,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Page Js Late Weekday"
   }
 
+  dimension: metrics__counter__use_counter_page_js_legacy_lang_subtag {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_legacy_lang_subtag ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Legacy Lang Subtag"
+  }
+
   dimension: metrics__counter__use_counter_page_js_optimize_get_iterator_fuse {
     sql: ${TABLE}.metrics.counter.use_counter_page_js_optimize_get_iterator_fuse ;;
     type: number
@@ -14856,6 +14891,27 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Subclassing Typedarray Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_thenable {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_thenable ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Thenable"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_thenable_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_thenable_proto ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Thenable Proto"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_thenable_standard_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_thenable_standard_proto ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Thenable Standard Proto"
   }
 
   dimension: metrics__counter__use_counter_page_js_wasm {
