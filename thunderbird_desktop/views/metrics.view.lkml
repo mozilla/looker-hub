@@ -265,6 +265,24 @@ view: metrics {
 "
   }
 
+  dimension: metrics__memory_distribution__mail_compact_space_recovered__sum {
+    label: "Mail Compact Space Recovered Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.mail_compact_space_recovered.sum ;;
+    type: number
+    group_label: "Mail"
+    group_item_label: "Compact Space Recovered Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Compact Space Recovered Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_compact_space_recovered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of bytes recovered by compaction.
+"
+  }
+
   dimension: metrics__labeled_counter__mail_failed_email_account_setup {
     label: "Mail Failed Email Account Setup"
     hidden: yes
@@ -27505,6 +27523,18 @@ view: metrics__metrics__memory_distribution__glean_upload_discarded_exceeding_pi
 }
 
 view: metrics__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__mail_compact_space_recovered__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

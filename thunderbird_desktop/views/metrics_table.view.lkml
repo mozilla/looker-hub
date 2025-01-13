@@ -4874,6 +4874,26 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__mail_compact_space_recovered__count {
+    sql: ${TABLE}.metrics.memory_distribution.mail_compact_space_recovered.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Mail Compact Space Recovered"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__mail_compact_space_recovered__sum {
+    sql: ${TABLE}.metrics.memory_distribution.mail_compact_space_recovered.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Mail Compact Space Recovered"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__mail_compact_space_recovered__values {
+    sql: ${TABLE}.metrics.memory_distribution.mail_compact_space_recovered.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__memory_distribution__networking_cache_metadata_size__count {
     sql: ${TABLE}.metrics.memory_distribution.networking_cache_metadata_size.count ;;
     type: number
@@ -19464,6 +19484,18 @@ view: metrics_table__metrics__memory_distribution__glean_upload_discarded_exceed
 }
 
 view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__mail_compact_space_recovered__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

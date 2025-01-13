@@ -195,6 +195,23 @@ view: nimbus_targeting_context {
     description: "Is this copy of Firefox installed from an MSIX installer?"
   }
 
+  dimension: metrics__string__nimbus_targeting_context_locale {
+    label: "Nimbus Targeting Context Locale"
+    hidden: no
+    sql: ${TABLE}.metrics.string.nimbus_targeting_context_locale ;;
+    type: string
+    group_label: "Nimbus Targeting Context"
+    group_item_label: "Locale"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Targeting Context Locale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/nimbus_targeting_context_locale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "What is the active locale of the browser?"
+  }
+
   dimension: metrics__quantity__nimbus_targeting_context_memory_mb {
     label: "Nimbus Targeting Context Memory Mb"
     hidden: no
@@ -227,6 +244,23 @@ view: nimbus_targeting_context {
     }
 
     description: "The UNIX timestamp of when the profile was created."
+  }
+
+  dimension: metrics__string__nimbus_targeting_context_region {
+    label: "Nimbus Targeting Context Region"
+    hidden: no
+    sql: ${TABLE}.metrics.string.nimbus_targeting_context_region ;;
+    type: string
+    group_label: "Nimbus Targeting Context"
+    group_item_label: "Region"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Targeting Context Region"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/nimbus_targeting_context_region"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "What region is the browser located in?"
   }
 
   dimension: metrics__quantity__nimbus_targeting_context_total_bookmarks_count {
