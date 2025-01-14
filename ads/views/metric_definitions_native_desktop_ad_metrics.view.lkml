@@ -13,23 +13,7 @@ SUM(impressions) AS native_impressions,
 SUM(clicks) AS native_clicks,
 SUM(saves) AS native_saves,
 
-                native_desktop_ad_metrics_v1_ad_url,
-native_desktop_ad_metrics_v1_advertiser,
-native_desktop_ad_metrics_v1_campaign_id,
-native_desktop_ad_metrics_v1_campaign_name,
-native_desktop_ad_metrics_v1_country,
-native_desktop_ad_metrics_v1_creative_type,
-native_desktop_ad_metrics_v1_external_param,
-native_desktop_ad_metrics_v1_flight_id,
-native_desktop_ad_metrics_v1_image_url,
-native_desktop_ad_metrics_v1_pid,
-native_desktop_ad_metrics_v1_position,
-native_desktop_ad_metrics_v1_rate_type,
-native_desktop_ad_metrics_v1_site_name,
-native_desktop_ad_metrics_v1_spoc_id,
-native_desktop_ad_metrics_v1_title,
-native_desktop_ad_metrics_v1_zone_name,
-native_desktop_ad_metrics_ad_url,
+                native_desktop_ad_metrics_ad_url,
 native_desktop_ad_metrics_advertiser,
 native_desktop_ad_metrics_campaign_id,
 native_desktop_ad_metrics_campaign_name,
@@ -85,23 +69,7 @@ native_desktop_ad_metrics_zone_name,
                 (
                     SELECT
                         native_desktop_ad_metrics.*,
-                        native_desktop_ad_metrics_v1.ad_url AS native_desktop_ad_metrics_v1_ad_url,
-native_desktop_ad_metrics_v1.advertiser AS native_desktop_ad_metrics_v1_advertiser,
-native_desktop_ad_metrics_v1.campaign_id AS native_desktop_ad_metrics_v1_campaign_id,
-native_desktop_ad_metrics_v1.campaign_name AS native_desktop_ad_metrics_v1_campaign_name,
-native_desktop_ad_metrics_v1.country AS native_desktop_ad_metrics_v1_country,
-native_desktop_ad_metrics_v1.creative_type AS native_desktop_ad_metrics_v1_creative_type,
-native_desktop_ad_metrics_v1.external_param AS native_desktop_ad_metrics_v1_external_param,
-native_desktop_ad_metrics_v1.flight_id AS native_desktop_ad_metrics_v1_flight_id,
-native_desktop_ad_metrics_v1.image_url AS native_desktop_ad_metrics_v1_image_url,
-native_desktop_ad_metrics_v1.pid AS native_desktop_ad_metrics_v1_pid,
-native_desktop_ad_metrics_v1.position AS native_desktop_ad_metrics_v1_position,
-native_desktop_ad_metrics_v1.rate_type AS native_desktop_ad_metrics_v1_rate_type,
-native_desktop_ad_metrics_v1.site_name AS native_desktop_ad_metrics_v1_site_name,
-native_desktop_ad_metrics_v1.spoc_id AS native_desktop_ad_metrics_v1_spoc_id,
-native_desktop_ad_metrics_v1.title AS native_desktop_ad_metrics_v1_title,
-native_desktop_ad_metrics_v1.zone_name AS native_desktop_ad_metrics_v1_zone_name,
-native_desktop_ad_metrics.ad_url AS native_desktop_ad_metrics_ad_url,
+                        native_desktop_ad_metrics.ad_url AS native_desktop_ad_metrics_ad_url,
 native_desktop_ad_metrics.advertiser AS native_desktop_ad_metrics_advertiser,
 native_desktop_ad_metrics.campaign_id AS native_desktop_ad_metrics_campaign_id,
 native_desktop_ad_metrics.campaign_name AS native_desktop_ad_metrics_campaign_name,
@@ -133,64 +101,9 @@ native_desktop_ad_metrics.zone_name AS native_desktop_ad_metrics_zone_name,
             FROM
                 moz-fx-data-shared-prod.ads.native_desktop_ad_metrics_hourly
             ) AS native_desktop_ad_metrics
-        INNER JOIN
-    (
-            SELECT
-                *
-            FROM
-                (
-  SELECT
-    submission_date,
-    spoc_id,
-    position,
-    advertiser,
-    campaign_name,
-    title,
-    flight_id,
-    creative_type,
-    site_name,
-    zone_name,
-    country,
-    rate_type,
-    pid,
-    ad_url,
-    image_url,
-    external_param,
-    campaign_id
-  FROM `moz-fx-data-shared-prod.ads.native_desktop_ad_metrics_hourly`
-)
-
-            ) AS native_desktop_ad_metrics_v1
         
-    ON 
-      native_desktop_ad_metrics.submission_date = native_desktop_ad_metrics_v1.submission_date
-  AND native_desktop_ad_metrics.spoc_id = native_desktop_ad_metrics_v1.spoc_id
-  AND native_desktop_ad_metrics.position = native_desktop_ad_metrics_v1.position
-  AND native_desktop_ad_metrics.advertiser = native_desktop_ad_metrics_v1.advertiser
-  AND native_desktop_ad_metrics.title = native_desktop_ad_metrics_v1.title
-  AND native_desktop_ad_metrics.flight_id = native_desktop_ad_metrics_v1.flight_id
-  AND native_desktop_ad_metrics.creative_type = native_desktop_ad_metrics_v1.creative_type
-  AND native_desktop_ad_metrics.country = native_desktop_ad_metrics_v1.country
-  AND native_desktop_ad_metrics.rate_type = native_desktop_ad_metrics_v1.rate_type
-  AND native_desktop_ad_metrics.pid = native_desktop_ad_metrics_v1.pid
-  AND native_desktop_ad_metrics.ad_url = native_desktop_ad_metrics_v1.ad_url
-  AND native_desktop_ad_metrics.campaign_id = native_desktop_ad_metrics_v1.campaign_id
- 
-    
-                
                     WHERE 
                     native_desktop_ad_metrics.submission_date
-                    BETWEEN
-                    COALESCE(
-                        SAFE_CAST(
-                            {% date_start submission_date %} AS DATE
-                        ), CURRENT_DATE()) AND
-                    COALESCE(
-                        SAFE_CAST(
-                            {% date_end submission_date %} AS DATE
-                        ), CURRENT_DATE())
-                 AND 
-                    native_desktop_ad_metrics_v1.submission_date
                     BETWEEN
                     COALESCE(
                         SAFE_CAST(
@@ -203,23 +116,7 @@ native_desktop_ad_metrics.zone_name AS native_desktop_ad_metrics_zone_name,
                 
                 )
             GROUP BY
-                native_desktop_ad_metrics_v1_ad_url,
-native_desktop_ad_metrics_v1_advertiser,
-native_desktop_ad_metrics_v1_campaign_id,
-native_desktop_ad_metrics_v1_campaign_name,
-native_desktop_ad_metrics_v1_country,
-native_desktop_ad_metrics_v1_creative_type,
-native_desktop_ad_metrics_v1_external_param,
-native_desktop_ad_metrics_v1_flight_id,
-native_desktop_ad_metrics_v1_image_url,
-native_desktop_ad_metrics_v1_pid,
-native_desktop_ad_metrics_v1_position,
-native_desktop_ad_metrics_v1_rate_type,
-native_desktop_ad_metrics_v1_site_name,
-native_desktop_ad_metrics_v1_spoc_id,
-native_desktop_ad_metrics_v1_title,
-native_desktop_ad_metrics_v1_zone_name,
-native_desktop_ad_metrics_ad_url,
+                native_desktop_ad_metrics_ad_url,
 native_desktop_ad_metrics_advertiser,
 native_desktop_ad_metrics_campaign_id,
 native_desktop_ad_metrics_campaign_name,
@@ -298,98 +195,25 @@ native_desktop_ad_metrics_zone_name,
   }
 
   dimension: ad_url {
-    sql: ${TABLE}.native_desktop_ad_metrics_v1_ad_url ;;
+    sql: ${TABLE}.native_desktop_ad_metrics_ad_url ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: advertiser {
-    sql: ${TABLE}.native_desktop_ad_metrics_v1_advertiser ;;
+    sql: ${TABLE}.native_desktop_ad_metrics_advertiser ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: campaign_id {
-    sql: ${TABLE}.native_desktop_ad_metrics_v1_campaign_id ;;
+    sql: ${TABLE}.native_desktop_ad_metrics_campaign_id ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: campaign_name {
-    sql: ${TABLE}.native_desktop_ad_metrics_v1_campaign_name ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: country {
-    sql: ${TABLE}.native_desktop_ad_metrics_v1_country ;;
-    type: string
-    map_layer_name: countries
-    group_label: "Base Fields"
-  }
-
-  dimension: creative_type {
-    sql: ${TABLE}.native_desktop_ad_metrics_v1_creative_type ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: external_param {
-    sql: ${TABLE}.native_desktop_ad_metrics_v1_external_param ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: flight_id {
-    sql: ${TABLE}.native_desktop_ad_metrics_v1_flight_id ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: image_url {
-    sql: ${TABLE}.native_desktop_ad_metrics_v1_image_url ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: pid {
-    sql: ${TABLE}.native_desktop_ad_metrics_v1_pid ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: position {
-    sql: ${TABLE}.native_desktop_ad_metrics_v1_position ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: rate_type {
-    sql: ${TABLE}.native_desktop_ad_metrics_v1_rate_type ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: site_name {
-    sql: ${TABLE}.native_desktop_ad_metrics_v1_site_name ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: spoc_id {
-    sql: ${TABLE}.native_desktop_ad_metrics_v1_spoc_id ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: title {
-    sql: ${TABLE}.native_desktop_ad_metrics_v1_title ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: zone_name {
-    sql: ${TABLE}.native_desktop_ad_metrics_v1_zone_name ;;
+    sql: ${TABLE}.native_desktop_ad_metrics_campaign_name ;;
     type: string
     group_label: "Base Fields"
   }
@@ -406,6 +230,19 @@ native_desktop_ad_metrics_zone_name,
     group_label: "Base Fields"
   }
 
+  dimension: country {
+    sql: ${TABLE}.native_desktop_ad_metrics_country ;;
+    type: string
+    map_layer_name: countries
+    group_label: "Base Fields"
+  }
+
+  dimension: creative_type {
+    sql: ${TABLE}.native_desktop_ad_metrics_creative_type ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
   dimension: dismiss_rate {
     sql: ${TABLE}.native_desktop_ad_metrics_dismiss_rate ;;
     type: number
@@ -418,9 +255,45 @@ native_desktop_ad_metrics_zone_name,
     group_label: "Base Fields"
   }
 
+  dimension: external_param {
+    sql: ${TABLE}.native_desktop_ad_metrics_external_param ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: flight_id {
+    sql: ${TABLE}.native_desktop_ad_metrics_flight_id ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: image_url {
+    sql: ${TABLE}.native_desktop_ad_metrics_image_url ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
   dimension: impressions {
     sql: ${TABLE}.native_desktop_ad_metrics_impressions ;;
     type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: pid {
+    sql: ${TABLE}.native_desktop_ad_metrics_pid ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: position {
+    sql: ${TABLE}.native_desktop_ad_metrics_position ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: rate_type {
+    sql: ${TABLE}.native_desktop_ad_metrics_rate_type ;;
+    type: string
     group_label: "Base Fields"
   }
 
@@ -436,9 +309,33 @@ native_desktop_ad_metrics_zone_name,
     group_label: "Base Fields"
   }
 
+  dimension: site_name {
+    sql: ${TABLE}.native_desktop_ad_metrics_site_name ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
   dimension: spend {
     sql: ${TABLE}.native_desktop_ad_metrics_spend ;;
     type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: spoc_id {
+    sql: ${TABLE}.native_desktop_ad_metrics_spoc_id ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: title {
+    sql: ${TABLE}.native_desktop_ad_metrics_title ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: zone_name {
+    sql: ${TABLE}.native_desktop_ad_metrics_zone_name ;;
+    type: string
     group_label: "Base Fields"
   }
 
