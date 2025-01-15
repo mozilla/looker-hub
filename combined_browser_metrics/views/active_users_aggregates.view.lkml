@@ -141,6 +141,11 @@ view: active_users_aggregates {
     type: number
   }
 
+  dimension: partnership {
+    sql: ${TABLE}.partnership ;;
+    type: string
+  }
+
   dimension: segment {
     sql: ${TABLE}.segment ;;
     type: string

@@ -7,7 +7,7 @@
 view: captcha_detection {
   dimension: metrics__counter__captcha_detection_arkoselabs_pc {
     label: "Captcha Detection Arkoselabs Pc"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_arkoselabs_pc ;;
     type: number
     group_label: "Captcha Detection"
@@ -25,7 +25,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_arkoselabs_pc_pbm {
     label: "Captcha Detection Arkoselabs Pc Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_arkoselabs_pc_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -43,7 +43,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_arkoselabs_pf {
     label: "Captcha Detection Arkoselabs Pf"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_arkoselabs_pf ;;
     type: number
     group_label: "Captcha Detection"
@@ -61,7 +61,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_arkoselabs_pf_pbm {
     label: "Captcha Detection Arkoselabs Pf Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_arkoselabs_pf_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -79,7 +79,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_arkoselabs_ps {
     label: "Captcha Detection Arkoselabs Ps"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_arkoselabs_ps ;;
     type: number
     group_label: "Captcha Detection"
@@ -97,7 +97,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_arkoselabs_ps_pbm {
     label: "Captcha Detection Arkoselabs Ps Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_arkoselabs_ps_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -115,7 +115,7 @@ view: captcha_detection {
 
   dimension: metrics__custom_distribution__captcha_detection_arkoselabs_solutions_required__sum {
     label: "Captcha Detection Arkoselabs Solutions Required Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.captcha_detection_arkoselabs_solutions_required.sum ;;
     type: number
     group_label: "Captcha Detection"
@@ -133,7 +133,7 @@ view: captcha_detection {
 
   dimension: metrics__custom_distribution__captcha_detection_arkoselabs_solutions_required_pbm__sum {
     label: "Captcha Detection Arkoselabs Solutions Required Pbm Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.captcha_detection_arkoselabs_solutions_required_pbm.sum ;;
     type: number
     group_label: "Captcha Detection"
@@ -151,7 +151,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_awswaf_pc {
     label: "Captcha Detection Awswaf Pc"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_awswaf_pc ;;
     type: number
     group_label: "Captcha Detection"
@@ -169,7 +169,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_awswaf_pc_pbm {
     label: "Captcha Detection Awswaf Pc Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_awswaf_pc_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -187,7 +187,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_awswaf_pf {
     label: "Captcha Detection Awswaf Pf"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_awswaf_pf ;;
     type: number
     group_label: "Captcha Detection"
@@ -205,7 +205,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_awswaf_pf_pbm {
     label: "Captcha Detection Awswaf Pf Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_awswaf_pf_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -223,7 +223,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_awswaf_ps {
     label: "Captcha Detection Awswaf Ps"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_awswaf_ps ;;
     type: number
     group_label: "Captcha Detection"
@@ -241,7 +241,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_awswaf_ps_pbm {
     label: "Captcha Detection Awswaf Ps Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_awswaf_ps_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -259,7 +259,7 @@ view: captcha_detection {
 
   dimension: metrics__custom_distribution__captcha_detection_awswaf_solutions_required__sum {
     label: "Captcha Detection Awswaf Solutions Required Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.captcha_detection_awswaf_solutions_required.sum ;;
     type: number
     group_label: "Captcha Detection"
@@ -277,7 +277,7 @@ view: captcha_detection {
 
   dimension: metrics__custom_distribution__captcha_detection_awswaf_solutions_required_pbm__sum {
     label: "Captcha Detection Awswaf Solutions Required Pbm Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.captcha_detection_awswaf_solutions_required_pbm.sum ;;
     type: number
     group_label: "Captcha Detection"
@@ -295,7 +295,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_cloudflare_turnstile_cc {
     label: "Captcha Detection Cloudflare Turnstile Cc"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_cloudflare_turnstile_cc ;;
     type: number
     group_label: "Captcha Detection"
@@ -313,7 +313,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_cloudflare_turnstile_cc_pbm {
     label: "Captcha Detection Cloudflare Turnstile Cc Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_cloudflare_turnstile_cc_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -331,7 +331,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_cloudflare_turnstile_cf {
     label: "Captcha Detection Cloudflare Turnstile Cf"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_cloudflare_turnstile_cf ;;
     type: number
     group_label: "Captcha Detection"
@@ -349,7 +349,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_cloudflare_turnstile_cf_pbm {
     label: "Captcha Detection Cloudflare Turnstile Cf Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_cloudflare_turnstile_cf_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -367,7 +367,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_datadome_bl {
     label: "Captcha Detection Datadome Bl"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_datadome_bl ;;
     type: number
     group_label: "Captcha Detection"
@@ -385,7 +385,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_datadome_bl_pbm {
     label: "Captcha Detection Datadome Bl Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_datadome_bl_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -403,7 +403,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_datadome_pc {
     label: "Captcha Detection Datadome Pc"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_datadome_pc ;;
     type: number
     group_label: "Captcha Detection"
@@ -421,7 +421,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_datadome_pc_pbm {
     label: "Captcha Detection Datadome Pc Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_datadome_pc_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -439,7 +439,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_datadome_ps {
     label: "Captcha Detection Datadome Ps"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_datadome_ps ;;
     type: number
     group_label: "Captcha Detection"
@@ -457,7 +457,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_datadome_ps_pbm {
     label: "Captcha Detection Datadome Ps Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_datadome_ps_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -475,7 +475,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_google_recaptcha_v2_ac {
     label: "Captcha Detection Google Recaptcha V2 Ac"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_google_recaptcha_v2_ac ;;
     type: number
     group_label: "Captcha Detection"
@@ -493,7 +493,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_google_recaptcha_v2_ac_pbm {
     label: "Captcha Detection Google Recaptcha V2 Ac Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_google_recaptcha_v2_ac_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -511,7 +511,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_google_recaptcha_v2_pc {
     label: "Captcha Detection Google Recaptcha V2 Pc"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_google_recaptcha_v2_pc ;;
     type: number
     group_label: "Captcha Detection"
@@ -529,7 +529,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_google_recaptcha_v2_pc_pbm {
     label: "Captcha Detection Google Recaptcha V2 Pc Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_google_recaptcha_v2_pc_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -547,7 +547,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_google_recaptcha_v2_ps {
     label: "Captcha Detection Google Recaptcha V2 Ps"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_google_recaptcha_v2_ps ;;
     type: number
     group_label: "Captcha Detection"
@@ -565,7 +565,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_google_recaptcha_v2_ps_pbm {
     label: "Captcha Detection Google Recaptcha V2 Ps Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_google_recaptcha_v2_ps_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -583,7 +583,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_hcaptcha_ac {
     label: "Captcha Detection Hcaptcha Ac"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_hcaptcha_ac ;;
     type: number
     group_label: "Captcha Detection"
@@ -601,7 +601,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_hcaptcha_ac_pbm {
     label: "Captcha Detection Hcaptcha Ac Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_hcaptcha_ac_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -619,7 +619,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_hcaptcha_pc {
     label: "Captcha Detection Hcaptcha Pc"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_hcaptcha_pc ;;
     type: number
     group_label: "Captcha Detection"
@@ -637,7 +637,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_hcaptcha_pc_pbm {
     label: "Captcha Detection Hcaptcha Pc Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_hcaptcha_pc_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -655,7 +655,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_hcaptcha_ps {
     label: "Captcha Detection Hcaptcha Ps"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_hcaptcha_ps ;;
     type: number
     group_label: "Captcha Detection"
@@ -673,7 +673,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_hcaptcha_ps_pbm {
     label: "Captcha Detection Hcaptcha Ps Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_hcaptcha_ps_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -691,7 +691,7 @@ view: captcha_detection {
 
   dimension: metrics__string__captcha_detection_network_cookie_cookiebehavior {
     label: "Captcha Detection Network Cookie Cookiebehavior"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.captcha_detection_network_cookie_cookiebehavior ;;
     type: string
     group_label: "Captcha Detection"
@@ -709,7 +709,7 @@ view: captcha_detection {
 
   dimension: metrics__boolean__captcha_detection_network_cookie_cookiebehavior_optinpartitioning {
     label: "Captcha Detection Network Cookie Cookiebehavior Optinpartitioning"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.captcha_detection_network_cookie_cookiebehavior_optinpartitioning ;;
     type: yesno
     group_label: "Captcha Detection"
@@ -727,7 +727,7 @@ view: captcha_detection {
 
   dimension: metrics__boolean__captcha_detection_network_cookie_cookiebehavior_optinpartitioning_pbm {
     label: "Captcha Detection Network Cookie Cookiebehavior Optinpartitioning Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.captcha_detection_network_cookie_cookiebehavior_optinpartitioning_pbm ;;
     type: yesno
     group_label: "Captcha Detection"
@@ -745,7 +745,7 @@ view: captcha_detection {
 
   dimension: metrics__boolean__captcha_detection_privacy_fingerprintingprotection {
     label: "Captcha Detection Privacy Fingerprintingprotection"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.captcha_detection_privacy_fingerprintingprotection ;;
     type: yesno
     group_label: "Captcha Detection"
@@ -763,7 +763,7 @@ view: captcha_detection {
 
   dimension: metrics__boolean__captcha_detection_privacy_fingerprintingprotection_pbm {
     label: "Captcha Detection Privacy Fingerprintingprotection Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.captcha_detection_privacy_fingerprintingprotection_pbm ;;
     type: yesno
     group_label: "Captcha Detection"
@@ -781,7 +781,7 @@ view: captcha_detection {
 
   dimension: metrics__boolean__captcha_detection_privacy_resistfingerprinting {
     label: "Captcha Detection Privacy Resistfingerprinting"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.captcha_detection_privacy_resistfingerprinting ;;
     type: yesno
     group_label: "Captcha Detection"
@@ -799,7 +799,7 @@ view: captcha_detection {
 
   dimension: metrics__boolean__captcha_detection_privacy_resistfingerprinting_pbmode {
     label: "Captcha Detection Privacy Resistfingerprinting Pbmode"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.captcha_detection_privacy_resistfingerprinting_pbmode ;;
     type: yesno
     group_label: "Captcha Detection"
@@ -817,7 +817,7 @@ view: captcha_detection {
 
   dimension: metrics__boolean__captcha_detection_privacy_trackingprotection_cryptomining_enabled {
     label: "Captcha Detection Privacy Trackingprotection Cryptomining Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.captcha_detection_privacy_trackingprotection_cryptomining_enabled ;;
     type: yesno
     group_label: "Captcha Detection"
@@ -835,7 +835,7 @@ view: captcha_detection {
 
   dimension: metrics__boolean__captcha_detection_privacy_trackingprotection_enabled {
     label: "Captcha Detection Privacy Trackingprotection Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.captcha_detection_privacy_trackingprotection_enabled ;;
     type: yesno
     group_label: "Captcha Detection"
@@ -853,7 +853,7 @@ view: captcha_detection {
 
   dimension: metrics__boolean__captcha_detection_privacy_trackingprotection_fingerprinting_enabled {
     label: "Captcha Detection Privacy Trackingprotection Fingerprinting Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.captcha_detection_privacy_trackingprotection_fingerprinting_enabled ;;
     type: yesno
     group_label: "Captcha Detection"
@@ -871,7 +871,7 @@ view: captcha_detection {
 
   dimension: metrics__boolean__captcha_detection_privacy_trackingprotection_pbm_enabled {
     label: "Captcha Detection Privacy Trackingprotection Pbm Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.captcha_detection_privacy_trackingprotection_pbm_enabled ;;
     type: yesno
     group_label: "Captcha Detection"

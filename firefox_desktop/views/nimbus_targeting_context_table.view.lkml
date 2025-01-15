@@ -602,6 +602,22 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__string__nimbus_targeting_context_locale {
+    sql: ${TABLE}.metrics.string.nimbus_targeting_context_locale ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Nimbus Targeting Context Locale"
+    description: "What is the active locale of the browser?"
+  }
+
+  dimension: metrics__string__nimbus_targeting_context_region {
+    sql: ${TABLE}.metrics.string.nimbus_targeting_context_region ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Nimbus Targeting Context Region"
+    description: "What region is the browser located in?"
+  }
+
   dimension: metrics__string__nimbus_targeting_context_version {
     sql: ${TABLE}.metrics.string.nimbus_targeting_context_version ;;
     type: string

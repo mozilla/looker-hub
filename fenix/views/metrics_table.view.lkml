@@ -4530,6 +4530,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_timing_distribution__network_http_fetch_duration {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.network_http_fetch_duration ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_timing_distribution__network_sup_http3_tcp_connection {
     sql: ${TABLE}.metrics.labeled_timing_distribution.network_sup_http3_tcp_connection ;;
     hidden: yes
@@ -5998,6 +6003,13 @@ view: metrics_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Startup Profile Selection Reason"
+  }
+
+  dimension: metrics__string__webcompatreporting_reason_dropdown {
+    sql: ${TABLE}.metrics.string.webcompatreporting_reason_dropdown ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Webcompatreporting Reason Dropdown"
   }
 
   dimension: metrics__string_list__addons_enabled_addons {
@@ -21602,6 +21614,84 @@ view: metrics_table__metrics__labeled_timing_distribution__network_http3_tls_han
 }
 
 view: metrics_table__metrics__labeled_timing_distribution__network_http3_tls_handshake__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http_fetch_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http_fetch_duration__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

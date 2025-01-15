@@ -214,7 +214,7 @@ view: metrics {
 
   dimension: metrics__custom_distribution__mail_compact_bytes_recovered__sum {
     label: "Mail Compact Bytes Recovered Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.mail_compact_bytes_recovered.sum ;;
     type: number
     group_label: "Mail"
@@ -262,6 +262,24 @@ view: metrics {
     }
 
     description: "Counts the number of folder compactions that happen and how they ended.
+"
+  }
+
+  dimension: metrics__memory_distribution__mail_compact_space_recovered__sum {
+    label: "Mail Compact Space Recovered Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.mail_compact_space_recovered.sum ;;
+    type: number
+    group_label: "Mail"
+    group_item_label: "Compact Space Recovered Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Compact Space Recovered Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_compact_space_recovered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of bytes recovered by compaction.
 "
   }
 
@@ -363,6 +381,23 @@ view: metrics {
     }
 
     description: "Counts mbox read failures by type.
+"
+  }
+
+  dimension: metrics__labeled_counter__mail_mbox_write_errors {
+    label: "Mail Mbox Write Errors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.mail_mbox_write_errors ;;
+    group_label: "Mail"
+    group_item_label: "Mbox Write Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Mbox Write Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_mbox_write_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts mbox write oddities which might indicate problems.
 "
   }
 
@@ -13137,7 +13172,7 @@ though the counts appear in the next successfully sent `metrics` ping.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A count of the pings submitted, by ping type.
+    description: "A count of the built-in pings submitted, by ping type.
 
 This metric appears in both the metrics and baseline pings.
 
@@ -13145,6 +13180,9 @@ This metric appears in both the metrics and baseline pings.
   the last metrics ping (including the last metrics ping)
 - On the baseline ping, the counts include the number of pings send since
   the last baseline ping (including the last baseline ping)
+
+Note: Previously this also recorded the number of submitted custom pings.
+Now it only records counts for the Glean built-in pings.
 "
   }
 
@@ -19939,6 +19977,47 @@ view: metrics__metrics__labeled_counter__mail_mbox_read_errors {
   }
 }
 
+view: metrics__metrics__labeled_counter__mail_mbox_write_errors {
+  label: "Mail - Mbox Write Errors"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__mail_successful_email_account_setup {
   label: "Mail - Successful Email Account Setup"
 
@@ -26502,6 +26581,85 @@ view: metrics__metrics__labeled_timing_distribution__network_http3_tls_handshake
   }
 }
 
+view: metrics__metrics__labeled_timing_distribution__network_http_fetch_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_http_fetch_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__labeled_timing_distribution__network_sup_http3_tcp_connection {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -27365,6 +27523,18 @@ view: metrics__metrics__memory_distribution__glean_upload_discarded_exceeding_pi
 }
 
 view: metrics__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__mail_compact_space_recovered__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

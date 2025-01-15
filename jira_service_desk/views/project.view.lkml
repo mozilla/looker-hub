@@ -50,6 +50,11 @@ view: project {
     type: string
   }
 
+  dimension: simplified {
+    sql: ${TABLE}.simplified ;;
+    type: yesno
+  }
+
   dimension_group: _fivetran_synced {
     sql: ${TABLE}._fivetran_synced ;;
     type: time
