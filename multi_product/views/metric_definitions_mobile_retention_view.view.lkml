@@ -18,6 +18,8 @@ mobile_retention_view_adjust_network,
 mobile_retention_view_app_name,
 mobile_retention_view_app_version,
 mobile_retention_view_country,
+mobile_retention_view_device_manufacturer,
+mobile_retention_view_device_type,
 mobile_retention_view_distribution_id,
 mobile_retention_view_install_source,
 mobile_retention_view_is_mobile,
@@ -77,6 +79,8 @@ mobile_retention_view.adjust_network AS mobile_retention_view_adjust_network,
 mobile_retention_view.app_name AS mobile_retention_view_app_name,
 mobile_retention_view.app_version AS mobile_retention_view_app_version,
 mobile_retention_view.country AS mobile_retention_view_country,
+mobile_retention_view.device_manufacturer AS mobile_retention_view_device_manufacturer,
+mobile_retention_view.device_type AS mobile_retention_view_device_type,
 mobile_retention_view.distribution_id AS mobile_retention_view_distribution_id,
 mobile_retention_view.install_source AS mobile_retention_view_install_source,
 mobile_retention_view.is_mobile AS mobile_retention_view_is_mobile,
@@ -131,6 +135,8 @@ mobile_retention_view_adjust_network,
 mobile_retention_view_app_name,
 mobile_retention_view_app_version,
 mobile_retention_view_country,
+mobile_retention_view_device_manufacturer,
+mobile_retention_view_device_type,
 mobile_retention_view_distribution_id,
 mobile_retention_view_install_source,
 mobile_retention_view_is_mobile,
@@ -230,6 +236,18 @@ mobile_retention_view_retained_week_4_new_profiles,
     sql: ${TABLE}.mobile_retention_view_country ;;
     type: string
     map_layer_name: countries
+    group_label: "Base Fields"
+  }
+
+  dimension: device_manufacturer {
+    sql: ${TABLE}.mobile_retention_view_device_manufacturer ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.mobile_retention_view_device_type ;;
+    type: string
     group_label: "Base Fields"
   }
 

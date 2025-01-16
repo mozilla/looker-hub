@@ -64,6 +64,8 @@ fenix_engagement_view_app_name,
 fenix_engagement_view_app_version,
 fenix_engagement_view_country,
 fenix_engagement_view_dau,
+fenix_engagement_view_device_manufacturer,
+fenix_engagement_view_device_type,
 fenix_engagement_view_distribution_id,
 fenix_engagement_view_install_source,
 fenix_engagement_view_is_mobile,
@@ -164,6 +166,8 @@ fenix_engagement_view.app_name AS fenix_engagement_view_app_name,
 fenix_engagement_view.app_version AS fenix_engagement_view_app_version,
 fenix_engagement_view.country AS fenix_engagement_view_country,
 fenix_engagement_view.dau AS fenix_engagement_view_dau,
+fenix_engagement_view.device_manufacturer AS fenix_engagement_view_device_manufacturer,
+fenix_engagement_view.device_type AS fenix_engagement_view_device_type,
 fenix_engagement_view.distribution_id AS fenix_engagement_view_distribution_id,
 fenix_engagement_view.install_source AS fenix_engagement_view_install_source,
 fenix_engagement_view.is_mobile AS fenix_engagement_view_is_mobile,
@@ -273,6 +277,8 @@ fenix_engagement_view_app_name,
 fenix_engagement_view_app_version,
 fenix_engagement_view_country,
 fenix_engagement_view_dau,
+fenix_engagement_view_device_manufacturer,
+fenix_engagement_view_device_type,
 fenix_engagement_view_distribution_id,
 fenix_engagement_view_install_source,
 fenix_engagement_view_is_mobile,
@@ -696,6 +702,18 @@ fenix_engagement_view_wau,
   dimension: dau {
     sql: ${TABLE}.fenix_engagement_view_dau ;;
     type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: device_manufacturer {
+    sql: ${TABLE}.fenix_engagement_view_device_manufacturer ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.fenix_engagement_view_device_type ;;
+    type: string
     group_label: "Base Fields"
   }
 

@@ -36,6 +36,11 @@ view: new_profile_clients_table {
     type: string
   }
 
+  dimension: device_type {
+    sql: ${TABLE}.device_type ;;
+    type: string
+  }
+
   dimension: is_mobile {
     sql: ${TABLE}.is_mobile ;;
     type: yesno

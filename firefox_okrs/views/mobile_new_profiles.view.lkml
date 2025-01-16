@@ -46,6 +46,11 @@ view: mobile_new_profiles {
     type: string
   }
 
+  dimension: device_type {
+    sql: ${TABLE}.device_type ;;
+    type: string
+  }
+
   dimension: distribution_id {
     sql: ${TABLE}.distribution_id ;;
     type: string

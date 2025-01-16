@@ -41,6 +41,16 @@ view: retention_clients_table {
     type: number
   }
 
+  dimension: device_manufacturer {
+    sql: ${TABLE}.device_manufacturer ;;
+    type: string
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.device_type ;;
+    type: string
+  }
+
   dimension: is_mobile {
     sql: ${TABLE}.is_mobile ;;
     type: yesno

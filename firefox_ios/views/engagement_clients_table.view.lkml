@@ -46,6 +46,16 @@ view: engagement_clients_table {
     map_layer_name: countries
   }
 
+  dimension: device_manufacturer {
+    sql: ${TABLE}.device_manufacturer ;;
+    type: string
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.device_type ;;
+    type: string
+  }
+
   dimension: is_dau {
     sql: ${TABLE}.is_dau ;;
     type: yesno

@@ -52,6 +52,8 @@ firefox_ios_retention_view_adjust_network,
 firefox_ios_retention_view_app_name,
 firefox_ios_retention_view_app_version,
 firefox_ios_retention_view_country,
+firefox_ios_retention_view_device_manufacturer,
+firefox_ios_retention_view_device_type,
 firefox_ios_retention_view_is_mobile,
 firefox_ios_retention_view_is_suspicious_device_client,
 firefox_ios_retention_view_lifecycle_stage,
@@ -138,6 +140,8 @@ firefox_ios_retention_view.adjust_network AS firefox_ios_retention_view_adjust_n
 firefox_ios_retention_view.app_name AS firefox_ios_retention_view_app_name,
 firefox_ios_retention_view.app_version AS firefox_ios_retention_view_app_version,
 firefox_ios_retention_view.country AS firefox_ios_retention_view_country,
+firefox_ios_retention_view.device_manufacturer AS firefox_ios_retention_view_device_manufacturer,
+firefox_ios_retention_view.device_type AS firefox_ios_retention_view_device_type,
 firefox_ios_retention_view.is_mobile AS firefox_ios_retention_view_is_mobile,
 firefox_ios_retention_view.is_suspicious_device_client AS firefox_ios_retention_view_is_suspicious_device_client,
 firefox_ios_retention_view.lifecycle_stage AS firefox_ios_retention_view_lifecycle_stage,
@@ -233,6 +237,8 @@ firefox_ios_retention_view_adjust_network,
 firefox_ios_retention_view_app_name,
 firefox_ios_retention_view_app_version,
 firefox_ios_retention_view_country,
+firefox_ios_retention_view_device_manufacturer,
+firefox_ios_retention_view_device_type,
 firefox_ios_retention_view_is_mobile,
 firefox_ios_retention_view_is_suspicious_device_client,
 firefox_ios_retention_view_lifecycle_stage,
@@ -565,6 +571,18 @@ firefox_ios_retention_view_retained_week_4_new_profiles,
     sql: ${TABLE}.firefox_ios_retention_view_country ;;
     type: string
     map_layer_name: countries
+    group_label: "Base Fields"
+  }
+
+  dimension: device_manufacturer {
+    sql: ${TABLE}.firefox_ios_retention_view_device_manufacturer ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.firefox_ios_retention_view_device_type ;;
+    type: string
     group_label: "Base Fields"
   }
 
