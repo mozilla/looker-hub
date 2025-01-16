@@ -48,6 +48,8 @@ klar_ios_retention_view_active_metric_date,
 klar_ios_retention_view_app_name,
 klar_ios_retention_view_app_version,
 klar_ios_retention_view_country,
+klar_ios_retention_view_device_manufacturer,
+klar_ios_retention_view_device_type,
 klar_ios_retention_view_is_mobile,
 klar_ios_retention_view_lifecycle_stage,
 klar_ios_retention_view_locale,
@@ -129,6 +131,8 @@ klar_ios_retention_view.active_metric_date AS klar_ios_retention_view_active_met
 klar_ios_retention_view.app_name AS klar_ios_retention_view_app_name,
 klar_ios_retention_view.app_version AS klar_ios_retention_view_app_version,
 klar_ios_retention_view.country AS klar_ios_retention_view_country,
+klar_ios_retention_view.device_manufacturer AS klar_ios_retention_view_device_manufacturer,
+klar_ios_retention_view.device_type AS klar_ios_retention_view_device_type,
 klar_ios_retention_view.is_mobile AS klar_ios_retention_view_is_mobile,
 klar_ios_retention_view.lifecycle_stage AS klar_ios_retention_view_lifecycle_stage,
 klar_ios_retention_view.locale AS klar_ios_retention_view_locale,
@@ -219,6 +223,8 @@ klar_ios_retention_view_active_metric_date,
 klar_ios_retention_view_app_name,
 klar_ios_retention_view_app_version,
 klar_ios_retention_view_country,
+klar_ios_retention_view_device_manufacturer,
+klar_ios_retention_view_device_type,
 klar_ios_retention_view_is_mobile,
 klar_ios_retention_view_lifecycle_stage,
 klar_ios_retention_view_locale,
@@ -526,6 +532,18 @@ klar_ios_retention_view_retained_week_4_new_profiles,
     sql: ${TABLE}.klar_ios_retention_view_country ;;
     type: string
     map_layer_name: countries
+    group_label: "Base Fields"
+  }
+
+  dimension: device_manufacturer {
+    sql: ${TABLE}.klar_ios_retention_view_device_manufacturer ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.klar_ios_retention_view_device_type ;;
+    type: string
     group_label: "Base Fields"
   }
 

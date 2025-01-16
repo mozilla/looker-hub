@@ -65,6 +65,8 @@ fenix_retention_view_adjust_network,
 fenix_retention_view_app_name,
 fenix_retention_view_app_version,
 fenix_retention_view_country,
+fenix_retention_view_device_manufacturer,
+fenix_retention_view_device_type,
 fenix_retention_view_distribution_id,
 fenix_retention_view_install_source,
 fenix_retention_view_is_mobile,
@@ -169,6 +171,8 @@ fenix_retention_view.adjust_network AS fenix_retention_view_adjust_network,
 fenix_retention_view.app_name AS fenix_retention_view_app_name,
 fenix_retention_view.app_version AS fenix_retention_view_app_version,
 fenix_retention_view.country AS fenix_retention_view_country,
+fenix_retention_view.device_manufacturer AS fenix_retention_view_device_manufacturer,
+fenix_retention_view.device_type AS fenix_retention_view_device_type,
 fenix_retention_view.distribution_id AS fenix_retention_view_distribution_id,
 fenix_retention_view.install_source AS fenix_retention_view_install_source,
 fenix_retention_view.is_mobile AS fenix_retention_view_is_mobile,
@@ -282,6 +286,8 @@ fenix_retention_view_adjust_network,
 fenix_retention_view_app_name,
 fenix_retention_view_app_version,
 fenix_retention_view_country,
+fenix_retention_view_device_manufacturer,
+fenix_retention_view_device_type,
 fenix_retention_view_distribution_id,
 fenix_retention_view_install_source,
 fenix_retention_view_is_mobile,
@@ -717,6 +723,18 @@ fenix_retention_view_retained_week_4_new_profiles,
     sql: ${TABLE}.fenix_retention_view_country ;;
     type: string
     map_layer_name: countries
+    group_label: "Base Fields"
+  }
+
+  dimension: device_manufacturer {
+    sql: ${TABLE}.fenix_retention_view_device_manufacturer ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.fenix_retention_view_device_type ;;
+    type: string
     group_label: "Base Fields"
   }
 

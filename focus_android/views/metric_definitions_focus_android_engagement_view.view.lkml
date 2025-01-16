@@ -47,6 +47,8 @@ focus_android_engagement_view_app_name,
 focus_android_engagement_view_app_version,
 focus_android_engagement_view_country,
 focus_android_engagement_view_dau,
+focus_android_engagement_view_device_manufacturer,
+focus_android_engagement_view_device_type,
 focus_android_engagement_view_is_mobile,
 focus_android_engagement_view_lifecycle_stage,
 focus_android_engagement_view_locale,
@@ -124,6 +126,8 @@ focus_android_engagement_view.app_name AS focus_android_engagement_view_app_name
 focus_android_engagement_view.app_version AS focus_android_engagement_view_app_version,
 focus_android_engagement_view.country AS focus_android_engagement_view_country,
 focus_android_engagement_view.dau AS focus_android_engagement_view_dau,
+focus_android_engagement_view.device_manufacturer AS focus_android_engagement_view_device_manufacturer,
+focus_android_engagement_view.device_type AS focus_android_engagement_view_device_type,
 focus_android_engagement_view.is_mobile AS focus_android_engagement_view_is_mobile,
 focus_android_engagement_view.lifecycle_stage AS focus_android_engagement_view_lifecycle_stage,
 focus_android_engagement_view.locale AS focus_android_engagement_view_locale,
@@ -210,6 +214,8 @@ focus_android_engagement_view_app_name,
 focus_android_engagement_view_app_version,
 focus_android_engagement_view_country,
 focus_android_engagement_view_dau,
+focus_android_engagement_view_device_manufacturer,
+focus_android_engagement_view_device_type,
 focus_android_engagement_view_is_mobile,
 focus_android_engagement_view_lifecycle_stage,
 focus_android_engagement_view_locale,
@@ -505,6 +511,18 @@ focus_android_engagement_view_wau,
   dimension: dau {
     sql: ${TABLE}.focus_android_engagement_view_dau ;;
     type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: device_manufacturer {
+    sql: ${TABLE}.focus_android_engagement_view_device_manufacturer ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.focus_android_engagement_view_device_type ;;
+    type: string
     group_label: "Base Fields"
   }
 

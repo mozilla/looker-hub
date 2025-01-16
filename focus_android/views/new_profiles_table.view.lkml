@@ -30,6 +30,13 @@ view: new_profiles_table {
     description: "Client's device manufacturer on the first seen date."
   }
 
+  dimension: device_type {
+    sql: ${TABLE}.device_type ;;
+    type: string
+    description: "On Apple devices allows us to differentiate between iPhone and iPad. On Android devices the value is always \"Android\".
+"
+  }
+
   dimension: is_mobile {
     sql: ${TABLE}.is_mobile ;;
     type: yesno
