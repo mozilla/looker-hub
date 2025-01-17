@@ -2221,7 +2221,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_ice_foundations {
     label: "Characteristics Ice Foundations"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.characteristics_ice_foundations ;;
     type: string
     group_label: "Characteristics"
@@ -2617,7 +2617,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_media_capabilities {
     label: "Characteristics Media Capabilities"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.characteristics_media_capabilities ;;
     type: string
     group_label: "Characteristics"
@@ -2707,7 +2707,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_media_devices {
     label: "Characteristics Media Devices"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.characteristics_media_devices ;;
     type: string
     group_label: "Characteristics"
@@ -3805,7 +3805,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_voices {
     label: "Characteristics Voices"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.characteristics_voices ;;
     type: string
     group_label: "Characteristics"
@@ -3967,7 +3967,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_webglinfo {
     label: "Characteristics Webglinfo"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.characteristics_webglinfo ;;
     type: string
     group_label: "Characteristics"
