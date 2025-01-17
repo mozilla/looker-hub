@@ -173,6 +173,13 @@ view: usage_reporting_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__datetime__usage_first_run_date {
+    sql: ${TABLE}.metrics.datetime.usage_first_run_date ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Usage First Run Date"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -198,6 +205,107 @@ view: usage_reporting_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Glean Client Annotation Experimentation Id"
+  }
+
+  dimension: metrics__string__usage_app_build {
+    sql: ${TABLE}.metrics.string.usage_app_build ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Usage App Build"
+  }
+
+  dimension: metrics__string__usage_app_channel {
+    sql: ${TABLE}.metrics.string.usage_app_channel ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Usage App Channel"
+  }
+
+  dimension: metrics__string__usage_app_display_version {
+    sql: ${TABLE}.metrics.string.usage_app_display_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Usage App Display Version"
+  }
+
+  dimension: metrics__string__usage_os {
+    sql: ${TABLE}.metrics.string.usage_os ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Usage Os"
+  }
+
+  dimension: metrics__string__usage_os_version {
+    sql: ${TABLE}.metrics.string.usage_os_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Usage Os Version"
+  }
+
+  dimension: metrics__string__usage_reason {
+    sql: ${TABLE}.metrics.string.usage_reason ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Usage Reason"
+  }
+
+  dimension: metrics__timing_distribution__usage_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.usage_duration.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Usage Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__usage_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.usage_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Usage Duration"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__usage_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.usage_duration.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Usage Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__usage_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.usage_duration.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Usage Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__usage_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.usage_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__usage_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.usage_duration.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Usage Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__usage_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.usage_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Usage Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__usage_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.usage_duration.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Usage Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__usage_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.usage_duration.values ;;
+    hidden: yes
   }
 
   dimension: metrics__uuid__usage_profile_id {
@@ -327,5 +435,17 @@ view: usage_reporting_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: usage_reporting_table__metrics__timing_distribution__usage_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }

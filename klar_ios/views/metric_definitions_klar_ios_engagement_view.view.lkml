@@ -47,6 +47,8 @@ klar_ios_engagement_view_app_name,
 klar_ios_engagement_view_app_version,
 klar_ios_engagement_view_country,
 klar_ios_engagement_view_dau,
+klar_ios_engagement_view_device_manufacturer,
+klar_ios_engagement_view_device_type,
 klar_ios_engagement_view_is_mobile,
 klar_ios_engagement_view_lifecycle_stage,
 klar_ios_engagement_view_locale,
@@ -124,6 +126,8 @@ klar_ios_engagement_view.app_name AS klar_ios_engagement_view_app_name,
 klar_ios_engagement_view.app_version AS klar_ios_engagement_view_app_version,
 klar_ios_engagement_view.country AS klar_ios_engagement_view_country,
 klar_ios_engagement_view.dau AS klar_ios_engagement_view_dau,
+klar_ios_engagement_view.device_manufacturer AS klar_ios_engagement_view_device_manufacturer,
+klar_ios_engagement_view.device_type AS klar_ios_engagement_view_device_type,
 klar_ios_engagement_view.is_mobile AS klar_ios_engagement_view_is_mobile,
 klar_ios_engagement_view.lifecycle_stage AS klar_ios_engagement_view_lifecycle_stage,
 klar_ios_engagement_view.locale AS klar_ios_engagement_view_locale,
@@ -210,6 +214,8 @@ klar_ios_engagement_view_app_name,
 klar_ios_engagement_view_app_version,
 klar_ios_engagement_view_country,
 klar_ios_engagement_view_dau,
+klar_ios_engagement_view_device_manufacturer,
+klar_ios_engagement_view_device_type,
 klar_ios_engagement_view_is_mobile,
 klar_ios_engagement_view_lifecycle_stage,
 klar_ios_engagement_view_locale,
@@ -505,6 +511,18 @@ klar_ios_engagement_view_wau,
   dimension: dau {
     sql: ${TABLE}.klar_ios_engagement_view_dau ;;
     type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: device_manufacturer {
+    sql: ${TABLE}.klar_ios_engagement_view_device_manufacturer ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.klar_ios_engagement_view_device_type ;;
+    type: string
     group_label: "Base Fields"
   }
 
