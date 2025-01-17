@@ -70,6 +70,7 @@ focus_ios_active_users_aggregates_view_os_grouped,
 focus_ios_active_users_aggregates_view_os_version,
 focus_ios_active_users_aggregates_view_os_version_major,
 focus_ios_active_users_aggregates_view_os_version_minor,
+focus_ios_active_users_aggregates_view_partnership,
 focus_ios_active_users_aggregates_view_segment,
 focus_ios_active_users_aggregates_view_wau,
 focus_ios_active_users_aggregates_view_weekly_users,
@@ -166,6 +167,7 @@ focus_ios_active_users_aggregates_view.os_grouped AS focus_ios_active_users_aggr
 focus_ios_active_users_aggregates_view.os_version AS focus_ios_active_users_aggregates_view_os_version,
 focus_ios_active_users_aggregates_view.os_version_major AS focus_ios_active_users_aggregates_view_os_version_major,
 focus_ios_active_users_aggregates_view.os_version_minor AS focus_ios_active_users_aggregates_view_os_version_minor,
+focus_ios_active_users_aggregates_view.partnership AS focus_ios_active_users_aggregates_view_partnership,
 focus_ios_active_users_aggregates_view.segment AS focus_ios_active_users_aggregates_view_segment,
 focus_ios_active_users_aggregates_view.wau AS focus_ios_active_users_aggregates_view_wau,
 focus_ios_active_users_aggregates_view.weekly_users AS focus_ios_active_users_aggregates_view_weekly_users,
@@ -271,6 +273,7 @@ focus_ios_active_users_aggregates_view_os_grouped,
 focus_ios_active_users_aggregates_view_os_version,
 focus_ios_active_users_aggregates_view_os_version_major,
 focus_ios_active_users_aggregates_view_os_version_minor,
+focus_ios_active_users_aggregates_view_partnership,
 focus_ios_active_users_aggregates_view_segment,
 focus_ios_active_users_aggregates_view_wau,
 focus_ios_active_users_aggregates_view_weekly_users,
@@ -693,6 +696,12 @@ focus_ios_active_users_aggregates_view_weekly_users,
   dimension: os_version_minor {
     sql: ${TABLE}.focus_ios_active_users_aggregates_view_os_version_minor ;;
     type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: partnership {
+    sql: ${TABLE}.focus_ios_active_users_aggregates_view_partnership ;;
+    type: string
     group_label: "Base Fields"
   }
 

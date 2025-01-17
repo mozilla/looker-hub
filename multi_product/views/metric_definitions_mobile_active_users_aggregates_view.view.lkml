@@ -37,6 +37,7 @@ mobile_active_users_aggregates_view_os_grouped,
 mobile_active_users_aggregates_view_os_version,
 mobile_active_users_aggregates_view_os_version_major,
 mobile_active_users_aggregates_view_os_version_minor,
+mobile_active_users_aggregates_view_partnership,
 mobile_active_users_aggregates_view_segment,
 mobile_active_users_aggregates_view_wau,
 mobile_active_users_aggregates_view_weekly_users,
@@ -99,6 +100,7 @@ mobile_active_users_aggregates_view.os_grouped AS mobile_active_users_aggregates
 mobile_active_users_aggregates_view.os_version AS mobile_active_users_aggregates_view_os_version,
 mobile_active_users_aggregates_view.os_version_major AS mobile_active_users_aggregates_view_os_version_major,
 mobile_active_users_aggregates_view.os_version_minor AS mobile_active_users_aggregates_view_os_version_minor,
+mobile_active_users_aggregates_view.partnership AS mobile_active_users_aggregates_view_partnership,
 mobile_active_users_aggregates_view.segment AS mobile_active_users_aggregates_view_segment,
 mobile_active_users_aggregates_view.wau AS mobile_active_users_aggregates_view_wau,
 mobile_active_users_aggregates_view.weekly_users AS mobile_active_users_aggregates_view_weekly_users,
@@ -156,6 +158,7 @@ mobile_active_users_aggregates_view_os_grouped,
 mobile_active_users_aggregates_view_os_version,
 mobile_active_users_aggregates_view_os_version_major,
 mobile_active_users_aggregates_view_os_version_minor,
+mobile_active_users_aggregates_view_partnership,
 mobile_active_users_aggregates_view_segment,
 mobile_active_users_aggregates_view_wau,
 mobile_active_users_aggregates_view_weekly_users,
@@ -361,6 +364,12 @@ mobile_active_users_aggregates_view_weekly_users,
   dimension: os_version_minor {
     sql: ${TABLE}.mobile_active_users_aggregates_view_os_version_minor ;;
     type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: partnership {
+    sql: ${TABLE}.mobile_active_users_aggregates_view_partnership ;;
+    type: string
     group_label: "Base Fields"
   }
 

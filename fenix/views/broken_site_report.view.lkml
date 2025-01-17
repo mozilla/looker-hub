@@ -185,24 +185,6 @@ view: broken_site_report {
 "
   }
 
-  dimension: metrics__boolean__broken_site_report_browser_info_prefs_forced_accelerated_layers {
-    label: "Broken Site Report Browser Info Prefs Forced Accelerated Layers"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_forced_accelerated_layers ;;
-    type: yesno
-    group_label: "Broken Site Report Browser Info Prefs"
-    group_item_label: "Forced Accelerated Layers"
-
-    link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Forced Accelerated Layers"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/broken_site_report_browser_info_prefs_forced_accelerated_layers"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Value of `layers.acceleration_force.enabled`
-"
-  }
-
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_global_privacy_control_enabled {
     label: "Broken Site Report Browser Info Prefs Global Privacy Control Enabled"
     hidden: no
@@ -290,60 +272,6 @@ view: broken_site_report {
     }
 
     description: "Value of `gfx.webrender.software`
-"
-  }
-
-  dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled {
-    label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled ;;
-    type: yesno
-    group_label: "Broken Site Report Browser Info Prefs"
-    group_item_label: "Third Party Cookie Blocking Enabled"
-
-    link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Value of `network.cookie.cookieBehavior.optInPartitioning`
-"
-  }
-
-  dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm {
-    label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled In Pbm"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm ;;
-    type: yesno
-    group_label: "Broken Site Report Browser Info Prefs"
-    group_item_label: "Third Party Cookie Blocking Enabled In Pbm"
-
-    link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled In Pbm"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Value of `network.cookie.cookieBehavior.optInPartitioning.pbmode`
-"
-  }
-
-  dimension: metrics__boolean__broken_site_report_browser_info_system_is_tablet {
-    label: "Broken Site Report Browser Info System Is Tablet"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_system_is_tablet ;;
-    type: yesno
-    group_label: "Broken Site Report Browser Info System"
-    group_item_label: "Is Tablet"
-
-    link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info System Is Tablet"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/broken_site_report_browser_info_system_is_tablet"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether the device is a tablet
 "
   }
 
@@ -578,6 +506,78 @@ view: broken_site_report {
     }
 
     description: "The URL of the site being reported. May contain PII.
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_forced_accelerated_layers {
+    label: "Broken Site Report Browser Info Prefs Forced Accelerated Layers"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_forced_accelerated_layers ;;
+    type: yesno
+    group_label: "Broken Site Report Browser Info Prefs"
+    group_item_label: "Forced Accelerated Layers"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Forced Accelerated Layers"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/broken_site_report_browser_info_prefs_forced_accelerated_layers"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of `layers.acceleration_force.enabled`
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled {
+    label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled ;;
+    type: yesno
+    group_label: "Broken Site Report Browser Info Prefs"
+    group_item_label: "Third Party Cookie Blocking Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of `network.cookie.cookieBehavior.optInPartitioning`
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm {
+    label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled In Pbm"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm ;;
+    type: yesno
+    group_label: "Broken Site Report Browser Info Prefs"
+    group_item_label: "Third Party Cookie Blocking Enabled In Pbm"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled In Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of `network.cookie.cookieBehavior.optInPartitioning.pbmode`
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_browser_info_system_is_tablet {
+    label: "Broken Site Report Browser Info System Is Tablet"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_system_is_tablet ;;
+    type: yesno
+    group_label: "Broken Site Report Browser Info System"
+    group_item_label: "Is Tablet"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info System Is Tablet"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/broken_site_report_browser_info_system_is_tablet"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the device is a tablet
 "
   }
 

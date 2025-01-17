@@ -433,6 +433,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mail_mbox_read_errors}) AS metrics__metrics__labeled_counter__mail_mbox_read_errors ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mail_mbox_read_errors.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__mail_mbox_write_errors {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mail_mbox_write_errors}) AS metrics__metrics__labeled_counter__mail_mbox_write_errors ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mail_mbox_write_errors.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__mail_successful_email_account_setup {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mail_successful_email_account_setup}) AS metrics__metrics__labeled_counter__mail_successful_email_account_setup ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mail_successful_email_account_setup.document_id} ;;

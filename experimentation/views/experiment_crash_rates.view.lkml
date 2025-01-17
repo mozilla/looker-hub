@@ -20,11 +20,6 @@ view: experiment_crash_rates {
     type: string
   }
 
-  dimension: estimated_crash_rate {
-    sql: ${TABLE}.estimated_crash_rate ;;
-    type: number
-  }
-
   dimension: experiment {
     sql: ${TABLE}.experiment ;;
     type: string

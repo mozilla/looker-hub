@@ -48,6 +48,8 @@ focus_ios_retention_view_active_metric_date,
 focus_ios_retention_view_app_name,
 focus_ios_retention_view_app_version,
 focus_ios_retention_view_country,
+focus_ios_retention_view_device_manufacturer,
+focus_ios_retention_view_device_type,
 focus_ios_retention_view_is_mobile,
 focus_ios_retention_view_lifecycle_stage,
 focus_ios_retention_view_locale,
@@ -129,6 +131,8 @@ focus_ios_retention_view.active_metric_date AS focus_ios_retention_view_active_m
 focus_ios_retention_view.app_name AS focus_ios_retention_view_app_name,
 focus_ios_retention_view.app_version AS focus_ios_retention_view_app_version,
 focus_ios_retention_view.country AS focus_ios_retention_view_country,
+focus_ios_retention_view.device_manufacturer AS focus_ios_retention_view_device_manufacturer,
+focus_ios_retention_view.device_type AS focus_ios_retention_view_device_type,
 focus_ios_retention_view.is_mobile AS focus_ios_retention_view_is_mobile,
 focus_ios_retention_view.lifecycle_stage AS focus_ios_retention_view_lifecycle_stage,
 focus_ios_retention_view.locale AS focus_ios_retention_view_locale,
@@ -219,6 +223,8 @@ focus_ios_retention_view_active_metric_date,
 focus_ios_retention_view_app_name,
 focus_ios_retention_view_app_version,
 focus_ios_retention_view_country,
+focus_ios_retention_view_device_manufacturer,
+focus_ios_retention_view_device_type,
 focus_ios_retention_view_is_mobile,
 focus_ios_retention_view_lifecycle_stage,
 focus_ios_retention_view_locale,
@@ -526,6 +532,18 @@ focus_ios_retention_view_retained_week_4_new_profiles,
     sql: ${TABLE}.focus_ios_retention_view_country ;;
     type: string
     map_layer_name: countries
+    group_label: "Base Fields"
+  }
+
+  dimension: device_manufacturer {
+    sql: ${TABLE}.focus_ios_retention_view_device_manufacturer ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.focus_ios_retention_view_device_type ;;
+    type: string
     group_label: "Base Fields"
   }
 

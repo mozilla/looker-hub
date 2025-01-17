@@ -173,6 +173,20 @@ view: usage_reporting_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__metrics_default_browser {
+    sql: ${TABLE}.metrics.boolean.metrics_default_browser ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Metrics Default Browser"
+  }
+
+  dimension: metrics__datetime__usage_first_run_date {
+    sql: ${TABLE}.metrics.datetime.usage_first_run_date ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Usage First Run Date"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -205,6 +219,62 @@ view: usage_reporting_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Metrics Distribution Id"
+  }
+
+  dimension: metrics__string__usage_app_build {
+    sql: ${TABLE}.metrics.string.usage_app_build ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Usage App Build"
+  }
+
+  dimension: metrics__string__usage_app_channel {
+    sql: ${TABLE}.metrics.string.usage_app_channel ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Usage App Channel"
+  }
+
+  dimension: metrics__string__usage_app_display_version {
+    sql: ${TABLE}.metrics.string.usage_app_display_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Usage App Display Version"
+  }
+
+  dimension: metrics__string__usage_os {
+    sql: ${TABLE}.metrics.string.usage_os ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Usage Os"
+  }
+
+  dimension: metrics__string__usage_os_version {
+    sql: ${TABLE}.metrics.string.usage_os_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Usage Os Version"
+  }
+
+  dimension: metrics__string__usage_reason {
+    sql: ${TABLE}.metrics.string.usage_reason ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Usage Reason"
+  }
+
+  dimension: metrics__timespan__usage_duration__time_unit {
+    sql: ${TABLE}.metrics.timespan.usage_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Usage Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__usage_duration__value {
+    sql: ${TABLE}.metrics.timespan.usage_duration.value ;;
+    type: number
+    group_label: "Metrics Timespan Usage Duration"
+    group_item_label: "Value"
   }
 
   dimension: metrics__uuid__usage_profile_id {
