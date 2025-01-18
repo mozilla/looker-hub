@@ -12058,6 +12058,20 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Js Asmjs"
   }
 
+  dimension: metrics__counter__use_counter_doc_js_ic_stub_oom {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_ic_stub_oom ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Ic Stub Oom"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_ic_stub_too_large {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_ic_stub_too_large ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Ic Stub Too Large"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_is_htmldda_fuse {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_is_htmldda_fuse ;;
     type: number
@@ -14793,6 +14807,20 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Asmjs"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_ic_stub_oom {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_ic_stub_oom ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Ic Stub Oom"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_ic_stub_too_large {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_ic_stub_too_large ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Ic Stub Too Large"
   }
 
   dimension: metrics__counter__use_counter_page_js_is_htmldda_fuse {

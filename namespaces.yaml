@@ -2675,6 +2675,10 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: urlbar_potential_exposure
+    usage_deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: usage_deletion_request
     usage_reporting:
       type: glean_ping_explore
       views:
@@ -3227,6 +3231,15 @@ firefox_desktop:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.urlbar_potential_exposure
+      type: table_view
+    usage_deletion_request:
+      tables:
+      - table: mozdata.firefox_desktop.usage_deletion_request
+      type: glean_ping_view
+    usage_deletion_request_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.usage_deletion_request
       type: table_view
     usage_reporting:
       tables:

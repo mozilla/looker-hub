@@ -543,6 +543,13 @@ view: metrics_table {
     group_item_label: "Formautofill Availability"
   }
 
+  dimension: metrics__boolean__formautofill_os_auth_enabled {
+    sql: ${TABLE}.metrics.boolean.formautofill_os_auth_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Formautofill Os Auth Enabled"
+  }
+
   dimension: metrics__boolean__gfx_os_compositor {
     sql: ${TABLE}.metrics.boolean.gfx_os_compositor ;;
     type: yesno
@@ -828,6 +835,13 @@ view: metrics_table {
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Pull To Refresh In Browser Enabled"
+  }
+
+  dimension: metrics__boolean__pwmgr_os_auth_enabled {
+    sql: ${TABLE}.metrics.boolean.pwmgr_os_auth_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Pwmgr Os Auth Enabled"
   }
 
   dimension: metrics__boolean__recent_tabs_section_visible {
@@ -2372,6 +2386,234 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__javascript_gc_effectiveness__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_effectiveness.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Effectiveness"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_effectiveness__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_effectiveness.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Effectiveness"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_effectiveness__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_effectiveness.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mark_rate__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mark_rate.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Mark Rate"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mark_rate__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mark_rate.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Mark Rate"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mark_rate__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mark_rate.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mmu_50__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mmu_50.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Mmu 50"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mmu_50__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mmu_50.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Mmu 50"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mmu_50__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mmu_50.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_nursery_promotion_rate__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_nursery_promotion_rate.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Nursery Promotion Rate"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_nursery_promotion_rate__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_nursery_promotion_rate.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Nursery Promotion Rate"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_nursery_promotion_rate__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_nursery_promotion_rate.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_interruptions__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_interruptions.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Interruptions"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_interruptions__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_interruptions.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Interruptions"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_interruptions__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_interruptions.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_speedup__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_speedup.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Speedup"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_speedup__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_speedup.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Speedup"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_speedup__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_speedup.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_utilization__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_utilization.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Utilization"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_utilization__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_utilization.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Utilization"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_utilization__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_utilization.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_pretenure_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_pretenure_count.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Pretenure Count"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_pretenure_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_pretenure_count.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Pretenure Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_pretenure_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_pretenure_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_slice_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_slice_count.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Slice Count"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_slice_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_slice_count.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Slice Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_slice_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_slice_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_tenured_survival_rate__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_tenured_survival_rate.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Tenured Survival Rate"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_tenured_survival_rate__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_tenured_survival_rate.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Tenured Survival Rate"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_tenured_survival_rate__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_tenured_survival_rate.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zone_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zone_count.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Zone Count"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zone_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zone_count.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Zone Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zone_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zone_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zones_collected__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zones_collected.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Zones Collected"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zones_collected__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zones_collected.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Zones Collected"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zones_collected__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zones_collected.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__js_baseline_compile_percentage__count {
     sql: ${TABLE}.metrics.custom_distribution.js_baseline_compile_percentage.count ;;
     type: number
@@ -3835,6 +4077,71 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__javascript_gc_budget_was_increased {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_budget_was_increased ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_is_zone_gc {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_is_zone_gc ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_minor_reason {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_minor_reason ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_minor_reason_long {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_minor_reason_long ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_non_incremental {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_non_incremental ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_non_incremental_reason {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_non_incremental_reason ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_parallel_mark_used {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_parallel_mark_used ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_reason {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_reason ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_reset {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_reset ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_reset_reason {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_reset_reason ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_slice_was_long {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_slice_was_long ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_slow_phase {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_slow_phase ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_slow_task {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_slow_task ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__logins_store_read_query_error_count {
     sql: ${TABLE}.metrics.labeled_counter.logins_store_read_query_error_count ;;
     hidden: yes
@@ -4715,6 +5022,25 @@ view: metrics_table {
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__javascript_gc_nursery_bytes__count {
+    sql: ${TABLE}.metrics.memory_distribution.javascript_gc_nursery_bytes.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Javascript Gc Nursery Bytes"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__javascript_gc_nursery_bytes__sum {
+    sql: ${TABLE}.metrics.memory_distribution.javascript_gc_nursery_bytes.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Javascript Gc Nursery Bytes"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__javascript_gc_nursery_bytes__values {
+    sql: ${TABLE}.metrics.memory_distribution.javascript_gc_nursery_bytes.values ;;
     hidden: yes
   }
 
@@ -20119,6 +20445,150 @@ view: metrics_table__metrics__custom_distribution__gfx_content_frame_time_withou
   }
 }
 
+view: metrics_table__metrics__custom_distribution__javascript_gc_effectiveness__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_mark_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_mmu_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_nursery_promotion_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_parallel_mark_interruptions__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_parallel_mark_speedup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_parallel_mark_utilization__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_pretenure_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_slice_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_tenured_survival_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_zone_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_zones_collected__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__js_baseline_compile_percentage__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -22556,6 +23026,18 @@ view: metrics_table__metrics__memory_distribution__glean_upload_discarded_exceed
 }
 
 view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__javascript_gc_nursery_bytes__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
