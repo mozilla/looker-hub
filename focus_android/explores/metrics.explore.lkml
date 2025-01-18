@@ -619,6 +619,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_tls_early_data_negotiated}) AS metrics__metrics__labeled_counter__network_tls_early_data_negotiated ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_tls_early_data_negotiated.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_cache_purge_due_to_memory_limit {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_cache_purge_due_to_memory_limit}) AS metrics__metrics__labeled_counter__networking_cache_purge_due_to_memory_limit ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_cache_purge_due_to_memory_limit.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_captive_portal_banner_display_time {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_captive_portal_banner_display_time}) AS metrics__metrics__labeled_counter__networking_captive_portal_banner_display_time ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_captive_portal_banner_display_time.document_id} ;;

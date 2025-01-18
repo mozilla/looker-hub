@@ -4312,6 +4312,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_cache_purge_due_to_memory_limit {
+    sql: ${TABLE}.metrics.labeled_counter.networking_cache_purge_due_to_memory_limit ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_captive_portal_banner_display_time {
     sql: ${TABLE}.metrics.labeled_counter.networking_captive_portal_banner_display_time ;;
     hidden: yes

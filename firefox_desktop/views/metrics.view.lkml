@@ -5835,7 +5835,7 @@ in browser.
 
   dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__sum {
     label: "Urlbar Quick Suggest Ingest Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.sum ;;
     type: number
     group_label: "Urlbar"
