@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: task_run_costs {
+view: task_run_costs_base {
   dimension: run_cost {
     sql: ${TABLE}.run_cost ;;
     type: number
@@ -33,12 +33,6 @@ view: task_run_costs {
     ]
     convert_tz: no
     datatype: date
-  }
-
-  measure: total_cost {
-    sql: ${run_cost} ;;
-    type: sum
-    value_format_name: usd
   }
 
   sql_table_name: `moz-fx-data-shared-prod.fxci.task_run_costs` ;;

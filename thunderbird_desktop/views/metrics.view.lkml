@@ -7557,6 +7557,23 @@ To be used to validate GIFFT.
     description: "Size of the metadata in bytes parsed from the disk."
   }
 
+  dimension: metrics__labeled_counter__networking_cache_purge_due_to_memory_limit {
+    label: "Networking Cache Purge Due To Memory Limit"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_cache_purge_due_to_memory_limit ;;
+    group_label: "Networking"
+    group_item_label: "Cache Purge Due To Memory Limit"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cache Purge Due To Memory Limit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/networking_cache_purge_due_to_memory_limit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often we purge cache entries from memory due to memory limits.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_captive_portal_banner_display_time {
     label: "Networking Captive Portal Banner Display Time"
     hidden: yes
@@ -22151,6 +22168,47 @@ view: metrics__metrics__labeled_counter__network_tls_early_data_accepted {
 
 view: metrics__metrics__labeled_counter__network_tls_early_data_negotiated {
   label: "Network - Tls Early Data Negotiated"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_cache_purge_due_to_memory_limit {
+  label: "Networking - Cache Purge Due To Memory Limit"
 
   dimension: document_id {
     type: string

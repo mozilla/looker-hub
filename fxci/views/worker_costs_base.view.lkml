@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: worker_costs {
+view: worker_costs_base {
   dimension: instance_id {
     sql: ${TABLE}.instance_id ;;
     type: string
@@ -43,12 +43,6 @@ view: worker_costs {
     ]
     convert_tz: no
     datatype: date
-  }
-
-  measure: total_cost {
-    sql: ${total_cost} ;;
-    type: sum
-    value_format_name: usd
   }
 
   sql_table_name: `moz-fx-data-shared-prod.fxci.worker_costs` ;;
