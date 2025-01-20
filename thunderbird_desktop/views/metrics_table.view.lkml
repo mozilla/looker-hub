@@ -4218,6 +4218,13 @@ Now it only records counts for the Glean built-in pings.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_cache_purge_due_to_memory_limit {
+    sql: ${TABLE}.metrics.labeled_counter.networking_cache_purge_due_to_memory_limit ;;
+    hidden: yes
+    description: "Counts how often we purge cache entries from memory due to memory limits.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_captive_portal_banner_display_time {
     sql: ${TABLE}.metrics.labeled_counter.networking_captive_portal_banner_display_time ;;
     hidden: yes
