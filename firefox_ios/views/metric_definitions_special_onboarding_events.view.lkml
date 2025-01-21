@@ -12,7 +12,10 @@ COALESCE(SUM(set_to_default_flag)) AS set_to_default_ctr_onboarding,
 COALESCE(SUM(sign_in_flag)) AS sign_in_ctr_onboarding,
 COALESCE(SUM(at_least_1_cta)) AS at_least_1_cta_ctr_onboarding,
 
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -75,7 +78,10 @@ looker_base_fields_user_agent__version,
                 (
                     SELECT
                         special_onboarding_events.*,
-                        looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
+                        looker_base_fields.app_version_major AS looker_base_fields_app_version_major,
+looker_base_fields.app_version_minor AS looker_base_fields_app_version_minor,
+looker_base_fields.app_version_patch AS looker_base_fields_app_version_patch,
+looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
 looker_base_fields.client_info.app_build AS looker_base_fields_client_info__app_build,
 looker_base_fields.client_info.app_channel AS looker_base_fields_client_info__app_channel,
 looker_base_fields.client_info.app_display_version AS looker_base_fields_client_info__app_display_version,
@@ -221,7 +227,10 @@ GROUP BY 1, 2, 3, 4, 5, 6
                 
                 )
             GROUP BY
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -296,6 +305,24 @@ looker_base_fields_user_agent__version,
     description: "This metric looks at proportion of all new profiles that were exposed to onboarding cards and clicked at least one action during on-boarding."
     type: number
     sql: ${TABLE}.at_least_1_cta_ctr_onboarding ;;
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.looker_base_fields_app_version_major ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.looker_base_fields_app_version_minor ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.looker_base_fields_app_version_patch ;;
+    type: number
+    group_label: "Base Fields"
   }
 
   dimension: client_info__android_sdk_version {

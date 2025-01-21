@@ -334,6 +334,15 @@ view: user_characteristics_table {
 "
   }
 
+  dimension: metrics__boolean__characteristics_using_accelerated_canvas {
+    sql: ${TABLE}.metrics.boolean.characteristics_using_accelerated_canvas ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Using Accelerated Canvas"
+    description: "Whether the user's device is using accelerated canvas
+"
+  }
+
   dimension: metrics__boolean__characteristics_video_dynamic_range {
     sql: ${TABLE}.metrics.boolean.characteristics_video_dynamic_range ;;
     type: yesno
@@ -444,6 +453,15 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Build Date"
     description: "Firefox build's build date in unix time
+"
+  }
+
+  dimension: metrics__quantity__characteristics_camera_count {
+    sql: ${TABLE}.metrics.quantity.characteristics_camera_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Camera Count"
+    description: "Number of cameras available on the device.
 "
   }
 
@@ -645,6 +663,60 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_gl_version {
+    sql: ${TABLE}.metrics.quantity.characteristics_gl_version ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Gl Version"
+    description: "The version of OpenGL supported by the user's system.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_gl_version_software {
+    sql: ${TABLE}.metrics.quantity.characteristics_gl_version_software ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Gl Version Software"
+    description: "The version of OpenGL supported by the user's system.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_group_count {
+    sql: ${TABLE}.metrics.quantity.characteristics_group_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Group Count"
+    description: "Number of device groups reported by the device.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_group_count_wo_speakers {
+    sql: ${TABLE}.metrics.quantity.characteristics_group_count_wo_speakers ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Group Count Wo Speakers"
+    description: "Number of device groups without speakers reported by the device.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_ice_order {
+    sql: ${TABLE}.metrics.quantity.characteristics_ice_order ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Ice Order"
+    description: "Unique ICE foundations occurrence count
+"
+  }
+
+  dimension: metrics__quantity__characteristics_ice_sd {
+    sql: ${TABLE}.metrics.quantity.characteristics_ice_sd ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Ice Sd"
+    description: "ICE foundation discovery latency standard deviation sum multiplied by 1000
+"
+  }
+
   dimension: metrics__quantity__characteristics_inner_height {
     sql: ${TABLE}.metrics.quantity.characteristics_inner_height ;;
     type: number
@@ -759,6 +831,15 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Max Touch Points"
     description: "The number of touch points we will report to the web. On Android, this is based on Android's FEATURE_TOUCHSCREEN* constants - Mozilla caps this at 5 as Android stops distinguishing between numbers greater than 5.  On Windows this comes from the SM_MAXIMUMTOUCHES System Metric.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_microphone_count {
+    sql: ${TABLE}.metrics.quantity.characteristics_microphone_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Microphone Count"
+    description: "Number of microphones available on the device.
 "
   }
 
@@ -996,6 +1077,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_speaker_count {
+    sql: ${TABLE}.metrics.quantity.characteristics_speaker_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Speaker Count"
+    description: "Number of speakers available on the device.
+"
+  }
+
   dimension: metrics__quantity__characteristics_submission_schema {
     sql: ${TABLE}.metrics.quantity.characteristics_submission_schema ;;
     type: number
@@ -1014,12 +1104,39 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_voices_count {
+    sql: ${TABLE}.metrics.quantity.characteristics_voices_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Voices Count"
+    description: "Number of speechSynthesis voices available to the user.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_voices_local_count {
+    sql: ${TABLE}.metrics.quantity.characteristics_voices_local_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Voices Local Count"
+    description: "Number of local speechSynthesis voices available to the user.
+"
+  }
+
   dimension: metrics__quantity__characteristics_zoom_count {
     sql: ${TABLE}.metrics.quantity.characteristics_zoom_count ;;
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Zoom Count"
     description: "Number of domains the users has a non-default zoom level.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvas_feature_status {
+    sql: ${TABLE}.metrics.string.characteristics_canvas_feature_status ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvas Feature Status"
+    description: "Status of and failure id (if failed) of ACCELERATED_CANVAS2D feature
 "
   }
 
@@ -1140,11 +1257,83 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata3avif {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3avif ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Avif"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3avifsoftware {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3avifsoftware ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Avifsoftware"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3cspsafe {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3cspsafe ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Cspsafe"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3cspsafesoftware {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3cspsafesoftware ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Cspsafesoftware"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3png {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3png ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Png"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3pngsoftware {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3pngsoftware ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Pngsoftware"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata3software {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata3software ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Characteristics Canvasdata3Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3webp {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3webp ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Webp"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3webpsoftware {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3webpsoftware ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvasdata3Webpsoftware"
     description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
 "
   }
@@ -1410,6 +1599,150 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_gl_context_type {
+    sql: ${TABLE}.metrics.string.characteristics_gl_context_type ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Context Type"
+    description: "The type of the GL context (EGL, GLX, WGL, etc).
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_context_type_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl_context_type_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Context Type Software"
+    description: "The type of the GL context (EGL, GLX, WGL, etc).
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_fragment_shader {
+    sql: ${TABLE}.metrics.string.characteristics_gl_fragment_shader ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Fragment Shader"
+    description: "Hash of the transformed source of the fragment shader.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_fragment_shader_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl_fragment_shader_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Fragment Shader Software"
+    description: "Hash of the transformed source of the fragment shader.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_renderer {
+    sql: ${TABLE}.metrics.string.characteristics_gl_renderer ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Renderer"
+    description: "The OpenGL renderer string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_renderer_raw {
+    sql: ${TABLE}.metrics.string.characteristics_gl_renderer_raw ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Renderer Raw"
+    description: "The raw OpenGL renderer string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_renderer_raw_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl_renderer_raw_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Renderer Raw Software"
+    description: "The raw OpenGL renderer string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_renderer_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl_renderer_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Renderer Software"
+    description: "The OpenGL renderer string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_vendor {
+    sql: ${TABLE}.metrics.string.characteristics_gl_vendor ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Vendor"
+    description: "The OpenGL vendor string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_vendor_raw {
+    sql: ${TABLE}.metrics.string.characteristics_gl_vendor_raw ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Vendor Raw"
+    description: "The raw OpenGL vendor string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_vendor_raw_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl_vendor_raw_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Vendor Raw Software"
+    description: "The raw OpenGL vendor string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_vendor_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl_vendor_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Vendor Software"
+    description: "The OpenGL vendor string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_version_raw {
+    sql: ${TABLE}.metrics.string.characteristics_gl_version_raw ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Version Raw"
+    description: "The raw OpenGL version string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_version_raw_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl_version_raw_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Version Raw Software"
+    description: "The raw OpenGL version string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_vertex_shader {
+    sql: ${TABLE}.metrics.string.characteristics_gl_vertex_shader ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Vertex Shader"
+    description: "Hash of the transformed source of the vertex shader.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_vertex_shader_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl_vertex_shader_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl Vertex Shader Software"
+    description: "Hash of the transformed source of the vertex shader.
+"
+  }
+
   dimension: metrics__string__characteristics_intl_locale {
     sql: ${TABLE}.metrics.string.characteristics_intl_locale ;;
     type: string
@@ -1551,6 +1884,42 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics String"
     group_item_label: "Characteristics Version"
     description: "Firefox build version
+"
+  }
+
+  dimension: metrics__string__characteristics_voices_all_ssdeep {
+    sql: ${TABLE}.metrics.string.characteristics_voices_all_ssdeep ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Voices All Ssdeep"
+    description: "ssdeep hash of all speechSynthesis voices.
+"
+  }
+
+  dimension: metrics__string__characteristics_voices_default {
+    sql: ${TABLE}.metrics.string.characteristics_voices_default ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Voices Default"
+    description: "The default speechSynthesis voice.
+"
+  }
+
+  dimension: metrics__string__characteristics_voices_local_ssdeep {
+    sql: ${TABLE}.metrics.string.characteristics_voices_local_ssdeep ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Voices Local Ssdeep"
+    description: "ssdeep hash of local speechSynthesis voices.
+"
+  }
+
+  dimension: metrics__string__characteristics_voices_nonlocal_ssdeep {
+    sql: ${TABLE}.metrics.string.characteristics_voices_nonlocal_ssdeep ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Voices Nonlocal Ssdeep"
+    description: "ssdeep hash of non-local speechSynthesis voices.
 "
   }
 
@@ -1704,6 +2073,150 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_gl_extensions {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_extensions ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Extensions"
+    description: "The list of OpenGL extensions supported by the user's system.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_extensions_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_extensions_raw ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Extensions Raw"
+    description: "The raw list of OpenGL extensions supported by the user's system.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_extensions_raw_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_extensions_raw_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Extensions Raw Software"
+    description: "The raw list of OpenGL extensions supported by the user's system.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_extensions_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_extensions_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Extensions Software"
+    description: "The list of OpenGL extensions supported by the user's system.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_minimal_source {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_minimal_source ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Minimal Source"
+    description: "Transformed source of the minimal shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_minimal_source_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_minimal_source_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Minimal Source Software"
+    description: "Transformed source of the minimal shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_params_extensions {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_extensions ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Params Extensions"
+    description: "The list of GL parameters of the extensions.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_params_extensions_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_extensions_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Params Extensions Software"
+    description: "The list of GL parameters of the extensions.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_params_v1 {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_v1 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Params V1"
+    description: "The list of GL parameters of GL1.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_params_v1_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_v1_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Params V1 Software"
+    description: "The list of GL parameters of GL1.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_params_v2 {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_v2 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Params V2"
+    description: "The list of GL parameters of GL2.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_params_v2_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_v2_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Params V2 Software"
+    description: "The list of GL parameters of GL2.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_precision_fragment {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_precision_fragment ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Precision Fragment"
+    description: "Precisions of the fragment shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_precision_fragment_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_precision_fragment_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Precision Fragment Software"
+    description: "Precisions of the fragment shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_precision_vertex {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_precision_vertex ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Precision Vertex"
+    description: "Precisions of the vertex shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_precision_vertex_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_precision_vertex_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Precision Vertex Software"
+    description: "Precisions of the vertex shader.
+"
+  }
+
   dimension: metrics__text2__characteristics_ice_foundations {
     sql: ${TABLE}.metrics.text2.characteristics_ice_foundations ;;
     type: string
@@ -1740,6 +2253,42 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_media_capabilities_h264 {
+    sql: ${TABLE}.metrics.text2.characteristics_media_capabilities_h264 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Media Capabilities H264"
+    description: "Levels of support for H264 codec.
+"
+  }
+
+  dimension: metrics__text2__characteristics_media_capabilities_not_efficient {
+    sql: ${TABLE}.metrics.text2.characteristics_media_capabilities_not_efficient ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Media Capabilities Not Efficient"
+    description: "Which, if any, media types are not power efficient.
+"
+  }
+
+  dimension: metrics__text2__characteristics_media_capabilities_not_smooth {
+    sql: ${TABLE}.metrics.text2.characteristics_media_capabilities_not_smooth ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Media Capabilities Not Smooth"
+    description: "Which, if any, media types are not smooth.
+"
+  }
+
+  dimension: metrics__text2__characteristics_media_capabilities_unsupported {
+    sql: ${TABLE}.metrics.text2.characteristics_media_capabilities_unsupported ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Media Capabilities Unsupported"
+    description: "Which, if any, media types are not supported.
+"
+  }
+
   dimension: metrics__text2__characteristics_media_devices {
     sql: ${TABLE}.metrics.text2.characteristics_media_devices ;;
     type: string
@@ -1764,6 +2313,33 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Voices"
     description: "Available speechSynthesis voices.
+"
+  }
+
+  dimension: metrics__text2__characteristics_voices_sample {
+    sql: ${TABLE}.metrics.text2.characteristics_voices_sample ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Voices Sample"
+    description: "Names of 5 sample speechSynthesis voices.
+"
+  }
+
+  dimension: metrics__text2__characteristics_voices_sha1 {
+    sql: ${TABLE}.metrics.text2.characteristics_voices_sha1 ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Voices Sha1"
+    description: "SHA1 hash of all the voices.
+"
+  }
+
+  dimension: metrics__text2__characteristics_webglinfo {
+    sql: ${TABLE}.metrics.text2.characteristics_webglinfo ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Webglinfo"
+    description: "A JSON blob that contains information about the graphics hardware exposed by WebGL.
 "
   }
 

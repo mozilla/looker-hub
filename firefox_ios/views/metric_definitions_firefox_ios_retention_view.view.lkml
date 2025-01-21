@@ -10,7 +10,10 @@ view: metric_definitions_firefox_ios_retention_view {
                 SUM(retained_week_4) / SUM(active_metric_date) AS retention_rate_v1,
 SUM(retained_week_4_new_profiles) / SUM(new_profiles_metric_date) AS new_profile_retention_rate_v1,
 
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -49,6 +52,8 @@ firefox_ios_retention_view_adjust_network,
 firefox_ios_retention_view_app_name,
 firefox_ios_retention_view_app_version,
 firefox_ios_retention_view_country,
+firefox_ios_retention_view_device_manufacturer,
+firefox_ios_retention_view_device_type,
 firefox_ios_retention_view_is_mobile,
 firefox_ios_retention_view_is_suspicious_device_client,
 firefox_ios_retention_view_lifecycle_stage,
@@ -93,7 +98,10 @@ firefox_ios_retention_view_retained_week_4_new_profiles,
                 (
                     SELECT
                         firefox_ios_retention_view.*,
-                        looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
+                        looker_base_fields.app_version_major AS looker_base_fields_app_version_major,
+looker_base_fields.app_version_minor AS looker_base_fields_app_version_minor,
+looker_base_fields.app_version_patch AS looker_base_fields_app_version_patch,
+looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
 looker_base_fields.client_info.app_build AS looker_base_fields_client_info__app_build,
 looker_base_fields.client_info.app_channel AS looker_base_fields_client_info__app_channel,
 looker_base_fields.client_info.app_display_version AS looker_base_fields_client_info__app_display_version,
@@ -132,6 +140,8 @@ firefox_ios_retention_view.adjust_network AS firefox_ios_retention_view_adjust_n
 firefox_ios_retention_view.app_name AS firefox_ios_retention_view_app_name,
 firefox_ios_retention_view.app_version AS firefox_ios_retention_view_app_version,
 firefox_ios_retention_view.country AS firefox_ios_retention_view_country,
+firefox_ios_retention_view.device_manufacturer AS firefox_ios_retention_view_device_manufacturer,
+firefox_ios_retention_view.device_type AS firefox_ios_retention_view_device_type,
 firefox_ios_retention_view.is_mobile AS firefox_ios_retention_view_is_mobile,
 firefox_ios_retention_view.is_suspicious_device_client AS firefox_ios_retention_view_is_suspicious_device_client,
 firefox_ios_retention_view.lifecycle_stage AS firefox_ios_retention_view_lifecycle_stage,
@@ -185,7 +195,10 @@ firefox_ios_retention_view.retained_week_4_new_profiles AS firefox_ios_retention
                 
                 )
             GROUP BY
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -224,6 +237,8 @@ firefox_ios_retention_view_adjust_network,
 firefox_ios_retention_view_app_name,
 firefox_ios_retention_view_app_version,
 firefox_ios_retention_view_country,
+firefox_ios_retention_view_device_manufacturer,
+firefox_ios_retention_view_device_type,
 firefox_ios_retention_view_is_mobile,
 firefox_ios_retention_view_is_suspicious_device_client,
 firefox_ios_retention_view_lifecycle_stage,
@@ -268,6 +283,24 @@ firefox_ios_retention_view_retained_week_4_new_profiles,
 "
     type: number
     sql: ${TABLE}.new_profile_retention_rate_v1 ;;
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.looker_base_fields_app_version_major ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.looker_base_fields_app_version_minor ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.looker_base_fields_app_version_patch ;;
+    type: number
+    group_label: "Base Fields"
   }
 
   dimension: client_info__android_sdk_version {
@@ -538,6 +571,18 @@ firefox_ios_retention_view_retained_week_4_new_profiles,
     sql: ${TABLE}.firefox_ios_retention_view_country ;;
     type: string
     map_layer_name: countries
+    group_label: "Base Fields"
+  }
+
+  dimension: device_manufacturer {
+    sql: ${TABLE}.firefox_ios_retention_view_device_manufacturer ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.firefox_ios_retention_view_device_type ;;
+    type: string
     group_label: "Base Fields"
   }
 

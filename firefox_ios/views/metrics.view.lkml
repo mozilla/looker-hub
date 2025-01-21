@@ -99,6 +99,42 @@ Firefox-iOS.
 "
   }
 
+  dimension: metrics__boolean__app_choice_screen_acquisition {
+    label: "App Choice Screen Acquisition"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.app_choice_screen_acquisition ;;
+    type: yesno
+    group_label: "App"
+    group_item_label: "Choice Screen Acquisition"
+
+    link: {
+      label: "Glean Dictionary reference for App Choice Screen Acquisition"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/app_choice_screen_acquisition"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The user installed the app via the browser choice screen
+"
+  }
+
+  dimension: metrics__boolean__app_default_browser {
+    label: "App Default Browser"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.app_default_browser ;;
+    type: yesno
+    group_label: "App"
+    group_item_label: "Default Browser"
+
+    link: {
+      label: "Glean Dictionary reference for App Default Browser"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/app_default_browser"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Is Firefox the default browser
+"
+  }
+
   dimension: metrics__counter__app_opened_as_default_browser {
     label: "App Opened As Default Browser"
     hidden: no
@@ -2113,6 +2149,42 @@ from the page action menu.
 "
   }
 
+  dimension: metrics__counter__password_generator_filled {
+    label: "Password Generator Filled"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.password_generator_filled ;;
+    type: number
+    group_label: "Password Generator"
+    group_item_label: "Filled"
+
+    link: {
+      label: "Glean Dictionary reference for Password Generator Filled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/password_generator_filled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The \"use password button\" of the password generator bottom sheet was clicked.
+"
+  }
+
+  dimension: metrics__counter__password_generator_shown {
+    label: "Password Generator Shown"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.password_generator_shown ;;
+    type: number
+    group_label: "Password Generator"
+    group_item_label: "Shown"
+
+    link: {
+      label: "Glean Dictionary reference for Password Generator Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/password_generator_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The password generator bottom sheet was shown and is visible
+"
+  }
+
   dimension: metrics__timing_distribution__places_history_migration_duration__sum {
     label: "Places History Migration Duration Sum"
     hidden: no
@@ -3312,25 +3384,6 @@ closes the application.
 "
   }
 
-  dimension: metrics__counter__tabs_pull_to_refresh {
-    label: "Tabs Pull To Refresh"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.tabs_pull_to_refresh ;;
-    type: number
-    group_label: "Tabs"
-    group_item_label: "Pull To Refresh"
-
-    link: {
-      label: "Glean Dictionary reference for Tabs Pull To Refresh"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_pull_to_refresh"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Record the number of times a user pulls down
-on a page to reload.
-"
-  }
-
   dimension: metrics__counter__tabs_reload_from_url_bar {
     label: "Tabs Reload From Url Bar"
     hidden: no
@@ -4167,7 +4220,7 @@ though the counts appear in the next successfully sent `metrics` ping.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A count of the pings submitted, by ping type.
+    description: "A count of the built-in pings submitted, by ping type.
 
 This metric appears in both the metrics and baseline pings.
 
@@ -4175,6 +4228,9 @@ This metric appears in both the metrics and baseline pings.
   the last metrics ping (including the last metrics ping)
 - On the baseline ping, the counts include the number of pings send since
   the last baseline ping (including the last baseline ping)
+
+Note: Previously this also recorded the number of submitted custom pings.
+Now it only records counts for the Glean built-in pings.
 "
   }
 
@@ -4558,6 +4614,21 @@ startup, as part of the initialization sequence.
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
   }
 
   dimension: client_info__android_sdk_version {
@@ -6804,6 +6875,56 @@ startup, as part of the initialization sequence.
     }
   }
 
+  measure: password_generator_filled {
+    type: sum
+    sql: ${metrics__counter__password_generator_filled} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Password Generator Filled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/password_generator_filled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: password_generator_filled_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__password_generator_filled: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Password Generator Filled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/password_generator_filled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: password_generator_shown {
+    type: sum
+    sql: ${metrics__counter__password_generator_shown} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Password Generator Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/password_generator_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: password_generator_shown_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__password_generator_shown: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Password Generator Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/password_generator_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: pocket_open_story {
     type: sum
     sql: ${metrics__counter__pocket_open_story} ;;
@@ -7375,31 +7496,6 @@ startup, as part of the initialization sequence.
     link: {
       label: "Glean Dictionary reference for Tabs Normal And Private Uri Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_normal_and_private_uri_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: tabs_pull_to_refresh {
-    type: sum
-    sql: ${metrics__counter__tabs_pull_to_refresh} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Tabs Pull To Refresh"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_pull_to_refresh"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: tabs_pull_to_refresh_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__tabs_pull_to_refresh: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Tabs Pull To Refresh"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_pull_to_refresh"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

@@ -10,6 +10,21 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -288,6 +303,20 @@ view: metrics_table {
     type: string
     group_label: "Metadata User Agent"
     group_item_label: "Version"
+  }
+
+  dimension: metrics__boolean__app_choice_screen_acquisition {
+    sql: ${TABLE}.metrics.boolean.app_choice_screen_acquisition ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "App Choice Screen Acquisition"
+  }
+
+  dimension: metrics__boolean__app_default_browser {
+    sql: ${TABLE}.metrics.boolean.app_default_browser ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "App Default Browser"
   }
 
   dimension: metrics__boolean__application_services_bookmark_highlights_visible {
@@ -1130,6 +1159,20 @@ view: metrics_table {
     group_item_label: "Page Action Menu View History Panel"
   }
 
+  dimension: metrics__counter__password_generator_filled {
+    sql: ${TABLE}.metrics.counter.password_generator_filled ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Password Generator Filled"
+  }
+
+  dimension: metrics__counter__password_generator_shown {
+    sql: ${TABLE}.metrics.counter.password_generator_shown ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Password Generator Shown"
+  }
+
   dimension: metrics__counter__pocket_open_story {
     sql: ${TABLE}.metrics.counter.pocket_open_story ;;
     type: number
@@ -1632,6 +1675,11 @@ view: metrics_table {
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__nimbus_system_recorded_nimbus_context {
+    sql: ${TABLE}.metrics.object.nimbus_system_recorded_nimbus_context ;;
     hidden: yes
   }
 

@@ -10,7 +10,10 @@ view: metric_definitions_fenix_retention_view {
                 SUM(retained_week_4) / SUM(active_metric_date) AS retention_rate_v1,
 SUM(retained_week_4_new_profiles) / SUM(new_profiles_metric_date) AS new_profile_retention_rate_v1,
 
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -62,6 +65,9 @@ fenix_retention_view_adjust_network,
 fenix_retention_view_app_name,
 fenix_retention_view_app_version,
 fenix_retention_view_country,
+fenix_retention_view_device_manufacturer,
+fenix_retention_view_device_type,
+fenix_retention_view_distribution_id,
 fenix_retention_view_install_source,
 fenix_retention_view_is_mobile,
 fenix_retention_view_lifecycle_stage,
@@ -110,7 +116,10 @@ fenix_retention_view_retained_week_4_new_profiles,
                 (
                     SELECT
                         fenix_retention_view.*,
-                        looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
+                        looker_base_fields.app_version_major AS looker_base_fields_app_version_major,
+looker_base_fields.app_version_minor AS looker_base_fields_app_version_minor,
+looker_base_fields.app_version_patch AS looker_base_fields_app_version_patch,
+looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
 looker_base_fields.client_info.app_build AS looker_base_fields_client_info__app_build,
 looker_base_fields.client_info.app_channel AS looker_base_fields_client_info__app_channel,
 looker_base_fields.client_info.app_display_version AS looker_base_fields_client_info__app_display_version,
@@ -162,6 +171,9 @@ fenix_retention_view.adjust_network AS fenix_retention_view_adjust_network,
 fenix_retention_view.app_name AS fenix_retention_view_app_name,
 fenix_retention_view.app_version AS fenix_retention_view_app_version,
 fenix_retention_view.country AS fenix_retention_view_country,
+fenix_retention_view.device_manufacturer AS fenix_retention_view_device_manufacturer,
+fenix_retention_view.device_type AS fenix_retention_view_device_type,
+fenix_retention_view.distribution_id AS fenix_retention_view_distribution_id,
 fenix_retention_view.install_source AS fenix_retention_view_install_source,
 fenix_retention_view.is_mobile AS fenix_retention_view_is_mobile,
 fenix_retention_view.lifecycle_stage AS fenix_retention_view_lifecycle_stage,
@@ -219,7 +231,10 @@ fenix_retention_view.retained_week_4_new_profiles AS fenix_retention_view_retain
                 
                 )
             GROUP BY
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -271,6 +286,9 @@ fenix_retention_view_adjust_network,
 fenix_retention_view_app_name,
 fenix_retention_view_app_version,
 fenix_retention_view_country,
+fenix_retention_view_device_manufacturer,
+fenix_retention_view_device_type,
+fenix_retention_view_distribution_id,
 fenix_retention_view_install_source,
 fenix_retention_view_is_mobile,
 fenix_retention_view_lifecycle_stage,
@@ -319,6 +337,24 @@ fenix_retention_view_retained_week_4_new_profiles,
 "
     type: number
     sql: ${TABLE}.new_profile_retention_rate_v1 ;;
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.looker_base_fields_app_version_major ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.looker_base_fields_app_version_minor ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.looker_base_fields_app_version_patch ;;
+    type: number
+    group_label: "Base Fields"
   }
 
   dimension: client_info__android_sdk_version {
@@ -687,6 +723,24 @@ fenix_retention_view_retained_week_4_new_profiles,
     sql: ${TABLE}.fenix_retention_view_country ;;
     type: string
     map_layer_name: countries
+    group_label: "Base Fields"
+  }
+
+  dimension: device_manufacturer {
+    sql: ${TABLE}.fenix_retention_view_device_manufacturer ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.fenix_retention_view_device_type ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: distribution_id {
+    sql: ${TABLE}.fenix_retention_view_distribution_id ;;
+    type: string
     group_label: "Base Fields"
   }
 

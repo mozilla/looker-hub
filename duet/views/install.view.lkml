@@ -62,7 +62,13 @@ view: install {
   dimension: disk_space_error {
     sql: ${TABLE}.disk_space_error ;;
     type: yesno
-    description: "True if the installation failed because the drive we're trying to install to does not have enough space"
+    description: "[DEPRECATED] Use `disk_space_req_not_met` instead."
+  }
+
+  dimension: disk_space_req_not_met {
+    sql: ${TABLE}.disk_space_req_not_met ;;
+    type: yesno
+    description: "True if the installation failed because the drive we're trying to install to does not have enough space."
   }
 
   dimension: distribution_id {
@@ -152,6 +158,12 @@ view: install {
     sql: ${TABLE}.had_old_install ;;
     type: yesno
     description: "True if at least one existing installation of Firefox was found on the system prior to this installation"
+  }
+
+  dimension: hardware_req_not_met {
+    sql: ${TABLE}.hardware_req_not_met ;;
+    type: yesno
+    description: "True if the system hardware does not meet the minimum hardware requirements."
   }
 
   dimension: install_time {
@@ -379,7 +391,7 @@ view: install {
   dimension: no_write_access {
     sql: ${TABLE}.no_write_access ;;
     type: yesno
-    description: "True if the installation failed because the user doesn’t have permission to write to the path we’re trying to install to."
+    description: "[DEPRECATED] Use `writeable_req_not_met` instead."
   }
 
   dimension: normalized_app_name {
@@ -426,7 +438,7 @@ view: install {
   dimension: old_running {
     sql: ${TABLE}.old_running ;;
     type: yesno
-    description: "True if the installation succeeded and we weren’t able to launch the newly installed application because a copy of Firefox was already running."
+    description: "[DEPRECATED] Should always be false since Firefox 74, since this check was removed in that version."
   }
 
   dimension: old_version {
@@ -445,6 +457,12 @@ view: install {
     sql: ${TABLE}.os_version ;;
     type: string
     description: "Windows version number in major.minor.build format"
+  }
+
+  dimension: os_version_req_not_met {
+    sql: ${TABLE}.os_version_req_not_met ;;
+    type: yesno
+    description: " True if the system does not meet the minimum OS version requirements."
   }
 
   dimension: out_of_retries {
@@ -506,6 +524,12 @@ view: install {
     description: "True if the option to set the new installation as the default browser was selected"
   }
 
+  dimension: sig_check_timeout {
+    sql: ${TABLE}.sig_check_timeout ;;
+    type: yesno
+    description: "True if there was a timeout on the the certificate checks"
+  }
+
   dimension: sig_not_trusted {
     sql: ${TABLE}.sig_not_trusted ;;
     type: yesno
@@ -524,10 +548,22 @@ view: install {
     description: "True if the installer was run in silent mode (either from an MSI or with command-line parameters)"
   }
 
+  dimension: stub_build_id {
+    sql: ${TABLE}.stub_build_id ;;
+    type: string
+    description: "Build ID of the stub installer"
+  }
+
   dimension: succeeded {
     sql: ${TABLE}.succeeded ;;
     type: yesno
     description: "True if a new installation was successfully created. If false, check the error status fields for the failure reason."
+  }
+
+  dimension: unknown_error {
+    sql: ${TABLE}.unknown_error ;;
+    type: yesno
+    description: "Default failure exit code. Seeing this in telemetry indicates that the stub installer has exited unsuccessfully, but no reason has been specified"
   }
 
   dimension: update_channel {
@@ -546,6 +582,18 @@ view: install {
     sql: ${TABLE}.version ;;
     type: string
     description: "Version of the installed product. May be different from installer_version for a stub install. Absent for a failed stub installation."
+  }
+
+  dimension: windows_ubr {
+    sql: ${TABLE}.windows_ubr ;;
+    type: number
+    description: "The Windows Update Build Revision of the installation device, 0 if it does not exist"
+  }
+
+  dimension: writeable_req_not_met {
+    sql: ${TABLE}.writeable_req_not_met ;;
+    type: yesno
+    description: "True if the installation failed because the user doesn't have permission to write to the path we're trying to install to."
   }
 
   dimension_group: metadata__header__parsed {

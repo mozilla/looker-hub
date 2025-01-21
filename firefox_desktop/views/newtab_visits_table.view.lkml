@@ -105,6 +105,11 @@ view: newtab_visits_table {
     type: yesno
   }
 
+  dimension: newtab_selected_topics {
+    sql: ${TABLE}.newtab_selected_topics ;;
+    hidden: yes
+  }
+
   dimension: newtab_visit_ended_at {
     sql: ${TABLE}.newtab_visit_ended_at ;;
     type: number
@@ -123,6 +128,16 @@ view: newtab_visits_table {
   dimension: newtab_weather_widget_enabled {
     sql: ${TABLE}.newtab_weather_widget_enabled ;;
     type: yesno
+  }
+
+  dimension: newtab_window_inner_height {
+    sql: ${TABLE}.newtab_window_inner_height ;;
+    type: number
+  }
+
+  dimension: newtab_window_inner_width {
+    sql: ${TABLE}.newtab_window_inner_width ;;
+    type: number
   }
 
   dimension: normalized_os {
@@ -155,8 +170,19 @@ view: newtab_visits_table {
     type: yesno
   }
 
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
+    description: "A UUID identifying the profile's group on a single device and allowing user-oriented correlation of data"
+  }
+
   dimension: search_interactions {
     sql: ${TABLE}.search_interactions ;;
+    hidden: yes
+  }
+
+  dimension: topic_selection_interactions {
+    sql: ${TABLE}.topic_selection_interactions ;;
     hidden: yes
   }
 
@@ -178,6 +204,12 @@ view: newtab_visits_table {
   dimension: topsites_sponsored_enabled {
     sql: ${TABLE}.topsites_sponsored_enabled ;;
     type: yesno
+  }
+
+  dimension: topsites_sponsored_tiles_configured {
+    sql: ${TABLE}.topsites_sponsored_tiles_configured ;;
+    type: number
+    description: "An integer from client configuration that determines how many tiles the client can see. This telemetry released in Fx123 (2024/02/20), so it should only be considered for clients with Fx123+."
   }
 
   dimension: wallpaper_interactions {
@@ -237,8 +269,53 @@ view: newtab_visits_table__experiments {
 }
 
 view: newtab_visits_table__pocket_interactions {
+  dimension: list_card_clicks {
+    sql: ${TABLE}.list_card_clicks ;;
+    type: number
+  }
+
+  dimension: list_card_dismissals {
+    sql: ${TABLE}.list_card_dismissals ;;
+    type: number
+  }
+
+  dimension: list_card_impressions {
+    sql: ${TABLE}.list_card_impressions ;;
+    type: number
+  }
+
+  dimension: list_card_saves {
+    sql: ${TABLE}.list_card_saves ;;
+    type: number
+  }
+
+  dimension: organic_list_card_clicks {
+    sql: ${TABLE}.organic_list_card_clicks ;;
+    type: number
+  }
+
+  dimension: organic_list_card_dismissals {
+    sql: ${TABLE}.organic_list_card_dismissals ;;
+    type: number
+  }
+
+  dimension: organic_list_card_impressions {
+    sql: ${TABLE}.organic_list_card_impressions ;;
+    type: number
+  }
+
+  dimension: organic_list_card_saves {
+    sql: ${TABLE}.organic_list_card_saves ;;
+    type: number
+  }
+
   dimension: organic_pocket_clicks {
     sql: ${TABLE}.organic_pocket_clicks ;;
+    type: number
+  }
+
+  dimension: organic_pocket_dismissals {
+    sql: ${TABLE}.organic_pocket_dismissals ;;
     type: number
   }
 
@@ -262,6 +339,16 @@ view: newtab_visits_table__pocket_interactions {
     type: number
   }
 
+  dimension: pocket_matches_selected_topic {
+    sql: ${TABLE}.pocket_matches_selected_topic ;;
+    type: string
+  }
+
+  dimension: pocket_received_rank {
+    sql: ${TABLE}.pocket_received_rank ;;
+    type: number
+  }
+
   dimension: pocket_recommendation_id {
     sql: ${TABLE}.pocket_recommendation_id ;;
     type: string
@@ -272,8 +359,23 @@ view: newtab_visits_table__pocket_interactions {
     type: number
   }
 
+  dimension: pocket_scheduled_corpus_item_id {
+    sql: ${TABLE}.pocket_scheduled_corpus_item_id ;;
+    type: string
+  }
+
   dimension: pocket_story_position {
     sql: ${TABLE}.pocket_story_position ;;
+    type: number
+  }
+
+  dimension: pocket_thumbs_down {
+    sql: ${TABLE}.pocket_thumbs_down ;;
+    type: number
+  }
+
+  dimension: pocket_thumbs_up {
+    sql: ${TABLE}.pocket_thumbs_up ;;
     type: number
   }
 
@@ -282,8 +384,38 @@ view: newtab_visits_table__pocket_interactions {
     type: string
   }
 
+  dimension: pocket_topic {
+    sql: ${TABLE}.pocket_topic ;;
+    type: string
+  }
+
+  dimension: sponsored_list_card_clicks {
+    sql: ${TABLE}.sponsored_list_card_clicks ;;
+    type: number
+  }
+
+  dimension: sponsored_list_card_dismissals {
+    sql: ${TABLE}.sponsored_list_card_dismissals ;;
+    type: number
+  }
+
+  dimension: sponsored_list_card_impressions {
+    sql: ${TABLE}.sponsored_list_card_impressions ;;
+    type: number
+  }
+
+  dimension: sponsored_list_card_saves {
+    sql: ${TABLE}.sponsored_list_card_saves ;;
+    type: number
+  }
+
   dimension: sponsored_pocket_clicks {
     sql: ${TABLE}.sponsored_pocket_clicks ;;
+    type: number
+  }
+
+  dimension: sponsored_pocket_dismissals {
+    sql: ${TABLE}.sponsored_pocket_dismissals ;;
     type: number
   }
 
@@ -342,6 +474,38 @@ view: newtab_visits_table__search_interactions {
   dimension: tagged_search_ad_impressions {
     sql: ${TABLE}.tagged_search_ad_impressions ;;
     type: number
+  }
+}
+
+view: newtab_visits_table__topic_selection_interactions {
+  dimension: previous_topics {
+    sql: ${TABLE}.previous_topics ;;
+    type: string
+  }
+
+  dimension: topic_selection_dismiss {
+    sql: ${TABLE}.topic_selection_dismiss ;;
+    type: number
+  }
+
+  dimension: topic_selection_open {
+    sql: ${TABLE}.topic_selection_open ;;
+    type: number
+  }
+
+  dimension: topic_selection_topics_first_saved {
+    sql: ${TABLE}.topic_selection_topics_first_saved ;;
+    type: number
+  }
+
+  dimension: topic_selection_topics_updated {
+    sql: ${TABLE}.topic_selection_topics_updated ;;
+    type: number
+  }
+
+  dimension: topics {
+    sql: ${TABLE}.topics ;;
+    type: string
   }
 }
 
@@ -477,6 +641,11 @@ view: newtab_visits_table__weather_interactions {
 
   dimension: weather_widget_load_errors {
     sql: ${TABLE}.weather_widget_load_errors ;;
+    type: number
+  }
+
+  dimension: weather_widget_location_selected {
+    sql: ${TABLE}.weather_widget_location_selected ;;
     type: number
   }
 }

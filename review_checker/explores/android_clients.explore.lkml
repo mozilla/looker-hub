@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/review_checker/views/android_clients.view.lkml"
+include: "/looker-hub/review_checker/datagroups/android_clients_last_updated.datagroup.lkml"
 
 explore: android_clients {
   sql_always_where: ${android_clients.submission_date} >= '2010-01-01' ;;
@@ -21,4 +22,6 @@ explore: android_clients {
       submission_date: "28 days",
     ]
   }
+
+  persist_with: android_clients_last_updated
 }

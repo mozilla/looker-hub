@@ -9,7 +9,10 @@ view: metric_definitions_focus_android_active_users_aggregates_view {
     sql: SELECT
                 SUM(dau) AS daily_active_users_v2,
 
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -67,6 +70,7 @@ focus_android_active_users_aggregates_view_os_grouped,
 focus_android_active_users_aggregates_view_os_version,
 focus_android_active_users_aggregates_view_os_version_major,
 focus_android_active_users_aggregates_view_os_version_minor,
+focus_android_active_users_aggregates_view_partnership,
 focus_android_active_users_aggregates_view_segment,
 focus_android_active_users_aggregates_view_wau,
 focus_android_active_users_aggregates_view_weekly_users,
@@ -102,7 +106,10 @@ focus_android_active_users_aggregates_view_weekly_users,
                 (
                     SELECT
                         focus_android_active_users_aggregates_view.*,
-                        looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
+                        looker_base_fields.app_version_major AS looker_base_fields_app_version_major,
+looker_base_fields.app_version_minor AS looker_base_fields_app_version_minor,
+looker_base_fields.app_version_patch AS looker_base_fields_app_version_patch,
+looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
 looker_base_fields.client_info.app_build AS looker_base_fields_client_info__app_build,
 looker_base_fields.client_info.app_channel AS looker_base_fields_client_info__app_channel,
 looker_base_fields.client_info.app_display_version AS looker_base_fields_client_info__app_display_version,
@@ -160,6 +167,7 @@ focus_android_active_users_aggregates_view.os_grouped AS focus_android_active_us
 focus_android_active_users_aggregates_view.os_version AS focus_android_active_users_aggregates_view_os_version,
 focus_android_active_users_aggregates_view.os_version_major AS focus_android_active_users_aggregates_view_os_version_major,
 focus_android_active_users_aggregates_view.os_version_minor AS focus_android_active_users_aggregates_view_os_version_minor,
+focus_android_active_users_aggregates_view.partnership AS focus_android_active_users_aggregates_view_partnership,
 focus_android_active_users_aggregates_view.segment AS focus_android_active_users_aggregates_view_segment,
 focus_android_active_users_aggregates_view.wau AS focus_android_active_users_aggregates_view_wau,
 focus_android_active_users_aggregates_view.weekly_users AS focus_android_active_users_aggregates_view_weekly_users,
@@ -204,7 +212,10 @@ focus_android_active_users_aggregates_view.weekly_users AS focus_android_active_
                 
                 )
             GROUP BY
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -262,6 +273,7 @@ focus_android_active_users_aggregates_view_os_grouped,
 focus_android_active_users_aggregates_view_os_version,
 focus_android_active_users_aggregates_view_os_version_major,
 focus_android_active_users_aggregates_view_os_version_minor,
+focus_android_active_users_aggregates_view_partnership,
 focus_android_active_users_aggregates_view_segment,
 focus_android_active_users_aggregates_view_wau,
 focus_android_active_users_aggregates_view_weekly_users,
@@ -294,6 +306,24 @@ focus_android_active_users_aggregates_view_weekly_users,
 "
     type: number
     sql: ${TABLE}.daily_active_users_v2 ;;
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.looker_base_fields_app_version_major ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.looker_base_fields_app_version_minor ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.looker_base_fields_app_version_patch ;;
+    type: number
+    group_label: "Base Fields"
   }
 
   dimension: client_info__android_sdk_version {
@@ -542,18 +572,6 @@ focus_android_active_users_aggregates_view_weekly_users,
     group_label: "Base Fields"
   }
 
-  dimension: app_version_major {
-    sql: ${TABLE}.focus_android_active_users_aggregates_view_app_version_major ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: app_version_minor {
-    sql: ${TABLE}.focus_android_active_users_aggregates_view_app_version_minor ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
   dimension: app_version_patch_revision {
     sql: ${TABLE}.focus_android_active_users_aggregates_view_app_version_patch_revision ;;
     type: number
@@ -678,6 +696,12 @@ focus_android_active_users_aggregates_view_weekly_users,
   dimension: os_version_minor {
     sql: ${TABLE}.focus_android_active_users_aggregates_view_os_version_minor ;;
     type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: partnership {
+    sql: ${TABLE}.focus_android_active_users_aggregates_view_partnership ;;
+    type: string
     group_label: "Base Fields"
   }
 

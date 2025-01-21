@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: accounts_events {
+  dimension: metrics__string__account_user_id {
+    label: "Account User Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.account_user_id ;;
+    type: string
+    group_label: "Account"
+    group_item_label: "User Id"
+
+    link: {
+      label: "Glean Dictionary reference for Account User Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/account_user_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The firefox/mozilla account id
+"
+  }
+
   dimension: metrics__string__account_user_id_sha256 {
     label: "Account User Id Sha256"
     hidden: no
@@ -20,6 +38,44 @@ view: accounts_events {
     }
 
     description: "A hex string of a sha256 hash of the account's uid
+"
+  }
+
+  dimension: metrics__string__entrypoint_experiment {
+    label: "Entrypoint Experiment"
+    hidden: no
+    sql: ${TABLE}.metrics.string.entrypoint_experiment ;;
+    type: string
+    group_label: "Entrypoint"
+    group_item_label: "Experiment"
+
+    link: {
+      label: "Glean Dictionary reference for Entrypoint Experiment"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/entrypoint_experiment"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The entrypoint experiment the user was assigned to. This value is specified
+by query parameter `entrypoint_experiment` in the URL.
+"
+  }
+
+  dimension: metrics__string__entrypoint_variation {
+    label: "Entrypoint Variation"
+    hidden: no
+    sql: ${TABLE}.metrics.string.entrypoint_variation ;;
+    type: string
+    group_label: "Entrypoint"
+    group_item_label: "Variation"
+
+    link: {
+      label: "Glean Dictionary reference for Entrypoint Variation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/entrypoint_variation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The entrypoint variation the user was assigned to. This value is specified
+by query parameter `entrypoint_variation` in the URL.
 "
   }
 
@@ -56,6 +112,23 @@ view: accounts_events {
     }
 
     description: "additional context-dependent (on event.name) info, e.g. the cause of an error"
+  }
+
+  dimension: metrics__boolean__event_third_party_links {
+    label: "Event Third Party Links"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.event_third_party_links ;;
+    type: yesno
+    group_label: "Event"
+    group_item_label: "Third Party Links"
+
+    link: {
+      label: "Glean Dictionary reference for Event Third Party Links"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/event_third_party_links"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "boolean, additional context-dependent (on event.name) info related to third party auth links"
   }
 
   dimension: metrics__string__relying_party_oauth_client_id {
@@ -394,6 +467,21 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
     description: "A JSON string containing any payload properties not present in the schema"
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
   }
 
   dimension: client_info__android_sdk_version {

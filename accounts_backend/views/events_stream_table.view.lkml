@@ -10,6 +10,21 @@ view: events_stream_table {
     hidden: yes
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
@@ -141,6 +156,11 @@ view: events_stream_table {
   dimension: experiments {
     sql: ${TABLE}.experiments ;;
     hidden: yes
+  }
+
+  dimension: legacy_telemetry_client_id {
+    sql: ${TABLE}.legacy_telemetry_client_id ;;
+    type: string
   }
 
   dimension: metadata__geo__city {
@@ -316,6 +336,13 @@ view: events_stream_table {
     hidden: yes
   }
 
+  dimension: metrics__string__account_user_id {
+    sql: ${TABLE}.metrics.string.account_user_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Account User Id"
+  }
+
   dimension: metrics__string__account_user_id_sha256 {
     sql: ${TABLE}.metrics.string.account_user_id_sha256 ;;
     type: string
@@ -356,6 +383,20 @@ view: events_stream_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Session Entrypoint"
+  }
+
+  dimension: metrics__string__session_entrypoint_experiment {
+    sql: ${TABLE}.metrics.string.session_entrypoint_experiment ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Session Entrypoint Experiment"
+  }
+
+  dimension: metrics__string__session_entrypoint_variation {
+    sql: ${TABLE}.metrics.string.session_entrypoint_variation ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Session Entrypoint Variation"
   }
 
   dimension: metrics__string__session_flow_id {
@@ -451,6 +492,11 @@ view: events_stream_table {
     type: string
     group_label: "Ping Info"
     group_item_label: "Start Time"
+  }
+
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
   }
 
   dimension: reason {

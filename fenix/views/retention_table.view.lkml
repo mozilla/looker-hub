@@ -54,6 +54,26 @@ view: retention_table {
     description: "Client's country on the metric date."
   }
 
+  dimension: device_manufacturer {
+    sql: ${TABLE}.device_manufacturer ;;
+    type: string
+    description: "Manufacturer of the device where the client is installed.
+"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.device_type ;;
+    type: string
+    description: "On Apple devices allows us to differentiate between iPhone and iPad. On Android devices the value is always \"Android\".
+"
+  }
+
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+    description: "A string containing the distribution identifier."
+  }
+
   dimension: install_source {
     sql: ${TABLE}.install_source ;;
     type: string

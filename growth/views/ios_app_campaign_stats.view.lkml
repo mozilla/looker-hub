@@ -32,7 +32,7 @@ view: ios_app_campaign_stats {
   dimension: campaign_country_code {
     sql: ${TABLE}.campaign_country_code ;;
     type: string
-    description: "Campaign Country Code"
+    description: "Campaign country code (normalized)."
   }
 
   dimension: campaign_id {
@@ -44,25 +44,25 @@ view: ios_app_campaign_stats {
   dimension: clicks {
     sql: ${TABLE}.clicks ;;
     type: number
-    description: "Number of Clicks"
+    description: "The number of times your ad was tapped by users within the reporting time period."
   }
 
   dimension: downloads {
     sql: ${TABLE}.downloads ;;
     type: number
-    description: "Number of Downloads"
+    description: "The total number of tap-through and view-through new downloads within the reporting period."
   }
 
   dimension: impressions {
     sql: ${TABLE}.impressions ;;
     type: number
-    description: "Number of Impressions"
+    description: "The number of times your ad appeared on the App Store within the reporting time period."
   }
 
   dimension: lifetime_value {
     sql: ${TABLE}.lifetime_value ;;
     type: number
-    description: "Lifetime Value"
+    description: "Lifetime Value of the specific client."
   }
 
   dimension: new_profiles {
@@ -80,7 +80,7 @@ view: ios_app_campaign_stats {
   dimension: spend {
     sql: ${TABLE}.spend ;;
     type: string
-    description: "Marketing Spend"
+    description: "The sum of the cost of each customer tap on your ad over the period of time set for your reporting."
   }
 
   dimension: week_4_retained_users {

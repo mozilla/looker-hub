@@ -10,6 +10,21 @@ view: events_table {
     hidden: yes
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -302,6 +317,13 @@ view: events_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Tabs Grouped Tab Closed"
+  }
+
+  dimension: metrics__counter__tabs_pull_to_refresh {
+    sql: ${TABLE}.metrics.counter.tabs_pull_to_refresh ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Tabs Pull To Refresh"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {

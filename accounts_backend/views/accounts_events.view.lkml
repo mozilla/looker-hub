@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: accounts_events {
+  dimension: metrics__string__account_user_id {
+    label: "Account User Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.account_user_id ;;
+    type: string
+    group_label: "Account"
+    group_item_label: "User Id"
+
+    link: {
+      label: "Glean Dictionary reference for Account User Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/account_user_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The firefox/mozilla account id
+"
+  }
+
   dimension: metrics__string__account_user_id_sha256 {
     label: "Account User Id Sha256"
     hidden: no
@@ -216,7 +234,41 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "entrypoint to the service"
+    description: "Entrypoint to the service"
+  }
+
+  dimension: metrics__string__session_entrypoint_experiment {
+    label: "Session Entrypoint Experiment"
+    hidden: no
+    sql: ${TABLE}.metrics.string.session_entrypoint_experiment ;;
+    type: string
+    group_label: "Session"
+    group_item_label: "Entrypoint Experiment"
+
+    link: {
+      label: "Glean Dictionary reference for Session Entrypoint Experiment"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/session_entrypoint_experiment"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Identifier for the experiment the user is part of at the entrypoint"
+  }
+
+  dimension: metrics__string__session_entrypoint_variation {
+    label: "Session Entrypoint Variation"
+    hidden: no
+    sql: ${TABLE}.metrics.string.session_entrypoint_variation ;;
+    type: string
+    group_label: "Session"
+    group_item_label: "Entrypoint Variation"
+
+    link: {
+      label: "Glean Dictionary reference for Session Entrypoint Variation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/session_entrypoint_variation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Identifier for the experiment variation the user is part of at the entrypoint"
   }
 
   dimension: metrics__string__session_flow_id {
@@ -353,6 +405,21 @@ characters.
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
     description: "A JSON string containing any payload properties not present in the schema"
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
   }
 
   dimension: client_info__android_sdk_version {

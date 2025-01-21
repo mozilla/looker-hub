@@ -747,6 +747,168 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__boolean__a11y_always_underline_links {
+    label: "A11Y Always Underline Links"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.a11y_always_underline_links ;;
+    type: yesno
+    group_label: "A11Y"
+    group_item_label: "Always Underline Links"
+
+    link: {
+      label: "Glean Dictionary reference for A11Y Always Underline Links"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/a11y_always_underline_links"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Bool tracking if the user has always underline links enabled in firefox. This metric was generated to correspond to the Legacy Telemetry scalar a11y.always_underline_links.
+"
+  }
+
+  dimension: metrics__boolean__a11y_backplate {
+    label: "A11Y Backplate"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.a11y_backplate ;;
+    type: yesno
+    group_label: "A11Y"
+    group_item_label: "Backplate"
+
+    link: {
+      label: "Glean Dictionary reference for A11Y Backplate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/a11y_backplate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Boolean tracking if the user has the backplate preference enabled or disabled. This metric was generated to correspond to the Legacy Telemetry scalar a11y.backplate.
+"
+  }
+
+  dimension: metrics__quantity__a11y_hcm_background {
+    label: "A11Y Hcm Background"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.a11y_hcm_background ;;
+    type: number
+    group_label: "A11Y"
+    group_item_label: "Hcm Background"
+
+    link: {
+      label: "Glean Dictionary reference for A11Y Hcm Background"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/a11y_hcm_background"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Unsigned int tracking the user's prefered background color \ (logged when HCM is enabled). This metric was generated to correspond to the Legacy Telemetry scalar a11y.HCM_background.
+"
+  }
+
+  dimension: metrics__quantity__a11y_hcm_foreground {
+    label: "A11Y Hcm Foreground"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.a11y_hcm_foreground ;;
+    type: number
+    group_label: "A11Y"
+    group_item_label: "Hcm Foreground"
+
+    link: {
+      label: "Glean Dictionary reference for A11Y Hcm Foreground"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/a11y_hcm_foreground"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Unsigned int tracking the user's prefered foreground color \ (logged when HCM is enabled). This metric was generated to correspond to the Legacy Telemetry scalar a11y.HCM_foreground.
+"
+  }
+
+  dimension: metrics__string__a11y_instantiators {
+    label: "A11Y Instantiators"
+    hidden: no
+    sql: ${TABLE}.metrics.string.a11y_instantiators ;;
+    type: string
+    group_label: "A11Y"
+    group_item_label: "Instantiators"
+
+    link: {
+      label: "Glean Dictionary reference for A11Y Instantiators"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/a11y_instantiators"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The leaf name and version number of the binary for the process responsible for remotely instantiating a11y. This metric was generated to correspond to the Legacy Telemetry scalar a11y.instantiators.
+"
+  }
+
+  dimension: metrics__boolean__a11y_invert_colors {
+    label: "A11Y Invert Colors"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.a11y_invert_colors ;;
+    type: yesno
+    group_label: "A11Y"
+    group_item_label: "Invert Colors"
+
+    link: {
+      label: "Glean Dictionary reference for A11Y Invert Colors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/a11y_invert_colors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Boolean tracking if the user has an invert colors OS setting enabled. This metric was generated to correspond to the Legacy Telemetry scalar a11y.invert_colors.
+"
+  }
+
+  dimension: metrics__labeled_boolean__a11y_theme {
+    label: "A11Y Theme"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.a11y_theme ;;
+    type: string
+    group_label: "A11Y"
+    group_item_label: "Theme"
+
+    link: {
+      label: "Glean Dictionary reference for A11Y Theme"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/a11y_theme"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "OS high contrast or other accessibility theme is enabled. The result is split into keys which represent the values of browser.display.document_color_use: \"default\", \"always\", or \"never\". This metric was generated to correspond to the Legacy Telemetry scalar a11y.theme.
+"
+  }
+
+  dimension: metrics__boolean__a11y_use_system_colors {
+    label: "A11Y Use System Colors"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.a11y_use_system_colors ;;
+    type: yesno
+    group_label: "A11Y"
+    group_item_label: "Use System Colors"
+
+    link: {
+      label: "Glean Dictionary reference for A11Y Use System Colors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/a11y_use_system_colors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Bool tracking if the user has system colors enabled in firefox. This metric was generated to correspond to the Legacy Telemetry scalar a11y.use_system_colors.
+"
+  }
+
+  dimension: metrics__counter__apz_scrollwheel_overshoot {
+    label: "Apz Scrollwheel Overshoot"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.apz_scrollwheel_overshoot ;;
+    type: number
+    group_label: "Apz"
+    group_item_label: "Scrollwheel Overshoot"
+
+    link: {
+      label: "Glean Dictionary reference for Apz Scrollwheel Overshoot"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/apz_scrollwheel_overshoot"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of overshoot events, where the user reverses scrollwheel direction soon after the last scrollwheel input. This metric was generated to correspond to the Legacy Telemetry scalar apz.scrollwheel_overshoot.
+"
+  }
+
   dimension: metrics__labeled_counter__avif_a1lx {
     label: "Avif A1Lx"
     hidden: yes
@@ -1088,6 +1250,24 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__string__blocklist_mlbf_softblocks_source {
+    label: "Blocklist Mlbf Softblocks Source"
+    hidden: no
+    sql: ${TABLE}.metrics.string.blocklist_mlbf_softblocks_source ;;
+    type: string
+    group_label: "Blocklist"
+    group_item_label: "Mlbf Softblocks Source"
+
+    link: {
+      label: "Glean Dictionary reference for Blocklist Mlbf Softblocks Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/blocklist_mlbf_softblocks_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The source of the RemoteSettings attachment that holds the bloom filter. Possible values are \"dump_match\", \"cache_match\", \"remote_match\",\"dump_fallback\", \"cache_fallback\", \"unknown\". \"dump_match\", \"cache_match\" and \"remote_match\" are expected known-good values, and means that the loaded bloomfilter matches the blocklist record in the RemoteSettings collection. The prefix denotes the immediate source of the loaded data: \"dump\" means packaged with the application, \"remote\" means a freshly downloaded bloomfilter, \"cache\" means a previously downloaded bloomfilter. \"dump_fallback\" and \"cache_fallback\" means that the last known bloomfilter was used, despite it not matching the latest record in the RemoteSettings collection. In this case the outdated bloomfilter is used as a fallback (e.g. because the latest version cannot be downloaded). \"unknown\"  means that the bloomfilter cannot be loaded at all. This can happen if the blocklist is disabled via preferences or enterprise policies.
+"
+  }
+
   dimension: metrics__string__blocklist_mlbf_source {
     label: "Blocklist Mlbf Source"
     hidden: no
@@ -1108,7 +1288,7 @@ the tracking protection settings panel from the toolbar.
 
   dimension: metrics__boolean__bounce_tracking_protection_enabled_at_startup {
     label: "Bounce Tracking Protection Enabled At Startup"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_at_startup ;;
     type: yesno
     group_label: "Bounce Tracking Protection"
@@ -1126,7 +1306,7 @@ the tracking protection settings panel from the toolbar.
 
   dimension: metrics__boolean__bounce_tracking_protection_enabled_dry_run_mode_at_startup {
     label: "Bounce Tracking Protection Enabled Dry Run Mode At Startup"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_dry_run_mode_at_startup ;;
     type: yesno
     group_label: "Bounce Tracking Protection"
@@ -1139,6 +1319,24 @@ the tracking protection settings panel from the toolbar.
     }
 
     description: "Keeps track of whether the feature is enabled and running in dry-run mode at startup.
+"
+  }
+
+  dimension: metrics__quantity__bounce_tracking_protection_mode {
+    label: "Bounce Tracking Protection Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.bounce_tracking_protection_mode ;;
+    type: number
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/bounce_tracking_protection_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the pref value of privacy.bounceTrackingProtection.mode. Values are any of nsIBounceTrackingProtection#Modes.
 "
   }
 
@@ -1213,6 +1411,59 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_added {
+    label: "Browser Engagement Bookmarks Toolbar Bookmark Added"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_bookmarks_toolbar_bookmark_added ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Bookmarks Toolbar Bookmark Added"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/browser_engagement_bookmarks_toolbar_bookmark_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of bookmarks added to the bookmarks toolbar. This counts bookmarks created on the bookmarks toolbar and bookmarks moved to the bookmarks toolbar. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.bookmarks_toolbar_bookmark_added.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_opened {
+    label: "Browser Engagement Bookmarks Toolbar Bookmark Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_bookmarks_toolbar_bookmark_opened ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Bookmarks Toolbar Bookmark Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/browser_engagement_bookmarks_toolbar_bookmark_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of bookmarks opened from the Bookmarks Toolbar. This counts bookmarks opened on the toolbar and bookmarks opened from the 'symlinked' Other Bookmarks folder on the Bookmarks Toolbar. It does not count Bookmarks Toolbar bookmarks opened via the Library, Bookmarks Menu, or other UI since the goal is to measure interactions that pass through the toolbar. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.bookmarks_toolbar_bookmark_opened.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_keyboard {
+    label: "Browser Ui Interaction Keyboard"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_keyboard ;;
+    group_label: "Browser Ui Interaction"
+    group_item_label: "Keyboard"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Ui Interaction Keyboard"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/browser_ui_interaction_keyboard"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records a count of interactions with keyboard shortcuts. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.keyboard.
+"
+  }
+
   dimension: metrics__boolean__browser_ui_proton_enabled {
     label: "Browser Ui Proton Enabled"
     hidden: yes
@@ -1233,7 +1484,7 @@ the tracking protection settings panel from the toolbar.
 
   dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__sum {
     label: "Cert Compression Brotli Saved Bytes Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.sum ;;
     type: number
     group_label: "Cert Compression"
@@ -1282,7 +1533,7 @@ the tracking protection settings panel from the toolbar.
 
   dimension: metrics__custom_distribution__cert_compression_zlib_saved_bytes__sum {
     label: "Cert Compression Zlib Saved Bytes Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cert_compression_zlib_saved_bytes.sum ;;
     type: number
     group_label: "Cert Compression"
@@ -1299,7 +1550,7 @@ the tracking protection settings panel from the toolbar.
 
   dimension: metrics__custom_distribution__cert_compression_zstd_saved_bytes__sum {
     label: "Cert Compression Zstd Saved Bytes Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cert_compression_zstd_saved_bytes.sum ;;
     type: number
     group_label: "Cert Compression"
@@ -1314,9 +1565,188 @@ the tracking protection settings panel from the toolbar.
     description: "The difference between the length of encoded certificate vs the actual certificate."
   }
 
+  dimension: metrics__rate__cert_signature_cache_hits__numerator {
+    label: "Cert Signature Cache Hits Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.cert_signature_cache_hits.numerator ;;
+    type: number
+    group_label: "Cert Signature Cache"
+    group_item_label: "Hits Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Signature Cache Hits Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_signature_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often a certificate signature to be verified is in the cache already.
+"
+  }
+
+  dimension: metrics__rate__cert_signature_cache_hits__denominator {
+    label: "Cert Signature Cache Hits Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.cert_signature_cache_hits.denominator ;;
+    type: number
+    group_label: "Cert Signature Cache"
+    group_item_label: "Hits Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Signature Cache Hits Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_signature_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often a certificate signature to be verified is in the cache already.
+"
+  }
+
+  dimension: metrics__counter__cert_signature_cache_total {
+    label: "Cert Signature Cache Total"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.cert_signature_cache_total ;;
+    type: number
+    group_label: "Cert Signature Cache"
+    group_item_label: "Total"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Signature Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_signature_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many certificate signature verifications are performed.
+"
+  }
+
+  dimension: metrics__memory_distribution__cert_storage_memory__sum {
+    label: "Cert Storage Memory Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.cert_storage_memory.sum ;;
+    type: number
+    group_label: "Cert Storage"
+    group_item_label: "Memory Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Storage Memory Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_storage_memory"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Heap memory used by cert_storage.
+"
+  }
+
+  dimension: metrics__rate__cert_trust_cache_hits__numerator {
+    label: "Cert Trust Cache Hits Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.cert_trust_cache_hits.numerator ;;
+    type: number
+    group_label: "Cert Trust Cache"
+    group_item_label: "Hits Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Trust Cache Hits Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_trust_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often a certificate's trust is in the cache already.
+"
+  }
+
+  dimension: metrics__rate__cert_trust_cache_hits__denominator {
+    label: "Cert Trust Cache Hits Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.cert_trust_cache_hits.denominator ;;
+    type: number
+    group_label: "Cert Trust Cache"
+    group_item_label: "Hits Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Trust Cache Hits Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_trust_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often a certificate's trust is in the cache already.
+"
+  }
+
+  dimension: metrics__counter__cert_trust_cache_total {
+    label: "Cert Trust Cache Total"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.cert_trust_cache_total ;;
+    type: number
+    group_label: "Cert Trust Cache"
+    group_item_label: "Total"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Trust Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_trust_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many certificate trust lookups are performed.
+"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_failure__sum {
+    label: "Cert Verification Time Failure Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.sum ;;
+    type: number
+    group_label: "Cert Verification Time"
+    group_item_label: "Failure Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verification Time Failure Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_verification_time_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time it takes to fail to verify a certificate in a TLS handshake.
+"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__sum {
+    label: "Cert Verification Time Success Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.sum ;;
+    type: number
+    group_label: "Cert Verification Time"
+    group_item_label: "Success Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verification Time Success Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_verification_time_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time it takes to successfully verify a certificate in a TLS handshake.
+"
+  }
+
+  dimension: metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms {
+    label: "Cert Verifier Cert Revocation Mechanisms"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_cert_revocation_mechanisms ;;
+    group_label: "Cert Verifier"
+    group_item_label: "Cert Revocation Mechanisms"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verifier Cert Revocation Mechanisms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_verifier_cert_revocation_mechanisms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which revocation checking mechanisms were used in a TLS handshake?
+"
+  }
+
   dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__sum {
     label: "Cert Verifier Cert Trust Evaluation Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.sum ;;
     type: number
     group_label: "Cert Verifier"
@@ -1346,6 +1776,23 @@ the tracking protection settings panel from the toolbar.
     }
 
     description: "Counts the number of times different CRLite statuses were returned.
+"
+  }
+
+  dimension: metrics__labeled_counter__cert_verifier_crlite_vs_ocsp_result {
+    label: "Cert Verifier Crlite Vs Ocsp Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_vs_ocsp_result ;;
+    group_label: "Cert Verifier"
+    group_item_label: "Crlite Vs Ocsp Result"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verifier Crlite Vs Ocsp Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_verifier_crlite_vs_ocsp_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The OCSP result when CRLite claims a certificate is revoked.
 "
   }
 
@@ -1435,6 +1882,78 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__quantity__contentblocking_category {
+    label: "Contentblocking Category"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.contentblocking_category ;;
+    type: number
+    group_label: "Contentblocking"
+    group_item_label: "Category"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Category"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/contentblocking_category"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This scalar reports the value of the content blocking category pref (0 = \"standard\", 1 = \"strict\", 2 = \"custom\", 3 = some other value, this is not supported). This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.category.
+"
+  }
+
+  dimension: metrics__boolean__contentblocking_cryptomining_blocking_enabled {
+    label: "Contentblocking Cryptomining Blocking Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.contentblocking_cryptomining_blocking_enabled ;;
+    type: yesno
+    group_label: "Contentblocking"
+    group_item_label: "Cryptomining Blocking Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Cryptomining Blocking Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/contentblocking_cryptomining_blocking_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if cryptominer blocking is enabled globally at startup. This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.cryptomining_blocking_enabled.
+"
+  }
+
+  dimension: metrics__boolean__contentblocking_fingerprinting_blocking_enabled {
+    label: "Contentblocking Fingerprinting Blocking Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.contentblocking_fingerprinting_blocking_enabled ;;
+    type: yesno
+    group_label: "Contentblocking"
+    group_item_label: "Fingerprinting Blocking Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Fingerprinting Blocking Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/contentblocking_fingerprinting_blocking_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if fingerprinter blocking is enabled globally at startup. This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.fingerprinting_blocking_enabled.
+"
+  }
+
+  dimension: metrics__counter__contentblocking_trackers_blocked_count {
+    label: "Contentblocking Trackers Blocked Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.contentblocking_trackers_blocked_count ;;
+    type: number
+    group_label: "Contentblocking"
+    group_item_label: "Trackers Blocked Count"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Trackers Blocked Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/contentblocking_trackers_blocked_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A count of the number of tracking events blocked. This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.trackers_blocked_count.
+"
+  }
+
   dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__sum {
     label: "Cookie Banners Click Handle Duration Sum"
     hidden: yes
@@ -1455,7 +1974,7 @@ the tracking protection settings panel from the toolbar.
 
   dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__sum {
     label: "Cookie Banners Click Query Selector Run Count Per Window Frame Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_frame.sum ;;
     type: number
     group_label: "Cookie Banners Click"
@@ -1473,7 +1992,7 @@ the tracking protection settings panel from the toolbar.
 
   dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_top_level__sum {
     label: "Cookie Banners Click Query Selector Run Count Per Window Top Level Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_top_level.sum ;;
     type: number
     group_label: "Cookie Banners Click"
@@ -1491,7 +2010,7 @@ the tracking protection settings panel from the toolbar.
 
   dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_frame__sum {
     label: "Cookie Banners Click Query Selector Run Duration Per Window Frame Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_frame.sum ;;
     type: number
     group_label: "Cookie Banners Click"
@@ -1509,7 +2028,7 @@ the tracking protection settings panel from the toolbar.
 
   dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__sum {
     label: "Cookie Banners Click Query Selector Run Duration Per Window Top Level Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_top_level.sum ;;
     type: number
     group_label: "Cookie Banners Click"
@@ -1579,7 +2098,7 @@ the tracking protection settings panel from the toolbar.
 
   dimension: metrics__rate__cookie_banners_cmp_ratio_handled_by_cmp_rule__numerator {
     label: "Cookie Banners Cmp Ratio Handled By Cmp Rule Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.numerator ;;
     type: number
     group_label: "Cookie Banners Cmp"
@@ -1597,7 +2116,7 @@ the tracking protection settings panel from the toolbar.
 
   dimension: metrics__rate__cookie_banners_cmp_ratio_handled_by_cmp_rule__denominator {
     label: "Cookie Banners Cmp Ratio Handled By Cmp Rule Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.denominator ;;
     type: number
     group_label: "Cookie Banners Cmp"
@@ -1632,7 +2151,7 @@ the tracking protection settings panel from the toolbar.
 
   dimension: metrics__counter__cookie_banners_cookie_injection_fail {
     label: "Cookie Banners Cookie Injection Fail"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.cookie_banners_cookie_injection_fail ;;
     type: number
     group_label: "Cookie Banners"
@@ -1838,6 +2357,608 @@ the tracking protection settings panel from the toolbar.
     description: "The number of entries stored in the SiteSecurityServiceState nsIDataStorage"
   }
 
+  dimension: metrics__labeled_counter__devtools_accessibility_accessible_context_menu_item_activated {
+    label: "Devtools Accessibility Accessible Context Menu Item Activated"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_accessible_context_menu_item_activated ;;
+    group_label: "Devtools Accessibility"
+    group_item_label: "Accessible Context Menu Item Activated"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Accessible Context Menu Item Activated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_accessible_context_menu_item_activated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a context menu item for an accessible object was activated (with mouse or keyboard) from the context menu opened in the accessibility tree. Keyed by the id of the context menu item. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.accessible_context_menu_item_activated.
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_accessible_context_menu_opened {
+    label: "Devtools Accessibility Accessible Context Menu Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_accessible_context_menu_opened ;;
+    type: number
+    group_label: "Devtools Accessibility"
+    group_item_label: "Accessible Context Menu Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Accessible Context Menu Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_accessible_context_menu_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a context menu was opened for an accessible object in the accessibility tree. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.accessible_context_menu_opened.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_audit_activated {
+    label: "Devtools Accessibility Audit Activated"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_audit_activated ;;
+    group_label: "Devtools Accessibility"
+    group_item_label: "Audit Activated"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Audit Activated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_audit_activated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times accessibility audit was activated (with mouse or keyboard) from the accessibility panel's toolbar. Keyed by the audit filter type (e.g. \"CONTRAST\"). This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.audit_activated.
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_node_inspected_count {
+    label: "Devtools Accessibility Node Inspected Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_node_inspected_count ;;
+    type: number
+    group_label: "Devtools Accessibility"
+    group_item_label: "Node Inspected Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Node Inspected Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_node_inspected_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a DOM node was inspected from within the Accessibility tool. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.node_inspected_count.
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_opened_count {
+    label: "Devtools Accessibility Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_opened_count ;;
+    type: number
+    group_label: "Devtools Accessibility"
+    group_item_label: "Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Accessibility tool has been opened. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.opened_count.
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_picker_used_count {
+    label: "Devtools Accessibility Picker Used Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_picker_used_count ;;
+    type: number
+    group_label: "Devtools Accessibility"
+    group_item_label: "Picker Used Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Picker Used Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_picker_used_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the picker tool has been used in DevTools Accessibility panel. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.picker_used_count.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_select_accessible_for_node {
+    label: "Devtools Accessibility Select Accessible For Node"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_select_accessible_for_node ;;
+    group_label: "Devtools Accessibility"
+    group_item_label: "Select Accessible For Node"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Select Accessible For Node"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_select_accessible_for_node"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times an accessible object was inspected from outside the Accessibility tool (navigation to Accessibility panel). Keyed by the source of user action (inspector context menu, browser context menu, etc). This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.select_accessible_for_node.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_simulation_activated {
+    label: "Devtools Accessibility Simulation Activated"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_simulation_activated ;;
+    group_label: "Devtools Accessibility"
+    group_item_label: "Simulation Activated"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Simulation Activated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_simulation_activated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times accessibility simulation was activated (with mouse or keyboard) from the accessibility panel's toolbar. Keyed by the simulation type (e.g. \"DEUTERANOPIA\"). This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.simulation_activated.
+"
+  }
+
+  dimension: metrics__counter__devtools_changesview_opened_count {
+    label: "Devtools Changesview Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_changesview_opened_count ;;
+    type: number
+    group_label: "Devtools Changesview"
+    group_item_label: "Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Changesview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_changesview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the Changes panel has been opened. This metric was generated to correspond to the Legacy Telemetry scalar devtools.changesview.opened_count.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_current_theme {
+    label: "Devtools Current Theme"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_current_theme ;;
+    group_label: "Devtools"
+    group_item_label: "Current Theme"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Current Theme"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_current_theme"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times DevTools was opened, keyed by theme. This metric was generated to correspond to the Legacy Telemetry scalar devtools.current_theme.
+"
+  }
+
+  dimension: metrics__counter__devtools_grid_gridinspector_opened {
+    label: "Devtools Grid Gridinspector Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_grid_gridinspector_opened ;;
+    type: number
+    group_label: "Devtools Grid Gridinspector"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Grid Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_grid_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools grid inspector was opened from the grid view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.grid.gridinspector.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_inspector_node_selection_count {
+    label: "Devtools Inspector Node Selection Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_inspector_node_selection_count ;;
+    type: number
+    group_label: "Devtools Inspector"
+    group_item_label: "Node Selection Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Inspector Node Selection Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_inspector_node_selection_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a different node is marked as selected in the Inspector regardless of the cause: context menu, manual selection in markup view, etc. This metric was generated to correspond to the Legacy Telemetry scalar devtools.inspector.node_selection_count.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_inspector_three_pane_enabled {
+    label: "Devtools Inspector Three Pane Enabled"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_inspector_three_pane_enabled ;;
+    group_label: "Devtools Inspector"
+    group_item_label: "Three Pane Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Inspector Three Pane Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_inspector_three_pane_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools inspector was opened with the 3 pane inspector enabled, keyed by true/false. This metric was generated to correspond to the Legacy Telemetry scalar devtools.inspector.three_pane_enabled.
+"
+  }
+
+  dimension: metrics__counter__devtools_layout_flexboxhighlighter_opened {
+    label: "Devtools Layout Flexboxhighlighter Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_layout_flexboxhighlighter_opened ;;
+    type: number
+    group_label: "Devtools Layout Flexboxhighlighter"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Layout Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_layout_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools flexbox highlighter was activated from the layout view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.layout.flexboxhighlighter.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_markup_flexboxhighlighter_opened {
+    label: "Devtools Markup Flexboxhighlighter Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_markup_flexboxhighlighter_opened ;;
+    type: number
+    group_label: "Devtools Markup Flexboxhighlighter"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_markup_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools flexbox highlighter was activated from the markup view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.markup.flexboxhighlighter.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_markup_gridinspector_opened {
+    label: "Devtools Markup Gridinspector Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_markup_gridinspector_opened ;;
+    type: number
+    group_label: "Devtools Markup Gridinspector"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_markup_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools grid inspector was opened from the markup view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.markup.gridinspector.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_markup_scrollable_badge_clicked {
+    label: "Devtools Markup Scrollable Badge Clicked"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_markup_scrollable_badge_clicked ;;
+    type: number
+    group_label: "Devtools Markup Scrollable Badge"
+    group_item_label: "Clicked"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Scrollable Badge Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_markup_scrollable_badge_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the scrollable inspector badge has been clicked. This metric was generated to correspond to the Legacy Telemetry scalar devtools.markup.scrollable.badge.clicked.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_responsive_open_trigger {
+    label: "Devtools Responsive Open Trigger"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_responsive_open_trigger ;;
+    group_label: "Devtools Responsive"
+    group_item_label: "Open Trigger"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Responsive Open Trigger"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_responsive_open_trigger"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Responsive Design Mode opens keyed by the UI entry point used. This metric was generated to correspond to the Legacy Telemetry scalar devtools.responsive.open_trigger.
+"
+  }
+
+  dimension: metrics__counter__devtools_responsive_toolbox_opened_first {
+    label: "Devtools Responsive Toolbox Opened First"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_responsive_toolbox_opened_first ;;
+    type: number
+    group_label: "Devtools Responsive"
+    group_item_label: "Toolbox Opened First"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Responsive Toolbox Opened First"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_responsive_toolbox_opened_first"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Responsive Design Mode opens with a toolbox already open. This metric was generated to correspond to the Legacy Telemetry scalar devtools.responsive.toolbox_opened_first.
+"
+  }
+
+  dimension: metrics__counter__devtools_rules_flexboxhighlighter_opened {
+    label: "Devtools Rules Flexboxhighlighter Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_rules_flexboxhighlighter_opened ;;
+    type: number
+    group_label: "Devtools Rules Flexboxhighlighter"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Rules Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_rules_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools flexbox highlighter was activated from the rules view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.rules.flexboxhighlighter.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_rules_gridinspector_opened {
+    label: "Devtools Rules Gridinspector Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_rules_gridinspector_opened ;;
+    type: number
+    group_label: "Devtools Rules Gridinspector"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Rules Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_rules_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools grid inspector was opened from the rules view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.rules.gridinspector.opened.
+"
+  }
+
+  dimension: metrics__boolean__devtools_shadowdom_reveal_link_clicked {
+    label: "Devtools Shadowdom Reveal Link Clicked"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.devtools_shadowdom_reveal_link_clicked ;;
+    type: yesno
+    group_label: "Devtools Shadowdom"
+    group_item_label: "Reveal Link Clicked"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Shadowdom Reveal Link Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_shadowdom_reveal_link_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the user clicked on any \"reveal\" link. \"reveal\" links are displayed in shadow dom trees in the markup view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.shadowdom.reveal_link_clicked.
+"
+  }
+
+  dimension: metrics__boolean__devtools_shadowdom_shadow_root_displayed {
+    label: "Devtools Shadowdom Shadow Root Displayed"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.devtools_shadowdom_shadow_root_displayed ;;
+    type: yesno
+    group_label: "Devtools Shadowdom"
+    group_item_label: "Shadow Root Displayed"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Shadowdom Shadow Root Displayed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_shadowdom_shadow_root_displayed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the markup view displayed any #shadow-root element in the UI. This metric was generated to correspond to the Legacy Telemetry scalar devtools.shadowdom.shadow_root_displayed.
+"
+  }
+
+  dimension: metrics__boolean__devtools_shadowdom_shadow_root_expanded {
+    label: "Devtools Shadowdom Shadow Root Expanded"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.devtools_shadowdom_shadow_root_expanded ;;
+    type: yesno
+    group_label: "Devtools Shadowdom"
+    group_item_label: "Shadow Root Expanded"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Shadowdom Shadow Root Expanded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_shadowdom_shadow_root_expanded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the user expanded any #shadow-root element. This metric was generated to correspond to the Legacy Telemetry scalar devtools.shadowdom.shadow_root_expanded.
+"
+  }
+
+  dimension: metrics__labeled_boolean__devtools_tool_registered {
+    label: "Devtools Tool Registered"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.devtools_tool_registered ;;
+    type: string
+    group_label: "Devtools Tool"
+    group_item_label: "Registered"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Tool Registered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_tool_registered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded on enable tool checkbox check/uncheck in Developer Tools options panel. Boolean stating if the tool was enabled or disabled by the user. Keyed by tool id. Current default tools with their id's are defined in https://searchfox.org/mozilla- central/source/devtools/client/definitions.js This metric was generated to correspond to the Legacy Telemetry scalar devtools.tool.registered.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_toolbox_tabs_reordered {
+    label: "Devtools Toolbox Tabs Reordered"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_toolbox_tabs_reordered ;;
+    group_label: "Devtools Toolbox"
+    group_item_label: "Tabs Reordered"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Toolbox Tabs Reordered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_toolbox_tabs_reordered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools tab was reordered. Keyed by tab's id. This metric was generated to correspond to the Legacy Telemetry scalar devtools.toolbox.tabs_reordered.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_tooltip_shown {
+    label: "Devtools Tooltip Shown"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_tooltip_shown ;;
+    group_label: "Devtools Tooltip"
+    group_item_label: "Shown"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Tooltip Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_tooltip_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a tooltip was shown, keyed by tooltip type. Currently supported types are \"image\", \"font-family\", \"inactive- css\", \"css-compatibility\", \"css-query-container\" and \"variable.\" This metric was generated to correspond to the Legacy Telemetry scalar devtools.tooltip.shown.
+"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_build_id_mismatch {
+    label: "Dom Contentprocess Build Id Mismatch"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_build_id_mismatch ;;
+    type: number
+    group_label: "Dom Contentprocess"
+    group_item_label: "Build Id Mismatch"
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Build Id Mismatch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dom_contentprocess_build_id_mismatch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times the about:restartrequired page appeared due to a buildID mismatch between the parent and the content processes. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.buildID_mismatch.
+"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_build_id_mismatch_false_positive {
+    label: "Dom Contentprocess Build Id Mismatch False Positive"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_build_id_mismatch_false_positive ;;
+    type: number
+    group_label: "Dom Contentprocess"
+    group_item_label: "Build Id Mismatch False Positive"
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Build Id Mismatch False Positive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dom_contentprocess_build_id_mismatch_false_positive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times a process crashed early but we could verify it was not because of buildID mismatch between the parent and the content processes. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.buildID_mismatch_false_positive.
+"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_os_priority_change_considered {
+    label: "Dom Contentprocess Os Priority Change Considered"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_os_priority_change_considered ;;
+    type: number
+    group_label: "Dom Contentprocess"
+    group_item_label: "Os Priority Change Considered"
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Os Priority Change Considered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dom_contentprocess_os_priority_change_considered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we've had the opportunity to change content process priority due to a tab switch or a tab being opened. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_change_considered.
+"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_os_priority_lowered {
+    label: "Dom Contentprocess Os Priority Lowered"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_os_priority_lowered ;;
+    type: number
+    group_label: "Dom Contentprocess"
+    group_item_label: "Os Priority Lowered"
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Os Priority Lowered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dom_contentprocess_os_priority_lowered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times a content process has had its OS priority lowered due to only containing background tabs without audible media playing. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_lowered.
+"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_os_priority_raised {
+    label: "Dom Contentprocess Os Priority Raised"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_os_priority_raised ;;
+    type: number
+    group_label: "Dom Contentprocess"
+    group_item_label: "Os Priority Raised"
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Os Priority Raised"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dom_contentprocess_os_priority_raised"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times a content process has had its OS priority raised due to containing at least one foregrounded tab, or a tab with audible media has started playing in it. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_raised.
+"
+  }
+
+  dimension: metrics__boolean__dom_parentprocess_private_window_used {
+    label: "Dom Parentprocess Private Window Used"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.dom_parentprocess_private_window_used ;;
+    type: yesno
+    group_label: "Dom Parentprocess"
+    group_item_label: "Private Window Used"
+
+    link: {
+      label: "Glean Dictionary reference for Dom Parentprocess Private Window Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dom_parentprocess_private_window_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a private browsing window has been used in the session. This metric was generated to correspond to the Legacy Telemetry scalar dom.parentprocess.private_window_used.
+"
+  }
+
+  dimension: metrics__labeled_counter__dom_parentprocess_process_launch_errors {
+    label: "Dom Parentprocess Process Launch Errors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.dom_parentprocess_process_launch_errors ;;
+    group_label: "Dom Parentprocess"
+    group_item_label: "Process Launch Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Dom Parentprocess Process Launch Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dom_parentprocess_process_launch_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Collect precise set of error code and calling site upon process creation failure path. This metric was generated to correspond to the Legacy Telemetry scalar dom.parentprocess.process_launch_errors.
+"
+  }
+
   dimension: metrics__counter__dotprint_android_dialog_requested {
     label: "Dotprint Android Dialog Requested"
     hidden: yes
@@ -1888,6 +3009,24 @@ the tracking protection settings panel from the toolbar.
     }
 
     description: "How many times window.print was requested.
+"
+  }
+
+  dimension: metrics__counter__downloads_file_opened {
+    label: "Downloads File Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.downloads_file_opened ;;
+    type: number
+    group_label: "Downloads"
+    group_item_label: "File Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Downloads File Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/downloads_file_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of how many times files were opened from the download panel. This metric was generated to correspond to the Legacy Telemetry scalar downloads.file_opened.
 "
   }
 
@@ -2417,9 +3556,135 @@ startup function is called to when the startup promise resolves.
 "
   }
 
+  dimension: metrics__counter__findbar_find_next {
+    label: "Findbar Find Next"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.findbar_find_next ;;
+    type: number
+    group_label: "Findbar"
+    group_item_label: "Find Next"
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Find Next"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_find_next"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of how many times the find next button was used per session. This metric was generated to correspond to the Legacy Telemetry scalar findbar.find_next.
+"
+  }
+
+  dimension: metrics__counter__findbar_find_prev {
+    label: "Findbar Find Prev"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.findbar_find_prev ;;
+    type: number
+    group_label: "Findbar"
+    group_item_label: "Find Prev"
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Find Prev"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_find_prev"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of how many times the find previous button was used per session. This metric was generated to correspond to the Legacy Telemetry scalar findbar.find_prev.
+"
+  }
+
+  dimension: metrics__counter__findbar_highlight_all {
+    label: "Findbar Highlight All"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.findbar_highlight_all ;;
+    type: number
+    group_label: "Findbar"
+    group_item_label: "Highlight All"
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Highlight All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_highlight_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of how many times the \"Highlight All\" button was used in find toolbar. This metric was generated to correspond to the Legacy Telemetry scalar findbar.highlight_all.
+"
+  }
+
+  dimension: metrics__counter__findbar_match_case {
+    label: "Findbar Match Case"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.findbar_match_case ;;
+    type: number
+    group_label: "Findbar"
+    group_item_label: "Match Case"
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Match Case"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_match_case"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of how many times the \"Match Case\" button was used in find toolbar. This metric was generated to correspond to the Legacy Telemetry scalar findbar.match_case.
+"
+  }
+
+  dimension: metrics__counter__findbar_match_diacritics {
+    label: "Findbar Match Diacritics"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.findbar_match_diacritics ;;
+    type: number
+    group_label: "Findbar"
+    group_item_label: "Match Diacritics"
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Match Diacritics"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_match_diacritics"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of how many times the \"Match Diacritics\" button was used in find toolbar. This metric was generated to correspond to the Legacy Telemetry scalar findbar.match_diacritics.
+"
+  }
+
+  dimension: metrics__counter__findbar_shown {
+    label: "Findbar Shown"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.findbar_shown ;;
+    type: number
+    group_label: "Findbar"
+    group_item_label: "Shown"
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of how many times the \"Find toolbar\" was shown per session. This metric was generated to correspond to the Legacy Telemetry scalar findbar.shown.
+"
+  }
+
+  dimension: metrics__counter__findbar_whole_words {
+    label: "Findbar Whole Words"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.findbar_whole_words ;;
+    type: number
+    group_label: "Findbar"
+    group_item_label: "Whole Words"
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Whole Words"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_whole_words"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of how many times the \"Whole Words\" button was used in find toolbar. This metric was generated to correspond to the Legacy Telemetry scalar findbar.whole_words.
+"
+  }
+
   dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__sum {
     label: "Fingerprinting Protection Canvas Noise Calculate Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.sum ;;
     type: number
     group_label: "Fingerprinting Protection"
@@ -2428,6 +3693,42 @@ startup function is called to when the startup promise resolves.
     link: {
       label: "Glean Dictionary reference for Fingerprinting Protection Canvas Noise Calculate Time Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fingerprinting_protection_canvas_noise_calculate_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how long to generate canvas random noises.
+"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__sum {
+    label: "Fingerprinting Protection Canvas Noise Calculate Time 2 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.sum ;;
+    type: number
+    group_label: "Fingerprinting Protection"
+    group_item_label: "Canvas Noise Calculate Time 2 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fingerprinting Protection Canvas Noise Calculate Time 2 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fingerprinting_protection_canvas_noise_calculate_time_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how long to generate canvas random noises.
+"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__sum {
+    label: "Fingerprinting Protection Canvas Noise Calculate Time Ns Sum"
+    hidden: yes
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.sum ;;
+    type: number
+    group_label: "Fingerprinting Protection"
+    group_item_label: "Canvas Noise Calculate Time Ns Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fingerprinting Protection Canvas Noise Calculate Time Ns Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fingerprinting_protection_canvas_noise_calculate_time_ns"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -2721,6 +4022,114 @@ API for the purposes of Validation (hence GVSV).
 
     description: "Primary display pixel width, recorded alongside the GeckoView Streaming
 API for the purposes of Validation (hence GVSV).
+"
+  }
+
+  dimension: metrics__quantity__formautofill_addresses_autofill_profiles_count {
+    label: "Formautofill Addresses Autofill Profiles Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.formautofill_addresses_autofill_profiles_count ;;
+    type: number
+    group_label: "Formautofill Addresses"
+    group_item_label: "Autofill Profiles Count"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Addresses Autofill Profiles Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/formautofill_addresses_autofill_profiles_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count at store time how many address autofill profiles user has. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.addresses.autofill_profiles_count.
+"
+  }
+
+  dimension: metrics__counter__formautofill_addresses_detected_sections_count {
+    label: "Formautofill Addresses Detected Sections Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.formautofill_addresses_detected_sections_count ;;
+    type: number
+    group_label: "Formautofill Addresses"
+    group_item_label: "Detected Sections Count"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Addresses Detected Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/formautofill_addresses_detected_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count at detection time number of address form sections. A single form can contain more than one address form section. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.addresses.detected_sections_count.
+"
+  }
+
+  dimension: metrics__counter__formautofill_addresses_submitted_sections_count {
+    label: "Formautofill Addresses Submitted Sections Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.formautofill_addresses_submitted_sections_count ;;
+    type: number
+    group_label: "Formautofill Addresses"
+    group_item_label: "Submitted Sections Count"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Addresses Submitted Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/formautofill_addresses_submitted_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count at submission time number of credit card form sections submitted. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.addresses.submitted_sections_count.
+"
+  }
+
+  dimension: metrics__boolean__formautofill_availability {
+    label: "Formautofill Availability"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.formautofill_availability ;;
+    type: yesno
+    group_label: "Formautofill"
+    group_item_label: "Availability"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Availability"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/formautofill_availability"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A boolean sent once per session to represent whether the formautofill is available in the build This metric was generated to correspond to the Legacy Telemetry scalar formautofill.availability.
+"
+  }
+
+  dimension: metrics__counter__formautofill_credit_cards_detected_sections_count {
+    label: "Formautofill Credit Cards Detected Sections Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.formautofill_credit_cards_detected_sections_count ;;
+    type: number
+    group_label: "Formautofill Credit Cards"
+    group_item_label: "Detected Sections Count"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Credit Cards Detected Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/formautofill_credit_cards_detected_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count at detection time number of credit card form sections. A single form can contain more than one credit card form section. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.creditCards.detected_sections_count.
+"
+  }
+
+  dimension: metrics__counter__formautofill_credit_cards_submitted_sections_count {
+    label: "Formautofill Credit Cards Submitted Sections Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.formautofill_credit_cards_submitted_sections_count ;;
+    type: number
+    group_label: "Formautofill Credit Cards"
+    group_item_label: "Submitted Sections Count"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Credit Cards Submitted Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/formautofill_credit_cards_submitted_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count at submission time number of credit card form sections submitted. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.creditCards.submitted_sections_count.
 "
   }
 
@@ -3493,6 +4902,60 @@ API for the purposes of Validation (hence GVSV).
 "
   }
 
+  dimension: metrics__quantity__gfx_hdr_windows_display_colorspace_bitfield {
+    label: "Gfx Hdr Windows Display Colorspace Bitfield"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gfx_hdr_windows_display_colorspace_bitfield ;;
+    type: number
+    group_label: "Gfx Hdr"
+    group_item_label: "Windows Display Colorspace Bitfield"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Hdr Windows Display Colorspace Bitfield"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_hdr_windows_display_colorspace_bitfield"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A bitfield representation of the available DXGI color spaces of the connected displays on Windows. See (https://docs.microsoft.com/en- us/windows/desktop/api/dxgicommon/ne-dxgicommon- dxgi_color_space_type) for definitions of color spaces. Each N'th bit of this scalar indicates whether the DXGI color space with index 'N' is available on at least one connected monitor. This metric was generated to correspond to the Legacy Telemetry scalar gfx.hdr.windows_display_colorspace_bitfield.
+"
+  }
+
+  dimension: metrics__string__gfx_linux_window_protocol {
+    label: "Gfx Linux Window Protocol"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_linux_window_protocol ;;
+    type: string
+    group_label: "Gfx"
+    group_item_label: "Linux Window Protocol"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Linux Window Protocol"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_linux_window_protocol"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Windowing protocol on Linux. Can be Wayland, WaylandDRM, XWayland, or X11 This metric was generated to correspond to the Legacy Telemetry scalar gfx.linux_window_protocol.
+"
+  }
+
+  dimension: metrics__boolean__gfx_os_compositor {
+    label: "Gfx Os Compositor"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.gfx_os_compositor ;;
+    type: yesno
+    group_label: "Gfx"
+    group_item_label: "Os Compositor"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Os Compositor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_os_compositor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Boolean indicating whether the os compositor is being used by WebRender. Only collected in the first subsession. This metric was generated to correspond to the Legacy Telemetry scalar gfx.os_compositor.
+"
+  }
+
   dimension: metrics__timing_distribution__gfx_scroll_present_latency__sum {
     label: "Gfx Scroll Present Latency Sum"
     hidden: no
@@ -3508,6 +4971,24 @@ API for the purposes of Validation (hence GVSV).
     }
 
     description: "Time between receiving a scroll event on the event loop and compositing its result onto the screen (ms). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__counter__gfx_skipped_composites {
+    label: "Gfx Skipped Composites"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.gfx_skipped_composites ;;
+    type: number
+    group_label: "Gfx"
+    group_item_label: "Skipped Composites"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Skipped Composites"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_skipped_composites"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of skipped composites, happening when rendering is too slow to keep up with content. This metric was generated to correspond to the Legacy Telemetry scalar gfx.skipped_composites.
 "
   }
 
@@ -3562,6 +5043,42 @@ API for the purposes of Validation (hence GVSV).
     }
 
     description: "The gecko version at the last time a compositor was initialized, and therefore when gfx_status_compositor was last updated. Due to gfx_status_compositor's user lifetime we see lots of unexpected values for the current gecko version. We believe this is because the user has not opened a tab since they were updated to a version where webrender should be enabled on their device. This can be used to verify that theory. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__boolean__gfx_supports_hdr {
+    label: "Gfx Supports Hdr"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.gfx_supports_hdr ;;
+    type: yesno
+    group_label: "Gfx"
+    group_item_label: "Supports Hdr"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Supports Hdr"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_supports_hdr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Does the hardware support accurate display of HDR content This metric was generated to correspond to the Legacy Telemetry scalar gfx.supports_hdr.
+"
+  }
+
+  dimension: metrics__boolean__gfx_tmp_writable {
+    label: "Gfx Tmp Writable"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.gfx_tmp_writable ;;
+    type: yesno
+    group_label: "Gfx"
+    group_item_label: "Tmp Writable"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Tmp Writable"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_tmp_writable"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Is the system temporary directory writable This metric was generated to correspond to the Legacy Telemetry scalar gfx.tmp_writable.
 "
   }
 
@@ -4059,6 +5576,60 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__javascript_gc_animation__sum {
+    label: "Javascript Gc Animation Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_animation.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Animation Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Animation Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_gc_animation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent running JS GC when animating.
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget__sum {
+    label: "Javascript Gc Budget Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Budget Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Budget Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_gc_budget"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Requested GC slice budget.
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget_overrun__sum {
+    label: "Javascript Gc Budget Overrun Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget_overrun.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Budget Overrun Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Budget Overrun Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_gc_budget_overrun"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long a GC slice ran over its budget.
+"
+  }
+
   dimension: metrics__timing_distribution__javascript_gc_compact_time__sum {
     label: "Javascript Gc Compact Time Sum"
     hidden: no
@@ -4074,6 +5645,24 @@ To be used to validate GIFFT.
     }
 
     description: "The time spent in the compact phase. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_gray__sum {
+    label: "Javascript Gc Mark Gray Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_gray.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Mark Gray Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Mark Gray Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_gc_mark_gray"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent marking gray GC objects.
 "
   }
 
@@ -4110,6 +5699,42 @@ To be used to validate GIFFT.
     }
 
     description: "The time spent in the mark phase. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_weak__sum {
+    label: "Javascript Gc Mark Weak Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_weak.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Mark Weak Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Mark Weak Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_gc_mark_weak"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent marking GC objects held live through weakmaps.
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_max_pause__sum {
+    label: "Javascript Gc Max Pause Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_max_pause.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Max Pause Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Max Pause Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_gc_max_pause"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Longest GC slice in a GC.
 "
   }
 
@@ -4185,6 +5810,60 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__javascript_gc_task_start_delay__sum {
+    label: "Javascript Gc Task Start Delay Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_task_start_delay.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Task Start Delay Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Task Start Delay Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_gc_task_start_delay"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Delay between queuing a GC task and the task starting.
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between__sum {
+    label: "Javascript Gc Time Between Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Time Between Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Time Between Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_gc_time_between"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in between garbage collections for the main runtime.
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_slices__sum {
+    label: "Javascript Gc Time Between Slices Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_slices.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Time Between Slices Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Time Between Slices Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_gc_time_between_slices"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in between garbage collections for the main runtime.
+"
+  }
+
   dimension: metrics__timing_distribution__javascript_gc_total_time__sum {
     label: "Javascript Gc Total Time Sum"
     hidden: no
@@ -4200,6 +5879,24 @@ To be used to validate GIFFT.
     }
 
     description: "The total time taken by a major collection. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__sum {
+    label: "Javascript Ion Compile Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.sum ;;
+    type: number
+    group_label: "Javascript Ion"
+    group_item_label: "Compile Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Ion Compile Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_ion_compile_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in microseconds of an Ion compilation.
 "
   }
 
@@ -4329,6 +6026,114 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__sum {
+    label: "Localstorage Database Request Allow To Close Response Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.sum ;;
+    type: number
+    group_label: "Localstorage Database"
+    group_item_label: "Request Allow To Close Response Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Localstorage Database Request Allow To Close Response Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/localstorage_database_request_allow_to_close_response_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time it took between sending PBackgroundLSDatabase::RequestAllowToClose and receiving PBackgroundLSDatabase::AllowToClose message. These messages are issued when QuotaManager is shutting down or is aborting operations for a particular origin or process.
+"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__sum {
+    label: "Ls Preparedatastore Processing Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.sum ;;
+    type: number
+    group_label: "Ls Preparedatastore"
+    group_item_label: "Processing Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ls Preparedatastore Processing Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/ls_preparedatastore_processing_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time it took for the parent process to prepare a Datastore. This duration can be significantly affected by Datastore preloading, which is triggered when a page begins to load. When a Datastore is already preloaded, the preparation is usually fast since it doesn't need to do any I/O. If an error occurs, the time is not recorded. In future, we might want to introduce additional separate metrics for different types of datastore preparations (data needs to be loaded from disk, data already available, etc.)
+"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__sum {
+    label: "Ls Preparelsdatabase Processing Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.sum ;;
+    type: number
+    group_label: "Ls Preparelsdatabase"
+    group_item_label: "Processing Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ls Preparelsdatabase Processing Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/ls_preparelsdatabase_processing_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time it took for the content process to fully prepare a new LSDatabase, including any time required to prepare a Datastore in the parent. This duration can be significantly affected by Datastore preloading, which is triggered when a page begins to load. If an error occurs, the time is not recorded.
+"
+  }
+
+  dimension: metrics__counter__ls_request_recv_cancellation {
+    label: "Ls Request Recv Cancellation"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.ls_request_recv_cancellation ;;
+    type: number
+    group_label: "Ls Request"
+    group_item_label: "Recv Cancellation"
+
+    link: {
+      label: "Glean Dictionary reference for Ls Request Recv Cancellation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/ls_request_recv_cancellation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Upticks whenever a LS request cancellation message is received. This includes requests for ensuring either LSDatabase or LSObserver in the child.
+"
+  }
+
+  dimension: metrics__counter__ls_request_send_cancellation {
+    label: "Ls Request Send Cancellation"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.ls_request_send_cancellation ;;
+    type: number
+    group_label: "Ls Request"
+    group_item_label: "Send Cancellation"
+
+    link: {
+      label: "Glean Dictionary reference for Ls Request Send Cancellation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/ls_request_send_cancellation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Upticks whenever a LS request cancellation message is sent. This includes requests for ensuring either LSDatabase or LSObserver.
+"
+  }
+
+  dimension: metrics__counter__mathml_doc_count {
+    label: "Mathml Doc Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.mathml_doc_count ;;
+    type: number
+    group_label: "Mathml"
+    group_item_label: "Doc Count"
+
+    link: {
+      label: "Glean Dictionary reference for Mathml Doc Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/mathml_doc_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of documents that contained enabled MathML elements. This metric was generated to correspond to the Legacy Telemetry scalar mathml.doc_count.
+"
+  }
+
   dimension: metrics__labeled_counter__media_audio_backend {
     label: "Media Audio Backend"
     hidden: yes
@@ -4363,6 +6168,41 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__media_decode_error_per_mime_type {
+    label: "Media Decode Error Per Mime Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_decode_error_per_mime_type ;;
+    group_label: "Media"
+    group_item_label: "Decode Error Per Mime Type"
+
+    link: {
+      label: "Glean Dictionary reference for Media Decode Error Per Mime Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/media_decode_error_per_mime_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count the number of times the media with a specific mime type (Eg. audio/vorbis, that would be used as the key) encounters a decode error during playback. This metric was generated to correspond to the Legacy Telemetry scalar media.decode_error_per_mime_type.
+"
+  }
+
+  dimension: metrics__counter__media_element_in_page_count {
+    label: "Media Element In Page Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.media_element_in_page_count ;;
+    type: number
+    group_label: "Media"
+    group_item_label: "Element In Page Count"
+
+    link: {
+      label: "Glean Dictionary reference for Media Element In Page Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/media_element_in_page_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times a document hierarchy contained at least one HTMLMediaElement. In addition, the telemetry probe 'MIXED_CONTENT_UNBLOCK_COUNTER' records the total number of loaded top level content documents, which can help us calculate the result of the percentage of documents using media. This metric was generated to correspond to the Legacy Telemetry scalar media.element_in_page_count.
+"
+  }
+
   dimension: metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
     label: "Media Playback Device Hardware Decoder Support"
     hidden: no
@@ -4394,6 +6234,60 @@ To be used to validate GIFFT.
     }
 
     description: "Count the amount of times where video playback is failed to start due to the mime type is not supported by Firefox. The result is accumulated per mime type, eg. video/hevc."
+  }
+
+  dimension: metrics__labeled_boolean__media_video_hardware_decoding_support {
+    label: "Media Video Hardware Decoding Support"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.media_video_hardware_decoding_support ;;
+    type: string
+    group_label: "Media"
+    group_item_label: "Video Hardware Decoding Support"
+
+    link: {
+      label: "Glean Dictionary reference for Media Video Hardware Decoding Support"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/media_video_hardware_decoding_support"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record whether hardware decoding is supported for the specific video codec. The key is the type of video codec, eg. video/vp9. This metric was generated to correspond to the Legacy Telemetry scalar media.video_hardware_decoding_support.
+"
+  }
+
+  dimension: metrics__labeled_boolean__media_video_hd_hardware_decoding_support {
+    label: "Media Video Hd Hardware Decoding Support"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.media_video_hd_hardware_decoding_support ;;
+    type: string
+    group_label: "Media"
+    group_item_label: "Video Hd Hardware Decoding Support"
+
+    link: {
+      label: "Glean Dictionary reference for Media Video Hd Hardware Decoding Support"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/media_video_hd_hardware_decoding_support"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record whether hardware decoding is supported for the specific video codec, this only records video in HD (1280*720) or higher resultion. The key is the type of video codec, eg. video/vp9. This metric was generated to correspond to the Legacy Telemetry scalar media.video_hd_hardware_decoding_support.
+"
+  }
+
+  dimension: metrics__labeled_boolean__mediadrm_decryption {
+    label: "Mediadrm Decryption"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.mediadrm_decryption ;;
+    type: string
+    group_label: "Mediadrm"
+    group_item_label: "Decryption"
+
+    link: {
+      label: "Glean Dictionary reference for Mediadrm Decryption"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/mediadrm_decryption"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record the statuses related with the media decryption.
+"
   }
 
   dimension: metrics__labeled_counter__netwerk_early_hints {
@@ -4447,6 +6341,74 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__netwerk_http3_0rtt_state {
+    label: "Netwerk Http3 0Rtt State"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_0rtt_state ;;
+    group_label: "Netwerk"
+    group_item_label: "Http3 0Rtt State"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk Http3 0Rtt State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/netwerk_http3_0rtt_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gather the outcome of 0-RTT usage: - \"not_used\": 0RTT_NOT_USED - \"succeeded\": 0RTT_USED_SUCCESS - \"rejected\": 0RTT_USED_REJECT - \"conn_error\": 0RTT_USED_CONN_ERROR - \"conn_closed_by_necko\": 0RTT_CONN_CLOSED_BY_NECKO
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_http3_ech_outcome_grease {
+    label: "Netwerk Http3 Ech Outcome Grease"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_ech_outcome_grease ;;
+    group_label: "Netwerk"
+    group_item_label: "Http3 Ech Outcome Grease"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk Http3 Ech Outcome Grease"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/netwerk_http3_ech_outcome_grease"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Success / Fail Rates for HTTP3 when a GREASE ECH Extension was sent
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_http3_ech_outcome_none {
+    label: "Netwerk Http3 Ech Outcome None"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_ech_outcome_none ;;
+    group_label: "Netwerk"
+    group_item_label: "Http3 Ech Outcome None"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk Http3 Ech Outcome None"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/netwerk_http3_ech_outcome_none"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Success / Fail Rates for HTTP3 when No ECH Extension was sent
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_http3_ech_outcome_real {
+    label: "Netwerk Http3 Ech Outcome Real"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_ech_outcome_real ;;
+    group_label: "Netwerk"
+    group_item_label: "Http3 Ech Outcome Real"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk Http3 Ech Outcome Real"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/netwerk_http3_ech_outcome_real"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Success / Fail Rates for HTTP3 when a 'real' ECH Extension was sent
+"
+  }
+
   dimension: metrics__counter__netwerk_parent_connect_timeout {
     label: "Netwerk Parent Connect Timeout"
     hidden: no
@@ -4482,6 +6444,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__network_cache_hit_miss_stat_per_cache_size {
+    label: "Network Cache Hit Miss Stat Per Cache Size"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_cache_hit_miss_stat_per_cache_size ;;
+    group_label: "Network"
+    group_item_label: "Cache Hit Miss Stat Per Cache Size"
+
+    link: {
+      label: "Glean Dictionary reference for Network Cache Hit Miss Stat Per Cache Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_cache_hit_miss_stat_per_cache_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Hit/Miss count split by cache size in file count Hit 0-5000, Miss 0-5000, Hit 5001-10000, ...
+"
+  }
+
   dimension: metrics__timing_distribution__network_cache_hit_time__sum {
     label: "Network Cache Hit Time Sum"
     hidden: no
@@ -4497,6 +6476,96 @@ To be used to validate GIFFT.
     }
 
     description: "Time to open existing cache entry file. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__sum {
+    label: "Network Cache Miss Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Cache Miss Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Cache Miss Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_cache_miss_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent to find out a cache entry file is missing. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_read_time__sum {
+    label: "Network Cache Read Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_read_time.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Cache Read Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Cache Read Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_cache_read_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection cache read start to cache read end. Corresponds to Legacy histogram HTTP_PAGE_CACHE_READ_TIME_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load__sum {
+    label: "Network Complete Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Complete Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Complete Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_complete_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection open to complete load (cache read end/until the last byte received) Corresponds to Legacy histogram HTTP_PAGE_COMPLETE_LOAD_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_cached__sum {
+    label: "Network Complete Load Cached Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_cached.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Complete Load Cached Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Complete Load Cached Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_complete_load_cached"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection open to cache read end. Corresponds to Legacy histogram HTTP_PAGE_COMPLETE_LOAD_CACHED_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_net__sum {
+    label: "Network Complete Load Net Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_net.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Complete Load Net Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Complete Load Net Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_complete_load_net"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection open to the last byte received. Corresponds to Legacy histogram HTTP_PAGE_COMPLETE_LOAD_NET_V2 in Desktop.
 "
   }
 
@@ -4605,6 +6674,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__network_first_sent_to_last_received__sum {
+    label: "Network First Sent To Last Received Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_first_sent_to_last_received.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "First Sent To Last Received Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network First Sent To Last Received Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_first_sent_to_last_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from first byte of request sent to the last byte received. Corresponds to Legacy histogram HTTP_PAGE_FIRST_SENT_TO_LAST_RECEIVED in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__timing_distribution__network_font_download_end__sum {
     label: "Network Font Download End Sum"
     hidden: no
@@ -4623,6 +6710,60 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__network_http_revalidation__sum {
+    label: "Network Http Revalidation Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_http_revalidation.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Http Revalidation Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Http Revalidation Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_http_revalidation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time for positive cache validation Corresponds to Legacy histogram HTTP_PAGE_REVALIDATION in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_received__sum {
+    label: "Network Open To First Received Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_received.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Open To First Received Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Open To First Received Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_open_to_first_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel,time from connection open to the first byte received. Corresponds to Legacy histogram HTTP_PAGE_OPEN_TO_FIRST_RECEIVED in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_sent__sum {
+    label: "Network Open To First Sent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_sent.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Open To First Sent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Open To First Sent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_open_to_first_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection open to the first byte of requst sent. Corresponds to Legacy histogram HTTP_PAGE_OPEN_TO_FIRST_SENT in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__sum {
     label: "Network Open To Transaction Pending Sum"
     hidden: yes
@@ -4638,6 +6779,394 @@ To be used to validate GIFFT.
     }
 
     description: "The time spent from HttpChannelChild::AsyncOpen to adding the transaction to the nsHttpConnectionMgr
+"
+  }
+
+  dimension: metrics__labeled_counter__network_sso_entra_success {
+    label: "Network Sso Entra Success"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_sso_entra_success ;;
+    group_label: "Network Sso"
+    group_item_label: "Entra Success"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sso Entra Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_sso_entra_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often Entra SSO succeeded/failed (macOS only). Labels are ordered in reverse chronological relation to SSO success, meaning the labels higher up are closer to the SSO success. device_headers_missing: only device_headers is missing in the SSO cookie. prt_headers_missing: only prt_headers is missing in the SSO cookie. both_headers_missing: both prt_headers and device_headers are missing in the SSO cookie. invalid_cookie: Failed to parse SSO cookie (could be a null cookie/format is incorrect). no_credential: ASAuthorizationSingleSignOnCredential is not present broker_error: An error from Microsoft's broker. invalid_controller_setup: ASAuthorizationController is setup incorrectly.
+"
+  }
+
+  dimension: metrics__counter__network_sso_total_entra_uses {
+    label: "Network Sso Total Entra Uses"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.network_sso_total_entra_uses ;;
+    type: number
+    group_label: "Network Sso"
+    group_item_label: "Total Entra Uses"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sso Total Entra Uses"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_sso_total_entra_uses"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often Entra SSO is used (macOS only).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_cache_read_time__sum {
+    label: "Network Sub Cache Read Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_cache_read_time.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Cache Read Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Cache Read Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_sub_cache_read_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from connection cache read start to cache read end. Corresponds to Legacy histogram HTTP_SUB_CACHE_READ_TIME_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load__sum {
+    label: "Network Sub Complete Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Complete Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Complete Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_sub_complete_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from connection open to complete load (cache read end/until the last byte received) Corresponds to Legacy histogram HTTP_SUB_COMPLETE_LOAD_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_cached__sum {
+    label: "Network Sub Complete Load Cached Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_cached.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Complete Load Cached Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Complete Load Cached Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_sub_complete_load_cached"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from connection open to cache read end. Corresponds to Legacy histogram HTTP_SUB_COMPLETE_LOAD_CACHED_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_net__sum {
+    label: "Network Sub Complete Load Net Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_net.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Complete Load Net Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Complete Load Net Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_sub_complete_load_net"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from connection open to the last byte received. Corresponds to Legacy histogram HTTP_SUB_COMPLETE_LOAD_NET_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_end__sum {
+    label: "Network Sub Dns End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_end.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Dns End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Dns End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_sub_dns_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from the DNS request being issued to the response. Corresponds to Legacy histogram HTTP_SUB_DNS_LOOKUP_TIME in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_start__sum {
+    label: "Network Sub Dns Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_start.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Dns Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Dns Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_sub_dns_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from connection open to the DNS request being issued. Corresponds to Legacy histogram HTTP_SUB_DNS_ISSUE_TIME in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_from_cache__sum {
+    label: "Network Sub First From Cache Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_from_cache.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub First From Cache Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub First From Cache Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_sub_first_from_cache"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from connection open to cache read start. Corresponds to Legacy histogram HTTP_SUB_OPEN_TO_FIRST_FROM_CACHE_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_sent_to_last_received__sum {
+    label: "Network Sub First Sent To Last Received Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_sent_to_last_received.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub First Sent To Last Received Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub First Sent To Last Received Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_sub_first_sent_to_last_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from first byte of request sent to the last byte received. Corresponds to Legacy histogram HTTP_SUB_FIRST_SENT_TO_LAST_RECEIVED in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_http_revalidation__sum {
+    label: "Network Sub Http Revalidation Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_http_revalidation.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Http Revalidation Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Http Revalidation Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_sub_http_revalidation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time for positive cache validation Corresponds to Legacy histogram HTTP_SUB_REVALIDATION in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_received__sum {
+    label: "Network Sub Open To First Received Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_received.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Open To First Received Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Open To First Received Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_sub_open_to_first_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from connection open to the first byte received. Corresponds to Legacy histogram HTTP_SUB_OPEN_TO_FIRST_RECEIVED in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_sent__sum {
+    label: "Network Sub Open To First Sent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_sent.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Open To First Sent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Open To First Sent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_sub_open_to_first_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from connection open to the first byte of requst sent. Corresponds to Legacy histogram HTTP_SUB_OPEN_TO_FIRST_SENT in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tcp_connection__sum {
+    label: "Network Sub Tcp Connection Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tcp_connection.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Tcp Connection Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Tcp Connection Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_sub_tcp_connection"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from the TCP SYN packet is received to the connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_SUB_TCP_CONNECTION_2 in Desktop (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tls_handshake__sum {
+    label: "Network Sub Tls Handshake Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tls_handshake.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Sub Tls Handshake Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Sub Tls Handshake Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_sub_tls_handshake"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP subitem channel, time from after the TCP SYN packet is received to the secure connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_SUB_TLS_HANDSHAKE in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_addon_status {
+    label: "Network System Channel Addon Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_addon_status ;;
+    group_label: "Network"
+    group_item_label: "System Channel Addon Status"
+
+    link: {
+      label: "Glean Dictionary reference for Network System Channel Addon Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_system_channel_addon_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the status of succeeded and failed requests to addons.mozilla.org
+"
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_addonversion_status {
+    label: "Network System Channel Addonversion Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_addonversion_status ;;
+    group_label: "Network"
+    group_item_label: "System Channel Addonversion Status"
+
+    link: {
+      label: "Glean Dictionary reference for Network System Channel Addonversion Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_system_channel_addonversion_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the status of succeeded and failed requests to *.addons.mozilla.org
+"
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_other_status {
+    label: "Network System Channel Other Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_other_status ;;
+    group_label: "Network"
+    group_item_label: "System Channel Other Status"
+
+    link: {
+      label: "Glean Dictionary reference for Network System Channel Other Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_system_channel_other_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the status of succeeded and failed requests to other mozilla.org domains
+"
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_remote_settings_status {
+    label: "Network System Channel Remote Settings Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_remote_settings_status ;;
+    group_label: "Network"
+    group_item_label: "System Channel Remote Settings Status"
+
+    link: {
+      label: "Glean Dictionary reference for Network System Channel Remote Settings Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_system_channel_remote_settings_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the status of succeeded and failed requests to firefox.settings.services.mozilla.com
+"
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_success_or_failure {
+    label: "Network System Channel Success Or Failure"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_success_or_failure ;;
+    group_label: "Network"
+    group_item_label: "System Channel Success Or Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Network System Channel Success Or Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_system_channel_success_or_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of succeeded and failed channels with a system principal to a mozilla domain. Label contains ok or failure reason.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_telemetry_status {
+    label: "Network System Channel Telemetry Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_telemetry_status ;;
+    group_label: "Network"
+    group_item_label: "System Channel Telemetry Status"
+
+    link: {
+      label: "Glean Dictionary reference for Network System Channel Telemetry Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_system_channel_telemetry_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the status of succeeded and failed requests to incoming.telemetry.mozilla.org
+"
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_update_status {
+    label: "Network System Channel Update Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_update_status ;;
+    group_label: "Network"
+    group_item_label: "System Channel Update Status"
+
+    link: {
+      label: "Glean Dictionary reference for Network System Channel Update Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_system_channel_update_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the status of succeeded and failed requests to aus5.mozilla.org
 "
   }
 
@@ -4729,6 +7258,98 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__sum {
+    label: "Networking Cache Metadata First Read Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cache Metadata First Read Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cache Metadata First Read Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_cache_metadata_first_read_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent to read the first part of the metadata from the cache entry file.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__sum {
+    label: "Networking Cache Metadata Second Read Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cache Metadata Second Read Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cache Metadata Second Read Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_cache_metadata_second_read_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent to read the missing part of the metadata from the cache entry file.
+"
+  }
+
+  dimension: metrics__memory_distribution__networking_cache_metadata_size__sum {
+    label: "Networking Cache Metadata Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.networking_cache_metadata_size.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cache Metadata Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cache Metadata Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_cache_metadata_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of the metadata in bytes parsed from the disk."
+  }
+
+  dimension: metrics__labeled_counter__networking_captive_portal_banner_display_time {
+    label: "Networking Captive Portal Banner Display Time"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_captive_portal_banner_display_time ;;
+    group_label: "Networking"
+    group_item_label: "Captive Portal Banner Display Time"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Captive Portal Banner Display Time"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_captive_portal_banner_display_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of seconds the captive portal banner was displayed for, keyed by close reason:
+  \"success\" - the portal login was completed
+  \"abort\"   - the portal login was aborted (e.g. loss of network)
+  \"dismiss\" - the user dismissed the banner
+This metric was generated to correspond to the Legacy Telemetry scalar networking.captive_portal_banner_display_time.
+"
+  }
+
+  dimension: metrics__counter__networking_captive_portal_banner_displayed {
+    label: "Networking Captive Portal Banner Displayed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.networking_captive_portal_banner_displayed ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Captive Portal Banner Displayed"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Captive Portal Banner Displayed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_captive_portal_banner_displayed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the captive portal banner was displayed in this session. This metric was generated to correspond to the Legacy Telemetry scalar networking.captive_portal_banner_displayed.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__sum {
     label: "Networking Cookie Access Fixup Diff Sum"
     hidden: no
@@ -4762,6 +7383,24 @@ To be used to validate GIFFT.
     }
 
     description: "The number of cookie bytes exceeding chips partition limit capacity for a single partition
+"
+  }
+
+  dimension: metrics__counter__networking_cookie_count_invalid_first_party_partitioned_in_db {
+    label: "Networking Cookie Count Invalid First Party Partitioned In Db"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.networking_cookie_count_invalid_first_party_partitioned_in_db ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cookie Count Invalid First Party Partitioned In Db"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie Count Invalid First Party Partitioned In Db"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_cookie_count_invalid_first_party_partitioned_in_db"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of invalid first-party partitioned cookies that don't have the partitioned cookie attribution(CHIPS).
 "
   }
 
@@ -4926,6 +7565,56 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_data_transferred_v3_kb {
+    label: "Networking Data Transferred V3 Kb"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_data_transferred_v3_kb ;;
+    group_label: "Networking"
+    group_item_label: "Data Transferred V3 Kb"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Data Transferred V3 Kb"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_data_transferred_v3_kb"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many KB of HTTP data transferred by type, there are some categories separated by keys based on 5 parameters:
+  1. normal browsing or private browsing
+  2. system principal or not
+  3. first party or third party
+  4. class of service (Leader/Background/Others)
+  5. tracking classification (Basic/Content/FingerprintingContent)
+
+Available keys are:
+  \"Y0_N1Sys\",
+  \"Y1_N1\",
+  \"Y2_N3Oth\",
+  \"Y3_N3BasicLead\",
+  \"Y4_N3BasicBg\",
+  \"Y5_N3BasicOth\",
+  \"Y6_N3ContentLead\",
+  \"Y7_N3ContentBg\",
+  \"Y8_N3ContentOth\",
+  \"Y9_N3FpLead\",
+  \"Y10_N3FpBg\",
+  \"Y11_N3FpOth\",
+  \"Y12_P1Sys\",
+  \"Y13_P1\",
+  \"Y14_P3Oth\",
+  \"Y15_P3BasicLead\",
+  \"Y16_P3BasicBg\",
+  \"Y17_P3BasicOth\",
+  \"Y18_P3ContentLead\",
+  \"Y19_P3ContentBg\",
+  \"Y20_P3ContentOth\",
+  \"Y21_P3FpLead\",
+  \"Y22_P3FpBg\",
+  \"Y23_P3FpOth\"
+
+This metric was generated to correspond to the Legacy Telemetry scalar networking.data_transferred_v3_kb.
+"
+  }
+
   dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__sum {
     label: "Networking Dns Failed Lookup Time Sum"
     hidden: no
@@ -5033,6 +7722,58 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_fetch_keepalive_discard_count {
+    label: "Networking Fetch Keepalive Discard Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_fetch_keepalive_discard_count ;;
+    group_label: "Networking"
+    group_item_label: "Fetch Keepalive Discard Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Fetch Keepalive Discard Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_fetch_keepalive_discard_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many fetch keepalive requests are dropped due to configured resource limits.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_fetch_keepalive_request_count {
+    label: "Networking Fetch Keepalive Request Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_fetch_keepalive_request_count ;;
+    group_label: "Networking"
+    group_item_label: "Fetch Keepalive Request Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Fetch Keepalive Request Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_fetch_keepalive_request_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many fetch keepalive requests are made. This counter helps us to understand the adoption of fetch keepalive for firefox.
+"
+  }
+
+  dimension: metrics__boolean__networking_http3_enabled {
+    label: "Networking Http3 Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.networking_http3_enabled ;;
+    type: yesno
+    group_label: "Networking"
+    group_item_label: "Http3 Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http3 Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http3_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if HTTP3 is enabled at the start of a session. This metric was generated to correspond to the Legacy Telemetry scalar networking.http3_enabled.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_http_1_download_throughput__sum {
     label: "Networking Http 1 Download Throughput Sum"
     hidden: no
@@ -5048,6 +7789,60 @@ To be used to validate GIFFT.
     }
 
     description: "The download throughput for  http/1.0, http/1.1 requests larger than 10MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_download_throughput_100__sum {
+    label: "Networking Http 1 Download Throughput 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 1 Download Throughput 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 1 Download Throughput 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_1_download_throughput_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The download throughput for http/1.0 and http/1.1 requests size larger than 100MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_download_throughput_10_50__sum {
+    label: "Networking Http 1 Download Throughput 10 50 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput_10_50.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 1 Download Throughput 10 50 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 1 Download Throughput 10 50 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_1_download_throughput_10_50"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The download throughput for http/1.0 and http/1.1 requests between 10MB and 50MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_download_throughput_50_100__sum {
+    label: "Networking Http 1 Download Throughput 50 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput_50_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 1 Download Throughput 50 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 1 Download Throughput 50 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_1_download_throughput_50_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The download throughput for http/1.0 and http/1.1 requests between 50MB and 100MB. Measured in megabits per second, Mbps.
 "
   }
 
@@ -5141,6 +7936,60 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_2_download_throughput_100__sum {
+    label: "Networking Http 2 Download Throughput 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 2 Download Throughput 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 2 Download Throughput 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_2_download_throughput_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The download throughput for http/2 requests size larger than 100MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_download_throughput_10_50__sum {
+    label: "Networking Http 2 Download Throughput 10 50 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput_10_50.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 2 Download Throughput 10 50 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 2 Download Throughput 10 50 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_2_download_throughput_10_50"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The download throughput for http/2 requests between 10MB and 50MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_download_throughput_50_100__sum {
+    label: "Networking Http 2 Download Throughput 50 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput_50_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 2 Download Throughput 50 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 2 Download Throughput 50 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_2_download_throughput_50_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The download throughput for http/2 requests between 50MB and 100MB. Measured in megabits per second, Mbps.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_http_2_upload_throughput__sum {
     label: "Networking Http 2 Upload Throughput Sum"
     hidden: no
@@ -5213,6 +8062,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_connection_close_reason {
+    label: "Networking Http 3 Connection Close Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_connection_close_reason ;;
+    group_label: "Networking"
+    group_item_label: "Http 3 Connection Close Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Connection Close Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_3_connection_close_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of HTTP3 connections closed, labeled by reason.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_download_throughput__sum {
     label: "Networking Http 3 Download Throughput Sum"
     hidden: no
@@ -5228,6 +8094,220 @@ To be used to validate GIFFT.
     }
 
     description: "The download throughput for http/3 requests larger than 10MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_100__sum {
+    label: "Networking Http 3 Download Throughput 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Download Throughput 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Download Throughput 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_3_download_throughput_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The download throughput for http/3 requests size larger than 100MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_10_50__sum {
+    label: "Networking Http 3 Download Throughput 10 50 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_10_50.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Download Throughput 10 50 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Download Throughput 10 50 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_3_download_throughput_10_50"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The download throughput for http/3 requests between 10MB and 50MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_50_100__sum {
+    label: "Networking Http 3 Download Throughput 50 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_50_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Download Throughput 50 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Download Throughput 50 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_3_download_throughput_50_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The download throughput for http/3 requests between 50MB and 100MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_received__sum {
+    label: "Networking Http 3 Ecn Ce Ect0 Ratio Received Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_received.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Ecn Ce Ect0 Ratio Received Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Ecn Ce Ect0 Ratio Received Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_3_ecn_ce_ect0_ratio_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: ECN CE to ECT0 ratio (multiply by 10000) received.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_sent__sum {
+    label: "Networking Http 3 Ecn Ce Ect0 Ratio Sent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_sent.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Ecn Ce Ect0 Ratio Sent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Ecn Ce Ect0 Ratio Sent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_3_ecn_ce_ect0_ratio_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: ECN CE to ECT0 ratio (multiply by 10000) sent.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_ecn_path_capability {
+    label: "Networking Http 3 Ecn Path Capability"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_ecn_path_capability ;;
+    group_label: "Networking"
+    group_item_label: "Http 3 Ecn Path Capability"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Ecn Path Capability"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_3_ecn_path_capability"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of paths known to be ECN capable or not-capable.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_loss_ratio__sum {
+    label: "Networking Http 3 Loss Ratio Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Loss Ratio Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Loss Ratio Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_3_loss_ratio"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: packet loss ratio (multiply by 10000).
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_quic_frame_count {
+    label: "Networking Http 3 Quic Frame Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_quic_frame_count ;;
+    group_label: "Networking"
+    group_item_label: "Http 3 Quic Frame Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Quic Frame Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_3_quic_frame_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of QUIC frames send and received by type.
+"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__sum {
+    label: "Networking Http 3 Udp Datagram Segment Size Received Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_received.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Udp Datagram Segment Size Received Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Udp Datagram Segment Size Received Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_3_udp_datagram_segment_size_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3 UDP datagram size received.
+"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_sent__sum {
+    label: "Networking Http 3 Udp Datagram Segment Size Sent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_sent.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Udp Datagram Segment Size Sent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Udp Datagram Segment Size Sent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_3_udp_datagram_segment_size_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3 UDP datagram segment size sent.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__sum {
+    label: "Networking Http 3 Udp Datagram Segments Received Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_received.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Udp Datagram Segments Received Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Udp Datagram Segments Received Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_3_udp_datagram_segments_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3 UDP number of segments per datagram received.
+"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_received__sum {
+    label: "Networking Http 3 Udp Datagram Size Received Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_received.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Udp Datagram Size Received Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Udp Datagram Size Received Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_3_udp_datagram_size_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3 UDP datagram size received.
 "
   }
 
@@ -5596,7 +8676,25 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The time between dispatching OnDataFinished from the socket thread and processing it.
+    description: "The time between dispatching OnDataFinished from the socket thread and processing it on main/background thread.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__sum {
+    label: "Networking Http Content Ondatafinished Delay 2 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Content Ondatafinished Delay 2 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Content Ondatafinished Delay 2 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_content_ondatafinished_delay_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between dispatching OnDataFinished from the socket thread and processing it on the background thread.
 "
   }
 
@@ -5669,6 +8767,40 @@ To be used to validate GIFFT.
     }
 
     description: "The time between dispatching OnStopRequest from the socket thread and processing it on the main thread (content process).
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_ip_addr_any_count {
+    label: "Networking Http Ip Addr Any Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_ip_addr_any_count ;;
+    group_label: "Networking"
+    group_item_label: "Http Ip Addr Any Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Ip Addr Any Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_ip_addr_any_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we see the IP address 0.0.0.0 or its IPv6 equivalent.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_ip_addr_any_hostnames {
+    label: "Networking Http Ip Addr Any Hostnames"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_ip_addr_any_hostnames ;;
+    group_label: "Networking"
+    group_item_label: "Http Ip Addr Any Hostnames"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Ip Addr Any Hostnames"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_ip_addr_any_hostnames"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we see the IP address 0.0.0.0 or its IPv6 equivalent used as hostnames
 "
   }
 
@@ -5775,6 +8907,58 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_https_http_or_local {
+    label: "Networking Https Http Or Local"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_http_or_local ;;
+    group_label: "Networking"
+    group_item_label: "Https Http Or Local"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Https Http Or Local"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_https_http_or_local"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a top-level request is HTTPS, HTTP, or HTTP for local domain
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_https_record_state {
+    label: "Networking Https Record State"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_record_state ;;
+    group_label: "Networking"
+    group_item_label: "Https Record State"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Https Record State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_https_record_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gather the outcome of checking if a HTTPS record can be used: - \"invalid\" - \"succeeded\" - \"unmatched_cname\" - \"all_excluded\" - \"no_default_alpn\" - \"others\"
+"
+  }
+
+  dimension: metrics__quantity__networking_https_rr_prefs_usage {
+    label: "Networking Https Rr Prefs Usage"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.networking_https_rr_prefs_usage ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Https Rr Prefs Usage"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Https Rr Prefs Usage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_https_rr_prefs_usage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A bitfield representation for the usage of HTTPS RR prefs. bit 0: network.dns.upgrade_with_https_rr is enabled or not. bit 1: network.dns.use_https_rr_as_altsvc is enabled or not. bit 2: network.dns.echconfig.enabled is enabled or not. This metric was generated to correspond to the Legacy Telemetry scalar networking.https_rr_prefs_usage.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_https_rr_presented {
     label: "Networking Https Rr Presented"
     hidden: yes
@@ -5806,6 +8990,42 @@ To be used to validate GIFFT.
     }
 
     description: "Whether an HTTP request gets upgraded to HTTPS because of HTTPS RR
+"
+  }
+
+  dimension: metrics__quantity__networking_loading_certs_task {
+    label: "Networking Loading Certs Task"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.networking_loading_certs_task ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Loading Certs Task"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Loading Certs Task"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_loading_certs_task"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time in milliseconds to load any external certificates. This occurs off of the main-thread, but can block main-thread operations. This metric was generated to correspond to the Legacy Telemetry scalar networking.loading_certs_task.
+"
+  }
+
+  dimension: metrics__quantity__networking_nss_initialization {
+    label: "Networking Nss Initialization"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.networking_nss_initialization ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Nss Initialization"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Nss Initialization"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_nss_initialization"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time in milliseconds to initialize the NSS component in the parent process. This metric was generated to correspond to the Legacy Telemetry scalar networking.nss_initialization.
 "
   }
 
@@ -5894,6 +9114,42 @@ To be used to validate GIFFT.
     }
 
     description: "This counts the number of times we set a cookie. Introduced as a denomenator for measuring CHIPS adoption.
+"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_expired_without_server_time__numerator {
+    label: "Networking Set Cookie Expired Without Server Time Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_expired_without_server_time.numerator ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Set Cookie Expired Without Server Time Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie Expired Without Server Time Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_set_cookie_expired_without_server_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times a cookie is set already expires but it would not if we considered the server time.
+"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_expired_without_server_time__denominator {
+    label: "Networking Set Cookie Expired Without Server Time Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_expired_without_server_time.denominator ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Set Cookie Expired Without Server Time Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie Expired Without Server Time Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_set_cookie_expired_without_server_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times a cookie is set already expires but it would not if we considered the server time.
 "
   }
 
@@ -6005,6 +9261,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__networking_set_invalid_first_party_partitioned_cookie {
+    label: "Networking Set Invalid First Party Partitioned Cookie"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.networking_set_invalid_first_party_partitioned_cookie ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Set Invalid First Party Partitioned Cookie"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Invalid First Party Partitioned Cookie"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_set_invalid_first_party_partitioned_cookie"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times we set an invalid first-party partitioned cookie.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_speculative_connect_outcome {
     label: "Networking Speculative Connect Outcome"
     hidden: yes
@@ -6036,6 +9310,42 @@ To be used to validate GIFFT.
     }
 
     description: "Counts the occurrence of each outcome of a speculative connection
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__sum {
+    label: "Networking Sqlite Cookies Block Main Thread Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Sqlite Cookies Block Main Thread Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Sqlite Cookies Block Main Thread Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_sqlite_cookies_block_main_thread"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent on blocking main thread by startup cookie database read (in milliseconds), only for blocking case
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__sum {
+    label: "Networking Sqlite Cookies Time To Block Main Thread Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Sqlite Cookies Time To Block Main Thread Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Sqlite Cookies Time To Block Main Thread Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_sqlite_cookies_time_to_block_main_thread"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long (in milliseconds) after we finished reading the cookie db until the first cookie request came in (0 implies we blocked the main thread)
 "
   }
 
@@ -6075,6 +9385,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_trr_connection_cycle_count {
+    label: "Networking Trr Connection Cycle Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_trr_connection_cycle_count ;;
+    group_label: "Networking"
+    group_item_label: "Trr Connection Cycle Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Trr Connection Cycle Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_trr_connection_cycle_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times we cycled the TRR connection during a subsession. Keyed by TRR provider URL. This metric was generated to correspond to the Legacy Telemetry scalar networking.trr_connection_cycle_count.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_trr_request_count {
     label: "Networking Trr Request Count"
     hidden: yes
@@ -6089,6 +9416,149 @@ To be used to validate GIFFT.
     }
 
     description: "The count of successful TRR requests keyed by regular/private browsing
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_trr_request_count_per_conn {
+    label: "Networking Trr Request Count Per Conn"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_trr_request_count_per_conn ;;
+    group_label: "Networking"
+    group_item_label: "Trr Request Count Per Conn"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Trr Request Count Per Conn"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_trr_request_count_per_conn"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of DOH requests per connection keyed by HTTP version
+"
+  }
+
+  dimension: metrics__labeled_quantity__normandy_recipe_freshness {
+    label: "Normandy Recipe Freshness"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_quantity.normandy_recipe_freshness ;;
+    type: string
+    group_label: "Normandy"
+    group_item_label: "Recipe Freshness"
+
+    link: {
+      label: "Glean Dictionary reference for Normandy Recipe Freshness"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/normandy_recipe_freshness"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "For each recipe ID seen by the Normandy client, its last_modified. This metric was generated to correspond to the Legacy Telemetry scalar normandy.recipe_freshness.
+"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__sum {
+    label: "Ocsp Request Time Cancel Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.sum ;;
+    type: number
+    group_label: "Ocsp Request Time"
+    group_item_label: "Cancel Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ocsp Request Time Cancel Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/ocsp_request_time_cancel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time it takes to make an OCSP request that was cancelled.
+"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__sum {
+    label: "Ocsp Request Time Failure Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.sum ;;
+    type: number
+    group_label: "Ocsp Request Time"
+    group_item_label: "Failure Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ocsp Request Time Failure Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/ocsp_request_time_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time it takes to make an OCSP request that failed.
+"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__sum {
+    label: "Ocsp Request Time Success Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.sum ;;
+    type: number
+    group_label: "Ocsp Request Time"
+    group_item_label: "Success Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ocsp Request Time Success Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/ocsp_request_time_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time it takes to make an OCSP request that succeeded.
+"
+  }
+
+  dimension: metrics__counter__opaque_response_blocking_cross_origin_opaque_response_count {
+    label: "Opaque Response Blocking Cross Origin Opaque Response Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.opaque_response_blocking_cross_origin_opaque_response_count ;;
+    type: number
+    group_label: "Opaque Response Blocking"
+    group_item_label: "Cross Origin Opaque Response Count"
+
+    link: {
+      label: "Glean Dictionary reference for Opaque Response Blocking Cross Origin Opaque Response Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/opaque_response_blocking_cross_origin_opaque_response_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of loads of cross origin opaque resources. This metric was generated to correspond to the Legacy Telemetry scalar opaque.response.blocking.cross_origin_opaque_response_count.
+"
+  }
+
+  dimension: metrics__counter__opaque_response_blocking_javascript_validation_count {
+    label: "Opaque Response Blocking Javascript Validation Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.opaque_response_blocking_javascript_validation_count ;;
+    type: number
+    group_label: "Opaque Response Blocking"
+    group_item_label: "Javascript Validation Count"
+
+    link: {
+      label: "Glean Dictionary reference for Opaque Response Blocking Javascript Validation Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/opaque_response_blocking_javascript_validation_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we run the JS validator. This metric was generated to correspond to the Legacy Telemetry scalar opaque.response.blocking.javascript_validation_count.
+"
+  }
+
+  dimension: metrics__boolean__os_environment_is_admin_without_uac {
+    label: "Os Environment Is Admin Without Uac"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.os_environment_is_admin_without_uac ;;
+    type: yesno
+    group_label: "Os Environment"
+    group_item_label: "Is Admin Without Uac"
+
+    link: {
+      label: "Glean Dictionary reference for Os Environment Is Admin Without Uac"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/os_environment_is_admin_without_uac"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates that the process is lauched with Admin privileges but without UAC. This metric was generated to correspond to the Legacy Telemetry scalar os.environment.is_admin_without_uac.
 "
   }
 
@@ -6124,6 +9594,42 @@ To be used to validate GIFFT.
     }
 
     description: "The time to build a Gecko display list.
+"
+  }
+
+  dimension: metrics__rate__parsing_svg_unusual_pcdata__numerator {
+    label: "Parsing Svg Unusual Pcdata Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.parsing_svg_unusual_pcdata.numerator ;;
+    type: number
+    group_label: "Parsing"
+    group_item_label: "Svg Unusual Pcdata Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Parsing Svg Unusual Pcdata Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/parsing_svg_unusual_pcdata"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The rate of svg elements that have child elements during parsing, where their HTML counterpart would not have children.
+"
+  }
+
+  dimension: metrics__rate__parsing_svg_unusual_pcdata__denominator {
+    label: "Parsing Svg Unusual Pcdata Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.parsing_svg_unusual_pcdata.denominator ;;
+    type: number
+    group_label: "Parsing"
+    group_item_label: "Svg Unusual Pcdata Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Parsing Svg Unusual Pcdata Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/parsing_svg_unusual_pcdata"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The rate of svg elements that have child elements during parsing, where their HTML counterpart would not have children.
 "
   }
 
@@ -6390,6 +9896,41 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_image_added {
+    label: "Pdfjs Image Added"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_image_added ;;
+    group_label: "Pdfjs Image"
+    group_item_label: "Added"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Image Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_image_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of images added with/without alt text.
+"
+  }
+
+  dimension: metrics__labeled_boolean__pdfjs_image_alt_text_edit {
+    label: "Pdfjs Image Alt Text Edit"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.pdfjs_image_alt_text_edit ;;
+    type: string
+    group_label: "Pdfjs Image"
+    group_item_label: "Alt Text Edit"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Image Alt Text Edit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_image_alt_text_edit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Stores alt text modal settings for the user.
+"
+  }
+
   dimension: metrics__labeled_counter__pdfjs_stamp {
     label: "Pdfjs Stamp"
     hidden: yes
@@ -6625,7 +10166,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__sum {
     label: "Performance Pageload Eh Fcp Preconnect Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -6643,7 +10184,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__sum {
     label: "Performance Pageload Eh Fcp Preconnect Preload With Eh Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -6661,7 +10202,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__sum {
     label: "Performance Pageload Eh Fcp Preconnect Preload Without Eh Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -6679,7 +10220,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__sum {
     label: "Performance Pageload Eh Fcp Preload With Eh Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -6697,7 +10238,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__sum {
     label: "Performance Pageload Eh Fcp Preload Without Eh Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -6859,7 +10400,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__sum {
     label: "Performance Pageload Req Anim Frame Callback Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_req_anim_frame_callback.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -6877,7 +10418,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__sum {
     label: "Performance Responsiveness Req Anim Frame Callback Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_responsiveness_req_anim_frame_callback.sum ;;
     type: number
     group_label: "Performance Responsiveness"
@@ -7106,6 +10647,42 @@ To be used to validate GIFFT.
     }
 
     description: "The number of third-party PKCS#11 modules loaded."
+  }
+
+  dimension: metrics__quantity__policies_count {
+    label: "Policies Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.policies_count ;;
+    type: number
+    group_label: "Policies"
+    group_item_label: "Count"
+
+    link: {
+      label: "Glean Dictionary reference for Policies Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/policies_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A uint with the number of active enterprise policies, collected once at startup. This metric was generated to correspond to the Legacy Telemetry scalar policies.count.
+"
+  }
+
+  dimension: metrics__boolean__policies_is_enterprise {
+    label: "Policies Is Enterprise"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.policies_is_enterprise ;;
+    type: yesno
+    group_label: "Policies"
+    group_item_label: "Is Enterprise"
+
+    link: {
+      label: "Glean Dictionary reference for Policies Is Enterprise"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/policies_is_enterprise"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Attempt to determine if the user is an enterprise user based on various signals. This metric was generated to correspond to the Legacy Telemetry scalar policies.is_enterprise.
+"
   }
 
   dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__sum {
@@ -7471,6 +11048,165 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__boolean__preferences_prefs_file_was_invalid {
+    label: "Preferences Prefs File Was Invalid"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_prefs_file_was_invalid ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Prefs File Was Invalid"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Prefs File Was Invalid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/preferences_prefs_file_was_invalid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to true if a failure occurred reading profile/prefs.js. This metric was generated to correspond to the Legacy Telemetry scalar preferences.prefs_file_was_invalid.
+"
+  }
+
+  dimension: metrics__counter__printing_dialog_opened_via_preview_tm {
+    label: "Printing Dialog Opened Via Preview Tm"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.printing_dialog_opened_via_preview_tm ;;
+    type: number
+    group_label: "Printing"
+    group_item_label: "Dialog Opened Via Preview Tm"
+
+    link: {
+      label: "Glean Dictionary reference for Printing Dialog Opened Via Preview Tm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/printing_dialog_opened_via_preview_tm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter incremented every time a user opens the system print dialog from the print preview interface. This metric was generated to correspond to the Legacy Telemetry scalar printing.dialog_opened_via_preview_tm.
+"
+  }
+
+  dimension: metrics__counter__printing_dialog_via_preview_cancelled_tm {
+    label: "Printing Dialog Via Preview Cancelled Tm"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.printing_dialog_via_preview_cancelled_tm ;;
+    type: number
+    group_label: "Printing"
+    group_item_label: "Dialog Via Preview Cancelled Tm"
+
+    link: {
+      label: "Glean Dictionary reference for Printing Dialog Via Preview Cancelled Tm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/printing_dialog_via_preview_cancelled_tm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter incremented every time a user cancels a system print dialog that they opened from the print preview interface. This metric was generated to correspond to the Legacy Telemetry scalar printing.dialog_via_preview_cancelled_tm.
+"
+  }
+
+  dimension: metrics__labeled_counter__printing_error {
+    label: "Printing Error"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.printing_error ;;
+    group_label: "Printing"
+    group_item_label: "Error"
+
+    link: {
+      label: "Glean Dictionary reference for Printing Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/printing_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter incremented every time the user encounters an error printing. The result is split into keys which represent the values of error codes related to printing. Possible values are listed in 'keys'. \"FAILURE\" is a catch-all code for an error we don't recognize. This metric was generated to correspond to the Legacy Telemetry scalar printing.error.
+"
+  }
+
+  dimension: metrics__counter__printing_preview_cancelled_tm {
+    label: "Printing Preview Cancelled Tm"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.printing_preview_cancelled_tm ;;
+    type: number
+    group_label: "Printing"
+    group_item_label: "Preview Cancelled Tm"
+
+    link: {
+      label: "Glean Dictionary reference for Printing Preview Cancelled Tm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/printing_preview_cancelled_tm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter incremented every time a user exits print preview without printing. This metric was generated to correspond to the Legacy Telemetry scalar printing.preview_cancelled_tm.
+"
+  }
+
+  dimension: metrics__counter__printing_preview_opened_tm {
+    label: "Printing Preview Opened Tm"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.printing_preview_opened_tm ;;
+    type: number
+    group_label: "Printing"
+    group_item_label: "Preview Opened Tm"
+
+    link: {
+      label: "Glean Dictionary reference for Printing Preview Opened Tm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/printing_preview_opened_tm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter incremented every time a user opens print preview. This metric was generated to correspond to the Legacy Telemetry scalar printing.preview_opened_tm.
+"
+  }
+
+  dimension: metrics__labeled_counter__printing_settings_changed {
+    label: "Printing Settings Changed"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.printing_settings_changed ;;
+    group_label: "Printing"
+    group_item_label: "Settings Changed"
+
+    link: {
+      label: "Glean Dictionary reference for Printing Settings Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/printing_settings_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A count of how many times the user changed a setting in print preview, broken down per setting. This metric was generated to correspond to the Legacy Telemetry scalar printing.settings_changed.
+"
+  }
+
+  dimension: metrics__counter__printing_silent_print {
+    label: "Printing Silent Print"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.printing_silent_print ;;
+    type: number
+    group_label: "Printing"
+    group_item_label: "Silent Print"
+
+    link: {
+      label: "Glean Dictionary reference for Printing Silent Print"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/printing_silent_print"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter incremented every time a silent print (a print without a print settings dialog being opened) is initiated.  This happens when extensions invoke ExtensionAPI.tabs.saveAsPDF, for example, or when the print.always_print_silent pref is set. This metric was generated to correspond to the Legacy Telemetry scalar printing.silent_print.
+"
+  }
+
+  dimension: metrics__labeled_counter__printing_target_type {
+    label: "Printing Target Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.printing_target_type ;;
+    group_label: "Printing"
+    group_item_label: "Target Type"
+
+    link: {
+      label: "Glean Dictionary reference for Printing Target Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/printing_target_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter incremented every time the user prints to a certain target type.  The 'pdf_unknown' count is for printers with names that we don't know about/check for, but that have 'pdf' in their name, and is mainly a sanity check that we're not missing significant counts in 'pdf_file'. For the most part, the 'unknown' count will be prints to a physical printer, but we can't know for sure since third party drivers could also be print to file drivers that we don't otherwise catch in the other counts. This metric was generated to correspond to the Legacy Telemetry scalar printing.target_type.
+"
+  }
+
   dimension: metrics__timing_distribution__privacy_sanitize_load_time__sum {
     label: "Privacy Sanitize Load Time Sum"
     hidden: no
@@ -7503,6 +11239,24 @@ To be used to validate GIFFT.
     }
 
     description: "The result of auto-filling a login form."
+  }
+
+  dimension: metrics__quantity__pwmgr_potentially_breached_passwords {
+    label: "Pwmgr Potentially Breached Passwords"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.pwmgr_potentially_breached_passwords ;;
+    type: number
+    group_label: "Pwmgr"
+    group_item_label: "Potentially Breached Passwords"
+
+    link: {
+      label: "Glean Dictionary reference for Pwmgr Potentially Breached Passwords"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pwmgr_potentially_breached_passwords"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of potentially breached passwords, as determined by LoginBreaches.getPotentialBreachesByLoginGUID. This metric was generated to correspond to the Legacy Telemetry scalar pwmgr.potentially_breached_passwords.
+"
   }
 
   dimension: metrics__counter__rtcrtpsender_count {
@@ -8077,6 +11831,182 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__script_preloader_mainthread_recompile {
+    label: "Script Preloader Mainthread Recompile"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.script_preloader_mainthread_recompile ;;
+    type: number
+    group_label: "Script Preloader"
+    group_item_label: "Mainthread Recompile"
+
+    link: {
+      label: "Glean Dictionary reference for Script Preloader Mainthread Recompile"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/script_preloader_mainthread_recompile"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times we ended up recompiling a script from the script preloader on the main thread. This metric was generated to correspond to the Legacy Telemetry scalar script.preloader.mainthread_recompile.
+"
+  }
+
+  dimension: metrics__rate__sct_signature_cache_hits__numerator {
+    label: "Sct Signature Cache Hits Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.sct_signature_cache_hits.numerator ;;
+    type: number
+    group_label: "Sct Signature Cache"
+    group_item_label: "Hits Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Sct Signature Cache Hits Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/sct_signature_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often an SCT signature to be verified is in the cache already.
+"
+  }
+
+  dimension: metrics__rate__sct_signature_cache_hits__denominator {
+    label: "Sct Signature Cache Hits Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.sct_signature_cache_hits.denominator ;;
+    type: number
+    group_label: "Sct Signature Cache"
+    group_item_label: "Hits Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Sct Signature Cache Hits Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/sct_signature_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often an SCT signature to be verified is in the cache already.
+"
+  }
+
+  dimension: metrics__counter__sct_signature_cache_total {
+    label: "Sct Signature Cache Total"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.sct_signature_cache_total ;;
+    type: number
+    group_label: "Sct Signature Cache"
+    group_item_label: "Total"
+
+    link: {
+      label: "Glean Dictionary reference for Sct Signature Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/sct_signature_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many SCT signature verifications are performed.
+"
+  }
+
+  dimension: metrics__labeled_counter__security_client_auth_cert_usage {
+    label: "Security Client Auth Cert Usage"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.security_client_auth_cert_usage ;;
+    group_label: "Security"
+    group_item_label: "Client Auth Cert Usage"
+
+    link: {
+      label: "Glean Dictionary reference for Security Client Auth Cert Usage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/security_client_auth_cert_usage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures how many servers have requested a client authentication certificate (key: \"requested\") and how many times the user has opted to send one in response (key: \"sent\"). This metric was generated to correspond to the Legacy Telemetry scalar security.client_auth_cert_usage.
+"
+  }
+
+  dimension: metrics__quantity__startup_profile_count {
+    label: "Startup Profile Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.startup_profile_count ;;
+    type: number
+    group_label: "Startup"
+    group_item_label: "Profile Count"
+
+    link: {
+      label: "Glean Dictionary reference for Startup Profile Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/startup_profile_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This records the number of known profiles after startup completes. This includes any profiles that were created during startup. This metric was generated to correspond to the Legacy Telemetry scalar startup.profile_count.
+"
+  }
+
+  dimension: metrics__string__startup_profile_database_version {
+    label: "Startup Profile Database Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.startup_profile_database_version ;;
+    type: string
+    group_label: "Startup"
+    group_item_label: "Profile Database Version"
+
+    link: {
+      label: "Glean Dictionary reference for Startup Profile Database Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/startup_profile_database_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of the profiles.ini database loaded during startup. A value of \"0\" is used to indicate that no file was present during startup. This metric was generated to correspond to the Legacy Telemetry scalar startup.profile_database_version.
+"
+  }
+
+  dimension: metrics__string__startup_profile_selection_reason {
+    label: "Startup Profile Selection Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.string.startup_profile_selection_reason ;;
+    type: string
+    group_label: "Startup"
+    group_item_label: "Profile Selection Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Startup Profile Selection Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/startup_profile_selection_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How the profile was selected during startup. One of the following reasons:
+  unknown:
+    Generally should not happen, set as a default in case no other reason
+    occured.
+  profile-manager:
+    The profile was selected by the profile manager.
+  profile-selector:
+    The profile was selected by the profile selector window.
+  profile-reset:
+    The profile was selected for reset, normally this would mean a restart.
+  restart:
+    The user restarted the application, the same profile as previous will
+    be used.
+  argument-profile:
+    The profile was selected by the --profile command line argument.
+  argument-p:
+    The profile was selected by the -p command line argument.
+  firstrun-claimed-default:
+    A first run of a dedicated profiles build chose the old default
+    profile to be the default for this install.
+  firstrun-skipped-default:
+    A first run of a dedicated profiles build skipped over the old default
+    profile and created a new profile.
+  restart-claimed-default:
+    A first run of a dedicated profiles build after a restart chose the
+    old default profile to be the default for this install.
+  restart-skipped-default:
+    A first run of a dedicated profiles build after a restart skipped over
+    the old default profile and created a new profile.
+  firstrun-created-default:
+    A first run of the application created a new profile to use.
+  default:
+    The default profile was selected as normal.
+This metric was generated to correspond to the Legacy Telemetry scalar startup.profile_selection_reason.
+"
+  }
+
   dimension: metrics__custom_distribution__timer_thread_timers_fired_per_wakeup__sum {
     label: "Timer Thread Timers Fired Per Wakeup Sum"
     hidden: no
@@ -8092,6 +12022,42 @@ To be used to validate GIFFT.
     }
 
     description: "How many timers were processed in a single wake-up of the Timer Thread.
+"
+  }
+
+  dimension: metrics__quantity__timestamps_first_paint {
+    label: "Timestamps First Paint"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.timestamps_first_paint ;;
+    type: number
+    group_label: "Timestamps"
+    group_item_label: "First Paint"
+
+    link: {
+      label: "Glean Dictionary reference for Timestamps First Paint"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/timestamps_first_paint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record the timestamp of the first content window paint, in milliseconds since process start. This metric was generated to correspond to the Legacy Telemetry scalar timestamps.first_paint.
+"
+  }
+
+  dimension: metrics__quantity__timestamps_first_paint_two {
+    label: "Timestamps First Paint Two"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.timestamps_first_paint_two ;;
+    type: number
+    group_label: "Timestamps"
+    group_item_label: "First Paint Two"
+
+    link: {
+      label: "Glean Dictionary reference for Timestamps First Paint Two"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/timestamps_first_paint_two"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record the timestamp of the first main window paint, in milliseconds since process start. Intended to replace first_paint since first_paint is broken. This metric was generated to correspond to the Legacy Telemetry scalar timestamps.first_paint_two.
 "
   }
 
@@ -8126,7 +12092,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The error that was returned from a failed TLS 1.3 handshake in which the client sent a Xyber key share (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
+    description: "The error that was returned from a failed TLS 1.3 handshake in which the client sent a mlkem768x25519 key share (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
 "
   }
 
@@ -8381,6 +12347,127 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__web_notification_insecure_context_permission_request {
+    label: "Web Notification Insecure Context Permission Request"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.web_notification_insecure_context_permission_request ;;
+    type: number
+    group_label: "Web Notification"
+    group_item_label: "Insecure Context Permission Request"
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification Insecure Context Permission Request"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/web_notification_insecure_context_permission_request"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether we saw a permission request from an insecure context.
+"
+  }
+
+  dimension: metrics__labeled_counter__web_notification_permission_origin {
+    label: "Web Notification Permission Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.web_notification_permission_origin ;;
+    group_label: "Web Notification"
+    group_item_label: "Permission Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification Permission Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/web_notification_permission_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The category of the origin that retrieves Notification.permission.
+"
+  }
+
+  dimension: metrics__labeled_counter__web_notification_request_permission_origin {
+    label: "Web Notification Request Permission Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.web_notification_request_permission_origin ;;
+    group_label: "Web Notification"
+    group_item_label: "Request Permission Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification Request Permission Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/web_notification_request_permission_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The category of the origin that calls Notification.requestPermission().
+"
+  }
+
+  dimension: metrics__labeled_counter__web_notification_show_origin {
+    label: "Web Notification Show Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.web_notification_show_origin ;;
+    group_label: "Web Notification"
+    group_item_label: "Show Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification Show Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/web_notification_show_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The category of the origin that calls new Notification/showNotification().
+"
+  }
+
+  dimension: metrics__labeled_counter__web_push_content_encoding {
+    label: "Web Push Content Encoding"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.web_push_content_encoding ;;
+    group_label: "Web Push"
+    group_item_label: "Content Encoding"
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Content Encoding"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/web_push_content_encoding"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which content encoding is being used for push.
+"
+  }
+
+  dimension: metrics__counter__web_push_detected_duplicated_message_ids {
+    label: "Web Push Detected Duplicated Message Ids"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.web_push_detected_duplicated_message_ids ;;
+    type: number
+    group_label: "Web Push"
+    group_item_label: "Detected Duplicated Message Ids"
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Detected Duplicated Message Ids"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/web_push_detected_duplicated_message_ids"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the duplicated IDs from the server. The ability to detect depends on the pref `dom.push.maxRecentMessageIDsPerSubscription`.
+"
+  }
+
+  dimension: metrics__labeled_counter__web_push_error_code {
+    label: "Web Push Error Code"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.web_push_error_code ;;
+    group_label: "Web Push"
+    group_item_label: "Error Code"
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Error Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/web_push_error_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The code indicating why the push message couldn't be processed.
+"
+  }
+
   dimension: metrics__labeled_counter__webauthn_create_authenticator_attachment {
     label: "Webauthn Create Authenticator Attachment"
     hidden: yes
@@ -8498,6 +12585,40 @@ To be used to validate GIFFT.
     description: "The total number of successful calls to navigator.credentials.get."
   }
 
+  dimension: metrics__labeled_counter__webrtc_video_recv_codec_used {
+    label: "Webrtc Video Recv Codec Used"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_video_recv_codec_used ;;
+    group_label: "Webrtc Video"
+    group_item_label: "Recv Codec Used"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Video Recv Codec Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_video_recv_codec_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The video codec used for receiving video on a WebRTC call. This metric was generated to correspond to the Legacy Telemetry scalar webrtc.video.recv_codec_used.
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtc_video_send_codec_used {
+    label: "Webrtc Video Send Codec Used"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_video_send_codec_used ;;
+    group_label: "Webrtc Video"
+    group_item_label: "Send Codec Used"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Video Send Codec Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_video_send_codec_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The video codec used for sending video on a WebRTC call. This metric was generated to correspond to the Legacy Telemetry scalar webrtc.video.send_codec_used.
+"
+  }
+
   dimension: metrics__labeled_counter__webrtcdtls_cipher {
     label: "Webrtcdtls Cipher"
     hidden: yes
@@ -8529,6 +12650,24 @@ To be used to validate GIFFT.
     }
 
     description: "The result of each webrtc client DTLS handshake as a string containing either the name of the error code (eg; SSL_ERROR_BAD_CERTIFICATE), SUCCESS for successful handshakes, ALPN_FAILURE when ALPN negotiation fails, or CERT_FAILURE when cert validation fails.
+"
+  }
+
+  dimension: metrics__counter__webrtcdtls_client_handshake_started_counter {
+    label: "Webrtcdtls Client Handshake Started Counter"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.webrtcdtls_client_handshake_started_counter ;;
+    type: number
+    group_label: "Webrtcdtls"
+    group_item_label: "Client Handshake Started Counter"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Client Handshake Started Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtcdtls_client_handshake_started_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of webrtc transports that have started a DTLS handshake as the client.
 "
   }
 
@@ -8566,6 +12705,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__webrtcdtls_server_handshake_started_counter {
+    label: "Webrtcdtls Server Handshake Started Counter"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.webrtcdtls_server_handshake_started_counter ;;
+    type: number
+    group_label: "Webrtcdtls"
+    group_item_label: "Server Handshake Started Counter"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Server Handshake Started Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtcdtls_server_handshake_started_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of webrtc transports that have started a DTLS handshake as the server.
+"
+  }
+
   dimension: metrics__labeled_counter__webrtcdtls_srtp_cipher {
     label: "Webrtcdtls Srtp Cipher"
     hidden: yes
@@ -8580,6 +12737,42 @@ To be used to validate GIFFT.
     }
 
     description: "The SRTPProtectionProfile (see RFC 5764) used for each webrtc SRTP connection, as a string representation of the SRTPProtectionProfile's ID in 4 hex digits (eg; SRTP_AES128_CM_HMAC_SHA1_80 would be \"0x0001\")
+"
+  }
+
+  dimension: metrics__boolean__widget_dark_mode {
+    label: "Widget Dark Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.widget_dark_mode ;;
+    type: yesno
+    group_label: "Widget"
+    group_item_label: "Dark Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Widget Dark Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/widget_dark_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the OS theme is dark. This metric was generated to correspond to the Legacy Telemetry scalar widget.dark_mode.
+"
+  }
+
+  dimension: metrics__labeled_boolean__widget_pointing_devices {
+    label: "Widget Pointing Devices"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.widget_pointing_devices ;;
+    type: string
+    group_label: "Widget"
+    group_item_label: "Pointing Devices"
+
+    link: {
+      label: "Glean Dictionary reference for Widget Pointing Devices"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/widget_pointing_devices"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the system has any matching pointing device for each label.
 "
   }
 
@@ -9206,7 +13399,7 @@ though the counts appear in the next successfully sent `metrics` ping.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A count of the pings submitted, by ping type.
+    description: "A count of the built-in pings submitted, by ping type.
 
 This metric appears in both the metrics and baseline pings.
 
@@ -9214,6 +13407,9 @@ This metric appears in both the metrics and baseline pings.
   the last metrics ping (including the last metrics ping)
 - On the baseline ping, the counts include the number of pings send since
   the last baseline ping (including the last baseline ping)
+
+Note: Previously this also recorded the number of submitted custom pings.
+Now it only records counts for the Glean built-in pings.
 "
   }
 
@@ -9385,6 +13581,21 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
     description: "A JSON string containing any payload properties not present in the schema"
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
   }
 
   dimension: client_info__android_sdk_version {
@@ -10167,6 +14378,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: apz_scrollwheel_overshoot {
+    type: sum
+    sql: ${metrics__counter__apz_scrollwheel_overshoot} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Apz Scrollwheel Overshoot"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/apz_scrollwheel_overshoot"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: apz_scrollwheel_overshoot_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__apz_scrollwheel_overshoot: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Apz Scrollwheel Overshoot"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/apz_scrollwheel_overshoot"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: bloburl_resolve_stopped {
     type: sum
     sql: ${metrics__counter__bloburl_resolve_stopped} ;;
@@ -10217,6 +14453,131 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: browser_engagement_bookmarks_toolbar_bookmark_added {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_added} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/browser_engagement_bookmarks_toolbar_bookmark_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_bookmarks_toolbar_bookmark_added_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_added: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/browser_engagement_bookmarks_toolbar_bookmark_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_bookmarks_toolbar_bookmark_opened {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/browser_engagement_bookmarks_toolbar_bookmark_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_bookmarks_toolbar_bookmark_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Bookmarks Toolbar Bookmark Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/browser_engagement_bookmarks_toolbar_bookmark_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: cert_signature_cache_total {
+    type: sum
+    sql: ${metrics__counter__cert_signature_cache_total} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Cert Signature Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_signature_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: cert_signature_cache_total_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__cert_signature_cache_total: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Cert Signature Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_signature_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: cert_trust_cache_total {
+    type: sum
+    sql: ${metrics__counter__cert_trust_cache_total} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Cert Trust Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_trust_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: cert_trust_cache_total_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__cert_trust_cache_total: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Cert Trust Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_trust_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: contentblocking_trackers_blocked_count {
+    type: sum
+    sql: ${metrics__counter__contentblocking_trackers_blocked_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Trackers Blocked Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/contentblocking_trackers_blocked_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: contentblocking_trackers_blocked_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__contentblocking_trackers_blocked_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Trackers Blocked Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/contentblocking_trackers_blocked_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: cookie_banners_cookie_injection_fail {
     type: sum
     sql: ${metrics__counter__cookie_banners_cookie_injection_fail} ;;
@@ -10238,6 +14599,481 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Cookie Banners Cookie Injection Fail"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cookie_banners_cookie_injection_fail"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_accessible_context_menu_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_accessibility_accessible_context_menu_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Accessible Context Menu Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_accessible_context_menu_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_accessible_context_menu_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_accessibility_accessible_context_menu_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Accessible Context Menu Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_accessible_context_menu_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_node_inspected_count {
+    type: sum
+    sql: ${metrics__counter__devtools_accessibility_node_inspected_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Node Inspected Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_node_inspected_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_node_inspected_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_accessibility_node_inspected_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Node Inspected Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_node_inspected_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_accessibility_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_accessibility_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_picker_used_count {
+    type: sum
+    sql: ${metrics__counter__devtools_accessibility_picker_used_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Picker Used Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_picker_used_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_accessibility_picker_used_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_accessibility_picker_used_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Picker Used Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_accessibility_picker_used_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_changesview_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_changesview_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Changesview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_changesview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_changesview_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_changesview_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Changesview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_changesview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_grid_gridinspector_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_grid_gridinspector_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Grid Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_grid_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_grid_gridinspector_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_grid_gridinspector_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Grid Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_grid_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_inspector_node_selection_count {
+    type: sum
+    sql: ${metrics__counter__devtools_inspector_node_selection_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Inspector Node Selection Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_inspector_node_selection_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_inspector_node_selection_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_inspector_node_selection_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Inspector Node Selection Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_inspector_node_selection_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_layout_flexboxhighlighter_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_layout_flexboxhighlighter_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Layout Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_layout_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_layout_flexboxhighlighter_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_layout_flexboxhighlighter_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Layout Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_layout_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_markup_flexboxhighlighter_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_markup_flexboxhighlighter_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_markup_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_markup_flexboxhighlighter_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_markup_flexboxhighlighter_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_markup_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_markup_gridinspector_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_markup_gridinspector_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_markup_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_markup_gridinspector_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_markup_gridinspector_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_markup_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_markup_scrollable_badge_clicked {
+    type: sum
+    sql: ${metrics__counter__devtools_markup_scrollable_badge_clicked} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Scrollable Badge Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_markup_scrollable_badge_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_markup_scrollable_badge_clicked_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_markup_scrollable_badge_clicked: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Markup Scrollable Badge Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_markup_scrollable_badge_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_responsive_toolbox_opened_first {
+    type: sum
+    sql: ${metrics__counter__devtools_responsive_toolbox_opened_first} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Responsive Toolbox Opened First"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_responsive_toolbox_opened_first"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_responsive_toolbox_opened_first_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_responsive_toolbox_opened_first: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Responsive Toolbox Opened First"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_responsive_toolbox_opened_first"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_rules_flexboxhighlighter_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_rules_flexboxhighlighter_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Rules Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_rules_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_rules_flexboxhighlighter_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_rules_flexboxhighlighter_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Rules Flexboxhighlighter Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_rules_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_rules_gridinspector_opened {
+    type: sum
+    sql: ${metrics__counter__devtools_rules_gridinspector_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Rules Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_rules_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_rules_gridinspector_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_rules_gridinspector_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Rules Gridinspector Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_rules_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dom_contentprocess_build_id_mismatch {
+    type: sum
+    sql: ${metrics__counter__dom_contentprocess_build_id_mismatch} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Build Id Mismatch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dom_contentprocess_build_id_mismatch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dom_contentprocess_build_id_mismatch_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__dom_contentprocess_build_id_mismatch: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Build Id Mismatch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dom_contentprocess_build_id_mismatch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dom_contentprocess_build_id_mismatch_false_positive {
+    type: sum
+    sql: ${metrics__counter__dom_contentprocess_build_id_mismatch_false_positive} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Build Id Mismatch False Positive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dom_contentprocess_build_id_mismatch_false_positive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dom_contentprocess_build_id_mismatch_false_positive_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__dom_contentprocess_build_id_mismatch_false_positive: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Build Id Mismatch False Positive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dom_contentprocess_build_id_mismatch_false_positive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dom_contentprocess_os_priority_change_considered {
+    type: sum
+    sql: ${metrics__counter__dom_contentprocess_os_priority_change_considered} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Os Priority Change Considered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dom_contentprocess_os_priority_change_considered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dom_contentprocess_os_priority_change_considered_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__dom_contentprocess_os_priority_change_considered: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Os Priority Change Considered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dom_contentprocess_os_priority_change_considered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dom_contentprocess_os_priority_lowered {
+    type: sum
+    sql: ${metrics__counter__dom_contentprocess_os_priority_lowered} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Os Priority Lowered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dom_contentprocess_os_priority_lowered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dom_contentprocess_os_priority_lowered_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__dom_contentprocess_os_priority_lowered: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Os Priority Lowered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dom_contentprocess_os_priority_lowered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dom_contentprocess_os_priority_raised {
+    type: sum
+    sql: ${metrics__counter__dom_contentprocess_os_priority_raised} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Os Priority Raised"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dom_contentprocess_os_priority_raised"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dom_contentprocess_os_priority_raised_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__dom_contentprocess_os_priority_raised: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Os Priority Raised"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dom_contentprocess_os_priority_raised"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -10288,6 +15124,206 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Dotprint Requested"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dotprint_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: downloads_file_opened {
+    type: sum
+    sql: ${metrics__counter__downloads_file_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Downloads File Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/downloads_file_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: downloads_file_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__downloads_file_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Downloads File Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/downloads_file_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_find_next {
+    type: sum
+    sql: ${metrics__counter__findbar_find_next} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Find Next"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_find_next"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_find_next_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__findbar_find_next: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Find Next"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_find_next"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_find_prev {
+    type: sum
+    sql: ${metrics__counter__findbar_find_prev} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Find Prev"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_find_prev"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_find_prev_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__findbar_find_prev: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Find Prev"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_find_prev"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_highlight_all {
+    type: sum
+    sql: ${metrics__counter__findbar_highlight_all} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Highlight All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_highlight_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_highlight_all_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__findbar_highlight_all: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Highlight All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_highlight_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_match_case {
+    type: sum
+    sql: ${metrics__counter__findbar_match_case} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Match Case"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_match_case"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_match_case_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__findbar_match_case: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Match Case"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_match_case"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_match_diacritics {
+    type: sum
+    sql: ${metrics__counter__findbar_match_diacritics} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Match Diacritics"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_match_diacritics"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_match_diacritics_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__findbar_match_diacritics: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Match Diacritics"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_match_diacritics"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_shown {
+    type: sum
+    sql: ${metrics__counter__findbar_shown} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_shown_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__findbar_shown: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_whole_words {
+    type: sum
+    sql: ${metrics__counter__findbar_whole_words} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Whole Words"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_whole_words"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: findbar_whole_words_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__findbar_whole_words: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Findbar Whole Words"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/findbar_whole_words"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -10388,6 +15424,131 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Fog Ipc Shutdown Registration Failures"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fog_ipc_shutdown_registration_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: formautofill_addresses_detected_sections_count {
+    type: sum
+    sql: ${metrics__counter__formautofill_addresses_detected_sections_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Addresses Detected Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/formautofill_addresses_detected_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: formautofill_addresses_detected_sections_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__formautofill_addresses_detected_sections_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Addresses Detected Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/formautofill_addresses_detected_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: formautofill_addresses_submitted_sections_count {
+    type: sum
+    sql: ${metrics__counter__formautofill_addresses_submitted_sections_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Addresses Submitted Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/formautofill_addresses_submitted_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: formautofill_addresses_submitted_sections_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__formautofill_addresses_submitted_sections_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Addresses Submitted Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/formautofill_addresses_submitted_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: formautofill_credit_cards_detected_sections_count {
+    type: sum
+    sql: ${metrics__counter__formautofill_credit_cards_detected_sections_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Credit Cards Detected Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/formautofill_credit_cards_detected_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: formautofill_credit_cards_detected_sections_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__formautofill_credit_cards_detected_sections_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Credit Cards Detected Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/formautofill_credit_cards_detected_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: formautofill_credit_cards_submitted_sections_count {
+    type: sum
+    sql: ${metrics__counter__formautofill_credit_cards_submitted_sections_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Credit Cards Submitted Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/formautofill_credit_cards_submitted_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: formautofill_credit_cards_submitted_sections_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__formautofill_credit_cards_submitted_sections_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Credit Cards Submitted Sections Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/formautofill_credit_cards_submitted_sections_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: gfx_skipped_composites {
+    type: sum
+    sql: ${metrics__counter__gfx_skipped_composites} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Skipped Composites"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_skipped_composites"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: gfx_skipped_composites_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__gfx_skipped_composites: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Skipped Composites"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_skipped_composites"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -10542,6 +15703,106 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: ls_request_recv_cancellation {
+    type: sum
+    sql: ${metrics__counter__ls_request_recv_cancellation} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ls Request Recv Cancellation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/ls_request_recv_cancellation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ls_request_recv_cancellation_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__ls_request_recv_cancellation: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ls Request Recv Cancellation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/ls_request_recv_cancellation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ls_request_send_cancellation {
+    type: sum
+    sql: ${metrics__counter__ls_request_send_cancellation} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ls Request Send Cancellation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/ls_request_send_cancellation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ls_request_send_cancellation_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__ls_request_send_cancellation: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ls Request Send Cancellation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/ls_request_send_cancellation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: mathml_doc_count {
+    type: sum
+    sql: ${metrics__counter__mathml_doc_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Mathml Doc Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/mathml_doc_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: mathml_doc_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__mathml_doc_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Mathml Doc Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/mathml_doc_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: media_element_in_page_count {
+    type: sum
+    sql: ${metrics__counter__media_element_in_page_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Media Element In Page Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/media_element_in_page_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: media_element_in_page_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__media_element_in_page_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Media Element In Page Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/media_element_in_page_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: netwerk_parent_connect_timeout {
     type: sum
     sql: ${metrics__counter__netwerk_parent_connect_timeout} ;;
@@ -10563,6 +15824,81 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Netwerk Parent Connect Timeout"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/netwerk_parent_connect_timeout"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_sso_total_entra_uses {
+    type: sum
+    sql: ${metrics__counter__network_sso_total_entra_uses} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network Sso Total Entra Uses"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_sso_total_entra_uses"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_sso_total_entra_uses_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__network_sso_total_entra_uses: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network Sso Total Entra Uses"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_sso_total_entra_uses"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_captive_portal_banner_displayed {
+    type: sum
+    sql: ${metrics__counter__networking_captive_portal_banner_displayed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Captive Portal Banner Displayed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_captive_portal_banner_displayed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_captive_portal_banner_displayed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__networking_captive_portal_banner_displayed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Captive Portal Banner Displayed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_captive_portal_banner_displayed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_cookie_count_invalid_first_party_partitioned_in_db {
+    type: sum
+    sql: ${metrics__counter__networking_cookie_count_invalid_first_party_partitioned_in_db} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie Count Invalid First Party Partitioned In Db"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_cookie_count_invalid_first_party_partitioned_in_db"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_cookie_count_invalid_first_party_partitioned_in_db_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__networking_cookie_count_invalid_first_party_partitioned_in_db: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie Count Invalid First Party Partitioned In Db"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_cookie_count_invalid_first_party_partitioned_in_db"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -10638,6 +15974,81 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Networking Set Cookie"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_set_cookie"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_set_invalid_first_party_partitioned_cookie {
+    type: sum
+    sql: ${metrics__counter__networking_set_invalid_first_party_partitioned_cookie} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Invalid First Party Partitioned Cookie"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_set_invalid_first_party_partitioned_cookie"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_set_invalid_first_party_partitioned_cookie_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__networking_set_invalid_first_party_partitioned_cookie: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Invalid First Party Partitioned Cookie"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_set_invalid_first_party_partitioned_cookie"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: opaque_response_blocking_cross_origin_opaque_response_count {
+    type: sum
+    sql: ${metrics__counter__opaque_response_blocking_cross_origin_opaque_response_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Opaque Response Blocking Cross Origin Opaque Response Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/opaque_response_blocking_cross_origin_opaque_response_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: opaque_response_blocking_cross_origin_opaque_response_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__opaque_response_blocking_cross_origin_opaque_response_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Opaque Response Blocking Cross Origin Opaque Response Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/opaque_response_blocking_cross_origin_opaque_response_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: opaque_response_blocking_javascript_validation_count {
+    type: sum
+    sql: ${metrics__counter__opaque_response_blocking_javascript_validation_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Opaque Response Blocking Javascript Validation Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/opaque_response_blocking_javascript_validation_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: opaque_response_blocking_javascript_validation_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__opaque_response_blocking_javascript_validation_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Opaque Response Blocking Javascript Validation Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/opaque_response_blocking_javascript_validation_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -10967,6 +16378,131 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: printing_dialog_opened_via_preview_tm {
+    type: sum
+    sql: ${metrics__counter__printing_dialog_opened_via_preview_tm} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Printing Dialog Opened Via Preview Tm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/printing_dialog_opened_via_preview_tm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: printing_dialog_opened_via_preview_tm_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__printing_dialog_opened_via_preview_tm: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Printing Dialog Opened Via Preview Tm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/printing_dialog_opened_via_preview_tm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: printing_dialog_via_preview_cancelled_tm {
+    type: sum
+    sql: ${metrics__counter__printing_dialog_via_preview_cancelled_tm} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Printing Dialog Via Preview Cancelled Tm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/printing_dialog_via_preview_cancelled_tm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: printing_dialog_via_preview_cancelled_tm_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__printing_dialog_via_preview_cancelled_tm: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Printing Dialog Via Preview Cancelled Tm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/printing_dialog_via_preview_cancelled_tm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: printing_preview_cancelled_tm {
+    type: sum
+    sql: ${metrics__counter__printing_preview_cancelled_tm} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Printing Preview Cancelled Tm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/printing_preview_cancelled_tm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: printing_preview_cancelled_tm_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__printing_preview_cancelled_tm: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Printing Preview Cancelled Tm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/printing_preview_cancelled_tm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: printing_preview_opened_tm {
+    type: sum
+    sql: ${metrics__counter__printing_preview_opened_tm} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Printing Preview Opened Tm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/printing_preview_opened_tm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: printing_preview_opened_tm_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__printing_preview_opened_tm: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Printing Preview Opened Tm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/printing_preview_opened_tm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: printing_silent_print {
+    type: sum
+    sql: ${metrics__counter__printing_silent_print} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Printing Silent Print"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/printing_silent_print"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: printing_silent_print_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__printing_silent_print: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Printing Silent Print"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/printing_silent_print"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: rtcrtpsender_count {
     type: sum
     sql: ${metrics__counter__rtcrtpsender_count} ;;
@@ -11017,6 +16553,56 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: script_preloader_mainthread_recompile {
+    type: sum
+    sql: ${metrics__counter__script_preloader_mainthread_recompile} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Script Preloader Mainthread Recompile"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/script_preloader_mainthread_recompile"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: script_preloader_mainthread_recompile_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__script_preloader_mainthread_recompile: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Script Preloader Mainthread Recompile"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/script_preloader_mainthread_recompile"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: sct_signature_cache_total {
+    type: sum
+    sql: ${metrics__counter__sct_signature_cache_total} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Sct Signature Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/sct_signature_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: sct_signature_cache_total_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__sct_signature_cache_total: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Sct Signature Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/sct_signature_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: tls_certificate_verifications {
     type: sum
     sql: ${metrics__counter__tls_certificate_verifications} ;;
@@ -11063,6 +16649,56 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Translations Requests Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/translations_requests_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_notification_insecure_context_permission_request {
+    type: sum
+    sql: ${metrics__counter__web_notification_insecure_context_permission_request} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification Insecure Context Permission Request"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/web_notification_insecure_context_permission_request"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_notification_insecure_context_permission_request_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__web_notification_insecure_context_permission_request: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification Insecure Context Permission Request"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/web_notification_insecure_context_permission_request"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_push_detected_duplicated_message_ids {
+    type: sum
+    sql: ${metrics__counter__web_push_detected_duplicated_message_ids} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Detected Duplicated Message Ids"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/web_push_detected_duplicated_message_ids"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_push_detected_duplicated_message_ids_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__web_push_detected_duplicated_message_ids: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Detected Duplicated Message Ids"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/web_push_detected_duplicated_message_ids"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -11188,6 +16824,56 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Webauthn Get Success"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webauthn_get_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webrtcdtls_client_handshake_started_counter {
+    type: sum
+    sql: ${metrics__counter__webrtcdtls_client_handshake_started_counter} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Client Handshake Started Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtcdtls_client_handshake_started_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webrtcdtls_client_handshake_started_counter_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__webrtcdtls_client_handshake_started_counter: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Client Handshake Started Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtcdtls_client_handshake_started_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webrtcdtls_server_handshake_started_counter {
+    type: sum
+    sql: ${metrics__counter__webrtcdtls_server_handshake_started_counter} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Server Handshake Started Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtcdtls_server_handshake_started_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webrtcdtls_server_handshake_started_counter_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__webrtcdtls_server_handshake_started_counter: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Server Handshake Started Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtcdtls_server_handshake_started_counter"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -12429,6 +18115,47 @@ view: metrics__metrics__labeled_counter__browser_search_with_ads {
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_ui_interaction_keyboard {
+  label: "Browser Ui Interaction - Keyboard"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__cert_compression_failures {
   label: "Cert Compression - Failures"
 
@@ -12495,6 +18222,47 @@ view: metrics__metrics__labeled_counter__cert_compression_used {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms {
+  label: "Cert Verifier - Cert Revocation Mechanisms"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: no
   }
 
@@ -12513,6 +18281,47 @@ view: metrics__metrics__labeled_counter__cert_compression_used {
 
 view: metrics__metrics__labeled_counter__cert_verifier_crlite_status {
   label: "Cert Verifier - Crlite Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__cert_verifier_crlite_vs_ocsp_result {
+  label: "Cert Verifier - Crlite Vs Ocsp Result"
 
   dimension: document_id {
     type: string
@@ -12741,19 +18550,19 @@ view: metrics__metrics__labeled_counter__cookie_banners_click_result {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -12782,19 +18591,19 @@ view: metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -12823,19 +18632,19 @@ view: metrics__metrics__labeled_counter__cookie_banners_cmp_result {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -12864,19 +18673,19 @@ view: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -12905,19 +18714,19 @@ view: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -13000,6 +18809,416 @@ view: metrics__metrics__labeled_counter__data_storage_entries {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_accessibility_accessible_context_menu_item_activated {
+  label: "Devtools Accessibility - Accessible Context Menu Item Activated"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_accessibility_audit_activated {
+  label: "Devtools Accessibility - Audit Activated"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_accessibility_select_accessible_for_node {
+  label: "Devtools Accessibility - Select Accessible For Node"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_accessibility_simulation_activated {
+  label: "Devtools Accessibility - Simulation Activated"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_current_theme {
+  label: "Devtools - Current Theme"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_inspector_three_pane_enabled {
+  label: "Devtools Inspector - Three Pane Enabled"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_responsive_open_trigger {
+  label: "Devtools Responsive - Open Trigger"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_toolbox_tabs_reordered {
+  label: "Devtools Toolbox - Tabs Reordered"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_tooltip_shown {
+  label: "Devtools Tooltip - Shown"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__dom_parentprocess_process_launch_errors {
+  label: "Dom Parentprocess - Process Launch Errors"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -14317,6 +20536,47 @@ view: metrics__metrics__labeled_counter__media_audio_init_failure {
   }
 }
 
+view: metrics__metrics__labeled_counter__media_decode_error_per_mime_type {
+  label: "Media - Decode Error Per Mime Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
 view: metrics__metrics__labeled_counter__media_playback_not_supported_video_per_mime_type {
   label: "Media Playback - Not Supported Video Per Mime Type"
 
@@ -14383,19 +20643,19 @@ view: metrics__metrics__labeled_counter__netwerk_early_hints {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -14424,24 +20684,65 @@ view: metrics__metrics__labeled_counter__netwerk_eh_link_type {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
 view: metrics__metrics__labeled_counter__netwerk_eh_response_version {
   label: "Netwerk - Eh Response Version"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__netwerk_http3_0rtt_state {
+  label: "Netwerk - Http3 0Rtt State"
 
   dimension: document_id {
     type: string
@@ -14481,8 +20782,172 @@ view: metrics__metrics__labeled_counter__netwerk_eh_response_version {
   }
 }
 
+view: metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_grease {
+  label: "Netwerk - Http3 Ech Outcome Grease"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_none {
+  label: "Netwerk - Http3 Ech Outcome None"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_real {
+  label: "Netwerk - Http3 Ech Outcome Real"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
 view: metrics__metrics__labeled_counter__network_byte_range_request {
   label: "Network - Byte Range Request"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_cache_hit_miss_stat_per_cache_size {
+  label: "Network - Cache Hit Miss Stat Per Cache Size"
 
   dimension: document_id {
     type: string
@@ -14645,6 +21110,334 @@ view: metrics__metrics__labeled_counter__network_data_size_per_type {
   }
 }
 
+view: metrics__metrics__labeled_counter__network_sso_entra_success {
+  label: "Network Sso - Entra Success"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_system_channel_addon_status {
+  label: "Network - System Channel Addon Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_system_channel_addonversion_status {
+  label: "Network - System Channel Addonversion Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_system_channel_other_status {
+  label: "Network - System Channel Other Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_system_channel_remote_settings_status {
+  label: "Network - System Channel Remote Settings Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_system_channel_success_or_failure {
+  label: "Network - System Channel Success Or Failure"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_system_channel_telemetry_status {
+  label: "Network - System Channel Telemetry Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_system_channel_update_status {
+  label: "Network - System Channel Update Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__network_tls_early_data_accepted {
   label: "Network - Tls Early Data Accepted"
 
@@ -14727,6 +21520,47 @@ view: metrics__metrics__labeled_counter__network_tls_early_data_negotiated {
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_captive_portal_banner_display_time {
+  label: "Networking - Captive Portal Banner Display Time"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
   label: "Networking - Cookie Timestamp Fixed Count"
 
@@ -14768,8 +21602,254 @@ view: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_data_transferred_v3_kb {
+  label: "Networking - Data Transferred V3 Kb"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_dns_native_count {
   label: "Networking - Dns Native Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_fetch_keepalive_discard_count {
+  label: "Networking - Fetch Keepalive Discard Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_fetch_keepalive_request_count {
+  label: "Networking - Fetch Keepalive Request Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_3_connection_close_reason {
+  label: "Networking - Http 3 Connection Close Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_3_ecn_path_capability {
+  label: "Networking - Http 3 Ecn Path Capability"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_3_quic_frame_count {
+  label: "Networking - Http 3 Quic Frame Count"
 
   dimension: document_id {
     type: string
@@ -15178,6 +22258,88 @@ view: metrics__metrics__labeled_counter__networking_http_channel_onstart_success
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_http_ip_addr_any_count {
+  label: "Networking - Http Ip Addr Any Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_ip_addr_any_hostnames {
+  label: "Networking - Http Ip Addr Any Hostnames"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_http_redirect_to_scheme_subresource {
   label: "Networking - Http Redirect To Scheme Subresource"
 
@@ -15344,6 +22506,88 @@ view: metrics__metrics__labeled_counter__networking_http_response_version {
 
 view: metrics__metrics__labeled_counter__networking_http_to_https_upgrade_reason {
   label: "Networking - Http To Https Upgrade Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_https_http_or_local {
+  label: "Networking - Https Http Or Local"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_https_record_state {
+  label: "Networking - Https Record State"
 
   dimension: document_id {
     type: string
@@ -15629,8 +22873,90 @@ view: metrics__metrics__labeled_counter__networking_speculative_connection_outco
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_trr_connection_cycle_count {
+  label: "Networking - Trr Connection Cycle Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_trr_request_count {
   label: "Networking - Trr Request Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_trr_request_count_per_conn {
+  label: "Networking - Trr Request Count Per Conn"
 
   dimension: document_id {
     type: string
@@ -15918,6 +23244,47 @@ view: metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_color
 
 view: metrics__metrics__labeled_counter__pdfjs_geckoview {
   label: "Pdfjs - Geckoview"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_image_added {
+  label: "Pdfjs Image - Added"
 
   dimension: document_id {
     type: string
@@ -16654,6 +24021,129 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactiv
   }
 }
 
+view: metrics__metrics__labeled_counter__printing_error {
+  label: "Printing - Error"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__printing_settings_changed {
+  label: "Printing - Settings Changed"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__printing_target_type {
+  label: "Printing - Target Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__pwmgr_form_autofill_result {
   label: "Pwmgr - Form Autofill Result"
 
@@ -16720,19 +24210,19 @@ view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -16761,19 +24251,19 @@ view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_get
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -16802,19 +24292,19 @@ view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_tra
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -16856,6 +24346,47 @@ view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__security_client_auth_cert_usage {
+  label: "Security - Client Auth Cert Usage"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -16982,6 +24513,211 @@ view: metrics__metrics__labeled_counter__translations_request_count {
   }
 }
 
+view: metrics__metrics__labeled_counter__web_notification_permission_origin {
+  label: "Web Notification - Permission Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__web_notification_request_permission_origin {
+  label: "Web Notification - Request Permission Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__web_notification_show_origin {
+  label: "Web Notification - Show Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__web_push_content_encoding {
+  label: "Web Push - Content Encoding"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__web_push_error_code {
+  label: "Web Push - Error Code"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__webauthn_create_authenticator_attachment {
   label: "Webauthn Create - Authenticator Attachment"
 
@@ -17025,6 +24761,88 @@ view: metrics__metrics__labeled_counter__webauthn_create_authenticator_attachmen
 
 view: metrics__metrics__labeled_counter__webauthn_get_authenticator_attachment {
   label: "Webauthn Get - Authenticator Attachment"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webrtc_video_recv_codec_used {
+  label: "Webrtc Video - Recv Codec Used"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webrtc_video_send_codec_used {
+  label: "Webrtc Video - Send Codec Used"
 
   dimension: document_id {
     type: string
@@ -17706,6 +25524,42 @@ view: metrics__metrics__custom_distribution__networking_http_1_download_throughp
   }
 }
 
+view: metrics__metrics__custom_distribution__networking_http_1_download_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_1_download_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_1_download_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__networking_http_1_upload_throughput__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -17766,6 +25620,42 @@ view: metrics__metrics__custom_distribution__networking_http_2_download_throughp
   }
 }
 
+view: metrics__metrics__custom_distribution__networking_http_2_download_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_2_download_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_2_download_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__networking_http_2_upload_throughput__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -17815,6 +25705,90 @@ view: metrics__metrics__custom_distribution__networking_http_2_upload_throughput
 }
 
 view: metrics__metrics__custom_distribution__networking_http_3_download_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_download_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_download_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_download_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_loss_ratio__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -17946,6 +25920,18 @@ view: metrics__metrics__custom_distribution__timer_thread_timers_fired_per_wakeu
   }
 }
 
+view: metrics__metrics__labeled_boolean__a11y_theme {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics__metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -17982,6 +25968,18 @@ view: metrics__metrics__labeled_boolean__data_storage_migration {
   }
 }
 
+view: metrics__metrics__labeled_boolean__devtools_tool_registered {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics__metrics__labeled_boolean__geolocation_linux_provider {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -18006,6 +26004,42 @@ view: metrics__metrics__labeled_boolean__media_playback_device_hardware_decoder_
   }
 }
 
+view: metrics__metrics__labeled_boolean__media_video_hardware_decoding_support {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__media_video_hd_hardware_decoding_support {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__mediadrm_decryption {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics__metrics__labeled_boolean__oskeystore_self_test {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -18018,6 +26052,159 @@ view: metrics__metrics__labeled_boolean__oskeystore_self_test {
   }
 }
 
+view: metrics__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__widget_pointing_devices {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_quantity__normandy_recipe_freshness {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -18027,6 +26214,1519 @@ view: metrics__metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse_idle_connection {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse_idle_connection__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_http3_avg_read_interval {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_http3_avg_read_interval__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_http3_complete_load {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_http3_complete_load__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_http3_first_sent_to_last_received {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_http3_first_sent_to_last_received__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_http3_open_to_first_received {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_http3_open_to_first_received__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_http3_open_to_first_sent {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_http3_open_to_first_sent__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_http3_tls_handshake {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_http3_tls_handshake__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_http_fetch_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_http_fetch_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_sup_http3_tcp_connection {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_sup_http3_tcp_connection__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__networking_trr_complete_load {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__networking_trr_complete_load__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__networking_trr_dns_end {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__networking_trr_dns_end__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__networking_trr_dns_start {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__networking_trr_dns_start__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__networking_trr_fetch_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__networking_trr_fetch_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__networking_trr_first_sent_to_last_received {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__networking_trr_first_sent_to_last_received__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__networking_trr_open_to_first_received {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__networking_trr_open_to_first_received__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__networking_trr_open_to_first_sent {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__networking_trr_open_to_first_sent__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__networking_trr_tcp_connection {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__networking_trr_tcp_connection__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__networking_trr_tls_handshake {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__networking_trr_tls_handshake__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__cert_storage_memory__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
@@ -18102,6 +27802,54 @@ view: metrics__metrics__memory_distribution__glean_upload_pending_pings_director
   }
 }
 
+view: metrics__metrics__memory_distribution__networking_cache_metadata_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__networking_http_3_udp_datagram_size_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__memory_distribution__performance_clone_deserialize_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -18115,6 +27863,30 @@ view: metrics__metrics__memory_distribution__performance_clone_deserialize_size_
 }
 
 view: metrics__metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cert_verification_time_failure__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cert_verification_time_success__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -18319,6 +28091,30 @@ view: metrics__metrics__timing_distribution__extensions_timing_storage_local_set
 }
 
 view: metrics__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -18570,7 +28366,55 @@ view: metrics__metrics__timing_distribution__httpsfirst_downgrade_time_schemeles
   }
 }
 
+view: metrics__metrics__timing_distribution__javascript_gc_animation__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_budget__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_budget_overrun__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__javascript_gc_compact_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_mark_gray__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -18595,6 +28439,30 @@ view: metrics__metrics__timing_distribution__javascript_gc_mark_roots_time__valu
 }
 
 view: metrics__metrics__timing_distribution__javascript_gc_mark_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_mark_weak__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_max_pause__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -18654,7 +28522,55 @@ view: metrics__metrics__timing_distribution__javascript_gc_sweep_time__values {
   }
 }
 
+view: metrics__metrics__timing_distribution__javascript_gc_task_start_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_time_between__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_time_between_slices__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__javascript_gc_total_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_ion_compile_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -18750,7 +28666,103 @@ view: metrics__metrics__timing_distribution__javascript_pageload_xdr_encode_time
   }
 }
 
+view: metrics__metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__ls_preparedatastore_processing_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__ls_preparelsdatabase_processing_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__network_cache_hit_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_cache_miss_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_cache_read_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_complete_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_complete_load_cached__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_complete_load_net__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -18798,6 +28810,18 @@ view: metrics__metrics__timing_distribution__network_first_from_cache__values {
   }
 }
 
+view: metrics__metrics__timing_distribution__network_first_sent_to_last_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__network_font_download_end__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -18810,7 +28834,199 @@ view: metrics__metrics__timing_distribution__network_font_download_end__values {
   }
 }
 
+view: metrics__metrics__timing_distribution__network_http_revalidation__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_open_to_first_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_open_to_first_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__network_open_to_transaction_pending__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_cache_read_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_complete_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_complete_load_cached__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_complete_load_net__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_dns_end__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_dns_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_first_from_cache__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_first_sent_to_last_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_http_revalidation__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_open_to_first_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_open_to_first_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_tcp_connection__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_sub_tls_handshake__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -18835,6 +29051,30 @@ view: metrics__metrics__timing_distribution__network_tcp_connection__values {
 }
 
 view: metrics__metrics__timing_distribution__network_tls_handshake__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_cache_metadata_first_read_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_cache_metadata_second_read_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -19002,6 +29242,18 @@ view: metrics__metrics__timing_distribution__networking_http_content_ondatafinis
   }
 }
 
+view: metrics__metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -19062,6 +29314,30 @@ view: metrics__metrics__timing_distribution__networking_http_onstart_suspend_tot
   }
 }
 
+view: metrics__metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__networking_transaction_wait_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -19099,6 +29375,42 @@ view: metrics__metrics__timing_distribution__nimbus_health_apply_pending_experim
 }
 
 view: metrics__metrics__timing_distribution__nimbus_health_fetch_experiments_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__ocsp_request_time_cancel__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__ocsp_request_time_failure__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__ocsp_request_time_success__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

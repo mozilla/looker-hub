@@ -109,8 +109,27 @@ view: first_session {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A string containing the distribution identifier. This is currently used
-to identify installs from Mozilla Online.
+    description: "A string containing the distribution identifier. This was used
+to identify installs from Mozilla Online, but now also identifies
+partnership deal distributions
+"
+  }
+
+  dimension: metrics__string__first_session_install_source {
+    label: "First Session Install Source"
+    hidden: no
+    sql: ${TABLE}.metrics.string.first_session_install_source ;;
+    type: string
+    group_label: "First Session"
+    group_item_label: "Install Source"
+
+    link: {
+      label: "Glean Dictionary reference for First Session Install Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_install_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Used to identify the source the app was installed from.
 "
   }
 
@@ -406,6 +425,21 @@ The labels are the `category.name` identifier of the metric.
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
   }
 
   dimension: client_info__android_sdk_version {

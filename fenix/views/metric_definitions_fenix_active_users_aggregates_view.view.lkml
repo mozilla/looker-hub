@@ -9,7 +9,10 @@ view: metric_definitions_fenix_active_users_aggregates_view {
     sql: SELECT
                 SUM(dau) AS daily_active_users_v2,
 
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -80,6 +83,7 @@ fenix_active_users_aggregates_view_os_grouped,
 fenix_active_users_aggregates_view_os_version,
 fenix_active_users_aggregates_view_os_version_major,
 fenix_active_users_aggregates_view_os_version_minor,
+fenix_active_users_aggregates_view_partnership,
 fenix_active_users_aggregates_view_segment,
 fenix_active_users_aggregates_view_wau,
 fenix_active_users_aggregates_view_weekly_users,
@@ -115,7 +119,10 @@ fenix_active_users_aggregates_view_weekly_users,
                 (
                     SELECT
                         fenix_active_users_aggregates_view.*,
-                        looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
+                        looker_base_fields.app_version_major AS looker_base_fields_app_version_major,
+looker_base_fields.app_version_minor AS looker_base_fields_app_version_minor,
+looker_base_fields.app_version_patch AS looker_base_fields_app_version_patch,
+looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
 looker_base_fields.client_info.app_build AS looker_base_fields_client_info__app_build,
 looker_base_fields.client_info.app_channel AS looker_base_fields_client_info__app_channel,
 looker_base_fields.client_info.app_display_version AS looker_base_fields_client_info__app_display_version,
@@ -186,6 +193,7 @@ fenix_active_users_aggregates_view.os_grouped AS fenix_active_users_aggregates_v
 fenix_active_users_aggregates_view.os_version AS fenix_active_users_aggregates_view_os_version,
 fenix_active_users_aggregates_view.os_version_major AS fenix_active_users_aggregates_view_os_version_major,
 fenix_active_users_aggregates_view.os_version_minor AS fenix_active_users_aggregates_view_os_version_minor,
+fenix_active_users_aggregates_view.partnership AS fenix_active_users_aggregates_view_partnership,
 fenix_active_users_aggregates_view.segment AS fenix_active_users_aggregates_view_segment,
 fenix_active_users_aggregates_view.wau AS fenix_active_users_aggregates_view_wau,
 fenix_active_users_aggregates_view.weekly_users AS fenix_active_users_aggregates_view_weekly_users,
@@ -230,7 +238,10 @@ fenix_active_users_aggregates_view.weekly_users AS fenix_active_users_aggregates
                 
                 )
             GROUP BY
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -301,6 +312,7 @@ fenix_active_users_aggregates_view_os_grouped,
 fenix_active_users_aggregates_view_os_version,
 fenix_active_users_aggregates_view_os_version_major,
 fenix_active_users_aggregates_view_os_version_minor,
+fenix_active_users_aggregates_view_partnership,
 fenix_active_users_aggregates_view_segment,
 fenix_active_users_aggregates_view_wau,
 fenix_active_users_aggregates_view_weekly_users,
@@ -333,6 +345,24 @@ fenix_active_users_aggregates_view_weekly_users,
 "
     type: number
     sql: ${TABLE}.daily_active_users_v2 ;;
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.looker_base_fields_app_version_major ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.looker_base_fields_app_version_minor ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.looker_base_fields_app_version_patch ;;
+    type: number
+    group_label: "Base Fields"
   }
 
   dimension: client_info__android_sdk_version {
@@ -679,18 +709,6 @@ fenix_active_users_aggregates_view_weekly_users,
     group_label: "Base Fields"
   }
 
-  dimension: app_version_major {
-    sql: ${TABLE}.fenix_active_users_aggregates_view_app_version_major ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: app_version_minor {
-    sql: ${TABLE}.fenix_active_users_aggregates_view_app_version_minor ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
   dimension: app_version_patch_revision {
     sql: ${TABLE}.fenix_active_users_aggregates_view_app_version_patch_revision ;;
     type: number
@@ -815,6 +833,12 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: os_version_minor {
     sql: ${TABLE}.fenix_active_users_aggregates_view_os_version_minor ;;
     type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: partnership {
+    sql: ${TABLE}.fenix_active_users_aggregates_view_partnership ;;
+    type: string
     group_label: "Base Fields"
   }
 

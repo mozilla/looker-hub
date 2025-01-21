@@ -11,6 +11,6 @@ datagroup: logs_last_updated {
     FROM `moz-fx-data-experiments`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'monitoring'
     AND table_name = 'logs' ;;
-  description: "Updates when moz-fx-data-experiments:monitoring.logs is modified."
+  description: "Updates for logs when moz-fx-data-experiments.monitoring.logs is modified."
   max_cache_age: "24 hours"
 }

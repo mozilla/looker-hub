@@ -386,6 +386,23 @@ This version number does not have a physical unit: it's only useful to compare b
 "
   }
 
+  dimension: metrics__labeled_counter__update_skip_startup_update_reason {
+    label: "Update Skip Startup Update Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_skip_startup_update_reason ;;
+    group_label: "Update"
+    group_item_label: "Skip Startup Update Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Update Skip Startup Update Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/update_skip_startup_update_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "We usually install pending updates at startup, but there are a couple of reasons we might not. This value will be set to \"none\" if there was no reason not to install updates. If the value is \"DevToolsLaunching\", that means that we skipped applying updates because the application startup was actually a startup of the Browser Toolbox, not the browser itself. If the value is \"NotAnUpdatingTask\", that means that the browser launch is a background task other than the background update task, (which have update capabilities disabled). If the value is \"OtherInstanceRunning\", that means that the background update task was launched, but it didn't install an update in order to avoid interfering with other application instances. If the value is \"FirstStartup\", we didn't install any updates because the browser was launched by the installer. If the value is \"MultiSessionInstallLockout\", there are other browser instances running and the Multi Session Install Lockout timeout has not expired yet. Note that, for updates to be installed, the browser launches, sees the update, runs the updater, and exits. The updater then relaunches the browser when it completes. Naturally, the first launch is what decides if the update should be installed. But, if we are installing an update, the browser exits too early to send telemetry so it isn't sent until the second launch. It may be technically possible (though very unlikely) for the value sent on the second launch to not be \"none\".
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation Id"
     hidden: no
@@ -481,6 +498,21 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
     description: "A JSON string containing any payload properties not present in the schema"
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
   }
 
   dimension: client_info__android_sdk_version {
@@ -1089,6 +1121,47 @@ view: background_update__metrics__labeled_counter__glean_error_invalid_state {
 
 view: background_update__metrics__labeled_counter__glean_error_invalid_value {
   label: "Glean Error - Invalid Value"
+
+  dimension: document_id {
+    type: string
+    sql: ${background_update.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${background_update.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${background_update.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: background_update__metrics__labeled_counter__update_skip_startup_update_reason {
+  label: "Update - Skip Startup Update Reason"
 
   dimension: document_id {
     type: string

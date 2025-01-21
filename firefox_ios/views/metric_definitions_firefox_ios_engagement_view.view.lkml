@@ -9,7 +9,10 @@ view: metric_definitions_firefox_ios_engagement_view {
     sql: SELECT
                 SUM(dau) / SUM(mau) AS engagement_rate_v1,
 
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -48,6 +51,8 @@ firefox_ios_engagement_view_app_name,
 firefox_ios_engagement_view_app_version,
 firefox_ios_engagement_view_country,
 firefox_ios_engagement_view_dau,
+firefox_ios_engagement_view_device_manufacturer,
+firefox_ios_engagement_view_device_type,
 firefox_ios_engagement_view_is_mobile,
 firefox_ios_engagement_view_is_suspicious_device_client,
 firefox_ios_engagement_view_lifecycle_stage,
@@ -88,7 +93,10 @@ firefox_ios_engagement_view_wau,
                 (
                     SELECT
                         firefox_ios_engagement_view.*,
-                        looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
+                        looker_base_fields.app_version_major AS looker_base_fields_app_version_major,
+looker_base_fields.app_version_minor AS looker_base_fields_app_version_minor,
+looker_base_fields.app_version_patch AS looker_base_fields_app_version_patch,
+looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
 looker_base_fields.client_info.app_build AS looker_base_fields_client_info__app_build,
 looker_base_fields.client_info.app_channel AS looker_base_fields_client_info__app_channel,
 looker_base_fields.client_info.app_display_version AS looker_base_fields_client_info__app_display_version,
@@ -127,6 +135,8 @@ firefox_ios_engagement_view.app_name AS firefox_ios_engagement_view_app_name,
 firefox_ios_engagement_view.app_version AS firefox_ios_engagement_view_app_version,
 firefox_ios_engagement_view.country AS firefox_ios_engagement_view_country,
 firefox_ios_engagement_view.dau AS firefox_ios_engagement_view_dau,
+firefox_ios_engagement_view.device_manufacturer AS firefox_ios_engagement_view_device_manufacturer,
+firefox_ios_engagement_view.device_type AS firefox_ios_engagement_view_device_type,
 firefox_ios_engagement_view.is_mobile AS firefox_ios_engagement_view_is_mobile,
 firefox_ios_engagement_view.is_suspicious_device_client AS firefox_ios_engagement_view_is_suspicious_device_client,
 firefox_ios_engagement_view.lifecycle_stage AS firefox_ios_engagement_view_lifecycle_stage,
@@ -176,7 +186,10 @@ firefox_ios_engagement_view.wau AS firefox_ios_engagement_view_wau,
                 
                 )
             GROUP BY
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -215,6 +228,8 @@ firefox_ios_engagement_view_app_name,
 firefox_ios_engagement_view_app_version,
 firefox_ios_engagement_view_country,
 firefox_ios_engagement_view_dau,
+firefox_ios_engagement_view_device_manufacturer,
+firefox_ios_engagement_view_device_type,
 firefox_ios_engagement_view_is_mobile,
 firefox_ios_engagement_view_is_suspicious_device_client,
 firefox_ios_engagement_view_lifecycle_stage,
@@ -247,6 +262,24 @@ firefox_ios_engagement_view_wau,
 "
     type: number
     sql: ${TABLE}.engagement_rate_v1 ;;
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.looker_base_fields_app_version_major ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.looker_base_fields_app_version_minor ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.looker_base_fields_app_version_patch ;;
+    type: number
+    group_label: "Base Fields"
   }
 
   dimension: client_info__android_sdk_version {
@@ -517,6 +550,18 @@ firefox_ios_engagement_view_wau,
   dimension: dau {
     sql: ${TABLE}.firefox_ios_engagement_view_dau ;;
     type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: device_manufacturer {
+    sql: ${TABLE}.firefox_ios_engagement_view_device_manufacturer ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.firefox_ios_engagement_view_device_type ;;
+    type: string
     group_label: "Base Fields"
   }
 

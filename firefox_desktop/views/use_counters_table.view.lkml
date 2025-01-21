@@ -11,6 +11,21 @@ view: use_counters_table {
     description: "A JSON string containing any payload properties not present in the schema"
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -4023,6 +4038,24 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_position_area {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_area ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Area"
+    description: "Whether a document used the CSS property position-area. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_position_try {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Try"
+    description: "Whether a document used the CSS property position-try. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_position_try_fallbacks {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try_fallbacks ;;
     type: number
@@ -5040,6 +5073,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_view_transition_name {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_view_transition_name ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css View Transition Name"
+    description: "Whether a document used the CSS property view-transition-name. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_visibility {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_visibility ;;
     type: number
@@ -5414,7 +5456,7 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Doc Css Webkit Font Feature Settings"
-    description: "Whether a page used the CSS property -webkit-font-feature-settings. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a document used the CSS property -webkit-font-feature-settings. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -10404,6 +10446,24 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_position_area {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_area ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Area"
+    description: "Whether a page used the CSS property position-area. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_try {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Try"
+    description: "Whether a page used the CSS property position-try. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_position_try_fallbacks {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try_fallbacks ;;
     type: number
@@ -11418,6 +11478,15 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css View Timeline Name"
     description: "Whether a page used the CSS property view-timeline-name. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_view_transition_name {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_view_transition_name ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css View Transition Name"
+    description: "Whether a page used the CSS property view-transition-name. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -14175,6 +14244,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_components_shim_resolved {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_components_shim_resolved ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Components Shim Resolved"
+    description: "Whether a document resolves the components shim.. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_console_assert {
     sql: ${TABLE}.metrics.counter.use_counter_doc_console_assert ;;
     type: number
@@ -15372,12 +15450,39 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_js_is_htmldda_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_is_htmldda_fuse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Is Htmldda Fuse"
+    description: "Whether a document has used the document.all getter (popping the EmulatesUndefined Fuse). Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_late_weekday {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_late_weekday ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Late Weekday"
     description: "Whether a document parses a Date with day of week in an unexpected position. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_legacy_lang_subtag {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_legacy_lang_subtag ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Legacy Lang Subtag"
+    description: "Whether a document uses a 5-to-8-character language subtag in Intl.Locale constructor. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_optimize_get_iterator_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_optimize_get_iterator_fuse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Optimize Get Iterator Fuse"
+    description: "Whether a document has modified any builtins such that the GetIterator fuse is popped. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -15468,6 +15573,33 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Subclassing Typedarray Type 3"
     description: "Whether a document TypedArray is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_thenable {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_thenable ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Thenable"
+    description: "Whether a document resolved a promise using thenable support rather than builtin methods. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_thenable_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_thenable_proto ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Thenable Proto"
+    description: "Whether a document resolved a promise using thenable on prototype. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_thenable_standard_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_thenable_standard_proto ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Thenable Standard Proto"
+    description: "Whether a document resolved a promise using thenable on a standard prototype. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -15630,6 +15762,150 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Mixed Content Upgraded Video Success"
     description: "Whether a document includes a mixed content video element that loads.. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_deriveexporter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_deriveexporter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Deriveexporter"
+    description: "Whether a document called called MLS.deriveExporter. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_generatecredentialbasic {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_generatecredentialbasic ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Generatecredentialbasic"
+    description: "Whether a document called called MLS.generateCredentialBasic. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_generatekeypackage {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_generatekeypackage ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Generatekeypackage"
+    description: "Whether a document called called MLS.generateKeyPackage. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_generatesignaturekeypair {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_generatesignaturekeypair ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Generatesignaturekeypair"
+    description: "Whether a document called called MLS.generateSignatureKeypair. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_groupadd {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_groupadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Groupadd"
+    description: "Whether a document called called MLS.groupAdd. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_groupclose {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_groupclose ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Groupclose"
+    description: "Whether a document called called MLS.groupClose. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_groupcreate {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_groupcreate ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Groupcreate"
+    description: "Whether a document called called MLS.groupCreate. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_groupjoin {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_groupjoin ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Groupjoin"
+    description: "Whether a document called called MLS.groupJoin. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_groupmembers {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_groupmembers ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Groupmembers"
+    description: "Whether a document called called MLS.groupMembers. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_groupproposeadd {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_groupproposeadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Groupproposeadd"
+    description: "Whether a document called called MLS.groupProposeAdd. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_groupproposeremove {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_groupproposeremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Groupproposeremove"
+    description: "Whether a document called called MLS.groupProposeRemove. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_groupremove {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_groupremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Groupremove"
+    description: "Whether a document called called MLS.groupRemove. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_receive {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_receive ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Receive"
+    description: "Whether a document called called MLS.receive. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_send {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_send ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Send"
+    description: "Whether a document called called MLS.send. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_statedelete {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_statedelete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Statedelete"
+    description: "Whether a document called called MLS.stateDelete. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_statedeletegroup {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_statedeletegroup ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Statedeletegroup"
+    description: "Whether a document called called MLS.stateDeleteGroup. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17487,6 +17763,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_components_shim_resolved {
+    sql: ${TABLE}.metrics.counter.use_counter_page_components_shim_resolved ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Components Shim Resolved"
+    description: "Whether a page resolves the components shim.. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_console_assert {
     sql: ${TABLE}.metrics.counter.use_counter_page_console_assert ;;
     type: number
@@ -18684,12 +18969,39 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_js_is_htmldda_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_is_htmldda_fuse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Is Htmldda Fuse"
+    description: "Whether a page has used the document.all getter (popping the EmulatesUndefined Fuse). Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_js_late_weekday {
     sql: ${TABLE}.metrics.counter.use_counter_page_js_late_weekday ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Late Weekday"
     description: "Whether a page parses a Date with day of week in an unexpected position. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_legacy_lang_subtag {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_legacy_lang_subtag ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Legacy Lang Subtag"
+    description: "Whether a page uses a 5-to-8-character language subtag in Intl.Locale constructor. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_optimize_get_iterator_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_optimize_get_iterator_fuse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Optimize Get Iterator Fuse"
+    description: "Whether a page has modified any builtins such that the GetIterator fuse is popped. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -18780,6 +19092,33 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Subclassing Typedarray Type 3"
     description: "Whether a page TypedArray is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_thenable {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_thenable ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Thenable"
+    description: "Whether a page resolved a promise using thenable support rather than builtin methods. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_thenable_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_thenable_proto ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Thenable Proto"
+    description: "Whether a page resolved a promise using thenable on prototype. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_thenable_standard_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_thenable_standard_proto ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Thenable Standard Proto"
+    description: "Whether a page resolved a promise using thenable on a standard prototype. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -18942,6 +19281,150 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Mixed Content Upgraded Video Success"
     description: "Whether a page includes a mixed content video element that loads.. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_deriveexporter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_deriveexporter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Deriveexporter"
+    description: "Whether a page called called MLS.deriveExporter. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_generatecredentialbasic {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_generatecredentialbasic ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Generatecredentialbasic"
+    description: "Whether a page called called MLS.generateCredentialBasic. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_generatekeypackage {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_generatekeypackage ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Generatekeypackage"
+    description: "Whether a page called called MLS.generateKeyPackage. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_generatesignaturekeypair {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_generatesignaturekeypair ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Generatesignaturekeypair"
+    description: "Whether a page called called MLS.generateSignatureKeypair. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_groupadd {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_groupadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Groupadd"
+    description: "Whether a page called called MLS.groupAdd. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_groupclose {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_groupclose ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Groupclose"
+    description: "Whether a page called called MLS.groupClose. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_groupcreate {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_groupcreate ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Groupcreate"
+    description: "Whether a page called called MLS.groupCreate. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_groupjoin {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_groupjoin ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Groupjoin"
+    description: "Whether a page called called MLS.groupJoin. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_groupmembers {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_groupmembers ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Groupmembers"
+    description: "Whether a page called called MLS.groupMembers. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_groupproposeadd {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_groupproposeadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Groupproposeadd"
+    description: "Whether a page called called MLS.groupProposeAdd. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_groupproposeremove {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_groupproposeremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Groupproposeremove"
+    description: "Whether a page called called MLS.groupProposeRemove. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_groupremove {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_groupremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Groupremove"
+    description: "Whether a page called called MLS.groupRemove. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_receive {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_receive ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Receive"
+    description: "Whether a page called called MLS.receive. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_send {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_send ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Send"
+    description: "Whether a page called called MLS.send. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_statedelete {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_statedelete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Statedelete"
+    description: "Whether a page called called MLS.stateDelete. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_statedeletegroup {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_statedeletegroup ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Statedeletegroup"
+    description: "Whether a page called called MLS.stateDeleteGroup. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21006,6 +21489,150 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_deriveexporter {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_deriveexporter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Deriveexporter"
+    description: "Whether a dedicated worker called called MLS.deriveExporter. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_generatecredentialbasic {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_generatecredentialbasic ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Generatecredentialbasic"
+    description: "Whether a dedicated worker called called MLS.generateCredentialBasic. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_generatekeypackage {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_generatekeypackage ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Generatekeypackage"
+    description: "Whether a dedicated worker called called MLS.generateKeyPackage. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_generatesignaturekeypair {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_generatesignaturekeypair ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Generatesignaturekeypair"
+    description: "Whether a dedicated worker called called MLS.generateSignatureKeypair. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_groupadd {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_groupadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Groupadd"
+    description: "Whether a dedicated worker called called MLS.groupAdd. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_groupclose {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_groupclose ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Groupclose"
+    description: "Whether a dedicated worker called called MLS.groupClose. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_groupcreate {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_groupcreate ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Groupcreate"
+    description: "Whether a dedicated worker called called MLS.groupCreate. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_groupjoin {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_groupjoin ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Groupjoin"
+    description: "Whether a dedicated worker called called MLS.groupJoin. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_groupmembers {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_groupmembers ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Groupmembers"
+    description: "Whether a dedicated worker called called MLS.groupMembers. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_groupproposeadd {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_groupproposeadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Groupproposeadd"
+    description: "Whether a dedicated worker called called MLS.groupProposeAdd. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_groupproposeremove {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_groupproposeremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Groupproposeremove"
+    description: "Whether a dedicated worker called called MLS.groupProposeRemove. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_groupremove {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_groupremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Groupremove"
+    description: "Whether a dedicated worker called called MLS.groupRemove. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_receive {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_receive ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Receive"
+    description: "Whether a dedicated worker called called MLS.receive. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_send {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_send ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Send"
+    description: "Whether a dedicated worker called called MLS.send. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_statedelete {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_statedelete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Statedelete"
+    description: "Whether a dedicated worker called called MLS.stateDelete. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_statedeletegroup {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_statedeletegroup ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Statedeletegroup"
+    description: "Whether a dedicated worker called called MLS.stateDeleteGroup. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_dedicated_private_browsing_caches_delete {
     sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_private_browsing_caches_delete ;;
     type: number
@@ -21303,6 +21930,150 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_service_mls_deriveexporter {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_deriveexporter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Deriveexporter"
+    description: "Whether a service worker called called MLS.deriveExporter. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_generatecredentialbasic {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_generatecredentialbasic ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Generatecredentialbasic"
+    description: "Whether a service worker called called MLS.generateCredentialBasic. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_generatekeypackage {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_generatekeypackage ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Generatekeypackage"
+    description: "Whether a service worker called called MLS.generateKeyPackage. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_generatesignaturekeypair {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_generatesignaturekeypair ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Generatesignaturekeypair"
+    description: "Whether a service worker called called MLS.generateSignatureKeypair. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_groupadd {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_groupadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Groupadd"
+    description: "Whether a service worker called called MLS.groupAdd. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_groupclose {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_groupclose ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Groupclose"
+    description: "Whether a service worker called called MLS.groupClose. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_groupcreate {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_groupcreate ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Groupcreate"
+    description: "Whether a service worker called called MLS.groupCreate. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_groupjoin {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_groupjoin ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Groupjoin"
+    description: "Whether a service worker called called MLS.groupJoin. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_groupmembers {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_groupmembers ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Groupmembers"
+    description: "Whether a service worker called called MLS.groupMembers. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_groupproposeadd {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_groupproposeadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Groupproposeadd"
+    description: "Whether a service worker called called MLS.groupProposeAdd. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_groupproposeremove {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_groupproposeremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Groupproposeremove"
+    description: "Whether a service worker called called MLS.groupProposeRemove. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_groupremove {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_groupremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Groupremove"
+    description: "Whether a service worker called called MLS.groupRemove. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_receive {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_receive ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Receive"
+    description: "Whether a service worker called called MLS.receive. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_send {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_send ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Send"
+    description: "Whether a service worker called called MLS.send. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_statedelete {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_statedelete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Statedelete"
+    description: "Whether a service worker called called MLS.stateDelete. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_statedeletegroup {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_statedeletegroup ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Statedeletegroup"
+    description: "Whether a service worker called called MLS.stateDeleteGroup. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_service_private_browsing_caches_delete {
     sql: ${TABLE}.metrics.counter.use_counter_worker_service_private_browsing_caches_delete ;;
     type: number
@@ -21597,6 +22368,150 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Worker Shared Console Warn"
     description: "Whether a shared worker called called console.warn. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_deriveexporter {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_deriveexporter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Deriveexporter"
+    description: "Whether a shared worker called called MLS.deriveExporter. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_generatecredentialbasic {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_generatecredentialbasic ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Generatecredentialbasic"
+    description: "Whether a shared worker called called MLS.generateCredentialBasic. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_generatekeypackage {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_generatekeypackage ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Generatekeypackage"
+    description: "Whether a shared worker called called MLS.generateKeyPackage. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_generatesignaturekeypair {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_generatesignaturekeypair ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Generatesignaturekeypair"
+    description: "Whether a shared worker called called MLS.generateSignatureKeypair. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_groupadd {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_groupadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Groupadd"
+    description: "Whether a shared worker called called MLS.groupAdd. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_groupclose {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_groupclose ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Groupclose"
+    description: "Whether a shared worker called called MLS.groupClose. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_groupcreate {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_groupcreate ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Groupcreate"
+    description: "Whether a shared worker called called MLS.groupCreate. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_groupjoin {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_groupjoin ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Groupjoin"
+    description: "Whether a shared worker called called MLS.groupJoin. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_groupmembers {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_groupmembers ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Groupmembers"
+    description: "Whether a shared worker called called MLS.groupMembers. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_groupproposeadd {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_groupproposeadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Groupproposeadd"
+    description: "Whether a shared worker called called MLS.groupProposeAdd. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_groupproposeremove {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_groupproposeremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Groupproposeremove"
+    description: "Whether a shared worker called called MLS.groupProposeRemove. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_groupremove {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_groupremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Groupremove"
+    description: "Whether a shared worker called called MLS.groupRemove. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_receive {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_receive ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Receive"
+    description: "Whether a shared worker called called MLS.receive. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_send {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_send ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Send"
+    description: "Whether a shared worker called called MLS.send. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_statedelete {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_statedelete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Statedelete"
+    description: "Whether a shared worker called called MLS.stateDelete. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_statedeletegroup {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_statedeletegroup ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Statedeletegroup"
+    description: "Whether a shared worker called called MLS.stateDeleteGroup. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
 "
   }
 

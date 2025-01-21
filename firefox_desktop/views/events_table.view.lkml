@@ -11,6 +11,21 @@ view: events_table {
     description: "A JSON string containing any payload properties not present in the schema"
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -450,6 +465,18 @@ Value may be the canary client id `c0ffeec0-ffee-c0ff-eec0-ffeec0ffeec0`
 in pings near when the data upload pref is disabled (if Telemetry gets
 to go first), or between when a client_id has been removed and when it
 has been regenerated.
+Does not need to be sent in the Glean \"deletion-request\" ping.
+"
+  }
+
+  dimension: metrics__uuid__legacy_telemetry_profile_group_id {
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_profile_group_id ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Legacy Telemetry Profile Group Id"
+    description: "The profile_group_id according to Telemetry.
+Might not always have a value due to being too early for it to have
+loaded.
 Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }

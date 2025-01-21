@@ -9,7 +9,10 @@ view: metric_definitions_klar_android_engagement_view {
     sql: SELECT
                 SUM(dau) / SUM(mau) AS engagement_rate_v1,
 
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -44,6 +47,8 @@ klar_android_engagement_view_app_name,
 klar_android_engagement_view_app_version,
 klar_android_engagement_view_country,
 klar_android_engagement_view_dau,
+klar_android_engagement_view_device_manufacturer,
+klar_android_engagement_view_device_type,
 klar_android_engagement_view_is_mobile,
 klar_android_engagement_view_lifecycle_stage,
 klar_android_engagement_view_locale,
@@ -83,7 +88,10 @@ klar_android_engagement_view_wau,
                 (
                     SELECT
                         klar_android_engagement_view.*,
-                        looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
+                        looker_base_fields.app_version_major AS looker_base_fields_app_version_major,
+looker_base_fields.app_version_minor AS looker_base_fields_app_version_minor,
+looker_base_fields.app_version_patch AS looker_base_fields_app_version_patch,
+looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
 looker_base_fields.client_info.app_build AS looker_base_fields_client_info__app_build,
 looker_base_fields.client_info.app_channel AS looker_base_fields_client_info__app_channel,
 looker_base_fields.client_info.app_display_version AS looker_base_fields_client_info__app_display_version,
@@ -118,6 +126,8 @@ klar_android_engagement_view.app_name AS klar_android_engagement_view_app_name,
 klar_android_engagement_view.app_version AS klar_android_engagement_view_app_version,
 klar_android_engagement_view.country AS klar_android_engagement_view_country,
 klar_android_engagement_view.dau AS klar_android_engagement_view_dau,
+klar_android_engagement_view.device_manufacturer AS klar_android_engagement_view_device_manufacturer,
+klar_android_engagement_view.device_type AS klar_android_engagement_view_device_type,
 klar_android_engagement_view.is_mobile AS klar_android_engagement_view_is_mobile,
 klar_android_engagement_view.lifecycle_stage AS klar_android_engagement_view_lifecycle_stage,
 klar_android_engagement_view.locale AS klar_android_engagement_view_locale,
@@ -166,7 +176,10 @@ klar_android_engagement_view.wau AS klar_android_engagement_view_wau,
                 
                 )
             GROUP BY
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -201,6 +214,8 @@ klar_android_engagement_view_app_name,
 klar_android_engagement_view_app_version,
 klar_android_engagement_view_country,
 klar_android_engagement_view_dau,
+klar_android_engagement_view_device_manufacturer,
+klar_android_engagement_view_device_type,
 klar_android_engagement_view_is_mobile,
 klar_android_engagement_view_lifecycle_stage,
 klar_android_engagement_view_locale,
@@ -232,6 +247,24 @@ klar_android_engagement_view_wau,
 "
     type: number
     sql: ${TABLE}.engagement_rate_v1 ;;
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.looker_base_fields_app_version_major ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.looker_base_fields_app_version_minor ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.looker_base_fields_app_version_patch ;;
+    type: number
+    group_label: "Base Fields"
   }
 
   dimension: client_info__android_sdk_version {
@@ -478,6 +511,18 @@ klar_android_engagement_view_wau,
   dimension: dau {
     sql: ${TABLE}.klar_android_engagement_view_dau ;;
     type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: device_manufacturer {
+    sql: ${TABLE}.klar_android_engagement_view_device_manufacturer ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.klar_android_engagement_view_device_type ;;
+    type: string
     group_label: "Base Fields"
   }
 

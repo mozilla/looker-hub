@@ -61,6 +61,16 @@ view: retention_clients_table {
     type: number
   }
 
+  dimension: device_manufacturer {
+    sql: ${TABLE}.device_manufacturer ;;
+    type: string
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.device_type ;;
+    type: string
+  }
+
   dimension: is_mobile {
     sql: ${TABLE}.is_mobile ;;
     type: yesno
@@ -129,6 +139,20 @@ view: retention_clients_table {
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+  }
+
+  dimension_group: adjust_attribution {
+    sql: ${TABLE}.adjust_attribution_timestamp ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
   }
 
   dimension_group: first_seen {

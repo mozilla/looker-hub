@@ -121,6 +121,11 @@ view: growth_accounting {
     type: string
   }
 
+  dimension: install_source {
+    sql: ${TABLE}.install_source ;;
+    type: string
+  }
+
   dimension: is_new_profile {
     sql: ${TABLE}.is_new_profile ;;
     type: yesno
@@ -153,6 +158,11 @@ view: growth_accounting {
 
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
+    type: string
+  }
+
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
     type: string
   }
 

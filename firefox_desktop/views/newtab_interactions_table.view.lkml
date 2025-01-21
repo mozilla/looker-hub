@@ -180,6 +180,12 @@ view: newtab_interactions_table {
     type: number
   }
 
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
+    description: "A UUID identifying the profile's group on a single device and allowing user-oriented correlation of data"
+  }
+
   dimension: search_access_point {
     sql: ${TABLE}.search_access_point ;;
     type: string
