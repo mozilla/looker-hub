@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: task_runs {
+view: task_runs_base {
   dimension: reason_created {
     sql: ${TABLE}.reason_created ;;
     type: string

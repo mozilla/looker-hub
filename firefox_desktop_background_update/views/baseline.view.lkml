@@ -7,7 +7,7 @@
 view: baseline {
   dimension: metrics__uuid__background_update_client_id {
     label: "Background Update Client Id"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.background_update_client_id ;;
     type: string
     group_label: "Background Update"

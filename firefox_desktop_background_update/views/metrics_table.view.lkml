@@ -503,6 +503,15 @@ Child-process data will likely be absent, or incomplete.
 "
   }
 
+  dimension: metrics__boolean__formautofill_os_auth_enabled {
+    sql: ${TABLE}.metrics.boolean.formautofill_os_auth_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Formautofill Os Auth Enabled"
+    description: "Check at startup whether OS Authentication has been enabled for credit cards.
+"
+  }
+
   dimension: metrics__boolean__gfx_os_compositor {
     sql: ${TABLE}.metrics.boolean.gfx_os_compositor ;;
     type: yesno
@@ -591,6 +600,15 @@ To be used to validate GIFFT.
     group_label: "Metrics Boolean"
     group_item_label: "Preferences Prefs File Was Invalid"
     description: "Set to true if a failure occurred reading profile/prefs.js. This metric was generated to correspond to the Legacy Telemetry scalar preferences.prefs_file_was_invalid.
+"
+  }
+
+  dimension: metrics__boolean__pwmgr_os_auth_enabled {
+    sql: ${TABLE}.metrics.boolean.pwmgr_os_auth_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Pwmgr Os Auth Enabled"
+    description: "Check at startup whether OS Authentication has been enabled for passwords.
 "
   }
 
@@ -2038,6 +2056,246 @@ This does not include deletion-request pings.
 
   dimension: metrics__custom_distribution__gfx_content_frame_time_without_upload__values {
     sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_upload.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_effectiveness__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_effectiveness.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Effectiveness"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_effectiveness__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_effectiveness.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Effectiveness"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_effectiveness__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_effectiveness.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mark_rate__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mark_rate.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Mark Rate"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mark_rate__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mark_rate.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Mark Rate"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mark_rate__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mark_rate.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mmu_50__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mmu_50.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Mmu 50"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mmu_50__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mmu_50.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Mmu 50"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mmu_50__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mmu_50.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_nursery_promotion_rate__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_nursery_promotion_rate.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Nursery Promotion Rate"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_nursery_promotion_rate__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_nursery_promotion_rate.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Nursery Promotion Rate"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_nursery_promotion_rate__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_nursery_promotion_rate.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_interruptions__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_interruptions.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Interruptions"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_interruptions__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_interruptions.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Interruptions"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_interruptions__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_interruptions.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_speedup__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_speedup.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Speedup"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_speedup__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_speedup.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Speedup"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_speedup__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_speedup.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_utilization__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_utilization.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Utilization"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_utilization__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_utilization.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Utilization"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_utilization__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_utilization.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_pretenure_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_pretenure_count.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Pretenure Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_pretenure_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_pretenure_count.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Pretenure Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_pretenure_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_pretenure_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_slice_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_slice_count.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Slice Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_slice_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_slice_count.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Slice Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_slice_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_slice_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_tenured_survival_rate__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_tenured_survival_rate.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Tenured Survival Rate"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_tenured_survival_rate__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_tenured_survival_rate.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Tenured Survival Rate"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_tenured_survival_rate__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_tenured_survival_rate.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zone_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zone_count.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Zone Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zone_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zone_count.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Zone Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zone_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zone_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zones_collected__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zones_collected.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Zones Collected"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zones_collected__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zones_collected.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Zones Collected"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zones_collected__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zones_collected.values ;;
     hidden: yes
   }
 
@@ -3520,7 +3778,7 @@ though the counts appear in the next successfully sent `metrics` ping.
   dimension: metrics__labeled_counter__glean_validation_pings_submitted {
     sql: ${TABLE}.metrics.labeled_counter.glean_validation_pings_submitted ;;
     hidden: yes
-    description: "A count of the pings submitted, by ping type.
+    description: "A count of the built-in pings submitted, by ping type.
 
 This metric appears in both the metrics and baseline pings.
 
@@ -3528,6 +3786,9 @@ This metric appears in both the metrics and baseline pings.
   the last metrics ping (including the last metrics ping)
 - On the baseline ping, the counts include the number of pings send since
   the last baseline ping (including the last baseline ping)
+
+Note: Previously this also recorded the number of submitted custom pings.
+Now it only records counts for the Glean built-in pings.
 "
   }
 
@@ -3612,6 +3873,97 @@ This metric appears in both the metrics and baseline pings.
     sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_parent_inactive ;;
     hidden: yes
     description: "How many times each IPC message type was sent. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_budget_was_increased {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_budget_was_increased ;;
+    hidden: yes
+    description: "Whether the budget was increased due to taking too long or approaching the incremental limit
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_is_zone_gc {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_is_zone_gc ;;
+    hidden: yes
+    description: "Is it a zone GC?
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_minor_reason {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_minor_reason ;;
+    hidden: yes
+    description: "Reason (enum value) for initiating a minor GC
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_minor_reason_long {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_minor_reason_long ;;
+    hidden: yes
+    description: "Reason (enum value) that caused a long (>1ms) minor GC
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_non_incremental {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_non_incremental ;;
+    hidden: yes
+    description: "Was the GC non-incremental?
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_non_incremental_reason {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_non_incremental_reason ;;
+    hidden: yes
+    description: "Reason for performing a non-incremental GC (see js::GCAbortReason)
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_parallel_mark_used {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_parallel_mark_used ;;
+    hidden: yes
+    description: "Whether parallel marking was used for this collection
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_reason {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_reason ;;
+    hidden: yes
+    description: "Reason (enum value) for initiating a GC
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_reset {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_reset ;;
+    hidden: yes
+    description: "Was an incremental GC canceled?
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_reset_reason {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_reset_reason ;;
+    hidden: yes
+    description: "Reason for cancelling an ongoing GC (see js::GCAbortReason)
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_slice_was_long {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_slice_was_long ;;
+    hidden: yes
+    description: "Whether a GC slice took 1.5 times or 5ms more than its budget
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_slow_phase {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_slow_phase ;;
+    hidden: yes
+    description: "The longest phase in any slice that goes over 2x the budget. The phase values are defined in js/src/gc/GenerateStatsPhases.py.
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_slow_task {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_slow_task ;;
+    hidden: yes
+    description: "The longest parallel task in any slice that goes over 2x the budget. The phase values are defined in js/src/gc/GenerateStatsPhases.py.
 "
   }
 
@@ -3793,6 +4145,13 @@ This metric appears in both the metrics and baseline pings.
     sql: ${TABLE}.metrics.labeled_counter.network_tls_early_data_negotiated ;;
     hidden: yes
     description: "Sending TLS early data was not possible, possible and used, or possible but not used.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_cache_purge_due_to_memory_limit {
+    sql: ${TABLE}.metrics.labeled_counter.networking_cache_purge_due_to_memory_limit ;;
+    hidden: yes
+    description: "Counts how often we purge cache entries from memory due to memory limits.
 "
   }
 
@@ -4750,6 +5109,26 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__javascript_gc_nursery_bytes__count {
+    sql: ${TABLE}.metrics.memory_distribution.javascript_gc_nursery_bytes.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Javascript Gc Nursery Bytes"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__javascript_gc_nursery_bytes__sum {
+    sql: ${TABLE}.metrics.memory_distribution.javascript_gc_nursery_bytes.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Javascript Gc Nursery Bytes"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__javascript_gc_nursery_bytes__values {
+    sql: ${TABLE}.metrics.memory_distribution.javascript_gc_nursery_bytes.values ;;
     hidden: yes
   }
 
@@ -16713,6 +17092,150 @@ view: metrics_table__metrics__custom_distribution__gfx_content_frame_time_withou
   }
 }
 
+view: metrics_table__metrics__custom_distribution__javascript_gc_effectiveness__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_mark_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_mmu_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_nursery_promotion_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_parallel_mark_interruptions__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_parallel_mark_speedup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_parallel_mark_utilization__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_pretenure_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_slice_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_tenured_survival_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_zone_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_zones_collected__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__network_tls_early_data_bytes_written__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -19112,6 +19635,18 @@ view: metrics_table__metrics__memory_distribution__glean_upload_discarded_exceed
 }
 
 view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__javascript_gc_nursery_bytes__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

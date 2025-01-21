@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: tasks {
+view: tasks_base {
   dimension: scheduler_id {
     sql: ${TABLE}.scheduler_id ;;
     type: string
@@ -48,7 +48,7 @@ view: tasks {
   sql_table_name: `moz-fx-data-shared-prod.fxci.tasks_v1` ;;
 }
 
-view: tasks__tags {
+view: tasks_base__tags {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

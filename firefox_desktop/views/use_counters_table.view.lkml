@@ -15450,6 +15450,24 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_js_ic_stub_oom {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_ic_stub_oom ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Ic Stub Oom"
+    description: "Whether a document OOMed while creating IC stub . Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_ic_stub_too_large {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_ic_stub_too_large ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Ic Stub Too Large"
+    description: "Whether a document tried to create an IC stub that was too large. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_is_htmldda_fuse {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_is_htmldda_fuse ;;
     type: number
@@ -18966,6 +18984,24 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Asmjs"
     description: "Whether a page uses asm.js. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_ic_stub_oom {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_ic_stub_oom ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Ic Stub Oom"
+    description: "Whether a page OOMed while creating IC stub . Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_ic_stub_too_large {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_ic_stub_too_large ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Ic Stub Too Large"
+    description: "Whether a page tried to create an IC stub that was too large. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

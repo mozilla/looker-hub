@@ -7,7 +7,7 @@
 view: metrics {
   dimension: metrics__uuid__background_update_client_id {
     label: "Background Update Client Id"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.background_update_client_id ;;
     type: string
     group_label: "Background Update"
@@ -149,7 +149,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
   dimension: metrics__counter__update_no_window_auto_restarts {
     label: "Update No Window Auto Restarts"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.update_no_window_auto_restarts ;;
     type: number
     group_label: "Update"
@@ -184,7 +184,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
   dimension: metrics__boolean__update_suppress_prompts {
     label: "Update Suppress Prompts"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.update_suppress_prompts ;;
     type: yesno
     group_label: "Update"
@@ -202,7 +202,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
   dimension: metrics__string__update_version_pin {
     label: "Update Version Pin"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.update_version_pin ;;
     type: string
     group_label: "Update"
@@ -3638,6 +3638,24 @@ API for the purposes of Validation (hence GVSV).
     description: "The heuristic that detected the form submission."
   }
 
+  dimension: metrics__boolean__formautofill_os_auth_enabled {
+    label: "Formautofill Os Auth Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.formautofill_os_auth_enabled ;;
+    type: yesno
+    group_label: "Formautofill"
+    group_item_label: "Os Auth Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Os Auth Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/formautofill_os_auth_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Check at startup whether OS Authentication has been enabled for credit cards.
+"
+  }
+
   dimension: metrics__string__gecko_build_id {
     label: "Gecko Build Id"
     hidden: no
@@ -5101,6 +5119,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__javascript_gc_budget_was_increased {
+    label: "Javascript Gc Budget Was Increased"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_budget_was_increased ;;
+    group_label: "Javascript Gc"
+    group_item_label: "Budget Was Increased"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Budget Was Increased"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_budget_was_increased"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the budget was increased due to taking too long or approaching the incremental limit
+"
+  }
+
   dimension: metrics__timing_distribution__javascript_gc_compact_time__sum {
     label: "Javascript Gc Compact Time Sum"
     hidden: no
@@ -5119,6 +5154,41 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__javascript_gc_effectiveness__sum {
+    label: "Javascript Gc Effectiveness Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_effectiveness.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Effectiveness Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Effectiveness Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_effectiveness"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "GC effectiveness, the amount of memory freed divided by main-thread collection time (MB/s)
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_is_zone_gc {
+    label: "Javascript Gc Is Zone Gc"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_is_zone_gc ;;
+    group_label: "Javascript Gc"
+    group_item_label: "Is Zone Gc"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Is Zone Gc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_is_zone_gc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Is it a zone GC?
+"
+  }
+
   dimension: metrics__timing_distribution__javascript_gc_mark_gray__sum {
     label: "Javascript Gc Mark Gray Sum"
     hidden: no
@@ -5134,6 +5204,24 @@ To be used to validate GIFFT.
     }
 
     description: "Time spent marking gray GC objects.
+"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mark_rate__sum {
+    label: "Javascript Gc Mark Rate Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mark_rate.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Mark Rate Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Mark Rate Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_mark_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of objects marked per ms during GC.
 "
   }
 
@@ -5209,6 +5297,40 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__javascript_gc_minor_reason {
+    label: "Javascript Gc Minor Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_minor_reason ;;
+    group_label: "Javascript Gc"
+    group_item_label: "Minor Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Minor Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_minor_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Reason (enum value) for initiating a minor GC
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_minor_reason_long {
+    label: "Javascript Gc Minor Reason Long"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_minor_reason_long ;;
+    group_label: "Javascript Gc"
+    group_item_label: "Minor Reason Long"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Minor Reason Long"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_minor_reason_long"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Reason (enum value) that caused a long (>1ms) minor GC
+"
+  }
+
   dimension: metrics__timing_distribution__javascript_gc_minor_time__sum {
     label: "Javascript Gc Minor Time Sum"
     hidden: no
@@ -5224,6 +5346,165 @@ To be used to validate GIFFT.
     }
 
     description: "The time taked by a minor (nursery) collection. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mmu_50__sum {
+    label: "Javascript Gc Mmu 50 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mmu_50.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Mmu 50 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Mmu 50 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_mmu_50"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Minimum percentage of time spent outside GC over any 50ms window.
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_non_incremental {
+    label: "Javascript Gc Non Incremental"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_non_incremental ;;
+    group_label: "Javascript Gc"
+    group_item_label: "Non Incremental"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Non Incremental"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_non_incremental"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Was the GC non-incremental?
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_non_incremental_reason {
+    label: "Javascript Gc Non Incremental Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_non_incremental_reason ;;
+    group_label: "Javascript Gc"
+    group_item_label: "Non Incremental Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Non Incremental Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_non_incremental_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Reason for performing a non-incremental GC (see js::GCAbortReason)
+"
+  }
+
+  dimension: metrics__memory_distribution__javascript_gc_nursery_bytes__sum {
+    label: "Javascript Gc Nursery Bytes Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.javascript_gc_nursery_bytes.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Nursery Bytes Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Nursery Bytes Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_nursery_bytes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of the GC nursery in bytes.
+"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_nursery_promotion_rate__sum {
+    label: "Javascript Gc Nursery Promotion Rate Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_nursery_promotion_rate.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Nursery Promotion Rate Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Nursery Promotion Rate Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_nursery_promotion_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The percentage of nursery objects that were promoted to the tenured heap.
+"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_interruptions__sum {
+    label: "Javascript Gc Parallel Mark Interruptions Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_interruptions.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Parallel Mark Interruptions Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Parallel Mark Interruptions Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_parallel_mark_interruptions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of interruptions/donations per slice during parallel marking.
+"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_speedup__sum {
+    label: "Javascript Gc Parallel Mark Speedup Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_speedup.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Parallel Mark Speedup Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Parallel Mark Speedup Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_parallel_mark_speedup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Ratio of total helper thread time spent marking to main thread time for parallel marking, scaled by 100.
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_parallel_mark_used {
+    label: "Javascript Gc Parallel Mark Used"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_parallel_mark_used ;;
+    group_label: "Javascript Gc"
+    group_item_label: "Parallel Mark Used"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Parallel Mark Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_parallel_mark_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether parallel marking was used for this collection
+"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_utilization__sum {
+    label: "Javascript Gc Parallel Mark Utilization Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_utilization.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Parallel Mark Utilization Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Parallel Mark Utilization Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_parallel_mark_utilization"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Ratio of helper thread time spent marking to total helper thread time for parallel marking.
 "
   }
 
@@ -5245,6 +5526,93 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__javascript_gc_pretenure_count__sum {
+    label: "Javascript Gc Pretenure Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_pretenure_count.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Pretenure Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Pretenure Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_pretenure_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many allocation sites were selected for pretenuring by a minor GC
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_reason {
+    label: "Javascript Gc Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_reason ;;
+    group_label: "Javascript Gc"
+    group_item_label: "Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Reason (enum value) for initiating a GC
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_reset {
+    label: "Javascript Gc Reset"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_reset ;;
+    group_label: "Javascript Gc"
+    group_item_label: "Reset"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Reset"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_reset"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Was an incremental GC canceled?
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_reset_reason {
+    label: "Javascript Gc Reset Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_reset_reason ;;
+    group_label: "Javascript Gc"
+    group_item_label: "Reset Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Reset Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_reset_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Reason for cancelling an ongoing GC (see js::GCAbortReason)
+"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_slice_count__sum {
+    label: "Javascript Gc Slice Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_slice_count.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Slice Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Slice Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_slice_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of slices in an incremental GC for the main runtime.
+"
+  }
+
   dimension: metrics__timing_distribution__javascript_gc_slice_time__sum {
     label: "Javascript Gc Slice Time Sum"
     hidden: no
@@ -5260,6 +5628,57 @@ To be used to validate GIFFT.
     }
 
     description: "The time spent running a GC slice. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_slice_was_long {
+    label: "Javascript Gc Slice Was Long"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_slice_was_long ;;
+    group_label: "Javascript Gc"
+    group_item_label: "Slice Was Long"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Slice Was Long"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_slice_was_long"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a GC slice took 1.5 times or 5ms more than its budget
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_slow_phase {
+    label: "Javascript Gc Slow Phase"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_slow_phase ;;
+    group_label: "Javascript Gc"
+    group_item_label: "Slow Phase"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Slow Phase"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_slow_phase"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The longest phase in any slice that goes over 2x the budget. The phase values are defined in js/src/gc/GenerateStatsPhases.py.
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_slow_task {
+    label: "Javascript Gc Slow Task"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_slow_task ;;
+    group_label: "Javascript Gc"
+    group_item_label: "Slow Task"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Slow Task"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_slow_task"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The longest parallel task in any slice that goes over 2x the budget. The phase values are defined in js/src/gc/GenerateStatsPhases.py.
 "
   }
 
@@ -5296,6 +5715,24 @@ To be used to validate GIFFT.
     }
 
     description: "Delay between queuing a GC task and the task starting.
+"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_tenured_survival_rate__sum {
+    label: "Javascript Gc Tenured Survival Rate Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_tenured_survival_rate.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Tenured Survival Rate Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Tenured Survival Rate Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_tenured_survival_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The percentage of tenured GC things that survived a collection.
 "
   }
 
@@ -5350,6 +5787,42 @@ To be used to validate GIFFT.
     }
 
     description: "The total time taken by a major collection. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zone_count__sum {
+    label: "Javascript Gc Zone Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zone_count.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Zone Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Zone Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_zone_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total number of GC zones
+"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zones_collected__sum {
+    label: "Javascript Gc Zones Collected Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zones_collected.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Zones Collected Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Zones Collected Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_gc_zones_collected"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of zones collected in a zone GC.
 "
   }
 
@@ -6780,6 +7253,23 @@ To be used to validate GIFFT.
     }
 
     description: "Size of the metadata in bytes parsed from the disk."
+  }
+
+  dimension: metrics__labeled_counter__networking_cache_purge_due_to_memory_limit {
+    label: "Networking Cache Purge Due To Memory Limit"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_cache_purge_due_to_memory_limit ;;
+    group_label: "Networking"
+    group_item_label: "Cache Purge Due To Memory Limit"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cache Purge Due To Memory Limit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_cache_purge_due_to_memory_limit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often we purge cache entries from memory due to memory limits.
+"
   }
 
   dimension: metrics__labeled_counter__networking_captive_portal_banner_display_time {
@@ -10710,6 +11200,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "The result of auto-filling a login form."
+  }
+
+  dimension: metrics__boolean__pwmgr_os_auth_enabled {
+    label: "Pwmgr Os Auth Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.pwmgr_os_auth_enabled ;;
+    type: yesno
+    group_label: "Pwmgr"
+    group_item_label: "Os Auth Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Pwmgr Os Auth Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/pwmgr_os_auth_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Check at startup whether OS Authentication has been enabled for passwords.
+"
   }
 
   dimension: metrics__quantity__pwmgr_potentially_breached_passwords {
@@ -19495,6 +20003,539 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
   }
 }
 
+view: metrics__metrics__labeled_counter__javascript_gc_budget_was_increased {
+  label: "Javascript Gc - Budget Was Increased"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__javascript_gc_is_zone_gc {
+  label: "Javascript Gc - Is Zone Gc"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__javascript_gc_minor_reason {
+  label: "Javascript Gc - Minor Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__javascript_gc_minor_reason_long {
+  label: "Javascript Gc - Minor Reason Long"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__javascript_gc_non_incremental {
+  label: "Javascript Gc - Non Incremental"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__javascript_gc_non_incremental_reason {
+  label: "Javascript Gc - Non Incremental Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__javascript_gc_parallel_mark_used {
+  label: "Javascript Gc - Parallel Mark Used"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__javascript_gc_reason {
+  label: "Javascript Gc - Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__javascript_gc_reset {
+  label: "Javascript Gc - Reset"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__javascript_gc_reset_reason {
+  label: "Javascript Gc - Reset Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__javascript_gc_slice_was_long {
+  label: "Javascript Gc - Slice Was Long"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__javascript_gc_slow_phase {
+  label: "Javascript Gc - Slow Phase"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__javascript_gc_slow_task {
+  label: "Javascript Gc - Slow Task"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__media_audio_backend {
   label: "Media Audio - Backend"
 
@@ -20522,6 +21563,47 @@ view: metrics__metrics__labeled_counter__network_tls_early_data_accepted {
 
 view: metrics__metrics__labeled_counter__network_tls_early_data_negotiated {
   label: "Network - Tls Early Data Negotiated"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_cache_purge_due_to_memory_limit {
+  label: "Networking - Cache Purge Due To Memory Limit"
 
   dimension: document_id {
     type: string
@@ -23497,19 +24579,19 @@ view: metrics__metrics__labeled_counter__update_bitshresult {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -23538,19 +24620,19 @@ view: metrics__metrics__labeled_counter__update_move_result {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -23579,19 +24661,19 @@ view: metrics__metrics__labeled_counter__update_skip_startup_update_reason {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -24451,6 +25533,150 @@ view: metrics__metrics__custom_distribution__gfx_content_frame_time_without_reso
 }
 
 view: metrics__metrics__custom_distribution__gfx_content_frame_time_without_upload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__javascript_gc_effectiveness__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__javascript_gc_mark_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__javascript_gc_mmu_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__javascript_gc_nursery_promotion_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__javascript_gc_parallel_mark_interruptions__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__javascript_gc_parallel_mark_speedup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__javascript_gc_parallel_mark_utilization__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__javascript_gc_pretenure_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__javascript_gc_slice_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__javascript_gc_tenured_survival_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__javascript_gc_zone_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__javascript_gc_zones_collected__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -26861,6 +28087,18 @@ view: metrics__metrics__memory_distribution__glean_upload_discarded_exceeding_pi
 }
 
 view: metrics__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__javascript_gc_nursery_bytes__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

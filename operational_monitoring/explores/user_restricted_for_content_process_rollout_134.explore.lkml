@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/us_review_checker_rollout_v3_transition_stop_gap.view.lkml"
+include: "/looker-hub/operational_monitoring/views/user_restricted_for_content_process_rollout_134.view.lkml"
 
-explore: us_review_checker_rollout_v3_transition_stop_gap {
+explore: user_restricted_for_content_process_rollout_134 {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
