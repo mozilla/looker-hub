@@ -7,7 +7,7 @@
 view: metrics {
   dimension: metrics__uuid__background_update_client_id {
     label: "Background Update Client Id"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.uuid.background_update_client_id ;;
     type: string
     group_label: "Background Update"
@@ -149,7 +149,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
   dimension: metrics__counter__update_no_window_auto_restarts {
     label: "Update No Window Auto Restarts"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.update_no_window_auto_restarts ;;
     type: number
     group_label: "Update"
@@ -184,7 +184,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
   dimension: metrics__boolean__update_suppress_prompts {
     label: "Update Suppress Prompts"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.update_suppress_prompts ;;
     type: yesno
     group_label: "Update"
@@ -202,7 +202,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
   dimension: metrics__string__update_version_pin {
     label: "Update Version Pin"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.update_version_pin ;;
     type: string
     group_label: "Update"
@@ -24579,19 +24579,19 @@ view: metrics__metrics__labeled_counter__update_bitshresult {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -24620,19 +24620,19 @@ view: metrics__metrics__labeled_counter__update_move_result {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -24661,19 +24661,19 @@ view: metrics__metrics__labeled_counter__update_skip_startup_update_reason {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
