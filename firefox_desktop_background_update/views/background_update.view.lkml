@@ -7,7 +7,7 @@
 view: background_update {
   dimension: metrics__boolean__background_update_automatic_restart_attempted {
     label: "Background Update Automatic Restart Attempted"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.background_update_automatic_restart_attempted ;;
     type: yesno
     group_label: "Background Update"
@@ -25,7 +25,7 @@ view: background_update {
 
   dimension: metrics__boolean__background_update_automatic_restart_success {
     label: "Background Update Automatic Restart Success"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.background_update_automatic_restart_success ;;
     type: yesno
     group_label: "Background Update"
@@ -43,7 +43,7 @@ view: background_update {
 
   dimension: metrics__uuid__background_update_client_id {
     label: "Background Update Client Id"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.uuid.background_update_client_id ;;
     type: string
     group_label: "Background Update"
@@ -63,7 +63,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
   dimension: metrics__boolean__background_update_exit_code_exception {
     label: "Background Update Exit Code Exception"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.background_update_exit_code_exception ;;
     type: yesno
     group_label: "Background Update"
@@ -81,7 +81,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
   dimension: metrics__boolean__background_update_exit_code_success {
     label: "Background Update Exit Code Success"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.background_update_exit_code_success ;;
     type: yesno
     group_label: "Background Update"
@@ -99,7 +99,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
   dimension: metrics__string__background_update_final_state {
     label: "Background Update Final State"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.background_update_final_state ;;
     type: string
     group_label: "Background Update"
@@ -153,7 +153,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
   dimension: metrics__quantity__background_update_targeting_env_firefox_version {
     label: "Background Update Targeting Env Firefox Version"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.background_update_targeting_env_firefox_version ;;
     type: number
     group_label: "Background Update"
@@ -171,7 +171,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
   dimension: metrics__boolean__background_update_targeting_exception {
     label: "Background Update Targeting Exception"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.background_update_targeting_exception ;;
     type: yesno
     group_label: "Background Update"
@@ -189,7 +189,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
   dimension: metrics__boolean__background_update_targeting_exists {
     label: "Background Update Targeting Exists"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.background_update_targeting_exists ;;
     type: yesno
     group_label: "Background Update"
@@ -207,7 +207,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
   dimension: metrics__quantity__background_update_targeting_version {
     label: "Background Update Targeting Version"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.background_update_targeting_version ;;
     type: number
     group_label: "Background Update"
@@ -226,7 +226,7 @@ This version number does not have a physical unit: it's only useful to compare b
 
   dimension: metrics__boolean__update_auto_download {
     label: "Update Auto Download"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.update_auto_download ;;
     type: yesno
     group_label: "Update"
@@ -244,7 +244,7 @@ This version number does not have a physical unit: it's only useful to compare b
 
   dimension: metrics__boolean__update_background_update {
     label: "Update Background Update"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.update_background_update ;;
     type: yesno
     group_label: "Update"
@@ -262,7 +262,7 @@ This version number does not have a physical unit: it's only useful to compare b
 
   dimension: metrics__boolean__update_can_usually_apply_updates {
     label: "Update Can Usually Apply Updates"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.update_can_usually_apply_updates ;;
     type: yesno
     group_label: "Update"
@@ -280,7 +280,7 @@ This version number does not have a physical unit: it's only useful to compare b
 
   dimension: metrics__boolean__update_can_usually_check_for_updates {
     label: "Update Can Usually Check For Updates"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.update_can_usually_check_for_updates ;;
     type: yesno
     group_label: "Update"
@@ -298,7 +298,7 @@ This version number does not have a physical unit: it's only useful to compare b
 
   dimension: metrics__boolean__update_can_usually_stage_updates {
     label: "Update Can Usually Stage Updates"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.update_can_usually_stage_updates ;;
     type: yesno
     group_label: "Update"
@@ -316,7 +316,7 @@ This version number does not have a physical unit: it's only useful to compare b
 
   dimension: metrics__boolean__update_can_usually_use_bits {
     label: "Update Can Usually Use Bits"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.update_can_usually_use_bits ;;
     type: yesno
     group_label: "Update"
@@ -334,7 +334,7 @@ This version number does not have a physical unit: it's only useful to compare b
 
   dimension: metrics__string__update_channel {
     label: "Update Channel"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.update_channel ;;
     type: string
     group_label: "Update"
@@ -352,7 +352,7 @@ This version number does not have a physical unit: it's only useful to compare b
 
   dimension: metrics__boolean__update_enabled {
     label: "Update Enabled"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.update_enabled ;;
     type: yesno
     group_label: "Update"
@@ -370,7 +370,7 @@ This version number does not have a physical unit: it's only useful to compare b
 
   dimension: metrics__boolean__update_service_enabled {
     label: "Update Service Enabled"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.update_service_enabled ;;
     type: yesno
     group_label: "Update"
@@ -906,7 +906,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension_group: metrics__datetime__background_update_targeting_env_profile_age {
     label: "Background Update Targeting Env Profile Age"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.datetime.background_update_targeting_env_profile_age ;;
     type: time
     timeframes: [
@@ -1185,19 +1185,19 @@ view: background_update__metrics__labeled_counter__update_skip_startup_update_re
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${background_update.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
