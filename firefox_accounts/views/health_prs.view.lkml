@@ -120,5 +120,5 @@ view: health_prs {
     type: count
   }
 
-  sql_table_name: `mozdata.analysis.wclouser_fxa_health_prs` ;;
+  sql_table_name: `moz-fx-data-shared-prod.firefox_accounts_derived.health_prs_v1` ;;
 }

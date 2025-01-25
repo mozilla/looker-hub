@@ -483,6 +483,24 @@ view: background_update_table {
 "
   }
 
+  dimension: metrics__boolean__update_suppress_prompts {
+    sql: ${TABLE}.metrics.boolean.update_suppress_prompts ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Update Suppress Prompts"
+    description: "When an update is available and app.update.auto is disabled, a popup is opened prompting the user to download and install the update. The pref app.update.suppressPrompts causes Firefox Nightly to wait up to 7 days before showing the prompt, instead showing a badge and banner in the meantime. It also prevents Nightly from showing update restart prompts, instead showing a badge and banner immediately. This value is set for the users who set this pref to true. This metric was generated to correspond to the Legacy Telemetry scalar update.suppress_prompts.
+"
+  }
+
+  dimension: metrics__counter__update_no_window_auto_restarts {
+    sql: ${TABLE}.metrics.counter.update_no_window_auto_restarts ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Update No Window Auto Restarts"
+    description: "On macOS, all browser windows can be closed without exiting Firefox. If there is an update pending in that case, and we can install it silently, we restart automatically in order to do so. This probe counts the number of times the browser restarts to silently install a pending update. This metric was generated to correspond to the Legacy Telemetry scalar update.no_window_auto_restarts.
+"
+  }
+
   dimension: metrics__datetime__raw_background_update_targeting_env_current_date {
     sql: ${TABLE}.metrics.datetime.raw_background_update_targeting_env_current_date ;;
     type: string
@@ -526,6 +544,20 @@ The labels are the `category.name` identifier of the metric.
     hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_bitshresult {
+    sql: ${TABLE}.metrics.labeled_counter.update_bitshresult ;;
+    hidden: yes
+    description: "If a BITS download fails on the Windows side (that is to say, BITS ecounters an error rather than Firefox failing to interact with BITS), it will likely give an hresult error indicating what happened. This probe reports those error codes to allow us to see if BITS is commonly failing on some systems. This probe is keyed on the type of update download, either \"PARTIAL\" or \"COMPLETE\". This metric was generated to correspond to the Legacy Telemetry scalar update.bitshresult.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_move_result {
+    sql: ${TABLE}.metrics.labeled_counter.update_move_result ;;
+    hidden: yes
+    description: "Firefox keeps downloading updates in a different place from updates that are ready to install. Once the download completes, the resulting file has to be moved from the downloading update directory to the ready update directory. This probe counts the results that we get when attempting to perform this file move. Valid values for the keys for this probe are stored in the MOVE_RESULT_* values in UpdateTelemetry.sys.mjs. This metric was generated to correspond to the Legacy Telemetry scalar update.move_result.
 "
   }
 
@@ -579,6 +611,15 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics String"
     group_item_label: "Update Channel"
     description: "The update channel.
+"
+  }
+
+  dimension: metrics__string__update_version_pin {
+    sql: ${TABLE}.metrics.string.update_version_pin ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Update Version Pin"
+    description: "The AppUpdatePin Enterprise Policy controls the maximum version that the browser can update to. If the policy is set, this probe will report the policy's value. The possible policy values are \"X.\" and \"X.Y.\", where X is the pinned major version and Y is the pinned minor version. This metric was generated to correspond to the Legacy Telemetry scalar update.version_pin.
 "
   }
 
