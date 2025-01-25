@@ -11288,6 +11288,34 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Console Warn"
   }
 
+  dimension: metrics__counter__use_counter_doc_cookiestore_delete {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_cookiestore_delete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Cookiestore Delete"
+  }
+
+  dimension: metrics__counter__use_counter_doc_cookiestore_get {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_cookiestore_get ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Cookiestore Get"
+  }
+
+  dimension: metrics__counter__use_counter_doc_cookiestore_getall {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_cookiestore_getall ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Cookiestore Getall"
+  }
+
+  dimension: metrics__counter__use_counter_doc_cookiestore_set {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_cookiestore_set ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Cookiestore Set"
+  }
+
   dimension: metrics__counter__use_counter_doc_customelementregistry_define {
     sql: ${TABLE}.metrics.counter.use_counter_doc_customelementregistry_define ;;
     type: number
@@ -14039,6 +14067,34 @@ view: use_counters_table {
     group_item_label: "Use Counter Page Console Warn"
   }
 
+  dimension: metrics__counter__use_counter_page_cookiestore_delete {
+    sql: ${TABLE}.metrics.counter.use_counter_page_cookiestore_delete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Cookiestore Delete"
+  }
+
+  dimension: metrics__counter__use_counter_page_cookiestore_get {
+    sql: ${TABLE}.metrics.counter.use_counter_page_cookiestore_get ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Cookiestore Get"
+  }
+
+  dimension: metrics__counter__use_counter_page_cookiestore_getall {
+    sql: ${TABLE}.metrics.counter.use_counter_page_cookiestore_getall ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Cookiestore Getall"
+  }
+
+  dimension: metrics__counter__use_counter_page_cookiestore_set {
+    sql: ${TABLE}.metrics.counter.use_counter_page_cookiestore_set ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Cookiestore Set"
+  }
+
   dimension: metrics__counter__use_counter_page_customelementregistry_define {
     sql: ${TABLE}.metrics.counter.use_counter_page_customelementregistry_define ;;
     type: number
@@ -16783,6 +16839,34 @@ view: use_counters_table {
     group_item_label: "Use Counter Worker Dedicated Console Warn"
   }
 
+  dimension: metrics__counter__use_counter_worker_dedicated_cookiestore_delete {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_cookiestore_delete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Cookiestore Delete"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_cookiestore_get {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_cookiestore_get ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Cookiestore Get"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_cookiestore_getall {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_cookiestore_getall ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Cookiestore Getall"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_cookiestore_set {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_cookiestore_set ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Cookiestore Set"
+  }
+
   dimension: metrics__counter__use_counter_worker_dedicated_mls_deriveexporter {
     sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_deriveexporter ;;
     type: number
@@ -17126,6 +17210,34 @@ view: use_counters_table {
     group_item_label: "Use Counter Worker Service Console Warn"
   }
 
+  dimension: metrics__counter__use_counter_worker_service_cookiestore_delete {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_cookiestore_delete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Cookiestore Delete"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_cookiestore_get {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_cookiestore_get ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Cookiestore Get"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_cookiestore_getall {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_cookiestore_getall ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Cookiestore Getall"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_cookiestore_set {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_cookiestore_set ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Cookiestore Set"
+  }
+
   dimension: metrics__counter__use_counter_worker_service_mls_deriveexporter {
     sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_deriveexporter ;;
     type: number
@@ -17467,6 +17579,34 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Worker Shared Console Warn"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_cookiestore_delete {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_cookiestore_delete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Cookiestore Delete"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_cookiestore_get {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_cookiestore_get ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Cookiestore Get"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_cookiestore_getall {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_cookiestore_getall ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Cookiestore Getall"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_cookiestore_set {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_cookiestore_set ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Cookiestore Set"
   }
 
   dimension: metrics__counter__use_counter_worker_shared_mls_deriveexporter {

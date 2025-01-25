@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/firefox_accounts/views/health_velocity.view.lkml"
+include: "/looker-hub/firefox_accounts/views/health_pingdom.view.lkml"
 
-explore: health_velocity {
-  view_name: health_velocity
+explore: health_pingdom {
+  view_name: health_pingdom
 }

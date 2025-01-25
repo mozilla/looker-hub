@@ -893,6 +893,223 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Voices Local Count"
   }
 
+  dimension: metrics__quantity__characteristics_wgpu_maxbindgroups {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxbindgroups ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxbindgroups"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxbindgroupsplusvertexbuffers {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxbindgroupsplusvertexbuffers ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxbindgroupsplusvertexbuffers"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxbindingsperbindgroup {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxbindingsperbindgroup ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxbindingsperbindgroup"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxbuffersize {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxbuffersize ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxbuffersize"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcolorattachmentbytespersample {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcolorattachmentbytespersample ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxcolorattachmentbytespersample"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcolorattachments {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcolorattachments ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxcolorattachments"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcomputeinvocationsperworkgroup {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcomputeinvocationsperworkgroup ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxcomputeinvocationsperworkgroup"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupsizex {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcomputeworkgroupsizex ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxcomputeworkgroupsizex"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupsizey {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcomputeworkgroupsizey ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxcomputeworkgroupsizey"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupsizez {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcomputeworkgroupsizez ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxcomputeworkgroupsizez"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupsperdimension {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcomputeworkgroupsperdimension ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxcomputeworkgroupsperdimension"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupstoragesize {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcomputeworkgroupstoragesize ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxcomputeworkgroupstoragesize"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxdynamicstoragebuffersperpipelinelayout {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxdynamicstoragebuffersperpipelinelayout ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxdynamicstoragebuffersperpipelinelayout"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxdynamicuniformbuffersperpipelinelayout {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxdynamicuniformbuffersperpipelinelayout ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxdynamicuniformbuffersperpipelinelayout"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxinterstageshadervariables {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxinterstageshadervariables ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxinterstageshadervariables"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxsampledtexturespershaderstage {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxsampledtexturespershaderstage ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxsampledtexturespershaderstage"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxsamplerspershaderstage {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxsamplerspershaderstage ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxsamplerspershaderstage"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxstoragebufferbindingsize {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxstoragebufferbindingsize ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxstoragebufferbindingsize"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxstoragebufferspershaderstage {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxstoragebufferspershaderstage ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxstoragebufferspershaderstage"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxstoragetexturespershaderstage {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxstoragetexturespershaderstage ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxstoragetexturespershaderstage"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxtexturearraylayers {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxtexturearraylayers ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxtexturearraylayers"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxtexturedimension1d {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxtexturedimension1d ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxtexturedimension1D"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxtexturedimension2d {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxtexturedimension2d ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxtexturedimension2D"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxtexturedimension3d {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxtexturedimension3d ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxtexturedimension3D"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxuniformbufferbindingsize {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxuniformbufferbindingsize ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxuniformbufferbindingsize"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxuniformbufferspershaderstage {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxuniformbufferspershaderstage ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxuniformbufferspershaderstage"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxvertexattributes {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxvertexattributes ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxvertexattributes"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxvertexbufferarraystride {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxvertexbufferarraystride ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxvertexbufferarraystride"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxvertexbuffers {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxvertexbuffers ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxvertexbuffers"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_minstoragebufferoffsetalignment {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_minstoragebufferoffsetalignment ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Minstoragebufferoffsetalignment"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_minuniformbufferoffsetalignment {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_minuniformbufferoffsetalignment ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Minuniformbufferoffsetalignment"
+  }
+
   dimension: metrics__quantity__characteristics_zoom_count {
     sql: ${TABLE}.metrics.quantity.characteristics_zoom_count ;;
     type: number
@@ -1514,6 +1731,13 @@ view: user_characteristics_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Characteristics Voices Nonlocal Ssdeep"
+  }
+
+  dimension: metrics__string__characteristics_wgpu_missing_features {
+    sql: ${TABLE}.metrics.string.characteristics_wgpu_missing_features ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Wgpu Missing Features"
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {

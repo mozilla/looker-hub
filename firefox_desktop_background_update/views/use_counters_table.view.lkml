@@ -14460,6 +14460,42 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_cookiestore_delete {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_cookiestore_delete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Cookiestore Delete"
+    description: "Whether a document called called CookieStore.delete. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_cookiestore_get {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_cookiestore_get ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Cookiestore Get"
+    description: "Whether a document called called CookieStore.get. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_cookiestore_getall {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_cookiestore_getall ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Cookiestore Getall"
+    description: "Whether a document called called CookieStore.getAll. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_cookiestore_set {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_cookiestore_set ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Cookiestore Set"
+    description: "Whether a document called called CookieStore.set. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_customelementregistry_define {
     sql: ${TABLE}.metrics.counter.use_counter_doc_customelementregistry_define ;;
     type: number
@@ -17997,6 +18033,42 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_cookiestore_delete {
+    sql: ${TABLE}.metrics.counter.use_counter_page_cookiestore_delete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Cookiestore Delete"
+    description: "Whether a page called called CookieStore.delete. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_cookiestore_get {
+    sql: ${TABLE}.metrics.counter.use_counter_page_cookiestore_get ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Cookiestore Get"
+    description: "Whether a page called called CookieStore.get. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_cookiestore_getall {
+    sql: ${TABLE}.metrics.counter.use_counter_page_cookiestore_getall ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Cookiestore Getall"
+    description: "Whether a page called called CookieStore.getAll. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_cookiestore_set {
+    sql: ${TABLE}.metrics.counter.use_counter_page_cookiestore_set ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Cookiestore Set"
+    description: "Whether a page called called CookieStore.set. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_customelementregistry_define {
     sql: ${TABLE}.metrics.counter.use_counter_page_customelementregistry_define ;;
     type: number
@@ -21525,6 +21597,42 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_dedicated_cookiestore_delete {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_cookiestore_delete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Cookiestore Delete"
+    description: "Whether a dedicated worker called called CookieStore.delete. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_cookiestore_get {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_cookiestore_get ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Cookiestore Get"
+    description: "Whether a dedicated worker called called CookieStore.get. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_cookiestore_getall {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_cookiestore_getall ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Cookiestore Getall"
+    description: "Whether a dedicated worker called called CookieStore.getAll. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_cookiestore_set {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_cookiestore_set ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Cookiestore Set"
+    description: "Whether a dedicated worker called called CookieStore.set. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_dedicated_mls_deriveexporter {
     sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_deriveexporter ;;
     type: number
@@ -21966,6 +22074,42 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_service_cookiestore_delete {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_cookiestore_delete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Cookiestore Delete"
+    description: "Whether a service worker called called CookieStore.delete. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_cookiestore_get {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_cookiestore_get ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Cookiestore Get"
+    description: "Whether a service worker called called CookieStore.get. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_cookiestore_getall {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_cookiestore_getall ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Cookiestore Getall"
+    description: "Whether a service worker called called CookieStore.getAll. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_cookiestore_set {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_cookiestore_set ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Cookiestore Set"
+    description: "Whether a service worker called called CookieStore.set. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_service_mls_deriveexporter {
     sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_deriveexporter ;;
     type: number
@@ -22404,6 +22548,42 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Worker Shared Console Warn"
     description: "Whether a shared worker called called console.warn. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_cookiestore_delete {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_cookiestore_delete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Cookiestore Delete"
+    description: "Whether a shared worker called called CookieStore.delete. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_cookiestore_get {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_cookiestore_get ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Cookiestore Get"
+    description: "Whether a shared worker called called CookieStore.get. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_cookiestore_getall {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_cookiestore_getall ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Cookiestore Getall"
+    description: "Whether a shared worker called called CookieStore.getAll. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_cookiestore_set {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_cookiestore_set ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Cookiestore Set"
+    description: "Whether a shared worker called called CookieStore.set. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
 "
   }
 

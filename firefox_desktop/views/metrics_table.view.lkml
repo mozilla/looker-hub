@@ -1003,6 +1003,15 @@ in browser.
 "
   }
 
+  dimension: metrics__boolean__update_suppress_prompts {
+    sql: ${TABLE}.metrics.boolean.update_suppress_prompts ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Update Suppress Prompts"
+    description: "When an update is available and app.update.auto is disabled, a popup is opened prompting the user to download and install the update. The pref app.update.suppressPrompts causes Firefox Nightly to wait up to 7 days before showing the prompt, instead showing a badge and banner in the meantime. It also prevents Nightly from showing update restart prompts, instead showing a badge and banner immediately. This value is set for the users who set this pref to true. This metric was generated to correspond to the Legacy Telemetry scalar update.suppress_prompts.
+"
+  }
+
   dimension: metrics__boolean__widget_dark_mode {
     sql: ${TABLE}.metrics.boolean.widget_dark_mode ;;
     type: yesno
@@ -2182,6 +2191,15 @@ of the shopping experiment.
     group_label: "Metrics Counter"
     group_item_label: "Translations Requests Count"
     description: "The count of translation requests.
+"
+  }
+
+  dimension: metrics__counter__update_no_window_auto_restarts {
+    sql: ${TABLE}.metrics.counter.update_no_window_auto_restarts ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Update No Window Auto Restarts"
+    description: "On macOS, all browser windows can be closed without exiting Firefox. If there is an update pending in that case, and we can install it silently, we restart automatically in order to do so. This probe counts the number of times the browser restarts to silently install a pending update. This metric was generated to correspond to the Legacy Telemetry scalar update.no_window_auto_restarts.
 "
   }
 
@@ -6211,6 +6229,26 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__labeled_counter__update_bitshresult {
+    sql: ${TABLE}.metrics.labeled_counter.update_bitshresult ;;
+    hidden: yes
+    description: "If a BITS download fails on the Windows side (that is to say, BITS ecounters an error rather than Firefox failing to interact with BITS), it will likely give an hresult error indicating what happened. This probe reports those error codes to allow us to see if BITS is commonly failing on some systems. This probe is keyed on the type of update download, either \"PARTIAL\" or \"COMPLETE\". This metric was generated to correspond to the Legacy Telemetry scalar update.bitshresult.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_move_result {
+    sql: ${TABLE}.metrics.labeled_counter.update_move_result ;;
+    hidden: yes
+    description: "Firefox keeps downloading updates in a different place from updates that are ready to install. Once the download completes, the resulting file has to be moved from the downloading update directory to the ready update directory. This probe counts the results that we get when attempting to perform this file move. Valid values for the keys for this probe are stored in the MOVE_RESULT_* values in UpdateTelemetry.sys.mjs. This metric was generated to correspond to the Legacy Telemetry scalar update.move_result.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_skip_startup_update_reason {
+    sql: ${TABLE}.metrics.labeled_counter.update_skip_startup_update_reason ;;
+    hidden: yes
+    description: "We usually install pending updates at startup, but there are a couple of reasons we might not. This value will be set to \"none\" if there was no reason not to install updates. If the value is \"DevToolsLaunching\", that means that we skipped applying updates because the application startup was actually a startup of the Browser Toolbox, not the browser itself. If the value is \"NotAnUpdatingTask\", that means that the browser launch is a background task other than the background update task, (which have update capabilities disabled). If the value is \"OtherInstanceRunning\", that means that the background update task was launched, but it didn't install an update in order to avoid interfering with other application instances. If the value is \"FirstStartup\", we didn't install any updates because the browser was launched by the installer. If the value is \"MultiSessionInstallLockout\", there are other browser instances running and the Multi Session Install Lockout timeout has not expired yet. Note that, for updates to be "
+  }
+
   dimension: metrics__labeled_counter__urlbar_picked_autofill_about {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_about ;;
     hidden: yes
@@ -8945,6 +8983,15 @@ default engine, and hence both versions of these fields will be filled in.
     profile and created a new profile.
   restart-claimed-default:
     A first run of a dedicate"
+  }
+
+  dimension: metrics__string__update_version_pin {
+    sql: ${TABLE}.metrics.string.update_version_pin ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Update Version Pin"
+    description: "The AppUpdatePin Enterprise Policy controls the maximum version that the browser can update to. If the policy is set, this probe will report the policy's value. The possible policy values are \"X.\" and \"X.Y.\", where X is the pinned major version and Y is the pinned minor version. This metric was generated to correspond to the Legacy Telemetry scalar update.version_pin.
+"
   }
 
   dimension: metrics__string__widget_gtk_version {
