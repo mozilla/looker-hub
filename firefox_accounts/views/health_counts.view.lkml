@@ -39,5 +39,5 @@ view: health_counts {
     type: sum
   }
 
-  sql_table_name: `mozdata.analysis.wclouser_fxa_health_counts` ;;
+  sql_table_name: `moz-fx-data-shared-prod.firefox_accounts_derived.health_counts_v1` ;;
 }

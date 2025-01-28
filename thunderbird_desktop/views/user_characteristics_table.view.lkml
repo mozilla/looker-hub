@@ -1122,6 +1122,285 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_wgpu_maxbindgroups {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxbindgroups ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxbindgroups"
+    description: "WebGPU limit maxBindGroups
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxbindgroupsplusvertexbuffers {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxbindgroupsplusvertexbuffers ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxbindgroupsplusvertexbuffers"
+    description: "WebGPU limit maxBindGroupsPlusVertexBuffers
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxbindingsperbindgroup {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxbindingsperbindgroup ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxbindingsperbindgroup"
+    description: "WebGPU limit maxBindingsPerBindGroup
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxbuffersize {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxbuffersize ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxbuffersize"
+    description: "WebGPU limit maxBufferSize
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcolorattachmentbytespersample {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcolorattachmentbytespersample ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxcolorattachmentbytespersample"
+    description: "WebGPU limit maxColorAttachmentBytesPerSample
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcolorattachments {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcolorattachments ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxcolorattachments"
+    description: "WebGPU limit maxColorAttachments
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcomputeinvocationsperworkgroup {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcomputeinvocationsperworkgroup ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxcomputeinvocationsperworkgroup"
+    description: "WebGPU limit maxComputeInvocationsPerWorkgroup
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupsizex {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcomputeworkgroupsizex ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxcomputeworkgroupsizex"
+    description: "WebGPU limit maxComputeWorkgroupSizeX
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupsizey {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcomputeworkgroupsizey ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxcomputeworkgroupsizey"
+    description: "WebGPU limit maxComputeWorkgroupSizeY
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupsizez {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcomputeworkgroupsizez ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxcomputeworkgroupsizez"
+    description: "WebGPU limit maxComputeWorkgroupSizeZ
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupsperdimension {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcomputeworkgroupsperdimension ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxcomputeworkgroupsperdimension"
+    description: "WebGPU limit maxComputeWorkgroupsPerDimension
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupstoragesize {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcomputeworkgroupstoragesize ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxcomputeworkgroupstoragesize"
+    description: "WebGPU limit maxComputeWorkgroupStorageSize
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxdynamicstoragebuffersperpipelinelayout {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxdynamicstoragebuffersperpipelinelayout ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxdynamicstoragebuffersperpipelinelayout"
+    description: "WebGPU limit maxDynamicStorageBuffersPerPipelineLayout
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxdynamicuniformbuffersperpipelinelayout {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxdynamicuniformbuffersperpipelinelayout ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxdynamicuniformbuffersperpipelinelayout"
+    description: "WebGPU limit maxDynamicUniformBuffersPerPipelineLayout
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxinterstageshadervariables {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxinterstageshadervariables ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxinterstageshadervariables"
+    description: "WebGPU limit maxInterStageShaderVariables
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxsampledtexturespershaderstage {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxsampledtexturespershaderstage ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxsampledtexturespershaderstage"
+    description: "WebGPU limit maxSampledTexturesPerShaderStage
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxsamplerspershaderstage {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxsamplerspershaderstage ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxsamplerspershaderstage"
+    description: "WebGPU limit maxSamplersPerShaderStage
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxstoragebufferbindingsize {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxstoragebufferbindingsize ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxstoragebufferbindingsize"
+    description: "WebGPU limit maxStorageBufferBindingSize
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxstoragebufferspershaderstage {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxstoragebufferspershaderstage ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxstoragebufferspershaderstage"
+    description: "WebGPU limit maxStorageBuffersPerShaderStage
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxstoragetexturespershaderstage {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxstoragetexturespershaderstage ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxstoragetexturespershaderstage"
+    description: "WebGPU limit maxStorageTexturesPerShaderStage
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxtexturearraylayers {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxtexturearraylayers ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxtexturearraylayers"
+    description: "WebGPU limit maxTextureArrayLayers
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxtexturedimension1d {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxtexturedimension1d ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxtexturedimension1D"
+    description: "WebGPU limit maxTextureDimension1D
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxtexturedimension2d {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxtexturedimension2d ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxtexturedimension2D"
+    description: "WebGPU limit maxTextureDimension2D
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxtexturedimension3d {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxtexturedimension3d ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxtexturedimension3D"
+    description: "WebGPU limit maxTextureDimension3D
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxuniformbufferbindingsize {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxuniformbufferbindingsize ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxuniformbufferbindingsize"
+    description: "WebGPU limit maxUniformBufferBindingSize
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxuniformbufferspershaderstage {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxuniformbufferspershaderstage ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxuniformbufferspershaderstage"
+    description: "WebGPU limit maxUniformBuffersPerShaderStage
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxvertexattributes {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxvertexattributes ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxvertexattributes"
+    description: "WebGPU limit maxVertexAttributes
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxvertexbufferarraystride {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxvertexbufferarraystride ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxvertexbufferarraystride"
+    description: "WebGPU limit maxVertexBufferArrayStride
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxvertexbuffers {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxvertexbuffers ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Maxvertexbuffers"
+    description: "WebGPU limit maxVertexBuffers
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_minstoragebufferoffsetalignment {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_minstoragebufferoffsetalignment ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Minstoragebufferoffsetalignment"
+    description: "WebGPU limit minStorageBufferOffsetAlignment
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_minuniformbufferoffsetalignment {
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_minuniformbufferoffsetalignment ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Wgpu Minuniformbufferoffsetalignment"
+    description: "WebGPU limit minUniformBufferOffsetAlignment
+"
+  }
+
   dimension: metrics__quantity__characteristics_zoom_count {
     sql: ${TABLE}.metrics.quantity.characteristics_zoom_count ;;
     type: number
@@ -1920,6 +2199,15 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics String"
     group_item_label: "Characteristics Voices Nonlocal Ssdeep"
     description: "ssdeep hash of non-local speechSynthesis voices.
+"
+  }
+
+  dimension: metrics__string__characteristics_wgpu_missing_features {
+    sql: ${TABLE}.metrics.string.characteristics_wgpu_missing_features ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Wgpu Missing Features"
+    description: "Missing features of WebGPU as a bitset
 "
   }
 

@@ -136,5 +136,5 @@ view: health_issues {
     type: count
   }
 
-  sql_table_name: `mozdata.analysis.wclouser_fxa_health_issues` ;;
+  sql_table_name: `moz-fx-data-shared-prod.firefox_accounts_derived.health_issues_v1` ;;
 }

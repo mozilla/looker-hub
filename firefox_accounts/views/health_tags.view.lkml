@@ -22,7 +22,7 @@ view: health_tags {
 
   dimension: since_last_push {
     sql: ${TABLE}.since_last_push ;;
-    type: string
+    type: number
   }
 
   dimension: tospp {
@@ -53,5 +53,5 @@ view: health_tags {
     type: count
   }
 
-  sql_table_name: `mozdata.analysis.wclouser_fxa_health_tags` ;;
+  sql_table_name: `moz-fx-data-shared-prod.firefox_accounts_derived.health_tags_v1` ;;
 }

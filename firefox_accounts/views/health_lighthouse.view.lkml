@@ -15,6 +15,11 @@ view: health_lighthouse {
     type: string
   }
 
+  dimension: formfactor {
+    sql: ${TABLE}.formfactor ;;
+    type: string
+  }
+
   dimension: numVal {
     sql: ${TABLE}.numVal ;;
     type: number
@@ -48,5 +53,5 @@ view: health_lighthouse {
     type: count
   }
 
-  sql_table_name: `mozdata.analysis.wclouser_fxa_health_lighthouse` ;;
+  sql_table_name: `moz-fx-data-shared-prod.firefox_accounts_derived.health_lighthouse_v1` ;;
 }

@@ -3983,6 +3983,582 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__quantity__characteristics_wgpu_maxbindgroups {
+    label: "Characteristics Wgpu Maxbindgroups"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxbindgroups ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxbindgroups"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxbindgroups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxbindgroups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxBindGroups
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxbindgroupsplusvertexbuffers {
+    label: "Characteristics Wgpu Maxbindgroupsplusvertexbuffers"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxbindgroupsplusvertexbuffers ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxbindgroupsplusvertexbuffers"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxbindgroupsplusvertexbuffers"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxbindgroupsplusvertexbuffers"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxBindGroupsPlusVertexBuffers
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxbindingsperbindgroup {
+    label: "Characteristics Wgpu Maxbindingsperbindgroup"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxbindingsperbindgroup ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxbindingsperbindgroup"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxbindingsperbindgroup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxbindingsperbindgroup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxBindingsPerBindGroup
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxbuffersize {
+    label: "Characteristics Wgpu Maxbuffersize"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxbuffersize ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxbuffersize"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxbuffersize"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxbuffersize"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxBufferSize
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcolorattachmentbytespersample {
+    label: "Characteristics Wgpu Maxcolorattachmentbytespersample"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcolorattachmentbytespersample ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxcolorattachmentbytespersample"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxcolorattachmentbytespersample"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxcolorattachmentbytespersample"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxColorAttachmentBytesPerSample
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcolorattachments {
+    label: "Characteristics Wgpu Maxcolorattachments"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcolorattachments ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxcolorattachments"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxcolorattachments"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxcolorattachments"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxColorAttachments
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcomputeinvocationsperworkgroup {
+    label: "Characteristics Wgpu Maxcomputeinvocationsperworkgroup"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcomputeinvocationsperworkgroup ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxcomputeinvocationsperworkgroup"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxcomputeinvocationsperworkgroup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxcomputeinvocationsperworkgroup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxComputeInvocationsPerWorkgroup
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupsizex {
+    label: "Characteristics Wgpu Maxcomputeworkgroupsizex"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcomputeworkgroupsizex ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxcomputeworkgroupsizex"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxcomputeworkgroupsizex"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxcomputeworkgroupsizex"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxComputeWorkgroupSizeX
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupsizey {
+    label: "Characteristics Wgpu Maxcomputeworkgroupsizey"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcomputeworkgroupsizey ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxcomputeworkgroupsizey"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxcomputeworkgroupsizey"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxcomputeworkgroupsizey"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxComputeWorkgroupSizeY
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupsizez {
+    label: "Characteristics Wgpu Maxcomputeworkgroupsizez"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcomputeworkgroupsizez ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxcomputeworkgroupsizez"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxcomputeworkgroupsizez"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxcomputeworkgroupsizez"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxComputeWorkgroupSizeZ
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupsperdimension {
+    label: "Characteristics Wgpu Maxcomputeworkgroupsperdimension"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcomputeworkgroupsperdimension ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxcomputeworkgroupsperdimension"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxcomputeworkgroupsperdimension"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxcomputeworkgroupsperdimension"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxComputeWorkgroupsPerDimension
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupstoragesize {
+    label: "Characteristics Wgpu Maxcomputeworkgroupstoragesize"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxcomputeworkgroupstoragesize ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxcomputeworkgroupstoragesize"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxcomputeworkgroupstoragesize"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxcomputeworkgroupstoragesize"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxComputeWorkgroupStorageSize
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxdynamicstoragebuffersperpipelinelayout {
+    label: "Characteristics Wgpu Maxdynamicstoragebuffersperpipelinelayout"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxdynamicstoragebuffersperpipelinelayout ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxdynamicstoragebuffersperpipelinelayout"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxdynamicstoragebuffersperpipelinelayout"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxdynamicstoragebuffersperpipelinelayout"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxDynamicStorageBuffersPerPipelineLayout
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxdynamicuniformbuffersperpipelinelayout {
+    label: "Characteristics Wgpu Maxdynamicuniformbuffersperpipelinelayout"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxdynamicuniformbuffersperpipelinelayout ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxdynamicuniformbuffersperpipelinelayout"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxdynamicuniformbuffersperpipelinelayout"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxdynamicuniformbuffersperpipelinelayout"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxDynamicUniformBuffersPerPipelineLayout
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxinterstageshadervariables {
+    label: "Characteristics Wgpu Maxinterstageshadervariables"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxinterstageshadervariables ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxinterstageshadervariables"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxinterstageshadervariables"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxinterstageshadervariables"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxInterStageShaderVariables
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxsampledtexturespershaderstage {
+    label: "Characteristics Wgpu Maxsampledtexturespershaderstage"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxsampledtexturespershaderstage ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxsampledtexturespershaderstage"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxsampledtexturespershaderstage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxsampledtexturespershaderstage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxSampledTexturesPerShaderStage
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxsamplerspershaderstage {
+    label: "Characteristics Wgpu Maxsamplerspershaderstage"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxsamplerspershaderstage ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxsamplerspershaderstage"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxsamplerspershaderstage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxsamplerspershaderstage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxSamplersPerShaderStage
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxstoragebufferbindingsize {
+    label: "Characteristics Wgpu Maxstoragebufferbindingsize"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxstoragebufferbindingsize ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxstoragebufferbindingsize"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxstoragebufferbindingsize"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxstoragebufferbindingsize"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxStorageBufferBindingSize
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxstoragebufferspershaderstage {
+    label: "Characteristics Wgpu Maxstoragebufferspershaderstage"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxstoragebufferspershaderstage ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxstoragebufferspershaderstage"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxstoragebufferspershaderstage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxstoragebufferspershaderstage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxStorageBuffersPerShaderStage
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxstoragetexturespershaderstage {
+    label: "Characteristics Wgpu Maxstoragetexturespershaderstage"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxstoragetexturespershaderstage ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxstoragetexturespershaderstage"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxstoragetexturespershaderstage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxstoragetexturespershaderstage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxStorageTexturesPerShaderStage
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxtexturearraylayers {
+    label: "Characteristics Wgpu Maxtexturearraylayers"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxtexturearraylayers ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxtexturearraylayers"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxtexturearraylayers"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxtexturearraylayers"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxTextureArrayLayers
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxtexturedimension1d {
+    label: "Characteristics Wgpu Maxtexturedimension1D"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxtexturedimension1d ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxtexturedimension1D"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxtexturedimension1D"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxtexturedimension1d"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxTextureDimension1D
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxtexturedimension2d {
+    label: "Characteristics Wgpu Maxtexturedimension2D"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxtexturedimension2d ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxtexturedimension2D"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxtexturedimension2D"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxtexturedimension2d"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxTextureDimension2D
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxtexturedimension3d {
+    label: "Characteristics Wgpu Maxtexturedimension3D"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxtexturedimension3d ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxtexturedimension3D"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxtexturedimension3D"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxtexturedimension3d"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxTextureDimension3D
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxuniformbufferbindingsize {
+    label: "Characteristics Wgpu Maxuniformbufferbindingsize"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxuniformbufferbindingsize ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxuniformbufferbindingsize"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxuniformbufferbindingsize"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxuniformbufferbindingsize"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxUniformBufferBindingSize
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxuniformbufferspershaderstage {
+    label: "Characteristics Wgpu Maxuniformbufferspershaderstage"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxuniformbufferspershaderstage ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxuniformbufferspershaderstage"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxuniformbufferspershaderstage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxuniformbufferspershaderstage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxUniformBuffersPerShaderStage
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxvertexattributes {
+    label: "Characteristics Wgpu Maxvertexattributes"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxvertexattributes ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxvertexattributes"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxvertexattributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxvertexattributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxVertexAttributes
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxvertexbufferarraystride {
+    label: "Characteristics Wgpu Maxvertexbufferarraystride"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxvertexbufferarraystride ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxvertexbufferarraystride"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxvertexbufferarraystride"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxvertexbufferarraystride"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxVertexBufferArrayStride
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_maxvertexbuffers {
+    label: "Characteristics Wgpu Maxvertexbuffers"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_maxvertexbuffers ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Maxvertexbuffers"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Maxvertexbuffers"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_maxvertexbuffers"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit maxVertexBuffers
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_minstoragebufferoffsetalignment {
+    label: "Characteristics Wgpu Minstoragebufferoffsetalignment"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_minstoragebufferoffsetalignment ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Minstoragebufferoffsetalignment"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Minstoragebufferoffsetalignment"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_minstoragebufferoffsetalignment"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit minStorageBufferOffsetAlignment
+"
+  }
+
+  dimension: metrics__quantity__characteristics_wgpu_minuniformbufferoffsetalignment {
+    label: "Characteristics Wgpu Minuniformbufferoffsetalignment"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_wgpu_minuniformbufferoffsetalignment ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Minuniformbufferoffsetalignment"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Minuniformbufferoffsetalignment"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_minuniformbufferoffsetalignment"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU limit minUniformBufferOffsetAlignment
+"
+  }
+
+  dimension: metrics__string__characteristics_wgpu_missing_features {
+    label: "Characteristics Wgpu Missing Features"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_wgpu_missing_features ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Missing Features"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Wgpu Missing Features"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_wgpu_missing_features"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Missing features of WebGPU as a bitset
+"
+  }
+
   dimension: metrics__quantity__characteristics_zoom_count {
     label: "Characteristics Zoom Count"
     hidden: no

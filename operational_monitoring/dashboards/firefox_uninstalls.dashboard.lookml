@@ -87,8 +87,8 @@
       - 'release'
       - 'beta'
       - 'aurora'
-      - 'nightly'
       - 'esr'
+      - 'nightly'
       - 'Other'
       
   

@@ -4786,6 +4786,111 @@ in browser.
 "
   }
 
+  dimension: metrics__labeled_counter__update_bitshresult {
+    label: "Update Bitshresult"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_bitshresult ;;
+    group_label: "Update"
+    group_item_label: "Bitshresult"
+
+    link: {
+      label: "Glean Dictionary reference for Update Bitshresult"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_bitshresult"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If a BITS download fails on the Windows side (that is to say, BITS ecounters an error rather than Firefox failing to interact with BITS), it will likely give an hresult error indicating what happened. This probe reports those error codes to allow us to see if BITS is commonly failing on some systems. This probe is keyed on the type of update download, either \"PARTIAL\" or \"COMPLETE\". This metric was generated to correspond to the Legacy Telemetry scalar update.bitshresult.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_move_result {
+    label: "Update Move Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_move_result ;;
+    group_label: "Update"
+    group_item_label: "Move Result"
+
+    link: {
+      label: "Glean Dictionary reference for Update Move Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_move_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Firefox keeps downloading updates in a different place from updates that are ready to install. Once the download completes, the resulting file has to be moved from the downloading update directory to the ready update directory. This probe counts the results that we get when attempting to perform this file move. Valid values for the keys for this probe are stored in the MOVE_RESULT_* values in UpdateTelemetry.sys.mjs. This metric was generated to correspond to the Legacy Telemetry scalar update.move_result.
+"
+  }
+
+  dimension: metrics__counter__update_no_window_auto_restarts {
+    label: "Update No Window Auto Restarts"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_no_window_auto_restarts ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "No Window Auto Restarts"
+
+    link: {
+      label: "Glean Dictionary reference for Update No Window Auto Restarts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_no_window_auto_restarts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "On macOS, all browser windows can be closed without exiting Firefox. If there is an update pending in that case, and we can install it silently, we restart automatically in order to do so. This probe counts the number of times the browser restarts to silently install a pending update. This metric was generated to correspond to the Legacy Telemetry scalar update.no_window_auto_restarts.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_skip_startup_update_reason {
+    label: "Update Skip Startup Update Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_skip_startup_update_reason ;;
+    group_label: "Update"
+    group_item_label: "Skip Startup Update Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Update Skip Startup Update Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_skip_startup_update_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "We usually install pending updates at startup, but there are a couple of reasons we might not. This value will be set to \"none\" if there was no reason not to install updates. If the value is \"DevToolsLaunching\", that means that we skipped applying updates because the application startup was actually a startup of the Browser Toolbox, not the browser itself. If the value is \"NotAnUpdatingTask\", that means that the browser launch is a background task other than the background update task, (which have update capabilities disabled). If the value is \"OtherInstanceRunning\", that means that the background update task was launched, but it didn't install an update in order to avoid interfering with other application instances. If the value is \"FirstStartup\", we didn't install any updates because the browser was launched by the installer. If the value is \"MultiSessionInstallLockout\", there are other browser instances running and the Multi Session Install Lockout timeout has not expired yet. Note that, for updates to be installed, the browser launches, sees the update, runs the updater, and exits. The updater then relaunches the browser when it completes. Naturally, the first launch is what decides if the update should be installed. But, if we are installing an update, the browser exits too early to send telemetry so it isn't sent until the second launch. It may be technically possible (though very unlikely) for the value sent on the second launch to not be \"none\".
+"
+  }
+
+  dimension: metrics__boolean__update_suppress_prompts {
+    label: "Update Suppress Prompts"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.update_suppress_prompts ;;
+    type: yesno
+    group_label: "Update"
+    group_item_label: "Suppress Prompts"
+
+    link: {
+      label: "Glean Dictionary reference for Update Suppress Prompts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_suppress_prompts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "When an update is available and app.update.auto is disabled, a popup is opened prompting the user to download and install the update. The pref app.update.suppressPrompts causes Firefox Nightly to wait up to 7 days before showing the prompt, instead showing a badge and banner in the meantime. It also prevents Nightly from showing update restart prompts, instead showing a badge and banner immediately. This value is set for the users who set this pref to true. This metric was generated to correspond to the Legacy Telemetry scalar update.suppress_prompts.
+"
+  }
+
+  dimension: metrics__string__update_version_pin {
+    label: "Update Version Pin"
+    hidden: no
+    sql: ${TABLE}.metrics.string.update_version_pin ;;
+    type: string
+    group_label: "Update"
+    group_item_label: "Version Pin"
+
+    link: {
+      label: "Glean Dictionary reference for Update Version Pin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_version_pin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The AppUpdatePin Enterprise Policy controls the maximum version that the browser can update to. If the policy is set, this probe will report the policy's value. The possible policy values are \"X.\" and \"X.Y.\", where X is the pinned major version and Y is the pinned minor version. This metric was generated to correspond to the Legacy Telemetry scalar update.version_pin.
+"
+  }
+
   dimension: metrics__counter__urlbar_abandonment_count {
     label: "Urlbar Abandonment Count"
     hidden: no
@@ -7933,6 +8038,344 @@ in browser.
 "
   }
 
+  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__sum {
+    label: "Cycle Collector Async Snow White Freeing Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.sum ;;
+    type: number
+    group_label: "Cycle Collector"
+    group_item_label: "Async Snow White Freeing Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cycle Collector Async Snow White Freeing Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_async_snow_white_freeing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent on one asynchronous SnowWhite freeing (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_ASYNC_SNOW_WHITE_FREEING.
+"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_collected__sum {
+    label: "Cycle Collector Collected Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_collected.sum ;;
+    type: number
+    group_label: "Cycle Collector"
+    group_item_label: "Collected Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cycle Collector Collected Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_collected"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of objects collected by the cycle collector
+This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_COLLECTED.
+"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__sum {
+    label: "Cycle Collector Deferred Finalize Async Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.sum ;;
+    type: number
+    group_label: "Cycle Collector"
+    group_item_label: "Deferred Finalize Async Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cycle Collector Deferred Finalize Async Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_deferred_finalize_async"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Pause time for asynchronous deferred finalization (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEFERRED_FINALIZE_ASYNC.
+"
+  }
+
+  dimension: metrics__labeled_counter__cycle_collector_finish_igc {
+    label: "Cycle Collector Finish Igc"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cycle_collector_finish_igc ;;
+    group_label: "Cycle Collector"
+    group_item_label: "Finish Igc"
+
+    link: {
+      label: "Glean Dictionary reference for Cycle Collector Finish Igc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_finish_igc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Cycle collection finished an incremental GC
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CYCLE_COLLECTOR_FINISH_IGC.
+"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_full__sum {
+    label: "Cycle Collector Full Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.sum ;;
+    type: number
+    group_label: "Cycle Collector"
+    group_item_label: "Full Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cycle Collector Full Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_full"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Full pause time for one cycle collection, including preparation (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_FULL.
+"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_max_pause__sum {
+    label: "Cycle Collector Max Pause Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.sum ;;
+    type: number
+    group_label: "Cycle Collector"
+    group_item_label: "Max Pause Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cycle Collector Max Pause Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_max_pause"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Longest pause for an individual slice of one cycle collection, including preparation (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_MAX_PAUSE.
+"
+  }
+
+  dimension: metrics__labeled_counter__cycle_collector_need_gc {
+    label: "Cycle Collector Need Gc"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cycle_collector_need_gc ;;
+    group_label: "Cycle Collector"
+    group_item_label: "Need Gc"
+
+    link: {
+      label: "Glean Dictionary reference for Cycle Collector Need Gc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_need_gc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Needed garbage collection before cycle collection.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CYCLE_COLLECTOR_NEED_GC.
+"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_slice_during_idle__sum {
+    label: "Cycle Collector Slice During Idle Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_slice_during_idle.sum ;;
+    type: number
+    group_label: "Cycle Collector"
+    group_item_label: "Slice During Idle Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cycle Collector Slice During Idle Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_slice_during_idle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Percent of cycle collector slice done during idle time
+This metric was generated to correspond to the Legacy Telemetry linear histogram CYCLE_COLLECTOR_SLICE_DURING_IDLE.
+"
+  }
+
+  dimension: metrics__labeled_counter__cycle_collector_sync_skippable {
+    label: "Cycle Collector Sync Skippable"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cycle_collector_sync_skippable ;;
+    group_label: "Cycle Collector"
+    group_item_label: "Sync Skippable"
+
+    link: {
+      label: "Glean Dictionary reference for Cycle Collector Sync Skippable"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_sync_skippable"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Cycle collection synchronously ran forget skippable
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CYCLE_COLLECTOR_SYNC_SKIPPABLE.
+"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time__sum {
+    label: "Cycle Collector Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.sum ;;
+    type: number
+    group_label: "Cycle Collector"
+    group_item_label: "Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cycle Collector Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent on one cycle collection (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR.
+"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time_between__sum {
+    label: "Cycle Collector Time Between Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.sum ;;
+    type: number
+    group_label: "Cycle Collector"
+    group_item_label: "Time Between Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cycle Collector Time Between Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_time_between"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in between cycle collections (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_TIME_BETWEEN.
+"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_visited_gced__sum {
+    label: "Cycle Collector Visited Gced Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_visited_gced.sum ;;
+    type: number
+    group_label: "Cycle Collector"
+    group_item_label: "Visited Gced Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cycle Collector Visited Gced Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_visited_gced"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of JS objects visited by the cycle collector
+This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_VISITED_GCED.
+"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_visited_ref_counted__sum {
+    label: "Cycle Collector Visited Ref Counted Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_visited_ref_counted.sum ;;
+    type: number
+    group_label: "Cycle Collector"
+    group_item_label: "Visited Ref Counted Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cycle Collector Visited Ref Counted Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_visited_ref_counted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of ref counted objects visited by the cycle collector
+This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_VISITED_REF_COUNTED.
+"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_collected__sum {
+    label: "Cycle Collector Worker Collected Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_collected.sum ;;
+    type: number
+    group_label: "Cycle Collector"
+    group_item_label: "Worker Collected Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cycle Collector Worker Collected Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_worker_collected"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of objects collected by the cycle collector in a worker
+This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_WORKER_COLLECTED.
+"
+  }
+
+  dimension: metrics__labeled_counter__cycle_collector_worker_need_gc {
+    label: "Cycle Collector Worker Need Gc"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cycle_collector_worker_need_gc ;;
+    group_label: "Cycle Collector"
+    group_item_label: "Worker Need Gc"
+
+    link: {
+      label: "Glean Dictionary reference for Cycle Collector Worker Need Gc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_worker_need_gc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Needed garbage collection before cycle collection in a worker.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CYCLE_COLLECTOR_WORKER_NEED_GC.
+"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_worker_time__sum {
+    label: "Cycle Collector Worker Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.sum ;;
+    type: number
+    group_label: "Cycle Collector"
+    group_item_label: "Worker Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cycle Collector Worker Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_worker_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent on one cycle collection in a worker (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_WORKER.
+"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_visited_gced__sum {
+    label: "Cycle Collector Worker Visited Gced Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_visited_gced.sum ;;
+    type: number
+    group_label: "Cycle Collector"
+    group_item_label: "Worker Visited Gced Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cycle Collector Worker Visited Gced Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_worker_visited_gced"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of JS objects visited by the cycle collector in a worker
+This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_WORKER_VISITED_GCED.
+"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_visited_ref_counted__sum {
+    label: "Cycle Collector Worker Visited Ref Counted Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_visited_ref_counted.sum ;;
+    type: number
+    group_label: "Cycle Collector"
+    group_item_label: "Worker Visited Ref Counted Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cycle Collector Worker Visited Ref Counted Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_worker_visited_ref_counted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of ref counted objects visited by the cycle collector in a worker
+This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_WORKER_VISITED_REF_COUNTED.
+"
+  }
+
   dimension: metrics__quantity__data_storage_alternate_services {
     label: "Data Storage Alternate Services"
     hidden: no
@@ -8530,6 +8973,62 @@ in browser.
 "
   }
 
+  dimension: metrics__labeled_counter__dom_contentprocess_launch_is_sync {
+    label: "Dom Contentprocess Launch Is Sync"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.dom_contentprocess_launch_is_sync ;;
+    group_label: "Dom Contentprocess"
+    group_item_label: "Launch Is Sync"
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Launch Is Sync"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dom_contentprocess_launch_is_sync"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a content process was launched synchronously (unnecessarily delaying UI response).
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CONTENT_PROCESS_LAUNCH_IS_SYNC.
+"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_mainthread__sum {
+    label: "Dom Contentprocess Launch Mainthread Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.sum ;;
+    type: number
+    group_label: "Dom Contentprocess"
+    group_item_label: "Launch Mainthread Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Launch Mainthread Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dom_contentprocess_launch_mainthread"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent on the main thread during asynchronous content process launch.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram CONTENT_PROCESS_LAUNCH_MAINTHREAD_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_total__sum {
+    label: "Dom Contentprocess Launch Total Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.sum ;;
+    type: number
+    group_label: "Dom Contentprocess"
+    group_item_label: "Launch Total Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Launch Total Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dom_contentprocess_launch_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total time elapsed during asynchronous content process launch, until the process is usable for loading content.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram CONTENT_PROCESS_LAUNCH_TOTAL_MS.
+"
+  }
+
   dimension: metrics__counter__dom_contentprocess_os_priority_change_considered {
     label: "Dom Contentprocess Os Priority Change Considered"
     hidden: no
@@ -8581,6 +9080,25 @@ in browser.
     }
 
     description: "The number of times a content process has had its OS priority raised due to containing at least one foregrounded tab, or a tab with audible media has started playing in it. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_raised.
+"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_sync_launch__sum {
+    label: "Dom Contentprocess Sync Launch Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.sum ;;
+    type: number
+    group_label: "Dom Contentprocess"
+    group_item_label: "Sync Launch Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Dom Contentprocess Sync Launch Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dom_contentprocess_sync_launch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time elapsed during synchronous content process launch until the process is usable for loading content.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram CONTENT_PROCESS_SYNC_LAUNCH_MS.
 "
   }
 
@@ -12221,6 +12739,63 @@ To be used to validate GIFFT.
     }
 
     description: "Record the statuses related with the media decryption.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_phc_slop__sum {
+    label: "Memory Phc Slop Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_phc_slop.sum ;;
+    type: number
+    group_label: "Memory Phc"
+    group_item_label: "Slop Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Phc Slop Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/memory_phc_slop"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Over-allocation due to PHC's rounding (aka internal fragmentation).  Measured in bytes.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_PHC_SLOP.
+"
+  }
+
+  dimension: metrics__custom_distribution__memory_phc_slots_allocated__sum {
+    label: "Memory Phc Slots Allocated Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.memory_phc_slots_allocated.sum ;;
+    type: number
+    group_label: "Memory Phc"
+    group_item_label: "Slots Allocated Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Phc Slots Allocated Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/memory_phc_slots_allocated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of PHC slots currently allocated
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_PHC_SLOTS_ALLOCATED.
+"
+  }
+
+  dimension: metrics__custom_distribution__memory_phc_slots_freed__sum {
+    label: "Memory Phc Slots Freed Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.memory_phc_slots_freed.sum ;;
+    type: number
+    group_label: "Memory Phc"
+    group_item_label: "Slots Freed Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Phc Slots Freed Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/memory_phc_slots_freed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of PHC slots allocated-then-freed
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_PHC_SLOTS_FREED.
 "
   }
 
@@ -20648,6 +21223,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: update_no_window_auto_restarts {
+    type: sum
+    sql: ${metrics__counter__update_no_window_auto_restarts} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update No Window Auto Restarts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_no_window_auto_restarts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_no_window_auto_restarts_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_no_window_auto_restarts: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update No Window Auto Restarts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_no_window_auto_restarts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: urlbar_abandonment_count {
     type: sum
     sql: ${metrics__counter__urlbar_abandonment_count} ;;
@@ -28450,6 +29050,170 @@ view: metrics__metrics__labeled_counter__crash_submission_collector_errors {
   }
 }
 
+view: metrics__metrics__labeled_counter__cycle_collector_finish_igc {
+  label: "Cycle Collector - Finish Igc"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__cycle_collector_need_gc {
+  label: "Cycle Collector - Need Gc"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__cycle_collector_sync_skippable {
+  label: "Cycle Collector - Sync Skippable"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__cycle_collector_worker_need_gc {
+  label: "Cycle Collector - Worker Need Gc"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__dap_report_generation_status {
   label: "Dap - Report Generation Status"
 
@@ -28903,6 +29667,47 @@ view: metrics__metrics__labeled_counter__devtools_toolbox_tabs_reordered {
 
 view: metrics__metrics__labeled_counter__devtools_tooltip_shown {
   label: "Devtools Tooltip - Shown"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__dom_contentprocess_launch_is_sync {
+  label: "Dom Contentprocess - Launch Is Sync"
 
   dimension: document_id {
     type: string
@@ -35570,19 +36375,19 @@ view: metrics__metrics__labeled_counter__telemetry_clamping_time_hgrams {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -35629,6 +36434,129 @@ view: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
 
 view: metrics__metrics__labeled_counter__translations_request_count {
   label: "Translations - Request Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__update_bitshresult {
+  label: "Update - Bitshresult"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__update_move_result {
+  label: "Update - Move Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__update_skip_startup_update_reason {
+  label: "Update - Skip Startup Update Reason"
 
   dimension: document_id {
     type: string
@@ -39302,6 +40230,90 @@ view: metrics__metrics__custom_distribution__cookie_banners_click_query_selector
   }
 }
 
+view: metrics__metrics__custom_distribution__cycle_collector_collected__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cycle_collector_slice_during_idle__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cycle_collector_visited_gced__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cycle_collector_visited_ref_counted__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cycle_collector_worker_collected__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cycle_collector_worker_visited_gced__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cycle_collector_worker_visited_ref_counted__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__extensions_timing_event_page_running_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -39579,6 +40591,30 @@ view: metrics__metrics__custom_distribution__javascript_gc_zone_count__values {
 }
 
 view: metrics__metrics__custom_distribution__javascript_gc_zones_collected__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__memory_phc_slots_allocated__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__memory_phc_slots_freed__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -42393,6 +43429,18 @@ view: metrics__metrics__memory_distribution__javascript_gc_nursery_bytes__values
   }
 }
 
+view: metrics__metrics__memory_distribution__memory_phc_slop__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__memory_distribution__networking_cache_metadata_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -42550,6 +43598,126 @@ view: metrics__metrics__timing_distribution__cookie_banners_click_handle_duratio
 }
 
 view: metrics__metrics__timing_distribution__cookie_banners_cmp_handle_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cycle_collector_async_snow_white_freeing__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cycle_collector_deferred_finalize_async__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cycle_collector_full__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cycle_collector_max_pause__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cycle_collector_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cycle_collector_time_between__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cycle_collector_worker_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__dom_contentprocess_launch_mainthread__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__dom_contentprocess_launch_total__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__dom_contentprocess_sync_launch__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
