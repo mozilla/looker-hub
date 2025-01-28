@@ -203,6 +203,26 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__crash_submission_collector_errors}) AS metrics__metrics__labeled_counter__crash_submission_collector_errors ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__crash_submission_collector_errors.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__cycle_collector_finish_igc {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cycle_collector_finish_igc}) AS metrics__metrics__labeled_counter__cycle_collector_finish_igc ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cycle_collector_finish_igc.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__cycle_collector_need_gc {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cycle_collector_need_gc}) AS metrics__metrics__labeled_counter__cycle_collector_need_gc ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cycle_collector_need_gc.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__cycle_collector_sync_skippable {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cycle_collector_sync_skippable}) AS metrics__metrics__labeled_counter__cycle_collector_sync_skippable ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cycle_collector_sync_skippable.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__cycle_collector_worker_need_gc {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cycle_collector_worker_need_gc}) AS metrics__metrics__labeled_counter__cycle_collector_worker_need_gc ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cycle_collector_worker_need_gc.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__data_storage_entries {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__data_storage_entries}) AS metrics__metrics__labeled_counter__data_storage_entries ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__data_storage_entries.document_id} ;;
@@ -251,6 +271,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__devtools_tooltip_shown {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__devtools_tooltip_shown}) AS metrics__metrics__labeled_counter__devtools_tooltip_shown ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__devtools_tooltip_shown.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__dom_contentprocess_launch_is_sync {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dom_contentprocess_launch_is_sync}) AS metrics__metrics__labeled_counter__dom_contentprocess_launch_is_sync ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dom_contentprocess_launch_is_sync.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__dom_parentprocess_process_launch_errors {

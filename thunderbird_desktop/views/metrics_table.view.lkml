@@ -1798,6 +1798,146 @@ This does not include deletion-request pings.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__cycle_collector_collected__count {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_collected.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Collected"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_collected__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_collected.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Collected"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_collected__values {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_collected.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_slice_during_idle__count {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_slice_during_idle.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Slice During Idle"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_slice_during_idle__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_slice_during_idle.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Slice During Idle"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_slice_during_idle__values {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_slice_during_idle.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_visited_gced__count {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_visited_gced.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Visited Gced"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_visited_gced__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_visited_gced.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Visited Gced"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_visited_gced__values {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_visited_gced.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_visited_ref_counted__count {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_visited_ref_counted.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Visited Ref Counted"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_visited_ref_counted__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_visited_ref_counted.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Visited Ref Counted"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_visited_ref_counted__values {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_visited_ref_counted.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_collected__count {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_collected.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Worker Collected"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_collected__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_collected.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Worker Collected"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_collected__values {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_collected.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_visited_gced__count {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_visited_gced.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Worker Visited Gced"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_visited_gced__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_visited_gced.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Worker Visited Gced"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_visited_gced__values {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_visited_gced.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_visited_ref_counted__count {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_visited_ref_counted.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Worker Visited Ref Counted"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_visited_ref_counted__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_visited_ref_counted.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Worker Visited Ref Counted"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_visited_ref_counted__values {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_visited_ref_counted.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__extensions_timing_event_page_running_time__count {
     sql: ${TABLE}.metrics.custom_distribution.extensions_timing_event_page_running_time.count ;;
     type: number
@@ -2295,6 +2435,46 @@ This does not include deletion-request pings.
 
   dimension: metrics__custom_distribution__mail_compact_bytes_recovered__values {
     sql: ${TABLE}.metrics.custom_distribution.mail_compact_bytes_recovered.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__memory_phc_slots_allocated__count {
+    sql: ${TABLE}.metrics.custom_distribution.memory_phc_slots_allocated.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Memory Phc Slots Allocated"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__memory_phc_slots_allocated__sum {
+    sql: ${TABLE}.metrics.custom_distribution.memory_phc_slots_allocated.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Memory Phc Slots Allocated"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__memory_phc_slots_allocated__values {
+    sql: ${TABLE}.metrics.custom_distribution.memory_phc_slots_allocated.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__memory_phc_slots_freed__count {
+    sql: ${TABLE}.metrics.custom_distribution.memory_phc_slots_freed.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Memory Phc Slots Freed"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__memory_phc_slots_freed__sum {
+    sql: ${TABLE}.metrics.custom_distribution.memory_phc_slots_freed.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Memory Phc Slots Freed"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__memory_phc_slots_freed__values {
+    sql: ${TABLE}.metrics.custom_distribution.memory_phc_slots_freed.values ;;
     hidden: yes
   }
 
@@ -3583,6 +3763,38 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__labeled_counter__cycle_collector_finish_igc {
+    sql: ${TABLE}.metrics.labeled_counter.cycle_collector_finish_igc ;;
+    hidden: yes
+    description: "Cycle collection finished an incremental GC
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CYCLE_COLLECTOR_FINISH_IGC.
+"
+  }
+
+  dimension: metrics__labeled_counter__cycle_collector_need_gc {
+    sql: ${TABLE}.metrics.labeled_counter.cycle_collector_need_gc ;;
+    hidden: yes
+    description: "Needed garbage collection before cycle collection.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CYCLE_COLLECTOR_NEED_GC.
+"
+  }
+
+  dimension: metrics__labeled_counter__cycle_collector_sync_skippable {
+    sql: ${TABLE}.metrics.labeled_counter.cycle_collector_sync_skippable ;;
+    hidden: yes
+    description: "Cycle collection synchronously ran forget skippable
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CYCLE_COLLECTOR_SYNC_SKIPPABLE.
+"
+  }
+
+  dimension: metrics__labeled_counter__cycle_collector_worker_need_gc {
+    sql: ${TABLE}.metrics.labeled_counter.cycle_collector_worker_need_gc ;;
+    hidden: yes
+    description: "Needed garbage collection before cycle collection in a worker.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CYCLE_COLLECTOR_WORKER_NEED_GC.
+"
+  }
+
   dimension: metrics__labeled_counter__data_storage_entries {
     sql: ${TABLE}.metrics.labeled_counter.data_storage_entries ;;
     hidden: yes
@@ -3649,6 +3861,14 @@ This does not include deletion-request pings.
     sql: ${TABLE}.metrics.labeled_counter.devtools_tooltip_shown ;;
     hidden: yes
     description: "Number of times a tooltip was shown, keyed by tooltip type. Currently supported types are \"image\", \"font-family\", \"inactive- css\", \"css-compatibility\", \"css-query-container\" and \"variable.\" This metric was generated to correspond to the Legacy Telemetry scalar devtools.tooltip.shown.
+"
+  }
+
+  dimension: metrics__labeled_counter__dom_contentprocess_launch_is_sync {
+    sql: ${TABLE}.metrics.labeled_counter.dom_contentprocess_launch_is_sync ;;
+    hidden: yes
+    description: "Whether a content process was launched synchronously (unnecessarily delaying UI response).
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CONTENT_PROCESS_LAUNCH_IS_SYNC.
 "
   }
 
@@ -5273,6 +5493,26 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__memory_phc_slop__count {
+    sql: ${TABLE}.metrics.memory_distribution.memory_phc_slop.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Memory Phc Slop"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__memory_phc_slop__sum {
+    sql: ${TABLE}.metrics.memory_distribution.memory_phc_slop.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Memory Phc Slop"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__memory_phc_slop__values {
+    sql: ${TABLE}.metrics.memory_distribution.memory_phc_slop.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__memory_distribution__networking_cache_metadata_size__count {
     sql: ${TABLE}.metrics.memory_distribution.networking_cache_metadata_size.count ;;
     type: number
@@ -6807,6 +7047,606 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__values {
     sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Async Snow White Freeing"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Async Snow White Freeing"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Async Snow White Freeing"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Async Snow White Freeing"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__range {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Async Snow White Freeing"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Async Snow White Freeing"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Async Snow White Freeing"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__values {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Deferred Finalize Async"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Deferred Finalize Async"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Deferred Finalize Async"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Deferred Finalize Async"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__range {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Deferred Finalize Async"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Deferred Finalize Async"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Deferred Finalize Async"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__values {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_full__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Full"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_full__count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Full"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_full__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Full"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_full__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Full"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_full__range {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_full__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Full"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_full__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Full"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_full__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Full"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_full__values {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_max_pause__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Max Pause"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_max_pause__count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Max Pause"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_max_pause__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Max Pause"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_max_pause__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Max Pause"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_max_pause__range {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_max_pause__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Max Pause"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_max_pause__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Max Pause"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_max_pause__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Max Pause"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_max_pause__values {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time_between__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time Between"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time_between__count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time Between"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time_between__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Time Between"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time_between__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time Between"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time_between__range {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time_between__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time Between"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time_between__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Time Between"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time_between__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time Between"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time_between__values {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_worker_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Worker Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_worker_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Worker Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_worker_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Worker Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_worker_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Worker Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_worker_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_worker_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Worker Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_worker_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Worker Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_worker_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Worker Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_worker_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_mainthread__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_mainthread__count {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_mainthread__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_mainthread__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_mainthread__range {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_mainthread__sum {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_mainthread__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_mainthread__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_mainthread__values {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_total__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_total__count {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_total__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_total__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_total__range {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_total__sum {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_total__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_total__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_total__values {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_sync_launch__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_sync_launch__count {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_sync_launch__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_sync_launch__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_sync_launch__range {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_sync_launch__sum {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_sync_launch__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_sync_launch__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_sync_launch__values {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.values ;;
     hidden: yes
   }
 
@@ -17140,6 +17980,90 @@ view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_se
   }
 }
 
+view: metrics_table__metrics__custom_distribution__cycle_collector_collected__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cycle_collector_slice_during_idle__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cycle_collector_visited_gced__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cycle_collector_visited_ref_counted__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cycle_collector_worker_collected__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cycle_collector_worker_visited_gced__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cycle_collector_worker_visited_ref_counted__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__extensions_timing_event_page_running_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -17429,6 +18353,30 @@ view: metrics_table__metrics__custom_distribution__javascript_gc_zones_collected
 }
 
 view: metrics_table__metrics__custom_distribution__mail_compact_bytes_recovered__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__memory_phc_slots_allocated__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__memory_phc_slots_freed__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -20042,6 +20990,18 @@ view: metrics_table__metrics__memory_distribution__mail_compact_space_recovered_
   }
 }
 
+view: metrics_table__metrics__memory_distribution__memory_phc_slop__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__memory_distribution__networking_cache_metadata_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -20163,6 +21123,126 @@ view: metrics_table__metrics__timing_distribution__cookie_banners_click_handle_d
 }
 
 view: metrics_table__metrics__timing_distribution__cookie_banners_cmp_handle_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cycle_collector_async_snow_white_freeing__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cycle_collector_deferred_finalize_async__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cycle_collector_full__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cycle_collector_max_pause__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cycle_collector_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cycle_collector_time_between__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cycle_collector_worker_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__dom_contentprocess_launch_mainthread__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__dom_contentprocess_launch_total__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__dom_contentprocess_sync_launch__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

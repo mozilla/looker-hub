@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: fox_doodle_and_tail_fox_2025_v2_rollout
-    type: looker_line
-    fields: [
-      fox_doodle_and_tail_fox_2025_v2_rollout.submission_date,
-      fox_doodle_and_tail_fox_2025_v2_rollout.branch,
-      fox_doodle_and_tail_fox_2025_v2_rollout.point
-    ]
-    pivots: [
-      fox_doodle_and_tail_fox_2025_v2_rollout.branch
-    ]
-    filters:
-      fox_doodle_and_tail_fox_2025_v2_rollout.metric: 'qualified_cumulative_days_of_use'
-      fox_doodle_and_tail_fox_2025_v2_rollout.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: fox_doodle_and_tail_fox_2025_v2_rollout.submission_date
-    field_y: fox_doodle_and_tail_fox_2025_v2_rollout.point
-    log_scale: false
-    ci_lower: fox_doodle_and_tail_fox_2025_v2_rollout.lower
-    ci_upper: fox_doodle_and_tail_fox_2025_v2_rollout.upper
-    show_grid: true
-    listen:
-      Date: fox_doodle_and_tail_fox_2025_v2_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -61,6 +27,40 @@
     ]
     filters:
       fox_doodle_and_tail_fox_2025_v2_rollout.metric: 'days_of_use'
+      fox_doodle_and_tail_fox_2025_v2_rollout.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: fox_doodle_and_tail_fox_2025_v2_rollout.submission_date
+    field_y: fox_doodle_and_tail_fox_2025_v2_rollout.point
+    log_scale: false
+    ci_lower: fox_doodle_and_tail_fox_2025_v2_rollout.lower
+    ci_upper: fox_doodle_and_tail_fox_2025_v2_rollout.upper
+    show_grid: true
+    listen:
+      Date: fox_doodle_and_tail_fox_2025_v2_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: fox_doodle_and_tail_fox_2025_v2_rollout
+    type: looker_line
+    fields: [
+      fox_doodle_and_tail_fox_2025_v2_rollout.submission_date,
+      fox_doodle_and_tail_fox_2025_v2_rollout.branch,
+      fox_doodle_and_tail_fox_2025_v2_rollout.point
+    ]
+    pivots: [
+      fox_doodle_and_tail_fox_2025_v2_rollout.branch
+    ]
+    filters:
+      fox_doodle_and_tail_fox_2025_v2_rollout.metric: 'active_hours'
       fox_doodle_and_tail_fox_2025_v2_rollout.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       fox_doodle_and_tail_fox_2025_v2_rollout.branch
     ]
     filters:
-      fox_doodle_and_tail_fox_2025_v2_rollout.metric: 'search_count'
+      fox_doodle_and_tail_fox_2025_v2_rollout.metric: 'qualified_cumulative_days_of_use'
       fox_doodle_and_tail_fox_2025_v2_rollout.statistic: mean
     row: 10
     col: 12
@@ -180,40 +180,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: fox_doodle_and_tail_fox_2025_v2_rollout
-    type: looker_line
-    fields: [
-      fox_doodle_and_tail_fox_2025_v2_rollout.submission_date,
-      fox_doodle_and_tail_fox_2025_v2_rollout.branch,
-      fox_doodle_and_tail_fox_2025_v2_rollout.point
-    ]
-    pivots: [
-      fox_doodle_and_tail_fox_2025_v2_rollout.branch
-    ]
-    filters:
-      fox_doodle_and_tail_fox_2025_v2_rollout.metric: 'uri_count'
-      fox_doodle_and_tail_fox_2025_v2_rollout.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: fox_doodle_and_tail_fox_2025_v2_rollout.submission_date
-    field_y: fox_doodle_and_tail_fox_2025_v2_rollout.point
-    log_scale: false
-    ci_lower: fox_doodle_and_tail_fox_2025_v2_rollout.lower
-    ci_upper: fox_doodle_and_tail_fox_2025_v2_rollout.upper
-    show_grid: true
-    listen:
-      Date: fox_doodle_and_tail_fox_2025_v2_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -234,8 +200,8 @@
     filters:
       fox_doodle_and_tail_fox_2025_v2_rollout.metric: 'memory_total'
       fox_doodle_and_tail_fox_2025_v2_rollout.statistic: percentile
-    row: 30
-    col: 0
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: fox_doodle_and_tail_fox_2025_v2_rollout.submission_date
@@ -251,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +233,41 @@
       fox_doodle_and_tail_fox_2025_v2_rollout.branch
     ]
     filters:
-      fox_doodle_and_tail_fox_2025_v2_rollout.metric: 'active_hours'
+      fox_doodle_and_tail_fox_2025_v2_rollout.metric: 'uri_count'
+      fox_doodle_and_tail_fox_2025_v2_rollout.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: fox_doodle_and_tail_fox_2025_v2_rollout.submission_date
+    field_y: fox_doodle_and_tail_fox_2025_v2_rollout.point
+    log_scale: false
+    ci_lower: fox_doodle_and_tail_fox_2025_v2_rollout.lower
+    ci_upper: fox_doodle_and_tail_fox_2025_v2_rollout.upper
+    show_grid: true
+    listen:
+      Date: fox_doodle_and_tail_fox_2025_v2_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: fox_doodle_and_tail_fox_2025_v2_rollout
+    type: looker_line
+    fields: [
+      fox_doodle_and_tail_fox_2025_v2_rollout.submission_date,
+      fox_doodle_and_tail_fox_2025_v2_rollout.branch,
+      fox_doodle_and_tail_fox_2025_v2_rollout.point
+    ]
+    pivots: [
+      fox_doodle_and_tail_fox_2025_v2_rollout.branch
+    ]
+    filters:
+      fox_doodle_and_tail_fox_2025_v2_rollout.metric: 'search_count'
       fox_doodle_and_tail_fox_2025_v2_rollout.statistic: mean
     row: 30
     col: 12
