@@ -891,6 +891,190 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__labeled_counter__application_reputation_binary_archive {
+    label: "Application Reputation Binary Archive"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_binary_archive ;;
+    group_label: "Application Reputation"
+    group_item_label: "Binary Archive"
+
+    link: {
+      label: "Glean Dictionary reference for Application Reputation Binary Archive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/application_reputation_binary_archive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a binary file examined by download protection is one of the common archive formats.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_BINARY_ARCHIVE.
+"
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_binary_type {
+    label: "Application Reputation Binary Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_binary_type ;;
+    group_label: "Application Reputation"
+    group_item_label: "Binary Type"
+
+    link: {
+      label: "Glean Dictionary reference for Application Reputation Binary Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/application_reputation_binary_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not the file examined by download protection is a binary type (or it's not possible to tell because the filename is missing).
+This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_BINARY_TYPE.
+"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_local__sum {
+    label: "Application Reputation Local Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_local.sum ;;
+    type: number
+    group_label: "Application Reputation"
+    group_item_label: "Local Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Application Reputation Local Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/application_reputation_local"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Application reputation local results (0=ALLOW, 1=BLOCK, 2=NONE)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram APPLICATION_REPUTATION_LOCAL.
+"
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_reason {
+    label: "Application Reputation Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_reason ;;
+    group_label: "Application Reputation"
+    group_item_label: "Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Application Reputation Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/application_reputation_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The reason application reputation service blocks or allows the download.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_REASON.
+"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__sum {
+    label: "Application Reputation Remote Lookup Response Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.sum ;;
+    type: number
+    group_label: "Application Reputation"
+    group_item_label: "Remote Lookup Response Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Application Reputation Remote Lookup Response Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/application_reputation_remote_lookup_response_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Server response time to remote lookup request (ms).
+This metric was generated to correspond to the Legacy Telemetry linear histogram APPLICATION_REPUTATION_REMOTE_LOOKUP_RESPONSE_TIME.
+"
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_remote_lookup_timeout {
+    label: "Application Reputation Remote Lookup Timeout"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_remote_lookup_timeout ;;
+    group_label: "Application Reputation"
+    group_item_label: "Remote Lookup Timeout"
+
+    link: {
+      label: "Glean Dictionary reference for Application Reputation Remote Lookup Timeout"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/application_reputation_remote_lookup_timeout"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded when application reputation remote lookup is performed, `true` is recorded if the lookup times out.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram APPLICATION_REPUTATION_REMOTE_LOOKUP_TIMEOUT.
+"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server__sum {
+    label: "Application Reputation Server Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server.sum ;;
+    type: number
+    group_label: "Application Reputation"
+    group_item_label: "Server Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Application Reputation Server Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/application_reputation_server"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Status of the application reputation remote lookup (0=OK, 1=failed, 2=invalid protobuf response)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram APPLICATION_REPUTATION_SERVER.
+"
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_server_2 {
+    label: "Application Reputation Server 2"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_server_2 ;;
+    group_label: "Application Reputation"
+    group_item_label: "Server 2"
+
+    link: {
+      label: "Glean Dictionary reference for Application Reputation Server 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/application_reputation_server_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Network status of the application reputation remote lookup
+This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_SERVER_2.
+"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server_verdict__sum {
+    label: "Application Reputation Server Verdict Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server_verdict.sum ;;
+    type: number
+    group_label: "Application Reputation"
+    group_item_label: "Server Verdict Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Application Reputation Server Verdict Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/application_reputation_server_verdict"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Application reputation remote verdict (0=SAFE, 1=DANGEROUS, 2=UNCOMMON, 3=POTENTIALLY_UNWANTED, 4=DANGEROUS_HOST, 5=UNKNOWN)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram APPLICATION_REPUTATION_SERVER_VERDICT.
+"
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_should_block {
+    label: "Application Reputation Should Block"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_should_block ;;
+    group_label: "Application Reputation"
+    group_item_label: "Should Block"
+
+    link: {
+      label: "Glean Dictionary reference for Application Reputation Should Block"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/application_reputation_should_block"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Overall (local or remote) application reputation verdict (shouldBlock=false is OK).
+This metric was generated to correspond to the Legacy Telemetry boolean histogram APPLICATION_REPUTATION_SHOULD_BLOCK.
+"
+  }
+
   dimension: metrics__counter__apz_scrollwheel_overshoot {
     label: "Apz Scrollwheel Overshoot"
     hidden: yes
@@ -18084,6 +18268,252 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
   sql_table_name: `mozdata.focus_android.metrics` ;;
 }
 
+view: metrics__metrics__labeled_counter__application_reputation_binary_archive {
+  label: "Application Reputation - Binary Archive"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__application_reputation_binary_type {
+  label: "Application Reputation - Binary Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__application_reputation_reason {
+  label: "Application Reputation - Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__application_reputation_remote_lookup_timeout {
+  label: "Application Reputation - Remote Lookup Timeout"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__application_reputation_server_2 {
+  label: "Application Reputation - Server 2"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__application_reputation_should_block {
+  label: "Application Reputation - Should Block"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__avif_a1lx {
   label: "Avif - A1Lx"
 
@@ -26872,6 +27302,42 @@ view: metrics__events__extra {
   }
 }
 
+view: metrics__metrics__custom_distribution__application_reputation_local__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__application_reputation_server__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__application_reputation_server_verdict__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -29837,6 +30303,18 @@ view: metrics__metrics__memory_distribution__networking_http_3_udp_datagram_size
 }
 
 view: metrics__metrics__memory_distribution__performance_clone_deserialize_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__application_reputation_remote_lookup_response_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

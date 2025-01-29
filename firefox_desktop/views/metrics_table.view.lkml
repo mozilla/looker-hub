@@ -2414,6 +2414,66 @@ of the shopping experiment.
 "
   }
 
+  dimension: metrics__custom_distribution__application_reputation_local__count {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_local.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Application Reputation Local"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_local__sum {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_local.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Application Reputation Local"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_local__values {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_local.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server__count {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Application Reputation Server"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server__sum {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Application Reputation Server"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server__values {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server_verdict__count {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server_verdict.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Application Reputation Server Verdict"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server_verdict__sum {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server_verdict.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Application Reputation Server Verdict"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server_verdict__values {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server_verdict.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__count {
     sql: ${TABLE}.metrics.custom_distribution.bounce_tracking_protection_num_hosts_per_purge_run.count ;;
     type: number
@@ -4304,6 +4364,54 @@ of the shopping experiment.
     sql: ${TABLE}.metrics.labeled_boolean.widget_pointing_devices ;;
     hidden: yes
     description: "Whether the system has any matching pointing device for each label.
+"
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_binary_archive {
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_binary_archive ;;
+    hidden: yes
+    description: "Whether a binary file examined by download protection is one of the common archive formats.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_BINARY_ARCHIVE.
+"
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_binary_type {
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_binary_type ;;
+    hidden: yes
+    description: "Whether or not the file examined by download protection is a binary type (or it's not possible to tell because the filename is missing).
+This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_BINARY_TYPE.
+"
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_reason {
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_reason ;;
+    hidden: yes
+    description: "The reason application reputation service blocks or allows the download.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_REASON.
+"
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_remote_lookup_timeout {
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_remote_lookup_timeout ;;
+    hidden: yes
+    description: "Recorded when application reputation remote lookup is performed, `true` is recorded if the lookup times out.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram APPLICATION_REPUTATION_REMOTE_LOOKUP_TIMEOUT.
+"
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_server_2 {
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_server_2 ;;
+    hidden: yes
+    description: "Network status of the application reputation remote lookup
+This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_SERVER_2.
+"
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_should_block {
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_should_block ;;
+    hidden: yes
+    description: "Overall (local or remote) application reputation verdict (shouldBlock=false is OK).
+This metric was generated to correspond to the Legacy Telemetry boolean histogram APPLICATION_REPUTATION_SHOULD_BLOCK.
 "
   }
 
@@ -9326,6 +9434,66 @@ default engine, and hence both versions of these fields will be filled in.
     type: number
     group_label: "Metrics Timespan Networking Nss Initialization"
     group_item_label: "Value"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.values ;;
+    hidden: yes
   }
 
   dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__bucket_count {
@@ -21032,6 +21200,42 @@ view: metrics_table__events__extra {
   }
 }
 
+view: metrics_table__metrics__custom_distribution__application_reputation_local__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__application_reputation_server__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__application_reputation_server_verdict__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -24388,6 +24592,18 @@ view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagra
 }
 
 view: metrics_table__metrics__memory_distribution__performance_clone_deserialize_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__application_reputation_remote_lookup_response_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

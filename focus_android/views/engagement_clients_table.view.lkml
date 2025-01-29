@@ -15,6 +15,11 @@ view: engagement_clients_table {
     type: string
   }
 
+  dimension: city {
+    sql: ${TABLE}.city ;;
+    type: string
+  }
+
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
@@ -33,6 +38,11 @@ view: engagement_clients_table {
 
   dimension: device_type {
     sql: ${TABLE}.device_type ;;
+    type: string
+  }
+
+  dimension: geo_subdivision {
+    sql: ${TABLE}.geo_subdivision ;;
     type: string
   }
 
