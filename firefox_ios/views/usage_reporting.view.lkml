@@ -63,24 +63,6 @@ this metric gets set to `Unknown`.
 "
   }
 
-  dimension: metrics__timing_distribution__usage_duration__sum {
-    label: "Usage Duration Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.usage_duration.sum ;;
-    type: number
-    group_label: "Usage"
-    group_item_label: "Duration Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Usage Duration Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/usage_duration"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The duration of the last foreground session.
-"
-  }
-
   dimension: metrics__datetime__usage_first_run_date {
     label: "Usage First Run Date"
     hidden: no

@@ -18,6 +18,36 @@ explore: metrics {
     ]
   }
 
+  join: metrics__metrics__labeled_counter__application_reputation_binary_archive {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__application_reputation_binary_archive}) AS metrics__metrics__labeled_counter__application_reputation_binary_archive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__application_reputation_binary_archive.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__application_reputation_binary_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__application_reputation_binary_type}) AS metrics__metrics__labeled_counter__application_reputation_binary_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__application_reputation_binary_type.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__application_reputation_reason {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__application_reputation_reason}) AS metrics__metrics__labeled_counter__application_reputation_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__application_reputation_reason.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__application_reputation_remote_lookup_timeout {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__application_reputation_remote_lookup_timeout}) AS metrics__metrics__labeled_counter__application_reputation_remote_lookup_timeout ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__application_reputation_remote_lookup_timeout.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__application_reputation_server_2 {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__application_reputation_server_2}) AS metrics__metrics__labeled_counter__application_reputation_server_2 ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__application_reputation_server_2.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__application_reputation_should_block {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__application_reputation_should_block}) AS metrics__metrics__labeled_counter__application_reputation_should_block ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__application_reputation_should_block.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__avif_a1lx {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_a1lx}) AS metrics__metrics__labeled_counter__avif_a1lx ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_a1lx.document_id} ;;

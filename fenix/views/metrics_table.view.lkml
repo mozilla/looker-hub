@@ -2006,6 +2006,63 @@ view: metrics_table {
     group_item_label: "Webrtcdtls Server Handshake Started Counter"
   }
 
+  dimension: metrics__custom_distribution__application_reputation_local__count {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_local.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Application Reputation Local"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_local__sum {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_local.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Application Reputation Local"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_local__values {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_local.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server__count {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Application Reputation Server"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server__sum {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Application Reputation Server"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server__values {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server_verdict__count {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server_verdict.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Application Reputation Server Verdict"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server_verdict__sum {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server_verdict.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Application Reputation Server Verdict"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server_verdict__values {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server_verdict.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__count {
     sql: ${TABLE}.metrics.custom_distribution.bounce_tracking_protection_num_hosts_per_purge_run.count ;;
     type: number
@@ -3820,6 +3877,36 @@ view: metrics_table {
 
   dimension: metrics__labeled_boolean__widget_pointing_devices {
     sql: ${TABLE}.metrics.labeled_boolean.widget_pointing_devices ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_binary_archive {
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_binary_archive ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_binary_type {
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_binary_type ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_reason {
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_reason ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_remote_lookup_timeout {
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_remote_lookup_timeout ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_server_2 {
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_server_2 ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_should_block {
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_should_block ;;
     hidden: yes
   }
 
@@ -6834,6 +6921,65 @@ view: metrics_table {
     type: number
     group_label: "Metrics Timespan Play Store Attribution Deferred Deeplink Time"
     group_item_label: "Value"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.values ;;
+    hidden: yes
   }
 
   dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__bucket_count {
@@ -21015,6 +21161,42 @@ view: metrics_table__events__extra {
   }
 }
 
+view: metrics_table__metrics__custom_distribution__application_reputation_local__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__application_reputation_server__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__application_reputation_server_verdict__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -24076,6 +24258,18 @@ view: metrics_table__metrics__memory_distribution__storage_stats_cache_bytes__va
 }
 
 view: metrics_table__metrics__memory_distribution__storage_stats_data_dir_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__application_reputation_remote_lookup_response_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
