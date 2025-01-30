@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       anti_fingerprinting_research_characteristic_evaluation_desktopnightlyus_only.branch
     ]
     filters:
-      anti_fingerprinting_research_characteristic_evaluation_desktopnightlyus_only.metric: 'active_hours'
+      anti_fingerprinting_research_characteristic_evaluation_desktopnightlyus_only.metric: 'search_count'
       anti_fingerprinting_research_characteristic_evaluation_desktopnightlyus_only.statistic: mean
     row: 0
     col: 12
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       anti_fingerprinting_research_characteristic_evaluation_desktopnightlyus_only.branch
     ]
     filters:
-      anti_fingerprinting_research_characteristic_evaluation_desktopnightlyus_only.metric: 'ad_clicks'
+      anti_fingerprinting_research_characteristic_evaluation_desktopnightlyus_only.metric: 'active_hours'
       anti_fingerprinting_research_characteristic_evaluation_desktopnightlyus_only.statistic: mean
     row: 10
     col: 0
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       anti_fingerprinting_research_characteristic_evaluation_desktopnightlyus_only.branch
     ]
     filters:
-      anti_fingerprinting_research_characteristic_evaluation_desktopnightlyus_only.metric: 'search_count'
+      anti_fingerprinting_research_characteristic_evaluation_desktopnightlyus_only.metric: 'uri_count'
       anti_fingerprinting_research_characteristic_evaluation_desktopnightlyus_only.statistic: mean
     row: 20
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       anti_fingerprinting_research_characteristic_evaluation_desktopnightlyus_only.branch
     ]
     filters:
-      anti_fingerprinting_research_characteristic_evaluation_desktopnightlyus_only.metric: 'uri_count'
+      anti_fingerprinting_research_characteristic_evaluation_desktopnightlyus_only.metric: 'ad_clicks'
       anti_fingerprinting_research_characteristic_evaluation_desktopnightlyus_only.statistic: mean
     row: 30
     col: 12
