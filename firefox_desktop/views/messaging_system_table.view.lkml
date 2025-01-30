@@ -11,6 +11,21 @@ view: messaging_system_table {
     description: "A JSON string containing any payload properties not present in the schema"
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -620,7 +635,7 @@ name.
     type: string
     group_label: "Metrics String"
     group_item_label: "Messaging System Ping Type"
-    description: "Type of event the ping is capturing. e.g. \"cfr\", \"whats-new-panel\", \"onboarding\"
+    description: "Type of event the ping is capturing. e.g. \"cfr\", \"onboarding\"
 "
   }
 

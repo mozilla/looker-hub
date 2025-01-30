@@ -5,6 +5,58 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: daemonsession {
+  dimension: metrics__custom_distribution__connection_health_data_transferred_rx__sum {
+    label: "Connection Health Data Transferred Rx Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_rx.sum ;;
+    type: number
+    group_label: "Connection Health"
+    group_item_label: "Data Transferred Rx Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health Data Transferred Rx Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_data_transferred_rx"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The amount of data received through the VPN tunnel.
+
+This metric is accumulated periodically on a 3hr interval
+while the VPN is turned on.
+
+This metric is not collected on iOS.
+
+> **Note**: This metric is recorded on the vpnsession ping for
+> desktop platforms and on the daemonsession ping for mobile platforms.
+"
+  }
+
+  dimension: metrics__custom_distribution__connection_health_data_transferred_tx__sum {
+    label: "Connection Health Data Transferred Tx Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_tx.sum ;;
+    type: number
+    group_label: "Connection Health"
+    group_item_label: "Data Transferred Tx Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health Data Transferred Tx Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_data_transferred_tx"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The amount of data sent through the VPN tunnel.
+
+This metric is accumulated periodically on a 3hr interval
+while the VPN is turned on.
+
+This metric is not collected on iOS.
+
+> **Note**: This metric is recorded on the vpnsession ping for
+> desktop platforms and on the daemonsession ping for mobile platforms.
+"
+  }
+
   dimension: metrics__counter__connection_health_no_signal_count {
     label: "Connection Health No Signal Count"
     hidden: no
@@ -50,6 +102,49 @@ health check is started because of the return.
 Only collected on desktop for vpnsession, as mobile apps
 frequently are relaunched during VPN sessions. It is
 collected in daemonsession for mobile clients.
+"
+  }
+
+  dimension: metrics__counter__connection_health_pending_count {
+    label: "Connection Health Pending Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.connection_health_pending_count ;;
+    type: number
+    group_label: "Connection Health"
+    group_item_label: "Pending Count"
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health Pending Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_pending_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "(iOS only) Count of times that the connection health check is in pending.
+
+The health check counters must not be considered as markers of time.
+There is a possible situation in the health check (which calls the
+telemetry) which frequently results in more than one count per second.
+The situation: A health check is conducted because a network check did not
+return, and milliseconds later that network check returns and another
+health check is started because of the return.
+"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_pending_time__sum {
+    label: "Connection Health Pending Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_pending_time.sum ;;
+    type: number
+    group_label: "Connection Health"
+    group_item_label: "Pending Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health Pending Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_pending_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "(iOS only) Time spent in pending state.
 "
   }
 
@@ -320,6 +415,21 @@ The labels are the `category.name` identifier of the metric.
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
   }
 
   dimension: client_info__android_sdk_version {
@@ -811,6 +921,31 @@ network extension
     }
   }
 
+  measure: connection_health_pending_count {
+    type: sum
+    sql: ${metrics__counter__connection_health_pending_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health Pending Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_pending_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: connection_health_pending_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__connection_health_pending_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health Pending Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_pending_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: connection_health_stable_count {
     type: sum
     sql: ${metrics__counter__connection_health_stable_count} ;;
@@ -1108,7 +1243,43 @@ view: daemonsession__events__extra {
   }
 }
 
+view: daemonsession__metrics__custom_distribution__connection_health_data_transferred_rx__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: daemonsession__metrics__custom_distribution__connection_health_data_transferred_tx__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: daemonsession__metrics__timing_distribution__connection_health_no_signal_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: daemonsession__metrics__timing_distribution__connection_health_pending_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

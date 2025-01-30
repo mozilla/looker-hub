@@ -54,6 +54,26 @@ view: engagement_table {
     description: "DAU - Daily Active Users"
   }
 
+  dimension: device_manufacturer {
+    sql: ${TABLE}.device_manufacturer ;;
+    type: string
+    description: "Manufacturer of the device where the client is installed.
+"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.device_type ;;
+    type: string
+    description: "On Apple devices allows us to differentiate between iPhone and iPad. On Android devices the value is always \"Android\".
+"
+  }
+
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+    description: "A string containing the distribution identifier."
+  }
+
   dimension: install_source {
     sql: ${TABLE}.install_source ;;
     type: string
@@ -93,6 +113,11 @@ view: engagement_table {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     description: "Release channel of the app the profile is using."
+  }
+
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.paid_vs_organic ;;
+    type: string
   }
 
   dimension: play_store_attribution_campaign {
@@ -148,6 +173,7 @@ view: engagement_table {
     ]
     convert_tz: no
     datatype: date
+    description: "Submission Date"
   }
 
   sql_table_name: `mozdata.fenix.engagement` ;;

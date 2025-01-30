@@ -11,6 +11,6 @@ datagroup: ga_sessions_v2_last_updated {
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'mozilla_org_derived'
     AND table_name = 'ga_sessions_v2' ;;
-  description: "Updates when moz-fx-data-shared-prod:mozilla_org_derived.ga_sessions_v2 is modified."
+  description: "Updates when moz-fx-data-shared-prod.mozilla_org_derived.ga_sessions_v2 is modified."
   max_cache_age: "24 hours"
 }

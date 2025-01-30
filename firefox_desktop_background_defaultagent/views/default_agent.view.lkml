@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: default_agent {
+  dimension: metrics__quantity__defaultagent_days_since_last_app_launch {
+    label: "Defaultagent Days Since Last App Launch"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.defaultagent_days_since_last_app_launch ;;
+    type: number
+    group_label: "Defaultagent"
+    group_item_label: "Days Since Last App Launch"
+
+    link: {
+      label: "Glean Dictionary reference for Defaultagent Days Since Last App Launch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_defaultagent/metrics/defaultagent_days_since_last_app_launch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of days since the app last launched. Once this reaches 90 days, the installation will stop running the default browser agent.
+"
+  }
+
   dimension: metrics__string__do_task_implementation {
     label: "Do Task Implementation"
     hidden: yes
@@ -258,6 +276,21 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
     description: "A JSON string containing any payload properties not present in the schema"
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
   }
 
   dimension: client_info__android_sdk_version {

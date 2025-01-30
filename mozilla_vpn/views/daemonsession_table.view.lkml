@@ -10,6 +10,21 @@ view: daemonsession_table {
     hidden: yes
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -297,6 +312,13 @@ view: daemonsession_table {
     group_item_label: "Connection Health No Signal Count"
   }
 
+  dimension: metrics__counter__connection_health_pending_count {
+    sql: ${TABLE}.metrics.counter.connection_health_pending_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Connection Health Pending Count"
+  }
+
   dimension: metrics__counter__connection_health_stable_count {
     sql: ${TABLE}.metrics.counter.connection_health_stable_count ;;
     type: number
@@ -316,6 +338,44 @@ view: daemonsession_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Session Connection Health Stable Count"
+  }
+
+  dimension: metrics__custom_distribution__connection_health_data_transferred_rx__count {
+    sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_rx.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Connection Health Data Transferred Rx"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__connection_health_data_transferred_rx__sum {
+    sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_rx.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Connection Health Data Transferred Rx"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__connection_health_data_transferred_rx__values {
+    sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_rx.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__connection_health_data_transferred_tx__count {
+    sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_tx.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Connection Health Data Transferred Tx"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__connection_health_data_transferred_tx__sum {
+    sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_tx.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Connection Health Data Transferred Tx"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__connection_health_data_transferred_tx__values {
+    sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_tx.values ;;
+    hidden: yes
   }
 
   dimension: metrics__datetime__raw_session_daemon_session_end {
@@ -422,6 +482,65 @@ view: daemonsession_table {
 
   dimension: metrics__timing_distribution__connection_health_no_signal_time__values {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__connection_health_pending_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_pending_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health Pending Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_pending_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_pending_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health Pending Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_pending_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_pending_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Connection Health Pending Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_pending_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_pending_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health Pending Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_pending_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_pending_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__connection_health_pending_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_pending_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health Pending Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_pending_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_pending_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Connection Health Pending Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_pending_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_pending_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health Pending Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_pending_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_pending_time.values ;;
     hidden: yes
   }
 
@@ -760,7 +879,43 @@ view: daemonsession_table__events__extra {
   }
 }
 
+view: daemonsession_table__metrics__custom_distribution__connection_health_data_transferred_rx__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: daemonsession_table__metrics__custom_distribution__connection_health_data_transferred_tx__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: daemonsession_table__metrics__timing_distribution__connection_health_no_signal_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: daemonsession_table__metrics__timing_distribution__connection_health_pending_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

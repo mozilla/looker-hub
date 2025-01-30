@@ -46,6 +46,21 @@ view: mobile_retention {
     map_layer_name: countries
   }
 
+  dimension: device_manufacturer {
+    sql: ${TABLE}.device_manufacturer ;;
+    type: string
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.device_type ;;
+    type: string
+  }
+
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+  }
+
   dimension: install_source {
     sql: ${TABLE}.install_source ;;
     type: string
@@ -83,6 +98,11 @@ view: mobile_retention {
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
+    type: string
+  }
+
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.paid_vs_organic ;;
     type: string
   }
 

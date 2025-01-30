@@ -66,6 +66,12 @@ view: desktop_retention {
     description: "Country"
   }
 
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+    description: "Distribution ID"
+  }
+
   dimension: is_desktop {
     sql: ${TABLE}.is_desktop ;;
     type: yesno
@@ -105,6 +111,11 @@ view: desktop_retention {
     sql: ${TABLE}.normalized_os_version ;;
     type: string
     description: "Normalized OS Version"
+  }
+
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.paid_vs_organic ;;
+    type: string
   }
 
   dimension: ping_sent_metric_date {

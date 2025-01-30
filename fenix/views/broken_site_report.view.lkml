@@ -185,24 +185,6 @@ view: broken_site_report {
 "
   }
 
-  dimension: metrics__boolean__broken_site_report_browser_info_prefs_forced_accelerated_layers {
-    label: "Broken Site Report Browser Info Prefs Forced Accelerated Layers"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_forced_accelerated_layers ;;
-    type: yesno
-    group_label: "Broken Site Report Browser Info Prefs"
-    group_item_label: "Forced Accelerated Layers"
-
-    link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Forced Accelerated Layers"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/broken_site_report_browser_info_prefs_forced_accelerated_layers"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Value of `layers.acceleration_force.enabled`
-"
-  }
-
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_global_privacy_control_enabled {
     label: "Broken Site Report Browser Info Prefs Global Privacy Control Enabled"
     hidden: no
@@ -293,24 +275,6 @@ view: broken_site_report {
 "
   }
 
-  dimension: metrics__boolean__broken_site_report_browser_info_system_is_tablet {
-    label: "Broken Site Report Browser Info System Is Tablet"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_system_is_tablet ;;
-    type: yesno
-    group_label: "Broken Site Report Browser Info System"
-    group_item_label: "Is Tablet"
-
-    link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info System Is Tablet"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/broken_site_report_browser_info_system_is_tablet"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether the device is a tablet
-"
-  }
-
   dimension: metrics__quantity__broken_site_report_browser_info_system_memory {
     label: "Broken Site Report Browser Info System Memory"
     hidden: no
@@ -362,6 +326,24 @@ view: broken_site_report {
     }
 
     description: "Currently either `basic` or `strict`, may change in the future.
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_tab_info_antitracking_btp_has_purged_site {
+    label: "Broken Site Report Tab Info Antitracking Btp Has Purged Site"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_btp_has_purged_site ;;
+    type: yesno
+    group_label: "Broken Site Report Tab Info Antitracking"
+    group_item_label: "Btp Has Purged Site"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking Btp Has Purged Site"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/broken_site_report_tab_info_antitracking_btp_has_purged_site"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the site in the current tab has recently been purged by Bounce Tracking Protection.
 "
   }
 
@@ -527,6 +509,78 @@ view: broken_site_report {
 "
   }
 
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_forced_accelerated_layers {
+    label: "Broken Site Report Browser Info Prefs Forced Accelerated Layers"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_forced_accelerated_layers ;;
+    type: yesno
+    group_label: "Broken Site Report Browser Info Prefs"
+    group_item_label: "Forced Accelerated Layers"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Forced Accelerated Layers"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/broken_site_report_browser_info_prefs_forced_accelerated_layers"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of `layers.acceleration_force.enabled`
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled {
+    label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled ;;
+    type: yesno
+    group_label: "Broken Site Report Browser Info Prefs"
+    group_item_label: "Third Party Cookie Blocking Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of `network.cookie.cookieBehavior.optInPartitioning`
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm {
+    label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled In Pbm"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm ;;
+    type: yesno
+    group_label: "Broken Site Report Browser Info Prefs"
+    group_item_label: "Third Party Cookie Blocking Enabled In Pbm"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled In Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of `network.cookie.cookieBehavior.optInPartitioning.pbmode`
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_browser_info_system_is_tablet {
+    label: "Broken Site Report Browser Info System Is Tablet"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_system_is_tablet ;;
+    type: yesno
+    group_label: "Broken Site Report Browser Info System"
+    group_item_label: "Is Tablet"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info System Is Tablet"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/broken_site_report_browser_info_system_is_tablet"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the device is a tablet
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation Id"
     hidden: no
@@ -621,6 +675,21 @@ The labels are the `category.name` identifier of the metric.
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
   }
 
   dimension: client_info__android_sdk_version {

@@ -7,7 +7,7 @@
 view: broken_site_report {
   dimension: metrics__string__broken_site_report_breakage_category {
     label: "Broken Site Report Breakage Category"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.broken_site_report_breakage_category ;;
     type: string
     group_label: "Broken Site Report"
@@ -25,7 +25,7 @@ view: broken_site_report {
 
   dimension: metrics__text2__broken_site_report_browser_info_app_default_useragent_string {
     label: "Broken Site Report Browser Info App Default Useragent String"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_app_default_useragent_string ;;
     type: string
     group_label: "Broken Site Report Browser Info App"
@@ -43,7 +43,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_browser_info_app_fission_enabled {
     label: "Broken Site Report Browser Info App Fission Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_app_fission_enabled ;;
     type: yesno
     group_label: "Broken Site Report Browser Info App"
@@ -61,7 +61,7 @@ view: broken_site_report {
 
   dimension: metrics__string__broken_site_report_browser_info_graphics_device_pixel_ratio {
     label: "Broken Site Report Browser Info Graphics Device Pixel Ratio"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.broken_site_report_browser_info_graphics_device_pixel_ratio ;;
     type: string
     group_label: "Broken Site Report Browser Info Graphics"
@@ -79,7 +79,7 @@ view: broken_site_report {
 
   dimension: metrics__text2__broken_site_report_browser_info_graphics_devices_json {
     label: "Broken Site Report Browser Info Graphics Devices Json"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_graphics_devices_json ;;
     type: string
     group_label: "Broken Site Report Browser Info Graphics"
@@ -97,7 +97,7 @@ view: broken_site_report {
 
   dimension: metrics__text2__broken_site_report_browser_info_graphics_drivers_json {
     label: "Broken Site Report Browser Info Graphics Drivers Json"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_graphics_drivers_json ;;
     type: string
     group_label: "Broken Site Report Browser Info Graphics"
@@ -115,7 +115,7 @@ view: broken_site_report {
 
   dimension: metrics__text2__broken_site_report_browser_info_graphics_features_json {
     label: "Broken Site Report Browser Info Graphics Features Json"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_graphics_features_json ;;
     type: string
     group_label: "Broken Site Report Browser Info Graphics"
@@ -133,7 +133,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_browser_info_graphics_has_touch_screen {
     label: "Broken Site Report Browser Info Graphics Has Touch Screen"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_graphics_has_touch_screen ;;
     type: yesno
     group_label: "Broken Site Report Browser Info Graphics"
@@ -151,7 +151,7 @@ view: broken_site_report {
 
   dimension: metrics__text2__broken_site_report_browser_info_graphics_monitors_json {
     label: "Broken Site Report Browser Info Graphics Monitors Json"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_graphics_monitors_json ;;
     type: string
     group_label: "Broken Site Report Browser Info Graphics"
@@ -169,7 +169,7 @@ view: broken_site_report {
 
   dimension: metrics__quantity__broken_site_report_browser_info_prefs_cookie_behavior {
     label: "Broken Site Report Browser Info Prefs Cookie Behavior"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.broken_site_report_browser_info_prefs_cookie_behavior ;;
     type: number
     group_label: "Broken Site Report Browser Info Prefs"
@@ -187,7 +187,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_forced_accelerated_layers {
     label: "Broken Site Report Browser Info Prefs Forced Accelerated Layers"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_forced_accelerated_layers ;;
     type: yesno
     group_label: "Broken Site Report Browser Info Prefs"
@@ -205,7 +205,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_global_privacy_control_enabled {
     label: "Broken Site Report Browser Info Prefs Global Privacy Control Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_global_privacy_control_enabled ;;
     type: yesno
     group_label: "Broken Site Report Browser Info Prefs"
@@ -223,7 +223,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_installtrigger_enabled {
     label: "Broken Site Report Browser Info Prefs Installtrigger Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_installtrigger_enabled ;;
     type: yesno
     group_label: "Broken Site Report Browser Info Prefs"
@@ -241,7 +241,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_opaque_response_blocking {
     label: "Broken Site Report Browser Info Prefs Opaque Response Blocking"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_opaque_response_blocking ;;
     type: yesno
     group_label: "Broken Site Report Browser Info Prefs"
@@ -259,7 +259,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_resist_fingerprinting_enabled {
     label: "Broken Site Report Browser Info Prefs Resist Fingerprinting Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_resist_fingerprinting_enabled ;;
     type: yesno
     group_label: "Broken Site Report Browser Info Prefs"
@@ -277,7 +277,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_software_webrender {
     label: "Broken Site Report Browser Info Prefs Software Webrender"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_software_webrender ;;
     type: yesno
     group_label: "Broken Site Report Browser Info Prefs"
@@ -293,9 +293,45 @@ view: broken_site_report {
 "
   }
 
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled {
+    label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled ;;
+    type: yesno
+    group_label: "Broken Site Report Browser Info Prefs"
+    group_item_label: "Third Party Cookie Blocking Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of `network.cookie.cookieBehavior.optInPartitioning`
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm {
+    label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled In Pbm"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm ;;
+    type: yesno
+    group_label: "Broken Site Report Browser Info Prefs"
+    group_item_label: "Third Party Cookie Blocking Enabled In Pbm"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled In Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of `network.cookie.cookieBehavior.optInPartitioning.pbmode`
+"
+  }
+
   dimension: metrics__boolean__broken_site_report_browser_info_system_is_tablet {
     label: "Broken Site Report Browser Info System Is Tablet"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_system_is_tablet ;;
     type: yesno
     group_label: "Broken Site Report Browser Info System"
@@ -313,7 +349,7 @@ view: broken_site_report {
 
   dimension: metrics__quantity__broken_site_report_browser_info_system_memory {
     label: "Broken Site Report Browser Info System Memory"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.broken_site_report_browser_info_system_memory ;;
     type: number
     group_label: "Broken Site Report Browser Info System"
@@ -331,7 +367,7 @@ view: broken_site_report {
 
   dimension: metrics__text2__broken_site_report_description {
     label: "Broken Site Report Description"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.broken_site_report_description ;;
     type: string
     group_label: "Broken Site Report"
@@ -349,7 +385,7 @@ view: broken_site_report {
 
   dimension: metrics__string__broken_site_report_tab_info_antitracking_block_list {
     label: "Broken Site Report Tab Info Antitracking Block List"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.broken_site_report_tab_info_antitracking_block_list ;;
     type: string
     group_label: "Broken Site Report Tab Info Antitracking"
@@ -365,9 +401,27 @@ view: broken_site_report {
 "
   }
 
+  dimension: metrics__boolean__broken_site_report_tab_info_antitracking_btp_has_purged_site {
+    label: "Broken Site Report Tab Info Antitracking Btp Has Purged Site"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_btp_has_purged_site ;;
+    type: yesno
+    group_label: "Broken Site Report Tab Info Antitracking"
+    group_item_label: "Btp Has Purged Site"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking Btp Has Purged Site"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/broken_site_report_tab_info_antitracking_btp_has_purged_site"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the site in the current tab has recently been purged by Bounce Tracking Protection.
+"
+  }
+
   dimension: metrics__boolean__broken_site_report_tab_info_antitracking_has_mixed_active_content_blocked {
     label: "Broken Site Report Tab Info Antitracking Has Mixed Active Content Blocked"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_has_mixed_active_content_blocked ;;
     type: yesno
     group_label: "Broken Site Report Tab Info Antitracking"
@@ -385,7 +439,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_tab_info_antitracking_has_mixed_display_content_blocked {
     label: "Broken Site Report Tab Info Antitracking Has Mixed Display Content Blocked"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_has_mixed_display_content_blocked ;;
     type: yesno
     group_label: "Broken Site Report Tab Info Antitracking"
@@ -403,7 +457,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_tab_info_antitracking_has_tracking_content_blocked {
     label: "Broken Site Report Tab Info Antitracking Has Tracking Content Blocked"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_has_tracking_content_blocked ;;
     type: yesno
     group_label: "Broken Site Report Tab Info Antitracking"
@@ -421,7 +475,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_tab_info_antitracking_is_private_browsing {
     label: "Broken Site Report Tab Info Antitracking Is Private Browsing"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_is_private_browsing ;;
     type: yesno
     group_label: "Broken Site Report Tab Info Antitracking"
@@ -439,7 +493,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_tab_info_frameworks_fastclick {
     label: "Broken Site Report Tab Info Frameworks Fastclick"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_frameworks_fastclick ;;
     type: yesno
     group_label: "Broken Site Report Tab Info Frameworks"
@@ -457,7 +511,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_tab_info_frameworks_marfeel {
     label: "Broken Site Report Tab Info Frameworks Marfeel"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_frameworks_marfeel ;;
     type: yesno
     group_label: "Broken Site Report Tab Info Frameworks"
@@ -475,7 +529,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_tab_info_frameworks_mobify {
     label: "Broken Site Report Tab Info Frameworks Mobify"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_frameworks_mobify ;;
     type: yesno
     group_label: "Broken Site Report Tab Info Frameworks"
@@ -493,7 +547,7 @@ view: broken_site_report {
 
   dimension: metrics__text2__broken_site_report_tab_info_useragent_string {
     label: "Broken Site Report Tab Info Useragent String"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.broken_site_report_tab_info_useragent_string ;;
     type: string
     group_label: "Broken Site Report Tab Info"
@@ -511,7 +565,7 @@ view: broken_site_report {
 
   dimension: metrics__url2__broken_site_report_url {
     label: "Broken Site Report Url"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.url2.broken_site_report_url ;;
     type: string
     group_label: "Broken Site Report"
@@ -622,6 +676,21 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
     description: "A JSON string containing any payload properties not present in the schema"
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
   }
 
   dimension: client_info__android_sdk_version {

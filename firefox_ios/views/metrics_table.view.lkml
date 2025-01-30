@@ -10,6 +10,21 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -288,6 +303,20 @@ view: metrics_table {
     type: string
     group_label: "Metadata User Agent"
     group_item_label: "Version"
+  }
+
+  dimension: metrics__boolean__app_choice_screen_acquisition {
+    sql: ${TABLE}.metrics.boolean.app_choice_screen_acquisition ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "App Choice Screen Acquisition"
+  }
+
+  dimension: metrics__boolean__app_default_browser {
+    sql: ${TABLE}.metrics.boolean.app_default_browser ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "App Default Browser"
   }
 
   dimension: metrics__boolean__application_services_bookmark_highlights_visible {
@@ -1130,6 +1159,20 @@ view: metrics_table {
     group_item_label: "Page Action Menu View History Panel"
   }
 
+  dimension: metrics__counter__password_generator_filled {
+    sql: ${TABLE}.metrics.counter.password_generator_filled ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Password Generator Filled"
+  }
+
+  dimension: metrics__counter__password_generator_shown {
+    sql: ${TABLE}.metrics.counter.password_generator_shown ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Password Generator Shown"
+  }
+
   dimension: metrics__counter__pocket_open_story {
     sql: ${TABLE}.metrics.counter.pocket_open_story ;;
     type: number
@@ -1635,6 +1678,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__object__nimbus_system_recorded_nimbus_context {
+    sql: ${TABLE}.metrics.object.nimbus_system_recorded_nimbus_context ;;
+    hidden: yes
+  }
+
   dimension: metrics__quantity__addresses_saved_all {
     sql: ${TABLE}.metrics.quantity.addresses_saved_all ;;
     type: number
@@ -1920,6 +1968,65 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__awesomebar_query_time__values {
     sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.values ;;
     hidden: yes
   }
 
@@ -2883,6 +2990,18 @@ view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_di
 }
 
 view: metrics_table__metrics__timing_distribution__awesomebar_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__glean_database_write_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

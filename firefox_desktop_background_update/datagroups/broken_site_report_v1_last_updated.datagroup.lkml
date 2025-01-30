@@ -11,6 +11,6 @@ datagroup: broken_site_report_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'firefox_desktop_background_update_stable'
     AND table_name = 'broken_site_report_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:firefox_desktop_background_update_stable.broken_site_report_v1 is modified."
+  description: "Updates when moz-fx-data-shared-prod.firefox_desktop_background_update_stable.broken_site_report_v1 is modified."
   max_cache_age: "24 hours"
 }

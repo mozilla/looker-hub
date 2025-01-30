@@ -115,5 +115,5 @@ For URL-prefix properties, it will be the full URL of the property definition."
     description: "The day on which the search occurred (Pacific Time)."
   }
 
-  sql_table_name: `moz-fx-data-marketing-prod.google_search_console.search_impressions_by_site` ;;
+  sql_table_name: `mozdata.google_search_console.search_impressions_by_site` ;;
 }

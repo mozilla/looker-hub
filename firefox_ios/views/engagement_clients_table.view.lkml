@@ -35,6 +35,11 @@ view: engagement_clients_table {
     type: string
   }
 
+  dimension: city {
+    sql: ${TABLE}.city ;;
+    type: string
+  }
+
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
@@ -44,6 +49,21 @@ view: engagement_clients_table {
     sql: ${TABLE}.country ;;
     type: string
     map_layer_name: countries
+  }
+
+  dimension: device_manufacturer {
+    sql: ${TABLE}.device_manufacturer ;;
+    type: string
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.device_type ;;
+    type: string
+  }
+
+  dimension: geo_subdivision {
+    sql: ${TABLE}.geo_subdivision ;;
+    type: string
   }
 
   dimension: is_dau {
@@ -91,9 +111,28 @@ view: engagement_clients_table {
     type: string
   }
 
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.paid_vs_organic ;;
+    type: string
+  }
+
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+  }
+
+  dimension_group: adjust_attribution {
+    sql: ${TABLE}.adjust_attribution_timestamp ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
   }
 
   dimension_group: first_seen {

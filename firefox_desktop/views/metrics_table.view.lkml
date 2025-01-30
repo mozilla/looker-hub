@@ -11,6 +11,21 @@ view: metrics_table {
     description: "A JSON string containing any payload properties not present in the schema"
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -324,6 +339,42 @@ view: metrics_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__a11y_always_underline_links {
+    sql: ${TABLE}.metrics.boolean.a11y_always_underline_links ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "A11Y Always Underline Links"
+    description: "Bool tracking if the user has always underline links enabled in firefox. This metric was generated to correspond to the Legacy Telemetry scalar a11y.always_underline_links.
+"
+  }
+
+  dimension: metrics__boolean__a11y_backplate {
+    sql: ${TABLE}.metrics.boolean.a11y_backplate ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "A11Y Backplate"
+    description: "Boolean tracking if the user has the backplate preference enabled or disabled. This metric was generated to correspond to the Legacy Telemetry scalar a11y.backplate.
+"
+  }
+
+  dimension: metrics__boolean__a11y_invert_colors {
+    sql: ${TABLE}.metrics.boolean.a11y_invert_colors ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "A11Y Invert Colors"
+    description: "Boolean tracking if the user has an invert colors OS setting enabled. This metric was generated to correspond to the Legacy Telemetry scalar a11y.invert_colors.
+"
+  }
+
+  dimension: metrics__boolean__a11y_use_system_colors {
+    sql: ${TABLE}.metrics.boolean.a11y_use_system_colors ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "A11Y Use System Colors"
+    description: "Bool tracking if the user has system colors enabled in firefox. This metric was generated to correspond to the Legacy Telemetry scalar a11y.use_system_colors.
+"
+  }
+
   dimension: metrics__boolean__bounce_tracking_protection_enabled_at_startup {
     sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_at_startup ;;
     type: yesno
@@ -342,6 +393,42 @@ view: metrics_table {
 "
   }
 
+  dimension: metrics__boolean__browser_backup_enabled {
+    sql: ${TABLE}.metrics.boolean.browser_backup_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Browser Backup Enabled"
+    description: "True if the BackupService is enabled by default.
+"
+  }
+
+  dimension: metrics__boolean__browser_backup_pswd_encrypted {
+    sql: ${TABLE}.metrics.boolean.browser_backup_pswd_encrypted ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Browser Backup Pswd Encrypted"
+    description: "True if the BackupService is configured to encrypt backups.
+"
+  }
+
+  dimension: metrics__boolean__browser_backup_scheduler_enabled {
+    sql: ${TABLE}.metrics.boolean.browser_backup_scheduler_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Browser Backup Scheduler Enabled"
+    description: "True if the BackupService is configured to automatically create backups in the background.
+"
+  }
+
+  dimension: metrics__boolean__browser_startup_abouthome_cache_shutdownwrite {
+    sql: ${TABLE}.metrics.boolean.browser_startup_abouthome_cache_shutdownwrite ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Browser Startup Abouthome Cache Shutdownwrite"
+    description: "True if the about:home startup cache was written via the AsyncShutdown blocker. This metric was generated to correspond to the Legacy Telemetry scalar browser.startup.abouthome_cache_shutdownwrite.
+"
+  }
+
   dimension: metrics__boolean__browser_ui_proton_enabled {
     sql: ${TABLE}.metrics.boolean.browser_ui_proton_enabled ;;
     type: yesno
@@ -351,12 +438,156 @@ view: metrics_table {
 "
   }
 
+  dimension: metrics__boolean__contentblocking_cryptomining_blocking_enabled {
+    sql: ${TABLE}.metrics.boolean.contentblocking_cryptomining_blocking_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Contentblocking Cryptomining Blocking Enabled"
+    description: "True if cryptominer blocking is enabled globally at startup. This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.cryptomining_blocking_enabled.
+"
+  }
+
+  dimension: metrics__boolean__contentblocking_fingerprinting_blocking_enabled {
+    sql: ${TABLE}.metrics.boolean.contentblocking_fingerprinting_blocking_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Contentblocking Fingerprinting Blocking Enabled"
+    description: "True if fingerprinter blocking is enabled globally at startup. This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.fingerprinting_blocking_enabled.
+"
+  }
+
   dimension: metrics__boolean__cookie_banners_service_detect_only {
     sql: ${TABLE}.metrics.boolean.cookie_banners_service_detect_only ;;
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Cookie Banners Service Detect Only"
     description: "Tracks the value of the cookiebanners.service.detectOnly pref.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_cache {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_cache ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Cache"
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.cache pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_cache.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_cookies {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_cookies ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Cookies"
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.cookies pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_cookies.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_downloads {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_downloads ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Downloads"
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.downloads pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_downloads.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_formdata {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_formdata ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Formdata"
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.formdata pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_formdata.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_history {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_history ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown History"
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.history pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_history.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_offline_apps {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_offline_apps ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Offline Apps"
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.offlineApps pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_offlineApps.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_open_windows {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_open_windows ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Open Windows"
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.openWindows pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_openWindows.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_sessions {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_sessions ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Sessions"
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.sessions pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_sessions.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_site_settings {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_site_settings ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Site Settings"
+    description: "A boolean reporting the value of the privacy.clearOnShutdown.siteSettings pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_clearOnShutdown_siteSettings.
+"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_sanitize_sanitize_on_shutdown {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_sanitize_sanitize_on_shutdown ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Datasanitization Privacy Sanitize Sanitize On Shutdown"
+    description: "A boolean reporting the value of the privacy.sanitize.sanitizeOnShutdown pref. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.privacy_sanitize_sanitizeOnShutdown.
+"
+  }
+
+  dimension: metrics__boolean__devtools_shadowdom_reveal_link_clicked {
+    sql: ${TABLE}.metrics.boolean.devtools_shadowdom_reveal_link_clicked ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Devtools Shadowdom Reveal Link Clicked"
+    description: "Whether the user clicked on any \"reveal\" link. \"reveal\" links are displayed in shadow dom trees in the markup view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.shadowdom.reveal_link_clicked.
+"
+  }
+
+  dimension: metrics__boolean__devtools_shadowdom_shadow_root_displayed {
+    sql: ${TABLE}.metrics.boolean.devtools_shadowdom_shadow_root_displayed ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Devtools Shadowdom Shadow Root Displayed"
+    description: "Whether the markup view displayed any #shadow-root element in the UI. This metric was generated to correspond to the Legacy Telemetry scalar devtools.shadowdom.shadow_root_displayed.
+"
+  }
+
+  dimension: metrics__boolean__devtools_shadowdom_shadow_root_expanded {
+    sql: ${TABLE}.metrics.boolean.devtools_shadowdom_shadow_root_expanded ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Devtools Shadowdom Shadow Root Expanded"
+    description: "Whether the user expanded any #shadow-root element. This metric was generated to correspond to the Legacy Telemetry scalar devtools.shadowdom.shadow_root_expanded.
+"
+  }
+
+  dimension: metrics__boolean__dom_parentprocess_private_window_used {
+    sql: ${TABLE}.metrics.boolean.dom_parentprocess_private_window_used ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Dom Parentprocess Private Window Used"
+    description: "Whether a private browsing window has been used in the session. This metric was generated to correspond to the Legacy Telemetry scalar dom.parentprocess.private_window_used.
 "
   }
 
@@ -389,12 +620,93 @@ Child-process data will likely be absent, or incomplete.
 "
   }
 
+  dimension: metrics__boolean__formautofill_availability {
+    sql: ${TABLE}.metrics.boolean.formautofill_availability ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Formautofill Availability"
+    description: "A boolean sent once per session to represent whether the formautofill is available in the build This metric was generated to correspond to the Legacy Telemetry scalar formautofill.availability.
+"
+  }
+
+  dimension: metrics__boolean__formautofill_os_auth_enabled {
+    sql: ${TABLE}.metrics.boolean.formautofill_os_auth_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Formautofill Os Auth Enabled"
+    description: "Check at startup whether OS Authentication has been enabled for credit cards.
+"
+  }
+
+  dimension: metrics__boolean__genai_chatbot_enabled {
+    sql: ${TABLE}.metrics.boolean.genai_chatbot_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Genai Chatbot Enabled"
+    description: "Indicates if the chatbot feature is enabled.
+"
+  }
+
+  dimension: metrics__boolean__genai_chatbot_shortcuts {
+    sql: ${TABLE}.metrics.boolean.genai_chatbot_shortcuts ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Genai Chatbot Shortcuts"
+    description: "Indicates if the chatbot feature would show shortcuts on selection.
+"
+  }
+
+  dimension: metrics__boolean__genai_chatbot_shortcuts_custom {
+    sql: ${TABLE}.metrics.boolean.genai_chatbot_shortcuts_custom ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Genai Chatbot Shortcuts Custom"
+    description: "Indicates if the chatbot feature would show shortcuts custom input.
+"
+  }
+
+  dimension: metrics__boolean__genai_chatbot_sidebar {
+    sql: ${TABLE}.metrics.boolean.genai_chatbot_sidebar ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Genai Chatbot Sidebar"
+    description: "Indicates if the chatbot feature would open in sidebar.
+"
+  }
+
+  dimension: metrics__boolean__gfx_os_compositor {
+    sql: ${TABLE}.metrics.boolean.gfx_os_compositor ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Gfx Os Compositor"
+    description: "Boolean indicating whether the os compositor is being used by WebRender. Only collected in the first subsession. This metric was generated to correspond to the Legacy Telemetry scalar gfx.os_compositor.
+"
+  }
+
   dimension: metrics__boolean__gfx_status_headless {
     sql: ${TABLE}.metrics.boolean.gfx_status_headless ;;
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Gfx Status Headless"
     description: "Boolean indicated whether graphics is running in headless (no display) mode (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__boolean__gfx_supports_hdr {
+    sql: ${TABLE}.metrics.boolean.gfx_supports_hdr ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Gfx Supports Hdr"
+    description: "Does the hardware support accurate display of HDR content This metric was generated to correspond to the Legacy Telemetry scalar gfx.supports_hdr.
+"
+  }
+
+  dimension: metrics__boolean__gfx_tmp_writable {
+    sql: ${TABLE}.metrics.boolean.gfx_tmp_writable ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Gfx Tmp Writable"
+    description: "Is the system temporary directory writable This metric was generated to correspond to the Legacy Telemetry scalar gfx.tmp_writable.
 "
   }
 
@@ -497,12 +809,111 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__boolean__migration_uninstaller_profile_refresh {
+    sql: ${TABLE}.metrics.boolean.migration_uninstaller_profile_refresh ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Migration Uninstaller Profile Refresh"
+    description: "Set when a profile refresh is initiated from the uninstaller. This metric was generated to correspond to the Legacy Telemetry scalar migration.uninstaller_profile_refresh.
+"
+  }
+
+  dimension: metrics__boolean__networking_http3_enabled {
+    sql: ${TABLE}.metrics.boolean.networking_http3_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Networking Http3 Enabled"
+    description: "True if HTTP3 is enabled at the start of a session. This metric was generated to correspond to the Legacy Telemetry scalar networking.http3_enabled.
+"
+  }
+
   dimension: metrics__boolean__newtab_handoff_preference_enabled {
     sql: ${TABLE}.metrics.boolean.newtab_handoff_preference_enabled ;;
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Newtab Handoff Preference Enabled"
     description: "Records whether the browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar preference is enabled or disabled
+"
+  }
+
+  dimension: metrics__boolean__os_environment_is_admin_without_uac {
+    sql: ${TABLE}.metrics.boolean.os_environment_is_admin_without_uac ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Os Environment Is Admin Without Uac"
+    description: "Indicates that the process is lauched with Admin privileges but without UAC. This metric was generated to correspond to the Legacy Telemetry scalar os.environment.is_admin_without_uac.
+"
+  }
+
+  dimension: metrics__boolean__os_environment_is_kept_in_dock {
+    sql: ${TABLE}.metrics.boolean.os_environment_is_kept_in_dock ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Os Environment Is Kept In Dock"
+    description: "Whether this app was kept in macOS Dock on startup This metric was generated to correspond to the Legacy Telemetry scalar os.environment.is_kept_in_dock.
+"
+  }
+
+  dimension: metrics__boolean__os_environment_is_taskbar_pinned {
+    sql: ${TABLE}.metrics.boolean.os_environment_is_taskbar_pinned ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Os Environment Is Taskbar Pinned"
+    description: "Whether the non-Private Browsing version of this app was pinned to taskbar on startup This metric was generated to correspond to the Legacy Telemetry scalar os.environment.is_taskbar_pinned.
+"
+  }
+
+  dimension: metrics__boolean__os_environment_is_taskbar_pinned_private {
+    sql: ${TABLE}.metrics.boolean.os_environment_is_taskbar_pinned_private ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Os Environment Is Taskbar Pinned Private"
+    description: "Whether the Private Browsing version of this app was pinned to taskbar on startup This metric was generated to correspond to the Legacy Telemetry scalar os.environment.is_taskbar_pinned_private.
+"
+  }
+
+  dimension: metrics__boolean__pictureinpicture_toggle_enabled {
+    sql: ${TABLE}.metrics.boolean.pictureinpicture_toggle_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Pictureinpicture Toggle Enabled"
+    description: "Whether the user has Picture-in-Picture enabled. This metric was generated to correspond to the Legacy Telemetry scalar pictureinpicture.toggle_enabled.
+"
+  }
+
+  dimension: metrics__boolean__policies_is_enterprise {
+    sql: ${TABLE}.metrics.boolean.policies_is_enterprise ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Policies Is Enterprise"
+    description: "Attempt to determine if the user is an enterprise user based on various signals. This metric was generated to correspond to the Legacy Telemetry scalar policies.is_enterprise.
+"
+  }
+
+  dimension: metrics__boolean__preferences_prefs_file_was_invalid {
+    sql: ${TABLE}.metrics.boolean.preferences_prefs_file_was_invalid ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Prefs File Was Invalid"
+    description: "Set to true if a failure occurred reading profile/prefs.js. This metric was generated to correspond to the Legacy Telemetry scalar preferences.prefs_file_was_invalid.
+"
+  }
+
+  dimension: metrics__boolean__primary_password_enabled {
+    sql: ${TABLE}.metrics.boolean.primary_password_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Primary Password Enabled"
+    description: "If a primary-password is enabled for this profile. Set soon after browser startup. Does not update if a primary password is added or removed after startup.
+"
+  }
+
+  dimension: metrics__boolean__pwmgr_os_auth_enabled {
+    sql: ${TABLE}.metrics.boolean.pwmgr_os_auth_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Pwmgr Os Auth Enabled"
+    description: "Check at startup whether OS Authentication has been enabled for passwords.
 "
   }
 
@@ -556,12 +967,66 @@ in browser.
 "
   }
 
+  dimension: metrics__boolean__sslkeylogging_enabled {
+    sql: ${TABLE}.metrics.boolean.sslkeylogging_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Sslkeylogging Enabled"
+    description: "Records whether TLS key logging has been enabled via the environment variable SSLKEYLOGFILE.
+"
+  }
+
+  dimension: metrics__boolean__startup_is_cold {
+    sql: ${TABLE}.metrics.boolean.startup_is_cold ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Startup Is Cold"
+    description: "Whether or not this startup is the first startup since OS reboot (according to our best guess.) This metric was generated to correspond to the Legacy Telemetry scalar startup.is_cold.
+"
+  }
+
   dimension: metrics__boolean__startup_is_restored_by_macos {
     sql: ${TABLE}.metrics.boolean.startup_is_restored_by_macos ;;
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Startup Is Restored By Macos"
     description: "Recorded on every launch of a Firefox install on macOS, with a boolean value indicating whether Firefox was restored by macOS or if it was manually launched by a user.
+"
+  }
+
+  dimension: metrics__boolean__telemetry_data_upload_optin {
+    sql: ${TABLE}.metrics.boolean.telemetry_data_upload_optin ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Telemetry Data Upload Optin"
+    description: "User opted into sending Telemetry data again. This metric was generated to correspond to the Legacy Telemetry scalar telemetry.data_upload_optin.
+"
+  }
+
+  dimension: metrics__boolean__update_suppress_prompts {
+    sql: ${TABLE}.metrics.boolean.update_suppress_prompts ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Update Suppress Prompts"
+    description: "When an update is available and app.update.auto is disabled, a popup is opened prompting the user to download and install the update. The pref app.update.suppressPrompts causes Firefox Nightly to wait up to 7 days before showing the prompt, instead showing a badge and banner in the meantime. It also prevents Nightly from showing update restart prompts, instead showing a badge and banner immediately. This value is set for the users who set this pref to true. This metric was generated to correspond to the Legacy Telemetry scalar update.suppress_prompts.
+"
+  }
+
+  dimension: metrics__boolean__widget_dark_mode {
+    sql: ${TABLE}.metrics.boolean.widget_dark_mode ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Widget Dark Mode"
+    description: "Whether the OS theme is dark. This metric was generated to correspond to the Legacy Telemetry scalar widget.dark_mode.
+"
+  }
+
+  dimension: metrics__counter__apz_scrollwheel_overshoot {
+    sql: ${TABLE}.metrics.counter.apz_scrollwheel_overshoot ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Apz Scrollwheel Overshoot"
+    description: "Count of overshoot events, where the user reverses scrollwheel direction soon after the last scrollwheel input. This metric was generated to correspond to the Legacy Telemetry scalar apz.scrollwheel_overshoot.
 "
   }
 
@@ -599,6 +1064,69 @@ Migrated from Telemetry's `browser.engagement.active_ticks`.
 "
   }
 
+  dimension: metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_added {
+    sql: ${TABLE}.metrics.counter.browser_engagement_bookmarks_toolbar_bookmark_added ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Bookmarks Toolbar Bookmark Added"
+    description: "The count of bookmarks added to the bookmarks toolbar. This counts bookmarks created on the bookmarks toolbar and bookmarks moved to the bookmarks toolbar. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.bookmarks_toolbar_bookmark_added.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_opened {
+    sql: ${TABLE}.metrics.counter.browser_engagement_bookmarks_toolbar_bookmark_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Bookmarks Toolbar Bookmark Opened"
+    description: "The count of bookmarks opened from the Bookmarks Toolbar. This counts bookmarks opened on the toolbar and bookmarks opened from the 'symlinked' Other Bookmarks folder on the Bookmarks Toolbar. It does not count Bookmarks Toolbar bookmarks opened via the Library, Bookmarks Menu, or other UI since the goal is to measure interactions that pass through the toolbar. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.bookmarks_toolbar_bookmark_opened.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_open_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_open_event_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Tab Open Event Count"
+    description: "The count of tab open events per subsession, across all windows, after the session has been restored. This includes tab open events from private windows and from manual session restorations (i.e. after crashes and from about:home), but excludes tabs opened vertically. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_open_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_pinned_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_pinned_event_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Tab Pinned Event Count"
+    description: "The count of tab pinned events per subsession, across all windows, after the session has been restored. This includes tab pinned events from private windows. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_pinned_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_reload_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_reload_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Tab Reload Count"
+    description: "The count of tab reload events by the user after unloaded. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_reload_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_unload_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_unload_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Tab Unload Count"
+    description: "The count of tab unload events by TabUnloader due to a low-memory situation. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_unload_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_unfiltered_uri_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_unfiltered_uri_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Unfiltered Uri Count"
+    description: "The count of the total non-unique URIs visited in a subsession, not restricted to a specific protocol, including page reloads and about:* pages (other than initial pages such as about:blank, ...), after the session has been restored. This does not include background page requests and URIs from embedded pages or private browsing. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.unfiltered_uri_count.
+"
+  }
+
   dimension: metrics__counter__browser_engagement_uri_count {
     sql: ${TABLE}.metrics.counter.browser_engagement_uri_count ;;
     type: number
@@ -610,6 +1138,87 @@ background tabs may also be counted. Private browsing uris are included.
 
 Migrated from Telemetry's
 `browser.engagement.total_uri_count_normal_and_private_mode`.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_uri_count_normal_mode {
+    sql: ${TABLE}.metrics.counter.browser_engagement_uri_count_normal_mode ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Uri Count Normal Mode"
+    description: "The count of the total non-unique http(s) URIs visited in a subsession, including page reloads, after the session has been restored. URIs on minimized or background tabs may also be counted towards this. Private browsing is not included in this count. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.total_uri_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_vertical_tab_open_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_vertical_tab_open_event_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Vertical Tab Open Event Count"
+    description: "The count of tab open events with vertical tabs enabled. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.vertical_tab_open_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_vertical_tab_pinned_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_vertical_tab_pinned_event_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Vertical Tab Pinned Event Count"
+    description: "The count of tab pinned events with vertical tabs enabled. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.vertical_tab_pinned_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_window_open_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_window_open_event_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Window Open Event Count"
+    description: "The count of browser window open events per subsession, after the session has been restored. The count includes private windows and the ones from manual session restorations (i.e. after crashes and from about:home). This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.window_open_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_ui_interaction_all_tabs_panel_dragstart_tab_event_count {
+    sql: ${TABLE}.metrics.counter.browser_ui_interaction_all_tabs_panel_dragstart_tab_event_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Ui Interaction All Tabs Panel Dragstart Tab Event Count"
+    description: "Records a count of how many times a drag event started for a tab within the All Tabs panel. This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.all_tabs_panel_dragstart_tab_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_ui_interaction_textrecognition_error {
+    sql: ${TABLE}.metrics.counter.browser_ui_interaction_textrecognition_error ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Ui Interaction Textrecognition Error"
+    description: "Recorded when text recognition in images fails for some unknown reason. This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.textrecognition_error.
+"
+  }
+
+  dimension: metrics__counter__cert_signature_cache_total {
+    sql: ${TABLE}.metrics.counter.cert_signature_cache_total ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Cert Signature Cache Total"
+    description: "How many certificate signature verifications are performed.
+"
+  }
+
+  dimension: metrics__counter__cert_trust_cache_total {
+    sql: ${TABLE}.metrics.counter.cert_trust_cache_total ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Cert Trust Cache Total"
+    description: "How many certificate trust lookups are performed.
+"
+  }
+
+  dimension: metrics__counter__contentblocking_trackers_blocked_count {
+    sql: ${TABLE}.metrics.counter.contentblocking_trackers_blocked_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Contentblocking Trackers Blocked Count"
+    description: "A count of the number of tracking events blocked. This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.trackers_blocked_count.
 "
   }
 
@@ -627,7 +1236,8 @@ Migrated from Telemetry's
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Crash Submission Failure"
-    description: "The total number of successful calls to navigator.credentials.get."
+    description: "Number of failed crash report submissions
+"
   }
 
   dimension: metrics__counter__crash_submission_pending {
@@ -635,7 +1245,8 @@ Migrated from Telemetry's
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Crash Submission Pending"
-    description: "The total number of successful calls to navigator.credentials.get."
+    description: "Number of pending crash report submissions
+"
   }
 
   dimension: metrics__counter__crash_submission_success {
@@ -643,7 +1254,179 @@ Migrated from Telemetry's
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Crash Submission Success"
-    description: "The total number of successful calls to navigator.credentials.get."
+    description: "Number of successfull crash report submissions
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_accessible_context_menu_opened {
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_accessible_context_menu_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Accessibility Accessible Context Menu Opened"
+    description: "Number of times a context menu was opened for an accessible object in the accessibility tree. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.accessible_context_menu_opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_node_inspected_count {
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_node_inspected_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Accessibility Node Inspected Count"
+    description: "Number of times a DOM node was inspected from within the Accessibility tool. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.node_inspected_count.
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_opened_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Accessibility Opened Count"
+    description: "Number of times the DevTools Accessibility tool has been opened. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.opened_count.
+"
+  }
+
+  dimension: metrics__counter__devtools_accessibility_picker_used_count {
+    sql: ${TABLE}.metrics.counter.devtools_accessibility_picker_used_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Accessibility Picker Used Count"
+    description: "Number of times the picker tool has been used in DevTools Accessibility panel. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.picker_used_count.
+"
+  }
+
+  dimension: metrics__counter__devtools_changesview_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_changesview_opened_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Changesview Opened Count"
+    description: "Number of times the Changes panel has been opened. This metric was generated to correspond to the Legacy Telemetry scalar devtools.changesview.opened_count.
+"
+  }
+
+  dimension: metrics__counter__devtools_grid_gridinspector_opened {
+    sql: ${TABLE}.metrics.counter.devtools_grid_gridinspector_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Grid Gridinspector Opened"
+    description: "Number of times the DevTools grid inspector was opened from the grid view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.grid.gridinspector.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_inspector_node_selection_count {
+    sql: ${TABLE}.metrics.counter.devtools_inspector_node_selection_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Inspector Node Selection Count"
+    description: "Number of times a different node is marked as selected in the Inspector regardless of the cause: context menu, manual selection in markup view, etc. This metric was generated to correspond to the Legacy Telemetry scalar devtools.inspector.node_selection_count.
+"
+  }
+
+  dimension: metrics__counter__devtools_layout_flexboxhighlighter_opened {
+    sql: ${TABLE}.metrics.counter.devtools_layout_flexboxhighlighter_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Layout Flexboxhighlighter Opened"
+    description: "Number of times the DevTools flexbox highlighter was activated from the layout view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.layout.flexboxhighlighter.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_markup_flexboxhighlighter_opened {
+    sql: ${TABLE}.metrics.counter.devtools_markup_flexboxhighlighter_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Markup Flexboxhighlighter Opened"
+    description: "Number of times the DevTools flexbox highlighter was activated from the markup view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.markup.flexboxhighlighter.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_markup_gridinspector_opened {
+    sql: ${TABLE}.metrics.counter.devtools_markup_gridinspector_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Markup Gridinspector Opened"
+    description: "Number of times the DevTools grid inspector was opened from the markup view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.markup.gridinspector.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_markup_scrollable_badge_clicked {
+    sql: ${TABLE}.metrics.counter.devtools_markup_scrollable_badge_clicked ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Markup Scrollable Badge Clicked"
+    description: "Number of times the scrollable inspector badge has been clicked. This metric was generated to correspond to the Legacy Telemetry scalar devtools.markup.scrollable.badge.clicked.
+"
+  }
+
+  dimension: metrics__counter__devtools_responsive_toolbox_opened_first {
+    sql: ${TABLE}.metrics.counter.devtools_responsive_toolbox_opened_first ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Responsive Toolbox Opened First"
+    description: "Number of Responsive Design Mode opens with a toolbox already open. This metric was generated to correspond to the Legacy Telemetry scalar devtools.responsive.toolbox_opened_first.
+"
+  }
+
+  dimension: metrics__counter__devtools_rules_flexboxhighlighter_opened {
+    sql: ${TABLE}.metrics.counter.devtools_rules_flexboxhighlighter_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Rules Flexboxhighlighter Opened"
+    description: "Number of times the DevTools flexbox highlighter was activated from the rules view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.rules.flexboxhighlighter.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_rules_gridinspector_opened {
+    sql: ${TABLE}.metrics.counter.devtools_rules_gridinspector_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Rules Gridinspector Opened"
+    description: "Number of times the DevTools grid inspector was opened from the rules view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.rules.gridinspector.opened.
+"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_build_id_mismatch {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_build_id_mismatch ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Build Id Mismatch"
+    description: "The number of times the about:restartrequired page appeared due to a buildID mismatch between the parent and the content processes. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.buildID_mismatch.
+"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_build_id_mismatch_false_positive {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_build_id_mismatch_false_positive ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Build Id Mismatch False Positive"
+    description: "The number of times a process crashed early but we could verify it was not because of buildID mismatch between the parent and the content processes. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.buildID_mismatch_false_positive.
+"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_os_priority_change_considered {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_os_priority_change_considered ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Os Priority Change Considered"
+    description: "The number of times we've had the opportunity to change content process priority due to a tab switch or a tab being opened. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_change_considered.
+"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_os_priority_lowered {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_os_priority_lowered ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Os Priority Lowered"
+    description: "The number of times a content process has had its OS priority lowered due to only containing background tabs without audible media playing. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_lowered.
+"
+  }
+
+  dimension: metrics__counter__dom_contentprocess_os_priority_raised {
+    sql: ${TABLE}.metrics.counter.dom_contentprocess_os_priority_raised ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dom Contentprocess Os Priority Raised"
+    description: "The number of times a content process has had its OS priority raised due to containing at least one foregrounded tab, or a tab with audible media has started playing in it. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_raised.
+"
   }
 
   dimension: metrics__counter__dotprint_android_dialog_requested {
@@ -661,6 +1444,87 @@ Migrated from Telemetry's
     group_label: "Metrics Counter"
     group_item_label: "Dotprint Requested"
     description: "How many times window.print was requested.
+"
+  }
+
+  dimension: metrics__counter__downloads_file_opened {
+    sql: ${TABLE}.metrics.counter.downloads_file_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Downloads File Opened"
+    description: "The count of how many times files were opened from the download panel. This metric was generated to correspond to the Legacy Telemetry scalar downloads.file_opened.
+"
+  }
+
+  dimension: metrics__counter__downloads_panel_shown {
+    sql: ${TABLE}.metrics.counter.downloads_panel_shown ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Downloads Panel Shown"
+    description: "The count of how many times the downloads panel was shown per session. This metric was generated to correspond to the Legacy Telemetry scalar downloads.panel_shown.
+"
+  }
+
+  dimension: metrics__counter__findbar_find_next {
+    sql: ${TABLE}.metrics.counter.findbar_find_next ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Findbar Find Next"
+    description: "The count of how many times the find next button was used per session. This metric was generated to correspond to the Legacy Telemetry scalar findbar.find_next.
+"
+  }
+
+  dimension: metrics__counter__findbar_find_prev {
+    sql: ${TABLE}.metrics.counter.findbar_find_prev ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Findbar Find Prev"
+    description: "The count of how many times the find previous button was used per session. This metric was generated to correspond to the Legacy Telemetry scalar findbar.find_prev.
+"
+  }
+
+  dimension: metrics__counter__findbar_highlight_all {
+    sql: ${TABLE}.metrics.counter.findbar_highlight_all ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Findbar Highlight All"
+    description: "The count of how many times the \"Highlight All\" button was used in find toolbar. This metric was generated to correspond to the Legacy Telemetry scalar findbar.highlight_all.
+"
+  }
+
+  dimension: metrics__counter__findbar_match_case {
+    sql: ${TABLE}.metrics.counter.findbar_match_case ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Findbar Match Case"
+    description: "The count of how many times the \"Match Case\" button was used in find toolbar. This metric was generated to correspond to the Legacy Telemetry scalar findbar.match_case.
+"
+  }
+
+  dimension: metrics__counter__findbar_match_diacritics {
+    sql: ${TABLE}.metrics.counter.findbar_match_diacritics ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Findbar Match Diacritics"
+    description: "The count of how many times the \"Match Diacritics\" button was used in find toolbar. This metric was generated to correspond to the Legacy Telemetry scalar findbar.match_diacritics.
+"
+  }
+
+  dimension: metrics__counter__findbar_shown {
+    sql: ${TABLE}.metrics.counter.findbar_shown ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Findbar Shown"
+    description: "The count of how many times the \"Find toolbar\" was shown per session. This metric was generated to correspond to the Legacy Telemetry scalar findbar.shown.
+"
+  }
+
+  dimension: metrics__counter__findbar_whole_words {
+    sql: ${TABLE}.metrics.counter.findbar_whole_words ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Findbar Whole Words"
+    description: "The count of how many times the \"Whole Words\" button was used in find toolbar. This metric was generated to correspond to the Legacy Telemetry scalar findbar.whole_words.
 "
   }
 
@@ -709,6 +1573,51 @@ Large or rising number of clients experiencing this indicates we should
 perhaps refactor content child shutdown in FOG to try harder to register
 flush operations.
 Will likely be obsoleted by bug 1641989.
+"
+  }
+
+  dimension: metrics__counter__formautofill_addresses_detected_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_addresses_detected_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Addresses Detected Sections Count"
+    description: "Count at detection time number of address form sections. A single form can contain more than one address form section. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.addresses.detected_sections_count.
+"
+  }
+
+  dimension: metrics__counter__formautofill_addresses_submitted_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_addresses_submitted_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Addresses Submitted Sections Count"
+    description: "Count at submission time number of credit card form sections submitted. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.addresses.submitted_sections_count.
+"
+  }
+
+  dimension: metrics__counter__formautofill_credit_cards_detected_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_credit_cards_detected_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Credit Cards Detected Sections Count"
+    description: "Count at detection time number of credit card form sections. A single form can contain more than one credit card form section. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.creditCards.detected_sections_count.
+"
+  }
+
+  dimension: metrics__counter__formautofill_credit_cards_submitted_sections_count {
+    sql: ${TABLE}.metrics.counter.formautofill_credit_cards_submitted_sections_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Formautofill Credit Cards Submitted Sections Count"
+    description: "Count at submission time number of credit card form sections submitted. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.creditCards.submitted_sections_count.
+"
+  }
+
+  dimension: metrics__counter__gfx_skipped_composites {
+    sql: ${TABLE}.metrics.counter.gfx_skipped_composites ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Gfx Skipped Composites"
+    description: "Number of skipped composites, happening when rendering is too slow to keep up with content. This metric was generated to correspond to the Legacy Telemetry scalar gfx.skipped_composites.
 "
   }
 
@@ -868,6 +1777,42 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__ls_request_recv_cancellation {
+    sql: ${TABLE}.metrics.counter.ls_request_recv_cancellation ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Ls Request Recv Cancellation"
+    description: "Upticks whenever a LS request cancellation message is received. This includes requests for ensuring either LSDatabase or LSObserver in the child.
+"
+  }
+
+  dimension: metrics__counter__ls_request_send_cancellation {
+    sql: ${TABLE}.metrics.counter.ls_request_send_cancellation ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Ls Request Send Cancellation"
+    description: "Upticks whenever a LS request cancellation message is sent. This includes requests for ensuring either LSDatabase or LSObserver.
+"
+  }
+
+  dimension: metrics__counter__mathml_doc_count {
+    sql: ${TABLE}.metrics.counter.mathml_doc_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Mathml Doc Count"
+    description: "The number of documents that contained enabled MathML elements. This metric was generated to correspond to the Legacy Telemetry scalar mathml.doc_count.
+"
+  }
+
+  dimension: metrics__counter__media_element_in_page_count {
+    sql: ${TABLE}.metrics.counter.media_element_in_page_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Media Element In Page Count"
+    description: "The number of times a document hierarchy contained at least one HTMLMediaElement. In addition, the telemetry probe 'MIXED_CONTENT_UNBLOCK_COUNTER' records the total number of loaded top level content documents, which can help us calculate the result of the percentage of documents using media. This metric was generated to correspond to the Legacy Telemetry scalar media.element_in_page_count.
+"
+  }
+
   dimension: metrics__counter__messaging_system_glean_ping_for_ping_failures {
     sql: ${TABLE}.metrics.counter.messaging_system_glean_ping_for_ping_failures ;;
     type: number
@@ -875,6 +1820,69 @@ This does not include deletion-request pings.
     group_item_label: "Messaging System Glean Ping For Ping Failures"
     description: "How often something went awry within
 `AboutWelcome.submitGleanPingForPing`, preventing ping submission.
+"
+  }
+
+  dimension: metrics__counter__netwerk_parent_connect_timeout {
+    sql: ${TABLE}.metrics.counter.netwerk_parent_connect_timeout ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Netwerk Parent Connect Timeout"
+    description: "Counts how often the parent-connect-timeout timer is necessary to clear up EarlyHintPreloader
+"
+  }
+
+  dimension: metrics__counter__network_sso_total_entra_uses {
+    sql: ${TABLE}.metrics.counter.network_sso_total_entra_uses ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Network Sso Total Entra Uses"
+    description: "Counts how often Entra SSO is used (macOS only).
+"
+  }
+
+  dimension: metrics__counter__networking_captive_portal_banner_displayed {
+    sql: ${TABLE}.metrics.counter.networking_captive_portal_banner_displayed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Captive Portal Banner Displayed"
+    description: "Number of times the captive portal banner was displayed in this session. This metric was generated to correspond to the Legacy Telemetry scalar networking.captive_portal_banner_displayed.
+"
+  }
+
+  dimension: metrics__counter__networking_cookie_count_invalid_first_party_partitioned_in_db {
+    sql: ${TABLE}.metrics.counter.networking_cookie_count_invalid_first_party_partitioned_in_db ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Cookie Count Invalid First Party Partitioned In Db"
+    description: "This counts the number of invalid first-party partitioned cookies that don't have the partitioned cookie attribution(CHIPS).
+"
+  }
+
+  dimension: metrics__counter__networking_doh_heuristics_attempts {
+    sql: ${TABLE}.metrics.counter.networking_doh_heuristics_attempts ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Doh Heuristics Attempts"
+    description: "The number of times we ran DoH heuristics. This metric was generated to correspond to the Legacy Telemetry scalar networking.doh_heuristics_attempts.
+"
+  }
+
+  dimension: metrics__counter__networking_doh_heuristics_pass_count {
+    sql: ${TABLE}.metrics.counter.networking_doh_heuristics_pass_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Doh Heuristics Pass Count"
+    description: "The number of times we passed DoH heuristics. This metric was generated to correspond to the Legacy Telemetry scalar networking.doh_heuristics_pass_count.
+"
+  }
+
+  dimension: metrics__counter__networking_os_socket_limit_reached {
+    sql: ${TABLE}.metrics.counter.networking_os_socket_limit_reached ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Os Socket Limit Reached"
+    description: "Counts the number of times the os socket limit was reached. i.e. CanAttachSocket() returned false.
 "
   }
 
@@ -893,6 +1901,51 @@ This does not include deletion-request pings.
     group_label: "Metrics Counter"
     group_item_label: "Networking Set Cookie"
     description: "This counts the number of times we set a cookie. Introduced as a denomenator for measuring CHIPS adoption.
+"
+  }
+
+  dimension: metrics__counter__networking_set_invalid_first_party_partitioned_cookie {
+    sql: ${TABLE}.metrics.counter.networking_set_invalid_first_party_partitioned_cookie ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Set Invalid First Party Partitioned Cookie"
+    description: "This counts the number of times we set an invalid first-party partitioned cookie.
+"
+  }
+
+  dimension: metrics__counter__opaque_response_blocking_cross_origin_opaque_response_count {
+    sql: ${TABLE}.metrics.counter.opaque_response_blocking_cross_origin_opaque_response_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Opaque Response Blocking Cross Origin Opaque Response Count"
+    description: "The number of loads of cross origin opaque resources. This metric was generated to correspond to the Legacy Telemetry scalar opaque.response.blocking.cross_origin_opaque_response_count.
+"
+  }
+
+  dimension: metrics__counter__opaque_response_blocking_javascript_validation_count {
+    sql: ${TABLE}.metrics.counter.opaque_response_blocking_javascript_validation_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Opaque Response Blocking Javascript Validation Count"
+    description: "The number of times we run the JS validator. This metric was generated to correspond to the Legacy Telemetry scalar opaque.response.blocking.javascript_validation_count.
+"
+  }
+
+  dimension: metrics__counter__page_icon_fit_icon_count {
+    sql: ${TABLE}.metrics.counter.page_icon_fit_icon_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Page Icon Fit Icon Count"
+    description: "Number of times the page-icon protocol serves an icon equal to or larger than requested.
+"
+  }
+
+  dimension: metrics__counter__page_icon_small_icon_count {
+    sql: ${TABLE}.metrics.counter.page_icon_small_icon_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Page Icon Small Icon Count"
+    description: "Number of times the page-icon protocol serves an icon smaller than requested.
 "
   }
 
@@ -977,6 +2030,15 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__places_sponsored_visit_no_triggering_url {
+    sql: ${TABLE}.metrics.counter.places_sponsored_visit_no_triggering_url ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Places Sponsored Visit No Triggering Url"
+    description: "Number of sponsored visits that could not find their triggering URL in history. We expect this to be a small number just due to the navigation layer manipulating URLs. A large or growing value may be a concern. This metric was generated to correspond to the Legacy Telemetry scalar places.sponsored_visit_no_triggering_url.
+"
+  }
+
   dimension: metrics__counter__power_cpu_time_bogus_values {
     sql: ${TABLE}.metrics.counter.power_cpu_time_bogus_values ;;
     type: number
@@ -1022,6 +2084,51 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__printing_dialog_opened_via_preview_tm {
+    sql: ${TABLE}.metrics.counter.printing_dialog_opened_via_preview_tm ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Printing Dialog Opened Via Preview Tm"
+    description: "A counter incremented every time a user opens the system print dialog from the print preview interface. This metric was generated to correspond to the Legacy Telemetry scalar printing.dialog_opened_via_preview_tm.
+"
+  }
+
+  dimension: metrics__counter__printing_dialog_via_preview_cancelled_tm {
+    sql: ${TABLE}.metrics.counter.printing_dialog_via_preview_cancelled_tm ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Printing Dialog Via Preview Cancelled Tm"
+    description: "A counter incremented every time a user cancels a system print dialog that they opened from the print preview interface. This metric was generated to correspond to the Legacy Telemetry scalar printing.dialog_via_preview_cancelled_tm.
+"
+  }
+
+  dimension: metrics__counter__printing_preview_cancelled_tm {
+    sql: ${TABLE}.metrics.counter.printing_preview_cancelled_tm ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Printing Preview Cancelled Tm"
+    description: "A counter incremented every time a user exits print preview without printing. This metric was generated to correspond to the Legacy Telemetry scalar printing.preview_cancelled_tm.
+"
+  }
+
+  dimension: metrics__counter__printing_preview_opened_tm {
+    sql: ${TABLE}.metrics.counter.printing_preview_opened_tm ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Printing Preview Opened Tm"
+    description: "A counter incremented every time a user opens print preview. This metric was generated to correspond to the Legacy Telemetry scalar printing.preview_opened_tm.
+"
+  }
+
+  dimension: metrics__counter__printing_silent_print {
+    sql: ${TABLE}.metrics.counter.printing_silent_print ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Printing Silent Print"
+    description: "A counter incremented every time a silent print (a print without a print settings dialog being opened) is initiated.  This happens when extensions invoke ExtensionAPI.tabs.saveAsPDF, for example, or when the print.always_print_silent pref is set. This metric was generated to correspond to the Legacy Telemetry scalar printing.silent_print.
+"
+  }
+
   dimension: metrics__counter__rtcrtpsender_count {
     sql: ${TABLE}.metrics.counter.rtcrtpsender_count ;;
     type: number
@@ -1037,6 +2144,33 @@ This does not include deletion-request pings.
     group_label: "Metrics Counter"
     group_item_label: "Rtcrtpsender Count Setparameters Compat"
     description: "The number of RTCRtpSenders created that use the compatibility mode for setParameters.
+"
+  }
+
+  dimension: metrics__counter__script_preloader_mainthread_recompile {
+    sql: ${TABLE}.metrics.counter.script_preloader_mainthread_recompile ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Script Preloader Mainthread Recompile"
+    description: "How many times we ended up recompiling a script from the script preloader on the main thread. This metric was generated to correspond to the Legacy Telemetry scalar script.preloader.mainthread_recompile.
+"
+  }
+
+  dimension: metrics__counter__sct_signature_cache_total {
+    sql: ${TABLE}.metrics.counter.sct_signature_cache_total ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Sct Signature Cache Total"
+    description: "How many SCT signature verifications are performed.
+"
+  }
+
+  dimension: metrics__counter__security_ui_protectionspopup_smartblockembeds_shown {
+    sql: ${TABLE}.metrics.counter.security_ui_protectionspopup_smartblockembeds_shown ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Security Ui Protectionspopup Smartblockembeds Shown"
+    description: "How many times the SmartBlock placeholders are shown on the page
 "
   }
 
@@ -1066,6 +2200,168 @@ of the shopping experiment.
     group_label: "Metrics Counter"
     group_item_label: "Translations Requests Count"
     description: "The count of translation requests.
+"
+  }
+
+  dimension: metrics__counter__update_no_window_auto_restarts {
+    sql: ${TABLE}.metrics.counter.update_no_window_auto_restarts ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Update No Window Auto Restarts"
+    description: "On macOS, all browser windows can be closed without exiting Firefox. If there is an update pending in that case, and we can install it silently, we restart automatically in order to do so. This probe counts the number of times the browser restarts to silently install a pending update. This metric was generated to correspond to the Legacy Telemetry scalar update.no_window_auto_restarts.
+"
+  }
+
+  dimension: metrics__counter__urlbar_abandonment_count {
+    sql: ${TABLE}.metrics.counter.urlbar_abandonment_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Abandonment Count"
+    description: "A uint recording the number of abandoned engagements in the urlbar. An abandonment occurs when the user begins using the urlbar but stops before completing the engagement. This can happen when the user clicks outside the urlbar to focus a different part of the window. It can also happen when the user switches to another window while the urlbar is focused. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.abandonment.
+"
+  }
+
+  dimension: metrics__counter__urlbar_autofill_deletion {
+    sql: ${TABLE}.metrics.counter.urlbar_autofill_deletion ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Autofill Deletion"
+    description: "A uint recording the deletion count for autofilled string in the urlbar. This occurs when the user deletes whole autofilled string by BACKSPACE or DELETE key while the autofilled string is selected. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.autofill_deletion.
+"
+  }
+
+  dimension: metrics__counter__urlbar_engagement_count {
+    sql: ${TABLE}.metrics.counter.urlbar_engagement_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Engagement Count"
+    description: "A uint recording the number of engagements the user completes in the urlbar.  An engagement occurs when the user navigates to a page using the urlbar, for example by picking a result in the urlbar panel or typing a search term or URL in the urlbar and pressing the enter key. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.engagement.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_about {
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_about ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Impression Autofill About"
+    description: "Counts how many times about-page type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_about.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_adaptive {
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_adaptive ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Impression Autofill Adaptive"
+    description: "Counts how many times adaptive history type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_adaptive.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_origin {
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_origin ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Impression Autofill Origin"
+    description: "Counts how many times origin type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_origin.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_other {
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_other ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Impression Autofill Other"
+    description: "Counts how many times other type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_other.
+"
+  }
+
+  dimension: metrics__counter__urlbar_impression_autofill_url {
+    sql: ${TABLE}.metrics.counter.urlbar_impression_autofill_url ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Impression Autofill Url"
+    description: "Counts how many times url type was autofilled per engagement. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.impression.autofill_url.
+"
+  }
+
+  dimension: metrics__counter__urlbar_persistedsearchterms_revert_by_popup_count {
+    sql: ${TABLE}.metrics.counter.urlbar_persistedsearchterms_revert_by_popup_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Persistedsearchterms Revert By Popup Count"
+    description: "The count of the number of times search terms were removed from the urlbar due to a shown PopupNotification. This event can happen when a user loads a SERP and a PopupNotification is shown, as well as when a user switches away from a tab on a SERP showing a PopupNotification and switches back to it. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.persistedsearchterms.revert_by_popup_count.
+"
+  }
+
+  dimension: metrics__counter__urlbar_persistedsearchterms_view_count {
+    sql: ${TABLE}.metrics.counter.urlbar_persistedsearchterms_view_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Persistedsearchterms View Count"
+    description: "The count of the number of times search terms persisted in the Urlbar. This gets recorded after a user loads a SERP that persists search terms, or switches back to an existing tab that should be showing the persisted search terms in the Urlbar, regardless of whether PopupNotification cleared the search terms from the Urlbar. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.persistedsearchterms.view_count.
+"
+  }
+
+  dimension: metrics__counter__urlbar_trending_block {
+    sql: ${TABLE}.metrics.counter.urlbar_trending_block ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Trending Block"
+    description: "User has blocked seeing trending results. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.trending.block.
+"
+  }
+
+  dimension: metrics__counter__urlbar_unifiedsearchbutton_opened {
+    sql: ${TABLE}.metrics.counter.urlbar_unifiedsearchbutton_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Unifiedsearchbutton Opened"
+    description: "Counts how many times Unified Search Button popup is opened. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.unifiedsearchbutton.opened.
+"
+  }
+
+  dimension: metrics__counter__urlbar_zeroprefix_abandonment {
+    sql: ${TABLE}.metrics.counter.urlbar_zeroprefix_abandonment ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Zeroprefix Abandonment"
+    description: "Counts how many times the zero-prefix urlbar results panel was abandoned. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.zeroprefix.abandonment.
+"
+  }
+
+  dimension: metrics__counter__urlbar_zeroprefix_engagement {
+    sql: ${TABLE}.metrics.counter.urlbar_zeroprefix_engagement ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Zeroprefix Engagement"
+    description: "Counts how many times a result was picked in the zero-prefix urlbar results panel. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.zeroprefix.engagement.
+"
+  }
+
+  dimension: metrics__counter__urlbar_zeroprefix_exposure {
+    sql: ${TABLE}.metrics.counter.urlbar_zeroprefix_exposure ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Urlbar Zeroprefix Exposure"
+    description: "Counts how many times the zero-prefix urlbar results panel was shown to the user. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.zeroprefix.exposure.
+"
+  }
+
+  dimension: metrics__counter__web_notification_insecure_context_permission_request {
+    sql: ${TABLE}.metrics.counter.web_notification_insecure_context_permission_request ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Web Notification Insecure Context Permission Request"
+    description: "Whether we saw a permission request from an insecure context.
+"
+  }
+
+  dimension: metrics__counter__web_push_detected_duplicated_message_ids {
+    sql: ${TABLE}.metrics.counter.web_push_detected_duplicated_message_ids ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Web Push Detected Duplicated Message Ids"
+    description: "Counts the duplicated IDs from the server. The ability to detect depends on the pref `dom.push.maxRecentMessageIDsPerSubscription`.
 "
   }
 
@@ -1109,6 +2405,144 @@ of the shopping experiment.
     description: "The total number of successful calls to navigator.credentials.get."
   }
 
+  dimension: metrics__counter__webrtcdtls_client_handshake_started_counter {
+    sql: ${TABLE}.metrics.counter.webrtcdtls_client_handshake_started_counter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webrtcdtls Client Handshake Started Counter"
+    description: "The number of webrtc transports that have started a DTLS handshake as the client.
+"
+  }
+
+  dimension: metrics__counter__webrtcdtls_server_handshake_started_counter {
+    sql: ${TABLE}.metrics.counter.webrtcdtls_server_handshake_started_counter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webrtcdtls Server Handshake Started Counter"
+    description: "The number of webrtc transports that have started a DTLS handshake as the server.
+"
+  }
+
+  dimension: metrics__custom_distribution__a11y_consumers__count {
+    sql: ${TABLE}.metrics.custom_distribution.a11y_consumers.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution A11Y Consumers"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__a11y_consumers__sum {
+    sql: ${TABLE}.metrics.custom_distribution.a11y_consumers.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution A11Y Consumers"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__a11y_consumers__values {
+    sql: ${TABLE}.metrics.custom_distribution.a11y_consumers.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_local__count {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_local.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Application Reputation Local"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_local__sum {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_local.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Application Reputation Local"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_local__values {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_local.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server__count {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Application Reputation Server"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server__sum {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Application Reputation Server"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server__values {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server_verdict__count {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server_verdict.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Application Reputation Server Verdict"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server_verdict__sum {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server_verdict.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Application Reputation Server Verdict"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__application_reputation_server_verdict__values {
+    sql: ${TABLE}.metrics.custom_distribution.application_reputation_server_verdict.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__count {
+    sql: ${TABLE}.metrics.custom_distribution.bounce_tracking_protection_num_hosts_per_purge_run.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Bounce Tracking Protection Num Hosts Per Purge Run"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__sum {
+    sql: ${TABLE}.metrics.custom_distribution.bounce_tracking_protection_num_hosts_per_purge_run.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Bounce Tracking Protection Num Hosts Per Purge Run"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__values {
+    sql: ${TABLE}.metrics.custom_distribution.bounce_tracking_protection_num_hosts_per_purge_run.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__browser_migration_source_browser__count {
+    sql: ${TABLE}.metrics.custom_distribution.browser_migration_source_browser.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Browser Migration Source Browser"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__browser_migration_source_browser__sum {
+    sql: ${TABLE}.metrics.custom_distribution.browser_migration_source_browser.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Browser Migration Source Browser"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__browser_migration_source_browser__values {
+    sql: ${TABLE}.metrics.custom_distribution.browser_migration_source_browser.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__count {
     sql: ${TABLE}.metrics.custom_distribution.cert_compression_brotli_saved_bytes.count ;;
     type: number
@@ -1146,6 +2580,146 @@ of the shopping experiment.
 
   dimension: metrics__custom_distribution__cert_compression_zlib_saved_bytes__values {
     sql: ${TABLE}.metrics.custom_distribution.cert_compression_zlib_saved_bytes.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zstd_saved_bytes__count {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zstd_saved_bytes.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Zstd Saved Bytes"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zstd_saved_bytes__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zstd_saved_bytes.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cert Compression Zstd Saved Bytes"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cert_compression_zstd_saved_bytes__values {
+    sql: ${TABLE}.metrics.custom_distribution.cert_compression_zstd_saved_bytes.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_cookie_behavior__count {
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_cookie_behavior.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Contentblocking Cookie Behavior"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_cookie_behavior__sum {
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_cookie_behavior.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Contentblocking Cookie Behavior"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_cookie_behavior__values {
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_cookie_behavior.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_query_stripping_param_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_query_stripping_param_count.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Contentblocking Query Stripping Param Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_query_stripping_param_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_query_stripping_param_count.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Contentblocking Query Stripping Param Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_query_stripping_param_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_query_stripping_param_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_storage_access_remaining_days__count {
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_storage_access_remaining_days.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Contentblocking Storage Access Remaining Days"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_storage_access_remaining_days__sum {
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_storage_access_remaining_days.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Contentblocking Storage Access Remaining Days"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_storage_access_remaining_days__values {
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_storage_access_remaining_days.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_strip_on_share_length_decrease__count {
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_strip_on_share_length_decrease.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Contentblocking Strip On Share Length Decrease"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_strip_on_share_length_decrease__sum {
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_strip_on_share_length_decrease.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Contentblocking Strip On Share Length Decrease"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_strip_on_share_length_decrease__values {
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_strip_on_share_length_decrease.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_strip_on_share_params_removed__count {
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_strip_on_share_params_removed.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Contentblocking Strip On Share Params Removed"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_strip_on_share_params_removed__sum {
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_strip_on_share_params_removed.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Contentblocking Strip On Share Params Removed"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_strip_on_share_params_removed__values {
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_strip_on_share_params_removed.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_tracking_protection_shield__count {
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_tracking_protection_shield.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Contentblocking Tracking Protection Shield"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_tracking_protection_shield__sum {
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_tracking_protection_shield.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Contentblocking Tracking Protection Shield"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_tracking_protection_shield__values {
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_tracking_protection_shield.values ;;
     hidden: yes
   }
 
@@ -1229,6 +2803,186 @@ of the shopping experiment.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__cookie_purging_origins_purged__count {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_purging_origins_purged.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Purging Origins Purged"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cookie_purging_origins_purged__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_purging_origins_purged.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Purging Origins Purged"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cookie_purging_origins_purged__values {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_purging_origins_purged.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cookie_purging_trackers_with_user_interaction__count {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_purging_trackers_with_user_interaction.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Purging Trackers With User Interaction"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cookie_purging_trackers_with_user_interaction__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_purging_trackers_with_user_interaction.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Purging Trackers With User Interaction"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cookie_purging_trackers_with_user_interaction__values {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_purging_trackers_with_user_interaction.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_collected__count {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_collected.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Collected"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_collected__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_collected.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Collected"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_collected__values {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_collected.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_slice_during_idle__count {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_slice_during_idle.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Slice During Idle"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_slice_during_idle__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_slice_during_idle.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Slice During Idle"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_slice_during_idle__values {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_slice_during_idle.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_visited_gced__count {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_visited_gced.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Visited Gced"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_visited_gced__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_visited_gced.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Visited Gced"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_visited_gced__values {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_visited_gced.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_visited_ref_counted__count {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_visited_ref_counted.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Visited Ref Counted"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_visited_ref_counted__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_visited_ref_counted.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Visited Ref Counted"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_visited_ref_counted__values {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_visited_ref_counted.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_collected__count {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_collected.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Worker Collected"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_collected__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_collected.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Worker Collected"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_collected__values {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_collected.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_visited_gced__count {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_visited_gced.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Worker Visited Gced"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_visited_gced__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_visited_gced.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Worker Visited Gced"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_visited_gced__values {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_visited_gced.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_visited_ref_counted__count {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_visited_ref_counted.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Worker Visited Ref Counted"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_visited_ref_counted__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_visited_ref_counted.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cycle Collector Worker Visited Ref Counted"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cycle_collector_worker_visited_ref_counted__values {
+    sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_visited_ref_counted.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__extensions_timing_event_page_running_time__count {
     sql: ${TABLE}.metrics.custom_distribution.extensions_timing_event_page_running_time.count ;;
     type: number
@@ -1269,6 +3023,46 @@ of the shopping experiment.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__fontlist_dwritefont_delayedinit_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.fontlist_dwritefont_delayedinit_count.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Fontlist Dwritefont Delayedinit Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__fontlist_dwritefont_delayedinit_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.fontlist_dwritefont_delayedinit_count.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Fontlist Dwritefont Delayedinit Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__fontlist_dwritefont_delayedinit_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.fontlist_dwritefont_delayedinit_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__fontlist_dwritefont_init_problem__count {
+    sql: ${TABLE}.metrics.custom_distribution.fontlist_dwritefont_init_problem.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Fontlist Dwritefont Init Problem"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__fontlist_dwritefont_init_problem__sum {
+    sql: ${TABLE}.metrics.custom_distribution.fontlist_dwritefont_init_problem.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Fontlist Dwritefont Init Problem"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__fontlist_dwritefont_init_problem__values {
+    sql: ${TABLE}.metrics.custom_distribution.fontlist_dwritefont_init_problem.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__geckoview_document_site_origins__count {
     sql: ${TABLE}.metrics.custom_distribution.geckoview_document_site_origins.count ;;
     type: number
@@ -1306,6 +3100,26 @@ of the shopping experiment.
 
   dimension: metrics__custom_distribution__geckoview_per_document_site_origins__values {
     sql: ${TABLE}.metrics.custom_distribution.geckoview_per_document_site_origins.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__geolocation_accuracy__count {
+    sql: ${TABLE}.metrics.custom_distribution.geolocation_accuracy.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Geolocation Accuracy"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__geolocation_accuracy__sum {
+    sql: ${TABLE}.metrics.custom_distribution.geolocation_accuracy.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Geolocation Accuracy"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__geolocation_accuracy__values {
+    sql: ${TABLE}.metrics.custom_distribution.geolocation_accuracy.values ;;
     hidden: yes
   }
 
@@ -1449,6 +3263,286 @@ of the shopping experiment.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__javascript_gc_effectiveness__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_effectiveness.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Effectiveness"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_effectiveness__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_effectiveness.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Effectiveness"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_effectiveness__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_effectiveness.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mark_rate__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mark_rate.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Mark Rate"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mark_rate__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mark_rate.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Mark Rate"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mark_rate__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mark_rate.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mmu_50__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mmu_50.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Mmu 50"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mmu_50__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mmu_50.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Mmu 50"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_mmu_50__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mmu_50.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_nursery_promotion_rate__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_nursery_promotion_rate.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Nursery Promotion Rate"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_nursery_promotion_rate__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_nursery_promotion_rate.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Nursery Promotion Rate"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_nursery_promotion_rate__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_nursery_promotion_rate.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_interruptions__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_interruptions.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Interruptions"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_interruptions__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_interruptions.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Interruptions"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_interruptions__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_interruptions.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_speedup__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_speedup.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Speedup"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_speedup__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_speedup.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Speedup"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_speedup__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_speedup.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_utilization__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_utilization.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Utilization"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_utilization__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_utilization.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Utilization"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_parallel_mark_utilization__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_utilization.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_pretenure_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_pretenure_count.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Pretenure Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_pretenure_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_pretenure_count.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Pretenure Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_pretenure_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_pretenure_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_slice_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_slice_count.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Slice Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_slice_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_slice_count.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Slice Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_slice_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_slice_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_tenured_survival_rate__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_tenured_survival_rate.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Tenured Survival Rate"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_tenured_survival_rate__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_tenured_survival_rate.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Tenured Survival Rate"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_tenured_survival_rate__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_tenured_survival_rate.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zone_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zone_count.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Zone Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zone_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zone_count.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Zone Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zone_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zone_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zones_collected__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zones_collected.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Zones Collected"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zones_collected__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zones_collected.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Javascript Gc Zones Collected"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_zones_collected__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zones_collected.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__memory_phc_slots_allocated__count {
+    sql: ${TABLE}.metrics.custom_distribution.memory_phc_slots_allocated.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Memory Phc Slots Allocated"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__memory_phc_slots_allocated__sum {
+    sql: ${TABLE}.metrics.custom_distribution.memory_phc_slots_allocated.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Memory Phc Slots Allocated"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__memory_phc_slots_allocated__values {
+    sql: ${TABLE}.metrics.custom_distribution.memory_phc_slots_allocated.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__memory_phc_slots_freed__count {
+    sql: ${TABLE}.metrics.custom_distribution.memory_phc_slots_freed.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Memory Phc Slots Freed"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__memory_phc_slots_freed__sum {
+    sql: ${TABLE}.metrics.custom_distribution.memory_phc_slots_freed.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Memory Phc Slots Freed"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__memory_phc_slots_freed__values {
+    sql: ${TABLE}.metrics.custom_distribution.memory_phc_slots_freed.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__network_tls_early_data_bytes_written__count {
     sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.count ;;
     type: number
@@ -1486,6 +3580,26 @@ of the shopping experiment.
 
   dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__values {
     sql: ${TABLE}.metrics.custom_distribution.networking_cookie_access_fixup_diff.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_chips_partition_limit_overflow.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Chips Partition Limit Overflow"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_chips_partition_limit_overflow.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Chips Partition Limit Overflow"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_chips_partition_limit_overflow.values ;;
     hidden: yes
   }
 
@@ -1669,6 +3783,66 @@ of the shopping experiment.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_1_download_throughput_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Download Throughput 100"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_download_throughput_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Download Throughput 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_download_throughput_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput_100.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_download_throughput_10_50__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput_10_50.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Download Throughput 10 50"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_download_throughput_10_50__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput_10_50.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Download Throughput 10 50"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_download_throughput_10_50__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput_10_50.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_download_throughput_50_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput_50_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Download Throughput 50 100"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_download_throughput_50_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput_50_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Download Throughput 50 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_download_throughput_50_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput_50_100.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_1_upload_throughput__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput.count ;;
     type: number
@@ -1769,6 +3943,66 @@ of the shopping experiment.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_2_download_throughput_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Download Throughput 100"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_download_throughput_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Download Throughput 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_download_throughput_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput_100.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_download_throughput_10_50__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput_10_50.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Download Throughput 10 50"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_download_throughput_10_50__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput_10_50.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Download Throughput 10 50"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_download_throughput_10_50__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput_10_50.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_download_throughput_50_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput_50_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Download Throughput 50 100"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_download_throughput_50_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput_50_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Download Throughput 50 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_download_throughput_50_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput_50_100.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_2_upload_throughput__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput.count ;;
     type: number
@@ -1866,6 +4100,146 @@ of the shopping experiment.
 
   dimension: metrics__custom_distribution__networking_http_3_download_throughput__values {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput 100"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_100.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_10_50__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_10_50.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput 10 50"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_10_50__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_10_50.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput 10 50"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_10_50__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_10_50.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_50_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_50_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput 50 100"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_50_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_50_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput 50 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput_50_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_50_100.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_received__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_received.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Ecn Ce Ect0 Ratio Received"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_received__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_received.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Ecn Ce Ect0 Ratio Received"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_received__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_received.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_sent__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_sent.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Ecn Ce Ect0 Ratio Sent"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_sent__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_sent.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Ecn Ce Ect0 Ratio Sent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_sent__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_sent.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_loss_ratio__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Loss Ratio"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_loss_ratio__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Loss Ratio"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_loss_ratio__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_received.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Udp Datagram Segments Received"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_received.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Udp Datagram Segments Received"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_received.values ;;
     hidden: yes
   }
 
@@ -2029,6 +4403,246 @@ of the shopping experiment.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__predictor_base_confidence__count {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_base_confidence.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Base Confidence"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__predictor_base_confidence__sum {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_base_confidence.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Base Confidence"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__predictor_base_confidence__values {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_base_confidence.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__predictor_confidence__count {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_confidence.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Confidence"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__predictor_confidence__sum {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_confidence.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Confidence"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__predictor_confidence__values {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_confidence.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__predictor_global_degradation__count {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_global_degradation.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Global Degradation"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__predictor_global_degradation__sum {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_global_degradation.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Global Degradation"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__predictor_global_degradation__values {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_global_degradation.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__predictor_learn_attempts__count {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_learn_attempts.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Learn Attempts"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__predictor_learn_attempts__sum {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_learn_attempts.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Learn Attempts"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__predictor_learn_attempts__values {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_learn_attempts.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__predictor_predictions_calculated__count {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_predictions_calculated.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Predictions Calculated"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__predictor_predictions_calculated__sum {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_predictions_calculated.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Predictions Calculated"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__predictor_predictions_calculated__values {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_predictions_calculated.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__predictor_prefetch_decision_reason__count {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_prefetch_decision_reason.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Prefetch Decision Reason"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__predictor_prefetch_decision_reason__sum {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_prefetch_decision_reason.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Prefetch Decision Reason"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__predictor_prefetch_decision_reason__values {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_prefetch_decision_reason.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__predictor_prefetch_ignore_reason__count {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_prefetch_ignore_reason.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Prefetch Ignore Reason"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__predictor_prefetch_ignore_reason__sum {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_prefetch_ignore_reason.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Prefetch Ignore Reason"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__predictor_prefetch_ignore_reason__values {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_prefetch_ignore_reason.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__predictor_subresource_degradation__count {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_subresource_degradation.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Subresource Degradation"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__predictor_subresource_degradation__sum {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_subresource_degradation.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Subresource Degradation"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__predictor_subresource_degradation__values {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_subresource_degradation.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__predictor_total_preconnects__count {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_total_preconnects.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Total Preconnects"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__predictor_total_preconnects__sum {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_total_preconnects.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Total Preconnects"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__predictor_total_preconnects__values {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_total_preconnects.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__predictor_total_predictions__count {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_total_predictions.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Total Predictions"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__predictor_total_predictions__sum {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_total_predictions.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Total Predictions"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__predictor_total_predictions__values {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_total_predictions.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__predictor_total_prefetches__count {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_total_prefetches.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Total Prefetches"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__predictor_total_prefetches__sum {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_total_prefetches.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Total Prefetches"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__predictor_total_prefetches__values {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_total_prefetches.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__predictor_total_preresolves__count {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_total_preresolves.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Total Preresolves"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__predictor_total_preresolves__sum {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_total_preresolves.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Predictor Total Preresolves"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__predictor_total_preresolves__values {
+    sql: ${TABLE}.metrics.custom_distribution.predictor_total_preresolves.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__timer_thread_timers_fired_per_wakeup__count {
     sql: ${TABLE}.metrics.custom_distribution.timer_thread_timers_fired_per_wakeup.count ;;
     type: number
@@ -2070,6 +4684,13 @@ of the shopping experiment.
     group_item_label: "Raw Blocklist Mlbf Generation Time"
   }
 
+  dimension: metrics__datetime__raw_blocklist_mlbf_softblocks_generation_time {
+    sql: ${TABLE}.metrics.datetime.raw_blocklist_mlbf_softblocks_generation_time ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Blocklist Mlbf Softblocks Generation Time"
+  }
+
   dimension: metrics__datetime__raw_blocklist_mlbf_stash_time_newest {
     sql: ${TABLE}.metrics.datetime.raw_blocklist_mlbf_stash_time_newest ;;
     type: string
@@ -2089,6 +4710,20 @@ of the shopping experiment.
     type: string
     group_label: "Metrics Datetime"
     group_item_label: "Raw Glean Validation First Run Hour"
+  }
+
+  dimension: metrics__labeled_boolean__a11y_theme {
+    sql: ${TABLE}.metrics.labeled_boolean.a11y_theme ;;
+    hidden: yes
+    description: "OS high contrast or other accessibility theme is enabled. The result is split into keys which represent the values of browser.display.document_color_use: \"default\", \"always\", or \"never\". This metric was generated to correspond to the Legacy Telemetry scalar a11y.theme.
+"
+  }
+
+  dimension: metrics__labeled_boolean__browser_ui_mirror_for_toolbar_widgets {
+    sql: ${TABLE}.metrics.labeled_boolean.browser_ui_mirror_for_toolbar_widgets ;;
+    hidden: yes
+    description: "The widgets in the toolbars. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.toolbar_widgets.
+"
   }
 
   dimension: metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
@@ -2111,10 +4746,59 @@ of the shopping experiment.
     description: "Indicates whether or not migration was successful for each nsIDataStorage."
   }
 
+  dimension: metrics__labeled_boolean__devtools_tool_registered {
+    sql: ${TABLE}.metrics.labeled_boolean.devtools_tool_registered ;;
+    hidden: yes
+    description: "Recorded on enable tool checkbox check/uncheck in Developer Tools options panel. Boolean stating if the tool was enabled or disabled by the user. Keyed by tool id. Current default tools with their id's are defined in https://searchfox.org/mozilla- central/source/devtools/client/definitions.js This metric was generated to correspond to the Legacy Telemetry scalar devtools.tool.registered.
+"
+  }
+
+  dimension: metrics__labeled_boolean__geolocation_linux_provider {
+    sql: ${TABLE}.metrics.labeled_boolean.geolocation_linux_provider ;;
+    hidden: yes
+    description: "Which system provider are we using on Linux
+"
+  }
+
   dimension: metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
     sql: ${TABLE}.metrics.labeled_boolean.media_playback_device_hardware_decoder_support ;;
     hidden: yes
     description: "The results of hardware decoder support for different video codecs. True means that codec can be decoded by hardware on user's device."
+  }
+
+  dimension: metrics__labeled_boolean__media_video_hardware_decoding_support {
+    sql: ${TABLE}.metrics.labeled_boolean.media_video_hardware_decoding_support ;;
+    hidden: yes
+    description: "Record whether hardware decoding is supported for the specific video codec. The key is the type of video codec, eg. video/vp9. This metric was generated to correspond to the Legacy Telemetry scalar media.video_hardware_decoding_support.
+"
+  }
+
+  dimension: metrics__labeled_boolean__media_video_hd_hardware_decoding_support {
+    sql: ${TABLE}.metrics.labeled_boolean.media_video_hd_hardware_decoding_support ;;
+    hidden: yes
+    description: "Record whether hardware decoding is supported for the specific video codec, this only records video in HD (1280*720) or higher resultion. The key is the type of video codec, eg. video/vp9. This metric was generated to correspond to the Legacy Telemetry scalar media.video_hd_hardware_decoding_support.
+"
+  }
+
+  dimension: metrics__labeled_boolean__mediadrm_decryption {
+    sql: ${TABLE}.metrics.labeled_boolean.mediadrm_decryption ;;
+    hidden: yes
+    description: "Record the statuses related with the media decryption.
+"
+  }
+
+  dimension: metrics__labeled_boolean__networking_doh_heuristic_ever_tripped {
+    sql: ${TABLE}.metrics.labeled_boolean.networking_doh_heuristic_ever_tripped ;;
+    hidden: yes
+    description: "True if this heuristic (key) was ever tripped during the session. This metric was generated to correspond to the Legacy Telemetry scalar networking.doh_heuristic_ever_tripped.
+"
+  }
+
+  dimension: metrics__labeled_boolean__os_environment_is_default_handler {
+    sql: ${TABLE}.metrics.labeled_boolean.os_environment_is_default_handler ;;
+    hidden: yes
+    description: "Records whether Firefox was the default handler for particular file types or protocols.  The result is split into keys which represent the file extension or scheme: currently, a subset of the file types Firefox registers to handle, namely \".pdf\" and \"mailto\" as protocol. In the future, more file types may be recorded. This metric was generated to correspond to the Legacy Telemetry scalar os.environment.is_default_handler.
+"
   }
 
   dimension: metrics__labeled_boolean__oskeystore_self_test {
@@ -2123,10 +4807,100 @@ of the shopping experiment.
     description: "Whether or not each step of the OSKeyStore self test succeeded."
   }
 
+  dimension: metrics__labeled_boolean__pdfjs_image_alt_text_edit {
+    sql: ${TABLE}.metrics.labeled_boolean.pdfjs_image_alt_text_edit ;;
+    hidden: yes
+    description: "Stores alt text modal settings for the user.
+"
+  }
+
   dimension: metrics__labeled_boolean__startup_run_from_dmg_install_outcome {
     sql: ${TABLE}.metrics.labeled_boolean.startup_run_from_dmg_install_outcome ;;
     hidden: yes
     description: "The outcome after the app detected that it was running from DMG or an app translocated location and should offer to install and relaunch itself.
+"
+  }
+
+  dimension: metrics__labeled_boolean__widget_ime_name_on_linux {
+    sql: ${TABLE}.metrics.labeled_boolean.widget_ime_name_on_linux ;;
+    hidden: yes
+    description: "Name of active IM (e.g., xim, fcitx, ibus, etc) which was actually set by env on Linux.  Different from Windows and macOS, this value includes non-IME users even though this is recoded when first compositionstart event because dead key is also implemented by IME on Linux. This metric was generated to correspond to the Legacy Telemetry scalar widget.ime_name_on_linux.
+"
+  }
+
+  dimension: metrics__labeled_boolean__widget_ime_name_on_mac {
+    sql: ${TABLE}.metrics.labeled_boolean.widget_ime_name_on_mac ;;
+    hidden: yes
+    description: "Name of IME which was selected by users on macOS.  The value is Input Source ID if non-Japanese IME was open.  Otherwise, if Japanese IME was open, the value is Bundle ID.  Input Source ID includes input mode, but Bundle ID does not include input mode. This metric was generated to correspond to the Legacy Telemetry scalar widget.ime_name_on_mac.
+"
+  }
+
+  dimension: metrics__labeled_boolean__widget_ime_name_on_windows {
+    sql: ${TABLE}.metrics.labeled_boolean.widget_ime_name_on_windows ;;
+    hidden: yes
+    description: "Locale ID and name of IME which was selected by users on Windows. This does NOT collect legacy IMM-IME names since we cannot get readable names and we do not support IMM-IME so aggressively because IME vendors should've already released TIP for TSF for supporting Windows 8 or later completely. This metric was generated to correspond to the Legacy Telemetry scalar widget.ime_name_on_windows.
+"
+  }
+
+  dimension: metrics__labeled_boolean__widget_ime_name_on_windows_inserted_crlf {
+    sql: ${TABLE}.metrics.labeled_boolean.widget_ime_name_on_windows_inserted_crlf ;;
+    hidden: yes
+    description: "Same data as ime_name_on_windows, but only collecting IME names which inserted CRLF to check whether the feature works. This metric was generated to correspond to the Legacy Telemetry scalar widget.ime_name_on_windows_inserted_crlf.
+"
+  }
+
+  dimension: metrics__labeled_boolean__widget_pointing_devices {
+    sql: ${TABLE}.metrics.labeled_boolean.widget_pointing_devices ;;
+    hidden: yes
+    description: "Whether the system has any matching pointing device for each label.
+"
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_binary_archive {
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_binary_archive ;;
+    hidden: yes
+    description: "Whether a binary file examined by download protection is one of the common archive formats.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_BINARY_ARCHIVE.
+"
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_binary_type {
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_binary_type ;;
+    hidden: yes
+    description: "Whether or not the file examined by download protection is a binary type (or it's not possible to tell because the filename is missing).
+This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_BINARY_TYPE.
+"
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_reason {
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_reason ;;
+    hidden: yes
+    description: "The reason application reputation service blocks or allows the download.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_REASON.
+"
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_remote_lookup_timeout {
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_remote_lookup_timeout ;;
+    hidden: yes
+    description: "Recorded when application reputation remote lookup is performed, `true` is recorded if the lookup times out.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram APPLICATION_REPUTATION_REMOTE_LOOKUP_TIMEOUT.
+"
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_server_2 {
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_server_2 ;;
+    hidden: yes
+    description: "Network status of the application reputation remote lookup
+This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_SERVER_2.
+"
+  }
+
+  dimension: metrics__labeled_counter__application_reputation_should_block {
+    sql: ${TABLE}.metrics.labeled_counter.application_reputation_should_block ;;
+    hidden: yes
+    description: "Overall (local or remote) application reputation verdict (shouldBlock=false is OK).
+This metric was generated to correspond to the Legacy Telemetry boolean histogram APPLICATION_REPUTATION_SHOULD_BLOCK.
 "
   }
 
@@ -2263,10 +5037,566 @@ of the shopping experiment.
 "
   }
 
+  dimension: metrics__labeled_counter__bfcache_combo {
+    sql: ${TABLE}.metrics.labeled_counter.bfcache_combo ;;
+    hidden: yes
+    description: "The common combinations of BFCacheStatus when we determine whether the page can be BFCached or not; If it's BFCached, we record BFCache_Success; Success_Not_Toplevel represents the number of not the only top level document in BrowsingContextGroup's documents that are BFCached, and BFCache_Success includes Success_Not_Toplevel; If it's not and it falls under common failure reasons combinations, we record the corresponding combination; Otherwise, we record Other to indicate this is not a common failure
+This metric was generated to correspond to the Legacy Telemetry categorical histogram BFCACHE_COMBO.
+"
+  }
+
+  dimension: metrics__labeled_counter__bfcache_page_restored {
+    sql: ${TABLE}.metrics.labeled_counter.bfcache_page_restored ;;
+    hidden: yes
+    description: "Whether bfcache is used when loading a page from session history
+This metric was generated to correspond to the Legacy Telemetry boolean histogram BFCACHE_PAGE_RESTORED.
+"
+  }
+
   dimension: metrics__labeled_counter__bounce_tracking_protection_purge_count {
     sql: ${TABLE}.metrics.labeled_counter.bounce_tracking_protection_purge_count ;;
     hidden: yes
     description: "Counts how often we purge trackers. Giving a high level overview about the effectivness of bounce tracking protection. Allows determining error rate with failure/success label. When in dry mode, we count the purges that would have happened under the dry label.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_about_home {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_about_home ;;
+    hidden: yes
+    description: "The count URI loads triggered in a subsession from about:home, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.about_home.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_about_newtab {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_about_newtab ;;
+    hidden: yes
+    description: "The count URI loads triggered in a subsession from about:newtab, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.about_newtab.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_contextmenu {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_contextmenu ;;
+    hidden: yes
+    description: "The count URI loads triggered in a subsession from the contextmenu, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.contextmenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_searchbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_searchbar ;;
+    hidden: yes
+    description: "The count URI loads triggered in a subsession from the searchbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.searchbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar ;;
+    hidden: yes
+    description: "The count URI loads triggered in a subsession from the urlbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar_handoff {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar_handoff ;;
+    hidden: yes
+    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_handoff.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar_persisted {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar_persisted ;;
+    hidden: yes
+    description: "The count of URI loads triggered in a subsession from the urlbar after the search term was shown in the urlbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_persisted.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar_searchmode {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar_searchmode ;;
+    hidden: yes
+    description: "The count URI loads triggered in a subsession from the urlbar's search mode, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_searchmode.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_webextension {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_webextension ;;
+    hidden: yes
+    description: "The count URI loads triggered in a subsession from a webextension. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.webextension.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_sessionrestore_interstitial {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_sessionrestore_interstitial ;;
+    hidden: yes
+    description: "Whether we show about:sessionrestore or not. Split by key, which indicates why we showed the item or not. Specifically, 'deferred_restore' means we didn't autorestore and thus didn't show the interstitial; 'autorestore' indicates we autorestored without showing the interstitial. 'shown_old_session', 'shown_only_about_welcomeback', 'shown_many_crashes', 'shown_many_crashes_old_session' all indicate we did show the interstitial because of a crash, and the text after 'shown' indicates what secondary reason there was to show this page (as we don't show it for 'just' one crash). This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.sessionrestore_interstitial.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_migration_entry_point_categorical {
+    sql: ${TABLE}.metrics.labeled_counter.browser_migration_entry_point_categorical ;;
+    hidden: yes
+    description: "Where the migration wizard was entered from.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram FX_MIGRATION_ENTRY_POINT_CATEGORICAL.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_about_home {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_about_home ;;
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from about:home. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source- docs.mozilla.org/browser/search/telemetry.html#browser-search- content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.about_home.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_about_newtab {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_about_newtab ;;
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from about:newtab. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.about_newtab.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_contextmenu {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_contextmenu ;;
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from the context menu. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.contextmenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_reload {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_reload ;;
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was loaded by reloading the page. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.reload.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_searchbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_searchbar ;;
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from the search bar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.searchbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_system {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_system ;;
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from the system, e.g. command line. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.system.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_tabhistory {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_tabhistory ;;
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was loaded from the tab history. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.tabhistory.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_unknown {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_unknown ;;
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from a place not categorized by the other scalars. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.unknown.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_urlbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_urlbar ;;
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from the urlbar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source- docs.mozilla.org/browser/search/telemetry.html#browser-search- content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_urlbar_handoff {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_urlbar_handoff ;;
+    hidden: yes
+    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar_handoff.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_urlbar_persisted {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_urlbar_persisted ;;
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from the urlbar after the search term was shown in the urlbar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar_persisted.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_urlbar_searchmode {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_urlbar_searchmode ;;
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from the urlbar in search mode. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar_searchmode.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_webextension {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_webextension ;;
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from a webextension. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.webextension.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_about_home {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_about_home ;;
+    hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from the about:home. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.about_home.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_about_newtab {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_about_newtab ;;
+    hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from the about:newtab. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.about_newtab.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_contextmenu {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_contextmenu ;;
+    hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from the context menu. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.contextmenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_reload {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_reload ;;
+    hidden: yes
+    description: "Records counts for in-content searches where the search was loaded by reloading the page. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.reload.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_searchbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_searchbar ;;
+    hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from the search bar. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.searchbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_system {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_system ;;
+    hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from the system, e.g. command line. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.system.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_tabhistory {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_tabhistory ;;
+    hidden: yes
+    description: "Records counts for in-content searches where the search was loaded from the tab history. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.tabhistory.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_unknown {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_unknown ;;
+    hidden: yes
+    description: "Records counts for in-content searches where the search was started from a place that could not be determined or not categorized by the other scalars. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.unknown.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_urlbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_urlbar ;;
+    hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from the urlbar. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.urlbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_urlbar_handoff {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_urlbar_handoff ;;
+    hidden: yes
+    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.urlbar_handoff.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_urlbar_persisted {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_urlbar_persisted ;;
+    hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from the urlbar after the search term was shown in the urlbar. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.urlbar_persisted.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_urlbar_searchmode {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_urlbar_searchmode ;;
+    hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from the urlbar in search mode. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.urlbar_searchmode.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_webextension {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_webextension ;;
+    hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from a webextension. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.webextension.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_about_home {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_about_home ;;
+    hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from about:home. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.about_home.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_about_newtab {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_about_newtab ;;
+    hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from about:newtab. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.about_newtab.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_contextmenu {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_contextmenu ;;
+    hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the context menu. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.contextmenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_reload {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_reload ;;
+    hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was loaded by reloading the page. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.reload.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_searchbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_searchbar ;;
+    hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the search bar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.searchbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_system {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_system ;;
+    hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the system, e.g. command line. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.system.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_tabhistory {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_tabhistory ;;
+    hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was loaded from the tab history. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.tabhistory.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_unknown {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_unknown ;;
+    hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from a place not categorized by the other scalars. The key format is ‘<provider>:<tagged|organic>’ See https://firefox- source-docs.mozilla.org/browser/search/telemetry.html#browser- search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.unknown.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_urlbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_urlbar ;;
+    hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the urlbar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.urlbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_urlbar_handoff {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_urlbar_handoff ;;
+    hidden: yes
+    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.urlbar_handoff.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_urlbar_persisted {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_urlbar_persisted ;;
+    hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the urlbar after the search term was shown in the urlbar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.urlbar_persisted.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_urlbar_searchmode {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_urlbar_searchmode ;;
+    hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the urlbar in search mode. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.urlbar_searchmode.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_webextension {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_webextension ;;
+    hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from a webextension. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source- docs.mozilla.org/browser/search/telemetry.html#browser-search- content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.webextension.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_customized_widgets {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_customized_widgets ;;
+    hidden: yes
+    description: "Records when widgets are added, removed or moved in the UI. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.customized_widgets.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_all_tabs_panel_entrypoint {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_all_tabs_panel_entrypoint ;;
+    hidden: yes
+    description: "Records a count of how many times the All Tabs Panel was opened, keyed on a string describing the entrypoint. This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.all_tabs_panel_entrypoint.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_app_menu {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_app_menu ;;
+    hidden: yes
+    description: "Records a count of interactions with items in the app menu. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.app_menu.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_bookmarks_bar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_bookmarks_bar ;;
+    hidden: yes
+    description: "Records a count of interactions with items in the bookmarks bar. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.bookmarks_bar.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_content_context {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_content_context ;;
+    hidden: yes
+    description: "Records a count of interactions with items in the content context menu. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.content_context.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_keyboard {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_keyboard ;;
+    hidden: yes
+    description: "Records a count of interactions with keyboard shortcuts. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.keyboard.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_menu_bar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_menu_bar ;;
+    hidden: yes
+    description: "Records a count of interactions with items in the menu bar. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.menu_bar.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_nav_bar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_nav_bar ;;
+    hidden: yes
+    description: "Records a count of interactions with items in the nav bar. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.nav_bar.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_overflow_menu {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_overflow_menu ;;
+    hidden: yes
+    description: "Records a count of interactions with items in the overflow menu. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.overflow_menu.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_pageaction_panel {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_pageaction_panel ;;
+    hidden: yes
+    description: "Records a count of interactions with page action items in the panel. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.pageaction_panel.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_pageaction_urlbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_pageaction_urlbar ;;
+    hidden: yes
+    description: "Records a count of interactions with page action items in the url bar. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.pageaction_urlbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_pinned_overflow_menu {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_pinned_overflow_menu ;;
+    hidden: yes
+    description: "Records a count of interactions with items in the pinned area of the overflow menu. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.pinned_overflow_menu.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_containers ;;
+    hidden: yes
+    description: "Records the items interacted with in the Containers section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneContainers.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_experimental {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_experimental ;;
+    hidden: yes
+    description: "Records the items interacted with in the Experimental section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneExperimental.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_general {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_general ;;
+    hidden: yes
+    description: "Records the items interacted with in the General section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneGeneral.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_home {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_home ;;
+    hidden: yes
+    description: "Records the items interacted with in the Home section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneHome.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_more_from_mozilla {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_more_from_mozilla ;;
+    hidden: yes
+    description: "Records the items interacted with in the More From Mozilla section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneMoreFromMozilla.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_privacy {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_privacy ;;
+    hidden: yes
+    description: "Records the items interacted with in the Privacy section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_panePrivacy.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_search {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_search ;;
+    hidden: yes
+    description: "Records the items interacted with in the Search section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneSearch.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_search_results {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_search_results ;;
+    hidden: yes
+    description: "Records the items interacted with in the Search results section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneSearchResults.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_sync {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_sync ;;
+    hidden: yes
+    description: "Records the items interacted with in the Sync section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneSync.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_unknown {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_unknown ;;
+    hidden: yes
+    description: "Records the items interacted with in any other section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneUnknown.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_tabs_bar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_tabs_bar ;;
+    hidden: yes
+    description: "Records a count of interactions with items in the tab bar. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.tabs_bar.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_tabs_context {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_tabs_context ;;
+    hidden: yes
+    description: "Records a count of interactions with items in the tab context menu. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.tabs_context.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_tabs_context_entrypoint {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_tabs_context_entrypoint ;;
+    hidden: yes
+    description: "Records a count for each entrypoint (the container of the trigger node) when an item from the tabs context menu is selected. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.tabs_context_entrypoint.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_unified_extensions_area {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_unified_extensions_area ;;
+    hidden: yes
+    description: "Records a count of interactions with items in the Unified Extensions area. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.unified_extensions_area.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_vertical_tabs_container {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_vertical_tabs_container ;;
+    hidden: yes
+    description: "Records a count of interactions with items in the vertical tab bar. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.vertical_tabs_container.
 "
   }
 
@@ -2282,10 +5612,24 @@ of the shopping experiment.
     description: "The number of times each certificate compression algorithm was used."
   }
 
+  dimension: metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms {
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_cert_revocation_mechanisms ;;
+    hidden: yes
+    description: "Which revocation checking mechanisms were used in a TLS handshake?
+"
+  }
+
   dimension: metrics__labeled_counter__cert_verifier_crlite_status {
     sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_status ;;
     hidden: yes
     description: "Counts the number of times different CRLite statuses were returned.
+"
+  }
+
+  dimension: metrics__labeled_counter__cert_verifier_crlite_vs_ocsp_result {
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_vs_ocsp_result ;;
+    hidden: yes
+    description: "The OCSP result when CRLite claims a certificate is revoked.
 "
   }
 
@@ -2314,6 +5658,92 @@ of the shopping experiment.
     sql: ${TABLE}.metrics.labeled_counter.codec_stats_video_preferred_codec ;;
     hidden: yes
     description: "Counts the preferred video codec being signaled to us to identify preferred video codec.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_cryptominers_blocked_count {
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_cryptominers_blocked_count ;;
+    hidden: yes
+    description: "A count of the status of cryptominer blocking per top level page load. ('pageLoad' = There was a page load, 'blocked' = at least one cryptominer was blocked, 'allowed' = at least one cryptominer was detected and allowed.) Note, pageLoad is used as a baseline measurement.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram CRYPTOMINERS_BLOCKED_COUNT.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_email_tracker_count {
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_email_tracker_count ;;
+    hidden: yes
+    description: "A count of the classified email trackers. ('base_normal' = The classified email tracker is in base category and loaded under a normal site, 'content_normal' = The classified email tracker is in content category and loaded under a normal site, 'base_email_webapp' = The classified email tracker is in base category and loaded under a known email webapp, 'content_email_webapp' = The classified email tracker is in content category and loaded under a known email webapp.)
+This metric was generated to correspond to the Legacy Telemetry categorical histogram EMAIL_TRACKER_COUNT.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_fingerprinters_blocked_count {
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_fingerprinters_blocked_count ;;
+    hidden: yes
+    description: "A count of the status of fingerprinter blocking per top level page load. ('pageLoad' = There was a page load, 'blocked' = at least one fingerprinter was blocked, 'allowed' = at least one fingerprinter was detected and allowed.) Note, pageLoad is used as a baseline measurement.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram FINGERPRINTERS_BLOCKED_COUNT.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_font_fingerprinting_per_tab {
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_font_fingerprinting_per_tab ;;
+    hidden: yes
+    description: "Whether a probable font fingerprinting attempt was detected
+This metric was generated to correspond to the Legacy Telemetry boolean histogram FONT_FINGERPRINTING_PER_TAB.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_query_stripping_count {
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_query_stripping_count ;;
+    hidden: yes
+    description: "A count of the query stripping. ('Navigation' = There was a top-level loading via navigation, 'Redirect' = There was a top-level loading via redirect, 'StripForNavigation' = There was a stripping happened for a top-level navigation, 'StripForRedirect' = There was a stripping happened for a top-level redirect.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram QUERY_STRIPPING_COUNT.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_query_stripping_count_by_param {
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_query_stripping_count_by_param ;;
+    hidden: yes
+    description: "Counts how often specific query parameters are stripped.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram QUERY_STRIPPING_COUNT_BY_PARAM.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_storage_access_granted_count {
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_storage_access_granted_count ;;
+    hidden: yes
+    description: "A count of the granted storage access. ('StorageGranted' = There was a storage access granted, 'StorageAccessAPI' = the storage access was granted by the storage access API, 'OpenerAfterUserInteraction' = the storage access was granted due to the heuristic 'OpenerAfterUserInteraction', 'Opener' = the storage access was granted due to the heuristic 'Opener', 'Redirect' = the storage access was granted due to the heuristic 'Redirect', 'RedirectTracker' = the storage access was granted due to the heuristic 'RedirectTracker'.) Note, StorageGranted is used as a baseline measurement, which should be the sum of all other measurements.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram STORAGE_ACCESS_GRANTED_COUNT.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_tracking_protection_enabled {
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_tracking_protection_enabled ;;
+    hidden: yes
+    description: "True if tracking protection is enabled globally at startup.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram TRACKING_PROTECTION_ENABLED.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_tracking_protection_pbm_disabled {
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_tracking_protection_pbm_disabled ;;
+    hidden: yes
+    description: "True if tracking protection in Private Browsing mode is disabled at startup.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram TRACKING_PROTECTION_PBM_DISABLED.
+"
+  }
+
+  dimension: metrics__labeled_counter__contextual_services_topsites_click {
+    sql: ${TABLE}.metrics.labeled_counter.contextual_services_topsites_click ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user has clicked on the sponsored TopSites on the newtab page. The key is a combination of the source and the placement of the TopSites tile (1-based). such as 'urlbar_1', 'newtab_2'. This metric was generated to correspond to the Legacy Telemetry scalar contextual.services.topsites.click.
+"
+  }
+
+  dimension: metrics__labeled_counter__contextual_services_topsites_impression {
+    sql: ${TABLE}.metrics.labeled_counter.contextual_services_topsites_impression ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user has viewed the sponsored TopSites on the newtab page. The key is a combination of the source and the placement of the TopSites tile (1-based). such as 'urlbar_1', 'newtab_2'. This metric was generated to correspond to the Legacy Telemetry scalar contextual.services.topsites.impression.
 "
   }
 
@@ -2352,10 +5782,50 @@ of the shopping experiment.
 "
   }
 
+  dimension: metrics__labeled_counter__crash_submission_channel_status {
+    sql: ${TABLE}.metrics.labeled_counter.crash_submission_channel_status ;;
+    hidden: yes
+    description: "Collecting XHR channel status on error code when statusCode == 0.
+"
+  }
+
   dimension: metrics__labeled_counter__crash_submission_collector_errors {
     sql: ${TABLE}.metrics.labeled_counter.crash_submission_collector_errors ;;
     hidden: yes
-    description: "The number of times each certificate compression algorithm was used."
+    description: "Amount and error name reported when performing crash submission.
+"
+  }
+
+  dimension: metrics__labeled_counter__cycle_collector_finish_igc {
+    sql: ${TABLE}.metrics.labeled_counter.cycle_collector_finish_igc ;;
+    hidden: yes
+    description: "Cycle collection finished an incremental GC
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CYCLE_COLLECTOR_FINISH_IGC.
+"
+  }
+
+  dimension: metrics__labeled_counter__cycle_collector_need_gc {
+    sql: ${TABLE}.metrics.labeled_counter.cycle_collector_need_gc ;;
+    hidden: yes
+    description: "Needed garbage collection before cycle collection.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CYCLE_COLLECTOR_NEED_GC.
+"
+  }
+
+  dimension: metrics__labeled_counter__cycle_collector_sync_skippable {
+    sql: ${TABLE}.metrics.labeled_counter.cycle_collector_sync_skippable ;;
+    hidden: yes
+    description: "Cycle collection synchronously ran forget skippable
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CYCLE_COLLECTOR_SYNC_SKIPPABLE.
+"
+  }
+
+  dimension: metrics__labeled_counter__cycle_collector_worker_need_gc {
+    sql: ${TABLE}.metrics.labeled_counter.cycle_collector_worker_need_gc ;;
+    hidden: yes
+    description: "Needed garbage collection before cycle collection in a worker.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CYCLE_COLLECTOR_WORKER_NEED_GC.
+"
   }
 
   dimension: metrics__labeled_counter__dap_report_generation_status {
@@ -2376,6 +5846,84 @@ of the shopping experiment.
     sql: ${TABLE}.metrics.labeled_counter.data_storage_entries ;;
     hidden: yes
     description: "Counts the number of entries stored in each nsIDataStorage."
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_accessible_context_menu_item_activated {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_accessible_context_menu_item_activated ;;
+    hidden: yes
+    description: "Number of times a context menu item for an accessible object was activated (with mouse or keyboard) from the context menu opened in the accessibility tree. Keyed by the id of the context menu item. This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.accessible_context_menu_item_activated.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_audit_activated {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_audit_activated ;;
+    hidden: yes
+    description: "Number of times accessibility audit was activated (with mouse or keyboard) from the accessibility panel's toolbar. Keyed by the audit filter type (e.g. \"CONTRAST\"). This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.audit_activated.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_select_accessible_for_node {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_select_accessible_for_node ;;
+    hidden: yes
+    description: "Number of times an accessible object was inspected from outside the Accessibility tool (navigation to Accessibility panel). Keyed by the source of user action (inspector context menu, browser context menu, etc). This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.select_accessible_for_node.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_accessibility_simulation_activated {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_simulation_activated ;;
+    hidden: yes
+    description: "Number of times accessibility simulation was activated (with mouse or keyboard) from the accessibility panel's toolbar. Keyed by the simulation type (e.g. \"DEUTERANOPIA\"). This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.simulation_activated.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_current_theme {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_current_theme ;;
+    hidden: yes
+    description: "Number of times DevTools was opened, keyed by theme. This metric was generated to correspond to the Legacy Telemetry scalar devtools.current_theme.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_inspector_three_pane_enabled {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_inspector_three_pane_enabled ;;
+    hidden: yes
+    description: "Number of times the DevTools inspector was opened with the 3 pane inspector enabled, keyed by true/false. This metric was generated to correspond to the Legacy Telemetry scalar devtools.inspector.three_pane_enabled.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_responsive_open_trigger {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_responsive_open_trigger ;;
+    hidden: yes
+    description: "Number of Responsive Design Mode opens keyed by the UI entry point used. This metric was generated to correspond to the Legacy Telemetry scalar devtools.responsive.open_trigger.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_toolbox_tabs_reordered {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_toolbox_tabs_reordered ;;
+    hidden: yes
+    description: "Number of times the DevTools tab was reordered. Keyed by tab's id. This metric was generated to correspond to the Legacy Telemetry scalar devtools.toolbox.tabs_reordered.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_tooltip_shown {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_tooltip_shown ;;
+    hidden: yes
+    description: "Number of times a tooltip was shown, keyed by tooltip type. Currently supported types are \"image\", \"font-family\", \"inactive- css\", \"css-compatibility\", \"css-query-container\" and \"variable.\" This metric was generated to correspond to the Legacy Telemetry scalar devtools.tooltip.shown.
+"
+  }
+
+  dimension: metrics__labeled_counter__dom_contentprocess_launch_is_sync {
+    sql: ${TABLE}.metrics.labeled_counter.dom_contentprocess_launch_is_sync ;;
+    hidden: yes
+    description: "Whether a content process was launched synchronously (unnecessarily delaying UI response).
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CONTENT_PROCESS_LAUNCH_IS_SYNC.
+"
+  }
+
+  dimension: metrics__labeled_counter__dom_parentprocess_process_launch_errors {
+    sql: ${TABLE}.metrics.labeled_counter.dom_parentprocess_process_launch_errors ;;
+    hidden: yes
+    description: "Collect precise set of error code and calling site upon process creation failure path. This metric was generated to correspond to the Legacy Telemetry scalar dom.parentprocess.process_launch_errors.
+"
   }
 
   dimension: metrics__labeled_counter__dotprint_failure {
@@ -2443,10 +5991,40 @@ Uses a single label due to only labeled counters being supported
 "
   }
 
+  dimension: metrics__labeled_counter__fontlist_bad_fallback_font {
+    sql: ${TABLE}.metrics.labeled_counter.fontlist_bad_fallback_font ;;
+    hidden: yes
+    description: "system fallback font can't be used
+This metric was generated to correspond to the Legacy Telemetry boolean histogram BAD_FALLBACK_FONT.
+"
+  }
+
+  dimension: metrics__labeled_counter__fontlist_font_cache_hit {
+    sql: ${TABLE}.metrics.labeled_counter.fontlist_font_cache_hit ;;
+    hidden: yes
+    description: "font cache hit
+This metric was generated to correspond to the Legacy Telemetry boolean histogram FONT_CACHE_HIT.
+"
+  }
+
   dimension: metrics__labeled_counter__formautofill_form_submission_heuristic {
     sql: ${TABLE}.metrics.labeled_counter.formautofill_form_submission_heuristic ;;
     hidden: yes
     description: "The heuristic that detected the form submission."
+  }
+
+  dimension: metrics__labeled_counter__geolocation_fallback {
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_fallback ;;
+    hidden: yes
+    description: "Whether the default provider falled back to NetworkGeolocationProvider.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_request_result {
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_request_result ;;
+    hidden: yes
+    description: "The result for each geolocation request. Success label will only happen once for each request, even if it's a watch request.
+"
   }
 
   dimension: metrics__labeled_counter__gfx_content_frame_time_reason {
@@ -2500,7 +6078,7 @@ though the counts appear in the next successfully sent `metrics` ping.
   dimension: metrics__labeled_counter__glean_validation_pings_submitted {
     sql: ${TABLE}.metrics.labeled_counter.glean_validation_pings_submitted ;;
     hidden: yes
-    description: "A count of the pings submitted, by ping type.
+    description: "A count of the built-in pings submitted, by ping type.
 
 This metric appears in both the metrics and baseline pings.
 
@@ -2508,6 +6086,9 @@ This metric appears in both the metrics and baseline pings.
   the last metrics ping (including the last metrics ping)
 - On the baseline ping, the counts include the number of pings send since
   the last baseline ping (including the last baseline ping)
+
+Note: Previously this also recorded the number of submitted custom pings.
+Now it only records counts for the Glean built-in pings.
 "
   }
 
@@ -2595,6 +6176,118 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__javascript_gc_budget_was_increased {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_budget_was_increased ;;
+    hidden: yes
+    description: "Whether the budget was increased due to taking too long or approaching the incremental limit
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_is_zone_gc {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_is_zone_gc ;;
+    hidden: yes
+    description: "Is it a zone GC?
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_minor_reason {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_minor_reason ;;
+    hidden: yes
+    description: "Reason (enum value) for initiating a minor GC
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_minor_reason_long {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_minor_reason_long ;;
+    hidden: yes
+    description: "Reason (enum value) that caused a long (>1ms) minor GC
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_non_incremental {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_non_incremental ;;
+    hidden: yes
+    description: "Was the GC non-incremental?
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_non_incremental_reason {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_non_incremental_reason ;;
+    hidden: yes
+    description: "Reason for performing a non-incremental GC (see js::GCAbortReason)
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_parallel_mark_used {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_parallel_mark_used ;;
+    hidden: yes
+    description: "Whether parallel marking was used for this collection
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_reason {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_reason ;;
+    hidden: yes
+    description: "Reason (enum value) for initiating a GC
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_reset {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_reset ;;
+    hidden: yes
+    description: "Was an incremental GC canceled?
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_reset_reason {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_reset_reason ;;
+    hidden: yes
+    description: "Reason for cancelling an ongoing GC (see js::GCAbortReason)
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_slice_was_long {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_slice_was_long ;;
+    hidden: yes
+    description: "Whether a GC slice took 1.5 times or 5ms more than its budget
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_slow_phase {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_slow_phase ;;
+    hidden: yes
+    description: "The longest phase in any slice that goes over 2x the budget. The phase values are defined in js/src/gc/GenerateStatsPhases.py.
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_slow_task {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_slow_task ;;
+    hidden: yes
+    description: "The longest parallel task in any slice that goes over 2x the budget. The phase values are defined in js/src/gc/GenerateStatsPhases.py.
+"
+  }
+
+  dimension: metrics__labeled_counter__library_link {
+    sql: ${TABLE}.metrics.labeled_counter.library_link ;;
+    hidden: yes
+    description: "The number of history or bookmark items opened from the Library window This metric was generated to correspond to the Legacy Telemetry scalar library.link.
+"
+  }
+
+  dimension: metrics__labeled_counter__library_opened {
+    sql: ${TABLE}.metrics.labeled_counter.library_opened ;;
+    hidden: yes
+    description: "The number of times the Library window was opened, keyed by 'history' or 'bookmarks' This metric was generated to correspond to the Legacy Telemetry scalar library.opened.
+"
+  }
+
+  dimension: metrics__labeled_counter__library_search {
+    sql: ${TABLE}.metrics.labeled_counter.library_search ;;
+    hidden: yes
+    description: "The number of history-specific or bookmark-specific searches made from the Library window This metric was generated to correspond to the Legacy Telemetry scalar library.search.
+"
+  }
+
   dimension: metrics__labeled_counter__media_audio_backend {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_backend ;;
     hidden: yes
@@ -2606,6 +6299,13 @@ This metric appears in both the metrics and baseline pings.
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
     description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__media_decode_error_per_mime_type {
+    sql: ${TABLE}.metrics.labeled_counter.media_decode_error_per_mime_type ;;
+    hidden: yes
+    description: "Count the number of times the media with a specific mime type (Eg. audio/vorbis, that would be used as the key) encounters a decode error during playback. This metric was generated to correspond to the Legacy Telemetry scalar media.decode_error_per_mime_type.
 "
   }
 
@@ -2629,6 +6329,20 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__labeled_counter__migration_discovered_migrators {
+    sql: ${TABLE}.metrics.labeled_counter.migration_discovered_migrators ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the migration wizard detected a browser / profile pair for a particular browser. This is incremented every time the discovery occurs, so multiple openings of the wizard will increase the counts each time. This metric was generated to correspond to the Legacy Telemetry scalar migration.discovered_migrators.
+"
+  }
+
+  dimension: metrics__labeled_counter__mozstorage_sqlitejsm_transaction_timeout {
+    sql: ${TABLE}.metrics.labeled_counter.mozstorage_sqlitejsm_transaction_timeout ;;
+    hidden: yes
+    description: "Collection of javascript modules that created a Sqlite.sys.mjs transaction taking too long and timing out. This can be used to identify and optimize those modules transactions. This metric was generated to correspond to the Legacy Telemetry scalar mozstorage.sqlitejsm_transaction_timeout.
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_early_hints {
     sql: ${TABLE}.metrics.labeled_counter.netwerk_early_hints ;;
     hidden: yes
@@ -2643,10 +6357,59 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__labeled_counter__netwerk_eh_response_version {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_eh_response_version ;;
+    hidden: yes
+    description: "HTTP protocol version from Early Hints response
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_http3_0rtt_state {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_0rtt_state ;;
+    hidden: yes
+    description: "Gather the outcome of 0-RTT usage: - \"not_used\": 0RTT_NOT_USED - \"succeeded\": 0RTT_USED_SUCCESS - \"rejected\": 0RTT_USED_REJECT - \"conn_error\": 0RTT_USED_CONN_ERROR - \"conn_closed_by_necko\": 0RTT_CONN_CLOSED_BY_NECKO
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_http3_ech_outcome_grease {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_ech_outcome_grease ;;
+    hidden: yes
+    description: "Success / Fail Rates for HTTP3 when a GREASE ECH Extension was sent
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_http3_ech_outcome_none {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_ech_outcome_none ;;
+    hidden: yes
+    description: "Success / Fail Rates for HTTP3 when No ECH Extension was sent
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_http3_ech_outcome_real {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_ech_outcome_real ;;
+    hidden: yes
+    description: "Success / Fail Rates for HTTP3 when a 'real' ECH Extension was sent
+"
+  }
+
+  dimension: metrics__labeled_counter__network_alpn_mismatch_count {
+    sql: ${TABLE}.metrics.labeled_counter.network_alpn_mismatch_count ;;
+    hidden: yes
+    description: "Counts the number of times we encountered a mismatched ALPN token and needed to reset the connection. Keyed by the negotiated NPN.
+"
+  }
+
   dimension: metrics__labeled_counter__network_byte_range_request {
     sql: ${TABLE}.metrics.labeled_counter.network_byte_range_request ;;
     hidden: yes
     description: "Counts of cacheable/non-cacheable byte-range requests
+"
+  }
+
+  dimension: metrics__labeled_counter__network_cache_hit_miss_stat_per_cache_size {
+    sql: ${TABLE}.metrics.labeled_counter.network_cache_hit_miss_stat_per_cache_size ;;
+    hidden: yes
+    description: "Hit/Miss count split by cache size in file count Hit 0-5000, Miss 0-5000, Hit 5001-10000, ...
 "
   }
 
@@ -2671,6 +6434,62 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__labeled_counter__network_sso_entra_success {
+    sql: ${TABLE}.metrics.labeled_counter.network_sso_entra_success ;;
+    hidden: yes
+    description: "Counts how often Entra SSO succeeded/failed (macOS only). Labels are ordered in reverse chronological relation to SSO success, meaning the labels higher up are closer to the SSO success. device_headers_missing: only device_headers is missing in the SSO cookie. prt_headers_missing: only prt_headers is missing in the SSO cookie. both_headers_missing: both prt_headers and device_headers are missing in the SSO cookie. invalid_cookie: Failed to parse SSO cookie (could be a null cookie/format is incorrect). no_credential: ASAuthorizationSingleSignOnCredential is not present broker_error: An error from Microsoft's broker. invalid_controller_setup: ASAuthorizationController is setup incorrectly.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_addon_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_addon_status ;;
+    hidden: yes
+    description: "Counts the status of succeeded and failed requests to addons.mozilla.org
+"
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_addonversion_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_addonversion_status ;;
+    hidden: yes
+    description: "Counts the status of succeeded and failed requests to *.addons.mozilla.org
+"
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_other_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_other_status ;;
+    hidden: yes
+    description: "Counts the status of succeeded and failed requests to other mozilla.org domains
+"
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_remote_settings_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_remote_settings_status ;;
+    hidden: yes
+    description: "Counts the status of succeeded and failed requests to firefox.settings.services.mozilla.com
+"
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_success_or_failure {
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_success_or_failure ;;
+    hidden: yes
+    description: "Counts the number of succeeded and failed channels with a system principal to a mozilla domain. Label contains ok or failure reason.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_telemetry_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_telemetry_status ;;
+    hidden: yes
+    description: "Counts the status of succeeded and failed requests to incoming.telemetry.mozilla.org
+"
+  }
+
+  dimension: metrics__labeled_counter__network_system_channel_update_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_system_channel_update_status ;;
+    hidden: yes
+    description: "Counts the status of succeeded and failed requests to aus5.mozilla.org
+"
+  }
+
   dimension: metrics__labeled_counter__network_tls_early_data_accepted {
     sql: ${TABLE}.metrics.labeled_counter.network_tls_early_data_accepted ;;
     hidden: yes
@@ -2685,10 +6504,68 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__labeled_counter__networking_cache_purge_due_to_memory_limit {
+    sql: ${TABLE}.metrics.labeled_counter.networking_cache_purge_due_to_memory_limit ;;
+    hidden: yes
+    description: "Counts how often we purge cache entries from memory due to memory limits.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_captive_portal_banner_display_time {
+    sql: ${TABLE}.metrics.labeled_counter.networking_captive_portal_banner_display_time ;;
+    hidden: yes
+    description: "Number of seconds the captive portal banner was displayed for, keyed by close reason:
+  \"success\" - the portal login was completed
+  \"abort\"   - the portal login was aborted (e.g. loss of network)
+  \"dismiss\" - the user dismissed the banner
+This metric was generated to correspond to the Legacy Telemetry scalar networking.captive_portal_banner_display_time.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
     sql: ${TABLE}.metrics.labeled_counter.networking_cookie_timestamp_fixed_count ;;
     hidden: yes
     description: "Counts the number of times a cookie's invalid timestamp was fixed when reading it from the DB.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_data_transferred_v3_kb {
+    sql: ${TABLE}.metrics.labeled_counter.networking_data_transferred_v3_kb ;;
+    hidden: yes
+    description: "How many KB of HTTP data transferred by type, there are some categories separated by keys based on 5 parameters:
+  1. normal browsing or private browsing
+  2. system principal or not
+  3. first party or third party
+  4. class of service (Leader/Background/Others)
+  5. tracking classification (Basic/Content/FingerprintingContent)
+
+Available keys are:
+  \"Y0_N1Sys\",
+  \"Y1_N1\",
+  \"Y2_N3Oth\",
+  \"Y3_N3BasicLead\",
+  \"Y4_N3BasicBg\",
+  \"Y5_N3BasicOth\",
+  \"Y6_N3ContentLead\",
+  \"Y7_N3ContentBg\",
+  \"Y8_N3ContentOth\",
+  \"Y9_N3FpLead\",
+  \"Y10_N3FpBg\",
+  \"Y11_N3FpOth\",
+  \"Y12_P1Sys\",
+  \"Y13_P1\",
+  \"Y14_P3Oth\",
+  \"Y15_P3BasicLead\",
+  \"Y16_P3BasicBg\",
+  \"Y17_P3BasicOth\",
+  \"Y18_P3ContentLead\",
+  \"Y19_P3ContentBg\",
+  \"Y20_P3ContentOth\",
+  \"Y21_P3FpLead\",
+  \"Y22_P3FpBg\",
+  \"Y23_P3FpOth\"
+
+This metric was generated to correspond to the Legacy Telemetry scalar networking.data_transferred_v3_kb.
 "
   }
 
@@ -2699,10 +6576,115 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__labeled_counter__networking_fetch_keepalive_discard_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_fetch_keepalive_discard_count ;;
+    hidden: yes
+    description: "Counts how many fetch keepalive requests are dropped due to configured resource limits.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_fetch_keepalive_request_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_fetch_keepalive_request_count ;;
+    hidden: yes
+    description: "Counts how many fetch keepalive requests are made. This counter helps us to understand the adoption of fetch keepalive for firefox.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_connection_close_reason {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_connection_close_reason ;;
+    hidden: yes
+    description: "Number of HTTP3 connections closed, labeled by reason.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_ecn_path_capability {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_ecn_path_capability ;;
+    hidden: yes
+    description: "Number of paths known to be ECN capable or not-capable.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_quic_frame_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_quic_frame_count ;;
+    hidden: yes
+    description: "Number of QUIC frames send and received by type.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition ;;
+    hidden: yes
+    description: "Channel Disposition for HTTP and HTTPS: cancel, disk, net_ok, net_early_fail, and net_late_fail
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition_disabled_no_reason {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition_disabled_no_reason ;;
+    hidden: yes
+    description: "Upgrading display content Channel Disposition (key: disabled_no_reason)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition_disabled_upgrade {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition_disabled_upgrade ;;
+    hidden: yes
+    description: "Upgrading display content Channel Disposition (key: disable_upgrade)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition_disabled_wont {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition_disabled_wont ;;
+    hidden: yes
+    description: "Upgrading display content Channel Disposition (key: disabled_wont)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition_enabled_no_reason {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition_enabled_no_reason ;;
+    hidden: yes
+    description: "Upgrading display content Channel Disposition (key: enabled_no_reason)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition_enabled_upgrade {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition_enabled_upgrade ;;
+    hidden: yes
+    description: "Upgrading display content Channel Disposition (key: enable_upgrade)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_disposition_enabled_wont {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition_enabled_wont ;;
+    hidden: yes
+    description: "Upgrading display content Channel Disposition (key: enabled_wont)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_onstart_status {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_onstart_status ;;
+    hidden: yes
+    description: "Whether successfully started HTTP channels
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_onstart_success_https_rr ;;
     hidden: yes
     description: "Successfully started HTTP channels when HTTPS RR is used
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_ip_addr_any_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_ip_addr_any_count ;;
+    hidden: yes
+    description: "The number of times we see the IP address 0.0.0.0 or its IPv6 equivalent.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_ip_addr_any_hostnames {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_ip_addr_any_hostnames ;;
+    hidden: yes
+    description: "The number of times we see the IP address 0.0.0.0 or its IPv6 equivalent used as hostnames
 "
   }
 
@@ -2720,10 +6702,38 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_response_status_code {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_response_status_code ;;
+    hidden: yes
+    description: "HTTP Response Status Code (200, 301, 302, 304, 307, 308, 400, 401, 403, 404, 421, 425, 429, other 400 and 500)
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_response_version {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_response_version ;;
     hidden: yes
     description: "HTTP protocol version used on response from nsHttp.h
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_to_https_upgrade_reason {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_to_https_upgrade_reason ;;
+    hidden: yes
+    description: "Whether a top-level HTTP request gets upgraded to HTTPS and the reason for it
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_https_http_or_local {
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_http_or_local ;;
+    hidden: yes
+    description: "Whether a top-level request is HTTPS, HTTP, or HTTP for local domain
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_https_record_state {
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_record_state ;;
+    hidden: yes
+    description: "Gather the outcome of checking if a HTTPS record can be used: - \"invalid\" - \"succeeded\" - \"unmatched_cname\" - \"all_excluded\" - \"no_default_alpn\" - \"others\"
 "
   }
 
@@ -2769,10 +6779,62 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__labeled_counter__networking_trr_connection_cycle_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_trr_connection_cycle_count ;;
+    hidden: yes
+    description: "Number of times we cycled the TRR connection during a subsession. Keyed by TRR provider URL. This metric was generated to correspond to the Legacy Telemetry scalar networking.trr_connection_cycle_count.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_trr_request_count {
     sql: ${TABLE}.metrics.labeled_counter.networking_trr_request_count ;;
     hidden: yes
     description: "The count of successful TRR requests keyed by regular/private browsing
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_trr_request_count_per_conn {
+    sql: ${TABLE}.metrics.labeled_counter.networking_trr_request_count_per_conn ;;
+    hidden: yes
+    description: "Number of DOH requests per connection keyed by HTTP version
+"
+  }
+
+  dimension: metrics__labeled_counter__orb_block_initiator {
+    sql: ${TABLE}.metrics.labeled_counter.orb_block_initiator ;;
+    hidden: yes
+    description: "The initiator of this ORB blocked request.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram ORB_BLOCK_INITIATOR.
+"
+  }
+
+  dimension: metrics__labeled_counter__orb_block_reason {
+    sql: ${TABLE}.metrics.labeled_counter.orb_block_reason ;;
+    hidden: yes
+    description: "The reason of why this request was blocked by ORB
+This metric was generated to correspond to the Legacy Telemetry categorical histogram ORB_BLOCK_REASON.
+"
+  }
+
+  dimension: metrics__labeled_counter__orb_did_ever_block_response {
+    sql: ${TABLE}.metrics.labeled_counter.orb_did_ever_block_response ;;
+    hidden: yes
+    description: "If any opaque response was blocked for a given top-level window context.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram ORB_DID_EVER_BLOCK_RESPONSE.
+"
+  }
+
+  dimension: metrics__labeled_counter__os_environment_invoked_to_handle {
+    sql: ${TABLE}.metrics.labeled_counter.os_environment_invoked_to_handle ;;
+    hidden: yes
+    description: "Records counts for when Firefox was invoked (i.e., was already running and was not launched) to handle a file type or protocol with `-osint -url ...`.  The result is split into keys which represent the file extension: currently, the set of file types Firefox registers to handle, namely \".avif\", \".htm\", \".html\", \".pdf\", \".shtml\", \".xht\", \".xhtml\", \".svg\", \".webp\", and the set of protocol schemes that Firefox registers to handle, namely \"about\", \"http\", \"https\", \"mailto\".  If Firefox was invoked to handle a file type or protocol it does not register to handle by default, the count is recorded as \".<other extension>\" or \"<other protocol>\", respectively (neither of which are valid extension or protocol identifiers). This metric was generated to correspond to the Legacy Telemetry scalar os.environment.invoked_to_handle.
+"
+  }
+
+  dimension: metrics__labeled_counter__os_environment_launched_to_handle {
+    sql: ${TABLE}.metrics.labeled_counter.os_environment_launched_to_handle ;;
+    hidden: yes
+    description: "Records counts for when Firefox was launched afresh (i.e., was not already running) to handle a file type or protocol with `-osint -url ...`.  The result is split into keys which represent the file extension: currently, the set of file types Firefox registers to handle, namely \".avif\", \".htm\", \".html\", \".pdf\", \".shtml\", \".xht\", \".xhtml\", \".svg\", \".webp\", and the set of protocol schemes that Firefox registers to handle, namely \"about\", \"http\", \"https\", \"mailto\".  If Firefox was launched to handle a file type or protocol it does not register to handle by default, the count is recorded as \".<other extension>\" or \"<other protocol>\", respectively (neither of which are valid extension or protocol identifiers). This metric was generated to correspond to the Legacy Telemetry scalar os.environment.launched_to_handle.
 "
   }
 
@@ -2822,6 +6884,13 @@ If you're unsure, please ask in
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_geckoview ;;
     hidden: yes
     description: "Counts the number of times some actions are executed in the PDF viewer.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_image_added {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_image_added ;;
+    hidden: yes
+    description: "Number of images added with/without alt text.
 "
   }
 
@@ -2953,6 +7022,35 @@ broken down by structured ingestion namespace.
 "
   }
 
+  dimension: metrics__labeled_counter__predictor_prefetch_use_status {
+    sql: ${TABLE}.metrics.labeled_counter.predictor_prefetch_use_status ;;
+    hidden: yes
+    description: "If and why prefetches are used/unused.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram PREDICTOR_PREFETCH_USE_STATUS.
+"
+  }
+
+  dimension: metrics__labeled_counter__printing_error {
+    sql: ${TABLE}.metrics.labeled_counter.printing_error ;;
+    hidden: yes
+    description: "A counter incremented every time the user encounters an error printing. The result is split into keys which represent the values of error codes related to printing. Possible values are listed in 'keys'. \"FAILURE\" is a catch-all code for an error we don't recognize. This metric was generated to correspond to the Legacy Telemetry scalar printing.error.
+"
+  }
+
+  dimension: metrics__labeled_counter__printing_settings_changed {
+    sql: ${TABLE}.metrics.labeled_counter.printing_settings_changed ;;
+    hidden: yes
+    description: "A count of how many times the user changed a setting in print preview, broken down per setting. This metric was generated to correspond to the Legacy Telemetry scalar printing.settings_changed.
+"
+  }
+
+  dimension: metrics__labeled_counter__printing_target_type {
+    sql: ${TABLE}.metrics.labeled_counter.printing_target_type ;;
+    hidden: yes
+    description: "A counter incremented every time the user prints to a certain target type.  The 'pdf_unknown' count is for printers with names that we don't know about/check for, but that have 'pdf' in their name, and is mainly a sanity check that we're not missing significant counts in 'pdf_file'. For the most part, the 'unknown' count will be prints to a physical printer, but we can't know for sure since third party drivers could also be print to file drivers that we don't otherwise catch in the other counts. This metric was generated to correspond to the Legacy Telemetry scalar printing.target_type.
+"
+  }
+
   dimension: metrics__labeled_counter__private_attribution_database {
     sql: ${TABLE}.metrics.labeled_counter.private_attribution_database ;;
     hidden: yes
@@ -3031,14 +7129,64 @@ failedFetchEngines - failed to load or parse the configuration from remote
                      settings.
 failedLoadEngines - failed to create all the search engines from the
                     configuration or user installed engines.
+failedLoadSettingsAddonManager - the addon manager ready promise was rejected. (from FF135)
 success - search service successfully initialized.
+"
+  }
+
+  dimension: metrics__labeled_counter__security_client_auth_cert_usage {
+    sql: ${TABLE}.metrics.labeled_counter.security_client_auth_cert_usage ;;
+    hidden: yes
+    description: "Measures how many servers have requested a client authentication certificate (key: \"requested\") and how many times the user has opted to send one in response (key: \"sent\"). This metric was generated to correspond to the Legacy Telemetry scalar security.client_auth_cert_usage.
+"
+  }
+
+  dimension: metrics__labeled_counter__serp_ads_blocked_count {
+    sql: ${TABLE}.metrics.labeled_counter.serp_ads_blocked_count ;;
+    hidden: yes
+    description: "Counts the specific type of block.
+"
+  }
+
+  dimension: metrics__labeled_counter__sidebar_link {
+    sql: ${TABLE}.metrics.labeled_counter.sidebar_link ;;
+    hidden: yes
+    description: "The number of history items opened from the History sidebar. This metric was generated to correspond to the Legacy Telemetry scalar sidebar.link.
+"
+  }
+
+  dimension: metrics__labeled_counter__sidebar_search {
+    sql: ${TABLE}.metrics.labeled_counter.sidebar_search ;;
+    hidden: yes
+    description: "The number of searches from the sidebar, per view (e.g.: bookmarks, history). This metric was generated to correspond to the Legacy Telemetry scalar sidebar.search.
+"
+  }
+
+  dimension: metrics__labeled_counter__suggest_relevance_outcome {
+    sql: ${TABLE}.metrics.labeled_counter.suggest_relevance_outcome ;;
+    hidden: yes
+    description: "For each successful scoring, count whether the relevance score gets boosted or decreased over the original score. Note that given how the score is calculated, it's practically impossible to have the two scores tied. If that's the case anyhow, it will increment the \"boosted\" counter.
+"
+  }
+
+  dimension: metrics__labeled_counter__suggest_relevance_status {
+    sql: ${TABLE}.metrics.labeled_counter.suggest_relevance_status ;;
+    hidden: yes
+    description: "Count the successful / failed attempts of relevance scoring in Firefox Suggest.
+"
+  }
+
+  dimension: metrics__labeled_counter__telemetry_clamping_time_hgrams {
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_clamping_time_hgrams ;;
+    hidden: yes
+    description: "How often do which histograms that use `Telemetry::AccumulateTimeDelta` have clamped samples due to underflow?
 "
   }
 
   dimension: metrics__labeled_counter__tls_xyber_intolerance_reason {
     sql: ${TABLE}.metrics.labeled_counter.tls_xyber_intolerance_reason ;;
     hidden: yes
-    description: "The error that was returned from a failed TLS 1.3 handshake in which the client sent a Xyber key share (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
+    description: "The error that was returned from a failed TLS 1.3 handshake in which the client sent a mlkem768x25519 key share (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
 "
   }
 
@@ -3046,6 +7194,558 @@ success - search service successfully initialized.
     sql: ${TABLE}.metrics.labeled_counter.translations_request_count ;;
     hidden: yes
     description: "The count of translation requests, along with their type.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_bitshresult {
+    sql: ${TABLE}.metrics.labeled_counter.update_bitshresult ;;
+    hidden: yes
+    description: "If a BITS download fails on the Windows side (that is to say, BITS ecounters an error rather than Firefox failing to interact with BITS), it will likely give an hresult error indicating what happened. This probe reports those error codes to allow us to see if BITS is commonly failing on some systems. This probe is keyed on the type of update download, either \"PARTIAL\" or \"COMPLETE\". This metric was generated to correspond to the Legacy Telemetry scalar update.bitshresult.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_move_result {
+    sql: ${TABLE}.metrics.labeled_counter.update_move_result ;;
+    hidden: yes
+    description: "Firefox keeps downloading updates in a different place from updates that are ready to install. Once the download completes, the resulting file has to be moved from the downloading update directory to the ready update directory. This probe counts the results that we get when attempting to perform this file move. Valid values for the keys for this probe are stored in the MOVE_RESULT_* values in UpdateTelemetry.sys.mjs. This metric was generated to correspond to the Legacy Telemetry scalar update.move_result.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_skip_startup_update_reason {
+    sql: ${TABLE}.metrics.labeled_counter.update_skip_startup_update_reason ;;
+    hidden: yes
+    description: "We usually install pending updates at startup, but there are a couple of reasons we might not. This value will be set to \"none\" if there was no reason not to install updates. If the value is \"DevToolsLaunching\", that means that we skipped applying updates because the application startup was actually a startup of the Browser Toolbox, not the browser itself. If the value is \"NotAnUpdatingTask\", that means that the browser launch is a background task other than the background update task, (which have update capabilities disabled). If the value is \"OtherInstanceRunning\", that means that the background update task was launched, but it didn't install an update in order to avoid interfering with other application instances. If the value is \"FirstStartup\", we didn't install any updates because the browser was launched by the installer. If the value is \"MultiSessionInstallLockout\", there are other browser instances running and the Multi Session Install Lockout timeout has not expired yet. Note that, for updates to be "
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_about {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_about ;;
+    hidden: yes
+    description: "Counts how many times an about-page autofill result (e.g., \"about:config\") was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_about.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_adaptive {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_adaptive ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_adaptive.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_origin {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_origin ;;
+    hidden: yes
+    description: "Counts how many times an origin (domain) autofill result (e.g., \"mozilla.org\") was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_origin.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_other {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_other ;;
+    hidden: yes
+    description: "Counts how many times some other type of autofill result that does not have a specific keyed scalar was picked at a given index. This is a fallback that is used when the code is not properly setting a specific autofill type, and it should not normally be used. If it appears in the data, it means we need to investigate and fix the code that is not properly setting a specific autofill type. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_other.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_autofill_url {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_url ;;
+    hidden: yes
+    description: "Counts how many times a URL autofill result (e.g., \"mozilla.org/firefox\") was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.autofill_url.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_bookmark {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_bookmark ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.bookmark.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_bookmark_adaptive {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_bookmark_adaptive ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.bookmark_adaptive.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_clipboard {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_clipboard ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.clipboard.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_dynamic {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_dynamic ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.dynamic.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_dynamic_wikipedia {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_dynamic_wikipedia ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.dynamic_wikipedia.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_extension {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_extension ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.extension.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_formhistory {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_formhistory ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.formhistory.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_history {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_history ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.history.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_history_adaptive {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_history_adaptive ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.history_adaptive.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_keyword {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_keyword ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.keyword.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_navigational {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_navigational ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.navigational.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_quickaction {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_quickaction ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.quickaction.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_quicksuggest {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_quicksuggest ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.quicksuggest.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_recent_search {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_recent_search ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.recent_search.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_remotetab {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_remotetab ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.remotetab.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_restrict_keyword_actions {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_restrict_keyword_actions ;;
+    hidden: yes
+    description: "Counts how many times this restrict actions result was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.restrict_keyword_actions.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_restrict_keyword_bookmarks {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_restrict_keyword_bookmarks ;;
+    hidden: yes
+    description: "Counts how many times this restrict bookmarks result was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.restrict_keyword_bookmarks.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_restrict_keyword_history {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_restrict_keyword_history ;;
+    hidden: yes
+    description: "Counts how many times this restrict history result was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.restrict_keyword_history.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_restrict_keyword_tabs {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_restrict_keyword_tabs ;;
+    hidden: yes
+    description: "Counts how many times this restrict tabs result was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.restrict_keyword_tabs.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchengine {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchengine ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchengine.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_bookmarkmenu {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_bookmarkmenu ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode from the Search Bookmarks menu item in the Library menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.bookmarkmenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_handoff {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_handoff ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by being handed off from the search bar on the new tab page. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.handoff.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_historymenu {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_historymenu ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode from the Search History menu item in a History menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.historymenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_keywordoffer {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_keywordoffer ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a keyword offer result. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.keywordoffer.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_oneoff {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_oneoff ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a one-off. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.oneoff.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_other {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_other ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode from an unknown entry point. If values appear for this probe in Telemetry, we should review the entry points to search mode. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.other.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_searchbutton {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_searchbutton ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode by unified search button. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.searchbutton.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_shortcut {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_shortcut ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by pressing a keyboard shortcut. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.shortcut.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_tabmenu {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_tabmenu ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting the Search Tabs menu item in the Tab Overflow menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.tabmenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_tabtosearch {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_tabtosearch ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a tab-to-search result. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.tabtosearch.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_tabtosearch_onboard {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_tabtosearch_onboard ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a tab-to-search onboarding result. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.tabtosearch_onboard.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_topsites_newtab {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_topsites_newtab ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a search shortcut Top Site on the New Tab Page. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.topsites_newtab.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_topsites_urlbar {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_topsites_urlbar ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a search shortcut Top Site in the Urlbar. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.topsites_urlbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_touchbar {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_touchbar ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by selecting a search shortcut on the macOS Touch Bar. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.touchbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchmode_typed {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchmode_typed ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user picked a particular kind of result while in search mode after entering search mode by typing an alias. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchmode.typed.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchsuggestion {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchsuggestion ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchsuggestion.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_searchsuggestion_rich {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_searchsuggestion_rich ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.searchsuggestion_rich.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_switchtab {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_switchtab ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.switchtab.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_tabtosearch {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_tabtosearch ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.tabtosearch.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_tip {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_tip ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.tip.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_topsite {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_topsite ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.topsite.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_trending {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_trending ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.trending.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_trending_rich {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_trending_rich ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.trending_rich.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_unknown {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_unknown ;;
+    hidden: yes
+    description: "Counts how many times an unknown result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.unknown.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_visiturl {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_visiturl ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.visiturl.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_picked_weather {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_weather ;;
+    hidden: yes
+    description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.weather.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_quickaction_picked {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_quickaction_picked ;;
+    hidden: yes
+    description: "Counts how many times quickaction results were selected. The key is the in the form \"actionkey-N\" where N is the number of characters the user typed to be shown the action. This metric was generated to correspond to the Legacy Telemetry scalar quickaction.picked.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_bookmarkmenu {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_bookmarkmenu ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecing the Search Bookmarks menu item in the Library menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.bookmarkmenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_handoff {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_handoff ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after being handed off from the search bar on the new tab page. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.handoff.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_historymenu {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_historymenu ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecing the Search History menu item in a History menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.historymenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_keywordoffer {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_keywordoffer ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a keyword offer result. The scalar key for local search modes entered using a restrict keyword will be suffixed with \"keyword\". For example: tabs_keyword, bookmarks_keyword, history_keyword, and actions_keyword. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.keywordoffer.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_oneoff {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_oneoff ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a one-off. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.oneoff.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_other {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_other ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode from an unknown entry point. If values appear for this probe in Telemetry, we should review the entry points to search mode. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.other.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_searchbutton {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_searchbutton ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode by unified search button. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.searchbutton.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_shortcut {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_shortcut ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after pressing a keyboard shortcut. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.shortcut.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_tabmenu {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_tabmenu ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecting the Search Tabs menu item in the Tab Overflow menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.tabmenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_tabtosearch {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_tabtosearch ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a tab-to-search result. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.tabtosearch.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_tabtosearch_onboard {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_tabtosearch_onboard ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a tab-to-search onboarding result. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.tabtosearch_onboard.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_topsites_newtab {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_topsites_newtab ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a search shortcut Top Site on the New Tab Page. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.topsites_newtab.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_topsites_urlbar {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_topsites_urlbar ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a search shortcut Top Site in the Urlbar. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.topsites_urlbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_touchbar {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_touchbar ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a search shortcut on the macOS Touch Bar. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.touchbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_typed {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_typed ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after typing an alias. The scalar keys for local search modes entered by typing a restrict keyword will be suffixed with \"keyword\". For example: tabs_keyword, bookmarks_keyword, history_keyword, and actions_keyword. If instead search mode was entered by typing a restrict symbol the key will be suffixed with \"symbol\" (e.g. typing \"%\" will generate \"tabs_symbol\"). This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.typed.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_tabtosearch_impressions {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_tabtosearch_impressions ;;
+    hidden: yes
+    description: "A keyed uint recording how many times non-onboarding tab-to-search results are shown in the Urlbar for a particular search engine. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.tabtosearch.impressions.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_tabtosearch_impressions_onboarding {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_tabtosearch_impressions_onboarding ;;
+    hidden: yes
+    description: "A keyed uint recording how many times onboarding tab-to-search results are shown in the Urlbar for a particular search engine. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.tabtosearch.impressions_onboarding.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_tips {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_tips ;;
+    hidden: yes
+    description: "A keyed uint recording how many times particular tips are shown in the Urlbar and how often their confirm and help buttons are pressed. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.tips.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_unifiedsearchbutton_picked {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_unifiedsearchbutton_picked ;;
+    hidden: yes
+    description: "Counts how many times Unified Search Button items were selected. The key is followings. * builtin_search: Builtin search engine. * addon_search: Addon search engine. * local_search: Local search engine such as Bookmarks. * settings: Settings menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.unifiedsearchbutton.picked.
+"
+  }
+
+  dimension: metrics__labeled_counter__web_notification_permission_origin {
+    sql: ${TABLE}.metrics.labeled_counter.web_notification_permission_origin ;;
+    hidden: yes
+    description: "The category of the origin that retrieves Notification.permission.
+"
+  }
+
+  dimension: metrics__labeled_counter__web_notification_request_permission_origin {
+    sql: ${TABLE}.metrics.labeled_counter.web_notification_request_permission_origin ;;
+    hidden: yes
+    description: "The category of the origin that calls Notification.requestPermission().
+"
+  }
+
+  dimension: metrics__labeled_counter__web_notification_show_origin {
+    sql: ${TABLE}.metrics.labeled_counter.web_notification_show_origin ;;
+    hidden: yes
+    description: "The category of the origin that calls new Notification/showNotification().
+"
+  }
+
+  dimension: metrics__labeled_counter__web_push_content_encoding {
+    sql: ${TABLE}.metrics.labeled_counter.web_push_content_encoding ;;
+    hidden: yes
+    description: "Which content encoding is being used for push.
+"
+  }
+
+  dimension: metrics__labeled_counter__web_push_error_code {
+    sql: ${TABLE}.metrics.labeled_counter.web_push_error_code ;;
+    hidden: yes
+    description: "The code indicating why the push message couldn't be processed.
 "
   }
 
@@ -3059,6 +7759,20 @@ success - search service successfully initialized.
     sql: ${TABLE}.metrics.labeled_counter.webauthn_get_authenticator_attachment ;;
     hidden: yes
     description: "The number of successfully asserted credentials by authenticator attachment modality."
+  }
+
+  dimension: metrics__labeled_counter__webrtc_video_recv_codec_used {
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_video_recv_codec_used ;;
+    hidden: yes
+    description: "The video codec used for receiving video on a WebRTC call. This metric was generated to correspond to the Legacy Telemetry scalar webrtc.video.recv_codec_used.
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtc_video_send_codec_used {
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_video_send_codec_used ;;
+    hidden: yes
+    description: "The video codec used for sending video on a WebRTC call. This metric was generated to correspond to the Legacy Telemetry scalar webrtc.video.send_codec_used.
+"
   }
 
   dimension: metrics__labeled_counter__webrtcdtls_cipher {
@@ -3096,11 +7810,360 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__labeled_custom_distribution__browser_migration_bookmarks_quantity {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_bookmarks_quantity ;;
+    hidden: yes
+    description: "How many bookmarks we imported from another browser, keyed by the name of the browser.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_MIGRATION_BOOKMARKS_QUANTITY.
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__browser_migration_cards_quantity {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_cards_quantity ;;
+    hidden: yes
+    description: "How many credit card entries we imported from another browser, keyed by the name of the browser.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_MIGRATION_CARDS_QUANTITY.
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__browser_migration_errors {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_errors ;;
+    hidden: yes
+    description: "Errors encountered during migration in buckets defined by the datatype, keyed by the string description of the browser.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram FX_MIGRATION_ERRORS.
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__browser_migration_extensions_quantity {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_extensions_quantity ;;
+    hidden: yes
+    description: "How many extensions were matched to be imported from another browser, keyed by the name of the browser.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_MIGRATION_EXTENSIONS_QUANTITY.
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__browser_migration_history_quantity {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_history_quantity ;;
+    hidden: yes
+    description: "How many history visits we imported from another browser, keyed by the name of the browser.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_MIGRATION_HISTORY_QUANTITY.
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__browser_migration_logins_quantity {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_logins_quantity ;;
+    hidden: yes
+    description: "How many logins (passwords) we imported from another browser, keyed by the name of the browser.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_MIGRATION_LOGINS_QUANTITY.
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__browser_migration_usage {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_usage ;;
+    hidden: yes
+    description: "Usage of migration for each datatype when migration is run through the post-firstrun flow which allows individual datatypes, keyed by the string description of the browser.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram FX_MIGRATION_USAGE.
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__contentblocking_canvas_fingerprinting_per_tab {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.contentblocking_canvas_fingerprinting_per_tab ;;
+    hidden: yes
+    description: "Type of canvas fingerprinter detected (keyed by known_fingerprinting_text or unknown), 0 = none
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram CANVAS_FINGERPRINTING_PER_TAB.
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__contentblocking_email_tracker_embedded_per_tab {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.contentblocking_email_tracker_embedded_per_tab ;;
+    hidden: yes
+    description: "A count of the embedded third-party email trackers for known email web apps. ('base_normal' = The count of loaded base email trackers under normal sites, 'content_normal' = The count of loaded content email trackers under normal sites, 'all_normal' = The count of all loaded email trackers under normal sites, 'base_emailapp' = The count of loaded base email trackers under email webapps, 'content_emailapp' = The count of loaded content email trackers under email webapps, 'all_emailapp' = The count of all loaded email trackers under email webapps.)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram EMAIL_TRACKER_EMBEDDED_PER_TAB.
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__downloads_user_action_on_blocked_download {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.downloads_user_action_on_blocked_download ;;
+    hidden: yes
+    description: "Users action on blocked download, keyed by verdict type (0=Number of blocked downloads, 1=Confirm block, 2=Confirm unblock)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram DOWNLOADS_USER_ACTION_ON_BLOCKED_DOWNLOAD.
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.network_cache_hit_rate_per_cache_size ;;
+    hidden: yes
+    description: "Hit rate for a specific cache size in file count. The hit rate is split into 20 buckets. The key is the cacheSize (20 buckets) and the value is between 0 and 100.
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.networking_http_3_ecn_ce_ect0_ratio ;;
+    hidden: yes
+    description: "HTTP3: ECN CE to ECT0 ratio (multiply by 10000).
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.quotamanager_initialize_repository_number_of_iterations ;;
+    hidden: yes
+    description: "This metric logs the count of directory entries iterated within the QuotaManager::InitializeRepository function for each repository type. Each instance of this metric is labeled with one of three repository types: \"persistent\", \"temporary\" or \"default\" (there's also \"private\" repository but that should never be iterated by the function). The main purpose is to track and analyze iteration counts during the initialization process of each repository type, helping to identify performance trends or potential inefficiencies across these repositories. This can provide insight into the impacts of specific code changes, including potential optimizations or regressions.
+"
+  }
+
+  dimension: metrics__labeled_quantity__browser_searchinit_engine_invalid_webextension {
+    sql: ${TABLE}.metrics.labeled_quantity.browser_searchinit_engine_invalid_webextension ;;
+    hidden: yes
+    description: "Records the WebExtension ID of a search engine where the WebExtension is not installed (= 1), disabled (= 2), search engine no longer specified (= 4), a different name (= 5), where the submission URL is different between the search engine and the WebExtension (= 6). The value '3' has been replaced by '6' to distinguish newer entries. This metric was generated to correspond to the Legacy Telemetry scalar browser.searchinit.engine_invalid_webextension.
+"
+  }
+
+  dimension: metrics__labeled_quantity__normandy_recipe_freshness {
+    sql: ${TABLE}.metrics.labeled_quantity.normandy_recipe_freshness ;;
+    hidden: yes
+    description: "For each recipe ID seen by the Normandy client, its last_modified. This metric was generated to correspond to the Legacy Telemetry scalar normandy.recipe_freshness.
+"
+  }
+
   dimension: metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
     sql: ${TABLE}.metrics.labeled_string.cookie_banners_google_gdpr_choice_cookie ;;
     hidden: yes
     description: "Records the GDPR choice on Google Search based on the \"SOCS\" cookie of the Google Search domains. The value could be \"Accept\", \"Reject\" or \"Custom\". We use the label to record different choices on different Google domains. We only collect this if the default search engine is Google.
 "
+  }
+
+  dimension: metrics__labeled_string__places_places_database_corruption_handling_stage {
+    sql: ${TABLE}.metrics.labeled_string.places_places_database_corruption_handling_stage ;;
+    hidden: yes
+    description: "PLACES - stage reached when trying to fix a database corruption, see Places::Database::eCorruptDBReplaceStage.
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.netwerk_http3_0rtt_state_duration ;;
+    hidden: yes
+    description: "The time a connection was in the 0-RTT state
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse_idle_connection {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.netwerk_http3_time_to_reuse_idle_connection ;;
+    hidden: yes
+    description: "The time to reuse an idle connection in HTTP3 (ms); keyed by the transaction reusing an idle connection has succeeded or failed
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__network_http3_avg_read_interval {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.network_http3_avg_read_interval ;;
+    hidden: yes
+    description: "The average time between read operations in a HTTP/3 connection, keyed by the server header
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__network_http3_complete_load {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.network_http3_complete_load ;;
+    hidden: yes
+    description: "In the HTTP channel (keys: uses_http3_page, uses_http3_sub, supports_http3_page, supports_http3_sub), overall load time
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__network_http3_first_sent_to_last_received {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.network_http3_first_sent_to_last_received ;;
+    hidden: yes
+    description: "In the HTTP channel (keys: uses_http3_page, uses_http3_sub, supports_http3_page, supports_http3_sub), time from first byte of request sent to last byte of response received
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__network_http3_open_to_first_received {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.network_http3_open_to_first_received ;;
+    hidden: yes
+    description: "In the HTTP channel (keys: uses_http3_page, uses_http3_sub, supports_http3_page, supports_http3_sub), time from open to first byte of reply received
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__network_http3_open_to_first_sent {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.network_http3_open_to_first_sent ;;
+    hidden: yes
+    description: "In the HTTP channel (keys: uses_http3_page, uses_http3_sub, supports_http3_page, supports_http3_sub), time from open to first byte of request
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__network_http3_tls_handshake {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.network_http3_tls_handshake ;;
+    hidden: yes
+    description: "In the HTTP channel (keys: uses_http3_page, uses_http3_sub, supports_http3_page, supports_http3_sub), time from secure connection start (after TCP SYN) to ready for HTTP
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__network_http_fetch_duration {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.network_http_fetch_duration ;;
+    hidden: yes
+    description: "The time between requestStart and responseEnd, keyed by the server header
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__network_sup_http3_tcp_connection {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.network_sup_http3_tcp_connection ;;
+    hidden: yes
+    description: "In the HTTP channel (keys: supports_http3_page, supports_http3_sub), time from TCP SYN to ready for HTTP
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__networking_trr_complete_load {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.networking_trr_complete_load ;;
+    hidden: yes
+    description: "In TRR channel, overall load time.
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__networking_trr_dns_end {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.networking_trr_dns_end ;;
+    hidden: yes
+    description: "In TRR channel, time from the DNS request being issued to the response.
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__networking_trr_dns_start {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.networking_trr_dns_start ;;
+    hidden: yes
+    description: "In TRR channel, time from connection open to the DNS request being issued.
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__networking_trr_fetch_duration {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.networking_trr_fetch_duration ;;
+    hidden: yes
+    description: "Time for a successful DoH request, from AsyncOpen to ReturnData
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__networking_trr_first_sent_to_last_received {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.networking_trr_first_sent_to_last_received ;;
+    hidden: yes
+    description: "In TRR channel, time from first byte of request sent to last byte of response received.
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__networking_trr_open_to_first_received {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.networking_trr_open_to_first_received ;;
+    hidden: yes
+    description: "In TRR channel, time from open to first byte of reply received.
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__networking_trr_open_to_first_sent {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.networking_trr_open_to_first_sent ;;
+    hidden: yes
+    description: "In TRR channel, time from open to first byte of request.
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__networking_trr_tcp_connection {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.networking_trr_tcp_connection ;;
+    hidden: yes
+    description: "In TRR channel, time from the TCP SYN packet is received to the connection is established and ready for HTTP.
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__networking_trr_tls_handshake {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.networking_trr_tls_handshake ;;
+    hidden: yes
+    description: "In TRR channel, time from after the TCP SYN packet is received to the secure connection is established and ready for HTTP.
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__orb_javascript_validation {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.orb_javascript_validation ;;
+    hidden: yes
+    description: "Time (in ms) that it takes for a ORB JavaScript validator to complete a validation, including IPC to the validator actor.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram ORB_JAVASCRIPT_VALIDATION_MS.
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__orb_receive_data_for_validation {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.orb_receive_data_for_validation ;;
+    hidden: yes
+    description: "Time (in ms) that it takes to receive data for ORB JavaScript validation, including IPC to the validator actor.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram ORB_RECEIVE_DATA_FOR_VALIDATION_MS.
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__suggest_ingest_download_time {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.suggest_ingest_download_time ;;
+    hidden: yes
+    description: "Download time for ingestion, labelled by record type"
+  }
+
+  dimension: metrics__labeled_timing_distribution__suggest_ingest_time {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.suggest_ingest_time ;;
+    hidden: yes
+    description: "Time for ingestion (excluding download time), labelled by record type"
+  }
+
+  dimension: metrics__labeled_timing_distribution__suggest_query_time {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.suggest_query_time ;;
+    hidden: yes
+    description: "Time executing queries, labelled by provider type"
+  }
+
+  dimension: metrics__memory_distribution__browser_backup_compressed_archive_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.browser_backup_compressed_archive_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Browser Backup Compressed Archive Size"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__browser_backup_compressed_archive_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.browser_backup_compressed_archive_size.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Browser Backup Compressed Archive Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__browser_backup_compressed_archive_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.browser_backup_compressed_archive_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__browser_backup_total_backup_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.browser_backup_total_backup_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Browser Backup Total Backup Size"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__browser_backup_total_backup_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.browser_backup_total_backup_size.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Browser Backup Total Backup Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__browser_backup_total_backup_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.browser_backup_total_backup_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__cert_storage_memory__count {
+    sql: ${TABLE}.metrics.memory_distribution.cert_storage_memory.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Cert Storage Memory"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__cert_storage_memory__sum {
+    sql: ${TABLE}.metrics.memory_distribution.cert_storage_memory.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Cert Storage Memory"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__cert_storage_memory__values {
+    sql: ${TABLE}.metrics.memory_distribution.cert_storage_memory.values ;;
+    hidden: yes
   }
 
   dimension: metrics__memory_distribution__extensions_apis_dnr_startup_cache_read_size__count {
@@ -3223,6 +8286,126 @@ success - search service successfully initialized.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__javascript_gc_nursery_bytes__count {
+    sql: ${TABLE}.metrics.memory_distribution.javascript_gc_nursery_bytes.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Javascript Gc Nursery Bytes"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__javascript_gc_nursery_bytes__sum {
+    sql: ${TABLE}.metrics.memory_distribution.javascript_gc_nursery_bytes.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Javascript Gc Nursery Bytes"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__javascript_gc_nursery_bytes__values {
+    sql: ${TABLE}.metrics.memory_distribution.javascript_gc_nursery_bytes.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__memory_phc_slop__count {
+    sql: ${TABLE}.metrics.memory_distribution.memory_phc_slop.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Memory Phc Slop"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__memory_phc_slop__sum {
+    sql: ${TABLE}.metrics.memory_distribution.memory_phc_slop.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Memory Phc Slop"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__memory_phc_slop__values {
+    sql: ${TABLE}.metrics.memory_distribution.memory_phc_slop.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_cache_metadata_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_cache_metadata_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Cache Metadata Size"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__networking_cache_metadata_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_cache_metadata_size.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Cache Metadata Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_cache_metadata_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_cache_metadata_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_received.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Segment Size Received"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_received.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Segment Size Received"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_received.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_sent__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_sent.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Segment Size Sent"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_sent__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_sent.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Segment Size Sent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_sent__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_sent.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_received__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_received.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Size Received"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_received__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_received.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Size Received"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_received__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_received.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__memory_distribution__performance_clone_deserialize_size__count {
     sql: ${TABLE}.metrics.memory_distribution.performance_clone_deserialize_size.count ;;
     type: number
@@ -3243,10 +8426,44 @@ success - search service successfully initialized.
     hidden: yes
   }
 
+  dimension: metrics__object__browser_ui_toolbar_widgets {
+    sql: ${TABLE}.metrics.object.browser_ui_toolbar_widgets ;;
+    hidden: yes
+    description: "What widgets are in which toolbars. Not dissimilar from Telemetry's `browser.ui.toolbar_widgets`, but in a friendlier format. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html for how widget ids and positions are determined.
+"
+  }
+
   dimension: metrics__object__fog_validation_some_object {
     sql: ${TABLE}.metrics.object.fog_validation_some_object ;;
     hidden: yes
     description: "Static data recorded to verify the new object metric type end-to-end.
+"
+  }
+
+  dimension: metrics__quantity__a11y_hcm_background {
+    sql: ${TABLE}.metrics.quantity.a11y_hcm_background ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "A11Y Hcm Background"
+    description: "Unsigned int tracking the user's prefered background color \ (logged when HCM is enabled). This metric was generated to correspond to the Legacy Telemetry scalar a11y.HCM_background.
+"
+  }
+
+  dimension: metrics__quantity__a11y_hcm_foreground {
+    sql: ${TABLE}.metrics.quantity.a11y_hcm_foreground ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "A11Y Hcm Foreground"
+    description: "Unsigned int tracking the user's prefered foreground color \ (logged when HCM is enabled). This metric was generated to correspond to the Legacy Telemetry scalar a11y.HCM_foreground.
+"
+  }
+
+  dimension: metrics__quantity__bounce_tracking_protection_mode {
+    sql: ${TABLE}.metrics.quantity.bounce_tracking_protection_mode ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Bounce Tracking Protection Mode"
+    description: "Records the pref value of privacy.bounceTrackingProtection.mode. Values are any of nsIBounceTrackingProtection#Modes.
 "
   }
 
@@ -3335,6 +8552,15 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__quantity__browser_backup_location_on_device {
+    sql: ${TABLE}.metrics.quantity.browser_backup_location_on_device ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Location On Device"
+    description: "1 = the default location, 2 = a non-default location
+"
+  }
+
   dimension: metrics__quantity__browser_backup_misc_data_size {
     sql: ${TABLE}.metrics.quantity.browser_backup_misc_data_size ;;
     type: number
@@ -3407,6 +8633,51 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__quantity__browser_engagement_max_concurrent_tab_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_tab_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Tab Count"
+    description: "The count of maximum number of tabs open during a subsession, across all windows, including tabs in private windows and restored at startup. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_tab_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_max_concurrent_tab_pinned_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_tab_pinned_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Tab Pinned Count"
+    description: "The count of maximum number of pinned tabs open during a subsession. This includes private windows and the ones opened when starting the browser. Starting Firefox 85 this includes number of restored pinned tabs at startup. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_tab_pinned_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_max_concurrent_vertical_tab_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_vertical_tab_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Vertical Tab Count"
+    description: "The count of maximum number of tabs with vertical tabs enabled. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_vertical_tab_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_max_concurrent_vertical_tab_pinned_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_vertical_tab_pinned_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Vertical Tab Pinned Count"
+    description: "The count of maximum number of pinned tabs with vertical tabs enabled. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_vertical_tab_pinned_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_max_concurrent_window_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_window_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Window Count"
+    description: "The count of maximum number of browser windows open during a subsession. This includes private windows and the ones opened when starting the browser. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_window_count.
+"
+  }
+
   dimension: metrics__quantity__browser_engagement_profile_count {
     sql: ${TABLE}.metrics.quantity.browser_engagement_profile_count ;;
     type: number
@@ -3420,6 +8691,33 @@ count. Unset on other platforms.
 "
   }
 
+  dimension: metrics__quantity__browser_engagement_session_time_excluding_suspend {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_session_time_excluding_suspend ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Session Time Excluding Suspend"
+    description: "The duration of the session in milliseconds, excluding the time the device was suspended. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.session_time_excluding_suspend.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_session_time_including_suspend {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_session_time_including_suspend ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Session Time Including Suspend"
+    description: "The duration of the session in milliseconds, including the time the device was suspended. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.session_time_including_suspend.
+"
+  }
+
+  dimension: metrics__quantity__browser_engagement_unique_domains_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_unique_domains_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Unique Domains Count"
+    description: "The count of the unique domains visited in a subsession, after the session has been restored. Subdomains under eTLD are aggregated after the first level (i.e. test.example.com and other.example.com are only counted once). This does not include background page requests and domains from embedded pages or private browsing. The count is limited to 100 unique domains. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.unique_domains_count.
+"
+  }
+
   dimension: metrics__quantity__browser_link_open_newwindow_restriction {
     sql: ${TABLE}.metrics.quantity.browser_link_open_newwindow_restriction ;;
     type: number
@@ -3429,12 +8727,77 @@ count. Unset on other platforms.
 "
   }
 
+  dimension: metrics__quantity__browser_searchinit_insecure_opensearch_engine_count {
+    sql: ${TABLE}.metrics.quantity.browser_searchinit_insecure_opensearch_engine_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Searchinit Insecure Opensearch Engine Count"
+    description: "Records the number of insecure (i.e., using http) OpenSearch search engines a given user has installed. This metric was generated to correspond to the Legacy Telemetry scalar browser.searchinit.insecure_opensearch_engine_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_searchinit_insecure_opensearch_update_count {
+    sql: ${TABLE}.metrics.quantity.browser_searchinit_insecure_opensearch_update_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Searchinit Insecure Opensearch Update Count"
+    description: "Records the number of OpenSearch search engines with insecure updates enabled (i.e., using http) a given user has installed. This metric was generated to correspond to the Legacy Telemetry scalar browser.searchinit.insecure_opensearch_update_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_searchinit_secure_opensearch_engine_count {
+    sql: ${TABLE}.metrics.quantity.browser_searchinit_secure_opensearch_engine_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Searchinit Secure Opensearch Engine Count"
+    description: "Records the number of secure (i.e., using https) OpenSearch search engines a given user has installed. This metric was generated to correspond to the Legacy Telemetry scalar browser.searchinit.secure_opensearch_engine_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_searchinit_secure_opensearch_update_count {
+    sql: ${TABLE}.metrics.quantity.browser_searchinit_secure_opensearch_update_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Searchinit Secure Opensearch Update Count"
+    description: "Records the number of OpenSearch search engines with secure updates enabled (i.e., using https) a given user has installed. This metric was generated to correspond to the Legacy Telemetry scalar browser.searchinit.secure_opensearch_update_count.
+"
+  }
+
+  dimension: metrics__quantity__browser_startup_abouthome_cache_result {
+    sql: ${TABLE}.metrics.quantity.browser_startup_abouthome_cache_result ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Startup Abouthome Cache Result"
+    description: "How the about:home startup cache functioned on startup.
+0: Result value was never set (error case) 1: Cache did not exist 2: Cache page stream was corrupt / inaccessible 3: Cache script stream was corrupt / inaccessible 4: Cache was invalidated by a version bump 5: Cache was valid, but read too late to be useful. 6: Cache was valid and used. 7: Cache is disabled. 8: User did not load about:home on its own by default. 9: Cache is disabled because about:newtab preloading is disabled.
+This metric was generated to correspond to the Legacy Telemetry scalar browser.startup.abouthome_cache_result.
+"
+  }
+
+  dimension: metrics__quantity__browser_timings_last_shutdown {
+    sql: ${TABLE}.metrics.quantity.browser_timings_last_shutdown ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Timings Last Shutdown"
+    description: "The time, in milliseconds, it took to complete the last shutdown. On successful shutdown, Telemetry saves this to disk into Telemetry.ShutdownTime.txt. On the next startup this is loaded and recorded. This metric was generated to correspond to the Legacy Telemetry scalar browser.timings.last_shutdown.
+"
+  }
+
   dimension: metrics__quantity__cert_verifier_trust_obj_count {
     sql: ${TABLE}.metrics.quantity.cert_verifier_trust_obj_count ;;
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Cert Verifier Trust Obj Count"
     description: "The total number of trust objects in cert9.db
+"
+  }
+
+  dimension: metrics__quantity__contentblocking_category {
+    sql: ${TABLE}.metrics.quantity.contentblocking_category ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Contentblocking Category"
+    description: "This scalar reports the value of the content blocking category pref (0 = \"standard\", 1 = \"strict\", 2 = \"custom\", 3 = some other value, this is not supported). This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.category.
 "
   }
 
@@ -3460,6 +8823,15 @@ count. Unset on other platforms.
     group_label: "Metrics Quantity"
     group_item_label: "Data Storage Site Security Service State"
     description: "The number of entries stored in the SiteSecurityServiceState nsIDataStorage"
+  }
+
+  dimension: metrics__quantity__datasanitization_session_permission_exceptions {
+    sql: ${TABLE}.metrics.quantity.datasanitization_session_permission_exceptions ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Datasanitization Session Permission Exceptions"
+    description: "A count of how many \"session\" cookie exceptions a user has set. This metric was generated to correspond to the Legacy Telemetry scalar datasanitization.session_permission_exceptions.
+"
   }
 
   dimension: metrics__quantity__extensions_apis_dnr_evaluate_rules_count_max {
@@ -3518,6 +8890,15 @@ API for the purposes of Validation (hence GVSV).
 "
   }
 
+  dimension: metrics__quantity__formautofill_addresses_autofill_profiles_count {
+    sql: ${TABLE}.metrics.quantity.formautofill_addresses_autofill_profiles_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Formautofill Addresses Autofill Profiles Count"
+    description: "Count at store time how many address autofill profiles user has. This metric was generated to correspond to the Legacy Telemetry scalar formautofill.addresses.autofill_profiles_count.
+"
+  }
+
   dimension: metrics__quantity__formautofill_creditcards_autofill_profiles_count {
     sql: ${TABLE}.metrics.quantity.formautofill_creditcards_autofill_profiles_count ;;
     type: number
@@ -3563,6 +8944,15 @@ API for the purposes of Validation (hence GVSV).
 "
   }
 
+  dimension: metrics__quantity__gfx_hdr_windows_display_colorspace_bitfield {
+    sql: ${TABLE}.metrics.quantity.gfx_hdr_windows_display_colorspace_bitfield ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Gfx Hdr Windows Display Colorspace Bitfield"
+    description: "A bitfield representation of the available DXGI color spaces of the connected displays on Windows. See (https://docs.microsoft.com/en- us/windows/desktop/api/dxgicommon/ne-dxgicommon- dxgi_color_space_type) for definitions of color spaces. Each N'th bit of this scalar indicates whether the DXGI color space with index 'N' is available on at least one connected monitor. This metric was generated to correspond to the Legacy Telemetry scalar gfx.hdr.windows_display_colorspace_bitfield.
+"
+  }
+
   dimension: metrics__quantity__gpu_process_total_launch_attempts {
     sql: ${TABLE}.metrics.quantity.gpu_process_total_launch_attempts ;;
     type: number
@@ -3579,6 +8969,204 @@ API for the purposes of Validation (hence GVSV).
     group_item_label: "Gpu Process Unstable Launch Attempts"
     description: "The number of consecutive unstable launch attempts.
 "
+  }
+
+  dimension: metrics__quantity__networking_doh_heuristics_result {
+    sql: ${TABLE}.metrics.quantity.networking_doh_heuristics_result ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Networking Doh Heuristics Result"
+    description: "The value of this scalar indicates the result of the last heuristic run. 0: \"incomplete\" 1: \"pass\" 2: \"opt-out\" 3: \"manually-disabled\" 4: \"manually-enabled\" 5: \"enterprise-disabled\" 6: \"enterprise- present\" 7: \"enterprise-enabled\" 8: \"vpn\" 9: \"proxy\" 10: \"nrpt\" 11: \"parental\" 12: \"modifiedRoots\" 13: \"thirdPartyRoots\" 14: \"google\" 15: \"youtube\" 16: \"zscaler\" 17: \"canary\" 18: \"ignored\" This metric was generated to correspond to the Legacy Telemetry scalar networking.doh_heuristics_result.
+"
+  }
+
+  dimension: metrics__quantity__networking_https_rr_prefs_usage {
+    sql: ${TABLE}.metrics.quantity.networking_https_rr_prefs_usage ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Networking Https Rr Prefs Usage"
+    description: "A bitfield representation for the usage of HTTPS RR prefs. bit 0: network.dns.upgrade_with_https_rr is enabled or not. bit 1: network.dns.use_https_rr_as_altsvc is enabled or not. bit 2: network.dns.echconfig.enabled is enabled or not. This metric was generated to correspond to the Legacy Telemetry scalar networking.https_rr_prefs_usage.
+"
+  }
+
+  dimension: metrics__quantity__networking_loading_certs_task {
+    sql: ${TABLE}.metrics.quantity.networking_loading_certs_task ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Networking Loading Certs Task"
+    description: "The time in milliseconds to load any external certificates. This occurs off of the main-thread, but can block main-thread operations. This metric was generated to correspond to the Legacy Telemetry scalar networking.loading_certs_task.
+"
+  }
+
+  dimension: metrics__quantity__networking_nss_initialization {
+    sql: ${TABLE}.metrics.quantity.networking_nss_initialization ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Networking Nss Initialization"
+    description: "The time in milliseconds to initialize the NSS component in the parent process. This metric was generated to correspond to the Legacy Telemetry scalar networking.nss_initialization.
+"
+  }
+
+  dimension: metrics__quantity__pictureinpicture_most_concurrent_players {
+    sql: ${TABLE}.metrics.quantity.pictureinpicture_most_concurrent_players ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Pictureinpicture Most Concurrent Players"
+    description: "The most concurrent Picture-in-Picture players the user had open at any one time. This metric was generated to correspond to the Legacy Telemetry scalar pictureinpicture.most_concurrent_players.
+"
+  }
+
+  dimension: metrics__quantity__pkcs11_third_party_modules_loaded {
+    sql: ${TABLE}.metrics.quantity.pkcs11_third_party_modules_loaded ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Pkcs11 Third Party Modules Loaded"
+    description: "The number of third-party PKCS#11 modules loaded."
+  }
+
+  dimension: metrics__quantity__places_pages_need_frecency_recalculation {
+    sql: ${TABLE}.metrics.quantity.places_pages_need_frecency_recalculation ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Places Pages Need Frecency Recalculation"
+    description: "Number of pages that need a frecency recalculation. This metric was generated to correspond to the Legacy Telemetry scalar places.pages_need_frecency_recalculation.
+"
+  }
+
+  dimension: metrics__quantity__places_previousday_visits {
+    sql: ${TABLE}.metrics.quantity.places_previousday_visits ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Places Previousday Visits"
+    description: "Number of history entries for the previous day. This metric was generated to correspond to the Legacy Telemetry scalar places.previousday_visits.
+"
+  }
+
+  dimension: metrics__quantity__policies_count {
+    sql: ${TABLE}.metrics.quantity.policies_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Policies Count"
+    description: "A uint with the number of active enterprise policies, collected once at startup. This metric was generated to correspond to the Legacy Telemetry scalar policies.count.
+"
+  }
+
+  dimension: metrics__quantity__pwmgr_potentially_breached_passwords {
+    sql: ${TABLE}.metrics.quantity.pwmgr_potentially_breached_passwords ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Pwmgr Potentially Breached Passwords"
+    description: "The number of potentially breached passwords, as determined by LoginBreaches.getPotentialBreachesByLoginGUID. This metric was generated to correspond to the Legacy Telemetry scalar pwmgr.potentially_breached_passwords.
+"
+  }
+
+  dimension: metrics__quantity__security_global_privacy_control_enabled {
+    sql: ${TABLE}.metrics.quantity.security_global_privacy_control_enabled ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Security Global Privacy Control Enabled"
+    description: "Measures user retention of the Global Privacy Control. 0 = never enabled, 1 = enabled, 2 = disabled (but was enabled) This metric was generated to correspond to the Legacy Telemetry scalar security.global_privacy_control_enabled.
+"
+  }
+
+  dimension: metrics__quantity__security_https_only_mode_enabled {
+    sql: ${TABLE}.metrics.quantity.security_https_only_mode_enabled ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Security Https Only Mode Enabled"
+    description: "Measures user retention of the HTTPS-Only Mode. 0 = never enabled, 1 = enabled, 2 = disabled (but was enabled) This metric was generated to correspond to the Legacy Telemetry scalar security.https_only_mode_enabled.
+"
+  }
+
+  dimension: metrics__quantity__security_https_only_mode_enabled_pbm {
+    sql: ${TABLE}.metrics.quantity.security_https_only_mode_enabled_pbm ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Security Https Only Mode Enabled Pbm"
+    description: "Measures user retention of the HTTPS-Only Mode in Private Browsing. 0 = https-only never enabled in PBM, 1 = https-only enabled in PBM, 2 = https-only disabled in PBM (but was enabled) This metric was generated to correspond to the Legacy Telemetry scalar security.https_only_mode_enabled_pbm.
+"
+  }
+
+  dimension: metrics__quantity__sidebar_width {
+    sql: ${TABLE}.metrics.quantity.sidebar_width ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Sidebar Width"
+    description: "Width of the sidebar, in pixels.
+"
+  }
+
+  dimension: metrics__quantity__startup_profile_count {
+    sql: ${TABLE}.metrics.quantity.startup_profile_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Startup Profile Count"
+    description: "This records the number of known profiles after startup completes. This includes any profiles that were created during startup. This metric was generated to correspond to the Legacy Telemetry scalar startup.profile_count.
+"
+  }
+
+  dimension: metrics__quantity__startup_seconds_since_last_os_restart {
+    sql: ${TABLE}.metrics.quantity.startup_seconds_since_last_os_restart ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Startup Seconds Since Last Os Restart"
+    description: "The time in seconds between the first browser window loading, and the time the OS started. This can give us an indication of whether starting the browser may have been the first thing the user did after starting their computer. This metric was generated to correspond to the Legacy Telemetry scalar startup.seconds_since_last_os_restart.
+"
+  }
+
+  dimension: metrics__quantity__timestamps_about_home_topsites_first_paint {
+    sql: ${TABLE}.metrics.quantity.timestamps_about_home_topsites_first_paint ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Timestamps About Home Topsites First Paint"
+    description: "Record the timestamp of when the first about:home's Topsites are painted. Only records if about:home is set as the default homepage, and if sessions are not being restored by default. This metric was generated to correspond to the Legacy Telemetry scalar timestamps.about_home_topsites_first_paint.
+"
+  }
+
+  dimension: metrics__quantity__timestamps_first_paint {
+    sql: ${TABLE}.metrics.quantity.timestamps_first_paint ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Timestamps First Paint"
+    description: "Record the timestamp of the first content window paint, in milliseconds since process start. This metric was generated to correspond to the Legacy Telemetry scalar timestamps.first_paint.
+"
+  }
+
+  dimension: metrics__quantity__timestamps_first_paint_two {
+    sql: ${TABLE}.metrics.quantity.timestamps_first_paint_two ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Timestamps First Paint Two"
+    description: "Record the timestamp of the first main window paint, in milliseconds since process start. Intended to replace first_paint since first_paint is broken. This metric was generated to correspond to the Legacy Telemetry scalar timestamps.first_paint_two.
+"
+  }
+
+  dimension: metrics__rate__cert_signature_cache_hits__denominator {
+    sql: ${TABLE}.metrics.rate.cert_signature_cache_hits.denominator ;;
+    type: number
+    group_label: "Metrics Rate Cert Signature Cache Hits"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__cert_signature_cache_hits__numerator {
+    sql: ${TABLE}.metrics.rate.cert_signature_cache_hits.numerator ;;
+    type: number
+    group_label: "Metrics Rate Cert Signature Cache Hits"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__cert_trust_cache_hits__denominator {
+    sql: ${TABLE}.metrics.rate.cert_trust_cache_hits.denominator ;;
+    type: number
+    group_label: "Metrics Rate Cert Trust Cache Hits"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__cert_trust_cache_hits__numerator {
+    sql: ${TABLE}.metrics.rate.cert_trust_cache_hits.numerator ;;
+    type: number
+    group_label: "Metrics Rate Cert Trust Cache Hits"
+    group_item_label: "Numerator"
   }
 
   dimension: metrics__rate__cookie_banners_cmp_ratio_handled_by_cmp_rule__denominator {
@@ -3623,6 +9211,20 @@ API for the purposes of Validation (hence GVSV).
     group_item_label: "Numerator"
   }
 
+  dimension: metrics__rate__networking_set_cookie_expired_without_server_time__denominator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_expired_without_server_time.denominator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Expired Without Server Time"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_expired_without_server_time__numerator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_expired_without_server_time.numerator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Expired Without Server Time"
+    group_item_label: "Numerator"
+  }
+
   dimension: metrics__rate__networking_set_cookie_foreign__denominator {
     sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign.denominator ;;
     type: number
@@ -3662,6 +9264,62 @@ API for the purposes of Validation (hence GVSV).
     sql: ${TABLE}.metrics.rate.networking_set_cookie_partitioned.numerator ;;
     type: number
     group_label: "Metrics Rate Networking Set Cookie Partitioned"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__parsing_svg_unusual_pcdata__denominator {
+    sql: ${TABLE}.metrics.rate.parsing_svg_unusual_pcdata.denominator ;;
+    type: number
+    group_label: "Metrics Rate Parsing Svg Unusual Pcdata"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__parsing_svg_unusual_pcdata__numerator {
+    sql: ${TABLE}.metrics.rate.parsing_svg_unusual_pcdata.numerator ;;
+    type: number
+    group_label: "Metrics Rate Parsing Svg Unusual Pcdata"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__pkcs11_built_in_roots_module__denominator {
+    sql: ${TABLE}.metrics.rate.pkcs11_built_in_roots_module.denominator ;;
+    type: number
+    group_label: "Metrics Rate Pkcs11 Built In Roots Module"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__pkcs11_built_in_roots_module__numerator {
+    sql: ${TABLE}.metrics.rate.pkcs11_built_in_roots_module.numerator ;;
+    type: number
+    group_label: "Metrics Rate Pkcs11 Built In Roots Module"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__pkcs11_nss_cert_db__denominator {
+    sql: ${TABLE}.metrics.rate.pkcs11_nss_cert_db.denominator ;;
+    type: number
+    group_label: "Metrics Rate Pkcs11 Nss Cert Db"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__pkcs11_nss_cert_db__numerator {
+    sql: ${TABLE}.metrics.rate.pkcs11_nss_cert_db.numerator ;;
+    type: number
+    group_label: "Metrics Rate Pkcs11 Nss Cert Db"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__private_browsing_window_open_during_teardown__denominator {
+    sql: ${TABLE}.metrics.rate.private_browsing_window_open_during_teardown.denominator ;;
+    type: number
+    group_label: "Metrics Rate Private Browsing Window Open During Teardown"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__private_browsing_window_open_during_teardown__numerator {
+    sql: ${TABLE}.metrics.rate.private_browsing_window_open_during_teardown.numerator ;;
+    type: number
+    group_label: "Metrics Rate Private Browsing Window Open During Teardown"
     group_item_label: "Numerator"
   }
 
@@ -3847,6 +9505,20 @@ API for the purposes of Validation (hence GVSV).
     group_item_label: "Numerator"
   }
 
+  dimension: metrics__rate__sct_signature_cache_hits__denominator {
+    sql: ${TABLE}.metrics.rate.sct_signature_cache_hits.denominator ;;
+    type: number
+    group_label: "Metrics Rate Sct Signature Cache Hits"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__sct_signature_cache_hits__numerator {
+    sql: ${TABLE}.metrics.rate.sct_signature_cache_hits.numerator ;;
+    type: number
+    group_label: "Metrics Rate Sct Signature Cache Hits"
+    group_item_label: "Numerator"
+  }
+
   dimension: metrics__rate__translations_error_rate__denominator {
     sql: ${TABLE}.metrics.rate.translations_error_rate.denominator ;;
     type: number
@@ -3931,6 +9603,24 @@ API for the purposes of Validation (hence GVSV).
     group_item_label: "Numerator"
   }
 
+  dimension: metrics__string__a11y_instantiators {
+    sql: ${TABLE}.metrics.string.a11y_instantiators ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "A11Y Instantiators"
+    description: "The leaf name and version number of the binary for the process responsible for remotely instantiating a11y. This metric was generated to correspond to the Legacy Telemetry scalar a11y.instantiators.
+"
+  }
+
+  dimension: metrics__string__blocklist_mlbf_softblocks_source {
+    sql: ${TABLE}.metrics.string.blocklist_mlbf_softblocks_source ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Blocklist Mlbf Softblocks Source"
+    description: "The source of the RemoteSettings attachment that holds the bloom filter. Possible values are \"dump_match\", \"cache_match\", \"remote_match\",\"dump_fallback\", \"cache_fallback\", \"unknown\". \"dump_match\", \"cache_match\" and \"remote_match\" are expected known-good values, and means that the loaded bloomfilter matches the blocklist record in the RemoteSettings collection. The prefix denotes the immediate source of the loaded data: \"dump\" means packaged with the application, \"remote\" means a freshly downloaded bloomfilter, \"cache\" means a previously downloaded bloomfilter. \"dump_fallback\" and \"cache_fallback\" means that the last known bloomfilter was used, despite it not matching the latest record in the RemoteSettings collection. In this case the outdated bloomfilter is used as a fallback (e.g. because the latest version cannot be downloaded). \"unknown\"  means that the bloomfilter cannot be loaded at all. This can happen if the blocklist is disabled via preferences or enterprise policies.
+"
+  }
+
   dimension: metrics__string__blocklist_mlbf_source {
     sql: ${TABLE}.metrics.string.blocklist_mlbf_source ;;
     type: string
@@ -3991,6 +9681,15 @@ API for the purposes of Validation (hence GVSV).
     group_label: "Metrics String"
     group_item_label: "Geckoview Validation Version"
     description: "The version of the Gecko engine, example: 74.0a1 Mirror of `geckoview.version` for validation of migrated data.
+"
+  }
+
+  dimension: metrics__string__genai_chatbot_provider {
+    sql: ${TABLE}.metrics.string.genai_chatbot_provider ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Genai Chatbot Provider"
+    description: "Indicates id of activated chatbot provider or \"custom\" or \"none\"
 "
   }
 
@@ -4075,6 +9774,15 @@ API for the purposes of Validation (hence GVSV).
 "
   }
 
+  dimension: metrics__string__gfx_linux_window_protocol {
+    sql: ${TABLE}.metrics.string.gfx_linux_window_protocol ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gfx Linux Window Protocol"
+    description: "Windowing protocol on Linux. Can be Wayland, WaylandDRM, XWayland, or X11 This metric was generated to correspond to the Legacy Telemetry scalar gfx.linux_window_protocol.
+"
+  }
+
   dimension: metrics__string__gfx_status_compositor {
     sql: ${TABLE}.metrics.string.gfx_status_compositor ;;
     type: string
@@ -4145,6 +9853,24 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics String"
     group_item_label: "Installation First Seen Version"
     description: "The application version installed by the installer (not necessarily the current version)
+"
+  }
+
+  dimension: metrics__string__os_environment_allowed_app_sources {
+    sql: ${TABLE}.metrics.string.os_environment_allowed_app_sources ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Os Environment Allowed App Sources"
+    description: "Indicates what sources the OS is currently configured to allow apps to be installed from. Possible values are \"Anywhere\", \"Recommendations\", \"PreferStore\", \"StoreOnly\", \"NoSuchFeature\", or \"Error\". \"Recommendations\" allows installs from anywhere, but recommends a comparable app from the store, if available. \"NoSuchFeature\" will be reported on versions of Windows that do not have an app source setting. This metric was generated to correspond to the Legacy Telemetry scalar os.environment.allowed_app_sources.
+"
+  }
+
+  dimension: metrics__string__os_environment_launch_method {
+    sql: ${TABLE}.metrics.string.os_environment_launch_method ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Os Environment Launch Method"
+    description: "Records how Firefox was started on Windows. Currently will be one of \"Desktop\", \"DesktopPrivate\", \"StartMenu\" (including pins), \"StartMenuPrivate\", \"Taskbar\", \"TaskbarPrivate\", \"OtherShortcut\", or \"Other\" This metric was generated to correspond to the Legacy Telemetry scalar os.environment.launch_method.
 "
   }
 
@@ -4275,6 +10001,92 @@ default engine, and hence both versions of these fields will be filled in.
 "
   }
 
+  dimension: metrics__string__sidebar_display_settings {
+    sql: ${TABLE}.metrics.string.sidebar_display_settings ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Sidebar Display Settings"
+    description: "Setting for sidebar display (either \"always\" or \"hide\").
+"
+  }
+
+  dimension: metrics__string__sidebar_position_settings {
+    sql: ${TABLE}.metrics.string.sidebar_position_settings ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Sidebar Position Settings"
+    description: "Setting for sidebar position (either \"left\" or \"right\").
+"
+  }
+
+  dimension: metrics__string__sidebar_tabs_layout {
+    sql: ${TABLE}.metrics.string.sidebar_tabs_layout ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Sidebar Tabs Layout"
+    description: "Setting for tabs orientation (either \"horizontal\" or \"vertical\").
+"
+  }
+
+  dimension: metrics__string__startup_profile_database_version {
+    sql: ${TABLE}.metrics.string.startup_profile_database_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Startup Profile Database Version"
+    description: "The version of the profiles.ini database loaded during startup. A value of \"0\" is used to indicate that no file was present during startup. This metric was generated to correspond to the Legacy Telemetry scalar startup.profile_database_version.
+"
+  }
+
+  dimension: metrics__string__startup_profile_selection_reason {
+    sql: ${TABLE}.metrics.string.startup_profile_selection_reason ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Startup Profile Selection Reason"
+    description: "How the profile was selected during startup. One of the following reasons:
+  unknown:
+    Generally should not happen, set as a default in case no other reason
+    occured.
+  profile-manager:
+    The profile was selected by the profile manager.
+  profile-selector:
+    The profile was selected by the profile selector window.
+  profile-reset:
+    The profile was selected for reset, normally this would mean a restart.
+  restart:
+    The user restarted the application, the same profile as previous will
+    be used.
+  argument-profile:
+    The profile was selected by the --profile command line argument.
+  argument-p:
+    The profile was selected by the -p command line argument.
+  firstrun-claimed-default:
+    A first run of a dedicated profiles build chose the old default
+    profile to be the default for this install.
+  firstrun-skipped-default:
+    A first run of a dedicated profiles build skipped over the old default
+    profile and created a new profile.
+  restart-claimed-default:
+    A first run of a dedicate"
+  }
+
+  dimension: metrics__string__update_version_pin {
+    sql: ${TABLE}.metrics.string.update_version_pin ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Update Version Pin"
+    description: "The AppUpdatePin Enterprise Policy controls the maximum version that the browser can update to. If the policy is set, this probe will report the policy's value. The possible policy values are \"X.\" and \"X.Y.\", where X is the pinned major version and Y is the pinned minor version. This metric was generated to correspond to the Legacy Telemetry scalar update.version_pin.
+"
+  }
+
+  dimension: metrics__string__widget_gtk_version {
+    sql: ${TABLE}.metrics.string.widget_gtk_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Widget Gtk Version"
+    description: "The version of Gtk 3 in use. This metric was generated to correspond to the Legacy Telemetry scalar widget.gtk_version.
+"
+  }
+
   dimension: metrics__string_list__background_update_reasons_to_not_update {
     sql: ${TABLE}.metrics.string_list.background_update_reasons_to_not_update ;;
     hidden: yes
@@ -4316,6 +10128,168 @@ default engine, and hence both versions of these fields will be filled in.
     type: number
     group_label: "Metrics Timespan Fog Initialization"
     group_item_label: "Value"
+  }
+
+  dimension: metrics__timespan__migration_time_to_produce_migrator_list__time_unit {
+    sql: ${TABLE}.metrics.timespan.migration_time_to_produce_migrator_list.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Migration Time To Produce Migrator List"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__migration_time_to_produce_migrator_list__value {
+    sql: ${TABLE}.metrics.timespan.migration_time_to_produce_migrator_list.value ;;
+    type: number
+    group_label: "Metrics Timespan Migration Time To Produce Migrator List"
+    group_item_label: "Value"
+  }
+
+  dimension: metrics__timespan__networking_loading_certs_task__time_unit {
+    sql: ${TABLE}.metrics.timespan.networking_loading_certs_task.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Networking Loading Certs Task"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__networking_loading_certs_task__value {
+    sql: ${TABLE}.metrics.timespan.networking_loading_certs_task.value ;;
+    type: number
+    group_label: "Metrics Timespan Networking Loading Certs Task"
+    group_item_label: "Value"
+  }
+
+  dimension: metrics__timespan__networking_nss_initialization__time_unit {
+    sql: ${TABLE}.metrics.timespan.networking_nss_initialization.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Networking Nss Initialization"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__networking_nss_initialization__value {
+    sql: ${TABLE}.metrics.timespan.networking_nss_initialization.value ;;
+    type: number
+    group_label: "Metrics Timespan Networking Nss Initialization"
+    group_item_label: "Value"
+  }
+
+  dimension: metrics__timing_distribution__a11y_tree_update_timing__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.a11y_tree_update_timing.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution A11Y Tree Update Timing"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__a11y_tree_update_timing__count {
+    sql: ${TABLE}.metrics.timing_distribution.a11y_tree_update_timing.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution A11Y Tree Update Timing"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__a11y_tree_update_timing__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.a11y_tree_update_timing.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution A11Y Tree Update Timing"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__a11y_tree_update_timing__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.a11y_tree_update_timing.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution A11Y Tree Update Timing"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__a11y_tree_update_timing__range {
+    sql: ${TABLE}.metrics.timing_distribution.a11y_tree_update_timing.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__a11y_tree_update_timing__sum {
+    sql: ${TABLE}.metrics.timing_distribution.a11y_tree_update_timing.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution A11Y Tree Update Timing"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__a11y_tree_update_timing__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.a11y_tree_update_timing.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution A11Y Tree Update Timing"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__a11y_tree_update_timing__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.a11y_tree_update_timing.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution A11Y Tree Update Timing"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__a11y_tree_update_timing__values {
+    sql: ${TABLE}.metrics.timing_distribution.a11y_tree_update_timing.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Application Reputation Remote Lookup Response Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.values ;;
+    hidden: yes
   }
 
   dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__bucket_count {
@@ -4375,6 +10349,306 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
     sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Favicons Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Favicons Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Browser Backup Favicons Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Favicons Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Favicons Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Browser Backup Favicons Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Favicons Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Places Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Places Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Browser Backup Places Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Places Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Places Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Browser Backup Places Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Places Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Total Backup Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Total Backup Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Browser Backup Total Backup Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Total Backup Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Total Backup Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Browser Backup Total Backup Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Browser Backup Total Backup Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_failure__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Failure"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_failure__count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Failure"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_failure__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cert Verification Time Failure"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_failure__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Failure"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_failure__range {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_failure__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Failure"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_failure__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cert Verification Time Failure"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_failure__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Failure"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_failure__values {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_failure.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Success"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Success"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cert Verification Time Success"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Success"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__range {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Success"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cert Verification Time Success"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verification Time Success"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verification_time_success__values {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verification_time_success.values ;;
     hidden: yes
   }
 
@@ -4555,6 +10829,786 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__values {
     sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_duration.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Purging Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Purging Duration"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_duration.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cookie Purging Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_duration.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Purging Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_duration.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Purging Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cookie Purging Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_duration.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Purging Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_interval_hours__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_interval_hours.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Purging Interval Hours"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_interval_hours__count {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_interval_hours.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Purging Interval Hours"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_interval_hours__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_interval_hours.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cookie Purging Interval Hours"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_interval_hours__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_interval_hours.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Purging Interval Hours"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_interval_hours__range {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_interval_hours.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_interval_hours__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_interval_hours.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Purging Interval Hours"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_interval_hours__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_interval_hours.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cookie Purging Interval Hours"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_interval_hours__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_interval_hours.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Purging Interval Hours"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_interval_hours__values {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_interval_hours.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_trackers_user_interaction_remaining_days__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_trackers_user_interaction_remaining_days.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Purging Trackers User Interaction Remaining Days"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_trackers_user_interaction_remaining_days__count {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_trackers_user_interaction_remaining_days.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Purging Trackers User Interaction Remaining Days"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_trackers_user_interaction_remaining_days__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_trackers_user_interaction_remaining_days.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cookie Purging Trackers User Interaction Remaining Days"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_trackers_user_interaction_remaining_days__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_trackers_user_interaction_remaining_days.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Purging Trackers User Interaction Remaining Days"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_trackers_user_interaction_remaining_days__range {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_trackers_user_interaction_remaining_days.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_trackers_user_interaction_remaining_days__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_trackers_user_interaction_remaining_days.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Purging Trackers User Interaction Remaining Days"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_trackers_user_interaction_remaining_days__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_trackers_user_interaction_remaining_days.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cookie Purging Trackers User Interaction Remaining Days"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_trackers_user_interaction_remaining_days__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_trackers_user_interaction_remaining_days.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Purging Trackers User Interaction Remaining Days"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_trackers_user_interaction_remaining_days__values {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_trackers_user_interaction_remaining_days.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Async Snow White Freeing"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Async Snow White Freeing"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Async Snow White Freeing"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Async Snow White Freeing"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__range {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Async Snow White Freeing"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Async Snow White Freeing"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Async Snow White Freeing"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__values {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Deferred Finalize Async"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Deferred Finalize Async"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Deferred Finalize Async"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Deferred Finalize Async"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__range {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Deferred Finalize Async"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Deferred Finalize Async"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Deferred Finalize Async"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__values {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_full__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Full"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_full__count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Full"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_full__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Full"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_full__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Full"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_full__range {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_full__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Full"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_full__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Full"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_full__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Full"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_full__values {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_max_pause__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Max Pause"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_max_pause__count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Max Pause"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_max_pause__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Max Pause"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_max_pause__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Max Pause"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_max_pause__range {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_max_pause__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Max Pause"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_max_pause__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Max Pause"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_max_pause__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Max Pause"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_max_pause__values {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time_between__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time Between"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time_between__count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time Between"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time_between__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Time Between"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time_between__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time Between"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time_between__range {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time_between__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time Between"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time_between__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Time Between"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time_between__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Time Between"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_time_between__values {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_worker_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Worker Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_worker_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Worker Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_worker_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Worker Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_worker_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Worker Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_worker_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_worker_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Worker Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_worker_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cycle Collector Worker Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_worker_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cycle Collector Worker Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cycle_collector_worker_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_mainthread__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_mainthread__count {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_mainthread__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_mainthread__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_mainthread__range {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_mainthread__sum {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_mainthread__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_mainthread__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_mainthread__values {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_total__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_total__count {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_total__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_total__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_total__range {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_total__sum {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_total__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_total__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_launch_total__values {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_sync_launch__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_sync_launch__count {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_sync_launch__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_sync_launch__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_sync_launch__range {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_sync_launch__sum {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_sync_launch__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_sync_launch__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__dom_contentprocess_sync_launch__values {
+    sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.values ;;
     hidden: yes
   }
 
@@ -5398,6 +12452,126 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time 2"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__count {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time 2"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time 2"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time 2"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__range {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time 2"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time 2"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time 2"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__values {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_2.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time Ns"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__count {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time Ns"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time Ns"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time Ns"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__range {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time Ns"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time Ns"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time Ns"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__values {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__fog_ipc_flush_durations__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.bucket_count ;;
     type: number
@@ -5515,6 +12689,606 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__values {
     sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_bundledfonts_activate__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_bundledfonts_activate.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Bundledfonts Activate"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_bundledfonts_activate__count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_bundledfonts_activate.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Bundledfonts Activate"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_bundledfonts_activate__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_bundledfonts_activate.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist Bundledfonts Activate"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_bundledfonts_activate__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_bundledfonts_activate.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Bundledfonts Activate"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_bundledfonts_activate__range {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_bundledfonts_activate.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_bundledfonts_activate__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_bundledfonts_activate.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Bundledfonts Activate"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_bundledfonts_activate__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_bundledfonts_activate.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist Bundledfonts Activate"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_bundledfonts_activate__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_bundledfonts_activate.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Bundledfonts Activate"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_bundledfonts_activate__values {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_bundledfonts_activate.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_collect__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_collect.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Dwritefont Delayedinit Collect"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_collect__count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_collect.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Dwritefont Delayedinit Collect"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_collect__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_collect.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist Dwritefont Delayedinit Collect"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_collect__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_collect.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Dwritefont Delayedinit Collect"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_collect__range {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_collect.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_collect__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_collect.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Dwritefont Delayedinit Collect"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_collect__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_collect.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist Dwritefont Delayedinit Collect"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_collect__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_collect.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Dwritefont Delayedinit Collect"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_collect__values {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_collect.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_total__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_total.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Dwritefont Delayedinit Total"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_total__count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_total.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Dwritefont Delayedinit Total"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_total__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_total.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist Dwritefont Delayedinit Total"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_total__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_total.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Dwritefont Delayedinit Total"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_total__range {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_total.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_total__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_total.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Dwritefont Delayedinit Total"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_total__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_total.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist Dwritefont Delayedinit Total"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_total__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_total.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Dwritefont Delayedinit Total"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_total__values {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_total.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_gdi_init_total__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_gdi_init_total.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Gdi Init Total"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_gdi_init_total__count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_gdi_init_total.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Gdi Init Total"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_gdi_init_total__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_gdi_init_total.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist Gdi Init Total"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_gdi_init_total__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_gdi_init_total.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Gdi Init Total"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_gdi_init_total__range {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_gdi_init_total.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_gdi_init_total__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_gdi_init_total.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Gdi Init Total"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_gdi_init_total__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_gdi_init_total.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist Gdi Init Total"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_gdi_init_total__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_gdi_init_total.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Gdi Init Total"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_gdi_init_total__values {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_gdi_init_total.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initfacenamelists__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initfacenamelists.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Initfacenamelists"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initfacenamelists__count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initfacenamelists.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Initfacenamelists"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initfacenamelists__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initfacenamelists.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist Initfacenamelists"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initfacenamelists__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initfacenamelists.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Initfacenamelists"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initfacenamelists__range {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initfacenamelists.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initfacenamelists__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initfacenamelists.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Initfacenamelists"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initfacenamelists__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initfacenamelists.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist Initfacenamelists"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initfacenamelists__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initfacenamelists.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Initfacenamelists"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initfacenamelists__values {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initfacenamelists.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Initotherfamilynames"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames__count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Initotherfamilynames"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist Initotherfamilynames"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Initotherfamilynames"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames__range {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Initotherfamilynames"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist Initotherfamilynames"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Initotherfamilynames"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames__values {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames_no_deferring__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames_no_deferring.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Initotherfamilynames No Deferring"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames_no_deferring__count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames_no_deferring.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Initotherfamilynames No Deferring"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames_no_deferring__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames_no_deferring.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist Initotherfamilynames No Deferring"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames_no_deferring__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames_no_deferring.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Initotherfamilynames No Deferring"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames_no_deferring__range {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames_no_deferring.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames_no_deferring__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames_no_deferring.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Initotherfamilynames No Deferring"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames_no_deferring__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames_no_deferring.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist Initotherfamilynames No Deferring"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames_no_deferring__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames_no_deferring.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Initotherfamilynames No Deferring"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames_no_deferring__values {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames_no_deferring.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_mac_init_total__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_mac_init_total.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Mac Init Total"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_mac_init_total__count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_mac_init_total.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Mac Init Total"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_mac_init_total__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_mac_init_total.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist Mac Init Total"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_mac_init_total__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_mac_init_total.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Mac Init Total"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_mac_init_total__range {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_mac_init_total.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_mac_init_total__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_mac_init_total.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Mac Init Total"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_mac_init_total__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_mac_init_total.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist Mac Init Total"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_mac_init_total__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_mac_init_total.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist Mac Init Total"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_mac_init_total__values {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_mac_init_total.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist System Font Fallback"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback__count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist System Font Fallback"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist System Font Fallback"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist System Font Fallback"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback__range {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist System Font Fallback"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist System Font Fallback"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist System Font Fallback"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback__values {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback_first__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback_first.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist System Font Fallback First"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback_first__count {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback_first.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist System Font Fallback First"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback_first__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback_first.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist System Font Fallback First"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback_first__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback_first.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist System Font Fallback First"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback_first__range {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback_first.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback_first__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback_first.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist System Font Fallback First"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback_first__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback_first.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fontlist System Font Fallback First"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback_first__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback_first.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fontlist System Font Fallback First"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback_first__values {
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback_first.values ;;
     hidden: yes
   }
 
@@ -6178,6 +13952,66 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__glean_database_write_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_database_write_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__glean_upload_send_failure__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.bucket_count ;;
     type: number
@@ -6418,6 +14252,126 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__gpu_process_initialization_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_initialization_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gpu Process Initialization Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__gpu_process_initialization_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_initialization_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gpu Process Initialization Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__gpu_process_initialization_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_initialization_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Gpu Process Initialization Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__gpu_process_initialization_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_initialization_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gpu Process Initialization Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__gpu_process_initialization_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_initialization_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__gpu_process_initialization_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_initialization_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gpu Process Initialization Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__gpu_process_initialization_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_initialization_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Gpu Process Initialization Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__gpu_process_initialization_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_initialization_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gpu Process Initialization Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__gpu_process_initialization_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_initialization_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__gpu_process_launch_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_launch_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gpu Process Launch Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__gpu_process_launch_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_launch_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gpu Process Launch Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__gpu_process_launch_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_launch_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Gpu Process Launch Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__gpu_process_launch_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_launch_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gpu Process Launch Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__gpu_process_launch_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_launch_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__gpu_process_launch_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_launch_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gpu Process Launch Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__gpu_process_launch_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_launch_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Gpu Process Launch Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__gpu_process_launch_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_launch_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gpu Process Launch Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__gpu_process_launch_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_launch_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__httpsfirst_downgrade_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.bucket_count ;;
     type: number
@@ -6538,6 +14492,186 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__javascript_gc_animation__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_animation.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Animation"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_animation__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_animation.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Animation"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_animation__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_animation.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Animation"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_animation__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_animation.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Animation"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_animation__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_animation.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_animation__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_animation.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Animation"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_animation__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_animation.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Animation"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_animation__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_animation.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Animation"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_animation__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_animation.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Budget"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Budget"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Budget"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Budget"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Budget"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Budget"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Budget"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget_overrun__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget_overrun.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Budget Overrun"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget_overrun__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget_overrun.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Budget Overrun"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget_overrun__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget_overrun.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Budget Overrun"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget_overrun__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget_overrun.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Budget Overrun"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget_overrun__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget_overrun.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget_overrun__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget_overrun.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Budget Overrun"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget_overrun__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget_overrun.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Budget Overrun"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget_overrun__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget_overrun.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Budget Overrun"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_budget_overrun__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget_overrun.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__javascript_gc_compact_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.bucket_count ;;
     type: number
@@ -6595,6 +14729,66 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__javascript_gc_compact_time__values {
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_gray__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_gray.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Gray"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_gray__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_gray.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Gray"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_gray__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_gray.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Gray"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_gray__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_gray.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Gray"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_gray__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_gray.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_gray__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_gray.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Gray"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_gray__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_gray.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Gray"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_gray__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_gray.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Gray"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_gray__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_gray.values ;;
     hidden: yes
   }
 
@@ -6715,6 +14909,126 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__javascript_gc_mark_time__values {
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_weak__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_weak.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Weak"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_weak__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_weak.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Weak"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_weak__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_weak.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Weak"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_weak__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_weak.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Weak"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_weak__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_weak.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_weak__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_weak.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Weak"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_weak__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_weak.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Weak"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_weak__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_weak.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Weak"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_weak__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_weak.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_max_pause__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_max_pause.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Max Pause"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_max_pause__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_max_pause.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Max Pause"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_max_pause__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_max_pause.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Max Pause"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_max_pause__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_max_pause.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Max Pause"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_max_pause__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_max_pause.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_max_pause__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_max_pause.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Max Pause"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_max_pause__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_max_pause.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Max Pause"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_max_pause__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_max_pause.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Max Pause"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_max_pause__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_max_pause.values ;;
     hidden: yes
   }
 
@@ -6958,6 +15272,186 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__javascript_gc_task_start_delay__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_task_start_delay.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Task Start Delay"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_task_start_delay__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_task_start_delay.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Task Start Delay"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_task_start_delay__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_task_start_delay.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Task Start Delay"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_task_start_delay__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_task_start_delay.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Task Start Delay"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_task_start_delay__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_task_start_delay.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_task_start_delay__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_task_start_delay.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Task Start Delay"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_task_start_delay__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_task_start_delay.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Task Start Delay"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_task_start_delay__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_task_start_delay.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Task Start Delay"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_task_start_delay__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_task_start_delay.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Time Between"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Time Between"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Time Between"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Time Between"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Time Between"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Time Between"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Time Between"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_slices__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_slices.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Time Between Slices"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_slices__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_slices.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Time Between Slices"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_slices__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_slices.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Time Between Slices"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_slices__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_slices.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Time Between Slices"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_slices__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_slices.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_slices__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_slices.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Time Between Slices"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_slices__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_slices.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Time Between Slices"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_slices__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_slices.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Time Between Slices"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_slices__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_slices.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__javascript_gc_total_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.bucket_count ;;
     type: number
@@ -7015,6 +15509,66 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__javascript_gc_total_time__values {
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Ion Compile Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_ion_compile_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.values ;;
     hidden: yes
   }
 
@@ -7438,6 +15992,186 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Localstorage Database Request Allow To Close Response Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparedatastore Processing Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparedatastore Processing Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ls Preparedatastore Processing Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparedatastore Processing Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparedatastore Processing Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ls Preparedatastore Processing Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparedatastore Processing Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparelsdatabase Processing Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparelsdatabase Processing Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ls Preparelsdatabase Processing Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparelsdatabase Processing Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparelsdatabase Processing Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ls Preparelsdatabase Processing Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ls Preparelsdatabase Processing Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__network_cache_hit_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.bucket_count ;;
     type: number
@@ -7495,6 +16229,306 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__network_cache_hit_time__values {
     sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Miss Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_miss_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_miss_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_cache_read_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_read_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Read Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_read_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_read_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Read Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_read_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_read_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Cache Read Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_read_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_read_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Read Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_read_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_read_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_cache_read_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_read_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Read Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_read_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_read_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Cache Read Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_read_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_read_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Read Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_read_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_read_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Complete Load"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Complete Load"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Complete Load"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Complete Load"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Complete Load"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Complete Load"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Complete Load"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_cached__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_cached.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Complete Load Cached"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_cached__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_cached.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Complete Load Cached"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_cached__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_cached.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Complete Load Cached"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_cached__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_cached.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Complete Load Cached"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_cached__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_cached.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_cached__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_cached.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Complete Load Cached"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_cached__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_cached.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Complete Load Cached"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_cached__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_cached.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Complete Load Cached"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_cached__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_cached.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_net__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_net.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Complete Load Net"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_net__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_net.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Complete Load Net"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_net__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_net.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Complete Load Net"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_net__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_net.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Complete Load Net"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_net__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_net.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_net__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_net.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Complete Load Net"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_net__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_net.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Complete Load Net"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_net__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_net.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Complete Load Net"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_complete_load_net__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_complete_load_net.values ;;
     hidden: yes
   }
 
@@ -7678,6 +16712,66 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__network_first_sent_to_last_received__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_sent_to_last_received.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network First Sent To Last Received"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_first_sent_to_last_received__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_sent_to_last_received.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network First Sent To Last Received"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_first_sent_to_last_received__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_sent_to_last_received.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network First Sent To Last Received"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_first_sent_to_last_received__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_sent_to_last_received.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network First Sent To Last Received"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_first_sent_to_last_received__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_sent_to_last_received.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_first_sent_to_last_received__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_sent_to_last_received.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network First Sent To Last Received"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_first_sent_to_last_received__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_sent_to_last_received.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network First Sent To Last Received"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_first_sent_to_last_received__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_sent_to_last_received.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network First Sent To Last Received"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_first_sent_to_last_received__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_sent_to_last_received.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__network_font_download_end__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.bucket_count ;;
     type: number
@@ -7738,6 +16832,186 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__network_http_revalidation__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_http_revalidation.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Http Revalidation"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_http_revalidation__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_http_revalidation.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Http Revalidation"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_http_revalidation__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_http_revalidation.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Http Revalidation"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_http_revalidation__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_http_revalidation.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Http Revalidation"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_http_revalidation__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_http_revalidation.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_http_revalidation__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_http_revalidation.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Http Revalidation"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_http_revalidation__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_http_revalidation.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Http Revalidation"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_http_revalidation__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_http_revalidation.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Http Revalidation"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_http_revalidation__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_http_revalidation.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_received__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_received.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Open To First Received"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_received__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_received.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Open To First Received"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_received__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_received.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Open To First Received"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_received__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_received.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Open To First Received"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_received__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_received.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_received__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_received.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Open To First Received"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_received__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_received.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Open To First Received"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_received__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_received.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Open To First Received"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_received__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_received.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_sent__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_sent.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Open To First Sent"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_sent__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_sent.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Open To First Sent"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_sent__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_sent.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Open To First Sent"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_sent__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_sent.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Open To First Sent"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_sent__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_sent.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_sent__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_sent.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Open To First Sent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_sent__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_sent.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Open To First Sent"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_sent__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_sent.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Open To First Sent"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_first_sent__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_first_sent.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.bucket_count ;;
     type: number
@@ -7795,6 +17069,786 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__values {
     sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_cache_read_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_cache_read_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Cache Read Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_cache_read_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_cache_read_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Cache Read Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_cache_read_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_cache_read_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Cache Read Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_cache_read_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_cache_read_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Cache Read Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_cache_read_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_cache_read_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_cache_read_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_cache_read_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Cache Read Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_cache_read_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_cache_read_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Cache Read Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_cache_read_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_cache_read_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Cache Read Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_cache_read_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_cache_read_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Complete Load"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Complete Load"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Complete Load"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Complete Load"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Complete Load"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Complete Load"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Complete Load"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_cached__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_cached.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Complete Load Cached"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_cached__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_cached.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Complete Load Cached"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_cached__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_cached.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Complete Load Cached"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_cached__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_cached.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Complete Load Cached"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_cached__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_cached.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_cached__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_cached.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Complete Load Cached"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_cached__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_cached.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Complete Load Cached"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_cached__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_cached.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Complete Load Cached"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_cached__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_cached.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_net__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_net.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Complete Load Net"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_net__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_net.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Complete Load Net"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_net__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_net.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Complete Load Net"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_net__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_net.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Complete Load Net"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_net__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_net.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_net__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_net.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Complete Load Net"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_net__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_net.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Complete Load Net"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_net__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_net.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Complete Load Net"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_complete_load_net__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_complete_load_net.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_end__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_end.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Dns End"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_end__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_end.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Dns End"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_end__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_end.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Dns End"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_end__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_end.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Dns End"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_end__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_end.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_end__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_end.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Dns End"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_end__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_end.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Dns End"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_end__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_end.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Dns End"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_end__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_end.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_start__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_start.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Dns Start"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_start__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_start.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Dns Start"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_start__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_start.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Dns Start"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_start__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_start.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Dns Start"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_start__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_start.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_start__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_start.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Dns Start"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_start__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_start.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Dns Start"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_start__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_start.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Dns Start"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_dns_start__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_start.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_from_cache__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_from_cache.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub First From Cache"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_from_cache__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_from_cache.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub First From Cache"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_from_cache__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_from_cache.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub First From Cache"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_from_cache__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_from_cache.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub First From Cache"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_from_cache__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_from_cache.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_from_cache__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_from_cache.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub First From Cache"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_from_cache__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_from_cache.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub First From Cache"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_from_cache__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_from_cache.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub First From Cache"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_from_cache__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_from_cache.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_sent_to_last_received__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_sent_to_last_received.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub First Sent To Last Received"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_sent_to_last_received__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_sent_to_last_received.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub First Sent To Last Received"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_sent_to_last_received__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_sent_to_last_received.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub First Sent To Last Received"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_sent_to_last_received__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_sent_to_last_received.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub First Sent To Last Received"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_sent_to_last_received__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_sent_to_last_received.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_sent_to_last_received__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_sent_to_last_received.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub First Sent To Last Received"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_sent_to_last_received__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_sent_to_last_received.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub First Sent To Last Received"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_sent_to_last_received__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_sent_to_last_received.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub First Sent To Last Received"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_first_sent_to_last_received__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_first_sent_to_last_received.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_http_revalidation__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_http_revalidation.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Http Revalidation"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_http_revalidation__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_http_revalidation.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Http Revalidation"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_http_revalidation__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_http_revalidation.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Http Revalidation"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_http_revalidation__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_http_revalidation.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Http Revalidation"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_http_revalidation__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_http_revalidation.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_http_revalidation__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_http_revalidation.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Http Revalidation"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_http_revalidation__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_http_revalidation.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Http Revalidation"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_http_revalidation__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_http_revalidation.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Http Revalidation"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_http_revalidation__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_http_revalidation.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_received__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_received.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Open To First Received"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_received__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_received.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Open To First Received"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_received__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_received.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Open To First Received"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_received__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_received.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Open To First Received"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_received__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_received.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_received__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_received.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Open To First Received"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_received__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_received.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Open To First Received"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_received__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_received.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Open To First Received"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_received__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_received.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_sent__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_sent.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Open To First Sent"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_sent__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_sent.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Open To First Sent"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_sent__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_sent.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Open To First Sent"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_sent__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_sent.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Open To First Sent"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_sent__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_sent.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_sent__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_sent.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Open To First Sent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_sent__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_sent.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Open To First Sent"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_sent__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_sent.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Open To First Sent"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_open_to_first_sent__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_open_to_first_sent.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tcp_connection__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tcp_connection.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Tcp Connection"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tcp_connection__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tcp_connection.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Tcp Connection"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tcp_connection__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tcp_connection.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Tcp Connection"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tcp_connection__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tcp_connection.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Tcp Connection"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tcp_connection__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tcp_connection.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tcp_connection__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tcp_connection.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Tcp Connection"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tcp_connection__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tcp_connection.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Tcp Connection"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tcp_connection__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tcp_connection.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Tcp Connection"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tcp_connection__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tcp_connection.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tls_handshake__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tls_handshake.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Tls Handshake"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tls_handshake__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tls_handshake.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Tls Handshake"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tls_handshake__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tls_handshake.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Tls Handshake"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tls_handshake__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tls_handshake.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Tls Handshake"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tls_handshake__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tls_handshake.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tls_handshake__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tls_handshake.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Tls Handshake"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tls_handshake__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tls_handshake.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Sub Tls Handshake"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tls_handshake__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tls_handshake.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Sub Tls Handshake"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_sub_tls_handshake__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_sub_tls_handshake.values ;;
     hidden: yes
   }
 
@@ -7915,6 +17969,126 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__network_tls_handshake__values {
     sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata First Read Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata First Read Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Cache Metadata First Read Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata First Read Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata First Read Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Cache Metadata First Read Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata First Read Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_first_read_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_first_read_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata Second Read Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata Second Read Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Cache Metadata Second Read Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata Second Read Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata Second Read Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Cache Metadata Second Read Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Cache Metadata Second Read Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_cache_metadata_second_read_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_cache_metadata_second_read_time.values ;;
     hidden: yes
   }
 
@@ -8698,6 +18872,66 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.bucket_count ;;
     type: number
@@ -8998,6 +19232,126 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Block Main Thread"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Block Main Thread"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Block Main Thread"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Block Main Thread"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Block Main Thread"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Block Main Thread"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Block Main Thread"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Time To Block Main Thread"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Time To Block Main Thread"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Time To Block Main Thread"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Time To Block Main Thread"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Time To Block Main Thread"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Time To Block Main Thread"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Sqlite Cookies Time To Block Main Thread"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_time_to_block_main_thread.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__networking_transaction_wait_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.bucket_count ;;
     type: number
@@ -9115,6 +19469,186 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__values {
     sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Cancel"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__count {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Cancel"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ocsp Request Time Cancel"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Cancel"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__range {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__sum {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Cancel"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ocsp Request Time Cancel"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Cancel"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_cancel__values {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Failure"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__count {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Failure"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ocsp Request Time Failure"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Failure"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__range {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__sum {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Failure"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ocsp Request Time Failure"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Failure"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_failure__values {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_failure.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Success"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__count {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Success"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ocsp Request Time Success"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Success"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__range {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__sum {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Success"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Ocsp Request Time Success"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Ocsp Request Time Success"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__ocsp_request_time_success__values {
+    sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_success.values ;;
     hidden: yes
   }
 
@@ -9718,6 +20252,306 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload With Eh"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload With Eh"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload With Eh"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload With Eh"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload With Eh"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload With Eh"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload With Eh"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_with_eh.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload Without Eh"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload Without Eh"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload Without Eh"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload Without Eh"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload Without Eh"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload Without Eh"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preconnect Preload Without Eh"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preconnect_preload_without_eh.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload With Eh"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload With Eh"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload With Eh"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload With Eh"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload With Eh"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload With Eh"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload With Eh"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_with_eh.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload Without Eh"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload Without Eh"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload Without Eh"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload Without Eh"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload Without Eh"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload Without Eh"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Eh Fcp Preload Without Eh"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_eh_fcp_preload_without_eh.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__performance_pageload_fcp__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.bucket_count ;;
     type: number
@@ -9835,6 +20669,246 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__values {
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload H3P Fcp With Priority"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload H3P Fcp With Priority"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload H3P Fcp With Priority"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload H3P Fcp With Priority"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload H3P Fcp With Priority"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload H3P Fcp With Priority"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload H3P Fcp With Priority"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Http3"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Http3"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Http3"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Http3"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Http3"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Http3"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Http3"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Supports Http3"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Supports Http3"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Supports Http3"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Supports Http3"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Supports Http3"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Supports Http3"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Supports Http3"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Without Priority"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Without Priority"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Without Priority"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Without Priority"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Without Priority"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Without Priority"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Http3 Fcp Without Priority"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.values ;;
     hidden: yes
   }
 
@@ -10498,6 +21572,366 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__predictor_learn_work_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_learn_work_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Learn Work Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__predictor_learn_work_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_learn_work_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Learn Work Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__predictor_learn_work_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_learn_work_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Predictor Learn Work Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__predictor_learn_work_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_learn_work_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Learn Work Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__predictor_learn_work_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_learn_work_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__predictor_learn_work_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_learn_work_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Learn Work Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__predictor_learn_work_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_learn_work_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Predictor Learn Work Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__predictor_learn_work_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_learn_work_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Learn Work Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__predictor_learn_work_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_learn_work_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_action__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_action.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Predict Time To Action"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_action__count {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_action.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Predict Time To Action"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_action__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_action.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Predictor Predict Time To Action"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_action__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_action.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Predict Time To Action"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_action__range {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_action.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_action__sum {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_action.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Predict Time To Action"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_action__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_action.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Predictor Predict Time To Action"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_action__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_action.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Predict Time To Action"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_action__values {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_action.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_inaction__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_inaction.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Predict Time To Inaction"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_inaction__count {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_inaction.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Predict Time To Inaction"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_inaction__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_inaction.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Predictor Predict Time To Inaction"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_inaction__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_inaction.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Predict Time To Inaction"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_inaction__range {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_inaction.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_inaction__sum {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_inaction.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Predict Time To Inaction"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_inaction__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_inaction.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Predictor Predict Time To Inaction"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_inaction__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_inaction.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Predict Time To Inaction"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_inaction__values {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_inaction.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_work_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_work_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Predict Work Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_work_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_work_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Predict Work Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_work_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_work_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Predictor Predict Work Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_work_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_work_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Predict Work Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_work_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_work_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_work_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_work_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Predict Work Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_work_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_work_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Predictor Predict Work Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_work_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_work_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Predict Work Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_work_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_work_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__predictor_prefetch_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_prefetch_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Prefetch Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__predictor_prefetch_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_prefetch_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Prefetch Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__predictor_prefetch_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_prefetch_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Predictor Prefetch Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__predictor_prefetch_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_prefetch_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Prefetch Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__predictor_prefetch_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_prefetch_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__predictor_prefetch_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_prefetch_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Prefetch Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__predictor_prefetch_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_prefetch_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Predictor Prefetch Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__predictor_prefetch_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_prefetch_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Prefetch Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__predictor_prefetch_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_prefetch_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__predictor_wait_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_wait_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Wait Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__predictor_wait_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_wait_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Wait Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__predictor_wait_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_wait_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Predictor Wait Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__predictor_wait_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_wait_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Wait Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__predictor_wait_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_wait_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__predictor_wait_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_wait_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Wait Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__predictor_wait_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_wait_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Predictor Wait Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__predictor_wait_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_wait_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Predictor Wait Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__predictor_wait_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.predictor_wait_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__privacy_sanitize_load_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.bucket_count ;;
     type: number
@@ -10735,6 +22169,306 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__serp_categorization_duration__values {
     sql: ${TABLE}.metrics.timing_distribution.serp_categorization_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_event_the_last_cycle__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_event_the_last_cycle.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll And Event The Last Cycle"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_event_the_last_cycle__count {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_event_the_last_cycle.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll And Event The Last Cycle"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_event_the_last_cycle__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_event_the_last_cycle.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Sts Poll And Event The Last Cycle"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_event_the_last_cycle__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_event_the_last_cycle.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll And Event The Last Cycle"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_event_the_last_cycle__range {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_event_the_last_cycle.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_event_the_last_cycle__sum {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_event_the_last_cycle.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll And Event The Last Cycle"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_event_the_last_cycle__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_event_the_last_cycle.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Sts Poll And Event The Last Cycle"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_event_the_last_cycle__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_event_the_last_cycle.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll And Event The Last Cycle"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_event_the_last_cycle__values {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_event_the_last_cycle.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_events_cycle__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_events_cycle.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll And Events Cycle"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_events_cycle__count {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_events_cycle.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll And Events Cycle"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_events_cycle__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_events_cycle.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Sts Poll And Events Cycle"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_events_cycle__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_events_cycle.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll And Events Cycle"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_events_cycle__range {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_events_cycle.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_events_cycle__sum {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_events_cycle.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll And Events Cycle"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_events_cycle__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_events_cycle.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Sts Poll And Events Cycle"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_events_cycle__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_events_cycle.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll And Events Cycle"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_events_cycle__values {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_events_cycle.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_block_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_block_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll Block Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_block_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_block_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll Block Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_block_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_block_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Sts Poll Block Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_block_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_block_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll Block Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_block_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_block_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_block_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_block_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll Block Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_block_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_block_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Sts Poll Block Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_block_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_block_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll Block Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_block_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_block_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_cycle__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_cycle.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll Cycle"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_cycle__count {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_cycle.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll Cycle"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_cycle__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_cycle.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Sts Poll Cycle"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_cycle__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_cycle.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll Cycle"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_cycle__range {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_cycle.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_cycle__sum {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_cycle.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll Cycle"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_cycle__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_cycle.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Sts Poll Cycle"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_cycle__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_cycle.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Sts Poll Cycle"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_cycle__values {
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_cycle.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Urlbar Quick Suggest Ingest Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Urlbar Quick Suggest Ingest Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Urlbar Quick Suggest Ingest Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Urlbar Quick Suggest Ingest Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Urlbar Quick Suggest Ingest Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Urlbar Quick Suggest Ingest Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Urlbar Quick Suggest Ingest Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__urlbar_quick_suggest_ingest_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_quick_suggest_ingest_time.values ;;
     hidden: yes
   }
 
@@ -11459,6 +23193,18 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__uuid__legacy_telemetry_profile_group_id {
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_profile_group_id ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Legacy Telemetry Profile Group Id"
+    description: "The profile_group_id according to Telemetry.
+Might not always have a value due to being too early for it to have
+loaded.
+Does not need to be sent in the Glean \"deletion-request\" ping.
+"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -11600,6 +23346,23 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension_group: metrics__datetime__blocklist_mlbf_softblocks_generation {
+    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_softblocks_generation_time ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Blocklist Mlbf Softblocks Generation Time"
+    description: "Keep track of the generation time of the addon blocklist's bloom filter. This marks the point in time until which signed add-ons are recognized by the selected bloom filter from the addons-bloomfilters collection.
+"
+  }
+
   dimension_group: metrics__datetime__blocklist_mlbf_stash_time_newest {
     sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_newest ;;
     type: time
@@ -11733,6 +23496,78 @@ view: metrics_table__events__extra {
   }
 }
 
+view: metrics_table__metrics__custom_distribution__a11y_consumers__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__application_reputation_local__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__application_reputation_server__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__application_reputation_server_verdict__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__browser_migration_source_browser__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__cert_compression_brotli_saved_bytes__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -11746,6 +23581,90 @@ view: metrics_table__metrics__custom_distribution__cert_compression_brotli_saved
 }
 
 view: metrics_table__metrics__custom_distribution__cert_compression_zlib_saved_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cert_compression_zstd_saved_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__contentblocking_cookie_behavior__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__contentblocking_query_stripping_param_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__contentblocking_storage_access_remaining_days__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__contentblocking_strip_on_share_length_decrease__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__contentblocking_strip_on_share_params_removed__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__contentblocking_tracking_protection_shield__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -11805,6 +23724,114 @@ view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_se
   }
 }
 
+view: metrics_table__metrics__custom_distribution__cookie_purging_origins_purged__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cookie_purging_trackers_with_user_interaction__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cycle_collector_collected__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cycle_collector_slice_during_idle__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cycle_collector_visited_gced__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cycle_collector_visited_ref_counted__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cycle_collector_worker_collected__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cycle_collector_worker_visited_gced__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cycle_collector_worker_visited_ref_counted__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__extensions_timing_event_page_running_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -11829,6 +23856,30 @@ view: metrics_table__metrics__custom_distribution__fog_validation_gvsv_number_of
   }
 }
 
+view: metrics_table__metrics__custom_distribution__fontlist_dwritefont_delayedinit_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__fontlist_dwritefont_init_problem__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__geckoview_document_site_origins__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -11842,6 +23893,18 @@ view: metrics_table__metrics__custom_distribution__geckoview_document_site_origi
 }
 
 view: metrics_table__metrics__custom_distribution__geckoview_per_document_site_origins__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__geolocation_accuracy__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -11937,6 +24000,174 @@ view: metrics_table__metrics__custom_distribution__gfx_content_frame_time_withou
   }
 }
 
+view: metrics_table__metrics__custom_distribution__javascript_gc_effectiveness__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_mark_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_mmu_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_nursery_promotion_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_parallel_mark_interruptions__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_parallel_mark_speedup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_parallel_mark_utilization__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_pretenure_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_slice_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_tenured_survival_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_zone_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__javascript_gc_zones_collected__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__memory_phc_slots_allocated__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__memory_phc_slots_freed__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__network_tls_early_data_bytes_written__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -11950,6 +24181,18 @@ view: metrics_table__metrics__custom_distribution__network_tls_early_data_bytes_
 }
 
 view: metrics_table__metrics__custom_distribution__networking_cookie_access_fixup_diff__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_chips_partition_limit_overflow__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -12069,6 +24312,42 @@ view: metrics_table__metrics__custom_distribution__networking_http_1_download_th
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_http_1_download_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_1_download_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_1_download_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_http_1_upload_throughput__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -12129,6 +24408,42 @@ view: metrics_table__metrics__custom_distribution__networking_http_2_download_th
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_http_2_download_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_2_download_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_2_download_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_http_2_upload_throughput__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -12178,6 +24493,90 @@ view: metrics_table__metrics__custom_distribution__networking_http_2_upload_thro
 }
 
 view: metrics_table__metrics__custom_distribution__networking_http_3_download_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_download_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_download_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_download_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_loss_ratio__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -12285,6 +24684,150 @@ view: metrics_table__metrics__custom_distribution__power_battery_percentage_when
   }
 }
 
+view: metrics_table__metrics__custom_distribution__predictor_base_confidence__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__predictor_confidence__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__predictor_global_degradation__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__predictor_learn_attempts__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__predictor_predictions_calculated__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__predictor_prefetch_decision_reason__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__predictor_prefetch_ignore_reason__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__predictor_subresource_degradation__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__predictor_total_preconnects__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__predictor_total_predictions__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__predictor_total_prefetches__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__predictor_total_preresolves__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__timer_thread_timers_fired_per_wakeup__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -12294,6 +24837,30 @@ view: metrics_table__metrics__custom_distribution__timer_thread_timers_fired_per
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__a11y_theme {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__browser_ui_mirror_for_toolbar_widgets {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
   }
 }
 
@@ -12333,7 +24900,91 @@ view: metrics_table__metrics__labeled_boolean__data_storage_migration {
   }
 }
 
+view: metrics_table__metrics__labeled_boolean__devtools_tool_registered {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__geolocation_linux_provider {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics_table__metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__media_video_hardware_decoding_support {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__media_video_hd_hardware_decoding_support {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__mediadrm_decryption {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__networking_doh_heuristic_ever_tripped {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__os_environment_is_default_handler {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -12357,6 +25008,18 @@ view: metrics_table__metrics__labeled_boolean__oskeystore_self_test {
   }
 }
 
+view: metrics_table__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics_table__metrics__labeled_boolean__startup_run_from_dmg_install_outcome {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -12369,6 +25032,597 @@ view: metrics_table__metrics__labeled_boolean__startup_run_from_dmg_install_outc
   }
 }
 
+view: metrics_table__metrics__labeled_boolean__widget_ime_name_on_linux {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__widget_ime_name_on_mac {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__widget_ime_name_on_windows {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__widget_ime_name_on_windows_inserted_crlf {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__widget_pointing_devices {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_bookmarks_quantity {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_bookmarks_quantity__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_cards_quantity {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_cards_quantity__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_errors {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_errors__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_extensions_quantity {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_extensions_quantity__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_history_quantity {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_history_quantity__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_logins_quantity {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_logins_quantity__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_usage {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_usage__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__contentblocking_canvas_fingerprinting_per_tab {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__contentblocking_canvas_fingerprinting_per_tab__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__contentblocking_email_tracker_embedded_per_tab {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__contentblocking_email_tracker_embedded_per_tab__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__downloads_user_action_on_blocked_download {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__downloads_user_action_on_blocked_download__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__browser_searchinit_engine_invalid_webextension {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__normandy_recipe_freshness {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -12378,6 +25632,1950 @@ view: metrics_table__metrics__labeled_string__cookie_banners_google_gdpr_choice_
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__labeled_string__places_places_database_corruption_handling_stage {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse_idle_connection {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse_idle_connection__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http3_avg_read_interval {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http3_avg_read_interval__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http3_complete_load {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http3_complete_load__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http3_first_sent_to_last_received {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http3_first_sent_to_last_received__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http3_open_to_first_received {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http3_open_to_first_received__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http3_open_to_first_sent {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http3_open_to_first_sent__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http3_tls_handshake {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http3_tls_handshake__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http_fetch_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_http_fetch_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_sup_http3_tcp_connection {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__network_sup_http3_tcp_connection__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__networking_trr_complete_load {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__networking_trr_complete_load__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__networking_trr_dns_end {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__networking_trr_dns_end__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__networking_trr_dns_start {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__networking_trr_dns_start__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__networking_trr_fetch_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__networking_trr_fetch_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__networking_trr_first_sent_to_last_received {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__networking_trr_first_sent_to_last_received__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__networking_trr_open_to_first_received {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__networking_trr_open_to_first_received__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__networking_trr_open_to_first_sent {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__networking_trr_open_to_first_sent__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__networking_trr_tcp_connection {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__networking_trr_tcp_connection__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__networking_trr_tls_handshake {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__networking_trr_tls_handshake__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__orb_javascript_validation {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__orb_javascript_validation__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__orb_receive_data_for_validation {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__orb_receive_data_for_validation__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_ingest_download_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_ingest_download_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_ingest_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_ingest_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_query_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_query_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__browser_backup_compressed_archive_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__browser_backup_total_backup_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__cert_storage_memory__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
@@ -12453,6 +27651,78 @@ view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_di
   }
 }
 
+view: metrics_table__metrics__memory_distribution__javascript_gc_nursery_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__memory_phc_slop__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__networking_cache_metadata_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagram_size_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__memory_distribution__performance_clone_deserialize_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -12465,7 +27735,91 @@ view: metrics_table__metrics__memory_distribution__performance_clone_deserialize
   }
 }
 
+view: metrics_table__metrics__timing_distribution__a11y_tree_update_timing__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__application_reputation_remote_lookup_response_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_backup_favicons_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_backup_places_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_backup_total_backup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cert_verification_time_failure__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cert_verification_time_success__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -12502,6 +27856,162 @@ view: metrics_table__metrics__timing_distribution__cookie_banners_click_handle_d
 }
 
 view: metrics_table__metrics__timing_distribution__cookie_banners_cmp_handle_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cookie_purging_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cookie_purging_interval_hours__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cookie_purging_trackers_user_interaction_remaining_days__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cycle_collector_async_snow_white_freeing__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cycle_collector_deferred_finalize_async__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cycle_collector_full__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cycle_collector_max_pause__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cycle_collector_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cycle_collector_time_between__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cycle_collector_worker_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__dom_contentprocess_launch_mainthread__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__dom_contentprocess_launch_total__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__dom_contentprocess_sync_launch__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -12681,6 +28191,30 @@ view: metrics_table__metrics__timing_distribution__fingerprinting_protection_can
   }
 }
 
+view: metrics_table__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_2__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__fog_ipc_flush_durations__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -12694,6 +28228,126 @@ view: metrics_table__metrics__timing_distribution__fog_ipc_flush_durations__valu
 }
 
 view: metrics_table__metrics__timing_distribution__fog_validation_gvsv_composite_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fontlist_bundledfonts_activate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fontlist_dwritefont_delayedinit_collect__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fontlist_dwritefont_delayedinit_total__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fontlist_gdi_init_total__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fontlist_initfacenamelists__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fontlist_initotherfamilynames__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fontlist_initotherfamilynames_no_deferring__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fontlist_mac_init_total__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fontlist_system_font_fallback__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fontlist_system_font_fallback_first__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -12837,6 +28491,18 @@ view: metrics_table__metrics__timing_distribution__gfx_scroll_present_latency__v
   }
 }
 
+view: metrics_table__metrics__timing_distribution__glean_database_write_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__glean_upload_send_failure__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -12885,6 +28551,30 @@ view: metrics_table__metrics__timing_distribution__glean_validation_shutdown_wai
   }
 }
 
+view: metrics_table__metrics__timing_distribution__gpu_process_initialization_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__gpu_process_launch_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__httpsfirst_downgrade_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -12909,7 +28599,55 @@ view: metrics_table__metrics__timing_distribution__httpsfirst_downgrade_time_sch
   }
 }
 
+view: metrics_table__metrics__timing_distribution__javascript_gc_animation__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_gc_budget__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_gc_budget_overrun__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__javascript_gc_compact_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_gc_mark_gray__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -12934,6 +28672,30 @@ view: metrics_table__metrics__timing_distribution__javascript_gc_mark_roots_time
 }
 
 view: metrics_table__metrics__timing_distribution__javascript_gc_mark_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_gc_mark_weak__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_gc_max_pause__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -12993,7 +28755,55 @@ view: metrics_table__metrics__timing_distribution__javascript_gc_sweep_time__val
   }
 }
 
+view: metrics_table__metrics__timing_distribution__javascript_gc_task_start_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_gc_time_between__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_gc_time_between_slices__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__javascript_gc_total_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_ion_compile_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -13089,7 +28899,103 @@ view: metrics_table__metrics__timing_distribution__javascript_pageload_xdr_encod
   }
 }
 
+view: metrics_table__metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__ls_preparedatastore_processing_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__ls_preparelsdatabase_processing_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__network_cache_hit_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_cache_miss_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_cache_read_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_complete_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_complete_load_cached__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_complete_load_net__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -13137,6 +29043,18 @@ view: metrics_table__metrics__timing_distribution__network_first_from_cache__val
   }
 }
 
+view: metrics_table__metrics__timing_distribution__network_first_sent_to_last_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__network_font_download_end__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -13149,7 +29067,199 @@ view: metrics_table__metrics__timing_distribution__network_font_download_end__va
   }
 }
 
+view: metrics_table__metrics__timing_distribution__network_http_revalidation__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_open_to_first_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_open_to_first_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__network_open_to_transaction_pending__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_sub_cache_read_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_sub_complete_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_sub_complete_load_cached__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_sub_complete_load_net__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_sub_dns_end__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_sub_dns_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_sub_first_from_cache__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_sub_first_sent_to_last_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_sub_http_revalidation__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_sub_open_to_first_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_sub_open_to_first_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_sub_tcp_connection__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_sub_tls_handshake__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -13174,6 +29284,30 @@ view: metrics_table__metrics__timing_distribution__network_tcp_connection__value
 }
 
 view: metrics_table__metrics__timing_distribution__network_tls_handshake__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_cache_metadata_first_read_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_cache_metadata_second_read_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -13341,6 +29475,18 @@ view: metrics_table__metrics__timing_distribution__networking_http_content_ondat
   }
 }
 
+view: metrics_table__metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -13401,6 +29547,30 @@ view: metrics_table__metrics__timing_distribution__networking_http_onstart_suspe
   }
 }
 
+view: metrics_table__metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_sqlite_cookies_time_to_block_main_thread__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__networking_transaction_wait_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -13414,6 +29584,42 @@ view: metrics_table__metrics__timing_distribution__networking_transaction_wait_t
 }
 
 view: metrics_table__metrics__timing_distribution__networking_transaction_wait_time_https_rr__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__ocsp_request_time_cancel__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__ocsp_request_time_failure__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__ocsp_request_time_success__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -13545,6 +29751,66 @@ view: metrics_table__metrics__timing_distribution__performance_pageload_async_sh
   }
 }
 
+view: metrics_table__metrics__timing_distribution__performance_pageload_eh_fcp_preconnect__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_with_eh__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_eh_fcp_preconnect_preload_without_eh__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_eh_fcp_preload_with_eh__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_eh_fcp_preload_without_eh__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__performance_pageload_fcp__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -13558,6 +29824,54 @@ view: metrics_table__metrics__timing_distribution__performance_pageload_fcp__val
 }
 
 view: metrics_table__metrics__timing_distribution__performance_pageload_fcp_responsestart__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_http3_fcp_http3__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -13701,6 +30015,78 @@ view: metrics_table__metrics__timing_distribution__performance_time_response_sta
   }
 }
 
+view: metrics_table__metrics__timing_distribution__predictor_learn_work_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__predictor_predict_time_to_action__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__predictor_predict_time_to_inaction__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__predictor_predict_work_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__predictor_prefetch_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__predictor_wait_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__privacy_sanitize_load_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -13738,6 +30124,66 @@ view: metrics_table__metrics__timing_distribution__search_service_startup_time__
 }
 
 view: metrics_table__metrics__timing_distribution__serp_categorization_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__sts_poll_and_event_the_last_cycle__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__sts_poll_and_events_cycle__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__sts_poll_block_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__sts_poll_cycle__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__urlbar_quick_suggest_ingest_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

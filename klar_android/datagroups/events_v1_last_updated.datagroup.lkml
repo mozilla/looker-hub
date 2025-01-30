@@ -11,6 +11,6 @@ datagroup: events_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'org_mozilla_klar_stable'
     AND table_name = 'events_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:org_mozilla_klar_stable.events_v1 is modified."
+  description: "Updates when moz-fx-data-shared-prod.org_mozilla_klar_stable.events_v1 is modified."
   max_cache_age: "24 hours"
 }

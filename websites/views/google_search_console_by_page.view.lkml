@@ -28,8 +28,7 @@ This will be null for Discover impressions."
   dimension: has_good_page_experience {
     sql: ${TABLE}.has_good_page_experience ;;
     type: yesno
-    description: "Whether Google Search considers the page to be providing a good page experience.
-This will be null when the source data wasn't exported directly to BigQuery by Google."
+    description: "Whether Google Search considers the page to be providing a good page experience."
   }
 
   dimension: impressions {
@@ -49,7 +48,7 @@ The `country_code`, `page_url`, and related fields will be null for anonymized D
   dimension: localized_site {
     sql: ${TABLE}.localized_site ;;
     type: string
-    description: "Description of the localized site language and/or country based on `localized_site_language_code` (if any).
+    description: "Description of the localized site language and/or country based on `localized_site_code` (if any).
 This will be null for anonymized Discover impressions."
   }
 
@@ -116,8 +115,7 @@ This will be null for all Discover and Google News search impressions."
   dimension: search_appearance {
     sql: ${TABLE}.search_appearance ;;
     type: string
-    description: "How the search result appeared (e.g. normal result, translated result, video).
-This will be null when the source data wasn't exported directly to BigQuery by Google."
+    description: "How the search result appeared (e.g. normal result, translated result, video)."
   }
 
   dimension: search_type {
@@ -187,5 +185,5 @@ This will be null for anonymized Discover impressions."
     description: "The day on which the search occurred (Pacific Time)."
   }
 
-  sql_table_name: `moz-fx-data-marketing-prod.google_search_console.search_impressions_by_page` ;;
+  sql_table_name: `mozdata.google_search_console.search_impressions_by_page` ;;
 }

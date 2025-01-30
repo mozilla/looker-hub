@@ -10,6 +10,21 @@ view: use_counters_table {
     hidden: yes
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -3167,6 +3182,27 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css Position Anchor"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_position_area {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_area ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Area"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_position_try {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Try"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_position_try_fallbacks {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try_fallbacks ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Try Fallbacks"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_position_try_options {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try_options ;;
     type: number
@@ -3951,6 +3987,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css View Timeline Name"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_view_transition_name {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_view_transition_name ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css View Transition Name"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_visibility {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_visibility ;;
     type: number
@@ -4236,6 +4279,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Doc Css Webkit Flex Wrap"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_webkit_font_feature_settings {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_webkit_font_feature_settings ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Webkit Font Feature Settings"
   }
 
   dimension: metrics__counter__use_counter_css_doc_css_webkit_font_smoothing {
@@ -8116,6 +8166,27 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Page Css Position Anchor"
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_position_area {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_area ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Area"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_try {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Try"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_try_fallbacks {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try_fallbacks ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Try Fallbacks"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_position_try_options {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try_options ;;
     type: number
@@ -8900,6 +8971,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Page Css View Timeline Name"
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_view_transition_name {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_view_transition_name ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css View Transition Name"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_visibility {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_visibility ;;
     type: number
@@ -9185,6 +9263,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Webkit Flex Wrap"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_webkit_font_feature_settings {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_webkit_font_feature_settings ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Webkit Font Feature Settings"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_webkit_font_smoothing {
@@ -11035,6 +11120,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Clipboard Write"
   }
 
+  dimension: metrics__counter__use_counter_doc_components_shim_resolved {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_components_shim_resolved ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Components Shim Resolved"
+  }
+
   dimension: metrics__counter__use_counter_doc_console_assert {
     sql: ${TABLE}.metrics.counter.use_counter_doc_console_assert ;;
     type: number
@@ -11194,6 +11286,34 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Console Warn"
+  }
+
+  dimension: metrics__counter__use_counter_doc_cookiestore_delete {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_cookiestore_delete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Cookiestore Delete"
+  }
+
+  dimension: metrics__counter__use_counter_doc_cookiestore_get {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_cookiestore_get ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Cookiestore Get"
+  }
+
+  dimension: metrics__counter__use_counter_doc_cookiestore_getall {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_cookiestore_getall ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Cookiestore Getall"
+  }
+
+  dimension: metrics__counter__use_counter_doc_cookiestore_set {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_cookiestore_set ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Cookiestore Set"
   }
 
   dimension: metrics__counter__use_counter_doc_customelementregistry_define {
@@ -11966,11 +12086,81 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Js Asmjs"
   }
 
+  dimension: metrics__counter__use_counter_doc_js_errorstack_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_errorstack_getter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Errorstack Getter"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_errorstack_getter_no_errordata {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_errorstack_getter_no_errordata ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Errorstack Getter No Errordata"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_errorstack_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_errorstack_setter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Errorstack Setter"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_errorstack_setter_no_errordata {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_errorstack_setter_no_errordata ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Errorstack Setter No Errordata"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_errorstack_setter_nonstring {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_errorstack_setter_nonstring ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Errorstack Setter Nonstring"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_ic_stub_oom {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_ic_stub_oom ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Ic Stub Oom"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_ic_stub_too_large {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_ic_stub_too_large ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Ic Stub Too Large"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_is_htmldda_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_is_htmldda_fuse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Is Htmldda Fuse"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_late_weekday {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_late_weekday ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Late Weekday"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_legacy_lang_subtag {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_legacy_lang_subtag ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Legacy Lang Subtag"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_optimize_get_iterator_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_optimize_get_iterator_fuse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Optimize Get Iterator Fuse"
   }
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_2 {
@@ -12041,6 +12231,27 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Subclassing Typedarray Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_thenable {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_thenable ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Thenable"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_thenable_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_thenable_proto ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Thenable Proto"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_thenable_standard_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_thenable_standard_proto ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Thenable Standard Proto"
   }
 
   dimension: metrics__counter__use_counter_doc_js_wasm {
@@ -12167,6 +12378,118 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Mixed Content Upgraded Video Success"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_deriveexporter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_deriveexporter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Deriveexporter"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_generatecredentialbasic {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_generatecredentialbasic ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Generatecredentialbasic"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_generatekeypackage {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_generatekeypackage ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Generatekeypackage"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_generatesignaturekeypair {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_generatesignaturekeypair ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Generatesignaturekeypair"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_groupadd {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_groupadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Groupadd"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_groupclose {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_groupclose ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Groupclose"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_groupcreate {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_groupcreate ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Groupcreate"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_groupjoin {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_groupjoin ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Groupjoin"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_groupmembers {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_groupmembers ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Groupmembers"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_groupproposeadd {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_groupproposeadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Groupproposeadd"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_groupproposeremove {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_groupproposeremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Groupproposeremove"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_groupremove {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_groupremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Groupremove"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_receive {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_receive ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Receive"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_send {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_send ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Send"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_statedelete {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_statedelete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Statedelete"
+  }
+
+  dimension: metrics__counter__use_counter_doc_mls_statedeletegroup {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_mls_statedeletegroup ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Mls Statedeletegroup"
   }
 
   dimension: metrics__counter__use_counter_doc_moz_get_user_media_insec {
@@ -13611,6 +13934,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Page Clipboard Write"
   }
 
+  dimension: metrics__counter__use_counter_page_components_shim_resolved {
+    sql: ${TABLE}.metrics.counter.use_counter_page_components_shim_resolved ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Components Shim Resolved"
+  }
+
   dimension: metrics__counter__use_counter_page_console_assert {
     sql: ${TABLE}.metrics.counter.use_counter_page_console_assert ;;
     type: number
@@ -13770,6 +14100,34 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Console Warn"
+  }
+
+  dimension: metrics__counter__use_counter_page_cookiestore_delete {
+    sql: ${TABLE}.metrics.counter.use_counter_page_cookiestore_delete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Cookiestore Delete"
+  }
+
+  dimension: metrics__counter__use_counter_page_cookiestore_get {
+    sql: ${TABLE}.metrics.counter.use_counter_page_cookiestore_get ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Cookiestore Get"
+  }
+
+  dimension: metrics__counter__use_counter_page_cookiestore_getall {
+    sql: ${TABLE}.metrics.counter.use_counter_page_cookiestore_getall ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Cookiestore Getall"
+  }
+
+  dimension: metrics__counter__use_counter_page_cookiestore_set {
+    sql: ${TABLE}.metrics.counter.use_counter_page_cookiestore_set ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Cookiestore Set"
   }
 
   dimension: metrics__counter__use_counter_page_customelementregistry_define {
@@ -14542,11 +14900,81 @@ view: use_counters_table {
     group_item_label: "Use Counter Page Js Asmjs"
   }
 
+  dimension: metrics__counter__use_counter_page_js_errorstack_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_errorstack_getter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Errorstack Getter"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_errorstack_getter_no_errordata {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_errorstack_getter_no_errordata ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Errorstack Getter No Errordata"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_errorstack_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_errorstack_setter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Errorstack Setter"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_errorstack_setter_no_errordata {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_errorstack_setter_no_errordata ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Errorstack Setter No Errordata"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_errorstack_setter_nonstring {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_errorstack_setter_nonstring ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Errorstack Setter Nonstring"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_ic_stub_oom {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_ic_stub_oom ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Ic Stub Oom"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_ic_stub_too_large {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_ic_stub_too_large ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Ic Stub Too Large"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_is_htmldda_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_is_htmldda_fuse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Is Htmldda Fuse"
+  }
+
   dimension: metrics__counter__use_counter_page_js_late_weekday {
     sql: ${TABLE}.metrics.counter.use_counter_page_js_late_weekday ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Late Weekday"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_legacy_lang_subtag {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_legacy_lang_subtag ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Legacy Lang Subtag"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_optimize_get_iterator_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_optimize_get_iterator_fuse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Optimize Get Iterator Fuse"
   }
 
   dimension: metrics__counter__use_counter_page_js_subclassing_array_type_2 {
@@ -14617,6 +15045,27 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Subclassing Typedarray Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_thenable {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_thenable ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Thenable"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_thenable_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_thenable_proto ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Thenable Proto"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_thenable_standard_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_thenable_standard_proto ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Thenable Standard Proto"
   }
 
   dimension: metrics__counter__use_counter_page_js_wasm {
@@ -14743,6 +15192,118 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Mixed Content Upgraded Video Success"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_deriveexporter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_deriveexporter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Deriveexporter"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_generatecredentialbasic {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_generatecredentialbasic ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Generatecredentialbasic"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_generatekeypackage {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_generatekeypackage ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Generatekeypackage"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_generatesignaturekeypair {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_generatesignaturekeypair ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Generatesignaturekeypair"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_groupadd {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_groupadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Groupadd"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_groupclose {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_groupclose ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Groupclose"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_groupcreate {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_groupcreate ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Groupcreate"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_groupjoin {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_groupjoin ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Groupjoin"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_groupmembers {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_groupmembers ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Groupmembers"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_groupproposeadd {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_groupproposeadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Groupproposeadd"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_groupproposeremove {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_groupproposeremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Groupproposeremove"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_groupremove {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_groupremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Groupremove"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_receive {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_receive ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Receive"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_send {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_send ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Send"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_statedelete {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_statedelete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Statedelete"
+  }
+
+  dimension: metrics__counter__use_counter_page_mls_statedeletegroup {
+    sql: ${TABLE}.metrics.counter.use_counter_page_mls_statedeletegroup ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Mls Statedeletegroup"
   }
 
   dimension: metrics__counter__use_counter_page_moz_get_user_media_insec {
@@ -16348,6 +16909,146 @@ view: use_counters_table {
     group_item_label: "Use Counter Worker Dedicated Console Warn"
   }
 
+  dimension: metrics__counter__use_counter_worker_dedicated_cookiestore_delete {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_cookiestore_delete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Cookiestore Delete"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_cookiestore_get {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_cookiestore_get ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Cookiestore Get"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_cookiestore_getall {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_cookiestore_getall ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Cookiestore Getall"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_cookiestore_set {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_cookiestore_set ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Cookiestore Set"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_deriveexporter {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_deriveexporter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Deriveexporter"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_generatecredentialbasic {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_generatecredentialbasic ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Generatecredentialbasic"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_generatekeypackage {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_generatekeypackage ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Generatekeypackage"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_generatesignaturekeypair {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_generatesignaturekeypair ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Generatesignaturekeypair"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_groupadd {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_groupadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Groupadd"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_groupclose {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_groupclose ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Groupclose"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_groupcreate {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_groupcreate ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Groupcreate"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_groupjoin {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_groupjoin ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Groupjoin"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_groupmembers {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_groupmembers ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Groupmembers"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_groupproposeadd {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_groupproposeadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Groupproposeadd"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_groupproposeremove {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_groupproposeremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Groupproposeremove"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_groupremove {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_groupremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Groupremove"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_receive {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_receive ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Receive"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_send {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_send ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Send"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_statedelete {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_statedelete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Statedelete"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_mls_statedeletegroup {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_statedeletegroup ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Mls Statedeletegroup"
+  }
+
   dimension: metrics__counter__use_counter_worker_dedicated_private_browsing_caches_delete {
     sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_private_browsing_caches_delete ;;
     type: number
@@ -16579,6 +17280,146 @@ view: use_counters_table {
     group_item_label: "Use Counter Worker Service Console Warn"
   }
 
+  dimension: metrics__counter__use_counter_worker_service_cookiestore_delete {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_cookiestore_delete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Cookiestore Delete"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_cookiestore_get {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_cookiestore_get ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Cookiestore Get"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_cookiestore_getall {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_cookiestore_getall ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Cookiestore Getall"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_cookiestore_set {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_cookiestore_set ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Cookiestore Set"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_deriveexporter {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_deriveexporter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Deriveexporter"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_generatecredentialbasic {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_generatecredentialbasic ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Generatecredentialbasic"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_generatekeypackage {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_generatekeypackage ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Generatekeypackage"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_generatesignaturekeypair {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_generatesignaturekeypair ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Generatesignaturekeypair"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_groupadd {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_groupadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Groupadd"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_groupclose {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_groupclose ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Groupclose"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_groupcreate {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_groupcreate ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Groupcreate"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_groupjoin {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_groupjoin ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Groupjoin"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_groupmembers {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_groupmembers ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Groupmembers"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_groupproposeadd {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_groupproposeadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Groupproposeadd"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_groupproposeremove {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_groupproposeremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Groupproposeremove"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_groupremove {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_groupremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Groupremove"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_receive {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_receive ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Receive"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_send {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_send ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Send"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_statedelete {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_statedelete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Statedelete"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_mls_statedeletegroup {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_statedeletegroup ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Mls Statedeletegroup"
+  }
+
   dimension: metrics__counter__use_counter_worker_service_private_browsing_caches_delete {
     sql: ${TABLE}.metrics.counter.use_counter_worker_service_private_browsing_caches_delete ;;
     type: number
@@ -16808,6 +17649,146 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Worker Shared Console Warn"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_cookiestore_delete {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_cookiestore_delete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Cookiestore Delete"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_cookiestore_get {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_cookiestore_get ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Cookiestore Get"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_cookiestore_getall {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_cookiestore_getall ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Cookiestore Getall"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_cookiestore_set {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_cookiestore_set ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Cookiestore Set"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_deriveexporter {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_deriveexporter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Deriveexporter"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_generatecredentialbasic {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_generatecredentialbasic ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Generatecredentialbasic"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_generatekeypackage {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_generatekeypackage ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Generatekeypackage"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_generatesignaturekeypair {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_generatesignaturekeypair ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Generatesignaturekeypair"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_groupadd {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_groupadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Groupadd"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_groupclose {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_groupclose ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Groupclose"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_groupcreate {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_groupcreate ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Groupcreate"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_groupjoin {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_groupjoin ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Groupjoin"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_groupmembers {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_groupmembers ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Groupmembers"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_groupproposeadd {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_groupproposeadd ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Groupproposeadd"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_groupproposeremove {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_groupproposeremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Groupproposeremove"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_groupremove {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_groupremove ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Groupremove"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_receive {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_receive ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Receive"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_send {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_send ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Send"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_statedelete {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_statedelete ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Statedelete"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_mls_statedeletegroup {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_mls_statedeletegroup ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Mls Statedeletegroup"
   }
 
   dimension: metrics__counter__use_counter_worker_shared_private_browsing_caches_delete {

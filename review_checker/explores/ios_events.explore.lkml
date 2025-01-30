@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/review_checker/views/ios_events.view.lkml"
+include: "/looker-hub/review_checker/datagroups/ios_events_last_updated.datagroup.lkml"
 
 explore: ios_events {
   sql_always_where: ${ios_events.submission_date} >= '2010-01-01' ;;
@@ -21,4 +22,6 @@ explore: ios_events {
       submission_date: "28 days",
     ]
   }
+
+  persist_with: ios_events_last_updated
 }

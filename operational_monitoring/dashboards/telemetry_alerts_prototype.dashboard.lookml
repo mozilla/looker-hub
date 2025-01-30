@@ -132,7 +132,7 @@
   - name: Metric
     title: Metric
     type: field_filter
-    default_value: 'active_ticks'
+    default_value: 'subsession_length'
     allow_multiple_values: false
     required: true
     ui_config:

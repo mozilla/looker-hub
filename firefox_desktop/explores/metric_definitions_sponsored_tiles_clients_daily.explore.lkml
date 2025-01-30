@@ -10,6 +10,7 @@ explore: metric_definitions_sponsored_tiles_clients_daily {
   always_filter: {
     filters: [
       submission_date: "7 days",
+      sampling: "1",
     ]
   }
 

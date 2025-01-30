@@ -11,6 +11,6 @@ datagroup: data_review_stats_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'telemetry_dev_cycle_external'
     AND table_name = 'data_review_stats_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:telemetry_dev_cycle_external.data_review_stats_v1 is modified."
+  description: "Updates when moz-fx-data-shared-prod.telemetry_dev_cycle_external.data_review_stats_v1 is modified."
   max_cache_age: "24 hours"
 }

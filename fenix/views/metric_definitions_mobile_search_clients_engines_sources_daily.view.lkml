@@ -10,13 +10,17 @@ view: metric_definitions_mobile_search_clients_engines_sources_daily {
                 COALESCE(SUM(tagged_sap), 0) AS tagged_sap_searches,
 COALESCE(SUM(organic), 0) AS organic_search_count,
 COALESCE(SUM(ad_click_organic), 0) AS ad_click_organic,
+COALESCE(SUM(search_with_ads_organic), 0) AS searches_with_ads_organic,
 COALESCE(SUM(search_count), 0) AS search_count,
 COALESCE(SUM(search_with_ads), 0) AS searches_with_ads,
 COALESCE(SUM(ad_click), 0) AS ad_clicks,
 COALESCE(SUM(tagged_sap), 0) AS tagged_search_count,
 COALESCE(SUM(tagged_follow_on), 0) AS tagged_follow_on,
 
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -92,7 +96,10 @@ looker_base_fields_sample_id,
                 (
                     SELECT
                         mobile_search_clients_engines_sources_daily.*,
-                        looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
+                        looker_base_fields.app_version_major AS looker_base_fields_app_version_major,
+looker_base_fields.app_version_minor AS looker_base_fields_app_version_minor,
+looker_base_fields.app_version_patch AS looker_base_fields_app_version_patch,
+looker_base_fields.client_info.android_sdk_version AS looker_base_fields_client_info__android_sdk_version,
 looker_base_fields.client_info.app_build AS looker_base_fields_client_info__app_build,
 looker_base_fields.client_info.app_channel AS looker_base_fields_client_info__app_channel,
 looker_base_fields.client_info.app_display_version AS looker_base_fields_client_info__app_display_version,
@@ -199,7 +206,10 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
                 
                 )
             GROUP BY
-                looker_base_fields_client_info__android_sdk_version,
+                looker_base_fields_app_version_major,
+looker_base_fields_app_version_minor,
+looker_base_fields_app_version_patch,
+looker_base_fields_client_info__android_sdk_version,
 looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
@@ -285,6 +295,14 @@ looker_base_fields_sample_id,
     sql: ${TABLE}.ad_click_organic ;;
   }
 
+  dimension: searches_with_ads_organic {
+    group_label: "Metrics"
+    label: "Organic Search With Ads Count"
+    description: "Total number of Organic Search With Ads Counts"
+    type: number
+    sql: ${TABLE}.searches_with_ads_organic ;;
+  }
+
   dimension: search_count {
     group_label: "Metrics"
     label: "SAP searches"
@@ -343,6 +361,24 @@ looker_base_fields_sample_id,
 "
     type: number
     sql: ${TABLE}.tagged_follow_on ;;
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.looker_base_fields_app_version_major ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.looker_base_fields_app_version_minor ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.looker_base_fields_app_version_patch ;;
+    type: number
+    group_label: "Base Fields"
   }
 
   dimension: client_info__android_sdk_version {
@@ -693,6 +729,7 @@ looker_base_fields_sample_id,
       tagged_sap_searches,
       organic_search_count,
       ad_click_organic,
+      searches_with_ads_organic,
       search_count,
       searches_with_ads,
       ad_clicks,

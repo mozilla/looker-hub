@@ -96,6 +96,78 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__crash_app_build {
+    label: "Crash App Build"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_app_build ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "App Build"
+
+    link: {
+      label: "Glean Dictionary reference for Crash App Build"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/crash_app_build"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The build id of the application. This may differ from `client_info` because a main process crash may be reported later by a different (e.g. updated) client.
+"
+  }
+
+  dimension: metrics__string__crash_app_channel {
+    label: "Crash App Channel"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_app_channel ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "App Channel"
+
+    link: {
+      label: "Glean Dictionary reference for Crash App Channel"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/crash_app_channel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The release channel of the application. This may differ from `client_info` because a main process crash may be reported later by a different (e.g. updated) client.
+"
+  }
+
+  dimension: metrics__string__crash_app_display_version {
+    label: "Crash App Display Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_app_display_version ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "App Display Version"
+
+    link: {
+      label: "Glean Dictionary reference for Crash App Display Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/crash_app_display_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of the application. This may differ from `client_info` because a main process crash may be reported later by a different (e.g. updated) client.
+"
+  }
+
+  dimension: metrics__string__crash_background_task_name {
+    label: "Crash Background Task Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_background_task_name ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Background Task Name"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Background Task Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/crash_background_task_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the background task if launched as one.
+"
+  }
+
   dimension: metrics__string__crash_cause {
     label: "Crash Cause"
     hidden: no
@@ -111,6 +183,150 @@ The labels are the `category.name` identifier of the metric.
     }
 
     description: "The cause of the crash. May be one of `os_fault` or `java_exception`.
+"
+  }
+
+  dimension: metrics__quantity__crash_event_loop_nesting_level {
+    label: "Crash Event Loop Nesting Level"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.crash_event_loop_nesting_level ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "Event Loop Nesting Level"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Event Loop Nesting Level"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/crash_event_loop_nesting_level"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates the nesting level of the event loop.
+"
+  }
+
+  dimension: metrics__string__crash_font_name {
+    label: "Crash Font Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_font_name ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Font Name"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Font Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/crash_font_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The font family name that is being loaded when the crash occurred.
+"
+  }
+
+  dimension: metrics__quantity__crash_gpu_process_launch {
+    label: "Crash Gpu Process Launch"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.crash_gpu_process_launch ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "Gpu Process Launch"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Gpu Process Launch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/crash_gpu_process_launch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times that the GPU process was launched.
+"
+  }
+
+  dimension: metrics__string__crash_ipc_channel_error {
+    label: "Crash Ipc Channel Error"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_ipc_channel_error ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Ipc Channel Error"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Ipc Channel Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/crash_ipc_channel_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The error reason for an ipc-based content crash.
+"
+  }
+
+  dimension: metrics__boolean__crash_is_garbage_collecting {
+    label: "Crash Is Garbage Collecting"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.crash_is_garbage_collecting ;;
+    type: yesno
+    group_label: "Crash"
+    group_item_label: "Is Garbage Collecting"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Is Garbage Collecting"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/crash_is_garbage_collecting"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates that the crash occurred while the garbage collector was running.
+"
+  }
+
+  dimension: metrics__string__crash_main_thread_runnable_name {
+    label: "Crash Main Thread Runnable Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_main_thread_runnable_name ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Main Thread Runnable Name"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Main Thread Runnable Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/crash_main_thread_runnable_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Name of the currently executing `nsIRunnable` on the main thread. Nightly-only.
+"
+  }
+
+  dimension: metrics__string__crash_minidump_sha256_hash {
+    label: "Crash Minidump Sha256 Hash"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_minidump_sha256_hash ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Minidump Sha256 Hash"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Minidump Sha256 Hash"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/crash_minidump_sha256_hash"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The SHA256 hash of the associated minidump file, if any.
+"
+  }
+
+  dimension: metrics__string__crash_moz_crash_reason {
+    label: "Crash Moz Crash Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_moz_crash_reason ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Moz Crash Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Moz Crash Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/crash_moz_crash_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Contains the string passed to `MOZ_CRASH()`.
 "
   }
 
@@ -132,6 +348,24 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__crash_profiler_child_shutdown_phase {
+    label: "Crash Profiler Child Shutdown Phase"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_profiler_child_shutdown_phase ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Profiler Child Shutdown Phase"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Profiler Child Shutdown Phase"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/crash_profiler_child_shutdown_phase"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The shutdown phase of the profiler.
+"
+  }
+
   dimension: metrics__string__crash_remote_type {
     label: "Crash Remote Type"
     hidden: no
@@ -147,6 +381,24 @@ The labels are the `category.name` identifier of the metric.
     }
 
     description: "Type of the child process, can be set to \"web\", \"file\" or \"extension\" but could also be unavailable.
+"
+  }
+
+  dimension: metrics__string__crash_shutdown_progress {
+    label: "Crash Shutdown Progress"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_shutdown_progress ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Shutdown Progress"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Shutdown Progress"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/crash_shutdown_progress"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The shutdown phase in which the crash occurred.
 "
   }
 
@@ -170,7 +422,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__crash_uptime__value {
     label: "Crash Uptime Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.crash_uptime.value ;;
     type: number
     group_label: "Crash"
@@ -186,9 +438,276 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__boolean__environment_headless_mode {
+    label: "Environment Headless Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.environment_headless_mode ;;
+    type: yesno
+    group_label: "Environment"
+    group_item_label: "Headless Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Environment Headless Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/environment_headless_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the app was invoked in headless mode via `--headless` or `--backgroundtask`.
+"
+  }
+
+  dimension: metrics__timespan__environment_uptime__value {
+    label: "Environment Uptime Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.environment_uptime.value ;;
+    type: number
+    group_label: "Environment"
+    group_item_label: "Uptime Value"
+
+    link: {
+      label: "Glean Dictionary reference for Environment Uptime Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/environment_uptime"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The start time of the application.
+"
+  }
+
+  dimension: metrics__quantity__memory_available_commit {
+    label: "Memory Available Commit"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_available_commit ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Available Commit"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Available Commit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/memory_available_commit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Available commit space.
+"
+  }
+
+  dimension: metrics__quantity__memory_available_physical {
+    label: "Memory Available Physical"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_available_physical ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Available Physical"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Available Physical"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/memory_available_physical"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Available physical memory.
+"
+  }
+
+  dimension: metrics__quantity__memory_available_swap {
+    label: "Memory Available Swap"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_available_swap ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Available Swap"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Available Swap"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/memory_available_swap"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Available swap memory.
+"
+  }
+
+  dimension: metrics__quantity__memory_available_virtual {
+    label: "Memory Available Virtual"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_available_virtual ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Available Virtual"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Available Virtual"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/memory_available_virtual"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Available virtual memory.
+"
+  }
+
+  dimension: metrics__quantity__memory_low_physical {
+    label: "Memory Low Physical"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_low_physical ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Low Physical"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Low Physical"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/memory_low_physical"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times the available memory tracker has detected that free physical memory is running low.
+"
+  }
+
+  dimension: metrics__quantity__memory_oom_allocation_size {
+    label: "Memory Oom Allocation Size"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_oom_allocation_size ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Oom Allocation Size"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Oom Allocation Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/memory_oom_allocation_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The size of the allocation that caused on OOM crash.
+"
+  }
+
+  dimension: metrics__quantity__memory_purgeable_physical {
+    label: "Memory Purgeable Physical"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_purgeable_physical ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Purgeable Physical"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Purgeable Physical"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/memory_purgeable_physical"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The amount of memory that can be deallocated by the OS in case of memory pressure.
+"
+  }
+
+  dimension: metrics__quantity__memory_system_use_percentage {
+    label: "Memory System Use Percentage"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_system_use_percentage ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "System Use Percentage"
+
+    link: {
+      label: "Glean Dictionary reference for Memory System Use Percentage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/memory_system_use_percentage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The percentage of memory in use.
+"
+  }
+
+  dimension: metrics__quantity__memory_texture {
+    label: "Memory Texture"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_texture ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Texture"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Texture"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/memory_texture"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The amount of memory used in textures.
+"
+  }
+
+  dimension: metrics__quantity__memory_total_page_file {
+    label: "Memory Total Page File"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_total_page_file ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Total Page File"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Total Page File"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/memory_total_page_file"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total page file size.
+"
+  }
+
+  dimension: metrics__quantity__memory_total_physical {
+    label: "Memory Total Physical"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_total_physical ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Total Physical"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Total Physical"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/memory_total_physical"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total physical memory.
+"
+  }
+
+  dimension: metrics__quantity__memory_total_virtual {
+    label: "Memory Total Virtual"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_total_virtual ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Total Virtual"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Total Virtual"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/memory_total_virtual"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total virtual memory.
+"
+  }
+
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
   }
 
   dimension: client_info__android_sdk_version {

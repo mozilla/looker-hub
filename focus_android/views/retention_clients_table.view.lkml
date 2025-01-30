@@ -20,6 +20,11 @@ view: retention_clients_table {
     type: string
   }
 
+  dimension: city {
+    sql: ${TABLE}.city ;;
+    type: string
+  }
+
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
@@ -39,6 +44,21 @@ view: retention_clients_table {
   dimension: days_seen_bits {
     sql: ${TABLE}.days_seen_bits ;;
     type: number
+  }
+
+  dimension: device_manufacturer {
+    sql: ${TABLE}.device_manufacturer ;;
+    type: string
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.device_type ;;
+    type: string
+  }
+
+  dimension: geo_subdivision {
+    sql: ${TABLE}.geo_subdivision ;;
+    type: string
   }
 
   dimension: is_mobile {
@@ -68,6 +88,11 @@ view: retention_clients_table {
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
+    type: string
+  }
+
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.paid_vs_organic ;;
     type: string
   }
 

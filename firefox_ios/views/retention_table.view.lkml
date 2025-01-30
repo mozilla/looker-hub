@@ -54,9 +54,24 @@ view: retention_table {
     description: "Client's country on the metric date."
   }
 
+  dimension: device_manufacturer {
+    sql: ${TABLE}.device_manufacturer ;;
+    type: string
+    description: "Manufacturer of the device where the client is installed.
+"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.device_type ;;
+    type: string
+    description: "On Apple devices allows us to differentiate between iPhone and iPad. On Android devices the value is always \"Android\".
+"
+  }
+
   dimension: is_mobile {
     sql: ${TABLE}.is_mobile ;;
     type: yesno
+    description: "Indicates if this specific entry is used towards calculating mobile DAU."
   }
 
   dimension: is_suspicious_device_client {
@@ -86,6 +101,11 @@ view: retention_table {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     description: "Release channel of the app the profile is using."
+  }
+
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.paid_vs_organic ;;
+    type: string
   }
 
   dimension: ping_sent_metric_date {

@@ -11,6 +11,6 @@ datagroup: stripe_products_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'subscription_platform_derived'
     AND table_name = 'stripe_products_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:subscription_platform_derived.stripe_products_v1 is modified."
+  description: "Updates when moz-fx-data-shared-prod.subscription_platform_derived.stripe_products_v1 is modified."
   max_cache_age: "24 hours"
 }

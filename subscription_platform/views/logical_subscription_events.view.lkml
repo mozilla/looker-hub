@@ -36,6 +36,27 @@ view: logical_subscription_events {
     group_item_label: "Country Name"
   }
 
+  dimension: old_subscription__current_period_discount_amount {
+    sql: ${TABLE}.old_subscription.current_period_discount_amount ;;
+    type: number
+    group_label: "Old Subscription"
+    group_item_label: "Current Period Discount Amount"
+  }
+
+  dimension: old_subscription__current_period_discount_name {
+    sql: ${TABLE}.old_subscription.current_period_discount_name ;;
+    type: string
+    group_label: "Old Subscription"
+    group_item_label: "Current Period Discount Name"
+  }
+
+  dimension: old_subscription__current_period_discount_promotion_code {
+    sql: ${TABLE}.old_subscription.current_period_discount_promotion_code ;;
+    type: string
+    group_label: "Old Subscription"
+    group_item_label: "Current Period Discount Promotion Code"
+  }
+
   dimension: old_subscription__customer_subscription_number {
     sql: ${TABLE}.old_subscription.customer_subscription_number ;;
     type: number
@@ -118,6 +139,20 @@ view: logical_subscription_events {
     type: string
     group_label: "Old Subscription"
     group_item_label: "Id"
+  }
+
+  dimension: old_subscription__initial_discount_name {
+    sql: ${TABLE}.old_subscription.initial_discount_name ;;
+    type: string
+    group_label: "Old Subscription"
+    group_item_label: "Initial Discount Name"
+  }
+
+  dimension: old_subscription__initial_discount_promotion_code {
+    sql: ${TABLE}.old_subscription.initial_discount_promotion_code ;;
+    type: string
+    group_label: "Old Subscription"
+    group_item_label: "Initial Discount Promotion Code"
   }
 
   dimension: old_subscription__is_active {
@@ -209,6 +244,27 @@ view: logical_subscription_events {
     type: string
     group_label: "Old Subscription"
     group_item_label: "Mozilla Account Id Sha256"
+  }
+
+  dimension: old_subscription__ongoing_discount_amount {
+    sql: ${TABLE}.old_subscription.ongoing_discount_amount ;;
+    type: number
+    group_label: "Old Subscription"
+    group_item_label: "Ongoing Discount Amount"
+  }
+
+  dimension: old_subscription__ongoing_discount_name {
+    sql: ${TABLE}.old_subscription.ongoing_discount_name ;;
+    type: string
+    group_label: "Old Subscription"
+    group_item_label: "Ongoing Discount Name"
+  }
+
+  dimension: old_subscription__ongoing_discount_promotion_code {
+    sql: ${TABLE}.old_subscription.ongoing_discount_promotion_code ;;
+    type: string
+    group_label: "Old Subscription"
+    group_item_label: "Ongoing Discount Promotion Code"
   }
 
   dimension: old_subscription__payment_provider {
@@ -354,6 +410,27 @@ view: logical_subscription_events {
     group_item_label: "Country Name"
   }
 
+  dimension: subscription__current_period_discount_amount {
+    sql: ${TABLE}.subscription.current_period_discount_amount ;;
+    type: number
+    group_label: "Subscription"
+    group_item_label: "Current Period Discount Amount"
+  }
+
+  dimension: subscription__current_period_discount_name {
+    sql: ${TABLE}.subscription.current_period_discount_name ;;
+    type: string
+    group_label: "Subscription"
+    group_item_label: "Current Period Discount Name"
+  }
+
+  dimension: subscription__current_period_discount_promotion_code {
+    sql: ${TABLE}.subscription.current_period_discount_promotion_code ;;
+    type: string
+    group_label: "Subscription"
+    group_item_label: "Current Period Discount Promotion Code"
+  }
+
   dimension: subscription__customer_subscription_number {
     sql: ${TABLE}.subscription.customer_subscription_number ;;
     type: number
@@ -436,6 +513,20 @@ view: logical_subscription_events {
     type: string
     group_label: "Subscription"
     group_item_label: "Id"
+  }
+
+  dimension: subscription__initial_discount_name {
+    sql: ${TABLE}.subscription.initial_discount_name ;;
+    type: string
+    group_label: "Subscription"
+    group_item_label: "Initial Discount Name"
+  }
+
+  dimension: subscription__initial_discount_promotion_code {
+    sql: ${TABLE}.subscription.initial_discount_promotion_code ;;
+    type: string
+    group_label: "Subscription"
+    group_item_label: "Initial Discount Promotion Code"
   }
 
   dimension: subscription__is_active {
@@ -527,6 +618,27 @@ view: logical_subscription_events {
     type: string
     group_label: "Subscription"
     group_item_label: "Mozilla Account Id Sha256"
+  }
+
+  dimension: subscription__ongoing_discount_amount {
+    sql: ${TABLE}.subscription.ongoing_discount_amount ;;
+    type: number
+    group_label: "Subscription"
+    group_item_label: "Ongoing Discount Amount"
+  }
+
+  dimension: subscription__ongoing_discount_name {
+    sql: ${TABLE}.subscription.ongoing_discount_name ;;
+    type: string
+    group_label: "Subscription"
+    group_item_label: "Ongoing Discount Name"
+  }
+
+  dimension: subscription__ongoing_discount_promotion_code {
+    sql: ${TABLE}.subscription.ongoing_discount_promotion_code ;;
+    type: string
+    group_label: "Subscription"
+    group_item_label: "Ongoing Discount Promotion Code"
   }
 
   dimension: subscription__payment_provider {
@@ -741,6 +853,21 @@ view: logical_subscription_events {
     label: "Old Subscription Last Touch Attribution: Impression At"
   }
 
+  dimension_group: old_subscription__ongoing_discount_ends_at {
+    sql: ${TABLE}.old_subscription.ongoing_discount_ends_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Old Subscription: Ongoing Discount Ends At"
+  }
+
   dimension_group: old_subscription__provider_subscription_created_at {
     sql: ${TABLE}.old_subscription.provider_subscription_created_at ;;
     type: time
@@ -874,6 +1001,21 @@ view: logical_subscription_events {
       year,
     ]
     label: "Subscription Last Touch Attribution: Impression At"
+  }
+
+  dimension_group: subscription__ongoing_discount_ends_at {
+    sql: ${TABLE}.subscription.ongoing_discount_ends_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Subscription: Ongoing Discount Ends At"
   }
 
   dimension_group: subscription__provider_subscription_created_at {

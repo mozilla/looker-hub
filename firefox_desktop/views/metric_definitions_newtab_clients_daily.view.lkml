@@ -23,12 +23,24 @@ COALESCE(SUM(sponsored_topsite_tile_clicks), 0) AS sponsored_tile_clicks,
 COALESCE(MAX(IF(newtab_newtab_category = 'enabled', 1, 0)), 0) AS newtab_newtab_enabled,
 COALESCE(MAX(IF(newtab_homepage_category = 'enabled', 1, 0)), 0) AS newtab_homepage_enabled,
 COALESCE(MAX(CAST(topsites_enabled AS INT)), 0) AS newtab_tiles_enabled,
+COALESCE(MAX(CAST(topsites_sponsored_enabled AS INT)), 0) AS newtab_sponsored_tiles_enabled,
 COALESCE(MAX(CAST(pocket_enabled AS INT)), 0) AS newtab_pocket_enabled,
 COALESCE(MAX(CAST(pocket_sponsored_stories_enabled AS INT)), 0) AS newtab_sponsored_pocket_stories_enabled,
 COALESCE(MAX(CASE WHEN visits_with_non_impression_engagement > 0 THEN 1 ELSE 0 END), 0) AS newtab_engagement,
 COALESCE(SUM(newtab_visit_count), 0) AS newtab_visits,
 COALESCE(SUM(visits_with_non_impression_engagement), 0) AS newtab_engaged_visits,
 COALESCE(SUM(visits_with_non_search_engagement), 0) AS newtab_non_search_engagement,
+COALESCE(SUM(wallpaper_clicks), 0) AS wallpaper_clicks,
+COALESCE(SUM(wallpaper_clicks_had_previous_wallpaper), 0) AS wallpaper_clicks_had_previous_wallpaper,
+COALESCE(SUM(wallpaper_clicks_first_selected_wallpaper), 0) AS wallpaper_clicks_first_selected_wallpaper,
+COALESCE(SUM(wallpaper_highlight_dismissals), 0) AS wallpaper_highlight_dismissals,
+COALESCE(SUM(wallpaper_highlight_cta_clicks), 0) AS wallpaper_highlight_cta_clicks,
+COALESCE(MAX(CAST(newtab_weather_widget_enabled AS INT)), 0) AS newtab_weather_widget_enabled,
+COALESCE(SUM(weather_widget_impressions), 0) AS weather_widget_impressions,
+COALESCE(SUM(weather_widget_clicks), 0) AS weather_widget_clicks,
+COALESCE(SUM(weather_widget_load_errors), 0) AS weather_widget_load_errors,
+COALESCE(SUM(weather_widget_change_display_to_detailed), 0) AS weather_widget_change_display_to_detailed,
+COALESCE(SUM(weather_widget_change_display_to_simple), 0) AS weather_widget_change_display_to_simple,
 
                 countries_ads_value_tier,
 countries_code,
@@ -50,12 +62,23 @@ newtab_clients_daily_follow_on_search_ad_clicks,
 newtab_clients_daily_follow_on_search_ad_impressions,
 newtab_clients_daily_is_new_profile,
 newtab_clients_daily_legacy_telemetry_client_id,
+newtab_clients_daily_list_card_clicks,
+newtab_clients_daily_list_card_dismissals,
+newtab_clients_daily_list_card_impressions,
+newtab_clients_daily_list_card_saves,
 newtab_clients_daily_locale,
+newtab_clients_daily_newtab_dismissal_count,
 newtab_clients_daily_newtab_homepage_category,
 newtab_clients_daily_newtab_newtab_category,
 newtab_clients_daily_newtab_visit_count,
+newtab_clients_daily_non_search_engagement_count,
 newtab_clients_daily_normalized_os,
 newtab_clients_daily_normalized_os_version,
+newtab_clients_daily_organic_list_card_clicks,
+newtab_clients_daily_organic_list_card_dismissals,
+newtab_clients_daily_organic_list_card_impressions,
+newtab_clients_daily_organic_list_card_saves,
+newtab_clients_daily_organic_pocket_dismissals,
 newtab_clients_daily_organic_pocket_saves,
 newtab_clients_daily_organic_topsite_tile_clicks,
 newtab_clients_daily_organic_topsite_tile_dismissals,
@@ -66,7 +89,16 @@ newtab_clients_daily_pocket_impressions,
 newtab_clients_daily_pocket_is_signed_in,
 newtab_clients_daily_pocket_saves,
 newtab_clients_daily_pocket_sponsored_stories_enabled,
+newtab_clients_daily_pocket_thumb_voting_events,
+newtab_clients_daily_pocket_thumbs_down,
+newtab_clients_daily_pocket_thumbs_up,
+newtab_clients_daily_profile_group_id,
 newtab_clients_daily_searches,
+newtab_clients_daily_sponsored_list_card_clicks,
+newtab_clients_daily_sponsored_list_card_dismissals,
+newtab_clients_daily_sponsored_list_card_impressions,
+newtab_clients_daily_sponsored_list_card_saves,
+newtab_clients_daily_sponsored_pocket_dismissals,
 newtab_clients_daily_sponsored_pocket_saves,
 newtab_clients_daily_sponsored_topsite_tile_clicks,
 newtab_clients_daily_sponsored_topsite_tile_dismissals,
@@ -75,14 +107,26 @@ newtab_clients_daily_tagged_follow_on_search_ad_clicks,
 newtab_clients_daily_tagged_follow_on_search_ad_impressions,
 newtab_clients_daily_tagged_search_ad_clicks,
 newtab_clients_daily_tagged_search_ad_impressions,
+newtab_clients_daily_topic_preferences_set,
+newtab_clients_daily_topic_selection_dismissals,
+newtab_clients_daily_topic_selection_opened,
+newtab_clients_daily_topic_selection_selected_topics_first_time,
+newtab_clients_daily_topic_selection_updates,
 newtab_clients_daily_topsite_tile_clicks,
 newtab_clients_daily_topsite_tile_dismissals,
 newtab_clients_daily_topsite_tile_impressions,
 newtab_clients_daily_topsites_enabled,
 newtab_clients_daily_topsites_rows,
 newtab_clients_daily_topsites_sponsored_enabled,
+newtab_clients_daily_topsites_sponsored_tiles_configured,
+newtab_clients_daily_visits_with_default_ui,
+newtab_clients_daily_visits_with_default_ui_with_non_impression_engagement,
+newtab_clients_daily_visits_with_default_ui_with_non_search_engagement,
+newtab_clients_daily_visits_with_non_default_ui,
 newtab_clients_daily_visits_with_non_impression_engagement,
 newtab_clients_daily_visits_with_non_search_engagement,
+newtab_clients_daily_wallpaper_category_clicks,
+newtab_clients_daily_weather_widget_location_selected,
 
                 legacy_telemetry_client_id AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
@@ -135,12 +179,23 @@ newtab_clients_daily.follow_on_search_ad_clicks AS newtab_clients_daily_follow_o
 newtab_clients_daily.follow_on_search_ad_impressions AS newtab_clients_daily_follow_on_search_ad_impressions,
 newtab_clients_daily.is_new_profile AS newtab_clients_daily_is_new_profile,
 newtab_clients_daily.legacy_telemetry_client_id AS newtab_clients_daily_legacy_telemetry_client_id,
+newtab_clients_daily.list_card_clicks AS newtab_clients_daily_list_card_clicks,
+newtab_clients_daily.list_card_dismissals AS newtab_clients_daily_list_card_dismissals,
+newtab_clients_daily.list_card_impressions AS newtab_clients_daily_list_card_impressions,
+newtab_clients_daily.list_card_saves AS newtab_clients_daily_list_card_saves,
 newtab_clients_daily.locale AS newtab_clients_daily_locale,
+newtab_clients_daily.newtab_dismissal_count AS newtab_clients_daily_newtab_dismissal_count,
 newtab_clients_daily.newtab_homepage_category AS newtab_clients_daily_newtab_homepage_category,
 newtab_clients_daily.newtab_newtab_category AS newtab_clients_daily_newtab_newtab_category,
 newtab_clients_daily.newtab_visit_count AS newtab_clients_daily_newtab_visit_count,
+newtab_clients_daily.non_search_engagement_count AS newtab_clients_daily_non_search_engagement_count,
 newtab_clients_daily.normalized_os AS newtab_clients_daily_normalized_os,
 newtab_clients_daily.normalized_os_version AS newtab_clients_daily_normalized_os_version,
+newtab_clients_daily.organic_list_card_clicks AS newtab_clients_daily_organic_list_card_clicks,
+newtab_clients_daily.organic_list_card_dismissals AS newtab_clients_daily_organic_list_card_dismissals,
+newtab_clients_daily.organic_list_card_impressions AS newtab_clients_daily_organic_list_card_impressions,
+newtab_clients_daily.organic_list_card_saves AS newtab_clients_daily_organic_list_card_saves,
+newtab_clients_daily.organic_pocket_dismissals AS newtab_clients_daily_organic_pocket_dismissals,
 newtab_clients_daily.organic_pocket_saves AS newtab_clients_daily_organic_pocket_saves,
 newtab_clients_daily.organic_topsite_tile_clicks AS newtab_clients_daily_organic_topsite_tile_clicks,
 newtab_clients_daily.organic_topsite_tile_dismissals AS newtab_clients_daily_organic_topsite_tile_dismissals,
@@ -151,7 +206,16 @@ newtab_clients_daily.pocket_impressions AS newtab_clients_daily_pocket_impressio
 newtab_clients_daily.pocket_is_signed_in AS newtab_clients_daily_pocket_is_signed_in,
 newtab_clients_daily.pocket_saves AS newtab_clients_daily_pocket_saves,
 newtab_clients_daily.pocket_sponsored_stories_enabled AS newtab_clients_daily_pocket_sponsored_stories_enabled,
+newtab_clients_daily.pocket_thumb_voting_events AS newtab_clients_daily_pocket_thumb_voting_events,
+newtab_clients_daily.pocket_thumbs_down AS newtab_clients_daily_pocket_thumbs_down,
+newtab_clients_daily.pocket_thumbs_up AS newtab_clients_daily_pocket_thumbs_up,
+newtab_clients_daily.profile_group_id AS newtab_clients_daily_profile_group_id,
 newtab_clients_daily.searches AS newtab_clients_daily_searches,
+newtab_clients_daily.sponsored_list_card_clicks AS newtab_clients_daily_sponsored_list_card_clicks,
+newtab_clients_daily.sponsored_list_card_dismissals AS newtab_clients_daily_sponsored_list_card_dismissals,
+newtab_clients_daily.sponsored_list_card_impressions AS newtab_clients_daily_sponsored_list_card_impressions,
+newtab_clients_daily.sponsored_list_card_saves AS newtab_clients_daily_sponsored_list_card_saves,
+newtab_clients_daily.sponsored_pocket_dismissals AS newtab_clients_daily_sponsored_pocket_dismissals,
 newtab_clients_daily.sponsored_pocket_saves AS newtab_clients_daily_sponsored_pocket_saves,
 newtab_clients_daily.sponsored_topsite_tile_clicks AS newtab_clients_daily_sponsored_topsite_tile_clicks,
 newtab_clients_daily.sponsored_topsite_tile_dismissals AS newtab_clients_daily_sponsored_topsite_tile_dismissals,
@@ -160,14 +224,26 @@ newtab_clients_daily.tagged_follow_on_search_ad_clicks AS newtab_clients_daily_t
 newtab_clients_daily.tagged_follow_on_search_ad_impressions AS newtab_clients_daily_tagged_follow_on_search_ad_impressions,
 newtab_clients_daily.tagged_search_ad_clicks AS newtab_clients_daily_tagged_search_ad_clicks,
 newtab_clients_daily.tagged_search_ad_impressions AS newtab_clients_daily_tagged_search_ad_impressions,
+newtab_clients_daily.topic_preferences_set AS newtab_clients_daily_topic_preferences_set,
+newtab_clients_daily.topic_selection_dismissals AS newtab_clients_daily_topic_selection_dismissals,
+newtab_clients_daily.topic_selection_opened AS newtab_clients_daily_topic_selection_opened,
+newtab_clients_daily.topic_selection_selected_topics_first_time AS newtab_clients_daily_topic_selection_selected_topics_first_time,
+newtab_clients_daily.topic_selection_updates AS newtab_clients_daily_topic_selection_updates,
 newtab_clients_daily.topsite_tile_clicks AS newtab_clients_daily_topsite_tile_clicks,
 newtab_clients_daily.topsite_tile_dismissals AS newtab_clients_daily_topsite_tile_dismissals,
 newtab_clients_daily.topsite_tile_impressions AS newtab_clients_daily_topsite_tile_impressions,
 newtab_clients_daily.topsites_enabled AS newtab_clients_daily_topsites_enabled,
 newtab_clients_daily.topsites_rows AS newtab_clients_daily_topsites_rows,
 newtab_clients_daily.topsites_sponsored_enabled AS newtab_clients_daily_topsites_sponsored_enabled,
+newtab_clients_daily.topsites_sponsored_tiles_configured AS newtab_clients_daily_topsites_sponsored_tiles_configured,
+newtab_clients_daily.visits_with_default_ui AS newtab_clients_daily_visits_with_default_ui,
+newtab_clients_daily.visits_with_default_ui_with_non_impression_engagement AS newtab_clients_daily_visits_with_default_ui_with_non_impression_engagement,
+newtab_clients_daily.visits_with_default_ui_with_non_search_engagement AS newtab_clients_daily_visits_with_default_ui_with_non_search_engagement,
+newtab_clients_daily.visits_with_non_default_ui AS newtab_clients_daily_visits_with_non_default_ui,
 newtab_clients_daily.visits_with_non_impression_engagement AS newtab_clients_daily_visits_with_non_impression_engagement,
 newtab_clients_daily.visits_with_non_search_engagement AS newtab_clients_daily_visits_with_non_search_engagement,
+newtab_clients_daily.wallpaper_category_clicks AS newtab_clients_daily_wallpaper_category_clicks,
+newtab_clients_daily.weather_widget_location_selected AS newtab_clients_daily_weather_widget_location_selected,
 
                     FROM
                     (
@@ -222,12 +298,23 @@ newtab_clients_daily_follow_on_search_ad_clicks,
 newtab_clients_daily_follow_on_search_ad_impressions,
 newtab_clients_daily_is_new_profile,
 newtab_clients_daily_legacy_telemetry_client_id,
+newtab_clients_daily_list_card_clicks,
+newtab_clients_daily_list_card_dismissals,
+newtab_clients_daily_list_card_impressions,
+newtab_clients_daily_list_card_saves,
 newtab_clients_daily_locale,
+newtab_clients_daily_newtab_dismissal_count,
 newtab_clients_daily_newtab_homepage_category,
 newtab_clients_daily_newtab_newtab_category,
 newtab_clients_daily_newtab_visit_count,
+newtab_clients_daily_non_search_engagement_count,
 newtab_clients_daily_normalized_os,
 newtab_clients_daily_normalized_os_version,
+newtab_clients_daily_organic_list_card_clicks,
+newtab_clients_daily_organic_list_card_dismissals,
+newtab_clients_daily_organic_list_card_impressions,
+newtab_clients_daily_organic_list_card_saves,
+newtab_clients_daily_organic_pocket_dismissals,
 newtab_clients_daily_organic_pocket_saves,
 newtab_clients_daily_organic_topsite_tile_clicks,
 newtab_clients_daily_organic_topsite_tile_dismissals,
@@ -238,7 +325,16 @@ newtab_clients_daily_pocket_impressions,
 newtab_clients_daily_pocket_is_signed_in,
 newtab_clients_daily_pocket_saves,
 newtab_clients_daily_pocket_sponsored_stories_enabled,
+newtab_clients_daily_pocket_thumb_voting_events,
+newtab_clients_daily_pocket_thumbs_down,
+newtab_clients_daily_pocket_thumbs_up,
+newtab_clients_daily_profile_group_id,
 newtab_clients_daily_searches,
+newtab_clients_daily_sponsored_list_card_clicks,
+newtab_clients_daily_sponsored_list_card_dismissals,
+newtab_clients_daily_sponsored_list_card_impressions,
+newtab_clients_daily_sponsored_list_card_saves,
+newtab_clients_daily_sponsored_pocket_dismissals,
 newtab_clients_daily_sponsored_pocket_saves,
 newtab_clients_daily_sponsored_topsite_tile_clicks,
 newtab_clients_daily_sponsored_topsite_tile_dismissals,
@@ -247,14 +343,26 @@ newtab_clients_daily_tagged_follow_on_search_ad_clicks,
 newtab_clients_daily_tagged_follow_on_search_ad_impressions,
 newtab_clients_daily_tagged_search_ad_clicks,
 newtab_clients_daily_tagged_search_ad_impressions,
+newtab_clients_daily_topic_preferences_set,
+newtab_clients_daily_topic_selection_dismissals,
+newtab_clients_daily_topic_selection_opened,
+newtab_clients_daily_topic_selection_selected_topics_first_time,
+newtab_clients_daily_topic_selection_updates,
 newtab_clients_daily_topsite_tile_clicks,
 newtab_clients_daily_topsite_tile_dismissals,
 newtab_clients_daily_topsite_tile_impressions,
 newtab_clients_daily_topsites_enabled,
 newtab_clients_daily_topsites_rows,
 newtab_clients_daily_topsites_sponsored_enabled,
+newtab_clients_daily_topsites_sponsored_tiles_configured,
+newtab_clients_daily_visits_with_default_ui,
+newtab_clients_daily_visits_with_default_ui_with_non_impression_engagement,
+newtab_clients_daily_visits_with_default_ui_with_non_search_engagement,
+newtab_clients_daily_visits_with_non_default_ui,
 newtab_clients_daily_visits_with_non_impression_engagement,
 newtab_clients_daily_visits_with_non_search_engagement,
+newtab_clients_daily_wallpaper_category_clicks,
+newtab_clients_daily_weather_widget_location_selected,
 
                 client_id,
                 analysis_basis ;;
@@ -413,6 +521,15 @@ newtab_clients_daily_visits_with_non_search_engagement,
     sql: ${TABLE}.newtab_tiles_enabled ;;
   }
 
+  dimension: newtab_sponsored_tiles_enabled {
+    group_label: "Metrics"
+    label: "Newtab Sponsored Tiles Enabled"
+    description: "Whether or not sponsored tiles are enabled on the New Tab. Includes both sponsored and nonsponsored tiles.
+"
+    type: number
+    sql: ${TABLE}.newtab_sponsored_tiles_enabled ;;
+  }
+
   dimension: newtab_pocket_enabled {
     group_label: "Metrics"
     label: "Newtab Pocket Enabled"
@@ -465,6 +582,107 @@ newtab_clients_daily_visits_with_non_search_engagement,
 "
     type: number
     sql: ${TABLE}.newtab_non_search_engagement ;;
+  }
+
+  dimension: wallpaper_clicks {
+    group_label: "Metrics"
+    label: "Wallpaper Selection Clicks"
+    description: "Count of total clicks on wallpaper selections.
+"
+    type: number
+    sql: ${TABLE}.wallpaper_clicks ;;
+  }
+
+  dimension: wallpaper_clicks_had_previous_wallpaper {
+    group_label: "Metrics"
+    label: "Wallpaper Selection Clicks With Previous Wallpaper"
+    description: "Count of total clicks on wallpaper selections where the client had previously selected
+a wallpaper.
+"
+    type: number
+    sql: ${TABLE}.wallpaper_clicks_had_previous_wallpaper ;;
+  }
+
+  dimension: wallpaper_clicks_first_selected_wallpaper {
+    group_label: "Metrics"
+    label: "Wallpaper Selection Clicks With No Previous Wallpaper"
+    description: "Count of total clicks on wallpaper selections where the client had no previously selected
+a wallpaper.
+"
+    type: number
+    sql: ${TABLE}.wallpaper_clicks_first_selected_wallpaper ;;
+  }
+
+  dimension: wallpaper_highlight_dismissals {
+    group_label: "Metrics"
+    label: "Wallpaper Highlight Dismissals"
+    description: "Count of dismissals of the wallpaper highlight.
+"
+    type: number
+    sql: ${TABLE}.wallpaper_highlight_dismissals ;;
+  }
+
+  dimension: wallpaper_highlight_cta_clicks {
+    group_label: "Metrics"
+    label: "Wallpaper Highlight CTA Clicks"
+    description: "Count of total clicks on the CTA in the wallpaper feature highlight.
+"
+    type: number
+    sql: ${TABLE}.wallpaper_highlight_cta_clicks ;;
+  }
+
+  dimension: newtab_weather_widget_enabled {
+    group_label: "Metrics"
+    label: "Weather Widget Enabled"
+    description: "Whether or not the weather widget is enabled on the New Tab.
+"
+    type: number
+    sql: ${TABLE}.newtab_weather_widget_enabled ;;
+  }
+
+  dimension: weather_widget_impressions {
+    group_label: "Metrics"
+    label: "Weather Widget Impressions"
+    description: "Count of total impressions of the New Tab weather widget.
+"
+    type: number
+    sql: ${TABLE}.weather_widget_impressions ;;
+  }
+
+  dimension: weather_widget_clicks {
+    group_label: "Metrics"
+    label: "Weather Widget Clicks"
+    description: "Count of total clicks on the New Tab weather widget.
+"
+    type: number
+    sql: ${TABLE}.weather_widget_clicks ;;
+  }
+
+  dimension: weather_widget_load_errors {
+    group_label: "Metrics"
+    label: "Weather Widget Load Errors"
+    description: "Count of New Tab weather widget load errors.
+"
+    type: number
+    sql: ${TABLE}.weather_widget_load_errors ;;
+  }
+
+  dimension: weather_widget_change_display_to_detailed {
+    group_label: "Metrics"
+    label: "Weather Widget Change Display to Detailed"
+    description: "Count of events where the client changed the weather widget display type to Detailed.
+"
+    type: number
+    sql: ${TABLE}.weather_widget_change_display_to_detailed ;;
+  }
+
+  dimension: weather_widget_change_display_to_simple {
+    group_label: "Metrics"
+    label: "Weather Widget Change Display to Simple"
+    description: "Count of events where the client changed the weather widget display type to Simple.
+"
+    type: number
+    sql: ${TABLE}.weather_widget_change_display_to_simple ;;
   }
 
   dimension: ads_value_tier {
@@ -593,9 +811,39 @@ newtab_clients_daily_visits_with_non_search_engagement,
     group_label: "Base Fields"
   }
 
+  dimension: list_card_clicks {
+    sql: ${TABLE}.newtab_clients_daily_list_card_clicks ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: list_card_dismissals {
+    sql: ${TABLE}.newtab_clients_daily_list_card_dismissals ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: list_card_impressions {
+    sql: ${TABLE}.newtab_clients_daily_list_card_impressions ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: list_card_saves {
+    sql: ${TABLE}.newtab_clients_daily_list_card_saves ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
   dimension: locale {
     sql: ${TABLE}.newtab_clients_daily_locale ;;
     type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: newtab_dismissal_count {
+    sql: ${TABLE}.newtab_clients_daily_newtab_dismissal_count ;;
+    type: number
     group_label: "Base Fields"
   }
 
@@ -617,6 +865,12 @@ newtab_clients_daily_visits_with_non_search_engagement,
     group_label: "Base Fields"
   }
 
+  dimension: non_search_engagement_count {
+    sql: ${TABLE}.newtab_clients_daily_non_search_engagement_count ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
   dimension: normalized_os {
     sql: ${TABLE}.newtab_clients_daily_normalized_os ;;
     type: string
@@ -626,6 +880,36 @@ newtab_clients_daily_visits_with_non_search_engagement,
   dimension: normalized_os_version {
     sql: ${TABLE}.newtab_clients_daily_normalized_os_version ;;
     type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: organic_list_card_clicks {
+    sql: ${TABLE}.newtab_clients_daily_organic_list_card_clicks ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: organic_list_card_dismissals {
+    sql: ${TABLE}.newtab_clients_daily_organic_list_card_dismissals ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: organic_list_card_impressions {
+    sql: ${TABLE}.newtab_clients_daily_organic_list_card_impressions ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: organic_list_card_saves {
+    sql: ${TABLE}.newtab_clients_daily_organic_list_card_saves ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: organic_pocket_dismissals {
+    sql: ${TABLE}.newtab_clients_daily_organic_pocket_dismissals ;;
+    type: number
     group_label: "Base Fields"
   }
 
@@ -689,8 +973,62 @@ newtab_clients_daily_visits_with_non_search_engagement,
     group_label: "Base Fields"
   }
 
+  dimension: pocket_thumb_voting_events {
+    sql: ${TABLE}.newtab_clients_daily_pocket_thumb_voting_events ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: pocket_thumbs_down {
+    sql: ${TABLE}.newtab_clients_daily_pocket_thumbs_down ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: pocket_thumbs_up {
+    sql: ${TABLE}.newtab_clients_daily_pocket_thumbs_up ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: profile_group_id {
+    sql: ${TABLE}.newtab_clients_daily_profile_group_id ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
   dimension: searches {
     sql: ${TABLE}.newtab_clients_daily_searches ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsored_list_card_clicks {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_list_card_clicks ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsored_list_card_dismissals {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_list_card_dismissals ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsored_list_card_impressions {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_list_card_impressions ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsored_list_card_saves {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_list_card_saves ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsored_pocket_dismissals {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_pocket_dismissals ;;
     type: number
     group_label: "Base Fields"
   }
@@ -743,6 +1081,36 @@ newtab_clients_daily_visits_with_non_search_engagement,
     group_label: "Base Fields"
   }
 
+  dimension: topic_preferences_set {
+    sql: ${TABLE}.newtab_clients_daily_topic_preferences_set ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: topic_selection_dismissals {
+    sql: ${TABLE}.newtab_clients_daily_topic_selection_dismissals ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: topic_selection_opened {
+    sql: ${TABLE}.newtab_clients_daily_topic_selection_opened ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: topic_selection_selected_topics_first_time {
+    sql: ${TABLE}.newtab_clients_daily_topic_selection_selected_topics_first_time ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: topic_selection_updates {
+    sql: ${TABLE}.newtab_clients_daily_topic_selection_updates ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
   dimension: topsite_tile_clicks {
     sql: ${TABLE}.newtab_clients_daily_topsite_tile_clicks ;;
     type: number
@@ -779,6 +1147,36 @@ newtab_clients_daily_visits_with_non_search_engagement,
     group_label: "Base Fields"
   }
 
+  dimension: topsites_sponsored_tiles_configured {
+    sql: ${TABLE}.newtab_clients_daily_topsites_sponsored_tiles_configured ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: visits_with_default_ui {
+    sql: ${TABLE}.newtab_clients_daily_visits_with_default_ui ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: visits_with_default_ui_with_non_impression_engagement {
+    sql: ${TABLE}.newtab_clients_daily_visits_with_default_ui_with_non_impression_engagement ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: visits_with_default_ui_with_non_search_engagement {
+    sql: ${TABLE}.newtab_clients_daily_visits_with_default_ui_with_non_search_engagement ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: visits_with_non_default_ui {
+    sql: ${TABLE}.newtab_clients_daily_visits_with_non_default_ui ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
   dimension: visits_with_non_impression_engagement {
     sql: ${TABLE}.newtab_clients_daily_visits_with_non_impression_engagement ;;
     type: number
@@ -787,6 +1185,18 @@ newtab_clients_daily_visits_with_non_search_engagement,
 
   dimension: visits_with_non_search_engagement {
     sql: ${TABLE}.newtab_clients_daily_visits_with_non_search_engagement ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: wallpaper_category_clicks {
+    sql: ${TABLE}.newtab_clients_daily_wallpaper_category_clicks ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: weather_widget_location_selected {
+    sql: ${TABLE}.newtab_clients_daily_weather_widget_location_selected ;;
     type: number
     group_label: "Base Fields"
   }
@@ -865,12 +1275,24 @@ newtab_clients_daily_visits_with_non_search_engagement,
       newtab_newtab_enabled,
       newtab_homepage_enabled,
       newtab_tiles_enabled,
+      newtab_sponsored_tiles_enabled,
       newtab_pocket_enabled,
       newtab_sponsored_pocket_stories_enabled,
       newtab_engagement,
       newtab_visits,
       newtab_engaged_visits,
       newtab_non_search_engagement,
+      wallpaper_clicks,
+      wallpaper_clicks_had_previous_wallpaper,
+      wallpaper_clicks_first_selected_wallpaper,
+      wallpaper_highlight_dismissals,
+      wallpaper_highlight_cta_clicks,
+      newtab_weather_widget_enabled,
+      weather_widget_impressions,
+      weather_widget_clicks,
+      weather_widget_load_errors,
+      weather_widget_change_display_to_detailed,
+      weather_widget_change_display_to_simple,
       newtab_ad_click_rate_average,
       newtab_visits_sum,
       newtab_visits_client_count_sampled,

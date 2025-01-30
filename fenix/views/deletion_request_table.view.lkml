@@ -10,6 +10,21 @@ view: deletion_request_table {
     hidden: yes
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -308,6 +323,13 @@ view: deletion_request_table {
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     hidden: yes
+  }
+
+  dimension: metrics__string__deletion_request_sync_device_id {
+    sql: ${TABLE}.metrics.string.deletion_request_sync_device_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Deletion Request Sync Device Id"
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {

@@ -11,6 +11,21 @@ view: broken_site_report_table {
     description: "A JSON string containing any payload properties not present in the schema"
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -396,12 +411,39 @@ view: broken_site_report_table {
 "
   }
 
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled {
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled"
+    description: "Value of `network.cookie.cookieBehavior.optInPartitioning`
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm {
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled In Pbm"
+    description: "Value of `network.cookie.cookieBehavior.optInPartitioning.pbmode`
+"
+  }
+
   dimension: metrics__boolean__broken_site_report_browser_info_system_is_tablet {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_system_is_tablet ;;
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Broken Site Report Browser Info System Is Tablet"
     description: "Whether the device is a tablet
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_tab_info_antitracking_btp_has_purged_site {
+    sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_btp_has_purged_site ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Broken Site Report Tab Info Antitracking Btp Has Purged Site"
+    description: "Whether the site in the current tab has recently been purged by Bounce Tracking Protection.
 "
   }
 

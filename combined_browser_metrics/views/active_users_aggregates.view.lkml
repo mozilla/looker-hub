@@ -5,11 +5,6 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: active_users_aggregates {
-  dimension: active_hours {
-    sql: ${TABLE}.active_hours ;;
-    type: number
-  }
-
   dimension: adjust_network {
     sql: ${TABLE}.adjust_network ;;
     type: string
@@ -146,14 +141,14 @@ view: active_users_aggregates {
     type: number
   }
 
-  dimension: segment {
-    sql: ${TABLE}.segment ;;
+  dimension: partnership {
+    sql: ${TABLE}.partnership ;;
     type: string
   }
 
-  dimension: uri_count {
-    sql: ${TABLE}.uri_count ;;
-    type: number
+  dimension: segment {
+    sql: ${TABLE}.segment ;;
+    type: string
   }
 
   dimension: wau {

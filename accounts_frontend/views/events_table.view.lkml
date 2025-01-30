@@ -11,6 +11,21 @@ view: events_table {
     description: "A JSON string containing any payload properties not present in the schema"
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -324,6 +339,15 @@ view: events_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__labeled_boolean__standard_marketing {
+    sql: ${TABLE}.metrics.labeled_boolean.standard_marketing ;;
+    hidden: yes
+    description: "The set of marketing options at the time of an account sign up (standard flow).
+For example, if the user only opted into getting 'news' then only news would be
+marked as true
+"
+  }
+
   dimension: metrics__labeled_boolean__sync_cwts {
     sql: ${TABLE}.metrics.labeled_boolean.sync_cwts ;;
     hidden: yes
@@ -366,12 +390,41 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__account_user_id {
+    sql: ${TABLE}.metrics.string.account_user_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Account User Id"
+    description: "The firefox/mozilla account id
+"
+  }
+
   dimension: metrics__string__account_user_id_sha256 {
     sql: ${TABLE}.metrics.string.account_user_id_sha256 ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Account User Id Sha256"
     description: "A hex string of a sha256 hash of the account's uid
+"
+  }
+
+  dimension: metrics__string__entrypoint_experiment {
+    sql: ${TABLE}.metrics.string.entrypoint_experiment ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Entrypoint Experiment"
+    description: "The entrypoint experiment the user was assigned to. This value is specified
+by query parameter `entrypoint_experiment` in the URL.
+"
+  }
+
+  dimension: metrics__string__entrypoint_variation {
+    sql: ${TABLE}.metrics.string.entrypoint_variation ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Entrypoint Variation"
+    description: "The entrypoint variation the user was assigned to. This value is specified
+by query parameter `entrypoint_variation` in the URL.
 "
   }
 
@@ -674,6 +727,18 @@ view: events_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: events_table__metrics__labeled_boolean__standard_marketing {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
   }
 }
 

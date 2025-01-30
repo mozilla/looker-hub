@@ -11,6 +11,6 @@ datagroup: desktop_search_alert_latest_daily_last_updated {
     FROM `mozdata`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'analysis'
     AND table_name = 'desktop_search_alert_latest_daily' ;;
-  description: "Updates when mozdata:analysis.desktop_search_alert_latest_daily is modified."
+  description: "Updates for desktop_search_alert_latest_daily when mozdata.analysis.desktop_search_alert_latest_daily is modified."
   max_cache_age: "24 hours"
 }

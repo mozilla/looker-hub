@@ -54,6 +54,20 @@ view: engagement_table {
     description: "DAU - Daily Active Users"
   }
 
+  dimension: device_manufacturer {
+    sql: ${TABLE}.device_manufacturer ;;
+    type: string
+    description: "Manufacturer of the device where the client is installed.
+"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.device_type ;;
+    type: string
+    description: "On Apple devices allows us to differentiate between iPhone and iPad. On Android devices the value is always \"Android\".
+"
+  }
+
   dimension: is_mobile {
     sql: ${TABLE}.is_mobile ;;
     type: yesno
@@ -87,6 +101,11 @@ view: engagement_table {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     description: "Release channel of the app the profile is using."
+  }
+
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.paid_vs_organic ;;
+    type: string
   }
 
   dimension: wau {
@@ -124,6 +143,7 @@ view: engagement_table {
     ]
     convert_tz: no
     datatype: date
+    description: "Submission Date"
   }
 
   sql_table_name: `mozdata.firefox_ios.engagement` ;;

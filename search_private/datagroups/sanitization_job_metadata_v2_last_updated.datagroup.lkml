@@ -11,6 +11,6 @@ datagroup: sanitization_job_metadata_v2_last_updated {
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'search_terms_derived'
     AND table_name = 'sanitization_job_metadata_v2' ;;
-  description: "Updates when moz-fx-data-shared-prod:search_terms_derived.sanitization_job_metadata_v2 is modified."
+  description: "Updates when moz-fx-data-shared-prod.search_terms_derived.sanitization_job_metadata_v2 is modified."
   max_cache_age: "24 hours"
 }
