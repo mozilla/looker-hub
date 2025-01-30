@@ -783,6 +783,25 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__custom_distribution__a11y_consumers__sum {
+    label: "A11Y Consumers Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.a11y_consumers.sum ;;
+    type: number
+    group_label: "A11Y"
+    group_item_label: "Consumers Sum"
+
+    link: {
+      label: "Glean Dictionary reference for A11Y Consumers Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/a11y_consumers"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A list of known accessibility clients that inject into Firefox process space (see https://searchfox.org/mozilla-central/source/accessible/windows/msaa/Compatibility.h).
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram A11Y_CONSUMERS.
+"
+  }
+
   dimension: metrics__quantity__a11y_hcm_background {
     label: "A11Y Hcm Background"
     hidden: no
@@ -870,6 +889,25 @@ the tracking protection settings panel from the toolbar.
     }
 
     description: "OS high contrast or other accessibility theme is enabled. The result is split into keys which represent the values of browser.display.document_color_use: \"default\", \"always\", or \"never\". This metric was generated to correspond to the Legacy Telemetry scalar a11y.theme.
+"
+  }
+
+  dimension: metrics__timing_distribution__a11y_tree_update_timing__sum {
+    label: "A11Y Tree Update Timing Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.a11y_tree_update_timing.sum ;;
+    type: number
+    group_label: "A11Y"
+    group_item_label: "Tree Update Timing Sum"
+
+    link: {
+      label: "Glean Dictionary reference for A11Y Tree Update Timing Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/a11y_tree_update_timing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The amount of time taken to update the accessibility tree (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram A11Y_TREE_UPDATE_TIMING_MS.
 "
   }
 
@@ -1413,6 +1451,42 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "YUV color space of AVIF image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__bfcache_combo {
+    label: "Bfcache Combo"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.bfcache_combo ;;
+    group_label: "Bfcache"
+    group_item_label: "Combo"
+
+    link: {
+      label: "Glean Dictionary reference for Bfcache Combo"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/bfcache_combo"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The common combinations of BFCacheStatus when we determine whether the page can be BFCached or not; If it's BFCached, we record BFCache_Success; Success_Not_Toplevel represents the number of not the only top level document in BrowsingContextGroup's documents that are BFCached, and BFCache_Success includes Success_Not_Toplevel; If it's not and it falls under common failure reasons combinations, we record the corresponding combination; Otherwise, we record Other to indicate this is not a common failure
+This metric was generated to correspond to the Legacy Telemetry categorical histogram BFCACHE_COMBO.
+"
+  }
+
+  dimension: metrics__labeled_counter__bfcache_page_restored {
+    label: "Bfcache Page Restored"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.bfcache_page_restored ;;
+    group_label: "Bfcache"
+    group_item_label: "Page Restored"
+
+    link: {
+      label: "Glean Dictionary reference for Bfcache Page Restored"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/bfcache_page_restored"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether bfcache is used when loading a page from session history
+This metric was generated to correspond to the Legacy Telemetry boolean histogram BFCACHE_PAGE_RESTORED.
 "
   }
 
@@ -2084,6 +2158,43 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__custom_distribution__contentblocking_cookie_behavior__sum {
+    label: "Contentblocking Cookie Behavior Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_cookie_behavior.sum ;;
+    type: number
+    group_label: "Contentblocking"
+    group_item_label: "Cookie Behavior Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Cookie Behavior Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/contentblocking_cookie_behavior"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the cookie behavior pref at startup.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram COOKIE_BEHAVIOR.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_cryptominers_blocked_count {
+    label: "Contentblocking Cryptominers Blocked Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_cryptominers_blocked_count ;;
+    group_label: "Contentblocking"
+    group_item_label: "Cryptominers Blocked Count"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Cryptominers Blocked Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/contentblocking_cryptominers_blocked_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A count of the status of cryptominer blocking per top level page load. ('pageLoad' = There was a page load, 'blocked' = at least one cryptominer was blocked, 'allowed' = at least one cryptominer was detected and allowed.) Note, pageLoad is used as a baseline measurement.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram CRYPTOMINERS_BLOCKED_COUNT.
+"
+  }
+
   dimension: metrics__boolean__contentblocking_cryptomining_blocking_enabled {
     label: "Contentblocking Cryptomining Blocking Enabled"
     hidden: no
@@ -2099,6 +2210,42 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "True if cryptominer blocking is enabled globally at startup. This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.cryptomining_blocking_enabled.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_email_tracker_count {
+    label: "Contentblocking Email Tracker Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_email_tracker_count ;;
+    group_label: "Contentblocking"
+    group_item_label: "Email Tracker Count"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Email Tracker Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/contentblocking_email_tracker_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A count of the classified email trackers. ('base_normal' = The classified email tracker is in base category and loaded under a normal site, 'content_normal' = The classified email tracker is in content category and loaded under a normal site, 'base_email_webapp' = The classified email tracker is in base category and loaded under a known email webapp, 'content_email_webapp' = The classified email tracker is in content category and loaded under a known email webapp.)
+This metric was generated to correspond to the Legacy Telemetry categorical histogram EMAIL_TRACKER_COUNT.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_fingerprinters_blocked_count {
+    label: "Contentblocking Fingerprinters Blocked Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_fingerprinters_blocked_count ;;
+    group_label: "Contentblocking"
+    group_item_label: "Fingerprinters Blocked Count"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Fingerprinters Blocked Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/contentblocking_fingerprinters_blocked_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A count of the status of fingerprinter blocking per top level page load. ('pageLoad' = There was a page load, 'blocked' = at least one fingerprinter was blocked, 'allowed' = at least one fingerprinter was detected and allowed.) Note, pageLoad is used as a baseline measurement.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram FINGERPRINTERS_BLOCKED_COUNT.
 "
   }
 
@@ -2120,6 +2267,154 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__contentblocking_font_fingerprinting_per_tab {
+    label: "Contentblocking Font Fingerprinting Per Tab"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_font_fingerprinting_per_tab ;;
+    group_label: "Contentblocking"
+    group_item_label: "Font Fingerprinting Per Tab"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Font Fingerprinting Per Tab"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/contentblocking_font_fingerprinting_per_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a probable font fingerprinting attempt was detected
+This metric was generated to correspond to the Legacy Telemetry boolean histogram FONT_FINGERPRINTING_PER_TAB.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_query_stripping_count {
+    label: "Contentblocking Query Stripping Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_query_stripping_count ;;
+    group_label: "Contentblocking"
+    group_item_label: "Query Stripping Count"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Query Stripping Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/contentblocking_query_stripping_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A count of the query stripping. ('Navigation' = There was a top-level loading via navigation, 'Redirect' = There was a top-level loading via redirect, 'StripForNavigation' = There was a stripping happened for a top-level navigation, 'StripForRedirect' = There was a stripping happened for a top-level redirect.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram QUERY_STRIPPING_COUNT.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_query_stripping_count_by_param {
+    label: "Contentblocking Query Stripping Count By Param"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_query_stripping_count_by_param ;;
+    group_label: "Contentblocking"
+    group_item_label: "Query Stripping Count By Param"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Query Stripping Count By Param"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/contentblocking_query_stripping_count_by_param"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often specific query parameters are stripped.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram QUERY_STRIPPING_COUNT_BY_PARAM.
+"
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_query_stripping_param_count__sum {
+    label: "Contentblocking Query Stripping Param Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_query_stripping_param_count.sum ;;
+    type: number
+    group_label: "Contentblocking"
+    group_item_label: "Query Stripping Param Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Query Stripping Param Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/contentblocking_query_stripping_param_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If query params get stripped, how many per navigation/redirect.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram QUERY_STRIPPING_PARAM_COUNT.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_storage_access_granted_count {
+    label: "Contentblocking Storage Access Granted Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_storage_access_granted_count ;;
+    group_label: "Contentblocking"
+    group_item_label: "Storage Access Granted Count"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Storage Access Granted Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/contentblocking_storage_access_granted_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A count of the granted storage access. ('StorageGranted' = There was a storage access granted, 'StorageAccessAPI' = the storage access was granted by the storage access API, 'OpenerAfterUserInteraction' = the storage access was granted due to the heuristic 'OpenerAfterUserInteraction', 'Opener' = the storage access was granted due to the heuristic 'Opener', 'Redirect' = the storage access was granted due to the heuristic 'Redirect', 'RedirectTracker' = the storage access was granted due to the heuristic 'RedirectTracker'.) Note, StorageGranted is used as a baseline measurement, which should be the sum of all other measurements.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram STORAGE_ACCESS_GRANTED_COUNT.
+"
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_storage_access_remaining_days__sum {
+    label: "Contentblocking Storage Access Remaining Days Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_storage_access_remaining_days.sum ;;
+    type: number
+    group_label: "Contentblocking"
+    group_item_label: "Storage Access Remaining Days Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Storage Access Remaining Days Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/contentblocking_storage_access_remaining_days"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time remaining until expiration per storage access permissions, in days (one record per permission, not averaged).
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram STORAGE_ACCESS_REMAINING_DAYS.
+"
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_strip_on_share_length_decrease__sum {
+    label: "Contentblocking Strip On Share Length Decrease Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_strip_on_share_length_decrease.sum ;;
+    type: number
+    group_label: "Contentblocking"
+    group_item_label: "Strip On Share Length Decrease Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Strip On Share Length Decrease Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/contentblocking_strip_on_share_length_decrease"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The decrease in the length of the URL when strip on share is used, only if at least one parameter is stripped
+This metric was generated to correspond to the Legacy Telemetry exponential histogram STRIP_ON_SHARE_LENGTH_DECREASE.
+"
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_strip_on_share_params_removed__sum {
+    label: "Contentblocking Strip On Share Params Removed Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_strip_on_share_params_removed.sum ;;
+    type: number
+    group_label: "Contentblocking"
+    group_item_label: "Strip On Share Params Removed Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Strip On Share Params Removed Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/contentblocking_strip_on_share_params_removed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of query parameters removed, if any, when strip on share is used
+This metric was generated to correspond to the Legacy Telemetry linear histogram STRIP_ON_SHARE_PARAMS_REMOVED.
+"
+  }
+
   dimension: metrics__counter__contentblocking_trackers_blocked_count {
     label: "Contentblocking Trackers Blocked Count"
     hidden: no
@@ -2135,6 +2430,61 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "A count of the number of tracking events blocked. This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.trackers_blocked_count.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_tracking_protection_enabled {
+    label: "Contentblocking Tracking Protection Enabled"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_tracking_protection_enabled ;;
+    group_label: "Contentblocking"
+    group_item_label: "Tracking Protection Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Tracking Protection Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/contentblocking_tracking_protection_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if tracking protection is enabled globally at startup.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram TRACKING_PROTECTION_ENABLED.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_tracking_protection_pbm_disabled {
+    label: "Contentblocking Tracking Protection Pbm Disabled"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_tracking_protection_pbm_disabled ;;
+    group_label: "Contentblocking"
+    group_item_label: "Tracking Protection Pbm Disabled"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Tracking Protection Pbm Disabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/contentblocking_tracking_protection_pbm_disabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if tracking protection in Private Browsing mode is disabled at startup.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram TRACKING_PROTECTION_PBM_DISABLED.
+"
+  }
+
+  dimension: metrics__custom_distribution__contentblocking_tracking_protection_shield__sum {
+    label: "Contentblocking Tracking Protection Shield Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.contentblocking_tracking_protection_shield.sum ;;
+    type: number
+    group_label: "Contentblocking"
+    group_item_label: "Tracking Protection Shield Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Tracking Protection Shield Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/contentblocking_tracking_protection_shield"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Status of the shield icon for each top-level pageload (outside of Private Browsing mode) when tracking protection is enabled (0 = there was a page load, this is used as a baseline, 1 = shield crossed out because CB was disabled on this page by the user, 2 = shield shown because some content was blocked)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram TRACKING_PROTECTION_SHIELD.
 "
   }
 
@@ -2454,6 +2804,101 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Tracks the value of the cookiebanners.service.detectOnly pref.
+"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_duration__sum {
+    label: "Cookie Purging Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_duration.sum ;;
+    type: number
+    group_label: "Cookie Purging"
+    group_item_label: "Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Purging Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/cookie_purging_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent per daily cookie purging activity, in milliseconds. This measures the time for all batch iterations of that day.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram COOKIE_PURGING_DURATION_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_interval_hours__sum {
+    label: "Cookie Purging Interval Hours Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_interval_hours.sum ;;
+    type: number
+    group_label: "Cookie Purging"
+    group_item_label: "Interval Hours Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Purging Interval Hours Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/cookie_purging_interval_hours"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How much time (in hours) passed between the current cookie purging activity and the one before that (cookie purging is run on 'daily idle')
+This metric was generated to correspond to the Legacy Telemetry linear histogram COOKIE_PURGING_INTERVAL_HOURS.
+"
+  }
+
+  dimension: metrics__custom_distribution__cookie_purging_origins_purged__sum {
+    label: "Cookie Purging Origins Purged Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cookie_purging_origins_purged.sum ;;
+    type: number
+    group_label: "Cookie Purging"
+    group_item_label: "Origins Purged Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Purging Origins Purged Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/cookie_purging_origins_purged"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of origins that were purged during one run of cookie purging.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram COOKIE_PURGING_ORIGINS_PURGED.
+"
+  }
+
+  dimension: metrics__timing_distribution__cookie_purging_trackers_user_interaction_remaining_days__sum {
+    label: "Cookie Purging Trackers User Interaction Remaining Days Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cookie_purging_trackers_user_interaction_remaining_days.sum ;;
+    type: number
+    group_label: "Cookie Purging"
+    group_item_label: "Trackers User Interaction Remaining Days Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Purging Trackers User Interaction Remaining Days Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/cookie_purging_trackers_user_interaction_remaining_days"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time remaining until expiration per user interaction permissions of trackers at the time of purging, in days (one record per tracker, not averaged).
+This metric was generated to correspond to the Legacy Telemetry linear histogram COOKIE_PURGING_TRACKERS_USER_INTERACTION_REMAINING_DAYS.
+"
+  }
+
+  dimension: metrics__custom_distribution__cookie_purging_trackers_with_user_interaction__sum {
+    label: "Cookie Purging Trackers With User Interaction Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cookie_purging_trackers_with_user_interaction.sum ;;
+    type: number
+    group_label: "Cookie Purging"
+    group_item_label: "Trackers With User Interaction Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Purging Trackers With User Interaction Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/cookie_purging_trackers_with_user_interaction"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of trackers that had user interaction at the time of purging.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram COOKIE_PURGING_TRACKERS_WITH_USER_INTERACTION.
 "
   }
 
@@ -4622,6 +5067,270 @@ API for the purposes of Validation (hence GVSV).
 "
   }
 
+  dimension: metrics__labeled_counter__fontlist_bad_fallback_font {
+    label: "Fontlist Bad Fallback Font"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.fontlist_bad_fallback_font ;;
+    group_label: "Fontlist"
+    group_item_label: "Bad Fallback Font"
+
+    link: {
+      label: "Glean Dictionary reference for Fontlist Bad Fallback Font"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/fontlist_bad_fallback_font"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "system fallback font can't be used
+This metric was generated to correspond to the Legacy Telemetry boolean histogram BAD_FALLBACK_FONT.
+"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_bundledfonts_activate__sum {
+    label: "Fontlist Bundledfonts Activate Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_bundledfonts_activate.sum ;;
+    type: number
+    group_label: "Fontlist"
+    group_item_label: "Bundledfonts Activate Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fontlist Bundledfonts Activate Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/fontlist_bundledfonts_activate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time(ms) spent activating additional fonts bundled with the product
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FONTLIST_BUNDLEDFONTS_ACTIVATE.
+"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_collect__sum {
+    label: "Fontlist Dwritefont Delayedinit Collect Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_collect.sum ;;
+    type: number
+    group_label: "Fontlist"
+    group_item_label: "Dwritefont Delayedinit Collect Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fontlist Dwritefont Delayedinit Collect Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/fontlist_dwritefont_delayedinit_collect"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "gfxDWriteFontList::DelayedInitFontList GetSystemFontCollection (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DWRITEFONT_DELAYEDINITFONTLIST_COLLECT.
+"
+  }
+
+  dimension: metrics__custom_distribution__fontlist_dwritefont_delayedinit_count__sum {
+    label: "Fontlist Dwritefont Delayedinit Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.fontlist_dwritefont_delayedinit_count.sum ;;
+    type: number
+    group_label: "Fontlist"
+    group_item_label: "Dwritefont Delayedinit Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fontlist Dwritefont Delayedinit Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/fontlist_dwritefont_delayedinit_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "gfxDWriteFontList::DelayedInitFontList Font Family Count
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DWRITEFONT_DELAYEDINITFONTLIST_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_dwritefont_delayedinit_total__sum {
+    label: "Fontlist Dwritefont Delayedinit Total Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_dwritefont_delayedinit_total.sum ;;
+    type: number
+    group_label: "Fontlist"
+    group_item_label: "Dwritefont Delayedinit Total Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fontlist Dwritefont Delayedinit Total Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/fontlist_dwritefont_delayedinit_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "gfxDWriteFontList::DelayedInitFontList Total (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DWRITEFONT_DELAYEDINITFONTLIST_TOTAL.
+"
+  }
+
+  dimension: metrics__custom_distribution__fontlist_dwritefont_init_problem__sum {
+    label: "Fontlist Dwritefont Init Problem Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.fontlist_dwritefont_init_problem.sum ;;
+    type: number
+    group_label: "Fontlist"
+    group_item_label: "Dwritefont Init Problem Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fontlist Dwritefont Init Problem Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/fontlist_dwritefont_init_problem"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DirectWrite system fontlist initialization problem (1=GDI interop, 2=system font collection, 3=no fonts)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram DWRITEFONT_INIT_PROBLEM.
+"
+  }
+
+  dimension: metrics__labeled_counter__fontlist_font_cache_hit {
+    label: "Fontlist Font Cache Hit"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.fontlist_font_cache_hit ;;
+    group_label: "Fontlist"
+    group_item_label: "Font Cache Hit"
+
+    link: {
+      label: "Glean Dictionary reference for Fontlist Font Cache Hit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/fontlist_font_cache_hit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "font cache hit
+This metric was generated to correspond to the Legacy Telemetry boolean histogram FONT_CACHE_HIT.
+"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_gdi_init_total__sum {
+    label: "Fontlist Gdi Init Total Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_gdi_init_total.sum ;;
+    type: number
+    group_label: "Fontlist"
+    group_item_label: "Gdi Init Total Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fontlist Gdi Init Total Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/fontlist_gdi_init_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "gfxGDIFontList::InitFontList Total (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram GDI_INITFONTLIST_TOTAL.
+"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initfacenamelists__sum {
+    label: "Fontlist Initfacenamelists Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initfacenamelists.sum ;;
+    type: number
+    group_label: "Fontlist"
+    group_item_label: "Initfacenamelists Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fontlist Initfacenamelists Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/fontlist_initfacenamelists"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time(ms) spent on reading family names from all fonts
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FONTLIST_INITFACENAMELISTS.
+"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames__sum {
+    label: "Fontlist Initotherfamilynames Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames.sum ;;
+    type: number
+    group_label: "Fontlist"
+    group_item_label: "Initotherfamilynames Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fontlist Initotherfamilynames Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/fontlist_initotherfamilynames"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time(ms) spent on reading other family names from all fonts
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FONTLIST_INITOTHERFAMILYNAMES.
+"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_initotherfamilynames_no_deferring__sum {
+    label: "Fontlist Initotherfamilynames No Deferring Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_initotherfamilynames_no_deferring.sum ;;
+    type: number
+    group_label: "Fontlist"
+    group_item_label: "Initotherfamilynames No Deferring Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fontlist Initotherfamilynames No Deferring Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/fontlist_initotherfamilynames_no_deferring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time(ms) spent on reading other family names from all fonts for no timeout case
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FONTLIST_INITOTHERFAMILYNAMES_NO_DEFERRING.
+"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_mac_init_total__sum {
+    label: "Fontlist Mac Init Total Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_mac_init_total.sum ;;
+    type: number
+    group_label: "Fontlist"
+    group_item_label: "Mac Init Total Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fontlist Mac Init Total Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/fontlist_mac_init_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "gfxMacPlatformFontList::InitFontList Total (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MAC_INITFONTLIST_TOTAL.
+"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback__sum {
+    label: "Fontlist System Font Fallback Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback.sum ;;
+    type: number
+    group_label: "Fontlist"
+    group_item_label: "System Font Fallback Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fontlist System Font Fallback Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/fontlist_system_font_fallback"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "System font fallback (us)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SYSTEM_FONT_FALLBACK.
+"
+  }
+
+  dimension: metrics__timing_distribution__fontlist_system_font_fallback_first__sum {
+    label: "Fontlist System Font Fallback First Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.fontlist_system_font_fallback_first.sum ;;
+    type: number
+    group_label: "Fontlist"
+    group_item_label: "System Font Fallback First Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fontlist System Font Fallback First Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/fontlist_system_font_fallback_first"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "System font fallback, first call (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SYSTEM_FONT_FALLBACK_FIRST.
+"
+  }
+
   dimension: metrics__quantity__formautofill_addresses_autofill_profiles_count {
     label: "Formautofill Addresses Autofill Profiles Count"
     hidden: no
@@ -5766,6 +6475,44 @@ To be used to validate GIFFT.
     }
 
     description: "Current status of the GPU process feature
+"
+  }
+
+  dimension: metrics__timing_distribution__gpu_process_initialization_time__sum {
+    label: "Gpu Process Initialization Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_initialization_time.sum ;;
+    type: number
+    group_label: "Gpu Process"
+    group_item_label: "Initialization Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gpu Process Initialization Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/gpu_process_initialization_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "GPU process initialization (excluding XPCOM and fork time) time in milliseconds
+This metric was generated to correspond to the Legacy Telemetry exponential histogram GPU_PROCESS_INITIALIZATION_TIME_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__gpu_process_launch_time__sum {
+    label: "Gpu Process Launch Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gpu_process_launch_time.sum ;;
+    type: number
+    group_label: "Gpu Process"
+    group_item_label: "Launch Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gpu Process Launch Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/gpu_process_launch_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "GPU process launch time in milliseconds
+This metric was generated to correspond to the Legacy Telemetry exponential histogram GPU_PROCESS_LAUNCH_TIME_MS_2.
 "
   }
 
@@ -7551,6 +8298,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Counts how often the parent-connect-timeout timer is necessary to clear up EarlyHintPreloader
+"
+  }
+
+  dimension: metrics__labeled_counter__network_alpn_mismatch_count {
+    label: "Network Alpn Mismatch Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_alpn_mismatch_count ;;
+    group_label: "Network"
+    group_item_label: "Alpn Mismatch Count"
+
+    link: {
+      label: "Glean Dictionary reference for Network Alpn Mismatch Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/network_alpn_mismatch_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times we encountered a mismatched ALPN token and needed to reset the connection. Keyed by the negotiated NPN.
 "
   }
 
@@ -10688,6 +11452,60 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__orb_block_initiator {
+    label: "Orb Block Initiator"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.orb_block_initiator ;;
+    group_label: "Orb"
+    group_item_label: "Block Initiator"
+
+    link: {
+      label: "Glean Dictionary reference for Orb Block Initiator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/orb_block_initiator"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The initiator of this ORB blocked request.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram ORB_BLOCK_INITIATOR.
+"
+  }
+
+  dimension: metrics__labeled_counter__orb_block_reason {
+    label: "Orb Block Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.orb_block_reason ;;
+    group_label: "Orb"
+    group_item_label: "Block Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Orb Block Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/orb_block_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The reason of why this request was blocked by ORB
+This metric was generated to correspond to the Legacy Telemetry categorical histogram ORB_BLOCK_REASON.
+"
+  }
+
+  dimension: metrics__labeled_counter__orb_did_ever_block_response {
+    label: "Orb Did Ever Block Response"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.orb_did_ever_block_response ;;
+    group_label: "Orb"
+    group_item_label: "Did Ever Block Response"
+
+    link: {
+      label: "Glean Dictionary reference for Orb Did Ever Block Response"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/orb_did_ever_block_response"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If any opaque response was blocked for a given top-level window context.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram ORB_DID_EVER_BLOCK_RESPONSE.
+"
+  }
+
   dimension: metrics__boolean__os_environment_is_admin_without_uac {
     label: "Os Environment Is Admin Without Uac"
     hidden: no
@@ -12192,6 +13010,366 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__custom_distribution__predictor_base_confidence__sum {
+    label: "Predictor Base Confidence Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.predictor_base_confidence.sum ;;
+    type: number
+    group_label: "Predictor"
+    group_item_label: "Base Confidence Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Predictor Base Confidence Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/predictor_base_confidence"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The base confidence calculated for a subresource
+This metric was generated to correspond to the Legacy Telemetry linear histogram PREDICTOR_BASE_CONFIDENCE.
+"
+  }
+
+  dimension: metrics__custom_distribution__predictor_confidence__sum {
+    label: "Predictor Confidence Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.predictor_confidence.sum ;;
+    type: number
+    group_label: "Predictor"
+    group_item_label: "Confidence Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Predictor Confidence Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/predictor_confidence"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The final confidence calculated for a subresource
+This metric was generated to correspond to the Legacy Telemetry linear histogram PREDICTOR_CONFIDENCE.
+"
+  }
+
+  dimension: metrics__custom_distribution__predictor_global_degradation__sum {
+    label: "Predictor Global Degradation Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.predictor_global_degradation.sum ;;
+    type: number
+    group_label: "Predictor"
+    group_item_label: "Global Degradation Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Predictor Global Degradation Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/predictor_global_degradation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The global degradation calculated
+This metric was generated to correspond to the Legacy Telemetry linear histogram PREDICTOR_GLOBAL_DEGRADATION.
+"
+  }
+
+  dimension: metrics__custom_distribution__predictor_learn_attempts__sum {
+    label: "Predictor Learn Attempts Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.predictor_learn_attempts.sum ;;
+    type: number
+    group_label: "Predictor"
+    group_item_label: "Learn Attempts Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Predictor Learn Attempts Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/predictor_learn_attempts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times nsINetworkPredictor::Learn is called and attempts to learn
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PREDICTOR_LEARN_ATTEMPTS.
+"
+  }
+
+  dimension: metrics__timing_distribution__predictor_learn_work_time__sum {
+    label: "Predictor Learn Work Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.predictor_learn_work_time.sum ;;
+    type: number
+    group_label: "Predictor"
+    group_item_label: "Learn Work Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Predictor Learn Work Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/predictor_learn_work_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time spent doing the work for learn (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PREDICTOR_LEARN_WORK_TIME.
+"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_action__sum {
+    label: "Predictor Predict Time To Action Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_action.sum ;;
+    type: number
+    group_label: "Predictor"
+    group_item_label: "Predict Time To Action Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Predictor Predict Time To Action Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/predictor_predict_time_to_action"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long it takes from the time Predict() is called to the time we take action
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PREDICTOR_PREDICT_TIME_TO_ACTION.
+"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_time_to_inaction__sum {
+    label: "Predictor Predict Time To Inaction Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_inaction.sum ;;
+    type: number
+    group_label: "Predictor"
+    group_item_label: "Predict Time To Inaction Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Predictor Predict Time To Inaction Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/predictor_predict_time_to_inaction"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long it takes from the time Predict() is called to the time we figure out there's nothing to do
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PREDICTOR_PREDICT_TIME_TO_INACTION.
+"
+  }
+
+  dimension: metrics__timing_distribution__predictor_predict_work_time__sum {
+    label: "Predictor Predict Work Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.predictor_predict_work_time.sum ;;
+    type: number
+    group_label: "Predictor"
+    group_item_label: "Predict Work Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Predictor Predict Work Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/predictor_predict_work_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time spent doing the work for predict (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PREDICTOR_PREDICT_WORK_TIME.
+"
+  }
+
+  dimension: metrics__custom_distribution__predictor_predictions_calculated__sum {
+    label: "Predictor Predictions Calculated Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.predictor_predictions_calculated.sum ;;
+    type: number
+    group_label: "Predictor"
+    group_item_label: "Predictions Calculated Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Predictor Predictions Calculated Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/predictor_predictions_calculated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many prediction calculations are performed
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PREDICTOR_PREDICTIONS_CALCULATED.
+"
+  }
+
+  dimension: metrics__custom_distribution__predictor_prefetch_decision_reason__sum {
+    label: "Predictor Prefetch Decision Reason Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.predictor_prefetch_decision_reason.sum ;;
+    type: number
+    group_label: "Predictor"
+    group_item_label: "Prefetch Decision Reason Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Predictor Prefetch Decision Reason Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/predictor_prefetch_decision_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Why the predictor determined a particular resource was eligible for future prefetch (or not). See PrefetchDecisionReason in Predictor.cpp for value meanings
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram PREDICTOR_PREFETCH_DECISION_REASON.
+"
+  }
+
+  dimension: metrics__custom_distribution__predictor_prefetch_ignore_reason__sum {
+    label: "Predictor Prefetch Ignore Reason Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.predictor_prefetch_ignore_reason.sum ;;
+    type: number
+    group_label: "Predictor"
+    group_item_label: "Prefetch Ignore Reason Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Predictor Prefetch Ignore Reason Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/predictor_prefetch_ignore_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Why the predictor determined a particular resource that was marked eligible for prefetch should not be prefetched. See PrefetchIgnoreReason in Predictor.cpp for value meanings
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram PREDICTOR_PREFETCH_IGNORE_REASON.
+"
+  }
+
+  dimension: metrics__timing_distribution__predictor_prefetch_time__sum {
+    label: "Predictor Prefetch Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.predictor_prefetch_time.sum ;;
+    type: number
+    group_label: "Predictor"
+    group_item_label: "Prefetch Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Predictor Prefetch Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/predictor_prefetch_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long it takes from OnStartRequest to OnStopRequest for a prefetch
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PREDICTOR_PREFETCH_TIME.
+"
+  }
+
+  dimension: metrics__labeled_counter__predictor_prefetch_use_status {
+    label: "Predictor Prefetch Use Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.predictor_prefetch_use_status ;;
+    group_label: "Predictor"
+    group_item_label: "Prefetch Use Status"
+
+    link: {
+      label: "Glean Dictionary reference for Predictor Prefetch Use Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/predictor_prefetch_use_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If and why prefetches are used/unused.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram PREDICTOR_PREFETCH_USE_STATUS.
+"
+  }
+
+  dimension: metrics__custom_distribution__predictor_subresource_degradation__sum {
+    label: "Predictor Subresource Degradation Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.predictor_subresource_degradation.sum ;;
+    type: number
+    group_label: "Predictor"
+    group_item_label: "Subresource Degradation Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Predictor Subresource Degradation Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/predictor_subresource_degradation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The degradation calculated for a subresource
+This metric was generated to correspond to the Legacy Telemetry linear histogram PREDICTOR_SUBRESOURCE_DEGRADATION.
+"
+  }
+
+  dimension: metrics__custom_distribution__predictor_total_preconnects__sum {
+    label: "Predictor Total Preconnects Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.predictor_total_preconnects.sum ;;
+    type: number
+    group_label: "Predictor"
+    group_item_label: "Total Preconnects Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Predictor Total Preconnects Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/predictor_total_preconnects"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many actual preconnects happen
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PREDICTOR_TOTAL_PRECONNECTS.
+"
+  }
+
+  dimension: metrics__custom_distribution__predictor_total_predictions__sum {
+    label: "Predictor Total Predictions Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.predictor_total_predictions.sum ;;
+    type: number
+    group_label: "Predictor"
+    group_item_label: "Total Predictions Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Predictor Total Predictions Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/predictor_total_predictions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many actual predictions (preresolves, preconnects, ...) happen
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PREDICTOR_TOTAL_PREDICTIONS.
+"
+  }
+
+  dimension: metrics__custom_distribution__predictor_total_prefetches__sum {
+    label: "Predictor Total Prefetches Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.predictor_total_prefetches.sum ;;
+    type: number
+    group_label: "Predictor"
+    group_item_label: "Total Prefetches Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Predictor Total Prefetches Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/predictor_total_prefetches"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many actual prefetches happen
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PREDICTOR_TOTAL_PREFETCHES.
+"
+  }
+
+  dimension: metrics__custom_distribution__predictor_total_preresolves__sum {
+    label: "Predictor Total Preresolves Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.predictor_total_preresolves.sum ;;
+    type: number
+    group_label: "Predictor"
+    group_item_label: "Total Preresolves Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Predictor Total Preresolves Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/predictor_total_preresolves"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many actual preresolves happen
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PREDICTOR_TOTAL_PRERESOLVES.
+"
+  }
+
+  dimension: metrics__timing_distribution__predictor_wait_time__sum {
+    label: "Predictor Wait Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.predictor_wait_time.sum ;;
+    type: number
+    group_label: "Predictor"
+    group_item_label: "Wait Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Predictor Wait Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/predictor_wait_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time a predictor event waits in the queue (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PREDICTOR_WAIT_TIME.
+"
+  }
+
   dimension: metrics__boolean__preferences_prefs_file_was_invalid {
     label: "Preferences Prefs File Was Invalid"
     hidden: no
@@ -13082,6 +14260,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__counter__security_ui_protectionspopup_smartblockembeds_shown {
+    label: "Security Ui Protectionspopup Smartblockembeds Shown"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.security_ui_protectionspopup_smartblockembeds_shown ;;
+    type: number
+    group_label: "Security Ui Protectionspopup"
+    group_item_label: "Smartblockembeds Shown"
+
+    link: {
+      label: "Glean Dictionary reference for Security Ui Protectionspopup Smartblockembeds Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/security_ui_protectionspopup_smartblockembeds_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times the SmartBlock placeholders are shown on the page
+"
+  }
+
   dimension: metrics__quantity__startup_profile_count {
     label: "Startup Profile Count"
     hidden: no
@@ -13166,6 +14362,82 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
   default:
     The default profile was selected as normal.
 This metric was generated to correspond to the Legacy Telemetry scalar startup.profile_selection_reason.
+"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_event_the_last_cycle__sum {
+    label: "Sts Poll And Event The Last Cycle Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_event_the_last_cycle.sum ;;
+    type: number
+    group_label: "Sts"
+    group_item_label: "Poll And Event The Last Cycle Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Sts Poll And Event The Last Cycle Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/sts_poll_and_event_the_last_cycle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The duraion of the socketThread cycle during shutdown, including polls and pending events. (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram STS_POLL_AND_EVENT_THE_LAST_CYCLE.
+"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_and_events_cycle__sum {
+    label: "Sts Poll And Events Cycle Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_events_cycle.sum ;;
+    type: number
+    group_label: "Sts"
+    group_item_label: "Poll And Events Cycle Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Sts Poll And Events Cycle Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/sts_poll_and_events_cycle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The duraion of a socketThread cycle, including polls and pending events. (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram STS_POLL_AND_EVENTS_CYCLE.
+"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_block_time__sum {
+    label: "Sts Poll Block Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_block_time.sum ;;
+    type: number
+    group_label: "Sts"
+    group_item_label: "Poll Block Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Sts Poll Block Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/sts_poll_block_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked on poll (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram STS_POLL_BLOCK_TIME.
+"
+  }
+
+  dimension: metrics__timing_distribution__sts_poll_cycle__sum {
+    label: "Sts Poll Cycle Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.sts_poll_cycle.sum ;;
+    type: number
+    group_label: "Sts"
+    group_item_label: "Poll Cycle Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Sts Poll Cycle Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/sts_poll_cycle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The duration of poll. (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram STS_POLL_CYCLE.
 "
   }
 
@@ -17732,6 +19004,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: security_ui_protectionspopup_smartblockembeds_shown {
+    type: sum
+    sql: ${metrics__counter__security_ui_protectionspopup_smartblockembeds_shown} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Security Ui Protectionspopup Smartblockembeds Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/security_ui_protectionspopup_smartblockembeds_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: security_ui_protectionspopup_smartblockembeds_shown_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__security_ui_protectionspopup_smartblockembeds_shown: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Security Ui Protectionspopup Smartblockembeds Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/security_ui_protectionspopup_smartblockembeds_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: tls_certificate_verifications {
     type: sum
     sql: ${metrics__counter__tls_certificate_verifications} ;;
@@ -19293,6 +20590,88 @@ view: metrics__metrics__labeled_counter__avif_yuv_color_space {
   }
 }
 
+view: metrics__metrics__labeled_counter__bfcache_combo {
+  label: "Bfcache - Combo"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__bfcache_page_restored {
+  label: "Bfcache - Page Restored"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count {
   label: "Bounce Tracking Protection - Purge Count"
 
@@ -19869,6 +21248,375 @@ view: metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated {
 
 view: metrics__metrics__labeled_counter__codec_stats_video_preferred_codec {
   label: "Codec Stats - Video Preferred Codec"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__contentblocking_cryptominers_blocked_count {
+  label: "Contentblocking - Cryptominers Blocked Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__contentblocking_email_tracker_count {
+  label: "Contentblocking - Email Tracker Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__contentblocking_fingerprinters_blocked_count {
+  label: "Contentblocking - Fingerprinters Blocked Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__contentblocking_font_fingerprinting_per_tab {
+  label: "Contentblocking - Font Fingerprinting Per Tab"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__contentblocking_query_stripping_count {
+  label: "Contentblocking - Query Stripping Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__contentblocking_query_stripping_count_by_param {
+  label: "Contentblocking - Query Stripping Count By Param"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__contentblocking_storage_access_granted_count {
+  label: "Contentblocking - Storage Access Granted Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__contentblocking_tracking_protection_enabled {
+  label: "Contentblocking - Tracking Protection Enabled"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__contentblocking_tracking_protection_pbm_disabled {
+  label: "Contentblocking - Tracking Protection Pbm Disabled"
 
   dimension: document_id {
     type: string
@@ -21135,6 +22883,88 @@ view: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_g
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__fontlist_bad_fallback_font {
+  label: "Fontlist - Bad Fallback Font"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__fontlist_font_cache_hit {
+  label: "Fontlist - Font Cache Hit"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -23023,6 +24853,47 @@ view: metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_real {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_alpn_mismatch_count {
+  label: "Network - Alpn Mismatch Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -25158,6 +27029,129 @@ view: metrics__metrics__labeled_counter__networking_trr_request_count_per_conn {
   }
 }
 
+view: metrics__metrics__labeled_counter__orb_block_initiator {
+  label: "Orb - Block Initiator"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__orb_block_reason {
+  label: "Orb - Block Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__orb_did_ever_block_response {
+  label: "Orb - Did Ever Block Response"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__pdfjs_buttons {
   label: "Pdfjs - Buttons"
 
@@ -26144,6 +28138,47 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active 
 
 view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
   label: "Power Wakeups Per Thread - Parent Inactive"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__predictor_prefetch_use_status {
+  label: "Predictor - Prefetch Use Status"
 
   dimension: document_id {
     type: string
@@ -27302,6 +29337,18 @@ view: metrics__events__extra {
   }
 }
 
+view: metrics__metrics__custom_distribution__a11y_consumers__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__application_reputation_local__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -27386,6 +29433,78 @@ view: metrics__metrics__custom_distribution__cert_compression_zstd_saved_bytes__
   }
 }
 
+view: metrics__metrics__custom_distribution__contentblocking_cookie_behavior__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__contentblocking_query_stripping_param_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__contentblocking_storage_access_remaining_days__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__contentblocking_strip_on_share_length_decrease__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__contentblocking_strip_on_share_params_removed__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__contentblocking_tracking_protection_shield__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -27423,6 +29542,30 @@ view: metrics__metrics__custom_distribution__cookie_banners_click_query_selector
 }
 
 view: metrics__metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cookie_purging_origins_purged__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cookie_purging_trackers_with_user_interaction__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -27531,6 +29674,30 @@ view: metrics__metrics__custom_distribution__extensions_timing_event_page_runnin
 }
 
 view: metrics__metrics__custom_distribution__fog_validation_gvsv_number_of_unique_site_origins_all_tabs__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__fontlist_dwritefont_delayedinit_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__fontlist_dwritefont_init_problem__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -28346,6 +30513,150 @@ view: metrics__metrics__custom_distribution__power_battery_percentage_when_user_
   }
 }
 
+view: metrics__metrics__custom_distribution__predictor_base_confidence__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__predictor_confidence__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__predictor_global_degradation__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__predictor_learn_attempts__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__predictor_predictions_calculated__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__predictor_prefetch_decision_reason__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__predictor_prefetch_ignore_reason__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__predictor_subresource_degradation__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__predictor_total_preconnects__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__predictor_total_predictions__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__predictor_total_prefetches__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__predictor_total_preresolves__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__tab_count_app_backgrounded__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -28523,6 +30834,120 @@ view: metrics__metrics__labeled_boolean__widget_pointing_devices {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__contentblocking_canvas_fingerprinting_per_tab {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__contentblocking_canvas_fingerprinting_per_tab__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__contentblocking_email_tracker_embedded_per_tab {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__contentblocking_email_tracker_embedded_per_tab__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__downloads_user_action_on_blocked_download {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__downloads_user_action_on_blocked_download__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
@@ -30146,6 +32571,162 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_tls_handshak
   }
 }
 
+view: metrics__metrics__labeled_timing_distribution__orb_javascript_validation {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__orb_javascript_validation__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__orb_receive_data_for_validation {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__orb_receive_data_for_validation__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__memory_distribution__cert_storage_memory__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -30314,6 +32895,18 @@ view: metrics__metrics__memory_distribution__performance_clone_deserialize_size_
   }
 }
 
+view: metrics__metrics__timing_distribution__a11y_tree_update_timing__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__application_reputation_remote_lookup_response_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -30387,6 +32980,42 @@ view: metrics__metrics__timing_distribution__cookie_banners_click_handle_duratio
 }
 
 view: metrics__metrics__timing_distribution__cookie_banners_cmp_handle_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cookie_purging_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cookie_purging_interval_hours__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cookie_purging_trackers_user_interaction_remaining_days__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -30734,6 +33363,126 @@ view: metrics__metrics__timing_distribution__fog_validation_gvsv_composite_time_
   }
 }
 
+view: metrics__metrics__timing_distribution__fontlist_bundledfonts_activate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fontlist_dwritefont_delayedinit_collect__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fontlist_dwritefont_delayedinit_total__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fontlist_gdi_init_total__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fontlist_initfacenamelists__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fontlist_initotherfamilynames__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fontlist_initotherfamilynames_no_deferring__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fontlist_mac_init_total__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fontlist_system_font_fallback__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fontlist_system_font_fallback_first__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__geckoview_content_process_lifetime__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -30915,6 +33664,30 @@ view: metrics__metrics__timing_distribution__glean_validation_shutdown_dispatche
 }
 
 view: metrics__metrics__timing_distribution__glean_validation_shutdown_wait__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gpu_process_initialization_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gpu_process_launch_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -32378,7 +35151,127 @@ view: metrics__metrics__timing_distribution__performance_time_response_start__va
   }
 }
 
+view: metrics__metrics__timing_distribution__predictor_learn_work_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__predictor_predict_time_to_action__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__predictor_predict_time_to_inaction__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__predictor_predict_work_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__predictor_prefetch_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__predictor_wait_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__privacy_sanitize_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__sts_poll_and_event_the_last_cycle__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__sts_poll_and_events_cycle__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__sts_poll_block_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__sts_poll_cycle__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
