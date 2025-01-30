@@ -12086,6 +12086,41 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Js Asmjs"
   }
 
+  dimension: metrics__counter__use_counter_doc_js_errorstack_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_errorstack_getter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Errorstack Getter"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_errorstack_getter_no_errordata {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_errorstack_getter_no_errordata ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Errorstack Getter No Errordata"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_errorstack_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_errorstack_setter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Errorstack Setter"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_errorstack_setter_no_errordata {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_errorstack_setter_no_errordata ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Errorstack Setter No Errordata"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_errorstack_setter_nonstring {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_errorstack_setter_nonstring ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Errorstack Setter Nonstring"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_ic_stub_oom {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_ic_stub_oom ;;
     type: number
@@ -14863,6 +14898,41 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Asmjs"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_errorstack_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_errorstack_getter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Errorstack Getter"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_errorstack_getter_no_errordata {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_errorstack_getter_no_errordata ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Errorstack Getter No Errordata"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_errorstack_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_errorstack_setter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Errorstack Setter"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_errorstack_setter_no_errordata {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_errorstack_setter_no_errordata ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Errorstack Setter No Errordata"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_errorstack_setter_nonstring {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_errorstack_setter_nonstring ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Errorstack Setter Nonstring"
   }
 
   dimension: metrics__counter__use_counter_page_js_ic_stub_oom {

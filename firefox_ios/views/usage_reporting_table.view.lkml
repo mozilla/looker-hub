@@ -249,6 +249,20 @@ view: usage_reporting_table {
     group_item_label: "Usage Reason"
   }
 
+  dimension: metrics__timespan__usage_duration__time_unit {
+    sql: ${TABLE}.metrics.timespan.usage_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Usage Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__usage_duration__value {
+    sql: ${TABLE}.metrics.timespan.usage_duration.value ;;
+    type: number
+    group_label: "Metrics Timespan Usage Duration"
+    group_item_label: "Value"
+  }
+
   dimension: metrics__timing_distribution__usage_duration__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.usage_duration.bucket_count ;;
     type: number

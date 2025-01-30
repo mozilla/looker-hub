@@ -5378,6 +5378,10 @@ focus_ios:
       type: glean_ping_explore
       views:
         base_view: metrics
+    usage_deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: usage_deletion_request
     usage_reporting:
       type: glean_ping_explore
       views:
@@ -5473,6 +5477,15 @@ focus_ios:
       tables:
       - channel: null
         table: mozdata.org_mozilla_ios_focus.metrics
+      type: table_view
+    usage_deletion_request:
+      tables:
+      - table: mozdata.org_mozilla_ios_focus.usage_deletion_request
+      type: glean_ping_view
+    usage_deletion_request_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_ios_focus.usage_deletion_request
       type: table_view
     usage_reporting:
       tables:
@@ -6004,6 +6017,10 @@ klar_ios:
       type: glean_ping_explore
       views:
         base_view: metrics
+    usage_deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: usage_deletion_request
     usage_reporting:
       type: glean_ping_explore
       views:
@@ -6095,6 +6112,15 @@ klar_ios:
       tables:
       - channel: null
         table: mozdata.org_mozilla_ios_klar.metrics
+      type: table_view
+    usage_deletion_request:
+      tables:
+      - table: mozdata.org_mozilla_ios_klar.usage_deletion_request
+      type: glean_ping_view
+    usage_deletion_request_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_ios_klar.usage_deletion_request
       type: table_view
     usage_reporting:
       tables:
