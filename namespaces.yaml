@@ -589,6 +589,21 @@ experimentation:
       tables:
       - table: moz-fx-data-shared-prod.telemetry.experiment_crash_rates_live
       type: table_view
+    experiment_cumulative_ad_clicks:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_cumulative_ad_clicks
+      type: table_view
+    experiment_cumulative_search_count:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_cumulative_search_count
+      type: table_view
+    experiment_cumulative_search_with_ads_count:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_cumulative_search_with_ads_count
+      type: table_view
     experiment_enrollment_cumulative_population_estimate:
       tables:
       - channel: release
@@ -608,6 +623,11 @@ experimentation:
       tables:
       - channel: release
         table: mozdata.telemetry.experiment_enrollment_overall
+      type: table_view
+    experiment_search_aggregates_live:
+      tables:
+      - channel: release
+        table: moz-fx-data-shared-prod.telemetry_derived.experiment_search_aggregates_live_v1
       type: table_view
     experiment_unenrollment_overall:
       tables:
@@ -1777,10 +1797,20 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.migration
       type: table_view
+    new_profile_activation_clients_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.new_profile_activation_clients
+      type: table_view
     new_profile_activation_table:
       tables:
       - channel: release
         table: mozdata.fenix.new_profile_activation
+      type: table_view
+    new_profile_activations_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.new_profile_activations
       type: table_view
     new_profile_clients_table:
       tables:
@@ -4411,10 +4441,20 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.metrics
       type: table_view
+    new_profile_activation_clients_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.new_profile_activation_clients
+      type: table_view
     new_profile_activation_table:
       tables:
       - channel: release
         table: mozdata.firefox_ios.new_profile_activation
+      type: table_view
+    new_profile_activations_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.new_profile_activations
       type: table_view
     new_profile_clients_table:
       tables:
@@ -5236,6 +5276,16 @@ focus_android:
         table: mozdata.org_mozilla_focus_beta.metrics
       - channel: nightly
         table: mozdata.org_mozilla_focus_nightly.metrics
+      type: table_view
+    new_profile_activation_clients_table:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.new_profile_activation_clients
+      type: table_view
+    new_profile_activations_table:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.new_profile_activations
       type: table_view
     new_profile_clients_table:
       tables:
