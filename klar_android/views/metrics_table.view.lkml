@@ -2692,6 +2692,46 @@ the tracking protection settings panel from the toolbar.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__image_decode_chunks__count {
+    sql: ${TABLE}.metrics.custom_distribution.image_decode_chunks.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Image Decode Chunks"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__image_decode_chunks__sum {
+    sql: ${TABLE}.metrics.custom_distribution.image_decode_chunks.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Image Decode Chunks"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__image_decode_chunks__values {
+    sql: ${TABLE}.metrics.custom_distribution.image_decode_chunks.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__image_decode_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.image_decode_count.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Image Decode Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__image_decode_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.image_decode_count.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Image Decode Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__image_decode_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.image_decode_count.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__javascript_gc_effectiveness__count {
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_effectiveness.count ;;
     type: number
@@ -2929,6 +2969,26 @@ the tracking protection settings panel from the toolbar.
 
   dimension: metrics__custom_distribution__javascript_gc_zones_collected__values {
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zones_collected.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__media_mp4_parse_num_sample_description_entries__count {
+    sql: ${TABLE}.metrics.custom_distribution.media_mp4_parse_num_sample_description_entries.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Media Mp4 Parse Num Sample Description Entries"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__media_mp4_parse_num_sample_description_entries__sum {
+    sql: ${TABLE}.metrics.custom_distribution.media_mp4_parse_num_sample_description_entries.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Media Mp4 Parse Num Sample Description Entries"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__media_mp4_parse_num_sample_description_entries__values {
+    sql: ${TABLE}.metrics.custom_distribution.media_mp4_parse_num_sample_description_entries.values ;;
     hidden: yes
   }
 
@@ -5366,6 +5426,22 @@ Now it only records counts for the Glean built-in pings.
 "
   }
 
+  dimension: metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_codecs {
+    sql: ${TABLE}.metrics.labeled_counter.media_mp4_parse_sample_description_entries_have_multiple_codecs ;;
+    hidden: yes
+    description: "Records if multiple codecs are present in a track's sample description entries. Recorded each time we process a track's metadata while parsing mp4s.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram MEDIA_MP4_PARSE_SAMPLE_DESCRIPTION_ENTRIES_HAVE_MULTIPLE_CODECS.
+"
+  }
+
+  dimension: metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_crypto {
+    sql: ${TABLE}.metrics.labeled_counter.media_mp4_parse_sample_description_entries_have_multiple_crypto ;;
+    hidden: yes
+    description: "Records if multiple sets of crypto info are present in a track's sample description entries. Recorded each time we process a track's metadata while parsing mp4s.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram MEDIA_MP4_PARSE_SAMPLE_DESCRIPTION_ENTRIES_HAVE_MULTIPLE_CRYPTO.
+"
+  }
+
   dimension: metrics__labeled_counter__media_playback_not_supported_video_per_mime_type {
     sql: ${TABLE}.metrics.labeled_counter.media_playback_not_supported_video_per_mime_type ;;
     hidden: yes
@@ -6696,6 +6772,106 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_avif__count {
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_avif.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Image Decode Speed Avif"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_avif__sum {
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_avif.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Image Decode Speed Avif"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_avif__values {
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_avif.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_gif__count {
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_gif.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Image Decode Speed Gif"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_gif__sum {
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_gif.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Image Decode Speed Gif"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_gif__values {
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_gif.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_jpeg__count {
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_jpeg.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Image Decode Speed Jpeg"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_jpeg__sum {
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_jpeg.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Image Decode Speed Jpeg"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_jpeg__values {
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_jpeg.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_png__count {
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_png.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Image Decode Speed Png"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_png__sum {
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_png.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Image Decode Speed Png"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_png__values {
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_png.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_webp__count {
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_webp.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Image Decode Speed Webp"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_webp__sum {
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_webp.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Image Decode Speed Webp"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_webp__values {
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_webp.values ;;
     hidden: yes
   }
 
@@ -12102,6 +12278,126 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__values {
     sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__image_decode_on_draw_latency__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_on_draw_latency.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Image Decode On Draw Latency"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__image_decode_on_draw_latency__count {
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_on_draw_latency.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Image Decode On Draw Latency"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__image_decode_on_draw_latency__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_on_draw_latency.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Image Decode On Draw Latency"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__image_decode_on_draw_latency__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_on_draw_latency.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Image Decode On Draw Latency"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__image_decode_on_draw_latency__range {
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_on_draw_latency.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__image_decode_on_draw_latency__sum {
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_on_draw_latency.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Image Decode On Draw Latency"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__image_decode_on_draw_latency__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_on_draw_latency.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Image Decode On Draw Latency"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__image_decode_on_draw_latency__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_on_draw_latency.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Image Decode On Draw Latency"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__image_decode_on_draw_latency__values {
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_on_draw_latency.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__image_decode_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Image Decode Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__image_decode_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Image Decode Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__image_decode_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Image Decode Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__image_decode_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Image Decode Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__image_decode_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__image_decode_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Image Decode Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__image_decode_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Image Decode Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__image_decode_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Image Decode Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__image_decode_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_time.values ;;
     hidden: yes
   }
 
@@ -22061,6 +22357,30 @@ view: metrics_table__metrics__custom_distribution__gfx_content_frame_time_withou
   }
 }
 
+view: metrics_table__metrics__custom_distribution__image_decode_chunks__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__image_decode_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__javascript_gc_effectiveness__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -22194,6 +22514,18 @@ view: metrics_table__metrics__custom_distribution__javascript_gc_zone_count__val
 }
 
 view: metrics_table__metrics__custom_distribution__javascript_gc_zones_collected__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__media_mp4_parse_num_sample_description_entries__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -25598,6 +25930,66 @@ view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_di
   }
 }
 
+view: metrics_table__metrics__memory_distribution__image_decode_speed_avif__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__image_decode_speed_gif__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__image_decode_speed_jpeg__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__image_decode_speed_png__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__image_decode_speed_webp__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__memory_distribution__javascript_gc_nursery_bytes__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -26499,6 +26891,30 @@ view: metrics_table__metrics__timing_distribution__httpsfirst_downgrade_time__va
 }
 
 view: metrics_table__metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__image_decode_on_draw_latency__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__image_decode_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
