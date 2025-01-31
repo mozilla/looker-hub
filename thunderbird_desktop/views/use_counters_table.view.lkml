@@ -2301,6 +2301,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_hyphenate_limit_chars {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_hyphenate_limit_chars ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Hyphenate Limit Chars"
+    description: "Whether a document used the CSS property hyphenate-limit-chars. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_hyphens {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_hyphens ;;
     type: number
@@ -8706,6 +8715,15 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Hyphenate Character"
     description: "Whether a page used the CSS property hyphenate-character. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_hyphenate_limit_chars {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_hyphenate_limit_chars ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Hyphenate Limit Chars"
+    description: "Whether a page used the CSS property hyphenate-limit-chars. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -15486,6 +15504,24 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_js_dateparse {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_dateparse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Dateparse"
+    description: "Whether a document called Date.parse. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_dateparse_impl_def {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_dateparse_impl_def ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Dateparse Impl Def"
+    description: "Whether a document call to Date.parse used implementation defined behaviour. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_errorstack_getter {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_errorstack_getter ;;
     type: number
@@ -19110,6 +19146,24 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Asmjs"
     description: "Whether a page uses asm.js. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_dateparse {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_dateparse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Dateparse"
+    description: "Whether a page called Date.parse. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_dateparse_impl_def {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_dateparse_impl_def ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Dateparse Impl Def"
+    description: "Whether a page call to Date.parse used implementation defined behaviour. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

@@ -743,6 +743,42 @@ view: captcha_detection {
 "
   }
 
+  dimension: metrics__counter__captcha_detection_pages_visited {
+    label: "Captcha Detection Pages Visited"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.captcha_detection_pages_visited ;;
+    type: number
+    group_label: "Captcha Detection"
+    group_item_label: "Pages Visited"
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Pages Visited"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/captcha_detection_pages_visited"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of pages visited since the last ping submission.
+"
+  }
+
+  dimension: metrics__counter__captcha_detection_pages_visited_pbm {
+    label: "Captcha Detection Pages Visited Pbm"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.captcha_detection_pages_visited_pbm ;;
+    type: number
+    group_label: "Captcha Detection"
+    group_item_label: "Pages Visited Pbm"
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Pages Visited Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/captcha_detection_pages_visited_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of pages visited since the last ping submission.
+"
+  }
+
   dimension: metrics__boolean__captcha_detection_privacy_fingerprintingprotection {
     label: "Captcha Detection Privacy Fingerprintingprotection"
     hidden: no
@@ -2270,6 +2306,56 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Captcha Detection Hcaptcha Ps Pbm"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/captcha_detection_hcaptcha_ps_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: captcha_detection_pages_visited {
+    type: sum
+    sql: ${metrics__counter__captcha_detection_pages_visited} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Pages Visited"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/captcha_detection_pages_visited"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: captcha_detection_pages_visited_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__captcha_detection_pages_visited: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Pages Visited"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/captcha_detection_pages_visited"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: captcha_detection_pages_visited_pbm {
+    type: sum
+    sql: ${metrics__counter__captcha_detection_pages_visited_pbm} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Pages Visited Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/captcha_detection_pages_visited_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: captcha_detection_pages_visited_pbm_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__captcha_detection_pages_visited_pbm: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Pages Visited Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/captcha_detection_pages_visited_pbm"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

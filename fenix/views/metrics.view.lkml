@@ -9597,6 +9597,177 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__custom_distribution__image_decode_chunks__sum {
+    label: "Image Decode Chunks Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.image_decode_chunks.sum ;;
+    type: number
+    group_label: "Image Decode"
+    group_item_label: "Chunks Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Image Decode Chunks Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/image_decode_chunks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of chunks per decode attempt
+This metric was generated to correspond to the Legacy Telemetry exponential histogram IMAGE_DECODE_CHUNKS.
+"
+  }
+
+  dimension: metrics__custom_distribution__image_decode_count__sum {
+    label: "Image Decode Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.image_decode_count.sum ;;
+    type: number
+    group_label: "Image Decode"
+    group_item_label: "Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Image Decode Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/image_decode_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Decode count
+This metric was generated to correspond to the Legacy Telemetry exponential histogram IMAGE_DECODE_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__image_decode_on_draw_latency__sum {
+    label: "Image Decode On Draw Latency Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_on_draw_latency.sum ;;
+    type: number
+    group_label: "Image Decode"
+    group_item_label: "On Draw Latency Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Image Decode On Draw Latency Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/image_decode_on_draw_latency"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from starting a decode to it showing up on the screen (us)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram IMAGE_DECODE_ON_DRAW_LATENCY.
+"
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_avif__sum {
+    label: "Image Decode Speed Avif Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_avif.sum ;;
+    type: number
+    group_label: "Image Decode"
+    group_item_label: "Speed Avif Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Image Decode Speed Avif Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/image_decode_speed_avif"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF image decode speed (Kbytes/sec)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram IMAGE_DECODE_SPEED_AVIF.
+"
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_gif__sum {
+    label: "Image Decode Speed Gif Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_gif.sum ;;
+    type: number
+    group_label: "Image Decode"
+    group_item_label: "Speed Gif Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Image Decode Speed Gif Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/image_decode_speed_gif"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "GIF image decode speed (Kbytes/sec)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram IMAGE_DECODE_SPEED_GIF.
+"
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_jpeg__sum {
+    label: "Image Decode Speed Jpeg Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_jpeg.sum ;;
+    type: number
+    group_label: "Image Decode"
+    group_item_label: "Speed Jpeg Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Image Decode Speed Jpeg Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/image_decode_speed_jpeg"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "JPEG image decode speed (Kbytes/sec)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram IMAGE_DECODE_SPEED_JPEG.
+"
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_png__sum {
+    label: "Image Decode Speed Png Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_png.sum ;;
+    type: number
+    group_label: "Image Decode"
+    group_item_label: "Speed Png Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Image Decode Speed Png Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/image_decode_speed_png"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PNG image decode speed (Kbytes/sec)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram IMAGE_DECODE_SPEED_PNG.
+"
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_webp__sum {
+    label: "Image Decode Speed Webp Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_webp.sum ;;
+    type: number
+    group_label: "Image Decode"
+    group_item_label: "Speed Webp Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Image Decode Speed Webp Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/image_decode_speed_webp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebP image decode speed (Kbytes/sec)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram IMAGE_DECODE_SPEED_WEBP.
+"
+  }
+
+  dimension: metrics__timing_distribution__image_decode_time__sum {
+    label: "Image Decode Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.image_decode_time.sum ;;
+    type: number
+    group_label: "Image Decode"
+    group_item_label: "Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Image Decode Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/image_decode_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent decoding an image (us)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram IMAGE_DECODE_TIME.
+"
+  }
+
   dimension: metrics__labeled_counter__ipc_received_messages_content_background {
     label: "Ipc Received Messages Content Background"
     hidden: yes
@@ -10846,6 +11017,61 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "The number of times a document hierarchy contained at least one HTMLMediaElement. In addition, the telemetry probe 'MIXED_CONTENT_UNBLOCK_COUNTER' records the total number of loaded top level content documents, which can help us calculate the result of the percentage of documents using media. This metric was generated to correspond to the Legacy Telemetry scalar media.element_in_page_count.
+"
+  }
+
+  dimension: metrics__custom_distribution__media_mp4_parse_num_sample_description_entries__sum {
+    label: "Media Mp4 Parse Num Sample Description Entries Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.media_mp4_parse_num_sample_description_entries.sum ;;
+    type: number
+    group_label: "Media Mp4 Parse"
+    group_item_label: "Num Sample Description Entries Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Media Mp4 Parse Num Sample Description Entries Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_mp4_parse_num_sample_description_entries"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of entries in the sample description box (stsd) for a track in an mp4. Recorded each time we process a track's metadata while parsing mp4s.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram MEDIA_MP4_PARSE_NUM_SAMPLE_DESCRIPTION_ENTRIES.
+"
+  }
+
+  dimension: metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_codecs {
+    label: "Media Mp4 Parse Sample Description Entries Have Multiple Codecs"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_mp4_parse_sample_description_entries_have_multiple_codecs ;;
+    group_label: "Media Mp4 Parse"
+    group_item_label: "Sample Description Entries Have Multiple Codecs"
+
+    link: {
+      label: "Glean Dictionary reference for Media Mp4 Parse Sample Description Entries Have Multiple Codecs"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_mp4_parse_sample_description_entries_have_multiple_codecs"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if multiple codecs are present in a track's sample description entries. Recorded each time we process a track's metadata while parsing mp4s.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram MEDIA_MP4_PARSE_SAMPLE_DESCRIPTION_ENTRIES_HAVE_MULTIPLE_CODECS.
+"
+  }
+
+  dimension: metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_crypto {
+    label: "Media Mp4 Parse Sample Description Entries Have Multiple Crypto"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_mp4_parse_sample_description_entries_have_multiple_crypto ;;
+    group_label: "Media Mp4 Parse"
+    group_item_label: "Sample Description Entries Have Multiple Crypto"
+
+    link: {
+      label: "Glean Dictionary reference for Media Mp4 Parse Sample Description Entries Have Multiple Crypto"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_mp4_parse_sample_description_entries_have_multiple_crypto"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if multiple sets of crypto info are present in a track's sample description entries. Recorded each time we process a track's metadata while parsing mp4s.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram MEDIA_MP4_PARSE_SAMPLE_DESCRIPTION_ENTRIES_HAVE_MULTIPLE_CRYPTO.
 "
   }
 
@@ -30287,6 +30513,88 @@ view: metrics__metrics__labeled_counter__media_decode_error_per_mime_type {
   }
 }
 
+view: metrics__metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_codecs {
+  label: "Media Mp4 Parse - Sample Description Entries Have Multiple Codecs"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_crypto {
+  label: "Media Mp4 Parse - Sample Description Entries Have Multiple Crypto"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__media_playback_not_supported_video_per_mime_type {
   label: "Media Playback - Not Supported Video Per Mime Type"
 
@@ -36244,6 +36552,30 @@ view: metrics__metrics__custom_distribution__gfx_content_frame_time_without_uplo
   }
 }
 
+view: metrics__metrics__custom_distribution__image_decode_chunks__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__image_decode_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__javascript_gc_effectiveness__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -36425,6 +36757,18 @@ view: metrics__metrics__custom_distribution__js_execution_percentage__values {
 }
 
 view: metrics__metrics__custom_distribution__js_xdr_encode_percentage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__media_mp4_parse_num_sample_description_entries__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -39794,6 +40138,66 @@ view: metrics__metrics__memory_distribution__glean_upload_pending_pings_director
   }
 }
 
+view: metrics__metrics__memory_distribution__image_decode_speed_avif__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__image_decode_speed_gif__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__image_decode_speed_jpeg__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__image_decode_speed_png__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__image_decode_speed_webp__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__memory_distribution__javascript_gc_nursery_bytes__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -40851,6 +41255,30 @@ view: metrics__metrics__timing_distribution__httpsfirst_downgrade_time__values {
 }
 
 view: metrics__metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__image_decode_on_draw_latency__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__image_decode_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

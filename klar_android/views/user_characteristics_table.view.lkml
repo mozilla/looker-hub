@@ -2595,6 +2595,15 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_user_agent {
+    sql: ${TABLE}.metrics.text2.characteristics_user_agent ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics User Agent"
+    description: "User agent string
+"
+  }
+
   dimension: metrics__text2__characteristics_voices {
     sql: ${TABLE}.metrics.text2.characteristics_voices ;;
     type: string
