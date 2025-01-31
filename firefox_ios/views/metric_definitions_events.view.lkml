@@ -21,6 +21,11 @@ view: metric_definitions_events {
           AND `mozfun.map.get_key`(event.extra, 'preference') = 'sponsoredTiles'
 	THEN 1 ELSE 0 END
   ),0) AS spoc_tiles_preference_toggled,
+  COALESCE(SUM(CASE WHEN
+          event.category = 'toolbar'
+          AND event.name = 'share_button_tapped'
+	THEN 1 ELSE 0 END
+  ),0) AS firefox_ios_share_button_tapped,
 
                 looker_base_fields_app_version_major,
 looker_base_fields_app_version_minor,
@@ -262,6 +267,14 @@ looker_base_fields_user_agent__version,
     description: "Number of times Contile Sponsored Tiles setting is flipped."
     type: number
     sql: ${TABLE}.spoc_tiles_preference_toggled ;;
+  }
+
+  dimension: firefox_ios_share_button_tapped {
+    group_label: "Metrics"
+    label: "Firefox iOS toolbar share button tapped"
+    description: "Number of times the toolbar share button is tapped."
+    type: number
+    sql: ${TABLE}.firefox_ios_share_button_tapped ;;
   }
 
   dimension: app_version_major {
@@ -520,7 +533,7 @@ looker_base_fields_user_agent__version,
   }
 
   set: metrics {
-    fields: [spoc_tiles_impressions, spoc_tiles_clicks, spoc_tiles_preference_toggled]
+    fields: [spoc_tiles_impressions, spoc_tiles_clicks, spoc_tiles_preference_toggled, firefox_ios_share_button_tapped]
   }
 
   parameter: aggregate_metrics_by {

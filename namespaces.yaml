@@ -1666,6 +1666,11 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.logins_sync
       type: table_view
+    ltv_android_aggregates_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.ltv_android_aggregates
+      type: table_view
     ltv_state_values_table:
       tables:
       - channel: release
@@ -4341,6 +4346,11 @@ firefox_ios:
         table: mozdata.org_mozilla_ios_firefoxbeta.logins_sync
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.logins_sync
+      type: table_view
+    ltv_ios_aggregates_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.ltv_ios_aggregates
       type: table_view
     ltv_states_table:
       tables:

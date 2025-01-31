@@ -12709,6 +12709,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Scheduler Posttask"
   }
 
+  dimension: metrics__counter__use_counter_doc_sectioning_h1_with_no_font_size_or_margins {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sectioning_h1_with_no_font_size_or_margins ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Sectioning H1 With No Font Size Or Margins"
+  }
+
   dimension: metrics__counter__use_counter_doc_shadowroot_pictureinpictureelement {
     sql: ${TABLE}.metrics.counter.use_counter_doc_shadowroot_pictureinpictureelement ;;
     type: number
@@ -15521,6 +15528,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Scheduler Posttask"
+  }
+
+  dimension: metrics__counter__use_counter_page_sectioning_h1_with_no_font_size_or_margins {
+    sql: ${TABLE}.metrics.counter.use_counter_page_sectioning_h1_with_no_font_size_or_margins ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Sectioning H1 With No Font Size Or Margins"
   }
 
   dimension: metrics__counter__use_counter_page_shadowroot_pictureinpictureelement {

@@ -99,6 +99,42 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__string__usage_distribution_id {
+    label: "Usage Distribution Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.usage_distribution_id ;;
+    type: string
+    group_label: "Usage"
+    group_item_label: "Distribution Id"
+
+    link: {
+      label: "Glean Dictionary reference for Usage Distribution Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/usage_distribution_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The distribution id associated with the install of Firefox.
+"
+  }
+
+  dimension: metrics__boolean__usage_is_default_browser {
+    label: "Usage Is Default Browser"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.usage_is_default_browser ;;
+    type: yesno
+    group_label: "Usage"
+    group_item_label: "Is Default Browser"
+
+    link: {
+      label: "Glean Dictionary reference for Usage Is Default Browser"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/usage_is_default_browser"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether Firefox is set as the default browser.
+"
+  }
+
   dimension: metrics__timespan__glean_baseline_duration__value {
     label: "Glean Baseline Duration Value"
     hidden: no

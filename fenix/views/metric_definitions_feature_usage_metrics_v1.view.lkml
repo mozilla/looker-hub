@@ -30,6 +30,7 @@ feature_usage_metrics_v1_bookmarks_edit_users,
 feature_usage_metrics_v1_bookmarks_open,
 feature_usage_metrics_v1_bookmarks_open_users,
 feature_usage_metrics_v1_channel,
+feature_usage_metrics_v1_clients,
 feature_usage_metrics_v1_country,
 feature_usage_metrics_v1_credit_cards_deleted,
 feature_usage_metrics_v1_credit_cards_deleted_users,
@@ -132,6 +133,7 @@ feature_usage_metrics_v1.bookmarks_edit_users AS feature_usage_metrics_v1_bookma
 feature_usage_metrics_v1.bookmarks_open AS feature_usage_metrics_v1_bookmarks_open,
 feature_usage_metrics_v1.bookmarks_open_users AS feature_usage_metrics_v1_bookmarks_open_users,
 feature_usage_metrics_v1.channel AS feature_usage_metrics_v1_channel,
+feature_usage_metrics_v1.clients AS feature_usage_metrics_v1_clients,
 feature_usage_metrics_v1.country AS feature_usage_metrics_v1_country,
 feature_usage_metrics_v1.credit_cards_deleted AS feature_usage_metrics_v1_credit_cards_deleted,
 feature_usage_metrics_v1.credit_cards_deleted_users AS feature_usage_metrics_v1_credit_cards_deleted_users,
@@ -238,6 +240,7 @@ feature_usage_metrics_v1_bookmarks_edit_users,
 feature_usage_metrics_v1_bookmarks_open,
 feature_usage_metrics_v1_bookmarks_open_users,
 feature_usage_metrics_v1_channel,
+feature_usage_metrics_v1_clients,
 feature_usage_metrics_v1_country,
 feature_usage_metrics_v1_credit_cards_deleted,
 feature_usage_metrics_v1_credit_cards_deleted_users,
@@ -444,6 +447,12 @@ feature_usage_metrics_v1_metrics_tabs_open_count_users,
   dimension: channel {
     sql: ${TABLE}.feature_usage_metrics_v1_channel ;;
     type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: clients {
+    sql: ${TABLE}.feature_usage_metrics_v1_clients ;;
+    type: number
     group_label: "Base Fields"
   }
 
