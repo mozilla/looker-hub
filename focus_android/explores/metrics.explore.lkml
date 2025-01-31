@@ -184,6 +184,36 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_keyboard}) AS metrics__metrics__labeled_counter__browser_ui_interaction_keyboard ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_keyboard.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__canvas_used_2d {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__canvas_used_2d}) AS metrics__metrics__labeled_counter__canvas_used_2d ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__canvas_used_2d.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__canvas_webgl2_success {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__canvas_webgl2_success}) AS metrics__metrics__labeled_counter__canvas_webgl2_success ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__canvas_webgl2_success.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__canvas_webgl_accl_failure_id {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__canvas_webgl_accl_failure_id}) AS metrics__metrics__labeled_counter__canvas_webgl_accl_failure_id ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__canvas_webgl_accl_failure_id.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__canvas_webgl_failure_id {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__canvas_webgl_failure_id}) AS metrics__metrics__labeled_counter__canvas_webgl_failure_id ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__canvas_webgl_failure_id.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__canvas_webgl_success {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__canvas_webgl_success}) AS metrics__metrics__labeled_counter__canvas_webgl_success ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__canvas_webgl_success.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__canvas_webgl_used {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__canvas_webgl_used}) AS metrics__metrics__labeled_counter__canvas_webgl_used ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__canvas_webgl_used.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__cert_compression_failures {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cert_compression_failures}) AS metrics__metrics__labeled_counter__cert_compression_failures ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cert_compression_failures.document_id} ;;
@@ -622,6 +652,16 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__media_decode_error_per_mime_type {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_decode_error_per_mime_type}) AS metrics__metrics__labeled_counter__media_decode_error_per_mime_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_decode_error_per_mime_type.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_codecs {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_codecs}) AS metrics__metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_codecs ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_codecs.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_crypto {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_crypto}) AS metrics__metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_crypto ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_crypto.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__media_playback_not_supported_video_per_mime_type {
@@ -1134,6 +1174,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__translations_request_count}) AS metrics__metrics__labeled_counter__translations_request_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__translations_request_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__urlclassifier_vlps_metadata_corrupt {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlclassifier_vlps_metadata_corrupt}) AS metrics__metrics__labeled_counter__urlclassifier_vlps_metadata_corrupt ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlclassifier_vlps_metadata_corrupt.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__web_notification_permission_origin {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__web_notification_permission_origin}) AS metrics__metrics__labeled_counter__web_notification_permission_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__web_notification_permission_origin.document_id} ;;
@@ -1167,6 +1212,31 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__webauthn_get_authenticator_attachment {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webauthn_get_authenticator_attachment}) AS metrics__metrics__labeled_counter__webauthn_get_authenticator_attachment ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webauthn_get_authenticator_attachment.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webcrypto_extractable_enc {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webcrypto_extractable_enc}) AS metrics__metrics__labeled_counter__webcrypto_extractable_enc ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webcrypto_extractable_enc.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webcrypto_extractable_generate {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webcrypto_extractable_generate}) AS metrics__metrics__labeled_counter__webcrypto_extractable_generate ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webcrypto_extractable_generate.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webcrypto_extractable_import {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webcrypto_extractable_import}) AS metrics__metrics__labeled_counter__webcrypto_extractable_import ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webcrypto_extractable_import.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webcrypto_extractable_sig {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webcrypto_extractable_sig}) AS metrics__metrics__labeled_counter__webcrypto_extractable_sig ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webcrypto_extractable_sig.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webcrypto_resolved {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webcrypto_resolved}) AS metrics__metrics__labeled_counter__webcrypto_resolved ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webcrypto_resolved.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__webrtc_video_recv_codec_used {

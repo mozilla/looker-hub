@@ -735,6 +735,24 @@ view: captcha_detection_table {
 "
   }
 
+  dimension: metrics__counter__captcha_detection_pages_visited {
+    sql: ${TABLE}.metrics.counter.captcha_detection_pages_visited ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Captcha Detection Pages Visited"
+    description: "The number of pages visited since the last ping submission.
+"
+  }
+
+  dimension: metrics__counter__captcha_detection_pages_visited_pbm {
+    sql: ${TABLE}.metrics.counter.captcha_detection_pages_visited_pbm ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Captcha Detection Pages Visited Pbm"
+    description: "The number of pages visited since the last ping submission.
+"
+  }
+
   dimension: metrics__custom_distribution__captcha_detection_arkoselabs_solutions_required__count {
     sql: ${TABLE}.metrics.custom_distribution.captcha_detection_arkoselabs_solutions_required.count ;;
     type: number

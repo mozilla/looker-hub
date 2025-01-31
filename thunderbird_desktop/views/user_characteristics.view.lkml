@@ -3749,6 +3749,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_user_agent {
+    label: "Characteristics User Agent"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_user_agent ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "User Agent"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics User Agent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_user_agent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "User agent string
+"
+  }
+
   dimension: metrics__boolean__characteristics_using_accelerated_canvas {
     label: "Characteristics Using Accelerated Canvas"
     hidden: no

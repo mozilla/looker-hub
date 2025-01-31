@@ -2039,6 +2039,13 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Missing Fonts"
   }
 
+  dimension: metrics__text2__characteristics_user_agent {
+    sql: ${TABLE}.metrics.text2.characteristics_user_agent ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics User Agent"
+  }
+
   dimension: metrics__text2__characteristics_voices {
     sql: ${TABLE}.metrics.text2.characteristics_voices ;;
     type: string
