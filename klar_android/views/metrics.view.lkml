@@ -1740,6 +1740,114 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__canvas_used_2d {
+    label: "Canvas Used 2D"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.canvas_used_2d ;;
+    group_label: "Canvas"
+    group_item_label: "Used 2D"
+
+    link: {
+      label: "Glean Dictionary reference for Canvas Used 2D"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/canvas_used_2d"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "2D canvas used
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CANVAS_2D_USED.
+"
+  }
+
+  dimension: metrics__labeled_counter__canvas_webgl2_success {
+    label: "Canvas Webgl2 Success"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.canvas_webgl2_success ;;
+    group_label: "Canvas"
+    group_item_label: "Webgl2 Success"
+
+    link: {
+      label: "Glean Dictionary reference for Canvas Webgl2 Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/canvas_webgl2_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGL2 creation success
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CANVAS_WEBGL2_SUCCESS.
+"
+  }
+
+  dimension: metrics__labeled_counter__canvas_webgl_accl_failure_id {
+    label: "Canvas Webgl Accl Failure Id"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.canvas_webgl_accl_failure_id ;;
+    group_label: "Canvas"
+    group_item_label: "Webgl Accl Failure Id"
+
+    link: {
+      label: "Glean Dictionary reference for Canvas Webgl Accl Failure Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/canvas_webgl_accl_failure_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Track the failure IDs that lead us to reject attempting to create an accelerated context. CANVAS_WEBGL_FAILURE_ID reports the overall WebGL status with the attempt to fallback.
+This metric was generated to correspond to the Legacy Telemetry count histogram CANVAS_WEBGL_ACCL_FAILURE_ID.
+"
+  }
+
+  dimension: metrics__labeled_counter__canvas_webgl_failure_id {
+    label: "Canvas Webgl Failure Id"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.canvas_webgl_failure_id ;;
+    group_label: "Canvas"
+    group_item_label: "Webgl Failure Id"
+
+    link: {
+      label: "Glean Dictionary reference for Canvas Webgl Failure Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/canvas_webgl_failure_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGL runtime and dynamic failure IDs. This will record a count for each context creation success or failure. Each failure id is a unique identifier that can be traced back to a particular failure branch or blocklist rule.
+This metric was generated to correspond to the Legacy Telemetry count histogram CANVAS_WEBGL_FAILURE_ID.
+"
+  }
+
+  dimension: metrics__labeled_counter__canvas_webgl_success {
+    label: "Canvas Webgl Success"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.canvas_webgl_success ;;
+    group_label: "Canvas"
+    group_item_label: "Webgl Success"
+
+    link: {
+      label: "Glean Dictionary reference for Canvas Webgl Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/canvas_webgl_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGL1 creation success
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CANVAS_WEBGL_SUCCESS.
+"
+  }
+
+  dimension: metrics__labeled_counter__canvas_webgl_used {
+    label: "Canvas Webgl Used"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.canvas_webgl_used ;;
+    group_label: "Canvas"
+    group_item_label: "Webgl Used"
+
+    link: {
+      label: "Glean Dictionary reference for Canvas Webgl Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/canvas_webgl_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGL canvas used
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CANVAS_WEBGL_USED.
+"
+  }
+
   dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__sum {
     label: "Cert Compression Brotli Saved Bytes Sum"
     hidden: yes
@@ -13601,7 +13709,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__rtcrtpsender_count {
     label: "Rtcrtpsender Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.rtcrtpsender_count ;;
     type: number
     group_label: "Rtcrtpsender"
@@ -13619,7 +13727,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__rtcrtpsender_count_setparameters_compat {
     label: "Rtcrtpsender Count Setparameters Compat"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.rtcrtpsender_count_setparameters_compat ;;
     type: number
     group_label: "Rtcrtpsender"
@@ -13705,7 +13813,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__numerator {
     label: "Rtcrtpsender Setparameters Fail Length Changed Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_length_changed.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -13723,7 +13831,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__denominator {
     label: "Rtcrtpsender Setparameters Fail Length Changed Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_length_changed.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -13741,7 +13849,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_encodings__numerator {
     label: "Rtcrtpsender Setparameters Fail No Encodings Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_encodings.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -13759,7 +13867,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_encodings__denominator {
     label: "Rtcrtpsender Setparameters Fail No Encodings Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_encodings.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -13777,7 +13885,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_getparameters__numerator {
     label: "Rtcrtpsender Setparameters Fail No Getparameters Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_getparameters.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -13795,7 +13903,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_getparameters__denominator {
     label: "Rtcrtpsender Setparameters Fail No Getparameters Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_getparameters.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -13813,7 +13921,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_transactionid__numerator {
     label: "Rtcrtpsender Setparameters Fail No Transactionid Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_transactionid.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -13831,7 +13939,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_transactionid__denominator {
     label: "Rtcrtpsender Setparameters Fail No Transactionid Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_transactionid.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -13849,7 +13957,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_other__numerator {
     label: "Rtcrtpsender Setparameters Fail Other Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_other.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -13867,7 +13975,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_other__denominator {
     label: "Rtcrtpsender Setparameters Fail Other Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_other.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -13885,7 +13993,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_rid_changed__numerator {
     label: "Rtcrtpsender Setparameters Fail Rid Changed Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_rid_changed.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -13903,7 +14011,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_rid_changed__denominator {
     label: "Rtcrtpsender Setparameters Fail Rid Changed Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_rid_changed.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -13921,7 +14029,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_stale_transactionid__numerator {
     label: "Rtcrtpsender Setparameters Fail Stale Transactionid Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_stale_transactionid.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -13939,7 +14047,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_stale_transactionid__denominator {
     label: "Rtcrtpsender Setparameters Fail Stale Transactionid Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_stale_transactionid.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -13957,7 +14065,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_length_changed__numerator {
     label: "Rtcrtpsender Setparameters Warn Length Changed Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_length_changed.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -13975,7 +14083,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_length_changed__denominator {
     label: "Rtcrtpsender Setparameters Warn Length Changed Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_length_changed.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -13993,7 +14101,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_getparameters__numerator {
     label: "Rtcrtpsender Setparameters Warn No Getparameters Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_getparameters.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14011,7 +14119,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_getparameters__denominator {
     label: "Rtcrtpsender Setparameters Warn No Getparameters Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_getparameters.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14029,7 +14137,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_transactionid__numerator {
     label: "Rtcrtpsender Setparameters Warn No Transactionid Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_transactionid.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14047,7 +14155,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_transactionid__denominator {
     label: "Rtcrtpsender Setparameters Warn No Transactionid Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_transactionid.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14137,7 +14245,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_used_sendencodings__numerator {
     label: "Rtcrtpsender Used Sendencodings Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_used_sendencodings.numerator ;;
     type: number
     group_label: "Rtcrtpsender"
@@ -14155,7 +14263,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_used_sendencodings__denominator {
     label: "Rtcrtpsender Used Sendencodings Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_used_sendencodings.denominator ;;
     type: number
     group_label: "Rtcrtpsender"
@@ -14441,6 +14549,139 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__timing_distribution__thumbnails_capture_canvas_draw_time__sum {
+    label: "Thumbnails Capture Canvas Draw Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.thumbnails_capture_canvas_draw_time.sum ;;
+    type: number
+    group_label: "Thumbnails"
+    group_item_label: "Capture Canvas Draw Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Thumbnails Capture Canvas Draw Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/thumbnails_capture_canvas_draw_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "BACKGROUND THUMBNAILS: Time it took to draw the capture's window to canvas (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_THUMBNAILS_BG_CAPTURE_CANVAS_DRAW_TIME_MS.
+"
+  }
+
+  dimension: metrics__custom_distribution__thumbnails_capture_done_reason_2__sum {
+    label: "Thumbnails Capture Done Reason 2 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.thumbnails_capture_done_reason_2.sum ;;
+    type: number
+    group_label: "Thumbnails"
+    group_item_label: "Capture Done Reason 2 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Thumbnails Capture Done Reason 2 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/thumbnails_capture_done_reason_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "BACKGROUND THUMBNAILS: Reason the capture completed (see TEL_CAPTURE_DONE_* constants in BackgroundPageThumbs.sys.mjs)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram FX_THUMBNAILS_BG_CAPTURE_DONE_REASON_2.
+"
+  }
+
+  dimension: metrics__timing_distribution__thumbnails_capture_page_load_time__sum {
+    label: "Thumbnails Capture Page Load Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.thumbnails_capture_page_load_time.sum ;;
+    type: number
+    group_label: "Thumbnails"
+    group_item_label: "Capture Page Load Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Thumbnails Capture Page Load Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/thumbnails_capture_page_load_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "BACKGROUND THUMBNAILS: Time the capture's page load took (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_THUMBNAILS_BG_CAPTURE_PAGE_LOAD_TIME_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__thumbnails_capture_queue_time__sum {
+    label: "Thumbnails Capture Queue Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.thumbnails_capture_queue_time.sum ;;
+    type: number
+    group_label: "Thumbnails"
+    group_item_label: "Capture Queue Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Thumbnails Capture Queue Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/thumbnails_capture_queue_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "BACKGROUND THUMBNAILS: Time the capture request spent in the queue before being serviced (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_THUMBNAILS_BG_CAPTURE_QUEUE_TIME_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__thumbnails_capture_time__sum {
+    label: "Thumbnails Capture Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.thumbnails_capture_time.sum ;;
+    type: number
+    group_label: "Thumbnails"
+    group_item_label: "Capture Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Thumbnails Capture Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/thumbnails_capture_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "THUMBNAILS: Time (ms) it takes to capture a thumbnail
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_THUMBNAILS_CAPTURE_TIME_MS.
+"
+  }
+
+  dimension: metrics__custom_distribution__thumbnails_queue_size_on_capture__sum {
+    label: "Thumbnails Queue Size On Capture Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.thumbnails_queue_size_on_capture.sum ;;
+    type: number
+    group_label: "Thumbnails"
+    group_item_label: "Queue Size On Capture Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Thumbnails Queue Size On Capture Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/thumbnails_queue_size_on_capture"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "BACKGROUND THUMBNAILS: Size of capture queue when a capture request is received
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_THUMBNAILS_BG_QUEUE_SIZE_ON_CAPTURE.
+"
+  }
+
+  dimension: metrics__timing_distribution__thumbnails_store_time__sum {
+    label: "Thumbnails Store Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.thumbnails_store_time.sum ;;
+    type: number
+    group_label: "Thumbnails"
+    group_item_label: "Store Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Thumbnails Store Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/thumbnails_store_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "THUMBNAILS: Time (ms) it takes to store a thumbnail in the cache
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_THUMBNAILS_STORE_TIME_MS.
+"
+  }
+
   dimension: metrics__custom_distribution__timer_thread_timers_fired_per_wakeup__sum {
     label: "Timer Thread Timers Fired Per Wakeup Sum"
     hidden: no
@@ -14598,6 +14839,233 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "The count of translation requests.
+"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_async_classifylocal_time__sum {
+    label: "Urlclassifier Async Classifylocal Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_async_classifylocal_time.sum ;;
+    type: number
+    group_label: "Urlclassifier"
+    group_item_label: "Async Classifylocal Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier Async Classifylocal Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/urlclassifier_async_classifylocal_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent per AsyncClassifyLocalWithTables (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_ASYNC_CLASSIFYLOCAL_TIME.
+"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_cl_check_time__sum {
+    label: "Urlclassifier Cl Check Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_cl_check_time.sum ;;
+    type: number
+    group_label: "Urlclassifier"
+    group_item_label: "Cl Check Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier Cl Check Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/urlclassifier_cl_check_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent per classifier lookup (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_CL_CHECK_TIME.
+"
+  }
+
+  dimension: metrics__custom_distribution__urlclassifier_completion_error__sum {
+    label: "Urlclassifier Completion Error Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.urlclassifier_completion_error.sum ;;
+    type: number
+    group_label: "Urlclassifier"
+    group_item_label: "Completion Error Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier Completion Error Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/urlclassifier_completion_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SafeBrowsing v4 hash completion error (0 = success, 1 = parsing failure, 2 = unknown threat type)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_COMPLETION_ERROR.
+"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_lookup_time_2__sum {
+    label: "Urlclassifier Lookup Time 2 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_lookup_time_2.sum ;;
+    type: number
+    group_label: "Urlclassifier"
+    group_item_label: "Lookup Time 2 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier Lookup Time 2 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/urlclassifier_lookup_time_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent per dbservice lookup (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_LOOKUP_TIME_2.
+"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_shutdown_time__sum {
+    label: "Urlclassifier Shutdown Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_shutdown_time.sum ;;
+    type: number
+    group_label: "Urlclassifier"
+    group_item_label: "Shutdown Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier Shutdown Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/urlclassifier_shutdown_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent per dbservice shutdown (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_SHUTDOWN_TIME.
+"
+  }
+
+  dimension: metrics__custom_distribution__urlclassifier_threathit_network_error__sum {
+    label: "Urlclassifier Threathit Network Error Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.urlclassifier_threathit_network_error.sum ;;
+    type: number
+    group_label: "Urlclassifier"
+    group_item_label: "Threathit Network Error Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier Threathit Network Error Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/urlclassifier_threathit_network_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not an error was encountered while sending a Safe Browsing ThreatHit report. (0=sucess, 1=unknown error, 2=already connected, 3=not connected, 4=connection refused,5=net timeout, 6=offline, 7=port access not allowed, 8=net reset, 9=net interrupt, 10=proxy connection refused, 11=partial transfer, 12=inadequate security, 13=unknown host, 14=dns lookup queue full, 15=unknown proxy host)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_THREATHIT_NETWORK_ERROR.
+"
+  }
+
+  dimension: metrics__custom_distribution__urlclassifier_threathit_remote_status__sum {
+    label: "Urlclassifier Threathit Remote Status Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.urlclassifier_threathit_remote_status.sum ;;
+    type: number
+    group_label: "Urlclassifier"
+    group_item_label: "Threathit Remote Status Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier Threathit Remote Status Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/urlclassifier_threathit_remote_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Server HTTP status code from Safe Browsing ThreatHit report. (0=1xx, 1=200, 2=2xx, 3=204, 4=3xx, 5=400, 6=4xx, 7=403, 8=404, 9=408, 10=413, 11=5xx, 12=502|504|511, 13=503, 14=505, 15=Other)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_THREATHIT_REMOTE_STATUS.
+"
+  }
+
+  dimension: metrics__custom_distribution__urlclassifier_ui_events__sum {
+    label: "Urlclassifier Ui Events Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.urlclassifier_ui_events.sum ;;
+    type: number
+    group_label: "Urlclassifier"
+    group_item_label: "Ui Events Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier Ui Events Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/urlclassifier_ui_events"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "URL CLassifier-related (aka Safe Browsing) UI events. See nsIUrlClassifierUITelemetry.idl for the specific values.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_UI_EVENTS.
+"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_vlps_construct_time__sum {
+    label: "Urlclassifier Vlps Construct Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_vlps_construct_time.sum ;;
+    type: number
+    group_label: "Urlclassifier"
+    group_item_label: "Vlps Construct Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier Vlps Construct Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/urlclassifier_vlps_construct_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent constructing Variable-Length PrefixSet from file (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_VLPS_CONSTRUCT_TIME.
+"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_vlps_fallocate_time__sum {
+    label: "Urlclassifier Vlps Fallocate Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_vlps_fallocate_time.sum ;;
+    type: number
+    group_label: "Urlclassifier"
+    group_item_label: "Vlps Fallocate Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier Vlps Fallocate Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/urlclassifier_vlps_fallocate_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent fallocating Variable-Length PrefixSet (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_VLPS_FALLOCATE_TIME.
+"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_vlps_fileload_time__sum {
+    label: "Urlclassifier Vlps Fileload Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_vlps_fileload_time.sum ;;
+    type: number
+    group_label: "Urlclassifier"
+    group_item_label: "Vlps Fileload Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier Vlps Fileload Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/urlclassifier_vlps_fileload_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent loading Variable-Length PrefixSet from file (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_VLPS_FILELOAD_TIME.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_vlps_metadata_corrupt {
+    label: "Urlclassifier Vlps Metadata Corrupt"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_vlps_metadata_corrupt ;;
+    group_label: "Urlclassifier"
+    group_item_label: "Vlps Metadata Corrupt"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier Vlps Metadata Corrupt"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/urlclassifier_vlps_metadata_corrupt"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not the metadata for a variable-length prefix set loaded from disk is corrupted (true = file corrupted).
+This metric was generated to correspond to the Legacy Telemetry boolean histogram URLCLASSIFIER_VLPS_METADATA_CORRUPT.
 "
   }
 
@@ -15019,6 +15487,134 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     description: "The total number of successful calls to navigator.credentials.get."
   }
 
+  dimension: metrics__custom_distribution__webcrypto_alg__sum {
+    label: "Webcrypto Alg Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webcrypto_alg.sum ;;
+    type: number
+    group_label: "Webcrypto"
+    group_item_label: "Alg Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webcrypto Alg Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webcrypto_alg"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Algorithms used with WebCrypto (see table in WebCryptoTask.cpp)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram WEBCRYPTO_ALG.
+"
+  }
+
+  dimension: metrics__labeled_counter__webcrypto_extractable_enc {
+    label: "Webcrypto Extractable Enc"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webcrypto_extractable_enc ;;
+    group_label: "Webcrypto"
+    group_item_label: "Extractable Enc"
+
+    link: {
+      label: "Glean Dictionary reference for Webcrypto Extractable Enc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webcrypto_extractable_enc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a key used in an encrypt/decrypt operation was marked as extractable
+This metric was generated to correspond to the Legacy Telemetry boolean histogram WEBCRYPTO_EXTRACTABLE_ENC.
+"
+  }
+
+  dimension: metrics__labeled_counter__webcrypto_extractable_generate {
+    label: "Webcrypto Extractable Generate"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webcrypto_extractable_generate ;;
+    group_label: "Webcrypto"
+    group_item_label: "Extractable Generate"
+
+    link: {
+      label: "Glean Dictionary reference for Webcrypto Extractable Generate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webcrypto_extractable_generate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a generated key was marked as extractable
+This metric was generated to correspond to the Legacy Telemetry boolean histogram WEBCRYPTO_EXTRACTABLE_GENERATE.
+"
+  }
+
+  dimension: metrics__labeled_counter__webcrypto_extractable_import {
+    label: "Webcrypto Extractable Import"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webcrypto_extractable_import ;;
+    group_label: "Webcrypto"
+    group_item_label: "Extractable Import"
+
+    link: {
+      label: "Glean Dictionary reference for Webcrypto Extractable Import"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webcrypto_extractable_import"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether an imported key was marked as extractable
+This metric was generated to correspond to the Legacy Telemetry boolean histogram WEBCRYPTO_EXTRACTABLE_IMPORT.
+"
+  }
+
+  dimension: metrics__labeled_counter__webcrypto_extractable_sig {
+    label: "Webcrypto Extractable Sig"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webcrypto_extractable_sig ;;
+    group_label: "Webcrypto"
+    group_item_label: "Extractable Sig"
+
+    link: {
+      label: "Glean Dictionary reference for Webcrypto Extractable Sig"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webcrypto_extractable_sig"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a key used in a sign/verify operation was marked as extractable
+This metric was generated to correspond to the Legacy Telemetry boolean histogram WEBCRYPTO_EXTRACTABLE_SIG.
+"
+  }
+
+  dimension: metrics__custom_distribution__webcrypto_method__sum {
+    label: "Webcrypto Method Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webcrypto_method.sum ;;
+    type: number
+    group_label: "Webcrypto"
+    group_item_label: "Method Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webcrypto Method Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webcrypto_method"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Methods invoked under window.crypto.subtle (0=encrypt, 1=decrypt, 2=sign, 3=verify, 4=digest, 5=generateKey, 6=deriveKey, 7=deriveBits, 8=importKey, 9=exportKey, 10=wrapKey, 11=unwrapKey)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram WEBCRYPTO_METHOD.
+"
+  }
+
+  dimension: metrics__labeled_counter__webcrypto_resolved {
+    label: "Webcrypto Resolved"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webcrypto_resolved ;;
+    group_label: "Webcrypto"
+    group_item_label: "Resolved"
+
+    link: {
+      label: "Glean Dictionary reference for Webcrypto Resolved"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webcrypto_resolved"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a promise created by WebCrypto was resolved (vs rejected)
+This metric was generated to correspond to the Legacy Telemetry boolean histogram WEBCRYPTO_RESOLVED.
+"
+  }
+
   dimension: metrics__labeled_counter__webrtc_video_recv_codec_used {
     label: "Webrtc Video Recv Codec Used"
     hidden: yes
@@ -15089,7 +15685,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__webrtcdtls_client_handshake_started_counter {
     label: "Webrtcdtls Client Handshake Started Counter"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.webrtcdtls_client_handshake_started_counter ;;
     type: number
     group_label: "Webrtcdtls"
@@ -15141,7 +15737,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__webrtcdtls_server_handshake_started_counter {
     label: "Webrtcdtls Server Handshake Started Counter"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.webrtcdtls_server_handshake_started_counter ;;
     type: number
     group_label: "Webrtcdtls"
@@ -20943,6 +21539,252 @@ view: metrics__metrics__labeled_counter__browser_ui_interaction_keyboard {
   }
 }
 
+view: metrics__metrics__labeled_counter__canvas_used_2d {
+  label: "Canvas - Used 2D"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__canvas_webgl2_success {
+  label: "Canvas - Webgl2 Success"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__canvas_webgl_accl_failure_id {
+  label: "Canvas - Webgl Accl Failure Id"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__canvas_webgl_failure_id {
+  label: "Canvas - Webgl Failure Id"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__canvas_webgl_success {
+  label: "Canvas - Webgl Success"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__canvas_webgl_used {
+  label: "Canvas - Webgl Used"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__cert_compression_failures {
   label: "Cert Compression - Failures"
 
@@ -21173,19 +22015,19 @@ view: metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -21214,19 +22056,19 @@ view: metrics__metrics__labeled_counter__codec_stats_other_fec_signaled {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -21255,19 +22097,19 @@ view: metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -21296,19 +22138,19 @@ view: metrics__metrics__labeled_counter__codec_stats_video_preferred_codec {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -28735,6 +29577,47 @@ view: metrics__metrics__labeled_counter__translations_request_count {
   }
 }
 
+view: metrics__metrics__labeled_counter__urlclassifier_vlps_metadata_corrupt {
+  label: "Urlclassifier - Vlps Metadata Corrupt"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__web_notification_permission_origin {
   label: "Web Notification - Permission Origin"
 
@@ -29022,8 +29905,8 @@ view: metrics__metrics__labeled_counter__webauthn_get_authenticator_attachment {
   }
 }
 
-view: metrics__metrics__labeled_counter__webrtc_video_recv_codec_used {
-  label: "Webrtc Video - Recv Codec Used"
+view: metrics__metrics__labeled_counter__webcrypto_extractable_enc {
+  label: "Webcrypto - Extractable Enc"
 
   dimension: document_id {
     type: string
@@ -29060,6 +29943,211 @@ view: metrics__metrics__labeled_counter__webrtc_video_recv_codec_used {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webcrypto_extractable_generate {
+  label: "Webcrypto - Extractable Generate"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webcrypto_extractable_import {
+  label: "Webcrypto - Extractable Import"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webcrypto_extractable_sig {
+  label: "Webcrypto - Extractable Sig"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webcrypto_resolved {
+  label: "Webcrypto - Resolved"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webrtc_video_recv_codec_used {
+  label: "Webrtc Video - Recv Codec Used"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
   }
 }
 
@@ -29088,19 +30176,19 @@ view: metrics__metrics__labeled_counter__webrtc_video_send_codec_used {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -29129,19 +30217,19 @@ view: metrics__metrics__labeled_counter__webrtcdtls_cipher {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -29170,19 +30258,19 @@ view: metrics__metrics__labeled_counter__webrtcdtls_client_handshake_result {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -29211,19 +30299,19 @@ view: metrics__metrics__labeled_counter__webrtcdtls_protocol_version {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -29252,19 +30340,19 @@ view: metrics__metrics__labeled_counter__webrtcdtls_server_handshake_result {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -29293,19 +30381,19 @@ view: metrics__metrics__labeled_counter__webrtcdtls_srtp_cipher {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -30694,7 +31782,103 @@ view: metrics__metrics__custom_distribution__tab_count_app_backgrounded__values 
   }
 }
 
+view: metrics__metrics__custom_distribution__thumbnails_capture_done_reason_2__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__thumbnails_queue_size_on_capture__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__timer_thread_timers_fired_per_wakeup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__urlclassifier_completion_error__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__urlclassifier_threathit_network_error__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__urlclassifier_threathit_remote_status__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__urlclassifier_ui_events__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webcrypto_alg__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webcrypto_method__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -31085,6 +32269,201 @@ view: metrics__metrics__labeled_custom_distribution__quotamanager_initialize_rep
 }
 
 view: metrics__metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__urlclassifier_complete_remote_status2 {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__urlclassifier_complete_remote_status2__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_error__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_remote_network_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_remote_network_error__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_remote_status2 {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_remote_status2__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_timeout {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_timeout__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -32768,6 +34147,243 @@ view: metrics__metrics__labeled_timing_distribution__orb_receive_data_for_valida
 }
 
 view: metrics__metrics__labeled_timing_distribution__orb_receive_data_for_validation__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__urlclassifier_cl_keyed_update_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__urlclassifier_cl_keyed_update_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__urlclassifier_complete_server_response_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__urlclassifier_complete_server_response_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__urlclassifier_update_server_response_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__urlclassifier_update_server_response_time__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -35324,6 +36940,150 @@ view: metrics__metrics__timing_distribution__sts_poll_block_time__values {
 }
 
 view: metrics__metrics__timing_distribution__sts_poll_cycle__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__thumbnails_capture_canvas_draw_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__thumbnails_capture_page_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__thumbnails_capture_queue_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__thumbnails_capture_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__thumbnails_store_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__urlclassifier_async_classifylocal_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__urlclassifier_cl_check_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__urlclassifier_lookup_time_2__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__urlclassifier_shutdown_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__urlclassifier_vlps_construct_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__urlclassifier_vlps_fallocate_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__urlclassifier_vlps_fileload_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

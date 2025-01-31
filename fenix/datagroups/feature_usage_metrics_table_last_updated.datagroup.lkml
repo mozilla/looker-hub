@@ -10,7 +10,7 @@ datagroup: feature_usage_metrics_table_last_updated {
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'fenix_derived'
-    AND table_name = 'feature_usage_metrics_v1' ;;
-  description: "Updates for feature_usage_metrics_table when moz-fx-data-shared-prod.fenix_derived.feature_usage_metrics_v1 is modified."
+    AND table_name = 'feature_usage_metrics_v2' ;;
+  description: "Updates for feature_usage_metrics_table when moz-fx-data-shared-prod.fenix_derived.feature_usage_metrics_v2 is modified."
   max_cache_age: "24 hours"
 }

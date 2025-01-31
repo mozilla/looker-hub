@@ -16287,6 +16287,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_sectioning_h1_with_no_font_size_or_margins {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sectioning_h1_with_no_font_size_or_margins ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Sectioning H1 With No Font Size Or Margins"
+    description: "Whether a document found sectioned h1 element with no font-size or no margins. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_shadowroot_pictureinpictureelement {
     sql: ${TABLE}.metrics.counter.use_counter_doc_shadowroot_pictureinpictureelement ;;
     type: number
@@ -19902,6 +19911,15 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Scheduler Posttask"
     description: "Whether a page called called Scheduler.postTask. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_sectioning_h1_with_no_font_size_or_margins {
+    sql: ${TABLE}.metrics.counter.use_counter_page_sectioning_h1_with_no_font_size_or_margins ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Sectioning H1 With No Font Size Or Margins"
+    description: "Whether a page found sectioned h1 element with no font-size or no margins. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
