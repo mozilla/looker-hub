@@ -13935,7 +13935,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__rtcrtpsender_count {
     label: "Rtcrtpsender Count"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.rtcrtpsender_count ;;
     type: number
     group_label: "Rtcrtpsender"
@@ -13953,7 +13953,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__rtcrtpsender_count_setparameters_compat {
     label: "Rtcrtpsender Count Setparameters Compat"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.rtcrtpsender_count_setparameters_compat ;;
     type: number
     group_label: "Rtcrtpsender"
@@ -14039,7 +14039,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__numerator {
     label: "Rtcrtpsender Setparameters Fail Length Changed Numerator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_length_changed.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14057,7 +14057,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__denominator {
     label: "Rtcrtpsender Setparameters Fail Length Changed Denominator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_length_changed.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14075,7 +14075,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_encodings__numerator {
     label: "Rtcrtpsender Setparameters Fail No Encodings Numerator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_encodings.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14093,7 +14093,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_encodings__denominator {
     label: "Rtcrtpsender Setparameters Fail No Encodings Denominator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_encodings.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14111,7 +14111,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_getparameters__numerator {
     label: "Rtcrtpsender Setparameters Fail No Getparameters Numerator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_getparameters.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14129,7 +14129,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_getparameters__denominator {
     label: "Rtcrtpsender Setparameters Fail No Getparameters Denominator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_getparameters.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14147,7 +14147,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_transactionid__numerator {
     label: "Rtcrtpsender Setparameters Fail No Transactionid Numerator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_transactionid.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14165,7 +14165,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_transactionid__denominator {
     label: "Rtcrtpsender Setparameters Fail No Transactionid Denominator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_transactionid.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14183,7 +14183,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_other__numerator {
     label: "Rtcrtpsender Setparameters Fail Other Numerator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_other.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14201,7 +14201,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_other__denominator {
     label: "Rtcrtpsender Setparameters Fail Other Denominator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_other.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14219,7 +14219,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_rid_changed__numerator {
     label: "Rtcrtpsender Setparameters Fail Rid Changed Numerator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_rid_changed.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14237,7 +14237,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_rid_changed__denominator {
     label: "Rtcrtpsender Setparameters Fail Rid Changed Denominator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_rid_changed.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14255,7 +14255,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_stale_transactionid__numerator {
     label: "Rtcrtpsender Setparameters Fail Stale Transactionid Numerator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_stale_transactionid.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14273,7 +14273,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_stale_transactionid__denominator {
     label: "Rtcrtpsender Setparameters Fail Stale Transactionid Denominator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_stale_transactionid.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14291,7 +14291,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_length_changed__numerator {
     label: "Rtcrtpsender Setparameters Warn Length Changed Numerator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_length_changed.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14309,7 +14309,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_length_changed__denominator {
     label: "Rtcrtpsender Setparameters Warn Length Changed Denominator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_length_changed.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14327,7 +14327,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_getparameters__numerator {
     label: "Rtcrtpsender Setparameters Warn No Getparameters Numerator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_getparameters.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14345,7 +14345,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_getparameters__denominator {
     label: "Rtcrtpsender Setparameters Warn No Getparameters Denominator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_getparameters.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14363,7 +14363,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_transactionid__numerator {
     label: "Rtcrtpsender Setparameters Warn No Transactionid Numerator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_transactionid.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14381,7 +14381,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_transactionid__denominator {
     label: "Rtcrtpsender Setparameters Warn No Transactionid Denominator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_transactionid.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -14471,7 +14471,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_used_sendencodings__numerator {
     label: "Rtcrtpsender Used Sendencodings Numerator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_used_sendencodings.numerator ;;
     type: number
     group_label: "Rtcrtpsender"
@@ -14489,7 +14489,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__rtcrtpsender_used_sendencodings__denominator {
     label: "Rtcrtpsender Used Sendencodings Denominator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.rtcrtpsender_used_sendencodings.denominator ;;
     type: number
     group_label: "Rtcrtpsender"
@@ -15911,7 +15911,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__counter__webrtcdtls_client_handshake_started_counter {
     label: "Webrtcdtls Client Handshake Started Counter"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.webrtcdtls_client_handshake_started_counter ;;
     type: number
     group_label: "Webrtcdtls"
@@ -15963,7 +15963,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__counter__webrtcdtls_server_handshake_started_counter {
     label: "Webrtcdtls Server Handshake Started Counter"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.webrtcdtls_server_handshake_started_counter ;;
     type: number
     group_label: "Webrtcdtls"
@@ -22241,19 +22241,19 @@ view: metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -22282,19 +22282,19 @@ view: metrics__metrics__labeled_counter__codec_stats_other_fec_signaled {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -22323,19 +22323,19 @@ view: metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -22364,19 +22364,19 @@ view: metrics__metrics__labeled_counter__codec_stats_video_preferred_codec {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -30443,19 +30443,19 @@ view: metrics__metrics__labeled_counter__webrtc_video_recv_codec_used {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -30484,19 +30484,19 @@ view: metrics__metrics__labeled_counter__webrtc_video_send_codec_used {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -30525,19 +30525,19 @@ view: metrics__metrics__labeled_counter__webrtcdtls_cipher {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -30566,19 +30566,19 @@ view: metrics__metrics__labeled_counter__webrtcdtls_client_handshake_result {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -30607,19 +30607,19 @@ view: metrics__metrics__labeled_counter__webrtcdtls_protocol_version {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -30648,19 +30648,19 @@ view: metrics__metrics__labeled_counter__webrtcdtls_server_handshake_result {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -30689,19 +30689,19 @@ view: metrics__metrics__labeled_counter__webrtcdtls_srtp_cipher {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
