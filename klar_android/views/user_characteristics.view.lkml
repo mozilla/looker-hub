@@ -1789,7 +1789,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_params_v1 {
     label: "Characteristics Gl Params V1"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.characteristics_gl_params_v1 ;;
     type: string
     group_label: "Characteristics"
@@ -1807,7 +1807,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_params_v1_software {
     label: "Characteristics Gl Params V1 Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.characteristics_gl_params_v1_software ;;
     type: string
     group_label: "Characteristics"
@@ -1825,7 +1825,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_params_v2 {
     label: "Characteristics Gl Params V2"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.characteristics_gl_params_v2 ;;
     type: string
     group_label: "Characteristics"
@@ -1843,7 +1843,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_params_v2_software {
     label: "Characteristics Gl Params V2 Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.characteristics_gl_params_v2_software ;;
     type: string
     group_label: "Characteristics"
@@ -2077,7 +2077,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_gl_version {
     label: "Characteristics Gl Version"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_gl_version ;;
     type: number
     group_label: "Characteristics"
