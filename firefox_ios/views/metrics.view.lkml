@@ -2942,6 +2942,24 @@ browser menu option is tapped.
 "
   }
 
+  dimension: metrics__timing_distribution__share_deeplink_open_url_startup_time__sum {
+    label: "Share Deeplink Open Url Startup Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.share_deeplink_open_url_startup_time.sum ;;
+    type: number
+    group_label: "Share"
+    group_item_label: "Deeplink Open Url Startup Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Share Deeplink Open Url Startup Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/share_deeplink_open_url_startup_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Track the startup time of the application when the app was launched to open a url.
+"
+  }
+
   dimension: metrics__counter__shopping_product_page_visits {
     label: "Shopping Product Page Visits"
     hidden: no
@@ -10041,6 +10059,18 @@ view: metrics__metrics__timing_distribution__nimbus_health_fetch_experiments_tim
 }
 
 view: metrics__metrics__timing_distribution__places_history_migration_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__share_deeplink_open_url_startup_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

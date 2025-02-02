@@ -1067,6 +1067,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_cpu_arch {
+    label: "Characteristics Cpu Arch"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_cpu_arch ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Cpu Arch"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Cpu Arch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_cpu_arch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Arch of the user's device
+"
+  }
+
   dimension: metrics__string__characteristics_cpu_model {
     label: "Characteristics Cpu Model"
     hidden: no
@@ -1571,6 +1589,564 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_gl2_context_type {
+    label: "Characteristics Gl2 Context Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_context_type ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Context Type"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Context Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_context_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The type of the GL context (EGL, GLX, WGL, etc).
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_context_type_software {
+    label: "Characteristics Gl2 Context Type Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_context_type_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Context Type Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Context Type Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_context_type_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The type of the GL context (EGL, GLX, WGL, etc).
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_extensions {
+    label: "Characteristics Gl2 Extensions"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_extensions ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Extensions"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Extensions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_extensions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of OpenGL extensions supported by the user's system.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_extensions_raw {
+    label: "Characteristics Gl2 Extensions Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_extensions_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Extensions Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Extensions Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_extensions_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw list of OpenGL extensions supported by the user's system.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_extensions_raw_software {
+    label: "Characteristics Gl2 Extensions Raw Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_extensions_raw_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Extensions Raw Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Extensions Raw Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_extensions_raw_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw list of OpenGL extensions supported by the user's system.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_extensions_software {
+    label: "Characteristics Gl2 Extensions Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_extensions_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Extensions Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Extensions Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_extensions_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of OpenGL extensions supported by the user's system.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_fragment_shader {
+    label: "Characteristics Gl2 Fragment Shader"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_fragment_shader ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Fragment Shader"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Fragment Shader"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_fragment_shader"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Hash of the transformed source of the fragment shader.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_fragment_shader_software {
+    label: "Characteristics Gl2 Fragment Shader Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_fragment_shader_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Fragment Shader Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Fragment Shader Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_fragment_shader_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Hash of the transformed source of the fragment shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_minimal_source {
+    label: "Characteristics Gl2 Minimal Source"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_minimal_source ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Minimal Source"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Minimal Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_minimal_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Transformed source of the minimal shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_minimal_source_software {
+    label: "Characteristics Gl2 Minimal Source Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_minimal_source_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Minimal Source Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Minimal Source Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_minimal_source_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Transformed source of the minimal shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_params {
+    label: "Characteristics Gl2 Params"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_params ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Params"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Params"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_params"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of GL parameters of GL2.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_params_extensions {
+    label: "Characteristics Gl2 Params Extensions"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_params_extensions ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Params Extensions"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Params Extensions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_params_extensions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of GL parameters of the extensions.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_params_extensions_software {
+    label: "Characteristics Gl2 Params Extensions Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_params_extensions_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Params Extensions Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Params Extensions Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_params_extensions_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of GL parameters of the extensions.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_params_software {
+    label: "Characteristics Gl2 Params Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_params_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Params Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Params Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_params_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of GL parameters of GL2.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_precision_fragment {
+    label: "Characteristics Gl2 Precision Fragment"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_precision_fragment ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Precision Fragment"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Precision Fragment"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_precision_fragment"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Precisions of the fragment shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_precision_fragment_software {
+    label: "Characteristics Gl2 Precision Fragment Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_precision_fragment_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Precision Fragment Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Precision Fragment Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_precision_fragment_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Precisions of the fragment shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_precision_vertex {
+    label: "Characteristics Gl2 Precision Vertex"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_precision_vertex ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Precision Vertex"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Precision Vertex"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_precision_vertex"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Precisions of the vertex shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_precision_vertex_software {
+    label: "Characteristics Gl2 Precision Vertex Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_precision_vertex_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Precision Vertex Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Precision Vertex Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_precision_vertex_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Precisions of the vertex shader.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_renderer {
+    label: "Characteristics Gl2 Renderer"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_renderer ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Renderer"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Renderer"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_renderer"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The OpenGL renderer string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_renderer_raw {
+    label: "Characteristics Gl2 Renderer Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_renderer_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Renderer Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Renderer Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_renderer_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw OpenGL renderer string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_renderer_raw_software {
+    label: "Characteristics Gl2 Renderer Raw Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_renderer_raw_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Renderer Raw Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Renderer Raw Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_renderer_raw_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw OpenGL renderer string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_renderer_software {
+    label: "Characteristics Gl2 Renderer Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_renderer_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Renderer Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Renderer Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_renderer_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The OpenGL renderer string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_vendor {
+    label: "Characteristics Gl2 Vendor"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_vendor ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Vendor"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Vendor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_vendor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The OpenGL vendor string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_vendor_raw {
+    label: "Characteristics Gl2 Vendor Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_vendor_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Vendor Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Vendor Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_vendor_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw OpenGL vendor string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_vendor_raw_software {
+    label: "Characteristics Gl2 Vendor Raw Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_vendor_raw_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Vendor Raw Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Vendor Raw Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_vendor_raw_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw OpenGL vendor string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_vendor_software {
+    label: "Characteristics Gl2 Vendor Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_vendor_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Vendor Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Vendor Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_vendor_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The OpenGL vendor string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_version_raw {
+    label: "Characteristics Gl2 Version Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_version_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Version Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Version Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_version_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw OpenGL version string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_version_raw_software {
+    label: "Characteristics Gl2 Version Raw Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_version_raw_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Version Raw Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Version Raw Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_version_raw_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The raw OpenGL version string.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_gl2_version_software {
+    label: "Characteristics Gl2 Version Software"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_gl2_version_software ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Version Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Version Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_version_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of OpenGL supported by the user's system.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_vertex_shader {
+    label: "Characteristics Gl2 Vertex Shader"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_vertex_shader ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Vertex Shader"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Vertex Shader"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_vertex_shader"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Hash of the transformed source of the vertex shader.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_vertex_shader_software {
+    label: "Characteristics Gl2 Vertex Shader Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_vertex_shader_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Vertex Shader Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl2 Vertex Shader Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_vertex_shader_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Hash of the transformed source of the vertex shader.
+"
+  }
+
   dimension: metrics__string__characteristics_gl_context_type {
     label: "Characteristics Gl Context Type"
     hidden: no
@@ -1751,6 +2327,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_gl_params {
+    label: "Characteristics Gl Params"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Params"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Params"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl_params"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of GL parameters of GL1.
+"
+  }
+
   dimension: metrics__text2__characteristics_gl_params_extensions {
     label: "Characteristics Gl Params Extensions"
     hidden: no
@@ -1784,6 +2378,24 @@ view: user_characteristics {
     }
 
     description: "The list of GL parameters of the extensions.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_params_software {
+    label: "Characteristics Gl Params Software"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Params Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Gl Params Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl_params_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The list of GL parameters of GL1.
 "
   }
 
