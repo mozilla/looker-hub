@@ -1446,6 +1446,13 @@ view: metrics_table {
     group_item_label: "Webauthn Get Success"
   }
 
+  dimension: metrics__counter__webrtc_call_count_3 {
+    sql: ${TABLE}.metrics.counter.webrtc_call_count_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Webrtc Call Count 3"
+  }
+
   dimension: metrics__counter__webrtcdtls_client_handshake_started_counter {
     sql: ${TABLE}.metrics.counter.webrtcdtls_client_handshake_started_counter ;;
     type: number
@@ -3797,6 +3804,424 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__webrtc_audio_quality_inbound_bandwidth_kbits__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_audio_quality_inbound_bandwidth_kbits.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Audio Quality Inbound Bandwidth Kbits"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_audio_quality_inbound_bandwidth_kbits__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_audio_quality_inbound_bandwidth_kbits.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Audio Quality Inbound Bandwidth Kbits"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_audio_quality_inbound_bandwidth_kbits__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_audio_quality_inbound_bandwidth_kbits.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_audio_quality_inbound_packetloss_rate__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_audio_quality_inbound_packetloss_rate.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Audio Quality Inbound Packetloss Rate"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_audio_quality_inbound_packetloss_rate__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_audio_quality_inbound_packetloss_rate.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Audio Quality Inbound Packetloss Rate"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_audio_quality_inbound_packetloss_rate__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_audio_quality_inbound_packetloss_rate.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_audio_quality_outbound_packetloss_rate__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_audio_quality_outbound_packetloss_rate.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Audio Quality Outbound Packetloss Rate"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_audio_quality_outbound_packetloss_rate__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_audio_quality_outbound_packetloss_rate.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Audio Quality Outbound Packetloss Rate"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_audio_quality_outbound_packetloss_rate__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_audio_quality_outbound_packetloss_rate.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_call_type__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_call_type.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Call Type"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_call_type__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_call_type.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Call Type"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_call_type__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_call_type.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_get_user_media_type__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_get_user_media_type.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Get User Media Type"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_get_user_media_type__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_get_user_media_type.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Get User Media Type"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_get_user_media_type__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_get_user_media_type.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_max_audio_receive_track__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_max_audio_receive_track.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Max Audio Receive Track"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_max_audio_receive_track__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_max_audio_receive_track.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Max Audio Receive Track"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_max_audio_receive_track__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_max_audio_receive_track.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_max_audio_send_track__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_max_audio_send_track.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Max Audio Send Track"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_max_audio_send_track__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_max_audio_send_track.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Max Audio Send Track"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_max_audio_send_track__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_max_audio_send_track.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_max_video_receive_track__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_max_video_receive_track.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Max Video Receive Track"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_max_video_receive_track__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_max_video_receive_track.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Max Video Receive Track"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_max_video_receive_track__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_max_video_receive_track.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_max_video_send_track__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_max_video_send_track.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Max Video Send Track"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_max_video_send_track__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_max_video_send_track.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Max Video Send Track"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_max_video_send_track__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_max_video_send_track.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_renegotiations__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_renegotiations.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Renegotiations"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_renegotiations__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_renegotiations.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Renegotiations"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_renegotiations__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_renegotiations.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_bitrate_avg_per_call_kbps__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_bitrate_avg_per_call_kbps.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Decoder Bitrate Avg Per Call Kbps"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_bitrate_avg_per_call_kbps__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_bitrate_avg_per_call_kbps.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Decoder Bitrate Avg Per Call Kbps"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_bitrate_avg_per_call_kbps__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_bitrate_avg_per_call_kbps.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_bitrate_std_dev_per_call_kbps__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_bitrate_std_dev_per_call_kbps.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Decoder Bitrate Std Dev Per Call Kbps"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_bitrate_std_dev_per_call_kbps__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_bitrate_std_dev_per_call_kbps.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Decoder Bitrate Std Dev Per Call Kbps"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_bitrate_std_dev_per_call_kbps__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_bitrate_std_dev_per_call_kbps.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_discarded_packets_per_call_ppm__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_discarded_packets_per_call_ppm.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Decoder Discarded Packets Per Call Ppm"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_discarded_packets_per_call_ppm__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_discarded_packets_per_call_ppm.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Decoder Discarded Packets Per Call Ppm"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_discarded_packets_per_call_ppm__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_discarded_packets_per_call_ppm.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_framerate_10x_std_dev_per_call__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_framerate_10x_std_dev_per_call.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Decoder Framerate 10X Std Dev Per Call"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_framerate_10x_std_dev_per_call__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_framerate_10x_std_dev_per_call.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Decoder Framerate 10X Std Dev Per Call"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_framerate_10x_std_dev_per_call__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_framerate_10x_std_dev_per_call.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_framerate_avg_per_call__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_framerate_avg_per_call.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Decoder Framerate Avg Per Call"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_framerate_avg_per_call__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_framerate_avg_per_call.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Decoder Framerate Avg Per Call"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_framerate_avg_per_call__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_framerate_avg_per_call.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_encoder_bitrate_avg_per_call_kbps__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_encoder_bitrate_avg_per_call_kbps.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Encoder Bitrate Avg Per Call Kbps"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_encoder_bitrate_avg_per_call_kbps__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_encoder_bitrate_avg_per_call_kbps.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Encoder Bitrate Avg Per Call Kbps"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_encoder_bitrate_avg_per_call_kbps__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_encoder_bitrate_avg_per_call_kbps.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_encoder_bitrate_std_dev_per_call_kbps__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_encoder_bitrate_std_dev_per_call_kbps.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Encoder Bitrate Std Dev Per Call Kbps"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_encoder_bitrate_std_dev_per_call_kbps__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_encoder_bitrate_std_dev_per_call_kbps.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Encoder Bitrate Std Dev Per Call Kbps"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_encoder_bitrate_std_dev_per_call_kbps__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_encoder_bitrate_std_dev_per_call_kbps.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_encoder_framerate_10x_std_dev_per_call__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_encoder_framerate_10x_std_dev_per_call.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Encoder Framerate 10X Std Dev Per Call"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_encoder_framerate_10x_std_dev_per_call__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_encoder_framerate_10x_std_dev_per_call.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Encoder Framerate 10X Std Dev Per Call"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_encoder_framerate_10x_std_dev_per_call__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_encoder_framerate_10x_std_dev_per_call.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_encoder_framerate_avg_per_call__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_encoder_framerate_avg_per_call.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Encoder Framerate Avg Per Call"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_encoder_framerate_avg_per_call__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_encoder_framerate_avg_per_call.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Encoder Framerate Avg Per Call"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_encoder_framerate_avg_per_call__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_encoder_framerate_avg_per_call.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_quality_inbound_bandwidth_kbits__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_quality_inbound_bandwidth_kbits.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Quality Inbound Bandwidth Kbits"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_quality_inbound_bandwidth_kbits__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_quality_inbound_bandwidth_kbits.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Quality Inbound Bandwidth Kbits"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_quality_inbound_bandwidth_kbits__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_quality_inbound_bandwidth_kbits.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_quality_inbound_packetloss_rate__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_quality_inbound_packetloss_rate.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Quality Inbound Packetloss Rate"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_quality_inbound_packetloss_rate__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_quality_inbound_packetloss_rate.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Quality Inbound Packetloss Rate"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_quality_inbound_packetloss_rate__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_quality_inbound_packetloss_rate.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_quality_outbound_packetloss_rate__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_quality_outbound_packetloss_rate.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Quality Outbound Packetloss Rate"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_quality_outbound_packetloss_rate__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_quality_outbound_packetloss_rate.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Webrtc Video Quality Outbound Packetloss Rate"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_quality_outbound_packetloss_rate__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_quality_outbound_packetloss_rate.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__datetime__raw_blocklist_last_modified_rs_addons_mblf {
     sql: ${TABLE}.metrics.datetime.raw_blocklist_last_modified_rs_addons_mblf ;;
     type: string
@@ -5121,6 +5546,36 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__webcrypto_resolved {
     sql: ${TABLE}.metrics.labeled_counter.webcrypto_resolved ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__webrtc_datachannel_negotiated {
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_datachannel_negotiated ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__webrtc_gmp_init_success {
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_gmp_init_success ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__webrtc_h264_enabled {
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_h264_enabled ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__webrtc_hardware_h264_enabled {
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_hardware_h264_enabled ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__webrtc_has_h264_hardware {
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_has_h264_hardware ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__webrtc_software_h264_enabled {
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_software_h264_enabled ;;
     hidden: yes
   }
 
@@ -19243,6 +19698,478 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__webrtc_audio_quality_inbound_jitter__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_inbound_jitter.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Inbound Jitter"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_inbound_jitter__count {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_inbound_jitter.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Inbound Jitter"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_inbound_jitter__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_inbound_jitter.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Inbound Jitter"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_inbound_jitter__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_inbound_jitter.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Inbound Jitter"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_inbound_jitter__range {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_inbound_jitter.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_inbound_jitter__sum {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_inbound_jitter.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Inbound Jitter"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_inbound_jitter__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_inbound_jitter.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Inbound Jitter"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_inbound_jitter__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_inbound_jitter.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Inbound Jitter"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_inbound_jitter__values {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_inbound_jitter.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_jitter__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_jitter.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Outbound Jitter"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_jitter__count {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_jitter.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Outbound Jitter"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_jitter__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_jitter.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Outbound Jitter"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_jitter__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_jitter.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Outbound Jitter"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_jitter__range {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_jitter.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_jitter__sum {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_jitter.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Outbound Jitter"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_jitter__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_jitter.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Outbound Jitter"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_jitter__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_jitter.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Outbound Jitter"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_jitter__values {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_jitter.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_rtt__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_rtt.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Outbound Rtt"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_rtt__count {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_rtt.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Outbound Rtt"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_rtt__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_rtt.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Outbound Rtt"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_rtt__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_rtt.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Outbound Rtt"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_rtt__range {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_rtt.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_rtt__sum {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_rtt.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Outbound Rtt"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_rtt__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_rtt.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Outbound Rtt"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_rtt__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_rtt.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Audio Quality Outbound Rtt"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_rtt__values {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_rtt.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__webrtc_av_call_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_av_call_duration.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Av Call Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_av_call_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_av_call_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Av Call Duration"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_av_call_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_av_call_duration.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webrtc Av Call Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_av_call_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_av_call_duration.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Av Call Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_av_call_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_av_call_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__webrtc_av_call_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_av_call_duration.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Av Call Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_av_call_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_av_call_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webrtc Av Call Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_av_call_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_av_call_duration.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Av Call Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_av_call_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_av_call_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__webrtc_call_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_call_duration.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Call Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_call_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_call_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Call Duration"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_call_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_call_duration.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webrtc Call Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_call_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_call_duration.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Call Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_call_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_call_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__webrtc_call_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_call_duration.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Call Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_call_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_call_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webrtc Call Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_call_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_call_duration.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Call Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_call_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_call_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_inbound_jitter__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_inbound_jitter.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Inbound Jitter"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_inbound_jitter__count {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_inbound_jitter.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Inbound Jitter"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_inbound_jitter__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_inbound_jitter.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Inbound Jitter"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_inbound_jitter__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_inbound_jitter.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Inbound Jitter"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_inbound_jitter__range {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_inbound_jitter.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_inbound_jitter__sum {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_inbound_jitter.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Inbound Jitter"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_inbound_jitter__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_inbound_jitter.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Inbound Jitter"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_inbound_jitter__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_inbound_jitter.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Inbound Jitter"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_inbound_jitter__values {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_inbound_jitter.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_jitter__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_jitter.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Outbound Jitter"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_jitter__count {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_jitter.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Outbound Jitter"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_jitter__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_jitter.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Outbound Jitter"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_jitter__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_jitter.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Outbound Jitter"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_jitter__range {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_jitter.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_jitter__sum {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_jitter.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Outbound Jitter"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_jitter__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_jitter.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Outbound Jitter"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_jitter__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_jitter.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Outbound Jitter"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_jitter__values {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_jitter.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_rtt__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_rtt.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Outbound Rtt"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_rtt__count {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_rtt.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Outbound Rtt"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_rtt__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_rtt.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Outbound Rtt"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_rtt__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_rtt.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Outbound Rtt"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_rtt__range {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_rtt.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_rtt__sum {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_rtt.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Outbound Rtt"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_rtt__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_rtt.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Outbound Rtt"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_rtt__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_rtt.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webrtc Video Quality Outbound Rtt"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_rtt__values {
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_rtt.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__wr_framebuild_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.bucket_count ;;
     type: number
@@ -21647,6 +22574,270 @@ view: metrics_table__metrics__custom_distribution__webcrypto_alg__values {
 }
 
 view: metrics_table__metrics__custom_distribution__webcrypto_method__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_audio_quality_inbound_bandwidth_kbits__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_audio_quality_inbound_packetloss_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_audio_quality_outbound_packetloss_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_call_type__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_get_user_media_type__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_max_audio_receive_track__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_max_audio_send_track__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_max_video_receive_track__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_max_video_send_track__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_renegotiations__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_video_decoder_bitrate_avg_per_call_kbps__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_video_decoder_bitrate_std_dev_per_call_kbps__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_video_decoder_discarded_packets_per_call_ppm__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_video_decoder_framerate_10x_std_dev_per_call__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_video_decoder_framerate_avg_per_call__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_video_encoder_bitrate_avg_per_call_kbps__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_video_encoder_bitrate_std_dev_per_call_kbps__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_video_encoder_framerate_10x_std_dev_per_call__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_video_encoder_framerate_avg_per_call__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_video_quality_inbound_bandwidth_kbits__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_video_quality_inbound_packetloss_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtc_video_quality_outbound_packetloss_rate__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -26901,6 +28092,102 @@ view: metrics_table__metrics__timing_distribution__urlclassifier_vlps_fallocate_
 }
 
 view: metrics_table__metrics__timing_distribution__urlclassifier_vlps_fileload_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__webrtc_audio_quality_inbound_jitter__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__webrtc_audio_quality_outbound_jitter__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__webrtc_audio_quality_outbound_rtt__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__webrtc_av_call_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__webrtc_call_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__webrtc_video_quality_inbound_jitter__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__webrtc_video_quality_outbound_jitter__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__webrtc_video_quality_outbound_rtt__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
