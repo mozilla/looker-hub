@@ -613,6 +613,20 @@ view: captcha_detection_table {
     group_item_label: "Captcha Detection Hcaptcha Ps Pbm"
   }
 
+  dimension: metrics__counter__captcha_detection_pages_visited {
+    sql: ${TABLE}.metrics.counter.captcha_detection_pages_visited ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Captcha Detection Pages Visited"
+  }
+
+  dimension: metrics__counter__captcha_detection_pages_visited_pbm {
+    sql: ${TABLE}.metrics.counter.captcha_detection_pages_visited_pbm ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Captcha Detection Pages Visited Pbm"
+  }
+
   dimension: metrics__custom_distribution__captcha_detection_arkoselabs_solutions_required__count {
     sql: ${TABLE}.metrics.custom_distribution.captcha_detection_arkoselabs_solutions_required.count ;;
     type: number

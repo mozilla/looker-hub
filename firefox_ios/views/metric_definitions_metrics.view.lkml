@@ -8,6 +8,7 @@ view: metric_definitions_metrics {
   derived_table: {
     sql: SELECT
                 COUNT(document_id) AS metric_ping_count,
+    COALESCE(SUM(metrics.counter.page_action_menu_share_page_with), 0) AS firefox_ios_page_action_menu_share_page_with,
 
                 looker_base_fields_app_version_major,
 looker_base_fields_app_version_minor,
@@ -229,6 +230,14 @@ looker_base_fields_user_agent__version,
     description: "Counts the number of `metrics` pings received from each client."
     type: number
     sql: ${TABLE}.metric_ping_count ;;
+  }
+
+  dimension: firefox_ios_page_action_menu_share_page_with {
+    group_label: "Metrics"
+    label: "Share page button in page action menu tapped"
+    description: "Number of times Share page button in page action menu is tapped."
+    type: number
+    sql: ${TABLE}.firefox_ios_page_action_menu_share_page_with ;;
   }
 
   dimension: app_version_major {
@@ -487,7 +496,7 @@ looker_base_fields_user_agent__version,
   }
 
   set: metrics {
-    fields: [metric_ping_count]
+    fields: [metric_ping_count, firefox_ios_page_action_menu_share_page_with]
   }
 
   parameter: aggregate_metrics_by {

@@ -9,7 +9,7 @@ include: "/looker-hub/focus_ios/views/usage_reporting.view.lkml"
 explore: usage_reporting {
   sql_always_where: ${usage_reporting.submission_date} >= '2010-01-01' ;;
   view_label: " Usage_Reporting"
-  description: "Explore for the usage_reporting ping. Minimal ping to measure DAU. Sent on the baseline schedule."
+  description: "Explore for the usage_reporting ping. Minimal ping to measure the usage frequency of Focus. Sent on the baseline schedule."
   view_name: usage_reporting
 
   always_filter: {

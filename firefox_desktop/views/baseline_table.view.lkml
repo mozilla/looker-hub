@@ -339,6 +339,15 @@ view: baseline_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__usage_is_default_browser {
+    sql: ${TABLE}.metrics.boolean.usage_is_default_browser ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Usage Is Default Browser"
+    description: "Whether Firefox is set as the default browser.
+"
+  }
+
   dimension: metrics__counter__browser_engagement_active_ticks {
     sql: ${TABLE}.metrics.counter.browser_engagement_active_ticks ;;
     type: number
@@ -419,7 +428,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metrics__labeled_counter__glean_validation_pings_submitted {
     sql: ${TABLE}.metrics.labeled_counter.glean_validation_pings_submitted ;;
     hidden: yes
-    description: "A count of the pings submitted, by ping type.
+    description: "A count of the built-in pings submitted, by ping type.
 
 This metric appears in both the metrics and baseline pings.
 
@@ -427,6 +436,9 @@ This metric appears in both the metrics and baseline pings.
   the last metrics ping (including the last metrics ping)
 - On the baseline ping, the counts include the number of pings send since
   the last baseline ping (including the last baseline ping)
+
+Note: Previously this also recorded the number of submitted custom pings.
+Now it only records counts for the Glean built-in pings.
 "
   }
 
@@ -449,6 +461,15 @@ to indicate \"undetermined\".
     group_item_label: "Glean Client Annotation Experimentation Id"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
+"
+  }
+
+  dimension: metrics__string__usage_distribution_id {
+    sql: ${TABLE}.metrics.string.usage_distribution_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Usage Distribution Id"
+    description: "The distribution id associated with the install of Firefox.
 "
   }
 

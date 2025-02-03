@@ -1831,6 +1831,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css Hyphenate Character"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_hyphenate_limit_chars {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_hyphenate_limit_chars ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Hyphenate Limit Chars"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_hyphens {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_hyphens ;;
     type: number
@@ -6813,6 +6820,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Hyphenate Character"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_hyphenate_limit_chars {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_hyphenate_limit_chars ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Hyphenate Limit Chars"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_hyphens {
@@ -12086,6 +12100,55 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Js Asmjs"
   }
 
+  dimension: metrics__counter__use_counter_doc_js_dateparse {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_dateparse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Dateparse"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_dateparse_impl_def {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_dateparse_impl_def ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Dateparse Impl Def"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_errorstack_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_errorstack_getter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Errorstack Getter"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_errorstack_getter_no_errordata {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_errorstack_getter_no_errordata ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Errorstack Getter No Errordata"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_errorstack_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_errorstack_setter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Errorstack Setter"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_errorstack_setter_no_errordata {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_errorstack_setter_no_errordata ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Errorstack Setter No Errordata"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_errorstack_setter_nonstring {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_errorstack_setter_nonstring ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Errorstack Setter Nonstring"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_ic_stub_oom {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_ic_stub_oom ;;
     type: number
@@ -12672,6 +12735,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Scheduler Posttask"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sectioning_h1_with_no_font_size_or_margins {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sectioning_h1_with_no_font_size_or_margins ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Sectioning H1 With No Font Size Or Margins"
   }
 
   dimension: metrics__counter__use_counter_doc_shadowroot_pictureinpictureelement {
@@ -14865,6 +14935,55 @@ view: use_counters_table {
     group_item_label: "Use Counter Page Js Asmjs"
   }
 
+  dimension: metrics__counter__use_counter_page_js_dateparse {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_dateparse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Dateparse"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_dateparse_impl_def {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_dateparse_impl_def ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Dateparse Impl Def"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_errorstack_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_errorstack_getter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Errorstack Getter"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_errorstack_getter_no_errordata {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_errorstack_getter_no_errordata ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Errorstack Getter No Errordata"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_errorstack_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_errorstack_setter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Errorstack Setter"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_errorstack_setter_no_errordata {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_errorstack_setter_no_errordata ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Errorstack Setter No Errordata"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_errorstack_setter_nonstring {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_errorstack_setter_nonstring ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Errorstack Setter Nonstring"
+  }
+
   dimension: metrics__counter__use_counter_page_js_ic_stub_oom {
     sql: ${TABLE}.metrics.counter.use_counter_page_js_ic_stub_oom ;;
     type: number
@@ -15451,6 +15570,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Scheduler Posttask"
+  }
+
+  dimension: metrics__counter__use_counter_page_sectioning_h1_with_no_font_size_or_margins {
+    sql: ${TABLE}.metrics.counter.use_counter_page_sectioning_h1_with_no_font_size_or_margins ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Sectioning H1 With No Font Size Or Margins"
   }
 
   dimension: metrics__counter__use_counter_page_shadowroot_pictureinpictureelement {

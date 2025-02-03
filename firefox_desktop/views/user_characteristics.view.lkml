@@ -1789,7 +1789,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_params_v1 {
     label: "Characteristics Gl Params V1"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.characteristics_gl_params_v1 ;;
     type: string
     group_label: "Characteristics"
@@ -1807,7 +1807,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_params_v1_software {
     label: "Characteristics Gl Params V1 Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.characteristics_gl_params_v1_software ;;
     type: string
     group_label: "Characteristics"
@@ -1825,7 +1825,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_params_v2 {
     label: "Characteristics Gl Params V2"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.characteristics_gl_params_v2 ;;
     type: string
     group_label: "Characteristics"
@@ -1843,7 +1843,7 @@ view: user_characteristics {
 
   dimension: metrics__text2__characteristics_gl_params_v2_software {
     label: "Characteristics Gl Params V2 Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.characteristics_gl_params_v2_software ;;
     type: string
     group_label: "Characteristics"
@@ -2077,7 +2077,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_gl_version {
     label: "Characteristics Gl Version"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_gl_version ;;
     type: number
     group_label: "Characteristics"
@@ -2414,186 +2414,6 @@ view: user_characteristics {
     }
 
     description: "Result of fingerprintable math operations
-"
-  }
-
-  dimension: metrics__quantity__characteristics_mathml1 {
-    label: "Characteristics Mathml1"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml1 ;;
-    type: number
-    group_label: "Characteristics"
-    group_item_label: "Mathml1"
-
-    link: {
-      label: "Glean Dictionary reference for Characteristics Mathml1"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_mathml1"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Width of the drawn MathML element
-"
-  }
-
-  dimension: metrics__quantity__characteristics_mathml10 {
-    label: "Characteristics Mathml10"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml10 ;;
-    type: number
-    group_label: "Characteristics"
-    group_item_label: "Mathml10"
-
-    link: {
-      label: "Glean Dictionary reference for Characteristics Mathml10"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_mathml10"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Width of the drawn MathML element
-"
-  }
-
-  dimension: metrics__quantity__characteristics_mathml2 {
-    label: "Characteristics Mathml2"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml2 ;;
-    type: number
-    group_label: "Characteristics"
-    group_item_label: "Mathml2"
-
-    link: {
-      label: "Glean Dictionary reference for Characteristics Mathml2"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_mathml2"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Width of the drawn MathML element
-"
-  }
-
-  dimension: metrics__quantity__characteristics_mathml3 {
-    label: "Characteristics Mathml3"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml3 ;;
-    type: number
-    group_label: "Characteristics"
-    group_item_label: "Mathml3"
-
-    link: {
-      label: "Glean Dictionary reference for Characteristics Mathml3"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_mathml3"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Width of the drawn MathML element
-"
-  }
-
-  dimension: metrics__quantity__characteristics_mathml4 {
-    label: "Characteristics Mathml4"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml4 ;;
-    type: number
-    group_label: "Characteristics"
-    group_item_label: "Mathml4"
-
-    link: {
-      label: "Glean Dictionary reference for Characteristics Mathml4"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_mathml4"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Width of the drawn MathML element
-"
-  }
-
-  dimension: metrics__quantity__characteristics_mathml5 {
-    label: "Characteristics Mathml5"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml5 ;;
-    type: number
-    group_label: "Characteristics"
-    group_item_label: "Mathml5"
-
-    link: {
-      label: "Glean Dictionary reference for Characteristics Mathml5"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_mathml5"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Width of the drawn MathML element
-"
-  }
-
-  dimension: metrics__quantity__characteristics_mathml6 {
-    label: "Characteristics Mathml6"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml6 ;;
-    type: number
-    group_label: "Characteristics"
-    group_item_label: "Mathml6"
-
-    link: {
-      label: "Glean Dictionary reference for Characteristics Mathml6"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_mathml6"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Width of the drawn MathML element
-"
-  }
-
-  dimension: metrics__quantity__characteristics_mathml7 {
-    label: "Characteristics Mathml7"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml7 ;;
-    type: number
-    group_label: "Characteristics"
-    group_item_label: "Mathml7"
-
-    link: {
-      label: "Glean Dictionary reference for Characteristics Mathml7"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_mathml7"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Width of the drawn MathML element
-"
-  }
-
-  dimension: metrics__quantity__characteristics_mathml8 {
-    label: "Characteristics Mathml8"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml8 ;;
-    type: number
-    group_label: "Characteristics"
-    group_item_label: "Mathml8"
-
-    link: {
-      label: "Glean Dictionary reference for Characteristics Mathml8"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_mathml8"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Width of the drawn MathML element
-"
-  }
-
-  dimension: metrics__quantity__characteristics_mathml9 {
-    label: "Characteristics Mathml9"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml9 ;;
-    type: number
-    group_label: "Characteristics"
-    group_item_label: "Mathml9"
-
-    link: {
-      label: "Glean Dictionary reference for Characteristics Mathml9"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_mathml9"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Width of the drawn MathML element
 "
   }
 
@@ -3746,6 +3566,24 @@ view: user_characteristics {
     }
 
     description: "This is the derived PreferenceSheet::Prefs::mUseDocumentColors value.
+"
+  }
+
+  dimension: metrics__text2__characteristics_user_agent {
+    label: "Characteristics User Agent"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_user_agent ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "User Agent"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics User Agent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_user_agent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "User agent string
 "
   }
 
