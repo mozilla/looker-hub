@@ -1740,6 +1740,76 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Languages"
   }
 
+  dimension: metrics__string__characteristics_mathml1 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml1 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml1"
+  }
+
+  dimension: metrics__string__characteristics_mathml10 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml10 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml10"
+  }
+
+  dimension: metrics__string__characteristics_mathml2 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml2 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml2"
+  }
+
+  dimension: metrics__string__characteristics_mathml3 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml3 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml3"
+  }
+
+  dimension: metrics__string__characteristics_mathml4 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml4 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml4"
+  }
+
+  dimension: metrics__string__characteristics_mathml5 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml5 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml5"
+  }
+
+  dimension: metrics__string__characteristics_mathml6 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml6 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml6"
+  }
+
+  dimension: metrics__string__characteristics_mathml7 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml7 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml7"
+  }
+
+  dimension: metrics__string__characteristics_mathml8 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml8 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml8"
+  }
+
+  dimension: metrics__string__characteristics_mathml9 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml9 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml9"
+  }
+
   dimension: metrics__string__characteristics_os_name {
     sql: ${TABLE}.metrics.string.characteristics_os_name ;;
     type: string
@@ -2226,6 +2296,13 @@ view: user_characteristics_table {
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Math Ops"
+  }
+
+  dimension: metrics__text2__characteristics_math_ops_fdlibm {
+    sql: ${TABLE}.metrics.text2.characteristics_math_ops_fdlibm ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Math Ops Fdlibm"
   }
 
   dimension: metrics__text2__characteristics_media_capabilities {

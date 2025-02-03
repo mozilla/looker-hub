@@ -3029,11 +3029,29 @@ view: user_characteristics {
 "
   }
 
-  dimension: metrics__quantity__characteristics_mathml1 {
+  dimension: metrics__text2__characteristics_math_ops_fdlibm {
+    label: "Characteristics Math Ops Fdlibm"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_math_ops_fdlibm ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Math Ops Fdlibm"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Math Ops Fdlibm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_math_ops_fdlibm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Windows only fdlibm math operation results
+"
+  }
+
+  dimension: metrics__string__characteristics_mathml1 {
     label: "Characteristics Mathml1"
     hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml1 ;;
-    type: number
+    sql: ${TABLE}.metrics.string.characteristics_mathml1 ;;
+    type: string
     group_label: "Characteristics"
     group_item_label: "Mathml1"
 
@@ -3047,11 +3065,11 @@ view: user_characteristics {
 "
   }
 
-  dimension: metrics__quantity__characteristics_mathml10 {
+  dimension: metrics__string__characteristics_mathml10 {
     label: "Characteristics Mathml10"
     hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml10 ;;
-    type: number
+    sql: ${TABLE}.metrics.string.characteristics_mathml10 ;;
+    type: string
     group_label: "Characteristics"
     group_item_label: "Mathml10"
 
@@ -3065,11 +3083,11 @@ view: user_characteristics {
 "
   }
 
-  dimension: metrics__quantity__characteristics_mathml2 {
+  dimension: metrics__string__characteristics_mathml2 {
     label: "Characteristics Mathml2"
     hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml2 ;;
-    type: number
+    sql: ${TABLE}.metrics.string.characteristics_mathml2 ;;
+    type: string
     group_label: "Characteristics"
     group_item_label: "Mathml2"
 
@@ -3083,11 +3101,11 @@ view: user_characteristics {
 "
   }
 
-  dimension: metrics__quantity__characteristics_mathml3 {
+  dimension: metrics__string__characteristics_mathml3 {
     label: "Characteristics Mathml3"
     hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml3 ;;
-    type: number
+    sql: ${TABLE}.metrics.string.characteristics_mathml3 ;;
+    type: string
     group_label: "Characteristics"
     group_item_label: "Mathml3"
 
@@ -3101,11 +3119,11 @@ view: user_characteristics {
 "
   }
 
-  dimension: metrics__quantity__characteristics_mathml4 {
+  dimension: metrics__string__characteristics_mathml4 {
     label: "Characteristics Mathml4"
     hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml4 ;;
-    type: number
+    sql: ${TABLE}.metrics.string.characteristics_mathml4 ;;
+    type: string
     group_label: "Characteristics"
     group_item_label: "Mathml4"
 
@@ -3119,11 +3137,11 @@ view: user_characteristics {
 "
   }
 
-  dimension: metrics__quantity__characteristics_mathml5 {
+  dimension: metrics__string__characteristics_mathml5 {
     label: "Characteristics Mathml5"
     hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml5 ;;
-    type: number
+    sql: ${TABLE}.metrics.string.characteristics_mathml5 ;;
+    type: string
     group_label: "Characteristics"
     group_item_label: "Mathml5"
 
@@ -3137,11 +3155,11 @@ view: user_characteristics {
 "
   }
 
-  dimension: metrics__quantity__characteristics_mathml6 {
+  dimension: metrics__string__characteristics_mathml6 {
     label: "Characteristics Mathml6"
     hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml6 ;;
-    type: number
+    sql: ${TABLE}.metrics.string.characteristics_mathml6 ;;
+    type: string
     group_label: "Characteristics"
     group_item_label: "Mathml6"
 
@@ -3155,11 +3173,11 @@ view: user_characteristics {
 "
   }
 
-  dimension: metrics__quantity__characteristics_mathml7 {
+  dimension: metrics__string__characteristics_mathml7 {
     label: "Characteristics Mathml7"
     hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml7 ;;
-    type: number
+    sql: ${TABLE}.metrics.string.characteristics_mathml7 ;;
+    type: string
     group_label: "Characteristics"
     group_item_label: "Mathml7"
 
@@ -3173,11 +3191,11 @@ view: user_characteristics {
 "
   }
 
-  dimension: metrics__quantity__characteristics_mathml8 {
+  dimension: metrics__string__characteristics_mathml8 {
     label: "Characteristics Mathml8"
     hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml8 ;;
-    type: number
+    sql: ${TABLE}.metrics.string.characteristics_mathml8 ;;
+    type: string
     group_label: "Characteristics"
     group_item_label: "Mathml8"
 
@@ -3191,11 +3209,11 @@ view: user_characteristics {
 "
   }
 
-  dimension: metrics__quantity__characteristics_mathml9 {
+  dimension: metrics__string__characteristics_mathml9 {
     label: "Characteristics Mathml9"
     hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_mathml9 ;;
-    type: number
+    sql: ${TABLE}.metrics.string.characteristics_mathml9 ;;
+    type: string
     group_label: "Characteristics"
     group_item_label: "Mathml9"
 
