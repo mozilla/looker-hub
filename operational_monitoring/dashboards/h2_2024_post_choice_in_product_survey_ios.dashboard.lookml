@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       h2_2024_post_choice_in_product_survey_ios.branch
     ]
     filters:
-      h2_2024_post_choice_in_product_survey_ios.metric: 'retained'
+      h2_2024_post_choice_in_product_survey_ios.metric: 'days_of_use'
       h2_2024_post_choice_in_product_survey_ios.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       h2_2024_post_choice_in_product_survey_ios.branch
     ]
     filters:
-      h2_2024_post_choice_in_product_survey_ios.metric: 'days_of_use'
+      h2_2024_post_choice_in_product_survey_ios.metric: 'retained'
       h2_2024_post_choice_in_product_survey_ios.statistic: mean
     row: 10
     col: 0
