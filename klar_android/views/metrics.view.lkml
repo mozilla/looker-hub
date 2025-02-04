@@ -8498,6 +8498,117 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__mixed_content_audio {
+    label: "Mixed Content Audio"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.mixed_content_audio ;;
+    group_label: "Mixed Content"
+    group_item_label: "Audio"
+
+    link: {
+      label: "Glean Dictionary reference for Mixed Content Audio"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/mixed_content_audio"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often audio loads fail in regular mode and in upgrading mode?
+This metric was generated to correspond to the Legacy Telemetry categorical histogram MIXED_CONTENT_AUDIO.
+"
+  }
+
+  dimension: metrics__custom_distribution__mixed_content_hsts__sum {
+    label: "Mixed Content Hsts Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.mixed_content_hsts.sum ;;
+    type: number
+    group_label: "Mixed Content"
+    group_item_label: "Hsts Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Mixed Content Hsts Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/mixed_content_hsts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often would blocked mixed content be allowed if HSTS upgrades were allowed? 0=display/no-HSTS, 1=display/HSTS, 2=active/no-HSTS, 3=active/HSTS
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram MIXED_CONTENT_HSTS.
+"
+  }
+
+  dimension: metrics__labeled_counter__mixed_content_images {
+    label: "Mixed Content Images"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.mixed_content_images ;;
+    group_label: "Mixed Content"
+    group_item_label: "Images"
+
+    link: {
+      label: "Glean Dictionary reference for Mixed Content Images"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/mixed_content_images"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often image loads fail in regular mode and in upgrading mode?
+This metric was generated to correspond to the Legacy Telemetry categorical histogram MIXED_CONTENT_IMAGES.
+"
+  }
+
+  dimension: metrics__custom_distribution__mixed_content_page_load__sum {
+    label: "Mixed Content Page Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.mixed_content_page_load.sum ;;
+    type: number
+    group_label: "Mixed Content"
+    group_item_label: "Page Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Mixed Content Page Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/mixed_content_page_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Accumulates type of content per page load (0=no mixed or non-secure page, 1=mixed passive, 2=mixed active, 3=mixed passive and mixed active)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram MIXED_CONTENT_PAGE_LOAD.
+"
+  }
+
+  dimension: metrics__custom_distribution__mixed_content_unblock_counter__sum {
+    label: "Mixed Content Unblock Counter Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.mixed_content_unblock_counter.sum ;;
+    type: number
+    group_label: "Mixed Content"
+    group_item_label: "Unblock Counter Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Mixed Content Unblock Counter Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/mixed_content_unblock_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A simple counter of daily mixed-content unblock operations and top documents loaded
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram MIXED_CONTENT_UNBLOCK_COUNTER.
+"
+  }
+
+  dimension: metrics__labeled_counter__mixed_content_video {
+    label: "Mixed Content Video"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.mixed_content_video ;;
+    group_label: "Mixed Content"
+    group_item_label: "Video"
+
+    link: {
+      label: "Glean Dictionary reference for Mixed Content Video"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/mixed_content_video"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often video loads fail in regular mode and in upgrading mode?
+This metric was generated to correspond to the Legacy Telemetry categorical histogram MIXED_CONTENT_VIDEO.
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_early_hints {
     label: "Netwerk Early Hints"
     hidden: yes
@@ -15841,6 +15952,418 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__custom_distribution__webrtc_audio_quality_inbound_bandwidth_kbits__sum {
+    label: "Webrtc Audio Quality Inbound Bandwidth Kbits Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_audio_quality_inbound_bandwidth_kbits.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Audio Quality Inbound Bandwidth Kbits Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Audio Quality Inbound Bandwidth Kbits Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_audio_quality_inbound_bandwidth_kbits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Locally measured data rate on inbound audio (kbit/s). Computed every second of a call.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_AUDIO_QUALITY_INBOUND_BANDWIDTH_KBITS.
+"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_inbound_jitter__sum {
+    label: "Webrtc Audio Quality Inbound Jitter Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_inbound_jitter.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Audio Quality Inbound Jitter Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Audio Quality Inbound Jitter Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_audio_quality_inbound_jitter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Locally measured jitter on inbound audio (ms). Sampled every second of a call.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_AUDIO_QUALITY_INBOUND_JITTER.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_audio_quality_inbound_packetloss_rate__sum {
+    label: "Webrtc Audio Quality Inbound Packetloss Rate Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_audio_quality_inbound_packetloss_rate.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Audio Quality Inbound Packetloss Rate Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Audio Quality Inbound Packetloss Rate Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_audio_quality_inbound_packetloss_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Locally measured packet loss on inbound audio (permille). Sampled every second of a call.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_AUDIO_QUALITY_INBOUND_PACKETLOSS_RATE.
+"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_jitter__sum {
+    label: "Webrtc Audio Quality Outbound Jitter Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_jitter.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Audio Quality Outbound Jitter Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Audio Quality Outbound Jitter Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_audio_quality_outbound_jitter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "RTCP-reported jitter by remote recipient of outbound audio (ms). Sampled every second of a call (for easy comparison).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_AUDIO_QUALITY_OUTBOUND_JITTER.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_audio_quality_outbound_packetloss_rate__sum {
+    label: "Webrtc Audio Quality Outbound Packetloss Rate Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_audio_quality_outbound_packetloss_rate.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Audio Quality Outbound Packetloss Rate Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Audio Quality Outbound Packetloss Rate Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_audio_quality_outbound_packetloss_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "RTCP-reported packet loss by remote recipient of outbound audio (permille). Sampled every second of a call (for easy comparison).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_AUDIO_QUALITY_OUTBOUND_PACKETLOSS_RATE.
+"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_audio_quality_outbound_rtt__sum {
+    label: "Webrtc Audio Quality Outbound Rtt Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_audio_quality_outbound_rtt.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Audio Quality Outbound Rtt Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Audio Quality Outbound Rtt Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_audio_quality_outbound_rtt"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Roundtrip time of outbound audio (ms). Sampled every second of a call.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_AUDIO_QUALITY_OUTBOUND_RTT.
+"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_av_call_duration__sum {
+    label: "Webrtc Av Call Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_av_call_duration.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Av Call Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Av Call Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_av_call_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The length of time (in seconds) that a call with audio or video in it lasted.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_AV_CALL_DURATION.
+"
+  }
+
+  dimension: metrics__counter__webrtc_call_count_3 {
+    label: "Webrtc Call Count 3"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.webrtc_call_count_3 ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Call Count 3"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Call Count 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_call_count_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of successfully connected calls made during a session (discounting re-negotiations).
+This metric was generated to correspond to the Legacy Telemetry count histogram WEBRTC_CALL_COUNT_3.
+"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_call_duration__sum {
+    label: "Webrtc Call Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_call_duration.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Call Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Call Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_call_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The length of time (in seconds) that a call lasted.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_CALL_DURATION.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_call_type__sum {
+    label: "Webrtc Call Type Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_call_type.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Call Type Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Call Type Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_call_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Type of call: (Bitmask) Audio = 1, Video = 2, DataChannels = 4
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram WEBRTC_CALL_TYPE.
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtc_datachannel_negotiated {
+    label: "Webrtc Datachannel Negotiated"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_datachannel_negotiated ;;
+    group_label: "Webrtc"
+    group_item_label: "Datachannel Negotiated"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Datachannel Negotiated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_datachannel_negotiated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Was DataChannels negotiated
+This metric was generated to correspond to the Legacy Telemetry boolean histogram WEBRTC_DATACHANNEL_NEGOTIATED.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_get_user_media_type__sum {
+    label: "Webrtc Get User Media Type Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_get_user_media_type.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Get User Media Type Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Get User Media Type Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_get_user_media_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Type for media in getUserMedia calls (0=Camera, 1=Screen, 2=Application, 3=Window, 4=Browser, 5=Microphone, 6=AudioCapture, 7=Other)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram WEBRTC_GET_USER_MEDIA_TYPE.
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtc_gmp_init_success {
+    label: "Webrtc Gmp Init Success"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_gmp_init_success ;;
+    group_label: "Webrtc"
+    group_item_label: "Gmp Init Success"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Gmp Init Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_gmp_init_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts of GMP codec initialization success and failure
+This metric was generated to correspond to the Legacy Telemetry boolean histogram WEBRTC_GMP_INIT_SUCCESS.
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtc_h264_enabled {
+    label: "Webrtc H264 Enabled"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_h264_enabled ;;
+    group_label: "Webrtc"
+    group_item_label: "H264 Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc H264 Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_h264_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether any kind of H264 is enabled
+This metric was generated to correspond to the Legacy Telemetry boolean histogram WEBRTC_H264_ENABLED.
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtc_hardware_h264_enabled {
+    label: "Webrtc Hardware H264 Enabled"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_hardware_h264_enabled ;;
+    group_label: "Webrtc"
+    group_item_label: "Hardware H264 Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Hardware H264 Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_hardware_h264_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether software H264 is enabled
+This metric was generated to correspond to the Legacy Telemetry boolean histogram WEBRTC_HARDWARE_H264_ENABLED.
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtc_has_h264_hardware {
+    label: "Webrtc Has H264 Hardware"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_has_h264_hardware ;;
+    group_label: "Webrtc"
+    group_item_label: "Has H264 Hardware"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Has H264 Hardware"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_has_h264_hardware"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the user has H264 hardware
+This metric was generated to correspond to the Legacy Telemetry boolean histogram WEBRTC_HAS_H264_HARDWARE.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_max_audio_receive_track__sum {
+    label: "Webrtc Max Audio Receive Track Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_max_audio_receive_track.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Max Audio Receive Track Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Max Audio Receive Track Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_max_audio_receive_track"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Audio tracks received simultaneously
+This metric was generated to correspond to the Legacy Telemetry linear histogram WEBRTC_MAX_AUDIO_RECEIVE_TRACK.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_max_audio_send_track__sum {
+    label: "Webrtc Max Audio Send Track Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_max_audio_send_track.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Max Audio Send Track Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Max Audio Send Track Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_max_audio_send_track"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Audio tracks sent simultaneously
+This metric was generated to correspond to the Legacy Telemetry linear histogram WEBRTC_MAX_AUDIO_SEND_TRACK.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_max_video_receive_track__sum {
+    label: "Webrtc Max Video Receive Track Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_max_video_receive_track.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Max Video Receive Track Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Max Video Receive Track Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_max_video_receive_track"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Video tracks received simultaneously
+This metric was generated to correspond to the Legacy Telemetry linear histogram WEBRTC_MAX_VIDEO_RECEIVE_TRACK.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_max_video_send_track__sum {
+    label: "Webrtc Max Video Send Track Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_max_video_send_track.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Max Video Send Track Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Max Video Send Track Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_max_video_send_track"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Video tracks sent simultaneously
+This metric was generated to correspond to the Legacy Telemetry linear histogram WEBRTC_MAX_VIDEO_SEND_TRACK.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_renegotiations__sum {
+    label: "Webrtc Renegotiations Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_renegotiations.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Renegotiations Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Renegotiations Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_renegotiations"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Renegotiations during each call
+This metric was generated to correspond to the Legacy Telemetry linear histogram WEBRTC_RENEGOTIATIONS.
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtc_software_h264_enabled {
+    label: "Webrtc Software H264 Enabled"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_software_h264_enabled ;;
+    group_label: "Webrtc"
+    group_item_label: "Software H264 Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Software H264 Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_software_h264_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether hardware H264 is enabled
+This metric was generated to correspond to the Legacy Telemetry boolean histogram WEBRTC_SOFTWARE_H264_ENABLED.
+"
+  }
+
   dimension: metrics__labeled_counter__webrtc_video_recv_codec_used {
     label: "Webrtc Video Recv Codec Used"
     hidden: yes
@@ -15872,6 +16395,291 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "The video codec used for sending video on a WebRTC call. This metric was generated to correspond to the Legacy Telemetry scalar webrtc.video.send_codec_used.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_bitrate_avg_per_call_kbps__sum {
+    label: "Webrtc Video Decoder Bitrate Avg Per Call Kbps Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_bitrate_avg_per_call_kbps.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Video Decoder Bitrate Avg Per Call Kbps Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Video Decoder Bitrate Avg Per Call Kbps Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_video_decoder_bitrate_avg_per_call_kbps"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Video decoder's average bitrate (in kbits/s) over an entire call
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_VIDEO_DECODER_BITRATE_AVG_PER_CALL_KBPS.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_bitrate_std_dev_per_call_kbps__sum {
+    label: "Webrtc Video Decoder Bitrate Std Dev Per Call Kbps Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_bitrate_std_dev_per_call_kbps.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Video Decoder Bitrate Std Dev Per Call Kbps Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Video Decoder Bitrate Std Dev Per Call Kbps Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_video_decoder_bitrate_std_dev_per_call_kbps"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Standard deviation from video decoder's average bitrate (in kbits/s) over an entire call
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_VIDEO_DECODER_BITRATE_STD_DEV_PER_CALL_KBPS.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_discarded_packets_per_call_ppm__sum {
+    label: "Webrtc Video Decoder Discarded Packets Per Call Ppm Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_discarded_packets_per_call_ppm.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Video Decoder Discarded Packets Per Call Ppm Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Video Decoder Discarded Packets Per Call Ppm Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_video_decoder_discarded_packets_per_call_ppm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Video decoder's number of discarded packets (in packets/min) over an entire call
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_VIDEO_DECODER_DISCARDED_PACKETS_PER_CALL_PPM.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_framerate_10x_std_dev_per_call__sum {
+    label: "Webrtc Video Decoder Framerate 10X Std Dev Per Call Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_framerate_10x_std_dev_per_call.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Video Decoder Framerate 10X Std Dev Per Call Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Video Decoder Framerate 10X Std Dev Per Call Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_video_decoder_framerate_10x_std_dev_per_call"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Standard deviation from video decoder's average framerate (in 1/10 fps) over an entire call
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_VIDEO_DECODER_FRAMERATE_10X_STD_DEV_PER_CALL.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_decoder_framerate_avg_per_call__sum {
+    label: "Webrtc Video Decoder Framerate Avg Per Call Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_decoder_framerate_avg_per_call.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Video Decoder Framerate Avg Per Call Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Video Decoder Framerate Avg Per Call Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_video_decoder_framerate_avg_per_call"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Video decoder's average framerate (in fps) over an entire call
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_VIDEO_DECODER_FRAMERATE_AVG_PER_CALL.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_encoder_bitrate_avg_per_call_kbps__sum {
+    label: "Webrtc Video Encoder Bitrate Avg Per Call Kbps Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_encoder_bitrate_avg_per_call_kbps.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Video Encoder Bitrate Avg Per Call Kbps Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Video Encoder Bitrate Avg Per Call Kbps Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_video_encoder_bitrate_avg_per_call_kbps"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Video encoder's average bitrate (in kbits/s) over an entire call
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_VIDEO_ENCODER_BITRATE_AVG_PER_CALL_KBPS.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_encoder_bitrate_std_dev_per_call_kbps__sum {
+    label: "Webrtc Video Encoder Bitrate Std Dev Per Call Kbps Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_encoder_bitrate_std_dev_per_call_kbps.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Video Encoder Bitrate Std Dev Per Call Kbps Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Video Encoder Bitrate Std Dev Per Call Kbps Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_video_encoder_bitrate_std_dev_per_call_kbps"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Standard deviation from video encoder's average bitrate (in kbits/s) over an entire call
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_VIDEO_ENCODER_BITRATE_STD_DEV_PER_CALL_KBPS.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_encoder_framerate_10x_std_dev_per_call__sum {
+    label: "Webrtc Video Encoder Framerate 10X Std Dev Per Call Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_encoder_framerate_10x_std_dev_per_call.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Video Encoder Framerate 10X Std Dev Per Call Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Video Encoder Framerate 10X Std Dev Per Call Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_video_encoder_framerate_10x_std_dev_per_call"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Standard deviation from video encoder's average framerate (in 1/10 fps) over an entire call
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_VIDEO_ENCODER_FRAMERATE_10X_STD_DEV_PER_CALL.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_encoder_framerate_avg_per_call__sum {
+    label: "Webrtc Video Encoder Framerate Avg Per Call Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_encoder_framerate_avg_per_call.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Video Encoder Framerate Avg Per Call Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Video Encoder Framerate Avg Per Call Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_video_encoder_framerate_avg_per_call"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Video encoder's average framerate (in fps) over an entire call
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_VIDEO_ENCODER_FRAMERATE_AVG_PER_CALL.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_quality_inbound_bandwidth_kbits__sum {
+    label: "Webrtc Video Quality Inbound Bandwidth Kbits Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_quality_inbound_bandwidth_kbits.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Video Quality Inbound Bandwidth Kbits Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Video Quality Inbound Bandwidth Kbits Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_video_quality_inbound_bandwidth_kbits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Locally measured data rate of inbound video (kbit/s). Computed every second of a call.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_VIDEO_QUALITY_INBOUND_BANDWIDTH_KBITS.
+"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_inbound_jitter__sum {
+    label: "Webrtc Video Quality Inbound Jitter Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_inbound_jitter.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Video Quality Inbound Jitter Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Video Quality Inbound Jitter Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_video_quality_inbound_jitter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Locally measured jitter on inbound video (ms). Sampled every second of a call.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_VIDEO_QUALITY_INBOUND_JITTER.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_quality_inbound_packetloss_rate__sum {
+    label: "Webrtc Video Quality Inbound Packetloss Rate Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_quality_inbound_packetloss_rate.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Video Quality Inbound Packetloss Rate Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Video Quality Inbound Packetloss Rate Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_video_quality_inbound_packetloss_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Locally measured packet loss on inbound video (permille). Sampled every second of a call.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_VIDEO_QUALITY_INBOUND_PACKETLOSS_RATE.
+"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_jitter__sum {
+    label: "Webrtc Video Quality Outbound Jitter Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_jitter.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Video Quality Outbound Jitter Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Video Quality Outbound Jitter Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_video_quality_outbound_jitter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "RTCP-reported jitter by remote recipient of outbound video (ms). Sampled every second of a call (for easy comparison).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_VIDEO_QUALITY_OUTBOUND_JITTER.
+"
+  }
+
+  dimension: metrics__custom_distribution__webrtc_video_quality_outbound_packetloss_rate__sum {
+    label: "Webrtc Video Quality Outbound Packetloss Rate Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtc_video_quality_outbound_packetloss_rate.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Video Quality Outbound Packetloss Rate Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Video Quality Outbound Packetloss Rate Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_video_quality_outbound_packetloss_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "RTCP-reported packet loss by remote recipient of outbound video (permille). Sampled every second of a call (for easy comparison).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_VIDEO_QUALITY_OUTBOUND_PACKETLOSS_RATE.
+"
+  }
+
+  dimension: metrics__timing_distribution__webrtc_video_quality_outbound_rtt__sum {
+    label: "Webrtc Video Quality Outbound Rtt Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.webrtc_video_quality_outbound_rtt.sum ;;
+    type: number
+    group_label: "Webrtc"
+    group_item_label: "Video Quality Outbound Rtt Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Video Quality Outbound Rtt Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_video_quality_outbound_rtt"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Roundtrip time of outbound video (ms). Sampled every second of a call.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBRTC_VIDEO_QUALITY_OUTBOUND_RTT.
 "
   }
 
@@ -20105,6 +20913,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Webauthn Get Success"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webauthn_get_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webrtc_call_count_3 {
+    type: sum
+    sql: ${metrics__counter__webrtc_call_count_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Call Count 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_call_count_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: webrtc_call_count_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__webrtc_call_count_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc Call Count 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtc_call_count_3"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -25744,6 +26577,129 @@ view: metrics__metrics__labeled_counter__media_playback_not_supported_video_per_
   }
 }
 
+view: metrics__metrics__labeled_counter__mixed_content_audio {
+  label: "Mixed Content - Audio"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__mixed_content_images {
+  label: "Mixed Content - Images"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__mixed_content_video {
+  label: "Mixed Content - Video"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__netwerk_early_hints {
   label: "Netwerk - Early Hints"
 
@@ -30418,6 +31374,252 @@ view: metrics__metrics__labeled_counter__webcrypto_resolved {
   }
 }
 
+view: metrics__metrics__labeled_counter__webrtc_datachannel_negotiated {
+  label: "Webrtc - Datachannel Negotiated"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webrtc_gmp_init_success {
+  label: "Webrtc - Gmp Init Success"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webrtc_h264_enabled {
+  label: "Webrtc - H264 Enabled"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webrtc_hardware_h264_enabled {
+  label: "Webrtc - Hardware H264 Enabled"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webrtc_has_h264_hardware {
+  label: "Webrtc - Has H264 Hardware"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webrtc_software_h264_enabled {
+  label: "Webrtc - Software H264 Enabled"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__webrtc_video_recv_codec_used {
   label: "Webrtc Video - Recv Codec Used"
 
@@ -31454,6 +32656,42 @@ view: metrics__metrics__custom_distribution__memory_phc_slots_freed__values {
   }
 }
 
+view: metrics__metrics__custom_distribution__mixed_content_hsts__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__mixed_content_page_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__mixed_content_unblock_counter__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__network_tls_early_data_bytes_written__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -32223,6 +33461,270 @@ view: metrics__metrics__custom_distribution__webcrypto_alg__values {
 }
 
 view: metrics__metrics__custom_distribution__webcrypto_method__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_audio_quality_inbound_bandwidth_kbits__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_audio_quality_inbound_packetloss_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_audio_quality_outbound_packetloss_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_call_type__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_get_user_media_type__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_max_audio_receive_track__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_max_audio_send_track__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_max_video_receive_track__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_max_video_send_track__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_renegotiations__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_video_decoder_bitrate_avg_per_call_kbps__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_video_decoder_bitrate_std_dev_per_call_kbps__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_video_decoder_discarded_packets_per_call_ppm__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_video_decoder_framerate_10x_std_dev_per_call__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_video_decoder_framerate_avg_per_call__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_video_encoder_bitrate_avg_per_call_kbps__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_video_encoder_bitrate_std_dev_per_call_kbps__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_video_encoder_framerate_10x_std_dev_per_call__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_video_encoder_framerate_avg_per_call__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_video_quality_inbound_bandwidth_kbits__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_video_quality_inbound_packetloss_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtc_video_quality_outbound_packetloss_rate__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -37512,6 +39014,102 @@ view: metrics__metrics__timing_distribution__urlclassifier_vlps_fallocate_time__
 }
 
 view: metrics__metrics__timing_distribution__urlclassifier_vlps_fileload_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__webrtc_audio_quality_inbound_jitter__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__webrtc_audio_quality_outbound_jitter__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__webrtc_audio_quality_outbound_rtt__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__webrtc_av_call_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__webrtc_call_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__webrtc_video_quality_inbound_jitter__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__webrtc_video_quality_outbound_jitter__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__webrtc_video_quality_outbound_rtt__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

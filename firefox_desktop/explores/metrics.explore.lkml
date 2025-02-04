@@ -1078,6 +1078,21 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__migration_discovered_migrators}) AS metrics__metrics__labeled_counter__migration_discovered_migrators ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__migration_discovered_migrators.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__mixed_content_audio {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mixed_content_audio}) AS metrics__metrics__labeled_counter__mixed_content_audio ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mixed_content_audio.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__mixed_content_images {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mixed_content_images}) AS metrics__metrics__labeled_counter__mixed_content_images ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mixed_content_images.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__mixed_content_video {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mixed_content_video}) AS metrics__metrics__labeled_counter__mixed_content_video ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mixed_content_video.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__mozstorage_sqlitejsm_transaction_timeout {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mozstorage_sqlitejsm_transaction_timeout}) AS metrics__metrics__labeled_counter__mozstorage_sqlitejsm_transaction_timeout ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mozstorage_sqlitejsm_transaction_timeout.document_id} ;;
@@ -2091,6 +2106,36 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__webcrypto_resolved {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webcrypto_resolved}) AS metrics__metrics__labeled_counter__webcrypto_resolved ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webcrypto_resolved.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webrtc_datachannel_negotiated {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webrtc_datachannel_negotiated}) AS metrics__metrics__labeled_counter__webrtc_datachannel_negotiated ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webrtc_datachannel_negotiated.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webrtc_gmp_init_success {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webrtc_gmp_init_success}) AS metrics__metrics__labeled_counter__webrtc_gmp_init_success ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webrtc_gmp_init_success.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webrtc_h264_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webrtc_h264_enabled}) AS metrics__metrics__labeled_counter__webrtc_h264_enabled ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webrtc_h264_enabled.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webrtc_hardware_h264_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webrtc_hardware_h264_enabled}) AS metrics__metrics__labeled_counter__webrtc_hardware_h264_enabled ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webrtc_hardware_h264_enabled.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webrtc_has_h264_hardware {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webrtc_has_h264_hardware}) AS metrics__metrics__labeled_counter__webrtc_has_h264_hardware ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webrtc_has_h264_hardware.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webrtc_software_h264_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webrtc_software_h264_enabled}) AS metrics__metrics__labeled_counter__webrtc_software_h264_enabled ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webrtc_software_h264_enabled.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__webrtc_video_recv_codec_used {

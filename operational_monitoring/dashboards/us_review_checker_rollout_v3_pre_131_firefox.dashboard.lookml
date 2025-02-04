@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       us_review_checker_rollout_v3_pre_131_firefox.branch
     ]
     filters:
-      us_review_checker_rollout_v3_pre_131_firefox.metric: 'days_of_use'
+      us_review_checker_rollout_v3_pre_131_firefox.metric: 'qualified_cumulative_days_of_use'
       us_review_checker_rollout_v3_pre_131_firefox.statistic: mean
     row: 0
     col: 0
@@ -81,74 +81,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: us_review_checker_rollout_v3_pre_131_firefox
-    type: looker_line
-    fields: [
-      us_review_checker_rollout_v3_pre_131_firefox.submission_date,
-      us_review_checker_rollout_v3_pre_131_firefox.branch,
-      us_review_checker_rollout_v3_pre_131_firefox.point
-    ]
-    pivots: [
-      us_review_checker_rollout_v3_pre_131_firefox.branch
-    ]
-    filters:
-      us_review_checker_rollout_v3_pre_131_firefox.metric: 'search_count'
-      us_review_checker_rollout_v3_pre_131_firefox.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: us_review_checker_rollout_v3_pre_131_firefox.submission_date
-    field_y: us_review_checker_rollout_v3_pre_131_firefox.point
-    log_scale: false
-    ci_lower: us_review_checker_rollout_v3_pre_131_firefox.lower
-    ci_upper: us_review_checker_rollout_v3_pre_131_firefox.upper
-    show_grid: true
-    listen:
-      Date: us_review_checker_rollout_v3_pre_131_firefox.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: us_review_checker_rollout_v3_pre_131_firefox
-    type: looker_line
-    fields: [
-      us_review_checker_rollout_v3_pre_131_firefox.submission_date,
-      us_review_checker_rollout_v3_pre_131_firefox.branch,
-      us_review_checker_rollout_v3_pre_131_firefox.point
-    ]
-    pivots: [
-      us_review_checker_rollout_v3_pre_131_firefox.branch
-    ]
-    filters:
-      us_review_checker_rollout_v3_pre_131_firefox.metric: 'qualified_cumulative_days_of_use'
-      us_review_checker_rollout_v3_pre_131_firefox.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: us_review_checker_rollout_v3_pre_131_firefox.submission_date
-    field_y: us_review_checker_rollout_v3_pre_131_firefox.point
-    log_scale: false
-    ci_lower: us_review_checker_rollout_v3_pre_131_firefox.lower
-    ci_upper: us_review_checker_rollout_v3_pre_131_firefox.upper
-    show_grid: true
-    listen:
-      Date: us_review_checker_rollout_v3_pre_131_firefox.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -167,42 +99,8 @@
     filters:
       us_review_checker_rollout_v3_pre_131_firefox.metric: 'ad_clicks'
       us_review_checker_rollout_v3_pre_131_firefox.statistic: mean
-    row: 20
+    row: 10
     col: 0
-    width: 12
-    height: 8
-    field_x: us_review_checker_rollout_v3_pre_131_firefox.submission_date
-    field_y: us_review_checker_rollout_v3_pre_131_firefox.point
-    log_scale: false
-    ci_lower: us_review_checker_rollout_v3_pre_131_firefox.lower
-    ci_upper: us_review_checker_rollout_v3_pre_131_firefox.upper
-    show_grid: true
-    listen:
-      Date: us_review_checker_rollout_v3_pre_131_firefox.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: us_review_checker_rollout_v3_pre_131_firefox
-    type: looker_line
-    fields: [
-      us_review_checker_rollout_v3_pre_131_firefox.submission_date,
-      us_review_checker_rollout_v3_pre_131_firefox.branch,
-      us_review_checker_rollout_v3_pre_131_firefox.point
-    ]
-    pivots: [
-      us_review_checker_rollout_v3_pre_131_firefox.branch
-    ]
-    filters:
-      us_review_checker_rollout_v3_pre_131_firefox.metric: 'retained'
-      us_review_checker_rollout_v3_pre_131_firefox.statistic: mean
-    row: 20
-    col: 12
     width: 12
     height: 8
     field_x: us_review_checker_rollout_v3_pre_131_firefox.submission_date
@@ -235,7 +133,41 @@
     filters:
       us_review_checker_rollout_v3_pre_131_firefox.metric: 'active_hours'
       us_review_checker_rollout_v3_pre_131_firefox.statistic: mean
-    row: 30
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: us_review_checker_rollout_v3_pre_131_firefox.submission_date
+    field_y: us_review_checker_rollout_v3_pre_131_firefox.point
+    log_scale: false
+    ci_lower: us_review_checker_rollout_v3_pre_131_firefox.lower
+    ci_upper: us_review_checker_rollout_v3_pre_131_firefox.upper
+    show_grid: true
+    listen:
+      Date: us_review_checker_rollout_v3_pre_131_firefox.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: us_review_checker_rollout_v3_pre_131_firefox
+    type: looker_line
+    fields: [
+      us_review_checker_rollout_v3_pre_131_firefox.submission_date,
+      us_review_checker_rollout_v3_pre_131_firefox.branch,
+      us_review_checker_rollout_v3_pre_131_firefox.point
+    ]
+    pivots: [
+      us_review_checker_rollout_v3_pre_131_firefox.branch
+    ]
+    filters:
+      us_review_checker_rollout_v3_pre_131_firefox.metric: 'days_of_use'
+      us_review_checker_rollout_v3_pre_131_firefox.statistic: mean
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -268,6 +200,74 @@
     ]
     filters:
       us_review_checker_rollout_v3_pre_131_firefox.metric: 'uri_count'
+      us_review_checker_rollout_v3_pre_131_firefox.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: us_review_checker_rollout_v3_pre_131_firefox.submission_date
+    field_y: us_review_checker_rollout_v3_pre_131_firefox.point
+    log_scale: false
+    ci_lower: us_review_checker_rollout_v3_pre_131_firefox.lower
+    ci_upper: us_review_checker_rollout_v3_pre_131_firefox.upper
+    show_grid: true
+    listen:
+      Date: us_review_checker_rollout_v3_pre_131_firefox.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: us_review_checker_rollout_v3_pre_131_firefox
+    type: looker_line
+    fields: [
+      us_review_checker_rollout_v3_pre_131_firefox.submission_date,
+      us_review_checker_rollout_v3_pre_131_firefox.branch,
+      us_review_checker_rollout_v3_pre_131_firefox.point
+    ]
+    pivots: [
+      us_review_checker_rollout_v3_pre_131_firefox.branch
+    ]
+    filters:
+      us_review_checker_rollout_v3_pre_131_firefox.metric: 'search_count'
+      us_review_checker_rollout_v3_pre_131_firefox.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: us_review_checker_rollout_v3_pre_131_firefox.submission_date
+    field_y: us_review_checker_rollout_v3_pre_131_firefox.point
+    log_scale: false
+    ci_lower: us_review_checker_rollout_v3_pre_131_firefox.lower
+    ci_upper: us_review_checker_rollout_v3_pre_131_firefox.upper
+    show_grid: true
+    listen:
+      Date: us_review_checker_rollout_v3_pre_131_firefox.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: us_review_checker_rollout_v3_pre_131_firefox
+    type: looker_line
+    fields: [
+      us_review_checker_rollout_v3_pre_131_firefox.submission_date,
+      us_review_checker_rollout_v3_pre_131_firefox.branch,
+      us_review_checker_rollout_v3_pre_131_firefox.point
+    ]
+    pivots: [
+      us_review_checker_rollout_v3_pre_131_firefox.branch
+    ]
+    filters:
+      us_review_checker_rollout_v3_pre_131_firefox.metric: 'retained'
       us_review_checker_rollout_v3_pre_131_firefox.statistic: mean
     row: 30
     col: 12

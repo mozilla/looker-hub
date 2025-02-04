@@ -11925,11 +11925,207 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Htmldialogelement Show"
   }
 
+  dimension: metrics__counter__use_counter_doc_htmldocument_caretrangefrompoint {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_caretrangefrompoint ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Caretrangefrompoint"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_exitpictureinpicture {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_exitpictureinpicture ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Exitpictureinpicture"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_featurepolicy {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_featurepolicy ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Featurepolicy"
+  }
+
   dimension: metrics__counter__use_counter_doc_htmldocument_named_getter_hit {
     sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_named_getter_hit ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Named Getter Hit"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_onbeforecopy {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_onbeforecopy ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Onbeforecopy"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_onbeforecut {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_onbeforecut ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Onbeforecut"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_onbeforepaste {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_onbeforepaste ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Onbeforepaste"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_oncancel {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_oncancel ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Oncancel"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_onfreeze {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_onfreeze ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Onfreeze"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_onmousewheel {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_onmousewheel ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Onmousewheel"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_onresume {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_onresume ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Onresume"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_onsearch {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_onsearch ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Onsearch"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_onwebkitfullscreenchange {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_onwebkitfullscreenchange ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Onwebkitfullscreenchange"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_onwebkitfullscreenerror {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_onwebkitfullscreenerror ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Onwebkitfullscreenerror"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_pictureinpictureelement {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_pictureinpictureelement ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Pictureinpictureelement"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_pictureinpictureenabled {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_pictureinpictureenabled ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Pictureinpictureenabled"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_registerelement {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_registerelement ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Registerelement"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_wasdiscarded {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_wasdiscarded ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Wasdiscarded"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_webkitcancelfullscreen {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_webkitcancelfullscreen ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Webkitcancelfullscreen"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_webkitcurrentfullscreenelement {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_webkitcurrentfullscreenelement ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Webkitcurrentfullscreenelement"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_webkitexitfullscreen {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_webkitexitfullscreen ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Webkitexitfullscreen"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_webkitfullscreenelement {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_webkitfullscreenelement ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Webkitfullscreenelement"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_webkitfullscreenenabled {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_webkitfullscreenenabled ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Webkitfullscreenenabled"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_webkithidden {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_webkithidden ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Webkithidden"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_webkitisfullscreen {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_webkitisfullscreen ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Webkitisfullscreen"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_webkitvisibilitystate {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_webkitvisibilitystate ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Webkitvisibilitystate"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_xmlencoding {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_xmlencoding ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Xmlencoding"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_xmlstandalone {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_xmlstandalone ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Xmlstandalone"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_xmlversion {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_xmlversion ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Xmlversion"
   }
 
   dimension: metrics__counter__use_counter_doc_htmlelement_attributestylemap {
@@ -14760,11 +14956,207 @@ view: use_counters_table {
     group_item_label: "Use Counter Page Htmldialogelement Show"
   }
 
+  dimension: metrics__counter__use_counter_page_htmldocument_caretrangefrompoint {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_caretrangefrompoint ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Caretrangefrompoint"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_exitpictureinpicture {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_exitpictureinpicture ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Exitpictureinpicture"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_featurepolicy {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_featurepolicy ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Featurepolicy"
+  }
+
   dimension: metrics__counter__use_counter_page_htmldocument_named_getter_hit {
     sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_named_getter_hit ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Named Getter Hit"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_onbeforecopy {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_onbeforecopy ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Onbeforecopy"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_onbeforecut {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_onbeforecut ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Onbeforecut"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_onbeforepaste {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_onbeforepaste ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Onbeforepaste"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_oncancel {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_oncancel ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Oncancel"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_onfreeze {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_onfreeze ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Onfreeze"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_onmousewheel {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_onmousewheel ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Onmousewheel"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_onresume {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_onresume ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Onresume"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_onsearch {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_onsearch ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Onsearch"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_onwebkitfullscreenchange {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_onwebkitfullscreenchange ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Onwebkitfullscreenchange"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_onwebkitfullscreenerror {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_onwebkitfullscreenerror ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Onwebkitfullscreenerror"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_pictureinpictureelement {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_pictureinpictureelement ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Pictureinpictureelement"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_pictureinpictureenabled {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_pictureinpictureenabled ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Pictureinpictureenabled"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_registerelement {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_registerelement ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Registerelement"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_wasdiscarded {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_wasdiscarded ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Wasdiscarded"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_webkitcancelfullscreen {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_webkitcancelfullscreen ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Webkitcancelfullscreen"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_webkitcurrentfullscreenelement {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_webkitcurrentfullscreenelement ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Webkitcurrentfullscreenelement"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_webkitexitfullscreen {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_webkitexitfullscreen ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Webkitexitfullscreen"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_webkitfullscreenelement {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_webkitfullscreenelement ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Webkitfullscreenelement"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_webkitfullscreenenabled {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_webkitfullscreenenabled ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Webkitfullscreenenabled"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_webkithidden {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_webkithidden ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Webkithidden"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_webkitisfullscreen {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_webkitisfullscreen ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Webkitisfullscreen"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_webkitvisibilitystate {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_webkitvisibilitystate ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Webkitvisibilitystate"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_xmlencoding {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_xmlencoding ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Xmlencoding"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_xmlstandalone {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_xmlstandalone ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Xmlstandalone"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_xmlversion {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_xmlversion ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Xmlversion"
   }
 
   dimension: metrics__counter__use_counter_page_htmlelement_attributestylemap {
