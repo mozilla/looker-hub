@@ -3198,6 +3198,63 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__mixed_content_hsts__count {
+    sql: ${TABLE}.metrics.custom_distribution.mixed_content_hsts.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Mixed Content Hsts"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__mixed_content_hsts__sum {
+    sql: ${TABLE}.metrics.custom_distribution.mixed_content_hsts.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Mixed Content Hsts"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__mixed_content_hsts__values {
+    sql: ${TABLE}.metrics.custom_distribution.mixed_content_hsts.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__mixed_content_page_load__count {
+    sql: ${TABLE}.metrics.custom_distribution.mixed_content_page_load.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Mixed Content Page Load"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__mixed_content_page_load__sum {
+    sql: ${TABLE}.metrics.custom_distribution.mixed_content_page_load.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Mixed Content Page Load"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__mixed_content_page_load__values {
+    sql: ${TABLE}.metrics.custom_distribution.mixed_content_page_load.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__mixed_content_unblock_counter__count {
+    sql: ${TABLE}.metrics.custom_distribution.mixed_content_unblock_counter.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Mixed Content Unblock Counter"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__mixed_content_unblock_counter__sum {
+    sql: ${TABLE}.metrics.custom_distribution.mixed_content_unblock_counter.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Mixed Content Unblock Counter"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__mixed_content_unblock_counter__values {
+    sql: ${TABLE}.metrics.custom_distribution.mixed_content_unblock_counter.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__network_tls_early_data_bytes_written__count {
     sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.count ;;
     type: number
@@ -5665,6 +5722,21 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__metrics_search_count {
     sql: ${TABLE}.metrics.labeled_counter.metrics_search_count ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__mixed_content_audio {
+    sql: ${TABLE}.metrics.labeled_counter.mixed_content_audio ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__mixed_content_images {
+    sql: ${TABLE}.metrics.labeled_counter.mixed_content_images ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__mixed_content_video {
+    sql: ${TABLE}.metrics.labeled_counter.mixed_content_video ;;
     hidden: yes
   }
 
@@ -26154,6 +26226,42 @@ view: metrics_table__metrics__custom_distribution__memory_phc_slots_allocated__v
 }
 
 view: metrics_table__metrics__custom_distribution__memory_phc_slots_freed__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__mixed_content_hsts__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__mixed_content_page_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__mixed_content_unblock_counter__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

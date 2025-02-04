@@ -11219,6 +11219,117 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__mixed_content_audio {
+    label: "Mixed Content Audio"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.mixed_content_audio ;;
+    group_label: "Mixed Content"
+    group_item_label: "Audio"
+
+    link: {
+      label: "Glean Dictionary reference for Mixed Content Audio"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/mixed_content_audio"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often audio loads fail in regular mode and in upgrading mode?
+This metric was generated to correspond to the Legacy Telemetry categorical histogram MIXED_CONTENT_AUDIO.
+"
+  }
+
+  dimension: metrics__custom_distribution__mixed_content_hsts__sum {
+    label: "Mixed Content Hsts Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.mixed_content_hsts.sum ;;
+    type: number
+    group_label: "Mixed Content"
+    group_item_label: "Hsts Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Mixed Content Hsts Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/mixed_content_hsts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often would blocked mixed content be allowed if HSTS upgrades were allowed? 0=display/no-HSTS, 1=display/HSTS, 2=active/no-HSTS, 3=active/HSTS
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram MIXED_CONTENT_HSTS.
+"
+  }
+
+  dimension: metrics__labeled_counter__mixed_content_images {
+    label: "Mixed Content Images"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.mixed_content_images ;;
+    group_label: "Mixed Content"
+    group_item_label: "Images"
+
+    link: {
+      label: "Glean Dictionary reference for Mixed Content Images"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/mixed_content_images"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often image loads fail in regular mode and in upgrading mode?
+This metric was generated to correspond to the Legacy Telemetry categorical histogram MIXED_CONTENT_IMAGES.
+"
+  }
+
+  dimension: metrics__custom_distribution__mixed_content_page_load__sum {
+    label: "Mixed Content Page Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.mixed_content_page_load.sum ;;
+    type: number
+    group_label: "Mixed Content"
+    group_item_label: "Page Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Mixed Content Page Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/mixed_content_page_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Accumulates type of content per page load (0=no mixed or non-secure page, 1=mixed passive, 2=mixed active, 3=mixed passive and mixed active)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram MIXED_CONTENT_PAGE_LOAD.
+"
+  }
+
+  dimension: metrics__custom_distribution__mixed_content_unblock_counter__sum {
+    label: "Mixed Content Unblock Counter Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.mixed_content_unblock_counter.sum ;;
+    type: number
+    group_label: "Mixed Content"
+    group_item_label: "Unblock Counter Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Mixed Content Unblock Counter Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/mixed_content_unblock_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A simple counter of daily mixed-content unblock operations and top documents loaded
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram MIXED_CONTENT_UNBLOCK_COUNTER.
+"
+  }
+
+  dimension: metrics__labeled_counter__mixed_content_video {
+    label: "Mixed Content Video"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.mixed_content_video ;;
+    group_label: "Mixed Content"
+    group_item_label: "Video"
+
+    link: {
+      label: "Glean Dictionary reference for Mixed Content Video"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/mixed_content_video"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often video loads fail in regular mode and in upgrading mode?
+This metric was generated to correspond to the Legacy Telemetry categorical histogram MIXED_CONTENT_VIDEO.
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_early_hints {
     label: "Netwerk Early Hints"
     hidden: yes
@@ -31563,6 +31674,129 @@ view: metrics__metrics__labeled_counter__metrics_search_count {
   }
 }
 
+view: metrics__metrics__labeled_counter__mixed_content_audio {
+  label: "Mixed Content - Audio"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__mixed_content_images {
+  label: "Mixed Content - Images"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__mixed_content_video {
+  label: "Mixed Content - Video"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__netwerk_early_hints {
   label: "Netwerk - Early Hints"
 
@@ -37761,6 +37995,42 @@ view: metrics__metrics__custom_distribution__memory_phc_slots_allocated__values 
 }
 
 view: metrics__metrics__custom_distribution__memory_phc_slots_freed__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__mixed_content_hsts__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__mixed_content_page_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__mixed_content_unblock_counter__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
