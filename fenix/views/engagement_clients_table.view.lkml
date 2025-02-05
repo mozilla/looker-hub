@@ -56,6 +56,11 @@ view: engagement_clients_table {
     type: string
   }
 
+  dimension: device_model {
+    sql: ${TABLE}.device_model ;;
+    type: string
+  }
+
   dimension: device_type {
     sql: ${TABLE}.device_type ;;
     type: string
@@ -118,6 +123,16 @@ view: engagement_clients_table {
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
+    type: string
+  }
+
+  dimension: os {
+    sql: ${TABLE}.os ;;
+    type: string
+  }
+
+  dimension: os_version {
+    sql: ${TABLE}.os_version ;;
     type: string
   }
 
