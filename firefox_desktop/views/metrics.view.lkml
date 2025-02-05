@@ -3339,6 +3339,25 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__custom_distribution__media_decoder_backend_used__sum {
+    label: "Media Decoder Backend Used Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.media_decoder_backend_used.sum ;;
+    type: number
+    group_label: "Media"
+    group_item_label: "Decoder Backend Used Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Media Decoder Backend Used Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_decoder_backend_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Media decoder backend (0=WMF Software, 1=DXVA2D3D9, 2=DXVA2D3D11)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram MEDIA_DECODER_BACKEND_USED.
+"
+  }
+
   dimension: metrics__counter__messaging_system_glean_ping_for_ping_failures {
     label: "Messaging System Glean Ping For Ping Failures"
     hidden: no
@@ -7650,6 +7669,82 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__custom_distribution__cert_chain_key_size_status__sum {
+    label: "Cert Chain Key Size Status Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cert_chain_key_size_status.sum ;;
+    type: number
+    group_label: "Cert"
+    group_item_label: "Chain Key Size Status Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Chain Key Size Status Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cert_chain_key_size_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Does enforcing a larger minimum RSA key size cause verification failures? 1 = no, 2 = yes, 3 = another error prevented finding a verified chain
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram CERT_CHAIN_KEY_SIZE_STATUS.
+"
+  }
+
+  dimension: metrics__custom_distribution__cert_ev_status__sum {
+    label: "Cert Ev Status Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cert_ev_status.sum ;;
+    type: number
+    group_label: "Cert"
+    group_item_label: "Ev Status Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Ev Status Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cert_ev_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "EV status of a certificate, recorded on each TLS connection. 0=invalid, 1=DV, 2=EV
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram CERT_EV_STATUS.
+"
+  }
+
+  dimension: metrics__custom_distribution__cert_validation_http_request_result__sum {
+    label: "Cert Validation Http Request Result Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cert_validation_http_request_result.sum ;;
+    type: number
+    group_label: "Cert"
+    group_item_label: "Validation Http Request Result Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Validation Http Request Result Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cert_validation_http_request_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP result of OCSP, etc.. (0=canceled, 1=OK, 2=FAILED, 3=internal-error)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram CERT_VALIDATION_HTTP_REQUEST_RESULT.
+"
+  }
+
+  dimension: metrics__custom_distribution__cert_validation_success_by_ca__sum {
+    label: "Cert Validation Success By Ca Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cert_validation_success_by_ca.sum ;;
+    type: number
+    group_label: "Cert"
+    group_item_label: "Validation Success By Ca Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Validation Success By Ca Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cert_validation_success_by_ca"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Successful SSL server cert validations by CA (see RootHashes.inc for names of CAs)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram CERT_VALIDATION_SUCCESS_BY_CA_2.
+"
+  }
+
   dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__sum {
     label: "Cert Compression Brotli Saved Bytes Sum"
     hidden: yes
@@ -7731,6 +7826,99 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "The difference between the length of encoded certificate vs the actual certificate."
+  }
+
+  dimension: metrics__custom_distribution__cert_pinning_failures_by_ca__sum {
+    label: "Cert Pinning Failures By Ca Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cert_pinning_failures_by_ca.sum ;;
+    type: number
+    group_label: "Cert Pinning"
+    group_item_label: "Failures By Ca Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Pinning Failures By Ca Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cert_pinning_failures_by_ca"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Pinning failures by CA (see RootHashes.inc for names of CAs)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram CERT_PINNING_FAILURES_BY_CA_2.
+"
+  }
+
+  dimension: metrics__custom_distribution__cert_pinning_moz_results_by_host__sum {
+    label: "Cert Pinning Moz Results By Host Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cert_pinning_moz_results_by_host.sum ;;
+    type: number
+    group_label: "Cert Pinning"
+    group_item_label: "Moz Results By Host Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Pinning Moz Results By Host Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cert_pinning_moz_results_by_host"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Certificate pinning results by host for Mozilla operational sites
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram CERT_PINNING_MOZ_RESULTS_BY_HOST.
+"
+  }
+
+  dimension: metrics__custom_distribution__cert_pinning_moz_test_results_by_host__sum {
+    label: "Cert Pinning Moz Test Results By Host Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cert_pinning_moz_test_results_by_host.sum ;;
+    type: number
+    group_label: "Cert Pinning"
+    group_item_label: "Moz Test Results By Host Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Pinning Moz Test Results By Host Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cert_pinning_moz_test_results_by_host"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Certificate pinning test results by host for Mozilla operational sites
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram CERT_PINNING_MOZ_TEST_RESULTS_BY_HOST.
+"
+  }
+
+  dimension: metrics__labeled_counter__cert_pinning_results {
+    label: "Cert Pinning Results"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cert_pinning_results ;;
+    group_label: "Cert Pinning"
+    group_item_label: "Results"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Pinning Results"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cert_pinning_results"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Certificate pinning results (0 = failure, 1 = success)
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CERT_PINNING_RESULTS.
+"
+  }
+
+  dimension: metrics__labeled_counter__cert_pinning_test_results {
+    label: "Cert Pinning Test Results"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cert_pinning_test_results ;;
+    group_label: "Cert Pinning"
+    group_item_label: "Test Results"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Pinning Test Results"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cert_pinning_test_results"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Certificate pinning test results (0 = failure, 1 = success)
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CERT_PINNING_TEST_RESULTS.
+"
   }
 
   dimension: metrics__rate__cert_signature_cache_hits__numerator {
@@ -9708,6 +9896,233 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Number of times a tooltip was shown, keyed by tooltip type. Currently supported types are \"image\", \"font-family\", \"inactive- css\", \"css-compatibility\", \"css-query-container\" and \"variable.\" This metric was generated to correspond to the Legacy Telemetry scalar devtools.tooltip.shown.
+"
+  }
+
+  dimension: metrics__custom_distribution__dns_blocklist_count__sum {
+    label: "Dns Blocklist Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.dns_blocklist_count.sum ;;
+    type: number
+    group_label: "Dns"
+    group_item_label: "Blocklist Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Dns Blocklist Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dns_blocklist_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of unusable addresses reported for each record
+This metric was generated to correspond to the Legacy Telemetry linear histogram DNS_BLACKLIST_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__dns_by_type_cleanup_age__sum {
+    label: "Dns By Type Cleanup Age Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.dns_by_type_cleanup_age.sum ;;
+    type: number
+    group_label: "Dns"
+    group_item_label: "By Type Cleanup Age Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Dns By Type Cleanup Age Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dns_by_type_cleanup_age"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DNS Cache Entry Age for by-type queries at Removal Time (minutes)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_BY_TYPE_CLEANUP_AGE.
+"
+  }
+
+  dimension: metrics__timing_distribution__dns_by_type_failed_lookup_time__sum {
+    label: "Dns By Type Failed Lookup Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.dns_by_type_failed_lookup_time.sum ;;
+    type: number
+    group_label: "Dns"
+    group_item_label: "By Type Failed Lookup Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Dns By Type Failed Lookup Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dns_by_type_failed_lookup_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time for a completed by-type resolution that has a negative answer (msec).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_BY_TYPE_FAILED_LOOKUP_TIME.
+"
+  }
+
+  dimension: metrics__timing_distribution__dns_by_type_premature_eviction__sum {
+    label: "Dns By Type Premature Eviction Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.dns_by_type_premature_eviction.sum ;;
+    type: number
+    group_label: "Dns"
+    group_item_label: "By Type Premature Eviction Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Dns By Type Premature Eviction Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dns_by_type_premature_eviction"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DNS Cache Entry Age for by-type queries at Removal Time of non-expired entries (minutes)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_BY_TYPE_PREMATURE_EVICTION.
+"
+  }
+
+  dimension: metrics__timing_distribution__dns_by_type_succeeded_lookup_time__sum {
+    label: "Dns By Type Succeeded Lookup Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.dns_by_type_succeeded_lookup_time.sum ;;
+    type: number
+    group_label: "Dns"
+    group_item_label: "By Type Succeeded Lookup Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Dns By Type Succeeded Lookup Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dns_by_type_succeeded_lookup_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time for a completed by-type resolution that succeeded (msec).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_BY_TYPE_SUCCEEDED_LOOKUP_TIME.
+"
+  }
+
+  dimension: metrics__timing_distribution__dns_cleanup_age__sum {
+    label: "Dns Cleanup Age Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.dns_cleanup_age.sum ;;
+    type: number
+    group_label: "Dns"
+    group_item_label: "Cleanup Age Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Dns Cleanup Age Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dns_cleanup_age"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DNS Cache Entry Age at Removal Time (minutes)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_CLEANUP_AGE.
+"
+  }
+
+  dimension: metrics__labeled_counter__dns_lookup_algorithm {
+    label: "Dns Lookup Algorithm"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.dns_lookup_algorithm ;;
+    group_label: "Dns"
+    group_item_label: "Lookup Algorithm"
+
+    link: {
+      label: "Glean Dictionary reference for Dns Lookup Algorithm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dns_lookup_algorithm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DNS: lookup algorithm
+This metric was generated to correspond to the Legacy Telemetry categorical histogram DNS_LOOKUP_ALGORITHM.
+"
+  }
+
+  dimension: metrics__custom_distribution__dns_lookup_method__sum {
+    label: "Dns Lookup Method Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.dns_lookup_method.sum ;;
+    type: number
+    group_label: "Dns"
+    group_item_label: "Lookup Method Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Dns Lookup Method Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dns_lookup_method"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DNS Lookup Type (hit, renewal, negative-hit, literal, overflow, network-first, network-shared)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram DNS_LOOKUP_METHOD2.
+"
+  }
+
+  dimension: metrics__timing_distribution__dns_native_lookup_time__sum {
+    label: "Dns Native Lookup Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.dns_native_lookup_time.sum ;;
+    type: number
+    group_label: "Dns"
+    group_item_label: "Native Lookup Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Dns Native Lookup Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dns_native_lookup_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time for a completed native name resolution (msec)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_NATIVE_LOOKUP_TIME.
+"
+  }
+
+  dimension: metrics__timing_distribution__dns_native_queuing__sum {
+    label: "Dns Native Queuing Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.dns_native_queuing.sum ;;
+    type: number
+    group_label: "Dns"
+    group_item_label: "Native Queuing Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Dns Native Queuing Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dns_native_queuing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in resolve queue waiting to getaddrinfo (msec)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_NATIVE_QUEUING.
+"
+  }
+
+  dimension: metrics__timing_distribution__dns_premature_eviction__sum {
+    label: "Dns Premature Eviction Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.dns_premature_eviction.sum ;;
+    type: number
+    group_label: "Dns"
+    group_item_label: "Premature Eviction Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Dns Premature Eviction Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dns_premature_eviction"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DNS Cache Entry Age at Removal Time of non-expired entries (minutes)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_PREMATURE_EVICTION.
+"
+  }
+
+  dimension: metrics__timing_distribution__dns_trr_processing_time__sum {
+    label: "Dns Trr Processing Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.dns_trr_processing_time.sum ;;
+    type: number
+    group_label: "Dns"
+    group_item_label: "Trr Processing Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Dns Trr Processing Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dns_trr_processing_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from the last received byte of the response until we have notified the consumer with a DNS record (msec)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_TRR_PROCESSING_TIME.
 "
   }
 
@@ -12299,6 +12714,703 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__memory_distribution__hpack_bytes_evicted_compressor__sum {
+    label: "Hpack Bytes Evicted Compressor Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.hpack_bytes_evicted_compressor.sum ;;
+    type: number
+    group_label: "Hpack"
+    group_item_label: "Bytes Evicted Compressor Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Hpack Bytes Evicted Compressor Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/hpack_bytes_evicted_compressor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HPACK: Number of bytes removed from dynamic table to make room for 1 new item
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HPACK_BYTES_EVICTED_COMPRESSOR.
+"
+  }
+
+  dimension: metrics__memory_distribution__hpack_bytes_evicted_decompressor__sum {
+    label: "Hpack Bytes Evicted Decompressor Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.hpack_bytes_evicted_decompressor.sum ;;
+    type: number
+    group_label: "Hpack"
+    group_item_label: "Bytes Evicted Decompressor Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Hpack Bytes Evicted Decompressor Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/hpack_bytes_evicted_decompressor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HPACK: Number of bytes removed from dynamic table to make room for 1 new item
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HPACK_BYTES_EVICTED_DECOMPRESSOR.
+"
+  }
+
+  dimension: metrics__custom_distribution__hpack_bytes_evicted_ratio_compressor__sum {
+    label: "Hpack Bytes Evicted Ratio Compressor Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.hpack_bytes_evicted_ratio_compressor.sum ;;
+    type: number
+    group_label: "Hpack"
+    group_item_label: "Bytes Evicted Ratio Compressor Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Hpack Bytes Evicted Ratio Compressor Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/hpack_bytes_evicted_ratio_compressor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HPACK: Ratio of bytes evicted to bytes added (* 100)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HPACK_BYTES_EVICTED_RATIO_COMPRESSOR.
+"
+  }
+
+  dimension: metrics__custom_distribution__hpack_bytes_evicted_ratio_decompressor__sum {
+    label: "Hpack Bytes Evicted Ratio Decompressor Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.hpack_bytes_evicted_ratio_decompressor.sum ;;
+    type: number
+    group_label: "Hpack"
+    group_item_label: "Bytes Evicted Ratio Decompressor Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Hpack Bytes Evicted Ratio Decompressor Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/hpack_bytes_evicted_ratio_decompressor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HPACK: Ratio of bytes evicted to bytes added (* 100)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HPACK_BYTES_EVICTED_RATIO_DECOMPRESSOR.
+"
+  }
+
+  dimension: metrics__custom_distribution__hpack_elements_evicted_compressor__sum {
+    label: "Hpack Elements Evicted Compressor Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.hpack_elements_evicted_compressor.sum ;;
+    type: number
+    group_label: "Hpack"
+    group_item_label: "Elements Evicted Compressor Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Hpack Elements Evicted Compressor Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/hpack_elements_evicted_compressor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HPACK: Number of items removed from dynamic table to make room for 1 new item
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HPACK_ELEMENTS_EVICTED_COMPRESSOR.
+"
+  }
+
+  dimension: metrics__custom_distribution__hpack_elements_evicted_decompressor__sum {
+    label: "Hpack Elements Evicted Decompressor Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.hpack_elements_evicted_decompressor.sum ;;
+    type: number
+    group_label: "Hpack"
+    group_item_label: "Elements Evicted Decompressor Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Hpack Elements Evicted Decompressor Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/hpack_elements_evicted_decompressor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HPACK: Number of items removed from dynamic table to make room for 1 new item
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HPACK_ELEMENTS_EVICTED_DECOMPRESSOR.
+"
+  }
+
+  dimension: metrics__custom_distribution__hpack_peak_count_compressor__sum {
+    label: "Hpack Peak Count Compressor Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.hpack_peak_count_compressor.sum ;;
+    type: number
+    group_label: "Hpack"
+    group_item_label: "Peak Count Compressor Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Hpack Peak Count Compressor Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/hpack_peak_count_compressor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HPACK: peak number of items in the dynamic table
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HPACK_PEAK_COUNT_COMPRESSOR.
+"
+  }
+
+  dimension: metrics__custom_distribution__hpack_peak_count_decompressor__sum {
+    label: "Hpack Peak Count Decompressor Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.hpack_peak_count_decompressor.sum ;;
+    type: number
+    group_label: "Hpack"
+    group_item_label: "Peak Count Decompressor Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Hpack Peak Count Decompressor Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/hpack_peak_count_decompressor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HPACK: peak number of items in the dynamic table
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HPACK_PEAK_COUNT_DECOMPRESSOR.
+"
+  }
+
+  dimension: metrics__memory_distribution__hpack_peak_size_compressor__sum {
+    label: "Hpack Peak Size Compressor Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.hpack_peak_size_compressor.sum ;;
+    type: number
+    group_label: "Hpack"
+    group_item_label: "Peak Size Compressor Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Hpack Peak Size Compressor Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/hpack_peak_size_compressor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HPACK: peak size in bytes of the table
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HPACK_PEAK_SIZE_COMPRESSOR.
+"
+  }
+
+  dimension: metrics__memory_distribution__hpack_peak_size_decompressor__sum {
+    label: "Hpack Peak Size Decompressor Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.hpack_peak_size_decompressor.sum ;;
+    type: number
+    group_label: "Hpack"
+    group_item_label: "Peak Size Decompressor Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Hpack Peak Size Decompressor Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/hpack_peak_size_decompressor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HPACK: peak size in bytes of the table
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HPACK_PEAK_SIZE_DECOMPRESSOR.
+"
+  }
+
+  dimension: metrics__custom_distribution__http_altsvc_entries_per_header__sum {
+    label: "Http Altsvc Entries Per Header Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http_altsvc_entries_per_header.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Altsvc Entries Per Header Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Altsvc Entries Per Header Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_altsvc_entries_per_header"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many alt-svc productions were seen in a single Alt-Svc header
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram HTTP_ALTSVC_ENTRIES_PER_HEADER.
+"
+  }
+
+  dimension: metrics__labeled_counter__http_altsvc_mapping_changed_target {
+    label: "Http Altsvc Mapping Changed Target"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.http_altsvc_mapping_changed_target ;;
+    group_label: "Http"
+    group_item_label: "Altsvc Mapping Changed Target"
+
+    link: {
+      label: "Glean Dictionary reference for Http Altsvc Mapping Changed Target"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_altsvc_mapping_changed_target"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not a new alt-svc mapping would change the target hostname of the existing mapping
+This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP_ALTSVC_MAPPING_CHANGED_TARGET.
+"
+  }
+
+  dimension: metrics__custom_distribution__http_channel_disposition__sum {
+    label: "Http Channel Disposition Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http_channel_disposition.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Channel Disposition Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Channel Disposition Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_channel_disposition"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Channel Disposition: 0=Cancel, 1=Disk, 2=NetOK, 3=NetEarlyFail, 4=NetlateFail, +8 for HTTPS
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram HTTP_CHANNEL_DISPOSITION.
+"
+  }
+
+  dimension: metrics__labeled_counter__http_channel_onstart_success {
+    label: "Http Channel Onstart Success"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.http_channel_onstart_success ;;
+    group_label: "Http"
+    group_item_label: "Channel Onstart Success"
+
+    link: {
+      label: "Glean Dictionary reference for Http Channel Onstart Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_channel_onstart_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Successfully started HTTP channels
+This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP_CHANNEL_ONSTART_SUCCESS.
+"
+  }
+
+  dimension: metrics__labeled_counter__http_connection_entry_cache_hit {
+    label: "Http Connection Entry Cache Hit"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.http_connection_entry_cache_hit ;;
+    group_label: "Http"
+    group_item_label: "Connection Entry Cache Hit"
+
+    link: {
+      label: "Glean Dictionary reference for Http Connection Entry Cache Hit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_connection_entry_cache_hit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Fraction of sockets that used a nsConnectionEntry with history - size 300.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP_CONNECTION_ENTRY_CACHE_HIT_1.
+"
+  }
+
+  dimension: metrics__custom_distribution__http_content_encoding__sum {
+    label: "Http Content Encoding Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http_content_encoding.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Content Encoding Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Content Encoding Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_content_encoding"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "encoding removed: 0=unknown, 1=gzip, 2=deflate, 3=brotli, 4=zstd
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram HTTP_CONTENT_ENCODING.
+"
+  }
+
+  dimension: metrics__memory_distribution__http_kbread_per_conn2__sum {
+    label: "Http Kbread Per Conn2 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.http_kbread_per_conn2.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Kbread Per Conn2 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Kbread Per Conn2 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_kbread_per_conn2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP: KB read per connection
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP_KBREAD_PER_CONN2.
+"
+  }
+
+  dimension: metrics__labeled_counter__http_pageload_is_ssl {
+    label: "Http Pageload Is Ssl"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.http_pageload_is_ssl ;;
+    group_label: "Http"
+    group_item_label: "Pageload Is Ssl"
+
+    link: {
+      label: "Glean Dictionary reference for Http Pageload Is Ssl"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_pageload_is_ssl"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a HTTP page load was over SSL or not. Recorded during response processing for all first-party page loads.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP_PAGELOAD_IS_SSL.
+"
+  }
+
+  dimension: metrics__custom_distribution__http_proxy_type__sum {
+    label: "Http Proxy Type Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http_proxy_type.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Proxy Type Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Proxy Type Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_proxy_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP Proxy Type (none, http, socks)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram HTTP_PROXY_TYPE.
+"
+  }
+
+  dimension: metrics__custom_distribution__http_request_per_conn__sum {
+    label: "Http Request Per Conn Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http_request_per_conn.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Request Per Conn Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Request Per Conn Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_request_per_conn"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP: requests per connection
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP_REQUEST_PER_CONN.
+"
+  }
+
+  dimension: metrics__custom_distribution__http_request_per_page__sum {
+    label: "Http Request Per Page Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http_request_per_page.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Request Per Page Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Request Per Page Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_request_per_page"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP: Requests per page (count)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP_REQUEST_PER_PAGE.
+"
+  }
+
+  dimension: metrics__custom_distribution__http_request_per_page_from_cache__sum {
+    label: "Http Request Per Page From Cache Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http_request_per_page_from_cache.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Request Per Page From Cache Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Request Per Page From Cache Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_request_per_page_from_cache"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP: Requests serviced from cache (%)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram HTTP_REQUEST_PER_PAGE_FROM_CACHE.
+"
+  }
+
+  dimension: metrics__custom_distribution__http_response_version__sum {
+    label: "Http Response Version Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http_response_version.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Response Version Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Response Version Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_response_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP: Protocol Version Used on Response from nsHttp.h
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram HTTP_RESPONSE_VERSION.
+"
+  }
+
+  dimension: metrics__custom_distribution__http_saw_quic_alt_protocol__sum {
+    label: "Http Saw Quic Alt Protocol Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http_saw_quic_alt_protocol.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Saw Quic Alt Protocol Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Saw Quic Alt Protocol Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_saw_quic_alt_protocol"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Does a response has a h3(1), other quic(2) or non(0) alt-protocol advertisement.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram HTTP_SAW_QUIC_ALT_PROTOCOL_2.
+"
+  }
+
+  dimension: metrics__timing_distribution__http_subitem_first_byte_latency_time__sum {
+    label: "Http Subitem First Byte Latency Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.http_subitem_first_byte_latency_time.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Subitem First Byte Latency Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Subitem First Byte Latency Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_subitem_first_byte_latency_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP subitem channel: Page start -> first byte received for subitem reply (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP_SUBITEM_FIRST_BYTE_LATENCY_TIME.
+"
+  }
+
+  dimension: metrics__timing_distribution__http_subitem_open_latency_time__sum {
+    label: "Http Subitem Open Latency Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.http_subitem_open_latency_time.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Subitem Open Latency Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Subitem Open Latency Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_subitem_open_latency_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP subitem channel: Page start -> subitem open() (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP_SUBITEM_OPEN_LATENCY_TIME.
+"
+  }
+
+  dimension: metrics__custom_distribution__http_transaction_ech_retry_ech_failed_count__sum {
+    label: "Http Transaction Ech Retry Ech Failed Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http_transaction_ech_retry_ech_failed_count.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Transaction Ech Retry Ech Failed Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Transaction Ech Retry Ech Failed Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_transaction_ech_retry_ech_failed_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "When echConfig is enabled, number of times a transaction is retried because of SSL_ERROR_ECH_FAILED
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TRANSACTION_ECH_RETRY_ECH_FAILED_COUNT.
+"
+  }
+
+  dimension: metrics__custom_distribution__http_transaction_ech_retry_others_count__sum {
+    label: "Http Transaction Ech Retry Others Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http_transaction_ech_retry_others_count.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Transaction Ech Retry Others Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Transaction Ech Retry Others Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_transaction_ech_retry_others_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "When echConfig is enabled, number of times a transaction is retried because of other error
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TRANSACTION_ECH_RETRY_OTHERS_COUNT.
+"
+  }
+
+  dimension: metrics__custom_distribution__http_transaction_ech_retry_with_ech_count__sum {
+    label: "Http Transaction Ech Retry With Ech Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http_transaction_ech_retry_with_ech_count.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Transaction Ech Retry With Ech Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Transaction Ech Retry With Ech Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_transaction_ech_retry_with_ech_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "When echConfig is enabled, number of times a transaction is retried because of SSL_ERROR_ECH_RETRY_WITH_ECH
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TRANSACTION_ECH_RETRY_WITH_ECH_COUNT.
+"
+  }
+
+  dimension: metrics__custom_distribution__http_transaction_ech_retry_without_ech_count__sum {
+    label: "Http Transaction Ech Retry Without Ech Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http_transaction_ech_retry_without_ech_count.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Transaction Ech Retry Without Ech Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Transaction Ech Retry Without Ech Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_transaction_ech_retry_without_ech_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "When echConfig is enabled, number of times a transaction is retried because of SSL_ERROR_ECH_RETRY_WITHOUT_ECH
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TRANSACTION_ECH_RETRY_WITHOUT_ECH_COUNT.
+"
+  }
+
+  dimension: metrics__labeled_counter__http_transaction_is_ssl {
+    label: "Http Transaction Is Ssl"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.http_transaction_is_ssl ;;
+    group_label: "Http"
+    group_item_label: "Transaction Is Ssl"
+
+    link: {
+      label: "Glean Dictionary reference for Http Transaction Is Ssl"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_transaction_is_ssl"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether an HTTP request occurred over TLS/SSL or not. Recorded during response processing for all requests.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP_TRANSACTION_IS_SSL.
+"
+  }
+
+  dimension: metrics__custom_distribution__http_transaction_restart_reason__sum {
+    label: "Http Transaction Restart Reason Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http_transaction_restart_reason.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Transaction Restart Reason Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Transaction Restart Reason Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_transaction_restart_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The reason why a HTTP transaction is restarted.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram HTTP_TRANSACTION_RESTART_REASON.
+"
+  }
+
+  dimension: metrics__labeled_counter__http_transaction_use_altsvc {
+    label: "Http Transaction Use Altsvc"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.http_transaction_use_altsvc ;;
+    group_label: "Http"
+    group_item_label: "Transaction Use Altsvc"
+
+    link: {
+      label: "Glean Dictionary reference for Http Transaction Use Altsvc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_transaction_use_altsvc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a HTTP transaction was routed via Alt-Svc or not.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP_TRANSACTION_USE_ALTSVC.
+"
+  }
+
+  dimension: metrics__timing_distribution__http_transaction_wait_time_http__sum {
+    label: "Http Transaction Wait Time Http Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Transaction Wait Time Http Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Transaction Wait Time Http Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_transaction_wait_time_http"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from submission to dispatch of HTTP transaction (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TRANSACTION_WAIT_TIME_HTTP.
+"
+  }
+
+  dimension: metrics__timing_distribution__http_transaction_wait_time_http2_sup_http3__sum {
+    label: "Http Transaction Wait Time Http2 Sup Http3 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http2_sup_http3.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Transaction Wait Time Http2 Sup Http3 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Transaction Wait Time Http2 Sup Http3 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_transaction_wait_time_http2_sup_http3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from submission to dispatch of HTTP2 transaction that has received a respone from a server that addretizes HTTP3 support (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TRANSACTION_WAIT_TIME_HTTP2_SUP_HTTP3.
+"
+  }
+
+  dimension: metrics__timing_distribution__http_transaction_wait_time_http3__sum {
+    label: "Http Transaction Wait Time Http3 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http3.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Transaction Wait Time Http3 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Transaction Wait Time Http3 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_transaction_wait_time_http3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from submission to dispatch of HTTP/3 transaction (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TRANSACTION_WAIT_TIME_HTTP3.
+"
+  }
+
+  dimension: metrics__timing_distribution__http_transaction_wait_time_spdy__sum {
+    label: "Http Transaction Wait Time Spdy Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_spdy.sum ;;
+    type: number
+    group_label: "Http"
+    group_item_label: "Transaction Wait Time Spdy Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http Transaction Wait Time Spdy Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/http_transaction_wait_time_spdy"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from submission to dispatch of SPDY transaction (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TRANSACTION_WAIT_TIME_SPDY.
+"
+  }
+
   dimension: metrics__timing_distribution__httpsfirst_downgrade_time__sum {
     label: "Httpsfirst Downgrade Time Sum"
     hidden: no
@@ -13725,6 +14837,43 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__localdomstorage_preload_pending_on_first_access {
+    label: "Localdomstorage Preload Pending On First Access"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.localdomstorage_preload_pending_on_first_access ;;
+    group_label: "Localdomstorage"
+    group_item_label: "Preload Pending On First Access"
+
+    link: {
+      label: "Glean Dictionary reference for Localdomstorage Preload Pending On First Access"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/localdomstorage_preload_pending_on_first_access"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True when we had to wait for a pending preload on first access to localStorage data, false otherwise
+This metric was generated to correspond to the Legacy Telemetry boolean histogram LOCALDOMSTORAGE_PRELOAD_PENDING_ON_FIRST_ACCESS.
+"
+  }
+
+  dimension: metrics__timing_distribution__localdomstorage_shutdown_database__sum {
+    label: "Localdomstorage Shutdown Database Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.localdomstorage_shutdown_database.sum ;;
+    type: number
+    group_label: "Localdomstorage"
+    group_item_label: "Shutdown Database Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Localdomstorage Shutdown Database Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/localdomstorage_shutdown_database"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time to flush and close the localStorage database (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram LOCALDOMSTORAGE_SHUTDOWN_DATABASE_MS.
+"
+  }
+
   dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__sum {
     label: "Localstorage Database Request Allow To Close Response Time Sum"
     hidden: no
@@ -13867,6 +15016,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__media_codec_used {
+    label: "Media Codec Used"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_codec_used ;;
+    group_label: "Media"
+    group_item_label: "Codec Used"
+
+    link: {
+      label: "Glean Dictionary reference for Media Codec Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_codec_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of use of audio/video codecs in HTMLMediaElements and WebAudio. Those with 'resource' prefix are approximate; report based on HTTP ContentType or sniffing. Those with 'webaudio' prefix are for WebAudio.
+This metric was generated to correspond to the Legacy Telemetry count histogram MEDIA_CODEC_USED.
+"
+  }
+
   dimension: metrics__labeled_counter__media_decode_error_per_mime_type {
     label: "Media Decode Error Per Mime Type"
     hidden: yes
@@ -13957,6 +15124,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__media_mse_source_buffer_type {
+    label: "Media Mse Source Buffer Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_mse_source_buffer_type ;;
+    group_label: "Media"
+    group_item_label: "Mse Source Buffer Type"
+
+    link: {
+      label: "Glean Dictionary reference for Media Mse Source Buffer Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_mse_source_buffer_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count the actual or possible (because we don't support some of them for now) usage amount for each media mime type used in MSE. We collect this data in MediaSource's `AddSourceBuffer()` and `IsTypeSupported()`.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram MSE_SOURCE_BUFFER_TYPE.
+"
+  }
+
   dimension: metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
     label: "Media Playback Device Hardware Decoder Support"
     hidden: no
@@ -13988,6 +15173,139 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Count the amount of times where video playback is failed to start due to the mime type is not supported by Firefox. The result is accumulated per mime type, eg. video/hevc."
+  }
+
+  dimension: metrics__timing_distribution__media_video_clearkey_play_time__sum {
+    label: "Media Video Clearkey Play Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.media_video_clearkey_play_time.sum ;;
+    type: number
+    group_label: "Media"
+    group_item_label: "Video Clearkey Play Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Media Video Clearkey Play Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_video_clearkey_play_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total time spent playing Clearkey encrypted video in milliseconds.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram VIDEO_CLEARKEY_PLAY_TIME_MS.
+"
+  }
+
+  dimension: metrics__custom_distribution__media_video_dropped_compositor_frames_proportion_exponential__sum {
+    label: "Media Video Dropped Compositor Frames Proportion Exponential Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.media_video_dropped_compositor_frames_proportion_exponential.sum ;;
+    type: number
+    group_label: "Media"
+    group_item_label: "Video Dropped Compositor Frames Proportion Exponential Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Media Video Dropped Compositor Frames Proportion Exponential Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_video_dropped_compositor_frames_proportion_exponential"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Ratio of compositor dropped frames per total decoded frames scaled by 10,000 between starting and stopping a video
+This metric was generated to correspond to the Legacy Telemetry exponential histogram VIDEO_DROPPED_COMPOSITOR_FRAMES_PROPORTION_EXPONENTIAL.
+"
+  }
+
+  dimension: metrics__custom_distribution__media_video_dropped_decoded_frames_proportion_exponential__sum {
+    label: "Media Video Dropped Decoded Frames Proportion Exponential Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.media_video_dropped_decoded_frames_proportion_exponential.sum ;;
+    type: number
+    group_label: "Media"
+    group_item_label: "Video Dropped Decoded Frames Proportion Exponential Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Media Video Dropped Decoded Frames Proportion Exponential Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_video_dropped_decoded_frames_proportion_exponential"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Ratio of decoder dropped frames per total decoded frames scaled by 10,000 between starting and stopping a video
+This metric was generated to correspond to the Legacy Telemetry exponential histogram VIDEO_DROPPED_DECODED_FRAMES_PROPORTION_EXPONENTIAL.
+"
+  }
+
+  dimension: metrics__custom_distribution__media_video_dropped_frames_proportion__sum {
+    label: "Media Video Dropped Frames Proportion Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.media_video_dropped_frames_proportion.sum ;;
+    type: number
+    group_label: "Media"
+    group_item_label: "Video Dropped Frames Proportion Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Media Video Dropped Frames Proportion Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_video_dropped_frames_proportion"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Percentage of frames decoded frames dropped between starting and stopping a video
+This metric was generated to correspond to the Legacy Telemetry linear histogram VIDEO_DROPPED_FRAMES_PROPORTION.
+"
+  }
+
+  dimension: metrics__custom_distribution__media_video_dropped_frames_proportion_exponential__sum {
+    label: "Media Video Dropped Frames Proportion Exponential Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.media_video_dropped_frames_proportion_exponential.sum ;;
+    type: number
+    group_label: "Media"
+    group_item_label: "Video Dropped Frames Proportion Exponential Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Media Video Dropped Frames Proportion Exponential Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_video_dropped_frames_proportion_exponential"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Ratio of dropped frames per total decoded frames scaled by 10,000 between starting and stopping a video
+This metric was generated to correspond to the Legacy Telemetry exponential histogram VIDEO_DROPPED_FRAMES_PROPORTION_EXPONENTIAL.
+"
+  }
+
+  dimension: metrics__custom_distribution__media_video_dropped_sink_frames_proportion_exponential__sum {
+    label: "Media Video Dropped Sink Frames Proportion Exponential Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.media_video_dropped_sink_frames_proportion_exponential.sum ;;
+    type: number
+    group_label: "Media"
+    group_item_label: "Video Dropped Sink Frames Proportion Exponential Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Media Video Dropped Sink Frames Proportion Exponential Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_video_dropped_sink_frames_proportion_exponential"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Ratio of sink dropped frames per total decoded frames scaled by 10,000 between starting and stopping a video
+This metric was generated to correspond to the Legacy Telemetry exponential histogram VIDEO_DROPPED_SINK_FRAMES_PROPORTION_EXPONENTIAL.
+"
+  }
+
+  dimension: metrics__timing_distribution__media_video_encrypted_play_time__sum {
+    label: "Media Video Encrypted Play Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.media_video_encrypted_play_time.sum ;;
+    type: number
+    group_label: "Media"
+    group_item_label: "Video Encrypted Play Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Media Video Encrypted Play Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_video_encrypted_play_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total time spent playing encrypted video in milliseconds.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram VIDEO_ENCRYPTED_PLAY_TIME_MS.
+"
   }
 
   dimension: metrics__labeled_boolean__media_video_hardware_decoding_support {
@@ -14023,6 +15341,82 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Record whether hardware decoding is supported for the specific video codec, this only records video in HD (1280*720) or higher resultion. The key is the type of video codec, eg. video/vp9. This metric was generated to correspond to the Legacy Telemetry scalar media.video_hd_hardware_decoding_support.
+"
+  }
+
+  dimension: metrics__timing_distribution__media_video_hdr_play_time__sum {
+    label: "Media Video Hdr Play Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.media_video_hdr_play_time.sum ;;
+    type: number
+    group_label: "Media"
+    group_item_label: "Video Hdr Play Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Media Video Hdr Play Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_video_hdr_play_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total time spent playing HDR video in milliseconds.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram VIDEO_HDR_PLAY_TIME_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__media_video_hidden_play_time__sum {
+    label: "Media Video Hidden Play Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.media_video_hidden_play_time.sum ;;
+    type: number
+    group_label: "Media"
+    group_item_label: "Video Hidden Play Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Media Video Hidden Play Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_video_hidden_play_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total time spent playing video while element is hidden, in milliseconds.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram VIDEO_HIDDEN_PLAY_TIME_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__media_video_play_time__sum {
+    label: "Media Video Play Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.media_video_play_time.sum ;;
+    type: number
+    group_label: "Media"
+    group_item_label: "Video Play Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Media Video Play Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_video_play_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total time spent playing video in milliseconds.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram VIDEO_PLAY_TIME_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__media_video_widevine_play_time__sum {
+    label: "Media Video Widevine Play Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.media_video_widevine_play_time.sum ;;
+    type: number
+    group_label: "Media"
+    group_item_label: "Video Widevine Play Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Media Video Widevine Play Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_video_widevine_play_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total time spent playing Widevine encrypted video in milliseconds.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram VIDEO_WIDEVINE_PLAY_TIME_MS.
 "
   }
 
@@ -14366,6 +15760,62 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__custom_distribution__network_back_pressure_suspension_cp_type__sum {
+    label: "Network Back Pressure Suspension Cp Type Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.network_back_pressure_suspension_cp_type.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Back Pressure Suspension Cp Type Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Back Pressure Suspension Cp Type Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_back_pressure_suspension_cp_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Collect the content policy when the resource is non-local and suspended by back pressure (0-44 from nsContentPolicyType in nsIContentPolicy.idl).
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram NETWORK_BACK_PRESSURE_SUSPENSION_CP_TYPE.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_back_pressure_suspension_delay_time__sum {
+    label: "Network Back Pressure Suspension Delay Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_back_pressure_suspension_delay_time.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Back Pressure Suspension Delay Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Back Pressure Suspension Delay Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_back_pressure_suspension_delay_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The delay caused by the e10s back pressure suspension(ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram NETWORK_BACK_PRESSURE_SUSPENSION_DELAY_TIME_MS.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_back_pressure_suspension_rate {
+    label: "Network Back Pressure Suspension Rate"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_back_pressure_suspension_rate ;;
+    group_label: "Network"
+    group_item_label: "Back Pressure Suspension Rate"
+
+    link: {
+      label: "Glean Dictionary reference for Network Back Pressure Suspension Rate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_back_pressure_suspension_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Collect whether the resource is suspended by back pressure. And split by local-ness.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram NETWORK_BACK_PRESSURE_SUSPENSION_RATE_V2.
+"
+  }
+
   dimension: metrics__labeled_counter__network_byte_range_request {
     label: "Network Byte Range Request"
     hidden: yes
@@ -14451,6 +15901,44 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "In the HTTP page channel, time from connection cache read start to cache read end. Corresponds to Legacy histogram HTTP_PAGE_CACHE_READ_TIME_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__custom_distribution__network_cache_v2_input_stream_status__sum {
+    label: "Network Cache V2 Input Stream Status Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.network_cache_v2_input_stream_status.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Cache V2 Input Stream Status Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Cache V2 Input Stream Status Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_cache_v2_input_stream_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Final status of the CacheFileInputStream (0=ok, 1=other error, 2=out of memory, 3=disk full, 4=file corrupted, 5=file not found, 6=binding aborted)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram NETWORK_CACHE_V2_INPUT_STREAM_STATUS.
+"
+  }
+
+  dimension: metrics__custom_distribution__network_cache_v2_output_stream_status__sum {
+    label: "Network Cache V2 Output Stream Status Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.network_cache_v2_output_stream_status.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Cache V2 Output Stream Status Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Cache V2 Output Stream Status Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_cache_v2_output_stream_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Final status of the CacheFileOutputStream (0=ok, 1=other error, 2=out of memory, 3=disk full, 4=file corrupted, 5=file not found, 6=binding aborted)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram NETWORK_CACHE_V2_OUTPUT_STREAM_STATUS.
 "
   }
 
@@ -14559,6 +16047,44 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__timing_distribution__network_disk_cache2_shutdown_clear_private__sum {
+    label: "Network Disk Cache2 Shutdown Clear Private Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_disk_cache2_shutdown_clear_private.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Disk Cache2 Shutdown Clear Private Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Disk Cache2 Shutdown Clear Private Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_disk_cache2_shutdown_clear_private"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent (ms) during shutdown deleting disk cache v2 for 'clear private data' option
+This metric was generated to correspond to the Legacy Telemetry exponential histogram NETWORK_DISK_CACHE2_SHUTDOWN_CLEAR_PRIVATE.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_disk_cache_shutdown_v2__sum {
+    label: "Network Disk Cache Shutdown V2 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_disk_cache_shutdown_v2.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Disk Cache Shutdown V2 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Disk Cache Shutdown V2 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_disk_cache_shutdown_v2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total Time spent (ms) during disk cache shutdown [cache2]
+This metric was generated to correspond to the Legacy Telemetry exponential histogram NETWORK_DISK_CACHE_SHUTDOWN_V2.
+"
+  }
+
   dimension: metrics__timing_distribution__network_dns_end__sum {
     label: "Network Dns End Sum"
     hidden: no
@@ -14649,6 +16175,63 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__timing_distribution__network_http_cache_entry_alive_time__sum {
+    label: "Network Http Cache Entry Alive Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_http_cache_entry_alive_time.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Http Cache Entry Alive Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Http Cache Entry Alive Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_http_cache_entry_alive_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time for which an HTTP cache entry is kept warmed in memory
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP_CACHE_ENTRY_ALIVE_TIME.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_http_cache_entry_reload_time__sum {
+    label: "Network Http Cache Entry Reload Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_http_cache_entry_reload_time.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Http Cache Entry Reload Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Http Cache Entry Reload Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_http_cache_entry_reload_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time before we reload an HTTP cache entry again to memory
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP_CACHE_ENTRY_RELOAD_TIME.
+"
+  }
+
+  dimension: metrics__custom_distribution__network_http_cache_entry_reuse_count__sum {
+    label: "Network Http Cache Entry Reuse Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.network_http_cache_entry_reuse_count.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Http Cache Entry Reuse Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Http Cache Entry Reuse Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_http_cache_entry_reuse_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Reuse count of an HTTP cache entry warmed in memory
+This metric was generated to correspond to the Legacy Telemetry linear histogram HTTP_CACHE_ENTRY_REUSE_COUNT.
+"
+  }
+
   dimension: metrics__timing_distribution__network_http_revalidation__sum {
     label: "Network Http Revalidation Sum"
     hidden: no
@@ -14718,6 +16301,137 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "The time spent from HttpChannelChild::AsyncOpen to adding the transaction to the nsHttpConnectionMgr
+"
+  }
+
+  dimension: metrics__memory_distribution__network_race_cache_bandwidth_not_race__sum {
+    label: "Network Race Cache Bandwidth Not Race Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.network_race_cache_bandwidth_not_race.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Race Cache Bandwidth Not Race Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Race Cache Bandwidth Not Race Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_race_cache_bandwidth_not_race"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of bytes received when we decide not to race cache with network.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram NETWORK_RACE_CACHE_BANDWIDTH_NOT_RACE.
+"
+  }
+
+  dimension: metrics__memory_distribution__network_race_cache_bandwidth_race_cache_win__sum {
+    label: "Network Race Cache Bandwidth Race Cache Win Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.network_race_cache_bandwidth_race_cache_win.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Race Cache Bandwidth Race Cache Win Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Race Cache Bandwidth Race Cache Win Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_race_cache_bandwidth_race_cache_win"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of bytes received when we decide to race cache with network and cache wins.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram NETWORK_RACE_CACHE_BANDWIDTH_RACE_CACHE_WIN.
+"
+  }
+
+  dimension: metrics__memory_distribution__network_race_cache_bandwidth_race_network_win__sum {
+    label: "Network Race Cache Bandwidth Race Network Win Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.network_race_cache_bandwidth_race_network_win.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Race Cache Bandwidth Race Network Win Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Race Cache Bandwidth Race Network Win Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_race_cache_bandwidth_race_network_win"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of bytes received when we decide to race cache with network and network wins.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram NETWORK_RACE_CACHE_BANDWIDTH_RACE_NETWORK_WIN.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_race_cache_validation {
+    label: "Network Race Cache Validation"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_race_cache_validation ;;
+    group_label: "Network"
+    group_item_label: "Race Cache Validation"
+
+    link: {
+      label: "Glean Dictionary reference for Network Race Cache Validation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_race_cache_validation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Stats for validation requests when cache won the race.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram NETWORK_RACE_CACHE_VALIDATION.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_race_cache_with_network_ocec_on_start_diff__sum {
+    label: "Network Race Cache With Network Ocec On Start Diff Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_race_cache_with_network_ocec_on_start_diff.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Race Cache With Network Ocec On Start Diff Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Race Cache With Network Ocec On Start Diff Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_race_cache_with_network_ocec_on_start_diff"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds between onStartRequest from the cache and onCacheEntryCheck. Report only when net wins and OCEC is before onStartRequest from net.
+This metric was generated to correspond to the Legacy Telemetry linear histogram NETWORK_RACE_CACHE_WITH_NETWORK_OCEC_ON_START_DIFF.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_race_cache_with_network_saved_time__sum {
+    label: "Network Race Cache With Network Saved Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_race_cache_with_network_saved_time.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Race Cache With Network Saved Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Race Cache With Network Saved Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_race_cache_with_network_saved_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds that we saved when we race cache with network.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram NETWORK_RACE_CACHE_WITH_NETWORK_SAVED_TIME.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_race_cache_with_network_usage {
+    label: "Network Race Cache With Network Usage"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_race_cache_with_network_usage ;;
+    group_label: "Network"
+    group_item_label: "Race Cache With Network Usage"
+
+    link: {
+      label: "Glean Dictionary reference for Network Race Cache With Network Usage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_race_cache_with_network_usage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether we raced network with the cache.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram NETWORK_RACE_CACHE_WITH_NETWORK_USAGE_2.
 "
   }
 
@@ -20326,6 +22040,1069 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__memory_distribution__spdy_chunk_recvd__sum {
+    label: "Spdy Chunk Recvd Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.spdy_chunk_recvd.sum ;;
+    type: number
+    group_label: "Spdy"
+    group_item_label: "Chunk Recvd Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Spdy Chunk Recvd Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/spdy_chunk_recvd"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SPDY: Recvd Chunk Size (rounded to KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SPDY_CHUNK_RECVD.
+"
+  }
+
+  dimension: metrics__memory_distribution__spdy_continued_headers__sum {
+    label: "Spdy Continued Headers Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.spdy_continued_headers.sum ;;
+    type: number
+    group_label: "Spdy"
+    group_item_label: "Continued Headers Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Spdy Continued Headers Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/spdy_continued_headers"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of continued H2 headers in bytes.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SPDY_CONTINUED_HEADERS.
+"
+  }
+
+  dimension: metrics__custom_distribution__spdy_goaway_local__sum {
+    label: "Spdy Goaway Local Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.spdy_goaway_local.sum ;;
+    type: number
+    group_label: "Spdy"
+    group_item_label: "Goaway Local Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Spdy Goaway Local Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/spdy_goaway_local"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "H2: goaway reason client sent from rfc 7540. 31 is none sent.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SPDY_GOAWAY_LOCAL.
+"
+  }
+
+  dimension: metrics__custom_distribution__spdy_goaway_peer__sum {
+    label: "Spdy Goaway Peer Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.spdy_goaway_peer.sum ;;
+    type: number
+    group_label: "Spdy"
+    group_item_label: "Goaway Peer Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Spdy Goaway Peer Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/spdy_goaway_peer"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "H2: goaway reason from peer from rfc 7540. 31 is none received.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SPDY_GOAWAY_PEER.
+"
+  }
+
+  dimension: metrics__memory_distribution__spdy_kbread_per_conn__sum {
+    label: "Spdy Kbread Per Conn Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.spdy_kbread_per_conn.sum ;;
+    type: number
+    group_label: "Spdy"
+    group_item_label: "Kbread Per Conn Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Spdy Kbread Per Conn Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/spdy_kbread_per_conn"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SPDY: KB read per connection
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SPDY_KBREAD_PER_CONN2.
+"
+  }
+
+  dimension: metrics__custom_distribution__spdy_parallel_streams__sum {
+    label: "Spdy Parallel Streams Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.spdy_parallel_streams.sum ;;
+    type: number
+    group_label: "Spdy"
+    group_item_label: "Parallel Streams Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Spdy Parallel Streams Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/spdy_parallel_streams"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SPDY: Streams concurrent active per connection
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SPDY_PARALLEL_STREAMS.
+"
+  }
+
+  dimension: metrics__custom_distribution__spdy_request_per_conn__sum {
+    label: "Spdy Request Per Conn Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.spdy_request_per_conn.sum ;;
+    type: number
+    group_label: "Spdy"
+    group_item_label: "Request Per Conn Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Spdy Request Per Conn Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/spdy_request_per_conn"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SPDY: Streams created per connection
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SPDY_REQUEST_PER_CONN_3.
+"
+  }
+
+  dimension: metrics__custom_distribution__spdy_server_initiated_streams__sum {
+    label: "Spdy Server Initiated Streams Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.spdy_server_initiated_streams.sum ;;
+    type: number
+    group_label: "Spdy"
+    group_item_label: "Server Initiated Streams Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Spdy Server Initiated Streams Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/spdy_server_initiated_streams"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SPDY: Streams received per connection
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SPDY_SERVER_INITIATED_STREAMS.
+"
+  }
+
+  dimension: metrics__memory_distribution__spdy_settings_iw__sum {
+    label: "Spdy Settings Iw Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.spdy_settings_iw.sum ;;
+    type: number
+    group_label: "Spdy"
+    group_item_label: "Settings Iw Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Spdy Settings Iw Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/spdy_settings_iw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "H2: Settings Initial Window (rounded to KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SPDY_SETTINGS_IW.
+"
+  }
+
+  dimension: metrics__custom_distribution__spdy_settings_max_streams__sum {
+    label: "Spdy Settings Max Streams Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.spdy_settings_max_streams.sum ;;
+    type: number
+    group_label: "Spdy"
+    group_item_label: "Settings Max Streams Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Spdy Settings Max Streams Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/spdy_settings_max_streams"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "H2: Settings Max Streams parameter
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SPDY_SETTINGS_MAX_STREAMS.
+"
+  }
+
+  dimension: metrics__custom_distribution__spdy_syn_ratio__sum {
+    label: "Spdy Syn Ratio Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.spdy_syn_ratio.sum ;;
+    type: number
+    group_label: "Spdy"
+    group_item_label: "Syn Ratio Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Spdy Syn Ratio Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/spdy_syn_ratio"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SPDY: SYN Frame Header Ratio (lower better)
+This metric was generated to correspond to the Legacy Telemetry linear histogram SPDY_SYN_RATIO.
+"
+  }
+
+  dimension: metrics__custom_distribution__spdy_syn_reply_ratio__sum {
+    label: "Spdy Syn Reply Ratio Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.spdy_syn_reply_ratio.sum ;;
+    type: number
+    group_label: "Spdy"
+    group_item_label: "Syn Reply Ratio Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Spdy Syn Reply Ratio Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/spdy_syn_reply_ratio"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SPDY: SYN Reply Header Ratio (lower better)
+This metric was generated to correspond to the Legacy Telemetry linear histogram SPDY_SYN_REPLY_RATIO.
+"
+  }
+
+  dimension: metrics__memory_distribution__spdy_syn_reply_size__sum {
+    label: "Spdy Syn Reply Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.spdy_syn_reply_size.sum ;;
+    type: number
+    group_label: "Spdy"
+    group_item_label: "Syn Reply Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Spdy Syn Reply Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/spdy_syn_reply_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SPDY: SYN Reply Header Size
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SPDY_SYN_REPLY_SIZE.
+"
+  }
+
+  dimension: metrics__memory_distribution__spdy_syn_size__sum {
+    label: "Spdy Syn Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.spdy_syn_size.sum ;;
+    type: number
+    group_label: "Spdy"
+    group_item_label: "Syn Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Spdy Syn Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/spdy_syn_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SPDY: SYN Frame Header Size
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SPDY_SYN_SIZE.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_auth_algorithm_full__sum {
+    label: "Ssl Auth Algorithm Full Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_auth_algorithm_full.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Auth Algorithm Full Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Auth Algorithm Full Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_auth_algorithm_full"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SSL Authentication Algorithm (null=0, rsa(KEA)=1, ecdsa=4, rsa(sign)=7) in full handshake
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_AUTH_ALGORITHM_FULL.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_auth_ecdsa_curve_full__sum {
+    label: "Ssl Auth Ecdsa Curve Full Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_auth_ecdsa_curve_full.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Auth Ecdsa Curve Full Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Auth Ecdsa Curve Full Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_auth_ecdsa_curve_full"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "ECDSA signature curve for TLS_*_ECDSA_* in full handshake (23=P-256, 24=P-384, 25=P-521)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_AUTH_ECDSA_CURVE_FULL.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_auth_rsa_key_size_full__sum {
+    label: "Ssl Auth Rsa Key Size Full Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_auth_rsa_key_size_full.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Auth Rsa Key Size Full Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Auth Rsa Key Size Full Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_auth_rsa_key_size_full"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "RSA signature key size for TLS_*_RSA_* in full handshake
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_AUTH_RSA_KEY_SIZE_FULL.
+"
+  }
+
+  dimension: metrics__memory_distribution__ssl_bytes_before_cert_callback__sum {
+    label: "Ssl Bytes Before Cert Callback Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.ssl_bytes_before_cert_callback.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Bytes Before Cert Callback Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Bytes Before Cert Callback Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_bytes_before_cert_callback"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "plaintext bytes read before a server certificate authenticated
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SSL_BYTES_BEFORE_CERT_CALLBACK.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_cert_error_overrides__sum {
+    label: "Ssl Cert Error Overrides Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_cert_error_overrides.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Cert Error Overrides Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Cert Error Overrides Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_cert_error_overrides"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Was a certificate error overridden on this handshake? What was it? (0=unknown error (indicating bug), 1=no, >1=a specific error)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_CERT_ERROR_OVERRIDES.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_cert_verification_errors__sum {
+    label: "Ssl Cert Verification Errors Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_cert_verification_errors.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Cert Verification Errors Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Cert Verification Errors Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_cert_verification_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If certificate verification failed in a TLS handshake, what was the error? (see MapCertErrorToProbeValue in security/manager/ssl/SSLServerCertVerification.cpp and the values in security/pkix/include/pkix/Result.h)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_CERT_VERIFICATION_ERRORS.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_ct_policy_non_compliant_connections_by_ca__sum {
+    label: "Ssl Ct Policy Non Compliant Connections By Ca Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_ct_policy_non_compliant_connections_by_ca.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Ct Policy Non Compliant Connections By Ca Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Ct Policy Non Compliant Connections By Ca Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_ct_policy_non_compliant_connections_by_ca"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of successfully established TLS connections NOT compliant with the Certificate Transparency Policy, by CA. See https://searchfox.org/mozilla-central/source/security/manager/ssl/RootHashes.inc for names of CAs. Bucket zero holds CAs not present in the list.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_CT_POLICY_NON_COMPLIANT_CONNECTIONS_BY_CA_2.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_kea_dhe_key_size_full__sum {
+    label: "Ssl Kea Dhe Key Size Full Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_kea_dhe_key_size_full.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Kea Dhe Key Size Full Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Kea Dhe Key Size Full Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_kea_dhe_key_size_full"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DHE KEA (TLS_DHE_*) key size in full handshake
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_KEA_DHE_KEY_SIZE_FULL.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_kea_ecdhe_curve_full__sum {
+    label: "Ssl Kea Ecdhe Curve Full Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_kea_ecdhe_curve_full.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Kea Ecdhe Curve Full Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Kea Ecdhe Curve Full Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_kea_ecdhe_curve_full"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "ECDHE KEA (TLS_ECDHE_*) curve (23=P-256, 24=P-384, 25=P-521, 29=Curve25519) in full handshake
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_KEA_ECDHE_CURVE_FULL.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_kea_rsa_key_size_full__sum {
+    label: "Ssl Kea Rsa Key Size Full Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_kea_rsa_key_size_full.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Kea Rsa Key Size Full Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Kea Rsa Key Size Full Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_kea_rsa_key_size_full"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "RSA KEA (TLS_RSA_*) key size in full handshake
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_KEA_RSA_KEY_SIZE_FULL.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_key_exchange_algorithm_full__sum {
+    label: "Ssl Key Exchange Algorithm Full Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_key_exchange_algorithm_full.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Key Exchange Algorithm Full Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Key Exchange Algorithm Full Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_key_exchange_algorithm_full"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SSL Handshake Key Exchange Algorithm for full handshake (null=0, rsa=1, dh=2, fortezza=3, ecdh=4)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_KEY_EXCHANGE_ALGORITHM_FULL.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_key_exchange_algorithm_resumed__sum {
+    label: "Ssl Key Exchange Algorithm Resumed Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_key_exchange_algorithm_resumed.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Key Exchange Algorithm Resumed Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Key Exchange Algorithm Resumed Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_key_exchange_algorithm_resumed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SSL Handshake Key Exchange Algorithm for resumed handshake (null=0, rsa=1, dh=2, fortezza=3, ecdh=4)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_KEY_EXCHANGE_ALGORITHM_RESUMED.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_npn_type__sum {
+    label: "Ssl Npn Type Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_npn_type.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Npn Type Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Npn Type Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_npn_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "NPN Results (0=none, 1=negotiated, 2=no-overlap, 3=selected(alpn))
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_NPN_TYPE.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_ocsp_stapling__sum {
+    label: "Ssl Ocsp Stapling Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_ocsp_stapling.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Ocsp Stapling Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Ocsp Stapling Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_ocsp_stapling"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Status of OCSP stapling on this handshake (1=present, good; 2=none; 3=present, expired; 4=present, other error)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_OCSP_STAPLING.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_permanent_cert_error_overrides__sum {
+    label: "Ssl Permanent Cert Error Overrides Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_permanent_cert_error_overrides.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Permanent Cert Error Overrides Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Permanent Cert Error Overrides Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_permanent_cert_error_overrides"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many permanent certificate overrides a user has stored.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SSL_PERMANENT_CERT_ERROR_OVERRIDES.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_reasons_for_not_false_starting__sum {
+    label: "Ssl Reasons For Not False Starting Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_reasons_for_not_false_starting.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Reasons For Not False Starting Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Reasons For Not False Starting Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_reasons_for_not_false_starting"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Bitmask of reasons we did not false start when libssl would have let us (see key in nsNSSCallbacks.cpp)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_REASONS_FOR_NOT_FALSE_STARTING.
+"
+  }
+
+  dimension: metrics__labeled_counter__ssl_resumed_session {
+    label: "Ssl Resumed Session"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ssl_resumed_session ;;
+    group_label: "Ssl"
+    group_item_label: "Resumed Session"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Resumed Session"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_resumed_session"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "complete TLS connect that used TLS Session Resumption (collected at same time as SSL_TIME_UNTIL_HANDSHAKE_FINISHED)
+This metric was generated to correspond to the Legacy Telemetry boolean histogram SSL_RESUMED_SESSION.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_scts_origin__sum {
+    label: "Ssl Scts Origin Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_scts_origin.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Scts Origin Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Scts Origin Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_scts_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Origin of Signed Certificate Timestamps received (1=Embedded, 2=TLS handshake extension, 3=Stapled OCSP response)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_SCTS_ORIGIN.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_scts_per_connection__sum {
+    label: "Ssl Scts Per Connection Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_scts_per_connection.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Scts Per Connection Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Scts Per Connection Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_scts_per_connection"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Histogram of Signed Certificate Timestamps per SSL connection, from all sources (embedded / OCSP Stapling / TLS handshake). Bucket 0 counts the cases when no SCTs were received, or none were extracted due to parsing errors.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_SCTS_PER_CONNECTION.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_scts_verification_status__sum {
+    label: "Ssl Scts Verification Status Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_scts_verification_status.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Scts Verification Status Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Scts Verification Status Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_scts_verification_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Verification status of Signed Certificate Timestamps received (0=Decoding error, 1=Valid SCT, 2=SCT from unknown log, 3=Invalid SCT signature, 4=SCT timestamp is in the future, 5=Valid SCT from a disqualified log)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_SCTS_VERIFICATION_STATUS.
+"
+  }
+
+  dimension: metrics__timing_distribution__ssl_time_until_ready__sum {
+    label: "Ssl Time Until Ready Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Time Until Ready Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Time Until Ready Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_time_until_ready"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "ms of SSL wait time including TCP and proxy tunneling
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SSL_TIME_UNTIL_READY.
+"
+  }
+
+  dimension: metrics__timing_distribution__ssl_time_until_ready_conservative__sum {
+    label: "Ssl Time Until Ready Conservative Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_conservative.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Time Until Ready Conservative Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Time Until Ready Conservative Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_time_until_ready_conservative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "ms of SSL wait time including TCP and proxy tunneling for conservative-mode connections
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SSL_TIME_UNTIL_READY_CONSERVATIVE.
+"
+  }
+
+  dimension: metrics__timing_distribution__ssl_time_until_ready_ech__sum {
+    label: "Ssl Time Until Ready Ech Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_ech.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Time Until Ready Ech Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Time Until Ready Ech Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_time_until_ready_ech"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "ms of SSL wait time including TCP and proxy tunneling for connections using ECH 'Real'
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SSL_TIME_UNTIL_READY_ECH.
+"
+  }
+
+  dimension: metrics__timing_distribution__ssl_time_until_ready_ech_grease__sum {
+    label: "Ssl Time Until Ready Ech Grease Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_ech_grease.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Time Until Ready Ech Grease Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Time Until Ready Ech Grease Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_time_until_ready_ech_grease"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "ms of SSL wait time including TCP and proxy tunneling for connections using ECH GREASE
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SSL_TIME_UNTIL_READY_ECH_GREASE.
+"
+  }
+
+  dimension: metrics__timing_distribution__ssl_time_until_ready_first_try__sum {
+    label: "Ssl Time Until Ready First Try Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_first_try.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Time Until Ready First Try Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Time Until Ready First Try Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_time_until_ready_first_try"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "ms of SSL wait time including TCP and proxy tunneling for first-try connections
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SSL_TIME_UNTIL_READY_FIRST_TRY.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_tls10_intolerance_reason_post__sum {
+    label: "Ssl Tls10 Intolerance Reason Post Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_tls10_intolerance_reason_post.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Tls10 Intolerance Reason Post Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Tls10 Intolerance Reason Post Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_tls10_intolerance_reason_post"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Potential TLS 1.0 intolerance, after considering historical info (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_TLS10_INTOLERANCE_REASON_POST.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_tls10_intolerance_reason_pre__sum {
+    label: "Ssl Tls10 Intolerance Reason Pre Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_tls10_intolerance_reason_pre.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Tls10 Intolerance Reason Pre Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Tls10 Intolerance Reason Pre Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_tls10_intolerance_reason_pre"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Potential TLS 1.0 intolerance, before considering historical info (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_TLS10_INTOLERANCE_REASON_PRE.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_tls11_intolerance_reason_post__sum {
+    label: "Ssl Tls11 Intolerance Reason Post Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_tls11_intolerance_reason_post.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Tls11 Intolerance Reason Post Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Tls11 Intolerance Reason Post Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_tls11_intolerance_reason_post"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Potential TLS 1.1 intolerance, after considering historical info (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_TLS11_INTOLERANCE_REASON_POST.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_tls11_intolerance_reason_pre__sum {
+    label: "Ssl Tls11 Intolerance Reason Pre Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_tls11_intolerance_reason_pre.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Tls11 Intolerance Reason Pre Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Tls11 Intolerance Reason Pre Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_tls11_intolerance_reason_pre"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Potential TLS 1.1 intolerance, before considering historical info (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_TLS11_INTOLERANCE_REASON_PRE.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_tls12_intolerance_reason_post__sum {
+    label: "Ssl Tls12 Intolerance Reason Post Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_tls12_intolerance_reason_post.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Tls12 Intolerance Reason Post Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Tls12 Intolerance Reason Post Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_tls12_intolerance_reason_post"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Potential TLS 1.2 intolerance, after considering historical info (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_TLS12_INTOLERANCE_REASON_POST.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_tls12_intolerance_reason_pre__sum {
+    label: "Ssl Tls12 Intolerance Reason Pre Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_tls12_intolerance_reason_pre.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Tls12 Intolerance Reason Pre Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Tls12 Intolerance Reason Pre Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_tls12_intolerance_reason_pre"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Potential TLS 1.2 intolerance, before considering historical info (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_TLS12_INTOLERANCE_REASON_PRE.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_tls13_intolerance_reason_post__sum {
+    label: "Ssl Tls13 Intolerance Reason Post Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_tls13_intolerance_reason_post.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Tls13 Intolerance Reason Post Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Tls13 Intolerance Reason Post Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_tls13_intolerance_reason_post"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Potential TLS 1.3 intolerance, after considering historical info (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_TLS13_INTOLERANCE_REASON_POST.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_tls13_intolerance_reason_pre__sum {
+    label: "Ssl Tls13 Intolerance Reason Pre Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_tls13_intolerance_reason_pre.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Tls13 Intolerance Reason Pre Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Tls13 Intolerance Reason Pre Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_tls13_intolerance_reason_pre"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Potential TLS 1.3 intolerance, before considering historical info (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_TLS13_INTOLERANCE_REASON_PRE.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_version_fallback_inappropriate__sum {
+    label: "Ssl Version Fallback Inappropriate Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_version_fallback_inappropriate.sum ;;
+    type: number
+    group_label: "Ssl"
+    group_item_label: "Version Fallback Inappropriate Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Version Fallback Inappropriate Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_version_fallback_inappropriate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "TLS/SSL version intolerance was falsely detected, server rejected handshake (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_VERSION_FALLBACK_INAPPROPRIATE.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_handshake_completed__sum {
+    label: "Ssl Handshake Completed Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_completed.sum ;;
+    type: number
+    group_label: "Ssl Handshake"
+    group_item_label: "Completed Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Handshake Completed Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_handshake_completed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Type of handshake (1=resumption, 2=false started, 3=chose not to false start, 4=not allowed to false start)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_HANDSHAKE_TYPE.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_handshake_privacy__sum {
+    label: "Ssl Handshake Privacy Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_privacy.sum ;;
+    type: number
+    group_label: "Ssl Handshake"
+    group_item_label: "Privacy Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Handshake Privacy Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_handshake_privacy"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "0th bit - TLS13 used? 1th bit - Revocation Privacy, 2nd bit - DNS Privacy, 3rd bit - ECH Privacy
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_HANDSHAKE_PRIVACY.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_handshake_result__sum {
+    label: "Ssl Handshake Result Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result.sum ;;
+    type: number
+    group_label: "Ssl Handshake"
+    group_item_label: "Result Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Handshake Result Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_handshake_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SSL handshake result, 0=success, 1-255=NSS error offset, 256-511=SEC error offset + 256, 512-639=NSPR error offset + 512, 640-670=PKIX error, 671=unknown err
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_HANDSHAKE_RESULT.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_handshake_result_conservative__sum {
+    label: "Ssl Handshake Result Conservative Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result_conservative.sum ;;
+    type: number
+    group_label: "Ssl Handshake"
+    group_item_label: "Result Conservative Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Handshake Result Conservative Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_handshake_result_conservative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SSL handshake result for conservative mode connections, 0=success, 1-255=NSS error offset, 256-511=SEC error offset + 256, 512-639=NSPR error offset + 512, 640-670=PKIX error, 671=unknown err
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_HANDSHAKE_RESULT_CONSERVATIVE.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_handshake_result_ech__sum {
+    label: "Ssl Handshake Result Ech Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result_ech.sum ;;
+    type: number
+    group_label: "Ssl Handshake"
+    group_item_label: "Result Ech Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Handshake Result Ech Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_handshake_result_ech"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SSL handshake result for connections which used ECH 'Real', 0=success, 1-255=NSS error offset, 256-511=SEC error offset + 256, 512-639=NSPR error offset + 512, 640-670=PKIX error, 671=unknown err
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_HANDSHAKE_RESULT_ECH.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_handshake_result_ech_grease__sum {
+    label: "Ssl Handshake Result Ech Grease Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result_ech_grease.sum ;;
+    type: number
+    group_label: "Ssl Handshake"
+    group_item_label: "Result Ech Grease Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Handshake Result Ech Grease Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_handshake_result_ech_grease"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SSL handshake result for connections which used ECH GREASE, 0=success, 1-255=NSS error offset, 256-511=SEC error offset + 256, 512-639=NSPR error offset + 512, 640-670=PKIX error, 671=unknown err
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_HANDSHAKE_RESULT_ECH_GREASE.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_handshake_result_first_try__sum {
+    label: "Ssl Handshake Result First Try Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result_first_try.sum ;;
+    type: number
+    group_label: "Ssl Handshake"
+    group_item_label: "Result First Try Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Handshake Result First Try Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_handshake_result_first_try"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SSL handshake result for first-try connections, 0=success, 1-255=NSS error offset, 256-511=SEC error offset + 256, 512-639=NSPR error offset + 512, 640-670=PKIX error, 671=unknown err
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_HANDSHAKE_RESULT_FIRST_TRY.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_handshake_version__sum {
+    label: "Ssl Handshake Version Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_version.sum ;;
+    type: number
+    group_label: "Ssl Handshake"
+    group_item_label: "Version Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ssl Handshake Version Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_handshake_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Negotiated SSL Version (1=tls1, 2=tls1.1, 3=tls1.2, 4=tls1.3)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_HANDSHAKE_VERSION.
+"
+  }
+
   dimension: metrics__quantity__startup_profile_count {
     label: "Startup Profile Count"
     hidden: no
@@ -20691,6 +23468,25 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "The total number of successful TLS server certificate verifications.
+"
+  }
+
+  dimension: metrics__custom_distribution__tls_cipher_suite__sum {
+    label: "Tls Cipher Suite Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.tls_cipher_suite.sum ;;
+    type: number
+    group_label: "Tls"
+    group_item_label: "Cipher Suite Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Tls Cipher Suite Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/tls_cipher_suite"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Negotiated cipher suite in TLS handshake (see key in AccumulateCipherSuite in nsNSSCallbacks.cpp)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram TLS_CIPHER_SUITE.
 "
   }
 
@@ -32182,6 +34978,88 @@ view: metrics__metrics__labeled_counter__cert_compression_used {
   }
 }
 
+view: metrics__metrics__labeled_counter__cert_pinning_results {
+  label: "Cert Pinning - Results"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__cert_pinning_test_results {
+  label: "Cert Pinning - Test Results"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms {
   label: "Cert Verifier - Cert Revocation Mechanisms"
 
@@ -33863,6 +36741,47 @@ view: metrics__metrics__labeled_counter__devtools_tooltip_shown {
   }
 }
 
+view: metrics__metrics__labeled_counter__dns_lookup_algorithm {
+  label: "Dns - Lookup Algorithm"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__dom_contentprocess_launch_is_sync {
   label: "Dom Contentprocess - Launch Is Sync"
 
@@ -34810,6 +37729,252 @@ view: metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
 
 view: metrics__metrics__labeled_counter__gpu_process_crash_fallbacks {
   label: "Gpu Process - Crash Fallbacks"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__http_altsvc_mapping_changed_target {
+  label: "Http - Altsvc Mapping Changed Target"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__http_channel_onstart_success {
+  label: "Http - Channel Onstart Success"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__http_connection_entry_cache_hit {
+  label: "Http - Connection Entry Cache Hit"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__http_pageload_is_ssl {
+  label: "Http - Pageload Is Ssl"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__http_transaction_is_ssl {
+  label: "Http - Transaction Is Ssl"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__http_transaction_use_altsvc {
+  label: "Http - Transaction Use Altsvc"
 
   dimension: document_id {
     type: string
@@ -35915,6 +39080,47 @@ view: metrics__metrics__labeled_counter__library_search {
   }
 }
 
+view: metrics__metrics__labeled_counter__localdomstorage_preload_pending_on_first_access {
+  label: "Localdomstorage - Preload Pending On First Access"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__media_audio_backend {
   label: "Media Audio - Backend"
 
@@ -35958,6 +39164,47 @@ view: metrics__metrics__labeled_counter__media_audio_backend {
 
 view: metrics__metrics__labeled_counter__media_audio_init_failure {
   label: "Media Audio - Init Failure"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_codec_used {
+  label: "Media - Codec Used"
 
   dimension: document_id {
     type: string
@@ -36081,6 +39328,47 @@ view: metrics__metrics__labeled_counter__media_mp4_parse_sample_description_entr
 
 view: metrics__metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_crypto {
   label: "Media Mp4 Parse - Sample Description Entries Have Multiple Crypto"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_mse_source_buffer_type {
+  label: "Media - Mse Source Buffer Type"
 
   dimension: document_id {
     type: string
@@ -36735,6 +40023,47 @@ view: metrics__metrics__labeled_counter__network_alpn_mismatch_count {
   }
 }
 
+view: metrics__metrics__labeled_counter__network_back_pressure_suspension_rate {
+  label: "Network - Back Pressure Suspension Rate"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__network_byte_range_request {
   label: "Network - Byte Range Request"
 
@@ -36937,6 +40266,88 @@ view: metrics__metrics__labeled_counter__network_data_size_per_type {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_race_cache_validation {
+  label: "Network - Race Cache Validation"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_race_cache_with_network_usage {
+  label: "Network - Race Cache With Network Usage"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -40878,6 +44289,47 @@ view: metrics__metrics__labeled_counter__sidebar_link {
 
 view: metrics__metrics__labeled_counter__sidebar_search {
   label: "Sidebar - Search"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__ssl_resumed_session {
+  label: "Ssl - Resumed Session"
 
   dimension: document_id {
     type: string
@@ -45347,6 +48799,18 @@ view: metrics__metrics__custom_distribution__browser_migration_source_browser__v
   }
 }
 
+view: metrics__metrics__custom_distribution__cert_chain_key_size_status__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__cert_compression_brotli_saved_bytes__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -45372,6 +48836,78 @@ view: metrics__metrics__custom_distribution__cert_compression_zlib_saved_bytes__
 }
 
 view: metrics__metrics__custom_distribution__cert_compression_zstd_saved_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cert_ev_status__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cert_pinning_failures_by_ca__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cert_pinning_moz_results_by_host__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cert_pinning_moz_test_results_by_host__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cert_validation_http_request_result__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cert_validation_success_by_ca__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -45611,6 +49147,30 @@ view: metrics__metrics__custom_distribution__cycle_collector_worker_visited_ref_
   }
 }
 
+view: metrics__metrics__custom_distribution__dns_blocklist_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__dns_lookup_method__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__extensions_timing_event_page_running_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -45768,6 +49328,246 @@ view: metrics__metrics__custom_distribution__gfx_content_frame_time_without_reso
 }
 
 view: metrics__metrics__custom_distribution__gfx_content_frame_time_without_upload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__hpack_bytes_evicted_ratio_compressor__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__hpack_bytes_evicted_ratio_decompressor__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__hpack_elements_evicted_compressor__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__hpack_elements_evicted_decompressor__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__hpack_peak_count_compressor__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__hpack_peak_count_decompressor__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__http_altsvc_entries_per_header__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__http_channel_disposition__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__http_content_encoding__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__http_proxy_type__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__http_request_per_conn__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__http_request_per_page__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__http_request_per_page_from_cache__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__http_response_version__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__http_saw_quic_alt_protocol__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__http_transaction_ech_retry_ech_failed_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__http_transaction_ech_retry_others_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__http_transaction_ech_retry_with_ech_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__http_transaction_ech_retry_without_ech_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__http_transaction_restart_reason__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -45947,7 +49747,79 @@ view: metrics__metrics__custom_distribution__javascript_gc_zones_collected__valu
   }
 }
 
+view: metrics__metrics__custom_distribution__media_decoder_backend_used__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__media_mp4_parse_num_sample_description_entries__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__media_video_dropped_compositor_frames_proportion_exponential__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__media_video_dropped_decoded_frames_proportion_exponential__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__media_video_dropped_frames_proportion__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__media_video_dropped_frames_proportion_exponential__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__media_video_dropped_sink_frames_proportion_exponential__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -46008,6 +49880,54 @@ view: metrics__metrics__custom_distribution__mixed_content_page_load__values {
 }
 
 view: metrics__metrics__custom_distribution__mixed_content_unblock_counter__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__network_back_pressure_suspension_cp_type__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__network_cache_v2_input_stream_status__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__network_cache_v2_output_stream_status__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__network_http_cache_entry_reuse_count__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -46679,6 +50599,522 @@ view: metrics__metrics__custom_distribution__predictor_total_preresolves__values
   }
 }
 
+view: metrics__metrics__custom_distribution__spdy_goaway_local__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__spdy_goaway_peer__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__spdy_parallel_streams__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__spdy_request_per_conn__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__spdy_server_initiated_streams__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__spdy_settings_max_streams__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__spdy_syn_ratio__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__spdy_syn_reply_ratio__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_auth_algorithm_full__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_auth_ecdsa_curve_full__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_auth_rsa_key_size_full__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_cert_error_overrides__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_cert_verification_errors__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_ct_policy_non_compliant_connections_by_ca__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_handshake_completed__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_handshake_privacy__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_handshake_result__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_handshake_result_conservative__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_handshake_result_ech__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_handshake_result_ech_grease__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_handshake_result_first_try__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_handshake_version__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_kea_dhe_key_size_full__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_kea_ecdhe_curve_full__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_kea_rsa_key_size_full__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_key_exchange_algorithm_full__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_key_exchange_algorithm_resumed__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_npn_type__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_ocsp_stapling__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_permanent_cert_error_overrides__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_reasons_for_not_false_starting__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_scts_origin__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_scts_per_connection__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_scts_verification_status__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_tls10_intolerance_reason_post__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_tls10_intolerance_reason_pre__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_tls11_intolerance_reason_post__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_tls11_intolerance_reason_pre__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_tls12_intolerance_reason_post__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_tls12_intolerance_reason_pre__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_tls13_intolerance_reason_post__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_tls13_intolerance_reason_pre__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_version_fallback_inappropriate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__thumbnails_capture_done_reason_2__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -46704,6 +51140,18 @@ view: metrics__metrics__custom_distribution__thumbnails_queue_size_on_capture__v
 }
 
 view: metrics__metrics__custom_distribution__timer_thread_timers_fired_per_wakeup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__tls_cipher_suite__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -47654,6 +52102,435 @@ view: metrics__metrics__labeled_custom_distribution__contentblocking_email_track
   }
 }
 
+view: metrics__metrics__labeled_custom_distribution__dns_trr_attempt_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_attempt_count__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reason_native_failed {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reason_native_failed__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reason_native_success {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reason_native_success__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reason_trr_first {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reason_trr_first__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reason_trr_first_type_rec {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reason_trr_first_type_rec__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_native_failed {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_native_failed__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_native_success {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_native_success__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_retry_failed {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_retry_failed__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_retry_success {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_retry_success__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_strict_mode {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_strict_mode__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_trr_first {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_trr_first__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__labeled_custom_distribution__downloads_user_action_on_blocked_download {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -47693,6 +52570,357 @@ view: metrics__metrics__labeled_custom_distribution__downloads_user_action_on_bl
   }
 }
 
+view: metrics__metrics__labeled_custom_distribution__http_channel_page_onstart_success_trr {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__http_channel_page_onstart_success_trr__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__http_channel_sub_onstart_success_trr {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__http_channel_sub_onstart_success_trr__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__http_connection_close_reason {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__http_connection_close_reason__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__http_upload_bandwidth_mbps {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__http_upload_bandwidth_mbps__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__media_audible_play_time_percent {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__media_audible_play_time_percent__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__media_muted_play_time_percent {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__media_muted_play_time_percent__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__media_video_hidden_play_time_percentage {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__media_video_hidden_play_time_percentage__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__network_cache_entry_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__network_cache_entry_count__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__network_cache_entry_count_share {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__network_cache_entry_count_share__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -47721,6 +52949,45 @@ view: metrics__metrics__labeled_custom_distribution__network_cache_hit_rate_per_
 }
 
 view: metrics__metrics__labeled_custom_distribution__network_cache_hit_rate_per_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__network_cache_size_share {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__network_cache_size_share__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -48005,6 +53272,45 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_timeou
   }
 }
 
+view: metrics__metrics__labeled_memory_distribution__network_cache_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__network_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__labeled_quantity__browser_searchinit_engine_invalid_webextension {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -48050,6 +53356,243 @@ view: metrics__metrics__labeled_string__places_places_database_corruption_handli
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__dns_trr_lookup_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__dns_trr_lookup_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__media_media_play_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__media_media_play_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__media_video_visible_play_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__media_video_visible_play_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
@@ -48200,6 +53743,164 @@ view: metrics__metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse
 }
 
 view: metrics__metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse_idle_connection__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_async_open_child_to_transaction_pending_exp {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_async_open_child_to_transaction_pending_exp__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_dns_end_to_connect_start_exp {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_dns_end_to_connect_start_exp__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -48753,6 +54454,164 @@ view: metrics__metrics__labeled_timing_distribution__network_http_fetch_duration
 }
 
 view: metrics__metrics__labeled_timing_distribution__network_http_fetch_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_response_end_parent_to_content {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_response_end_parent_to_content__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_response_start_parent_to_content_exp {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__network_response_start_parent_to_content_exp__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -49712,6 +55571,85 @@ view: metrics__metrics__labeled_timing_distribution__orb_receive_data_for_valida
   }
 }
 
+view: metrics__metrics__labeled_timing_distribution__ssl_time_until_handshake_finished_keyed_by_ka {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__ssl_time_until_handshake_finished_keyed_by_ka__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__labeled_timing_distribution__suggest_ingest_download_time {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -50294,6 +56232,66 @@ view: metrics__metrics__memory_distribution__glean_upload_pending_pings_director
   }
 }
 
+view: metrics__metrics__memory_distribution__hpack_bytes_evicted_compressor__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__hpack_bytes_evicted_decompressor__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__hpack_peak_size_compressor__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__hpack_peak_size_decompressor__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__http_kbread_per_conn2__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__memory_distribution__image_decode_speed_avif__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -50378,6 +56376,42 @@ view: metrics__metrics__memory_distribution__memory_phc_slop__values {
   }
 }
 
+view: metrics__metrics__memory_distribution__network_race_cache_bandwidth_not_race__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__network_race_cache_bandwidth_race_cache_win__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__network_race_cache_bandwidth_race_network_win__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__memory_distribution__networking_cache_metadata_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -50427,6 +56461,90 @@ view: metrics__metrics__memory_distribution__networking_http_3_udp_datagram_size
 }
 
 view: metrics__metrics__memory_distribution__performance_clone_deserialize_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__spdy_chunk_recvd__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__spdy_continued_headers__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__spdy_kbread_per_conn__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__spdy_settings_iw__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__spdy_syn_reply_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__spdy_syn_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__ssl_bytes_before_cert_callback__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -50679,6 +56797,114 @@ view: metrics__metrics__timing_distribution__cycle_collector_time_between__value
 }
 
 view: metrics__metrics__timing_distribution__cycle_collector_worker_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__dns_by_type_cleanup_age__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__dns_by_type_failed_lookup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__dns_by_type_premature_eviction__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__dns_by_type_succeeded_lookup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__dns_cleanup_age__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__dns_native_lookup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__dns_native_queuing__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__dns_premature_eviction__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__dns_trr_processing_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -51278,6 +57504,78 @@ view: metrics__metrics__timing_distribution__gpu_process_launch_time__values {
   }
 }
 
+view: metrics__metrics__timing_distribution__http_subitem_first_byte_latency_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__http_subitem_open_latency_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__http_transaction_wait_time_http__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__http_transaction_wait_time_http2_sup_http3__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__http_transaction_wait_time_http3__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__http_transaction_wait_time_spdy__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__httpsfirst_downgrade_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -51626,6 +57924,18 @@ view: metrics__metrics__timing_distribution__javascript_pageload_xdr_encode_time
   }
 }
 
+view: metrics__metrics__timing_distribution__localdomstorage_shutdown_database__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -51651,6 +57961,90 @@ view: metrics__metrics__timing_distribution__ls_preparedatastore_processing_time
 }
 
 view: metrics__metrics__timing_distribution__ls_preparelsdatabase_processing_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__media_video_clearkey_play_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__media_video_encrypted_play_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__media_video_hdr_play_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__media_video_hidden_play_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__media_video_play_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__media_video_widevine_play_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_back_pressure_suspension_delay_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -51734,6 +58128,30 @@ view: metrics__metrics__timing_distribution__network_complete_load_net__values {
   }
 }
 
+view: metrics__metrics__timing_distribution__network_disk_cache2_shutdown_clear_private__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_disk_cache_shutdown_v2__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__network_dns_end__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -51794,6 +58212,30 @@ view: metrics__metrics__timing_distribution__network_font_download_end__values {
   }
 }
 
+view: metrics__metrics__timing_distribution__network_http_cache_entry_alive_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_http_cache_entry_reload_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__network_http_revalidation__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -51831,6 +58273,30 @@ view: metrics__metrics__timing_distribution__network_open_to_first_sent__values 
 }
 
 view: metrics__metrics__timing_distribution__network_open_to_transaction_pending__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_race_cache_with_network_ocec_on_start_diff__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_race_cache_with_network_saved_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -52851,6 +59317,66 @@ view: metrics__metrics__timing_distribution__search_service_startup_time__values
 }
 
 view: metrics__metrics__timing_distribution__serp_categorization_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__ssl_time_until_ready__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__ssl_time_until_ready_conservative__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__ssl_time_until_ready_ech__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__ssl_time_until_ready_ech_grease__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__ssl_time_until_ready_first_try__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

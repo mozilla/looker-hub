@@ -1124,6 +1124,13 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Zoom Count"
   }
 
+  dimension: metrics__string__characteristics_canvas_dpr {
+    sql: ${TABLE}.metrics.string.characteristics_canvas_dpr ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvas Dpr"
+  }
+
   dimension: metrics__string__characteristics_canvas_feature_status {
     sql: ${TABLE}.metrics.string.characteristics_canvas_feature_status ;;
     type: string

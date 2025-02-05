@@ -1419,6 +1419,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvas_dpr {
+    sql: ${TABLE}.metrics.string.characteristics_canvas_dpr ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvas Dpr"
+    description: "The device pixel ratio of the canvas rendering context
+"
+  }
+
   dimension: metrics__string__characteristics_canvas_feature_status {
     sql: ${TABLE}.metrics.string.characteristics_canvas_feature_status ;;
     type: string

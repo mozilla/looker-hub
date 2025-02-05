@@ -40,6 +40,16 @@ view: active_users_table {
     type: string
   }
 
+  dimension: browser_engagement_active_ticks {
+    sql: ${TABLE}.browser_engagement_active_ticks ;;
+    type: number
+  }
+
+  dimension: browser_engagement_uri_count {
+    sql: ${TABLE}.browser_engagement_uri_count ;;
+    type: number
+  }
+
   dimension: city {
     sql: ${TABLE}.city ;;
     type: string
@@ -151,6 +161,11 @@ view: active_users_table {
     type: yesno
   }
 
+  dimension: is_default_browser {
+    sql: ${TABLE}.is_default_browser ;;
+    type: yesno
+  }
+
   dimension: is_mau {
     sql: ${TABLE}.is_mau ;;
     type: yesno
@@ -183,6 +198,11 @@ view: active_users_table {
 
   dimension: isp {
     sql: ${TABLE}.isp ;;
+    type: string
+  }
+
+  dimension: legacy_telemetry_client_id {
+    sql: ${TABLE}.legacy_telemetry_client_id ;;
     type: string
   }
 
@@ -224,6 +244,11 @@ view: active_users_table {
   dimension: telemetry_sdk_build {
     sql: ${TABLE}.telemetry_sdk_build ;;
     type: string
+  }
+
+  dimension: windows_build_number {
+    sql: ${TABLE}.windows_build_number ;;
+    type: number
   }
 
   dimension_group: first_run {
