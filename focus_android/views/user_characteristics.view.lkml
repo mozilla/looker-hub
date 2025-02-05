@@ -185,6 +185,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_canvas_dpr {
+    label: "Characteristics Canvas Dpr"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvas_dpr ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvas Dpr"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Canvas Dpr"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_canvas_dpr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The device pixel ratio of the canvas rendering context
+"
+  }
+
   dimension: metrics__string__characteristics_canvas_feature_status {
     label: "Characteristics Canvas Feature Status"
     hidden: no
