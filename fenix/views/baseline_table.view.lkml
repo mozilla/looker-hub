@@ -305,6 +305,13 @@ view: baseline_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__metrics_default_browser {
+    sql: ${TABLE}.metrics.boolean.metrics_default_browser ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Metrics Default Browser"
+  }
+
   dimension: metrics__counter__events_normal_and_private_uri_count {
     sql: ${TABLE}.metrics.counter.events_normal_and_private_uri_count ;;
     type: number

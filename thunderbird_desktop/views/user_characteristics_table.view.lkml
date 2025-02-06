@@ -663,6 +663,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_gl2_version_software {
+    sql: ${TABLE}.metrics.quantity.characteristics_gl2_version_software ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Gl2 Version Software"
+    description: "The version of OpenGL supported by the user's system.
+"
+  }
+
   dimension: metrics__quantity__characteristics_gl_version {
     sql: ${TABLE}.metrics.quantity.characteristics_gl_version ;;
     type: number
@@ -1410,6 +1419,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvas_dpr {
+    sql: ${TABLE}.metrics.string.characteristics_canvas_dpr ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Canvas Dpr"
+    description: "The device pixel ratio of the canvas rendering context
+"
+  }
+
   dimension: metrics__string__characteristics_canvas_feature_status {
     sql: ${TABLE}.metrics.string.characteristics_canvas_feature_status ;;
     type: string
@@ -1743,6 +1761,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_cpu_arch {
+    sql: ${TABLE}.metrics.string.characteristics_cpu_arch ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Cpu Arch"
+    description: "Arch of the user's device
+"
+  }
+
   dimension: metrics__string__characteristics_cpu_model {
     sql: ${TABLE}.metrics.string.characteristics_cpu_model ;;
     type: string
@@ -1875,6 +1902,150 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics String"
     group_item_label: "Characteristics Font Size Variable Western"
     description: "The value of the font.size.variable.x-western pref
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_context_type {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_context_type ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl2 Context Type"
+    description: "The type of the GL context (EGL, GLX, WGL, etc).
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_context_type_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_context_type_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl2 Context Type Software"
+    description: "The type of the GL context (EGL, GLX, WGL, etc).
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_fragment_shader {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_fragment_shader ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl2 Fragment Shader"
+    description: "Hash of the transformed source of the fragment shader.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_fragment_shader_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_fragment_shader_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl2 Fragment Shader Software"
+    description: "Hash of the transformed source of the fragment shader.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_renderer {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_renderer ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl2 Renderer"
+    description: "The OpenGL renderer string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_renderer_raw {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_renderer_raw ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl2 Renderer Raw"
+    description: "The raw OpenGL renderer string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_renderer_raw_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_renderer_raw_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl2 Renderer Raw Software"
+    description: "The raw OpenGL renderer string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_renderer_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_renderer_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl2 Renderer Software"
+    description: "The OpenGL renderer string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_vendor {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_vendor ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl2 Vendor"
+    description: "The OpenGL vendor string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_vendor_raw {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_vendor_raw ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl2 Vendor Raw"
+    description: "The raw OpenGL vendor string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_vendor_raw_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_vendor_raw_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl2 Vendor Raw Software"
+    description: "The raw OpenGL vendor string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_vendor_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_vendor_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl2 Vendor Software"
+    description: "The OpenGL vendor string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_version_raw {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_version_raw ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl2 Version Raw"
+    description: "The raw OpenGL version string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_version_raw_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_version_raw_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl2 Version Raw Software"
+    description: "The raw OpenGL version string.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_vertex_shader {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_vertex_shader ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl2 Vertex Shader"
+    description: "Hash of the transformed source of the vertex shader.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_vertex_shader_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_vertex_shader_software ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Gl2 Vertex Shader Software"
+    description: "Hash of the transformed source of the vertex shader.
 "
   }
 
@@ -2046,6 +2217,96 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics String"
     group_item_label: "Characteristics Languages"
     description: "Languages the user set. Returns intl.accept_languages pref, if it is empty, returns the first matched OS's language or the default language.
+"
+  }
+
+  dimension: metrics__string__characteristics_mathml1 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml1 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml1"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__string__characteristics_mathml10 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml10 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml10"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__string__characteristics_mathml2 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml2 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml2"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__string__characteristics_mathml3 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml3 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml3"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__string__characteristics_mathml4 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml4 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml4"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__string__characteristics_mathml5 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml5 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml5"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__string__characteristics_mathml6 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml6 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml6"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__string__characteristics_mathml7 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml7 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml7"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__string__characteristics_mathml8 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml8 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml8"
+    description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__string__characteristics_mathml9 {
+    sql: ${TABLE}.metrics.string.characteristics_mathml9 ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Mathml9"
+    description: "Width of the drawn MathML element
 "
   }
 
@@ -2361,6 +2622,132 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_gl2_extensions {
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_extensions ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl2 Extensions"
+    description: "The list of OpenGL extensions supported by the user's system.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_extensions_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_extensions_raw ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl2 Extensions Raw"
+    description: "The raw list of OpenGL extensions supported by the user's system.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_extensions_raw_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_extensions_raw_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl2 Extensions Raw Software"
+    description: "The raw list of OpenGL extensions supported by the user's system.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_extensions_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_extensions_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl2 Extensions Software"
+    description: "The list of OpenGL extensions supported by the user's system.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_minimal_source {
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_minimal_source ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl2 Minimal Source"
+    description: "Transformed source of the minimal shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_minimal_source_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_minimal_source_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl2 Minimal Source Software"
+    description: "Transformed source of the minimal shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_params {
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_params ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl2 Params"
+    description: "The list of GL parameters of GL2.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_params_extensions {
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_params_extensions ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl2 Params Extensions"
+    description: "The list of GL parameters of the extensions.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_params_extensions_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_params_extensions_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl2 Params Extensions Software"
+    description: "The list of GL parameters of the extensions.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_params_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_params_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl2 Params Software"
+    description: "The list of GL parameters of GL2.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_precision_fragment {
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_precision_fragment ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl2 Precision Fragment"
+    description: "Precisions of the fragment shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_precision_fragment_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_precision_fragment_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl2 Precision Fragment Software"
+    description: "Precisions of the fragment shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_precision_vertex {
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_precision_vertex ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl2 Precision Vertex"
+    description: "Precisions of the vertex shader.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl2_precision_vertex_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl2_precision_vertex_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl2 Precision Vertex Software"
+    description: "Precisions of the vertex shader.
+"
+  }
+
   dimension: metrics__text2__characteristics_gl_extensions {
     sql: ${TABLE}.metrics.text2.characteristics_gl_extensions ;;
     type: string
@@ -2415,6 +2802,15 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_gl_params {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Params"
+    description: "The list of GL parameters of GL1.
+"
+  }
+
   dimension: metrics__text2__characteristics_gl_params_extensions {
     sql: ${TABLE}.metrics.text2.characteristics_gl_params_extensions ;;
     type: string
@@ -2430,6 +2826,15 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Gl Params Extensions Software"
     description: "The list of GL parameters of the extensions.
+"
+  }
+
+  dimension: metrics__text2__characteristics_gl_params_software {
+    sql: ${TABLE}.metrics.text2.characteristics_gl_params_software ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Gl Params Software"
+    description: "The list of GL parameters of GL1.
 "
   }
 
@@ -2529,6 +2934,15 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Math Ops"
     description: "Result of fingerprintable math operations
+"
+  }
+
+  dimension: metrics__text2__characteristics_math_ops_fdlibm {
+    sql: ${TABLE}.metrics.text2.characteristics_math_ops_fdlibm ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Math Ops Fdlibm"
+    description: "Windows only fdlibm math operation results
 "
   }
 

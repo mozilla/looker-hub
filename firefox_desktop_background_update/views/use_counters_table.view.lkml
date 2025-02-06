@@ -15279,12 +15279,264 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_htmldocument_caretrangefrompoint {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_caretrangefrompoint ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Caretrangefrompoint"
+    description: "Whether a document called called Document.caretRangeFromPoint. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_exitpictureinpicture {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_exitpictureinpicture ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Exitpictureinpicture"
+    description: "Whether a document called called Document.exitPictureInPicture. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_featurepolicy {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_featurepolicy ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Featurepolicy"
+    description: "Whether a document called called Document.featurePolicy. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_htmldocument_named_getter_hit {
     sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_named_getter_hit ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Named Getter Hit"
     description: "Whether a document calls to the named getter on HTMLDocument that find something via the name lookup. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_onbeforecopy {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_onbeforecopy ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Onbeforecopy"
+    description: "Whether a document called called Document.onbeforecopy. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_onbeforecut {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_onbeforecut ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Onbeforecut"
+    description: "Whether a document called called Document.onbeforecut. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_onbeforepaste {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_onbeforepaste ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Onbeforepaste"
+    description: "Whether a document called called Document.onbeforepaste. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_oncancel {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_oncancel ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Oncancel"
+    description: "Whether a document called called Document.oncancel. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_onfreeze {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_onfreeze ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Onfreeze"
+    description: "Whether a document called called Document.onfreeze. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_onmousewheel {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_onmousewheel ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Onmousewheel"
+    description: "Whether a document called called Document.onmousewheel. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_onresume {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_onresume ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Onresume"
+    description: "Whether a document called called Document.onresume. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_onsearch {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_onsearch ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Onsearch"
+    description: "Whether a document called called Document.onsearch. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_onwebkitfullscreenchange {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_onwebkitfullscreenchange ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Onwebkitfullscreenchange"
+    description: "Whether a document called called Document.onwebkitfullscreenchange. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_onwebkitfullscreenerror {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_onwebkitfullscreenerror ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Onwebkitfullscreenerror"
+    description: "Whether a document called called Document.onwebkitfullscreenerror. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_pictureinpictureelement {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_pictureinpictureelement ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Pictureinpictureelement"
+    description: "Whether a document called called Document.pictureInPictureElement. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_pictureinpictureenabled {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_pictureinpictureenabled ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Pictureinpictureenabled"
+    description: "Whether a document called called Document.pictureInPictureEnabled. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_registerelement {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_registerelement ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Registerelement"
+    description: "Whether a document called called Document.registerElement. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_wasdiscarded {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_wasdiscarded ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Wasdiscarded"
+    description: "Whether a document called called Document.wasDiscarded. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_webkitcancelfullscreen {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_webkitcancelfullscreen ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Webkitcancelfullscreen"
+    description: "Whether a document called called Document.webkitCancelFullScreen. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_webkitcurrentfullscreenelement {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_webkitcurrentfullscreenelement ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Webkitcurrentfullscreenelement"
+    description: "Whether a document called called Document.webkitCurrentFullScreenElement. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_webkitexitfullscreen {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_webkitexitfullscreen ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Webkitexitfullscreen"
+    description: "Whether a document called called Document.webkitExitFullscreen. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_webkitfullscreenelement {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_webkitfullscreenelement ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Webkitfullscreenelement"
+    description: "Whether a document called called Document.webkitFullscreenElement. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_webkitfullscreenenabled {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_webkitfullscreenenabled ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Webkitfullscreenenabled"
+    description: "Whether a document called called Document.webkitFullscreenEnabled. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_webkithidden {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_webkithidden ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Webkithidden"
+    description: "Whether a document called called Document.webkitHidden. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_webkitisfullscreen {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_webkitisfullscreen ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Webkitisfullscreen"
+    description: "Whether a document called called Document.webkitIsFullScreen. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_webkitvisibilitystate {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_webkitvisibilitystate ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Webkitvisibilitystate"
+    description: "Whether a document called called Document.webkitVisibilityState. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_xmlencoding {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_xmlencoding ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Xmlencoding"
+    description: "Whether a document called called Document.xmlEncoding. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_xmlstandalone {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_xmlstandalone ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Xmlstandalone"
+    description: "Whether a document called called Document.xmlStandalone. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_htmldocument_xmlversion {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_xmlversion ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldocument Xmlversion"
+    description: "Whether a document called called Document.xmlVersion. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -18924,12 +19176,264 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_htmldocument_caretrangefrompoint {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_caretrangefrompoint ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Caretrangefrompoint"
+    description: "Whether a page called called Document.caretRangeFromPoint. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_exitpictureinpicture {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_exitpictureinpicture ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Exitpictureinpicture"
+    description: "Whether a page called called Document.exitPictureInPicture. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_featurepolicy {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_featurepolicy ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Featurepolicy"
+    description: "Whether a page called called Document.featurePolicy. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_htmldocument_named_getter_hit {
     sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_named_getter_hit ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Named Getter Hit"
     description: "Whether a page calls to the named getter on HTMLDocument that find something via the name lookup. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_onbeforecopy {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_onbeforecopy ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Onbeforecopy"
+    description: "Whether a page called called Document.onbeforecopy. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_onbeforecut {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_onbeforecut ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Onbeforecut"
+    description: "Whether a page called called Document.onbeforecut. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_onbeforepaste {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_onbeforepaste ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Onbeforepaste"
+    description: "Whether a page called called Document.onbeforepaste. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_oncancel {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_oncancel ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Oncancel"
+    description: "Whether a page called called Document.oncancel. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_onfreeze {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_onfreeze ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Onfreeze"
+    description: "Whether a page called called Document.onfreeze. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_onmousewheel {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_onmousewheel ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Onmousewheel"
+    description: "Whether a page called called Document.onmousewheel. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_onresume {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_onresume ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Onresume"
+    description: "Whether a page called called Document.onresume. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_onsearch {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_onsearch ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Onsearch"
+    description: "Whether a page called called Document.onsearch. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_onwebkitfullscreenchange {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_onwebkitfullscreenchange ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Onwebkitfullscreenchange"
+    description: "Whether a page called called Document.onwebkitfullscreenchange. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_onwebkitfullscreenerror {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_onwebkitfullscreenerror ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Onwebkitfullscreenerror"
+    description: "Whether a page called called Document.onwebkitfullscreenerror. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_pictureinpictureelement {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_pictureinpictureelement ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Pictureinpictureelement"
+    description: "Whether a page called called Document.pictureInPictureElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_pictureinpictureenabled {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_pictureinpictureenabled ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Pictureinpictureenabled"
+    description: "Whether a page called called Document.pictureInPictureEnabled. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_registerelement {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_registerelement ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Registerelement"
+    description: "Whether a page called called Document.registerElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_wasdiscarded {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_wasdiscarded ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Wasdiscarded"
+    description: "Whether a page called called Document.wasDiscarded. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_webkitcancelfullscreen {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_webkitcancelfullscreen ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Webkitcancelfullscreen"
+    description: "Whether a page called called Document.webkitCancelFullScreen. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_webkitcurrentfullscreenelement {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_webkitcurrentfullscreenelement ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Webkitcurrentfullscreenelement"
+    description: "Whether a page called called Document.webkitCurrentFullScreenElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_webkitexitfullscreen {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_webkitexitfullscreen ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Webkitexitfullscreen"
+    description: "Whether a page called called Document.webkitExitFullscreen. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_webkitfullscreenelement {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_webkitfullscreenelement ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Webkitfullscreenelement"
+    description: "Whether a page called called Document.webkitFullscreenElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_webkitfullscreenenabled {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_webkitfullscreenenabled ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Webkitfullscreenenabled"
+    description: "Whether a page called called Document.webkitFullscreenEnabled. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_webkithidden {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_webkithidden ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Webkithidden"
+    description: "Whether a page called called Document.webkitHidden. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_webkitisfullscreen {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_webkitisfullscreen ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Webkitisfullscreen"
+    description: "Whether a page called called Document.webkitIsFullScreen. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_webkitvisibilitystate {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_webkitvisibilitystate ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Webkitvisibilitystate"
+    description: "Whether a page called called Document.webkitVisibilityState. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_xmlencoding {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_xmlencoding ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Xmlencoding"
+    description: "Whether a page called called Document.xmlEncoding. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_xmlstandalone {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_xmlstandalone ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Xmlstandalone"
+    description: "Whether a page called called Document.xmlStandalone. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldocument_xmlversion {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_xmlversion ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldocument Xmlversion"
+    description: "Whether a page called called Document.xmlVersion. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
