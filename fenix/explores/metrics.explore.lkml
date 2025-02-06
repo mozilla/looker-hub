@@ -764,6 +764,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_playback_not_supported_video_per_mime_type}) AS metrics__metrics__labeled_counter__media_playback_not_supported_video_per_mime_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_playback_not_supported_video_per_mime_type.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__media_sniffer_mp4_brand_pattern {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_sniffer_mp4_brand_pattern}) AS metrics__metrics__labeled_counter__media_sniffer_mp4_brand_pattern ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_sniffer_mp4_brand_pattern.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__metrics_bookmarks_add {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__metrics_bookmarks_add}) AS metrics__metrics__labeled_counter__metrics_bookmarks_add ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__metrics_bookmarks_add.document_id} ;;

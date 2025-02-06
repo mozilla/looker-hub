@@ -134,6 +134,24 @@ location.
 "
   }
 
+  dimension: metrics__boolean__metrics_default_browser {
+    label: "Metrics Default Browser"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.metrics_default_browser ;;
+    type: yesno
+    group_label: "Metrics"
+    group_item_label: "Default Browser"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Default Browser"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_default_browser"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Is Fenix the default browser?
+"
+  }
+
   dimension: metrics__string__metrics_distribution_id {
     label: "Metrics Distribution Id"
     hidden: no

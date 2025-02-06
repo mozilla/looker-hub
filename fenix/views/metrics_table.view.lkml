@@ -2020,6 +2020,27 @@ view: metrics_table {
     group_item_label: "Webrtcdtls Server Handshake Started Counter"
   }
 
+  dimension: metrics__counter__workers_dedicated_worker_spawn_gets_queued {
+    sql: ${TABLE}.metrics.counter.workers_dedicated_worker_spawn_gets_queued ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Workers Dedicated Worker Spawn Gets Queued"
+  }
+
+  dimension: metrics__counter__workers_service_worker_spawn_gets_queued {
+    sql: ${TABLE}.metrics.counter.workers_service_worker_spawn_gets_queued ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Workers Service Worker Spawn Gets Queued"
+  }
+
+  dimension: metrics__counter__workers_shared_worker_spawn_gets_queued {
+    sql: ${TABLE}.metrics.counter.workers_shared_worker_spawn_gets_queued ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Workers Shared Worker Spawn Gets Queued"
+  }
+
   dimension: metrics__custom_distribution__a11y_consumers__count {
     sql: ${TABLE}.metrics.custom_distribution.a11y_consumers.count ;;
     type: number
@@ -7318,6 +7339,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__media_sniffer_mp4_brand_pattern {
+    sql: ${TABLE}.metrics.labeled_counter.media_sniffer_mp4_brand_pattern ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__metrics_bookmarks_add {
     sql: ${TABLE}.metrics.labeled_counter.metrics_bookmarks_add ;;
     hidden: yes
@@ -8173,6 +8199,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_custom_distribution__service_worker_running {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.service_worker_running ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_custom_distribution__urlclassifier_complete_remote_status2 {
     sql: ${TABLE}.metrics.labeled_custom_distribution.urlclassifier_complete_remote_status2 ;;
     hidden: yes
@@ -8353,6 +8384,26 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_timing_distribution__service_worker_fetch_event_channel_reset {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.service_worker_fetch_event_channel_reset ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__service_worker_fetch_event_dispatch {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.service_worker_fetch_event_dispatch ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__service_worker_fetch_event_finish_synthesized_response {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.service_worker_fetch_event_finish_synthesized_response ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__service_worker_fetch_interception_duration {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.service_worker_fetch_interception_duration ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_timing_distribution__ssl_time_until_handshake_finished_keyed_by_ka {
     sql: ${TABLE}.metrics.labeled_timing_distribution.ssl_time_until_handshake_finished_keyed_by_ka ;;
     hidden: yes
@@ -8370,6 +8421,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_timing_distribution__urlclassifier_update_server_response_time {
     sql: ${TABLE}.metrics.labeled_timing_distribution.urlclassifier_update_server_response_time ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__workers_sync_worker_operation {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.workers_sync_worker_operation ;;
     hidden: yes
   }
 
@@ -26839,6 +26895,183 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__service_worker_isolated_launch_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_isolated_launch_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Service Worker Isolated Launch Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_isolated_launch_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_isolated_launch_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Service Worker Isolated Launch Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_isolated_launch_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_isolated_launch_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Service Worker Isolated Launch Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_isolated_launch_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_isolated_launch_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Service Worker Isolated Launch Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_isolated_launch_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_isolated_launch_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__service_worker_isolated_launch_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_isolated_launch_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Service Worker Isolated Launch Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_isolated_launch_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_isolated_launch_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Service Worker Isolated Launch Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_isolated_launch_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_isolated_launch_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Service Worker Isolated Launch Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_isolated_launch_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_isolated_launch_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__service_worker_launch_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_launch_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Service Worker Launch Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_launch_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_launch_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Service Worker Launch Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_launch_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_launch_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Service Worker Launch Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_launch_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_launch_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Service Worker Launch Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_launch_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_launch_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__service_worker_launch_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_launch_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Service Worker Launch Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_launch_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_launch_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Service Worker Launch Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_launch_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_launch_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Service Worker Launch Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_launch_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_launch_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__service_worker_registration_loading__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_registration_loading.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Service Worker Registration Loading"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_registration_loading__count {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_registration_loading.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Service Worker Registration Loading"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_registration_loading__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_registration_loading.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Service Worker Registration Loading"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_registration_loading__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_registration_loading.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Service Worker Registration Loading"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_registration_loading__range {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_registration_loading.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__service_worker_registration_loading__sum {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_registration_loading.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Service Worker Registration Loading"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_registration_loading__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_registration_loading.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Service Worker Registration Loading"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_registration_loading__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_registration_loading.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Service Worker Registration Loading"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_registration_loading__values {
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_registration_loading.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__ssl_time_until_ready__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready.bucket_count ;;
     type: number
@@ -33562,6 +33795,44 @@ view: metrics_table__metrics__labeled_custom_distribution__quotamanager_initiali
   }
 }
 
+view: metrics_table__metrics__labeled_custom_distribution__service_worker_running {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__service_worker_running__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__labeled_custom_distribution__urlclassifier_complete_remote_status2 {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -35998,6 +36269,318 @@ view: metrics_table__metrics__labeled_timing_distribution__orb_receive_data_for_
   }
 }
 
+view: metrics_table__metrics__labeled_timing_distribution__service_worker_fetch_event_channel_reset {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__service_worker_fetch_event_channel_reset__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__service_worker_fetch_event_dispatch {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__service_worker_fetch_event_dispatch__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__service_worker_fetch_event_finish_synthesized_response {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__service_worker_fetch_event_finish_synthesized_response__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__service_worker_fetch_interception_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__service_worker_fetch_interception_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__labeled_timing_distribution__ssl_time_until_handshake_finished_keyed_by_ka {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -36299,6 +36882,84 @@ view: metrics_table__metrics__labeled_timing_distribution__urlclassifier_update_
 }
 
 view: metrics_table__metrics__labeled_timing_distribution__urlclassifier_update_server_response_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__workers_sync_worker_operation {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__workers_sync_worker_operation__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -40079,6 +40740,42 @@ view: metrics_table__metrics__timing_distribution__privacy_sanitize_load_time__v
 }
 
 view: metrics_table__metrics__timing_distribution__recent_synced_tabs_recent_synced_tab_time_to_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__service_worker_isolated_launch_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__service_worker_launch_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__service_worker_registration_loading__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
