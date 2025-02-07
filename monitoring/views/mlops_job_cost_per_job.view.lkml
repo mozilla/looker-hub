@@ -5,6 +5,11 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: mlops_job_cost_per_job {
+  dimension: flow_description {
+    sql: ${TABLE}.flow_description ;;
+    type: string
+  }
+
   dimension: flow_name {
     sql: ${TABLE}.flow_name ;;
     type: string

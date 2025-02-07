@@ -5008,6 +5008,24 @@ startup, as part of the initialization sequence.
     type: number
   }
 
+  dimension_group: metrics__datetime__app_last_opened_as_default_browser {
+    label: "App Last Opened As Default Browser"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.app_last_opened_as_default_browser ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "The date of when the app was last opened as default browser.
+"
+  }
+
   dimension_group: metrics__datetime__glean_validation_first_run_hour {
     label: "Glean Validation First Run Hour"
     hidden: yes

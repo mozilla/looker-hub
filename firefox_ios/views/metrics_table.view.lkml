@@ -1404,6 +1404,13 @@ view: metrics_table {
     group_item_label: "Widget S Quick Action Search"
   }
 
+  dimension: metrics__datetime__raw_app_last_opened_as_default_browser {
+    sql: ${TABLE}.metrics.datetime.raw_app_last_opened_as_default_browser ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw App Last Opened As Default Browser"
+  }
+
   dimension: metrics__datetime__raw_glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.raw_glean_validation_first_run_hour ;;
     type: string
@@ -2894,6 +2901,21 @@ view: metrics_table {
       year,
     ]
     label: "Metadata Header: Parsed Date"
+  }
+
+  dimension_group: metrics__datetime__app_last_opened_as_default_browser {
+    sql: ${TABLE}.metrics.datetime.app_last_opened_as_default_browser ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: App Last Opened As Default Browser"
   }
 
   dimension_group: metrics__datetime__glean_validation_first_run_hour {
