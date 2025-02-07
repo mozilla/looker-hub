@@ -1813,6 +1813,11 @@ fenix:
       - channel: release
         table: mozdata.fenix.new_profile_clients
       type: table_view
+    new_profile_metrics_marketing_geo_testing_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.new_profile_metrics_marketing_geo_testing
+      type: table_view
     new_profiles_table:
       tables:
       - channel: release
@@ -2733,6 +2738,10 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: nimbus_targeting_context
+    onboarding_opt_out:
+      type: glean_ping_explore
+      views:
+        base_view: onboarding_opt_out
     pageload:
       type: glean_ping_explore
       views:
@@ -3168,6 +3177,15 @@ firefox_desktop:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.nimbus_targeting_context
+      type: table_view
+    onboarding_opt_out:
+      tables:
+      - table: mozdata.firefox_desktop.onboarding_opt_out
+      type: glean_ping_view
+    onboarding_opt_out_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.onboarding_opt_out
       type: table_view
     onboarding_table:
       tables:
@@ -4456,6 +4474,11 @@ firefox_ios:
       tables:
       - channel: release
         table: mozdata.firefox_ios.new_profile_clients
+      type: table_view
+    new_profile_metrics_marketing_geo_testing_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.new_profile_metrics_marketing_geo_testing
       type: table_view
     new_profiles_table:
       tables:

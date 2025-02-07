@@ -509,6 +509,7 @@ preference.
 following:
 * Page Action Menu
 * Share Menu
+* Activity stream
 "
   }
 

@@ -10,6 +10,11 @@ view: issue_type {
     type: string
   }
 
+  dimension: hierarchy_level {
+    sql: ${TABLE}.hierarchy_level ;;
+    type: number
+  }
+
   dimension: id {
     sql: ${TABLE}.id ;;
     type: number
