@@ -4573,7 +4573,7 @@ in browser.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Setting for sidebar display (either \"always\" or \"hide\").
+    description: "Setting for sidebar display (either \"always\", \"expand-on-hover\", or \"hide\").
 "
   }
 

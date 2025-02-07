@@ -5,6 +5,132 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: extensionsession {
+  dimension: metrics__quantity__extension_count_excluded {
+    label: "Extension Count Excluded"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.extension_count_excluded ;;
+    type: number
+    group_label: "Extension"
+    group_item_label: "Count Excluded"
+
+    link: {
+      label: "Glean Dictionary reference for Extension Count Excluded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/extension_count_excluded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The amount of websites excluded from the VPN 
+"
+  }
+
+  dimension: metrics__quantity__extension_count_geoprefed {
+    label: "Extension Count Geoprefed"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.extension_count_geoprefed ;;
+    type: number
+    group_label: "Extension"
+    group_item_label: "Count Geoprefed"
+
+    link: {
+      label: "Glean Dictionary reference for Extension Count Geoprefed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/extension_count_geoprefed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The amount of Websites with a GeoPrefrence.
+"
+  }
+
+  dimension: metrics__boolean__extension_has_completed_onboarding {
+    label: "Extension Has Completed Onboarding"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.extension_has_completed_onboarding ;;
+    type: yesno
+    group_label: "Extension"
+    group_item_label: "Has Completed Onboarding"
+
+    link: {
+      label: "Glean Dictionary reference for Extension Has Completed Onboarding"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/extension_has_completed_onboarding"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the user has completed onboarding.
+"
+  }
+
+  dimension: metrics__boolean__extension_used_feature_disable_firefox_protection {
+    label: "Extension Used Feature Disable Firefox Protection"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.extension_used_feature_disable_firefox_protection ;;
+    type: yesno
+    group_label: "Extension"
+    group_item_label: "Used Feature Disable Firefox Protection"
+
+    link: {
+      label: "Glean Dictionary reference for Extension Used Feature Disable Firefox Protection"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/extension_used_feature_disable_firefox_protection"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the user has disabled the VPN for firefox
+"
+  }
+
+  dimension: metrics__boolean__extension_used_feature_page_action_revoke_exclude {
+    label: "Extension Used Feature Page Action Revoke Exclude"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.extension_used_feature_page_action_revoke_exclude ;;
+    type: yesno
+    group_label: "Extension"
+    group_item_label: "Used Feature Page Action Revoke Exclude"
+
+    link: {
+      label: "Glean Dictionary reference for Extension Used Feature Page Action Revoke Exclude"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/extension_used_feature_page_action_revoke_exclude"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the user has removed a Website Exclusion from the Page action
+"
+  }
+
+  dimension: metrics__boolean__extension_used_feature_page_action_revoke_geopref {
+    label: "Extension Used Feature Page Action Revoke Geopref"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.extension_used_feature_page_action_revoke_geopref ;;
+    type: yesno
+    group_label: "Extension"
+    group_item_label: "Used Feature Page Action Revoke Geopref"
+
+    link: {
+      label: "Glean Dictionary reference for Extension Used Feature Page Action Revoke Geopref"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/extension_used_feature_page_action_revoke_geopref"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the user has removed a Website GeoPrefrence from the Page action
+"
+  }
+
+  dimension: metrics__boolean__extension_used_feature_settings_page {
+    label: "Extension Used Feature Settings Page"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.extension_used_feature_settings_page ;;
+    type: yesno
+    group_label: "Extension"
+    group_item_label: "Used Feature Settings Page"
+
+    link: {
+      label: "Glean Dictionary reference for Extension Used Feature Settings Page"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/extension_used_feature_settings_page"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the user has opened the internal settings page. 
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation Id"
     hidden: no

@@ -305,6 +305,41 @@ view: extensionsession_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__extension_has_completed_onboarding {
+    sql: ${TABLE}.metrics.boolean.extension_has_completed_onboarding ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Extension Has Completed Onboarding"
+  }
+
+  dimension: metrics__boolean__extension_used_feature_disable_firefox_protection {
+    sql: ${TABLE}.metrics.boolean.extension_used_feature_disable_firefox_protection ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Extension Used Feature Disable Firefox Protection"
+  }
+
+  dimension: metrics__boolean__extension_used_feature_page_action_revoke_exclude {
+    sql: ${TABLE}.metrics.boolean.extension_used_feature_page_action_revoke_exclude ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Extension Used Feature Page Action Revoke Exclude"
+  }
+
+  dimension: metrics__boolean__extension_used_feature_page_action_revoke_geopref {
+    sql: ${TABLE}.metrics.boolean.extension_used_feature_page_action_revoke_geopref ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Extension Used Feature Page Action Revoke Geopref"
+  }
+
+  dimension: metrics__boolean__extension_used_feature_settings_page {
+    sql: ${TABLE}.metrics.boolean.extension_used_feature_settings_page ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Extension Used Feature Settings Page"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -323,6 +358,20 @@ view: extensionsession_table {
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     hidden: yes
+  }
+
+  dimension: metrics__quantity__extension_count_excluded {
+    sql: ${TABLE}.metrics.quantity.extension_count_excluded ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Extension Count Excluded"
+  }
+
+  dimension: metrics__quantity__extension_count_geoprefed {
+    sql: ${TABLE}.metrics.quantity.extension_count_geoprefed ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Extension Count Geoprefed"
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
