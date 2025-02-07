@@ -15420,6 +15420,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__media_sniffer_mp4_brand_pattern {
+    label: "Media Sniffer Mp4 Brand Pattern"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_sniffer_mp4_brand_pattern ;;
+    group_label: "Media Sniffer"
+    group_item_label: "Mp4 Brand Pattern"
+
+    link: {
+      label: "Glean Dictionary reference for Media Sniffer Mp4 Brand Pattern"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_sniffer_mp4_brand_pattern"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "ISOBMFF brand pattern used to identify MP4 in media sniffer
+This metric was generated to correspond to the Legacy Telemetry categorical histogram MEDIA_SNIFFER_MP4_BRAND_PATTERN.
+"
+  }
+
   dimension: metrics__labeled_boolean__mediadrm_decryption {
     label: "Mediadrm Decryption"
     hidden: no
@@ -22040,6 +22058,63 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__timing_distribution__service_worker_isolated_launch_time__sum {
+    label: "Service Worker Isolated Launch Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_isolated_launch_time.sum ;;
+    type: number
+    group_label: "Service Worker"
+    group_item_label: "Isolated Launch Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Service Worker Isolated Launch Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/service_worker_isolated_launch_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time (ms) for spawning a service worker in an isolated content process.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SERVICE_WORKER_ISOLATED_LAUNCH_TIME.
+"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_launch_time__sum {
+    label: "Service Worker Launch Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_launch_time.sum ;;
+    type: number
+    group_label: "Service Worker"
+    group_item_label: "Launch Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Service Worker Launch Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/service_worker_launch_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time (ms) for spawning a service worker in the remote content process.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SERVICE_WORKER_LAUNCH_TIME_2.
+"
+  }
+
+  dimension: metrics__timing_distribution__service_worker_registration_loading__sum {
+    label: "Service Worker Registration Loading Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.service_worker_registration_loading.sum ;;
+    type: number
+    group_label: "Service Worker"
+    group_item_label: "Registration Loading Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Service Worker Registration Loading Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/service_worker_registration_loading"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Tracking how ServiceWorkerRegistrar loads data before the first content is shown.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SERVICE_WORKER_REGISTRATION_LOADING.
+"
+  }
+
   dimension: metrics__memory_distribution__spdy_chunk_recvd__sum {
     label: "Spdy Chunk Recvd Sum"
     hidden: no
@@ -25200,6 +25275,63 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "The SRTPProtectionProfile (see RFC 5764) used for each webrtc SRTP connection, as a string representation of the SRTPProtectionProfile's ID in 4 hex digits (eg; SRTP_AES128_CM_HMAC_SHA1_80 would be \"0x0001\")
+"
+  }
+
+  dimension: metrics__counter__workers_dedicated_worker_spawn_gets_queued {
+    label: "Workers Dedicated Worker Spawn Gets Queued"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.workers_dedicated_worker_spawn_gets_queued ;;
+    type: number
+    group_label: "Workers"
+    group_item_label: "Dedicated Worker Spawn Gets Queued"
+
+    link: {
+      label: "Glean Dictionary reference for Workers Dedicated Worker Spawn Gets Queued"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/workers_dedicated_worker_spawn_gets_queued"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Tracking whether a DedicatedWorker spawn gets queued due to hitting max workers per domain limit.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEDICATED_WORKER_SPAWN_GETS_QUEUED.
+"
+  }
+
+  dimension: metrics__counter__workers_service_worker_spawn_gets_queued {
+    label: "Workers Service Worker Spawn Gets Queued"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.workers_service_worker_spawn_gets_queued ;;
+    type: number
+    group_label: "Workers"
+    group_item_label: "Service Worker Spawn Gets Queued"
+
+    link: {
+      label: "Glean Dictionary reference for Workers Service Worker Spawn Gets Queued"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/workers_service_worker_spawn_gets_queued"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Tracking whether a ServiceWorker spawn gets queued due to hitting max workers per domain limit.
+This metric was generated to correspond to the Legacy Telemetry count histogram SERVICE_WORKER_SPAWN_GETS_QUEUED.
+"
+  }
+
+  dimension: metrics__counter__workers_shared_worker_spawn_gets_queued {
+    label: "Workers Shared Worker Spawn Gets Queued"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.workers_shared_worker_spawn_gets_queued ;;
+    type: number
+    group_label: "Workers"
+    group_item_label: "Shared Worker Spawn Gets Queued"
+
+    link: {
+      label: "Glean Dictionary reference for Workers Shared Worker Spawn Gets Queued"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/workers_shared_worker_spawn_gets_queued"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Tracking whether a SharedWorker spawn gets queued due to hitting max workers per domain limit.
+This metric was generated to correspond to the Legacy Telemetry count histogram SHARED_WORKER_SPAWN_GETS_QUEUED.
 "
   }
 
@@ -30088,6 +30220,81 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Webrtcdtls Server Handshake Started Counter"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/webrtcdtls_server_handshake_started_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: workers_dedicated_worker_spawn_gets_queued {
+    type: sum
+    sql: ${metrics__counter__workers_dedicated_worker_spawn_gets_queued} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Workers Dedicated Worker Spawn Gets Queued"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/workers_dedicated_worker_spawn_gets_queued"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: workers_dedicated_worker_spawn_gets_queued_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__workers_dedicated_worker_spawn_gets_queued: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Workers Dedicated Worker Spawn Gets Queued"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/workers_dedicated_worker_spawn_gets_queued"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: workers_service_worker_spawn_gets_queued {
+    type: sum
+    sql: ${metrics__counter__workers_service_worker_spawn_gets_queued} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Workers Service Worker Spawn Gets Queued"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/workers_service_worker_spawn_gets_queued"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: workers_service_worker_spawn_gets_queued_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__workers_service_worker_spawn_gets_queued: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Workers Service Worker Spawn Gets Queued"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/workers_service_worker_spawn_gets_queued"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: workers_shared_worker_spawn_gets_queued {
+    type: sum
+    sql: ${metrics__counter__workers_shared_worker_spawn_gets_queued} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Workers Shared Worker Spawn Gets Queued"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/workers_shared_worker_spawn_gets_queued"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: workers_shared_worker_spawn_gets_queued_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__workers_shared_worker_spawn_gets_queued: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Workers Shared Worker Spawn Gets Queued"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/workers_shared_worker_spawn_gets_queued"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -39410,6 +39617,47 @@ view: metrics__metrics__labeled_counter__media_mse_source_buffer_type {
 
 view: metrics__metrics__labeled_counter__media_playback_not_supported_video_per_mime_type {
   label: "Media Playback - Not Supported Video Per Mime Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_sniffer_mp4_brand_pattern {
+  label: "Media Sniffer - Mp4 Brand Pattern"
 
   dimension: document_id {
     type: string
@@ -53077,6 +53325,45 @@ view: metrics__metrics__labeled_custom_distribution__quotamanager_initialize_rep
   }
 }
 
+view: metrics__metrics__labeled_custom_distribution__service_worker_running {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__service_worker_running__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__labeled_custom_distribution__urlclassifier_complete_remote_status2 {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -55571,6 +55858,322 @@ view: metrics__metrics__labeled_timing_distribution__orb_receive_data_for_valida
   }
 }
 
+view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_event_channel_reset {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_event_channel_reset__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_event_dispatch {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_event_dispatch__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_event_finish_synthesized_response {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_event_finish_synthesized_response__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_interception_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_interception_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__labeled_timing_distribution__ssl_time_until_handshake_finished_keyed_by_ka {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -56113,6 +56716,85 @@ view: metrics__metrics__labeled_timing_distribution__urlclassifier_update_server
 }
 
 view: metrics__metrics__labeled_timing_distribution__urlclassifier_update_server_response_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__workers_sync_worker_operation {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__workers_sync_worker_operation__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -59317,6 +59999,42 @@ view: metrics__metrics__timing_distribution__search_service_startup_time__values
 }
 
 view: metrics__metrics__timing_distribution__serp_categorization_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__service_worker_isolated_launch_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__service_worker_launch_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__service_worker_registration_loading__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

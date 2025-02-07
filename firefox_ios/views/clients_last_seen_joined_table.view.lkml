@@ -151,11 +151,6 @@ view: clients_last_seen_joined_table {
     type: yesno
   }
 
-  dimension: is_default_browser_1 {
-    sql: ${TABLE}.is_default_browser_1 ;;
-    type: yesno
-  }
-
   dimension: is_new_profile {
     sql: ${TABLE}.is_new_profile ;;
     type: yesno
