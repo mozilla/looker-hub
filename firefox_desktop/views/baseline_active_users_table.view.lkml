@@ -4,7 +4,12 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: clients_last_seen_joined_table {
+view: baseline_active_users_table {
+  dimension: activity_segment {
+    sql: ${TABLE}.activity_segment ;;
+    type: string
+  }
+
   dimension: android_sdk_version {
     sql: ${TABLE}.android_sdk_version ;;
     type: string
@@ -25,13 +30,13 @@ view: clients_last_seen_joined_table {
     type: string
   }
 
-  dimension: architecture {
-    sql: ${TABLE}.architecture ;;
+  dimension: app_name {
+    sql: ${TABLE}.app_name ;;
     type: string
   }
 
-  dimension: baseline_profile_group_id {
-    sql: ${TABLE}.baseline_profile_group_id ;;
+  dimension: architecture {
+    sql: ${TABLE}.architecture ;;
     type: string
   }
 
@@ -88,11 +93,6 @@ view: clients_last_seen_joined_table {
 
   dimension: days_seen_session_start_bits {
     sql: ${TABLE}.days_seen_session_start_bits ;;
-    type: number
-  }
-
-  dimension: days_sent_metrics_ping_bits {
-    sql: ${TABLE}.days_sent_metrics_ping_bits ;;
     type: number
   }
 
@@ -156,13 +156,63 @@ view: clients_last_seen_joined_table {
     type: string
   }
 
+  dimension: is_daily_user {
+    sql: ${TABLE}.is_daily_user ;;
+    type: yesno
+  }
+
+  dimension: is_dau {
+    sql: ${TABLE}.is_dau ;;
+    type: yesno
+  }
+
+  dimension: is_dau_duration {
+    sql: ${TABLE}.is_dau_duration ;;
+    type: yesno
+  }
+
   dimension: is_default_browser {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno
   }
 
+  dimension: is_included_kpi {
+    sql: ${TABLE}.is_included_kpi ;;
+    type: yesno
+  }
+
+  dimension: is_mau {
+    sql: ${TABLE}.is_mau ;;
+    type: yesno
+  }
+
+  dimension: is_mau_duration {
+    sql: ${TABLE}.is_mau_duration ;;
+    type: yesno
+  }
+
+  dimension: is_monthly_user {
+    sql: ${TABLE}.is_monthly_user ;;
+    type: yesno
+  }
+
   dimension: is_new_profile {
     sql: ${TABLE}.is_new_profile ;;
+    type: yesno
+  }
+
+  dimension: is_wau {
+    sql: ${TABLE}.is_wau ;;
+    type: yesno
+  }
+
+  dimension: is_wau_duration {
+    sql: ${TABLE}.is_wau_duration ;;
+    type: yesno
+  }
+
+  dimension: is_weekly_user {
+    sql: ${TABLE}.is_weekly_user ;;
     type: yesno
   }
 
@@ -179,11 +229,6 @@ view: clients_last_seen_joined_table {
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
-  }
-
-  dimension: n_metrics_ping {
-    sql: ${TABLE}.n_metrics_ping ;;
-    type: number
   }
 
   dimension: normalized_channel {
@@ -209,6 +254,11 @@ view: clients_last_seen_joined_table {
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+  }
+
+  dimension: segment_dau {
+    sql: ${TABLE}.segment_dau ;;
+    type: string
   }
 
   dimension: telemetry_sdk_build {
@@ -266,5 +316,5 @@ view: clients_last_seen_joined_table {
     datatype: date
   }
 
-  sql_table_name: `mozdata.firefox_desktop.clients_last_seen_joined` ;;
+  sql_table_name: `mozdata.firefox_desktop.baseline_active_users` ;;
 }
