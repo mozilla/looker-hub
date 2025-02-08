@@ -1875,6 +1875,11 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.pageload
       type: table_view
+    profile_dau_metrics_marketing_geo_testing_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.profile_dau_metrics_marketing_geo_testing
+      type: table_view
     releases_table:
       tables:
       - channel: nightly
@@ -2834,6 +2839,11 @@ firefox_desktop:
       tables:
       - table: mozdata.firefox_desktop.baseline
       type: glean_ping_view
+    baseline_active_users_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.baseline_active_users
+      type: table_view
     baseline_clients_daily_table:
       tables:
       - channel: null
@@ -4502,6 +4512,11 @@ firefox_ios:
         table: mozdata.org_mozilla_ios_firefoxbeta.onboarding_opt_out
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.onboarding_opt_out
+      type: table_view
+    profile_dau_metrics_marketing_geo_testing_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.profile_dau_metrics_marketing_geo_testing
       type: table_view
     retention_clients_table:
       tables:
@@ -8819,10 +8834,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 10
+            default: Windows 7
             options:
-            - Windows 10
             - Windows 7
+            - Windows 10
             - Windows 8
             - Windows 8.1
             - Windows 11
@@ -8862,9 +8877,9 @@ operational_monitoring:
             options:
             - release
             - aurora
+            - nightly
             - esr
             - beta
-            - nightly
             - default
             - nightly-pine
             - nightly-oak
@@ -9051,11 +9066,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id155
           normalized_channel:
-            default: nightly
+            default: aurora
             options:
+            - aurora
             - nightly
             - beta
-            - aurora
             - release
             - esr
             - Other
@@ -9662,8 +9677,8 @@ operational_monitoring:
             default: Mac
             options:
             - Mac
-            - Linux
             - Windows
+            - Linux
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -10728,15 +10743,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id287
           app:
-            default: Windows - vpn_session
+            default: Android - daemon_session
             options:
+            - Android - daemon_session
+            - Darwin - vpn_session
             - Windows - vpn_session
             - Android - vpn_session
-            - iOS - daemon_session
-            - Darwin - vpn_session
-            - Linux - vpn_session
-            - Android - daemon_session
             - iOS - vpn_session
+            - iOS - daemon_session
+            - Linux - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id288
@@ -11611,14 +11626,14 @@ operational_monitoring:
             default: nightly
             options:
             - nightly
-            - beta
             - release
+            - beta
           os:
-            default: Windows_NT
+            default: Darwin
             options:
+            - Darwin
             - Windows_NT
             - Linux
-            - Darwin
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id345

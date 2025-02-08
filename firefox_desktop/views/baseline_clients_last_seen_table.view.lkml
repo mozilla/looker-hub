@@ -97,6 +97,11 @@ view: baseline_clients_last_seen_table {
     type: number
   }
 
+  dimension: days_since_desktop_active {
+    sql: ${TABLE}.days_since_desktop_active ;;
+    type: number
+  }
+
   dimension: days_since_seen {
     sql: ${TABLE}.days_since_seen ;;
     type: number
