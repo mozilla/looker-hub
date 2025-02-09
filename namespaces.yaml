@@ -8834,10 +8834,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 7
+            default: Windows 10
             options:
-            - Windows 7
             - Windows 10
+            - Windows 7
             - Windows 8
             - Windows 8.1
             - Windows 11
@@ -8876,9 +8876,9 @@ operational_monitoring:
             default: release
             options:
             - release
-            - aurora
             - nightly
             - esr
+            - aurora
             - beta
             - default
             - nightly-pine
@@ -9674,11 +9674,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id188
           os:
-            default: Mac
+            default: Windows
             options:
-            - Mac
             - Windows
             - Linux
+            - Mac
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -10743,15 +10743,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id287
           app:
-            default: Android - daemon_session
+            default: Darwin - vpn_session
             options:
-            - Android - daemon_session
             - Darwin - vpn_session
             - Windows - vpn_session
             - Android - vpn_session
-            - iOS - vpn_session
-            - iOS - daemon_session
             - Linux - vpn_session
+            - Android - daemon_session
+            - iOS - daemon_session
+            - iOS - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id288
@@ -11632,8 +11632,8 @@ operational_monitoring:
             default: Darwin
             options:
             - Darwin
-            - Windows_NT
             - Linux
+            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id345

@@ -13113,6 +13113,481 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_connectivity_change__sum {
+    label: "Networking Prclose Tcp Blocking Time Connectivity Change Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_connectivity_change.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prclose Tcp Blocking Time Connectivity Change Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prclose Tcp Blocking Time Connectivity Change Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prclose_tcp_blocking_time_connectivity_change"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_Close when there has been the connectivity change in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCLOSE_TCP_BLOCKING_TIME_CONNECTIVITY_CHANGE.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_link_change__sum {
+    label: "Networking Prclose Tcp Blocking Time Link Change Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_link_change.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prclose Tcp Blocking Time Link Change Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prclose Tcp Blocking Time Link Change Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prclose_tcp_blocking_time_link_change"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_Close when there has been a link change in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCLOSE_TCP_BLOCKING_TIME_LINK_CHANGE.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_normal__sum {
+    label: "Networking Prclose Tcp Blocking Time Normal Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_normal.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prclose Tcp Blocking Time Normal Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prclose Tcp Blocking Time Normal Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prclose_tcp_blocking_time_normal"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_Close when we are not shutting down and there has been niether a network nor an offline state change in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCLOSE_TCP_BLOCKING_TIME_NORMAL.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_offline__sum {
+    label: "Networking Prclose Tcp Blocking Time Offline Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_offline.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prclose Tcp Blocking Time Offline Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prclose Tcp Blocking Time Offline Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prclose_tcp_blocking_time_offline"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_Close when the offline state has changed in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCLOSE_TCP_BLOCKING_TIME_OFFLINE.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_shutdown__sum {
+    label: "Networking Prclose Tcp Blocking Time Shutdown Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_shutdown.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prclose Tcp Blocking Time Shutdown Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prclose Tcp Blocking Time Shutdown Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prclose_tcp_blocking_time_shutdown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_Close during a shutdown (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCLOSE_TCP_BLOCKING_TIME_SHUTDOWN.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_connectivity_change__sum {
+    label: "Networking Prclose Udp Blocking Time Connectivity Change Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_connectivity_change.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prclose Udp Blocking Time Connectivity Change Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prclose Udp Blocking Time Connectivity Change Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prclose_udp_blocking_time_connectivity_change"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_Close when there has been the connectivity change in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCLOSE_UDP_BLOCKING_TIME_CONNECTIVITY_CHANGE.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_link_change__sum {
+    label: "Networking Prclose Udp Blocking Time Link Change Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_link_change.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prclose Udp Blocking Time Link Change Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prclose Udp Blocking Time Link Change Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prclose_udp_blocking_time_link_change"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_Close when there has been a link change in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCLOSE_UDP_BLOCKING_TIME_LINK_CHANGE.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_normal__sum {
+    label: "Networking Prclose Udp Blocking Time Normal Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_normal.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prclose Udp Blocking Time Normal Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prclose Udp Blocking Time Normal Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prclose_udp_blocking_time_normal"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_Close when we are not shutting down and there has been niether a network nor an offline state change in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCLOSE_UDP_BLOCKING_TIME_NORMAL.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_offline__sum {
+    label: "Networking Prclose Udp Blocking Time Offline Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_offline.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prclose Udp Blocking Time Offline Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prclose Udp Blocking Time Offline Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prclose_udp_blocking_time_offline"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_Close when the offline state has changed in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCLOSE_UDP_BLOCKING_TIME_OFFLINE.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_shutdown__sum {
+    label: "Networking Prclose Udp Blocking Time Shutdown Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_shutdown.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prclose Udp Blocking Time Shutdown Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prclose Udp Blocking Time Shutdown Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prclose_udp_blocking_time_shutdown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_Close during a shutdown (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCLOSE_UDP_BLOCKING_TIME_SHUTDOWN.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_connectivity_change__sum {
+    label: "Networking Prconnect Blocking Time Connectivity Change Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_connectivity_change.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prconnect Blocking Time Connectivity Change Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prconnect Blocking Time Connectivity Change Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prconnect_blocking_time_connectivity_change"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_Connect when there has been the connectiviy change in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCONNECT_BLOCKING_TIME_CONNECTIVITY_CHANGE.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_link_change__sum {
+    label: "Networking Prconnect Blocking Time Link Change Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_link_change.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prconnect Blocking Time Link Change Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prconnect Blocking Time Link Change Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prconnect_blocking_time_link_change"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_Connect when there has been a link change in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCONNECT_BLOCKING_TIME_LINK_CHANGE.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_normal__sum {
+    label: "Networking Prconnect Blocking Time Normal Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_normal.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prconnect Blocking Time Normal Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prconnect Blocking Time Normal Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prconnect_blocking_time_normal"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_Connect when we are not shutting down and there has been niether a network nor an offline state change in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCONNECT_BLOCKING_TIME_NORMAL.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_offline__sum {
+    label: "Networking Prconnect Blocking Time Offline Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_offline.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prconnect Blocking Time Offline Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prconnect Blocking Time Offline Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prconnect_blocking_time_offline"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_Connect when the offline state has changed in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCONNECT_BLOCKING_TIME_OFFLINE.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_shutdown__sum {
+    label: "Networking Prconnect Blocking Time Shutdown Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_shutdown.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prconnect Blocking Time Shutdown Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prconnect Blocking Time Shutdown Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prconnect_blocking_time_shutdown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_Connect during a shutdown (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCONNECT_BLOCKING_TIME_SHUTDOWN.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_connectivity_change__sum {
+    label: "Networking Prconnect Fail Blocking Time Connectivity Change Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_connectivity_change.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prconnect Fail Blocking Time Connectivity Change Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prconnect Fail Blocking Time Connectivity Change Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prconnect_fail_blocking_time_connectivity_change"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in a failed PR_Connect when there has been the connectiviy change in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCONNECT_FAIL_BLOCKING_TIME_CONNECTIVITY_CHANGE.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_link_change__sum {
+    label: "Networking Prconnect Fail Blocking Time Link Change Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_link_change.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prconnect Fail Blocking Time Link Change Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prconnect Fail Blocking Time Link Change Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prconnect_fail_blocking_time_link_change"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in a failed PR_Connect when there has been a link change in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCONNECT_FAIL_BLOCKING_TIME_LINK_CHANGE.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_normal__sum {
+    label: "Networking Prconnect Fail Blocking Time Normal Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_normal.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prconnect Fail Blocking Time Normal Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prconnect Fail Blocking Time Normal Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prconnect_fail_blocking_time_normal"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in a failed PR_Connect when we are not shutting down and there has been niether a network nor an offline state change in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCONNECT_FAIL_BLOCKING_TIME_NORMAL.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_offline__sum {
+    label: "Networking Prconnect Fail Blocking Time Offline Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_offline.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prconnect Fail Blocking Time Offline Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prconnect Fail Blocking Time Offline Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prconnect_fail_blocking_time_offline"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in a failed PR_Connect when the offline state has changed in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCONNECT_FAIL_BLOCKING_TIME_OFFLINE.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_shutdown__sum {
+    label: "Networking Prconnect Fail Blocking Time Shutdown Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_shutdown.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prconnect Fail Blocking Time Shutdown Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prconnect Fail Blocking Time Shutdown Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prconnect_fail_blocking_time_shutdown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in a failed PR_Connect during a shutdown (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCONNECT_FAIL_BLOCKING_TIME_SHUTDOWN.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_connectivity_change__sum {
+    label: "Networking Prconnectcontinue Blocking Time Connectivity Change Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_connectivity_change.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prconnectcontinue Blocking Time Connectivity Change Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prconnectcontinue Blocking Time Connectivity Change Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prconnectcontinue_blocking_time_connectivity_change"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_ConnectContinue when there has been the connectivity change in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCONNECTCONTINUE_BLOCKING_TIME_CONNECTIVITY_CHANGE.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_link_change__sum {
+    label: "Networking Prconnectcontinue Blocking Time Link Change Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_link_change.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prconnectcontinue Blocking Time Link Change Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prconnectcontinue Blocking Time Link Change Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prconnectcontinue_blocking_time_link_change"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_ConnectContinue when there has been a link change in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCONNECTCONTINUE_BLOCKING_TIME_LINK_CHANGE.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_normal__sum {
+    label: "Networking Prconnectcontinue Blocking Time Normal Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_normal.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prconnectcontinue Blocking Time Normal Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prconnectcontinue Blocking Time Normal Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prconnectcontinue_blocking_time_normal"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_ConnectContinue when we are not shutting down and there has been niether a network nor an offline state change in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCONNECTCONTINUE_BLOCKING_TIME_NORMAL.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_offline__sum {
+    label: "Networking Prconnectcontinue Blocking Time Offline Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_offline.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prconnectcontinue Blocking Time Offline Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prconnectcontinue Blocking Time Offline Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prconnectcontinue_blocking_time_offline"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_ConnectContinue when the offline state has changed in the last 60s (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCONNECTCONTINUE_BLOCKING_TIME_OFFLINE.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_shutdown__sum {
+    label: "Networking Prconnectcontinue Blocking Time Shutdown Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_shutdown.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Prconnectcontinue Blocking Time Shutdown Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Prconnectcontinue Blocking Time Shutdown Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_prconnectcontinue_blocking_time_shutdown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocked in PR_ConnectContinue during a shutdown (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCONNECTCONTINUE_BLOCKING_TIME_SHUTDOWN.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_proxy_info_type {
     label: "Networking Proxy Info Type"
     hidden: yes
@@ -45279,6 +45754,306 @@ view: metrics__metrics__timing_distribution__networking_http_content_onstop_dela
 }
 
 view: metrics__metrics__timing_distribution__networking_http_onstart_suspend_total_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prclose_tcp_blocking_time_connectivity_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prclose_tcp_blocking_time_link_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prclose_tcp_blocking_time_normal__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prclose_tcp_blocking_time_offline__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prclose_tcp_blocking_time_shutdown__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prclose_udp_blocking_time_connectivity_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prclose_udp_blocking_time_link_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prclose_udp_blocking_time_normal__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prclose_udp_blocking_time_offline__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prclose_udp_blocking_time_shutdown__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prconnect_blocking_time_connectivity_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prconnect_blocking_time_link_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prconnect_blocking_time_normal__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prconnect_blocking_time_offline__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prconnect_blocking_time_shutdown__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prconnect_fail_blocking_time_connectivity_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prconnect_fail_blocking_time_link_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prconnect_fail_blocking_time_normal__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prconnect_fail_blocking_time_offline__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prconnect_fail_blocking_time_shutdown__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prconnectcontinue_blocking_time_connectivity_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prconnectcontinue_blocking_time_link_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prconnectcontinue_blocking_time_normal__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prconnectcontinue_blocking_time_offline__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_prconnectcontinue_blocking_time_shutdown__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
