@@ -21722,6 +21722,1506 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_connectivity_change__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_connectivity_change.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Connectivity Change"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_connectivity_change__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_connectivity_change.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Connectivity Change"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_connectivity_change__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_connectivity_change.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Connectivity Change"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_connectivity_change__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_connectivity_change.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Connectivity Change"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_connectivity_change__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_connectivity_change.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_connectivity_change__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_connectivity_change.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Connectivity Change"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_connectivity_change__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_connectivity_change.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Connectivity Change"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_connectivity_change__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_connectivity_change.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Connectivity Change"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_connectivity_change__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_connectivity_change.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_link_change__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_link_change.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Link Change"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_link_change__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_link_change.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Link Change"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_link_change__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_link_change.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Link Change"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_link_change__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_link_change.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Link Change"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_link_change__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_link_change.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_link_change__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_link_change.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Link Change"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_link_change__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_link_change.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Link Change"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_link_change__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_link_change.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Link Change"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_link_change__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_link_change.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_normal__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_normal.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Normal"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_normal__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_normal.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Normal"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_normal__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_normal.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Normal"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_normal__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_normal.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Normal"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_normal__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_normal.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_normal__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_normal.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Normal"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_normal__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_normal.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Normal"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_normal__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_normal.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Normal"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_normal__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_normal.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_offline__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_offline.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Offline"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_offline__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_offline.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Offline"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_offline__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_offline.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Offline"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_offline__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_offline.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Offline"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_offline__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_offline.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_offline__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_offline.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Offline"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_offline__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_offline.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Offline"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_offline__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_offline.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Offline"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_offline__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_offline.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_shutdown__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_shutdown.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Shutdown"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_shutdown__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_shutdown.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Shutdown"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_shutdown__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_shutdown.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Shutdown"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_shutdown__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_shutdown.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Shutdown"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_shutdown__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_shutdown.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_shutdown__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_shutdown.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Shutdown"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_shutdown__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_shutdown.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Shutdown"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_shutdown__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_shutdown.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Tcp Blocking Time Shutdown"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_shutdown__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_shutdown.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_connectivity_change__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_connectivity_change.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Connectivity Change"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_connectivity_change__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_connectivity_change.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Connectivity Change"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_connectivity_change__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_connectivity_change.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Connectivity Change"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_connectivity_change__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_connectivity_change.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Connectivity Change"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_connectivity_change__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_connectivity_change.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_connectivity_change__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_connectivity_change.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Connectivity Change"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_connectivity_change__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_connectivity_change.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Connectivity Change"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_connectivity_change__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_connectivity_change.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Connectivity Change"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_connectivity_change__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_connectivity_change.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_link_change__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_link_change.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Link Change"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_link_change__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_link_change.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Link Change"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_link_change__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_link_change.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Link Change"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_link_change__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_link_change.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Link Change"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_link_change__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_link_change.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_link_change__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_link_change.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Link Change"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_link_change__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_link_change.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Link Change"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_link_change__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_link_change.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Link Change"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_link_change__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_link_change.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_normal__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_normal.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Normal"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_normal__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_normal.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Normal"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_normal__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_normal.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Normal"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_normal__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_normal.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Normal"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_normal__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_normal.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_normal__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_normal.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Normal"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_normal__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_normal.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Normal"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_normal__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_normal.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Normal"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_normal__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_normal.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_offline__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_offline.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Offline"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_offline__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_offline.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Offline"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_offline__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_offline.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Offline"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_offline__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_offline.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Offline"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_offline__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_offline.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_offline__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_offline.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Offline"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_offline__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_offline.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Offline"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_offline__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_offline.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Offline"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_offline__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_offline.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_shutdown__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_shutdown.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Shutdown"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_shutdown__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_shutdown.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Shutdown"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_shutdown__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_shutdown.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Shutdown"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_shutdown__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_shutdown.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Shutdown"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_shutdown__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_shutdown.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_shutdown__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_shutdown.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Shutdown"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_shutdown__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_shutdown.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Shutdown"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_shutdown__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_shutdown.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prclose Udp Blocking Time Shutdown"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prclose_udp_blocking_time_shutdown__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prclose_udp_blocking_time_shutdown.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_connectivity_change__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_connectivity_change.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Connectivity Change"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_connectivity_change__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_connectivity_change.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Connectivity Change"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_connectivity_change__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_connectivity_change.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Connectivity Change"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_connectivity_change__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_connectivity_change.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Connectivity Change"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_connectivity_change__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_connectivity_change.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_connectivity_change__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_connectivity_change.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Connectivity Change"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_connectivity_change__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_connectivity_change.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Connectivity Change"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_connectivity_change__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_connectivity_change.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Connectivity Change"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_connectivity_change__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_connectivity_change.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_link_change__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_link_change.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Link Change"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_link_change__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_link_change.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Link Change"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_link_change__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_link_change.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Link Change"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_link_change__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_link_change.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Link Change"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_link_change__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_link_change.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_link_change__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_link_change.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Link Change"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_link_change__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_link_change.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Link Change"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_link_change__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_link_change.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Link Change"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_link_change__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_link_change.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_normal__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_normal.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Normal"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_normal__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_normal.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Normal"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_normal__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_normal.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Normal"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_normal__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_normal.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Normal"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_normal__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_normal.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_normal__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_normal.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Normal"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_normal__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_normal.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Normal"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_normal__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_normal.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Normal"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_normal__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_normal.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_offline__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_offline.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Offline"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_offline__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_offline.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Offline"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_offline__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_offline.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Offline"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_offline__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_offline.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Offline"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_offline__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_offline.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_offline__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_offline.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Offline"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_offline__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_offline.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Offline"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_offline__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_offline.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Offline"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_offline__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_offline.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_shutdown__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_shutdown.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Shutdown"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_shutdown__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_shutdown.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Shutdown"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_shutdown__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_shutdown.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Shutdown"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_shutdown__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_shutdown.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Shutdown"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_shutdown__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_shutdown.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_shutdown__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_shutdown.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Shutdown"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_shutdown__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_shutdown.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Shutdown"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_shutdown__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_shutdown.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Blocking Time Shutdown"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_blocking_time_shutdown__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_shutdown.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_connectivity_change__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_connectivity_change.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Connectivity Change"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_connectivity_change__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_connectivity_change.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Connectivity Change"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_connectivity_change__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_connectivity_change.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Connectivity Change"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_connectivity_change__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_connectivity_change.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Connectivity Change"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_connectivity_change__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_connectivity_change.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_connectivity_change__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_connectivity_change.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Connectivity Change"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_connectivity_change__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_connectivity_change.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Connectivity Change"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_connectivity_change__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_connectivity_change.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Connectivity Change"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_connectivity_change__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_connectivity_change.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_link_change__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_link_change.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Link Change"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_link_change__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_link_change.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Link Change"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_link_change__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_link_change.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Link Change"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_link_change__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_link_change.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Link Change"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_link_change__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_link_change.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_link_change__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_link_change.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Link Change"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_link_change__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_link_change.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Link Change"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_link_change__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_link_change.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Link Change"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_link_change__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_link_change.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_normal__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_normal.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Normal"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_normal__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_normal.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Normal"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_normal__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_normal.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Normal"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_normal__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_normal.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Normal"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_normal__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_normal.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_normal__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_normal.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Normal"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_normal__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_normal.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Normal"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_normal__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_normal.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Normal"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_normal__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_normal.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_offline__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_offline.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Offline"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_offline__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_offline.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Offline"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_offline__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_offline.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Offline"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_offline__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_offline.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Offline"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_offline__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_offline.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_offline__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_offline.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Offline"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_offline__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_offline.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Offline"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_offline__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_offline.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Offline"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_offline__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_offline.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_shutdown__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_shutdown.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Shutdown"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_shutdown__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_shutdown.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Shutdown"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_shutdown__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_shutdown.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Shutdown"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_shutdown__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_shutdown.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Shutdown"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_shutdown__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_shutdown.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_shutdown__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_shutdown.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Shutdown"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_shutdown__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_shutdown.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Shutdown"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_shutdown__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_shutdown.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnect Fail Blocking Time Shutdown"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_shutdown__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_shutdown.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_connectivity_change__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_connectivity_change.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Connectivity Change"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_connectivity_change__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_connectivity_change.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Connectivity Change"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_connectivity_change__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_connectivity_change.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Connectivity Change"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_connectivity_change__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_connectivity_change.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Connectivity Change"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_connectivity_change__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_connectivity_change.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_connectivity_change__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_connectivity_change.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Connectivity Change"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_connectivity_change__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_connectivity_change.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Connectivity Change"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_connectivity_change__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_connectivity_change.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Connectivity Change"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_connectivity_change__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_connectivity_change.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_link_change__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_link_change.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Link Change"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_link_change__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_link_change.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Link Change"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_link_change__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_link_change.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Link Change"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_link_change__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_link_change.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Link Change"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_link_change__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_link_change.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_link_change__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_link_change.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Link Change"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_link_change__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_link_change.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Link Change"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_link_change__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_link_change.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Link Change"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_link_change__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_link_change.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_normal__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_normal.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Normal"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_normal__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_normal.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Normal"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_normal__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_normal.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Normal"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_normal__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_normal.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Normal"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_normal__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_normal.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_normal__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_normal.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Normal"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_normal__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_normal.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Normal"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_normal__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_normal.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Normal"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_normal__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_normal.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_offline__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_offline.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Offline"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_offline__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_offline.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Offline"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_offline__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_offline.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Offline"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_offline__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_offline.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Offline"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_offline__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_offline.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_offline__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_offline.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Offline"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_offline__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_offline.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Offline"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_offline__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_offline.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Offline"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_offline__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_offline.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_shutdown__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_shutdown.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Shutdown"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_shutdown__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_shutdown.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Shutdown"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_shutdown__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_shutdown.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Shutdown"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_shutdown__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_shutdown.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Shutdown"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_shutdown__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_shutdown.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_shutdown__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_shutdown.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Shutdown"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_shutdown__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_shutdown.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Shutdown"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_shutdown__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_shutdown.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Prconnectcontinue Blocking Time Shutdown"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_shutdown__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_shutdown.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__networking_sqlite_cookies_block_main_thread__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.networking_sqlite_cookies_block_main_thread.bucket_count ;;
     type: number
@@ -37202,6 +38702,306 @@ view: metrics_table__metrics__timing_distribution__networking_http_content_onsto
 }
 
 view: metrics_table__metrics__timing_distribution__networking_http_onstart_suspend_total_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prclose_tcp_blocking_time_connectivity_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prclose_tcp_blocking_time_link_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prclose_tcp_blocking_time_normal__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prclose_tcp_blocking_time_offline__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prclose_tcp_blocking_time_shutdown__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prclose_udp_blocking_time_connectivity_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prclose_udp_blocking_time_link_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prclose_udp_blocking_time_normal__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prclose_udp_blocking_time_offline__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prclose_udp_blocking_time_shutdown__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prconnect_blocking_time_connectivity_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prconnect_blocking_time_link_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prconnect_blocking_time_normal__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prconnect_blocking_time_offline__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prconnect_blocking_time_shutdown__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prconnect_fail_blocking_time_connectivity_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prconnect_fail_blocking_time_link_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prconnect_fail_blocking_time_normal__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prconnect_fail_blocking_time_offline__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prconnect_fail_blocking_time_shutdown__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prconnectcontinue_blocking_time_connectivity_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prconnectcontinue_blocking_time_link_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prconnectcontinue_blocking_time_normal__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prconnectcontinue_blocking_time_offline__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_prconnectcontinue_blocking_time_shutdown__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
