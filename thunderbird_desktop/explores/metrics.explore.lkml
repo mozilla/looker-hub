@@ -1293,6 +1293,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlclassifier_vlps_metadata_corrupt}) AS metrics__metrics__labeled_counter__urlclassifier_vlps_metadata_corrupt ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlclassifier_vlps_metadata_corrupt.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__web_notification_icon_url_encoding {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__web_notification_icon_url_encoding}) AS metrics__metrics__labeled_counter__web_notification_icon_url_encoding ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__web_notification_icon_url_encoding.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__web_notification_permission_origin {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__web_notification_permission_origin}) AS metrics__metrics__labeled_counter__web_notification_permission_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__web_notification_permission_origin.document_id} ;;

@@ -7225,6 +7225,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__web_notification_icon_url_encoding {
+    sql: ${TABLE}.metrics.labeled_counter.web_notification_icon_url_encoding ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__web_notification_permission_origin {
     sql: ${TABLE}.metrics.labeled_counter.web_notification_permission_origin ;;
     hidden: yes
