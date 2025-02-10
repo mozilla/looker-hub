@@ -18913,6 +18913,23 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__web_notification_icon_url_encoding {
+    label: "Web Notification Icon Url Encoding"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.web_notification_icon_url_encoding ;;
+    group_label: "Web Notification"
+    group_item_label: "Icon Url Encoding"
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification Icon Url Encoding"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/web_notification_icon_url_encoding"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The encoding of the notification icon URL
+"
+  }
+
   dimension: metrics__counter__web_notification_insecure_context_permission_request {
     label: "Web Notification Insecure Context Permission Request"
     hidden: no
@@ -34974,6 +34991,47 @@ view: metrics__metrics__labeled_counter__translations_request_count {
 
 view: metrics__metrics__labeled_counter__urlclassifier_vlps_metadata_corrupt {
   label: "Urlclassifier - Vlps Metadata Corrupt"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__web_notification_icon_url_encoding {
+  label: "Web Notification - Icon Url Encoding"
 
   dimension: document_id {
     type: string

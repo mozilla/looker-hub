@@ -10366,6 +10366,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__web_notification_icon_url_encoding {
+    sql: ${TABLE}.metrics.labeled_counter.web_notification_icon_url_encoding ;;
+    hidden: yes
+    description: "The encoding of the notification icon URL
+"
+  }
+
   dimension: metrics__labeled_counter__web_notification_permission_origin {
     sql: ${TABLE}.metrics.labeled_counter.web_notification_permission_origin ;;
     hidden: yes
