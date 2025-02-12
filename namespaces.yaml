@@ -17077,3 +17077,27 @@ websites:
       tables:
       - table: moz-fx-data-shared-prod.mozilla_org.www_site_events_metrics
       type: table_view
+zoom:
+  connection: bigquery-oauth
+  glean_app: false
+  owners:
+  - rantwan@mozilla.com
+  pretty_name: Zoom
+  spoke: looker-spoke-default
+  views:
+    meeting_participants:
+      tables:
+      - table: mozdata.zoom.meeting_participants
+      type: table_view
+    meeting_reports:
+      tables:
+      - table: mozdata.zoom.meeting_reports
+      type: table_view
+    meetings:
+      tables:
+      - table: mozdata.zoom.meetings
+      type: table_view
+    users:
+      tables:
+      - table: mozdata.zoom.users
+      type: table_view
