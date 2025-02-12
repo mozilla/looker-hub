@@ -8,24 +8,28 @@ view: stripe_products {
   dimension: active {
     sql: ${TABLE}.active ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     description: "Whether the product is currently available for purchase."
   }
 
   dimension: description {
     sql: ${TABLE}.description ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The product's description, meant to be displayable to the customer."
   }
 
   dimension: id {
     sql: ${TABLE}.id ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Unique identifier for the product."
   }
 
   dimension: is_deleted {
     sql: ${TABLE}.is_deleted ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     description: "Whether the product is deleted."
   }
 
@@ -38,18 +42,21 @@ view: stripe_products {
   dimension: name {
     sql: ${TABLE}.name ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The product's name, meant to be displayable to the customer."
   }
 
   dimension: statement_descriptor {
     sql: ${TABLE}.statement_descriptor ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Extra information about a product which will appear on your customer's credit card statement."
   }
 
   dimension_group: created {
     sql: ${TABLE}.created ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -65,6 +72,7 @@ view: stripe_products {
   dimension_group: updated {
     sql: ${TABLE}.updated ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

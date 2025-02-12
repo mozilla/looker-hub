@@ -8,16 +8,19 @@ view: database_counts {
   dimension: table_name {
     sql: ${TABLE}.table_name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: total_rows {
     sql: ${TABLE}.total_rows ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: as_of {
     sql: ${TABLE}.as_of_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

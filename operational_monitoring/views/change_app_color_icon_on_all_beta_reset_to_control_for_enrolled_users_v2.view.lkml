@@ -17,21 +17,25 @@ view: change_app_color_icon_on_all_beta_reset_to_control_for_enrolled_users_v2 {
   dimension: branch {
     sql: ${TABLE}.branch ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: metric {
     sql: ${TABLE}.metric ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: parameter {
     sql: ${TABLE}.parameter ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: statistic {
     sql: ${TABLE}.statistic ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   measure: point {

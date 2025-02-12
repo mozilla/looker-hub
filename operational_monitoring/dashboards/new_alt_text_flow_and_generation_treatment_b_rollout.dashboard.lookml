@@ -10,142 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_alt_text_flow_and_generation_treatment_b_rollout
-    type: looker_line
-    fields: [
-      new_alt_text_flow_and_generation_treatment_b_rollout.submission_date,
-      new_alt_text_flow_and_generation_treatment_b_rollout.branch,
-      new_alt_text_flow_and_generation_treatment_b_rollout.point
-    ]
-    pivots: [
-      new_alt_text_flow_and_generation_treatment_b_rollout.branch
-    ]
-    filters:
-      new_alt_text_flow_and_generation_treatment_b_rollout.metric: 'qualified_cumulative_days_of_use'
-      new_alt_text_flow_and_generation_treatment_b_rollout.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: new_alt_text_flow_and_generation_treatment_b_rollout.submission_date
-    field_y: new_alt_text_flow_and_generation_treatment_b_rollout.point
-    log_scale: false
-    ci_lower: new_alt_text_flow_and_generation_treatment_b_rollout.lower
-    ci_upper: new_alt_text_flow_and_generation_treatment_b_rollout.upper
-    show_grid: true
-    listen:
-      Date: new_alt_text_flow_and_generation_treatment_b_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_alt_text_flow_and_generation_treatment_b_rollout
-    type: looker_line
-    fields: [
-      new_alt_text_flow_and_generation_treatment_b_rollout.submission_date,
-      new_alt_text_flow_and_generation_treatment_b_rollout.branch,
-      new_alt_text_flow_and_generation_treatment_b_rollout.point
-    ]
-    pivots: [
-      new_alt_text_flow_and_generation_treatment_b_rollout.branch
-    ]
-    filters:
-      new_alt_text_flow_and_generation_treatment_b_rollout.metric: 'ad_clicks'
-      new_alt_text_flow_and_generation_treatment_b_rollout.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: new_alt_text_flow_and_generation_treatment_b_rollout.submission_date
-    field_y: new_alt_text_flow_and_generation_treatment_b_rollout.point
-    log_scale: false
-    ci_lower: new_alt_text_flow_and_generation_treatment_b_rollout.lower
-    ci_upper: new_alt_text_flow_and_generation_treatment_b_rollout.upper
-    show_grid: true
-    listen:
-      Date: new_alt_text_flow_and_generation_treatment_b_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_alt_text_flow_and_generation_treatment_b_rollout
-    type: looker_line
-    fields: [
-      new_alt_text_flow_and_generation_treatment_b_rollout.submission_date,
-      new_alt_text_flow_and_generation_treatment_b_rollout.branch,
-      new_alt_text_flow_and_generation_treatment_b_rollout.point
-    ]
-    pivots: [
-      new_alt_text_flow_and_generation_treatment_b_rollout.branch
-    ]
-    filters:
-      new_alt_text_flow_and_generation_treatment_b_rollout.metric: 'days_of_use'
-      new_alt_text_flow_and_generation_treatment_b_rollout.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: new_alt_text_flow_and_generation_treatment_b_rollout.submission_date
-    field_y: new_alt_text_flow_and_generation_treatment_b_rollout.point
-    log_scale: false
-    ci_lower: new_alt_text_flow_and_generation_treatment_b_rollout.lower
-    ci_upper: new_alt_text_flow_and_generation_treatment_b_rollout.upper
-    show_grid: true
-    listen:
-      Date: new_alt_text_flow_and_generation_treatment_b_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_alt_text_flow_and_generation_treatment_b_rollout
-    type: looker_line
-    fields: [
-      new_alt_text_flow_and_generation_treatment_b_rollout.submission_date,
-      new_alt_text_flow_and_generation_treatment_b_rollout.branch,
-      new_alt_text_flow_and_generation_treatment_b_rollout.point
-    ]
-    pivots: [
-      new_alt_text_flow_and_generation_treatment_b_rollout.branch
-    ]
-    filters:
-      new_alt_text_flow_and_generation_treatment_b_rollout.metric: 'search_count'
-      new_alt_text_flow_and_generation_treatment_b_rollout.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: new_alt_text_flow_and_generation_treatment_b_rollout.submission_date
-    field_y: new_alt_text_flow_and_generation_treatment_b_rollout.point
-    log_scale: false
-    ci_lower: new_alt_text_flow_and_generation_treatment_b_rollout.lower
-    ci_upper: new_alt_text_flow_and_generation_treatment_b_rollout.upper
-    show_grid: true
-    listen:
-      Date: new_alt_text_flow_and_generation_treatment_b_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Uri Count
     name: Uri Count_mean
     note_state: expanded
@@ -164,7 +28,7 @@
     filters:
       new_alt_text_flow_and_generation_treatment_b_rollout.metric: 'uri_count'
       new_alt_text_flow_and_generation_treatment_b_rollout.statistic: mean
-    row: 20
+    row: 0
     col: 0
     width: 12
     height: 8
@@ -198,7 +62,7 @@
     filters:
       new_alt_text_flow_and_generation_treatment_b_rollout.metric: 'active_hours'
       new_alt_text_flow_and_generation_treatment_b_rollout.statistic: mean
-    row: 20
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -214,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,9 +94,9 @@
       new_alt_text_flow_and_generation_treatment_b_rollout.branch
     ]
     filters:
-      new_alt_text_flow_and_generation_treatment_b_rollout.metric: 'retained'
+      new_alt_text_flow_and_generation_treatment_b_rollout.metric: 'search_count'
       new_alt_text_flow_and_generation_treatment_b_rollout.statistic: mean
-    row: 30
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -268,7 +132,7 @@
     filters:
       new_alt_text_flow_and_generation_treatment_b_rollout.metric: 'memory_total'
       new_alt_text_flow_and_generation_treatment_b_rollout.statistic: percentile
-    row: 30
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -281,6 +145,142 @@
     listen:
       Date: new_alt_text_flow_and_generation_treatment_b_rollout.submission_date
       Percentile: new_alt_text_flow_and_generation_treatment_b_rollout.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_alt_text_flow_and_generation_treatment_b_rollout
+    type: looker_line
+    fields: [
+      new_alt_text_flow_and_generation_treatment_b_rollout.submission_date,
+      new_alt_text_flow_and_generation_treatment_b_rollout.branch,
+      new_alt_text_flow_and_generation_treatment_b_rollout.point
+    ]
+    pivots: [
+      new_alt_text_flow_and_generation_treatment_b_rollout.branch
+    ]
+    filters:
+      new_alt_text_flow_and_generation_treatment_b_rollout.metric: 'ad_clicks'
+      new_alt_text_flow_and_generation_treatment_b_rollout.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: new_alt_text_flow_and_generation_treatment_b_rollout.submission_date
+    field_y: new_alt_text_flow_and_generation_treatment_b_rollout.point
+    log_scale: false
+    ci_lower: new_alt_text_flow_and_generation_treatment_b_rollout.lower
+    ci_upper: new_alt_text_flow_and_generation_treatment_b_rollout.upper
+    show_grid: true
+    listen:
+      Date: new_alt_text_flow_and_generation_treatment_b_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_alt_text_flow_and_generation_treatment_b_rollout
+    type: looker_line
+    fields: [
+      new_alt_text_flow_and_generation_treatment_b_rollout.submission_date,
+      new_alt_text_flow_and_generation_treatment_b_rollout.branch,
+      new_alt_text_flow_and_generation_treatment_b_rollout.point
+    ]
+    pivots: [
+      new_alt_text_flow_and_generation_treatment_b_rollout.branch
+    ]
+    filters:
+      new_alt_text_flow_and_generation_treatment_b_rollout.metric: 'retained'
+      new_alt_text_flow_and_generation_treatment_b_rollout.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: new_alt_text_flow_and_generation_treatment_b_rollout.submission_date
+    field_y: new_alt_text_flow_and_generation_treatment_b_rollout.point
+    log_scale: false
+    ci_lower: new_alt_text_flow_and_generation_treatment_b_rollout.lower
+    ci_upper: new_alt_text_flow_and_generation_treatment_b_rollout.upper
+    show_grid: true
+    listen:
+      Date: new_alt_text_flow_and_generation_treatment_b_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_alt_text_flow_and_generation_treatment_b_rollout
+    type: looker_line
+    fields: [
+      new_alt_text_flow_and_generation_treatment_b_rollout.submission_date,
+      new_alt_text_flow_and_generation_treatment_b_rollout.branch,
+      new_alt_text_flow_and_generation_treatment_b_rollout.point
+    ]
+    pivots: [
+      new_alt_text_flow_and_generation_treatment_b_rollout.branch
+    ]
+    filters:
+      new_alt_text_flow_and_generation_treatment_b_rollout.metric: 'qualified_cumulative_days_of_use'
+      new_alt_text_flow_and_generation_treatment_b_rollout.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: new_alt_text_flow_and_generation_treatment_b_rollout.submission_date
+    field_y: new_alt_text_flow_and_generation_treatment_b_rollout.point
+    log_scale: false
+    ci_lower: new_alt_text_flow_and_generation_treatment_b_rollout.lower
+    ci_upper: new_alt_text_flow_and_generation_treatment_b_rollout.upper
+    show_grid: true
+    listen:
+      Date: new_alt_text_flow_and_generation_treatment_b_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_alt_text_flow_and_generation_treatment_b_rollout
+    type: looker_line
+    fields: [
+      new_alt_text_flow_and_generation_treatment_b_rollout.submission_date,
+      new_alt_text_flow_and_generation_treatment_b_rollout.branch,
+      new_alt_text_flow_and_generation_treatment_b_rollout.point
+    ]
+    pivots: [
+      new_alt_text_flow_and_generation_treatment_b_rollout.branch
+    ]
+    filters:
+      new_alt_text_flow_and_generation_treatment_b_rollout.metric: 'days_of_use'
+      new_alt_text_flow_and_generation_treatment_b_rollout.statistic: mean
+    row: 30
+    col: 12
+    width: 12
+    height: 8
+    field_x: new_alt_text_flow_and_generation_treatment_b_rollout.submission_date
+    field_y: new_alt_text_flow_and_generation_treatment_b_rollout.point
+    log_scale: false
+    ci_lower: new_alt_text_flow_and_generation_treatment_b_rollout.lower
+    ci_upper: new_alt_text_flow_and_generation_treatment_b_rollout.upper
+    show_grid: true
+    listen:
+      Date: new_alt_text_flow_and_generation_treatment_b_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

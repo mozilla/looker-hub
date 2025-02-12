@@ -103,12 +103,14 @@ www_site_landing_page_metrics_operating_system,
   dimension: downloads {
     sql: ${TABLE}.www_site_landing_page_metrics_downloads ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: operating_system {
     sql: ${TABLE}.www_site_landing_page_metrics_operating_system ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 

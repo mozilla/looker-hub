@@ -8,31 +8,37 @@ view: event_error_monitoring_aggregates {
   dimension: channel {
     sql: ${TABLE}.channel ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: error_sum {
     sql: ${TABLE}.error_sum ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: error_type {
     sql: ${TABLE}.error_type ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: metric {
     sql: ${TABLE}.metric ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

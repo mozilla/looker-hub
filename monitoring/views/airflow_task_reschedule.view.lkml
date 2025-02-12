@@ -8,36 +8,42 @@ view: airflow_task_reschedule {
   dimension: dag_id {
     sql: ${TABLE}.dag_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Airflow DAG id"
   }
 
   dimension: duration {
     sql: ${TABLE}.duration ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Time elapsed since start until end of task's exeuction (seconds)"
   }
 
   dimension: run_id {
     sql: ${TABLE}.run_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Unique identifier of the task run instance"
   }
 
   dimension: task_id {
     sql: ${TABLE}.task_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Airflow task id"
   }
 
   dimension: try_number {
     sql: ${TABLE}.try_number ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Attempt number to execute the task"
   }
 
   dimension_group: end {
     sql: ${TABLE}.end_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -53,6 +59,7 @@ view: airflow_task_reschedule {
   dimension_group: reschedule {
     sql: ${TABLE}.reschedule_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -68,6 +75,7 @@ view: airflow_task_reschedule {
   dimension_group: start {
     sql: ${TABLE}.start_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

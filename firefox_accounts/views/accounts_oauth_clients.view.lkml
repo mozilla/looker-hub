@@ -8,17 +8,20 @@ view: accounts_oauth_clients {
   dimension: id {
     sql: ${TABLE}.id ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "id in hexadecimal format."
   }
 
   dimension: name {
     sql: ${TABLE}.name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: createdAt {
     sql: ${TABLE}.createdAt ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

@@ -17,21 +17,25 @@ view: sidebar_button_feature_callout_vertical_tabs_users_existing_profiles {
   dimension: branch {
     sql: ${TABLE}.branch ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: metric {
     sql: ${TABLE}.metric ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: parameter {
     sql: ${TABLE}.parameter ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: statistic {
     sql: ${TABLE}.statistic ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   measure: point {

@@ -257,18 +257,21 @@ firefox_desktop_active_users_aggregates_view_weekly_users,
   dimension: app_name {
     sql: ${TABLE}.looker_base_fields_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version {
     sql: ${TABLE}.looker_base_fields_app_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: country {
     sql: ${TABLE}.looker_base_fields_country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
     group_label: "Base Fields"
   }
@@ -276,12 +279,14 @@ firefox_desktop_active_users_aggregates_view_weekly_users,
   dimension: default_search_engine {
     sql: ${TABLE}.looker_base_fields_default_search_engine ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: distribution_id {
     sql: ${TABLE}.looker_base_fields_distribution_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
@@ -294,186 +299,217 @@ firefox_desktop_active_users_aggregates_view_weekly_users,
   dimension: is_default_browser {
     sql: ${TABLE}.looker_base_fields_is_default_browser ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: locale {
     sql: ${TABLE}.looker_base_fields_locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.looker_base_fields_normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.looker_base_fields_normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: os {
     sql: ${TABLE}.looker_base_fields_os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: partner_id {
     sql: ${TABLE}.looker_base_fields_partner_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sample_id {
     sql: ${TABLE}.looker_base_fields_sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: adjust_network {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_adjust_network ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version_is_major_release {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_app_version_is_major_release ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version_major {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_app_version_major ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version_minor {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_app_version_minor ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version_patch_revision {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_app_version_patch_revision ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: attributed {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_attributed ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: attribution_medium {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_attribution_medium ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: attribution_source {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_attribution_source ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: channel {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: city {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_city ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: daily_users {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_daily_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: dau {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_dau ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: first_seen_year {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_first_seen_year ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: install_source {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_install_source ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: mau {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_mau ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: monthly_users {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_monthly_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: os_grouped {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_os_grouped ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: os_version {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: os_version_major {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_os_version_major ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: os_version_minor {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_os_version_minor ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: partnership {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_partnership ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: segment {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_segment ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: wau {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_wau ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: weekly_users {
     sql: ${TABLE}.firefox_desktop_active_users_aggregates_view_weekly_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 

@@ -8,6 +8,7 @@ view: app_store_funnel_ios {
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
     description: "Dimension by which the numeric values are grouped.
 "
@@ -16,6 +17,7 @@ view: app_store_funnel_ios {
   dimension: first_time_downloads {
     sql: ${TABLE}.first_time_downloads ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Number of first time downloads of the Firefox iOS app from the Apple Store.
 "
   }
@@ -23,6 +25,7 @@ view: app_store_funnel_ios {
   dimension: impressions {
     sql: ${TABLE}.impressions ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Number of Firefox iOS app unique impressions in the Apple Store.
 "
   }
@@ -30,6 +33,7 @@ view: app_store_funnel_ios {
   dimension: new_profiles {
     sql: ${TABLE}.new_profiles ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Number of new profiles on the date.
 "
   }
@@ -37,6 +41,7 @@ view: app_store_funnel_ios {
   dimension: redownloads {
     sql: ${TABLE}.redownloads ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Number of redownloads of the Firefox iOS app from the Apple Store.
 "
   }
@@ -44,6 +49,7 @@ view: app_store_funnel_ios {
   dimension: total_downloads {
     sql: ${TABLE}.total_downloads ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Total number of downloads of the Firefox iOS app from the Apple Store.
 "
   }
@@ -51,6 +57,7 @@ view: app_store_funnel_ios {
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -68,6 +75,7 @@ view: app_store_funnel_ios {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

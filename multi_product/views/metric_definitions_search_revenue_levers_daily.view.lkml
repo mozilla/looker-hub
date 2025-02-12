@@ -221,24 +221,28 @@ search_revenue_levers_daily_tagged_sap,
   dimension: ad_click {
     sql: ${TABLE}.search_revenue_levers_daily_ad_click ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: ad_click_organic {
     sql: ${TABLE}.search_revenue_levers_daily_ad_click_organic ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: channel {
     sql: ${TABLE}.search_revenue_levers_daily_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: country {
     sql: ${TABLE}.search_revenue_levers_daily_country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
     group_label: "Base Fields"
   }
@@ -246,150 +250,175 @@ search_revenue_levers_daily_tagged_sap,
   dimension: dau {
     sql: ${TABLE}.search_revenue_levers_daily_dau ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: dau_engaged_w_sap {
     sql: ${TABLE}.search_revenue_levers_daily_dau_engaged_w_sap ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: dau_w_engine_as_default {
     sql: ${TABLE}.search_revenue_levers_daily_dau_w_engine_as_default ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: device {
     sql: ${TABLE}.search_revenue_levers_daily_device ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: monetizable_sap {
     sql: ${TABLE}.search_revenue_levers_daily_monetizable_sap ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: organic {
     sql: ${TABLE}.search_revenue_levers_daily_organic ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: partner {
     sql: ${TABLE}.search_revenue_levers_daily_partner ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sap {
     sql: ${TABLE}.search_revenue_levers_daily_sap ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: search_with_ads {
     sql: ${TABLE}.search_revenue_levers_daily_search_with_ads ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: search_with_ads_organic {
     sql: ${TABLE}.search_revenue_levers_daily_search_with_ads_organic ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: serp_events_ad_click {
     sql: ${TABLE}.search_revenue_levers_daily_serp_events_ad_click ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: serp_events_ad_click_organic {
     sql: ${TABLE}.search_revenue_levers_daily_serp_events_ad_click_organic ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: serp_events_client_count {
     sql: ${TABLE}.search_revenue_levers_daily_serp_events_client_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: serp_events_clients_with_ad_blocker_inferred {
     sql: ${TABLE}.search_revenue_levers_daily_serp_events_clients_with_ad_blocker_inferred ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: serp_events_num_ads_blocked {
     sql: ${TABLE}.search_revenue_levers_daily_serp_events_num_ads_blocked ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: serp_events_num_ads_visible {
     sql: ${TABLE}.search_revenue_levers_daily_serp_events_num_ads_visible ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: serp_events_organic {
     sql: ${TABLE}.search_revenue_levers_daily_serp_events_organic ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: serp_events_sap {
     sql: ${TABLE}.search_revenue_levers_daily_serp_events_sap ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: serp_events_sap_with_ad_blocker_inferred {
     sql: ${TABLE}.search_revenue_levers_daily_serp_events_sap_with_ad_blocker_inferred ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: serp_events_search_with_ads {
     sql: ${TABLE}.search_revenue_levers_daily_serp_events_search_with_ads ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: serp_events_search_with_ads_organic {
     sql: ${TABLE}.search_revenue_levers_daily_serp_events_search_with_ads_organic ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: serp_events_tagged_follow_on {
     sql: ${TABLE}.search_revenue_levers_daily_serp_events_tagged_follow_on ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: serp_events_tagged_sap {
     sql: ${TABLE}.search_revenue_levers_daily_serp_events_tagged_sap ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: tagged_follow_on {
     sql: ${TABLE}.search_revenue_levers_daily_tagged_follow_on ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: tagged_sap {
     sql: ${TABLE}.search_revenue_levers_daily_tagged_sap ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 

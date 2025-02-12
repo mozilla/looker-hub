@@ -8,6 +8,7 @@ view: tasks_base {
   dimension: scheduler_id {
     sql: ${TABLE}.scheduler_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: tags {
@@ -18,21 +19,25 @@ view: tasks_base {
   dimension: task_group_id {
     sql: ${TABLE}.task_group_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: task_id {
     sql: ${TABLE}.task_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: task_queue_id {
     sql: ${TABLE}.task_queue_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -52,10 +57,12 @@ view: tasks_base__tags {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }

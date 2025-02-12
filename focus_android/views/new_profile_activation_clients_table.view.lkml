@@ -8,16 +8,19 @@ view: new_profile_activation_clients_table {
   dimension: app_name {
     sql: ${TABLE}.app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: city {
     sql: ${TABLE}.city ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: client_id {
@@ -28,92 +31,110 @@ view: new_profile_activation_clients_table {
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
   }
 
   dimension: device_manufacturer {
     sql: ${TABLE}.device_manufacturer ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: device_model {
     sql: ${TABLE}.device_model ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: device_type {
     sql: ${TABLE}.device_type ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: geo_subdivision {
     sql: ${TABLE}.geo_subdivision ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: is_activated {
     sql: ${TABLE}.is_activated ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: is_early_engagement {
     sql: ${TABLE}.is_early_engagement ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: is_mobile {
     sql: ${TABLE}.is_mobile ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: isp {
     sql: ${TABLE}.isp ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: num_days_active_day_2_7 {
     sql: ${TABLE}.num_days_active_day_2_7 ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: num_days_seen_day_2_7 {
     sql: ${TABLE}.num_days_seen_day_2_7 ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: os {
     sql: ${TABLE}.os ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: os_version {
     sql: ${TABLE}.os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: paid_vs_organic {
     sql: ${TABLE}.paid_vs_organic ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: search_count {
     sql: ${TABLE}.search_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -129,6 +150,7 @@ view: new_profile_activation_clients_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

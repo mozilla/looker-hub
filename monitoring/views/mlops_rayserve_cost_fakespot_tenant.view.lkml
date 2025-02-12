@@ -8,21 +8,25 @@ view: mlops_rayserve_cost_fakespot_tenant {
   dimension: daily_cost_per_kuberay_workload {
     sql: ${TABLE}.daily_cost_per_kuberay_workload ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: k8s_label_akio_createdBy {
     sql: ${TABLE}.k8s_label_akio_createdBy ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: k8s_namespace {
     sql: ${TABLE}.k8s_namespace ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: invoice_day {
     sql: ${TABLE}.invoice_day ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

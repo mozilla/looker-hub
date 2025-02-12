@@ -8,41 +8,49 @@ view: field {
   dimension: _fivetran_deleted {
     sql: ${TABLE}._fivetran_deleted ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: description {
     sql: ${TABLE}.description ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: dimension_table {
     sql: ${TABLE}.dimension_table ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: id {
     sql: ${TABLE}.id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: is_array {
     sql: ${TABLE}.is_array ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: is_custom {
     sql: ${TABLE}.is_custom ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: name {
     sql: ${TABLE}.name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: _fivetran_synced {
     sql: ${TABLE}._fivetran_synced ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

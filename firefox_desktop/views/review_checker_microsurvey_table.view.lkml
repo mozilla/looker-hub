@@ -13,41 +13,49 @@ view: review_checker_microsurvey_table {
   dimension: coded_answers {
     sql: ${TABLE}.coded_answers ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: coded_question {
     sql: ${TABLE}.coded_question ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: country_code {
     sql: ${TABLE}.country_code ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: event {
     sql: ${TABLE}.event ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: event_page {
     sql: ${TABLE}.event_page ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: event_reason {
     sql: ${TABLE}.event_reason ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: event_source {
     sql: ${TABLE}.event_source ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: existing_user {
     sql: ${TABLE}.existing_user ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: experiments {
@@ -58,36 +66,43 @@ view: review_checker_microsurvey_table {
   dimension: message_id {
     sql: ${TABLE}.message_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: new_user {
     sql: ${TABLE}.new_user ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: os_version {
     sql: ${TABLE}.os_version ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: profile_group_id {
     sql: ${TABLE}.profile_group_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -107,11 +122,13 @@ view: review_checker_microsurvey_table__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value__branch {
     sql: ${TABLE}.value.branch ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Branch"
   }
@@ -119,6 +136,7 @@ view: review_checker_microsurvey_table__experiments {
   dimension: value__extra__enrollment_id {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value Extra"
     group_item_label: "Enrollment Id"
   }
@@ -126,6 +144,7 @@ view: review_checker_microsurvey_table__experiments {
   dimension: value__extra__type {
     sql: ${TABLE}.value.extra.type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value Extra"
     group_item_label: "Type"
   }
