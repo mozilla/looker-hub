@@ -8,41 +8,49 @@ view: health_pingdom {
   dimension: avgresponse {
     sql: ${TABLE}.avgresponse ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: downtime {
     sql: ${TABLE}.downtime ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: fuzzy_uptime_percent {
     sql: ${TABLE}.fuzzy_uptime_percent ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: project {
     sql: ${TABLE}.project ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: unmonitored {
     sql: ${TABLE}.unmonitored ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: unmonitored_percent {
     sql: ${TABLE}.unmonitored_percent ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: uptime {
     sql: ${TABLE}.uptime ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: starttime {
     sql: ${TABLE}.starttime ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

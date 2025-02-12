@@ -8,21 +8,25 @@ view: field_option {
   dimension: id {
     sql: ${TABLE}.id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: name {
     sql: ${TABLE}.name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: parent_id {
     sql: ${TABLE}.parent_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: _fivetran_synced {
     sql: ${TABLE}._fivetran_synced ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

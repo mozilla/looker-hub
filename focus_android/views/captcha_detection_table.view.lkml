@@ -13,21 +13,25 @@ view: captcha_detection_table {
   dimension: app_version_major {
     sql: ${TABLE}.app_version_major ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: app_version_minor {
     sql: ${TABLE}.app_version_minor ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: app_version_patch {
     sql: ${TABLE}.app_version_patch ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Android Sdk Version"
   }
@@ -35,6 +39,7 @@ view: captcha_detection_table {
   dimension: client_info__app_build {
     sql: ${TABLE}.client_info.app_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Build"
   }
@@ -42,6 +47,7 @@ view: captcha_detection_table {
   dimension: client_info__app_channel {
     sql: ${TABLE}.client_info.app_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Channel"
   }
@@ -49,6 +55,7 @@ view: captcha_detection_table {
   dimension: client_info__app_display_version {
     sql: ${TABLE}.client_info.app_display_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Display Version"
   }
@@ -56,6 +63,7 @@ view: captcha_detection_table {
   dimension: client_info__architecture {
     sql: ${TABLE}.client_info.architecture ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Architecture"
   }
@@ -63,6 +71,7 @@ view: captcha_detection_table {
   dimension: client_info__build_date {
     sql: ${TABLE}.client_info.build_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Build Date"
   }
@@ -75,6 +84,7 @@ view: captcha_detection_table {
   dimension: client_info__device_manufacturer {
     sql: ${TABLE}.client_info.device_manufacturer ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
   }
@@ -82,6 +92,7 @@ view: captcha_detection_table {
   dimension: client_info__device_model {
     sql: ${TABLE}.client_info.device_model ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
   }
@@ -89,6 +100,7 @@ view: captcha_detection_table {
   dimension: client_info__first_run_date {
     sql: ${TABLE}.client_info.first_run_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "First Run Date"
   }
@@ -96,6 +108,7 @@ view: captcha_detection_table {
   dimension: client_info__locale {
     sql: ${TABLE}.client_info.locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Locale"
   }
@@ -103,6 +116,7 @@ view: captcha_detection_table {
   dimension: client_info__os {
     sql: ${TABLE}.client_info.os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Os"
   }
@@ -110,6 +124,7 @@ view: captcha_detection_table {
   dimension: client_info__os_version {
     sql: ${TABLE}.client_info.os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Os Version"
   }
@@ -117,6 +132,7 @@ view: captcha_detection_table {
   dimension: client_info__session_count {
     sql: ${TABLE}.client_info.session_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session Count"
   }
@@ -124,6 +140,7 @@ view: captcha_detection_table {
   dimension: client_info__session_id {
     sql: ${TABLE}.client_info.session_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session Id"
   }
@@ -131,6 +148,7 @@ view: captcha_detection_table {
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
   }
@@ -138,6 +156,7 @@ view: captcha_detection_table {
   dimension: client_info__windows_build_number {
     sql: ${TABLE}.client_info.windows_build_number ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Windows Build Number"
   }
@@ -155,6 +174,7 @@ view: captcha_detection_table {
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "City"
   }
@@ -162,6 +182,7 @@ view: captcha_detection_table {
   dimension: metadata__geo__country {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
@@ -170,6 +191,7 @@ view: captcha_detection_table {
   dimension: metadata__geo__db_version {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Db Version"
   }
@@ -177,6 +199,7 @@ view: captcha_detection_table {
   dimension: metadata__geo__subdivision1 {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
   }
@@ -184,6 +207,7 @@ view: captcha_detection_table {
   dimension: metadata__geo__subdivision2 {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
   }
@@ -191,6 +215,7 @@ view: captcha_detection_table {
   dimension: metadata__header__date {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "Date"
   }
@@ -198,6 +223,7 @@ view: captcha_detection_table {
   dimension: metadata__header__dnt {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "Dnt"
   }
@@ -205,6 +231,7 @@ view: captcha_detection_table {
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header Parsed X Lb Tags"
     group_item_label: "Tls Cipher Hex"
   }
@@ -212,6 +239,7 @@ view: captcha_detection_table {
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header Parsed X Lb Tags"
     group_item_label: "Tls Version"
   }
@@ -224,6 +252,7 @@ view: captcha_detection_table {
   dimension: metadata__header__x_debug_id {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Debug Id"
   }
@@ -231,6 +260,7 @@ view: captcha_detection_table {
   dimension: metadata__header__x_foxsec_ip_reputation {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
   }
@@ -238,6 +268,7 @@ view: captcha_detection_table {
   dimension: metadata__header__x_lb_tags {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Lb Tags"
   }
@@ -245,6 +276,7 @@ view: captcha_detection_table {
   dimension: metadata__header__x_pingsender_version {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
   }
@@ -252,6 +284,7 @@ view: captcha_detection_table {
   dimension: metadata__header__x_source_tags {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
   }
@@ -259,6 +292,7 @@ view: captcha_detection_table {
   dimension: metadata__header__x_telemetry_agent {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
   }
@@ -266,6 +300,7 @@ view: captcha_detection_table {
   dimension: metadata__isp__db_version {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Isp"
     group_item_label: "Db Version"
   }
@@ -273,6 +308,7 @@ view: captcha_detection_table {
   dimension: metadata__isp__name {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Isp"
     group_item_label: "Name"
   }
@@ -280,6 +316,7 @@ view: captcha_detection_table {
   dimension: metadata__isp__organization {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Isp"
     group_item_label: "Organization"
   }
@@ -287,6 +324,7 @@ view: captcha_detection_table {
   dimension: metadata__user_agent__browser {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Browser"
   }
@@ -294,6 +332,7 @@ view: captcha_detection_table {
   dimension: metadata__user_agent__os {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Os"
   }
@@ -301,6 +340,7 @@ view: captcha_detection_table {
   dimension: metadata__user_agent__version {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Version"
   }
@@ -308,6 +348,7 @@ view: captcha_detection_table {
   dimension: metrics__boolean__captcha_detection_network_cookie_cookiebehavior_optinpartitioning {
     sql: ${TABLE}.metrics.boolean.captcha_detection_network_cookie_cookiebehavior_optinpartitioning ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Captcha Detection Network Cookie Cookiebehavior Optinpartitioning"
   }
@@ -315,6 +356,7 @@ view: captcha_detection_table {
   dimension: metrics__boolean__captcha_detection_network_cookie_cookiebehavior_optinpartitioning_pbm {
     sql: ${TABLE}.metrics.boolean.captcha_detection_network_cookie_cookiebehavior_optinpartitioning_pbm ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Captcha Detection Network Cookie Cookiebehavior Optinpartitioning Pbm"
   }
@@ -322,6 +364,7 @@ view: captcha_detection_table {
   dimension: metrics__boolean__captcha_detection_privacy_fingerprintingprotection {
     sql: ${TABLE}.metrics.boolean.captcha_detection_privacy_fingerprintingprotection ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Captcha Detection Privacy Fingerprintingprotection"
   }
@@ -329,6 +372,7 @@ view: captcha_detection_table {
   dimension: metrics__boolean__captcha_detection_privacy_fingerprintingprotection_pbm {
     sql: ${TABLE}.metrics.boolean.captcha_detection_privacy_fingerprintingprotection_pbm ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Captcha Detection Privacy Fingerprintingprotection Pbm"
   }
@@ -336,6 +380,7 @@ view: captcha_detection_table {
   dimension: metrics__boolean__captcha_detection_privacy_resistfingerprinting {
     sql: ${TABLE}.metrics.boolean.captcha_detection_privacy_resistfingerprinting ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Captcha Detection Privacy Resistfingerprinting"
   }
@@ -343,6 +388,7 @@ view: captcha_detection_table {
   dimension: metrics__boolean__captcha_detection_privacy_resistfingerprinting_pbmode {
     sql: ${TABLE}.metrics.boolean.captcha_detection_privacy_resistfingerprinting_pbmode ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Captcha Detection Privacy Resistfingerprinting Pbmode"
   }
@@ -350,6 +396,7 @@ view: captcha_detection_table {
   dimension: metrics__boolean__captcha_detection_privacy_trackingprotection_cryptomining_enabled {
     sql: ${TABLE}.metrics.boolean.captcha_detection_privacy_trackingprotection_cryptomining_enabled ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Captcha Detection Privacy Trackingprotection Cryptomining Enabled"
   }
@@ -357,6 +404,7 @@ view: captcha_detection_table {
   dimension: metrics__boolean__captcha_detection_privacy_trackingprotection_enabled {
     sql: ${TABLE}.metrics.boolean.captcha_detection_privacy_trackingprotection_enabled ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Captcha Detection Privacy Trackingprotection Enabled"
   }
@@ -364,6 +412,7 @@ view: captcha_detection_table {
   dimension: metrics__boolean__captcha_detection_privacy_trackingprotection_fingerprinting_enabled {
     sql: ${TABLE}.metrics.boolean.captcha_detection_privacy_trackingprotection_fingerprinting_enabled ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Captcha Detection Privacy Trackingprotection Fingerprinting Enabled"
   }
@@ -371,6 +420,7 @@ view: captcha_detection_table {
   dimension: metrics__boolean__captcha_detection_privacy_trackingprotection_pbm_enabled {
     sql: ${TABLE}.metrics.boolean.captcha_detection_privacy_trackingprotection_pbm_enabled ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Captcha Detection Privacy Trackingprotection Pbm Enabled"
   }
@@ -378,6 +428,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_arkoselabs_pc {
     sql: ${TABLE}.metrics.counter.captcha_detection_arkoselabs_pc ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Arkoselabs Pc"
   }
@@ -385,6 +436,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_arkoselabs_pc_pbm {
     sql: ${TABLE}.metrics.counter.captcha_detection_arkoselabs_pc_pbm ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Arkoselabs Pc Pbm"
   }
@@ -392,6 +444,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_arkoselabs_pf {
     sql: ${TABLE}.metrics.counter.captcha_detection_arkoselabs_pf ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Arkoselabs Pf"
   }
@@ -399,6 +452,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_arkoselabs_pf_pbm {
     sql: ${TABLE}.metrics.counter.captcha_detection_arkoselabs_pf_pbm ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Arkoselabs Pf Pbm"
   }
@@ -406,6 +460,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_arkoselabs_ps {
     sql: ${TABLE}.metrics.counter.captcha_detection_arkoselabs_ps ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Arkoselabs Ps"
   }
@@ -413,6 +468,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_arkoselabs_ps_pbm {
     sql: ${TABLE}.metrics.counter.captcha_detection_arkoselabs_ps_pbm ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Arkoselabs Ps Pbm"
   }
@@ -420,6 +476,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_awswaf_pc {
     sql: ${TABLE}.metrics.counter.captcha_detection_awswaf_pc ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Awswaf Pc"
   }
@@ -427,6 +484,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_awswaf_pc_pbm {
     sql: ${TABLE}.metrics.counter.captcha_detection_awswaf_pc_pbm ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Awswaf Pc Pbm"
   }
@@ -434,6 +492,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_awswaf_pf {
     sql: ${TABLE}.metrics.counter.captcha_detection_awswaf_pf ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Awswaf Pf"
   }
@@ -441,6 +500,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_awswaf_pf_pbm {
     sql: ${TABLE}.metrics.counter.captcha_detection_awswaf_pf_pbm ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Awswaf Pf Pbm"
   }
@@ -448,6 +508,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_awswaf_ps {
     sql: ${TABLE}.metrics.counter.captcha_detection_awswaf_ps ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Awswaf Ps"
   }
@@ -455,6 +516,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_awswaf_ps_pbm {
     sql: ${TABLE}.metrics.counter.captcha_detection_awswaf_ps_pbm ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Awswaf Ps Pbm"
   }
@@ -462,6 +524,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_cloudflare_turnstile_cc {
     sql: ${TABLE}.metrics.counter.captcha_detection_cloudflare_turnstile_cc ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Cloudflare Turnstile Cc"
   }
@@ -469,6 +532,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_cloudflare_turnstile_cc_pbm {
     sql: ${TABLE}.metrics.counter.captcha_detection_cloudflare_turnstile_cc_pbm ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Cloudflare Turnstile Cc Pbm"
   }
@@ -476,6 +540,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_cloudflare_turnstile_cf {
     sql: ${TABLE}.metrics.counter.captcha_detection_cloudflare_turnstile_cf ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Cloudflare Turnstile Cf"
   }
@@ -483,6 +548,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_cloudflare_turnstile_cf_pbm {
     sql: ${TABLE}.metrics.counter.captcha_detection_cloudflare_turnstile_cf_pbm ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Cloudflare Turnstile Cf Pbm"
   }
@@ -490,6 +556,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_datadome_bl {
     sql: ${TABLE}.metrics.counter.captcha_detection_datadome_bl ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Datadome Bl"
   }
@@ -497,6 +564,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_datadome_bl_pbm {
     sql: ${TABLE}.metrics.counter.captcha_detection_datadome_bl_pbm ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Datadome Bl Pbm"
   }
@@ -504,6 +572,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_datadome_pc {
     sql: ${TABLE}.metrics.counter.captcha_detection_datadome_pc ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Datadome Pc"
   }
@@ -511,6 +580,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_datadome_pc_pbm {
     sql: ${TABLE}.metrics.counter.captcha_detection_datadome_pc_pbm ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Datadome Pc Pbm"
   }
@@ -518,6 +588,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_datadome_ps {
     sql: ${TABLE}.metrics.counter.captcha_detection_datadome_ps ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Datadome Ps"
   }
@@ -525,6 +596,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_datadome_ps_pbm {
     sql: ${TABLE}.metrics.counter.captcha_detection_datadome_ps_pbm ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Datadome Ps Pbm"
   }
@@ -532,6 +604,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_google_recaptcha_v2_ac {
     sql: ${TABLE}.metrics.counter.captcha_detection_google_recaptcha_v2_ac ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Google Recaptcha V2 Ac"
   }
@@ -539,6 +612,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_google_recaptcha_v2_ac_pbm {
     sql: ${TABLE}.metrics.counter.captcha_detection_google_recaptcha_v2_ac_pbm ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Google Recaptcha V2 Ac Pbm"
   }
@@ -546,6 +620,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_google_recaptcha_v2_pc {
     sql: ${TABLE}.metrics.counter.captcha_detection_google_recaptcha_v2_pc ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Google Recaptcha V2 Pc"
   }
@@ -553,6 +628,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_google_recaptcha_v2_pc_pbm {
     sql: ${TABLE}.metrics.counter.captcha_detection_google_recaptcha_v2_pc_pbm ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Google Recaptcha V2 Pc Pbm"
   }
@@ -560,6 +636,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_google_recaptcha_v2_ps {
     sql: ${TABLE}.metrics.counter.captcha_detection_google_recaptcha_v2_ps ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Google Recaptcha V2 Ps"
   }
@@ -567,6 +644,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_google_recaptcha_v2_ps_pbm {
     sql: ${TABLE}.metrics.counter.captcha_detection_google_recaptcha_v2_ps_pbm ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Google Recaptcha V2 Ps Pbm"
   }
@@ -574,6 +652,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_hcaptcha_ac {
     sql: ${TABLE}.metrics.counter.captcha_detection_hcaptcha_ac ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Hcaptcha Ac"
   }
@@ -581,6 +660,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_hcaptcha_ac_pbm {
     sql: ${TABLE}.metrics.counter.captcha_detection_hcaptcha_ac_pbm ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Hcaptcha Ac Pbm"
   }
@@ -588,6 +668,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_hcaptcha_pc {
     sql: ${TABLE}.metrics.counter.captcha_detection_hcaptcha_pc ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Hcaptcha Pc"
   }
@@ -595,6 +676,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_hcaptcha_pc_pbm {
     sql: ${TABLE}.metrics.counter.captcha_detection_hcaptcha_pc_pbm ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Hcaptcha Pc Pbm"
   }
@@ -602,6 +684,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_hcaptcha_ps {
     sql: ${TABLE}.metrics.counter.captcha_detection_hcaptcha_ps ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Hcaptcha Ps"
   }
@@ -609,6 +692,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_hcaptcha_ps_pbm {
     sql: ${TABLE}.metrics.counter.captcha_detection_hcaptcha_ps_pbm ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Hcaptcha Ps Pbm"
   }
@@ -616,6 +700,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_pages_visited {
     sql: ${TABLE}.metrics.counter.captcha_detection_pages_visited ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Pages Visited"
   }
@@ -623,6 +708,7 @@ view: captcha_detection_table {
   dimension: metrics__counter__captcha_detection_pages_visited_pbm {
     sql: ${TABLE}.metrics.counter.captcha_detection_pages_visited_pbm ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Pages Visited Pbm"
   }
@@ -630,6 +716,7 @@ view: captcha_detection_table {
   dimension: metrics__custom_distribution__captcha_detection_arkoselabs_solutions_required__count {
     sql: ${TABLE}.metrics.custom_distribution.captcha_detection_arkoselabs_solutions_required.count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Custom Distribution Captcha Detection Arkoselabs Solutions Required"
     group_item_label: "Count"
   }
@@ -637,6 +724,7 @@ view: captcha_detection_table {
   dimension: metrics__custom_distribution__captcha_detection_arkoselabs_solutions_required__sum {
     sql: ${TABLE}.metrics.custom_distribution.captcha_detection_arkoselabs_solutions_required.sum ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Custom Distribution Captcha Detection Arkoselabs Solutions Required"
     group_item_label: "Sum"
   }
@@ -649,6 +737,7 @@ view: captcha_detection_table {
   dimension: metrics__custom_distribution__captcha_detection_arkoselabs_solutions_required_pbm__count {
     sql: ${TABLE}.metrics.custom_distribution.captcha_detection_arkoselabs_solutions_required_pbm.count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Custom Distribution Captcha Detection Arkoselabs Solutions Required Pbm"
     group_item_label: "Count"
   }
@@ -656,6 +745,7 @@ view: captcha_detection_table {
   dimension: metrics__custom_distribution__captcha_detection_arkoselabs_solutions_required_pbm__sum {
     sql: ${TABLE}.metrics.custom_distribution.captcha_detection_arkoselabs_solutions_required_pbm.sum ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Custom Distribution Captcha Detection Arkoselabs Solutions Required Pbm"
     group_item_label: "Sum"
   }
@@ -668,6 +758,7 @@ view: captcha_detection_table {
   dimension: metrics__custom_distribution__captcha_detection_awswaf_solutions_required__count {
     sql: ${TABLE}.metrics.custom_distribution.captcha_detection_awswaf_solutions_required.count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Custom Distribution Captcha Detection Awswaf Solutions Required"
     group_item_label: "Count"
   }
@@ -675,6 +766,7 @@ view: captcha_detection_table {
   dimension: metrics__custom_distribution__captcha_detection_awswaf_solutions_required__sum {
     sql: ${TABLE}.metrics.custom_distribution.captcha_detection_awswaf_solutions_required.sum ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Custom Distribution Captcha Detection Awswaf Solutions Required"
     group_item_label: "Sum"
   }
@@ -687,6 +779,7 @@ view: captcha_detection_table {
   dimension: metrics__custom_distribution__captcha_detection_awswaf_solutions_required_pbm__count {
     sql: ${TABLE}.metrics.custom_distribution.captcha_detection_awswaf_solutions_required_pbm.count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Custom Distribution Captcha Detection Awswaf Solutions Required Pbm"
     group_item_label: "Count"
   }
@@ -694,6 +787,7 @@ view: captcha_detection_table {
   dimension: metrics__custom_distribution__captcha_detection_awswaf_solutions_required_pbm__sum {
     sql: ${TABLE}.metrics.custom_distribution.captcha_detection_awswaf_solutions_required_pbm.sum ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Custom Distribution Captcha Detection Awswaf Solutions Required Pbm"
     group_item_label: "Sum"
   }
@@ -726,6 +820,7 @@ view: captcha_detection_table {
   dimension: metrics__string__captcha_detection_network_cookie_cookiebehavior {
     sql: ${TABLE}.metrics.string.captcha_detection_network_cookie_cookiebehavior ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Captcha Detection Network Cookie Cookiebehavior"
   }
@@ -733,6 +828,7 @@ view: captcha_detection_table {
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Glean Client Annotation Experimentation Id"
   }
@@ -740,38 +836,45 @@ view: captcha_detection_table {
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "App ID of the channel data was received from"
   }
 
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: ping_info__end_time {
     sql: ${TABLE}.ping_info.end_time ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "End Time"
   }
@@ -784,6 +887,7 @@ view: captcha_detection_table {
   dimension: ping_info__ping_type {
     sql: ${TABLE}.ping_info.ping_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Ping Type"
   }
@@ -791,6 +895,7 @@ view: captcha_detection_table {
   dimension: ping_info__reason {
     sql: ${TABLE}.ping_info.reason ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Reason"
   }
@@ -798,6 +903,7 @@ view: captcha_detection_table {
   dimension: ping_info__seq {
     sql: ${TABLE}.ping_info.seq ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Seq"
   }
@@ -805,6 +911,7 @@ view: captcha_detection_table {
   dimension: ping_info__start_time {
     sql: ${TABLE}.ping_info.start_time ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Start Time"
   }
@@ -812,11 +919,13 @@ view: captcha_detection_table {
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -832,6 +941,7 @@ view: captcha_detection_table {
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -847,6 +957,7 @@ view: captcha_detection_table {
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -862,6 +973,7 @@ view: captcha_detection_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -900,6 +1012,7 @@ view: captcha_detection_table__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: extra {
@@ -910,11 +1023,13 @@ view: captcha_detection_table__events {
   dimension: name {
     sql: ${TABLE}.name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: timestamp {
     sql: ${TABLE}.timestamp ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -922,11 +1037,13 @@ view: captcha_detection_table__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -934,11 +1051,13 @@ view: captcha_detection_table__metrics__custom_distribution__captcha_detection_a
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -946,11 +1065,13 @@ view: captcha_detection_table__metrics__custom_distribution__captcha_detection_a
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -958,11 +1079,13 @@ view: captcha_detection_table__metrics__custom_distribution__captcha_detection_a
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -970,11 +1093,13 @@ view: captcha_detection_table__metrics__custom_distribution__captcha_detection_a
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -982,11 +1107,13 @@ view: captcha_detection_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value__branch {
     sql: ${TABLE}.value.branch ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Branch"
   }
@@ -994,6 +1121,7 @@ view: captcha_detection_table__ping_info__experiments {
   dimension: value__extra__enrollment_id {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value Extra"
     group_item_label: "Enrollment Id"
   }
@@ -1001,6 +1129,7 @@ view: captcha_detection_table__ping_info__experiments {
   dimension: value__extra__type {
     sql: ${TABLE}.value.extra.type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value Extra"
     group_item_label: "Type"
   }

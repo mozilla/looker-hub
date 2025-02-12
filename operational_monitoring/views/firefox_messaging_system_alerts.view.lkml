@@ -10,41 +10,49 @@ view: firefox_messaging_system_alerts {
   dimension: branch {
     sql: ${TABLE}.branch ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: build_id {
     sql: ${TABLE}.build_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: message {
     sql: ${TABLE}.message ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: metric {
     sql: ${TABLE}.metric ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: parameter {
     sql: ${TABLE}.parameter ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: statistic {
     sql: ${TABLE}.statistic ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: submission_date {

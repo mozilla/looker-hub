@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       enhanced_cross_platform_suggest_android_relaunch_2_rollout.branch
     ]
     filters:
-      enhanced_cross_platform_suggest_android_relaunch_2_rollout.metric: 'ad_clicks'
+      enhanced_cross_platform_suggest_android_relaunch_2_rollout.metric: 'uri_count'
       enhanced_cross_platform_suggest_android_relaunch_2_rollout.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       enhanced_cross_platform_suggest_android_relaunch_2_rollout.branch
     ]
     filters:
-      enhanced_cross_platform_suggest_android_relaunch_2_rollout.metric: 'days_of_use'
+      enhanced_cross_platform_suggest_android_relaunch_2_rollout.metric: 'active_hours'
       enhanced_cross_platform_suggest_android_relaunch_2_rollout.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       enhanced_cross_platform_suggest_android_relaunch_2_rollout.branch
     ]
     filters:
-      enhanced_cross_platform_suggest_android_relaunch_2_rollout.metric: 'uri_count'
+      enhanced_cross_platform_suggest_android_relaunch_2_rollout.metric: 'tagged_sap_searches'
       enhanced_cross_platform_suggest_android_relaunch_2_rollout.statistic: mean
     row: 10
     col: 12
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       enhanced_cross_platform_suggest_android_relaunch_2_rollout.branch
     ]
     filters:
-      enhanced_cross_platform_suggest_android_relaunch_2_rollout.metric: 'active_hours'
+      enhanced_cross_platform_suggest_android_relaunch_2_rollout.metric: 'ad_clicks'
       enhanced_cross_platform_suggest_android_relaunch_2_rollout.statistic: mean
     row: 20
     col: 0
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       enhanced_cross_platform_suggest_android_relaunch_2_rollout.branch
     ]
     filters:
-      enhanced_cross_platform_suggest_android_relaunch_2_rollout.metric: 'tagged_sap_searches'
+      enhanced_cross_platform_suggest_android_relaunch_2_rollout.metric: 'days_of_use'
       enhanced_cross_platform_suggest_android_relaunch_2_rollout.statistic: mean
     row: 30
     col: 0

@@ -8,23 +8,27 @@ view: airflow_task_fail {
   dimension: dag_id {
     sql: ${TABLE}.dag_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Airflow DAG id"
   }
 
   dimension: duration {
     sql: ${TABLE}.duration ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: task_id {
     sql: ${TABLE}.task_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Airflow task id"
   }
 
   dimension_group: end {
     sql: ${TABLE}.end_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -39,6 +43,7 @@ view: airflow_task_fail {
   dimension_group: start {
     sql: ${TABLE}.start_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

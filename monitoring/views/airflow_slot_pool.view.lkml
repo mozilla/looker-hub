@@ -8,24 +8,28 @@ view: airflow_slot_pool {
   dimension: description {
     sql: ${TABLE}.description ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Pool description"
   }
 
   dimension: id {
     sql: ${TABLE}.id ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Pool id"
   }
 
   dimension: pool {
     sql: ${TABLE}.pool ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Pool name"
   }
 
   dimension: slots {
     sql: ${TABLE}.slots ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Number of slots available in the pool"
   }
 

@@ -8,30 +8,35 @@ view: airflow_dag_run {
   dimension: dag_id {
     sql: ${TABLE}.dag_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Airflow DAG id"
   }
 
   dimension: external_trigger {
     sql: ${TABLE}.external_trigger ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     description: "Indicates if the DAG was triggered externally"
   }
 
   dimension: run_type {
     sql: ${TABLE}.run_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "manual, scheduled or backfill"
   }
 
   dimension: state {
     sql: ${TABLE}.state ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "State of the DAG run instance (e.g. success)"
   }
 
   dimension_group: end {
     sql: ${TABLE}.end_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -47,6 +52,7 @@ view: airflow_dag_run {
   dimension_group: execution {
     sql: ${TABLE}.execution_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -62,6 +68,7 @@ view: airflow_dag_run {
   dimension_group: start {
     sql: ${TABLE}.start_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

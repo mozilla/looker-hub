@@ -8,21 +8,25 @@ view: experiment_enrollment_overall {
   dimension: branch {
     sql: ${TABLE}.branch ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: experiment {
     sql: ${TABLE}.experiment ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: time {
     sql: ${TABLE}.time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

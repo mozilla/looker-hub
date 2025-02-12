@@ -210,18 +210,21 @@ desktop_engagement_view_wau,
   dimension: app_name {
     sql: ${TABLE}.looker_base_fields_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version {
     sql: ${TABLE}.looker_base_fields_app_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: country {
     sql: ${TABLE}.looker_base_fields_country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
     group_label: "Base Fields"
   }
@@ -229,12 +232,14 @@ desktop_engagement_view_wau,
   dimension: default_search_engine {
     sql: ${TABLE}.looker_base_fields_default_search_engine ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: distribution_id {
     sql: ${TABLE}.looker_base_fields_distribution_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
@@ -247,132 +252,154 @@ desktop_engagement_view_wau,
   dimension: is_default_browser {
     sql: ${TABLE}.looker_base_fields_is_default_browser ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: locale {
     sql: ${TABLE}.looker_base_fields_locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.looker_base_fields_normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.looker_base_fields_normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: os {
     sql: ${TABLE}.looker_base_fields_os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: partner_id {
     sql: ${TABLE}.looker_base_fields_partner_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sample_id {
     sql: ${TABLE}.looker_base_fields_sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: attribution_campaign {
     sql: ${TABLE}.desktop_engagement_view_attribution_campaign ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: attribution_content {
     sql: ${TABLE}.desktop_engagement_view_attribution_content ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: attribution_dlsource {
     sql: ${TABLE}.desktop_engagement_view_attribution_dlsource ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: attribution_experiment {
     sql: ${TABLE}.desktop_engagement_view_attribution_experiment ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: attribution_medium {
     sql: ${TABLE}.desktop_engagement_view_attribution_medium ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: attribution_ua {
     sql: ${TABLE}.desktop_engagement_view_attribution_ua ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: attribution_variation {
     sql: ${TABLE}.desktop_engagement_view_attribution_variation ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: dau {
     sql: ${TABLE}.desktop_engagement_view_dau ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: is_desktop {
     sql: ${TABLE}.desktop_engagement_view_is_desktop ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: lifecycle_stage {
     sql: ${TABLE}.desktop_engagement_view_lifecycle_stage ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: mau {
     sql: ${TABLE}.desktop_engagement_view_mau ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.desktop_engagement_view_normalized_os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: paid_vs_organic {
     sql: ${TABLE}.desktop_engagement_view_paid_vs_organic ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: startup_profile_selection_reason {
     sql: ${TABLE}.desktop_engagement_view_startup_profile_selection_reason ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: wau {
     sql: ${TABLE}.desktop_engagement_view_wau ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 

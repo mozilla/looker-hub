@@ -8,21 +8,25 @@ view: task_run_costs_base {
   dimension: run_cost {
     sql: ${TABLE}.run_cost ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: run_id {
     sql: ${TABLE}.run_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: task_id {
     sql: ${TABLE}.task_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

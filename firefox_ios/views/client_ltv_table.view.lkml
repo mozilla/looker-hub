@@ -8,12 +8,14 @@ view: client_ltv_table {
   dimension: ad_clicks {
     sql: ${TABLE}.ad_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Ad Clicks"
   }
 
   dimension: adjust_network {
     sql: ${TABLE}.adjust_network ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Adjust Network"
   }
 
@@ -26,54 +28,63 @@ view: client_ltv_table {
   dimension: days_seen_bytes {
     sql: ${TABLE}.days_seen_bytes ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Days Seen Bytes"
   }
 
   dimension: days_since_first_seen {
     sql: ${TABLE}.days_since_first_seen ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Days Since First Seen"
   }
 
   dimension: days_since_seen {
     sql: ${TABLE}.days_since_seen ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Days Since Seen"
   }
 
   dimension: durations {
     sql: ${TABLE}.durations ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Durations"
   }
 
   dimension: first_reported_country {
     sql: ${TABLE}.first_reported_country ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "First Reported Country"
   }
 
   dimension: first_reported_isp {
     sql: ${TABLE}.first_reported_isp ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "First Reported ISP"
   }
 
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Sample ID, a number 0-99 inclusive, that samples by client ID"
   }
 
   dimension: total_historic_ad_clicks {
     sql: ${TABLE}.total_historic_ad_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Total Historical Ad Clicks"
   }
 
   dimension_group: as_of {
     sql: ${TABLE}.as_of_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -90,6 +101,7 @@ view: client_ltv_table {
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

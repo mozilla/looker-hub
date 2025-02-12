@@ -13,11 +13,13 @@ view: shredder_targets_new_mismatched_targets {
   dimension: dataset_id {
     sql: ${TABLE}.dataset_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: deprecated {
     sql: ${TABLE}.deprecated ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: detected_sources {
@@ -28,6 +30,7 @@ view: shredder_targets_new_mismatched_targets {
   dimension: matching_sources {
     sql: ${TABLE}.matching_sources ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: owners {
@@ -38,31 +41,37 @@ view: shredder_targets_new_mismatched_targets {
   dimension: project_id {
     sql: ${TABLE}.project_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: query_count_last_30d {
     sql: ${TABLE}.query_count_last_30d ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: table_id {
     sql: ${TABLE}.table_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: table_size_tib {
     sql: ${TABLE}.table_size_tib ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: write_count_last_30d {
     sql: ${TABLE}.write_count_last_30d ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: run {
     sql: ${TABLE}.run_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -78,6 +87,7 @@ view: shredder_targets_new_mismatched_targets {
   dimension_group: table_creation {
     sql: ${TABLE}.table_creation_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -97,16 +107,19 @@ view: shredder_targets_new_mismatched_targets__current_sources {
   dimension: field {
     sql: ${TABLE}.field ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: project {
     sql: ${TABLE}.project ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: table {
     sql: ${TABLE}.table ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -114,15 +127,18 @@ view: shredder_targets_new_mismatched_targets__detected_sources {
   dimension: field {
     sql: ${TABLE}.field ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: project {
     sql: ${TABLE}.project ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: table {
     sql: ${TABLE}.table ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }

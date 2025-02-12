@@ -161,60 +161,70 @@ consolidated_ads_spocs_url,
   dimension: campaign_name {
     sql: ${TABLE}.consolidated_ads_spocs_campaign_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: clicks {
     sql: ${TABLE}.consolidated_ads_spocs_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: client {
     sql: ${TABLE}.consolidated_ads_spocs_client ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: image {
     sql: ${TABLE}.consolidated_ads_spocs_image ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: impressions {
     sql: ${TABLE}.consolidated_ads_spocs_impressions ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: rate_type {
     sql: ${TABLE}.consolidated_ads_spocs_rate_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: revenue {
     sql: ${TABLE}.consolidated_ads_spocs_revenue ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: targeted_country {
     sql: ${TABLE}.consolidated_ads_spocs_targeted_country ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: title {
     sql: ${TABLE}.consolidated_ads_spocs_title ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: url {
     sql: ${TABLE}.consolidated_ads_spocs_url ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 

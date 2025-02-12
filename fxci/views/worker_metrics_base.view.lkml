@@ -8,26 +8,31 @@ view: worker_metrics_base {
   dimension: instance_id {
     sql: ${TABLE}.instance_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: project {
     sql: ${TABLE}.project ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: uptime {
     sql: ${TABLE}.uptime ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: zone {
     sql: ${TABLE}.zone ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: interval_end {
     sql: ${TABLE}.interval_end_time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -42,6 +47,7 @@ view: worker_metrics_base {
   dimension_group: interval_start {
     sql: ${TABLE}.interval_start_time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -56,6 +62,7 @@ view: worker_metrics_base {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

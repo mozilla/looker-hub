@@ -8,36 +8,43 @@ view: email_first_funnels {
   dimension: email_first_view {
     sql: ${TABLE}.email_first_view ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: funnel {
     sql: ${TABLE}.funnel ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: login_success {
     sql: ${TABLE}.login_success ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: login_view {
     sql: ${TABLE}.login_view ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: reg_success {
     sql: ${TABLE}.reg_success ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: reg_view {
     sql: ${TABLE}.reg_view ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

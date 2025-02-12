@@ -18,6 +18,7 @@ view: client_adclicks_history_table {
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   sql_table_name: `mozdata.fenix.client_adclicks_history` ;;
@@ -27,5 +28,6 @@ view: client_adclicks_history_table__ad_click_history {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }

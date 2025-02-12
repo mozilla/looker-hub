@@ -240,24 +240,28 @@ appstore_funnel_total_downloads,
   dimension: app_version_major {
     sql: ${TABLE}.looker_base_fields_app_version_major ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version_minor {
     sql: ${TABLE}.looker_base_fields_app_version_minor ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version_patch {
     sql: ${TABLE}.looker_base_fields_app_version_patch ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.looker_base_fields_client_info__android_sdk_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Android Sdk Version"
   }
@@ -265,6 +269,7 @@ appstore_funnel_total_downloads,
   dimension: client_info__app_build {
     sql: ${TABLE}.looker_base_fields_client_info__app_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "App Build"
   }
@@ -272,6 +277,7 @@ appstore_funnel_total_downloads,
   dimension: client_info__app_channel {
     sql: ${TABLE}.looker_base_fields_client_info__app_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "App Channel"
   }
@@ -279,6 +285,7 @@ appstore_funnel_total_downloads,
   dimension: client_info__app_display_version {
     sql: ${TABLE}.looker_base_fields_client_info__app_display_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "App Display Version"
   }
@@ -286,6 +293,7 @@ appstore_funnel_total_downloads,
   dimension: client_info__architecture {
     sql: ${TABLE}.looker_base_fields_client_info__architecture ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Architecture"
   }
@@ -293,6 +301,7 @@ appstore_funnel_total_downloads,
   dimension: client_info__build_date {
     sql: ${TABLE}.looker_base_fields_client_info__build_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Build Date"
   }
@@ -306,6 +315,7 @@ appstore_funnel_total_downloads,
   dimension: client_info__device_manufacturer {
     sql: ${TABLE}.looker_base_fields_client_info__device_manufacturer ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Device Manufacturer"
   }
@@ -313,6 +323,7 @@ appstore_funnel_total_downloads,
   dimension: client_info__device_model {
     sql: ${TABLE}.looker_base_fields_client_info__device_model ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Device Model"
   }
@@ -320,6 +331,7 @@ appstore_funnel_total_downloads,
   dimension: client_info__first_run_date {
     sql: ${TABLE}.looker_base_fields_client_info__first_run_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "First Run Date"
   }
@@ -327,6 +339,7 @@ appstore_funnel_total_downloads,
   dimension: client_info__locale {
     sql: ${TABLE}.looker_base_fields_client_info__locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Locale"
   }
@@ -334,6 +347,7 @@ appstore_funnel_total_downloads,
   dimension: client_info__os {
     sql: ${TABLE}.looker_base_fields_client_info__os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Os"
   }
@@ -341,6 +355,7 @@ appstore_funnel_total_downloads,
   dimension: client_info__os_version {
     sql: ${TABLE}.looker_base_fields_client_info__os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Os Version"
   }
@@ -348,6 +363,7 @@ appstore_funnel_total_downloads,
   dimension: client_info__session_count {
     sql: ${TABLE}.looker_base_fields_client_info__session_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Session Count"
   }
@@ -355,6 +371,7 @@ appstore_funnel_total_downloads,
   dimension: client_info__session_id {
     sql: ${TABLE}.looker_base_fields_client_info__session_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Session Id"
   }
@@ -362,6 +379,7 @@ appstore_funnel_total_downloads,
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.looker_base_fields_client_info__telemetry_sdk_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Telemetry Sdk Build"
   }
@@ -369,6 +387,7 @@ appstore_funnel_total_downloads,
   dimension: client_info__windows_build_number {
     sql: ${TABLE}.looker_base_fields_client_info__windows_build_number ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Windows Build Number"
   }
@@ -382,6 +401,7 @@ appstore_funnel_total_downloads,
   dimension: geo__city {
     sql: ${TABLE}.looker_base_fields_geo__city ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "City"
   }
@@ -389,6 +409,7 @@ appstore_funnel_total_downloads,
   dimension: geo__country {
     sql: ${TABLE}.looker_base_fields_geo__country ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Country"
   }
@@ -396,6 +417,7 @@ appstore_funnel_total_downloads,
   dimension: geo__db_version {
     sql: ${TABLE}.looker_base_fields_geo__db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Db Version"
   }
@@ -403,6 +425,7 @@ appstore_funnel_total_downloads,
   dimension: geo__subdivision1 {
     sql: ${TABLE}.looker_base_fields_geo__subdivision1 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Subdivision1"
   }
@@ -410,6 +433,7 @@ appstore_funnel_total_downloads,
   dimension: geo__subdivision2 {
     sql: ${TABLE}.looker_base_fields_geo__subdivision2 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Subdivision2"
   }
@@ -417,48 +441,56 @@ appstore_funnel_total_downloads,
   dimension: normalized_app_id {
     sql: ${TABLE}.looker_base_fields_normalized_app_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_app_name {
     sql: ${TABLE}.looker_base_fields_normalized_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.looker_base_fields_normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.looker_base_fields_normalized_country_code ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.looker_base_fields_normalized_os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.looker_base_fields_normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sample_id {
     sql: ${TABLE}.looker_base_fields_sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: user_agent__browser {
     sql: ${TABLE}.looker_base_fields_user_agent__browser ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Browser"
   }
@@ -466,6 +498,7 @@ appstore_funnel_total_downloads,
   dimension: user_agent__os {
     sql: ${TABLE}.looker_base_fields_user_agent__os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Os"
   }
@@ -473,6 +506,7 @@ appstore_funnel_total_downloads,
   dimension: user_agent__version {
     sql: ${TABLE}.looker_base_fields_user_agent__version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Version"
   }
@@ -480,6 +514,7 @@ appstore_funnel_total_downloads,
   dimension: country {
     sql: ${TABLE}.appstore_funnel_country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
     group_label: "Base Fields"
   }
@@ -487,24 +522,28 @@ appstore_funnel_total_downloads,
   dimension: first_time_downloads {
     sql: ${TABLE}.appstore_funnel_first_time_downloads ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: new_profiles {
     sql: ${TABLE}.appstore_funnel_new_profiles ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: redownloads {
     sql: ${TABLE}.appstore_funnel_redownloads ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: total_downloads {
     sql: ${TABLE}.appstore_funnel_total_downloads ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 

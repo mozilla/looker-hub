@@ -8,26 +8,31 @@ view: request {
   dimension: issue_id {
     sql: ${TABLE}.issue_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: link {
     sql: ${TABLE}.link ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: request_type_id {
     sql: ${TABLE}.request_type_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: service_desk_id {
     sql: ${TABLE}.service_desk_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: _fivetran_synced {
     sql: ${TABLE}._fivetran_synced ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

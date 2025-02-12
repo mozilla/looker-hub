@@ -8,21 +8,25 @@ view: mlops_job_cost_per_job_run {
   dimension: cost_usd {
     sql: ${TABLE}.cost_usd ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: flow_name {
     sql: ${TABLE}.flow_name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: run_id {
     sql: ${TABLE}.run_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: invoice_day {
     sql: ${TABLE}.invoice_day ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
