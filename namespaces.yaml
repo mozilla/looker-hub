@@ -8876,10 +8876,10 @@ operational_monitoring:
             default: release
             options:
             - release
-            - beta
             - aurora
-            - esr
+            - beta
             - nightly
+            - esr
             - default
             - nightly-pine
             - nightly-oak
@@ -9674,11 +9674,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id188
           os:
-            default: Windows
+            default: Linux
             options:
-            - Windows
-            - Mac
             - Linux
+            - Mac
+            - Windows
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -10743,15 +10743,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id287
           app:
-            default: iOS - daemon_session
+            default: Darwin - vpn_session
             options:
-            - iOS - daemon_session
-            - Windows - vpn_session
             - Darwin - vpn_session
             - Android - daemon_session
-            - Android - vpn_session
-            - Linux - vpn_session
             - iOS - vpn_session
+            - Android - vpn_session
+            - iOS - daemon_session
+            - Windows - vpn_session
+            - Linux - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id288
@@ -11585,17 +11585,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id341
           channel:
-            default: nightly
+            default: release
             options:
-            - nightly
             - release
             - beta
+            - nightly
           os:
-            default: Darwin
+            default: Linux
             options:
+            - Linux
             - Darwin
             - Windows_NT
-            - Linux
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id342
