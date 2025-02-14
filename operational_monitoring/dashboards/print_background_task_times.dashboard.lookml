@@ -193,23 +193,23 @@
       display: inline
       options:
       - 'release'
-      - 'beta'
       - 'nightly'
+      - 'beta'
       
   
   
   - title: Os
     name: Os
     type: string_filter
-    default_value: 'Linux'
+    default_value: 'Darwin'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'Linux'
       - 'Darwin'
+      - 'Linux'
       - 'Windows_NT'
       
   
