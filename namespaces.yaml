@@ -2074,6 +2074,39 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.usage_reporting
       type: glean_ping_view
+    usage_reporting_clients_daily_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.usage_reporting_clients_daily
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.usage_reporting_clients_daily
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.usage_reporting_clients_daily
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.usage_reporting_clients_daily
+      type: table_view
+    usage_reporting_clients_first_seen_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.usage_reporting_clients_first_seen
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.usage_reporting_clients_first_seen
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.usage_reporting_clients_first_seen
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.usage_reporting_clients_first_seen
+      type: table_view
+    usage_reporting_clients_last_seen_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.usage_reporting_clients_last_seen
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.usage_reporting_clients_last_seen
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.usage_reporting_clients_last_seen
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.usage_reporting_clients_last_seen
+      type: table_view
     usage_reporting_table:
       tables:
       - channel: release
@@ -3396,6 +3429,21 @@ firefox_desktop:
       tables:
       - table: mozdata.firefox_desktop.usage_reporting
       type: glean_ping_view
+    usage_reporting_clients_daily_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.usage_reporting_clients_daily
+      type: table_view
+    usage_reporting_clients_first_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.usage_reporting_clients_first_seen
+      type: table_view
+    usage_reporting_clients_last_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.usage_reporting_clients_last_seen
+      type: table_view
     usage_reporting_table:
       tables:
       - channel: null
@@ -4771,6 +4819,27 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.usage_reporting
       type: glean_ping_view
+    usage_reporting_clients_daily_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.usage_reporting_clients_daily
+      - channel: nightly
+        table: mozdata.org_mozilla_ios_fennec.usage_reporting_clients_daily
+      type: table_view
+    usage_reporting_clients_first_seen_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.usage_reporting_clients_first_seen
+      - channel: nightly
+        table: mozdata.org_mozilla_ios_fennec.usage_reporting_clients_first_seen
+      type: table_view
+    usage_reporting_clients_last_seen_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.usage_reporting_clients_last_seen
+      - channel: nightly
+        table: mozdata.org_mozilla_ios_fennec.usage_reporting_clients_last_seen
+      type: table_view
     usage_reporting_table:
       tables:
       - channel: release
