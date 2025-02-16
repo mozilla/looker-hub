@@ -4949,7 +4949,7 @@ in browser.
 
   dimension: metrics__counter__urlbar_abandonment_count {
     label: "Urlbar Abandonment Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.urlbar_abandonment_count ;;
     type: number
     group_label: "Urlbar"
@@ -4985,7 +4985,7 @@ in browser.
 
   dimension: metrics__counter__urlbar_engagement_count {
     label: "Urlbar Engagement Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.urlbar_engagement_count ;;
     type: number
     group_label: "Urlbar"

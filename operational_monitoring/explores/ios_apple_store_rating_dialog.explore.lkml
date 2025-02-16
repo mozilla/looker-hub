@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/change_app_color_icon_on_all_nightly.view.lkml"
+include: "/looker-hub/operational_monitoring/views/ios_apple_store_rating_dialog.view.lkml"
 
-explore: change_app_color_icon_on_all_nightly {
+explore: ios_apple_store_rating_dialog {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
