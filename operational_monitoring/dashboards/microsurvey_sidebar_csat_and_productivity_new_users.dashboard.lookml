@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: microsurvey_sidebar_csat_and_productivity_new_users
+    type: looker_line
+    fields: [
+      microsurvey_sidebar_csat_and_productivity_new_users.submission_date,
+      microsurvey_sidebar_csat_and_productivity_new_users.branch,
+      microsurvey_sidebar_csat_and_productivity_new_users.point
+    ]
+    pivots: [
+      microsurvey_sidebar_csat_and_productivity_new_users.branch
+    ]
+    filters:
+      microsurvey_sidebar_csat_and_productivity_new_users.metric: 'retained'
+      microsurvey_sidebar_csat_and_productivity_new_users.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: microsurvey_sidebar_csat_and_productivity_new_users.submission_date
+    field_y: microsurvey_sidebar_csat_and_productivity_new_users.point
+    log_scale: false
+    ci_lower: microsurvey_sidebar_csat_and_productivity_new_users.lower
+    ci_upper: microsurvey_sidebar_csat_and_productivity_new_users.upper
+    show_grid: true
+    listen:
+      Date: microsurvey_sidebar_csat_and_productivity_new_users.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -29,7 +63,7 @@
       microsurvey_sidebar_csat_and_productivity_new_users.metric: 'search_count'
       microsurvey_sidebar_csat_and_productivity_new_users.statistic: mean
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: microsurvey_sidebar_csat_and_productivity_new_users.submission_date
@@ -44,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,10 +94,10 @@
       microsurvey_sidebar_csat_and_productivity_new_users.branch
     ]
     filters:
-      microsurvey_sidebar_csat_and_productivity_new_users.metric: 'active_hours'
+      microsurvey_sidebar_csat_and_productivity_new_users.metric: 'uri_count'
       microsurvey_sidebar_csat_and_productivity_new_users.statistic: mean
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: microsurvey_sidebar_csat_and_productivity_new_users.submission_date
@@ -99,7 +133,7 @@
       microsurvey_sidebar_csat_and_productivity_new_users.metric: 'memory_total'
       microsurvey_sidebar_csat_and_productivity_new_users.statistic: percentile
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: microsurvey_sidebar_csat_and_productivity_new_users.submission_date
@@ -115,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,111 +165,9 @@
       microsurvey_sidebar_csat_and_productivity_new_users.branch
     ]
     filters:
-      microsurvey_sidebar_csat_and_productivity_new_users.metric: 'days_of_use'
-      microsurvey_sidebar_csat_and_productivity_new_users.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: microsurvey_sidebar_csat_and_productivity_new_users.submission_date
-    field_y: microsurvey_sidebar_csat_and_productivity_new_users.point
-    log_scale: false
-    ci_lower: microsurvey_sidebar_csat_and_productivity_new_users.lower
-    ci_upper: microsurvey_sidebar_csat_and_productivity_new_users.upper
-    show_grid: true
-    listen:
-      Date: microsurvey_sidebar_csat_and_productivity_new_users.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: microsurvey_sidebar_csat_and_productivity_new_users
-    type: looker_line
-    fields: [
-      microsurvey_sidebar_csat_and_productivity_new_users.submission_date,
-      microsurvey_sidebar_csat_and_productivity_new_users.branch,
-      microsurvey_sidebar_csat_and_productivity_new_users.point
-    ]
-    pivots: [
-      microsurvey_sidebar_csat_and_productivity_new_users.branch
-    ]
-    filters:
-      microsurvey_sidebar_csat_and_productivity_new_users.metric: 'ad_clicks'
+      microsurvey_sidebar_csat_and_productivity_new_users.metric: 'active_hours'
       microsurvey_sidebar_csat_and_productivity_new_users.statistic: mean
     row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: microsurvey_sidebar_csat_and_productivity_new_users.submission_date
-    field_y: microsurvey_sidebar_csat_and_productivity_new_users.point
-    log_scale: false
-    ci_lower: microsurvey_sidebar_csat_and_productivity_new_users.lower
-    ci_upper: microsurvey_sidebar_csat_and_productivity_new_users.upper
-    show_grid: true
-    listen:
-      Date: microsurvey_sidebar_csat_and_productivity_new_users.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: microsurvey_sidebar_csat_and_productivity_new_users
-    type: looker_line
-    fields: [
-      microsurvey_sidebar_csat_and_productivity_new_users.submission_date,
-      microsurvey_sidebar_csat_and_productivity_new_users.branch,
-      microsurvey_sidebar_csat_and_productivity_new_users.point
-    ]
-    pivots: [
-      microsurvey_sidebar_csat_and_productivity_new_users.branch
-    ]
-    filters:
-      microsurvey_sidebar_csat_and_productivity_new_users.metric: 'uri_count'
-      microsurvey_sidebar_csat_and_productivity_new_users.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: microsurvey_sidebar_csat_and_productivity_new_users.submission_date
-    field_y: microsurvey_sidebar_csat_and_productivity_new_users.point
-    log_scale: false
-    ci_lower: microsurvey_sidebar_csat_and_productivity_new_users.lower
-    ci_upper: microsurvey_sidebar_csat_and_productivity_new_users.upper
-    show_grid: true
-    listen:
-      Date: microsurvey_sidebar_csat_and_productivity_new_users.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: microsurvey_sidebar_csat_and_productivity_new_users
-    type: looker_line
-    fields: [
-      microsurvey_sidebar_csat_and_productivity_new_users.submission_date,
-      microsurvey_sidebar_csat_and_productivity_new_users.branch,
-      microsurvey_sidebar_csat_and_productivity_new_users.point
-    ]
-    pivots: [
-      microsurvey_sidebar_csat_and_productivity_new_users.branch
-    ]
-    filters:
-      microsurvey_sidebar_csat_and_productivity_new_users.metric: 'retained'
-      microsurvey_sidebar_csat_and_productivity_new_users.statistic: mean
-    row: 30
     col: 0
     width: 12
     height: 8
@@ -268,6 +200,74 @@
     ]
     filters:
       microsurvey_sidebar_csat_and_productivity_new_users.metric: 'qualified_cumulative_days_of_use'
+      microsurvey_sidebar_csat_and_productivity_new_users.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: microsurvey_sidebar_csat_and_productivity_new_users.submission_date
+    field_y: microsurvey_sidebar_csat_and_productivity_new_users.point
+    log_scale: false
+    ci_lower: microsurvey_sidebar_csat_and_productivity_new_users.lower
+    ci_upper: microsurvey_sidebar_csat_and_productivity_new_users.upper
+    show_grid: true
+    listen:
+      Date: microsurvey_sidebar_csat_and_productivity_new_users.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: microsurvey_sidebar_csat_and_productivity_new_users
+    type: looker_line
+    fields: [
+      microsurvey_sidebar_csat_and_productivity_new_users.submission_date,
+      microsurvey_sidebar_csat_and_productivity_new_users.branch,
+      microsurvey_sidebar_csat_and_productivity_new_users.point
+    ]
+    pivots: [
+      microsurvey_sidebar_csat_and_productivity_new_users.branch
+    ]
+    filters:
+      microsurvey_sidebar_csat_and_productivity_new_users.metric: 'days_of_use'
+      microsurvey_sidebar_csat_and_productivity_new_users.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: microsurvey_sidebar_csat_and_productivity_new_users.submission_date
+    field_y: microsurvey_sidebar_csat_and_productivity_new_users.point
+    log_scale: false
+    ci_lower: microsurvey_sidebar_csat_and_productivity_new_users.lower
+    ci_upper: microsurvey_sidebar_csat_and_productivity_new_users.upper
+    show_grid: true
+    listen:
+      Date: microsurvey_sidebar_csat_and_productivity_new_users.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: microsurvey_sidebar_csat_and_productivity_new_users
+    type: looker_line
+    fields: [
+      microsurvey_sidebar_csat_and_productivity_new_users.submission_date,
+      microsurvey_sidebar_csat_and_productivity_new_users.branch,
+      microsurvey_sidebar_csat_and_productivity_new_users.point
+    ]
+    pivots: [
+      microsurvey_sidebar_csat_and_productivity_new_users.branch
+    ]
+    filters:
+      microsurvey_sidebar_csat_and_productivity_new_users.metric: 'ad_clicks'
       microsurvey_sidebar_csat_and_productivity_new_users.statistic: mean
     row: 30
     col: 12
