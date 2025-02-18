@@ -10,8 +10,45 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: us_rollout_compact_layout_thumbs_updown
+    type: "ci-line-chart"
+    fields: [
+      us_rollout_compact_layout_thumbs_updown.submission_date,
+      us_rollout_compact_layout_thumbs_updown.branch,
+      us_rollout_compact_layout_thumbs_updown.upper,
+      us_rollout_compact_layout_thumbs_updown.lower,
+      us_rollout_compact_layout_thumbs_updown.point
+    ]
+    pivots: [
+      us_rollout_compact_layout_thumbs_updown.branch
+    ]
+    filters:
+      us_rollout_compact_layout_thumbs_updown.metric: 'memory_total'
+      us_rollout_compact_layout_thumbs_updown.statistic: percentile
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: us_rollout_compact_layout_thumbs_updown.submission_date
+    field_y: us_rollout_compact_layout_thumbs_updown.point
+    log_scale: false
+    ci_lower: us_rollout_compact_layout_thumbs_updown.lower
+    ci_upper: us_rollout_compact_layout_thumbs_updown.upper
+    show_grid: true
+    listen:
+      Date: us_rollout_compact_layout_thumbs_updown.submission_date
+      Percentile: us_rollout_compact_layout_thumbs_updown.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,10 +63,10 @@
       us_rollout_compact_layout_thumbs_updown.branch
     ]
     filters:
-      us_rollout_compact_layout_thumbs_updown.metric: 'retained'
+      us_rollout_compact_layout_thumbs_updown.metric: 'days_of_use'
       us_rollout_compact_layout_thumbs_updown.statistic: mean
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: us_rollout_compact_layout_thumbs_updown.submission_date
@@ -62,8 +99,8 @@
     filters:
       us_rollout_compact_layout_thumbs_updown.metric: 'search_count'
       us_rollout_compact_layout_thumbs_updown.statistic: mean
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: us_rollout_compact_layout_thumbs_updown.submission_date
@@ -97,78 +134,7 @@
       us_rollout_compact_layout_thumbs_updown.metric: 'uri_count'
       us_rollout_compact_layout_thumbs_updown.statistic: mean
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: us_rollout_compact_layout_thumbs_updown.submission_date
-    field_y: us_rollout_compact_layout_thumbs_updown.point
-    log_scale: false
-    ci_lower: us_rollout_compact_layout_thumbs_updown.lower
-    ci_upper: us_rollout_compact_layout_thumbs_updown.upper
-    show_grid: true
-    listen:
-      Date: us_rollout_compact_layout_thumbs_updown.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: us_rollout_compact_layout_thumbs_updown
-    type: "ci-line-chart"
-    fields: [
-      us_rollout_compact_layout_thumbs_updown.submission_date,
-      us_rollout_compact_layout_thumbs_updown.branch,
-      us_rollout_compact_layout_thumbs_updown.upper,
-      us_rollout_compact_layout_thumbs_updown.lower,
-      us_rollout_compact_layout_thumbs_updown.point
-    ]
-    pivots: [
-      us_rollout_compact_layout_thumbs_updown.branch
-    ]
-    filters:
-      us_rollout_compact_layout_thumbs_updown.metric: 'memory_total'
-      us_rollout_compact_layout_thumbs_updown.statistic: percentile
-    row: 10
     col: 12
-    width: 12
-    height: 8
-    field_x: us_rollout_compact_layout_thumbs_updown.submission_date
-    field_y: us_rollout_compact_layout_thumbs_updown.point
-    log_scale: false
-    ci_lower: us_rollout_compact_layout_thumbs_updown.lower
-    ci_upper: us_rollout_compact_layout_thumbs_updown.upper
-    show_grid: true
-    listen:
-      Date: us_rollout_compact_layout_thumbs_updown.submission_date
-      Percentile: us_rollout_compact_layout_thumbs_updown.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: us_rollout_compact_layout_thumbs_updown
-    type: looker_line
-    fields: [
-      us_rollout_compact_layout_thumbs_updown.submission_date,
-      us_rollout_compact_layout_thumbs_updown.branch,
-      us_rollout_compact_layout_thumbs_updown.point
-    ]
-    pivots: [
-      us_rollout_compact_layout_thumbs_updown.branch
-    ]
-    filters:
-      us_rollout_compact_layout_thumbs_updown.metric: 'active_hours'
-      us_rollout_compact_layout_thumbs_updown.statistic: mean
-    row: 20
-    col: 0
     width: 12
     height: 8
     field_x: us_rollout_compact_layout_thumbs_updown.submission_date
@@ -202,6 +168,40 @@
       us_rollout_compact_layout_thumbs_updown.metric: 'qualified_cumulative_days_of_use'
       us_rollout_compact_layout_thumbs_updown.statistic: mean
     row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: us_rollout_compact_layout_thumbs_updown.submission_date
+    field_y: us_rollout_compact_layout_thumbs_updown.point
+    log_scale: false
+    ci_lower: us_rollout_compact_layout_thumbs_updown.lower
+    ci_upper: us_rollout_compact_layout_thumbs_updown.upper
+    show_grid: true
+    listen:
+      Date: us_rollout_compact_layout_thumbs_updown.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: us_rollout_compact_layout_thumbs_updown
+    type: looker_line
+    fields: [
+      us_rollout_compact_layout_thumbs_updown.submission_date,
+      us_rollout_compact_layout_thumbs_updown.branch,
+      us_rollout_compact_layout_thumbs_updown.point
+    ]
+    pivots: [
+      us_rollout_compact_layout_thumbs_updown.branch
+    ]
+    filters:
+      us_rollout_compact_layout_thumbs_updown.metric: 'retained'
+      us_rollout_compact_layout_thumbs_updown.statistic: mean
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       us_rollout_compact_layout_thumbs_updown.branch
     ]
     filters:
-      us_rollout_compact_layout_thumbs_updown.metric: 'days_of_use'
+      us_rollout_compact_layout_thumbs_updown.metric: 'active_hours'
       us_rollout_compact_layout_thumbs_updown.statistic: mean
     row: 30
     col: 0

@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       rootca_push_notification_pnr1_fenix_125_127.branch
     ]
     filters:
-      rootca_push_notification_pnr1_fenix_125_127.metric: 'retained'
+      rootca_push_notification_pnr1_fenix_125_127.metric: 'days_of_use'
       rootca_push_notification_pnr1_fenix_125_127.statistic: mean
     row: 0
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       rootca_push_notification_pnr1_fenix_125_127.branch
     ]
     filters:
-      rootca_push_notification_pnr1_fenix_125_127.metric: 'active_hours'
+      rootca_push_notification_pnr1_fenix_125_127.metric: 'retained'
       rootca_push_notification_pnr1_fenix_125_127.statistic: mean
     row: 20
     col: 0
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       rootca_push_notification_pnr1_fenix_125_127.branch
     ]
     filters:
-      rootca_push_notification_pnr1_fenix_125_127.metric: 'days_of_use'
+      rootca_push_notification_pnr1_fenix_125_127.metric: 'active_hours'
       rootca_push_notification_pnr1_fenix_125_127.statistic: mean
     row: 20
     col: 12
