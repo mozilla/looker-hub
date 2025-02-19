@@ -1078,6 +1078,177 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__timing_distribution__browser_sanitizer_cache__sum {
+    label: "Browser Sanitizer Cache Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_cache.sum ;;
+    type: number
+    group_label: "Browser Sanitizer"
+    group_item_label: "Cache Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Sanitizer Cache Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_sanitizer_cache"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sanitize: Time it takes to sanitize the cache (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SANITIZE_CACHE.
+"
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_cookies__sum {
+    label: "Browser Sanitizer Cookies Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_cookies.sum ;;
+    type: number
+    group_label: "Browser Sanitizer"
+    group_item_label: "Cookies Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Sanitizer Cookies Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_sanitizer_cookies"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sanitize: Time it takes to sanitize firefox cookies (ms). A subset of FX_SANITIZE_COOKIES.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SANITIZE_COOKIES_2.
+"
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_downloads__sum {
+    label: "Browser Sanitizer Downloads Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_downloads.sum ;;
+    type: number
+    group_label: "Browser Sanitizer"
+    group_item_label: "Downloads Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Sanitizer Downloads Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_sanitizer_downloads"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sanitize: Time it takes to sanitize recent downloads (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SANITIZE_DOWNLOADS.
+"
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_formdata__sum {
+    label: "Browser Sanitizer Formdata Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_formdata.sum ;;
+    type: number
+    group_label: "Browser Sanitizer"
+    group_item_label: "Formdata Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Sanitizer Formdata Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_sanitizer_formdata"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sanitize: Time it takes to sanitize stored form data (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SANITIZE_FORMDATA.
+"
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_history__sum {
+    label: "Browser Sanitizer History Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_history.sum ;;
+    type: number
+    group_label: "Browser Sanitizer"
+    group_item_label: "History Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Sanitizer History Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_sanitizer_history"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sanitize: Time it takes to sanitize history (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SANITIZE_HISTORY.
+"
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_openwindows__sum {
+    label: "Browser Sanitizer Openwindows Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_openwindows.sum ;;
+    type: number
+    group_label: "Browser Sanitizer"
+    group_item_label: "Openwindows Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Sanitizer Openwindows Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_sanitizer_openwindows"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sanitize: Time it takes to sanitize the open windows list (ms). On Android, this is the time it takes to close all open tabs (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SANITIZE_OPENWINDOWS.
+"
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_sessions__sum {
+    label: "Browser Sanitizer Sessions Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_sessions.sum ;;
+    type: number
+    group_label: "Browser Sanitizer"
+    group_item_label: "Sessions Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Sanitizer Sessions Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_sanitizer_sessions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sanitize: Time it takes to sanitize saved sessions (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SANITIZE_SESSIONS.
+"
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_sitesettings__sum {
+    label: "Browser Sanitizer Sitesettings Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_sitesettings.sum ;;
+    type: number
+    group_label: "Browser Sanitizer"
+    group_item_label: "Sitesettings Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Sanitizer Sitesettings Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_sanitizer_sitesettings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sanitize: Time it takes to sanitize site-specific settings (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SANITIZE_SITESETTINGS.
+"
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_total__sum {
+    label: "Browser Sanitizer Total Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_total.sum ;;
+    type: number
+    group_label: "Browser Sanitizer"
+    group_item_label: "Total Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Sanitizer Total Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_sanitizer_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sanitize: Total time it takes to sanitize (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SANITIZE_TOTAL.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_adclicks_about_home {
     label: "Browser Search Adclicks About Home"
     hidden: yes
@@ -21851,6 +22022,44 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "The number of potentially breached passwords, as determined by LoginBreaches.getPotentialBreachesByLoginGUID. This metric was generated to correspond to the Legacy Telemetry scalar pwmgr.potentially_breached_passwords.
+"
+  }
+
+  dimension: metrics__custom_distribution__readermode_download_result__sum {
+    label: "Readermode Download Result Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.readermode_download_result.sum ;;
+    type: number
+    group_label: "Readermode"
+    group_item_label: "Download Result Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Readermode Download Result Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/readermode_download_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The result of trying to download a document to show in reader view (0=Success, 1=Error XHR, 2=Error no document)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram READER_MODE_DOWNLOAD_RESULT.
+"
+  }
+
+  dimension: metrics__custom_distribution__readermode_parse_result__sum {
+    label: "Readermode Parse Result Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.readermode_parse_result.sum ;;
+    type: number
+    group_label: "Readermode"
+    group_item_label: "Parse Result Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Readermode Parse Result Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/readermode_parse_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The result of trying to parse a document to show in reader view (0=Success, 1=Error too many elements, 2=Error in worker, 3=Error no article)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram READER_MODE_PARSE_RESULT.
 "
   }
 
@@ -51752,6 +51961,34 @@ view: metrics__metrics__custom_distribution__predictor_total_preresolves__values
   }
 }
 
+view: metrics__metrics__custom_distribution__readermode_download_result__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__readermode_parse_result__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__spdy_goaway_local__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -59091,6 +59328,132 @@ view: metrics__metrics__timing_distribution__browser_backup_places_time__values 
 }
 
 view: metrics__metrics__timing_distribution__browser_backup_total_backup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__browser_sanitizer_cache__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__browser_sanitizer_cookies__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__browser_sanitizer_downloads__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__browser_sanitizer_formdata__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__browser_sanitizer_history__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__browser_sanitizer_openwindows__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__browser_sanitizer_sessions__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__browser_sanitizer_sitesettings__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__browser_sanitizer_total__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

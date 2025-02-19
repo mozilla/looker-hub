@@ -12,6 +12,34 @@ view: cohort_daily_statistics {
     description: "Activity Segment"
   }
 
+  dimension: adjust_ad_group {
+    sql: ${TABLE}.adjust_ad_group ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Adjust Ad Group - Available for Mobile Only"
+  }
+
+  dimension: adjust_campaign {
+    sql: ${TABLE}.adjust_campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Adjust Campaign - Available for Mobile Only"
+  }
+
+  dimension: adjust_creative {
+    sql: ${TABLE}.adjust_creative ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Adjust Creative - Available for Mobile Only"
+  }
+
+  dimension: adjust_network {
+    sql: ${TABLE}.adjust_network ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Adjust Network - Available for Mobile Only"
+  }
+
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
     type: string
@@ -158,6 +186,47 @@ view: cohort_daily_statistics {
     type: number
     suggest_persist_for: "24 hours"
     description: "Operating System Minor Version"
+  }
+
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.paid_vs_organic ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: play_store_attribution_campaign {
+    sql: ${TABLE}.play_store_attribution_campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Play Store Attribution Campaign - Available for Mobile Only"
+  }
+
+  dimension: play_store_attribution_content {
+    sql: ${TABLE}.play_store_attribution_content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Play Store Attribution Content - Available for Mobile Only"
+  }
+
+  dimension: play_store_attribution_medium {
+    sql: ${TABLE}.play_store_attribution_medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Play Store Attribution Medium - Available for Mobile Only"
+  }
+
+  dimension: play_store_attribution_source {
+    sql: ${TABLE}.play_store_attribution_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Play Store Attribution Source - Available for Mobile Only"
+  }
+
+  dimension: play_store_attribution_term {
+    sql: ${TABLE}.play_store_attribution_term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Play Store Attribution Term - Available for Mobile Only"
   }
 
   dimension_group: activity {

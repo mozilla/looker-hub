@@ -5285,6 +5285,50 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__readermode_download_result__count {
+    sql: ${TABLE}.metrics.custom_distribution.readermode_download_result.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Readermode Download Result"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__readermode_download_result__sum {
+    sql: ${TABLE}.metrics.custom_distribution.readermode_download_result.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Readermode Download Result"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__readermode_download_result__values {
+    sql: ${TABLE}.metrics.custom_distribution.readermode_download_result.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__readermode_parse_result__count {
+    sql: ${TABLE}.metrics.custom_distribution.readermode_parse_result.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Readermode Parse Result"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__readermode_parse_result__sum {
+    sql: ${TABLE}.metrics.custom_distribution.readermode_parse_result.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Readermode Parse Result"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__readermode_parse_result__values {
+    sql: ${TABLE}.metrics.custom_distribution.readermode_parse_result.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__spdy_goaway_local__count {
     sql: ${TABLE}.metrics.custom_distribution.spdy_goaway_local.count ;;
     type: number
@@ -33658,6 +33702,34 @@ view: metrics_table__metrics__custom_distribution__predictor_total_prefetches__v
 }
 
 view: metrics_table__metrics__custom_distribution__predictor_total_preresolves__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__readermode_download_result__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__readermode_parse_result__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

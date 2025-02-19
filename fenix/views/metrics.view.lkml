@@ -18953,6 +18953,44 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__custom_distribution__readermode_download_result__sum {
+    label: "Readermode Download Result Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.readermode_download_result.sum ;;
+    type: number
+    group_label: "Readermode"
+    group_item_label: "Download Result Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Readermode Download Result Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/readermode_download_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The result of trying to download a document to show in reader view (0=Success, 1=Error XHR, 2=Error no document)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram READER_MODE_DOWNLOAD_RESULT.
+"
+  }
+
+  dimension: metrics__custom_distribution__readermode_parse_result__sum {
+    label: "Readermode Parse Result Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.readermode_parse_result.sum ;;
+    type: number
+    group_label: "Readermode"
+    group_item_label: "Parse Result Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Readermode Parse Result Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/readermode_parse_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The result of trying to parse a document to show in reader view (0=Success, 1=Error too many elements, 2=Error in worker, 3=Error no article)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram READER_MODE_PARSE_RESULT.
+"
+  }
+
   dimension: metrics__counter__rtcrtpsender_count {
     label: "Rtcrtpsender Count"
     hidden: no
@@ -43736,6 +43774,34 @@ view: metrics__metrics__custom_distribution__predictor_total_prefetches__values 
 }
 
 view: metrics__metrics__custom_distribution__predictor_total_preresolves__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__readermode_download_result__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__readermode_parse_result__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
