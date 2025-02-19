@@ -46,8 +46,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Performance Pageload Req Anim Frame Callback
-    name: Performance Pageload Req Anim Frame Callback_percentile
+  - title: Performance Pageload Dcl
+    name: Performance Pageload Dcl_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -64,7 +64,7 @@
       performance_fenix_build_by_build_beta.branch
     ]
     filters:
-      performance_fenix_build_by_build_beta.metric: 'performance_pageload_req_anim_frame_callback'
+      performance_fenix_build_by_build_beta.metric: 'performance_pageload_dcl'
       performance_fenix_build_by_build_beta.statistic: percentile
     row: 0
     col: 12
@@ -82,8 +82,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Performance Pageload Fcp Responsestart
-    name: Performance Pageload Fcp Responsestart_percentile
+  - title: Storage Stats Cache Bytes
+    name: Storage Stats Cache Bytes_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -100,7 +100,7 @@
       performance_fenix_build_by_build_beta.branch
     ]
     filters:
-      performance_fenix_build_by_build_beta.metric: 'performance_pageload_fcp_responsestart'
+      performance_fenix_build_by_build_beta.metric: 'storage_stats_cache_bytes'
       performance_fenix_build_by_build_beta.statistic: percentile
     row: 10
     col: 0
@@ -190,8 +190,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Performance Pageload Fcp
-    name: Performance Pageload Fcp_percentile
+  - title: Performance Pageload Load Time Responsestart
+    name: Performance Pageload Load Time Responsestart_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -208,7 +208,7 @@
       performance_fenix_build_by_build_beta.branch
     ]
     filters:
-      performance_fenix_build_by_build_beta.metric: 'performance_pageload_fcp'
+      performance_fenix_build_by_build_beta.metric: 'performance_pageload_load_time_responsestart'
       performance_fenix_build_by_build_beta.statistic: percentile
     row: 20
     col: 12
@@ -262,8 +262,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Performance Pageload Dcl Responsestart
-    name: Performance Pageload Dcl Responsestart_percentile
+  - title: Performance Pageload Fcp Responsestart
+    name: Performance Pageload Fcp Responsestart_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -280,7 +280,7 @@
       performance_fenix_build_by_build_beta.branch
     ]
     filters:
-      performance_fenix_build_by_build_beta.metric: 'performance_pageload_dcl_responsestart'
+      performance_fenix_build_by_build_beta.metric: 'performance_pageload_fcp_responsestart'
       performance_fenix_build_by_build_beta.statistic: percentile
     row: 30
     col: 12
@@ -334,8 +334,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Performance Pageload Dcl
-    name: Performance Pageload Dcl_percentile
+  - title: Performance Pageload Req Anim Frame Callback
+    name: Performance Pageload Req Anim Frame Callback_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -352,7 +352,7 @@
       performance_fenix_build_by_build_beta.branch
     ]
     filters:
-      performance_fenix_build_by_build_beta.metric: 'performance_pageload_dcl'
+      performance_fenix_build_by_build_beta.metric: 'performance_pageload_req_anim_frame_callback'
       performance_fenix_build_by_build_beta.statistic: percentile
     row: 40
     col: 12
@@ -370,8 +370,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Storage Stats Cache Bytes
-    name: Storage Stats Cache Bytes_percentile
+  - title: Performance Pageload Fcp
+    name: Performance Pageload Fcp_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -388,7 +388,7 @@
       performance_fenix_build_by_build_beta.branch
     ]
     filters:
-      performance_fenix_build_by_build_beta.metric: 'storage_stats_cache_bytes'
+      performance_fenix_build_by_build_beta.metric: 'performance_pageload_fcp'
       performance_fenix_build_by_build_beta.statistic: percentile
     row: 50
     col: 0
@@ -406,8 +406,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Performance Pageload Load Time Responsestart
-    name: Performance Pageload Load Time Responsestart_percentile
+  - title: Performance Pageload Dcl Responsestart
+    name: Performance Pageload Dcl Responsestart_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -424,7 +424,7 @@
       performance_fenix_build_by_build_beta.branch
     ]
     filters:
-      performance_fenix_build_by_build_beta.metric: 'performance_pageload_load_time_responsestart'
+      performance_fenix_build_by_build_beta.metric: 'performance_pageload_dcl_responsestart'
       performance_fenix_build_by_build_beta.statistic: percentile
     row: 50
     col: 12

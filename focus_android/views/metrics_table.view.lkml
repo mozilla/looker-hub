@@ -2873,6 +2873,174 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__http3_blocked_by_stream_limit_per_conn__count {
+    sql: ${TABLE}.metrics.custom_distribution.http3_blocked_by_stream_limit_per_conn.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Http3 Blocked By Stream Limit Per Conn"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__http3_blocked_by_stream_limit_per_conn__sum {
+    sql: ${TABLE}.metrics.custom_distribution.http3_blocked_by_stream_limit_per_conn.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Http3 Blocked By Stream Limit Per Conn"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__http3_blocked_by_stream_limit_per_conn__values {
+    sql: ${TABLE}.metrics.custom_distribution.http3_blocked_by_stream_limit_per_conn.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__http3_drop_dgrams__count {
+    sql: ${TABLE}.metrics.custom_distribution.http3_drop_dgrams.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Http3 Drop Dgrams"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__http3_drop_dgrams__sum {
+    sql: ${TABLE}.metrics.custom_distribution.http3_drop_dgrams.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Http3 Drop Dgrams"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__http3_drop_dgrams__values {
+    sql: ${TABLE}.metrics.custom_distribution.http3_drop_dgrams.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__http3_loss_ratio__count {
+    sql: ${TABLE}.metrics.custom_distribution.http3_loss_ratio.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Http3 Loss Ratio"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__http3_loss_ratio__sum {
+    sql: ${TABLE}.metrics.custom_distribution.http3_loss_ratio.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Http3 Loss Ratio"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__http3_loss_ratio__values {
+    sql: ${TABLE}.metrics.custom_distribution.http3_loss_ratio.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__http3_request_per_conn__count {
+    sql: ${TABLE}.metrics.custom_distribution.http3_request_per_conn.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Http3 Request Per Conn"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__http3_request_per_conn__sum {
+    sql: ${TABLE}.metrics.custom_distribution.http3_request_per_conn.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Http3 Request Per Conn"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__http3_request_per_conn__values {
+    sql: ${TABLE}.metrics.custom_distribution.http3_request_per_conn.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__http3_saved_dgrams__count {
+    sql: ${TABLE}.metrics.custom_distribution.http3_saved_dgrams.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Http3 Saved Dgrams"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__http3_saved_dgrams__sum {
+    sql: ${TABLE}.metrics.custom_distribution.http3_saved_dgrams.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Http3 Saved Dgrams"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__http3_saved_dgrams__values {
+    sql: ${TABLE}.metrics.custom_distribution.http3_saved_dgrams.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__http3_sending_blocked_by_flow_control_per_trans__count {
+    sql: ${TABLE}.metrics.custom_distribution.http3_sending_blocked_by_flow_control_per_trans.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Http3 Sending Blocked By Flow Control Per Trans"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__http3_sending_blocked_by_flow_control_per_trans__sum {
+    sql: ${TABLE}.metrics.custom_distribution.http3_sending_blocked_by_flow_control_per_trans.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Http3 Sending Blocked By Flow Control Per Trans"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__http3_sending_blocked_by_flow_control_per_trans__values {
+    sql: ${TABLE}.metrics.custom_distribution.http3_sending_blocked_by_flow_control_per_trans.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__http3_trans_blocked_by_stream_limit_per_conn__count {
+    sql: ${TABLE}.metrics.custom_distribution.http3_trans_blocked_by_stream_limit_per_conn.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Http3 Trans Blocked By Stream Limit Per Conn"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__http3_trans_blocked_by_stream_limit_per_conn__sum {
+    sql: ${TABLE}.metrics.custom_distribution.http3_trans_blocked_by_stream_limit_per_conn.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Http3 Trans Blocked By Stream Limit Per Conn"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__http3_trans_blocked_by_stream_limit_per_conn__values {
+    sql: ${TABLE}.metrics.custom_distribution.http3_trans_blocked_by_stream_limit_per_conn.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__http3_trans_sending_blocked_by_flow_control_per_conn__count {
+    sql: ${TABLE}.metrics.custom_distribution.http3_trans_sending_blocked_by_flow_control_per_conn.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Http3 Trans Sending Blocked By Flow Control Per Conn"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__http3_trans_sending_blocked_by_flow_control_per_conn__sum {
+    sql: ${TABLE}.metrics.custom_distribution.http3_trans_sending_blocked_by_flow_control_per_conn.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Http3 Trans Sending Blocked By Flow Control Per Conn"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__http3_trans_sending_blocked_by_flow_control_per_conn__values {
+    sql: ${TABLE}.metrics.custom_distribution.http3_trans_sending_blocked_by_flow_control_per_conn.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__http_altsvc_entries_per_header__count {
     sql: ${TABLE}.metrics.custom_distribution.http_altsvc_entries_per_header.count ;;
     type: number
@@ -8139,6 +8307,36 @@ view: metrics_table {
 
   dimension: metrics__labeled_custom_distribution__downloads_user_action_on_blocked_download {
     sql: ${TABLE}.metrics.labeled_custom_distribution.downloads_user_action_on_blocked_download ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_custom_distribution__http3_connection_close_code {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.http3_connection_close_code ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_custom_distribution__http3_counts_pto {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.http3_counts_pto ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_custom_distribution__http3_ech_outcome {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.http3_ech_outcome ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_custom_distribution__http3_late_ack {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.http3_late_ack ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_custom_distribution__http3_late_ack_ratio {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.http3_late_ack_ratio ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_custom_distribution__http3_received_sent_dgrams {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.http3_received_sent_dgrams ;;
     hidden: yes
   }
 
@@ -15273,6 +15471,72 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__gpu_process_launch_time__values {
     sql: ${TABLE}.metrics.timing_distribution.gpu_process_launch_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__http3_timer_delayed__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.http3_timer_delayed.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Http3 Timer Delayed"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__http3_timer_delayed__count {
+    sql: ${TABLE}.metrics.timing_distribution.http3_timer_delayed.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Http3 Timer Delayed"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__http3_timer_delayed__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.http3_timer_delayed.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Http3 Timer Delayed"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__http3_timer_delayed__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.http3_timer_delayed.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Http3 Timer Delayed"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__http3_timer_delayed__range {
+    sql: ${TABLE}.metrics.timing_distribution.http3_timer_delayed.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__http3_timer_delayed__sum {
+    sql: ${TABLE}.metrics.timing_distribution.http3_timer_delayed.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Http3 Timer Delayed"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__http3_timer_delayed__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.http3_timer_delayed.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Http3 Timer Delayed"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__http3_timer_delayed__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.http3_timer_delayed.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Http3 Timer Delayed"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__http3_timer_delayed__values {
+    sql: ${TABLE}.metrics.timing_distribution.http3_timer_delayed.values ;;
     hidden: yes
   }
 
@@ -30766,6 +31030,118 @@ view: metrics_table__metrics__custom_distribution__hpack_peak_count_decompressor
   }
 }
 
+view: metrics_table__metrics__custom_distribution__http3_blocked_by_stream_limit_per_conn__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__http3_drop_dgrams__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__http3_loss_ratio__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__http3_request_per_conn__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__http3_saved_dgrams__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__http3_sending_blocked_by_flow_control_per_trans__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__http3_trans_blocked_by_stream_limit_per_conn__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__http3_trans_sending_blocked_by_flow_control_per_conn__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__http_altsvc_entries_per_header__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -34001,6 +34377,264 @@ view: metrics_table__metrics__labeled_custom_distribution__downloads_user_action
 }
 
 view: metrics_table__metrics__labeled_custom_distribution__downloads_user_action_on_blocked_download__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__http3_connection_close_code {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__http3_connection_close_code__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__http3_counts_pto {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__http3_counts_pto__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__http3_ech_outcome {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__http3_ech_outcome__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__http3_late_ack {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__http3_late_ack__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__http3_late_ack_ratio {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__http3_late_ack_ratio__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__http3_received_sent_dgrams {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__http3_received_sent_dgrams__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -39685,6 +40319,20 @@ view: metrics_table__metrics__timing_distribution__gpu_process_initialization_ti
 }
 
 view: metrics_table__metrics__timing_distribution__gpu_process_launch_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__http3_timer_delayed__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
