@@ -7562,6 +7562,177 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__custom_distribution__http3_blocked_by_stream_limit_per_conn__sum {
+    label: "Http3 Blocked By Stream Limit Per Conn Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http3_blocked_by_stream_limit_per_conn.sum ;;
+    type: number
+    group_label: "Http3"
+    group_item_label: "Blocked By Stream Limit Per Conn Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http3 Blocked By Stream Limit Per Conn Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/http3_blocked_by_stream_limit_per_conn"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: number of times a connection is blocked by maximum allowed number of parallel streams per connection
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_BLOCKED_BY_STREAM_LIMIT_PER_CONN.
+"
+  }
+
+  dimension: metrics__custom_distribution__http3_drop_dgrams__sum {
+    label: "Http3 Drop Dgrams Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http3_drop_dgrams.sum ;;
+    type: number
+    group_label: "Http3"
+    group_item_label: "Drop Dgrams Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http3 Drop Dgrams Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/http3_drop_dgrams"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: the number of dropped datagrams.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_DROP_DGRAMS.
+"
+  }
+
+  dimension: metrics__custom_distribution__http3_loss_ratio__sum {
+    label: "Http3 Loss Ratio Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http3_loss_ratio.sum ;;
+    type: number
+    group_label: "Http3"
+    group_item_label: "Loss Ratio Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http3 Loss Ratio Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/http3_loss_ratio"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: packet loss ratio (multiply by 10000).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_LOSS_RATIO.
+"
+  }
+
+  dimension: metrics__custom_distribution__http3_request_per_conn__sum {
+    label: "Http3 Request Per Conn Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http3_request_per_conn.sum ;;
+    type: number
+    group_label: "Http3"
+    group_item_label: "Request Per Conn Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http3 Request Per Conn Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/http3_request_per_conn"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: Streams created per connection
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_REQUEST_PER_CONN.
+"
+  }
+
+  dimension: metrics__custom_distribution__http3_saved_dgrams__sum {
+    label: "Http3 Saved Dgrams Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http3_saved_dgrams.sum ;;
+    type: number
+    group_label: "Http3"
+    group_item_label: "Saved Dgrams Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http3 Saved Dgrams Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/http3_saved_dgrams"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: the number of saved datagrams that are waiting for keys to be available.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_SAVED_DGRAMS.
+"
+  }
+
+  dimension: metrics__custom_distribution__http3_sending_blocked_by_flow_control_per_trans__sum {
+    label: "Http3 Sending Blocked By Flow Control Per Trans Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http3_sending_blocked_by_flow_control_per_trans.sum ;;
+    type: number
+    group_label: "Http3"
+    group_item_label: "Sending Blocked By Flow Control Per Trans Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http3 Sending Blocked By Flow Control Per Trans Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/http3_sending_blocked_by_flow_control_per_trans"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: number of times when a stream is blocked by the flow control while sendnig data.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_SENDING_BLOCKED_BY_FLOW_CONTROL_PER_TRANS.
+"
+  }
+
+  dimension: metrics__timing_distribution__http3_timer_delayed__sum {
+    label: "Http3 Timer Delayed Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.http3_timer_delayed.sum ;;
+    type: number
+    group_label: "Http3"
+    group_item_label: "Timer Delayed Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http3 Timer Delayed Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/http3_timer_delayed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time difference between setting timer value and actually firing the timer for calling neqo
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_TIMER_DELAYED.
+"
+  }
+
+  dimension: metrics__custom_distribution__http3_trans_blocked_by_stream_limit_per_conn__sum {
+    label: "Http3 Trans Blocked By Stream Limit Per Conn Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http3_trans_blocked_by_stream_limit_per_conn.sum ;;
+    type: number
+    group_label: "Http3"
+    group_item_label: "Trans Blocked By Stream Limit Per Conn Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http3 Trans Blocked By Stream Limit Per Conn Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/http3_trans_blocked_by_stream_limit_per_conn"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: number of transactions that are blocked by maximum allowed number of parallel streams per connection
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_TRANS_BLOCKED_BY_STREAM_LIMIT_PER_CONN.
+"
+  }
+
+  dimension: metrics__custom_distribution__http3_trans_sending_blocked_by_flow_control_per_conn__sum {
+    label: "Http3 Trans Sending Blocked By Flow Control Per Conn Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http3_trans_sending_blocked_by_flow_control_per_conn.sum ;;
+    type: number
+    group_label: "Http3"
+    group_item_label: "Trans Sending Blocked By Flow Control Per Conn Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Http3 Trans Sending Blocked By Flow Control Per Conn Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/http3_trans_sending_blocked_by_flow_control_per_conn"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: number of times streams are blocked by the flow control while sending data per connection
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_TRANS_SENDING_BLOCKED_BY_FLOW_CONTROL_PER_CONN.
+"
+  }
+
   dimension: metrics__timing_distribution__httpsfirst_downgrade_time__sum {
     label: "Httpsfirst Downgrade Time Sum"
     hidden: no
@@ -36620,6 +36791,118 @@ view: metrics__metrics__custom_distribution__hpack_peak_count_decompressor__valu
   }
 }
 
+view: metrics__metrics__custom_distribution__http3_blocked_by_stream_limit_per_conn__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__http3_drop_dgrams__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__http3_loss_ratio__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__http3_request_per_conn__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__http3_saved_dgrams__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__http3_sending_blocked_by_flow_control_per_trans__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__http3_trans_blocked_by_stream_limit_per_conn__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__http3_trans_sending_blocked_by_flow_control_per_conn__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__http_altsvc_entries_per_header__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -39911,6 +40194,270 @@ view: metrics__metrics__labeled_custom_distribution__downloads_user_action_on_bl
 }
 
 view: metrics__metrics__labeled_custom_distribution__downloads_user_action_on_blocked_download__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__http3_connection_close_code {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__http3_connection_close_code__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__http3_counts_pto {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__http3_counts_pto__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__http3_ech_outcome {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__http3_ech_outcome__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__http3_late_ack {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__http3_late_ack__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__http3_late_ack_ratio {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__http3_late_ack_ratio__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__http3_received_sent_dgrams {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__http3_received_sent_dgrams__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -45820,6 +46367,20 @@ view: metrics__metrics__timing_distribution__gpu_process_initialization_time__va
 }
 
 view: metrics__metrics__timing_distribution__gpu_process_launch_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__http3_timer_delayed__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
