@@ -10,7 +10,7 @@ datagroup: ga4_www_site_downloads_last_updated {
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'mozilla_org_derived'
-    AND table_name = 'www_site_downloads_v2' ;;
-  description: "Updates for ga4_www_site_downloads when moz-fx-data-shared-prod.mozilla_org_derived.www_site_downloads_v2 is modified."
+    AND table_name = 'www_site_downloads_v3' ;;
+  description: "Updates for ga4_www_site_downloads when moz-fx-data-shared-prod.mozilla_org_derived.www_site_downloads_v3 is modified."
   max_cache_age: "24 hours"
 }
