@@ -211,6 +211,10 @@ ads:
   pretty_name: Ads
   spoke: looker-spoke-private
   views:
+    android_pocket_spocs:
+      tables:
+      - table: mozdata.ads.android_pocket_spocs
+      type: table_view
     amp_search_with:
       tables:
       - table: mozdata.ads.amp_search_with
