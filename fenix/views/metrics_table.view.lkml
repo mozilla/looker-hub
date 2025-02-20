@@ -2225,6 +2225,222 @@ view: metrics_table {
     group_item_label: "Translations Requests Count"
   }
 
+  dimension: metrics__counter__update_cannot_stage_external {
+    sql: ${TABLE}.metrics.counter.update_cannot_stage_external ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Cannot Stage External"
+  }
+
+  dimension: metrics__counter__update_cannot_stage_notify {
+    sql: ${TABLE}.metrics.counter.update_cannot_stage_notify ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Cannot Stage Notify"
+  }
+
+  dimension: metrics__counter__update_cannot_stage_subsequent {
+    sql: ${TABLE}.metrics.counter.update_cannot_stage_subsequent ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Cannot Stage Subsequent"
+  }
+
+  dimension: metrics__counter__update_check_no_update_external {
+    sql: ${TABLE}.metrics.counter.update_check_no_update_external ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Check No Update External"
+  }
+
+  dimension: metrics__counter__update_check_no_update_notify {
+    sql: ${TABLE}.metrics.counter.update_check_no_update_notify ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Check No Update Notify"
+  }
+
+  dimension: metrics__counter__update_check_no_update_subsequent {
+    sql: ${TABLE}.metrics.counter.update_check_no_update_subsequent ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Check No Update Subsequent"
+  }
+
+  dimension: metrics__counter__update_invalid_lastupdatetime_external {
+    sql: ${TABLE}.metrics.counter.update_invalid_lastupdatetime_external ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Invalid Lastupdatetime External"
+  }
+
+  dimension: metrics__counter__update_invalid_lastupdatetime_notify {
+    sql: ${TABLE}.metrics.counter.update_invalid_lastupdatetime_notify ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Invalid Lastupdatetime Notify"
+  }
+
+  dimension: metrics__counter__update_invalid_lastupdatetime_subsequent {
+    sql: ${TABLE}.metrics.counter.update_invalid_lastupdatetime_subsequent ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Invalid Lastupdatetime Subsequent"
+  }
+
+  dimension: metrics__counter__update_not_pref_update_auto_external {
+    sql: ${TABLE}.metrics.counter.update_not_pref_update_auto_external ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Not Pref Update Auto External"
+  }
+
+  dimension: metrics__counter__update_not_pref_update_auto_notify {
+    sql: ${TABLE}.metrics.counter.update_not_pref_update_auto_notify ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Not Pref Update Auto Notify"
+  }
+
+  dimension: metrics__counter__update_not_pref_update_auto_subsequent {
+    sql: ${TABLE}.metrics.counter.update_not_pref_update_auto_subsequent ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Not Pref Update Auto Subsequent"
+  }
+
+  dimension: metrics__counter__update_not_pref_update_service_enabled_external {
+    sql: ${TABLE}.metrics.counter.update_not_pref_update_service_enabled_external ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Not Pref Update Service Enabled External"
+  }
+
+  dimension: metrics__counter__update_not_pref_update_service_enabled_notify {
+    sql: ${TABLE}.metrics.counter.update_not_pref_update_service_enabled_notify ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Not Pref Update Service Enabled Notify"
+  }
+
+  dimension: metrics__counter__update_not_pref_update_service_enabled_subsequent {
+    sql: ${TABLE}.metrics.counter.update_not_pref_update_service_enabled_subsequent ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Not Pref Update Service Enabled Subsequent"
+  }
+
+  dimension: metrics__counter__update_not_pref_update_staging_enabled_external {
+    sql: ${TABLE}.metrics.counter.update_not_pref_update_staging_enabled_external ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Not Pref Update Staging Enabled External"
+  }
+
+  dimension: metrics__counter__update_not_pref_update_staging_enabled_notify {
+    sql: ${TABLE}.metrics.counter.update_not_pref_update_staging_enabled_notify ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Not Pref Update Staging Enabled Notify"
+  }
+
+  dimension: metrics__counter__update_not_pref_update_staging_enabled_subsequent {
+    sql: ${TABLE}.metrics.counter.update_not_pref_update_staging_enabled_subsequent ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Not Pref Update Staging Enabled Subsequent"
+  }
+
+  dimension: metrics__counter__update_ping_count_external {
+    sql: ${TABLE}.metrics.counter.update_ping_count_external ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Ping Count External"
+  }
+
+  dimension: metrics__counter__update_ping_count_notify {
+    sql: ${TABLE}.metrics.counter.update_ping_count_notify ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Ping Count Notify"
+  }
+
+  dimension: metrics__counter__update_ping_count_subsequent {
+    sql: ${TABLE}.metrics.counter.update_ping_count_subsequent ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Ping Count Subsequent"
+  }
+
+  dimension: metrics__counter__update_service_manually_uninstalled_external {
+    sql: ${TABLE}.metrics.counter.update_service_manually_uninstalled_external ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Service Manually Uninstalled External"
+  }
+
+  dimension: metrics__counter__update_service_manually_uninstalled_notify {
+    sql: ${TABLE}.metrics.counter.update_service_manually_uninstalled_notify ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Service Manually Uninstalled Notify"
+  }
+
+  dimension: metrics__counter__update_service_manually_uninstalled_subsequent {
+    sql: ${TABLE}.metrics.counter.update_service_manually_uninstalled_subsequent ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Service Manually Uninstalled Subsequent"
+  }
+
+  dimension: metrics__counter__update_unable_to_apply_external {
+    sql: ${TABLE}.metrics.counter.update_unable_to_apply_external ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Unable To Apply External"
+  }
+
+  dimension: metrics__counter__update_unable_to_apply_notify {
+    sql: ${TABLE}.metrics.counter.update_unable_to_apply_notify ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Unable To Apply Notify"
+  }
+
+  dimension: metrics__counter__update_unable_to_apply_subsequent {
+    sql: ${TABLE}.metrics.counter.update_unable_to_apply_subsequent ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update Unable To Apply Subsequent"
+  }
+
   dimension: metrics__counter__web_notification_insecure_context_permission_request {
     sql: ${TABLE}.metrics.counter.web_notification_insecure_context_permission_request ;;
     type: number
@@ -6865,6 +7081,552 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__update_bits_result_complete__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_bits_result_complete.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Bits Result Complete"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_bits_result_complete__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_bits_result_complete.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Bits Result Complete"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_bits_result_complete__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_bits_result_complete.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_bits_result_partial__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_bits_result_partial.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Bits Result Partial"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_bits_result_partial__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_bits_result_partial.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Bits Result Partial"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_bits_result_partial__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_bits_result_partial.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_check_code_external__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_check_code_external.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Check Code External"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_check_code_external__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_check_code_external.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Check Code External"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_check_code_external__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_check_code_external.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_check_code_notify__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_check_code_notify.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Check Code Notify"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_check_code_notify__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_check_code_notify.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Check Code Notify"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_check_code_notify__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_check_code_notify.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_check_code_subsequent__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_check_code_subsequent.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Check Code Subsequent"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_check_code_subsequent__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_check_code_subsequent.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Check Code Subsequent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_check_code_subsequent__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_check_code_subsequent.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_download_code_complete__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_download_code_complete.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Download Code Complete"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_download_code_complete__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_download_code_complete.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Download Code Complete"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_download_code_complete__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_download_code_complete.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_download_code_partial__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_download_code_partial.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Download Code Partial"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_download_code_partial__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_download_code_partial.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Download Code Partial"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_download_code_partial__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_download_code_partial.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_download_code_unknown__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_download_code_unknown.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Download Code Unknown"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_download_code_unknown__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_download_code_unknown.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Download Code Unknown"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_download_code_unknown__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_download_code_unknown.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_pref_service_errors_external__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_service_errors_external.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Pref Service Errors External"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_pref_service_errors_external__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_service_errors_external.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Pref Service Errors External"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_pref_service_errors_external__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_service_errors_external.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_pref_service_errors_notify__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_service_errors_notify.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Pref Service Errors Notify"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_pref_service_errors_notify__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_service_errors_notify.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Pref Service Errors Notify"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_pref_service_errors_notify__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_service_errors_notify.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_pref_service_errors_subsequent__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_service_errors_subsequent.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Pref Service Errors Subsequent"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_pref_service_errors_subsequent__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_service_errors_subsequent.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Pref Service Errors Subsequent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_pref_service_errors_subsequent__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_service_errors_subsequent.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_pref_update_cancelations_external__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_update_cancelations_external.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Pref Update Cancelations External"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_pref_update_cancelations_external__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_update_cancelations_external.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Pref Update Cancelations External"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_pref_update_cancelations_external__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_update_cancelations_external.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_pref_update_cancelations_notify__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_update_cancelations_notify.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Pref Update Cancelations Notify"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_pref_update_cancelations_notify__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_update_cancelations_notify.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Pref Update Cancelations Notify"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_pref_update_cancelations_notify__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_update_cancelations_notify.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_pref_update_cancelations_subsequent__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_update_cancelations_subsequent.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Pref Update Cancelations Subsequent"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_pref_update_cancelations_subsequent__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_update_cancelations_subsequent.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Pref Update Cancelations Subsequent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_pref_update_cancelations_subsequent__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_update_cancelations_subsequent.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_complete_stage__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_complete_stage.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update State Code Complete Stage"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_complete_stage__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_complete_stage.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update State Code Complete Stage"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_complete_stage__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_complete_stage.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_complete_startup__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_complete_startup.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update State Code Complete Startup"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_complete_startup__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_complete_startup.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update State Code Complete Startup"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_complete_startup__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_complete_startup.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_partial_stage__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_partial_stage.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update State Code Partial Stage"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_partial_stage__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_partial_stage.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update State Code Partial Stage"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_partial_stage__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_partial_stage.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_partial_startup__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_partial_startup.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update State Code Partial Startup"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_partial_startup__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_partial_startup.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update State Code Partial Startup"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_partial_startup__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_partial_startup.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_unknown_stage__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_unknown_stage.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update State Code Unknown Stage"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_unknown_stage__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_unknown_stage.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update State Code Unknown Stage"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_unknown_stage__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_unknown_stage.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_unknown_startup__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_unknown_startup.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update State Code Unknown Startup"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_unknown_startup__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_unknown_startup.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update State Code Unknown Startup"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_unknown_startup__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_unknown_startup.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_complete_stage__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_complete_stage.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Status Error Code Complete Stage"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_complete_stage__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_complete_stage.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Status Error Code Complete Stage"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_complete_stage__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_complete_stage.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_complete_startup__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_complete_startup.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Status Error Code Complete Startup"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_complete_startup__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_complete_startup.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Status Error Code Complete Startup"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_complete_startup__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_complete_startup.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_partial_stage__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_partial_stage.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Status Error Code Partial Stage"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_partial_stage__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_partial_stage.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Status Error Code Partial Stage"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_partial_stage__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_partial_stage.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_partial_startup__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_partial_startup.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Status Error Code Partial Startup"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_partial_startup__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_partial_startup.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Status Error Code Partial Startup"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_partial_startup__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_partial_startup.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_unknown_stage__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_unknown_stage.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Status Error Code Unknown Stage"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_unknown_stage__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_unknown_stage.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Status Error Code Unknown Stage"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_unknown_stage__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_unknown_stage.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_unknown_startup__count {
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_unknown_startup.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Status Error Code Unknown Startup"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_unknown_startup__sum {
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_unknown_startup.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Update Status Error Code Unknown Startup"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_unknown_startup__values {
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_unknown_startup.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__urlclassifier_completion_error__count {
     sql: ${TABLE}.metrics.custom_distribution.urlclassifier_completion_error.count ;;
     type: number
@@ -8898,6 +9660,76 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__translations_request_count {
     sql: ${TABLE}.metrics.labeled_counter.translations_request_count ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__update_can_use_bits_external {
+    sql: ${TABLE}.metrics.labeled_counter.update_can_use_bits_external ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__update_can_use_bits_notify {
+    sql: ${TABLE}.metrics.labeled_counter.update_can_use_bits_notify ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__update_can_use_bits_subsequent {
+    sql: ${TABLE}.metrics.labeled_counter.update_can_use_bits_subsequent ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__update_check_extended_error_external {
+    sql: ${TABLE}.metrics.labeled_counter.update_check_extended_error_external ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__update_check_extended_error_notify {
+    sql: ${TABLE}.metrics.labeled_counter.update_check_extended_error_notify ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__update_check_extended_error_subsequent {
+    sql: ${TABLE}.metrics.labeled_counter.update_check_extended_error_subsequent ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__update_notification_badge_shown {
+    sql: ${TABLE}.metrics.labeled_counter.update_notification_badge_shown ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__update_notification_dismissed {
+    sql: ${TABLE}.metrics.labeled_counter.update_notification_dismissed ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__update_notification_main_action_doorhanger {
+    sql: ${TABLE}.metrics.labeled_counter.update_notification_main_action_doorhanger ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__update_notification_main_action_menu {
+    sql: ${TABLE}.metrics.labeled_counter.update_notification_main_action_menu ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__update_notification_shown {
+    sql: ${TABLE}.metrics.labeled_counter.update_notification_shown ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__update_service_installed_external {
+    sql: ${TABLE}.metrics.labeled_counter.update_service_installed_external ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__update_service_installed_notify {
+    sql: ${TABLE}.metrics.labeled_counter.update_service_installed_notify ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__update_service_installed_subsequent {
+    sql: ${TABLE}.metrics.labeled_counter.update_service_installed_subsequent ;;
     hidden: yes
   }
 
@@ -33004,6 +33836,204 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_external__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_external.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days External"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_external__count {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_external.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days External"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_external__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_external.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days External"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_external__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_external.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days External"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_external__range {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_external.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_external__sum {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_external.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days External"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_external__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_external.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days External"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_external__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_external.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days External"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_external__values {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_external.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_notify__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_notify.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days Notify"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_notify__count {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_notify.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days Notify"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_notify__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_notify.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days Notify"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_notify__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_notify.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days Notify"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_notify__range {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_notify.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_notify__sum {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_notify.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days Notify"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_notify__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_notify.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days Notify"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_notify__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_notify.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days Notify"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_notify__values {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_notify.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_subsequent__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_subsequent.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days Subsequent"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_subsequent__count {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_subsequent.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days Subsequent"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_subsequent__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_subsequent.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days Subsequent"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_subsequent__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_subsequent.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days Subsequent"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_subsequent__range {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_subsequent.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_subsequent__sum {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_subsequent.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days Subsequent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_subsequent__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_subsequent.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days Subsequent"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_subsequent__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_subsequent.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Last Notify Interval Days Subsequent"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_subsequent__values {
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_subsequent.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__urlclassifier_async_classifylocal_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.urlclassifier_async_classifylocal_time.bucket_count ;;
     type: number
@@ -38075,6 +39105,370 @@ view: metrics_table__metrics__custom_distribution__timer_thread_timers_fired_per
 }
 
 view: metrics_table__metrics__custom_distribution__tls_cipher_suite__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_bits_result_complete__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_bits_result_partial__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_check_code_external__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_check_code_notify__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_check_code_subsequent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_download_code_complete__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_download_code_partial__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_download_code_unknown__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_pref_service_errors_external__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_pref_service_errors_notify__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_pref_service_errors_subsequent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_pref_update_cancelations_external__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_pref_update_cancelations_notify__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_pref_update_cancelations_subsequent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_state_code_complete_stage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_state_code_complete_startup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_state_code_partial_stage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_state_code_partial_startup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_state_code_unknown_stage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_state_code_unknown_startup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_status_error_code_complete_stage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_status_error_code_complete_startup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_status_error_code_partial_stage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_status_error_code_partial_startup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_status_error_code_unknown_stage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__update_status_error_code_unknown_startup__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -48679,6 +50073,48 @@ view: metrics_table__metrics__timing_distribution__thumbnails_capture_time__valu
 }
 
 view: metrics_table__metrics__timing_distribution__thumbnails_store_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__update_last_notify_interval_days_external__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__update_last_notify_interval_days_notify__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__update_last_notify_interval_days_subsequent__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

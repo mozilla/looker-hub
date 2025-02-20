@@ -1274,6 +1274,76 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__translations_request_count}) AS metrics__metrics__labeled_counter__translations_request_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__translations_request_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__update_can_use_bits_external {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__update_can_use_bits_external}) AS metrics__metrics__labeled_counter__update_can_use_bits_external ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__update_can_use_bits_external.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__update_can_use_bits_notify {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__update_can_use_bits_notify}) AS metrics__metrics__labeled_counter__update_can_use_bits_notify ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__update_can_use_bits_notify.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__update_can_use_bits_subsequent {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__update_can_use_bits_subsequent}) AS metrics__metrics__labeled_counter__update_can_use_bits_subsequent ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__update_can_use_bits_subsequent.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__update_check_extended_error_external {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__update_check_extended_error_external}) AS metrics__metrics__labeled_counter__update_check_extended_error_external ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__update_check_extended_error_external.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__update_check_extended_error_notify {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__update_check_extended_error_notify}) AS metrics__metrics__labeled_counter__update_check_extended_error_notify ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__update_check_extended_error_notify.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__update_check_extended_error_subsequent {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__update_check_extended_error_subsequent}) AS metrics__metrics__labeled_counter__update_check_extended_error_subsequent ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__update_check_extended_error_subsequent.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__update_notification_badge_shown {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__update_notification_badge_shown}) AS metrics__metrics__labeled_counter__update_notification_badge_shown ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__update_notification_badge_shown.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__update_notification_dismissed {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__update_notification_dismissed}) AS metrics__metrics__labeled_counter__update_notification_dismissed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__update_notification_dismissed.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__update_notification_main_action_doorhanger {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__update_notification_main_action_doorhanger}) AS metrics__metrics__labeled_counter__update_notification_main_action_doorhanger ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__update_notification_main_action_doorhanger.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__update_notification_main_action_menu {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__update_notification_main_action_menu}) AS metrics__metrics__labeled_counter__update_notification_main_action_menu ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__update_notification_main_action_menu.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__update_notification_shown {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__update_notification_shown}) AS metrics__metrics__labeled_counter__update_notification_shown ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__update_notification_shown.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__update_service_installed_external {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__update_service_installed_external}) AS metrics__metrics__labeled_counter__update_service_installed_external ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__update_service_installed_external.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__update_service_installed_notify {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__update_service_installed_notify}) AS metrics__metrics__labeled_counter__update_service_installed_notify ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__update_service_installed_notify.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__update_service_installed_subsequent {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__update_service_installed_subsequent}) AS metrics__metrics__labeled_counter__update_service_installed_subsequent ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__update_service_installed_subsequent.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__urlclassifier_vlps_metadata_corrupt {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlclassifier_vlps_metadata_corrupt}) AS metrics__metrics__labeled_counter__urlclassifier_vlps_metadata_corrupt ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlclassifier_vlps_metadata_corrupt.document_id} ;;

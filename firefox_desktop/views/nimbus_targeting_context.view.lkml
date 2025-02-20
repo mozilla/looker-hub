@@ -178,6 +178,23 @@ view: nimbus_targeting_context {
     description: "Whether Firefox Accounts and Sync are enabled."
   }
 
+  dimension: metrics__boolean__nimbus_targeting_context_is_fx_a_signed_in {
+    label: "Nimbus Targeting Context Is Fx A Signed In"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.nimbus_targeting_context_is_fx_a_signed_in ;;
+    type: yesno
+    group_label: "Nimbus Targeting Context"
+    group_item_label: "Is Fx A Signed In"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Targeting Context Is Fx A Signed In"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/nimbus_targeting_context_is_fx_a_signed_in"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the user is logged in to Firefox Accounts."
+  }
+
   dimension: metrics__boolean__nimbus_targeting_context_is_msix {
     label: "Nimbus Targeting Context Is Msix"
     hidden: no

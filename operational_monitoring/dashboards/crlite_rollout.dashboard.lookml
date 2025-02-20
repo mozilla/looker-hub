@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-- dashboard: phc_rollout
-  title: Phc Rollout
+- dashboard: crlite_rollout
+  title: Crlite Rollout
   layout: newspaper
   preferred_viewer: dashboards-next
 
@@ -15,31 +15,31 @@
     note_state: expanded
     note_display: above
     note_text: Mean
-    explore: phc_rollout
+    explore: crlite_rollout
     type: looker_line
     fields: [
-      phc_rollout.submission_date,
-      phc_rollout.branch,
-      phc_rollout.point
+      crlite_rollout.submission_date,
+      crlite_rollout.branch,
+      crlite_rollout.point
     ]
     pivots: [
-      phc_rollout.branch
+      crlite_rollout.branch
     ]
     filters:
-      phc_rollout.metric: 'qualified_cumulative_days_of_use'
-      phc_rollout.statistic: mean
+      crlite_rollout.metric: 'qualified_cumulative_days_of_use'
+      crlite_rollout.statistic: mean
     row: 0
     col: 0
     width: 12
     height: 8
-    field_x: phc_rollout.submission_date
-    field_y: phc_rollout.point
+    field_x: crlite_rollout.submission_date
+    field_y: crlite_rollout.point
     log_scale: false
-    ci_lower: phc_rollout.lower
-    ci_upper: phc_rollout.upper
+    ci_lower: crlite_rollout.lower
+    ci_upper: crlite_rollout.upper
     show_grid: true
     listen:
-      Date: phc_rollout.submission_date
+      Date: crlite_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -49,31 +49,31 @@
     note_state: expanded
     note_display: above
     note_text: Mean
-    explore: phc_rollout
+    explore: crlite_rollout
     type: looker_line
     fields: [
-      phc_rollout.submission_date,
-      phc_rollout.branch,
-      phc_rollout.point
+      crlite_rollout.submission_date,
+      crlite_rollout.branch,
+      crlite_rollout.point
     ]
     pivots: [
-      phc_rollout.branch
+      crlite_rollout.branch
     ]
     filters:
-      phc_rollout.metric: 'active_hours'
-      phc_rollout.statistic: mean
+      crlite_rollout.metric: 'active_hours'
+      crlite_rollout.statistic: mean
     row: 0
     col: 12
     width: 12
     height: 8
-    field_x: phc_rollout.submission_date
-    field_y: phc_rollout.point
+    field_x: crlite_rollout.submission_date
+    field_y: crlite_rollout.point
     log_scale: false
-    ci_lower: phc_rollout.lower
-    ci_upper: phc_rollout.upper
+    ci_lower: crlite_rollout.lower
+    ci_upper: crlite_rollout.upper
     show_grid: true
     listen:
-      Date: phc_rollout.submission_date
+      Date: crlite_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -83,31 +83,31 @@
     note_state: expanded
     note_display: above
     note_text: Mean
-    explore: phc_rollout
+    explore: crlite_rollout
     type: looker_line
     fields: [
-      phc_rollout.submission_date,
-      phc_rollout.branch,
-      phc_rollout.point
+      crlite_rollout.submission_date,
+      crlite_rollout.branch,
+      crlite_rollout.point
     ]
     pivots: [
-      phc_rollout.branch
+      crlite_rollout.branch
     ]
     filters:
-      phc_rollout.metric: 'retained'
-      phc_rollout.statistic: mean
+      crlite_rollout.metric: 'retained'
+      crlite_rollout.statistic: mean
     row: 10
     col: 0
     width: 12
     height: 8
-    field_x: phc_rollout.submission_date
-    field_y: phc_rollout.point
+    field_x: crlite_rollout.submission_date
+    field_y: crlite_rollout.point
     log_scale: false
-    ci_lower: phc_rollout.lower
-    ci_upper: phc_rollout.upper
+    ci_lower: crlite_rollout.lower
+    ci_upper: crlite_rollout.upper
     show_grid: true
     listen:
-      Date: phc_rollout.submission_date
+      Date: crlite_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -117,34 +117,34 @@
     note_state: expanded
     note_display: above
     note_text: Percentile
-    explore: phc_rollout
+    explore: crlite_rollout
     type: "ci-line-chart"
     fields: [
-      phc_rollout.submission_date,
-      phc_rollout.branch,
-      phc_rollout.upper,
-      phc_rollout.lower,
-      phc_rollout.point
+      crlite_rollout.submission_date,
+      crlite_rollout.branch,
+      crlite_rollout.upper,
+      crlite_rollout.lower,
+      crlite_rollout.point
     ]
     pivots: [
-      phc_rollout.branch
+      crlite_rollout.branch
     ]
     filters:
-      phc_rollout.metric: 'memory_total'
-      phc_rollout.statistic: percentile
+      crlite_rollout.metric: 'memory_total'
+      crlite_rollout.statistic: percentile
     row: 10
     col: 12
     width: 12
     height: 8
-    field_x: phc_rollout.submission_date
-    field_y: phc_rollout.point
+    field_x: crlite_rollout.submission_date
+    field_y: crlite_rollout.point
     log_scale: false
-    ci_lower: phc_rollout.lower
-    ci_upper: phc_rollout.upper
+    ci_lower: crlite_rollout.lower
+    ci_upper: crlite_rollout.upper
     show_grid: true
     listen:
-      Date: phc_rollout.submission_date
-      Percentile: phc_rollout.parameter
+      Date: crlite_rollout.submission_date
+      Percentile: crlite_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -154,31 +154,31 @@
     note_state: expanded
     note_display: above
     note_text: Mean
-    explore: phc_rollout
+    explore: crlite_rollout
     type: looker_line
     fields: [
-      phc_rollout.submission_date,
-      phc_rollout.branch,
-      phc_rollout.point
+      crlite_rollout.submission_date,
+      crlite_rollout.branch,
+      crlite_rollout.point
     ]
     pivots: [
-      phc_rollout.branch
+      crlite_rollout.branch
     ]
     filters:
-      phc_rollout.metric: 'search_count'
-      phc_rollout.statistic: mean
+      crlite_rollout.metric: 'search_count'
+      crlite_rollout.statistic: mean
     row: 20
     col: 0
     width: 12
     height: 8
-    field_x: phc_rollout.submission_date
-    field_y: phc_rollout.point
+    field_x: crlite_rollout.submission_date
+    field_y: crlite_rollout.point
     log_scale: false
-    ci_lower: phc_rollout.lower
-    ci_upper: phc_rollout.upper
+    ci_lower: crlite_rollout.lower
+    ci_upper: crlite_rollout.upper
     show_grid: true
     listen:
-      Date: phc_rollout.submission_date
+      Date: crlite_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -188,31 +188,31 @@
     note_state: expanded
     note_display: above
     note_text: Mean
-    explore: phc_rollout
+    explore: crlite_rollout
     type: looker_line
     fields: [
-      phc_rollout.submission_date,
-      phc_rollout.branch,
-      phc_rollout.point
+      crlite_rollout.submission_date,
+      crlite_rollout.branch,
+      crlite_rollout.point
     ]
     pivots: [
-      phc_rollout.branch
+      crlite_rollout.branch
     ]
     filters:
-      phc_rollout.metric: 'days_of_use'
-      phc_rollout.statistic: mean
+      crlite_rollout.metric: 'days_of_use'
+      crlite_rollout.statistic: mean
     row: 20
     col: 12
     width: 12
     height: 8
-    field_x: phc_rollout.submission_date
-    field_y: phc_rollout.point
+    field_x: crlite_rollout.submission_date
+    field_y: crlite_rollout.point
     log_scale: false
-    ci_lower: phc_rollout.lower
-    ci_upper: phc_rollout.upper
+    ci_lower: crlite_rollout.lower
+    ci_upper: crlite_rollout.upper
     show_grid: true
     listen:
-      Date: phc_rollout.submission_date
+      Date: crlite_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -222,31 +222,31 @@
     note_state: expanded
     note_display: above
     note_text: Mean
-    explore: phc_rollout
+    explore: crlite_rollout
     type: looker_line
     fields: [
-      phc_rollout.submission_date,
-      phc_rollout.branch,
-      phc_rollout.point
+      crlite_rollout.submission_date,
+      crlite_rollout.branch,
+      crlite_rollout.point
     ]
     pivots: [
-      phc_rollout.branch
+      crlite_rollout.branch
     ]
     filters:
-      phc_rollout.metric: 'ad_clicks'
-      phc_rollout.statistic: mean
+      crlite_rollout.metric: 'ad_clicks'
+      crlite_rollout.statistic: mean
     row: 30
     col: 0
     width: 12
     height: 8
-    field_x: phc_rollout.submission_date
-    field_y: phc_rollout.point
+    field_x: crlite_rollout.submission_date
+    field_y: crlite_rollout.point
     log_scale: false
-    ci_lower: phc_rollout.lower
-    ci_upper: phc_rollout.upper
+    ci_lower: crlite_rollout.lower
+    ci_upper: crlite_rollout.upper
     show_grid: true
     listen:
-      Date: phc_rollout.submission_date
+      Date: crlite_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -256,31 +256,31 @@
     note_state: expanded
     note_display: above
     note_text: Mean
-    explore: phc_rollout
+    explore: crlite_rollout
     type: looker_line
     fields: [
-      phc_rollout.submission_date,
-      phc_rollout.branch,
-      phc_rollout.point
+      crlite_rollout.submission_date,
+      crlite_rollout.branch,
+      crlite_rollout.point
     ]
     pivots: [
-      phc_rollout.branch
+      crlite_rollout.branch
     ]
     filters:
-      phc_rollout.metric: 'uri_count'
-      phc_rollout.statistic: mean
+      crlite_rollout.metric: 'uri_count'
+      crlite_rollout.statistic: mean
     row: 30
     col: 12
     width: 12
     height: 8
-    field_x: phc_rollout.submission_date
-    field_y: phc_rollout.point
+    field_x: crlite_rollout.submission_date
+    field_y: crlite_rollout.point
     log_scale: false
-    ci_lower: phc_rollout.lower
-    ci_upper: phc_rollout.upper
+    ci_lower: crlite_rollout.lower
+    ci_upper: crlite_rollout.upper
     show_grid: true
     listen:
-      Date: phc_rollout.submission_date
+      Date: crlite_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -296,9 +296,9 @@
       type: advanced
       display: popover
     model: operational_monitoring
-    explore: phc_rollout
+    explore: crlite_rollout
     listens_to_filters: []
-    field: phc_rollout.submission_date
+    field: crlite_rollout.submission_date
 
   - name: Percentile
     title: Percentile
@@ -310,7 +310,7 @@
       type: advanced
       display: popover
     model: operational_monitoring
-    explore: phc_rollout
+    explore: crlite_rollout
     listens_to_filters: []
-    field: phc_rollout.parameter
+    field: crlite_rollout.parameter
   

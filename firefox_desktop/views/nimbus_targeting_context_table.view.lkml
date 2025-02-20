@@ -425,6 +425,15 @@ view: nimbus_targeting_context_table {
     description: "Whether Firefox Accounts and Sync are enabled."
   }
 
+  dimension: metrics__boolean__nimbus_targeting_context_is_fx_a_signed_in {
+    sql: ${TABLE}.metrics.boolean.nimbus_targeting_context_is_fx_a_signed_in ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Nimbus Targeting Context Is Fx A Signed In"
+    description: "Whether the user is logged in to Firefox Accounts."
+  }
+
   dimension: metrics__boolean__nimbus_targeting_context_is_msix {
     sql: ${TABLE}.metrics.boolean.nimbus_targeting_context_is_msix ;;
     type: yesno
