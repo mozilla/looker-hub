@@ -5351,7 +5351,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A count of the granted storage access. ('StorageGranted' = There was a storage access granted, 'StorageAccessAPI' = the storage access was granted by the storage access API, 'OpenerAfterUserInteraction' = the storage access was granted due to the heuristic 'OpenerAfterUserInteraction', 'Opener' = the storage access was granted due to the heuristic 'Opener', 'Redirect' = the storage access was granted due to the heuristic 'Redirect', 'RedirectTracker' = the storage access was granted due to the heuristic 'RedirectTracker'.) Note, StorageGranted is used as a baseline measurement, which should be the sum of all other measurements.
+    description: "A count of the granted storage access. ('StorageGranted' = There was a storage access granted, 'StorageAccessAPI' = the storage access was granted by the storage access API, 'OpenerAfterUserInteraction' = the storage access was granted due to the heuristic 'OpenerAfterUserInteraction', 'Opener' = the storage access was granted due to the heuristic 'Opener', 'Redirect' = the storage access was granted due to the heuristic 'Redirect', 'RedirectTracker' = the storage access was granted due to the heuristic 'RedirectTracker'.) Note, StorageGranted is used as a baseline measurement, which should be the sum of all other measurements. We also duplicate all data reported into a corresponding *_CT label where the grant is given to a known classified tracker.
 This metric was generated to correspond to the Legacy Telemetry categorical histogram STORAGE_ACCESS_GRANTED_COUNT.
 "
   }

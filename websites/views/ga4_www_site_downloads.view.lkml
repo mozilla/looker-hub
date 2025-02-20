@@ -16,7 +16,7 @@ view: ga4_www_site_downloads {
     sql: ${TABLE}.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Browser"
+    description: "Browser vistor used to visit the site"
   }
 
   dimension: campaign {
@@ -30,7 +30,7 @@ view: ga4_www_site_downloads {
     sql: ${TABLE}.campaign_from_event_params ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Campaign From Event Params - Parsed from nested event_params key = campaign"
+    description: "Campaign from Event Parameters"
   }
 
   dimension: country {
@@ -66,7 +66,14 @@ view: ga4_www_site_downloads {
     sql: ${TABLE}.first_campaign_from_event_params_in_session ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "First Campaign From Event Params In Session - Parsed from nested event_params key = campaign"
+    description: "First Campaign From Event Parameters in Session"
+  }
+
+  dimension: first_source_from_event_params_in_session {
+    sql: ${TABLE}.first_source_from_event_params_in_session ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "First Source from Event Parameters in Session"
   }
 
   dimension: language {
@@ -80,7 +87,7 @@ view: ga4_www_site_downloads {
     sql: ${TABLE}.manual_campaign_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Manual Campaign ID (comes from collected traffic source)"
+    description: "Manual Campaign ID  (comes from collected traffic source)"
   }
 
   dimension: manual_term {
@@ -118,25 +125,32 @@ view: ga4_www_site_downloads {
     description: "Source - Referring partner domain (comes from collected traffic source)"
   }
 
+  dimension: source_from_event_params {
+    sql: ${TABLE}.source_from_event_params ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Source from Event Parameters - Parsed from nested event_params key = source"
+  }
+
   dimension: traffic_source_medium {
     sql: ${TABLE}.traffic_source_medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Traffic Source - Medium"
+    description: "Traffic Source Medium"
   }
 
   dimension: traffic_source_name {
     sql: ${TABLE}.traffic_source_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Traffic Source - Name"
+    description: "Traffic Source Name"
   }
 
   dimension: traffic_source_source {
     sql: ${TABLE}.traffic_source_source ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Traffic Source - Source"
+    description: "Traffic Source Source"
   }
 
   dimension: visit_identifier {
