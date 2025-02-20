@@ -24508,6 +24508,1322 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__custom_distribution__update_bits_result_complete__sum {
+    label: "Update Bits Result Complete Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_bits_result_complete.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Bits Result Complete Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Bits Result Complete Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_bits_result_complete"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: Result code from downloading a complete update via BITS
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_BITS_RESULT_COMPLETE.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_bits_result_partial__sum {
+    label: "Update Bits Result Partial Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_bits_result_partial.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Bits Result Partial Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Bits Result Partial Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_bits_result_partial"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: Result code from downloading a partial update via BITS
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_BITS_RESULT_PARTIAL.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_can_use_bits_external {
+    label: "Update Can Use Bits External"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_can_use_bits_external ;;
+    group_label: "Update"
+    group_item_label: "Can Use Bits External"
+
+    link: {
+      label: "Glean Dictionary reference for Update Can Use Bits External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_can_use_bits_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: Whether BITS could be used to download updates (externally initiated)
+This metric was generated to correspond to the Legacy Telemetry categorical histogram UPDATE_CAN_USE_BITS_EXTERNAL.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_can_use_bits_notify {
+    label: "Update Can Use Bits Notify"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_can_use_bits_notify ;;
+    group_label: "Update"
+    group_item_label: "Can Use Bits Notify"
+
+    link: {
+      label: "Glean Dictionary reference for Update Can Use Bits Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_can_use_bits_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: Whether BITS could be used to download updates (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry categorical histogram UPDATE_CAN_USE_BITS_NOTIFY.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_can_use_bits_subsequent {
+    label: "Update Can Use Bits Subsequent"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_can_use_bits_subsequent ;;
+    group_label: "Update"
+    group_item_label: "Can Use Bits Subsequent"
+
+    link: {
+      label: "Glean Dictionary reference for Update Can Use Bits Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_can_use_bits_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: Whether BITS could be used to download updates (after we already have an update ready)
+This metric was generated to correspond to the Legacy Telemetry categorical histogram UPDATE_CAN_USE_BITS_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__counter__update_cannot_stage_external {
+    label: "Update Cannot Stage External"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_cannot_stage_external ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Cannot Stage External"
+
+    link: {
+      label: "Glean Dictionary reference for Update Cannot Stage External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_cannot_stage_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of systems that cannot stage updates (externally initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_CANNOT_STAGE_EXTERNAL.
+"
+  }
+
+  dimension: metrics__counter__update_cannot_stage_notify {
+    label: "Update Cannot Stage Notify"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_cannot_stage_notify ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Cannot Stage Notify"
+
+    link: {
+      label: "Glean Dictionary reference for Update Cannot Stage Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_cannot_stage_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of systems that cannot stage updates (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_CANNOT_STAGE_NOTIFY.
+"
+  }
+
+  dimension: metrics__counter__update_cannot_stage_subsequent {
+    label: "Update Cannot Stage Subsequent"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_cannot_stage_subsequent ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Cannot Stage Subsequent"
+
+    link: {
+      label: "Glean Dictionary reference for Update Cannot Stage Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_cannot_stage_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of systems that cannot stage updates (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_CANNOT_STAGE_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_check_code_external__sum {
+    label: "Update Check Code External Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_check_code_external.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Check Code External Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Check Code External Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_check_code_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: background update check result code except for no updates found (externally initiated)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_CHECK_CODE_EXTERNAL.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_check_code_notify__sum {
+    label: "Update Check Code Notify Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_check_code_notify.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Check Code Notify Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Check Code Notify Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_check_code_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: background update check result code except for no updates found (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_CHECK_CODE_NOTIFY.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_check_code_subsequent__sum {
+    label: "Update Check Code Subsequent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_check_code_subsequent.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Check Code Subsequent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Check Code Subsequent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_check_code_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: background update check result code except for no updates found (after we already have an update ready). Possible codes are enumerated by constants starting with CHK_ in toolkit/mozapps/update/UpdateTelemetry.sys.mjs
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_CHECK_CODE_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_check_extended_error_external {
+    label: "Update Check Extended Error External"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_check_extended_error_external ;;
+    group_label: "Update"
+    group_item_label: "Check Extended Error External"
+
+    link: {
+      label: "Glean Dictionary reference for Update Check Extended Error External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_check_extended_error_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: keyed count (key names are prefixed with AUS_CHECK_EX_ERR_) of background update check extended error code (externally initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_CHECK_EXTENDED_ERROR_EXTERNAL.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_check_extended_error_notify {
+    label: "Update Check Extended Error Notify"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_check_extended_error_notify ;;
+    group_label: "Update"
+    group_item_label: "Check Extended Error Notify"
+
+    link: {
+      label: "Glean Dictionary reference for Update Check Extended Error Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_check_extended_error_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: keyed count (key names are prefixed with AUS_CHECK_EX_ERR_) of background update check extended error code (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_CHECK_EXTENDED_ERROR_NOTIFY.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_check_extended_error_subsequent {
+    label: "Update Check Extended Error Subsequent"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_check_extended_error_subsequent ;;
+    group_label: "Update"
+    group_item_label: "Check Extended Error Subsequent"
+
+    link: {
+      label: "Glean Dictionary reference for Update Check Extended Error Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_check_extended_error_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: keyed count (key names are prefixed with AUS_CHECK_EX_ERR_) of background update check extended error code (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_CHECK_EXTENDED_ERROR_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__counter__update_check_no_update_external {
+    label: "Update Check No Update External"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_check_no_update_external ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Check No Update External"
+
+    link: {
+      label: "Glean Dictionary reference for Update Check No Update External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_check_no_update_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of no updates were found for a background update check (externally initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_CHECK_NO_UPDATE_EXTERNAL.
+"
+  }
+
+  dimension: metrics__counter__update_check_no_update_notify {
+    label: "Update Check No Update Notify"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_check_no_update_notify ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Check No Update Notify"
+
+    link: {
+      label: "Glean Dictionary reference for Update Check No Update Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_check_no_update_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of no updates were found for a background update check (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_CHECK_NO_UPDATE_NOTIFY.
+"
+  }
+
+  dimension: metrics__counter__update_check_no_update_subsequent {
+    label: "Update Check No Update Subsequent"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_check_no_update_subsequent ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Check No Update Subsequent"
+
+    link: {
+      label: "Glean Dictionary reference for Update Check No Update Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_check_no_update_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of no updates were found for a background update check (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_CHECK_NO_UPDATE_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_download_code_complete__sum {
+    label: "Update Download Code Complete Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_download_code_complete.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Download Code Complete Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Download Code Complete Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_download_code_complete"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: complete patch type download result code
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_DOWNLOAD_CODE_COMPLETE.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_download_code_partial__sum {
+    label: "Update Download Code Partial Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_download_code_partial.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Download Code Partial Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Download Code Partial Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_download_code_partial"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: partial patch type download result code
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_DOWNLOAD_CODE_PARTIAL.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_download_code_unknown__sum {
+    label: "Update Download Code Unknown Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_download_code_unknown.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Download Code Unknown Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Download Code Unknown Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_download_code_unknown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: unknown patch type download result code
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_DOWNLOAD_CODE_UNKNOWN.
+"
+  }
+
+  dimension: metrics__counter__update_invalid_lastupdatetime_external {
+    label: "Update Invalid Lastupdatetime External"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_invalid_lastupdatetime_external ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Invalid Lastupdatetime External"
+
+    link: {
+      label: "Glean Dictionary reference for Update Invalid Lastupdatetime External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_invalid_lastupdatetime_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of systems that have a last update time greater than the current time (externally initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_INVALID_LASTUPDATETIME_EXTERNAL.
+"
+  }
+
+  dimension: metrics__counter__update_invalid_lastupdatetime_notify {
+    label: "Update Invalid Lastupdatetime Notify"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_invalid_lastupdatetime_notify ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Invalid Lastupdatetime Notify"
+
+    link: {
+      label: "Glean Dictionary reference for Update Invalid Lastupdatetime Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_invalid_lastupdatetime_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of systems that have a last update time greater than the current time (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_INVALID_LASTUPDATETIME_NOTIFY.
+"
+  }
+
+  dimension: metrics__counter__update_invalid_lastupdatetime_subsequent {
+    label: "Update Invalid Lastupdatetime Subsequent"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_invalid_lastupdatetime_subsequent ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Invalid Lastupdatetime Subsequent"
+
+    link: {
+      label: "Glean Dictionary reference for Update Invalid Lastupdatetime Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_invalid_lastupdatetime_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of systems that have a last update time greater than the current time (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_INVALID_LASTUPDATETIME_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_external__sum {
+    label: "Update Last Notify Interval Days External Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_external.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Last Notify Interval Days External Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Last Notify Interval Days External Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_last_notify_interval_days_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: interval in days since the last background update check (externally initiated)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram UPDATE_LAST_NOTIFY_INTERVAL_DAYS_EXTERNAL.
+"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_notify__sum {
+    label: "Update Last Notify Interval Days Notify Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_notify.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Last Notify Interval Days Notify Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Last Notify Interval Days Notify Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_last_notify_interval_days_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: interval in days since the last background update check (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram UPDATE_LAST_NOTIFY_INTERVAL_DAYS_NOTIFY.
+"
+  }
+
+  dimension: metrics__timing_distribution__update_last_notify_interval_days_subsequent__sum {
+    label: "Update Last Notify Interval Days Subsequent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_subsequent.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Last Notify Interval Days Subsequent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Last Notify Interval Days Subsequent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_last_notify_interval_days_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: interval in days since the last background update check (after we already have an update ready)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram UPDATE_LAST_NOTIFY_INTERVAL_DAYS_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__counter__update_not_pref_update_auto_external {
+    label: "Update Not Pref Update Auto External"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_not_pref_update_auto_external ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Not Pref Update Auto External"
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Auto External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_auto_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of when getAppUpdateAutoEnabled from UpdateUtils.sys.mjs does not return the default value of true (true values are not submitted)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_NOT_PREF_UPDATE_AUTO_EXTERNAL.
+"
+  }
+
+  dimension: metrics__counter__update_not_pref_update_auto_notify {
+    label: "Update Not Pref Update Auto Notify"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_not_pref_update_auto_notify ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Not Pref Update Auto Notify"
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Auto Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_auto_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of when getAppUpdateAutoEnabled from UpdateUtils.sys.mjs does not return the default value of true (true values are not submitted)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_NOT_PREF_UPDATE_AUTO_NOTIFY.
+"
+  }
+
+  dimension: metrics__counter__update_not_pref_update_auto_subsequent {
+    label: "Update Not Pref Update Auto Subsequent"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_not_pref_update_auto_subsequent ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Not Pref Update Auto Subsequent"
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Auto Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_auto_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of when getAppUpdateAutoEnabled from UpdateUtils.sys.mjs does not return the default value of true (true values are not submitted)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_NOT_PREF_UPDATE_AUTO_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__counter__update_not_pref_update_service_enabled_external {
+    label: "Update Not Pref Update Service Enabled External"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_not_pref_update_service_enabled_external ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Not Pref Update Service Enabled External"
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Service Enabled External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_service_enabled_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of when the app.update.service.enabled boolean preference is not the default value of true (true values are not submitted)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_NOT_PREF_UPDATE_SERVICE_ENABLED_EXTERNAL.
+"
+  }
+
+  dimension: metrics__counter__update_not_pref_update_service_enabled_notify {
+    label: "Update Not Pref Update Service Enabled Notify"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_not_pref_update_service_enabled_notify ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Not Pref Update Service Enabled Notify"
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Service Enabled Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_service_enabled_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of when the app.update.service.enabled boolean preference is not the default value of true (true values are not submitted)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_NOT_PREF_UPDATE_SERVICE_ENABLED_NOTIFY.
+"
+  }
+
+  dimension: metrics__counter__update_not_pref_update_service_enabled_subsequent {
+    label: "Update Not Pref Update Service Enabled Subsequent"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_not_pref_update_service_enabled_subsequent ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Not Pref Update Service Enabled Subsequent"
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Service Enabled Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_service_enabled_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of when the app.update.service.enabled boolean preference is not the default value of true (true values are not submitted)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_NOT_PREF_UPDATE_SERVICE_ENABLED_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__counter__update_not_pref_update_staging_enabled_external {
+    label: "Update Not Pref Update Staging Enabled External"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_not_pref_update_staging_enabled_external ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Not Pref Update Staging Enabled External"
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Staging Enabled External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_staging_enabled_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of when the app.update.staging.enabled boolean preference is not the default value of true (true values are not submitted)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_NOT_PREF_UPDATE_STAGING_ENABLED_EXTERNAL.
+"
+  }
+
+  dimension: metrics__counter__update_not_pref_update_staging_enabled_notify {
+    label: "Update Not Pref Update Staging Enabled Notify"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_not_pref_update_staging_enabled_notify ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Not Pref Update Staging Enabled Notify"
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Staging Enabled Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_staging_enabled_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of when the app.update.staging.enabled boolean preference is not the default value of true (true values are not submitted)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_NOT_PREF_UPDATE_STAGING_ENABLED_NOTIFY.
+"
+  }
+
+  dimension: metrics__counter__update_not_pref_update_staging_enabled_subsequent {
+    label: "Update Not Pref Update Staging Enabled Subsequent"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_not_pref_update_staging_enabled_subsequent ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Not Pref Update Staging Enabled Subsequent"
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Staging Enabled Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_staging_enabled_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of when the app.update.staging.enabled boolean preference is not the default value of true (true values are not submitted)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_NOT_PREF_UPDATE_STAGING_ENABLED_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_notification_badge_shown {
+    label: "Update Notification Badge Shown"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_notification_badge_shown ;;
+    group_label: "Update"
+    group_item_label: "Notification Badge Shown"
+
+    link: {
+      label: "Glean Dictionary reference for Update Notification Badge Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_notification_badge_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: the application update badge type that was displayed.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram UPDATE_NOTIFICATION_BADGE_SHOWN.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_notification_dismissed {
+    label: "Update Notification Dismissed"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_notification_dismissed ;;
+    group_label: "Update"
+    group_item_label: "Notification Dismissed"
+
+    link: {
+      label: "Glean Dictionary reference for Update Notification Dismissed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_notification_dismissed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: the dismiss action was executed for this application update doorhanger type.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram UPDATE_NOTIFICATION_DISMISSED.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_notification_main_action_doorhanger {
+    label: "Update Notification Main Action Doorhanger"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_notification_main_action_doorhanger ;;
+    group_label: "Update"
+    group_item_label: "Notification Main Action Doorhanger"
+
+    link: {
+      label: "Glean Dictionary reference for Update Notification Main Action Doorhanger"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_notification_main_action_doorhanger"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: the main update action was initiated for this application update doorhanger type.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram UPDATE_NOTIFICATION_MAIN_ACTION_DOORHANGER.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_notification_main_action_menu {
+    label: "Update Notification Main Action Menu"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_notification_main_action_menu ;;
+    group_label: "Update"
+    group_item_label: "Notification Main Action Menu"
+
+    link: {
+      label: "Glean Dictionary reference for Update Notification Main Action Menu"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_notification_main_action_menu"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: the update action was initiated from the PanelUI application update menu item.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram UPDATE_NOTIFICATION_MAIN_ACTION_MENU.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_notification_shown {
+    label: "Update Notification Shown"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_notification_shown ;;
+    group_label: "Update"
+    group_item_label: "Notification Shown"
+
+    link: {
+      label: "Glean Dictionary reference for Update Notification Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_notification_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: the application update doorhanger type that was displayed.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram UPDATE_NOTIFICATION_SHOWN.
+"
+  }
+
+  dimension: metrics__counter__update_ping_count_external {
+    label: "Update Ping Count External"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_ping_count_external ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Ping Count External"
+
+    link: {
+      label: "Glean Dictionary reference for Update Ping Count External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_ping_count_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of systems for this ping for comparison with other pings (externally initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_PING_COUNT_EXTERNAL.
+"
+  }
+
+  dimension: metrics__counter__update_ping_count_notify {
+    label: "Update Ping Count Notify"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_ping_count_notify ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Ping Count Notify"
+
+    link: {
+      label: "Glean Dictionary reference for Update Ping Count Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_ping_count_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of systems for this ping for comparison with other pings (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_PING_COUNT_NOTIFY.
+"
+  }
+
+  dimension: metrics__counter__update_ping_count_subsequent {
+    label: "Update Ping Count Subsequent"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_ping_count_subsequent ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Ping Count Subsequent"
+
+    link: {
+      label: "Glean Dictionary reference for Update Ping Count Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_ping_count_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of systems for this ping for comparison with other pings (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_PING_COUNT_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_pref_service_errors_external__sum {
+    label: "Update Pref Service Errors External Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_service_errors_external.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Pref Service Errors External Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Pref Service Errors External Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_pref_service_errors_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: number of sequential update service errors greater than 0 (externally initiated)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_PREF_SERVICE_ERRORS_EXTERNAL.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_pref_service_errors_notify__sum {
+    label: "Update Pref Service Errors Notify Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_service_errors_notify.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Pref Service Errors Notify Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Pref Service Errors Notify Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_pref_service_errors_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: number of sequential update service errors greater than 0 (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_PREF_SERVICE_ERRORS_NOTIFY.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_pref_service_errors_subsequent__sum {
+    label: "Update Pref Service Errors Subsequent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_service_errors_subsequent.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Pref Service Errors Subsequent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Pref Service Errors Subsequent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_pref_service_errors_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: number of sequential update service errors greater than 0 (after we already have an update ready)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_PREF_SERVICE_ERRORS_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_pref_update_cancelations_external__sum {
+    label: "Update Pref Update Cancelations External Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_update_cancelations_external.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Pref Update Cancelations External Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Pref Update Cancelations External Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_pref_update_cancelations_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: number of sequential update elevation request cancelations greater than 0 (externally initiated)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_PREF_UPDATE_CANCELATIONS_EXTERNAL.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_pref_update_cancelations_notify__sum {
+    label: "Update Pref Update Cancelations Notify Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_update_cancelations_notify.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Pref Update Cancelations Notify Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Pref Update Cancelations Notify Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_pref_update_cancelations_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: number of sequential update elevation request cancelations greater than 0 (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_PREF_UPDATE_CANCELATIONS_NOTIFY.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_pref_update_cancelations_subsequent__sum {
+    label: "Update Pref Update Cancelations Subsequent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_pref_update_cancelations_subsequent.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Pref Update Cancelations Subsequent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Pref Update Cancelations Subsequent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_pref_update_cancelations_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: number of sequential update elevation request cancelations greater than 0 (after we already have an update ready)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_PREF_UPDATE_CANCELATIONS_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_service_installed_external {
+    label: "Update Service Installed External"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_service_installed_external ;;
+    group_label: "Update"
+    group_item_label: "Service Installed External"
+
+    link: {
+      label: "Glean Dictionary reference for Update Service Installed External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_service_installed_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: whether the service is installed (externally initiated)
+This metric was generated to correspond to the Legacy Telemetry boolean histogram UPDATE_SERVICE_INSTALLED_EXTERNAL.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_service_installed_notify {
+    label: "Update Service Installed Notify"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_service_installed_notify ;;
+    group_label: "Update"
+    group_item_label: "Service Installed Notify"
+
+    link: {
+      label: "Glean Dictionary reference for Update Service Installed Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_service_installed_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: whether the service is installed (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry boolean histogram UPDATE_SERVICE_INSTALLED_NOTIFY.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_service_installed_subsequent {
+    label: "Update Service Installed Subsequent"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_service_installed_subsequent ;;
+    group_label: "Update"
+    group_item_label: "Service Installed Subsequent"
+
+    link: {
+      label: "Glean Dictionary reference for Update Service Installed Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_service_installed_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: whether the service is installed (after we already have an update ready)
+This metric was generated to correspond to the Legacy Telemetry boolean histogram UPDATE_SERVICE_INSTALLED_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__counter__update_service_manually_uninstalled_external {
+    label: "Update Service Manually Uninstalled External"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_service_manually_uninstalled_external ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Service Manually Uninstalled External"
+
+    link: {
+      label: "Glean Dictionary reference for Update Service Manually Uninstalled External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_service_manually_uninstalled_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of systems that manually uninstalled the service (externally initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_SERVICE_MANUALLY_UNINSTALLED_EXTERNAL.
+"
+  }
+
+  dimension: metrics__counter__update_service_manually_uninstalled_notify {
+    label: "Update Service Manually Uninstalled Notify"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_service_manually_uninstalled_notify ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Service Manually Uninstalled Notify"
+
+    link: {
+      label: "Glean Dictionary reference for Update Service Manually Uninstalled Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_service_manually_uninstalled_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of systems that manually uninstalled the service (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_SERVICE_MANUALLY_UNINSTALLED_NOTIFY.
+"
+  }
+
+  dimension: metrics__counter__update_service_manually_uninstalled_subsequent {
+    label: "Update Service Manually Uninstalled Subsequent"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_service_manually_uninstalled_subsequent ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Service Manually Uninstalled Subsequent"
+
+    link: {
+      label: "Glean Dictionary reference for Update Service Manually Uninstalled Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_service_manually_uninstalled_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of systems that manually uninstalled the service (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_SERVICE_MANUALLY_UNINSTALLED_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_complete_stage__sum {
+    label: "Update State Code Complete Stage Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_complete_stage.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "State Code Complete Stage Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update State Code Complete Stage Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_state_code_complete_stage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: the state of a complete patch update from update.status after staging
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_STATE_CODE_COMPLETE_STAGE.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_complete_startup__sum {
+    label: "Update State Code Complete Startup Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_complete_startup.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "State Code Complete Startup Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update State Code Complete Startup Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_state_code_complete_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: the state of a complete update from update.status on startup
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_STATE_CODE_COMPLETE_STARTUP.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_partial_stage__sum {
+    label: "Update State Code Partial Stage Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_partial_stage.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "State Code Partial Stage Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update State Code Partial Stage Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_state_code_partial_stage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: the state of a partial patch update from update.status after staging
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_STATE_CODE_PARTIAL_STAGE.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_partial_startup__sum {
+    label: "Update State Code Partial Startup Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_partial_startup.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "State Code Partial Startup Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update State Code Partial Startup Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_state_code_partial_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: the state of a partial patch update from update.status on startup
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_STATE_CODE_PARTIAL_STARTUP.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_unknown_stage__sum {
+    label: "Update State Code Unknown Stage Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_unknown_stage.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "State Code Unknown Stage Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update State Code Unknown Stage Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_state_code_unknown_stage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: the state of an unknown patch update from update.status after staging
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_STATE_CODE_UNKNOWN_STAGE.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_state_code_unknown_startup__sum {
+    label: "Update State Code Unknown Startup Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_state_code_unknown_startup.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "State Code Unknown Startup Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update State Code Unknown Startup Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_state_code_unknown_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: the state of an unknown patch update from update.status on startup
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_STATE_CODE_UNKNOWN_STARTUP.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_complete_stage__sum {
+    label: "Update Status Error Code Complete Stage Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_complete_stage.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Status Error Code Complete Stage Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Status Error Code Complete Stage Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_status_error_code_complete_stage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: the status error code for a failed complete patch update from update.status after staging
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_STATUS_ERROR_CODE_COMPLETE_STAGE.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_complete_startup__sum {
+    label: "Update Status Error Code Complete Startup Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_complete_startup.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Status Error Code Complete Startup Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Status Error Code Complete Startup Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_status_error_code_complete_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: the status error code for a failed complete patch update from update.status on startup
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_STATUS_ERROR_CODE_COMPLETE_STARTUP.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_partial_stage__sum {
+    label: "Update Status Error Code Partial Stage Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_partial_stage.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Status Error Code Partial Stage Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Status Error Code Partial Stage Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_status_error_code_partial_stage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: the status error code for a failed partial patch update from update.status after staging
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_STATUS_ERROR_CODE_PARTIAL_STAGE.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_partial_startup__sum {
+    label: "Update Status Error Code Partial Startup Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_partial_startup.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Status Error Code Partial Startup Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Status Error Code Partial Startup Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_status_error_code_partial_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: the status error code for a failed partial patch update from update.status on startup
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_STATUS_ERROR_CODE_PARTIAL_STARTUP.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_unknown_stage__sum {
+    label: "Update Status Error Code Unknown Stage Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_unknown_stage.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Status Error Code Unknown Stage Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Status Error Code Unknown Stage Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_status_error_code_unknown_stage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: the status error code for a failed unknown patch update from update.status after staging
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_STATUS_ERROR_CODE_UNKNOWN_STAGE.
+"
+  }
+
+  dimension: metrics__custom_distribution__update_status_error_code_unknown_startup__sum {
+    label: "Update Status Error Code Unknown Startup Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.update_status_error_code_unknown_startup.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Status Error Code Unknown Startup Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Status Error Code Unknown Startup Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_status_error_code_unknown_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: the status error code for a failed unknown patch update from update.status on startup
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram UPDATE_STATUS_ERROR_CODE_UNKNOWN_STARTUP.
+"
+  }
+
+  dimension: metrics__counter__update_unable_to_apply_external {
+    label: "Update Unable To Apply External"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_unable_to_apply_external ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Unable To Apply External"
+
+    link: {
+      label: "Glean Dictionary reference for Update Unable To Apply External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_unable_to_apply_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of systems that cannot apply updates (externally initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_UNABLE_TO_APPLY_EXTERNAL.
+"
+  }
+
+  dimension: metrics__counter__update_unable_to_apply_notify {
+    label: "Update Unable To Apply Notify"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_unable_to_apply_notify ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Unable To Apply Notify"
+
+    link: {
+      label: "Glean Dictionary reference for Update Unable To Apply Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_unable_to_apply_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of systems that cannot apply updates (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_UNABLE_TO_APPLY_NOTIFY.
+"
+  }
+
+  dimension: metrics__counter__update_unable_to_apply_subsequent {
+    label: "Update Unable To Apply Subsequent"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_unable_to_apply_subsequent ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Unable To Apply Subsequent"
+
+    link: {
+      label: "Glean Dictionary reference for Update Unable To Apply Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_unable_to_apply_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: count of systems that cannot apply updates (timer initiated)
+This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_UNABLE_TO_APPLY_SUBSEQUENT.
+"
+  }
+
   dimension: metrics__timing_distribution__urlclassifier_async_classifylocal_time__sum {
     label: "Urlclassifier Async Classifylocal Time Sum"
     hidden: no
@@ -30897,6 +32213,681 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Translations Requests Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/translations_requests_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_cannot_stage_external {
+    type: sum
+    sql: ${metrics__counter__update_cannot_stage_external} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Cannot Stage External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_cannot_stage_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_cannot_stage_external_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_cannot_stage_external: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Cannot Stage External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_cannot_stage_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_cannot_stage_notify {
+    type: sum
+    sql: ${metrics__counter__update_cannot_stage_notify} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Cannot Stage Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_cannot_stage_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_cannot_stage_notify_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_cannot_stage_notify: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Cannot Stage Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_cannot_stage_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_cannot_stage_subsequent {
+    type: sum
+    sql: ${metrics__counter__update_cannot_stage_subsequent} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Cannot Stage Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_cannot_stage_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_cannot_stage_subsequent_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_cannot_stage_subsequent: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Cannot Stage Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_cannot_stage_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_check_no_update_external {
+    type: sum
+    sql: ${metrics__counter__update_check_no_update_external} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Check No Update External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_check_no_update_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_check_no_update_external_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_check_no_update_external: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Check No Update External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_check_no_update_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_check_no_update_notify {
+    type: sum
+    sql: ${metrics__counter__update_check_no_update_notify} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Check No Update Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_check_no_update_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_check_no_update_notify_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_check_no_update_notify: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Check No Update Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_check_no_update_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_check_no_update_subsequent {
+    type: sum
+    sql: ${metrics__counter__update_check_no_update_subsequent} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Check No Update Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_check_no_update_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_check_no_update_subsequent_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_check_no_update_subsequent: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Check No Update Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_check_no_update_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_invalid_lastupdatetime_external {
+    type: sum
+    sql: ${metrics__counter__update_invalid_lastupdatetime_external} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Invalid Lastupdatetime External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_invalid_lastupdatetime_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_invalid_lastupdatetime_external_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_invalid_lastupdatetime_external: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Invalid Lastupdatetime External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_invalid_lastupdatetime_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_invalid_lastupdatetime_notify {
+    type: sum
+    sql: ${metrics__counter__update_invalid_lastupdatetime_notify} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Invalid Lastupdatetime Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_invalid_lastupdatetime_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_invalid_lastupdatetime_notify_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_invalid_lastupdatetime_notify: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Invalid Lastupdatetime Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_invalid_lastupdatetime_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_invalid_lastupdatetime_subsequent {
+    type: sum
+    sql: ${metrics__counter__update_invalid_lastupdatetime_subsequent} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Invalid Lastupdatetime Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_invalid_lastupdatetime_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_invalid_lastupdatetime_subsequent_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_invalid_lastupdatetime_subsequent: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Invalid Lastupdatetime Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_invalid_lastupdatetime_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_not_pref_update_auto_external {
+    type: sum
+    sql: ${metrics__counter__update_not_pref_update_auto_external} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Auto External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_auto_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_not_pref_update_auto_external_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_not_pref_update_auto_external: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Auto External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_auto_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_not_pref_update_auto_notify {
+    type: sum
+    sql: ${metrics__counter__update_not_pref_update_auto_notify} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Auto Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_auto_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_not_pref_update_auto_notify_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_not_pref_update_auto_notify: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Auto Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_auto_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_not_pref_update_auto_subsequent {
+    type: sum
+    sql: ${metrics__counter__update_not_pref_update_auto_subsequent} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Auto Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_auto_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_not_pref_update_auto_subsequent_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_not_pref_update_auto_subsequent: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Auto Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_auto_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_not_pref_update_service_enabled_external {
+    type: sum
+    sql: ${metrics__counter__update_not_pref_update_service_enabled_external} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Service Enabled External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_service_enabled_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_not_pref_update_service_enabled_external_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_not_pref_update_service_enabled_external: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Service Enabled External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_service_enabled_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_not_pref_update_service_enabled_notify {
+    type: sum
+    sql: ${metrics__counter__update_not_pref_update_service_enabled_notify} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Service Enabled Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_service_enabled_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_not_pref_update_service_enabled_notify_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_not_pref_update_service_enabled_notify: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Service Enabled Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_service_enabled_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_not_pref_update_service_enabled_subsequent {
+    type: sum
+    sql: ${metrics__counter__update_not_pref_update_service_enabled_subsequent} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Service Enabled Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_service_enabled_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_not_pref_update_service_enabled_subsequent_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_not_pref_update_service_enabled_subsequent: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Service Enabled Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_service_enabled_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_not_pref_update_staging_enabled_external {
+    type: sum
+    sql: ${metrics__counter__update_not_pref_update_staging_enabled_external} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Staging Enabled External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_staging_enabled_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_not_pref_update_staging_enabled_external_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_not_pref_update_staging_enabled_external: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Staging Enabled External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_staging_enabled_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_not_pref_update_staging_enabled_notify {
+    type: sum
+    sql: ${metrics__counter__update_not_pref_update_staging_enabled_notify} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Staging Enabled Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_staging_enabled_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_not_pref_update_staging_enabled_notify_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_not_pref_update_staging_enabled_notify: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Staging Enabled Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_staging_enabled_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_not_pref_update_staging_enabled_subsequent {
+    type: sum
+    sql: ${metrics__counter__update_not_pref_update_staging_enabled_subsequent} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Staging Enabled Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_staging_enabled_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_not_pref_update_staging_enabled_subsequent_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_not_pref_update_staging_enabled_subsequent: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Not Pref Update Staging Enabled Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_not_pref_update_staging_enabled_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_ping_count_external {
+    type: sum
+    sql: ${metrics__counter__update_ping_count_external} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Ping Count External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_ping_count_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_ping_count_external_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_ping_count_external: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Ping Count External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_ping_count_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_ping_count_notify {
+    type: sum
+    sql: ${metrics__counter__update_ping_count_notify} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Ping Count Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_ping_count_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_ping_count_notify_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_ping_count_notify: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Ping Count Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_ping_count_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_ping_count_subsequent {
+    type: sum
+    sql: ${metrics__counter__update_ping_count_subsequent} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Ping Count Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_ping_count_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_ping_count_subsequent_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_ping_count_subsequent: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Ping Count Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_ping_count_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_service_manually_uninstalled_external {
+    type: sum
+    sql: ${metrics__counter__update_service_manually_uninstalled_external} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Service Manually Uninstalled External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_service_manually_uninstalled_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_service_manually_uninstalled_external_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_service_manually_uninstalled_external: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Service Manually Uninstalled External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_service_manually_uninstalled_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_service_manually_uninstalled_notify {
+    type: sum
+    sql: ${metrics__counter__update_service_manually_uninstalled_notify} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Service Manually Uninstalled Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_service_manually_uninstalled_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_service_manually_uninstalled_notify_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_service_manually_uninstalled_notify: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Service Manually Uninstalled Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_service_manually_uninstalled_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_service_manually_uninstalled_subsequent {
+    type: sum
+    sql: ${metrics__counter__update_service_manually_uninstalled_subsequent} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Service Manually Uninstalled Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_service_manually_uninstalled_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_service_manually_uninstalled_subsequent_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_service_manually_uninstalled_subsequent: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Service Manually Uninstalled Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_service_manually_uninstalled_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_unable_to_apply_external {
+    type: sum
+    sql: ${metrics__counter__update_unable_to_apply_external} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Unable To Apply External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_unable_to_apply_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_unable_to_apply_external_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_unable_to_apply_external: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Unable To Apply External"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_unable_to_apply_external"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_unable_to_apply_notify {
+    type: sum
+    sql: ${metrics__counter__update_unable_to_apply_notify} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Unable To Apply Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_unable_to_apply_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_unable_to_apply_notify_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_unable_to_apply_notify: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Unable To Apply Notify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_unable_to_apply_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_unable_to_apply_subsequent {
+    type: sum
+    sql: ${metrics__counter__update_unable_to_apply_subsequent} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Unable To Apply Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_unable_to_apply_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_unable_to_apply_subsequent_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_unable_to_apply_subsequent: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Unable To Apply Subsequent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_unable_to_apply_subsequent"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -45790,8 +47781,582 @@ view: metrics__metrics__labeled_counter__update_bitshresult {
   }
 }
 
+view: metrics__metrics__labeled_counter__update_can_use_bits_external {
+  label: "Update - Can Use Bits External"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__update_can_use_bits_notify {
+  label: "Update - Can Use Bits Notify"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__update_can_use_bits_subsequent {
+  label: "Update - Can Use Bits Subsequent"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__update_check_extended_error_external {
+  label: "Update - Check Extended Error External"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__update_check_extended_error_notify {
+  label: "Update - Check Extended Error Notify"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__update_check_extended_error_subsequent {
+  label: "Update - Check Extended Error Subsequent"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__update_move_result {
   label: "Update - Move Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__update_notification_badge_shown {
+  label: "Update - Notification Badge Shown"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__update_notification_dismissed {
+  label: "Update - Notification Dismissed"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__update_notification_main_action_doorhanger {
+  label: "Update - Notification Main Action Doorhanger"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__update_notification_main_action_menu {
+  label: "Update - Notification Main Action Menu"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__update_notification_shown {
+  label: "Update - Notification Shown"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__update_service_installed_external {
+  label: "Update - Service Installed External"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__update_service_installed_notify {
+  label: "Update - Service Installed Notify"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__update_service_installed_subsequent {
+  label: "Update - Service Installed Subsequent"
 
   dimension: document_id {
     type: string
@@ -52917,6 +55482,370 @@ view: metrics__metrics__custom_distribution__timer_thread_timers_fired_per_wakeu
 }
 
 view: metrics__metrics__custom_distribution__tls_cipher_suite__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_bits_result_complete__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_bits_result_partial__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_check_code_external__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_check_code_notify__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_check_code_subsequent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_download_code_complete__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_download_code_partial__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_download_code_unknown__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_pref_service_errors_external__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_pref_service_errors_notify__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_pref_service_errors_subsequent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_pref_update_cancelations_external__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_pref_update_cancelations_notify__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_pref_update_cancelations_subsequent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_state_code_complete_stage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_state_code_complete_startup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_state_code_partial_stage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_state_code_partial_startup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_state_code_unknown_stage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_state_code_unknown_startup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_status_error_code_complete_stage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_status_error_code_complete_startup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_status_error_code_partial_stage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_status_error_code_partial_startup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_status_error_code_unknown_stage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__update_status_error_code_unknown_startup__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -63753,6 +66682,48 @@ view: metrics__metrics__timing_distribution__thumbnails_capture_time__values {
 }
 
 view: metrics__metrics__timing_distribution__thumbnails_store_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__update_last_notify_interval_days_external__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__update_last_notify_interval_days_notify__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__update_last_notify_interval_days_subsequent__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
