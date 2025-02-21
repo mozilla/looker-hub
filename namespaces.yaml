@@ -836,10 +836,10 @@ fenix:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_new_profile_activation
-    metric_definitions_special_onboarding_events:
+    metric_definitions_special_onboarding_events_v2:
       type: metric_definitions_explore
       views:
-        base_view: metric_definitions_special_onboarding_events
+        base_view: metric_definitions_special_onboarding_events_v2
     metrics:
       type: glean_ping_explore
       views:
@@ -1724,7 +1724,7 @@ fenix:
       type: metric_definitions_view
     metric_definitions_new_profile_activation:
       type: metric_definitions_view
-    metric_definitions_special_onboarding_events:
+    metric_definitions_special_onboarding_events_v2:
       type: metric_definitions_view
     metrics:
       tables:
