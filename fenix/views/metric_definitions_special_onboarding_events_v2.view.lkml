@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: metric_definitions_special_onboarding_events {
+view: metric_definitions_special_onboarding_events_v2 {
   derived_table: {
     sql: SELECT
                 COALESCE(SUM(turn_on_notifications_flag)) AS turn_on_notifications_ctr_onboarding,
@@ -90,7 +90,7 @@ looker_base_fields_sample_id,
             FROM
                 (
                     SELECT
-                        special_onboarding_events.*,
+                        special_onboarding_events_v2.*,
                         looker_base_fields.app_version_major AS looker_base_fields_app_version_major,
 looker_base_fields.app_version_minor AS looker_base_fields_app_version_minor,
 looker_base_fields.app_version_patch AS looker_base_fields_app_version_patch,
@@ -159,34 +159,32 @@ SELECT
 
 FROM (
       SELECT
-            client_info.client_id as client_id
+            client_id as client_id
             , min(DATE(submission_timestamp)) as submission_date
-            , count(case when event.name = "set_to_default_card" then DATE(submission_timestamp) END) as set_to_default_card
-            , count(case when event.name = "turn_on_notifications_card" then DATE(submission_timestamp) END) as turn_on_notifications_card
-            , count(case when event.name = "sign_in_card" then DATE(submission_timestamp) END) as sign_in_card
+            , count(case when event_name = "set_to_default_card" then DATE(submission_timestamp) END) as set_to_default_card
+            , count(case when event_name = "turn_on_notifications_card" then DATE(submission_timestamp) END) as turn_on_notifications_card
+            , count(case when event_name = "sign_in_card" then DATE(submission_timestamp) END) as sign_in_card
       FROM
-        `mozdata.org_mozilla_firefox.events` tm
-      CROSS JOIN
-        UNNEST(events) AS event
-      CROSS JOIN
-        UNNEST(event.extra) AS ext
-      WHERE event.category = "onboarding" AND ext.value ="impression" AND event.name in ("set_to_default_card", "turn_on_notifications_card", "sign_in_card")
+        `mozdata.org_mozilla_firefox.events_stream` tm
+
+      WHERE event_category = "onboarding"
+        AND JSON_VALUE(event_extra, "$.action") = 'impression'
+        AND event_name in ("set_to_default_card", "turn_on_notifications_card", "sign_in_card")
       AND DATE(submission_timestamp) >= "2023-01-01"
       GROUP BY 1
       ) expo
 LEFT JOIN (
   SELECT
-      client_info.client_id as client_id
-            , count(case when event.name = "set_to_default" then DATE(submission_timestamp) END) as set_to_default
-            , count(case when event.name = "turn_on_notifications" then DATE(submission_timestamp) END) as turn_on_notifications
-            , count(case when event.name = "sign_in" then DATE(submission_timestamp) END) as sign_in
+      client_id as client_id
+            , count(case when event_name = "set_to_default" then DATE(submission_timestamp) END) as set_to_default
+            , count(case when event_name = "turn_on_notifications" then DATE(submission_timestamp) END) as turn_on_notifications
+            , count(case when event_name = "sign_in" then DATE(submission_timestamp) END) as sign_in
   FROM
-    `mozdata.org_mozilla_firefox.events` tm
-  CROSS JOIN
-     UNNEST(events) AS event
-  CROSS JOIN
-     UNNEST(event.extra) AS ext
-  WHERE event.category = "onboarding" AND ext.key ="action" AND event.name in  ("set_to_default", "turn_on_notifications", "sign_in")
+    `mozdata.org_mozilla_firefox.events_stream` tm
+
+  WHERE event_category = "onboarding" 
+    AND JSON_QUERY(event_extra, "$.action") IS NOT NULL
+    AND event_name in  ("set_to_default", "turn_on_notifications", "sign_in")
   AND DATE(submission_timestamp) >= "2023-01-01"
   GROUP BY 1
 ) conv
@@ -194,7 +192,7 @@ ON expo.client_id = conv.client_id
 GROUP BY 1, 2, 3, 4, 5, 6
 )
 
-            ) AS special_onboarding_events
+            ) AS special_onboarding_events_v2
         JOIN
     (
             SELECT
@@ -212,14 +210,14 @@ GROUP BY 1, 2, 3, 4, 5, 6
             ) AS looker_base_fields
         
     ON 
-    special_onboarding_events.client_id =
+    special_onboarding_events_v2.client_id =
         looker_base_fields.client_id AND
-        special_onboarding_events.submission_date =
+        special_onboarding_events_v2.submission_date =
         looker_base_fields.submission_date
     
                 
                     WHERE 
-                    special_onboarding_events.submission_date
+                    special_onboarding_events_v2.submission_date
                     BETWEEN
                     COALESCE(
                         SAFE_CAST(
