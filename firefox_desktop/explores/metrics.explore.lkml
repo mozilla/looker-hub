@@ -1718,6 +1718,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__serp_ads_blocked_count}) AS metrics__metrics__labeled_counter__serp_ads_blocked_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__serp_ads_blocked_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__session_restore_all_files_corrupt {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__session_restore_all_files_corrupt}) AS metrics__metrics__labeled_counter__session_restore_all_files_corrupt ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__session_restore_all_files_corrupt.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__session_restore_corrupt_file {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__session_restore_corrupt_file}) AS metrics__metrics__labeled_counter__session_restore_corrupt_file ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__session_restore_corrupt_file.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__sidebar_link {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__sidebar_link}) AS metrics__metrics__labeled_counter__sidebar_link ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__sidebar_link.document_id} ;;

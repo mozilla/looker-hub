@@ -20576,6 +20576,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__counter__web_push_unsubscribed_by_clearing_data {
+    label: "Web Push Unsubscribed By Clearing Data"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.web_push_unsubscribed_by_clearing_data ;;
+    type: number
+    group_label: "Web Push"
+    group_item_label: "Unsubscribed By Clearing Data"
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Unsubscribed By Clearing Data"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/web_push_unsubscribed_by_clearing_data"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts unsubscriptions triggered by ClearDataService.
+"
+  }
+
   dimension: metrics__labeled_counter__webauthn_create_authenticator_attachment {
     label: "Webauthn Create Authenticator Attachment"
     hidden: yes
@@ -26412,6 +26430,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Web Push Detected Duplicated Message Ids"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/web_push_detected_duplicated_message_ids"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_push_unsubscribed_by_clearing_data {
+    type: sum
+    sql: ${metrics__counter__web_push_unsubscribed_by_clearing_data} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Unsubscribed By Clearing Data"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/web_push_unsubscribed_by_clearing_data"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_push_unsubscribed_by_clearing_data_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__web_push_unsubscribed_by_clearing_data: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Unsubscribed By Clearing Data"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/web_push_unsubscribed_by_clearing_data"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

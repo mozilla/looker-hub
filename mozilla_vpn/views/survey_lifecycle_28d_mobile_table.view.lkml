@@ -83,6 +83,12 @@ view: survey_lifecycle_28d_mobile_table__survey_data {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: parent {
+    sql: ${TABLE}.parent ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: question {
     sql: ${TABLE}.question ;;
     type: string

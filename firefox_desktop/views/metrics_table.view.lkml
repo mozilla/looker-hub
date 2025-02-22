@@ -2922,6 +2922,16 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__counter__web_push_unsubscribed_by_clearing_data {
+    sql: ${TABLE}.metrics.counter.web_push_unsubscribed_by_clearing_data ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Web Push Unsubscribed By Clearing Data"
+    description: "Counts unsubscriptions triggered by ClearDataService.
+"
+  }
+
   dimension: metrics__counter__webauthn_create_failure {
     sql: ${TABLE}.metrics.counter.webauthn_create_failure ;;
     type: number
@@ -6353,6 +6363,182 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__places_annos_pages_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.places_annos_pages_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Places Annos Pages Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__places_annos_pages_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.places_annos_pages_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Places Annos Pages Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__places_annos_pages_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.places_annos_pages_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__places_bookmarks_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.places_bookmarks_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Places Bookmarks Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__places_bookmarks_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.places_bookmarks_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Places Bookmarks Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__places_bookmarks_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.places_bookmarks_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__places_expiration_steps_to_clean__count {
+    sql: ${TABLE}.metrics.custom_distribution.places_expiration_steps_to_clean.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Places Expiration Steps To Clean"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__places_expiration_steps_to_clean__sum {
+    sql: ${TABLE}.metrics.custom_distribution.places_expiration_steps_to_clean.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Places Expiration Steps To Clean"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__places_expiration_steps_to_clean__values {
+    sql: ${TABLE}.metrics.custom_distribution.places_expiration_steps_to_clean.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__places_keywords_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.places_keywords_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Places Keywords Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__places_keywords_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.places_keywords_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Places Keywords Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__places_keywords_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.places_keywords_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__places_pages_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.places_pages_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Places Pages Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__places_pages_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.places_pages_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Places Pages Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__places_pages_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.places_pages_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__places_sorted_bookmarks_perc__count {
+    sql: ${TABLE}.metrics.custom_distribution.places_sorted_bookmarks_perc.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Places Sorted Bookmarks Perc"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__places_sorted_bookmarks_perc__sum {
+    sql: ${TABLE}.metrics.custom_distribution.places_sorted_bookmarks_perc.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Places Sorted Bookmarks Perc"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__places_sorted_bookmarks_perc__values {
+    sql: ${TABLE}.metrics.custom_distribution.places_sorted_bookmarks_perc.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__places_tagged_bookmarks_perc__count {
+    sql: ${TABLE}.metrics.custom_distribution.places_tagged_bookmarks_perc.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Places Tagged Bookmarks Perc"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__places_tagged_bookmarks_perc__sum {
+    sql: ${TABLE}.metrics.custom_distribution.places_tagged_bookmarks_perc.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Places Tagged Bookmarks Perc"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__places_tagged_bookmarks_perc__values {
+    sql: ${TABLE}.metrics.custom_distribution.places_tagged_bookmarks_perc.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__places_tags_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.places_tags_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Places Tags Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__places_tags_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.places_tags_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Places Tags Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__places_tags_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.places_tags_count.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__count {
     sql: ${TABLE}.metrics.custom_distribution.power_battery_percentage_when_user_active.count ;;
     type: number
@@ -6680,6 +6866,94 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__readermode_parse_result__values {
     sql: ${TABLE}.metrics.custom_distribution.readermode_parse_result.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__region_fetch_result__count {
+    sql: ${TABLE}.metrics.custom_distribution.region_fetch_result.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Region Fetch Result"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__region_fetch_result__sum {
+    sql: ${TABLE}.metrics.custom_distribution.region_fetch_result.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Region Fetch Result"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__region_fetch_result__values {
+    sql: ${TABLE}.metrics.custom_distribution.region_fetch_result.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__session_restore_number_of_eager_tabs_restored__count {
+    sql: ${TABLE}.metrics.custom_distribution.session_restore_number_of_eager_tabs_restored.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Session Restore Number Of Eager Tabs Restored"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__session_restore_number_of_eager_tabs_restored__sum {
+    sql: ${TABLE}.metrics.custom_distribution.session_restore_number_of_eager_tabs_restored.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Session Restore Number Of Eager Tabs Restored"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__session_restore_number_of_eager_tabs_restored__values {
+    sql: ${TABLE}.metrics.custom_distribution.session_restore_number_of_eager_tabs_restored.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__session_restore_number_of_tabs_restored__count {
+    sql: ${TABLE}.metrics.custom_distribution.session_restore_number_of_tabs_restored.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Session Restore Number Of Tabs Restored"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__session_restore_number_of_tabs_restored__sum {
+    sql: ${TABLE}.metrics.custom_distribution.session_restore_number_of_tabs_restored.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Session Restore Number Of Tabs Restored"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__session_restore_number_of_tabs_restored__values {
+    sql: ${TABLE}.metrics.custom_distribution.session_restore_number_of_tabs_restored.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__session_restore_number_of_windows_restored__count {
+    sql: ${TABLE}.metrics.custom_distribution.session_restore_number_of_windows_restored.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Session Restore Number Of Windows Restored"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__session_restore_number_of_windows_restored__sum {
+    sql: ${TABLE}.metrics.custom_distribution.session_restore_number_of_windows_restored.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Session Restore Number Of Windows Restored"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__session_restore_number_of_windows_restored__values {
+    sql: ${TABLE}.metrics.custom_distribution.session_restore_number_of_windows_restored.values ;;
     hidden: yes
   }
 
@@ -11613,6 +11887,22 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__labeled_counter__session_restore_all_files_corrupt {
+    sql: ${TABLE}.metrics.labeled_counter.session_restore_all_files_corrupt ;;
+    hidden: yes
+    description: "Session restore: Whether none of the backup files contained parse-able JSON
+This metric was generated to correspond to the Legacy Telemetry boolean histogram FX_SESSION_RESTORE_ALL_FILES_CORRUPT.
+"
+  }
+
+  dimension: metrics__labeled_counter__session_restore_corrupt_file {
+    sql: ${TABLE}.metrics.labeled_counter.session_restore_corrupt_file ;;
+    hidden: yes
+    description: "Session restore: Whether the file read on startup contained parse-able JSON
+This metric was generated to correspond to the Legacy Telemetry boolean histogram FX_SESSION_RESTORE_CORRUPT_FILE.
+"
+  }
+
   dimension: metrics__labeled_counter__sidebar_link {
     sql: ${TABLE}.metrics.labeled_counter.sidebar_link ;;
     hidden: yes
@@ -13829,6 +14119,72 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__performance_clone_deserialize_size__values {
     sql: ${TABLE}.metrics.memory_distribution.performance_clone_deserialize_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__places_database_favicons_filesize__count {
+    sql: ${TABLE}.metrics.memory_distribution.places_database_favicons_filesize.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Places Database Favicons Filesize"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__places_database_favicons_filesize__sum {
+    sql: ${TABLE}.metrics.memory_distribution.places_database_favicons_filesize.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Places Database Favicons Filesize"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__places_database_favicons_filesize__values {
+    sql: ${TABLE}.metrics.memory_distribution.places_database_favicons_filesize.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__places_database_filesize__count {
+    sql: ${TABLE}.metrics.memory_distribution.places_database_filesize.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Places Database Filesize"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__places_database_filesize__sum {
+    sql: ${TABLE}.metrics.memory_distribution.places_database_filesize.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Places Database Filesize"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__places_database_filesize__values {
+    sql: ${TABLE}.metrics.memory_distribution.places_database_filesize.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__session_restore_file_size_bytes__count {
+    sql: ${TABLE}.metrics.memory_distribution.session_restore_file_size_bytes.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Session Restore File Size Bytes"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__session_restore_file_size_bytes__sum {
+    sql: ${TABLE}.metrics.memory_distribution.session_restore_file_size_bytes.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Session Restore File Size Bytes"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__session_restore_file_size_bytes__values {
+    sql: ${TABLE}.metrics.memory_distribution.session_restore_file_size_bytes.values ;;
     hidden: yes
   }
 
@@ -33083,6 +33439,609 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__places_backups_bookmarkstree__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_bookmarkstree.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Bookmarkstree"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_bookmarkstree__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_bookmarkstree.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Bookmarkstree"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_bookmarkstree__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_bookmarkstree.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Bookmarkstree"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_bookmarkstree__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_bookmarkstree.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Bookmarkstree"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_bookmarkstree__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_bookmarkstree.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_backups_bookmarkstree__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_bookmarkstree.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Bookmarkstree"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_bookmarkstree__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_bookmarkstree.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Bookmarkstree"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_bookmarkstree__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_bookmarkstree.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Bookmarkstree"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_bookmarkstree__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_bookmarkstree.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_backups_daysfromlast__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_daysfromlast.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Daysfromlast"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_daysfromlast__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_daysfromlast.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Daysfromlast"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_daysfromlast__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_daysfromlast.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Daysfromlast"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_daysfromlast__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_daysfromlast.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Daysfromlast"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_daysfromlast__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_daysfromlast.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_backups_daysfromlast__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_daysfromlast.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Daysfromlast"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_daysfromlast__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_daysfromlast.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Daysfromlast"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_daysfromlast__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_daysfromlast.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Daysfromlast"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_daysfromlast__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_daysfromlast.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_backups_tojson__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_tojson.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Tojson"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_tojson__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_tojson.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Tojson"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_tojson__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_tojson.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Tojson"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_tojson__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_tojson.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Tojson"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_tojson__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_tojson.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_backups_tojson__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_tojson.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Tojson"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_tojson__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_tojson.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Tojson"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_tojson__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_tojson.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Backups Tojson"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_tojson__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_tojson.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_export_tohtml__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_export_tohtml.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Export Tohtml"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_export_tohtml__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_export_tohtml.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Export Tohtml"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__places_export_tohtml__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_export_tohtml.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Export Tohtml"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_export_tohtml__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_export_tohtml.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Export Tohtml"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_export_tohtml__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_export_tohtml.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_export_tohtml__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_export_tohtml.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Export Tohtml"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_export_tohtml__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_export_tohtml.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Export Tohtml"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_export_tohtml__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_export_tohtml.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Export Tohtml"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_export_tohtml__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_export_tohtml.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_frecency_recalc_chunk_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_frecency_recalc_chunk_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Frecency Recalc Chunk Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_frecency_recalc_chunk_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_frecency_recalc_chunk_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Frecency Recalc Chunk Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__places_frecency_recalc_chunk_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_frecency_recalc_chunk_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Frecency Recalc Chunk Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_frecency_recalc_chunk_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_frecency_recalc_chunk_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Frecency Recalc Chunk Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_frecency_recalc_chunk_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_frecency_recalc_chunk_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_frecency_recalc_chunk_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_frecency_recalc_chunk_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Frecency Recalc Chunk Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_frecency_recalc_chunk_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_frecency_recalc_chunk_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Frecency Recalc Chunk Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_frecency_recalc_chunk_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_frecency_recalc_chunk_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Frecency Recalc Chunk Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_frecency_recalc_chunk_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_frecency_recalc_chunk_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_idle_frecency_decay_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_frecency_decay_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Idle Frecency Decay Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_idle_frecency_decay_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_frecency_decay_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Idle Frecency Decay Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__places_idle_frecency_decay_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_frecency_decay_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Idle Frecency Decay Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_idle_frecency_decay_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_frecency_decay_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Idle Frecency Decay Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_idle_frecency_decay_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_frecency_decay_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_idle_frecency_decay_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_frecency_decay_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Idle Frecency Decay Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_idle_frecency_decay_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_frecency_decay_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Idle Frecency Decay Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_idle_frecency_decay_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_frecency_decay_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Idle Frecency Decay Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_idle_frecency_decay_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_frecency_decay_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_idle_maintenance_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_maintenance_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Idle Maintenance Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_idle_maintenance_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_maintenance_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Idle Maintenance Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__places_idle_maintenance_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_maintenance_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Idle Maintenance Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_idle_maintenance_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_maintenance_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Idle Maintenance Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_idle_maintenance_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_maintenance_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_idle_maintenance_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_maintenance_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Idle Maintenance Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_idle_maintenance_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_maintenance_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Idle Maintenance Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_idle_maintenance_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_maintenance_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Idle Maintenance Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_idle_maintenance_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_maintenance_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_maintenance_daysfromlast__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_maintenance_daysfromlast.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Maintenance Daysfromlast"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_maintenance_daysfromlast__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_maintenance_daysfromlast.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Maintenance Daysfromlast"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__places_maintenance_daysfromlast__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_maintenance_daysfromlast.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Maintenance Daysfromlast"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_maintenance_daysfromlast__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_maintenance_daysfromlast.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Maintenance Daysfromlast"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_maintenance_daysfromlast__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_maintenance_daysfromlast.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_maintenance_daysfromlast__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_maintenance_daysfromlast.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Maintenance Daysfromlast"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_maintenance_daysfromlast__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_maintenance_daysfromlast.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Maintenance Daysfromlast"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_maintenance_daysfromlast__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_maintenance_daysfromlast.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Maintenance Daysfromlast"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_maintenance_daysfromlast__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_maintenance_daysfromlast.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_most_recent_expired_visit__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_most_recent_expired_visit.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Most Recent Expired Visit"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_most_recent_expired_visit__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_most_recent_expired_visit.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Most Recent Expired Visit"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__places_most_recent_expired_visit__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_most_recent_expired_visit.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Most Recent Expired Visit"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_most_recent_expired_visit__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_most_recent_expired_visit.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Most Recent Expired Visit"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_most_recent_expired_visit__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_most_recent_expired_visit.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_most_recent_expired_visit__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_most_recent_expired_visit.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Most Recent Expired Visit"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_most_recent_expired_visit__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_most_recent_expired_visit.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Most Recent Expired Visit"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_most_recent_expired_visit__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_most_recent_expired_visit.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Most Recent Expired Visit"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_most_recent_expired_visit__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_most_recent_expired_visit.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__predictor_learn_work_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.predictor_learn_work_time.bucket_count ;;
     type: number
@@ -33552,6 +34511,73 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__region_fetch_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.region_fetch_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Region Fetch Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__region_fetch_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.region_fetch_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Region Fetch Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__region_fetch_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.region_fetch_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Region Fetch Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__region_fetch_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.region_fetch_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Region Fetch Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__region_fetch_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.region_fetch_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__region_fetch_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.region_fetch_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Region Fetch Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__region_fetch_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.region_fetch_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Region Fetch Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__region_fetch_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.region_fetch_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Region Fetch Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__region_fetch_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.region_fetch_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__relevancy_classify_duration__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.relevancy_classify_duration.bucket_count ;;
     type: number
@@ -33951,6 +34977,676 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__service_worker_registration_loading__values {
     sql: ${TABLE}.metrics.timing_distribution.service_worker_registration_loading.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_auto_restore_duration_until_eager_tabs_restored__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_auto_restore_duration_until_eager_tabs_restored.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Auto Restore Duration Until Eager Tabs Restored"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_auto_restore_duration_until_eager_tabs_restored__count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_auto_restore_duration_until_eager_tabs_restored.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Auto Restore Duration Until Eager Tabs Restored"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_auto_restore_duration_until_eager_tabs_restored__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_auto_restore_duration_until_eager_tabs_restored.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Auto Restore Duration Until Eager Tabs Restored"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_auto_restore_duration_until_eager_tabs_restored__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_auto_restore_duration_until_eager_tabs_restored.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Auto Restore Duration Until Eager Tabs Restored"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_auto_restore_duration_until_eager_tabs_restored__range {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_auto_restore_duration_until_eager_tabs_restored.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_auto_restore_duration_until_eager_tabs_restored__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_auto_restore_duration_until_eager_tabs_restored.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Auto Restore Duration Until Eager Tabs Restored"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_auto_restore_duration_until_eager_tabs_restored__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_auto_restore_duration_until_eager_tabs_restored.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Auto Restore Duration Until Eager Tabs Restored"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_auto_restore_duration_until_eager_tabs_restored__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_auto_restore_duration_until_eager_tabs_restored.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Auto Restore Duration Until Eager Tabs Restored"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_auto_restore_duration_until_eager_tabs_restored__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_auto_restore_duration_until_eager_tabs_restored.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_all_windows_data__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_all_windows_data.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect All Windows Data"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_all_windows_data__count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_all_windows_data.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect All Windows Data"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_all_windows_data__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_all_windows_data.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect All Windows Data"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_all_windows_data__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_all_windows_data.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect All Windows Data"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_all_windows_data__range {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_all_windows_data.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_all_windows_data__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_all_windows_data.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect All Windows Data"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_all_windows_data__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_all_windows_data.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect All Windows Data"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_all_windows_data__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_all_windows_data.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect All Windows Data"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_all_windows_data__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_all_windows_data.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_data__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_data.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect Data"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_data__count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_data.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect Data"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_data__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_data.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect Data"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_data__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_data.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect Data"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_data__range {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_data.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_data__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_data.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect Data"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_data__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_data.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect Data"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_data__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_data.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect Data"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_data__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_data.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_session_history__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_session_history.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect Session History"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_session_history__count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_session_history.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect Session History"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_session_history__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_session_history.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect Session History"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_session_history__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_session_history.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect Session History"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_session_history__range {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_session_history.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_session_history__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_session_history.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect Session History"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_session_history__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_session_history.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect Session History"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_session_history__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_session_history.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Collect Session History"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_session_history__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_session_history.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_manual_restore_duration_until_eager_tabs_restored__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_manual_restore_duration_until_eager_tabs_restored.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Manual Restore Duration Until Eager Tabs Restored"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_manual_restore_duration_until_eager_tabs_restored__count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_manual_restore_duration_until_eager_tabs_restored.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Manual Restore Duration Until Eager Tabs Restored"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_manual_restore_duration_until_eager_tabs_restored__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_manual_restore_duration_until_eager_tabs_restored.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Manual Restore Duration Until Eager Tabs Restored"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_manual_restore_duration_until_eager_tabs_restored__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_manual_restore_duration_until_eager_tabs_restored.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Manual Restore Duration Until Eager Tabs Restored"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_manual_restore_duration_until_eager_tabs_restored__range {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_manual_restore_duration_until_eager_tabs_restored.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_manual_restore_duration_until_eager_tabs_restored__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_manual_restore_duration_until_eager_tabs_restored.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Manual Restore Duration Until Eager Tabs Restored"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_manual_restore_duration_until_eager_tabs_restored__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_manual_restore_duration_until_eager_tabs_restored.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Manual Restore Duration Until Eager Tabs Restored"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_manual_restore_duration_until_eager_tabs_restored__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_manual_restore_duration_until_eager_tabs_restored.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Manual Restore Duration Until Eager Tabs Restored"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_manual_restore_duration_until_eager_tabs_restored__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_manual_restore_duration_until_eager_tabs_restored.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_read_file__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_read_file.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Read File"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_read_file__count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_read_file.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Read File"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_read_file__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_read_file.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Read File"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_read_file__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_read_file.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Read File"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_read_file__range {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_read_file.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_read_file__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_read_file.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Read File"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_read_file__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_read_file.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Read File"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_read_file__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_read_file.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Read File"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_read_file__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_read_file.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_restore_window__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_restore_window.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Restore Window"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_restore_window__count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_restore_window.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Restore Window"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_restore_window__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_restore_window.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Restore Window"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_restore_window__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_restore_window.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Restore Window"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_restore_window__range {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_restore_window.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_restore_window__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_restore_window.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Restore Window"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_restore_window__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_restore_window.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Restore Window"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_restore_window__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_restore_window.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Restore Window"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_restore_window__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_restore_window.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_init_session__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_init_session.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Startup Init Session"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_init_session__count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_init_session.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Startup Init Session"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_init_session__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_init_session.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Startup Init Session"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_init_session__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_init_session.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Startup Init Session"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_init_session__range {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_init_session.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_init_session__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_init_session.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Startup Init Session"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_init_session__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_init_session.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Startup Init Session"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_init_session__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_init_session.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Startup Init Session"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_init_session__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_init_session.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_onload_initial_window__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_onload_initial_window.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Startup Onload Initial Window"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_onload_initial_window__count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_onload_initial_window.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Startup Onload Initial Window"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_onload_initial_window__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_onload_initial_window.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Startup Onload Initial Window"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_onload_initial_window__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_onload_initial_window.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Startup Onload Initial Window"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_onload_initial_window__range {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_onload_initial_window.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_onload_initial_window__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_onload_initial_window.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Startup Onload Initial Window"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_onload_initial_window__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_onload_initial_window.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Startup Onload Initial Window"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_onload_initial_window__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_onload_initial_window.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Startup Onload Initial Window"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_onload_initial_window__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_onload_initial_window.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_write_file__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_write_file.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Write File"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_write_file__count {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_write_file.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Write File"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_write_file__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_write_file.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Write File"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_write_file__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_write_file.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Write File"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_write_file__range {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_write_file.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_write_file__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_write_file.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Write File"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_write_file__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_write_file.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Write File"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_write_file__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_write_file.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Session Restore Write File"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_write_file__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_write_file.values ;;
     hidden: yes
   }
 
@@ -39413,6 +41109,118 @@ view: metrics_table__metrics__custom_distribution__performance_clone_deserialize
   }
 }
 
+view: metrics_table__metrics__custom_distribution__places_annos_pages_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__places_bookmarks_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__places_expiration_steps_to_clean__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__places_keywords_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__places_pages_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__places_sorted_bookmarks_perc__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__places_tagged_bookmarks_perc__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__places_tags_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__power_battery_percentage_when_user_active__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -39610,6 +41418,62 @@ view: metrics_table__metrics__custom_distribution__readermode_download_result__v
 }
 
 view: metrics_table__metrics__custom_distribution__readermode_parse_result__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__region_fetch_result__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__session_restore_number_of_eager_tabs_restored__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__session_restore_number_of_tabs_restored__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__session_restore_number_of_windows_restored__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -47421,6 +49285,48 @@ view: metrics_table__metrics__memory_distribution__performance_clone_deserialize
   }
 }
 
+view: metrics_table__metrics__memory_distribution__places_database_favicons_filesize__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__places_database_filesize__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__session_restore_file_size_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__memory_distribution__spdy_chunk_recvd__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -51103,6 +53009,132 @@ view: metrics_table__metrics__timing_distribution__performance_time_response_sta
   }
 }
 
+view: metrics_table__metrics__timing_distribution__places_backups_bookmarkstree__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_backups_daysfromlast__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_backups_tojson__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_export_tohtml__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_frecency_recalc_chunk_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_idle_frecency_decay_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_idle_maintenance_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_maintenance_daysfromlast__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_most_recent_expired_visit__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__predictor_learn_work_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -51201,6 +53233,20 @@ view: metrics_table__metrics__timing_distribution__privacy_sanitize_load_time__v
   }
 }
 
+view: metrics_table__metrics__timing_distribution__region_fetch_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__relevancy_classify_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -51272,6 +53318,146 @@ view: metrics_table__metrics__timing_distribution__service_worker_launch_time__v
 }
 
 view: metrics_table__metrics__timing_distribution__service_worker_registration_loading__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_auto_restore_duration_until_eager_tabs_restored__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_collect_all_windows_data__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_collect_data__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_collect_session_history__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_manual_restore_duration_until_eager_tabs_restored__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_read_file__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_restore_window__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_startup_init_session__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_startup_onload_initial_window__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_write_file__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -4018,6 +4018,310 @@ broken down by structured ingestion namespace.
 "
   }
 
+  dimension: metrics__custom_distribution__places_annos_pages_count__sum {
+    label: "Places Annos Pages Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.places_annos_pages_count.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Annos Pages Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Annos Pages Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_annos_pages_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Number of pages annotations
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_ANNOS_PAGES_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_bookmarkstree__sum {
+    label: "Places Backups Bookmarkstree Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_bookmarkstree.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Backups Bookmarkstree Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Backups Bookmarkstree Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_backups_bookmarkstree"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Time to build the bookmarks tree
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_BACKUPS_BOOKMARKSTREE_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_daysfromlast__sum {
+    label: "Places Backups Daysfromlast Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_daysfromlast.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Backups Daysfromlast Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Backups Daysfromlast Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_backups_daysfromlast"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Days from last backup
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram PLACES_BACKUPS_DAYSFROMLAST.
+"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_tojson__sum {
+    label: "Places Backups Tojson Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_tojson.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Backups Tojson Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Backups Tojson Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_backups_tojson"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Time to convert and write the backup
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_BACKUPS_TOJSON_MS.
+"
+  }
+
+  dimension: metrics__custom_distribution__places_bookmarks_count__sum {
+    label: "Places Bookmarks Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.places_bookmarks_count.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Bookmarks Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Bookmarks Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_bookmarks_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Number of bookmarks
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_BOOKMARKS_COUNT.
+"
+  }
+
+  dimension: metrics__memory_distribution__places_database_favicons_filesize__sum {
+    label: "Places Database Favicons Filesize Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.places_database_favicons_filesize.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Database Favicons Filesize Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Database Favicons Filesize Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_database_favicons_filesize"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Favicons database filesize (MB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_DATABASE_FAVICONS_FILESIZE_MB.
+"
+  }
+
+  dimension: metrics__memory_distribution__places_database_filesize__sum {
+    label: "Places Database Filesize Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.places_database_filesize.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Database Filesize Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Database Filesize Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_database_filesize"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Database filesize (MB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_DATABASE_FILESIZE_MB.
+"
+  }
+
+  dimension: metrics__custom_distribution__places_expiration_steps_to_clean__sum {
+    label: "Places Expiration Steps To Clean Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.places_expiration_steps_to_clean.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Expiration Steps To Clean Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Expiration Steps To Clean Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_expiration_steps_to_clean"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Expiration steps to cleanup the database
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram PLACES_EXPIRATION_STEPS_TO_CLEAN2.
+"
+  }
+
+  dimension: metrics__timing_distribution__places_export_tohtml__sum {
+    label: "Places Export Tohtml Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_export_tohtml.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Export Tohtml Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Export Tohtml Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_export_tohtml"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Time to convert and write bookmarks.html
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_EXPORT_TOHTML_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__places_frecency_recalc_chunk_time__sum {
+    label: "Places Frecency Recalc Chunk Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_frecency_recalc_chunk_time.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Frecency Recalc Chunk Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Frecency Recalc Chunk Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_frecency_recalc_chunk_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Time to recalculate frecency for a chunk of pages (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_FRECENCY_RECALC_CHUNK_TIME_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__places_idle_frecency_decay_time__sum {
+    label: "Places Idle Frecency Decay Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_frecency_decay_time.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Idle Frecency Decay Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Idle Frecency Decay Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_idle_frecency_decay_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Time to decay all frecencies values on idle (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_IDLE_FRECENCY_DECAY_TIME_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__places_idle_maintenance_time__sum {
+    label: "Places Idle Maintenance Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_maintenance_time.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Idle Maintenance Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Idle Maintenance Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_idle_maintenance_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Time to execute maintenance tasks on idle (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_IDLE_MAINTENANCE_TIME_MS.
+"
+  }
+
+  dimension: metrics__custom_distribution__places_keywords_count__sum {
+    label: "Places Keywords Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.places_keywords_count.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Keywords Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Keywords Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_keywords_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Number of keywords
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_KEYWORDS_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__places_maintenance_daysfromlast__sum {
+    label: "Places Maintenance Daysfromlast Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_maintenance_daysfromlast.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Maintenance Daysfromlast Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Maintenance Daysfromlast Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_maintenance_daysfromlast"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Days from last maintenance
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_MAINTENANCE_DAYSFROMLAST.
+"
+  }
+
+  dimension: metrics__timing_distribution__places_most_recent_expired_visit__sum {
+    label: "Places Most Recent Expired Visit Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_most_recent_expired_visit.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Most Recent Expired Visit Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Most Recent Expired Visit Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_most_recent_expired_visit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: the most recent expired visit in days
+This metric was generated to correspond to the Legacy Telemetry linear histogram PLACES_MOST_RECENT_EXPIRED_VISIT_DAYS.
+"
+  }
+
+  dimension: metrics__custom_distribution__places_pages_count__sum {
+    label: "Places Pages Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.places_pages_count.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Pages Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Pages Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_pages_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Number of unique pages
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_PAGES_COUNT.
+"
+  }
+
   dimension: metrics__quantity__places_pages_need_frecency_recalculation {
     label: "Places Pages Need Frecency Recalculation"
     hidden: no
@@ -4072,6 +4376,25 @@ broken down by structured ingestion namespace.
 "
   }
 
+  dimension: metrics__custom_distribution__places_sorted_bookmarks_perc__sum {
+    label: "Places Sorted Bookmarks Perc Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.places_sorted_bookmarks_perc.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Sorted Bookmarks Perc Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Sorted Bookmarks Perc Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_sorted_bookmarks_perc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Percentage of bookmarks organized in folders
+This metric was generated to correspond to the Legacy Telemetry linear histogram PLACES_SORTED_BOOKMARKS_PERC.
+"
+  }
+
   dimension: metrics__counter__places_sponsored_visit_no_triggering_url {
     label: "Places Sponsored Visit No Triggering Url"
     hidden: no
@@ -4087,6 +4410,44 @@ broken down by structured ingestion namespace.
     }
 
     description: "Number of sponsored visits that could not find their triggering URL in history. We expect this to be a small number just due to the navigation layer manipulating URLs. A large or growing value may be a concern. This metric was generated to correspond to the Legacy Telemetry scalar places.sponsored_visit_no_triggering_url.
+"
+  }
+
+  dimension: metrics__custom_distribution__places_tagged_bookmarks_perc__sum {
+    label: "Places Tagged Bookmarks Perc Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.places_tagged_bookmarks_perc.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Tagged Bookmarks Perc Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Tagged Bookmarks Perc Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_tagged_bookmarks_perc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Percentage of tagged bookmarks
+This metric was generated to correspond to the Legacy Telemetry linear histogram PLACES_TAGGED_BOOKMARKS_PERC.
+"
+  }
+
+  dimension: metrics__custom_distribution__places_tags_count__sum {
+    label: "Places Tags Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.places_tags_count.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Tags Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Tags Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_tags_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Number of tags
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_TAGS_COUNT.
 "
   }
 
@@ -4226,6 +4587,44 @@ broken down by structured ingestion namespace.
     }
 
     description: "User clicked on a button to approve setting the current site as default web mail site. The sum of all counters is the total amount of user interactions and dismissing the same dialog often could be a sign of a bug.
+"
+  }
+
+  dimension: metrics__custom_distribution__region_fetch_result__sum {
+    label: "Region Fetch Result Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.region_fetch_result.sum ;;
+    type: number
+    group_label: "Region"
+    group_item_label: "Fetch Result Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Region Fetch Result Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/region_fetch_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Result of XHR request fetching the country-code. 0=SUCCESS, 1=SUCCESS_WITHOUT_DATA, 2=XHRTIMEOUT, 3=ERROR (rest reserved for finer-grained error codes later)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SEARCH_SERVICE_COUNTRY_FETCH_RESULT.
+"
+  }
+
+  dimension: metrics__timing_distribution__region_fetch_time__sum {
+    label: "Region Fetch Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.region_fetch_time.sum ;;
+    type: number
+    group_label: "Region"
+    group_item_label: "Fetch Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Region Fetch Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/region_fetch_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time (ms) it takes to fetch the country code
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SEARCH_SERVICE_COUNTRY_FETCH_TIME_MS.
 "
   }
 
@@ -4612,6 +5011,308 @@ success - search service successfully initialized.
     }
 
     description: "The time it takes to categorize elements on a SERP.
+"
+  }
+
+  dimension: metrics__labeled_counter__session_restore_all_files_corrupt {
+    label: "Session Restore All Files Corrupt"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.session_restore_all_files_corrupt ;;
+    group_label: "Session Restore"
+    group_item_label: "All Files Corrupt"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore All Files Corrupt"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_all_files_corrupt"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Session restore: Whether none of the backup files contained parse-able JSON
+This metric was generated to correspond to the Legacy Telemetry boolean histogram FX_SESSION_RESTORE_ALL_FILES_CORRUPT.
+"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_auto_restore_duration_until_eager_tabs_restored__sum {
+    label: "Session Restore Auto Restore Duration Until Eager Tabs Restored Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_auto_restore_duration_until_eager_tabs_restored.sum ;;
+    type: number
+    group_label: "Session Restore"
+    group_item_label: "Auto Restore Duration Until Eager Tabs Restored Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore Auto Restore Duration Until Eager Tabs Restored Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_auto_restore_duration_until_eager_tabs_restored"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Session restore: If the browser is setup to auto-restore tabs, this probe measures the time elapsed between the instant we start Session Restore and the instant we have finished restoring tabs eagerly. At this stage, the tabs that are restored on demand are not restored yet.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SESSION_RESTORE_AUTO_RESTORE_DURATION_UNTIL_EAGER_TABS_RESTORED_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_all_windows_data__sum {
+    label: "Session Restore Collect All Windows Data Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_all_windows_data.sum ;;
+    type: number
+    group_label: "Session Restore"
+    group_item_label: "Collect All Windows Data Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore Collect All Windows Data Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_collect_all_windows_data"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Session restore: Time to collect all window data (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SESSION_RESTORE_COLLECT_ALL_WINDOWS_DATA_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_data__sum {
+    label: "Session Restore Collect Data Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_data.sum ;;
+    type: number
+    group_label: "Session Restore"
+    group_item_label: "Collect Data Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore Collect Data Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_collect_data"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Session restore: Time to collect all window and tab data (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SESSION_RESTORE_COLLECT_DATA_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_session_history__sum {
+    label: "Session Restore Collect Session History Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_session_history.sum ;;
+    type: number
+    group_label: "Session Restore"
+    group_item_label: "Collect Session History Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore Collect Session History Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_collect_session_history"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Session restore: Duration of session history collection in the parent process (ms).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SESSION_RESTORE_COLLECT_SESSION_HISTORY_MS.
+"
+  }
+
+  dimension: metrics__labeled_counter__session_restore_corrupt_file {
+    label: "Session Restore Corrupt File"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.session_restore_corrupt_file ;;
+    group_label: "Session Restore"
+    group_item_label: "Corrupt File"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore Corrupt File"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_corrupt_file"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Session restore: Whether the file read on startup contained parse-able JSON
+This metric was generated to correspond to the Legacy Telemetry boolean histogram FX_SESSION_RESTORE_CORRUPT_FILE.
+"
+  }
+
+  dimension: metrics__memory_distribution__session_restore_file_size_bytes__sum {
+    label: "Session Restore File Size Bytes Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.session_restore_file_size_bytes.sum ;;
+    type: number
+    group_label: "Session Restore"
+    group_item_label: "File Size Bytes Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore File Size Bytes Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_file_size_bytes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Session restore: The size of file sessionstore.js (bytes)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SESSION_RESTORE_FILE_SIZE_BYTES.
+"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_manual_restore_duration_until_eager_tabs_restored__sum {
+    label: "Session Restore Manual Restore Duration Until Eager Tabs Restored Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_manual_restore_duration_until_eager_tabs_restored.sum ;;
+    type: number
+    group_label: "Session Restore"
+    group_item_label: "Manual Restore Duration Until Eager Tabs Restored Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore Manual Restore Duration Until Eager Tabs Restored Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_manual_restore_duration_until_eager_tabs_restored"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Session restore: If a session is restored by the user clicking on 'Restore Session', this probe measures the time elapsed between the instant the user has clicked and the instant we have finished restoring tabs eagerly. At this stage, the tabs that are restored on demand are not restored yet.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SESSION_RESTORE_MANUAL_RESTORE_DURATION_UNTIL_EAGER_TABS_RESTORED_MS.
+"
+  }
+
+  dimension: metrics__custom_distribution__session_restore_number_of_eager_tabs_restored__sum {
+    label: "Session Restore Number Of Eager Tabs Restored Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.session_restore_number_of_eager_tabs_restored.sum ;;
+    type: number
+    group_label: "Session Restore"
+    group_item_label: "Number Of Eager Tabs Restored Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore Number Of Eager Tabs Restored Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_number_of_eager_tabs_restored"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Session restore: Number of tabs restored eagerly in the session that has just been restored.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram FX_SESSION_RESTORE_NUMBER_OF_EAGER_TABS_RESTORED.
+"
+  }
+
+  dimension: metrics__custom_distribution__session_restore_number_of_tabs_restored__sum {
+    label: "Session Restore Number Of Tabs Restored Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.session_restore_number_of_tabs_restored.sum ;;
+    type: number
+    group_label: "Session Restore"
+    group_item_label: "Number Of Tabs Restored Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore Number Of Tabs Restored Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_number_of_tabs_restored"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Session restore: Number of tabs in the session that has just been restored.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SESSION_RESTORE_NUMBER_OF_TABS_RESTORED.
+"
+  }
+
+  dimension: metrics__custom_distribution__session_restore_number_of_windows_restored__sum {
+    label: "Session Restore Number Of Windows Restored Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.session_restore_number_of_windows_restored.sum ;;
+    type: number
+    group_label: "Session Restore"
+    group_item_label: "Number Of Windows Restored Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore Number Of Windows Restored Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_number_of_windows_restored"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Session restore: Number of windows in the session that has just been restored.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram FX_SESSION_RESTORE_NUMBER_OF_WINDOWS_RESTORED.
+"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_read_file__sum {
+    label: "Session Restore Read File Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_read_file.sum ;;
+    type: number
+    group_label: "Session Restore"
+    group_item_label: "Read File Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore Read File Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_read_file"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Session restore: Time to read the session data from the file on disk (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SESSION_RESTORE_READ_FILE_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_restore_window__sum {
+    label: "Session Restore Restore Window Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_restore_window.sum ;;
+    type: number
+    group_label: "Session Restore"
+    group_item_label: "Restore Window Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore Restore Window Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_restore_window"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Session restore: Time spent blocking the main thread while restoring a window state (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SESSION_RESTORE_RESTORE_WINDOW_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_init_session__sum {
+    label: "Session Restore Startup Init Session Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_init_session.sum ;;
+    type: number
+    group_label: "Session Restore"
+    group_item_label: "Startup Init Session Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore Startup Init Session Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_startup_init_session"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Session restore: Time it takes to prepare the data structures for restoring a session (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SESSION_RESTORE_STARTUP_INIT_SESSION_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_onload_initial_window__sum {
+    label: "Session Restore Startup Onload Initial Window Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_onload_initial_window.sum ;;
+    type: number
+    group_label: "Session Restore"
+    group_item_label: "Startup Onload Initial Window Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore Startup Onload Initial Window Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_startup_onload_initial_window"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Session restore: Time it takes to finish restoration once we have first opened a window (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SESSION_RESTORE_STARTUP_ONLOAD_INITIAL_WINDOW_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_write_file__sum {
+    label: "Session Restore Write File Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_write_file.sum ;;
+    type: number
+    group_label: "Session Restore"
+    group_item_label: "Write File Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore Write File Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_write_file"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Session restore: Time to write the session data to the file on disk (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SESSION_RESTORE_WRITE_FILE_MS.
 "
   }
 
@@ -26369,6 +27070,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__counter__web_push_unsubscribed_by_clearing_data {
+    label: "Web Push Unsubscribed By Clearing Data"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.web_push_unsubscribed_by_clearing_data ;;
+    type: number
+    group_label: "Web Push"
+    group_item_label: "Unsubscribed By Clearing Data"
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Unsubscribed By Clearing Data"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/web_push_unsubscribed_by_clearing_data"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts unsubscriptions triggered by ClearDataService.
+"
+  }
+
   dimension: metrics__labeled_counter__webauthn_create_authenticator_attachment {
     label: "Webauthn Create Authenticator Attachment"
     hidden: yes
@@ -32938,6 +33657,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Web Push Detected Duplicated Message Ids"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/web_push_detected_duplicated_message_ids"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_push_unsubscribed_by_clearing_data {
+    type: sum
+    sql: ${metrics__counter__web_push_unsubscribed_by_clearing_data} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Unsubscribed By Clearing Data"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/web_push_unsubscribed_by_clearing_data"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_push_unsubscribed_by_clearing_data_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__web_push_unsubscribed_by_clearing_data: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Unsubscribed By Clearing Data"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/web_push_unsubscribed_by_clearing_data"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -47412,6 +48156,88 @@ view: metrics__metrics__labeled_counter__serp_ads_blocked_count {
   }
 }
 
+view: metrics__metrics__labeled_counter__session_restore_all_files_corrupt {
+  label: "Session Restore - All Files Corrupt"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__session_restore_corrupt_file {
+  label: "Session Restore - Corrupt File"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__sidebar_link {
   label: "Sidebar - Link"
 
@@ -54627,6 +55453,118 @@ view: metrics__metrics__custom_distribution__performance_clone_deserialize_items
   }
 }
 
+view: metrics__metrics__custom_distribution__places_annos_pages_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__places_bookmarks_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__places_expiration_steps_to_clean__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__places_keywords_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__places_pages_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__places_sorted_bookmarks_perc__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__places_tagged_bookmarks_perc__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__places_tags_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__power_battery_percentage_when_user_active__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -54824,6 +55762,62 @@ view: metrics__metrics__custom_distribution__readermode_download_result__values 
 }
 
 view: metrics__metrics__custom_distribution__readermode_parse_result__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__region_fetch_result__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__session_restore_number_of_eager_tabs_restored__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__session_restore_number_of_tabs_restored__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__session_restore_number_of_windows_restored__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -62635,6 +63629,48 @@ view: metrics__metrics__memory_distribution__performance_clone_deserialize_size_
   }
 }
 
+view: metrics__metrics__memory_distribution__places_database_favicons_filesize__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__places_database_filesize__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__session_restore_file_size_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__memory_distribution__spdy_chunk_recvd__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -66317,6 +67353,132 @@ view: metrics__metrics__timing_distribution__performance_time_response_start__va
   }
 }
 
+view: metrics__metrics__timing_distribution__places_backups_bookmarkstree__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_backups_daysfromlast__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_backups_tojson__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_export_tohtml__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_frecency_recalc_chunk_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_idle_frecency_decay_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_idle_maintenance_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_maintenance_daysfromlast__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_most_recent_expired_visit__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__timing_distribution__predictor_learn_work_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -66415,6 +67577,20 @@ view: metrics__metrics__timing_distribution__privacy_sanitize_load_time__values 
   }
 }
 
+view: metrics__metrics__timing_distribution__region_fetch_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__timing_distribution__relevancy_classify_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -66486,6 +67662,146 @@ view: metrics__metrics__timing_distribution__service_worker_launch_time__values 
 }
 
 view: metrics__metrics__timing_distribution__service_worker_registration_loading__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__session_restore_auto_restore_duration_until_eager_tabs_restored__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__session_restore_collect_all_windows_data__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__session_restore_collect_data__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__session_restore_collect_session_history__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__session_restore_manual_restore_duration_until_eager_tabs_restored__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__session_restore_read_file__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__session_restore_restore_window__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__session_restore_startup_init_session__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__session_restore_startup_onload_initial_window__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__session_restore_write_file__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
