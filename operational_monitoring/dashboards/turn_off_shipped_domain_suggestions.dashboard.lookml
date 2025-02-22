@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       turn_off_shipped_domain_suggestions.branch
     ]
     filters:
-      turn_off_shipped_domain_suggestions.metric: 'active_hours'
+      turn_off_shipped_domain_suggestions.metric: 'ad_clicks'
       turn_off_shipped_domain_suggestions.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       turn_off_shipped_domain_suggestions.branch
     ]
     filters:
-      turn_off_shipped_domain_suggestions.metric: 'retained'
+      turn_off_shipped_domain_suggestions.metric: 'uri_count'
       turn_off_shipped_domain_suggestions.statistic: mean
     row: 0
     col: 12
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       turn_off_shipped_domain_suggestions.branch
     ]
     filters:
-      turn_off_shipped_domain_suggestions.metric: 'tagged_sap_searches'
+      turn_off_shipped_domain_suggestions.metric: 'active_hours'
       turn_off_shipped_domain_suggestions.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       turn_off_shipped_domain_suggestions.branch
     ]
     filters:
-      turn_off_shipped_domain_suggestions.metric: 'days_of_use'
+      turn_off_shipped_domain_suggestions.metric: 'retained'
       turn_off_shipped_domain_suggestions.statistic: mean
     row: 20
     col: 0
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       turn_off_shipped_domain_suggestions.branch
     ]
     filters:
-      turn_off_shipped_domain_suggestions.metric: 'ad_clicks'
+      turn_off_shipped_domain_suggestions.metric: 'tagged_sap_searches'
       turn_off_shipped_domain_suggestions.statistic: mean
     row: 20
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       turn_off_shipped_domain_suggestions.branch
     ]
     filters:
-      turn_off_shipped_domain_suggestions.metric: 'uri_count'
+      turn_off_shipped_domain_suggestions.metric: 'days_of_use'
       turn_off_shipped_domain_suggestions.statistic: mean
     row: 30
     col: 0

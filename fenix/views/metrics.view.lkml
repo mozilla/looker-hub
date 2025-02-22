@@ -4124,6 +4124,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__avif_major_brand {
+    label: "Avif Major Brand"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_major_brand ;;
+    group_label: "Avif"
+    group_item_label: "Major Brand"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Major Brand"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_major_brand"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF major brand
+This metric was generated to correspond to the Legacy Telemetry categorical histogram AVIF_MAJOR_BRAND.
+"
+  }
+
   dimension: metrics__labeled_counter__avif_pasp {
     label: "Avif Pasp"
     hidden: yes
@@ -4155,6 +4173,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "AVIF pixel information (bits per channel). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_sequence {
+    label: "Avif Sequence"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_sequence ;;
+    group_label: "Avif"
+    group_item_label: "Sequence"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Sequence"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_sequence"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF image sequence
+This metric was generated to correspond to the Legacy Telemetry categorical histogram AVIF_SEQUENCE.
 "
   }
 
@@ -23297,6 +23333,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__counter__web_push_unsubscribed_by_clearing_data {
+    label: "Web Push Unsubscribed By Clearing Data"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.web_push_unsubscribed_by_clearing_data ;;
+    type: number
+    group_label: "Web Push"
+    group_item_label: "Unsubscribed By Clearing Data"
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Unsubscribed By Clearing Data"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/web_push_unsubscribed_by_clearing_data"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts unsubscriptions triggered by ClearDataService.
+"
+  }
+
   dimension: metrics__labeled_counter__webauthn_create_authenticator_attachment {
     label: "Webauthn Create Authenticator Attachment"
     hidden: yes
@@ -25499,40 +25553,6 @@ startup, as part of the initialization sequence.
     }
 
     description: "Image-decode Error from dav1d decoder
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_major_brand {
-    label: "Avif Major Brand"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_major_brand ;;
-    group_label: "Avif"
-    group_item_label: "Major Brand"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Major Brand"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_major_brand"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF major brand.
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_sequence {
-    label: "Avif Sequence"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_sequence ;;
-    group_label: "Avif"
-    group_item_label: "Sequence"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Sequence"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_sequence"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF image sequence.
 "
   }
 
@@ -30817,6 +30837,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Web Push Detected Duplicated Message Ids"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/web_push_detected_duplicated_message_ids"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_push_unsubscribed_by_clearing_data {
+    type: sum
+    sql: ${metrics__counter__web_push_unsubscribed_by_clearing_data} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Unsubscribed By Clearing Data"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/web_push_unsubscribed_by_clearing_data"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_push_unsubscribed_by_clearing_data_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__web_push_unsubscribed_by_clearing_data: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Unsubscribed By Clearing Data"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/web_push_unsubscribed_by_clearing_data"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

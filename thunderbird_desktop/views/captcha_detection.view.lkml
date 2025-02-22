@@ -151,7 +151,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_awswaf_pc {
     label: "Captcha Detection Awswaf Pc"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_awswaf_pc ;;
     type: number
     group_label: "Captcha Detection"
@@ -169,7 +169,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_awswaf_pc_pbm {
     label: "Captcha Detection Awswaf Pc Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_awswaf_pc_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -187,7 +187,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_awswaf_pf {
     label: "Captcha Detection Awswaf Pf"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_awswaf_pf ;;
     type: number
     group_label: "Captcha Detection"
@@ -205,7 +205,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_awswaf_pf_pbm {
     label: "Captcha Detection Awswaf Pf Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_awswaf_pf_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -223,7 +223,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_awswaf_ps {
     label: "Captcha Detection Awswaf Ps"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_awswaf_ps ;;
     type: number
     group_label: "Captcha Detection"
@@ -241,7 +241,7 @@ view: captcha_detection {
 
   dimension: metrics__counter__captcha_detection_awswaf_ps_pbm {
     label: "Captcha Detection Awswaf Ps Pbm"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.captcha_detection_awswaf_ps_pbm ;;
     type: number
     group_label: "Captcha Detection"
@@ -259,7 +259,7 @@ view: captcha_detection {
 
   dimension: metrics__custom_distribution__captcha_detection_awswaf_solutions_required__sum {
     label: "Captcha Detection Awswaf Solutions Required Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.captcha_detection_awswaf_solutions_required.sum ;;
     type: number
     group_label: "Captcha Detection"
@@ -277,7 +277,7 @@ view: captcha_detection {
 
   dimension: metrics__custom_distribution__captcha_detection_awswaf_solutions_required_pbm__sum {
     label: "Captcha Detection Awswaf Solutions Required Pbm Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.captcha_detection_awswaf_solutions_required_pbm.sum ;;
     type: number
     group_label: "Captcha Detection"

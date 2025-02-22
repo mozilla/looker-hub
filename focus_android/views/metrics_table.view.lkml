@@ -1825,6 +1825,14 @@ view: metrics_table {
     group_item_label: "Web Push Detected Duplicated Message Ids"
   }
 
+  dimension: metrics__counter__web_push_unsubscribed_by_clearing_data {
+    sql: ${TABLE}.metrics.counter.web_push_unsubscribed_by_clearing_data ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Web Push Unsubscribed By Clearing Data"
+  }
+
   dimension: metrics__counter__webauthn_create_failure {
     sql: ${TABLE}.metrics.counter.webauthn_create_failure ;;
     type: number
