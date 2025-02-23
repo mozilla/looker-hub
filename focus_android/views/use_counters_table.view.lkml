@@ -11769,6 +11769,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Dedicated Workers Destroyed"
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_after_script_execute_event {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_after_script_execute_event ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc After Script Execute Event"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_ambient_light_event {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_ambient_light_event ;;
     type: number
@@ -11783,6 +11791,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Doc App Cache"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_before_script_execute_event {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_before_script_execute_event ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Before Script Execute Event"
   }
 
   dimension: metrics__counter__use_counter_deprecated_ops_doc_components {
@@ -12233,6 +12249,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Deprecated Ops Doc Window Content Untrusted"
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_page_after_script_execute_event {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_after_script_execute_event ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page After Script Execute Event"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_page_ambient_light_event {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_ambient_light_event ;;
     type: number
@@ -12247,6 +12271,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Page App Cache"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_before_script_execute_event {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_before_script_execute_event ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Before Script Execute Event"
   }
 
   dimension: metrics__counter__use_counter_deprecated_ops_page_components {

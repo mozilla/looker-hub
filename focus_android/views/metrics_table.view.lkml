@@ -7730,6 +7730,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__avif_major_brand {
+    sql: ${TABLE}.metrics.labeled_counter.avif_major_brand ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__avif_pasp {
     sql: ${TABLE}.metrics.labeled_counter.avif_pasp ;;
     hidden: yes
@@ -7737,6 +7742,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__avif_pixi {
     sql: ${TABLE}.metrics.labeled_counter.avif_pixi ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__avif_sequence {
+    sql: ${TABLE}.metrics.labeled_counter.avif_sequence ;;
     hidden: yes
   }
 
