@@ -1021,6 +1021,17 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__boolean__shopping_settings_auto_close_user_disabled {
+    sql: ${TABLE}.metrics.boolean.shopping_settings_auto_close_user_disabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Shopping Settings Auto Close User Disabled"
+    description: "Indicates if the user has manually disabled the auto close sidebar feature.
+Set during shopping component init and updated when changed in browser.
+"
+  }
+
   dimension: metrics__boolean__shopping_settings_auto_open_user_disabled {
     sql: ${TABLE}.metrics.boolean.shopping_settings_auto_open_user_disabled ;;
     type: yesno
@@ -3129,6 +3140,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__bookmarks_sidebar_cumulative_searches__count {
+    sql: ${TABLE}.metrics.custom_distribution.bookmarks_sidebar_cumulative_searches.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Bookmarks Sidebar Cumulative Searches"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__bookmarks_sidebar_cumulative_searches__sum {
+    sql: ${TABLE}.metrics.custom_distribution.bookmarks_sidebar_cumulative_searches.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Bookmarks Sidebar Cumulative Searches"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__bookmarks_sidebar_cumulative_searches__values {
+    sql: ${TABLE}.metrics.custom_distribution.bookmarks_sidebar_cumulative_searches.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__count {
     sql: ${TABLE}.metrics.custom_distribution.bounce_tracking_protection_num_hosts_per_purge_run.count ;;
     type: number
@@ -3170,6 +3203,50 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__browser_migration_source_browser__values {
     sql: ${TABLE}.metrics.custom_distribution.browser_migration_source_browser.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__browser_set_default_dialog_prompt_rawcount__count {
+    sql: ${TABLE}.metrics.custom_distribution.browser_set_default_dialog_prompt_rawcount.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Browser Set Default Dialog Prompt Rawcount"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__browser_set_default_dialog_prompt_rawcount__sum {
+    sql: ${TABLE}.metrics.custom_distribution.browser_set_default_dialog_prompt_rawcount.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Browser Set Default Dialog Prompt Rawcount"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__browser_set_default_dialog_prompt_rawcount__values {
+    sql: ${TABLE}.metrics.custom_distribution.browser_set_default_dialog_prompt_rawcount.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__browser_set_default_result__count {
+    sql: ${TABLE}.metrics.custom_distribution.browser_set_default_result.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Browser Set Default Result"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__browser_set_default_result__sum {
+    sql: ${TABLE}.metrics.custom_distribution.browser_set_default_result.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Browser Set Default Result"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__browser_set_default_result__values {
+    sql: ${TABLE}.metrics.custom_distribution.browser_set_default_result.values ;;
     hidden: yes
   }
 
@@ -4163,6 +4240,50 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__history_sidebar_cumulative_filter_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.history_sidebar_cumulative_filter_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution History Sidebar Cumulative Filter Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__history_sidebar_cumulative_filter_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.history_sidebar_cumulative_filter_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution History Sidebar Cumulative Filter Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__history_sidebar_cumulative_filter_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.history_sidebar_cumulative_filter_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__history_sidebar_cumulative_searches__count {
+    sql: ${TABLE}.metrics.custom_distribution.history_sidebar_cumulative_searches.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution History Sidebar Cumulative Searches"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__history_sidebar_cumulative_searches__sum {
+    sql: ${TABLE}.metrics.custom_distribution.history_sidebar_cumulative_searches.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution History Sidebar Cumulative Searches"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__history_sidebar_cumulative_searches__values {
+    sql: ${TABLE}.metrics.custom_distribution.history_sidebar_cumulative_searches.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__hpack_bytes_evicted_ratio_compressor__count {
     sql: ${TABLE}.metrics.custom_distribution.hpack_bytes_evicted_ratio_compressor.count ;;
     type: number
@@ -5084,6 +5205,50 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__javascript_gc_zones_collected__values {
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zones_collected.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__library_cumulative_bookmark_searches__count {
+    sql: ${TABLE}.metrics.custom_distribution.library_cumulative_bookmark_searches.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Library Cumulative Bookmark Searches"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__library_cumulative_bookmark_searches__sum {
+    sql: ${TABLE}.metrics.custom_distribution.library_cumulative_bookmark_searches.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Library Cumulative Bookmark Searches"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__library_cumulative_bookmark_searches__values {
+    sql: ${TABLE}.metrics.custom_distribution.library_cumulative_bookmark_searches.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__library_cumulative_history_searches__count {
+    sql: ${TABLE}.metrics.custom_distribution.library_cumulative_history_searches.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Library Cumulative History Searches"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__library_cumulative_history_searches__sum {
+    sql: ${TABLE}.metrics.custom_distribution.library_cumulative_history_searches.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Library Cumulative History Searches"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__library_cumulative_history_searches__values {
+    sql: ${TABLE}.metrics.custom_distribution.library_cumulative_history_searches.values ;;
     hidden: yes
   }
 
@@ -9539,6 +9704,14 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__avif_major_brand {
+    sql: ${TABLE}.metrics.labeled_counter.avif_major_brand ;;
+    hidden: yes
+    description: "AVIF major brand
+This metric was generated to correspond to the Legacy Telemetry categorical histogram AVIF_MAJOR_BRAND.
+"
+  }
+
   dimension: metrics__labeled_counter__avif_pasp {
     sql: ${TABLE}.metrics.labeled_counter.avif_pasp ;;
     hidden: yes
@@ -9550,6 +9723,14 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.avif_pixi ;;
     hidden: yes
     description: "AVIF pixel information (bits per channel). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_sequence {
+    sql: ${TABLE}.metrics.labeled_counter.avif_sequence ;;
+    hidden: yes
+    description: "AVIF image sequence
+This metric was generated to correspond to the Legacy Telemetry categorical histogram AVIF_SEQUENCE.
 "
   }
 
@@ -9580,6 +9761,14 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.bounce_tracking_protection_purge_count ;;
     hidden: yes
     description: "Counts how often we purge trackers. Giving a high level overview about the effectivness of bounce tracking protection. Allows determining error rate with failure/success label. When in dry mode, we count the purges that would have happened under the dry label.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_attribution_errors {
+    sql: ${TABLE}.metrics.labeled_counter.browser_attribution_errors ;;
+    hidden: yes
+    description: "Count for the number of errors encountered trying to determine attribution data: on Windows, from the installers (stub and full); on macOS, from an extended attributed on the .app bundle.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram BROWSER_ATTRIBUTION_ERRORS.
 "
   }
 
@@ -9650,6 +9839,22 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_sessionrestore_interstitial ;;
     hidden: yes
     description: "Whether we show about:sessionrestore or not. Split by key, which indicates why we showed the item or not. Specifically, 'deferred_restore' means we didn't autorestore and thus didn't show the interstitial; 'autorestore' indicates we autorestored without showing the interstitial. 'shown_old_session', 'shown_only_about_welcomeback', 'shown_many_crashes', 'shown_many_crashes_old_session' all indicate we did show the interstitial because of a crash, and the text after 'shown' indicates what secondary reason there was to show this page (as we don't show it for 'just' one crash). This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.sessionrestore_interstitial.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_is_user_default {
+    sql: ${TABLE}.metrics.labeled_counter.browser_is_user_default ;;
+    hidden: yes
+    description: "Whether Firefox is the system default browser on startup. A true value is also recorded here, and a false value is recorded to set_default_error, if a user clicked 'Use Firefox as my default browser' on an in-product prompt. (Note that on Windows 8+ the latter action opens the right settings dialog but does not actually change the default browser without further user action.) On Windows, 'system default browser' is operationalized as whether Firefox is the default HTTP protocol handler.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram BROWSER_IS_USER_DEFAULT.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_is_user_default_error {
+    sql: ${TABLE}.metrics.labeled_counter.browser_is_user_default_error ;;
+    hidden: yes
+    description: "True if the browser was unable to determine if the browser was set as default.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram BROWSER_IS_USER_DEFAULT_ERROR.
 "
   }
 
@@ -9931,6 +10136,38 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_webextension ;;
     hidden: yes
     description: "Records counts of SERP pages with adverts displayed where the search was started from a webextension. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source- docs.mozilla.org/browser/search/telemetry.html#browser-search- content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.webextension.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_set_default_always_check {
+    sql: ${TABLE}.metrics.labeled_counter.browser_set_default_always_check ;;
+    hidden: yes
+    description: "True if the profile has `browser.shell.checkDefaultBrowser` set to true.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram BROWSER_SET_DEFAULT_ALWAYS_CHECK.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_set_default_error {
+    sql: ${TABLE}.metrics.labeled_counter.browser_set_default_error ;;
+    hidden: yes
+    description: "True if the browser was unable to set Firefox as the default browser
+This metric was generated to correspond to the Legacy Telemetry boolean histogram BROWSER_SET_DEFAULT_ERROR.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_set_default_pdf_handler_user_choice_result {
+    sql: ${TABLE}.metrics.labeled_counter.browser_set_default_pdf_handler_user_choice_result ;;
+    hidden: yes
+    description: "Result of each attempt to set the default browser with SetDefaultExtensionHandlersUserChoice() for pdf extension
+This metric was generated to correspond to the Legacy Telemetry categorical histogram BROWSER_SET_DEFAULT_PDF_HANDLER_USER_CHOICE_RESULT.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_set_default_user_choice_result {
+    sql: ${TABLE}.metrics.labeled_counter.browser_set_default_user_choice_result ;;
+    hidden: yes
+    description: "Result of each attempt to set the default browser with SetDefaultBrowserUserChoice()
+This metric was generated to correspond to the Legacy Telemetry categorical histogram BROWSER_SET_DEFAULT_USER_CHOICE_RESULT.
 "
   }
 
@@ -10698,6 +10935,14 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metrics.labeled_counter.gpu_process_crash_fallbacks ;;
     hidden: yes
     description: "How often we use different fallbacks when the GPU process crashes
+"
+  }
+
+  dimension: metrics__labeled_counter__history_sidebar_filter_type {
+    sql: ${TABLE}.metrics.labeled_counter.history_sidebar_filter_type ;;
+    hidden: yes
+    description: "The type of search filters used for the sidebar search.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram PLACES_SEARCHBAR_FILTER_TYPE.
 "
   }
 
@@ -16418,6 +16663,73 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__application_reputation_remote_lookup_response_time__values {
     sql: ${TABLE}.metrics.timing_distribution.application_reputation_remote_lookup_response_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__bookmarks_toolbar_init__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.bookmarks_toolbar_init.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Bookmarks Toolbar Init"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__bookmarks_toolbar_init__count {
+    sql: ${TABLE}.metrics.timing_distribution.bookmarks_toolbar_init.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Bookmarks Toolbar Init"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__bookmarks_toolbar_init__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.bookmarks_toolbar_init.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Bookmarks Toolbar Init"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__bookmarks_toolbar_init__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.bookmarks_toolbar_init.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Bookmarks Toolbar Init"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__bookmarks_toolbar_init__range {
+    sql: ${TABLE}.metrics.timing_distribution.bookmarks_toolbar_init.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__bookmarks_toolbar_init__sum {
+    sql: ${TABLE}.metrics.timing_distribution.bookmarks_toolbar_init.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Bookmarks Toolbar Init"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__bookmarks_toolbar_init__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.bookmarks_toolbar_init.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Bookmarks Toolbar Init"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__bookmarks_toolbar_init__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.bookmarks_toolbar_init.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Bookmarks Toolbar Init"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__bookmarks_toolbar_init__values {
+    sql: ${TABLE}.metrics.timing_distribution.bookmarks_toolbar_init.values ;;
     hidden: yes
   }
 
@@ -22183,6 +22495,73 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__history_sidebar_lastvisited_tree_query_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.history_sidebar_lastvisited_tree_query_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution History Sidebar Lastvisited Tree Query Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__history_sidebar_lastvisited_tree_query_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.history_sidebar_lastvisited_tree_query_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution History Sidebar Lastvisited Tree Query Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__history_sidebar_lastvisited_tree_query_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.history_sidebar_lastvisited_tree_query_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution History Sidebar Lastvisited Tree Query Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__history_sidebar_lastvisited_tree_query_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.history_sidebar_lastvisited_tree_query_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution History Sidebar Lastvisited Tree Query Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__history_sidebar_lastvisited_tree_query_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.history_sidebar_lastvisited_tree_query_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__history_sidebar_lastvisited_tree_query_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.history_sidebar_lastvisited_tree_query_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution History Sidebar Lastvisited Tree Query Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__history_sidebar_lastvisited_tree_query_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.history_sidebar_lastvisited_tree_query_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution History Sidebar Lastvisited Tree Query Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__history_sidebar_lastvisited_tree_query_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.history_sidebar_lastvisited_tree_query_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution History Sidebar Lastvisited Tree Query Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__history_sidebar_lastvisited_tree_query_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.history_sidebar_lastvisited_tree_query_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__http3_timer_delayed__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.http3_timer_delayed.bucket_count ;;
     type: number
@@ -24592,6 +24971,73 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__values {
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__library_history_search_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.library_history_search_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Library History Search Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__library_history_search_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.library_history_search_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Library History Search Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__library_history_search_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.library_history_search_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Library History Search Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__library_history_search_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.library_history_search_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Library History Search Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__library_history_search_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.library_history_search_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__library_history_search_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.library_history_search_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Library History Search Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__library_history_search_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.library_history_search_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Library History Search Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__library_history_search_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.library_history_search_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Library History Search Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__library_history_search_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.library_history_search_time.values ;;
     hidden: yes
   }
 
@@ -39051,6 +39497,20 @@ view: metrics_table__metrics__custom_distribution__application_reputation_server
   }
 }
 
+view: metrics_table__metrics__custom_distribution__bookmarks_sidebar_cumulative_searches__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -39066,6 +39526,34 @@ view: metrics_table__metrics__custom_distribution__bounce_tracking_protection_nu
 }
 
 view: metrics_table__metrics__custom_distribution__browser_migration_source_browser__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__browser_set_default_dialog_prompt_rawcount__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__browser_set_default_result__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -39709,6 +40197,34 @@ view: metrics_table__metrics__custom_distribution__gfx_content_frame_time_withou
   }
 }
 
+view: metrics_table__metrics__custom_distribution__history_sidebar_cumulative_filter_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__history_sidebar_cumulative_searches__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__hpack_bytes_evicted_ratio_compressor__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -40284,6 +40800,34 @@ view: metrics_table__metrics__custom_distribution__javascript_gc_zone_count__val
 }
 
 view: metrics_table__metrics__custom_distribution__javascript_gc_zones_collected__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__library_cumulative_bookmark_searches__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__library_cumulative_history_searches__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -49453,6 +49997,20 @@ view: metrics_table__metrics__timing_distribution__application_reputation_remote
   }
 }
 
+view: metrics_table__metrics__timing_distribution__bookmarks_toolbar_init__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -50657,6 +51215,20 @@ view: metrics_table__metrics__timing_distribution__gpu_process_launch_time__valu
   }
 }
 
+view: metrics_table__metrics__timing_distribution__history_sidebar_lastvisited_tree_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__http3_timer_delayed__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -51148,6 +51720,20 @@ view: metrics_table__metrics__timing_distribution__javascript_pageload_protect_t
 }
 
 view: metrics_table__metrics__timing_distribution__javascript_pageload_xdr_encode_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__library_history_search_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

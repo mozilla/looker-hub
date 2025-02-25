@@ -14659,6 +14659,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_after_script_execute_event {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_after_script_execute_event ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc After Script Execute Event"
+    description: "Whether a document regiested afterscriptexecute event listener. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_ambient_light_event {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_ambient_light_event ;;
     type: number
@@ -14676,6 +14686,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Doc App Cache"
     description: "Whether a document used AppCache. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_before_script_execute_event {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_before_script_execute_event ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Before Script Execute Event"
+    description: "Whether a document regiested beforescriptexecute event listener. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -15239,6 +15259,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_page_after_script_execute_event {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_after_script_execute_event ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page After Script Execute Event"
+    description: "Whether a page regiested afterscriptexecute event listener. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_page_ambient_light_event {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_ambient_light_event ;;
     type: number
@@ -15256,6 +15286,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Page App Cache"
     description: "Whether a page used AppCache. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_before_script_execute_event {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_before_script_execute_event ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Before Script Execute Event"
+    description: "Whether a page regiested beforescriptexecute event listener. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

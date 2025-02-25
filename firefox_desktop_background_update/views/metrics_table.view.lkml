@@ -8330,6 +8330,14 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__avif_major_brand {
+    sql: ${TABLE}.metrics.labeled_counter.avif_major_brand ;;
+    hidden: yes
+    description: "AVIF major brand
+This metric was generated to correspond to the Legacy Telemetry categorical histogram AVIF_MAJOR_BRAND.
+"
+  }
+
   dimension: metrics__labeled_counter__avif_pasp {
     sql: ${TABLE}.metrics.labeled_counter.avif_pasp ;;
     hidden: yes
@@ -8341,6 +8349,14 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.avif_pixi ;;
     hidden: yes
     description: "AVIF pixel information (bits per channel). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_sequence {
+    sql: ${TABLE}.metrics.labeled_counter.avif_sequence ;;
+    hidden: yes
+    description: "AVIF image sequence
+This metric was generated to correspond to the Legacy Telemetry categorical histogram AVIF_SEQUENCE.
 "
   }
 

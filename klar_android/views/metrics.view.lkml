@@ -1403,6 +1403,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__avif_major_brand {
+    label: "Avif Major Brand"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_major_brand ;;
+    group_label: "Avif"
+    group_item_label: "Major Brand"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Major Brand"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_major_brand"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF major brand
+This metric was generated to correspond to the Legacy Telemetry categorical histogram AVIF_MAJOR_BRAND.
+"
+  }
+
   dimension: metrics__labeled_counter__avif_pasp {
     label: "Avif Pasp"
     hidden: yes
@@ -1434,6 +1452,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "AVIF pixel information (bits per channel). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_sequence {
+    label: "Avif Sequence"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_sequence ;;
+    group_label: "Avif"
+    group_item_label: "Sequence"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Sequence"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_sequence"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF image sequence
+This metric was generated to correspond to the Legacy Telemetry categorical histogram AVIF_SEQUENCE.
 "
   }
 
@@ -27921,6 +27957,47 @@ view: metrics__metrics__labeled_counter__avif_lsel {
   }
 }
 
+view: metrics__metrics__labeled_counter__avif_major_brand {
+  label: "Avif - Major Brand"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__avif_pasp {
   label: "Avif - Pasp"
 
@@ -27964,6 +28041,47 @@ view: metrics__metrics__labeled_counter__avif_pasp {
 
 view: metrics__metrics__labeled_counter__avif_pixi {
   label: "Avif - Pixi"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_sequence {
+  label: "Avif - Sequence"
 
   dimension: document_id {
     type: string

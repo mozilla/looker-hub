@@ -5,6 +5,62 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics {
+  dimension: metrics__custom_distribution__bookmarks_sidebar_cumulative_searches__sum {
+    label: "Bookmarks Sidebar Cumulative Searches Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.bookmarks_sidebar_cumulative_searches.sum ;;
+    type: number
+    group_label: "Bookmarks Sidebar"
+    group_item_label: "Cumulative Searches Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Bookmarks Sidebar Cumulative Searches Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/bookmarks_sidebar_cumulative_searches"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Cumulative no. bookmark of searches performed before selecting a link.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram PLACES_BOOKMARKS_SEARCHBAR_CUMULATIVE_SEARCHES.
+"
+  }
+
+  dimension: metrics__timing_distribution__bookmarks_toolbar_init__sum {
+    label: "Bookmarks Toolbar Init Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.bookmarks_toolbar_init.sum ;;
+    type: number
+    group_label: "Bookmarks Toolbar"
+    group_item_label: "Init Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Bookmarks Toolbar Init Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/bookmarks_toolbar_init"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Firefox: Time to initialize the bookmarks toolbar view (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_BOOKMARKS_TOOLBAR_INIT_MS.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_attribution_errors {
+    label: "Browser Attribution Errors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_attribution_errors ;;
+    group_label: "Browser"
+    group_item_label: "Attribution Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Attribution Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_attribution_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count for the number of errors encountered trying to determine attribution data: on Windows, from the installers (stub and full); on macOS, from an extended attributed on the .app bundle.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram BROWSER_ATTRIBUTION_ERRORS.
+"
+  }
+
   dimension: metrics__quantity__browser_backup_browser_extension_data_size {
     label: "Browser Backup Browser Extension Data Size"
     hidden: no
@@ -1023,6 +1079,42 @@ Migrated from Telemetry's
 "
   }
 
+  dimension: metrics__labeled_counter__browser_is_user_default {
+    label: "Browser Is User Default"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_is_user_default ;;
+    group_label: "Browser"
+    group_item_label: "Is User Default"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Is User Default"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_is_user_default"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether Firefox is the system default browser on startup. A true value is also recorded here, and a false value is recorded to set_default_error, if a user clicked 'Use Firefox as my default browser' on an in-product prompt. (Note that on Windows 8+ the latter action opens the right settings dialog but does not actually change the default browser without further user action.) On Windows, 'system default browser' is operationalized as whether Firefox is the default HTTP protocol handler.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram BROWSER_IS_USER_DEFAULT.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_is_user_default_error {
+    label: "Browser Is User Default Error"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_is_user_default_error ;;
+    group_label: "Browser"
+    group_item_label: "Is User Default Error"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Is User Default Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_is_user_default_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the browser was unable to determine if the browser was set as default.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram BROWSER_IS_USER_DEFAULT_ERROR.
+"
+  }
+
   dimension: metrics__quantity__browser_link_open_newwindow_restriction {
     label: "Browser Link Open Newwindow Restriction"
     hidden: yes
@@ -1999,6 +2091,116 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Records the number of OpenSearch search engines with secure updates enabled (i.e., using https) a given user has installed. This metric was generated to correspond to the Legacy Telemetry scalar browser.searchinit.secure_opensearch_update_count.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_set_default_always_check {
+    label: "Browser Set Default Always Check"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_set_default_always_check ;;
+    group_label: "Browser"
+    group_item_label: "Set Default Always Check"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Set Default Always Check"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_set_default_always_check"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the profile has `browser.shell.checkDefaultBrowser` set to true.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram BROWSER_SET_DEFAULT_ALWAYS_CHECK.
+"
+  }
+
+  dimension: metrics__custom_distribution__browser_set_default_dialog_prompt_rawcount__sum {
+    label: "Browser Set Default Dialog Prompt Rawcount Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.browser_set_default_dialog_prompt_rawcount.sum ;;
+    type: number
+    group_label: "Browser"
+    group_item_label: "Set Default Dialog Prompt Rawcount Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Set Default Dialog Prompt Rawcount Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_set_default_dialog_prompt_rawcount"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times that a profile has seen the 'Set Default Browser' dialog.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram BROWSER_SET_DEFAULT_DIALOG_PROMPT_RAWCOUNT.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_set_default_error {
+    label: "Browser Set Default Error"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_set_default_error ;;
+    group_label: "Browser"
+    group_item_label: "Set Default Error"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Set Default Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_set_default_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the browser was unable to set Firefox as the default browser
+This metric was generated to correspond to the Legacy Telemetry boolean histogram BROWSER_SET_DEFAULT_ERROR.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_set_default_pdf_handler_user_choice_result {
+    label: "Browser Set Default Pdf Handler User Choice Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_set_default_pdf_handler_user_choice_result ;;
+    group_label: "Browser"
+    group_item_label: "Set Default Pdf Handler User Choice Result"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Set Default Pdf Handler User Choice Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_set_default_pdf_handler_user_choice_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Result of each attempt to set the default browser with SetDefaultExtensionHandlersUserChoice() for pdf extension
+This metric was generated to correspond to the Legacy Telemetry categorical histogram BROWSER_SET_DEFAULT_PDF_HANDLER_USER_CHOICE_RESULT.
+"
+  }
+
+  dimension: metrics__custom_distribution__browser_set_default_result__sum {
+    label: "Browser Set Default Result Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.browser_set_default_result.sum ;;
+    type: number
+    group_label: "Browser"
+    group_item_label: "Set Default Result Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Set Default Result Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_set_default_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Result of the Set Default Browser dialog. After Firefox 89 the these values are: (0=Use Firefox + 'Don't ask again' checked, 1=Use Firefox + 'Don't ask again' unchecked, 2=Not Now + 'Don't ask again' checked, 3=Not Now + 'Don't ask again' unchecked). Before Firefox 89 these values were: (0=Use Firefox + 'Always perform check' unchecked, 1=Use Firefox + 'Always perform check' checked, 2=Not Now + 'Always perform check' unchecked, 3=Not Now + 'Always perform check' checked).
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram BROWSER_SET_DEFAULT_RESULT.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_set_default_user_choice_result {
+    label: "Browser Set Default User Choice Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_set_default_user_choice_result ;;
+    group_label: "Browser"
+    group_item_label: "Set Default User Choice Result"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Set Default User Choice Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_set_default_user_choice_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Result of each attempt to set the default browser with SetDefaultBrowserUserChoice()
+This metric was generated to correspond to the Legacy Telemetry categorical histogram BROWSER_SET_DEFAULT_USER_CHOICE_RESULT.
 "
   }
 
@@ -3215,6 +3417,81 @@ when dynamic or static rulesets have been loaded from disk.
 "
   }
 
+  dimension: metrics__custom_distribution__history_sidebar_cumulative_filter_count__sum {
+    label: "History Sidebar Cumulative Filter Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.history_sidebar_cumulative_filter_count.sum ;;
+    type: number
+    group_label: "History Sidebar"
+    group_item_label: "Cumulative Filter Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for History Sidebar Cumulative Filter Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/history_sidebar_cumulative_filter_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Cumulative no. of search filters applied performed before selecting a link.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram PLACES_SEARCHBAR_CUMULATIVE_FILTER_COUNT.
+"
+  }
+
+  dimension: metrics__custom_distribution__history_sidebar_cumulative_searches__sum {
+    label: "History Sidebar Cumulative Searches Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.history_sidebar_cumulative_searches.sum ;;
+    type: number
+    group_label: "History Sidebar"
+    group_item_label: "Cumulative Searches Sum"
+
+    link: {
+      label: "Glean Dictionary reference for History Sidebar Cumulative Searches Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/history_sidebar_cumulative_searches"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Cumulative no. of searches performed before selecting a link.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram PLACES_SEARCHBAR_CUMULATIVE_SEARCHES.
+"
+  }
+
+  dimension: metrics__labeled_counter__history_sidebar_filter_type {
+    label: "History Sidebar Filter Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.history_sidebar_filter_type ;;
+    group_label: "History Sidebar"
+    group_item_label: "Filter Type"
+
+    link: {
+      label: "Glean Dictionary reference for History Sidebar Filter Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/history_sidebar_filter_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The type of search filters used for the sidebar search.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram PLACES_SEARCHBAR_FILTER_TYPE.
+"
+  }
+
+  dimension: metrics__timing_distribution__history_sidebar_lastvisited_tree_query_time__sum {
+    label: "History Sidebar Lastvisited Tree Query Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.history_sidebar_lastvisited_tree_query_time.sum ;;
+    type: number
+    group_label: "History Sidebar"
+    group_item_label: "Lastvisited Tree Query Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for History Sidebar Lastvisited Tree Query Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/history_sidebar_lastvisited_tree_query_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Time to load the sidebar history tree sorted by last visit (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram HISTORY_LASTVISITED_TREE_QUERY_TIME_MS.
+"
+  }
+
   dimension: metrics__boolean__installation_first_seen_admin_user {
     label: "Installation First Seen Admin User"
     hidden: no
@@ -3456,6 +3733,63 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 Might not always have a value due to being too early for it to have
 loaded.
 Does not need to be sent in the Glean \"deletion-request\" ping.
+"
+  }
+
+  dimension: metrics__custom_distribution__library_cumulative_bookmark_searches__sum {
+    label: "Library Cumulative Bookmark Searches Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.library_cumulative_bookmark_searches.sum ;;
+    type: number
+    group_label: "Library"
+    group_item_label: "Cumulative Bookmark Searches Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Library Cumulative Bookmark Searches Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/library_cumulative_bookmark_searches"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Cumulative no. of Bookmark-specific searches performed before selecting a bookmark link in Library.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram PLACES_LIBRARY_CUMULATIVE_BOOKMARK_SEARCHES.
+"
+  }
+
+  dimension: metrics__custom_distribution__library_cumulative_history_searches__sum {
+    label: "Library Cumulative History Searches Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.library_cumulative_history_searches.sum ;;
+    type: number
+    group_label: "Library"
+    group_item_label: "Cumulative History Searches Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Library Cumulative History Searches Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/library_cumulative_history_searches"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Cumulative no. of History-specific searches performed before selecting a History link in Library.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram PLACES_LIBRARY_CUMULATIVE_HISTORY_SEARCHES.
+"
+  }
+
+  dimension: metrics__timing_distribution__library_history_search_time__sum {
+    label: "Library History Search Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.library_history_search_time.sum ;;
+    type: number
+    group_label: "Library"
+    group_item_label: "History Search Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Library History Search Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/library_history_search_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Time to search the history library (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_HISTORY_LIBRARY_SEARCH_TIME_MS.
 "
   }
 
@@ -5333,6 +5667,25 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     description: "Counts number of visits to a supported retailer product page
 while enrolled in either the control or treatment branches
 of the shopping experiment.
+"
+  }
+
+  dimension: metrics__boolean__shopping_settings_auto_close_user_disabled {
+    label: "Shopping Settings Auto Close User Disabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.shopping_settings_auto_close_user_disabled ;;
+    type: yesno
+    group_label: "Shopping Settings"
+    group_item_label: "Auto Close User Disabled"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Settings Auto Close User Disabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/shopping_settings_auto_close_user_disabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if the user has manually disabled the auto close sidebar feature.
+Set during shopping component init and updated when changed in browser.
 "
   }
 
@@ -8096,6 +8449,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__avif_major_brand {
+    label: "Avif Major Brand"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_major_brand ;;
+    group_label: "Avif"
+    group_item_label: "Major Brand"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Major Brand"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/avif_major_brand"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF major brand
+This metric was generated to correspond to the Legacy Telemetry categorical histogram AVIF_MAJOR_BRAND.
+"
+  }
+
   dimension: metrics__labeled_counter__avif_pasp {
     label: "Avif Pasp"
     hidden: yes
@@ -8127,6 +8498,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "AVIF pixel information (bits per channel). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_sequence {
+    label: "Avif Sequence"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_sequence ;;
+    group_label: "Avif"
+    group_item_label: "Sequence"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Sequence"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/avif_sequence"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF image sequence
+This metric was generated to correspond to the Legacy Telemetry categorical histogram AVIF_SEQUENCE.
 "
   }
 
@@ -35116,6 +35505,47 @@ view: metrics__metrics__labeled_counter__avif_lsel {
   }
 }
 
+view: metrics__metrics__labeled_counter__avif_major_brand {
+  label: "Avif - Major Brand"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__avif_pasp {
   label: "Avif - Pasp"
 
@@ -35159,6 +35589,47 @@ view: metrics__metrics__labeled_counter__avif_pasp {
 
 view: metrics__metrics__labeled_counter__avif_pixi {
   label: "Avif - Pixi"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_sequence {
+  label: "Avif - Sequence"
 
   dimension: document_id {
     type: string
@@ -35323,6 +35794,47 @@ view: metrics__metrics__labeled_counter__bfcache_page_restored {
 
 view: metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count {
   label: "Bounce Tracking Protection - Purge Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_attribution_errors {
+  label: "Browser - Attribution Errors"
 
   dimension: document_id {
     type: string
@@ -35733,6 +36245,88 @@ view: metrics__metrics__labeled_counter__browser_engagement_navigation_webextens
 
 view: metrics__metrics__labeled_counter__browser_engagement_sessionrestore_interstitial {
   label: "Browser Engagement - Sessionrestore Interstitial"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_is_user_default {
+  label: "Browser - Is User Default"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_is_user_default_error {
+  label: "Browser - Is User Default Error"
 
   dimension: document_id {
     type: string
@@ -37373,6 +37967,170 @@ view: metrics__metrics__labeled_counter__browser_search_withads_urlbar_searchmod
 
 view: metrics__metrics__labeled_counter__browser_search_withads_webextension {
   label: "Browser Search Withads - Webextension"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_set_default_always_check {
+  label: "Browser - Set Default Always Check"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_set_default_error {
+  label: "Browser - Set Default Error"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_set_default_pdf_handler_user_choice_result {
+  label: "Browser - Set Default Pdf Handler User Choice Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_set_default_user_choice_result {
+  label: "Browser - Set Default User Choice Result"
 
   dimension: document_id {
     type: string
@@ -41598,6 +42356,47 @@ view: metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
 
 view: metrics__metrics__labeled_counter__gpu_process_crash_fallbacks {
   label: "Gpu Process - Crash Fallbacks"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__history_sidebar_filter_type {
+  label: "History Sidebar - Filter Type"
 
   dimension: document_id {
     type: string
@@ -53395,6 +54194,20 @@ view: metrics__metrics__custom_distribution__application_reputation_server_verdi
   }
 }
 
+view: metrics__metrics__custom_distribution__bookmarks_sidebar_cumulative_searches__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -53410,6 +54223,34 @@ view: metrics__metrics__custom_distribution__bounce_tracking_protection_num_host
 }
 
 view: metrics__metrics__custom_distribution__browser_migration_source_browser__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__browser_set_default_dialog_prompt_rawcount__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__browser_set_default_result__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -54053,6 +54894,34 @@ view: metrics__metrics__custom_distribution__gfx_content_frame_time_without_uplo
   }
 }
 
+view: metrics__metrics__custom_distribution__history_sidebar_cumulative_filter_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__history_sidebar_cumulative_searches__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__hpack_bytes_evicted_ratio_compressor__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -54628,6 +55497,34 @@ view: metrics__metrics__custom_distribution__javascript_gc_zone_count__values {
 }
 
 view: metrics__metrics__custom_distribution__javascript_gc_zones_collected__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__library_cumulative_bookmark_searches__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__library_cumulative_history_searches__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -63797,6 +64694,20 @@ view: metrics__metrics__timing_distribution__application_reputation_remote_looku
   }
 }
 
+view: metrics__metrics__timing_distribution__bookmarks_toolbar_init__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -65001,6 +65912,20 @@ view: metrics__metrics__timing_distribution__gpu_process_launch_time__values {
   }
 }
 
+view: metrics__metrics__timing_distribution__history_sidebar_lastvisited_tree_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__timing_distribution__http3_timer_delayed__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -65492,6 +66417,20 @@ view: metrics__metrics__timing_distribution__javascript_pageload_protect_time__v
 }
 
 view: metrics__metrics__timing_distribution__javascript_pageload_xdr_encode_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__library_history_search_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
