@@ -108,6 +108,14 @@ and are documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
   }
 
+  dimension: windows_build_number {
+    sql: ${TABLE}.windows_build_number ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms.
+"
+  }
+
   dimension_group: first_run {
     sql: ${TABLE}.first_run_date ;;
     type: time

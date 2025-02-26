@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: reset_app_color_icon_on_all_nightly_disable
-    type: looker_line
-    fields: [
-      reset_app_color_icon_on_all_nightly_disable.submission_date,
-      reset_app_color_icon_on_all_nightly_disable.branch,
-      reset_app_color_icon_on_all_nightly_disable.point
-    ]
-    pivots: [
-      reset_app_color_icon_on_all_nightly_disable.branch
-    ]
-    filters:
-      reset_app_color_icon_on_all_nightly_disable.metric: 'retained'
-      reset_app_color_icon_on_all_nightly_disable.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: reset_app_color_icon_on_all_nightly_disable.submission_date
-    field_y: reset_app_color_icon_on_all_nightly_disable.point
-    log_scale: false
-    ci_lower: reset_app_color_icon_on_all_nightly_disable.lower
-    ci_upper: reset_app_color_icon_on_all_nightly_disable.upper
-    show_grid: true
-    listen:
-      Date: reset_app_color_icon_on_all_nightly_disable.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -63,40 +29,6 @@
       reset_app_color_icon_on_all_nightly_disable.metric: 'days_of_use'
       reset_app_color_icon_on_all_nightly_disable.statistic: mean
     row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: reset_app_color_icon_on_all_nightly_disable.submission_date
-    field_y: reset_app_color_icon_on_all_nightly_disable.point
-    log_scale: false
-    ci_lower: reset_app_color_icon_on_all_nightly_disable.lower
-    ci_upper: reset_app_color_icon_on_all_nightly_disable.upper
-    show_grid: true
-    listen:
-      Date: reset_app_color_icon_on_all_nightly_disable.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: reset_app_color_icon_on_all_nightly_disable
-    type: looker_line
-    fields: [
-      reset_app_color_icon_on_all_nightly_disable.submission_date,
-      reset_app_color_icon_on_all_nightly_disable.branch,
-      reset_app_color_icon_on_all_nightly_disable.point
-    ]
-    pivots: [
-      reset_app_color_icon_on_all_nightly_disable.branch
-    ]
-    filters:
-      reset_app_color_icon_on_all_nightly_disable.metric: 'ad_clicks'
-      reset_app_color_icon_on_all_nightly_disable.statistic: mean
-    row: 10
     col: 0
     width: 12
     height: 8
@@ -129,6 +61,74 @@
     ]
     filters:
       reset_app_color_icon_on_all_nightly_disable.metric: 'tagged_sap_searches'
+      reset_app_color_icon_on_all_nightly_disable.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: reset_app_color_icon_on_all_nightly_disable.submission_date
+    field_y: reset_app_color_icon_on_all_nightly_disable.point
+    log_scale: false
+    ci_lower: reset_app_color_icon_on_all_nightly_disable.lower
+    ci_upper: reset_app_color_icon_on_all_nightly_disable.upper
+    show_grid: true
+    listen:
+      Date: reset_app_color_icon_on_all_nightly_disable.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: reset_app_color_icon_on_all_nightly_disable
+    type: looker_line
+    fields: [
+      reset_app_color_icon_on_all_nightly_disable.submission_date,
+      reset_app_color_icon_on_all_nightly_disable.branch,
+      reset_app_color_icon_on_all_nightly_disable.point
+    ]
+    pivots: [
+      reset_app_color_icon_on_all_nightly_disable.branch
+    ]
+    filters:
+      reset_app_color_icon_on_all_nightly_disable.metric: 'retained'
+      reset_app_color_icon_on_all_nightly_disable.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: reset_app_color_icon_on_all_nightly_disable.submission_date
+    field_y: reset_app_color_icon_on_all_nightly_disable.point
+    log_scale: false
+    ci_lower: reset_app_color_icon_on_all_nightly_disable.lower
+    ci_upper: reset_app_color_icon_on_all_nightly_disable.upper
+    show_grid: true
+    listen:
+      Date: reset_app_color_icon_on_all_nightly_disable.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Uri Count
+    name: Uri Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: reset_app_color_icon_on_all_nightly_disable
+    type: looker_line
+    fields: [
+      reset_app_color_icon_on_all_nightly_disable.submission_date,
+      reset_app_color_icon_on_all_nightly_disable.branch,
+      reset_app_color_icon_on_all_nightly_disable.point
+    ]
+    pivots: [
+      reset_app_color_icon_on_all_nightly_disable.branch
+    ]
+    filters:
+      reset_app_color_icon_on_all_nightly_disable.metric: 'uri_count'
       reset_app_color_icon_on_all_nightly_disable.statistic: mean
     row: 10
     col: 12
@@ -180,40 +180,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: reset_app_color_icon_on_all_nightly_disable
-    type: looker_line
-    fields: [
-      reset_app_color_icon_on_all_nightly_disable.submission_date,
-      reset_app_color_icon_on_all_nightly_disable.branch,
-      reset_app_color_icon_on_all_nightly_disable.point
-    ]
-    pivots: [
-      reset_app_color_icon_on_all_nightly_disable.branch
-    ]
-    filters:
-      reset_app_color_icon_on_all_nightly_disable.metric: 'uri_count'
-      reset_app_color_icon_on_all_nightly_disable.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: reset_app_color_icon_on_all_nightly_disable.submission_date
-    field_y: reset_app_color_icon_on_all_nightly_disable.point
-    log_scale: false
-    ci_lower: reset_app_color_icon_on_all_nightly_disable.lower
-    ci_upper: reset_app_color_icon_on_all_nightly_disable.upper
-    show_grid: true
-    listen:
-      Date: reset_app_color_icon_on_all_nightly_disable.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -231,6 +197,40 @@
     ]
     filters:
       reset_app_color_icon_on_all_nightly_disable.metric: 'active_hours'
+      reset_app_color_icon_on_all_nightly_disable.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: reset_app_color_icon_on_all_nightly_disable.submission_date
+    field_y: reset_app_color_icon_on_all_nightly_disable.point
+    log_scale: false
+    ci_lower: reset_app_color_icon_on_all_nightly_disable.lower
+    ci_upper: reset_app_color_icon_on_all_nightly_disable.upper
+    show_grid: true
+    listen:
+      Date: reset_app_color_icon_on_all_nightly_disable.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: reset_app_color_icon_on_all_nightly_disable
+    type: looker_line
+    fields: [
+      reset_app_color_icon_on_all_nightly_disable.submission_date,
+      reset_app_color_icon_on_all_nightly_disable.branch,
+      reset_app_color_icon_on_all_nightly_disable.point
+    ]
+    pivots: [
+      reset_app_color_icon_on_all_nightly_disable.branch
+    ]
+    filters:
+      reset_app_color_icon_on_all_nightly_disable.metric: 'ad_clicks'
       reset_app_color_icon_on_all_nightly_disable.statistic: mean
     row: 30
     col: 0
