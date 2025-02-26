@@ -131,6 +131,12 @@ view: usage_reporting_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: windows_build_number {
+    sql: ${TABLE}.windows_build_number ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension_group: first_run {
     sql: ${TABLE}.first_run_date ;;
     type: time

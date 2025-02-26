@@ -29,14 +29,14 @@ view: baseline_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: app_display_version {
-    sql: ${TABLE}.app_display_version ;;
+  dimension: app_name {
+    sql: ${TABLE}.app_name ;;
     type: string
     suggest_persist_for: "24 hours"
   }
 
-  dimension: app_name {
-    sql: ${TABLE}.app_name ;;
+  dimension: app_version {
+    sql: ${TABLE}.app_version ;;
     type: string
     suggest_persist_for: "24 hours"
   }
@@ -56,6 +56,12 @@ view: baseline_active_users_table {
   dimension: browser_engagement_uri_count {
     sql: ${TABLE}.browser_engagement_uri_count ;;
     type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: channel {
+    sql: ${TABLE}.channel ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 
@@ -93,6 +99,7 @@ view: baseline_active_users_table {
     sql: ${TABLE}.days_desktop_active_bits ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "This represents the official definition of \"active user\" for desktop"
   }
 
   dimension: days_seen_bits {
@@ -173,6 +180,12 @@ view: baseline_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: first_seen_year {
+    sql: ${TABLE}.first_seen_year ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: geo_subdivision {
     sql: ${TABLE}.geo_subdivision ;;
     type: string
@@ -197,32 +210,14 @@ view: baseline_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: is_dau_duration {
-    sql: ${TABLE}.is_dau_duration ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-  }
-
   dimension: is_default_browser {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno
     suggest_persist_for: "24 hours"
   }
 
-  dimension: is_included_kpi {
-    sql: ${TABLE}.is_included_kpi ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-  }
-
   dimension: is_mau {
     sql: ${TABLE}.is_mau ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: is_mau_duration {
-    sql: ${TABLE}.is_mau_duration ;;
     type: yesno
     suggest_persist_for: "24 hours"
   }
@@ -241,12 +236,6 @@ view: baseline_active_users_table {
 
   dimension: is_wau {
     sql: ${TABLE}.is_wau ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: is_wau_duration {
-    sql: ${TABLE}.is_wau_duration ;;
     type: yesno
     suggest_persist_for: "24 hours"
   }
@@ -275,21 +264,33 @@ view: baseline_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: normalized_channel {
-    sql: ${TABLE}.normalized_channel ;;
+  dimension: os {
+    sql: ${TABLE}.os ;;
     type: string
     suggest_persist_for: "24 hours"
   }
 
-  dimension: normalized_os {
-    sql: ${TABLE}.normalized_os ;;
+  dimension: os_version {
+    sql: ${TABLE}.os_version ;;
     type: string
     suggest_persist_for: "24 hours"
   }
 
-  dimension: normalized_os_version {
-    sql: ${TABLE}.normalized_os_version ;;
+  dimension: os_version_build {
+    sql: ${TABLE}.os_version_build ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: os_version_major {
+    sql: ${TABLE}.os_version_major ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: os_version_minor {
+    sql: ${TABLE}.os_version_minor ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 
@@ -302,12 +303,6 @@ view: baseline_active_users_table {
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: segment_dau {
-    sql: ${TABLE}.segment_dau ;;
-    type: string
     suggest_persist_for: "24 hours"
   }
 
