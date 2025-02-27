@@ -10683,6 +10683,44 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     description: "The number of entries stored in the SiteSecurityServiceState nsIDataStorage"
   }
 
+  dimension: metrics__counter__devtools_aboutdebugging_opened_count {
+    label: "Devtools Aboutdebugging Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_aboutdebugging_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Aboutdebugging Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Aboutdebugging Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_aboutdebugging_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times about:debugging has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_ABOUTDEBUGGING_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_aboutdebugging_time_active__sum {
+    label: "Devtools Aboutdebugging Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_aboutdebugging_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Aboutdebugging Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Aboutdebugging Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_aboutdebugging_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has about:debugging been active? (seconds) (bug 1204601)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_ABOUTDEBUGGING_TIME_ACTIVE_SECONDS.
+"
+  }
+
   dimension: metrics__labeled_counter__devtools_accessibility_accessible_context_menu_item_activated {
     label: "Devtools Accessibility Accessible Context Menu Item Activated"
     hidden: yes
@@ -10823,6 +10861,139 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__timing_distribution__devtools_accessibility_picker_time_active__sum {
+    label: "Devtools Accessibility Picker Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_picker_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Accessibility Picker Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Picker Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_accessibility_picker_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the picker tool in accessibility panel been active (seconds).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_ACCESSIBILITY_PICKER_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_service_time_active__sum {
+    label: "Devtools Accessibility Service Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_service_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Accessibility Service Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Service Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_accessibility_service_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the platform accessibility been active (seconds) in accessibility panel.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_ACCESSIBILITY_SERVICE_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_time_active__sum {
+    label: "Devtools Accessibility Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Accessibility Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Accessibility Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_accessibility_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the accessibility panel been active (seconds).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_ACCESSIBILITY_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__counter__devtools_animationinspector_opened_count {
+    label: "Devtools Animationinspector Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_animationinspector_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Animationinspector Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Animationinspector Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_animationinspector_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Animation Inspector has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_ANIMATIONINSPECTOR_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_animationinspector_time_active__sum {
+    label: "Devtools Animationinspector Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_animationinspector_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Animationinspector Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Animationinspector Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_animationinspector_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the animation inspector been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_ANIMATIONINSPECTOR_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__counter__devtools_browserconsole_opened_count {
+    label: "Devtools Browserconsole Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_browserconsole_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Browserconsole Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Browserconsole Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_browserconsole_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Browser Console has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_BROWSERCONSOLE_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_browserconsole_time_active__sum {
+    label: "Devtools Browserconsole Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_browserconsole_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Browserconsole Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Browserconsole Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_browserconsole_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the browser console been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_BROWSERCONSOLE_TIME_ACTIVE_SECONDS.
+"
+  }
+
   dimension: metrics__counter__devtools_changesview_opened_count {
     label: "Devtools Changesview Opened Count"
     hidden: no
@@ -10841,6 +11012,101 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__timing_distribution__devtools_changesview_time_active__sum {
+    label: "Devtools Changesview Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_changesview_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Changesview Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Changesview Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_changesview_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the Changes panel been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_CHANGESVIEW_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__counter__devtools_compatibilityview_opened_count {
+    label: "Devtools Compatibilityview Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_compatibilityview_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Compatibilityview Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Compatibilityview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_compatibilityview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times about:debugging has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_COMPATIBILITYVIEW_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_compatibilityview_time_active__sum {
+    label: "Devtools Compatibilityview Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_compatibilityview_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Compatibilityview Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Compatibilityview Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_compatibilityview_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the compatibility view been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_COMPATIBILITYVIEW_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__counter__devtools_computedview_opened_count {
+    label: "Devtools Computedview Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_computedview_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Computedview Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Computedview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_computedview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Computed View has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_COMPUTEDVIEW_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_computedview_time_active__sum {
+    label: "Devtools Computedview Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_computedview_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Computedview Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Computedview Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_computedview_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the computed view been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_COMPUTEDVIEW_TIME_ACTIVE_SECONDS.
+"
+  }
+
   dimension: metrics__labeled_counter__devtools_current_theme {
     label: "Devtools Current Theme"
     hidden: yes
@@ -10855,6 +11121,176 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Number of times DevTools was opened, keyed by theme. This metric was generated to correspond to the Legacy Telemetry scalar devtools.current_theme.
+"
+  }
+
+  dimension: metrics__counter__devtools_custom_opened_count {
+    label: "Devtools Custom Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_custom_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Custom Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Custom Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_custom_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a custom developer tool has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_CUSTOM_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_custom_time_active__sum {
+    label: "Devtools Custom Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_custom_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Custom Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Custom Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_custom_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has a custom developer tool been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_CUSTOM_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__counter__devtools_dom_opened_count {
+    label: "Devtools Dom Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_dom_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Dom Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Dom Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_dom_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools DOM Inspector has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_DOM_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_dom_time_active__sum {
+    label: "Devtools Dom Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Dom Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Dom Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_dom_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the DOM inspector been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_DOM_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_entry_point {
+    label: "Devtools Entry Point"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_entry_point ;;
+    group_label: "Devtools"
+    group_item_label: "Entry Point"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Entry Point"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_entry_point"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records how the user is triggering Developer Tools startup.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram DEVTOOLS_ENTRY_POINT.
+"
+  }
+
+  dimension: metrics__counter__devtools_eyedropper_opened_count {
+    label: "Devtools Eyedropper Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_eyedropper_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Eyedropper Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Eyedropper Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_eyedropper_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Eyedropper tool has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_EYEDROPPER_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_flexbox_highlighter_time_active__sum {
+    label: "Devtools Flexbox Highlighter Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_flexbox_highlighter_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Flexbox Highlighter Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Flexbox Highlighter Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_flexbox_highlighter_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the flexbox highlighter been active (seconds).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_FLEXBOX_HIGHLIGHTER_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__counter__devtools_fontinspector_opened_count {
+    label: "Devtools Fontinspector Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_fontinspector_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Fontinspector Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Fontinspector Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_fontinspector_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Font Inspector has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_FONTINSPECTOR_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_fontinspector_time_active__sum {
+    label: "Devtools Fontinspector Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_fontinspector_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Fontinspector Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Fontinspector Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_fontinspector_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the font inspector been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_FONTINSPECTOR_TIME_ACTIVE_SECONDS.
 "
   }
 
@@ -10876,6 +11312,62 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__timing_distribution__devtools_grid_highlighter_time_active__sum {
+    label: "Devtools Grid Highlighter Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_grid_highlighter_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Grid Highlighter Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Grid Highlighter Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_grid_highlighter_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the grid highlighter been active (seconds).
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_GRID_HIGHLIGHTER_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_inspector_fonteditor_font_type_displayed {
+    label: "Devtools Inspector Fonteditor Font Type Displayed"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.devtools_inspector_fonteditor_font_type_displayed ;;
+    group_label: "Devtools Inspector"
+    group_item_label: "Fonteditor Font Type Displayed"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Inspector Fonteditor Font Type Displayed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_inspector_fonteditor_font_type_displayed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if the font editor displayed its UI for a non-variable font or a variable font
+This metric was generated to correspond to the Legacy Telemetry categorical histogram DEVTOOLS_FONTEDITOR_FONT_TYPE_DISPLAYED.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__sum {
+    label: "Devtools Inspector New Root To Reload Delay Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_new_root_to_reload_delay.sum ;;
+    type: number
+    group_label: "Devtools Inspector"
+    group_item_label: "New Root To Reload Delay Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Inspector New Root To Reload Delay Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_inspector_new_root_to_reload_delay"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken (in ms) to update the inspector during a page reload, starting from new-root event.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_INSPECTOR_NEW_ROOT_TO_RELOAD_DELAY_MS.
+"
+  }
+
   dimension: metrics__counter__devtools_inspector_node_selection_count {
     label: "Devtools Inspector Node Selection Count"
     hidden: no
@@ -10891,6 +11383,25 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Number of times a different node is marked as selected in the Inspector regardless of the cause: context menu, manual selection in markup view, etc. This metric was generated to correspond to the Legacy Telemetry scalar devtools.inspector.node_selection_count.
+"
+  }
+
+  dimension: metrics__custom_distribution__devtools_inspector_number_of_css_grids_in_a_page__sum {
+    label: "Devtools Inspector Number Of Css Grids In A Page Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.devtools_inspector_number_of_css_grids_in_a_page.sum ;;
+    type: number
+    group_label: "Devtools Inspector"
+    group_item_label: "Number Of Css Grids In A Page Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Inspector Number Of Css Grids In A Page Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_inspector_number_of_css_grids_in_a_page"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "On page load, record the number of CSS Grid elements present on a page when the DevTools is open
+This metric was generated to correspond to the Legacy Telemetry linear histogram DEVTOOLS_NUMBER_OF_CSS_GRIDS_IN_A_PAGE.
 "
   }
 
@@ -10911,6 +11422,158 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__counter__devtools_inspector_opened_count {
+    label: "Devtools Inspector Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_inspector_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Inspector Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Inspector Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_inspector_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Inspector has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_INSPECTOR_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_time_active__sum {
+    label: "Devtools Inspector Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Inspector Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Inspector Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_inspector_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the inspector been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_INSPECTOR_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__counter__devtools_jsbrowserdebugger_opened_count {
+    label: "Devtools Jsbrowserdebugger Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_jsbrowserdebugger_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Jsbrowserdebugger Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Jsbrowserdebugger Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_jsbrowserdebugger_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Browser Debugger has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_JSBROWSERDEBUGGER_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__sum {
+    label: "Devtools Jsbrowserdebugger Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsbrowserdebugger_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Jsbrowserdebugger Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Jsbrowserdebugger Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_jsbrowserdebugger_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the JS browser debugger been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_JSBROWSERDEBUGGER_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__counter__devtools_jsdebugger_opened_count {
+    label: "Devtools Jsdebugger Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_jsdebugger_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Jsdebugger Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Jsdebugger Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_jsdebugger_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Debugger has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_JSDEBUGGER_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsdebugger_time_active__sum {
+    label: "Devtools Jsdebugger Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsdebugger_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Jsdebugger Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Jsdebugger Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_jsdebugger_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the JS debugger been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_JSDEBUGGER_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__counter__devtools_jsprofiler_opened_count {
+    label: "Devtools Jsprofiler Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_jsprofiler_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Jsprofiler Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Jsprofiler Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_jsprofiler_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools JS Profiler has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_JSPROFILER_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsprofiler_time_active__sum {
+    label: "Devtools Jsprofiler Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsprofiler_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Jsprofiler Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Jsprofiler Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_jsprofiler_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the JS profiler been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_JSPROFILER_TIME_ACTIVE_SECONDS.
+"
+  }
+
   dimension: metrics__counter__devtools_layout_flexboxhighlighter_opened {
     label: "Devtools Layout Flexboxhighlighter Opened"
     hidden: no
@@ -10926,6 +11589,44 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Number of times the DevTools flexbox highlighter was activated from the layout view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.layout.flexboxhighlighter.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_layoutview_opened_count {
+    label: "Devtools Layoutview Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_layoutview_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Layoutview Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Layoutview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_layoutview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Layout View has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_LAYOUTVIEW_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_layoutview_time_active__sum {
+    label: "Devtools Layoutview Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_layoutview_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Layoutview Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Layoutview Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_layoutview_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the layout view been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_LAYOUTVIEW_TIME_ACTIVE_SECONDS.
 "
   }
 
@@ -10983,6 +11684,158 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__counter__devtools_memory_opened_count {
+    label: "Devtools Memory Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_memory_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Memory Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Memory Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_memory_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Memory Tool has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_MEMORY_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_memory_time_active__sum {
+    label: "Devtools Memory Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_memory_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Memory Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Memory Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_memory_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the Memory Tool been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_MEMORY_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__counter__devtools_menu_eyedropper_opened_count {
+    label: "Devtools Menu Eyedropper Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_menu_eyedropper_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Menu Eyedropper Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Menu Eyedropper Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_menu_eyedropper_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Eyedropper has been opened via the DevTools menu.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_MENU_EYEDROPPER_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__counter__devtools_netmonitor_opened_count {
+    label: "Devtools Netmonitor Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_netmonitor_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Netmonitor Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Netmonitor Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_netmonitor_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Network Monitor has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_NETMONITOR_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_netmonitor_time_active__sum {
+    label: "Devtools Netmonitor Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_netmonitor_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Netmonitor Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Netmonitor Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_netmonitor_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the network monitor been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_NETMONITOR_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__counter__devtools_options_opened_count {
+    label: "Devtools Options Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_options_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Options Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Options Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_options_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools options panel has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_OPTIONS_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_options_time_active__sum {
+    label: "Devtools Options Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_options_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Options Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Options Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_options_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the options panel been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_OPTIONS_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__counter__devtools_picker_eyedropper_opened_count {
+    label: "Devtools Picker Eyedropper Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_picker_eyedropper_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Picker Eyedropper Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Picker Eyedropper Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_picker_eyedropper_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Eyedropper has been opened via the color picker.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_PICKER_EYEDROPPER_OPENED_COUNT.
+"
+  }
+
   dimension: metrics__labeled_counter__devtools_responsive_open_trigger {
     label: "Devtools Responsive Open Trigger"
     hidden: yes
@@ -11015,6 +11868,44 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Number of Responsive Design Mode opens with a toolbox already open. This metric was generated to correspond to the Legacy Telemetry scalar devtools.responsive.toolbox_opened_first.
+"
+  }
+
+  dimension: metrics__counter__devtools_responsive_opened_count {
+    label: "Devtools Responsive Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_responsive_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Responsive Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Responsive Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_responsive_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Responsive Design Mode tool has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_RESPONSIVE_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_responsive_time_active__sum {
+    label: "Devtools Responsive Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Responsive Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Responsive Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_responsive_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the responsive view been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_RESPONSIVE_TIME_ACTIVE_SECONDS.
 "
   }
 
@@ -11051,6 +11942,44 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Number of times the DevTools grid inspector was opened from the rules view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.rules.gridinspector.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_ruleview_opened_count {
+    label: "Devtools Ruleview Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_ruleview_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Ruleview Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Ruleview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_ruleview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Rule View has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_RULEVIEW_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_ruleview_time_active__sum {
+    label: "Devtools Ruleview Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Ruleview Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Ruleview Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_ruleview_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the rule view been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_RULEVIEW_TIME_ACTIVE_SECONDS.
 "
   }
 
@@ -11108,6 +12037,82 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__counter__devtools_storage_opened_count {
+    label: "Devtools Storage Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_storage_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Storage Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Storage Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_storage_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Storage Inspector has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_STORAGE_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_storage_time_active__sum {
+    label: "Devtools Storage Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_storage_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Storage Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Storage Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_storage_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the storage inspector been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_STORAGE_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__counter__devtools_styleeditor_opened_count {
+    label: "Devtools Styleeditor Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_styleeditor_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Styleeditor Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_styleeditor_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Style Editor has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_STYLEEDITOR_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_styleeditor_time_active__sum {
+    label: "Devtools Styleeditor Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_styleeditor_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Styleeditor Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_styleeditor_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the style editor been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_STYLEEDITOR_TIME_ACTIVE_SECONDS.
+"
+  }
+
   dimension: metrics__labeled_boolean__devtools_tool_registered {
     label: "Devtools Tool Registered"
     hidden: no
@@ -11143,6 +12148,63 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__custom_distribution__devtools_toolbox_host__sum {
+    label: "Devtools Toolbox Host Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.devtools_toolbox_host.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Toolbox Host Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Toolbox Host Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_toolbox_host"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records DevTools toolbox host each time the toolbox is opened and when the host is changed (0:Bottom, 1:RIGHT, 2:WINDOW, 3:CUSTOM, 4:LEFT, 5:PAGE, 9:Unknown).
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram DEVTOOLS_TOOLBOX_HOST.
+"
+  }
+
+  dimension: metrics__counter__devtools_toolbox_opened_count {
+    label: "Devtools Toolbox Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_toolbox_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Toolbox Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Toolbox Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_toolbox_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools toolbox has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_TOOLBOX_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_toolbox_time_active__sum {
+    label: "Devtools Toolbox Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_toolbox_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Toolbox Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Toolbox Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_toolbox_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the toolbox been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_TOOLBOX_TIME_ACTIVE_SECONDS.
+"
+  }
+
   dimension: metrics__labeled_counter__devtools_tooltip_shown {
     label: "Devtools Tooltip Shown"
     hidden: yes
@@ -11157,6 +12219,44 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Number of times a tooltip was shown, keyed by tooltip type. Currently supported types are \"image\", \"font-family\", \"inactive- css\", \"css-compatibility\", \"css-query-container\" and \"variable.\" This metric was generated to correspond to the Legacy Telemetry scalar devtools.tooltip.shown.
+"
+  }
+
+  dimension: metrics__counter__devtools_webconsole_opened_count {
+    label: "Devtools Webconsole Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_webconsole_opened_count ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Webconsole Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Webconsole Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_webconsole_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the DevTools Web Console has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_WEBCONSOLE_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_webconsole_time_active__sum {
+    label: "Devtools Webconsole Time Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_webconsole_time_active.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Webconsole Time Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Webconsole Time Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_webconsole_time_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long has the web console been active (seconds)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_WEBCONSOLE_TIME_ACTIVE_SECONDS.
 "
   }
 
@@ -31250,6 +32350,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: devtools_aboutdebugging_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_aboutdebugging_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Aboutdebugging Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_aboutdebugging_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_aboutdebugging_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_aboutdebugging_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Aboutdebugging Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_aboutdebugging_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: devtools_accessibility_accessible_context_menu_opened {
     type: sum
     sql: ${metrics__counter__devtools_accessibility_accessible_context_menu_opened} ;;
@@ -31350,6 +32475,56 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: devtools_animationinspector_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_animationinspector_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Animationinspector Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_animationinspector_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_animationinspector_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_animationinspector_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Animationinspector Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_animationinspector_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_browserconsole_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_browserconsole_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Browserconsole Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_browserconsole_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_browserconsole_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_browserconsole_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Browserconsole Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_browserconsole_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: devtools_changesview_opened_count {
     type: sum
     sql: ${metrics__counter__devtools_changesview_opened_count} ;;
@@ -31371,6 +32546,156 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Devtools Changesview Opened Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_changesview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_compatibilityview_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_compatibilityview_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Compatibilityview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_compatibilityview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_compatibilityview_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_compatibilityview_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Compatibilityview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_compatibilityview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_computedview_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_computedview_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Computedview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_computedview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_computedview_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_computedview_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Computedview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_computedview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_custom_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_custom_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Custom Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_custom_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_custom_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_custom_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Custom Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_custom_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_dom_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_dom_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Dom Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_dom_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_dom_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_dom_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Dom Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_dom_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_eyedropper_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_eyedropper_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Eyedropper Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_eyedropper_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_eyedropper_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_eyedropper_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Eyedropper Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_eyedropper_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_fontinspector_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_fontinspector_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Fontinspector Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_fontinspector_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_fontinspector_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_fontinspector_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Fontinspector Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_fontinspector_opened_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -31425,6 +32750,106 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: devtools_inspector_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_inspector_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Inspector Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_inspector_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_inspector_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_inspector_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Inspector Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_inspector_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_jsbrowserdebugger_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_jsbrowserdebugger_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Jsbrowserdebugger Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_jsbrowserdebugger_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_jsbrowserdebugger_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_jsbrowserdebugger_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Jsbrowserdebugger Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_jsbrowserdebugger_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_jsdebugger_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_jsdebugger_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Jsdebugger Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_jsdebugger_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_jsdebugger_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_jsdebugger_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Jsdebugger Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_jsdebugger_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_jsprofiler_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_jsprofiler_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Jsprofiler Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_jsprofiler_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_jsprofiler_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_jsprofiler_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Jsprofiler Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_jsprofiler_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: devtools_layout_flexboxhighlighter_opened {
     type: sum
     sql: ${metrics__counter__devtools_layout_flexboxhighlighter_opened} ;;
@@ -31446,6 +32871,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Devtools Layout Flexboxhighlighter Opened"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_layout_flexboxhighlighter_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_layoutview_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_layoutview_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Layoutview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_layoutview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_layoutview_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_layoutview_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Layoutview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_layoutview_opened_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -31525,6 +32975,131 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: devtools_memory_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_memory_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Memory Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_memory_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_memory_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_memory_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Memory Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_memory_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_menu_eyedropper_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_menu_eyedropper_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Menu Eyedropper Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_menu_eyedropper_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_menu_eyedropper_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_menu_eyedropper_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Menu Eyedropper Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_menu_eyedropper_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_netmonitor_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_netmonitor_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Netmonitor Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_netmonitor_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_netmonitor_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_netmonitor_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Netmonitor Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_netmonitor_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_options_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_options_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Options Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_options_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_options_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_options_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Options Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_options_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_picker_eyedropper_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_picker_eyedropper_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Picker Eyedropper Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_picker_eyedropper_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_picker_eyedropper_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_picker_eyedropper_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Picker Eyedropper Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_picker_eyedropper_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: devtools_responsive_toolbox_opened_first {
     type: sum
     sql: ${metrics__counter__devtools_responsive_toolbox_opened_first} ;;
@@ -31546,6 +33121,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Devtools Responsive Toolbox Opened First"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_responsive_toolbox_opened_first"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_responsive_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_responsive_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Responsive Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_responsive_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_responsive_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_responsive_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Responsive Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_responsive_opened_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -31596,6 +33196,131 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Devtools Rules Gridinspector Opened"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_rules_gridinspector_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_ruleview_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_ruleview_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Ruleview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_ruleview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_ruleview_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_ruleview_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Ruleview Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_ruleview_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_storage_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_storage_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Storage Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_storage_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_storage_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_storage_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Storage Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_storage_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_styleeditor_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_styleeditor_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_styleeditor_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_styleeditor_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_styleeditor_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_styleeditor_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_toolbox_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_toolbox_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Toolbox Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_toolbox_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_toolbox_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_toolbox_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Toolbox Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_toolbox_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_webconsole_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_webconsole_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Webconsole Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_webconsole_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_webconsole_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_webconsole_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Webconsole Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_webconsole_opened_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -41165,6 +42890,88 @@ view: metrics__metrics__labeled_counter__devtools_accessibility_simulation_activ
 
 view: metrics__metrics__labeled_counter__devtools_current_theme {
   label: "Devtools - Current Theme"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_entry_point {
+  label: "Devtools - Entry Point"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__devtools_inspector_fonteditor_font_type_displayed {
+  label: "Devtools Inspector - Fonteditor Font Type Displayed"
 
   dimension: document_id {
     type: string
@@ -54670,6 +56477,34 @@ view: metrics__metrics__custom_distribution__cycle_collector_worker_visited_ref_
   }
 }
 
+view: metrics__metrics__custom_distribution__devtools_inspector_number_of_css_grids_in_a_page__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__devtools_toolbox_host__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__dns_blocklist_count__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -60560,6 +62395,273 @@ view: metrics__metrics__labeled_string__places_places_database_corruption_handli
   }
 }
 
+view: metrics__metrics__labeled_timing_distribution__devtools_cold_toolbox_open_delay {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__devtools_cold_toolbox_open_delay__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__devtools_toolbox_page_reload_delay {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__devtools_toolbox_page_reload_delay__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__devtools_warm_toolbox_open_delay {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__devtools_warm_toolbox_open_delay__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__labeled_timing_distribution__dns_trr_lookup_time {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -65087,6 +67189,412 @@ view: metrics__metrics__timing_distribution__cycle_collector_time_between__value
 }
 
 view: metrics__metrics__timing_distribution__cycle_collector_worker_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_aboutdebugging_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_accessibility_picker_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_accessibility_service_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_accessibility_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_animationinspector_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_browserconsole_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_changesview_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_compatibilityview_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_computedview_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_custom_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_dom_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_flexbox_highlighter_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_fontinspector_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_grid_highlighter_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_inspector_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_jsdebugger_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_jsprofiler_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_layoutview_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_memory_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_netmonitor_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_options_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_responsive_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_ruleview_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_storage_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_styleeditor_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_toolbox_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_webconsole_time_active__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

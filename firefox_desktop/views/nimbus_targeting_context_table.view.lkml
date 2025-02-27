@@ -565,6 +565,12 @@ The labels are the `category.name` identifier of the metric.
     description: "Information about the operating system."
   }
 
+  dimension: metrics__object__nimbus_targeting_context_primary_resolution {
+    sql: ${TABLE}.metrics.object.nimbus_targeting_context_primary_resolution ;;
+    hidden: yes
+    description: "The resolution of the primary display."
+  }
+
   dimension: metrics__object__nimbus_targeting_context_user_monthly_activity {
     sql: ${TABLE}.metrics.object.nimbus_targeting_context_user_monthly_activity ;;
     hidden: yes

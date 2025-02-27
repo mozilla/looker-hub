@@ -823,6 +823,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__devtools_current_theme}) AS metrics__metrics__labeled_counter__devtools_current_theme ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__devtools_current_theme.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__devtools_entry_point {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__devtools_entry_point}) AS metrics__metrics__labeled_counter__devtools_entry_point ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__devtools_entry_point.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__devtools_inspector_fonteditor_font_type_displayed {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__devtools_inspector_fonteditor_font_type_displayed}) AS metrics__metrics__labeled_counter__devtools_inspector_fonteditor_font_type_displayed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__devtools_inspector_fonteditor_font_type_displayed.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__devtools_inspector_three_pane_enabled {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__devtools_inspector_three_pane_enabled}) AS metrics__metrics__labeled_counter__devtools_inspector_three_pane_enabled ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__devtools_inspector_three_pane_enabled.document_id} ;;

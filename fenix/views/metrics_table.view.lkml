@@ -1185,6 +1185,14 @@ view: metrics_table {
     group_item_label: "Credit Cards Saved"
   }
 
+  dimension: metrics__counter__devtools_aboutdebugging_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_aboutdebugging_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Aboutdebugging Opened Count"
+  }
+
   dimension: metrics__counter__devtools_accessibility_accessible_context_menu_opened {
     sql: ${TABLE}.metrics.counter.devtools_accessibility_accessible_context_menu_opened ;;
     type: number
@@ -1217,12 +1225,76 @@ view: metrics_table {
     group_item_label: "Devtools Accessibility Picker Used Count"
   }
 
+  dimension: metrics__counter__devtools_animationinspector_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_animationinspector_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Animationinspector Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_browserconsole_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_browserconsole_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Browserconsole Opened Count"
+  }
+
   dimension: metrics__counter__devtools_changesview_opened_count {
     sql: ${TABLE}.metrics.counter.devtools_changesview_opened_count ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Devtools Changesview Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_compatibilityview_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_compatibilityview_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Compatibilityview Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_computedview_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_computedview_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Computedview Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_custom_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_custom_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Custom Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_dom_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_dom_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Dom Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_eyedropper_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_eyedropper_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Eyedropper Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_fontinspector_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_fontinspector_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Fontinspector Opened Count"
   }
 
   dimension: metrics__counter__devtools_grid_gridinspector_opened {
@@ -1241,12 +1313,52 @@ view: metrics_table {
     group_item_label: "Devtools Inspector Node Selection Count"
   }
 
+  dimension: metrics__counter__devtools_inspector_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_inspector_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Inspector Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_jsbrowserdebugger_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_jsbrowserdebugger_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Jsbrowserdebugger Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_jsdebugger_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_jsdebugger_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Jsdebugger Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_jsprofiler_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_jsprofiler_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Jsprofiler Opened Count"
+  }
+
   dimension: metrics__counter__devtools_layout_flexboxhighlighter_opened {
     sql: ${TABLE}.metrics.counter.devtools_layout_flexboxhighlighter_opened ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Devtools Layout Flexboxhighlighter Opened"
+  }
+
+  dimension: metrics__counter__devtools_layoutview_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_layoutview_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Layoutview Opened Count"
   }
 
   dimension: metrics__counter__devtools_markup_flexboxhighlighter_opened {
@@ -1273,6 +1385,54 @@ view: metrics_table {
     group_item_label: "Devtools Markup Scrollable Badge Clicked"
   }
 
+  dimension: metrics__counter__devtools_memory_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_memory_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Memory Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_menu_eyedropper_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_menu_eyedropper_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Menu Eyedropper Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_netmonitor_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_netmonitor_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Netmonitor Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_options_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_options_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Options Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_picker_eyedropper_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_picker_eyedropper_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Picker Eyedropper Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_responsive_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_responsive_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Responsive Opened Count"
+  }
+
   dimension: metrics__counter__devtools_responsive_toolbox_opened_first {
     sql: ${TABLE}.metrics.counter.devtools_responsive_toolbox_opened_first ;;
     type: number
@@ -1295,6 +1455,46 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Devtools Rules Gridinspector Opened"
+  }
+
+  dimension: metrics__counter__devtools_ruleview_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_ruleview_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Ruleview Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_storage_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_storage_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Storage Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_styleeditor_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_styleeditor_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Styleeditor Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_toolbox_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_toolbox_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Toolbox Opened Count"
+  }
+
+  dimension: metrics__counter__devtools_webconsole_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_webconsole_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Webconsole Opened Count"
   }
 
   dimension: metrics__counter__dom_contentprocess_build_id_mismatch {
@@ -3264,6 +3464,48 @@ view: metrics_table {
 
   dimension: metrics__custom_distribution__cycle_collector_worker_visited_ref_counted__values {
     sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_visited_ref_counted.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__devtools_inspector_number_of_css_grids_in_a_page__count {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_inspector_number_of_css_grids_in_a_page.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Devtools Inspector Number Of Css Grids In A Page"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__devtools_inspector_number_of_css_grids_in_a_page__sum {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_inspector_number_of_css_grids_in_a_page.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Devtools Inspector Number Of Css Grids In A Page"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__devtools_inspector_number_of_css_grids_in_a_page__values {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_inspector_number_of_css_grids_in_a_page.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__devtools_toolbox_host__count {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_toolbox_host.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Devtools Toolbox Host"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__devtools_toolbox_host__sum {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_toolbox_host.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Devtools Toolbox Host"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__devtools_toolbox_host__values {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_toolbox_host.values ;;
     hidden: yes
   }
 
@@ -8716,6 +8958,16 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__devtools_entry_point {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_entry_point ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__devtools_inspector_fonteditor_font_type_displayed {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_inspector_fonteditor_font_type_displayed ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__devtools_inspector_three_pane_enabled {
     sql: ${TABLE}.metrics.labeled_counter.devtools_inspector_three_pane_enabled ;;
     hidden: yes
@@ -10088,6 +10340,21 @@ view: metrics_table {
 
   dimension: metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
     sql: ${TABLE}.metrics.labeled_string.cookie_banners_google_gdpr_choice_cookie ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__devtools_cold_toolbox_open_delay {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.devtools_cold_toolbox_open_delay ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__devtools_toolbox_page_reload_delay {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.devtools_toolbox_page_reload_delay ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__devtools_warm_toolbox_open_delay {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.devtools_warm_toolbox_open_delay ;;
     hidden: yes
   }
 
@@ -13843,6 +14110,1920 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__cycle_collector_worker_time__values {
     sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_aboutdebugging_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_aboutdebugging_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Aboutdebugging Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_aboutdebugging_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_aboutdebugging_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Aboutdebugging Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_aboutdebugging_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_aboutdebugging_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Aboutdebugging Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_aboutdebugging_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_aboutdebugging_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Aboutdebugging Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_aboutdebugging_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_aboutdebugging_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_aboutdebugging_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_aboutdebugging_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Aboutdebugging Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_aboutdebugging_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_aboutdebugging_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Aboutdebugging Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_aboutdebugging_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_aboutdebugging_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Aboutdebugging Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_aboutdebugging_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_aboutdebugging_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_picker_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_picker_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Picker Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_picker_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_picker_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Picker Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_picker_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_picker_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Picker Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_picker_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_picker_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Picker Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_picker_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_picker_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_picker_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_picker_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Picker Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_picker_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_picker_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Picker Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_picker_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_picker_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Picker Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_picker_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_picker_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_service_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_service_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Service Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_service_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_service_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Service Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_service_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_service_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Service Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_service_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_service_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Service Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_service_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_service_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_service_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_service_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Service Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_service_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_service_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Service Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_service_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_service_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Service Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_service_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_service_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_animationinspector_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_animationinspector_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Animationinspector Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_animationinspector_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_animationinspector_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Animationinspector Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_animationinspector_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_animationinspector_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Animationinspector Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_animationinspector_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_animationinspector_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Animationinspector Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_animationinspector_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_animationinspector_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_animationinspector_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_animationinspector_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Animationinspector Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_animationinspector_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_animationinspector_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Animationinspector Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_animationinspector_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_animationinspector_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Animationinspector Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_animationinspector_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_animationinspector_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_browserconsole_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_browserconsole_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Browserconsole Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_browserconsole_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_browserconsole_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Browserconsole Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_browserconsole_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_browserconsole_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Browserconsole Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_browserconsole_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_browserconsole_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Browserconsole Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_browserconsole_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_browserconsole_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_browserconsole_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_browserconsole_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Browserconsole Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_browserconsole_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_browserconsole_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Browserconsole Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_browserconsole_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_browserconsole_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Browserconsole Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_browserconsole_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_browserconsole_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_changesview_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_changesview_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Changesview Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_changesview_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_changesview_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Changesview Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_changesview_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_changesview_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Changesview Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_changesview_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_changesview_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Changesview Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_changesview_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_changesview_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_changesview_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_changesview_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Changesview Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_changesview_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_changesview_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Changesview Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_changesview_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_changesview_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Changesview Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_changesview_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_changesview_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_compatibilityview_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_compatibilityview_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Compatibilityview Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_compatibilityview_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_compatibilityview_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Compatibilityview Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_compatibilityview_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_compatibilityview_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Compatibilityview Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_compatibilityview_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_compatibilityview_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Compatibilityview Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_compatibilityview_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_compatibilityview_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_compatibilityview_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_compatibilityview_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Compatibilityview Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_compatibilityview_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_compatibilityview_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Compatibilityview Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_compatibilityview_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_compatibilityview_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Compatibilityview Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_compatibilityview_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_compatibilityview_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_computedview_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_computedview_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Computedview Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_computedview_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_computedview_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Computedview Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_computedview_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_computedview_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Computedview Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_computedview_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_computedview_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Computedview Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_computedview_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_computedview_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_computedview_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_computedview_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Computedview Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_computedview_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_computedview_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Computedview Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_computedview_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_computedview_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Computedview Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_computedview_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_computedview_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_custom_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_custom_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Custom Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_custom_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_custom_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Custom Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_custom_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_custom_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Custom Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_custom_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_custom_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Custom Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_custom_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_custom_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_custom_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_custom_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Custom Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_custom_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_custom_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Custom Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_custom_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_custom_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Custom Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_custom_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_custom_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_dom_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_dom_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_dom_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_dom_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_dom_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_dom_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_dom_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_dom_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_dom_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_flexbox_highlighter_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_flexbox_highlighter_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Flexbox Highlighter Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_flexbox_highlighter_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_flexbox_highlighter_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Flexbox Highlighter Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_flexbox_highlighter_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_flexbox_highlighter_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Flexbox Highlighter Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_flexbox_highlighter_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_flexbox_highlighter_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Flexbox Highlighter Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_flexbox_highlighter_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_flexbox_highlighter_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_flexbox_highlighter_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_flexbox_highlighter_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Flexbox Highlighter Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_flexbox_highlighter_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_flexbox_highlighter_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Flexbox Highlighter Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_flexbox_highlighter_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_flexbox_highlighter_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Flexbox Highlighter Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_flexbox_highlighter_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_flexbox_highlighter_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_fontinspector_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_fontinspector_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Fontinspector Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_fontinspector_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_fontinspector_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Fontinspector Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_fontinspector_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_fontinspector_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Fontinspector Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_fontinspector_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_fontinspector_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Fontinspector Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_fontinspector_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_fontinspector_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_fontinspector_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_fontinspector_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Fontinspector Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_fontinspector_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_fontinspector_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Fontinspector Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_fontinspector_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_fontinspector_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Fontinspector Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_fontinspector_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_fontinspector_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_grid_highlighter_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_grid_highlighter_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Grid Highlighter Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_grid_highlighter_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_grid_highlighter_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Grid Highlighter Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_grid_highlighter_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_grid_highlighter_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Grid Highlighter Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_grid_highlighter_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_grid_highlighter_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Grid Highlighter Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_grid_highlighter_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_grid_highlighter_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_grid_highlighter_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_grid_highlighter_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Grid Highlighter Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_grid_highlighter_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_grid_highlighter_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Grid Highlighter Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_grid_highlighter_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_grid_highlighter_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Grid Highlighter Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_grid_highlighter_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_grid_highlighter_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_new_root_to_reload_delay.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector New Root To Reload Delay"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_new_root_to_reload_delay.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector New Root To Reload Delay"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_new_root_to_reload_delay.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector New Root To Reload Delay"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_new_root_to_reload_delay.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector New Root To Reload Delay"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_new_root_to_reload_delay.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_new_root_to_reload_delay.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector New Root To Reload Delay"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_new_root_to_reload_delay.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector New Root To Reload Delay"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_new_root_to_reload_delay.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector New Root To Reload Delay"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_new_root_to_reload_delay.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsbrowserdebugger_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsbrowserdebugger Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsbrowserdebugger_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsbrowserdebugger Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsbrowserdebugger_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsbrowserdebugger Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsbrowserdebugger_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsbrowserdebugger Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsbrowserdebugger_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsbrowserdebugger_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsbrowserdebugger Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsbrowserdebugger_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsbrowserdebugger Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsbrowserdebugger_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsbrowserdebugger Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsbrowserdebugger_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsdebugger_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsdebugger_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsdebugger Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsdebugger_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsdebugger_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsdebugger Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsdebugger_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsdebugger_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsdebugger Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsdebugger_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsdebugger_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsdebugger Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsdebugger_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsdebugger_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsdebugger_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsdebugger_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsdebugger Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsdebugger_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsdebugger_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsdebugger Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsdebugger_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsdebugger_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsdebugger Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsdebugger_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsdebugger_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsprofiler_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsprofiler_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsprofiler Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsprofiler_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsprofiler_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsprofiler Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsprofiler_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsprofiler_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsprofiler Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsprofiler_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsprofiler_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsprofiler Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsprofiler_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsprofiler_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsprofiler_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsprofiler_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsprofiler Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsprofiler_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsprofiler_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsprofiler Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsprofiler_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsprofiler_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsprofiler Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsprofiler_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsprofiler_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_layoutview_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_layoutview_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Layoutview Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_layoutview_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_layoutview_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Layoutview Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_layoutview_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_layoutview_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Layoutview Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_layoutview_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_layoutview_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Layoutview Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_layoutview_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_layoutview_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_layoutview_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_layoutview_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Layoutview Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_layoutview_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_layoutview_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Layoutview Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_layoutview_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_layoutview_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Layoutview Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_layoutview_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_layoutview_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_memory_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_memory_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Memory Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_memory_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_memory_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Memory Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_memory_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_memory_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Memory Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_memory_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_memory_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Memory Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_memory_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_memory_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_memory_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_memory_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Memory Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_memory_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_memory_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Memory Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_memory_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_memory_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Memory Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_memory_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_memory_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_netmonitor_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_netmonitor_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Netmonitor Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_netmonitor_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_netmonitor_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Netmonitor Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_netmonitor_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_netmonitor_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Netmonitor Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_netmonitor_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_netmonitor_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Netmonitor Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_netmonitor_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_netmonitor_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_netmonitor_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_netmonitor_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Netmonitor Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_netmonitor_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_netmonitor_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Netmonitor Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_netmonitor_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_netmonitor_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Netmonitor Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_netmonitor_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_netmonitor_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_options_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_options_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Options Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_options_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_options_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Options Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_options_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_options_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Options Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_options_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_options_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Options Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_options_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_options_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_options_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_options_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Options Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_options_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_options_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Options Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_options_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_options_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Options Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_options_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_options_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_responsive_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Responsive Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_responsive_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Responsive Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_responsive_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Responsive Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_responsive_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Responsive Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_responsive_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_responsive_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Responsive Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_responsive_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Responsive Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_responsive_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Responsive Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_responsive_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_ruleview_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Ruleview Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_ruleview_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Ruleview Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_ruleview_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Ruleview Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_ruleview_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Ruleview Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_ruleview_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_ruleview_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Ruleview Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_ruleview_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Ruleview Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_ruleview_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Ruleview Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_ruleview_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_storage_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_storage_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Storage Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_storage_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_storage_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Storage Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_storage_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_storage_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Storage Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_storage_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_storage_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Storage Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_storage_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_storage_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_storage_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_storage_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Storage Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_storage_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_storage_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Storage Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_storage_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_storage_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Storage Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_storage_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_storage_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_styleeditor_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_styleeditor_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Styleeditor Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_styleeditor_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_styleeditor_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Styleeditor Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_styleeditor_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_styleeditor_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Styleeditor Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_styleeditor_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_styleeditor_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Styleeditor Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_styleeditor_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_styleeditor_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_styleeditor_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_styleeditor_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Styleeditor Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_styleeditor_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_styleeditor_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Styleeditor Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_styleeditor_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_styleeditor_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Styleeditor Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_styleeditor_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_styleeditor_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_toolbox_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_toolbox_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Toolbox Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_toolbox_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_toolbox_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Toolbox Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_toolbox_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_toolbox_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Toolbox Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_toolbox_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_toolbox_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Toolbox Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_toolbox_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_toolbox_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_toolbox_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_toolbox_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Toolbox Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_toolbox_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_toolbox_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Toolbox Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_toolbox_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_toolbox_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Toolbox Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_toolbox_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_toolbox_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_webconsole_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_webconsole_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Webconsole Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_webconsole_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_webconsole_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Webconsole Time Active"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_webconsole_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_webconsole_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Webconsole Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_webconsole_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_webconsole_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Webconsole Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_webconsole_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_webconsole_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_webconsole_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_webconsole_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Webconsole Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_webconsole_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_webconsole_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Webconsole Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_webconsole_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_webconsole_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Webconsole Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_webconsole_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_webconsole_time_active.values ;;
     hidden: yes
   }
 
@@ -36578,6 +38759,34 @@ view: metrics_table__metrics__custom_distribution__cycle_collector_worker_visite
   }
 }
 
+view: metrics_table__metrics__custom_distribution__devtools_inspector_number_of_css_grids_in_a_page__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__devtools_toolbox_host__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__dns_blocklist_count__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -41812,6 +44021,270 @@ view: metrics_table__metrics__labeled_string__cookie_banners_google_gdpr_choice_
   }
 }
 
+view: metrics_table__metrics__labeled_timing_distribution__devtools_cold_toolbox_open_delay {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__devtools_cold_toolbox_open_delay__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__devtools_toolbox_page_reload_delay {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__devtools_toolbox_page_reload_delay__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__devtools_warm_toolbox_open_delay {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__devtools_warm_toolbox_open_delay__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_timing_distribution__dns_trr_lookup_time {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -45839,6 +48312,412 @@ view: metrics_table__metrics__timing_distribution__cycle_collector_time_between_
 }
 
 view: metrics_table__metrics__timing_distribution__cycle_collector_worker_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_aboutdebugging_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_accessibility_picker_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_accessibility_service_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_accessibility_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_animationinspector_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_browserconsole_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_changesview_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_compatibilityview_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_computedview_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_custom_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_dom_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_flexbox_highlighter_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_fontinspector_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_grid_highlighter_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_inspector_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_jsdebugger_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_jsprofiler_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_layoutview_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_memory_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_netmonitor_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_options_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_responsive_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_ruleview_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_storage_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_styleeditor_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_toolbox_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_webconsole_time_active__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
