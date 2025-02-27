@@ -99,7 +99,6 @@ view: baseline_active_users_table {
     sql: ${TABLE}.days_desktop_active_bits ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "This represents the official definition of \"active user\" for desktop"
   }
 
   dimension: days_seen_bits {
@@ -170,6 +169,12 @@ view: baseline_active_users_table {
 
   dimension: distribution_id {
     sql: ${TABLE}.distribution_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: distribution_id_source {
+    sql: ${TABLE}.distribution_id_source ;;
     type: string
     suggest_persist_for: "24 hours"
   }

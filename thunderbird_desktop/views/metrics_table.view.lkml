@@ -791,6 +791,17 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__devtools_aboutdebugging_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_aboutdebugging_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Aboutdebugging Opened Count"
+    description: "Number of times about:debugging has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_ABOUTDEBUGGING_OPENED_COUNT.
+"
+  }
+
   dimension: metrics__counter__devtools_accessibility_accessible_context_menu_opened {
     sql: ${TABLE}.metrics.counter.devtools_accessibility_accessible_context_menu_opened ;;
     type: number
@@ -831,6 +842,28 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__devtools_animationinspector_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_animationinspector_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Animationinspector Opened Count"
+    description: "Number of times the DevTools Animation Inspector has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_ANIMATIONINSPECTOR_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__counter__devtools_browserconsole_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_browserconsole_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Browserconsole Opened Count"
+    description: "Number of times the DevTools Browser Console has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_BROWSERCONSOLE_OPENED_COUNT.
+"
+  }
+
   dimension: metrics__counter__devtools_changesview_opened_count {
     sql: ${TABLE}.metrics.counter.devtools_changesview_opened_count ;;
     type: number
@@ -838,6 +871,72 @@ To be used to validate GIFFT.
     group_label: "Metrics Counter"
     group_item_label: "Devtools Changesview Opened Count"
     description: "Number of times the Changes panel has been opened. This metric was generated to correspond to the Legacy Telemetry scalar devtools.changesview.opened_count.
+"
+  }
+
+  dimension: metrics__counter__devtools_compatibilityview_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_compatibilityview_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Compatibilityview Opened Count"
+    description: "Number of times about:debugging has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_COMPATIBILITYVIEW_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__counter__devtools_computedview_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_computedview_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Computedview Opened Count"
+    description: "Number of times the DevTools Computed View has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_COMPUTEDVIEW_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__counter__devtools_custom_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_custom_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Custom Opened Count"
+    description: "Number of times a custom developer tool has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_CUSTOM_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__counter__devtools_dom_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_dom_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Dom Opened Count"
+    description: "Number of times the DevTools DOM Inspector has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_DOM_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__counter__devtools_eyedropper_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_eyedropper_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Eyedropper Opened Count"
+    description: "Number of times the DevTools Eyedropper tool has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_EYEDROPPER_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__counter__devtools_fontinspector_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_fontinspector_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Fontinspector Opened Count"
+    description: "Number of times the DevTools Font Inspector has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_FONTINSPECTOR_OPENED_COUNT.
 "
   }
 
@@ -861,6 +960,50 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__devtools_inspector_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_inspector_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Inspector Opened Count"
+    description: "Number of times the DevTools Inspector has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_INSPECTOR_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__counter__devtools_jsbrowserdebugger_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_jsbrowserdebugger_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Jsbrowserdebugger Opened Count"
+    description: "Number of times the DevTools Browser Debugger has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_JSBROWSERDEBUGGER_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__counter__devtools_jsdebugger_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_jsdebugger_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Jsdebugger Opened Count"
+    description: "Number of times the DevTools Debugger has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_JSDEBUGGER_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__counter__devtools_jsprofiler_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_jsprofiler_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Jsprofiler Opened Count"
+    description: "Number of times the DevTools JS Profiler has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_JSPROFILER_OPENED_COUNT.
+"
+  }
+
   dimension: metrics__counter__devtools_layout_flexboxhighlighter_opened {
     sql: ${TABLE}.metrics.counter.devtools_layout_flexboxhighlighter_opened ;;
     type: number
@@ -868,6 +1011,17 @@ To be used to validate GIFFT.
     group_label: "Metrics Counter"
     group_item_label: "Devtools Layout Flexboxhighlighter Opened"
     description: "Number of times the DevTools flexbox highlighter was activated from the layout view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.layout.flexboxhighlighter.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_layoutview_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_layoutview_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Layoutview Opened Count"
+    description: "Number of times the DevTools Layout View has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_LAYOUTVIEW_OPENED_COUNT.
 "
   }
 
@@ -901,6 +1055,72 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__devtools_memory_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_memory_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Memory Opened Count"
+    description: "Number of times the DevTools Memory Tool has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_MEMORY_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__counter__devtools_menu_eyedropper_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_menu_eyedropper_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Menu Eyedropper Opened Count"
+    description: "Number of times the DevTools Eyedropper has been opened via the DevTools menu.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_MENU_EYEDROPPER_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__counter__devtools_netmonitor_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_netmonitor_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Netmonitor Opened Count"
+    description: "Number of times the DevTools Network Monitor has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_NETMONITOR_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__counter__devtools_options_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_options_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Options Opened Count"
+    description: "Number of times the DevTools options panel has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_OPTIONS_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__counter__devtools_picker_eyedropper_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_picker_eyedropper_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Picker Eyedropper Opened Count"
+    description: "Number of times the DevTools Eyedropper has been opened via the color picker.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_PICKER_EYEDROPPER_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__counter__devtools_responsive_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_responsive_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Responsive Opened Count"
+    description: "Number of times the DevTools Responsive Design Mode tool has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_RESPONSIVE_OPENED_COUNT.
+"
+  }
+
   dimension: metrics__counter__devtools_responsive_toolbox_opened_first {
     sql: ${TABLE}.metrics.counter.devtools_responsive_toolbox_opened_first ;;
     type: number
@@ -928,6 +1148,61 @@ To be used to validate GIFFT.
     group_label: "Metrics Counter"
     group_item_label: "Devtools Rules Gridinspector Opened"
     description: "Number of times the DevTools grid inspector was opened from the rules view. This metric was generated to correspond to the Legacy Telemetry scalar devtools.rules.gridinspector.opened.
+"
+  }
+
+  dimension: metrics__counter__devtools_ruleview_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_ruleview_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Ruleview Opened Count"
+    description: "Number of times the DevTools Rule View has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_RULEVIEW_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__counter__devtools_storage_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_storage_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Storage Opened Count"
+    description: "Number of times the DevTools Storage Inspector has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_STORAGE_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__counter__devtools_styleeditor_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_styleeditor_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Styleeditor Opened Count"
+    description: "Number of times the DevTools Style Editor has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_STYLEEDITOR_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__counter__devtools_toolbox_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_toolbox_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Toolbox Opened Count"
+    description: "Number of times the DevTools toolbox has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_TOOLBOX_OPENED_COUNT.
+"
+  }
+
+  dimension: metrics__counter__devtools_webconsole_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_webconsole_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Devtools Webconsole Opened Count"
+    description: "Number of times the DevTools Web Console has been opened.
+This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_WEBCONSOLE_OPENED_COUNT.
 "
   }
 
@@ -2926,6 +3201,50 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__cycle_collector_worker_visited_ref_counted__values {
     sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_visited_ref_counted.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__devtools_inspector_number_of_css_grids_in_a_page__count {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_inspector_number_of_css_grids_in_a_page.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Devtools Inspector Number Of Css Grids In A Page"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__devtools_inspector_number_of_css_grids_in_a_page__sum {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_inspector_number_of_css_grids_in_a_page.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Devtools Inspector Number Of Css Grids In A Page"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__devtools_inspector_number_of_css_grids_in_a_page__values {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_inspector_number_of_css_grids_in_a_page.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__devtools_toolbox_host__count {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_toolbox_host.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Devtools Toolbox Host"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__devtools_toolbox_host__sum {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_toolbox_host.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Devtools Toolbox Host"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__devtools_toolbox_host__values {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_toolbox_host.values ;;
     hidden: yes
   }
 
@@ -8733,6 +9052,22 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__devtools_entry_point {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_entry_point ;;
+    hidden: yes
+    description: "Records how the user is triggering Developer Tools startup.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram DEVTOOLS_ENTRY_POINT.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_inspector_fonteditor_font_type_displayed {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_inspector_fonteditor_font_type_displayed ;;
+    hidden: yes
+    description: "Indicates if the font editor displayed its UI for a non-variable font or a variable font
+This metric was generated to correspond to the Legacy Telemetry categorical histogram DEVTOOLS_FONTEDITOR_FONT_TYPE_DISPLAYED.
+"
+  }
+
   dimension: metrics__labeled_counter__devtools_inspector_three_pane_enabled {
     sql: ${TABLE}.metrics.labeled_counter.devtools_inspector_three_pane_enabled ;;
     hidden: yes
@@ -10800,6 +11135,30 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     sql: ${TABLE}.metrics.labeled_string.mail_ui_configuration_message_header ;;
     hidden: yes
     description: "Configuration of the message header display. Customization state; expected values are \"true\" or \"false\". For buttonStyle values are \"default\", \"only-icons\", \"only-text\".
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__devtools_cold_toolbox_open_delay {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.devtools_cold_toolbox_open_delay ;;
+    hidden: yes
+    description: "Time taken (in ms) to open the first DevTools toolbox. This is keyed by tool ID being opened [inspector, webconsole, jsdebugger, styleeditor, performance, memory, netmonitor, storage, dom].
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_COLD_TOOLBOX_OPEN_DELAY_MS.
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__devtools_toolbox_page_reload_delay {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.devtools_toolbox_page_reload_delay ;;
+    hidden: yes
+    description: "Time taken (in ms) to update DevTools panel when reloading a page. This is keyed by tool ID being currently opened [inspector, webconsole, jsdebugger, styleeditor, performance, memory, netmonitor, storage, dom].
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_TOOLBOX_PAGE_RELOAD_DELAY_MS.
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__devtools_warm_toolbox_open_delay {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.devtools_warm_toolbox_open_delay ;;
+    hidden: yes
+    description: "Time taken (in ms) to open all but first DevTools toolbox. This is keyed by tool ID being opened [inspector, webconsole, jsdebugger, styleeditor, performance, memory, netmonitor, storage, dom].
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_WARM_TOOLBOX_OPEN_DELAY_MS.
 "
   }
 
@@ -14261,6 +14620,1949 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__cycle_collector_worker_time__values {
     sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_aboutdebugging_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_aboutdebugging_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Aboutdebugging Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_aboutdebugging_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_aboutdebugging_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Aboutdebugging Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_aboutdebugging_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_aboutdebugging_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Aboutdebugging Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_aboutdebugging_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_aboutdebugging_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Aboutdebugging Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_aboutdebugging_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_aboutdebugging_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_aboutdebugging_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_aboutdebugging_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Aboutdebugging Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_aboutdebugging_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_aboutdebugging_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Aboutdebugging Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_aboutdebugging_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_aboutdebugging_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Aboutdebugging Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_aboutdebugging_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_aboutdebugging_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_picker_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_picker_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Picker Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_picker_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_picker_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Picker Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_picker_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_picker_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Picker Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_picker_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_picker_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Picker Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_picker_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_picker_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_picker_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_picker_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Picker Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_picker_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_picker_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Picker Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_picker_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_picker_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Picker Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_picker_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_picker_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_service_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_service_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Service Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_service_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_service_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Service Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_service_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_service_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Service Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_service_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_service_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Service Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_service_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_service_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_service_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_service_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Service Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_service_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_service_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Service Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_service_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_service_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Service Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_service_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_service_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Accessibility Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_accessibility_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_accessibility_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_animationinspector_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_animationinspector_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Animationinspector Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_animationinspector_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_animationinspector_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Animationinspector Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_animationinspector_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_animationinspector_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Animationinspector Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_animationinspector_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_animationinspector_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Animationinspector Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_animationinspector_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_animationinspector_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_animationinspector_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_animationinspector_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Animationinspector Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_animationinspector_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_animationinspector_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Animationinspector Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_animationinspector_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_animationinspector_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Animationinspector Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_animationinspector_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_animationinspector_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_browserconsole_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_browserconsole_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Browserconsole Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_browserconsole_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_browserconsole_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Browserconsole Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_browserconsole_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_browserconsole_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Browserconsole Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_browserconsole_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_browserconsole_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Browserconsole Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_browserconsole_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_browserconsole_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_browserconsole_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_browserconsole_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Browserconsole Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_browserconsole_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_browserconsole_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Browserconsole Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_browserconsole_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_browserconsole_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Browserconsole Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_browserconsole_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_browserconsole_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_changesview_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_changesview_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Changesview Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_changesview_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_changesview_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Changesview Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_changesview_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_changesview_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Changesview Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_changesview_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_changesview_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Changesview Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_changesview_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_changesview_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_changesview_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_changesview_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Changesview Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_changesview_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_changesview_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Changesview Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_changesview_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_changesview_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Changesview Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_changesview_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_changesview_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_compatibilityview_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_compatibilityview_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Compatibilityview Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_compatibilityview_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_compatibilityview_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Compatibilityview Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_compatibilityview_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_compatibilityview_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Compatibilityview Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_compatibilityview_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_compatibilityview_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Compatibilityview Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_compatibilityview_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_compatibilityview_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_compatibilityview_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_compatibilityview_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Compatibilityview Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_compatibilityview_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_compatibilityview_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Compatibilityview Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_compatibilityview_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_compatibilityview_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Compatibilityview Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_compatibilityview_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_compatibilityview_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_computedview_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_computedview_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Computedview Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_computedview_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_computedview_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Computedview Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_computedview_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_computedview_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Computedview Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_computedview_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_computedview_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Computedview Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_computedview_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_computedview_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_computedview_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_computedview_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Computedview Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_computedview_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_computedview_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Computedview Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_computedview_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_computedview_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Computedview Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_computedview_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_computedview_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_custom_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_custom_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Custom Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_custom_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_custom_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Custom Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_custom_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_custom_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Custom Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_custom_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_custom_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Custom Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_custom_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_custom_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_custom_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_custom_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Custom Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_custom_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_custom_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Custom Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_custom_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_custom_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Custom Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_custom_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_custom_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_dom_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_dom_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_dom_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_dom_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_dom_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_dom_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_dom_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_dom_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_dom_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_flexbox_highlighter_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_flexbox_highlighter_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Flexbox Highlighter Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_flexbox_highlighter_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_flexbox_highlighter_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Flexbox Highlighter Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_flexbox_highlighter_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_flexbox_highlighter_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Flexbox Highlighter Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_flexbox_highlighter_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_flexbox_highlighter_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Flexbox Highlighter Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_flexbox_highlighter_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_flexbox_highlighter_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_flexbox_highlighter_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_flexbox_highlighter_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Flexbox Highlighter Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_flexbox_highlighter_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_flexbox_highlighter_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Flexbox Highlighter Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_flexbox_highlighter_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_flexbox_highlighter_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Flexbox Highlighter Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_flexbox_highlighter_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_flexbox_highlighter_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_fontinspector_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_fontinspector_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Fontinspector Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_fontinspector_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_fontinspector_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Fontinspector Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_fontinspector_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_fontinspector_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Fontinspector Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_fontinspector_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_fontinspector_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Fontinspector Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_fontinspector_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_fontinspector_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_fontinspector_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_fontinspector_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Fontinspector Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_fontinspector_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_fontinspector_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Fontinspector Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_fontinspector_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_fontinspector_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Fontinspector Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_fontinspector_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_fontinspector_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_grid_highlighter_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_grid_highlighter_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Grid Highlighter Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_grid_highlighter_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_grid_highlighter_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Grid Highlighter Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_grid_highlighter_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_grid_highlighter_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Grid Highlighter Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_grid_highlighter_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_grid_highlighter_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Grid Highlighter Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_grid_highlighter_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_grid_highlighter_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_grid_highlighter_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_grid_highlighter_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Grid Highlighter Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_grid_highlighter_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_grid_highlighter_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Grid Highlighter Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_grid_highlighter_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_grid_highlighter_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Grid Highlighter Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_grid_highlighter_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_grid_highlighter_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_new_root_to_reload_delay.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector New Root To Reload Delay"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_new_root_to_reload_delay.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector New Root To Reload Delay"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_new_root_to_reload_delay.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector New Root To Reload Delay"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_new_root_to_reload_delay.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector New Root To Reload Delay"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_new_root_to_reload_delay.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_new_root_to_reload_delay.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector New Root To Reload Delay"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_new_root_to_reload_delay.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector New Root To Reload Delay"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_new_root_to_reload_delay.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector New Root To Reload Delay"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_new_root_to_reload_delay.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Inspector Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_inspector_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_inspector_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsbrowserdebugger_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsbrowserdebugger Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsbrowserdebugger_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsbrowserdebugger Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsbrowserdebugger_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsbrowserdebugger Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsbrowserdebugger_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsbrowserdebugger Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsbrowserdebugger_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsbrowserdebugger_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsbrowserdebugger Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsbrowserdebugger_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsbrowserdebugger Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsbrowserdebugger_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsbrowserdebugger Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsbrowserdebugger_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsdebugger_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsdebugger_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsdebugger Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsdebugger_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsdebugger_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsdebugger Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsdebugger_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsdebugger_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsdebugger Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsdebugger_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsdebugger_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsdebugger Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsdebugger_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsdebugger_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsdebugger_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsdebugger_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsdebugger Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsdebugger_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsdebugger_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsdebugger Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsdebugger_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsdebugger_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsdebugger Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsdebugger_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsdebugger_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsprofiler_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsprofiler_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsprofiler Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsprofiler_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsprofiler_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsprofiler Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsprofiler_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsprofiler_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsprofiler Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsprofiler_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsprofiler_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsprofiler Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsprofiler_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsprofiler_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsprofiler_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsprofiler_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsprofiler Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsprofiler_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsprofiler_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsprofiler Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsprofiler_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsprofiler_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Jsprofiler Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_jsprofiler_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_jsprofiler_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_layoutview_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_layoutview_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Layoutview Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_layoutview_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_layoutview_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Layoutview Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_layoutview_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_layoutview_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Layoutview Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_layoutview_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_layoutview_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Layoutview Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_layoutview_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_layoutview_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_layoutview_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_layoutview_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Layoutview Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_layoutview_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_layoutview_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Layoutview Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_layoutview_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_layoutview_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Layoutview Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_layoutview_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_layoutview_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_memory_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_memory_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Memory Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_memory_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_memory_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Memory Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_memory_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_memory_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Memory Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_memory_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_memory_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Memory Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_memory_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_memory_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_memory_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_memory_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Memory Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_memory_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_memory_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Memory Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_memory_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_memory_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Memory Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_memory_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_memory_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_netmonitor_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_netmonitor_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Netmonitor Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_netmonitor_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_netmonitor_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Netmonitor Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_netmonitor_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_netmonitor_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Netmonitor Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_netmonitor_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_netmonitor_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Netmonitor Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_netmonitor_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_netmonitor_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_netmonitor_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_netmonitor_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Netmonitor Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_netmonitor_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_netmonitor_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Netmonitor Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_netmonitor_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_netmonitor_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Netmonitor Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_netmonitor_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_netmonitor_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_options_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_options_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Options Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_options_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_options_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Options Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_options_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_options_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Options Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_options_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_options_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Options Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_options_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_options_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_options_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_options_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Options Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_options_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_options_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Options Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_options_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_options_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Options Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_options_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_options_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_responsive_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Responsive Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_responsive_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Responsive Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_responsive_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Responsive Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_responsive_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Responsive Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_responsive_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_responsive_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Responsive Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_responsive_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Responsive Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_responsive_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Responsive Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_responsive_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_ruleview_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Ruleview Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_ruleview_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Ruleview Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_ruleview_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Ruleview Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_ruleview_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Ruleview Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_ruleview_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_ruleview_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Ruleview Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_ruleview_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Ruleview Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_ruleview_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Ruleview Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_ruleview_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_storage_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_storage_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Storage Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_storage_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_storage_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Storage Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_storage_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_storage_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Storage Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_storage_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_storage_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Storage Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_storage_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_storage_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_storage_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_storage_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Storage Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_storage_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_storage_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Storage Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_storage_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_storage_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Storage Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_storage_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_storage_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_styleeditor_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_styleeditor_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Styleeditor Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_styleeditor_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_styleeditor_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Styleeditor Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_styleeditor_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_styleeditor_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Styleeditor Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_styleeditor_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_styleeditor_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Styleeditor Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_styleeditor_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_styleeditor_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_styleeditor_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_styleeditor_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Styleeditor Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_styleeditor_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_styleeditor_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Styleeditor Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_styleeditor_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_styleeditor_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Styleeditor Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_styleeditor_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_styleeditor_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_toolbox_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_toolbox_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Toolbox Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_toolbox_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_toolbox_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Toolbox Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_toolbox_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_toolbox_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Toolbox Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_toolbox_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_toolbox_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Toolbox Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_toolbox_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_toolbox_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_toolbox_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_toolbox_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Toolbox Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_toolbox_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_toolbox_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Toolbox Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_toolbox_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_toolbox_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Toolbox Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_toolbox_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_toolbox_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_webconsole_time_active__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_webconsole_time_active.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Webconsole Time Active"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_webconsole_time_active__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_webconsole_time_active.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Webconsole Time Active"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_webconsole_time_active__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_webconsole_time_active.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Webconsole Time Active"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_webconsole_time_active__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_webconsole_time_active.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Webconsole Time Active"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_webconsole_time_active__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_webconsole_time_active.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_webconsole_time_active__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_webconsole_time_active.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Webconsole Time Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_webconsole_time_active__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_webconsole_time_active.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Webconsole Time Active"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_webconsole_time_active__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_webconsole_time_active.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Webconsole Time Active"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_webconsole_time_active__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_webconsole_time_active.values ;;
     hidden: yes
   }
 
@@ -33733,6 +36035,34 @@ view: metrics_table__metrics__custom_distribution__cycle_collector_worker_visite
   }
 }
 
+view: metrics_table__metrics__custom_distribution__devtools_inspector_number_of_css_grids_in_a_page__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__devtools_toolbox_host__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__dns_blocklist_count__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -39147,6 +41477,273 @@ view: metrics_table__metrics__labeled_string__mail_ui_configuration_message_head
   }
 }
 
+view: metrics_table__metrics__labeled_timing_distribution__devtools_cold_toolbox_open_delay {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__devtools_cold_toolbox_open_delay__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__devtools_toolbox_page_reload_delay {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__devtools_toolbox_page_reload_delay__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__devtools_warm_toolbox_open_delay {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__devtools_warm_toolbox_open_delay__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_timing_distribution__dns_trr_lookup_time {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -43169,6 +45766,412 @@ view: metrics_table__metrics__timing_distribution__cycle_collector_time_between_
 }
 
 view: metrics_table__metrics__timing_distribution__cycle_collector_worker_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_aboutdebugging_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_accessibility_picker_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_accessibility_service_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_accessibility_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_animationinspector_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_browserconsole_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_changesview_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_compatibilityview_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_computedview_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_custom_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_dom_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_flexbox_highlighter_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_fontinspector_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_grid_highlighter_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_inspector_new_root_to_reload_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_inspector_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_jsbrowserdebugger_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_jsdebugger_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_jsprofiler_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_layoutview_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_memory_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_netmonitor_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_options_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_responsive_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_ruleview_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_storage_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_styleeditor_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_toolbox_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_webconsole_time_active__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
