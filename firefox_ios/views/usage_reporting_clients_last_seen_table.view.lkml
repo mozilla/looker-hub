@@ -73,6 +73,11 @@ view: usage_reporting_clients_last_seen_table {
     }
 
     allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_ios_firefoxbeta.usage_reporting_clients_last_seen"
+    }
+
+    allowed_value: {
       label: "Nightly"
       value: "mozdata.org_mozilla_ios_fennec.usage_reporting_clients_last_seen"
     }
