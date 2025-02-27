@@ -50,7 +50,7 @@ view: tasks_base {
     datatype: date
   }
 
-  sql_table_name: `moz-fx-data-shared-prod.fxci.tasks_v1` ;;
+  sql_table_name: `moz-fx-data-shared-prod.fxci_derived.tasks_v1` ;;
 }
 
 view: tasks_base__tags {

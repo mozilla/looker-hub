@@ -108,5 +108,5 @@ view: task_runs_base {
     datatype: date
   }
 
-  sql_table_name: `moz-fx-data-shared-prod.fxci.task_runs_v1` ;;
+  sql_table_name: `moz-fx-data-shared-prod.fxci_derived.task_runs_v1` ;;
 }

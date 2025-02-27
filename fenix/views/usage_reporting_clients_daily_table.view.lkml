@@ -125,6 +125,11 @@ view: usage_reporting_clients_daily_table {
     }
 
     allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.usage_reporting_clients_daily"
+    }
+
+    allowed_value: {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.usage_reporting_clients_daily"
     }
