@@ -961,6 +961,14 @@ view: metrics_table {
     group_item_label: "Pwmgr Os Auth Enabled"
   }
 
+  dimension: metrics__boolean__pwmgr_saving_enabled {
+    sql: ${TABLE}.metrics.boolean.pwmgr_saving_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Pwmgr Saving Enabled"
+  }
+
   dimension: metrics__boolean__recent_tabs_section_visible {
     sql: ${TABLE}.metrics.boolean.recent_tabs_section_visible ;;
     type: yesno
@@ -1887,6 +1895,22 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Httpsfirst Upgraded Schemeless"
+  }
+
+  dimension: metrics__counter__localstorage_request_recv_cancel_counter {
+    sql: ${TABLE}.metrics.counter.localstorage_request_recv_cancel_counter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Localstorage Request Recv Cancel Counter"
+  }
+
+  dimension: metrics__counter__localstorage_request_send_cancel_counter {
+    sql: ${TABLE}.metrics.counter.localstorage_request_send_cancel_counter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Localstorage Request Send Cancel Counter"
   }
 
   dimension: metrics__counter__logins_deleted {
@@ -9170,6 +9194,26 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__htmleditors_overridden_by_beforeinput_listeners {
+    sql: ${TABLE}.metrics.labeled_counter.htmleditors_overridden_by_beforeinput_listeners ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__htmleditors_with_beforeinput_listeners {
+    sql: ${TABLE}.metrics.labeled_counter.htmleditors_with_beforeinput_listeners ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__htmleditors_with_mutation_listeners_without_beforeinput_listeners {
+    sql: ${TABLE}.metrics.labeled_counter.htmleditors_with_mutation_listeners_without_beforeinput_listeners ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__htmleditors_with_mutation_observers_without_beforeinput_listeners {
+    sql: ${TABLE}.metrics.labeled_counter.htmleditors_with_mutation_observers_without_beforeinput_listeners ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__http_altsvc_mapping_changed_target {
     sql: ${TABLE}.metrics.labeled_counter.http_altsvc_mapping_changed_target ;;
     hidden: yes
@@ -11679,6 +11723,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Policies Count"
+  }
+
+  dimension: metrics__quantity__pwmgr_num_saved_passwords {
+    sql: ${TABLE}.metrics.quantity.pwmgr_num_saved_passwords ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Pwmgr Num Saved Passwords"
   }
 
   dimension: metrics__quantity__pwmgr_potentially_breached_passwords {
@@ -23131,6 +23183,72 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__localstorage_database_new_object_setup_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_new_object_setup_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Database New Object Setup Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_new_object_setup_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_new_object_setup_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Database New Object Setup Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_new_object_setup_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_new_object_setup_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Database New Object Setup Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_new_object_setup_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_new_object_setup_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Database New Object Setup Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_new_object_setup_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_new_object_setup_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_new_object_setup_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_new_object_setup_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Database New Object Setup Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_new_object_setup_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_new_object_setup_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Database New Object Setup Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_new_object_setup_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_new_object_setup_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Database New Object Setup Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_new_object_setup_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_new_object_setup_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.bucket_count ;;
     type: number
@@ -23194,6 +23312,72 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__values {
     sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_request_prepare_datastore_processing_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Request Prepare Datastore Processing Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_request_prepare_datastore_processing_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Request Prepare Datastore Processing Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_request_prepare_datastore_processing_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Request Prepare Datastore Processing Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_request_prepare_datastore_processing_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Request Prepare Datastore Processing Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_request_prepare_datastore_processing_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_request_prepare_datastore_processing_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Request Prepare Datastore Processing Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_request_prepare_datastore_processing_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Request Prepare Datastore Processing Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_request_prepare_datastore_processing_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Request Prepare Datastore Processing Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_request_prepare_datastore_processing_time.values ;;
     hidden: yes
   }
 
@@ -50431,7 +50615,35 @@ view: metrics_table__metrics__timing_distribution__localdomstorage_shutdown_data
   }
 }
 
+view: metrics_table__metrics__timing_distribution__localstorage_database_new_object_setup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

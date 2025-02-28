@@ -1021,6 +1021,17 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__boolean__pwmgr_saving_enabled {
+    sql: ${TABLE}.metrics.boolean.pwmgr_saving_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Pwmgr Saving Enabled"
+    description: "Whether password saving is enabled globally.
+Tracks the pref `signon.rememberSignons`.
+"
+  }
+
   dimension: metrics__boolean__shopping_settings_auto_close_user_disabled {
     sql: ${TABLE}.metrics.boolean.shopping_settings_auto_close_user_disabled ;;
     type: yesno
@@ -2255,6 +2266,26 @@ This does not include deletion-request pings.
     group_label: "Metrics Counter"
     group_item_label: "Httpsfirst Upgraded Schemeless"
     description: "Counts how often a load is successfully upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless). This does not include loads that get downgraded again.
+"
+  }
+
+  dimension: metrics__counter__localstorage_request_recv_cancel_counter {
+    sql: ${TABLE}.metrics.counter.localstorage_request_recv_cancel_counter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Localstorage Request Recv Cancel Counter"
+    description: "Increments whenever a request cancellation message is successfully received. This includes cancellations for requests related to either databases or observers.
+"
+  }
+
+  dimension: metrics__counter__localstorage_request_send_cancel_counter {
+    sql: ${TABLE}.metrics.counter.localstorage_request_send_cancel_counter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Localstorage Request Send Cancel Counter"
+    description: "Increments whenever a request cancellation message is successfully sent. This includes cancellations for requests related to either databases or observers.
 "
   }
 
@@ -6924,6 +6955,50 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__newtab_page_blocked_sites_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.newtab_page_blocked_sites_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Newtab Page Blocked Sites Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__newtab_page_blocked_sites_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.newtab_page_blocked_sites_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Newtab Page Blocked Sites Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__newtab_page_blocked_sites_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.newtab_page_blocked_sites_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__newtab_page_pinned_sites_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.newtab_page_pinned_sites_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Newtab Page Pinned Sites Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__newtab_page_pinned_sites_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.newtab_page_pinned_sites_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Newtab Page Pinned Sites Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__newtab_page_pinned_sites_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.newtab_page_pinned_sites_count.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__pdfjs_editing_highlight_thickness__count {
     sql: ${TABLE}.metrics.custom_distribution.pdfjs_editing_highlight_thickness.count ;;
     type: number
@@ -11556,6 +11631,38 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__htmleditors_overridden_by_beforeinput_listeners {
+    sql: ${TABLE}.metrics.labeled_counter.htmleditors_overridden_by_beforeinput_listeners ;;
+    hidden: yes
+    description: "Number of HTML editors whose dispatching beforeinput events are canceled
+This metric was generated to correspond to the Legacy Telemetry boolean histogram HTMLEDITORS_OVERRIDDEN_BY_BEFOREINPUT_LISTENERS.
+"
+  }
+
+  dimension: metrics__labeled_counter__htmleditors_with_beforeinput_listeners {
+    sql: ${TABLE}.metrics.labeled_counter.htmleditors_with_beforeinput_listeners ;;
+    hidden: yes
+    description: "Number of HTML editors whose window or a node in it has had beforeinput event listeners
+This metric was generated to correspond to the Legacy Telemetry boolean histogram HTMLEDITORS_WITH_BEFOREINPUT_LISTENERS.
+"
+  }
+
+  dimension: metrics__labeled_counter__htmleditors_with_mutation_listeners_without_beforeinput_listeners {
+    sql: ${TABLE}.metrics.labeled_counter.htmleditors_with_mutation_listeners_without_beforeinput_listeners ;;
+    hidden: yes
+    description: "Number of HTML editors whose window or a node in it has had mutation event listeners, but has not had beforeinput event listeners
+This metric was generated to correspond to the Legacy Telemetry boolean histogram HTMLEDITORS_WITH_MUTATION_LISTENERS_WITHOUT_BEFOREINPUT_LISTENERS.
+"
+  }
+
+  dimension: metrics__labeled_counter__htmleditors_with_mutation_observers_without_beforeinput_listeners {
+    sql: ${TABLE}.metrics.labeled_counter.htmleditors_with_mutation_observers_without_beforeinput_listeners ;;
+    hidden: yes
+    description: "Number of HTML editors a node in the window has been observed by mutation observers, but has not had beforeinput event listeners
+This metric was generated to correspond to the Legacy Telemetry boolean histogram HTMLEDITORS_WITH_MUTATION_OBSERVERS_WITHOUT_BEFOREINPUT_LISTENERS.
+"
+  }
+
   dimension: metrics__labeled_counter__http_altsvc_mapping_changed_target {
     sql: ${TABLE}.metrics.labeled_counter.http_altsvc_mapping_changed_target ;;
     hidden: yes
@@ -16068,6 +16175,17 @@ API for the purposes of Validation (hence GVSV).
     group_label: "Metrics Quantity"
     group_item_label: "Policies Count"
     description: "A uint with the number of active enterprise policies, collected once at startup. This metric was generated to correspond to the Legacy Telemetry scalar policies.count.
+"
+  }
+
+  dimension: metrics__quantity__pwmgr_num_saved_passwords {
+    sql: ${TABLE}.metrics.quantity.pwmgr_num_saved_passwords ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Pwmgr Num Saved Passwords"
+    description: "The number of saved logins, including those that cannot be decrypted.
+Similar to the legacy telemetry histogram PWMGR_NUM_SAVED_PASSWORDS.
 "
   }
 
@@ -27977,6 +28095,73 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__localstorage_database_new_object_setup_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_new_object_setup_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Database New Object Setup Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_new_object_setup_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_new_object_setup_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Database New Object Setup Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_new_object_setup_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_new_object_setup_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Database New Object Setup Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_new_object_setup_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_new_object_setup_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Database New Object Setup Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_new_object_setup_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_new_object_setup_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_new_object_setup_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_new_object_setup_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Database New Object Setup Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_new_object_setup_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_new_object_setup_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Database New Object Setup Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_new_object_setup_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_new_object_setup_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Database New Object Setup Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_database_new_object_setup_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_database_new_object_setup_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.bucket_count ;;
     type: number
@@ -28041,6 +28226,73 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__values {
     sql: ${TABLE}.metrics.timing_distribution.localstorage_database_request_allow_to_close_response_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_request_prepare_datastore_processing_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Request Prepare Datastore Processing Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_request_prepare_datastore_processing_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Request Prepare Datastore Processing Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_request_prepare_datastore_processing_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Request Prepare Datastore Processing Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_request_prepare_datastore_processing_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Request Prepare Datastore Processing Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_request_prepare_datastore_processing_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_request_prepare_datastore_processing_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Request Prepare Datastore Processing Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_request_prepare_datastore_processing_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Request Prepare Datastore Processing Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_request_prepare_datastore_processing_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Localstorage Request Prepare Datastore Processing Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.localstorage_request_prepare_datastore_processing_time.values ;;
     hidden: yes
   }
 
@@ -45206,6 +45458,34 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_upload_thro
   }
 }
 
+view: metrics_table__metrics__custom_distribution__newtab_page_blocked_sites_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__newtab_page_pinned_sites_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__pdfjs_editing_highlight_thickness__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -56211,7 +56491,35 @@ view: metrics_table__metrics__timing_distribution__localdomstorage_shutdown_data
   }
 }
 
+view: metrics_table__metrics__timing_distribution__localstorage_database_new_object_setup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__localstorage_database_request_allow_to_close_response_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
