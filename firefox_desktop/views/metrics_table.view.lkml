@@ -2711,6 +2711,105 @@ of the shopping experiment.
 "
   }
 
+  dimension: metrics__counter__telemetry_archive_session_ping_count {
+    sql: ${TABLE}.metrics.counter.telemetry_archive_session_ping_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Telemetry Archive Session Ping Count"
+    description: "Number of Telemetry pings added to the archive during the session
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_ARCHIVE_SESSION_PING_COUNT.
+"
+  }
+
+  dimension: metrics__counter__telemetry_invalid_payload_submitted {
+    sql: ${TABLE}.metrics.counter.telemetry_invalid_payload_submitted ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Telemetry Invalid Payload Submitted"
+    description: "Count of individual invalid payloads that were submitted to Telemetry.
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_INVALID_PAYLOAD_SUBMITTED.
+"
+  }
+
+  dimension: metrics__counter__telemetry_pending_load_failure_parse {
+    sql: ${TABLE}.metrics.counter.telemetry_pending_load_failure_parse ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Telemetry Pending Load Failure Parse"
+    description: "Number of pending Telemetry pings that failed to parse once loaded from the disk
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_PENDING_LOAD_FAILURE_PARSE.
+"
+  }
+
+  dimension: metrics__counter__telemetry_pending_load_failure_read {
+    sql: ${TABLE}.metrics.counter.telemetry_pending_load_failure_read ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Telemetry Pending Load Failure Read"
+    description: "Number of pending Telemetry pings that failed to load from the disk
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_PENDING_LOAD_FAILURE_READ.
+"
+  }
+
+  dimension: metrics__counter__telemetry_ping_evicted_for_server_errors {
+    sql: ${TABLE}.metrics.counter.telemetry_ping_evicted_for_server_errors ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Telemetry Ping Evicted For Server Errors"
+    description: "Number of Telemetry ping files evicted due to server errors (4XX HTTP code received)
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_PING_EVICTED_FOR_SERVER_ERRORS.
+"
+  }
+
+  dimension: metrics__counter__telemetry_ping_size_exceeded_archived {
+    sql: ${TABLE}.metrics.counter.telemetry_ping_size_exceeded_archived ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Telemetry Ping Size Exceeded Archived"
+    description: "Number of archived Telemetry pings discarded because they exceeded the maximum size
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_PING_SIZE_EXCEEDED_ARCHIVED.
+"
+  }
+
+  dimension: metrics__counter__telemetry_ping_size_exceeded_pending {
+    sql: ${TABLE}.metrics.counter.telemetry_ping_size_exceeded_pending ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Telemetry Ping Size Exceeded Pending"
+    description: "Number of Telemetry pending pings discarded because they exceeded the maximum size
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_PING_SIZE_EXCEEDED_PENDING.
+"
+  }
+
+  dimension: metrics__counter__telemetry_ping_size_exceeded_send {
+    sql: ${TABLE}.metrics.counter.telemetry_ping_size_exceeded_send ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Telemetry Ping Size Exceeded Send"
+    description: "Number of Telemetry pings discarded before sending because they exceeded the maximum size
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_PING_SIZE_EXCEEDED_SEND.
+"
+  }
+
+  dimension: metrics__counter__telemetry_ping_submission_waiting_clientid {
+    sql: ${TABLE}.metrics.counter.telemetry_ping_submission_waiting_clientid ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Telemetry Ping Submission Waiting Clientid"
+    description: "The number of pings that were submitted and had to wait for a client id (i.e. before it was cached or loaded from disk)
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_PING_SUBMISSION_WAITING_CLIENTID.
+"
+  }
+
   dimension: metrics__counter__tls_certificate_verifications {
     sql: ${TABLE}.metrics.counter.tls_certificate_verifications ;;
     type: number
@@ -4160,6 +4259,50 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__cycle_collector_worker_visited_ref_counted__values {
     sql: ${TABLE}.metrics.custom_distribution.cycle_collector_worker_visited_ref_counted.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__devtools_heap_snapshot_edge_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_heap_snapshot_edge_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Devtools Heap Snapshot Edge Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__devtools_heap_snapshot_edge_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_heap_snapshot_edge_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Devtools Heap Snapshot Edge Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__devtools_heap_snapshot_edge_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_heap_snapshot_edge_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__devtools_heap_snapshot_node_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_heap_snapshot_node_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Devtools Heap Snapshot Node Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__devtools_heap_snapshot_node_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_heap_snapshot_node_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Devtools Heap Snapshot Node Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__devtools_heap_snapshot_node_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_heap_snapshot_node_count.values ;;
     hidden: yes
   }
 
@@ -8387,6 +8530,138 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__telemetry_archive_directories_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_directories_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Telemetry Archive Directories Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_directories_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_directories_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Telemetry Archive Directories Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_directories_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_directories_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_evicted_old_dirs__count {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_evicted_old_dirs.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Telemetry Archive Evicted Old Dirs"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_evicted_old_dirs__sum {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_evicted_old_dirs.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Telemetry Archive Evicted Old Dirs"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_evicted_old_dirs__values {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_evicted_old_dirs.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_evicted_over_quota__count {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_evicted_over_quota.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Telemetry Archive Evicted Over Quota"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_evicted_over_quota__sum {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_evicted_over_quota.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Telemetry Archive Evicted Over Quota"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_evicted_over_quota__values {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_evicted_over_quota.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_oldest_directory_age__count {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_oldest_directory_age.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Telemetry Archive Oldest Directory Age"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_oldest_directory_age__sum {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_oldest_directory_age.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Telemetry Archive Oldest Directory Age"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_oldest_directory_age__values {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_oldest_directory_age.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_scan_ping_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_scan_ping_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Telemetry Archive Scan Ping Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_scan_ping_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_scan_ping_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Telemetry Archive Scan Ping Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_scan_ping_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_scan_ping_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__telemetry_pending_pings_evicted_over_quota__count {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_pending_pings_evicted_over_quota.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Telemetry Pending Pings Evicted Over Quota"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_pending_pings_evicted_over_quota__sum {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_pending_pings_evicted_over_quota.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Telemetry Pending Pings Evicted Over Quota"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_pending_pings_evicted_over_quota__values {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_pending_pings_evicted_over_quota.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__thumbnails_capture_done_reason_2__count {
     sql: ${TABLE}.metrics.custom_distribution.thumbnails_capture_done_reason_2.count ;;
     type: number
@@ -12526,6 +12801,54 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__telemetry_event_ping_sent {
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_event_ping_sent ;;
+    hidden: yes
+    description: "Number of 'event' pings sent, by reason
+This metric was generated to correspond to the Legacy Telemetry categorical histogram TELEMETRY_EVENT_PING_SENT.
+"
+  }
+
+  dimension: metrics__labeled_counter__telemetry_event_recording_error {
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_event_recording_error ;;
+    hidden: yes
+    description: "Number of event recording failures, by type of failure
+This metric was generated to correspond to the Legacy Telemetry categorical histogram TELEMETRY_EVENT_RECORDING_ERROR.
+"
+  }
+
+  dimension: metrics__labeled_counter__telemetry_event_registration_error {
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_event_registration_error ;;
+    hidden: yes
+    description: "Number of event registration failures, by field causing the failure
+This metric was generated to correspond to the Legacy Telemetry categorical histogram TELEMETRY_EVENT_REGISTRATION_ERROR.
+"
+  }
+
+  dimension: metrics__labeled_counter__telemetry_invalid_ping_type_submitted {
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_invalid_ping_type_submitted ;;
+    hidden: yes
+    description: "Count of individual invalid ping types that were submitted to Telemetry.
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_INVALID_PING_TYPE_SUBMITTED.
+"
+  }
+
+  dimension: metrics__labeled_counter__telemetry_send_failure_type {
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_send_failure_type ;;
+    hidden: yes
+    description: "Counts of the different ways sending a Telemetry ping can fail.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram TELEMETRY_SEND_FAILURE_TYPE.
+"
+  }
+
+  dimension: metrics__labeled_counter__telemetry_success {
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_success ;;
+    hidden: yes
+    description: "Successful telemetry submission
+This metric was generated to correspond to the Legacy Telemetry boolean histogram TELEMETRY_SUCCESS.
+"
+  }
+
   dimension: metrics__labeled_counter__tls_xyber_intolerance_reason {
     sql: ${TABLE}.metrics.labeled_counter.tls_xyber_intolerance_reason ;;
     hidden: yes
@@ -14943,6 +15266,116 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__ssl_bytes_before_cert_callback__values {
     sql: ${TABLE}.metrics.memory_distribution.ssl_bytes_before_cert_callback.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__telemetry_archive_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_archive_size.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Telemetry Archive Size"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_archive_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_archive_size.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Telemetry Archive Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_archive_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_archive_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__telemetry_discarded_archived_pings_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_discarded_archived_pings_size.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Telemetry Discarded Archived Pings Size"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_discarded_archived_pings_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_discarded_archived_pings_size.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Telemetry Discarded Archived Pings Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_discarded_archived_pings_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_discarded_archived_pings_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__telemetry_discarded_pending_pings_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_discarded_pending_pings_size.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Telemetry Discarded Pending Pings Size"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_discarded_pending_pings_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_discarded_pending_pings_size.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Telemetry Discarded Pending Pings Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_discarded_pending_pings_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_discarded_pending_pings_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__telemetry_discarded_send_pings_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_discarded_send_pings_size.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Telemetry Discarded Send Pings Size"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_discarded_send_pings_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_discarded_send_pings_size.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Telemetry Discarded Send Pings Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_discarded_send_pings_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_discarded_send_pings_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__telemetry_pending_pings_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_pending_pings_size.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Telemetry Pending Pings Size"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_pending_pings_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_pending_pings_size.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Telemetry Pending Pings Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_pending_pings_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_pending_pings_size.values ;;
     hidden: yes
   }
 
@@ -20509,6 +20942,73 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Read Heap Snapshot"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Read Heap Snapshot"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Read Heap Snapshot"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Read Heap Snapshot"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Read Heap Snapshot"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Read Heap Snapshot"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Read Heap Snapshot"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__devtools_responsive_time_active__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.bucket_count ;;
     type: number
@@ -20640,6 +21140,73 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__devtools_ruleview_time_active__values {
     sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Save Heap Snapshot"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Save Heap Snapshot"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Save Heap Snapshot"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Save Heap Snapshot"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Save Heap Snapshot"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Save Heap Snapshot"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Save Heap Snapshot"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.values ;;
     hidden: yes
   }
 
@@ -39001,6 +39568,676 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__telemetry_archive_checking_over_quota__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_checking_over_quota.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Checking Over Quota"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_checking_over_quota__count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_checking_over_quota.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Checking Over Quota"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_checking_over_quota__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_checking_over_quota.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Checking Over Quota"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_checking_over_quota__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_checking_over_quota.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Checking Over Quota"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_checking_over_quota__range {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_checking_over_quota.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_checking_over_quota__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_checking_over_quota.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Checking Over Quota"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_checking_over_quota__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_checking_over_quota.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Checking Over Quota"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_checking_over_quota__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_checking_over_quota.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Checking Over Quota"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_checking_over_quota__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_checking_over_quota.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_dirs__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_dirs.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Evicting Dirs"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_dirs__count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_dirs.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Evicting Dirs"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_dirs__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_dirs.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Evicting Dirs"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_dirs__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_dirs.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Evicting Dirs"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_dirs__range {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_dirs.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_dirs__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_dirs.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Evicting Dirs"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_dirs__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_dirs.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Evicting Dirs"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_dirs__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_dirs.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Evicting Dirs"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_dirs__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_dirs.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_over_quota__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_over_quota.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Evicting Over Quota"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_over_quota__count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_over_quota.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Evicting Over Quota"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_over_quota__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_over_quota.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Evicting Over Quota"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_over_quota__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_over_quota.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Evicting Over Quota"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_over_quota__range {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_over_quota.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_over_quota__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_over_quota.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Evicting Over Quota"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_over_quota__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_over_quota.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Evicting Over Quota"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_over_quota__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_over_quota.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Archive Evicting Over Quota"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_over_quota__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_over_quota.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_compress__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_compress.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Compress"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_compress__count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_compress.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Compress"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_compress__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_compress.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Compress"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_compress__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_compress.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Compress"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_compress__range {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_compress.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_compress__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_compress.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Compress"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_compress__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_compress.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Compress"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_compress__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_compress.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Compress"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_compress__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_compress.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_checking_over_quota__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_checking_over_quota.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Checking Over Quota"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_checking_over_quota__count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_checking_over_quota.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Checking Over Quota"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_checking_over_quota__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_checking_over_quota.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Checking Over Quota"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_checking_over_quota__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_checking_over_quota.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Checking Over Quota"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_checking_over_quota__range {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_checking_over_quota.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_checking_over_quota__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_checking_over_quota.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Checking Over Quota"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_checking_over_quota__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_checking_over_quota.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Checking Over Quota"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_checking_over_quota__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_checking_over_quota.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Checking Over Quota"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_checking_over_quota__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_checking_over_quota.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_evicting_over_quota__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_evicting_over_quota.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Evicting Over Quota"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_evicting_over_quota__count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_evicting_over_quota.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Evicting Over Quota"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_evicting_over_quota__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_evicting_over_quota.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Evicting Over Quota"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_evicting_over_quota__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_evicting_over_quota.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Evicting Over Quota"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_evicting_over_quota__range {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_evicting_over_quota.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_evicting_over_quota__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_evicting_over_quota.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Evicting Over Quota"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_evicting_over_quota__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_evicting_over_quota.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Evicting Over Quota"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_evicting_over_quota__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_evicting_over_quota.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Evicting Over Quota"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_evicting_over_quota__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_evicting_over_quota.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_pings_age__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_pings_age.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Pings Age"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_pings_age__count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_pings_age.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Pings Age"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_pings_age__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_pings_age.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Pings Age"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_pings_age__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_pings_age.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Pings Age"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_pings_age__range {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_pings_age.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_pings_age__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_pings_age.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Pings Age"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_pings_age__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_pings_age.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Pings Age"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_pings_age__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_pings_age.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Pending Pings Age"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_pings_age__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_pings_age.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_failure__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_failure.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Send Failure"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_failure__count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_failure.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Send Failure"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_failure__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_failure.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Send Failure"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_failure__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_failure.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Send Failure"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_failure__range {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_failure.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_failure__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_failure.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Send Failure"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_failure__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_failure.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Send Failure"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_failure__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_failure.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Send Failure"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_failure__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_failure.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_success__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_success.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Send Success"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_success__count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_success.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Send Success"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_success__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_success.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Send Success"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_success__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_success.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Send Success"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_success__range {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_success.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_success__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_success.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Send Success"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_success__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_success.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Send Success"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_success__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_success.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Send Success"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_success__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_success.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_stringify__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_stringify.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Stringify"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_stringify__count {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_stringify.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Stringify"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_stringify__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_stringify.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Stringify"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_stringify__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_stringify.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Stringify"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_stringify__range {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_stringify.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_stringify__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_stringify.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Stringify"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_stringify__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_stringify.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Stringify"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_stringify__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_stringify.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Telemetry Stringify"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_stringify__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_stringify.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__thumbnails_capture_canvas_draw_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.thumbnails_capture_canvas_draw_time.bucket_count ;;
     type: number
@@ -42275,6 +43512,34 @@ view: metrics_table__metrics__custom_distribution__cycle_collector_worker_visite
   }
 }
 
+view: metrics_table__metrics__custom_distribution__devtools_heap_snapshot_edge_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__devtools_heap_snapshot_node_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__devtools_inspector_number_of_css_grids_in_a_page__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -44950,6 +46215,90 @@ view: metrics_table__metrics__custom_distribution__ssl_tls13_intolerance_reason_
 }
 
 view: metrics_table__metrics__custom_distribution__ssl_version_fallback_inappropriate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__telemetry_archive_directories_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__telemetry_archive_evicted_old_dirs__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__telemetry_archive_evicted_over_quota__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__telemetry_archive_oldest_directory_age__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__telemetry_archive_scan_ping_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__telemetry_pending_pings_evicted_over_quota__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -52566,6 +53915,76 @@ view: metrics_table__metrics__memory_distribution__ssl_bytes_before_cert_callbac
   }
 }
 
+view: metrics_table__metrics__memory_distribution__telemetry_archive_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__telemetry_discarded_archived_pings_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__telemetry_discarded_pending_pings_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__telemetry_discarded_send_pings_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__telemetry_pending_pings_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__a11y_tree_update_timing__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -53322,6 +54741,20 @@ view: metrics_table__metrics__timing_distribution__devtools_options_time_active_
   }
 }
 
+view: metrics_table__metrics__timing_distribution__devtools_read_heap_snapshot__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__devtools_responsive_time_active__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -53337,6 +54770,20 @@ view: metrics_table__metrics__timing_distribution__devtools_responsive_time_acti
 }
 
 view: metrics_table__metrics__timing_distribution__devtools_ruleview_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_save_heap_snapshot__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -57173,6 +58620,146 @@ view: metrics_table__metrics__timing_distribution__sts_poll_block_time__values {
 }
 
 view: metrics_table__metrics__timing_distribution__sts_poll_cycle__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__telemetry_archive_checking_over_quota__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__telemetry_archive_evicting_dirs__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__telemetry_archive_evicting_over_quota__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__telemetry_compress__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__telemetry_pending_checking_over_quota__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__telemetry_pending_evicting_over_quota__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__telemetry_pending_pings_age__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__telemetry_send_failure__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__telemetry_send_success__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__telemetry_stringify__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -17,12 +17,6 @@ view: usage_reporting_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: app_channel {
-    sql: ${TABLE}.app_channel ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
   dimension: app_display_version {
     sql: ${TABLE}.app_display_version ;;
     type: string
@@ -35,9 +29,28 @@ view: usage_reporting_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: channel {
+    sql: ${TABLE}.channel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: country {
+    sql: ${TABLE}.country ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    map_layer_name: countries
+  }
+
   dimension: distribution_id {
     sql: ${TABLE}.distribution_id ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: first_seen_year {
+    sql: ${TABLE}.first_seen_year ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 
@@ -97,12 +110,6 @@ view: usage_reporting_active_users_table {
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: normalized_country_code {
-    sql: ${TABLE}.normalized_country_code ;;
     type: string
     suggest_persist_for: "24 hours"
   }

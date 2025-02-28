@@ -4285,6 +4285,44 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__custom_distribution__devtools_heap_snapshot_edge_count__sum {
+    label: "Devtools Heap Snapshot Edge Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.devtools_heap_snapshot_edge_count.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Heap Snapshot Edge Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Heap Snapshot Edge Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_heap_snapshot_edge_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of edges serialized into a heap snapshot.
+This metric was generated to correspond to the Legacy Telemetry linear histogram DEVTOOLS_HEAP_SNAPSHOT_EDGE_COUNT.
+"
+  }
+
+  dimension: metrics__custom_distribution__devtools_heap_snapshot_node_count__sum {
+    label: "Devtools Heap Snapshot Node Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.devtools_heap_snapshot_node_count.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Heap Snapshot Node Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Heap Snapshot Node Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_heap_snapshot_node_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of nodes serialized into a heap snapshot.
+This metric was generated to correspond to the Legacy Telemetry linear histogram DEVTOOLS_HEAP_SNAPSHOT_NODE_COUNT.
+"
+  }
+
   dimension: metrics__labeled_counter__devtools_inspector_fonteditor_font_type_displayed {
     label: "Devtools Inspector Fonteditor Font Type Displayed"
     hidden: yes
@@ -4790,6 +4828,25 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__sum {
+    label: "Devtools Read Heap Snapshot Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Read Heap Snapshot Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Read Heap Snapshot Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_read_heap_snapshot"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time (in milliseconds) that it took to read a heap snapshot in mozilla::devtools::ChromeUtils::ReadHeapSnapshot.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_READ_HEAP_SNAPSHOT_MS.
+"
+  }
+
   dimension: metrics__labeled_counter__devtools_responsive_open_trigger {
     label: "Devtools Responsive Open Trigger"
     hidden: yes
@@ -4934,6 +4991,25 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
     description: "How long has the rule view been active (seconds)
 This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_RULEVIEW_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__sum {
+    label: "Devtools Save Heap Snapshot Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Save Heap Snapshot Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Save Heap Snapshot Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/devtools_save_heap_snapshot"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time (in milliseconds) that it took to save a heap snapshot in mozilla::devtools::ChromeUtils::SaveHeapSnapshot.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_SAVE_HEAP_SNAPSHOT_MS.
 "
   }
 
@@ -10579,7 +10655,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__sum {
     label: "Ls Preparedatastore Processing Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.sum ;;
     type: number
     group_label: "Ls Preparedatastore"
@@ -10597,7 +10673,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__sum {
     label: "Ls Preparelsdatabase Processing Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.sum ;;
     type: number
     group_label: "Ls Preparelsdatabase"
@@ -10615,7 +10691,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__ls_request_recv_cancellation {
     label: "Ls Request Recv Cancellation"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.ls_request_recv_cancellation ;;
     type: number
     group_label: "Ls Request"
@@ -10633,7 +10709,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__ls_request_send_cancellation {
     label: "Ls Request Send Cancellation"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.ls_request_send_cancellation ;;
     type: number
     group_label: "Ls Request"
@@ -14967,7 +15043,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__networking_set_cookie_expired_without_server_time__numerator {
     label: "Networking Set Cookie Expired Without Server Time Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.networking_set_cookie_expired_without_server_time.numerator ;;
     type: number
     group_label: "Networking"
@@ -14985,7 +15061,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__networking_set_cookie_expired_without_server_time__denominator {
     label: "Networking Set Cookie Expired Without Server Time Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.networking_set_cookie_expired_without_server_time.denominator ;;
     type: number
     group_label: "Networking"
@@ -41452,6 +41528,34 @@ view: metrics__metrics__custom_distribution__cycle_collector_worker_visited_ref_
   }
 }
 
+view: metrics__metrics__custom_distribution__devtools_heap_snapshot_edge_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__devtools_heap_snapshot_node_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__devtools_inspector_number_of_css_grids_in_a_page__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -51308,6 +51412,20 @@ view: metrics__metrics__timing_distribution__devtools_options_time_active__value
   }
 }
 
+view: metrics__metrics__timing_distribution__devtools_read_heap_snapshot__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__timing_distribution__devtools_responsive_time_active__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -51323,6 +51441,20 @@ view: metrics__metrics__timing_distribution__devtools_responsive_time_active__va
 }
 
 view: metrics__metrics__timing_distribution__devtools_ruleview_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_save_heap_snapshot__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

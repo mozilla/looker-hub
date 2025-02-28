@@ -1818,6 +1818,36 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__telemetry_clamping_time_hgrams}) AS metrics__metrics__labeled_counter__telemetry_clamping_time_hgrams ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__telemetry_clamping_time_hgrams.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__telemetry_event_ping_sent {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__telemetry_event_ping_sent}) AS metrics__metrics__labeled_counter__telemetry_event_ping_sent ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__telemetry_event_ping_sent.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__telemetry_event_recording_error {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__telemetry_event_recording_error}) AS metrics__metrics__labeled_counter__telemetry_event_recording_error ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__telemetry_event_recording_error.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__telemetry_event_registration_error {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__telemetry_event_registration_error}) AS metrics__metrics__labeled_counter__telemetry_event_registration_error ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__telemetry_event_registration_error.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__telemetry_invalid_ping_type_submitted {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__telemetry_invalid_ping_type_submitted}) AS metrics__metrics__labeled_counter__telemetry_invalid_ping_type_submitted ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__telemetry_invalid_ping_type_submitted.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__telemetry_send_failure_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__telemetry_send_failure_type}) AS metrics__metrics__labeled_counter__telemetry_send_failure_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__telemetry_send_failure_type.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__telemetry_success {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__telemetry_success}) AS metrics__metrics__labeled_counter__telemetry_success ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__telemetry_success.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tls_xyber_intolerance_reason}) AS metrics__metrics__labeled_counter__tls_xyber_intolerance_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tls_xyber_intolerance_reason.document_id} ;;

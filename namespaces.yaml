@@ -9007,10 +9007,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 10
+            default: Windows 7
             options:
-            - Windows 10
             - Windows 7
+            - Windows 10
             - Windows 8
             - Windows 8.1
             - Windows 11
@@ -9049,10 +9049,10 @@ operational_monitoring:
             default: release
             options:
             - release
-            - nightly
             - beta
             - aurora
             - esr
+            - nightly
             - default
             - nightly-pine
             - nightly-oak
@@ -9176,8 +9176,8 @@ operational_monitoring:
             - '126.0'
             - '125.0'
             - '124.0'
-            - '121.0'
             - '130.0'
+            - '121.0'
             - '119.0'
         explore: firefox_ios_beta_health
         group_by_dimension: null
@@ -11861,17 +11861,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id353
           channel:
-            default: release
+            default: beta
             options:
-            - release
             - beta
+            - release
             - nightly
           os:
-            default: Darwin
+            default: Linux
             options:
+            - Linux
             - Darwin
             - Windows_NT
-            - Linux
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id354
