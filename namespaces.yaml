@@ -335,6 +335,18 @@ combined_browser_metrics:
       tables:
       - table: moz-fx-data-shared-prod.telemetry.cohort_daily_statistics
       type: table_view
+    cohort_weekly_statistics:
+      tables:
+      - table: moz-fx-data-shared-prod.telemetry.cohort_weekly_statistics
+      type: table_view
+    cohort_weekly_statistics_by_app:
+      tables:
+      - table: moz-fx-data-shared-prod.telemetry.cohort_weekly_statistics_by_app
+      type: table_view
+    cohort_weekly_statistics_by_app_channel_version:
+      tables:
+      - table: moz-fx-data-shared-prod.telemetry.cohort_weekly_statistics_by_app_channel_version
+      type: table_view
     fenix_and_firefox_use_counters:
       tables:
       - table: mozilla-public-data.telemetry_derived.fenix_and_firefox_use_counters
