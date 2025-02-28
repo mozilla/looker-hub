@@ -115,7 +115,7 @@ looker_base_fields.user_agent.version AS looker_base_fields_user_agent__version,
             SELECT
                 *
             FROM
-                `mozdata.firefox_ios.clients_activation`
+                `mozdata.firefox_ios.new_profile_activation_clients`
             ) AS new_profile_activation
         JOIN
     (

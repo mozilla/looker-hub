@@ -7,7 +7,7 @@
 view: metric_definitions_new_profile_activation {
   derived_table: {
     sql: SELECT
-                COALESCE(SUM(activated)) AS new_profile_activation,
+                COUNTIF(is_activated) AS new_profile_activation,
 
                 looker_base_fields_app_version_major,
 looker_base_fields_app_version_minor,
@@ -141,7 +141,7 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
             SELECT
                 *
             FROM
-                `moz-fx-data-shared-prod.fenix.new_profile_activation`
+                `moz-fx-data-shared-prod.fenix.new_profile_activation_clients`
             ) AS new_profile_activation
         JOIN
     (

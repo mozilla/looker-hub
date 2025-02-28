@@ -558,6 +558,26 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__gpu_process_crash_fallbacks}) AS metrics__metrics__labeled_counter__gpu_process_crash_fallbacks ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__gpu_process_crash_fallbacks.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__htmleditors_overridden_by_beforeinput_listeners {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__htmleditors_overridden_by_beforeinput_listeners}) AS metrics__metrics__labeled_counter__htmleditors_overridden_by_beforeinput_listeners ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__htmleditors_overridden_by_beforeinput_listeners.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__htmleditors_with_beforeinput_listeners {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__htmleditors_with_beforeinput_listeners}) AS metrics__metrics__labeled_counter__htmleditors_with_beforeinput_listeners ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__htmleditors_with_beforeinput_listeners.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__htmleditors_with_mutation_listeners_without_beforeinput_listeners {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__htmleditors_with_mutation_listeners_without_beforeinput_listeners}) AS metrics__metrics__labeled_counter__htmleditors_with_mutation_listeners_without_beforeinput_listeners ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__htmleditors_with_mutation_listeners_without_beforeinput_listeners.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__htmleditors_with_mutation_observers_without_beforeinput_listeners {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__htmleditors_with_mutation_observers_without_beforeinput_listeners}) AS metrics__metrics__labeled_counter__htmleditors_with_mutation_observers_without_beforeinput_listeners ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__htmleditors_with_mutation_observers_without_beforeinput_listeners.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__http_altsvc_mapping_changed_target {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__http_altsvc_mapping_changed_target}) AS metrics__metrics__labeled_counter__http_altsvc_mapping_changed_target ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__http_altsvc_mapping_changed_target.document_id} ;;
