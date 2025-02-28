@@ -6014,6 +6014,196 @@ in browser.
 "
   }
 
+  dimension: metrics__timing_distribution__telemetry_archive_checking_over_quota__sum {
+    label: "Telemetry Archive Checking Over Quota Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_checking_over_quota.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Archive Checking Over Quota Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Archive Checking Over Quota Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_archive_checking_over_quota"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time (ms) it takes for checking if the archive is over-quota
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TELEMETRY_ARCHIVE_CHECKING_OVER_QUOTA_MS.
+"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_directories_count__sum {
+    label: "Telemetry Archive Directories Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_directories_count.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Archive Directories Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Archive Directories Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_archive_directories_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of directories in the archive at scan
+This metric was generated to correspond to the Legacy Telemetry linear histogram TELEMETRY_ARCHIVE_DIRECTORIES_COUNT.
+"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_evicted_old_dirs__sum {
+    label: "Telemetry Archive Evicted Old Dirs Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_evicted_old_dirs.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Archive Evicted Old Dirs Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Archive Evicted Old Dirs Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_archive_evicted_old_dirs"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Telemetry directories evicted from the archive during cleanup, because they were too old
+This metric was generated to correspond to the Legacy Telemetry linear histogram TELEMETRY_ARCHIVE_EVICTED_OLD_DIRS.
+"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_evicted_over_quota__sum {
+    label: "Telemetry Archive Evicted Over Quota Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_evicted_over_quota.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Archive Evicted Over Quota Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Archive Evicted Over Quota Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_archive_evicted_over_quota"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Telemetry pings evicted from the archive during cleanup, because they were over the quota
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TELEMETRY_ARCHIVE_EVICTED_OVER_QUOTA.
+"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_dirs__sum {
+    label: "Telemetry Archive Evicting Dirs Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_dirs.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Archive Evicting Dirs Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Archive Evicting Dirs Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_archive_evicting_dirs"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time (ms) it takes for evicting old directories
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TELEMETRY_ARCHIVE_EVICTING_DIRS_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_over_quota__sum {
+    label: "Telemetry Archive Evicting Over Quota Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_over_quota.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Archive Evicting Over Quota Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Archive Evicting Over Quota Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_archive_evicting_over_quota"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time (ms) it takes for evicting over-quota pings
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TELEMETRY_ARCHIVE_EVICTING_OVER_QUOTA_MS.
+"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_oldest_directory_age__sum {
+    label: "Telemetry Archive Oldest Directory Age Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_oldest_directory_age.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Archive Oldest Directory Age Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Archive Oldest Directory Age Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_archive_oldest_directory_age"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The age of the oldest Telemetry archive directory in months
+This metric was generated to correspond to the Legacy Telemetry linear histogram TELEMETRY_ARCHIVE_OLDEST_DIRECTORY_AGE.
+"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_scan_ping_count__sum {
+    label: "Telemetry Archive Scan Ping Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_scan_ping_count.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Archive Scan Ping Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Archive Scan Ping Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_archive_scan_ping_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Telemetry pings in the archive at scan
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TELEMETRY_ARCHIVE_SCAN_PING_COUNT.
+"
+  }
+
+  dimension: metrics__counter__telemetry_archive_session_ping_count {
+    label: "Telemetry Archive Session Ping Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.telemetry_archive_session_ping_count ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Archive Session Ping Count"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Archive Session Ping Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_archive_session_ping_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Telemetry pings added to the archive during the session
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_ARCHIVE_SESSION_PING_COUNT.
+"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_archive_size__sum {
+    label: "Telemetry Archive Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_archive_size.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Archive Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Archive Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_archive_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The size of the Telemetry archive (MB)
+This metric was generated to correspond to the Legacy Telemetry linear histogram TELEMETRY_ARCHIVE_SIZE_MB.
+"
+  }
+
   dimension: metrics__labeled_counter__telemetry_clamping_time_hgrams {
     label: "Telemetry Clamping Time Hgrams"
     hidden: yes
@@ -6028,6 +6218,25 @@ in browser.
     }
 
     description: "How often do which histograms that use `Telemetry::AccumulateTimeDelta` have clamped samples due to underflow?
+"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_compress__sum {
+    label: "Telemetry Compress Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_compress.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Compress Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Compress Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_compress"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to compress telemetry object (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TELEMETRY_COMPRESS.
 "
   }
 
@@ -6046,6 +6255,475 @@ in browser.
     }
 
     description: "User opted into sending Telemetry data again. This metric was generated to correspond to the Legacy Telemetry scalar telemetry.data_upload_optin.
+"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_discarded_archived_pings_size__sum {
+    label: "Telemetry Discarded Archived Pings Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_discarded_archived_pings_size.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Discarded Archived Pings Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Discarded Archived Pings Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_discarded_archived_pings_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The size (MB) of the Telemetry archived, compressed, pings exceeding the maximum file size
+This metric was generated to correspond to the Legacy Telemetry linear histogram TELEMETRY_DISCARDED_ARCHIVED_PINGS_SIZE_MB.
+"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_discarded_pending_pings_size__sum {
+    label: "Telemetry Discarded Pending Pings Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_discarded_pending_pings_size.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Discarded Pending Pings Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Discarded Pending Pings Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_discarded_pending_pings_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The size (MB) of the Telemetry pending pings exceeding the maximum file size
+This metric was generated to correspond to the Legacy Telemetry linear histogram TELEMETRY_DISCARDED_PENDING_PINGS_SIZE_MB.
+"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_discarded_send_pings_size__sum {
+    label: "Telemetry Discarded Send Pings Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_discarded_send_pings_size.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Discarded Send Pings Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Discarded Send Pings Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_discarded_send_pings_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The size (MB) of the ping data submitted to Telemetry exceeding the maximum size
+This metric was generated to correspond to the Legacy Telemetry linear histogram TELEMETRY_DISCARDED_SEND_PINGS_SIZE_MB.
+"
+  }
+
+  dimension: metrics__labeled_counter__telemetry_event_ping_sent {
+    label: "Telemetry Event Ping Sent"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_event_ping_sent ;;
+    group_label: "Telemetry"
+    group_item_label: "Event Ping Sent"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Event Ping Sent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_event_ping_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of 'event' pings sent, by reason
+This metric was generated to correspond to the Legacy Telemetry categorical histogram TELEMETRY_EVENT_PING_SENT.
+"
+  }
+
+  dimension: metrics__labeled_counter__telemetry_event_recording_error {
+    label: "Telemetry Event Recording Error"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_event_recording_error ;;
+    group_label: "Telemetry"
+    group_item_label: "Event Recording Error"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Event Recording Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_event_recording_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of event recording failures, by type of failure
+This metric was generated to correspond to the Legacy Telemetry categorical histogram TELEMETRY_EVENT_RECORDING_ERROR.
+"
+  }
+
+  dimension: metrics__labeled_counter__telemetry_event_registration_error {
+    label: "Telemetry Event Registration Error"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_event_registration_error ;;
+    group_label: "Telemetry"
+    group_item_label: "Event Registration Error"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Event Registration Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_event_registration_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of event registration failures, by field causing the failure
+This metric was generated to correspond to the Legacy Telemetry categorical histogram TELEMETRY_EVENT_REGISTRATION_ERROR.
+"
+  }
+
+  dimension: metrics__counter__telemetry_invalid_payload_submitted {
+    label: "Telemetry Invalid Payload Submitted"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.telemetry_invalid_payload_submitted ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Invalid Payload Submitted"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Invalid Payload Submitted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_invalid_payload_submitted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of individual invalid payloads that were submitted to Telemetry.
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_INVALID_PAYLOAD_SUBMITTED.
+"
+  }
+
+  dimension: metrics__labeled_counter__telemetry_invalid_ping_type_submitted {
+    label: "Telemetry Invalid Ping Type Submitted"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_invalid_ping_type_submitted ;;
+    group_label: "Telemetry"
+    group_item_label: "Invalid Ping Type Submitted"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Invalid Ping Type Submitted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_invalid_ping_type_submitted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of individual invalid ping types that were submitted to Telemetry.
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_INVALID_PING_TYPE_SUBMITTED.
+"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_checking_over_quota__sum {
+    label: "Telemetry Pending Checking Over Quota Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_checking_over_quota.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Pending Checking Over Quota Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Pending Checking Over Quota Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_pending_checking_over_quota"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time (ms) it takes for checking if the pending pings are over-quota
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TELEMETRY_PENDING_CHECKING_OVER_QUOTA_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_evicting_over_quota__sum {
+    label: "Telemetry Pending Evicting Over Quota Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_evicting_over_quota.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Pending Evicting Over Quota Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Pending Evicting Over Quota Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_pending_evicting_over_quota"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time (ms) it takes for evicting over-quota pending pings
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TELEMETRY_PENDING_EVICTING_OVER_QUOTA_MS.
+"
+  }
+
+  dimension: metrics__counter__telemetry_pending_load_failure_parse {
+    label: "Telemetry Pending Load Failure Parse"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.telemetry_pending_load_failure_parse ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Pending Load Failure Parse"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Pending Load Failure Parse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_pending_load_failure_parse"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of pending Telemetry pings that failed to parse once loaded from the disk
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_PENDING_LOAD_FAILURE_PARSE.
+"
+  }
+
+  dimension: metrics__counter__telemetry_pending_load_failure_read {
+    label: "Telemetry Pending Load Failure Read"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.telemetry_pending_load_failure_read ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Pending Load Failure Read"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Pending Load Failure Read"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_pending_load_failure_read"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of pending Telemetry pings that failed to load from the disk
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_PENDING_LOAD_FAILURE_READ.
+"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_pings_age__sum {
+    label: "Telemetry Pending Pings Age Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_pings_age.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Pending Pings Age Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Pending Pings Age Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_pending_pings_age"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The age, in days, of the pending pings.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TELEMETRY_PENDING_PINGS_AGE.
+"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_pending_pings_evicted_over_quota__sum {
+    label: "Telemetry Pending Pings Evicted Over Quota Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_pending_pings_evicted_over_quota.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Pending Pings Evicted Over Quota Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Pending Pings Evicted Over Quota Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_pending_pings_evicted_over_quota"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Telemetry pings evicted from the pending pings directory during cleanup, because they were over the quota
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TELEMETRY_PENDING_PINGS_EVICTED_OVER_QUOTA.
+"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_pending_pings_size__sum {
+    label: "Telemetry Pending Pings Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_pending_pings_size.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Pending Pings Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Pending Pings Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_pending_pings_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The size of the Telemetry pending pings directory (MB). The special value 17 is used to indicate over quota pings.
+This metric was generated to correspond to the Legacy Telemetry linear histogram TELEMETRY_PENDING_PINGS_SIZE_MB.
+"
+  }
+
+  dimension: metrics__counter__telemetry_ping_evicted_for_server_errors {
+    label: "Telemetry Ping Evicted For Server Errors"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.telemetry_ping_evicted_for_server_errors ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Ping Evicted For Server Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Ping Evicted For Server Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_ping_evicted_for_server_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Telemetry ping files evicted due to server errors (4XX HTTP code received)
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_PING_EVICTED_FOR_SERVER_ERRORS.
+"
+  }
+
+  dimension: metrics__counter__telemetry_ping_size_exceeded_archived {
+    label: "Telemetry Ping Size Exceeded Archived"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.telemetry_ping_size_exceeded_archived ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Ping Size Exceeded Archived"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Ping Size Exceeded Archived"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_ping_size_exceeded_archived"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of archived Telemetry pings discarded because they exceeded the maximum size
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_PING_SIZE_EXCEEDED_ARCHIVED.
+"
+  }
+
+  dimension: metrics__counter__telemetry_ping_size_exceeded_pending {
+    label: "Telemetry Ping Size Exceeded Pending"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.telemetry_ping_size_exceeded_pending ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Ping Size Exceeded Pending"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Ping Size Exceeded Pending"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_ping_size_exceeded_pending"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Telemetry pending pings discarded because they exceeded the maximum size
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_PING_SIZE_EXCEEDED_PENDING.
+"
+  }
+
+  dimension: metrics__counter__telemetry_ping_size_exceeded_send {
+    label: "Telemetry Ping Size Exceeded Send"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.telemetry_ping_size_exceeded_send ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Ping Size Exceeded Send"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Ping Size Exceeded Send"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_ping_size_exceeded_send"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Telemetry pings discarded before sending because they exceeded the maximum size
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_PING_SIZE_EXCEEDED_SEND.
+"
+  }
+
+  dimension: metrics__counter__telemetry_ping_submission_waiting_clientid {
+    label: "Telemetry Ping Submission Waiting Clientid"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.telemetry_ping_submission_waiting_clientid ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Ping Submission Waiting Clientid"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Ping Submission Waiting Clientid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_ping_submission_waiting_clientid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of pings that were submitted and had to wait for a client id (i.e. before it was cached or loaded from disk)
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_PING_SUBMISSION_WAITING_CLIENTID.
+"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_failure__sum {
+    label: "Telemetry Send Failure Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_failure.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Send Failure Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Send Failure Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_send_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time needed (in ms) for a failed send of a Telemetry ping to the servers and getting a reply back.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TELEMETRY_SEND_FAILURE.
+"
+  }
+
+  dimension: metrics__labeled_counter__telemetry_send_failure_type {
+    label: "Telemetry Send Failure Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_send_failure_type ;;
+    group_label: "Telemetry"
+    group_item_label: "Send Failure Type"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Send Failure Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_send_failure_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts of the different ways sending a Telemetry ping can fail.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram TELEMETRY_SEND_FAILURE_TYPE.
+"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_success__sum {
+    label: "Telemetry Send Success Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_success.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Send Success Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Send Success Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_send_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time needed (in ms) for a successful send of a Telemetry ping to the servers and getting a reply back.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TELEMETRY_SEND_SUCCESS.
+"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_stringify__sum {
+    label: "Telemetry Stringify Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_stringify.sum ;;
+    type: number
+    group_label: "Telemetry"
+    group_item_label: "Stringify Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Stringify Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_stringify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time to stringify telemetry object (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram TELEMETRY_STRINGIFY.
+"
+  }
+
+  dimension: metrics__labeled_counter__telemetry_success {
+    label: "Telemetry Success"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_success ;;
+    group_label: "Telemetry"
+    group_item_label: "Success"
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Successful telemetry submission
+This metric was generated to correspond to the Legacy Telemetry boolean histogram TELEMETRY_SUCCESS.
 "
   }
 
@@ -11331,6 +12009,44 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__custom_distribution__devtools_heap_snapshot_edge_count__sum {
+    label: "Devtools Heap Snapshot Edge Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.devtools_heap_snapshot_edge_count.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Heap Snapshot Edge Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Heap Snapshot Edge Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_heap_snapshot_edge_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of edges serialized into a heap snapshot.
+This metric was generated to correspond to the Legacy Telemetry linear histogram DEVTOOLS_HEAP_SNAPSHOT_EDGE_COUNT.
+"
+  }
+
+  dimension: metrics__custom_distribution__devtools_heap_snapshot_node_count__sum {
+    label: "Devtools Heap Snapshot Node Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.devtools_heap_snapshot_node_count.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Heap Snapshot Node Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Heap Snapshot Node Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_heap_snapshot_node_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of nodes serialized into a heap snapshot.
+This metric was generated to correspond to the Legacy Telemetry linear histogram DEVTOOLS_HEAP_SNAPSHOT_NODE_COUNT.
+"
+  }
+
   dimension: metrics__labeled_counter__devtools_inspector_fonteditor_font_type_displayed {
     label: "Devtools Inspector Fonteditor Font Type Displayed"
     hidden: yes
@@ -11836,6 +12552,25 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__sum {
+    label: "Devtools Read Heap Snapshot Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Read Heap Snapshot Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Read Heap Snapshot Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_read_heap_snapshot"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time (in milliseconds) that it took to read a heap snapshot in mozilla::devtools::ChromeUtils::ReadHeapSnapshot.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_READ_HEAP_SNAPSHOT_MS.
+"
+  }
+
   dimension: metrics__labeled_counter__devtools_responsive_open_trigger {
     label: "Devtools Responsive Open Trigger"
     hidden: yes
@@ -11980,6 +12715,25 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
     description: "How long has the rule view been active (seconds)
 This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_RULEVIEW_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__sum {
+    label: "Devtools Save Heap Snapshot Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.sum ;;
+    type: number
+    group_label: "Devtools"
+    group_item_label: "Save Heap Snapshot Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Save Heap Snapshot Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_save_heap_snapshot"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time (in milliseconds) that it took to save a heap snapshot in mozilla::devtools::ChromeUtils::SaveHeapSnapshot.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_SAVE_HEAP_SNAPSHOT_MS.
 "
   }
 
@@ -17426,7 +18180,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__ls_preparedatastore_processing_time__sum {
     label: "Ls Preparedatastore Processing Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.ls_preparedatastore_processing_time.sum ;;
     type: number
     group_label: "Ls Preparedatastore"
@@ -17444,7 +18198,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__ls_preparelsdatabase_processing_time__sum {
     label: "Ls Preparelsdatabase Processing Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.ls_preparelsdatabase_processing_time.sum ;;
     type: number
     group_label: "Ls Preparelsdatabase"
@@ -17462,7 +18216,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__ls_request_recv_cancellation {
     label: "Ls Request Recv Cancellation"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.ls_request_recv_cancellation ;;
     type: number
     group_label: "Ls Request"
@@ -17480,7 +18234,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__ls_request_send_cancellation {
     label: "Ls Request Send Cancellation"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.ls_request_send_cancellation ;;
     type: number
     group_label: "Ls Request"
@@ -21814,7 +22568,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__networking_set_cookie_expired_without_server_time__numerator {
     label: "Networking Set Cookie Expired Without Server Time Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.networking_set_cookie_expired_without_server_time.numerator ;;
     type: number
     group_label: "Networking"
@@ -21832,7 +22586,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__networking_set_cookie_expired_without_server_time__denominator {
     label: "Networking Set Cookie Expired Without Server Time Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.networking_set_cookie_expired_without_server_time.denominator ;;
     type: number
     group_label: "Networking"
@@ -31721,6 +32475,231 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Shopping Product Page Visits"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/shopping_product_page_visits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: telemetry_archive_session_ping_count {
+    type: sum
+    sql: ${metrics__counter__telemetry_archive_session_ping_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Archive Session Ping Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_archive_session_ping_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: telemetry_archive_session_ping_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__telemetry_archive_session_ping_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Archive Session Ping Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_archive_session_ping_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: telemetry_invalid_payload_submitted {
+    type: sum
+    sql: ${metrics__counter__telemetry_invalid_payload_submitted} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Invalid Payload Submitted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_invalid_payload_submitted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: telemetry_invalid_payload_submitted_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__telemetry_invalid_payload_submitted: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Invalid Payload Submitted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_invalid_payload_submitted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: telemetry_pending_load_failure_parse {
+    type: sum
+    sql: ${metrics__counter__telemetry_pending_load_failure_parse} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Pending Load Failure Parse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_pending_load_failure_parse"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: telemetry_pending_load_failure_parse_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__telemetry_pending_load_failure_parse: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Pending Load Failure Parse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_pending_load_failure_parse"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: telemetry_pending_load_failure_read {
+    type: sum
+    sql: ${metrics__counter__telemetry_pending_load_failure_read} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Pending Load Failure Read"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_pending_load_failure_read"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: telemetry_pending_load_failure_read_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__telemetry_pending_load_failure_read: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Pending Load Failure Read"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_pending_load_failure_read"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: telemetry_ping_evicted_for_server_errors {
+    type: sum
+    sql: ${metrics__counter__telemetry_ping_evicted_for_server_errors} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Ping Evicted For Server Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_ping_evicted_for_server_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: telemetry_ping_evicted_for_server_errors_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__telemetry_ping_evicted_for_server_errors: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Ping Evicted For Server Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_ping_evicted_for_server_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: telemetry_ping_size_exceeded_archived {
+    type: sum
+    sql: ${metrics__counter__telemetry_ping_size_exceeded_archived} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Ping Size Exceeded Archived"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_ping_size_exceeded_archived"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: telemetry_ping_size_exceeded_archived_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__telemetry_ping_size_exceeded_archived: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Ping Size Exceeded Archived"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_ping_size_exceeded_archived"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: telemetry_ping_size_exceeded_pending {
+    type: sum
+    sql: ${metrics__counter__telemetry_ping_size_exceeded_pending} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Ping Size Exceeded Pending"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_ping_size_exceeded_pending"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: telemetry_ping_size_exceeded_pending_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__telemetry_ping_size_exceeded_pending: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Ping Size Exceeded Pending"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_ping_size_exceeded_pending"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: telemetry_ping_size_exceeded_send {
+    type: sum
+    sql: ${metrics__counter__telemetry_ping_size_exceeded_send} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Ping Size Exceeded Send"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_ping_size_exceeded_send"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: telemetry_ping_size_exceeded_send_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__telemetry_ping_size_exceeded_send: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Ping Size Exceeded Send"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_ping_size_exceeded_send"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: telemetry_ping_submission_waiting_clientid {
+    type: sum
+    sql: ${metrics__counter__telemetry_ping_submission_waiting_clientid} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Ping Submission Waiting Clientid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_ping_submission_waiting_clientid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: telemetry_ping_submission_waiting_clientid_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__telemetry_ping_submission_waiting_clientid: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Telemetry Ping Submission Waiting Clientid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/telemetry_ping_submission_waiting_clientid"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -51090,6 +52069,252 @@ view: metrics__metrics__labeled_counter__telemetry_clamping_time_hgrams {
   }
 }
 
+view: metrics__metrics__labeled_counter__telemetry_event_ping_sent {
+  label: "Telemetry - Event Ping Sent"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__telemetry_event_recording_error {
+  label: "Telemetry - Event Recording Error"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__telemetry_event_registration_error {
+  label: "Telemetry - Event Registration Error"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__telemetry_invalid_ping_type_submitted {
+  label: "Telemetry - Invalid Ping Type Submitted"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__telemetry_send_failure_type {
+  label: "Telemetry - Send Failure Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__telemetry_success {
+  label: "Telemetry - Success"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
   label: "Tls - Xyber Intolerance Reason"
 
@@ -56477,6 +57702,34 @@ view: metrics__metrics__custom_distribution__cycle_collector_worker_visited_ref_
   }
 }
 
+view: metrics__metrics__custom_distribution__devtools_heap_snapshot_edge_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__devtools_heap_snapshot_node_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__devtools_inspector_number_of_css_grids_in_a_page__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -59152,6 +60405,90 @@ view: metrics__metrics__custom_distribution__ssl_tls13_intolerance_reason_pre__v
 }
 
 view: metrics__metrics__custom_distribution__ssl_version_fallback_inappropriate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__telemetry_archive_directories_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__telemetry_archive_evicted_old_dirs__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__telemetry_archive_evicted_over_quota__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__telemetry_archive_oldest_directory_age__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__telemetry_archive_scan_ping_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__telemetry_pending_pings_evicted_over_quota__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -66768,6 +68105,76 @@ view: metrics__metrics__memory_distribution__ssl_bytes_before_cert_callback__val
   }
 }
 
+view: metrics__metrics__memory_distribution__telemetry_archive_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__telemetry_discarded_archived_pings_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__telemetry_discarded_pending_pings_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__telemetry_discarded_send_pings_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__telemetry_pending_pings_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__timing_distribution__a11y_tree_update_timing__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -67524,6 +68931,20 @@ view: metrics__metrics__timing_distribution__devtools_options_time_active__value
   }
 }
 
+view: metrics__metrics__timing_distribution__devtools_read_heap_snapshot__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__timing_distribution__devtools_responsive_time_active__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -67539,6 +68960,20 @@ view: metrics__metrics__timing_distribution__devtools_responsive_time_active__va
 }
 
 view: metrics__metrics__timing_distribution__devtools_ruleview_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__devtools_save_heap_snapshot__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -71375,6 +72810,146 @@ view: metrics__metrics__timing_distribution__sts_poll_block_time__values {
 }
 
 view: metrics__metrics__timing_distribution__sts_poll_cycle__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__telemetry_archive_checking_over_quota__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__telemetry_archive_evicting_dirs__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__telemetry_archive_evicting_over_quota__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__telemetry_compress__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__telemetry_pending_checking_over_quota__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__telemetry_pending_evicting_over_quota__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__telemetry_pending_pings_age__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__telemetry_send_failure__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__telemetry_send_success__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__telemetry_stringify__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

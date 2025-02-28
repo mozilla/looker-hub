@@ -3467,6 +3467,48 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__devtools_heap_snapshot_edge_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_heap_snapshot_edge_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Devtools Heap Snapshot Edge Count"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__devtools_heap_snapshot_edge_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_heap_snapshot_edge_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Devtools Heap Snapshot Edge Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__devtools_heap_snapshot_edge_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_heap_snapshot_edge_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__devtools_heap_snapshot_node_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_heap_snapshot_node_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Devtools Heap Snapshot Node Count"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__devtools_heap_snapshot_node_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_heap_snapshot_node_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Devtools Heap Snapshot Node Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__devtools_heap_snapshot_node_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.devtools_heap_snapshot_node_count.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__devtools_inspector_number_of_css_grids_in_a_page__count {
     sql: ${TABLE}.metrics.custom_distribution.devtools_inspector_number_of_css_grids_in_a_page.count ;;
     type: number
@@ -15631,6 +15673,72 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Read Heap Snapshot"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Read Heap Snapshot"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Read Heap Snapshot"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Read Heap Snapshot"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Read Heap Snapshot"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Read Heap Snapshot"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Read Heap Snapshot"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_read_heap_snapshot__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_read_heap_snapshot.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__devtools_responsive_time_active__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.devtools_responsive_time_active.bucket_count ;;
     type: number
@@ -15760,6 +15868,72 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__devtools_ruleview_time_active__values {
     sql: ${TABLE}.metrics.timing_distribution.devtools_ruleview_time_active.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Save Heap Snapshot"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__count {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Save Heap Snapshot"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Save Heap Snapshot"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Save Heap Snapshot"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__range {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__sum {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Save Heap Snapshot"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Save Heap Snapshot"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Devtools Save Heap Snapshot"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__devtools_save_heap_snapshot__values {
+    sql: ${TABLE}.metrics.timing_distribution.devtools_save_heap_snapshot.values ;;
     hidden: yes
   }
 
@@ -38759,6 +38933,34 @@ view: metrics_table__metrics__custom_distribution__cycle_collector_worker_visite
   }
 }
 
+view: metrics_table__metrics__custom_distribution__devtools_heap_snapshot_edge_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__devtools_heap_snapshot_node_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__devtools_inspector_number_of_css_grids_in_a_page__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -48647,6 +48849,20 @@ view: metrics_table__metrics__timing_distribution__devtools_options_time_active_
   }
 }
 
+view: metrics_table__metrics__timing_distribution__devtools_read_heap_snapshot__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__devtools_responsive_time_active__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -48662,6 +48878,20 @@ view: metrics_table__metrics__timing_distribution__devtools_responsive_time_acti
 }
 
 view: metrics_table__metrics__timing_distribution__devtools_ruleview_time_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__devtools_save_heap_snapshot__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
