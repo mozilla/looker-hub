@@ -11903,17 +11903,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id356
           channel:
-            default: beta
+            default: release
             options:
-            - beta
             - release
+            - beta
             - nightly
           os:
             default: Linux
             options:
             - Linux
-            - Darwin
             - Windows_NT
+            - Darwin
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id357
