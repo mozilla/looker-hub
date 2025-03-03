@@ -8,36 +8,43 @@ view: password_reset_funnels {
   dimension: create_new_pwd_view_no_rk {
     sql: ${TABLE}.create_new_pwd_view_no_rk ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: create_new_pwd_view_with_rk {
     sql: ${TABLE}.create_new_pwd_view_with_rk ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: funnel {
     sql: ${TABLE}.funnel ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: pwd_reset_success_no_rk {
     sql: ${TABLE}.pwd_reset_success_no_rk ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: pwd_reset_success_with_rk {
     sql: ${TABLE}.pwd_reset_success_with_rk ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: pwd_reset_view {
     sql: ${TABLE}.pwd_reset_view ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

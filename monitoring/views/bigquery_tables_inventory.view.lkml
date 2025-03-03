@@ -8,12 +8,14 @@ view: bigquery_tables_inventory {
   dimension: dataset_id {
     sql: ${TABLE}.dataset_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The name of the dataset that contains the table or view"
   }
 
   dimension: deprecated {
     sql: ${TABLE}.deprecated ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     description: "Whether the table has been deprecated and pending deletion"
   }
 
@@ -26,24 +28,28 @@ view: bigquery_tables_inventory {
   dimension: project_id {
     sql: ${TABLE}.project_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The ID of the project that contains the dataset"
   }
 
   dimension: table_id {
     sql: ${TABLE}.table_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The name of the table or view"
   }
 
   dimension: table_type {
     sql: ${TABLE}.table_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The table type"
   }
 
   dimension_group: creation {
     sql: ${TABLE}.creation_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -60,6 +66,7 @@ view: bigquery_tables_inventory {
   dimension_group: deletion {
     sql: ${TABLE}.deletion_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -76,6 +83,7 @@ view: bigquery_tables_inventory {
   dimension_group: last_modified {
     sql: ${TABLE}.last_modified_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -92,6 +100,7 @@ view: bigquery_tables_inventory {
   dimension_group: last_used {
     sql: ${TABLE}.last_used_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -108,6 +117,7 @@ view: bigquery_tables_inventory {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

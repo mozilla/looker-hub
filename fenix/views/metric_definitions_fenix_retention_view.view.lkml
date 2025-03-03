@@ -342,24 +342,28 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: app_version_major {
     sql: ${TABLE}.looker_base_fields_app_version_major ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version_minor {
     sql: ${TABLE}.looker_base_fields_app_version_minor ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version_patch {
     sql: ${TABLE}.looker_base_fields_app_version_patch ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.looker_base_fields_client_info__android_sdk_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Android Sdk Version"
   }
@@ -367,6 +371,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: client_info__app_build {
     sql: ${TABLE}.looker_base_fields_client_info__app_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "App Build"
   }
@@ -374,6 +379,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: client_info__app_channel {
     sql: ${TABLE}.looker_base_fields_client_info__app_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "App Channel"
   }
@@ -381,6 +387,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: client_info__app_display_version {
     sql: ${TABLE}.looker_base_fields_client_info__app_display_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "App Display Version"
   }
@@ -388,6 +395,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: client_info__architecture {
     sql: ${TABLE}.looker_base_fields_client_info__architecture ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Architecture"
   }
@@ -395,6 +403,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: client_info__build_date {
     sql: ${TABLE}.looker_base_fields_client_info__build_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Build Date"
   }
@@ -408,6 +417,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: client_info__device_manufacturer {
     sql: ${TABLE}.looker_base_fields_client_info__device_manufacturer ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Device Manufacturer"
   }
@@ -415,6 +425,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: client_info__device_model {
     sql: ${TABLE}.looker_base_fields_client_info__device_model ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Device Model"
   }
@@ -422,6 +433,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: client_info__first_run_date {
     sql: ${TABLE}.looker_base_fields_client_info__first_run_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "First Run Date"
   }
@@ -429,6 +441,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: client_info__locale {
     sql: ${TABLE}.looker_base_fields_client_info__locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Locale"
   }
@@ -436,6 +449,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: client_info__os {
     sql: ${TABLE}.looker_base_fields_client_info__os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Os"
   }
@@ -443,6 +457,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: client_info__os_version {
     sql: ${TABLE}.looker_base_fields_client_info__os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Os Version"
   }
@@ -450,6 +465,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: client_info__session_count {
     sql: ${TABLE}.looker_base_fields_client_info__session_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Session Count"
   }
@@ -457,6 +473,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: client_info__session_id {
     sql: ${TABLE}.looker_base_fields_client_info__session_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Session Id"
   }
@@ -464,6 +481,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.looker_base_fields_client_info__telemetry_sdk_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Telemetry Sdk Build"
   }
@@ -471,6 +489,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: client_info__windows_build_number {
     sql: ${TABLE}.looker_base_fields_client_info__windows_build_number ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Windows Build Number"
   }
@@ -484,6 +503,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__geo__city {
     sql: ${TABLE}.looker_base_fields_metadata__geo__city ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "City"
   }
@@ -491,6 +511,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__geo__country {
     sql: ${TABLE}.looker_base_fields_metadata__geo__country ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Country"
     map_layer_name: countries
@@ -499,6 +520,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__geo__db_version {
     sql: ${TABLE}.looker_base_fields_metadata__geo__db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Db Version"
   }
@@ -506,6 +528,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__geo__subdivision1 {
     sql: ${TABLE}.looker_base_fields_metadata__geo__subdivision1 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Subdivision1"
   }
@@ -513,6 +536,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__geo__subdivision2 {
     sql: ${TABLE}.looker_base_fields_metadata__geo__subdivision2 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Subdivision2"
   }
@@ -520,6 +544,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__header__date {
     sql: ${TABLE}.looker_base_fields_metadata__header__date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Date"
   }
@@ -527,6 +552,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__header__dnt {
     sql: ${TABLE}.looker_base_fields_metadata__header__dnt ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Dnt"
   }
@@ -534,6 +560,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
     sql: ${TABLE}.looker_base_fields_metadata__header__parsed_x_lb_tags__tls_cipher_hex ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Tls Cipher Hex"
   }
@@ -541,6 +568,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.looker_base_fields_metadata__header__parsed_x_lb_tags__tls_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Tls Version"
   }
@@ -554,6 +582,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__header__x_debug_id {
     sql: ${TABLE}.looker_base_fields_metadata__header__x_debug_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "X Debug Id"
   }
@@ -561,6 +590,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__header__x_foxsec_ip_reputation {
     sql: ${TABLE}.looker_base_fields_metadata__header__x_foxsec_ip_reputation ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "X Foxsec Ip Reputation"
   }
@@ -568,6 +598,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__header__x_lb_tags {
     sql: ${TABLE}.looker_base_fields_metadata__header__x_lb_tags ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "X Lb Tags"
   }
@@ -575,6 +606,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__header__x_pingsender_version {
     sql: ${TABLE}.looker_base_fields_metadata__header__x_pingsender_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "X Pingsender Version"
   }
@@ -582,6 +614,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__header__x_source_tags {
     sql: ${TABLE}.looker_base_fields_metadata__header__x_source_tags ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "X Source Tags"
   }
@@ -589,6 +622,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__header__x_telemetry_agent {
     sql: ${TABLE}.looker_base_fields_metadata__header__x_telemetry_agent ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "X Telemetry Agent"
   }
@@ -596,6 +630,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__isp__db_version {
     sql: ${TABLE}.looker_base_fields_metadata__isp__db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Db Version"
   }
@@ -603,6 +638,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__isp__name {
     sql: ${TABLE}.looker_base_fields_metadata__isp__name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Name"
   }
@@ -610,6 +646,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__isp__organization {
     sql: ${TABLE}.looker_base_fields_metadata__isp__organization ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Organization"
   }
@@ -617,6 +654,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__user_agent__browser {
     sql: ${TABLE}.looker_base_fields_metadata__user_agent__browser ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Browser"
   }
@@ -624,6 +662,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__user_agent__os {
     sql: ${TABLE}.looker_base_fields_metadata__user_agent__os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Os"
   }
@@ -631,6 +670,7 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: metadata__user_agent__version {
     sql: ${TABLE}.looker_base_fields_metadata__user_agent__version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Version"
   }
@@ -638,90 +678,105 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: normalized_app_id {
     sql: ${TABLE}.looker_base_fields_normalized_app_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_app_name {
     sql: ${TABLE}.looker_base_fields_normalized_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.looker_base_fields_normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.looker_base_fields_normalized_country_code ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.looker_base_fields_normalized_os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.looker_base_fields_normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sample_id {
     sql: ${TABLE}.looker_base_fields_sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: active_metric_date {
     sql: ${TABLE}.fenix_retention_view_active_metric_date ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: adjust_ad_group {
     sql: ${TABLE}.fenix_retention_view_adjust_ad_group ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: adjust_campaign {
     sql: ${TABLE}.fenix_retention_view_adjust_campaign ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: adjust_creative {
     sql: ${TABLE}.fenix_retention_view_adjust_creative ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: adjust_network {
     sql: ${TABLE}.fenix_retention_view_adjust_network ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_name {
     sql: ${TABLE}.fenix_retention_view_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version {
     sql: ${TABLE}.fenix_retention_view_app_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: country {
     sql: ${TABLE}.fenix_retention_view_country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
     group_label: "Base Fields"
   }
@@ -729,108 +784,126 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension: device_manufacturer {
     sql: ${TABLE}.fenix_retention_view_device_manufacturer ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: device_type {
     sql: ${TABLE}.fenix_retention_view_device_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: distribution_id {
     sql: ${TABLE}.fenix_retention_view_distribution_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: install_source {
     sql: ${TABLE}.fenix_retention_view_install_source ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: is_mobile {
     sql: ${TABLE}.fenix_retention_view_is_mobile ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: lifecycle_stage {
     sql: ${TABLE}.fenix_retention_view_lifecycle_stage ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: locale {
     sql: ${TABLE}.fenix_retention_view_locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: meta_attribution_app {
     sql: ${TABLE}.fenix_retention_view_meta_attribution_app ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: new_profiles_metric_date {
     sql: ${TABLE}.fenix_retention_view_new_profiles_metric_date ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: paid_vs_organic {
     sql: ${TABLE}.fenix_retention_view_paid_vs_organic ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: ping_sent_metric_date {
     sql: ${TABLE}.fenix_retention_view_ping_sent_metric_date ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: ping_sent_week_4 {
     sql: ${TABLE}.fenix_retention_view_ping_sent_week_4 ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: play_store_attribution_campaign {
     sql: ${TABLE}.fenix_retention_view_play_store_attribution_campaign ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: play_store_attribution_medium {
     sql: ${TABLE}.fenix_retention_view_play_store_attribution_medium ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: play_store_attribution_source {
     sql: ${TABLE}.fenix_retention_view_play_store_attribution_source ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: repeat_profiles {
     sql: ${TABLE}.fenix_retention_view_repeat_profiles ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: retained_week_4 {
     sql: ${TABLE}.fenix_retention_view_retained_week_4 ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: retained_week_4_new_profiles {
     sql: ${TABLE}.fenix_retention_view_retained_week_4_new_profiles ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 

@@ -8,36 +8,43 @@ view: data_review_stats {
   dimension: action {
     sql: ${TABLE}.action ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: attachment_id {
     sql: ${TABLE}.attachment_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: bug_id {
     sql: ${TABLE}.bug_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: requestor {
     sql: ${TABLE}.requestor ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: steward {
     sql: ${TABLE}.steward ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: update_counter {
     sql: ${TABLE}.update_counter ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: update_datetime {
     sql: ${TABLE}.update_datetime ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

@@ -8,31 +8,37 @@ view: missing_document_namespaces_notes {
   dimension: bug {
     sql: ${TABLE}.bug ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: document_namespace {
     sql: ${TABLE}.document_namespace ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: document_type {
     sql: ${TABLE}.document_type ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: document_version {
     sql: ${TABLE}.document_version ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: notes {
     sql: ${TABLE}.notes ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: end {
     sql: ${TABLE}.end_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -48,6 +54,7 @@ view: missing_document_namespaces_notes {
   dimension_group: start {
     sql: ${TABLE}.start_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

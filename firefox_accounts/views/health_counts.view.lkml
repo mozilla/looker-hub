@@ -8,21 +8,25 @@ view: health_counts {
   dimension: count {
     sql: ${TABLE}.count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: state {
     sql: ${TABLE}.state ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: type {
     sql: ${TABLE}.type ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: date {
     sql: ${TABLE}.date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

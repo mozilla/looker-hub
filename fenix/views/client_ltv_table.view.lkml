@@ -13,27 +13,32 @@ view: client_ltv_table {
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
   }
 
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: total_future_ad_clicks {
     sql: ${TABLE}.total_future_ad_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: total_historic_ad_clicks {
     sql: ${TABLE}.total_historic_ad_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: total_predicted_ad_clicks {
     sql: ${TABLE}.total_predicted_ad_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   sql_table_name: `mozdata.fenix.client_ltv` ;;

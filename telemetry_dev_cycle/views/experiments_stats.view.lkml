@@ -8,16 +8,19 @@ view: experiments_stats {
   dimension: has_config {
     sql: ${TABLE}.has_config ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: slug {
     sql: ${TABLE}.slug ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: end {
     sql: ${TABLE}.end_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -33,6 +36,7 @@ view: experiments_stats {
   dimension_group: enrollment_end {
     sql: ${TABLE}.enrollment_end_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -48,6 +52,7 @@ view: experiments_stats {
   dimension_group: start {
     sql: ${TABLE}.start_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

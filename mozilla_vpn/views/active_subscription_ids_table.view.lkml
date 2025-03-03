@@ -8,11 +8,13 @@ view: active_subscription_ids_table {
   dimension: subscription_id {
     sql: ${TABLE}.subscription_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: active {
     sql: ${TABLE}.active_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

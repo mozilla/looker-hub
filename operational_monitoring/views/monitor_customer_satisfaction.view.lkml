@@ -17,36 +17,43 @@ view: monitor_customer_satisfaction {
   dimension: branch {
     sql: ${TABLE}.branch ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: experiment_branch {
     sql: ${TABLE}.experiment_branch ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: metric {
     sql: ${TABLE}.metric ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: parameter {
     sql: ${TABLE}.parameter ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: plan_tier {
     sql: ${TABLE}.plan_tier ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: statistic {
     sql: ${TABLE}.statistic ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: survey_id {
     sql: ${TABLE}.survey_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   measure: point {

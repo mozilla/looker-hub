@@ -8,6 +8,7 @@ view: subscriptions_table {
   dimension: apple_receipt__active_period__interval {
     sql: ${TABLE}.apple_receipt.active_period.interval ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Apple Receipt Active Period"
     group_item_label: "Interval"
   }
@@ -15,6 +16,7 @@ view: subscriptions_table {
   dimension: apple_receipt__active_period__interval_count {
     sql: ${TABLE}.apple_receipt.active_period.interval_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Apple Receipt Active Period"
     group_item_label: "Interval Count"
   }
@@ -22,6 +24,7 @@ view: subscriptions_table {
   dimension: apple_receipt__environment {
     sql: ${TABLE}.apple_receipt.environment ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Apple Receipt"
     group_item_label: "Environment"
   }
@@ -29,31 +32,37 @@ view: subscriptions_table {
   dimension: id {
     sql: ${TABLE}.id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: is_active {
     sql: ${TABLE}.is_active ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: provider {
     sql: ${TABLE}.provider ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: type {
     sql: ${TABLE}.type ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: user_id {
     sql: ${TABLE}.user_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: apple_receipt__active_period__end {
     sql: ${TABLE}.apple_receipt.active_period.end_time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -69,6 +78,7 @@ view: subscriptions_table {
   dimension_group: apple_receipt__active_period__start {
     sql: ${TABLE}.apple_receipt.active_period.start_time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -84,6 +94,7 @@ view: subscriptions_table {
   dimension_group: apple_receipt__trial_period__end {
     sql: ${TABLE}.apple_receipt.trial_period.end_time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -99,6 +110,7 @@ view: subscriptions_table {
   dimension_group: apple_receipt__trial_period__start {
     sql: ${TABLE}.apple_receipt.trial_period.start_time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -114,6 +126,7 @@ view: subscriptions_table {
   dimension_group: created_at {
     sql: ${TABLE}.created_at ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -128,6 +141,7 @@ view: subscriptions_table {
   dimension_group: ended_at {
     sql: ${TABLE}.ended_at ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -142,6 +156,7 @@ view: subscriptions_table {
   dimension_group: updated_at {
     sql: ${TABLE}.updated_at ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

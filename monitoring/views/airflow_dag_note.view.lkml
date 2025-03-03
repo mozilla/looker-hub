@@ -8,21 +8,25 @@ view: airflow_dag_note {
   dimension: content {
     sql: ${TABLE}.content ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: dag_run_id {
     sql: ${TABLE}.dag_run_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: user_id {
     sql: ${TABLE}.user_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: created_at {
     sql: ${TABLE}.created_at ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -37,6 +41,7 @@ view: airflow_dag_note {
   dimension_group: updated_at {
     sql: ${TABLE}.updated_at ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

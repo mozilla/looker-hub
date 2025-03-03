@@ -8,11 +8,13 @@ view: users {
   dimension: id {
     sql: ${TABLE}.id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: initials {
     sql: ${TABLE}.initials ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: memberships {
@@ -23,21 +25,25 @@ view: users {
   dimension: mobile {
     sql: ${TABLE}.mobile ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: name {
     sql: ${TABLE}.name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: username {
     sql: ${TABLE}.username ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: created_at {
     sql: ${TABLE}.created_at ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -56,6 +62,7 @@ view: users__memberships {
   dimension: ar_global_access {
     sql: ${TABLE}.ar_global_access ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: channels_moderated {
@@ -71,6 +78,7 @@ view: users__memberships {
   dimension: role {
     sql: ${TABLE}.role ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -78,11 +86,13 @@ view: users__memberships__channels_moderated {
   dimension: channel {
     sql: ${TABLE}.channel ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: included {
     sql: ${TABLE}.included ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -90,10 +100,12 @@ view: users__memberships__data_viewer_channels {
   dimension: channel {
     sql: ${TABLE}.channel ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: included {
     sql: ${TABLE}.included ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }

@@ -7,8 +7,8 @@
 view: metric_definitions_funnel_retention {
   derived_table: {
     sql: SELECT
-                SUM(new_profiles) AS funnel_new_profiles,
-SUM(repeat_user) AS repeat_users,
+                SUM(new_profiles_metric_date) AS funnel_new_profiles,
+SUM(repeat_profiles) AS repeat_users,
 SUM(retained_week_4) AS week_4_retained_users,
 
                 looker_base_fields_app_version_major,
@@ -45,39 +45,52 @@ looker_base_fields_sample_id,
 looker_base_fields_user_agent__browser,
 looker_base_fields_user_agent__os,
 looker_base_fields_user_agent__version,
+funnel_retention_active_metric_date,
 funnel_retention_adjust_ad_group,
 funnel_retention_adjust_campaign,
 funnel_retention_adjust_creative,
 funnel_retention_adjust_network,
-funnel_retention_first_reported_country,
-funnel_retention_first_reported_isp,
-funnel_retention_new_profiles,
-funnel_retention_repeat_user,
+funnel_retention_app_name,
+funnel_retention_app_version,
+funnel_retention_country,
+funnel_retention_device_manufacturer,
+funnel_retention_device_type,
+funnel_retention_is_mobile,
+funnel_retention_is_suspicious_device_client,
+funnel_retention_lifecycle_stage,
+funnel_retention_locale,
+funnel_retention_new_profiles_metric_date,
+funnel_retention_normalized_channel,
+funnel_retention_paid_vs_organic,
+funnel_retention_ping_sent_metric_date,
+funnel_retention_ping_sent_week_4,
+funnel_retention_repeat_profiles,
 funnel_retention_retained_week_4,
+funnel_retention_retained_week_4_new_profiles,
 
                 NULL AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
-                submission_date AS analysis_basis
+                metric_date AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'week'  %}
                 (FORMAT_DATE(
                     '%F',
-                    DATE_TRUNC(submission_date,
+                    DATE_TRUNC(metric_date,
                     WEEK(MONDAY)))
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'month'  %}
                 (FORMAT_DATE(
                     '%Y-%m',
-                    submission_date)
+                    metric_date)
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'quarter'  %}
                 (FORMAT_DATE(
                     '%Y-%m',
-                    DATE_TRUNC(submission_date,
+                    DATE_TRUNC(metric_date,
                     QUARTER))
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'year'  %}
                 (EXTRACT(
-                    YEAR FROM submission_date)
+                    YEAR FROM metric_date)
                 ) AS analysis_basis
                 {% else %}
                 NULL as analysis_basis
@@ -120,15 +133,28 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
 looker_base_fields.user_agent.browser AS looker_base_fields_user_agent__browser,
 looker_base_fields.user_agent.os AS looker_base_fields_user_agent__os,
 looker_base_fields.user_agent.version AS looker_base_fields_user_agent__version,
+funnel_retention.active_metric_date AS funnel_retention_active_metric_date,
 funnel_retention.adjust_ad_group AS funnel_retention_adjust_ad_group,
 funnel_retention.adjust_campaign AS funnel_retention_adjust_campaign,
 funnel_retention.adjust_creative AS funnel_retention_adjust_creative,
 funnel_retention.adjust_network AS funnel_retention_adjust_network,
-funnel_retention.first_reported_country AS funnel_retention_first_reported_country,
-funnel_retention.first_reported_isp AS funnel_retention_first_reported_isp,
-funnel_retention.new_profiles AS funnel_retention_new_profiles,
-funnel_retention.repeat_user AS funnel_retention_repeat_user,
+funnel_retention.app_name AS funnel_retention_app_name,
+funnel_retention.app_version AS funnel_retention_app_version,
+funnel_retention.country AS funnel_retention_country,
+funnel_retention.device_manufacturer AS funnel_retention_device_manufacturer,
+funnel_retention.device_type AS funnel_retention_device_type,
+funnel_retention.is_mobile AS funnel_retention_is_mobile,
+funnel_retention.is_suspicious_device_client AS funnel_retention_is_suspicious_device_client,
+funnel_retention.lifecycle_stage AS funnel_retention_lifecycle_stage,
+funnel_retention.locale AS funnel_retention_locale,
+funnel_retention.new_profiles_metric_date AS funnel_retention_new_profiles_metric_date,
+funnel_retention.normalized_channel AS funnel_retention_normalized_channel,
+funnel_retention.paid_vs_organic AS funnel_retention_paid_vs_organic,
+funnel_retention.ping_sent_metric_date AS funnel_retention_ping_sent_metric_date,
+funnel_retention.ping_sent_week_4 AS funnel_retention_ping_sent_week_4,
+funnel_retention.repeat_profiles AS funnel_retention_repeat_profiles,
 funnel_retention.retained_week_4 AS funnel_retention_retained_week_4,
+funnel_retention.retained_week_4_new_profiles AS funnel_retention_retained_week_4_new_profiles,
 
                     FROM
                     (
@@ -137,12 +163,12 @@ funnel_retention.retained_week_4 AS funnel_retention_retained_week_4,
             FROM
                 (
     SELECT *
-     FROM `mozdata.firefox_ios.funnel_retention_week_4`
+     FROM `mozdata.firefox_ios.retention`
 )
             ) AS funnel_retention
         
                     WHERE 
-                    funnel_retention.submission_date
+                    funnel_retention.metric_date
                     BETWEEN
                     COALESCE(
                         SAFE_CAST(
@@ -203,15 +229,28 @@ looker_base_fields_sample_id,
 looker_base_fields_user_agent__browser,
 looker_base_fields_user_agent__os,
 looker_base_fields_user_agent__version,
+funnel_retention_active_metric_date,
 funnel_retention_adjust_ad_group,
 funnel_retention_adjust_campaign,
 funnel_retention_adjust_creative,
 funnel_retention_adjust_network,
-funnel_retention_first_reported_country,
-funnel_retention_first_reported_isp,
-funnel_retention_new_profiles,
-funnel_retention_repeat_user,
+funnel_retention_app_name,
+funnel_retention_app_version,
+funnel_retention_country,
+funnel_retention_device_manufacturer,
+funnel_retention_device_type,
+funnel_retention_is_mobile,
+funnel_retention_is_suspicious_device_client,
+funnel_retention_lifecycle_stage,
+funnel_retention_locale,
+funnel_retention_new_profiles_metric_date,
+funnel_retention_normalized_channel,
+funnel_retention_paid_vs_organic,
+funnel_retention_ping_sent_metric_date,
+funnel_retention_ping_sent_week_4,
+funnel_retention_repeat_profiles,
 funnel_retention_retained_week_4,
+funnel_retention_retained_week_4_new_profiles,
 
                 client_id,
                 analysis_basis ;;
@@ -230,7 +269,7 @@ funnel_retention_retained_week_4,
     group_label: "Metrics"
     label: "Firefox iOS funnel new profiles"
     description: "    This is the total number of new profiles created on a given date. We only count new profiles that came via release channel and we also filter out app version 107.2  data that was recieved after February 1st. The etl of the base table is
-    [defined in `bigquery-etl`](https://github.com/mozilla/bigquery-etl/blob/main/sql/moz-fx-data-shared-prod/firefox_ios_derived/funnel_retention_week_4_v1/query.sql).
+    [defined in `bigquery-etl`](https://github.com/mozilla/bigquery-etl/blob/main/sql/moz-fx-data-shared-prod/firefox_ios_derived/retention_v1/query.sql).
     This metric needs to be aggregated by `first_seen_date` for daily aggregation. The underlying table have a lag of 28 days, this means the most recent completed first seen date will be 28 days from current date.
     For questions please contact \"rbaffourawuah@mozilla.com\".
 "
@@ -242,7 +281,7 @@ funnel_retention_retained_week_4,
     group_label: "Metrics"
     label: "Firefox iOS funnel repeat users"
     description: "    This is the total number of new profiles that visited more than once within their first 28 days. All the filters applied to new profile counts is applied to this calculation. The etl of the base table is
-    [defined in `bigquery-etl`](https://github.com/mozilla/bigquery-etl/blob/main/sql/moz-fx-data-shared-prod/firefox_ios_derived/funnel_retention_week_4_v1/query.sql).
+    [defined in `bigquery-etl`](https://github.com/mozilla/bigquery-etl/blob/main/sql/moz-fx-data-shared-prod/firefox_ios_derived/retention_v1/query.sql).
     This metric needs to be aggregated by `first_seen_date` for daily aggregation. The underlying table have a lag of 28 days, this means the most recent completed first seen date will be 28 days from current date.
     For questions please contact \"rbaffourawuah@mozilla.com\".
 "
@@ -254,7 +293,7 @@ funnel_retention_retained_week_4,
     group_label: "Metrics"
     label: "Firefox iOS funnel week 4 retained users"
     description: "    This is the total number of new profiles that returned between between day 22 to day 28 after first seen. All the filters applied to new profile counts is applied to this calculation. The etl of the base table is
-    [defined in `bigquery-etl`](https://github.com/mozilla/bigquery-etl/blob/main/sql/moz-fx-data-shared-prod/firefox_ios_derived/funnel_retention_week_4_v1/query.sql).
+    [defined in `bigquery-etl`](https://github.com/mozilla/bigquery-etl/blob/main/sql/moz-fx-data-shared-prod/firefox_ios_derived/retention_v1/query.sql).
     This metric needs to be aggregated by `first_seen_date` for daily aggregation. The underlying table have a lag of 28 days, this means the most recent completed first seen date will be 28 days from current date.
     For questions please contact \"rbaffourawuah@mozilla.com\".
 "
@@ -265,24 +304,28 @@ funnel_retention_retained_week_4,
   dimension: app_version_major {
     sql: ${TABLE}.looker_base_fields_app_version_major ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version_minor {
     sql: ${TABLE}.looker_base_fields_app_version_minor ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version_patch {
     sql: ${TABLE}.looker_base_fields_app_version_patch ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.looker_base_fields_client_info__android_sdk_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Android Sdk Version"
   }
@@ -290,6 +333,7 @@ funnel_retention_retained_week_4,
   dimension: client_info__app_build {
     sql: ${TABLE}.looker_base_fields_client_info__app_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "App Build"
   }
@@ -297,6 +341,7 @@ funnel_retention_retained_week_4,
   dimension: client_info__app_channel {
     sql: ${TABLE}.looker_base_fields_client_info__app_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "App Channel"
   }
@@ -304,6 +349,7 @@ funnel_retention_retained_week_4,
   dimension: client_info__app_display_version {
     sql: ${TABLE}.looker_base_fields_client_info__app_display_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "App Display Version"
   }
@@ -311,6 +357,7 @@ funnel_retention_retained_week_4,
   dimension: client_info__architecture {
     sql: ${TABLE}.looker_base_fields_client_info__architecture ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Architecture"
   }
@@ -318,6 +365,7 @@ funnel_retention_retained_week_4,
   dimension: client_info__build_date {
     sql: ${TABLE}.looker_base_fields_client_info__build_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Build Date"
   }
@@ -331,6 +379,7 @@ funnel_retention_retained_week_4,
   dimension: client_info__device_manufacturer {
     sql: ${TABLE}.looker_base_fields_client_info__device_manufacturer ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Device Manufacturer"
   }
@@ -338,6 +387,7 @@ funnel_retention_retained_week_4,
   dimension: client_info__device_model {
     sql: ${TABLE}.looker_base_fields_client_info__device_model ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Device Model"
   }
@@ -345,6 +395,7 @@ funnel_retention_retained_week_4,
   dimension: client_info__first_run_date {
     sql: ${TABLE}.looker_base_fields_client_info__first_run_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "First Run Date"
   }
@@ -352,6 +403,7 @@ funnel_retention_retained_week_4,
   dimension: client_info__locale {
     sql: ${TABLE}.looker_base_fields_client_info__locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Locale"
   }
@@ -359,6 +411,7 @@ funnel_retention_retained_week_4,
   dimension: client_info__os {
     sql: ${TABLE}.looker_base_fields_client_info__os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Os"
   }
@@ -366,6 +419,7 @@ funnel_retention_retained_week_4,
   dimension: client_info__os_version {
     sql: ${TABLE}.looker_base_fields_client_info__os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Os Version"
   }
@@ -373,6 +427,7 @@ funnel_retention_retained_week_4,
   dimension: client_info__session_count {
     sql: ${TABLE}.looker_base_fields_client_info__session_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Session Count"
   }
@@ -380,6 +435,7 @@ funnel_retention_retained_week_4,
   dimension: client_info__session_id {
     sql: ${TABLE}.looker_base_fields_client_info__session_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Session Id"
   }
@@ -387,6 +443,7 @@ funnel_retention_retained_week_4,
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.looker_base_fields_client_info__telemetry_sdk_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Telemetry Sdk Build"
   }
@@ -394,6 +451,7 @@ funnel_retention_retained_week_4,
   dimension: client_info__windows_build_number {
     sql: ${TABLE}.looker_base_fields_client_info__windows_build_number ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Windows Build Number"
   }
@@ -407,6 +465,7 @@ funnel_retention_retained_week_4,
   dimension: geo__city {
     sql: ${TABLE}.looker_base_fields_geo__city ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "City"
   }
@@ -414,6 +473,7 @@ funnel_retention_retained_week_4,
   dimension: geo__country {
     sql: ${TABLE}.looker_base_fields_geo__country ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Country"
   }
@@ -421,6 +481,7 @@ funnel_retention_retained_week_4,
   dimension: geo__db_version {
     sql: ${TABLE}.looker_base_fields_geo__db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Db Version"
   }
@@ -428,6 +489,7 @@ funnel_retention_retained_week_4,
   dimension: geo__subdivision1 {
     sql: ${TABLE}.looker_base_fields_geo__subdivision1 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Subdivision1"
   }
@@ -435,6 +497,7 @@ funnel_retention_retained_week_4,
   dimension: geo__subdivision2 {
     sql: ${TABLE}.looker_base_fields_geo__subdivision2 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Subdivision2"
   }
@@ -442,48 +505,56 @@ funnel_retention_retained_week_4,
   dimension: normalized_app_id {
     sql: ${TABLE}.looker_base_fields_normalized_app_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_app_name {
     sql: ${TABLE}.looker_base_fields_normalized_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.looker_base_fields_normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.looker_base_fields_normalized_country_code ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.looker_base_fields_normalized_os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.looker_base_fields_normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sample_id {
     sql: ${TABLE}.looker_base_fields_sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: user_agent__browser {
     sql: ${TABLE}.looker_base_fields_user_agent__browser ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Browser"
   }
@@ -491,6 +562,7 @@ funnel_retention_retained_week_4,
   dimension: user_agent__os {
     sql: ${TABLE}.looker_base_fields_user_agent__os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Os"
   }
@@ -498,61 +570,156 @@ funnel_retention_retained_week_4,
   dimension: user_agent__version {
     sql: ${TABLE}.looker_base_fields_user_agent__version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Version"
+  }
+
+  dimension: active_metric_date {
+    sql: ${TABLE}.funnel_retention_active_metric_date ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
   }
 
   dimension: adjust_ad_group {
     sql: ${TABLE}.funnel_retention_adjust_ad_group ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: adjust_campaign {
     sql: ${TABLE}.funnel_retention_adjust_campaign ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: adjust_creative {
     sql: ${TABLE}.funnel_retention_adjust_creative ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: adjust_network {
     sql: ${TABLE}.funnel_retention_adjust_network ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: first_reported_country {
-    sql: ${TABLE}.funnel_retention_first_reported_country ;;
+  dimension: app_name {
+    sql: ${TABLE}.funnel_retention_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: first_reported_isp {
-    sql: ${TABLE}.funnel_retention_first_reported_isp ;;
+  dimension: app_version {
+    sql: ${TABLE}.funnel_retention_app_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: new_profiles {
-    sql: ${TABLE}.funnel_retention_new_profiles ;;
-    type: number
+  dimension: country {
+    sql: ${TABLE}.funnel_retention_country ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    map_layer_name: countries
     group_label: "Base Fields"
   }
 
-  dimension: repeat_user {
-    sql: ${TABLE}.funnel_retention_repeat_user ;;
+  dimension: device_manufacturer {
+    sql: ${TABLE}.funnel_retention_device_manufacturer ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.funnel_retention_device_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: is_mobile {
+    sql: ${TABLE}.funnel_retention_is_mobile ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: is_suspicious_device_client {
+    sql: ${TABLE}.funnel_retention_is_suspicious_device_client ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: lifecycle_stage {
+    sql: ${TABLE}.funnel_retention_lifecycle_stage ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: locale {
+    sql: ${TABLE}.funnel_retention_locale ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: new_profiles_metric_date {
+    sql: ${TABLE}.funnel_retention_new_profiles_metric_date ;;
     type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.funnel_retention_paid_vs_organic ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: ping_sent_metric_date {
+    sql: ${TABLE}.funnel_retention_ping_sent_metric_date ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: ping_sent_week_4 {
+    sql: ${TABLE}.funnel_retention_ping_sent_week_4 ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: repeat_profiles {
+    sql: ${TABLE}.funnel_retention_repeat_profiles ;;
+    type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: retained_week_4 {
     sql: ${TABLE}.funnel_retention_retained_week_4 ;;
     type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: retained_week_4_new_profiles {
+    sql: ${TABLE}.funnel_retention_retained_week_4_new_profiles ;;
+    type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
