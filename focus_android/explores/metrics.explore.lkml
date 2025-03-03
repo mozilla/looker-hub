@@ -1159,6 +1159,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_image_added}) AS metrics__metrics__labeled_counter__pdfjs_image_added ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_image_added.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__pdfjs_signature_clear {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_signature_clear}) AS metrics__metrics__labeled_counter__pdfjs_signature_clear ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_signature_clear.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__pdfjs_signature_edit_description {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_signature_edit_description}) AS metrics__metrics__labeled_counter__pdfjs_signature_edit_description ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_signature_edit_description.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__pdfjs_stamp {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_stamp}) AS metrics__metrics__labeled_counter__pdfjs_stamp ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_stamp.document_id} ;;
