@@ -816,6 +816,11 @@ for the purpose of experimentation enrollment.
     hidden: yes
   }
 
+  dimension: metrics__string_list__environment_nimbus_enrollments {
+    sql: ${TABLE}.metrics.string_list.environment_nimbus_enrollments ;;
+    hidden: yes
+  }
+
   dimension: metrics__timespan__environment_uptime__time_unit {
     sql: ${TABLE}.metrics.timespan.environment_uptime.time_unit ;;
     type: string

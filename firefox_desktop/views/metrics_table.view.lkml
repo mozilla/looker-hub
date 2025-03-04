@@ -12595,6 +12595,20 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_signature_clear {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_signature_clear ;;
+    hidden: yes
+    description: "Counts the number of times the user clears the signature while editing it.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_signature_edit_description {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_signature_edit_description ;;
+    hidden: yes
+    description: "Counts the number of times the user edit the description of a signature instance.
+"
+  }
+
   dimension: metrics__labeled_counter__pdfjs_stamp {
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_stamp ;;
     hidden: yes
