@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: highlighting_in_pdfs_rollout {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.highlighting_in_pdfs_rollout_statistics ;;
+view: rootca_info_card_hcw2_fenix {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.rootca_info_card_hcw2_fenix_statistics ;;
 
   dimension: submission_date {
     type: date
