@@ -12,13 +12,6 @@ explore: first_session {
   description: "Explore for the first_session ping. Recorded on first_session when the user installs the app."
   view_name: first_session
 
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
-
   join: first_session__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${first_session.metrics__labeled_counter__glean_error_invalid_label}) AS first_session__metrics__labeled_counter__glean_error_invalid_label ON ${first_session.document_id} = ${first_session__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -52,6 +45,13 @@ explore: first_session {
   join: first_session__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${first_session.ping_info__experiments}) AS first_session__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

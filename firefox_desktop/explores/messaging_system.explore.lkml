@@ -12,12 +12,6 @@ explore: messaging_system {
   description: "Explore for the messaging_system ping. This is a ping representing single events triggered by the messaging system and captures some pings from About:Welcome, ASRouter, and other corners."
   view_name: messaging_system
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: messaging_system__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${messaging_system.metrics__labeled_counter__glean_error_invalid_label}) AS messaging_system__metrics__labeled_counter__glean_error_invalid_label ON ${messaging_system.document_id} = ${messaging_system__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -66,6 +60,12 @@ explore: messaging_system {
   join: messaging_system__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${messaging_system.ping_info__experiments}) AS messaging_system__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

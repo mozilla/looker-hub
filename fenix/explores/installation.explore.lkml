@@ -12,13 +12,6 @@ explore: installation {
   description: "Explore for the installation ping. This ping is intended to capture the source of the installation"
   view_name: installation
 
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
-
   join: installation__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${installation.metrics__labeled_counter__glean_error_invalid_label}) AS installation__metrics__labeled_counter__glean_error_invalid_label ON ${installation.document_id} = ${installation__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -52,6 +45,13 @@ explore: installation {
   join: installation__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${installation.ping_info__experiments}) AS installation__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

@@ -12,13 +12,6 @@ explore: temp_baseline {
   description: "Explore for the temp_baseline ping. Temporary ping to measure when the app UI is visible to the user."
   view_name: temp_baseline
 
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
-
   join: temp_baseline__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${temp_baseline.metrics__labeled_counter__glean_error_invalid_label}) AS temp_baseline__metrics__labeled_counter__glean_error_invalid_label ON ${temp_baseline.document_id} = ${temp_baseline__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -52,6 +45,13 @@ explore: temp_baseline {
   join: temp_baseline__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${temp_baseline.ping_info__experiments}) AS temp_baseline__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

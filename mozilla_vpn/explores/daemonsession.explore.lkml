@@ -12,12 +12,6 @@ explore: daemonsession {
   description: "Explore for the daemonsession ping. Only on iOS and Android. Data for VPN sessions, as recorded from the Android daemon and iOS Network Extension. This ping will record start/end datestamp, session-based metrics, etc."
   view_name: daemonsession
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: daemonsession__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${daemonsession.metrics__labeled_counter__glean_error_invalid_label}) AS daemonsession__metrics__labeled_counter__glean_error_invalid_label ON ${daemonsession.document_id} = ${daemonsession__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: daemonsession {
   join: daemonsession__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${daemonsession.ping_info__experiments}) AS daemonsession__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

@@ -12,12 +12,6 @@ explore: first_startup {
   description: "Explore for the first_startup ping. Sent during startup if Firefox was launched by the installer."
   view_name: first_startup
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: first_startup__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${first_startup.metrics__labeled_counter__glean_error_invalid_label}) AS first_startup__metrics__labeled_counter__glean_error_invalid_label ON ${first_startup.document_id} = ${first_startup__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: first_startup {
   join: first_startup__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${first_startup.ping_info__experiments}) AS first_startup__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

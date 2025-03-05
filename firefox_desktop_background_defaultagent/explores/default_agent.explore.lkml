@@ -12,12 +12,6 @@ explore: default_agent {
   description: "Explore for the default_agent ping. This opt-out ping is sent from the Default Agent, which is a Windows-only Firefox Background Task that is registered during Firefox installation with the Windows scheduled tasks system so that it runs automatically every 24 hours, whether Firefox is running or not. Opting out of telemetry is handled via the pref value being copied to the registry so that the Default Agent can read it without needing to work with profiles. Relevant policies are consulted as well. The agent also has its own pref, `default-agent.enabled`, which if set to false disables all agent functionality, including generating this ping. Each installation of Firefox has its own copy of the agent and its own scheduled task which shares a common `LastPingSentAt` user registry key with other installations. Installations race to send a single ping per 24 hour window per installing user. If multiple operating system-level users are all using one copy of Firefox, only one scheduled task will have been created and only one ping will be sent, even though the users might have different default browser settings. If multiple users have installed Firefox then each installing user will have a scheduled task and ping. Additional information for the Default Agent can be found in the [Default Browser Agent docs](https://firefox-source-docs.mozilla.org/toolkit/mozapps/defaultagent/default-browser-agent/index.html)."
   view_name: default_agent
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: default_agent__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${default_agent.metrics__labeled_counter__glean_error_invalid_label}) AS default_agent__metrics__labeled_counter__glean_error_invalid_label ON ${default_agent.document_id} = ${default_agent__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: default_agent {
   join: default_agent__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${default_agent.ping_info__experiments}) AS default_agent__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

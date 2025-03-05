@@ -12,13 +12,6 @@ explore: tabs_sync {
   description: "Explore for the tabs_sync ping. A ping sent for every Tabs engine sync. It doesn't include the `client_id` because it reports a hashed version of the user's Firefox Account ID."
   view_name: tabs_sync
 
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
-
   join: tabs_sync__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${tabs_sync.metrics__labeled_counter__glean_error_invalid_label}) AS tabs_sync__metrics__labeled_counter__glean_error_invalid_label ON ${tabs_sync.document_id} = ${tabs_sync__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -72,6 +65,13 @@ explore: tabs_sync {
   join: tabs_sync__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${tabs_sync.ping_info__experiments}) AS tabs_sync__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

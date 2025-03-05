@@ -670,6 +670,10 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: addresses_sync
+    adjust_attribution:
+      type: glean_ping_explore
+      views:
+        base_view: adjust_attribution
     baseline:
       type: glean_ping_explore
       views:
@@ -860,6 +864,10 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: pageload
+    play_store_attribution:
+      type: glean_ping_explore
+      views:
+        base_view: play_store_attribution
     spoc:
       type: glean_ping_explore
       views:
@@ -888,6 +896,18 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: usage_reporting
+    usage_reporting_clients_daily:
+      type: glean_ping_explore
+      views:
+        base_view: usage_reporting_clients_daily
+    usage_reporting_clients_first_seen:
+      type: glean_ping_explore
+      views:
+        base_view: usage_reporting_clients_first_seen
+    usage_reporting_clients_last_seen:
+      type: glean_ping_explore
+      views:
+        base_view: usage_reporting_clients_last_seen
     use_counters:
       type: glean_ping_explore
       views:
@@ -967,6 +987,32 @@ fenix:
         table: mozdata.org_mozilla_fenix_nightly.addresses_sync
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.addresses_sync
+      type: table_view
+    adjust_attribution:
+      tables:
+      - channel: release
+        table: mozdata.fenix.adjust_attribution
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.adjust_attribution
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.adjust_attribution
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.adjust_attribution
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.adjust_attribution
+      type: glean_ping_view
+    adjust_attribution_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.adjust_attribution
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.adjust_attribution
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.adjust_attribution
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.adjust_attribution
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.adjust_attribution
       type: table_view
     android_onboarding:
       tables:
@@ -1879,6 +1925,32 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.pageload
       type: table_view
+    play_store_attribution:
+      tables:
+      - channel: release
+        table: mozdata.fenix.play_store_attribution
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.play_store_attribution
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.play_store_attribution
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.play_store_attribution
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.play_store_attribution
+      type: glean_ping_view
+    play_store_attribution_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.play_store_attribution
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.play_store_attribution
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.play_store_attribution
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.play_store_attribution
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.play_store_attribution
+      type: table_view
     profile_dau_metrics_marketing_geo_testing_table:
       tables:
       - channel: release
@@ -2088,6 +2160,11 @@ fenix:
       - channel: release
         table: mozdata.fenix.usage_reporting_active_users
       type: table_view
+    usage_reporting_clients_daily:
+      tables:
+      - channel: release
+        table: mozdata.fenix.usage_reporting_clients_daily
+      type: glean_ping_view
     usage_reporting_clients_daily_table:
       tables:
       - channel: release
@@ -2101,6 +2178,11 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.usage_reporting_clients_daily
       type: table_view
+    usage_reporting_clients_first_seen:
+      tables:
+      - channel: release
+        table: mozdata.fenix.usage_reporting_clients_first_seen
+      type: glean_ping_view
     usage_reporting_clients_first_seen_table:
       tables:
       - channel: release
@@ -2114,6 +2196,11 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.usage_reporting_clients_first_seen
       type: table_view
+    usage_reporting_clients_last_seen:
+      tables:
+      - channel: release
+        table: mozdata.fenix.usage_reporting_clients_last_seen
+      type: glean_ping_view
     usage_reporting_clients_last_seen_table:
       tables:
       - channel: release
@@ -4095,6 +4182,18 @@ firefox_ios:
       type: glean_ping_explore
       views:
         base_view: usage_reporting
+    usage_reporting_clients_daily:
+      type: glean_ping_explore
+      views:
+        base_view: usage_reporting_clients_daily
+    usage_reporting_clients_first_seen:
+      type: glean_ping_explore
+      views:
+        base_view: usage_reporting_clients_first_seen
+    usage_reporting_clients_last_seen:
+      type: glean_ping_explore
+      views:
+        base_view: usage_reporting_clients_last_seen
   glean_app: true
   owners:
   - tlong@mozilla.com
@@ -4864,6 +4963,11 @@ firefox_ios:
       - channel: release
         table: mozdata.firefox_ios.usage_reporting_active_users
       type: table_view
+    usage_reporting_clients_daily:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.usage_reporting_clients_daily
+      type: glean_ping_view
     usage_reporting_clients_daily_table:
       tables:
       - channel: release
@@ -4873,6 +4977,11 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.usage_reporting_clients_daily
       type: table_view
+    usage_reporting_clients_first_seen:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.usage_reporting_clients_first_seen
+      type: glean_ping_view
     usage_reporting_clients_first_seen_table:
       tables:
       - channel: release
@@ -4882,6 +4991,11 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.usage_reporting_clients_first_seen
       type: table_view
+    usage_reporting_clients_last_seen:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.usage_reporting_clients_last_seen
+      type: glean_ping_view
     usage_reporting_clients_last_seen_table:
       tables:
       - channel: release
@@ -5754,11 +5868,11 @@ fxci:
       type: table_view
     task_runs_base:
       tables:
-      - table: moz-fx-data-shared-prod.fxci_derived.task_runs_v1
+      - table: moz-fx-data-shared-prod.fxci.task_runs
       type: table_view
     tasks_base:
       tables:
-      - table: moz-fx-data-shared-prod.fxci_derived.tasks_v1
+      - table: moz-fx-data-shared-prod.fxci.tasks
       type: table_view
     worker_costs_base:
       tables:
@@ -5766,7 +5880,7 @@ fxci:
       type: table_view
     worker_metrics_base:
       tables:
-      - table: moz-fx-data-shared-prod.fxci_derived.worker_metrics_v1
+      - table: moz-fx-data-shared-prod.fxci.worker_metrics
       type: table_view
 growth:
   glean_app: false

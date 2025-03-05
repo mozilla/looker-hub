@@ -12,13 +12,6 @@ explore: bookmarks_sync {
   description: "Explore for the bookmarks_sync ping. A ping sent for every bookmarks sync. It doesn't include the `client_id` because it reports a hashed version of the user's Firefox Account ID."
   view_name: bookmarks_sync
 
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
-
   join: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${bookmarks_sync.metrics__labeled_counter__bookmarks_sync_incoming}) AS bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming ON ${bookmarks_sync.document_id} = ${bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming.document_id} ;;
@@ -82,6 +75,13 @@ explore: bookmarks_sync {
   join: bookmarks_sync__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${bookmarks_sync.ping_info__experiments}) AS bookmarks_sync__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

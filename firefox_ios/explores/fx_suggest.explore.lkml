@@ -12,13 +12,6 @@ explore: fx_suggest {
   description: "Explore for the fx_suggest ping. A ping representing a single event occurring with or to a Firefox Suggestion. Distinguishable by its `ping_type`. Does not contain a `client_id`, preferring a `context_id` instead."
   view_name: fx_suggest
 
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
-
   join: fx_suggest__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${fx_suggest.metrics__labeled_counter__glean_error_invalid_label}) AS fx_suggest__metrics__labeled_counter__glean_error_invalid_label ON ${fx_suggest.document_id} = ${fx_suggest__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -52,6 +45,13 @@ explore: fx_suggest {
   join: fx_suggest__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${fx_suggest.ping_info__experiments}) AS fx_suggest__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

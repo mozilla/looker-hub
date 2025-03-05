@@ -12,12 +12,6 @@ explore: urlbar_potential_exposure {
   description: "Explore for the urlbar_potential_exposure ping. This ping is submitted at the end of urlbar sessions during which the user typed a keyword defined by the Nimbus variable `potentialExposureKeywords`. A \"session\" begins when the user focuses the urlbar and ends with an engagement or abandonment. The ping will contain one `urlbar.potential_exposure` event per unique keyword that is typed during the session. This ping is not submitted for sessions in private windows."
   view_name: urlbar_potential_exposure
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: urlbar_potential_exposure__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${urlbar_potential_exposure.metrics__labeled_counter__glean_error_invalid_label}) AS urlbar_potential_exposure__metrics__labeled_counter__glean_error_invalid_label ON ${urlbar_potential_exposure.document_id} = ${urlbar_potential_exposure__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: urlbar_potential_exposure {
   join: urlbar_potential_exposure__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${urlbar_potential_exposure.ping_info__experiments}) AS urlbar_potential_exposure__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

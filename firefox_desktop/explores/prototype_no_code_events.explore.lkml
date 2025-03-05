@@ -12,12 +12,6 @@ explore: prototype_no_code_events {
   description: "Explore for the prototype_no_code_events ping. **Prototype-only ping not for general use!** Transport for no-code Firefox Desktop frontend instrumentation, should mostly contain no-code events in browser.ui.* categories. Submitted whenever the next flow of events begins (including startup)."
   view_name: prototype_no_code_events
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: prototype_no_code_events__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${prototype_no_code_events.metrics__labeled_counter__glean_error_invalid_label}) AS prototype_no_code_events__metrics__labeled_counter__glean_error_invalid_label ON ${prototype_no_code_events.document_id} = ${prototype_no_code_events__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: prototype_no_code_events {
   join: prototype_no_code_events__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${prototype_no_code_events.ping_info__experiments}) AS prototype_no_code_events__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

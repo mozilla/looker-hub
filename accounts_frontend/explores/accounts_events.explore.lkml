@@ -13,12 +13,6 @@ explore: accounts_events {
   description: "Explore for the accounts_events ping. An account event"
   view_name: accounts_events
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: accounts_events__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${accounts_events.metrics__labeled_counter__glean_error_invalid_label}) AS accounts_events__metrics__labeled_counter__glean_error_invalid_label ON ${accounts_events.document_id} = ${accounts_events__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -52,6 +46,12 @@ explore: accounts_events {
   join: accounts_events__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${accounts_events.ping_info__experiments}) AS accounts_events__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

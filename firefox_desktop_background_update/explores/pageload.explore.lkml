@@ -12,12 +12,6 @@ explore: pageload {
   description: "Explore for the pageload ping. Instrumentation collected during a page load."
   view_name: pageload
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: pageload__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${pageload.metrics__labeled_counter__glean_error_invalid_label}) AS pageload__metrics__labeled_counter__glean_error_invalid_label ON ${pageload.document_id} = ${pageload__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: pageload {
   join: pageload__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${pageload.ping_info__experiments}) AS pageload__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

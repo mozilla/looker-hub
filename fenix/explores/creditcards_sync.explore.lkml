@@ -12,13 +12,6 @@ explore: creditcards_sync {
   description: "Explore for the creditcards_sync ping. A ping sent for every Credit Cards engine sync. It doesn't include the `client_id` because it reports a hashed version of the user's Firefox Account ID."
   view_name: creditcards_sync
 
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
-
   join: creditcards_sync__metrics__labeled_counter__creditcards_sync_incoming {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${creditcards_sync.metrics__labeled_counter__creditcards_sync_incoming}) AS creditcards_sync__metrics__labeled_counter__creditcards_sync_incoming ON ${creditcards_sync.document_id} = ${creditcards_sync__metrics__labeled_counter__creditcards_sync_incoming.document_id} ;;
@@ -72,6 +65,13 @@ explore: creditcards_sync {
   join: creditcards_sync__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${creditcards_sync.ping_info__experiments}) AS creditcards_sync__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

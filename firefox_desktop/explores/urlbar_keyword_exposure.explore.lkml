@@ -12,12 +12,6 @@ explore: urlbar_keyword_exposure {
   description: "Explore for the urlbar_keyword_exposure ping. This ping is submitted only when urlbar keyword exposures are enabled. See the `keywordExposureResults` urlbar Nimbus variable. When enabled, the ping is submitted at the end of urlbar sessions during which one or more exposure results are matched. (A \"session\" begins when the user focuses the urlbar and ends with an engagement or abandonment.) Exposure results include all results defined in the `exposureResults` variable. They also include the \"rust_exposure\" result type if the `quickSuggestExposureSuggestionTypes` variable is defined. The ping will contain one `urlbar.keyword_exposure` event for each instance where a result is matched during the session. The ping is not submitted for sessions in private windows."
   view_name: urlbar_keyword_exposure
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: urlbar_keyword_exposure__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${urlbar_keyword_exposure.metrics__labeled_counter__glean_error_invalid_label}) AS urlbar_keyword_exposure__metrics__labeled_counter__glean_error_invalid_label ON ${urlbar_keyword_exposure.document_id} = ${urlbar_keyword_exposure__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: urlbar_keyword_exposure {
   join: urlbar_keyword_exposure__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${urlbar_keyword_exposure.ping_info__experiments}) AS urlbar_keyword_exposure__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

@@ -12,13 +12,6 @@ explore: home {
   description: "Explore for the home ping. Homepage new tab related instrumentation."
   view_name: home
 
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
-
   join: home__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${home.metrics__labeled_counter__glean_error_invalid_label}) AS home__metrics__labeled_counter__glean_error_invalid_label ON ${home.document_id} = ${home__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -52,6 +45,13 @@ explore: home {
   join: home__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${home.ping_info__experiments}) AS home__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

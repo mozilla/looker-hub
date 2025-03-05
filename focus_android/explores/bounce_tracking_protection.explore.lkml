@@ -12,13 +12,6 @@ explore: bounce_tracking_protection {
   description: "Explore for the bounce_tracking_protection ping. A ping representing Bounce Tracking Protection stats. Note that this ping does not include client_id. More details are available in Bug 1889444"
   view_name: bounce_tracking_protection
 
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
-
   join: bounce_tracking_protection__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${bounce_tracking_protection.metrics__labeled_counter__glean_error_invalid_label}) AS bounce_tracking_protection__metrics__labeled_counter__glean_error_invalid_label ON ${bounce_tracking_protection.document_id} = ${bounce_tracking_protection__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -47,6 +40,13 @@ explore: bounce_tracking_protection {
   join: bounce_tracking_protection__events__extra {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${bounce_tracking_protection__events.extra}) AS bounce_tracking_protection__events__extra ;;
+  }
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 
