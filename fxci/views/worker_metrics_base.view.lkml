@@ -75,5 +75,5 @@ view: worker_metrics_base {
     datatype: date
   }
 
-  sql_table_name: `moz-fx-data-shared-prod.fxci_derived.worker_metrics_v1` ;;
+  sql_table_name: `moz-fx-data-shared-prod.fxci.worker_metrics` ;;
 }

@@ -12,13 +12,6 @@ explore: topsites_impression {
   description: "Explore for the topsites_impression ping. Recorded when a sponsored top site is rendered and visible on the newtab page. Visibility is qualified as when the homepage is brought to the front of the Browser, and sponsored tiles are 100% visible on screen."
   view_name: topsites_impression
 
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
-
   join: topsites_impression__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${topsites_impression.metrics__labeled_counter__glean_error_invalid_label}) AS topsites_impression__metrics__labeled_counter__glean_error_invalid_label ON ${topsites_impression.document_id} = ${topsites_impression__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -52,6 +45,13 @@ explore: topsites_impression {
   join: topsites_impression__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${topsites_impression.ping_info__experiments}) AS topsites_impression__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

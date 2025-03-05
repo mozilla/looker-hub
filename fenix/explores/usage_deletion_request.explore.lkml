@@ -12,13 +12,6 @@ explore: usage_deletion_request {
   description: "Explore for the usage_deletion_request ping. This ping is submitted when a user opts out of sending usage frequency of Firefox to Mozilla. Sent in response to user action."
   view_name: usage_deletion_request
 
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
-
   join: usage_deletion_request__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${usage_deletion_request.metrics__labeled_counter__glean_error_invalid_label}) AS usage_deletion_request__metrics__labeled_counter__glean_error_invalid_label ON ${usage_deletion_request.document_id} = ${usage_deletion_request__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -47,6 +40,13 @@ explore: usage_deletion_request {
   join: usage_deletion_request__events__extra {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${usage_deletion_request__events.extra}) AS usage_deletion_request__events__extra ;;
+  }
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

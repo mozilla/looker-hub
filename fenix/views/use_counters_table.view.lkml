@@ -14177,6 +14177,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Js Legacy Lang Subtag"
   }
 
+  dimension: metrics__counter__use_counter_doc_js_optimize_array_species_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_optimize_array_species_fuse ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Optimize Array Species Fuse"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_optimize_get_iterator_fuse {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_optimize_get_iterator_fuse ;;
     type: number
@@ -14271,6 +14279,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Thenable"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_thenable_object_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_thenable_object_proto ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Thenable Object Proto"
   }
 
   dimension: metrics__counter__use_counter_doc_js_thenable_proto {
@@ -17641,6 +17657,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Page Js Legacy Lang Subtag"
   }
 
+  dimension: metrics__counter__use_counter_page_js_optimize_array_species_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_optimize_array_species_fuse ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Optimize Array Species Fuse"
+  }
+
   dimension: metrics__counter__use_counter_page_js_optimize_get_iterator_fuse {
     sql: ${TABLE}.metrics.counter.use_counter_page_js_optimize_get_iterator_fuse ;;
     type: number
@@ -17735,6 +17759,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Thenable"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_thenable_object_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_thenable_object_proto ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Thenable Object Proto"
   }
 
   dimension: metrics__counter__use_counter_page_js_thenable_proto {

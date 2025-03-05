@@ -12,12 +12,6 @@ explore: request_stats {
   description: "Explore for the request_stats ping. Request stats for calculating performance, such as addressable inventory or fill rates"
   view_name: request_stats
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: request_stats__events {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${request_stats.events}) AS request_stats__events ;;
@@ -31,5 +25,11 @@ explore: request_stats {
   join: request_stats__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${request_stats.ping_info__experiments}) AS request_stats__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }

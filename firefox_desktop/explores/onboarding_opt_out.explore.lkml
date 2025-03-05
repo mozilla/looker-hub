@@ -12,12 +12,6 @@ explore: onboarding_opt_out {
   description: "Explore for the onboarding_opt_out ping. This ping is submitted when a user opts out of sending Firefox technical and usage telemetry to Mozilla specifically during preonboarding. (After preonboarding, opting out of sending technical and usage telemetry triggers a `deletion-request` ping.) Sent in response to user action."
   view_name: onboarding_opt_out
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: onboarding_opt_out__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${onboarding_opt_out.metrics__labeled_counter__glean_error_invalid_label}) AS onboarding_opt_out__metrics__labeled_counter__glean_error_invalid_label ON ${onboarding_opt_out.document_id} = ${onboarding_opt_out__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -46,6 +40,12 @@ explore: onboarding_opt_out {
   join: onboarding_opt_out__events__extra {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${onboarding_opt_out__events.extra}) AS onboarding_opt_out__events__extra ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

@@ -12,12 +12,6 @@ explore: desktop_crashes {
   description: "Explore for the desktop_crashes ping. "
   view_name: desktop_crashes
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: desktop_crashes__events {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${desktop_crashes.events}) AS desktop_crashes__events ;;
@@ -31,5 +25,11 @@ explore: desktop_crashes {
   join: desktop_crashes__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${desktop_crashes.ping_info__experiments}) AS desktop_crashes__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }

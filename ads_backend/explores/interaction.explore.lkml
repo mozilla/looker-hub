@@ -12,12 +12,6 @@ explore: interaction {
   description: "Explore for the interaction ping. Ad interaction with an ad."
   view_name: interaction
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: interaction__events {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${interaction.events}) AS interaction__events ;;
@@ -31,5 +25,11 @@ explore: interaction {
   join: interaction__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${interaction.ping_info__experiments}) AS interaction__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }

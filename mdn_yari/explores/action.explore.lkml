@@ -12,12 +12,6 @@ explore: action {
   description: "Explore for the action ping. A ping that will be sent everytime a page event happens (user interaction)."
   view_name: action
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: action__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${action.metrics__labeled_counter__glean_error_invalid_label}) AS action__metrics__labeled_counter__glean_error_invalid_label ON ${action.document_id} = ${action__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: action {
   join: action__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${action.ping_info__experiments}) AS action__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

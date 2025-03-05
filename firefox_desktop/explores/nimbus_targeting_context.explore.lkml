@@ -12,12 +12,6 @@ explore: nimbus_targeting_context {
   description: "Explore for the nimbus_targeting_context ping. Sent by Nimbus during every experiment update cycle."
   view_name: nimbus_targeting_context
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: nimbus_targeting_context__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${nimbus_targeting_context.metrics__labeled_counter__glean_error_invalid_label}) AS nimbus_targeting_context__metrics__labeled_counter__glean_error_invalid_label ON ${nimbus_targeting_context.document_id} = ${nimbus_targeting_context__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -61,6 +55,12 @@ explore: nimbus_targeting_context {
   join: nimbus_targeting_context__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${nimbus_targeting_context.ping_info__experiments}) AS nimbus_targeting_context__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

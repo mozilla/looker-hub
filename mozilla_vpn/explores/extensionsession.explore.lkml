@@ -12,12 +12,6 @@ explore: extensionsession {
   description: "Explore for the extensionsession ping. Only on desktop. Data for the VPN extension This ping will record start/end datestamp, session-based metrics, etc."
   view_name: extensionsession
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: extensionsession__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${extensionsession.metrics__labeled_counter__glean_error_invalid_label}) AS extensionsession__metrics__labeled_counter__glean_error_invalid_label ON ${extensionsession.document_id} = ${extensionsession__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: extensionsession {
   join: extensionsession__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${extensionsession.ping_info__experiments}) AS extensionsession__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

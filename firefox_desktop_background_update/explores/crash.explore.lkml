@@ -12,12 +12,6 @@ explore: crash {
   description: "Explore for the crash ping. A ping to report crash information. This information is sent as soon as possible after a crash occurs (whether the crash is a background/content process or the main process). It is expected to be used for crash report analysis and to reduce blind spots in crash reporting."
   view_name: crash
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: crash__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${crash.metrics__labeled_counter__glean_error_invalid_label}) AS crash__metrics__labeled_counter__glean_error_invalid_label ON ${crash.document_id} = ${crash__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: crash {
   join: crash__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${crash.ping_info__experiments}) AS crash__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

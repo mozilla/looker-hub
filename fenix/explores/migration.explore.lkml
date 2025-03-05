@@ -12,13 +12,6 @@ explore: migration {
   description: "Explore for the migration ping. A ping sent after a Fennec->Fenix migration was completed."
   view_name: migration
 
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
-
   join: migration__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${migration.metrics__labeled_counter__glean_error_invalid_label}) AS migration__metrics__labeled_counter__glean_error_invalid_label ON ${migration.document_id} = ${migration__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -67,6 +60,13 @@ explore: migration {
   join: migration__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${migration.ping_info__experiments}) AS migration__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

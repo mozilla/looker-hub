@@ -12,12 +12,6 @@ explore: top_sites {
   description: "Explore for the top_sites ping. A ping representing a single event happening with or to a TopSite. Distinguishable by its `ping_type`. Does not contain a `client_id`, preferring a `context_id` instead."
   view_name: top_sites
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: top_sites__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${top_sites.metrics__labeled_counter__glean_error_invalid_label}) AS top_sites__metrics__labeled_counter__glean_error_invalid_label ON ${top_sites.document_id} = ${top_sites__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: top_sites {
   join: top_sites__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${top_sites.ping_info__experiments}) AS top_sites__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

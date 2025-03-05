@@ -12,12 +12,6 @@ explore: vpnsession {
   description: "Explore for the vpnsession ping. Data for one VPN session, defined as a user turning on and eventually turning off the VPN in the app. This ping will record start/end datestamp, session-based metrics, etc."
   view_name: vpnsession
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: vpnsession__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${vpnsession.metrics__labeled_counter__glean_error_invalid_label}) AS vpnsession__metrics__labeled_counter__glean_error_invalid_label ON ${vpnsession.document_id} = ${vpnsession__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: vpnsession {
   join: vpnsession__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${vpnsession.ping_info__experiments}) AS vpnsession__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

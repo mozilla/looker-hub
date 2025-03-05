@@ -12,12 +12,6 @@ explore: captcha_detection {
   description: "Explore for the captcha_detection ping. This ping is used to analyze the occurrence of CAPTCHAs in the wild by users' protection settings."
   view_name: captcha_detection
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: captcha_detection__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${captcha_detection.metrics__labeled_counter__glean_error_invalid_label}) AS captcha_detection__metrics__labeled_counter__glean_error_invalid_label ON ${captcha_detection.document_id} = ${captcha_detection__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: captcha_detection {
   join: captcha_detection__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${captcha_detection.ping_info__experiments}) AS captcha_detection__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 
