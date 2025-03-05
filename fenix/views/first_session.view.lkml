@@ -43,7 +43,7 @@ view: first_session {
 
   dimension: metrics__timespan__first_session_adjust_attribution_timespan__value {
     label: "First Session Adjust Attribution Timespan Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.first_session_adjust_attribution_timespan.value ;;
     type: number
     group_label: "First Session"

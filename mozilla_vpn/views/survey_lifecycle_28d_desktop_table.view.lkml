@@ -11,6 +11,12 @@ view: survey_lifecycle_28d_desktop_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: language {
+    sql: ${TABLE}.language ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: response_time {
     sql: ${TABLE}.response_time ;;
     type: number
@@ -32,6 +38,26 @@ view: survey_lifecycle_28d_desktop_table {
   dimension: survey_data {
     sql: ${TABLE}.survey_data ;;
     hidden: yes
+  }
+
+  dimension: url_variables {
+    sql: ${TABLE}.url_variables ;;
+    hidden: yes
+  }
+
+  dimension_group: date_started {
+    sql: ${TABLE}.date_started ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
   }
 
   dimension_group: submission {
@@ -135,6 +161,20 @@ view: survey_lifecycle_28d_desktop_table__survey_data__options {
 
   dimension: option {
     sql: ${TABLE}.option ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: survey_lifecycle_28d_desktop_table__url_variables {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
     type: string
     suggest_persist_for: "24 hours"
   }

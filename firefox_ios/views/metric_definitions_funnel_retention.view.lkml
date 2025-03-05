@@ -163,7 +163,8 @@ funnel_retention.retained_week_4_new_profiles AS funnel_retention_retained_week_
             FROM
                 (
     SELECT *
-     FROM `mozdata.firefox_ios.retention`
+    FROM `mozdata.firefox_ios.retention`
+    WHERE metric_date = first_seen_date
 )
             ) AS funnel_retention
         
