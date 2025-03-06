@@ -12,12 +12,6 @@ explore: page {
   description: "Explore for the page ping. A ping that will be sent everytime a new page is visited."
   view_name: page
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: page__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${page.metrics__labeled_counter__glean_error_invalid_label}) AS page__metrics__labeled_counter__glean_error_invalid_label ON ${page.document_id} = ${page__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: page {
   join: page__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${page.ping_info__experiments}) AS page__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

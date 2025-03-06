@@ -14665,7 +14665,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Doc After Script Execute Event"
-    description: "Whether a document regiested afterscriptexecute event listener. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document used AfterScriptExecuteEvent. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -14695,7 +14695,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Doc Before Script Execute Event"
-    description: "Whether a document regiested beforescriptexecute event listener. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document used BeforeScriptExecuteEvent. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -15265,7 +15265,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Page After Script Execute Event"
-    description: "Whether a page regiested afterscriptexecute event listener. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page used AfterScriptExecuteEvent. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -15295,7 +15295,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Page Before Script Execute Event"
-    description: "Whether a page regiested beforescriptexecute event listener. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page used BeforeScriptExecuteEvent. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17025,7 +17025,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Caretrangefrompoint"
-    description: "Whether a document called called Document.caretRangeFromPoint. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.caretRangeFromPoint. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17035,7 +17035,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Exitpictureinpicture"
-    description: "Whether a document called called Document.exitPictureInPicture. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.exitPictureInPicture. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17045,7 +17045,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Featurepolicy"
-    description: "Whether a document called called Document.featurePolicy. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.featurePolicy. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17065,7 +17065,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Onbeforecopy"
-    description: "Whether a document called called Document.onbeforecopy. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.onbeforecopy. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17075,7 +17075,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Onbeforecut"
-    description: "Whether a document called called Document.onbeforecut. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.onbeforecut. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17085,7 +17085,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Onbeforepaste"
-    description: "Whether a document called called Document.onbeforepaste. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.onbeforepaste. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17095,7 +17095,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Oncancel"
-    description: "Whether a document called called Document.oncancel. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.oncancel. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17105,7 +17105,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Onfreeze"
-    description: "Whether a document called called Document.onfreeze. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.onfreeze. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17115,7 +17115,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Onmousewheel"
-    description: "Whether a document called called Document.onmousewheel. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.onmousewheel. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17125,7 +17125,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Onresume"
-    description: "Whether a document called called Document.onresume. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.onresume. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17135,7 +17135,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Onsearch"
-    description: "Whether a document called called Document.onsearch. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.onsearch. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17145,7 +17145,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Onwebkitfullscreenchange"
-    description: "Whether a document called called Document.onwebkitfullscreenchange. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.onwebkitfullscreenchange. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17155,7 +17155,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Onwebkitfullscreenerror"
-    description: "Whether a document called called Document.onwebkitfullscreenerror. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.onwebkitfullscreenerror. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17165,7 +17165,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Pictureinpictureelement"
-    description: "Whether a document called called Document.pictureInPictureElement. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.pictureInPictureElement. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17175,7 +17175,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Pictureinpictureenabled"
-    description: "Whether a document called called Document.pictureInPictureEnabled. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.pictureInPictureEnabled. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17185,7 +17185,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Registerelement"
-    description: "Whether a document called called Document.registerElement. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.registerElement. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17195,7 +17195,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Wasdiscarded"
-    description: "Whether a document called called Document.wasDiscarded. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.wasDiscarded. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17205,7 +17205,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Webkitcancelfullscreen"
-    description: "Whether a document called called Document.webkitCancelFullScreen. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.webkitCancelFullScreen. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17215,7 +17215,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Webkitcurrentfullscreenelement"
-    description: "Whether a document called called Document.webkitCurrentFullScreenElement. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.webkitCurrentFullScreenElement. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17225,7 +17225,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Webkitexitfullscreen"
-    description: "Whether a document called called Document.webkitExitFullscreen. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.webkitExitFullscreen. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17235,7 +17235,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Webkitfullscreenelement"
-    description: "Whether a document called called Document.webkitFullscreenElement. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.webkitFullscreenElement. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17245,7 +17245,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Webkitfullscreenenabled"
-    description: "Whether a document called called Document.webkitFullscreenEnabled. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.webkitFullscreenEnabled. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17255,7 +17255,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Webkithidden"
-    description: "Whether a document called called Document.webkitHidden. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.webkitHidden. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17265,7 +17265,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Webkitisfullscreen"
-    description: "Whether a document called called Document.webkitIsFullScreen. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.webkitIsFullScreen. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17275,7 +17275,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Webkitvisibilitystate"
-    description: "Whether a document called called Document.webkitVisibilityState. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.webkitVisibilityState. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17285,7 +17285,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Xmlencoding"
-    description: "Whether a document called called Document.xmlEncoding. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.xmlEncoding. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17295,7 +17295,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Xmlstandalone"
-    description: "Whether a document called called Document.xmlStandalone. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.xmlStandalone. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17305,7 +17305,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Htmldocument Xmlversion"
-    description: "Whether a document called called Document.xmlVersion. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document called called HTMLDocument.xmlVersion. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17625,7 +17625,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Ic Stub Oom"
-    description: "Whether a document OOMed while creating IC stub . Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document OOMed while creating IC stub. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17666,6 +17666,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Legacy Lang Subtag"
     description: "Whether a document uses a 5-to-8-character language subtag in Intl.Locale constructor. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_optimize_array_species_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_optimize_array_species_fuse ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Optimize Array Species Fuse"
+    description: "Whether a document has modified builtin Array objects such that the ArraySpecies fuse is popped. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17786,6 +17796,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Thenable"
     description: "Whether a document resolved a promise using thenable support rather than builtin methods. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_thenable_object_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_thenable_object_proto ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Thenable Object Proto"
+    description: "Whether a document resolved a promise using thenable on a realms Object.prototype. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21355,7 +21375,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Caretrangefrompoint"
-    description: "Whether a page called called Document.caretRangeFromPoint. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.caretRangeFromPoint. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21365,7 +21385,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Exitpictureinpicture"
-    description: "Whether a page called called Document.exitPictureInPicture. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.exitPictureInPicture. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21375,7 +21395,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Featurepolicy"
-    description: "Whether a page called called Document.featurePolicy. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.featurePolicy. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21395,7 +21415,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Onbeforecopy"
-    description: "Whether a page called called Document.onbeforecopy. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.onbeforecopy. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21405,7 +21425,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Onbeforecut"
-    description: "Whether a page called called Document.onbeforecut. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.onbeforecut. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21415,7 +21435,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Onbeforepaste"
-    description: "Whether a page called called Document.onbeforepaste. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.onbeforepaste. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21425,7 +21445,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Oncancel"
-    description: "Whether a page called called Document.oncancel. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.oncancel. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21435,7 +21455,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Onfreeze"
-    description: "Whether a page called called Document.onfreeze. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.onfreeze. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21445,7 +21465,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Onmousewheel"
-    description: "Whether a page called called Document.onmousewheel. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.onmousewheel. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21455,7 +21475,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Onresume"
-    description: "Whether a page called called Document.onresume. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.onresume. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21465,7 +21485,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Onsearch"
-    description: "Whether a page called called Document.onsearch. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.onsearch. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21475,7 +21495,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Onwebkitfullscreenchange"
-    description: "Whether a page called called Document.onwebkitfullscreenchange. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.onwebkitfullscreenchange. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21485,7 +21505,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Onwebkitfullscreenerror"
-    description: "Whether a page called called Document.onwebkitfullscreenerror. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.onwebkitfullscreenerror. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21495,7 +21515,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Pictureinpictureelement"
-    description: "Whether a page called called Document.pictureInPictureElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.pictureInPictureElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21505,7 +21525,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Pictureinpictureenabled"
-    description: "Whether a page called called Document.pictureInPictureEnabled. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.pictureInPictureEnabled. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21515,7 +21535,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Registerelement"
-    description: "Whether a page called called Document.registerElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.registerElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21525,7 +21545,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Wasdiscarded"
-    description: "Whether a page called called Document.wasDiscarded. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.wasDiscarded. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21535,7 +21555,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Webkitcancelfullscreen"
-    description: "Whether a page called called Document.webkitCancelFullScreen. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.webkitCancelFullScreen. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21545,7 +21565,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Webkitcurrentfullscreenelement"
-    description: "Whether a page called called Document.webkitCurrentFullScreenElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.webkitCurrentFullScreenElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21555,7 +21575,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Webkitexitfullscreen"
-    description: "Whether a page called called Document.webkitExitFullscreen. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.webkitExitFullscreen. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21565,7 +21585,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Webkitfullscreenelement"
-    description: "Whether a page called called Document.webkitFullscreenElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.webkitFullscreenElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21575,7 +21595,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Webkitfullscreenenabled"
-    description: "Whether a page called called Document.webkitFullscreenEnabled. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.webkitFullscreenEnabled. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21585,7 +21605,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Webkithidden"
-    description: "Whether a page called called Document.webkitHidden. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.webkitHidden. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21595,7 +21615,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Webkitisfullscreen"
-    description: "Whether a page called called Document.webkitIsFullScreen. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.webkitIsFullScreen. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21605,7 +21625,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Webkitvisibilitystate"
-    description: "Whether a page called called Document.webkitVisibilityState. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.webkitVisibilityState. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21615,7 +21635,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Xmlencoding"
-    description: "Whether a page called called Document.xmlEncoding. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.xmlEncoding. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21625,7 +21645,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Xmlstandalone"
-    description: "Whether a page called called Document.xmlStandalone. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.xmlStandalone. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21635,7 +21655,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmldocument Xmlversion"
-    description: "Whether a page called called Document.xmlVersion. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page called called HTMLDocument.xmlVersion. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21955,7 +21975,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Ic Stub Oom"
-    description: "Whether a page OOMed while creating IC stub . Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page OOMed while creating IC stub. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21996,6 +22016,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Legacy Lang Subtag"
     description: "Whether a page uses a 5-to-8-character language subtag in Intl.Locale constructor. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_optimize_array_species_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_optimize_array_species_fuse ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Optimize Array Species Fuse"
+    description: "Whether a page has modified builtin Array objects such that the ArraySpecies fuse is popped. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -22116,6 +22146,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Thenable"
     description: "Whether a page resolved a promise using thenable support rather than builtin methods. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_thenable_object_proto {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_thenable_object_proto ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Thenable Object Proto"
+    description: "Whether a page resolved a promise using thenable on a realms Object.prototype. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

@@ -12,12 +12,6 @@ explore: spoc {
   description: "Explore for the spoc ping. A ping for submitting the pocket sponsored content's `shim`. Does not contain a `client_id`."
   view_name: spoc
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: spoc__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${spoc.metrics__labeled_counter__glean_error_invalid_label}) AS spoc__metrics__labeled_counter__glean_error_invalid_label ON ${spoc.document_id} = ${spoc__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: spoc {
   join: spoc__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${spoc.ping_info__experiments}) AS spoc__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

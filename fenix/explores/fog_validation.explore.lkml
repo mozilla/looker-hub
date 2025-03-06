@@ -12,13 +12,6 @@ explore: fog_validation {
   description: "Explore for the fog_validation ping. This ping is intended to evaluate the behaviour of FOG before it ships beyond Nightly. This is a temporary ping. It is sent one hour after FOG is initialized, and every hour thereafter."
   view_name: fog_validation
 
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
-
   join: fog_validation__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${fog_validation.metrics__labeled_counter__glean_error_invalid_label}) AS fog_validation__metrics__labeled_counter__glean_error_invalid_label ON ${fog_validation.document_id} = ${fog_validation__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -52,6 +45,13 @@ explore: fog_validation {
   join: fog_validation__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${fog_validation.ping_info__experiments}) AS fog_validation__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

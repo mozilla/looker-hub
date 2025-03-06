@@ -12,12 +12,6 @@ explore: client_deduplication {
   description: "Explore for the client_deduplication ping. Contains data to help identify if client IDs are being regenerated erroneously."
   view_name: client_deduplication
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: client_deduplication__metrics__labeled_counter__browser_search_ad_clicks {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_deduplication.metrics__labeled_counter__browser_search_ad_clicks}) AS client_deduplication__metrics__labeled_counter__browser_search_ad_clicks ON ${client_deduplication.document_id} = ${client_deduplication__metrics__labeled_counter__browser_search_ad_clicks.document_id} ;;
@@ -71,6 +65,12 @@ explore: client_deduplication {
   join: client_deduplication__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_deduplication.ping_info__experiments}) AS client_deduplication__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

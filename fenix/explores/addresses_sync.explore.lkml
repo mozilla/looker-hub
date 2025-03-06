@@ -12,13 +12,6 @@ explore: addresses_sync {
   description: "Explore for the addresses_sync ping. A ping sent for every Addresses engine sync. It doesn't include the `client_id` because it reports a hashed version of the user's Firefox Account ID."
   view_name: addresses_sync
 
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
-
   join: addresses_sync__metrics__labeled_counter__addresses_sync_incoming {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${addresses_sync.metrics__labeled_counter__addresses_sync_incoming}) AS addresses_sync__metrics__labeled_counter__addresses_sync_incoming ON ${addresses_sync.document_id} = ${addresses_sync__metrics__labeled_counter__addresses_sync_incoming.document_id} ;;
@@ -72,6 +65,13 @@ explore: addresses_sync {
   join: addresses_sync__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${addresses_sync.ping_info__experiments}) AS addresses_sync__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

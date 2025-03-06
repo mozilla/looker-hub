@@ -15524,6 +15524,40 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_signature_clear {
+    label: "Pdfjs Signature Clear"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_signature_clear ;;
+    group_label: "Pdfjs Signature"
+    group_item_label: "Clear"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Signature Clear"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/pdfjs_signature_clear"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user clears the signature while editing it.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_signature_edit_description {
+    label: "Pdfjs Signature Edit Description"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_signature_edit_description ;;
+    group_label: "Pdfjs Signature"
+    group_item_label: "Edit Description"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Signature Edit Description"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/pdfjs_signature_edit_description"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user edit the description of a signature instance.
+"
+  }
+
   dimension: metrics__labeled_counter__pdfjs_stamp {
     label: "Pdfjs Stamp"
     hidden: yes
@@ -37440,6 +37474,88 @@ view: metrics__metrics__labeled_counter__pdfjs_geckoview {
 
 view: metrics__metrics__labeled_counter__pdfjs_image_added {
   label: "Pdfjs Image - Added"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_signature_clear {
+  label: "Pdfjs Signature - Clear"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_signature_edit_description {
+  label: "Pdfjs Signature - Edit Description"
 
   dimension: document_id {
     type: string

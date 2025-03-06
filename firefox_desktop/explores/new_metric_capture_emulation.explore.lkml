@@ -12,12 +12,6 @@ explore: new_metric_capture_emulation {
   description: "Explore for the new_metric_capture_emulation ping. Experimental ping to emulate the capture of new measures that would usually be collected in the metrics ping, to see if it would speed up measure completeness. Sends only EXISTING measures."
   view_name: new_metric_capture_emulation
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: new_metric_capture_emulation__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${new_metric_capture_emulation.metrics__labeled_counter__glean_error_invalid_label}) AS new_metric_capture_emulation__metrics__labeled_counter__glean_error_invalid_label ON ${new_metric_capture_emulation.document_id} = ${new_metric_capture_emulation__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: new_metric_capture_emulation {
   join: new_metric_capture_emulation__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${new_metric_capture_emulation.ping_info__experiments}) AS new_metric_capture_emulation__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

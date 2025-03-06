@@ -12,13 +12,6 @@ explore: font_list {
   description: "Explore for the font_list ping. List of fonts installed on the user's device"
   view_name: font_list
 
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
-
   join: font_list__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${font_list.metrics__labeled_counter__glean_error_invalid_label}) AS font_list__metrics__labeled_counter__glean_error_invalid_label ON ${font_list.document_id} = ${font_list__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -52,6 +45,13 @@ explore: font_list {
   join: font_list__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${font_list.ping_info__experiments}) AS font_list__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

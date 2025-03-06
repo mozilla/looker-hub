@@ -12,12 +12,6 @@ explore: quick_suggest_deletion_request {
   description: "Explore for the quick_suggest_deletion_request ping. This ping is submitted when either AMP suggestions or the entire Suggest feature becomes disabled. Like the `quick-suggest` ping, it will contain a `context_id` metric in the `quick_suggest` category."
   view_name: quick_suggest_deletion_request
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: quick_suggest_deletion_request__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${quick_suggest_deletion_request.metrics__labeled_counter__glean_error_invalid_label}) AS quick_suggest_deletion_request__metrics__labeled_counter__glean_error_invalid_label ON ${quick_suggest_deletion_request.document_id} = ${quick_suggest_deletion_request__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: quick_suggest_deletion_request {
   join: quick_suggest_deletion_request__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${quick_suggest_deletion_request.ping_info__experiments}) AS quick_suggest_deletion_request__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

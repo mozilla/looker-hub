@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/round_2_post_choice_in_product_survey_ios_h1_2024.view.lkml"
+include: "/looker-hub/operational_monitoring/views/rootca_push_notification_pnw2_fenix_112.view.lkml"
 
-explore: round_2_post_choice_in_product_survey_ios_h1_2024 {
+explore: rootca_push_notification_pnw2_fenix_112 {
   always_filter: {
     filters: [
       branch: "enabled, disabled",

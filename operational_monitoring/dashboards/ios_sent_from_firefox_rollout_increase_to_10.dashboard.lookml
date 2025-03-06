@@ -44,40 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ios_sent_from_firefox_rollout_increase_to_10
-    type: looker_line
-    fields: [
-      ios_sent_from_firefox_rollout_increase_to_10.submission_date,
-      ios_sent_from_firefox_rollout_increase_to_10.branch,
-      ios_sent_from_firefox_rollout_increase_to_10.point
-    ]
-    pivots: [
-      ios_sent_from_firefox_rollout_increase_to_10.branch
-    ]
-    filters:
-      ios_sent_from_firefox_rollout_increase_to_10.metric: 'active_hours'
-      ios_sent_from_firefox_rollout_increase_to_10.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: ios_sent_from_firefox_rollout_increase_to_10.submission_date
-    field_y: ios_sent_from_firefox_rollout_increase_to_10.point
-    log_scale: false
-    ci_lower: ios_sent_from_firefox_rollout_increase_to_10.lower
-    ci_upper: ios_sent_from_firefox_rollout_increase_to_10.upper
-    show_grid: true
-    listen:
-      Date: ios_sent_from_firefox_rollout_increase_to_10.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -96,8 +62,8 @@
     filters:
       ios_sent_from_firefox_rollout_increase_to_10.metric: 'days_of_use'
       ios_sent_from_firefox_rollout_increase_to_10.statistic: mean
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: ios_sent_from_firefox_rollout_increase_to_10.submission_date
@@ -131,7 +97,7 @@
       ios_sent_from_firefox_rollout_increase_to_10.metric: 'ad_clicks'
       ios_sent_from_firefox_rollout_increase_to_10.statistic: mean
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: ios_sent_from_firefox_rollout_increase_to_10.submission_date
@@ -163,6 +129,40 @@
     ]
     filters:
       ios_sent_from_firefox_rollout_increase_to_10.metric: 'search_count'
+      ios_sent_from_firefox_rollout_increase_to_10.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: ios_sent_from_firefox_rollout_increase_to_10.submission_date
+    field_y: ios_sent_from_firefox_rollout_increase_to_10.point
+    log_scale: false
+    ci_lower: ios_sent_from_firefox_rollout_increase_to_10.lower
+    ci_upper: ios_sent_from_firefox_rollout_increase_to_10.upper
+    show_grid: true
+    listen:
+      Date: ios_sent_from_firefox_rollout_increase_to_10.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_sent_from_firefox_rollout_increase_to_10
+    type: looker_line
+    fields: [
+      ios_sent_from_firefox_rollout_increase_to_10.submission_date,
+      ios_sent_from_firefox_rollout_increase_to_10.branch,
+      ios_sent_from_firefox_rollout_increase_to_10.point
+    ]
+    pivots: [
+      ios_sent_from_firefox_rollout_increase_to_10.branch
+    ]
+    filters:
+      ios_sent_from_firefox_rollout_increase_to_10.metric: 'active_hours'
       ios_sent_from_firefox_rollout_increase_to_10.statistic: mean
     row: 20
     col: 0

@@ -12,12 +12,6 @@ explore: broken_site_report {
   description: "Explore for the broken_site_report ping. A ping containing the data for a user-initiated report for a broken site. Does not contain a `client_id`. All report data is self-contained."
   view_name: broken_site_report
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: broken_site_report__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${broken_site_report.metrics__labeled_counter__glean_error_invalid_label}) AS broken_site_report__metrics__labeled_counter__glean_error_invalid_label ON ${broken_site_report.document_id} = ${broken_site_report__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: broken_site_report {
   join: broken_site_report__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${broken_site_report.ping_info__experiments}) AS broken_site_report__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

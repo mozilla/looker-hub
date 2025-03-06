@@ -6,7 +6,7 @@
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
 datagroup: new_profile_activation_v1_last_updated {
-  label: "Fenix New Profile Activation Last Updated"
+  label: "(DEPRECATED) Fenix New Profile Activation Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'fenix_derived'

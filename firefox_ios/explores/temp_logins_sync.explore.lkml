@@ -12,13 +12,6 @@ explore: temp_logins_sync {
   description: "Explore for the temp_logins_sync ping. A ping sent for every logins/passwords sync. It doesn't include the `client_id` because it reports a hashed version of the user's Firefox Account ID."
   view_name: temp_logins_sync
 
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
-
   join: temp_logins_sync__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${temp_logins_sync.metrics__labeled_counter__glean_error_invalid_label}) AS temp_logins_sync__metrics__labeled_counter__glean_error_invalid_label ON ${temp_logins_sync.document_id} = ${temp_logins_sync__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -67,6 +60,13 @@ explore: temp_logins_sync {
   join: temp_logins_sync__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${temp_logins_sync.ping_info__experiments}) AS temp_logins_sync__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

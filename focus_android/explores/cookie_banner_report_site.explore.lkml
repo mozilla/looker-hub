@@ -12,13 +12,6 @@ explore: cookie_banner_report_site {
   description: "Explore for the cookie_banner_report_site ping. This ping is needed when the cookie banner reducer doesn't work on a website, and the user wants to report the site. This ping doesn't include a client id."
   view_name: cookie_banner_report_site
 
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
-
   join: cookie_banner_report_site__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${cookie_banner_report_site.metrics__labeled_counter__glean_error_invalid_label}) AS cookie_banner_report_site__metrics__labeled_counter__glean_error_invalid_label ON ${cookie_banner_report_site.document_id} = ${cookie_banner_report_site__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -52,6 +45,13 @@ explore: cookie_banner_report_site {
   join: cookie_banner_report_site__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${cookie_banner_report_site.ping_info__experiments}) AS cookie_banner_report_site__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 
