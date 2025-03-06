@@ -47,8 +47,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Http Page Tls Handshake
-    name: Http Page Tls Handshake_percentile
+  - title: Time To Response Start Ms
+    name: Time To Response Start Ms_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -65,7 +65,7 @@
       network_performance_desktop_build_by_build.branch
     ]
     filters:
-      network_performance_desktop_build_by_build.metric: 'http_page_tls_handshake'
+      network_performance_desktop_build_by_build.metric: 'time_to_response_start_ms'
       network_performance_desktop_build_by_build.statistic: percentile
     row: 0
     col: 12
@@ -121,8 +121,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Time To Response Start Ms
-    name: Time To Response Start Ms_percentile
+  - title: Http Page Tls Handshake
+    name: Http Page Tls Handshake_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -139,7 +139,7 @@
       network_performance_desktop_build_by_build.branch
     ]
     filters:
-      network_performance_desktop_build_by_build.metric: 'time_to_response_start_ms'
+      network_performance_desktop_build_by_build.metric: 'http_page_tls_handshake'
       network_performance_desktop_build_by_build.statistic: percentile
     row: 10
     col: 12

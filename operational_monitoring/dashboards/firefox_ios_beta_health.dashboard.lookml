@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Large File Write
-    name: Large File Write_total_ratio
+  - title: Cpu Exception
+    name: Cpu Exception_total_ratio
     note_state: expanded
     note_display: above
     note_text: Total_Ratio
@@ -26,7 +26,7 @@
       firefox_ios_beta_health.branch
     ]
     filters:
-      firefox_ios_beta_health.metric: 'large_file_write'
+      firefox_ios_beta_health.metric: 'cpu_exception'
       firefox_ios_beta_health.statistic: total_ratio
     row: 0
     col: 0
@@ -45,11 +45,11 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Total Baseline Pings
-    name: Total Baseline Pings_sum
+  - title: Large File Write
+    name: Large File Write_total_ratio
     note_state: expanded
     note_display: above
-    note_text: Sum
+    note_text: Total_Ratio
     explore: firefox_ios_beta_health
     type: looker_line
     fields: [
@@ -61,8 +61,8 @@
       firefox_ios_beta_health.branch
     ]
     filters:
-      firefox_ios_beta_health.metric: 'total_baseline_pings'
-      firefox_ios_beta_health.statistic: sum
+      firefox_ios_beta_health.metric: 'large_file_write'
+      firefox_ios_beta_health.statistic: total_ratio
     row: 0
     col: 12
     width: 12
@@ -150,11 +150,11 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Cpu Exception
-    name: Cpu Exception_total_ratio
+  - title: Total Baseline Pings
+    name: Total Baseline Pings_sum
     note_state: expanded
     note_display: above
-    note_text: Total_Ratio
+    note_text: Sum
     explore: firefox_ios_beta_health
     type: looker_line
     fields: [
@@ -166,8 +166,8 @@
       firefox_ios_beta_health.branch
     ]
     filters:
-      firefox_ios_beta_health.metric: 'cpu_exception'
-      firefox_ios_beta_health.statistic: total_ratio
+      firefox_ios_beta_health.metric: 'total_baseline_pings'
+      firefox_ios_beta_health.statistic: sum
     row: 20
     col: 0
     width: 12
@@ -242,8 +242,8 @@
       options:
       - '39.0'
       - '123.0'
-      - '117.0'
       - '122.0'
+      - '117.0'
       - '126.0'
       - '125.0'
       - '124.0'
