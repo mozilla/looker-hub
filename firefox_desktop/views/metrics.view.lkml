@@ -3865,7 +3865,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__counter__messaging_system_glean_ping_for_ping_failures {
     label: "Messaging System Glean Ping For Ping Failures"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.messaging_system_glean_ping_for_ping_failures ;;
     type: number
     group_label: "Messaging System"
@@ -5105,7 +5105,7 @@ cases where:
 
   dimension: metrics__string__search_engine_default_verified {
     label: "Search Engine Default Verified"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_engine_default_verified ;;
     type: string
     group_label: "Search Engine Default"
@@ -5231,7 +5231,7 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__string__search_engine_private_verified {
     label: "Search Engine Private Verified"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_engine_private_verified ;;
     type: string
     group_label: "Search Engine Private"
@@ -47437,19 +47437,19 @@ view: metrics__metrics__labeled_counter__messaging_system_invalid_nested_data {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
