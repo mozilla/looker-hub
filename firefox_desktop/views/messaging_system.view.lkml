@@ -25,7 +25,7 @@ view: messaging_system {
 
   dimension: metrics__string__messaging_system_addon_version {
     label: "Messaging System Addon Version"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_addon_version ;;
     type: string
     group_label: "Messaging System"
@@ -43,7 +43,7 @@ view: messaging_system {
 
   dimension: metrics__string__messaging_system_attribution_campaign {
     label: "Messaging System Attribution Campaign"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_campaign ;;
     type: string
     group_label: "Messaging System Attribution"
@@ -62,7 +62,7 @@ same name.
 
   dimension: metrics__string__messaging_system_attribution_content {
     label: "Messaging System Attribution Content"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_content ;;
     type: string
     group_label: "Messaging System Attribution"
@@ -81,7 +81,7 @@ same name.
 
   dimension: metrics__string__messaging_system_attribution_dlsource {
     label: "Messaging System Attribution Dlsource"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_dlsource ;;
     type: string
     group_label: "Messaging System Attribution"
@@ -101,7 +101,7 @@ same name.
 
   dimension: metrics__string__messaging_system_attribution_dltoken {
     label: "Messaging System Attribution Dltoken"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_dltoken ;;
     type: string
     group_label: "Messaging System Attribution"
@@ -121,7 +121,7 @@ Likely a UUID, if present.
 
   dimension: metrics__string__messaging_system_attribution_experiment {
     label: "Messaging System Attribution Experiment"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_experiment ;;
     type: string
     group_label: "Messaging System Attribution"
@@ -139,7 +139,7 @@ Likely a UUID, if present.
 
   dimension: metrics__string__messaging_system_attribution_medium {
     label: "Messaging System Attribution Medium"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_medium ;;
     type: string
     group_label: "Messaging System Attribution"
@@ -158,7 +158,7 @@ name.
 
   dimension: metrics__string__messaging_system_attribution_msstoresignedin {
     label: "Messaging System Attribution Msstoresignedin"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_msstoresignedin ;;
     type: string
     group_label: "Messaging System Attribution"
@@ -178,7 +178,7 @@ user was signed in at the time.
 
   dimension: metrics__string__messaging_system_attribution_source {
     label: "Messaging System Attribution Source"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_source ;;
     type: string
     group_label: "Messaging System Attribution"
@@ -197,7 +197,7 @@ name.
 
   dimension: metrics__string__messaging_system_attribution_ua {
     label: "Messaging System Attribution Ua"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_ua ;;
     type: string
     group_label: "Messaging System Attribution"
@@ -237,7 +237,7 @@ Either add this key to a list of known attribution keys in
 
   dimension: metrics__string__messaging_system_attribution_variation {
     label: "Messaging System Attribution Variation"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_variation ;;
     type: string
     group_label: "Messaging System Attribution"
@@ -255,7 +255,7 @@ Either add this key to a list of known attribution keys in
 
   dimension: metrics__uuid__messaging_system_browser_session_id {
     label: "Messaging System Browser Session Id"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.uuid.messaging_system_browser_session_id ;;
     type: string
     group_label: "Messaging System"
@@ -273,7 +273,7 @@ Either add this key to a list of known attribution keys in
 
   dimension: metrics__string__messaging_system_bucket_id {
     label: "Messaging System Bucket Id"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_bucket_id ;;
     type: string
     group_label: "Messaging System"
@@ -309,7 +309,7 @@ Either add this key to a list of known attribution keys in
 
   dimension: metrics__uuid__messaging_system_client_id {
     label: "Messaging System Client Id"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.uuid.messaging_system_client_id ;;
     type: string
     group_label: "Messaging System"
@@ -335,7 +335,7 @@ Present only in some circumstances (see
 
   dimension: metrics__string__messaging_system_event {
     label: "Messaging System Event"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_event ;;
     type: string
     group_label: "Messaging System"
@@ -353,7 +353,7 @@ Present only in some circumstances (see
 
   dimension: metrics__text2__messaging_system_event_context {
     label: "Messaging System Event Context"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.messaging_system_event_context ;;
     type: string
     group_label: "Messaging System"
@@ -371,7 +371,7 @@ Present only in some circumstances (see
 
   dimension: metrics__counter__messaging_system_event_context_parse_error {
     label: "Messaging System Event Context Parse Error"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.messaging_system_event_context_parse_error ;;
     type: number
     group_label: "Messaging System"
@@ -389,7 +389,7 @@ Present only in some circumstances (see
 
   dimension: metrics__string__messaging_system_event_page {
     label: "Messaging System Event Page"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_event_page ;;
     type: string
     group_label: "Messaging System"
@@ -407,7 +407,7 @@ Present only in some circumstances (see
 
   dimension: metrics__string__messaging_system_event_reason {
     label: "Messaging System Event Reason"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_event_reason ;;
     type: string
     group_label: "Messaging System"
@@ -426,7 +426,7 @@ Present only in some circumstances (see
 
   dimension: metrics__text2__messaging_system_event_screen_family {
     label: "Messaging System Event Screen Family"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.messaging_system_event_screen_family ;;
     type: string
     group_label: "Messaging System"
@@ -445,7 +445,7 @@ Present only in some circumstances (see
 
   dimension: metrics__text2__messaging_system_event_screen_id {
     label: "Messaging System Event Screen Id"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.messaging_system_event_screen_id ;;
     type: string
     group_label: "Messaging System"
@@ -464,7 +464,7 @@ Present only in some circumstances (see
 
   dimension: metrics__quantity__messaging_system_event_screen_index {
     label: "Messaging System Event Screen Index"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.messaging_system_event_screen_index ;;
     type: number
     group_label: "Messaging System"
@@ -483,7 +483,7 @@ Present only in some circumstances (see
 
   dimension: metrics__text2__messaging_system_event_screen_initials {
     label: "Messaging System Event Screen Initials"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.messaging_system_event_screen_initials ;;
     type: string
     group_label: "Messaging System"
@@ -502,7 +502,7 @@ Present only in some circumstances (see
 
   dimension: metrics__string__messaging_system_event_source {
     label: "Messaging System Event Source"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_event_source ;;
     type: string
     group_label: "Messaging System"
@@ -520,7 +520,7 @@ Present only in some circumstances (see
 
   dimension: metrics__uuid__messaging_system_impression_id {
     label: "Messaging System Impression Id"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.uuid.messaging_system_impression_id ;;
     type: string
     group_label: "Messaging System"
@@ -562,7 +562,7 @@ If you're unsure, please ask in
 
   dimension: metrics__string__messaging_system_locale {
     label: "Messaging System Locale"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_locale ;;
     type: string
     group_label: "Messaging System"
@@ -580,7 +580,7 @@ If you're unsure, please ask in
 
   dimension: metrics__text2__messaging_system_message_id {
     label: "Messaging System Message Id"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.messaging_system_message_id ;;
     type: string
     group_label: "Messaging System"
@@ -616,7 +616,7 @@ If you're unsure, please ask in
 
   dimension: metrics__string__messaging_system_ping_type {
     label: "Messaging System Ping Type"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_ping_type ;;
     type: string
     group_label: "Messaging System"
@@ -634,7 +634,7 @@ If you're unsure, please ask in
 
   dimension: metrics__string__messaging_system_source {
     label: "Messaging System Source"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_source ;;
     type: string
     group_label: "Messaging System"
@@ -652,7 +652,7 @@ If you're unsure, please ask in
 
   dimension: metrics__counter__messaging_system_unknown_key_count {
     label: "Messaging System Unknown Key Count"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.messaging_system_unknown_key_count ;;
     type: number
     group_label: "Messaging System"
@@ -1560,19 +1560,19 @@ view: messaging_system__metrics__labeled_counter__messaging_system_attribution_u
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${messaging_system.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -1601,19 +1601,19 @@ view: messaging_system__metrics__labeled_counter__messaging_system_invalid_neste
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${messaging_system.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -1642,19 +1642,19 @@ view: messaging_system__metrics__labeled_counter__messaging_system_unknown_keys 
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${messaging_system.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
