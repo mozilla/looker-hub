@@ -17,15 +17,39 @@ view: usage_reporting_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: app_display_version {
-    sql: ${TABLE}.app_display_version ;;
+  dimension: app_name {
+    sql: ${TABLE}.app_name ;;
     type: string
     suggest_persist_for: "24 hours"
   }
 
-  dimension: app_name {
-    sql: ${TABLE}.app_name ;;
+  dimension: app_version {
+    sql: ${TABLE}.app_version ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: app_version_is_major_release {
+    sql: ${TABLE}.app_version_is_major_release ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: app_version_patch_revision {
+    sql: ${TABLE}.app_version_patch_revision ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 
@@ -126,6 +150,18 @@ view: usage_reporting_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: os_version_major {
+    sql: ${TABLE}.os_version_major ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: os_version_minor {
+    sql: ${TABLE}.os_version_minor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: reason {
     sql: ${TABLE}.reason ;;
     type: string
@@ -140,6 +176,22 @@ view: usage_reporting_active_users_table {
 
   dimension_group: first_run {
     sql: ${TABLE}.first_run_date ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.first_seen_date ;;
     type: time
     suggest_persist_for: "24 hours"
     timeframes: [
