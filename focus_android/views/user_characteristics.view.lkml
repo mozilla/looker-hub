@@ -2113,7 +2113,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_gl2_version_software {
     label: "Characteristics Gl2 Version Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_gl2_version_software ;;
     type: number
     group_label: "Characteristics"
@@ -2761,7 +2761,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_gl_version_software {
     label: "Characteristics Gl Version Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_gl_version_software ;;
     type: number
     group_label: "Characteristics"

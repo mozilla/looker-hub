@@ -23,18 +23,6 @@ view: consolidated_ad_metrics_daily_pt {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: all_site_ids {
-    sql: ${TABLE}.all_site_ids ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: all_site_names {
-    sql: ${TABLE}.all_site_names ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
   dimension: campaign_id {
     sql: ${TABLE}.campaign_id ;;
     type: number
@@ -156,12 +144,6 @@ view: consolidated_ad_metrics_daily_pt {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: site_id_count {
-    sql: ${TABLE}.site_id_count ;;
-    type: number
-    suggest_persist_for: "24 hours"
-  }
-
   dimension: site_name {
     sql: ${TABLE}.site_name ;;
     type: string
@@ -176,13 +158,13 @@ view: consolidated_ad_metrics_daily_pt {
 
   dimension: targeted_against_default_site {
     sql: ${TABLE}.targeted_against_default_site ;;
-    type: number
+    type: yesno
     suggest_persist_for: "24 hours"
   }
 
   dimension: targeted_against_default_zone {
     sql: ${TABLE}.targeted_against_default_zone ;;
-    type: number
+    type: yesno
     suggest_persist_for: "24 hours"
   }
 
@@ -194,12 +176,6 @@ view: consolidated_ad_metrics_daily_pt {
 
   dimension: zone_id {
     sql: ${TABLE}.zone_id ;;
-    type: number
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: zone_id_count {
-    sql: ${TABLE}.zone_id_count ;;
     type: number
     suggest_persist_for: "24 hours"
   }
@@ -216,14 +192,13 @@ view: consolidated_ad_metrics_daily_pt {
     suggest_persist_for: "24 hours"
     timeframes: [
       raw,
+      time,
       date,
       week,
       month,
       quarter,
       year,
     ]
-    convert_tz: no
-    datatype: date
   }
 
   dimension_group: submission {
