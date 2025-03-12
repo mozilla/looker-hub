@@ -4,15 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: usage_reporting_active_users_table {
+view: composite_active_users_table {
   dimension: activity_segment {
     sql: ${TABLE}.activity_segment ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: app_build {
-    sql: ${TABLE}.app_build ;;
     type: string
     suggest_persist_for: "24 hours"
   }
@@ -78,12 +72,6 @@ view: usage_reporting_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: is_active {
-    sql: ${TABLE}.is_active ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-  }
-
   dimension: is_daily_user {
     sql: ${TABLE}.is_daily_user ;;
     type: yesno
@@ -126,18 +114,6 @@ view: usage_reporting_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: normalized_app_id {
-    sql: ${TABLE}.normalized_app_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: normalized_channel {
-    sql: ${TABLE}.normalized_channel ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
   dimension: os {
     sql: ${TABLE}.os ;;
     type: string
@@ -162,32 +138,10 @@ view: usage_reporting_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: reason {
-    sql: ${TABLE}.reason ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
   dimension: usage_profile_id {
     sql: ${TABLE}.usage_profile_id ;;
     type: string
     suggest_persist_for: "24 hours"
-  }
-
-  dimension_group: first_run {
-    sql: ${TABLE}.first_run_date ;;
-    type: time
-    suggest_persist_for: "24 hours"
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    convert_tz: no
-    datatype: date
   }
 
   dimension_group: first_seen {
@@ -222,5 +176,5 @@ view: usage_reporting_active_users_table {
     datatype: date
   }
 
-  sql_table_name: `mozdata.fenix.usage_reporting_active_users` ;;
+  sql_table_name: `mozdata.fenix.composite_active_users` ;;
 }

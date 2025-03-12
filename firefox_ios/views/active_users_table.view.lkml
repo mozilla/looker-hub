@@ -41,6 +41,36 @@ view: active_users_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: app_version {
+    sql: ${TABLE}.app_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: app_version_is_major_release {
+    sql: ${TABLE}.app_version_is_major_release ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: app_version_patch_revision {
+    sql: ${TABLE}.app_version_patch_revision ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: architecture {
     sql: ${TABLE}.architecture ;;
     type: string
@@ -56,6 +86,12 @@ view: active_users_table {
   dimension: browser_engagement_uri_count {
     sql: ${TABLE}.browser_engagement_uri_count ;;
     type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: channel {
+    sql: ${TABLE}.channel ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 
@@ -167,6 +203,12 @@ view: active_users_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: first_seen_year {
+    sql: ${TABLE}.first_seen_year ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: geo_subdivision {
     sql: ${TABLE}.geo_subdivision ;;
     type: string
@@ -272,6 +314,30 @@ view: active_users_table {
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: os {
+    sql: ${TABLE}.os ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: os_version {
+    sql: ${TABLE}.os_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: os_version_major {
+    sql: ${TABLE}.os_version_major ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: os_version_minor {
+    sql: ${TABLE}.os_version_minor ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 

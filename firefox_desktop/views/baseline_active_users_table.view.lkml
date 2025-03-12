@@ -41,6 +41,30 @@ view: baseline_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: app_version_is_major_release {
+    sql: ${TABLE}.app_version_is_major_release ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: app_version_patch_revision {
+    sql: ${TABLE}.app_version_patch_revision ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: architecture {
     sql: ${TABLE}.architecture ;;
     type: string

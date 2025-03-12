@@ -1263,6 +1263,11 @@ fenix:
       - channel: release
         table: mozdata.fenix.clients_yearly
       type: table_view
+    composite_active_users_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.composite_active_users
+      type: table_view
     cookie_banner_report_site:
       tables:
       - channel: release
@@ -3066,6 +3071,11 @@ firefox_desktop:
       tables:
       - table: mozdata.telemetry.clients_last_seen
       type: table_view
+    composite_active_users_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.composite_active_users
+      type: table_view
     crash:
       tables:
       - table: mozdata.firefox_desktop.crash
@@ -4371,6 +4381,11 @@ firefox_ios:
       tables:
       - channel: release
         table: mozdata.firefox_ios.clients_last_seen_joined
+      type: table_view
+    composite_active_users_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.composite_active_users
       type: table_view
     creditcards_sync:
       tables:
