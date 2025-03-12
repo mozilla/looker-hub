@@ -9,14 +9,8 @@ include: "/looker-hub/firefox_desktop/views/quick_suggest.view.lkml"
 explore: quick_suggest {
   sql_always_where: ${quick_suggest.submission_date} >= '2010-01-01' ;;
   view_label: " Quick_Suggest"
-  description: "Explore for the quick_suggest ping. A ping representing a single event happening with or to a QuickSuggest. Distinguishable by its `ping_type`. Does not contain a `client_id`, preferring a `context_id` instead."
+  description: "Explore for the quick_suggest ping. A ping representing an impression, selection, or dismissmal of an AMP suggestion. It contains metrics in the `quick_suggest` category. Its type is defined in the `ping_type` metric. It does not contain a `client_id`, preferring a `context_id` instead. `follows_collection_enabled` is set to false because the ping is conditioned on Suggest and AMP suggestions being enabled. It will be enabled when Suggest and AMP suggestions are enabled and it will be disabled otherwise. When it becomes disabled, a separate `quick-suggest-deletion-request` ping will be submitted."
   view_name: quick_suggest
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: quick_suggest__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -51,6 +45,12 @@ explore: quick_suggest {
   join: quick_suggest__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${quick_suggest.ping_info__experiments}) AS quick_suggest__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

@@ -12,12 +12,6 @@ explore: search_with {
   description: "Explore for the search_with ping. A ping representing a \"This time, search with\" event with a partner search. Does not contain a `client_id`, preferring a `context_id` instead. The `context_id` is used internally for counting unique sers as well as for anti-fraud. It is shared with other Contextual Services. It is not shared externally."
   view_name: search_with
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: search_with__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${search_with.metrics__labeled_counter__glean_error_invalid_label}) AS search_with__metrics__labeled_counter__glean_error_invalid_label ON ${search_with.document_id} = ${search_with__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: search_with {
   join: search_with__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${search_with.ping_info__experiments}) AS search_with__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

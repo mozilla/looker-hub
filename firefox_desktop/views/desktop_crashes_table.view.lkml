@@ -13,6 +13,7 @@ view: desktop_crashes_table {
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Android Sdk Version"
   }
@@ -20,6 +21,7 @@ view: desktop_crashes_table {
   dimension: client_info__app_build {
     sql: ${TABLE}.client_info.app_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Build"
   }
@@ -27,6 +29,7 @@ view: desktop_crashes_table {
   dimension: client_info__app_channel {
     sql: ${TABLE}.client_info.app_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Channel"
   }
@@ -34,6 +37,7 @@ view: desktop_crashes_table {
   dimension: client_info__app_display_version {
     sql: ${TABLE}.client_info.app_display_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Display Version"
   }
@@ -41,6 +45,7 @@ view: desktop_crashes_table {
   dimension: client_info__architecture {
     sql: ${TABLE}.client_info.architecture ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Architecture"
   }
@@ -48,6 +53,7 @@ view: desktop_crashes_table {
   dimension: client_info__build_date {
     sql: ${TABLE}.client_info.build_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Build Date"
   }
@@ -60,6 +66,7 @@ view: desktop_crashes_table {
   dimension: client_info__device_manufacturer {
     sql: ${TABLE}.client_info.device_manufacturer ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
   }
@@ -67,6 +74,7 @@ view: desktop_crashes_table {
   dimension: client_info__device_model {
     sql: ${TABLE}.client_info.device_model ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
   }
@@ -74,6 +82,7 @@ view: desktop_crashes_table {
   dimension: client_info__first_run_date {
     sql: ${TABLE}.client_info.first_run_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "First Run Date"
   }
@@ -81,6 +90,7 @@ view: desktop_crashes_table {
   dimension: client_info__locale {
     sql: ${TABLE}.client_info.locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Locale"
   }
@@ -88,6 +98,7 @@ view: desktop_crashes_table {
   dimension: client_info__os {
     sql: ${TABLE}.client_info.os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Os"
   }
@@ -95,6 +106,7 @@ view: desktop_crashes_table {
   dimension: client_info__os_version {
     sql: ${TABLE}.client_info.os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Os Version"
   }
@@ -102,6 +114,7 @@ view: desktop_crashes_table {
   dimension: client_info__session_count {
     sql: ${TABLE}.client_info.session_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session Count"
   }
@@ -109,6 +122,7 @@ view: desktop_crashes_table {
   dimension: client_info__session_id {
     sql: ${TABLE}.client_info.session_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session Id"
   }
@@ -116,6 +130,7 @@ view: desktop_crashes_table {
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
   }
@@ -123,6 +138,7 @@ view: desktop_crashes_table {
   dimension: client_info__windows_build_number {
     sql: ${TABLE}.client_info.windows_build_number ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Windows Build Number"
   }
@@ -140,6 +156,7 @@ view: desktop_crashes_table {
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "City"
   }
@@ -147,6 +164,7 @@ view: desktop_crashes_table {
   dimension: metadata__geo__country {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
@@ -155,6 +173,7 @@ view: desktop_crashes_table {
   dimension: metadata__geo__db_version {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Db Version"
   }
@@ -162,6 +181,7 @@ view: desktop_crashes_table {
   dimension: metadata__geo__subdivision1 {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
   }
@@ -169,6 +189,7 @@ view: desktop_crashes_table {
   dimension: metadata__geo__subdivision2 {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
   }
@@ -176,6 +197,7 @@ view: desktop_crashes_table {
   dimension: metadata__header__date {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "Date"
   }
@@ -183,6 +205,7 @@ view: desktop_crashes_table {
   dimension: metadata__header__dnt {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "Dnt"
   }
@@ -190,6 +213,7 @@ view: desktop_crashes_table {
   dimension: metadata__header__x_debug_id {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Debug Id"
   }
@@ -197,6 +221,7 @@ view: desktop_crashes_table {
   dimension: metadata__header__x_foxsec_ip_reputation {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
   }
@@ -204,6 +229,7 @@ view: desktop_crashes_table {
   dimension: metadata__header__x_lb_tags {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Lb Tags"
   }
@@ -211,6 +237,7 @@ view: desktop_crashes_table {
   dimension: metadata__header__x_pingsender_version {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
   }
@@ -218,6 +245,7 @@ view: desktop_crashes_table {
   dimension: metadata__header__x_source_tags {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
   }
@@ -225,6 +253,7 @@ view: desktop_crashes_table {
   dimension: metadata__header__x_telemetry_agent {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
   }
@@ -232,6 +261,7 @@ view: desktop_crashes_table {
   dimension: metadata__isp__db_version {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Isp"
     group_item_label: "Db Version"
   }
@@ -239,6 +269,7 @@ view: desktop_crashes_table {
   dimension: metadata__isp__name {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Isp"
     group_item_label: "Name"
   }
@@ -246,6 +277,7 @@ view: desktop_crashes_table {
   dimension: metadata__isp__organization {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Isp"
     group_item_label: "Organization"
   }
@@ -253,6 +285,7 @@ view: desktop_crashes_table {
   dimension: metadata__user_agent__browser {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Browser"
   }
@@ -260,6 +293,7 @@ view: desktop_crashes_table {
   dimension: metadata__user_agent__os {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Os"
   }
@@ -267,6 +301,7 @@ view: desktop_crashes_table {
   dimension: metadata__user_agent__version {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Version"
   }
@@ -274,6 +309,7 @@ view: desktop_crashes_table {
   dimension: metrics__boolean__crash_is_garbage_collecting {
     sql: ${TABLE}.metrics.boolean.crash_is_garbage_collecting ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Crash Is Garbage Collecting"
   }
@@ -281,6 +317,7 @@ view: desktop_crashes_table {
   dimension: metrics__boolean__crash_startup {
     sql: ${TABLE}.metrics.boolean.crash_startup ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Crash Startup"
   }
@@ -288,6 +325,7 @@ view: desktop_crashes_table {
   dimension: metrics__boolean__crash_windows_error_reporting {
     sql: ${TABLE}.metrics.boolean.crash_windows_error_reporting ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Crash Windows Error Reporting"
   }
@@ -295,6 +333,7 @@ view: desktop_crashes_table {
   dimension: metrics__boolean__dll_blocklist_init_failed {
     sql: ${TABLE}.metrics.boolean.dll_blocklist_init_failed ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Dll Blocklist Init Failed"
   }
@@ -302,6 +341,7 @@ view: desktop_crashes_table {
   dimension: metrics__boolean__dll_blocklist_user32_loaded_before {
     sql: ${TABLE}.metrics.boolean.dll_blocklist_user32_loaded_before ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Dll Blocklist User32 Loaded Before"
   }
@@ -309,6 +349,7 @@ view: desktop_crashes_table {
   dimension: metrics__boolean__environment_headless_mode {
     sql: ${TABLE}.metrics.boolean.environment_headless_mode ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Environment Headless Mode"
   }
@@ -316,6 +357,7 @@ view: desktop_crashes_table {
   dimension: metrics__datetime__crash_time {
     sql: ${TABLE}.metrics.datetime.crash_time ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Datetime"
     group_item_label: "Crash Time"
   }
@@ -358,6 +400,7 @@ view: desktop_crashes_table {
   dimension: metrics__quantity__crash_event_loop_nesting_level {
     sql: ${TABLE}.metrics.quantity.crash_event_loop_nesting_level ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Crash Event Loop Nesting Level"
   }
@@ -365,6 +408,7 @@ view: desktop_crashes_table {
   dimension: metrics__quantity__crash_gpu_process_launch {
     sql: ${TABLE}.metrics.quantity.crash_gpu_process_launch ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Crash Gpu Process Launch"
   }
@@ -372,6 +416,7 @@ view: desktop_crashes_table {
   dimension: metrics__quantity__memory_available_commit {
     sql: ${TABLE}.metrics.quantity.memory_available_commit ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Memory Available Commit"
   }
@@ -379,6 +424,7 @@ view: desktop_crashes_table {
   dimension: metrics__quantity__memory_available_physical {
     sql: ${TABLE}.metrics.quantity.memory_available_physical ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Memory Available Physical"
   }
@@ -386,6 +432,7 @@ view: desktop_crashes_table {
   dimension: metrics__quantity__memory_available_swap {
     sql: ${TABLE}.metrics.quantity.memory_available_swap ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Memory Available Swap"
   }
@@ -393,6 +440,7 @@ view: desktop_crashes_table {
   dimension: metrics__quantity__memory_available_virtual {
     sql: ${TABLE}.metrics.quantity.memory_available_virtual ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Memory Available Virtual"
   }
@@ -400,6 +448,7 @@ view: desktop_crashes_table {
   dimension: metrics__quantity__memory_low_physical {
     sql: ${TABLE}.metrics.quantity.memory_low_physical ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Memory Low Physical"
   }
@@ -407,6 +456,7 @@ view: desktop_crashes_table {
   dimension: metrics__quantity__memory_oom_allocation_size {
     sql: ${TABLE}.metrics.quantity.memory_oom_allocation_size ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Memory Oom Allocation Size"
   }
@@ -414,6 +464,7 @@ view: desktop_crashes_table {
   dimension: metrics__quantity__memory_purgeable_physical {
     sql: ${TABLE}.metrics.quantity.memory_purgeable_physical ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Memory Purgeable Physical"
   }
@@ -421,6 +472,7 @@ view: desktop_crashes_table {
   dimension: metrics__quantity__memory_system_use_percentage {
     sql: ${TABLE}.metrics.quantity.memory_system_use_percentage ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Memory System Use Percentage"
   }
@@ -428,6 +480,7 @@ view: desktop_crashes_table {
   dimension: metrics__quantity__memory_texture {
     sql: ${TABLE}.metrics.quantity.memory_texture ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Memory Texture"
   }
@@ -435,6 +488,7 @@ view: desktop_crashes_table {
   dimension: metrics__quantity__memory_total_page_file {
     sql: ${TABLE}.metrics.quantity.memory_total_page_file ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Memory Total Page File"
   }
@@ -442,6 +496,7 @@ view: desktop_crashes_table {
   dimension: metrics__quantity__memory_total_physical {
     sql: ${TABLE}.metrics.quantity.memory_total_physical ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Memory Total Physical"
   }
@@ -449,6 +504,7 @@ view: desktop_crashes_table {
   dimension: metrics__quantity__memory_total_virtual {
     sql: ${TABLE}.metrics.quantity.memory_total_virtual ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Memory Total Virtual"
   }
@@ -456,6 +512,7 @@ view: desktop_crashes_table {
   dimension: metrics__string__crash_app_build {
     sql: ${TABLE}.metrics.string.crash_app_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Crash App Build"
   }
@@ -463,6 +520,7 @@ view: desktop_crashes_table {
   dimension: metrics__string__crash_app_channel {
     sql: ${TABLE}.metrics.string.crash_app_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Crash App Channel"
   }
@@ -470,6 +528,7 @@ view: desktop_crashes_table {
   dimension: metrics__string__crash_app_display_version {
     sql: ${TABLE}.metrics.string.crash_app_display_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Crash App Display Version"
   }
@@ -477,6 +536,7 @@ view: desktop_crashes_table {
   dimension: metrics__string__crash_background_task_name {
     sql: ${TABLE}.metrics.string.crash_background_task_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Crash Background Task Name"
   }
@@ -484,6 +544,7 @@ view: desktop_crashes_table {
   dimension: metrics__string__crash_font_name {
     sql: ${TABLE}.metrics.string.crash_font_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Crash Font Name"
   }
@@ -491,6 +552,7 @@ view: desktop_crashes_table {
   dimension: metrics__string__crash_ipc_channel_error {
     sql: ${TABLE}.metrics.string.crash_ipc_channel_error ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Crash Ipc Channel Error"
   }
@@ -498,6 +560,7 @@ view: desktop_crashes_table {
   dimension: metrics__string__crash_main_thread_runnable_name {
     sql: ${TABLE}.metrics.string.crash_main_thread_runnable_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Crash Main Thread Runnable Name"
   }
@@ -505,6 +568,7 @@ view: desktop_crashes_table {
   dimension: metrics__string__crash_minidump_sha256_hash {
     sql: ${TABLE}.metrics.string.crash_minidump_sha256_hash ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Crash Minidump Sha256 Hash"
   }
@@ -512,6 +576,7 @@ view: desktop_crashes_table {
   dimension: metrics__string__crash_moz_crash_reason {
     sql: ${TABLE}.metrics.string.crash_moz_crash_reason ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Crash Moz Crash Reason"
   }
@@ -519,6 +584,7 @@ view: desktop_crashes_table {
   dimension: metrics__string__crash_process_type {
     sql: ${TABLE}.metrics.string.crash_process_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Crash Process Type"
   }
@@ -526,6 +592,7 @@ view: desktop_crashes_table {
   dimension: metrics__string__crash_profiler_child_shutdown_phase {
     sql: ${TABLE}.metrics.string.crash_profiler_child_shutdown_phase ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Crash Profiler Child Shutdown Phase"
   }
@@ -533,6 +600,7 @@ view: desktop_crashes_table {
   dimension: metrics__string__crash_remote_type {
     sql: ${TABLE}.metrics.string.crash_remote_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Crash Remote Type"
   }
@@ -540,6 +608,7 @@ view: desktop_crashes_table {
   dimension: metrics__string__crash_shutdown_progress {
     sql: ${TABLE}.metrics.string.crash_shutdown_progress ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Crash Shutdown Progress"
   }
@@ -547,6 +616,7 @@ view: desktop_crashes_table {
   dimension: metrics__string__crash_windows_file_dialog_error_code {
     sql: ${TABLE}.metrics.string.crash_windows_file_dialog_error_code ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Crash Windows File Dialog Error Code"
   }
@@ -554,6 +624,7 @@ view: desktop_crashes_table {
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Glean Client Annotation Experimentation Id"
   }
@@ -561,6 +632,7 @@ view: desktop_crashes_table {
   dimension: metrics__string__windows_package_family_name {
     sql: ${TABLE}.metrics.string.windows_package_family_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Windows Package Family Name"
   }
@@ -580,9 +652,15 @@ view: desktop_crashes_table {
     hidden: yes
   }
 
+  dimension: metrics__string_list__environment_nimbus_enrollments {
+    sql: ${TABLE}.metrics.string_list.environment_nimbus_enrollments ;;
+    hidden: yes
+  }
+
   dimension: metrics__timespan__crash_uptime__time_unit {
     sql: ${TABLE}.metrics.timespan.crash_uptime.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Crash Uptime"
     group_item_label: "Time Unit"
   }
@@ -590,6 +668,7 @@ view: desktop_crashes_table {
   dimension: metrics__timespan__crash_uptime__value {
     sql: ${TABLE}.metrics.timespan.crash_uptime.value ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Crash Uptime"
     group_item_label: "Value"
   }
@@ -597,6 +676,7 @@ view: desktop_crashes_table {
   dimension: metrics__timespan__environment_uptime__time_unit {
     sql: ${TABLE}.metrics.timespan.environment_uptime.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Environment Uptime"
     group_item_label: "Time Unit"
   }
@@ -604,6 +684,7 @@ view: desktop_crashes_table {
   dimension: metrics__timespan__environment_uptime__value {
     sql: ${TABLE}.metrics.timespan.environment_uptime.value ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Environment Uptime"
     group_item_label: "Value"
   }
@@ -611,31 +692,37 @@ view: desktop_crashes_table {
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: ping_info__end_time {
     sql: ${TABLE}.ping_info.end_time ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "End Time"
   }
@@ -648,6 +735,7 @@ view: desktop_crashes_table {
   dimension: ping_info__ping_type {
     sql: ${TABLE}.ping_info.ping_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Ping Type"
   }
@@ -655,6 +743,7 @@ view: desktop_crashes_table {
   dimension: ping_info__reason {
     sql: ${TABLE}.ping_info.reason ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Reason"
   }
@@ -662,6 +751,7 @@ view: desktop_crashes_table {
   dimension: ping_info__seq {
     sql: ${TABLE}.ping_info.seq ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Seq"
   }
@@ -669,6 +759,7 @@ view: desktop_crashes_table {
   dimension: ping_info__start_time {
     sql: ${TABLE}.ping_info.start_time ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Start Time"
   }
@@ -676,11 +767,13 @@ view: desktop_crashes_table {
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -699,6 +792,7 @@ view: desktop_crashes_table__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: extra {
@@ -709,11 +803,13 @@ view: desktop_crashes_table__events {
   dimension: name {
     sql: ${TABLE}.name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: timestamp {
     sql: ${TABLE}.timestamp ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -721,11 +817,13 @@ view: desktop_crashes_table__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -733,11 +831,13 @@ view: desktop_crashes_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value__branch {
     sql: ${TABLE}.value.branch ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Branch"
   }
@@ -745,6 +845,7 @@ view: desktop_crashes_table__ping_info__experiments {
   dimension: value__extra__enrollment_id {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value Extra"
     group_item_label: "Enrollment Id"
   }
@@ -752,6 +853,7 @@ view: desktop_crashes_table__ping_info__experiments {
   dimension: value__extra__type {
     sql: ${TABLE}.value.extra.type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value Extra"
     group_item_label: "Type"
   }

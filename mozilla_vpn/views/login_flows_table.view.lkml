@@ -8,6 +8,7 @@ view: login_flows_table {
   dimension: flow_id {
     sql: ${TABLE}.flow_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: fxa_uids {
@@ -18,11 +19,13 @@ view: login_flows_table {
   dimension: viewed_email_first_page {
     sql: ${TABLE}.viewed_email_first_page ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: flow_completed {
     sql: ${TABLE}.flow_completed ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -37,6 +40,7 @@ view: login_flows_table {
   dimension_group: flow_started {
     sql: ${TABLE}.flow_started ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

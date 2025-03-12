@@ -8,6 +8,7 @@ view: funnel_retention_week_4_table {
   dimension: adjust_ad_group {
     sql: ${TABLE}.adjust_ad_group ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Structure parameter for the the ad group of a campaign.
 "
   }
@@ -15,6 +16,7 @@ view: funnel_retention_week_4_table {
   dimension: adjust_campaign {
     sql: ${TABLE}.adjust_campaign ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Structure parameter for the campaign name.
 "
   }
@@ -22,6 +24,7 @@ view: funnel_retention_week_4_table {
   dimension: adjust_creative {
     sql: ${TABLE}.adjust_creative ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Structure parameter for the creative content of a campaign.
 "
   }
@@ -29,6 +32,7 @@ view: funnel_retention_week_4_table {
   dimension: adjust_network {
     sql: ${TABLE}.adjust_network ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The type of source of a client installation.
 "
   }
@@ -36,6 +40,7 @@ view: funnel_retention_week_4_table {
   dimension: first_reported_country {
     sql: ${TABLE}.first_reported_country ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "First reported country for the client installation.
 "
   }
@@ -43,6 +48,7 @@ view: funnel_retention_week_4_table {
   dimension: first_reported_isp {
     sql: ${TABLE}.first_reported_isp ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Name of the first reported isp (Internet Service Provider).
 "
   }
@@ -50,6 +56,7 @@ view: funnel_retention_week_4_table {
   dimension: new_profiles {
     sql: ${TABLE}.new_profiles ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Count of new_profiles for the given grouping.
 "
   }
@@ -57,6 +64,7 @@ view: funnel_retention_week_4_table {
   dimension: repeat_user {
     sql: ${TABLE}.repeat_user ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Count of clients categorised as \"repeat_first_month_user\" for the grouping.
 "
   }
@@ -64,6 +72,7 @@ view: funnel_retention_week_4_table {
   dimension: retained_week_4 {
     sql: ${TABLE}.retained_week_4 ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Count of clients categorised as \"retained_week_4\" for the grouping.
 "
   }
@@ -71,6 +80,7 @@ view: funnel_retention_week_4_table {
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -88,6 +98,7 @@ view: funnel_retention_week_4_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

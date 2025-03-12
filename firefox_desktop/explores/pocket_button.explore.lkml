@@ -12,12 +12,6 @@ explore: pocket_button {
   description: "Explore for the pocket_button ping. Reinstrumentation of the Activity Stream \"pocket-button\" ping. Submitted when actions are taken around the pocket button. Does not contain any `client_id`. Instead uses an `impression_id`."
   view_name: pocket_button
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: pocket_button__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${pocket_button.metrics__labeled_counter__glean_error_invalid_label}) AS pocket_button__metrics__labeled_counter__glean_error_invalid_label ON ${pocket_button.document_id} = ${pocket_button__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: pocket_button {
   join: pocket_button__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${pocket_button.ping_info__experiments}) AS pocket_button__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

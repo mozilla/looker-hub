@@ -12,12 +12,6 @@ explore: use_counters {
   description: "Explore for the use_counters ping. Collects counts of uses of web platform features. See [Use Counters Documentation](https://firefox-source-docs.mozilla.org/dom/use-counters.html) for more information."
   view_name: use_counters
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: use_counters__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${use_counters.metrics__labeled_counter__glean_error_invalid_label}) AS use_counters__metrics__labeled_counter__glean_error_invalid_label ON ${use_counters.document_id} = ${use_counters__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -56,6 +50,12 @@ explore: use_counters {
   join: use_counters__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${use_counters.ping_info__experiments}) AS use_counters__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

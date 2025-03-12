@@ -8,26 +8,31 @@ view: suggest_clients_daily {
   dimension: block_nonsponsored_bestmatch_count {
     sql: ${TABLE}.block_nonsponsored_bestmatch_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: block_nonsponsored_count {
     sql: ${TABLE}.block_nonsponsored_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: block_sponsored_bestmatch_count {
     sql: ${TABLE}.block_sponsored_bestmatch_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: block_sponsored_count {
     sql: ${TABLE}.block_sponsored_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: browser_version_info__is_major_release {
     sql: ${TABLE}.browser_version_info.is_major_release ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Browser Version Info"
     group_item_label: "Is Major Release"
   }
@@ -35,6 +40,7 @@ view: suggest_clients_daily {
   dimension: browser_version_info__major_version {
     sql: ${TABLE}.browser_version_info.major_version ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Browser Version Info"
     group_item_label: "Major Version"
   }
@@ -42,6 +48,7 @@ view: suggest_clients_daily {
   dimension: browser_version_info__minor_version {
     sql: ${TABLE}.browser_version_info.minor_version ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Browser Version Info"
     group_item_label: "Minor Version"
   }
@@ -49,6 +56,7 @@ view: suggest_clients_daily {
   dimension: browser_version_info__patch_revision {
     sql: ${TABLE}.browser_version_info.patch_revision ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Browser Version Info"
     group_item_label: "Patch Revision"
   }
@@ -56,6 +64,7 @@ view: suggest_clients_daily {
   dimension: browser_version_info__version {
     sql: ${TABLE}.browser_version_info.version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Browser Version Info"
     group_item_label: "Version"
   }
@@ -63,21 +72,25 @@ view: suggest_clients_daily {
   dimension: click_nonsponsored_bestmatch_count {
     sql: ${TABLE}.click_nonsponsored_bestmatch_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: click_nonsponsored_count {
     sql: ${TABLE}.click_nonsponsored_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: click_sponsored_bestmatch_count {
     sql: ${TABLE}.click_sponsored_bestmatch_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: click_sponsored_count {
     sql: ${TABLE}.click_sponsored_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: client_id {
@@ -88,6 +101,7 @@ view: suggest_clients_daily {
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
   }
 
@@ -99,86 +113,103 @@ view: suggest_clients_daily {
   dimension: help_nonsponsored_bestmatch_count {
     sql: ${TABLE}.help_nonsponsored_bestmatch_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: help_nonsponsored_count {
     sql: ${TABLE}.help_nonsponsored_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: help_sponsored_bestmatch_count {
     sql: ${TABLE}.help_sponsored_bestmatch_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: help_sponsored_count {
     sql: ${TABLE}.help_sponsored_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: impression_nonsponsored_bestmatch_count {
     sql: ${TABLE}.impression_nonsponsored_bestmatch_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: impression_nonsponsored_count {
     sql: ${TABLE}.impression_nonsponsored_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: impression_sponsored_bestmatch_count {
     sql: ${TABLE}.impression_sponsored_bestmatch_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: impression_sponsored_count {
     sql: ${TABLE}.impression_sponsored_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: profile_group_id {
     sql: ${TABLE}.profile_group_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: user_pref_data_collection_enabled {
     sql: ${TABLE}.user_pref_data_collection_enabled ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: user_pref_firefox_suggest_enabled {
     sql: ${TABLE}.user_pref_firefox_suggest_enabled ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: user_pref_sponsored_suggestions_enabled {
     sql: ${TABLE}.user_pref_sponsored_suggestions_enabled ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -198,10 +229,12 @@ view: suggest_clients_daily__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }

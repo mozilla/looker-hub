@@ -12,13 +12,6 @@ explore: activation {
   description: "Explore for the activation ping. This ping is intended to provide a measure of the activation of mobile products. It's generated when Focus starts, right after Glean is initialized."
   view_name: activation
 
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
-
   join: activation__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${activation.metrics__labeled_counter__glean_error_invalid_label}) AS activation__metrics__labeled_counter__glean_error_invalid_label ON ${activation.document_id} = ${activation__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -52,6 +45,13 @@ explore: activation {
   join: activation__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${activation.ping_info__experiments}) AS activation__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

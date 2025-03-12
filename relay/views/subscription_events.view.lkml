@@ -8,67 +8,80 @@ view: subscription_events {
   dimension: count {
     sql: ${TABLE}.count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
   }
 
   dimension: country_name {
     sql: ${TABLE}.country_name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: event_type {
     sql: ${TABLE}.event_type ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: granular_event_type {
     sql: ${TABLE}.granular_event_type ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: plan_amount {
     sql: ${TABLE}.plan_amount ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: plan_currency {
     sql: ${TABLE}.plan_currency ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: plan_id {
     sql: ${TABLE}.plan_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: plan_interval {
     sql: ${TABLE}.plan_interval ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: plan_interval_count {
     sql: ${TABLE}.plan_interval_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: pricing_plan {
     sql: ${TABLE}.pricing_plan ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: product_id {
     sql: ${TABLE}.product_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: product_name {
     sql: ${TABLE}.product_name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: promotion_codes {
@@ -79,11 +92,13 @@ view: subscription_events {
   dimension: provider {
     sql: ${TABLE}.provider ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: event {
     sql: ${TABLE}.event_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

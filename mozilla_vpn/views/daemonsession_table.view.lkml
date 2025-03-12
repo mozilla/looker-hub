@@ -13,21 +13,25 @@ view: daemonsession_table {
   dimension: app_version_major {
     sql: ${TABLE}.app_version_major ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: app_version_minor {
     sql: ${TABLE}.app_version_minor ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: app_version_patch {
     sql: ${TABLE}.app_version_patch ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Android Sdk Version"
   }
@@ -35,6 +39,7 @@ view: daemonsession_table {
   dimension: client_info__app_build {
     sql: ${TABLE}.client_info.app_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Build"
   }
@@ -42,6 +47,7 @@ view: daemonsession_table {
   dimension: client_info__app_channel {
     sql: ${TABLE}.client_info.app_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Channel"
   }
@@ -49,6 +55,7 @@ view: daemonsession_table {
   dimension: client_info__app_display_version {
     sql: ${TABLE}.client_info.app_display_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Display Version"
   }
@@ -56,6 +63,7 @@ view: daemonsession_table {
   dimension: client_info__architecture {
     sql: ${TABLE}.client_info.architecture ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Architecture"
   }
@@ -63,6 +71,7 @@ view: daemonsession_table {
   dimension: client_info__build_date {
     sql: ${TABLE}.client_info.build_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Build Date"
   }
@@ -75,6 +84,7 @@ view: daemonsession_table {
   dimension: client_info__device_manufacturer {
     sql: ${TABLE}.client_info.device_manufacturer ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
   }
@@ -82,6 +92,7 @@ view: daemonsession_table {
   dimension: client_info__device_model {
     sql: ${TABLE}.client_info.device_model ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
   }
@@ -89,6 +100,7 @@ view: daemonsession_table {
   dimension: client_info__first_run_date {
     sql: ${TABLE}.client_info.first_run_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "First Run Date"
   }
@@ -96,6 +108,7 @@ view: daemonsession_table {
   dimension: client_info__locale {
     sql: ${TABLE}.client_info.locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Locale"
   }
@@ -103,6 +116,7 @@ view: daemonsession_table {
   dimension: client_info__os {
     sql: ${TABLE}.client_info.os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Os"
   }
@@ -110,6 +124,7 @@ view: daemonsession_table {
   dimension: client_info__os_version {
     sql: ${TABLE}.client_info.os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Os Version"
   }
@@ -117,6 +132,7 @@ view: daemonsession_table {
   dimension: client_info__session_count {
     sql: ${TABLE}.client_info.session_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session Count"
   }
@@ -124,6 +140,7 @@ view: daemonsession_table {
   dimension: client_info__session_id {
     sql: ${TABLE}.client_info.session_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session Id"
   }
@@ -131,6 +148,7 @@ view: daemonsession_table {
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
   }
@@ -138,6 +156,7 @@ view: daemonsession_table {
   dimension: client_info__windows_build_number {
     sql: ${TABLE}.client_info.windows_build_number ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Windows Build Number"
   }
@@ -155,6 +174,7 @@ view: daemonsession_table {
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "City"
   }
@@ -162,6 +182,7 @@ view: daemonsession_table {
   dimension: metadata__geo__country {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
@@ -170,6 +191,7 @@ view: daemonsession_table {
   dimension: metadata__geo__db_version {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Db Version"
   }
@@ -177,6 +199,7 @@ view: daemonsession_table {
   dimension: metadata__geo__subdivision1 {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
   }
@@ -184,6 +207,7 @@ view: daemonsession_table {
   dimension: metadata__geo__subdivision2 {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
   }
@@ -191,6 +215,7 @@ view: daemonsession_table {
   dimension: metadata__header__date {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "Date"
   }
@@ -198,6 +223,7 @@ view: daemonsession_table {
   dimension: metadata__header__dnt {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "Dnt"
   }
@@ -205,6 +231,7 @@ view: daemonsession_table {
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header Parsed X Lb Tags"
     group_item_label: "Tls Cipher Hex"
   }
@@ -212,6 +239,7 @@ view: daemonsession_table {
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header Parsed X Lb Tags"
     group_item_label: "Tls Version"
   }
@@ -224,6 +252,7 @@ view: daemonsession_table {
   dimension: metadata__header__x_debug_id {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Debug Id"
   }
@@ -231,6 +260,7 @@ view: daemonsession_table {
   dimension: metadata__header__x_foxsec_ip_reputation {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
   }
@@ -238,6 +268,7 @@ view: daemonsession_table {
   dimension: metadata__header__x_lb_tags {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Lb Tags"
   }
@@ -245,6 +276,7 @@ view: daemonsession_table {
   dimension: metadata__header__x_pingsender_version {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
   }
@@ -252,6 +284,7 @@ view: daemonsession_table {
   dimension: metadata__header__x_source_tags {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
   }
@@ -259,6 +292,7 @@ view: daemonsession_table {
   dimension: metadata__header__x_telemetry_agent {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
   }
@@ -266,6 +300,7 @@ view: daemonsession_table {
   dimension: metadata__isp__db_version {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Isp"
     group_item_label: "Db Version"
   }
@@ -273,6 +308,7 @@ view: daemonsession_table {
   dimension: metadata__isp__name {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Isp"
     group_item_label: "Name"
   }
@@ -280,6 +316,7 @@ view: daemonsession_table {
   dimension: metadata__isp__organization {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Isp"
     group_item_label: "Organization"
   }
@@ -287,6 +324,7 @@ view: daemonsession_table {
   dimension: metadata__user_agent__browser {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Browser"
   }
@@ -294,6 +332,7 @@ view: daemonsession_table {
   dimension: metadata__user_agent__os {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Os"
   }
@@ -301,6 +340,7 @@ view: daemonsession_table {
   dimension: metadata__user_agent__version {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Version"
   }
@@ -308,6 +348,7 @@ view: daemonsession_table {
   dimension: metrics__counter__connection_health_no_signal_count {
     sql: ${TABLE}.metrics.counter.connection_health_no_signal_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Connection Health No Signal Count"
   }
@@ -315,6 +356,7 @@ view: daemonsession_table {
   dimension: metrics__counter__connection_health_pending_count {
     sql: ${TABLE}.metrics.counter.connection_health_pending_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Connection Health Pending Count"
   }
@@ -322,6 +364,7 @@ view: daemonsession_table {
   dimension: metrics__counter__connection_health_stable_count {
     sql: ${TABLE}.metrics.counter.connection_health_stable_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Connection Health Stable Count"
   }
@@ -329,6 +372,7 @@ view: daemonsession_table {
   dimension: metrics__counter__connection_health_unstable_count {
     sql: ${TABLE}.metrics.counter.connection_health_unstable_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Connection Health Unstable Count"
   }
@@ -336,6 +380,7 @@ view: daemonsession_table {
   dimension: metrics__counter__session_connection_health_stable_count {
     sql: ${TABLE}.metrics.counter.session_connection_health_stable_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Session Connection Health Stable Count"
   }
@@ -343,6 +388,7 @@ view: daemonsession_table {
   dimension: metrics__custom_distribution__connection_health_data_transferred_rx__count {
     sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_rx.count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Custom Distribution Connection Health Data Transferred Rx"
     group_item_label: "Count"
   }
@@ -350,6 +396,7 @@ view: daemonsession_table {
   dimension: metrics__custom_distribution__connection_health_data_transferred_rx__sum {
     sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_rx.sum ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Custom Distribution Connection Health Data Transferred Rx"
     group_item_label: "Sum"
   }
@@ -362,6 +409,7 @@ view: daemonsession_table {
   dimension: metrics__custom_distribution__connection_health_data_transferred_tx__count {
     sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_tx.count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Custom Distribution Connection Health Data Transferred Tx"
     group_item_label: "Count"
   }
@@ -369,6 +417,7 @@ view: daemonsession_table {
   dimension: metrics__custom_distribution__connection_health_data_transferred_tx__sum {
     sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_tx.sum ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Custom Distribution Connection Health Data Transferred Tx"
     group_item_label: "Sum"
   }
@@ -381,6 +430,7 @@ view: daemonsession_table {
   dimension: metrics__datetime__raw_session_daemon_session_end {
     sql: ${TABLE}.metrics.datetime.raw_session_daemon_session_end ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Datetime"
     group_item_label: "Raw Session Daemon Session End"
   }
@@ -388,6 +438,7 @@ view: daemonsession_table {
   dimension: metrics__datetime__raw_session_daemon_session_start {
     sql: ${TABLE}.metrics.datetime.raw_session_daemon_session_start ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Datetime"
     group_item_label: "Raw Session Daemon Session Start"
   }
@@ -415,6 +466,7 @@ view: daemonsession_table {
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Glean Client Annotation Experimentation Id"
   }
@@ -422,6 +474,7 @@ view: daemonsession_table {
   dimension: metrics__string__session_daemon_session_source {
     sql: ${TABLE}.metrics.string.session_daemon_session_source ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Session Daemon Session Source"
   }
@@ -429,6 +482,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_no_signal_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.bucket_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health No Signal Time"
     group_item_label: "Bucket Count"
   }
@@ -436,6 +490,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_no_signal_time__count {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health No Signal Time"
     group_item_label: "Count"
   }
@@ -443,6 +498,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_no_signal_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.histogram_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health No Signal Time"
     group_item_label: "Histogram Type"
   }
@@ -450,6 +506,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_no_signal_time__overflow {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.overflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health No Signal Time"
     group_item_label: "Overflow"
   }
@@ -462,6 +519,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_no_signal_time__sum {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.sum ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health No Signal Time"
     group_item_label: "Sum"
   }
@@ -469,6 +527,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_no_signal_time__time_unit {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health No Signal Time"
     group_item_label: "Time Unit"
   }
@@ -476,6 +535,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_no_signal_time__underflow {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.underflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health No Signal Time"
     group_item_label: "Underflow"
   }
@@ -488,6 +548,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_pending_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_pending_time.bucket_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Pending Time"
     group_item_label: "Bucket Count"
   }
@@ -495,6 +556,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_pending_time__count {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_pending_time.count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Pending Time"
     group_item_label: "Count"
   }
@@ -502,6 +564,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_pending_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_pending_time.histogram_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Pending Time"
     group_item_label: "Histogram Type"
   }
@@ -509,6 +572,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_pending_time__overflow {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_pending_time.overflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Pending Time"
     group_item_label: "Overflow"
   }
@@ -521,6 +585,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_pending_time__sum {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_pending_time.sum ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Pending Time"
     group_item_label: "Sum"
   }
@@ -528,6 +593,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_pending_time__time_unit {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_pending_time.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Pending Time"
     group_item_label: "Time Unit"
   }
@@ -535,6 +601,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_pending_time__underflow {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_pending_time.underflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Pending Time"
     group_item_label: "Underflow"
   }
@@ -547,6 +614,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_stable_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.bucket_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Stable Time"
     group_item_label: "Bucket Count"
   }
@@ -554,6 +622,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_stable_time__count {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Stable Time"
     group_item_label: "Count"
   }
@@ -561,6 +630,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_stable_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.histogram_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Stable Time"
     group_item_label: "Histogram Type"
   }
@@ -568,6 +638,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_stable_time__overflow {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.overflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Stable Time"
     group_item_label: "Overflow"
   }
@@ -580,6 +651,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_stable_time__sum {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.sum ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Stable Time"
     group_item_label: "Sum"
   }
@@ -587,6 +659,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_stable_time__time_unit {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Stable Time"
     group_item_label: "Time Unit"
   }
@@ -594,6 +667,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_stable_time__underflow {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.underflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Stable Time"
     group_item_label: "Underflow"
   }
@@ -606,6 +680,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_unstable_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.bucket_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Unstable Time"
     group_item_label: "Bucket Count"
   }
@@ -613,6 +688,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_unstable_time__count {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Unstable Time"
     group_item_label: "Count"
   }
@@ -620,6 +696,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_unstable_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.histogram_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Unstable Time"
     group_item_label: "Histogram Type"
   }
@@ -627,6 +704,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_unstable_time__overflow {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.overflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Unstable Time"
     group_item_label: "Overflow"
   }
@@ -639,6 +717,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_unstable_time__sum {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.sum ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Unstable Time"
     group_item_label: "Sum"
   }
@@ -646,6 +725,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_unstable_time__time_unit {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Unstable Time"
     group_item_label: "Time Unit"
   }
@@ -653,6 +733,7 @@ view: daemonsession_table {
   dimension: metrics__timing_distribution__connection_health_unstable_time__underflow {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.underflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Connection Health Unstable Time"
     group_item_label: "Underflow"
   }
@@ -665,6 +746,7 @@ view: daemonsession_table {
   dimension: metrics__uuid__session_daemon_session_id {
     sql: ${TABLE}.metrics.uuid.session_daemon_session_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Uuid"
     group_item_label: "Session Daemon Session Id"
   }
@@ -672,6 +754,7 @@ view: daemonsession_table {
   dimension: metrics__uuid__session_installation_id {
     sql: ${TABLE}.metrics.uuid.session_installation_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Uuid"
     group_item_label: "Session Installation Id"
   }
@@ -679,38 +762,45 @@ view: daemonsession_table {
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "App ID of the channel data was received from"
   }
 
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: ping_info__end_time {
     sql: ${TABLE}.ping_info.end_time ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "End Time"
   }
@@ -723,6 +813,7 @@ view: daemonsession_table {
   dimension: ping_info__ping_type {
     sql: ${TABLE}.ping_info.ping_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Ping Type"
   }
@@ -730,6 +821,7 @@ view: daemonsession_table {
   dimension: ping_info__reason {
     sql: ${TABLE}.ping_info.reason ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Reason"
   }
@@ -737,6 +829,7 @@ view: daemonsession_table {
   dimension: ping_info__seq {
     sql: ${TABLE}.ping_info.seq ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Seq"
   }
@@ -744,6 +837,7 @@ view: daemonsession_table {
   dimension: ping_info__start_time {
     sql: ${TABLE}.ping_info.start_time ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Start Time"
   }
@@ -751,11 +845,13 @@ view: daemonsession_table {
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -771,6 +867,7 @@ view: daemonsession_table {
   dimension_group: metrics__datetime__session_daemon_session_end {
     sql: ${TABLE}.metrics.datetime.session_daemon_session_end ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -786,6 +883,7 @@ view: daemonsession_table {
   dimension_group: metrics__datetime__session_daemon_session_start {
     sql: ${TABLE}.metrics.datetime.session_daemon_session_start ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -801,6 +899,7 @@ view: daemonsession_table {
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -816,6 +915,7 @@ view: daemonsession_table {
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -831,6 +931,7 @@ view: daemonsession_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -849,6 +950,7 @@ view: daemonsession_table__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: extra {
@@ -859,11 +961,13 @@ view: daemonsession_table__events {
   dimension: name {
     sql: ${TABLE}.name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: timestamp {
     sql: ${TABLE}.timestamp ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -871,11 +975,13 @@ view: daemonsession_table__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -883,11 +989,13 @@ view: daemonsession_table__metrics__custom_distribution__connection_health_data_
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -895,11 +1003,13 @@ view: daemonsession_table__metrics__custom_distribution__connection_health_data_
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -907,11 +1017,13 @@ view: daemonsession_table__metrics__timing_distribution__connection_health_no_si
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -919,11 +1031,13 @@ view: daemonsession_table__metrics__timing_distribution__connection_health_pendi
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -931,11 +1045,13 @@ view: daemonsession_table__metrics__timing_distribution__connection_health_stabl
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -943,11 +1059,13 @@ view: daemonsession_table__metrics__timing_distribution__connection_health_unsta
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -955,11 +1073,13 @@ view: daemonsession_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value__branch {
     sql: ${TABLE}.value.branch ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Branch"
   }
@@ -967,6 +1087,7 @@ view: daemonsession_table__ping_info__experiments {
   dimension: value__extra__enrollment_id {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value Extra"
     group_item_label: "Enrollment Id"
   }
@@ -974,6 +1095,7 @@ view: daemonsession_table__ping_info__experiments {
   dimension: value__extra__type {
     sql: ${TABLE}.value.extra.type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value Extra"
     group_item_label: "Type"
   }

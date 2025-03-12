@@ -12,12 +12,6 @@ explore: newtab {
   description: "Explore for the newtab ping. Newtab-related instrumentation. Can be disabled via the `newtabPingEnabled` variable of the `glean` Nimbus feature, or the `browser.newtabpage.ping.enabled` pref."
   view_name: newtab
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: newtab__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${newtab.metrics__labeled_counter__glean_error_invalid_label}) AS newtab__metrics__labeled_counter__glean_error_invalid_label ON ${newtab.document_id} = ${newtab__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: newtab {
   join: newtab__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${newtab.ping_info__experiments}) AS newtab__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

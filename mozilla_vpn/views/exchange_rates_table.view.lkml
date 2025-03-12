@@ -8,26 +8,31 @@ view: exchange_rates_table {
   dimension: base_currency {
     sql: ${TABLE}.base_currency ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: price {
     sql: ${TABLE}.price ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: price_type {
     sql: ${TABLE}.price_type ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: quote_currency {
     sql: ${TABLE}.quote_currency ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: date {
     sql: ${TABLE}.date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

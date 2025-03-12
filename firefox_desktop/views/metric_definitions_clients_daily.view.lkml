@@ -34,6 +34,7 @@ COALESCE(SUM(pings_aggregated_by_this_row), 0) > 0 AS retained,
 SUM(socket_crash_count) AS socket_crash_count_v1,
 SUM(IF(socket_crash_count > 0, active_hours_sum, 0)) AS socket_crash_active_hours_v1,
 COUNTIF(socket_crash_count > 0) AS socket_crash_dau_v1,
+LOGICAL_OR(COALESCE(sync_count_mobile_mean > 0, FALSE)) AS sync_to_mobile,
 
                 looker_base_fields_app_name,
 looker_base_fields_app_version,
@@ -377,21 +378,32 @@ looker_base_fields_sample_id,
     sql: ${TABLE}.socket_crash_dau_v1 ;;
   }
 
+  dimension: sync_to_mobile {
+    group_label: "Metrics"
+    label: "Desktop Sync to Mobile"
+    description: "Did a desktop user sync to mobile"
+    type: number
+    sql: ${TABLE}.sync_to_mobile ;;
+  }
+
   dimension: app_name {
     sql: ${TABLE}.looker_base_fields_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version {
     sql: ${TABLE}.looker_base_fields_app_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: country {
     sql: ${TABLE}.looker_base_fields_country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
     group_label: "Base Fields"
   }
@@ -399,12 +411,14 @@ looker_base_fields_sample_id,
   dimension: default_search_engine {
     sql: ${TABLE}.looker_base_fields_default_search_engine ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: distribution_id {
     sql: ${TABLE}.looker_base_fields_distribution_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
@@ -417,36 +431,42 @@ looker_base_fields_sample_id,
   dimension: locale {
     sql: ${TABLE}.looker_base_fields_locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.looker_base_fields_normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.looker_base_fields_normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: os {
     sql: ${TABLE}.looker_base_fields_os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: partner_id {
     sql: ${TABLE}.looker_base_fields_partner_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sample_id {
     sql: ${TABLE}.looker_base_fields_sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
@@ -546,6 +566,7 @@ looker_base_fields_sample_id,
       socket_crash_count_v1,
       socket_crash_active_hours_v1,
       socket_crash_dau_v1,
+      sync_to_mobile,
       days_of_use_average,
       socket_crash_count_v1_sum,
       socket_crash_count_v1_ratio,

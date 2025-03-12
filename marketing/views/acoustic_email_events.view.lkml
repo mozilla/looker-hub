@@ -8,71 +8,83 @@ view: acoustic_email_events {
   dimension: body_type {
     sql: ${TABLE}.body_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The body type the contact received."
   }
 
   dimension: campaign_id {
     sql: ${TABLE}.campaign_id ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "The ID of the campaign associated with the event."
   }
 
   dimension: click_name {
     sql: ${TABLE}.click_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The user-specified name of the link or Clickstream."
   }
 
   dimension: content_id {
     sql: ${TABLE}.content_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The ID of the content associated with the event."
   }
 
   dimension: event_type {
     sql: ${TABLE}.event_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The type of contact event."
   }
 
   dimension: mailing_id {
     sql: ${TABLE}.mailing_id ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "The ID of the Sent email associated with the event."
   }
 
   dimension: recipient_id {
     sql: ${TABLE}.recipient_id ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "The ID of the contact associated with the event."
   }
 
   dimension: recipient_type {
     sql: ${TABLE}.recipient_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The type of contact to whom the Acoustic Campaign sent the email."
   }
 
   dimension: report_id {
     sql: ${TABLE}.report_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: suppression_reason {
     sql: ${TABLE}.suppression_reason ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The reason a contact was suppressed."
   }
 
   dimension: url {
     sql: ${TABLE}.url ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The hyperlink of a Clickthrough or Clickstream."
   }
 
   dimension_group: event {
     sql: ${TABLE}.event_timestamp ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -88,6 +100,7 @@ view: acoustic_email_events {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

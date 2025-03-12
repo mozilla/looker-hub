@@ -12,12 +12,6 @@ explore: user_characteristics {
   description: "Explore for the user_characteristics ping. A ping representing user hardware and software settings. Note that this ping does not include client_id. More details are available in Bug 1879151"
   view_name: user_characteristics
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: user_characteristics__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${user_characteristics.metrics__labeled_counter__glean_error_invalid_label}) AS user_characteristics__metrics__labeled_counter__glean_error_invalid_label ON ${user_characteristics.document_id} = ${user_characteristics__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -46,6 +40,12 @@ explore: user_characteristics {
   join: user_characteristics__events__extra {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${user_characteristics__events.extra}) AS user_characteristics__events__extra ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

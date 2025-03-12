@@ -24,6 +24,7 @@ view: adclick_history_table__ad_click_history {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "The total number of ad_clicks for the submission_date"
   }
 }

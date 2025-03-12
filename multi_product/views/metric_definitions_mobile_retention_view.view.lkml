@@ -18,6 +18,8 @@ mobile_retention_view_adjust_network,
 mobile_retention_view_app_name,
 mobile_retention_view_app_version,
 mobile_retention_view_country,
+mobile_retention_view_device_manufacturer,
+mobile_retention_view_device_type,
 mobile_retention_view_distribution_id,
 mobile_retention_view_install_source,
 mobile_retention_view_is_mobile,
@@ -77,6 +79,8 @@ mobile_retention_view.adjust_network AS mobile_retention_view_adjust_network,
 mobile_retention_view.app_name AS mobile_retention_view_app_name,
 mobile_retention_view.app_version AS mobile_retention_view_app_version,
 mobile_retention_view.country AS mobile_retention_view_country,
+mobile_retention_view.device_manufacturer AS mobile_retention_view_device_manufacturer,
+mobile_retention_view.device_type AS mobile_retention_view_device_type,
 mobile_retention_view.distribution_id AS mobile_retention_view_distribution_id,
 mobile_retention_view.install_source AS mobile_retention_view_install_source,
 mobile_retention_view.is_mobile AS mobile_retention_view_is_mobile,
@@ -131,6 +135,8 @@ mobile_retention_view_adjust_network,
 mobile_retention_view_app_name,
 mobile_retention_view_app_version,
 mobile_retention_view_country,
+mobile_retention_view_device_manufacturer,
+mobile_retention_view_device_type,
 mobile_retention_view_distribution_id,
 mobile_retention_view_install_source,
 mobile_retention_view_is_mobile,
@@ -187,163 +193,204 @@ mobile_retention_view_retained_week_4_new_profiles,
   dimension: active_metric_date {
     sql: ${TABLE}.mobile_retention_view_active_metric_date ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: adjust_ad_group {
     sql: ${TABLE}.mobile_retention_view_adjust_ad_group ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: adjust_campaign {
     sql: ${TABLE}.mobile_retention_view_adjust_campaign ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: adjust_creative {
     sql: ${TABLE}.mobile_retention_view_adjust_creative ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: adjust_network {
     sql: ${TABLE}.mobile_retention_view_adjust_network ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_name {
     sql: ${TABLE}.mobile_retention_view_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version {
     sql: ${TABLE}.mobile_retention_view_app_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: country {
     sql: ${TABLE}.mobile_retention_view_country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
+    group_label: "Base Fields"
+  }
+
+  dimension: device_manufacturer {
+    sql: ${TABLE}.mobile_retention_view_device_manufacturer ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.mobile_retention_view_device_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: distribution_id {
     sql: ${TABLE}.mobile_retention_view_distribution_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: install_source {
     sql: ${TABLE}.mobile_retention_view_install_source ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: is_mobile {
     sql: ${TABLE}.mobile_retention_view_is_mobile ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: is_suspicious_device_client {
     sql: ${TABLE}.mobile_retention_view_is_suspicious_device_client ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: lifecycle_stage {
     sql: ${TABLE}.mobile_retention_view_lifecycle_stage ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: locale {
     sql: ${TABLE}.mobile_retention_view_locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: meta_attribution_app {
     sql: ${TABLE}.mobile_retention_view_meta_attribution_app ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: new_profiles_metric_date {
     sql: ${TABLE}.mobile_retention_view_new_profiles_metric_date ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.mobile_retention_view_normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: paid_vs_organic {
     sql: ${TABLE}.mobile_retention_view_paid_vs_organic ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: ping_sent_metric_date {
     sql: ${TABLE}.mobile_retention_view_ping_sent_metric_date ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: ping_sent_week_4 {
     sql: ${TABLE}.mobile_retention_view_ping_sent_week_4 ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: play_store_attribution_campaign {
     sql: ${TABLE}.mobile_retention_view_play_store_attribution_campaign ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: play_store_attribution_medium {
     sql: ${TABLE}.mobile_retention_view_play_store_attribution_medium ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: play_store_attribution_source {
     sql: ${TABLE}.mobile_retention_view_play_store_attribution_source ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: product_name {
     sql: ${TABLE}.mobile_retention_view_product_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: repeat_profiles {
     sql: ${TABLE}.mobile_retention_view_repeat_profiles ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: retained_week_4 {
     sql: ${TABLE}.mobile_retention_view_retained_week_4 ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: retained_week_4_new_profiles {
     sql: ${TABLE}.mobile_retention_view_retained_week_4_new_profiles ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 

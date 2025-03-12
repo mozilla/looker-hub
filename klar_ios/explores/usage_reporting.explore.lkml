@@ -9,14 +9,8 @@ include: "/looker-hub/klar_ios/views/usage_reporting.view.lkml"
 explore: usage_reporting {
   sql_always_where: ${usage_reporting.submission_date} >= '2010-01-01' ;;
   view_label: " Usage_Reporting"
-  description: "Explore for the usage_reporting ping. Minimal ping to measure DAU. Sent on the baseline schedule."
+  description: "Explore for the usage_reporting ping. Minimal ping to measure the usage frequency of Focus. Sent on the baseline schedule."
   view_name: usage_reporting
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: usage_reporting__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -46,6 +40,12 @@ explore: usage_reporting {
   join: usage_reporting__events__extra {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${usage_reporting__events.extra}) AS usage_reporting__events__extra ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

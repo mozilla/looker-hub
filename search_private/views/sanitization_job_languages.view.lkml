@@ -8,16 +8,19 @@ view: sanitization_job_languages {
   dimension: language_code {
     sql: ${TABLE}.language_code ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: search_term_count {
     sql: ${TABLE}.search_term_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: job_start {
     sql: ${TABLE}.job_start_time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

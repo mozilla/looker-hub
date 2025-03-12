@@ -47,6 +47,8 @@ focus_android_engagement_view_app_name,
 focus_android_engagement_view_app_version,
 focus_android_engagement_view_country,
 focus_android_engagement_view_dau,
+focus_android_engagement_view_device_manufacturer,
+focus_android_engagement_view_device_type,
 focus_android_engagement_view_is_mobile,
 focus_android_engagement_view_lifecycle_stage,
 focus_android_engagement_view_locale,
@@ -124,6 +126,8 @@ focus_android_engagement_view.app_name AS focus_android_engagement_view_app_name
 focus_android_engagement_view.app_version AS focus_android_engagement_view_app_version,
 focus_android_engagement_view.country AS focus_android_engagement_view_country,
 focus_android_engagement_view.dau AS focus_android_engagement_view_dau,
+focus_android_engagement_view.device_manufacturer AS focus_android_engagement_view_device_manufacturer,
+focus_android_engagement_view.device_type AS focus_android_engagement_view_device_type,
 focus_android_engagement_view.is_mobile AS focus_android_engagement_view_is_mobile,
 focus_android_engagement_view.lifecycle_stage AS focus_android_engagement_view_lifecycle_stage,
 focus_android_engagement_view.locale AS focus_android_engagement_view_locale,
@@ -210,6 +214,8 @@ focus_android_engagement_view_app_name,
 focus_android_engagement_view_app_version,
 focus_android_engagement_view_country,
 focus_android_engagement_view_dau,
+focus_android_engagement_view_device_manufacturer,
+focus_android_engagement_view_device_type,
 focus_android_engagement_view_is_mobile,
 focus_android_engagement_view_lifecycle_stage,
 focus_android_engagement_view_locale,
@@ -246,24 +252,28 @@ focus_android_engagement_view_wau,
   dimension: app_version_major {
     sql: ${TABLE}.looker_base_fields_app_version_major ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version_minor {
     sql: ${TABLE}.looker_base_fields_app_version_minor ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version_patch {
     sql: ${TABLE}.looker_base_fields_app_version_patch ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.looker_base_fields_client_info__android_sdk_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Android Sdk Version"
   }
@@ -271,6 +281,7 @@ focus_android_engagement_view_wau,
   dimension: client_info__app_build {
     sql: ${TABLE}.looker_base_fields_client_info__app_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "App Build"
   }
@@ -278,6 +289,7 @@ focus_android_engagement_view_wau,
   dimension: client_info__app_channel {
     sql: ${TABLE}.looker_base_fields_client_info__app_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "App Channel"
   }
@@ -285,6 +297,7 @@ focus_android_engagement_view_wau,
   dimension: client_info__app_display_version {
     sql: ${TABLE}.looker_base_fields_client_info__app_display_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "App Display Version"
   }
@@ -292,6 +305,7 @@ focus_android_engagement_view_wau,
   dimension: client_info__architecture {
     sql: ${TABLE}.looker_base_fields_client_info__architecture ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Architecture"
   }
@@ -299,6 +313,7 @@ focus_android_engagement_view_wau,
   dimension: client_info__build_date {
     sql: ${TABLE}.looker_base_fields_client_info__build_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Build Date"
   }
@@ -312,6 +327,7 @@ focus_android_engagement_view_wau,
   dimension: client_info__device_manufacturer {
     sql: ${TABLE}.looker_base_fields_client_info__device_manufacturer ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Device Manufacturer"
   }
@@ -319,6 +335,7 @@ focus_android_engagement_view_wau,
   dimension: client_info__device_model {
     sql: ${TABLE}.looker_base_fields_client_info__device_model ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Device Model"
   }
@@ -326,6 +343,7 @@ focus_android_engagement_view_wau,
   dimension: client_info__first_run_date {
     sql: ${TABLE}.looker_base_fields_client_info__first_run_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "First Run Date"
   }
@@ -333,6 +351,7 @@ focus_android_engagement_view_wau,
   dimension: client_info__locale {
     sql: ${TABLE}.looker_base_fields_client_info__locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Locale"
   }
@@ -340,6 +359,7 @@ focus_android_engagement_view_wau,
   dimension: client_info__os {
     sql: ${TABLE}.looker_base_fields_client_info__os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Os"
   }
@@ -347,6 +367,7 @@ focus_android_engagement_view_wau,
   dimension: client_info__os_version {
     sql: ${TABLE}.looker_base_fields_client_info__os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Os Version"
   }
@@ -354,6 +375,7 @@ focus_android_engagement_view_wau,
   dimension: client_info__session_count {
     sql: ${TABLE}.looker_base_fields_client_info__session_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Session Count"
   }
@@ -361,6 +383,7 @@ focus_android_engagement_view_wau,
   dimension: client_info__session_id {
     sql: ${TABLE}.looker_base_fields_client_info__session_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Session Id"
   }
@@ -368,6 +391,7 @@ focus_android_engagement_view_wau,
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.looker_base_fields_client_info__telemetry_sdk_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Telemetry Sdk Build"
   }
@@ -375,6 +399,7 @@ focus_android_engagement_view_wau,
   dimension: client_info__windows_build_number {
     sql: ${TABLE}.looker_base_fields_client_info__windows_build_number ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Windows Build Number"
   }
@@ -388,6 +413,7 @@ focus_android_engagement_view_wau,
   dimension: geo__city {
     sql: ${TABLE}.looker_base_fields_geo__city ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "City"
   }
@@ -395,6 +421,7 @@ focus_android_engagement_view_wau,
   dimension: geo__country {
     sql: ${TABLE}.looker_base_fields_geo__country ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Country"
   }
@@ -402,6 +429,7 @@ focus_android_engagement_view_wau,
   dimension: geo__db_version {
     sql: ${TABLE}.looker_base_fields_geo__db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Db Version"
   }
@@ -409,6 +437,7 @@ focus_android_engagement_view_wau,
   dimension: geo__subdivision1 {
     sql: ${TABLE}.looker_base_fields_geo__subdivision1 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Subdivision1"
   }
@@ -416,6 +445,7 @@ focus_android_engagement_view_wau,
   dimension: geo__subdivision2 {
     sql: ${TABLE}.looker_base_fields_geo__subdivision2 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Subdivision2"
   }
@@ -423,48 +453,56 @@ focus_android_engagement_view_wau,
   dimension: normalized_app_id {
     sql: ${TABLE}.looker_base_fields_normalized_app_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_app_name {
     sql: ${TABLE}.looker_base_fields_normalized_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.looker_base_fields_normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.looker_base_fields_normalized_country_code ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.looker_base_fields_normalized_os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.looker_base_fields_normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sample_id {
     sql: ${TABLE}.looker_base_fields_sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: user_agent__browser {
     sql: ${TABLE}.looker_base_fields_user_agent__browser ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Browser"
   }
@@ -472,6 +510,7 @@ focus_android_engagement_view_wau,
   dimension: user_agent__os {
     sql: ${TABLE}.looker_base_fields_user_agent__os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Os"
   }
@@ -479,6 +518,7 @@ focus_android_engagement_view_wau,
   dimension: user_agent__version {
     sql: ${TABLE}.looker_base_fields_user_agent__version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Version"
   }
@@ -486,18 +526,21 @@ focus_android_engagement_view_wau,
   dimension: app_name {
     sql: ${TABLE}.focus_android_engagement_view_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version {
     sql: ${TABLE}.focus_android_engagement_view_app_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: country {
     sql: ${TABLE}.focus_android_engagement_view_country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
     group_label: "Base Fields"
   }
@@ -505,42 +548,63 @@ focus_android_engagement_view_wau,
   dimension: dau {
     sql: ${TABLE}.focus_android_engagement_view_dau ;;
     type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: device_manufacturer {
+    sql: ${TABLE}.focus_android_engagement_view_device_manufacturer ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.focus_android_engagement_view_device_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: is_mobile {
     sql: ${TABLE}.focus_android_engagement_view_is_mobile ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: lifecycle_stage {
     sql: ${TABLE}.focus_android_engagement_view_lifecycle_stage ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: locale {
     sql: ${TABLE}.focus_android_engagement_view_locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: mau {
     sql: ${TABLE}.focus_android_engagement_view_mau ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: paid_vs_organic {
     sql: ${TABLE}.focus_android_engagement_view_paid_vs_organic ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: wau {
     sql: ${TABLE}.focus_android_engagement_view_wau ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 

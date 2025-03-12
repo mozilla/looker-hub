@@ -13,21 +13,25 @@ view: metrics_table {
   dimension: app_version_major {
     sql: ${TABLE}.app_version_major ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: app_version_minor {
     sql: ${TABLE}.app_version_minor ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: app_version_patch {
     sql: ${TABLE}.app_version_patch ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Android Sdk Version"
   }
@@ -35,6 +39,7 @@ view: metrics_table {
   dimension: client_info__app_build {
     sql: ${TABLE}.client_info.app_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Build"
   }
@@ -42,6 +47,7 @@ view: metrics_table {
   dimension: client_info__app_channel {
     sql: ${TABLE}.client_info.app_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Channel"
   }
@@ -49,6 +55,7 @@ view: metrics_table {
   dimension: client_info__app_display_version {
     sql: ${TABLE}.client_info.app_display_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Display Version"
   }
@@ -56,6 +63,7 @@ view: metrics_table {
   dimension: client_info__architecture {
     sql: ${TABLE}.client_info.architecture ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Architecture"
   }
@@ -63,6 +71,7 @@ view: metrics_table {
   dimension: client_info__build_date {
     sql: ${TABLE}.client_info.build_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Build Date"
   }
@@ -75,6 +84,7 @@ view: metrics_table {
   dimension: client_info__device_manufacturer {
     sql: ${TABLE}.client_info.device_manufacturer ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
   }
@@ -82,6 +92,7 @@ view: metrics_table {
   dimension: client_info__device_model {
     sql: ${TABLE}.client_info.device_model ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
   }
@@ -89,6 +100,7 @@ view: metrics_table {
   dimension: client_info__first_run_date {
     sql: ${TABLE}.client_info.first_run_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "First Run Date"
   }
@@ -96,6 +108,7 @@ view: metrics_table {
   dimension: client_info__locale {
     sql: ${TABLE}.client_info.locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Locale"
   }
@@ -103,6 +116,7 @@ view: metrics_table {
   dimension: client_info__os {
     sql: ${TABLE}.client_info.os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Os"
   }
@@ -110,6 +124,7 @@ view: metrics_table {
   dimension: client_info__os_version {
     sql: ${TABLE}.client_info.os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Os Version"
   }
@@ -117,6 +132,7 @@ view: metrics_table {
   dimension: client_info__session_count {
     sql: ${TABLE}.client_info.session_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session Count"
   }
@@ -124,6 +140,7 @@ view: metrics_table {
   dimension: client_info__session_id {
     sql: ${TABLE}.client_info.session_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session Id"
   }
@@ -131,6 +148,7 @@ view: metrics_table {
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
   }
@@ -138,6 +156,7 @@ view: metrics_table {
   dimension: client_info__windows_build_number {
     sql: ${TABLE}.client_info.windows_build_number ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Windows Build Number"
   }
@@ -155,6 +174,7 @@ view: metrics_table {
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "City"
   }
@@ -162,6 +182,7 @@ view: metrics_table {
   dimension: metadata__geo__country {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
@@ -170,6 +191,7 @@ view: metrics_table {
   dimension: metadata__geo__db_version {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Db Version"
   }
@@ -177,6 +199,7 @@ view: metrics_table {
   dimension: metadata__geo__subdivision1 {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
   }
@@ -184,6 +207,7 @@ view: metrics_table {
   dimension: metadata__geo__subdivision2 {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
   }
@@ -191,6 +215,7 @@ view: metrics_table {
   dimension: metadata__header__date {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "Date"
   }
@@ -198,6 +223,7 @@ view: metrics_table {
   dimension: metadata__header__dnt {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "Dnt"
   }
@@ -205,6 +231,7 @@ view: metrics_table {
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header Parsed X Lb Tags"
     group_item_label: "Tls Cipher Hex"
   }
@@ -212,6 +239,7 @@ view: metrics_table {
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header Parsed X Lb Tags"
     group_item_label: "Tls Version"
   }
@@ -224,6 +252,7 @@ view: metrics_table {
   dimension: metadata__header__x_debug_id {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Debug Id"
   }
@@ -231,6 +260,7 @@ view: metrics_table {
   dimension: metadata__header__x_foxsec_ip_reputation {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
   }
@@ -238,6 +268,7 @@ view: metrics_table {
   dimension: metadata__header__x_lb_tags {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Lb Tags"
   }
@@ -245,6 +276,7 @@ view: metrics_table {
   dimension: metadata__header__x_pingsender_version {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
   }
@@ -252,6 +284,7 @@ view: metrics_table {
   dimension: metadata__header__x_source_tags {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
   }
@@ -259,6 +292,7 @@ view: metrics_table {
   dimension: metadata__header__x_telemetry_agent {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
   }
@@ -266,6 +300,7 @@ view: metrics_table {
   dimension: metadata__isp__db_version {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Isp"
     group_item_label: "Db Version"
   }
@@ -273,6 +308,7 @@ view: metrics_table {
   dimension: metadata__isp__name {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Isp"
     group_item_label: "Name"
   }
@@ -280,6 +316,7 @@ view: metrics_table {
   dimension: metadata__isp__organization {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Isp"
     group_item_label: "Organization"
   }
@@ -287,6 +324,7 @@ view: metrics_table {
   dimension: metadata__user_agent__browser {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Browser"
   }
@@ -294,6 +332,7 @@ view: metrics_table {
   dimension: metadata__user_agent__os {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Os"
   }
@@ -301,6 +340,7 @@ view: metrics_table {
   dimension: metadata__user_agent__version {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Version"
   }
@@ -308,6 +348,7 @@ view: metrics_table {
   dimension: metrics__boolean__glean_core_migration_successful {
     sql: ${TABLE}.metrics.boolean.glean_core_migration_successful ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Glean Core Migration Successful"
   }
@@ -315,6 +356,7 @@ view: metrics_table {
   dimension: metrics__boolean__glean_error_preinit_tasks_timeout {
     sql: ${TABLE}.metrics.boolean.glean_error_preinit_tasks_timeout ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Glean Error Preinit Tasks Timeout"
   }
@@ -322,6 +364,7 @@ view: metrics_table {
   dimension: metrics__boolean__settings_connect_on_startup_active {
     sql: ${TABLE}.metrics.boolean.settings_connect_on_startup_active ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Settings Connect On Startup Active"
   }
@@ -329,6 +372,7 @@ view: metrics_table {
   dimension: metrics__boolean__settings_using_system_language {
     sql: ${TABLE}.metrics.boolean.settings_using_system_language ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Settings Using System Language"
   }
@@ -336,6 +380,7 @@ view: metrics_table {
   dimension: metrics__counter__glean_error_io {
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Glean Error Io"
   }
@@ -343,6 +388,7 @@ view: metrics_table {
   dimension: metrics__counter__glean_error_preinit_tasks_overflow {
     sql: ${TABLE}.metrics.counter.glean_error_preinit_tasks_overflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Glean Error Preinit Tasks Overflow"
   }
@@ -350,6 +396,7 @@ view: metrics_table {
   dimension: metrics__counter__glean_time_invalid_timezone_offset {
     sql: ${TABLE}.metrics.counter.glean_time_invalid_timezone_offset ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Glean Time Invalid Timezone Offset"
   }
@@ -357,6 +404,7 @@ view: metrics_table {
   dimension: metrics__counter__glean_upload_deleted_pings_after_quota_hit {
     sql: ${TABLE}.metrics.counter.glean_upload_deleted_pings_after_quota_hit ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Glean Upload Deleted Pings After Quota Hit"
   }
@@ -364,6 +412,7 @@ view: metrics_table {
   dimension: metrics__counter__glean_upload_in_flight_pings_dropped {
     sql: ${TABLE}.metrics.counter.glean_upload_in_flight_pings_dropped ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Glean Upload In Flight Pings Dropped"
   }
@@ -371,6 +420,7 @@ view: metrics_table {
   dimension: metrics__counter__glean_upload_missing_send_ids {
     sql: ${TABLE}.metrics.counter.glean_upload_missing_send_ids ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Glean Upload Missing Send Ids"
   }
@@ -378,6 +428,7 @@ view: metrics_table {
   dimension: metrics__counter__glean_upload_pending_pings {
     sql: ${TABLE}.metrics.counter.glean_upload_pending_pings ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Glean Upload Pending Pings"
   }
@@ -385,6 +436,7 @@ view: metrics_table {
   dimension: metrics__counter__glean_validation_app_forceclosed_count {
     sql: ${TABLE}.metrics.counter.glean_validation_app_forceclosed_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Glean Validation App Forceclosed Count"
   }
@@ -392,6 +444,7 @@ view: metrics_table {
   dimension: metrics__counter__glean_validation_baseline_ping_count {
     sql: ${TABLE}.metrics.counter.glean_validation_baseline_ping_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Glean Validation Baseline Ping Count"
   }
@@ -399,6 +452,7 @@ view: metrics_table {
   dimension: metrics__counter__glean_validation_foreground_count {
     sql: ${TABLE}.metrics.counter.glean_validation_foreground_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Glean Validation Foreground Count"
   }
@@ -406,6 +460,7 @@ view: metrics_table {
   dimension: metrics__datetime__raw_glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.raw_glean_validation_first_run_hour ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Datetime"
     group_item_label: "Raw Glean Validation First Run Hour"
   }
@@ -443,6 +498,7 @@ view: metrics_table {
   dimension: metrics__memory_distribution__glean_database_size__count {
     sql: ${TABLE}.metrics.memory_distribution.glean_database_size.count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Memory Distribution Glean Database Size"
     group_item_label: "Count"
   }
@@ -450,6 +506,7 @@ view: metrics_table {
   dimension: metrics__memory_distribution__glean_database_size__sum {
     sql: ${TABLE}.metrics.memory_distribution.glean_database_size.sum ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Memory Distribution Glean Database Size"
     group_item_label: "Sum"
   }
@@ -462,6 +519,7 @@ view: metrics_table {
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__count {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Memory Distribution Glean Upload Discarded Exceeding Pings Size"
     group_item_label: "Count"
   }
@@ -469,6 +527,7 @@ view: metrics_table {
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__sum {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.sum ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Memory Distribution Glean Upload Discarded Exceeding Pings Size"
     group_item_label: "Sum"
   }
@@ -481,6 +540,7 @@ view: metrics_table {
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__count {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Memory Distribution Glean Upload Pending Pings Directory Size"
     group_item_label: "Count"
   }
@@ -488,6 +548,7 @@ view: metrics_table {
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__sum {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.sum ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Memory Distribution Glean Upload Pending Pings Directory Size"
     group_item_label: "Sum"
   }
@@ -500,6 +561,7 @@ view: metrics_table {
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Glean Client Annotation Experimentation Id"
   }
@@ -507,6 +569,7 @@ view: metrics_table {
   dimension: metrics__string__glean_database_rkv_load_error {
     sql: ${TABLE}.metrics.string.glean_database_rkv_load_error ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Glean Database Rkv Load Error"
   }
@@ -514,6 +577,7 @@ view: metrics_table {
   dimension: metrics__string__ping_reason {
     sql: ${TABLE}.metrics.string.ping_reason ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Ping Reason"
   }
@@ -521,6 +585,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_database_write_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.bucket_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Database Write Time"
     group_item_label: "Bucket Count"
   }
@@ -528,6 +593,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_database_write_time__count {
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Database Write Time"
     group_item_label: "Count"
   }
@@ -535,6 +601,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_database_write_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.histogram_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Database Write Time"
     group_item_label: "Histogram Type"
   }
@@ -542,6 +609,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_database_write_time__overflow {
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.overflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Database Write Time"
     group_item_label: "Overflow"
   }
@@ -554,6 +622,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_database_write_time__sum {
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.sum ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Database Write Time"
     group_item_label: "Sum"
   }
@@ -561,6 +630,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_database_write_time__time_unit {
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Database Write Time"
     group_item_label: "Time Unit"
   }
@@ -568,6 +638,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_database_write_time__underflow {
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.underflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Database Write Time"
     group_item_label: "Underflow"
   }
@@ -580,6 +651,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_upload_send_failure__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.bucket_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Upload Send Failure"
     group_item_label: "Bucket Count"
   }
@@ -587,6 +659,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_upload_send_failure__count {
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Upload Send Failure"
     group_item_label: "Count"
   }
@@ -594,6 +667,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_upload_send_failure__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.histogram_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Upload Send Failure"
     group_item_label: "Histogram Type"
   }
@@ -601,6 +675,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_upload_send_failure__overflow {
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.overflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Upload Send Failure"
     group_item_label: "Overflow"
   }
@@ -613,6 +688,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_upload_send_failure__sum {
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.sum ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Upload Send Failure"
     group_item_label: "Sum"
   }
@@ -620,6 +696,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_upload_send_failure__time_unit {
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Upload Send Failure"
     group_item_label: "Time Unit"
   }
@@ -627,6 +704,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_upload_send_failure__underflow {
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.underflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Upload Send Failure"
     group_item_label: "Underflow"
   }
@@ -639,6 +717,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_upload_send_success__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.bucket_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Upload Send Success"
     group_item_label: "Bucket Count"
   }
@@ -646,6 +725,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_upload_send_success__count {
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Upload Send Success"
     group_item_label: "Count"
   }
@@ -653,6 +733,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_upload_send_success__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.histogram_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Upload Send Success"
     group_item_label: "Histogram Type"
   }
@@ -660,6 +741,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_upload_send_success__overflow {
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.overflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Upload Send Success"
     group_item_label: "Overflow"
   }
@@ -672,6 +754,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_upload_send_success__sum {
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.sum ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Upload Send Success"
     group_item_label: "Sum"
   }
@@ -679,6 +762,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_upload_send_success__time_unit {
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Upload Send Success"
     group_item_label: "Time Unit"
   }
@@ -686,6 +770,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_upload_send_success__underflow {
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.underflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Upload Send Success"
     group_item_label: "Underflow"
   }
@@ -698,6 +783,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.bucket_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Bucket Count"
   }
@@ -705,6 +791,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__count {
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Count"
   }
@@ -712,6 +799,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.histogram_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Histogram Type"
   }
@@ -719,6 +807,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__overflow {
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.overflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Overflow"
   }
@@ -731,6 +820,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__sum {
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.sum ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Sum"
   }
@@ -738,6 +828,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__time_unit {
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Time Unit"
   }
@@ -745,6 +836,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__underflow {
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.underflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Underflow"
   }
@@ -757,6 +849,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_validation_shutdown_wait__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.bucket_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
     group_item_label: "Bucket Count"
   }
@@ -764,6 +857,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_validation_shutdown_wait__count {
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
     group_item_label: "Count"
   }
@@ -771,6 +865,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_validation_shutdown_wait__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.histogram_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
     group_item_label: "Histogram Type"
   }
@@ -778,6 +873,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_validation_shutdown_wait__overflow {
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.overflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
     group_item_label: "Overflow"
   }
@@ -790,6 +886,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_validation_shutdown_wait__sum {
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.sum ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
     group_item_label: "Sum"
   }
@@ -797,6 +894,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_validation_shutdown_wait__time_unit {
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
     group_item_label: "Time Unit"
   }
@@ -804,6 +902,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__glean_validation_shutdown_wait__underflow {
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.underflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
     group_item_label: "Underflow"
   }
@@ -816,6 +915,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__performance_time_to_main_screen__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.bucket_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Performance Time To Main Screen"
     group_item_label: "Bucket Count"
   }
@@ -823,6 +923,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__performance_time_to_main_screen__count {
     sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Performance Time To Main Screen"
     group_item_label: "Count"
   }
@@ -830,6 +931,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__performance_time_to_main_screen__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.histogram_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Performance Time To Main Screen"
     group_item_label: "Histogram Type"
   }
@@ -837,6 +939,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__performance_time_to_main_screen__overflow {
     sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.overflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Performance Time To Main Screen"
     group_item_label: "Overflow"
   }
@@ -849,6 +952,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__performance_time_to_main_screen__sum {
     sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.sum ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Performance Time To Main Screen"
     group_item_label: "Sum"
   }
@@ -856,6 +960,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__performance_time_to_main_screen__time_unit {
     sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Performance Time To Main Screen"
     group_item_label: "Time Unit"
   }
@@ -863,6 +968,7 @@ view: metrics_table {
   dimension: metrics__timing_distribution__performance_time_to_main_screen__underflow {
     sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.underflow ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Performance Time To Main Screen"
     group_item_label: "Underflow"
   }
@@ -875,38 +981,45 @@ view: metrics_table {
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "App ID of the channel data was received from"
   }
 
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: ping_info__end_time {
     sql: ${TABLE}.ping_info.end_time ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "End Time"
   }
@@ -919,6 +1032,7 @@ view: metrics_table {
   dimension: ping_info__ping_type {
     sql: ${TABLE}.ping_info.ping_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Ping Type"
   }
@@ -926,6 +1040,7 @@ view: metrics_table {
   dimension: ping_info__reason {
     sql: ${TABLE}.ping_info.reason ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Reason"
   }
@@ -933,6 +1048,7 @@ view: metrics_table {
   dimension: ping_info__seq {
     sql: ${TABLE}.ping_info.seq ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Seq"
   }
@@ -940,6 +1056,7 @@ view: metrics_table {
   dimension: ping_info__start_time {
     sql: ${TABLE}.ping_info.start_time ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Start Time"
   }
@@ -947,11 +1064,13 @@ view: metrics_table {
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -967,6 +1086,7 @@ view: metrics_table {
   dimension_group: metrics__datetime__glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -982,6 +1102,7 @@ view: metrics_table {
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -997,6 +1118,7 @@ view: metrics_table {
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1012,6 +1134,7 @@ view: metrics_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1030,6 +1153,7 @@ view: metrics_table__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: extra {
@@ -1040,11 +1164,13 @@ view: metrics_table__events {
   dimension: name {
     sql: ${TABLE}.name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: timestamp {
     sql: ${TABLE}.timestamp ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1052,11 +1178,13 @@ view: metrics_table__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1064,11 +1192,13 @@ view: metrics_table__metrics__memory_distribution__glean_database_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1076,11 +1206,13 @@ view: metrics_table__metrics__memory_distribution__glean_upload_discarded_exceed
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1088,11 +1220,13 @@ view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_di
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1100,11 +1234,13 @@ view: metrics_table__metrics__timing_distribution__glean_database_write_time__va
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1112,11 +1248,13 @@ view: metrics_table__metrics__timing_distribution__glean_upload_send_failure__va
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1124,11 +1262,13 @@ view: metrics_table__metrics__timing_distribution__glean_upload_send_success__va
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1136,11 +1276,13 @@ view: metrics_table__metrics__timing_distribution__glean_validation_shutdown_dis
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1148,11 +1290,13 @@ view: metrics_table__metrics__timing_distribution__glean_validation_shutdown_wai
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1160,11 +1304,13 @@ view: metrics_table__metrics__timing_distribution__performance_time_to_main_scre
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1172,11 +1318,13 @@ view: metrics_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value__branch {
     sql: ${TABLE}.value.branch ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Branch"
   }
@@ -1184,6 +1332,7 @@ view: metrics_table__ping_info__experiments {
   dimension: value__extra__enrollment_id {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value Extra"
     group_item_label: "Enrollment Id"
   }
@@ -1191,6 +1340,7 @@ view: metrics_table__ping_info__experiments {
   dimension: value__extra__type {
     sql: ${TABLE}.value.extra.type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value Extra"
     group_item_label: "Type"
   }

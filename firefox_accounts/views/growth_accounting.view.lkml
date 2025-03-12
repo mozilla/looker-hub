@@ -8,12 +8,14 @@ view: growth_accounting {
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
   }
 
   dimension: days_registered_bits {
     sql: ${TABLE}.days_registered_bits ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "No. of days since registration event.
 "
   }
@@ -21,6 +23,7 @@ view: growth_accounting {
   dimension: days_seen_bits {
     sql: ${TABLE}.days_seen_bits ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "No. of days since the user had activity event.
 "
   }
@@ -28,6 +31,7 @@ view: growth_accounting {
   dimension: days_seen_in_tier1_country_bits {
     sql: ${TABLE}.days_seen_in_tier1_country_bits ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "No. of days since seen_in_tier1_country was last True.
 "
   }
@@ -35,17 +39,20 @@ view: growth_accounting {
   dimension: service {
     sql: ${TABLE}.service ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: user_agent_device_count {
     sql: ${TABLE}.user_agent_device_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Number of devices associated with the user, per service, per day. Estimated from the number of unique user agent strings."
   }
 
   dimension: user_id_sha256 {
     sql: ${TABLE}.user_id_sha256 ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: active_this_week {
@@ -82,6 +89,7 @@ view: growth_accounting {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

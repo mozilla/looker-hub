@@ -12,12 +12,6 @@ explore: deletion_request {
   description: "Explore for the deletion_request ping. This ping is submitted when a user opts out of sending technical and interaction data to Mozilla. This ping is intended to communicate to the Data Pipeline that the user wishes to have their reported Telemetry data deleted. As such it attempts to send itself at the moment the user opts out of data collection."
   view_name: deletion_request
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: deletion_request__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${deletion_request.metrics__labeled_counter__glean_error_invalid_label}) AS deletion_request__metrics__labeled_counter__glean_error_invalid_label ON ${deletion_request.document_id} = ${deletion_request__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: deletion_request {
   join: deletion_request__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${deletion_request.ping_info__experiments}) AS deletion_request__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

@@ -260,6 +260,23 @@ This version number does not have a physical unit: it's only useful to compare b
 "
   }
 
+  dimension: metrics__labeled_counter__update_bitshresult {
+    label: "Update Bitshresult"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_bitshresult ;;
+    group_label: "Update"
+    group_item_label: "Bitshresult"
+
+    link: {
+      label: "Glean Dictionary reference for Update Bitshresult"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/update_bitshresult"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If a BITS download fails on the Windows side (that is to say, BITS ecounters an error rather than Firefox failing to interact with BITS), it will likely give an hresult error indicating what happened. This probe reports those error codes to allow us to see if BITS is commonly failing on some systems. This probe is keyed on the type of update download, either \"PARTIAL\" or \"COMPLETE\". This metric was generated to correspond to the Legacy Telemetry scalar update.bitshresult.
+"
+  }
+
   dimension: metrics__boolean__update_can_usually_apply_updates {
     label: "Update Can Usually Apply Updates"
     hidden: no
@@ -368,6 +385,41 @@ This version number does not have a physical unit: it's only useful to compare b
 "
   }
 
+  dimension: metrics__labeled_counter__update_move_result {
+    label: "Update Move Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_move_result ;;
+    group_label: "Update"
+    group_item_label: "Move Result"
+
+    link: {
+      label: "Glean Dictionary reference for Update Move Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/update_move_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Firefox keeps downloading updates in a different place from updates that are ready to install. Once the download completes, the resulting file has to be moved from the downloading update directory to the ready update directory. This probe counts the results that we get when attempting to perform this file move. Valid values for the keys for this probe are stored in the MOVE_RESULT_* values in UpdateTelemetry.sys.mjs. This metric was generated to correspond to the Legacy Telemetry scalar update.move_result.
+"
+  }
+
+  dimension: metrics__counter__update_no_window_auto_restarts {
+    label: "Update No Window Auto Restarts"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_no_window_auto_restarts ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "No Window Auto Restarts"
+
+    link: {
+      label: "Glean Dictionary reference for Update No Window Auto Restarts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/update_no_window_auto_restarts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "On macOS, all browser windows can be closed without exiting Firefox. If there is an update pending in that case, and we can install it silently, we restart automatically in order to do so. This probe counts the number of times the browser restarts to silently install a pending update. This metric was generated to correspond to the Legacy Telemetry scalar update.no_window_auto_restarts.
+"
+  }
+
   dimension: metrics__boolean__update_service_enabled {
     label: "Update Service Enabled"
     hidden: no
@@ -383,6 +435,59 @@ This version number does not have a physical unit: it's only useful to compare b
     }
 
     description: "Preference \"app.update.service.enabled\": whether the Mozilla Maintenance Service is enabled.
+"
+  }
+
+  dimension: metrics__labeled_counter__update_skip_startup_update_reason {
+    label: "Update Skip Startup Update Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.update_skip_startup_update_reason ;;
+    group_label: "Update"
+    group_item_label: "Skip Startup Update Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Update Skip Startup Update Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/update_skip_startup_update_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "We usually install pending updates at startup, but there are a couple of reasons we might not. This value will be set to \"none\" if there was no reason not to install updates. If the value is \"DevToolsLaunching\", that means that we skipped applying updates because the application startup was actually a startup of the Browser Toolbox, not the browser itself. If the value is \"NotAnUpdatingTask\", that means that the browser launch is a background task other than the background update task, (which have update capabilities disabled). If the value is \"OtherInstanceRunning\", that means that the background update task was launched, but it didn't install an update in order to avoid interfering with other application instances. If the value is \"FirstStartup\", we didn't install any updates because the browser was launched by the installer. If the value is \"MultiSessionInstallLockout\", there are other browser instances running and the Multi Session Install Lockout timeout has not expired yet. Note that, for updates to be installed, the browser launches, sees the update, runs the updater, and exits. The updater then relaunches the browser when it completes. Naturally, the first launch is what decides if the update should be installed. But, if we are installing an update, the browser exits too early to send telemetry so it isn't sent until the second launch. It may be technically possible (though very unlikely) for the value sent on the second launch to not be \"none\".
+"
+  }
+
+  dimension: metrics__boolean__update_suppress_prompts {
+    label: "Update Suppress Prompts"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.update_suppress_prompts ;;
+    type: yesno
+    group_label: "Update"
+    group_item_label: "Suppress Prompts"
+
+    link: {
+      label: "Glean Dictionary reference for Update Suppress Prompts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/update_suppress_prompts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "When an update is available and app.update.auto is disabled, a popup is opened prompting the user to download and install the update. The pref app.update.suppressPrompts causes Firefox Nightly to wait up to 7 days before showing the prompt, instead showing a badge and banner in the meantime. It also prevents Nightly from showing update restart prompts, instead showing a badge and banner immediately. This value is set for the users who set this pref to true. This metric was generated to correspond to the Legacy Telemetry scalar update.suppress_prompts.
+"
+  }
+
+  dimension: metrics__string__update_version_pin {
+    label: "Update Version Pin"
+    hidden: no
+    sql: ${TABLE}.metrics.string.update_version_pin ;;
+    type: string
+    group_label: "Update"
+    group_item_label: "Version Pin"
+
+    link: {
+      label: "Glean Dictionary reference for Update Version Pin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/update_version_pin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The AppUpdatePin Enterprise Policy controls the maximum version that the browser can update to. If the policy is set, this probe will report the policy's value. The possible policy values are \"X.\" and \"X.Y.\", where X is the pinned major version and Y is the pinned minor version. This metric was generated to correspond to the Legacy Telemetry scalar update.version_pin.
 "
   }
 
@@ -486,21 +591,25 @@ The labels are the `category.name` identifier of the metric.
   dimension: app_version_major {
     sql: ${TABLE}.app_version_major ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: app_version_minor {
     sql: ${TABLE}.app_version_minor ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: app_version_patch {
     sql: ${TABLE}.app_version_patch ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Android Sdk Version"
     description: "The optional Android specific SDK version of the software running on this hardware device."
@@ -509,6 +618,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: client_info__app_build {
     sql: ${TABLE}.client_info.app_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Build"
     description: "The build identifier generated by the CI system (e.g. \"1234/A\"). For language bindings that provide automatic detection for this value, (e.g. Android/Kotlin), in the unlikely event that the build identifier can not be retrieved from the OS, it is set to \"inaccessible\". For other language bindings, if the value was not provided through configuration, this metric gets set to `Unknown`."
@@ -517,6 +627,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: client_info__app_channel {
     sql: ${TABLE}.client_info.app_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Channel"
     description: "The channel the application is being distributed on."
@@ -525,6 +636,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: client_info__app_display_version {
     sql: ${TABLE}.client_info.app_display_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Display Version"
     description: "The user visible version string (e.g. \"1.0.3\").  In the unlikely event that the display version can not be retrieved, it is set to \"inaccessible\"."
@@ -533,6 +645,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: client_info__architecture {
     sql: ${TABLE}.client_info.architecture ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Architecture"
     description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
@@ -541,6 +654,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: client_info__build_date {
     sql: ${TABLE}.client_info.build_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Build Date"
     description: "The date & time the application was built"
@@ -555,6 +669,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: client_info__device_manufacturer {
     sql: ${TABLE}.client_info.device_manufacturer ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
     description: "The manufacturer of the device the application is running on. Not set if the device manufacturer can't be determined (e.g. on Desktop)."
@@ -563,6 +678,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: client_info__device_model {
     sql: ${TABLE}.client_info.device_model ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
     description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
@@ -571,6 +687,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: client_info__first_run_date {
     sql: ${TABLE}.client_info.first_run_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "First Run Date"
     description: "The date of the first run of the application."
@@ -579,6 +696,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: client_info__locale {
     sql: ${TABLE}.client_info.locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Locale"
     description: "The locale of the application during initialization (e.g. \"es-ES\"). If the locale can't be determined on the system, the value is [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers), to indicate \"undetermined\"."
@@ -587,6 +705,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: client_info__os {
     sql: ${TABLE}.client_info.os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Os"
     description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
@@ -595,6 +714,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: client_info__os_version {
     sql: ${TABLE}.client_info.os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Os Version"
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
@@ -603,6 +723,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: client_info__session_count {
     sql: ${TABLE}.client_info.session_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session Count"
     description: "An optional running counter of the number of sessions for a client."
@@ -611,6 +732,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: client_info__session_id {
     sql: ${TABLE}.client_info.session_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session Id"
     description: "An optional UUID uniquely identifying the client's current session."
@@ -619,6 +741,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
     description: "The version of the Glean SDK"
@@ -627,6 +750,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: client_info__windows_build_number {
     sql: ${TABLE}.client_info.windows_build_number ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Windows Build Number"
     description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
@@ -647,6 +771,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "City"
   }
@@ -654,6 +779,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__geo__country {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
@@ -663,6 +789,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__geo__db_version {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Db Version"
     description: "The specific geo database version used for this lookup"
@@ -671,6 +798,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__geo__subdivision1 {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
@@ -679,6 +807,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__geo__subdivision2 {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
@@ -687,6 +816,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__header__date {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "Date"
     description: "Date HTTP header"
@@ -695,6 +825,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__header__dnt {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "Dnt"
     description: "DNT (Do Not Track) HTTP header"
@@ -703,6 +834,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header Parsed X Lb Tags"
     group_item_label: "Tls Cipher Hex"
   }
@@ -710,6 +842,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header Parsed X Lb Tags"
     group_item_label: "Tls Version"
   }
@@ -722,6 +855,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__header__x_debug_id {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Debug Id"
     description: "X-Debug-Id HTTP header"
@@ -730,6 +864,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__header__x_foxsec_ip_reputation {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
     description: "X-Foxsec-IP-Reputation header"
@@ -738,6 +873,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__header__x_lb_tags {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Lb Tags"
     description: "X-LB-Tags HTTP header"
@@ -746,6 +882,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__header__x_pingsender_version {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
@@ -754,6 +891,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__header__x_source_tags {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
@@ -762,6 +900,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__header__x_telemetry_agent {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
@@ -770,6 +909,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__isp__db_version {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Isp"
     group_item_label: "Db Version"
     description: "The specific geo ISP database version used for this lookup"
@@ -778,6 +918,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__isp__name {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Isp"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
@@ -786,6 +927,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__isp__organization {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Isp"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
@@ -794,6 +936,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__user_agent__browser {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Browser"
   }
@@ -801,6 +944,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__user_agent__os {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Os"
   }
@@ -808,6 +952,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metadata__user_agent__version {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Version"
   }
@@ -815,35 +960,41 @@ The labels are the `category.name` identifier of the metric.
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: ping_info__end_time {
     sql: ${TABLE}.ping_info.end_time ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "End Time"
   }
@@ -856,6 +1007,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: ping_info__ping_type {
     sql: ${TABLE}.ping_info.ping_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Ping Type"
   }
@@ -863,6 +1015,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: ping_info__reason {
     sql: ${TABLE}.ping_info.reason ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Reason"
   }
@@ -870,6 +1023,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: ping_info__seq {
     sql: ${TABLE}.ping_info.seq ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Seq"
   }
@@ -877,6 +1031,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: ping_info__start_time {
     sql: ${TABLE}.ping_info.start_time ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Start Time"
   }
@@ -884,6 +1039,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
@@ -908,6 +1064,7 @@ The labels are the `category.name` identifier of the metric.
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -923,6 +1080,7 @@ The labels are the `category.name` identifier of the metric.
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -938,6 +1096,7 @@ The labels are the `category.name` identifier of the metric.
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -953,6 +1112,7 @@ The labels are the `category.name` identifier of the metric.
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -972,6 +1132,31 @@ The labels are the `category.name` identifier of the metric.
 
   measure: ping_count {
     type: count
+  }
+
+  measure: update_no_window_auto_restarts {
+    type: sum
+    sql: ${metrics__counter__update_no_window_auto_restarts} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update No Window Auto Restarts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/update_no_window_auto_restarts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_no_window_auto_restarts_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_no_window_auto_restarts: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update No Window Auto Restarts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/update_no_window_auto_restarts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   sql_table_name: `mozdata.firefox_desktop_background_update.background_update` ;;
@@ -1143,6 +1328,129 @@ view: background_update__metrics__labeled_counter__glean_error_invalid_value {
   }
 }
 
+view: background_update__metrics__labeled_counter__update_bitshresult {
+  label: "Update - Bitshresult"
+
+  dimension: document_id {
+    type: string
+    sql: ${background_update.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${background_update.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${background_update.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: background_update__metrics__labeled_counter__update_move_result {
+  label: "Update - Move Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${background_update.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${background_update.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${background_update.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: background_update__metrics__labeled_counter__update_skip_startup_update_reason {
+  label: "Update - Skip Startup Update Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${background_update.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${background_update.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${background_update.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: suggest__background_update__metrics__labeled_counter__glean_error_invalid_label {
   derived_table: {
     sql: select
@@ -1166,6 +1474,7 @@ view: background_update__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: extra {
@@ -1176,11 +1485,13 @@ view: background_update__events {
   dimension: name {
     sql: ${TABLE}.name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: timestamp {
     sql: ${TABLE}.timestamp ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1188,11 +1499,13 @@ view: background_update__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1200,11 +1513,13 @@ view: background_update__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value__branch {
     sql: ${TABLE}.value.branch ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Branch"
   }
@@ -1212,6 +1527,7 @@ view: background_update__ping_info__experiments {
   dimension: value__extra__enrollment_id {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value Extra"
     group_item_label: "Enrollment Id"
   }
@@ -1219,6 +1535,7 @@ view: background_update__ping_info__experiments {
   dimension: value__extra__type {
     sql: ${TABLE}.value.extra.type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value Extra"
     group_item_label: "Type"
   }

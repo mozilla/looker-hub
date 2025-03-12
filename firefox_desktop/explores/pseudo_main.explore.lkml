@@ -12,12 +12,6 @@ explore: pseudo_main {
   description: "Explore for the pseudo_main ping. A ping designed to be submitted on the same schedule as the Legacy Telemetry \"main\" ping. See \"main\" ping documentation for details."
   view_name: pseudo_main
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: pseudo_main__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${pseudo_main.metrics__labeled_counter__glean_error_invalid_label}) AS pseudo_main__metrics__labeled_counter__glean_error_invalid_label ON ${pseudo_main.document_id} = ${pseudo_main__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: pseudo_main {
   join: pseudo_main__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${pseudo_main.ping_info__experiments}) AS pseudo_main__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

@@ -17,6 +17,8 @@ mobile_engagement_view_app_name,
 mobile_engagement_view_app_version,
 mobile_engagement_view_country,
 mobile_engagement_view_dau,
+mobile_engagement_view_device_manufacturer,
+mobile_engagement_view_device_type,
 mobile_engagement_view_distribution_id,
 mobile_engagement_view_install_source,
 mobile_engagement_view_is_mobile,
@@ -72,6 +74,8 @@ mobile_engagement_view.app_name AS mobile_engagement_view_app_name,
 mobile_engagement_view.app_version AS mobile_engagement_view_app_version,
 mobile_engagement_view.country AS mobile_engagement_view_country,
 mobile_engagement_view.dau AS mobile_engagement_view_dau,
+mobile_engagement_view.device_manufacturer AS mobile_engagement_view_device_manufacturer,
+mobile_engagement_view.device_type AS mobile_engagement_view_device_type,
 mobile_engagement_view.distribution_id AS mobile_engagement_view_distribution_id,
 mobile_engagement_view.install_source AS mobile_engagement_view_install_source,
 mobile_engagement_view.is_mobile AS mobile_engagement_view_is_mobile,
@@ -122,6 +126,8 @@ mobile_engagement_view_app_name,
 mobile_engagement_view_app_version,
 mobile_engagement_view_country,
 mobile_engagement_view_dau,
+mobile_engagement_view_device_manufacturer,
+mobile_engagement_view_device_type,
 mobile_engagement_view_distribution_id,
 mobile_engagement_view_install_source,
 mobile_engagement_view_is_mobile,
@@ -166,42 +172,49 @@ mobile_engagement_view_wau,
   dimension: adjust_ad_group {
     sql: ${TABLE}.mobile_engagement_view_adjust_ad_group ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: adjust_campaign {
     sql: ${TABLE}.mobile_engagement_view_adjust_campaign ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: adjust_creative {
     sql: ${TABLE}.mobile_engagement_view_adjust_creative ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: adjust_network {
     sql: ${TABLE}.mobile_engagement_view_adjust_network ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_name {
     sql: ${TABLE}.mobile_engagement_view_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version {
     sql: ${TABLE}.mobile_engagement_view_app_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: country {
     sql: ${TABLE}.mobile_engagement_view_country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
     group_label: "Base Fields"
   }
@@ -209,96 +222,126 @@ mobile_engagement_view_wau,
   dimension: dau {
     sql: ${TABLE}.mobile_engagement_view_dau ;;
     type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: device_manufacturer {
+    sql: ${TABLE}.mobile_engagement_view_device_manufacturer ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: device_type {
+    sql: ${TABLE}.mobile_engagement_view_device_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: distribution_id {
     sql: ${TABLE}.mobile_engagement_view_distribution_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: install_source {
     sql: ${TABLE}.mobile_engagement_view_install_source ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: is_mobile {
     sql: ${TABLE}.mobile_engagement_view_is_mobile ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: is_suspicious_device_client {
     sql: ${TABLE}.mobile_engagement_view_is_suspicious_device_client ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: lifecycle_stage {
     sql: ${TABLE}.mobile_engagement_view_lifecycle_stage ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: locale {
     sql: ${TABLE}.mobile_engagement_view_locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: mau {
     sql: ${TABLE}.mobile_engagement_view_mau ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: meta_attribution_app {
     sql: ${TABLE}.mobile_engagement_view_meta_attribution_app ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.mobile_engagement_view_normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: paid_vs_organic {
     sql: ${TABLE}.mobile_engagement_view_paid_vs_organic ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: play_store_attribution_campaign {
     sql: ${TABLE}.mobile_engagement_view_play_store_attribution_campaign ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: play_store_attribution_medium {
     sql: ${TABLE}.mobile_engagement_view_play_store_attribution_medium ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: play_store_attribution_source {
     sql: ${TABLE}.mobile_engagement_view_play_store_attribution_source ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: product_name {
     sql: ${TABLE}.mobile_engagement_view_product_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: wau {
     sql: ${TABLE}.mobile_engagement_view_wau ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 

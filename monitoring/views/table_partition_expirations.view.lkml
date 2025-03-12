@@ -8,44 +8,52 @@ view: table_partition_expirations {
   dimension: dataset_id {
     sql: ${TABLE}.dataset_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: expiration_changed {
     sql: ${TABLE}.expiration_changed ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     description: "True if the partition expiration value has changed in the past day"
   }
 
   dimension: first_partition_row_count {
     sql: ${TABLE}.first_partition_row_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Number of rows in the current first partition"
   }
 
   dimension: partition_expiration_days {
     sql: ${TABLE}.partition_expiration_days ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Maximum age of a partition before it is deleted"
   }
 
   dimension: previous_partition_expiration_days {
     sql: ${TABLE}.previous_partition_expiration_days ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: project_id {
     sql: ${TABLE}.project_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: table_id {
     sql: ${TABLE}.table_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: first_non_empty_partition_current {
     sql: ${TABLE}.first_non_empty_partition_current ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -62,6 +70,7 @@ view: table_partition_expirations {
   dimension_group: first_non_empty_partition_historical {
     sql: ${TABLE}.first_non_empty_partition_historical ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -79,6 +88,7 @@ view: table_partition_expirations {
   dimension_group: first_partition_current {
     sql: ${TABLE}.first_partition_current ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -95,6 +105,7 @@ view: table_partition_expirations {
   dimension_group: first_partition_historical {
     sql: ${TABLE}.first_partition_historical ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -111,6 +122,7 @@ view: table_partition_expirations {
   dimension_group: next_deletion {
     sql: ${TABLE}.next_deletion_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -128,6 +140,7 @@ view: table_partition_expirations {
   dimension_group: run {
     sql: ${TABLE}.run_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

@@ -8,16 +8,19 @@ view: geckoview_version_table {
   dimension: geckoview_major_version {
     sql: ${TABLE}.geckoview_major_version ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: n_pings {
     sql: ${TABLE}.n_pings ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: build_hour {
     sql: ${TABLE}.build_hour ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

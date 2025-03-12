@@ -209,96 +209,112 @@ admarketplace_valid_impressions,
   dimension: advertiser {
     sql: ${TABLE}.admarketplace_advertiser ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: alternative_revenue {
     sql: ${TABLE}.admarketplace_alternative_revenue ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: avg_pub_cpc {
     sql: ${TABLE}.admarketplace_avg_pub_cpc ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: country_code {
     sql: ${TABLE}.admarketplace_country_code ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: country_name {
     sql: ${TABLE}.admarketplace_country_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: device {
     sql: ${TABLE}.admarketplace_device ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: partner_name {
     sql: ${TABLE}.admarketplace_partner_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: placement {
     sql: ${TABLE}.admarketplace_placement ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: position {
     sql: ${TABLE}.admarketplace_position ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: pricing_model {
     sql: ${TABLE}.admarketplace_pricing_model ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: product {
     sql: ${TABLE}.admarketplace_product ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: report {
     sql: ${TABLE}.admarketplace_report ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: rpm_rate {
     sql: ${TABLE}.admarketplace_rpm_rate ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: source_file {
     sql: ${TABLE}.admarketplace_source_file ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: valid_clicks {
     sql: ${TABLE}.admarketplace_valid_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: valid_impressions {
     sql: ${TABLE}.admarketplace_valid_impressions ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 

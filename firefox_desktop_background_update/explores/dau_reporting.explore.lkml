@@ -12,12 +12,6 @@ explore: dau_reporting {
   description: "Explore for the dau_reporting ping. Minimal ping to measure DAU. Sent on the baseline schedule. **NOTE**: This ping is deprecated and replaced by the `usage-reporting` ping."
   view_name: dau_reporting
 
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
-
   join: dau_reporting__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${dau_reporting.metrics__labeled_counter__glean_error_invalid_label}) AS dau_reporting__metrics__labeled_counter__glean_error_invalid_label ON ${dau_reporting.document_id} = ${dau_reporting__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -51,6 +45,12 @@ explore: dau_reporting {
   join: dau_reporting__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${dau_reporting.ping_info__experiments}) AS dau_reporting__ping_info__experiments ;;
+  }
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

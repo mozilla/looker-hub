@@ -17,21 +17,25 @@ view: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users {
   dimension: branch {
     sql: ${TABLE}.branch ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: metric {
     sql: ${TABLE}.metric ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: parameter {
     sql: ${TABLE}.parameter ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: statistic {
     sql: ${TABLE}.statistic ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   measure: point {

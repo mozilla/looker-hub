@@ -13,21 +13,25 @@ view: migration_table {
   dimension: app_version_major {
     sql: ${TABLE}.app_version_major ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: app_version_minor {
     sql: ${TABLE}.app_version_minor ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: app_version_patch {
     sql: ${TABLE}.app_version_patch ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Android Sdk Version"
   }
@@ -35,6 +39,7 @@ view: migration_table {
   dimension: client_info__app_build {
     sql: ${TABLE}.client_info.app_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Build"
   }
@@ -42,6 +47,7 @@ view: migration_table {
   dimension: client_info__app_channel {
     sql: ${TABLE}.client_info.app_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Channel"
   }
@@ -49,6 +55,7 @@ view: migration_table {
   dimension: client_info__app_display_version {
     sql: ${TABLE}.client_info.app_display_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Display Version"
   }
@@ -56,6 +63,7 @@ view: migration_table {
   dimension: client_info__architecture {
     sql: ${TABLE}.client_info.architecture ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Architecture"
   }
@@ -63,6 +71,7 @@ view: migration_table {
   dimension: client_info__build_date {
     sql: ${TABLE}.client_info.build_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Build Date"
   }
@@ -75,6 +84,7 @@ view: migration_table {
   dimension: client_info__device_manufacturer {
     sql: ${TABLE}.client_info.device_manufacturer ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
   }
@@ -82,6 +92,7 @@ view: migration_table {
   dimension: client_info__device_model {
     sql: ${TABLE}.client_info.device_model ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
   }
@@ -89,6 +100,7 @@ view: migration_table {
   dimension: client_info__first_run_date {
     sql: ${TABLE}.client_info.first_run_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "First Run Date"
   }
@@ -96,6 +108,7 @@ view: migration_table {
   dimension: client_info__locale {
     sql: ${TABLE}.client_info.locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Locale"
   }
@@ -103,6 +116,7 @@ view: migration_table {
   dimension: client_info__os {
     sql: ${TABLE}.client_info.os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Os"
   }
@@ -110,6 +124,7 @@ view: migration_table {
   dimension: client_info__os_version {
     sql: ${TABLE}.client_info.os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Os Version"
   }
@@ -117,6 +132,7 @@ view: migration_table {
   dimension: client_info__session_count {
     sql: ${TABLE}.client_info.session_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session Count"
   }
@@ -124,6 +140,7 @@ view: migration_table {
   dimension: client_info__session_id {
     sql: ${TABLE}.client_info.session_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session Id"
   }
@@ -131,6 +148,7 @@ view: migration_table {
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
   }
@@ -138,6 +156,7 @@ view: migration_table {
   dimension: client_info__windows_build_number {
     sql: ${TABLE}.client_info.windows_build_number ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Windows Build Number"
   }
@@ -155,6 +174,7 @@ view: migration_table {
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "City"
   }
@@ -162,6 +182,7 @@ view: migration_table {
   dimension: metadata__geo__country {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
@@ -170,6 +191,7 @@ view: migration_table {
   dimension: metadata__geo__db_version {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Db Version"
   }
@@ -177,6 +199,7 @@ view: migration_table {
   dimension: metadata__geo__subdivision1 {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
   }
@@ -184,6 +207,7 @@ view: migration_table {
   dimension: metadata__geo__subdivision2 {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
   }
@@ -191,6 +215,7 @@ view: migration_table {
   dimension: metadata__header__date {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "Date"
   }
@@ -198,6 +223,7 @@ view: migration_table {
   dimension: metadata__header__dnt {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "Dnt"
   }
@@ -205,6 +231,7 @@ view: migration_table {
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header Parsed X Lb Tags"
     group_item_label: "Tls Cipher Hex"
   }
@@ -212,6 +239,7 @@ view: migration_table {
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header Parsed X Lb Tags"
     group_item_label: "Tls Version"
   }
@@ -224,6 +252,7 @@ view: migration_table {
   dimension: metadata__header__x_debug_id {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Debug Id"
   }
@@ -231,6 +260,7 @@ view: migration_table {
   dimension: metadata__header__x_foxsec_ip_reputation {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
   }
@@ -238,6 +268,7 @@ view: migration_table {
   dimension: metadata__header__x_lb_tags {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Lb Tags"
   }
@@ -245,6 +276,7 @@ view: migration_table {
   dimension: metadata__header__x_pingsender_version {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
   }
@@ -252,6 +284,7 @@ view: migration_table {
   dimension: metadata__header__x_source_tags {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
   }
@@ -259,6 +292,7 @@ view: migration_table {
   dimension: metadata__header__x_telemetry_agent {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
   }
@@ -266,6 +300,7 @@ view: migration_table {
   dimension: metadata__isp__db_version {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Isp"
     group_item_label: "Db Version"
   }
@@ -273,6 +308,7 @@ view: migration_table {
   dimension: metadata__isp__name {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Isp"
     group_item_label: "Name"
   }
@@ -280,6 +316,7 @@ view: migration_table {
   dimension: metadata__isp__organization {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Isp"
     group_item_label: "Organization"
   }
@@ -287,6 +324,7 @@ view: migration_table {
   dimension: metadata__user_agent__browser {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Browser"
   }
@@ -294,6 +332,7 @@ view: migration_table {
   dimension: metadata__user_agent__os {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Os"
   }
@@ -301,6 +340,7 @@ view: migration_table {
   dimension: metadata__user_agent__version {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Version"
   }
@@ -308,6 +348,7 @@ view: migration_table {
   dimension: metrics__boolean__migration_addons_any_failures {
     sql: ${TABLE}.metrics.boolean.migration_addons_any_failures ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Migration Addons Any Failures"
   }
@@ -315,6 +356,7 @@ view: migration_table {
   dimension: metrics__boolean__migration_bookmarks_any_failures {
     sql: ${TABLE}.metrics.boolean.migration_bookmarks_any_failures ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Migration Bookmarks Any Failures"
   }
@@ -322,6 +364,7 @@ view: migration_table {
   dimension: metrics__boolean__migration_fxa_any_failures {
     sql: ${TABLE}.metrics.boolean.migration_fxa_any_failures ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Migration Fxa Any Failures"
   }
@@ -329,6 +372,7 @@ view: migration_table {
   dimension: metrics__boolean__migration_fxa_has_custom_idp_server {
     sql: ${TABLE}.metrics.boolean.migration_fxa_has_custom_idp_server ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Migration Fxa Has Custom Idp Server"
   }
@@ -336,6 +380,7 @@ view: migration_table {
   dimension: metrics__boolean__migration_fxa_has_custom_token_server {
     sql: ${TABLE}.metrics.boolean.migration_fxa_has_custom_token_server ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Migration Fxa Has Custom Token Server"
   }
@@ -343,6 +388,7 @@ view: migration_table {
   dimension: metrics__boolean__migration_gecko_any_failures {
     sql: ${TABLE}.metrics.boolean.migration_gecko_any_failures ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Migration Gecko Any Failures"
   }
@@ -350,6 +396,7 @@ view: migration_table {
   dimension: metrics__boolean__migration_history_any_failures {
     sql: ${TABLE}.metrics.boolean.migration_history_any_failures ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Migration History Any Failures"
   }
@@ -357,6 +404,7 @@ view: migration_table {
   dimension: metrics__boolean__migration_logins_any_failures {
     sql: ${TABLE}.metrics.boolean.migration_logins_any_failures ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Migration Logins Any Failures"
   }
@@ -364,6 +412,7 @@ view: migration_table {
   dimension: metrics__boolean__migration_open_tabs_any_failures {
     sql: ${TABLE}.metrics.boolean.migration_open_tabs_any_failures ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Migration Open Tabs Any Failures"
   }
@@ -371,6 +420,7 @@ view: migration_table {
   dimension: metrics__boolean__migration_pinned_sites_any_failures {
     sql: ${TABLE}.metrics.boolean.migration_pinned_sites_any_failures ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Migration Pinned Sites Any Failures"
   }
@@ -378,6 +428,7 @@ view: migration_table {
   dimension: metrics__boolean__migration_search_any_failures {
     sql: ${TABLE}.metrics.boolean.migration_search_any_failures ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Migration Search Any Failures"
   }
@@ -385,6 +436,7 @@ view: migration_table {
   dimension: metrics__boolean__migration_settings_any_failures {
     sql: ${TABLE}.metrics.boolean.migration_settings_any_failures ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Migration Settings Any Failures"
   }
@@ -392,6 +444,7 @@ view: migration_table {
   dimension: metrics__boolean__migration_settings_telemetry_enabled {
     sql: ${TABLE}.metrics.boolean.migration_settings_telemetry_enabled ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Migration Settings Telemetry Enabled"
   }
@@ -399,6 +452,7 @@ view: migration_table {
   dimension: metrics__boolean__migration_telemetry_identifiers_any_failures {
     sql: ${TABLE}.metrics.boolean.migration_telemetry_identifiers_any_failures ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Migration Telemetry Identifiers Any Failures"
   }
@@ -406,6 +460,7 @@ view: migration_table {
   dimension: metrics__counter__migration_addons_failed_addons {
     sql: ${TABLE}.metrics.counter.migration_addons_failed_addons ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Addons Failed Addons"
   }
@@ -413,6 +468,7 @@ view: migration_table {
   dimension: metrics__counter__migration_addons_failure_reason {
     sql: ${TABLE}.metrics.counter.migration_addons_failure_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Addons Failure Reason"
   }
@@ -420,6 +476,7 @@ view: migration_table {
   dimension: metrics__counter__migration_addons_migrated_addons {
     sql: ${TABLE}.metrics.counter.migration_addons_migrated_addons ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Addons Migrated Addons"
   }
@@ -427,6 +484,7 @@ view: migration_table {
   dimension: metrics__counter__migration_addons_success_reason {
     sql: ${TABLE}.metrics.counter.migration_addons_success_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Addons Success Reason"
   }
@@ -434,6 +492,7 @@ view: migration_table {
   dimension: metrics__counter__migration_bookmarks_detected {
     sql: ${TABLE}.metrics.counter.migration_bookmarks_detected ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Bookmarks Detected"
   }
@@ -441,6 +500,7 @@ view: migration_table {
   dimension: metrics__counter__migration_bookmarks_failure_reason {
     sql: ${TABLE}.metrics.counter.migration_bookmarks_failure_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Bookmarks Failure Reason"
   }
@@ -448,6 +508,7 @@ view: migration_table {
   dimension: metrics__counter__migration_bookmarks_success_reason {
     sql: ${TABLE}.metrics.counter.migration_bookmarks_success_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Bookmarks Success Reason"
   }
@@ -455,6 +516,7 @@ view: migration_table {
   dimension: metrics__counter__migration_fxa_failure_reason {
     sql: ${TABLE}.metrics.counter.migration_fxa_failure_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Fxa Failure Reason"
   }
@@ -462,6 +524,7 @@ view: migration_table {
   dimension: metrics__counter__migration_fxa_success_reason {
     sql: ${TABLE}.metrics.counter.migration_fxa_success_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Fxa Success Reason"
   }
@@ -469,6 +532,7 @@ view: migration_table {
   dimension: metrics__counter__migration_gecko_failure_reason {
     sql: ${TABLE}.metrics.counter.migration_gecko_failure_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Gecko Failure Reason"
   }
@@ -476,6 +540,7 @@ view: migration_table {
   dimension: metrics__counter__migration_gecko_success_reason {
     sql: ${TABLE}.metrics.counter.migration_gecko_success_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Gecko Success Reason"
   }
@@ -483,6 +548,7 @@ view: migration_table {
   dimension: metrics__counter__migration_history_detected {
     sql: ${TABLE}.metrics.counter.migration_history_detected ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration History Detected"
   }
@@ -490,6 +556,7 @@ view: migration_table {
   dimension: metrics__counter__migration_history_failure_reason {
     sql: ${TABLE}.metrics.counter.migration_history_failure_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration History Failure Reason"
   }
@@ -497,6 +564,7 @@ view: migration_table {
   dimension: metrics__counter__migration_history_success_reason {
     sql: ${TABLE}.metrics.counter.migration_history_success_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration History Success Reason"
   }
@@ -504,6 +572,7 @@ view: migration_table {
   dimension: metrics__counter__migration_logins_detected {
     sql: ${TABLE}.metrics.counter.migration_logins_detected ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Logins Detected"
   }
@@ -511,6 +580,7 @@ view: migration_table {
   dimension: metrics__counter__migration_logins_failure_reason {
     sql: ${TABLE}.metrics.counter.migration_logins_failure_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Logins Failure Reason"
   }
@@ -518,6 +588,7 @@ view: migration_table {
   dimension: metrics__counter__migration_logins_success_reason {
     sql: ${TABLE}.metrics.counter.migration_logins_success_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Logins Success Reason"
   }
@@ -525,6 +596,7 @@ view: migration_table {
   dimension: metrics__counter__migration_logins_unsupported_db_version {
     sql: ${TABLE}.metrics.counter.migration_logins_unsupported_db_version ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Logins Unsupported Db Version"
   }
@@ -532,6 +604,7 @@ view: migration_table {
   dimension: metrics__counter__migration_open_tabs_detected {
     sql: ${TABLE}.metrics.counter.migration_open_tabs_detected ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Open Tabs Detected"
   }
@@ -539,6 +612,7 @@ view: migration_table {
   dimension: metrics__counter__migration_open_tabs_failure_reason {
     sql: ${TABLE}.metrics.counter.migration_open_tabs_failure_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Open Tabs Failure Reason"
   }
@@ -546,6 +620,7 @@ view: migration_table {
   dimension: metrics__counter__migration_open_tabs_migrated {
     sql: ${TABLE}.metrics.counter.migration_open_tabs_migrated ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Open Tabs Migrated"
   }
@@ -553,6 +628,7 @@ view: migration_table {
   dimension: metrics__counter__migration_open_tabs_success_reason {
     sql: ${TABLE}.metrics.counter.migration_open_tabs_success_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Open Tabs Success Reason"
   }
@@ -560,6 +636,7 @@ view: migration_table {
   dimension: metrics__counter__migration_pinned_sites_detected_pinned_sites {
     sql: ${TABLE}.metrics.counter.migration_pinned_sites_detected_pinned_sites ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Pinned Sites Detected Pinned Sites"
   }
@@ -567,6 +644,7 @@ view: migration_table {
   dimension: metrics__counter__migration_pinned_sites_failure_reason {
     sql: ${TABLE}.metrics.counter.migration_pinned_sites_failure_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Pinned Sites Failure Reason"
   }
@@ -574,6 +652,7 @@ view: migration_table {
   dimension: metrics__counter__migration_pinned_sites_migrated_pinned_sites {
     sql: ${TABLE}.metrics.counter.migration_pinned_sites_migrated_pinned_sites ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Pinned Sites Migrated Pinned Sites"
   }
@@ -581,6 +660,7 @@ view: migration_table {
   dimension: metrics__counter__migration_pinned_sites_success_reason {
     sql: ${TABLE}.metrics.counter.migration_pinned_sites_success_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Pinned Sites Success Reason"
   }
@@ -588,6 +668,7 @@ view: migration_table {
   dimension: metrics__counter__migration_search_failure_reason {
     sql: ${TABLE}.metrics.counter.migration_search_failure_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Search Failure Reason"
   }
@@ -595,6 +676,7 @@ view: migration_table {
   dimension: metrics__counter__migration_search_success_reason {
     sql: ${TABLE}.metrics.counter.migration_search_success_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Search Success Reason"
   }
@@ -602,6 +684,7 @@ view: migration_table {
   dimension: metrics__counter__migration_settings_failure_reason {
     sql: ${TABLE}.metrics.counter.migration_settings_failure_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Settings Failure Reason"
   }
@@ -609,6 +692,7 @@ view: migration_table {
   dimension: metrics__counter__migration_settings_success_reason {
     sql: ${TABLE}.metrics.counter.migration_settings_success_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Settings Success Reason"
   }
@@ -616,6 +700,7 @@ view: migration_table {
   dimension: metrics__counter__migration_telemetry_identifiers_failure_reason {
     sql: ${TABLE}.metrics.counter.migration_telemetry_identifiers_failure_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Telemetry Identifiers Failure Reason"
   }
@@ -623,6 +708,7 @@ view: migration_table {
   dimension: metrics__counter__migration_telemetry_identifiers_success_reason {
     sql: ${TABLE}.metrics.counter.migration_telemetry_identifiers_success_reason ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Migration Telemetry Identifiers Success Reason"
   }
@@ -630,6 +716,7 @@ view: migration_table {
   dimension: metrics__datetime__migration_telemetry_identifiers_fennec_profile_creation_date {
     sql: ${TABLE}.metrics.datetime.migration_telemetry_identifiers_fennec_profile_creation_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Datetime"
     group_item_label: "Migration Telemetry Identifiers Fennec Profile Creation Date"
   }
@@ -637,6 +724,7 @@ view: migration_table {
   dimension: metrics__datetime__raw_migration_telemetry_identifiers_fennec_profile_creation_date {
     sql: ${TABLE}.metrics.datetime.raw_migration_telemetry_identifiers_fennec_profile_creation_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Datetime"
     group_item_label: "Raw Migration Telemetry Identifiers Fennec Profile Creation Date"
   }
@@ -694,6 +782,7 @@ view: migration_table {
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Glean Client Annotation Experimentation Id"
   }
@@ -701,6 +790,7 @@ view: migration_table {
   dimension: metrics__string__migration_fxa_bad_auth_state {
     sql: ${TABLE}.metrics.string.migration_fxa_bad_auth_state ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Migration Fxa Bad Auth State"
   }
@@ -708,6 +798,7 @@ view: migration_table {
   dimension: metrics__string__migration_fxa_failure_reason_rust {
     sql: ${TABLE}.metrics.string.migration_fxa_failure_reason_rust ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Migration Fxa Failure Reason Rust"
   }
@@ -715,6 +806,7 @@ view: migration_table {
   dimension: metrics__string__migration_fxa_unsupported_account_version {
     sql: ${TABLE}.metrics.string.migration_fxa_unsupported_account_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Migration Fxa Unsupported Account Version"
   }
@@ -722,6 +814,7 @@ view: migration_table {
   dimension: metrics__string__migration_fxa_unsupported_pickle_version {
     sql: ${TABLE}.metrics.string.migration_fxa_unsupported_pickle_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Migration Fxa Unsupported Pickle Version"
   }
@@ -729,6 +822,7 @@ view: migration_table {
   dimension: metrics__string__migration_fxa_unsupported_state_version {
     sql: ${TABLE}.metrics.string.migration_fxa_unsupported_state_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Migration Fxa Unsupported State Version"
   }
@@ -741,6 +835,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_addons_total_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.migration_addons_total_duration.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Addons Total Duration"
     group_item_label: "Time Unit"
   }
@@ -748,6 +843,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_addons_total_duration__value {
     sql: ${TABLE}.metrics.timespan.migration_addons_total_duration.value ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Addons Total Duration"
     group_item_label: "Value"
   }
@@ -755,6 +851,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_bookmarks_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.migration_bookmarks_duration.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Bookmarks Duration"
     group_item_label: "Time Unit"
   }
@@ -762,6 +859,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_bookmarks_duration__value {
     sql: ${TABLE}.metrics.timespan.migration_bookmarks_duration.value ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Bookmarks Duration"
     group_item_label: "Value"
   }
@@ -769,6 +867,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_bookmarks_total_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.migration_bookmarks_total_duration.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Bookmarks Total Duration"
     group_item_label: "Time Unit"
   }
@@ -776,6 +875,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_bookmarks_total_duration__value {
     sql: ${TABLE}.metrics.timespan.migration_bookmarks_total_duration.value ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Bookmarks Total Duration"
     group_item_label: "Value"
   }
@@ -783,6 +883,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_fxa_total_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.migration_fxa_total_duration.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Fxa Total Duration"
     group_item_label: "Time Unit"
   }
@@ -790,6 +891,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_fxa_total_duration__value {
     sql: ${TABLE}.metrics.timespan.migration_fxa_total_duration.value ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Fxa Total Duration"
     group_item_label: "Value"
   }
@@ -797,6 +899,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_gecko_total_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.migration_gecko_total_duration.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Gecko Total Duration"
     group_item_label: "Time Unit"
   }
@@ -804,6 +907,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_gecko_total_duration__value {
     sql: ${TABLE}.metrics.timespan.migration_gecko_total_duration.value ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Gecko Total Duration"
     group_item_label: "Value"
   }
@@ -811,6 +915,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_history_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.migration_history_duration.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration History Duration"
     group_item_label: "Time Unit"
   }
@@ -818,6 +923,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_history_duration__value {
     sql: ${TABLE}.metrics.timespan.migration_history_duration.value ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration History Duration"
     group_item_label: "Value"
   }
@@ -825,6 +931,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_history_total_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.migration_history_total_duration.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration History Total Duration"
     group_item_label: "Time Unit"
   }
@@ -832,6 +939,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_history_total_duration__value {
     sql: ${TABLE}.metrics.timespan.migration_history_total_duration.value ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration History Total Duration"
     group_item_label: "Value"
   }
@@ -839,6 +947,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_logins_total_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.migration_logins_total_duration.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Logins Total Duration"
     group_item_label: "Time Unit"
   }
@@ -846,6 +955,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_logins_total_duration__value {
     sql: ${TABLE}.metrics.timespan.migration_logins_total_duration.value ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Logins Total Duration"
     group_item_label: "Value"
   }
@@ -853,6 +963,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_open_tabs_total_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.migration_open_tabs_total_duration.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Open Tabs Total Duration"
     group_item_label: "Time Unit"
   }
@@ -860,6 +971,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_open_tabs_total_duration__value {
     sql: ${TABLE}.metrics.timespan.migration_open_tabs_total_duration.value ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Open Tabs Total Duration"
     group_item_label: "Value"
   }
@@ -867,6 +979,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_pinned_sites_total_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.migration_pinned_sites_total_duration.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Pinned Sites Total Duration"
     group_item_label: "Time Unit"
   }
@@ -874,6 +987,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_pinned_sites_total_duration__value {
     sql: ${TABLE}.metrics.timespan.migration_pinned_sites_total_duration.value ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Pinned Sites Total Duration"
     group_item_label: "Value"
   }
@@ -881,6 +995,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_search_total_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.migration_search_total_duration.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Search Total Duration"
     group_item_label: "Time Unit"
   }
@@ -888,6 +1003,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_search_total_duration__value {
     sql: ${TABLE}.metrics.timespan.migration_search_total_duration.value ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Search Total Duration"
     group_item_label: "Value"
   }
@@ -895,6 +1011,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_settings_total_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.migration_settings_total_duration.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Settings Total Duration"
     group_item_label: "Time Unit"
   }
@@ -902,6 +1019,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_settings_total_duration__value {
     sql: ${TABLE}.metrics.timespan.migration_settings_total_duration.value ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Settings Total Duration"
     group_item_label: "Value"
   }
@@ -909,6 +1027,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_telemetry_identifiers_total_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.migration_telemetry_identifiers_total_duration.time_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Telemetry Identifiers Total Duration"
     group_item_label: "Time Unit"
   }
@@ -916,6 +1035,7 @@ view: migration_table {
   dimension: metrics__timespan__migration_telemetry_identifiers_total_duration__value {
     sql: ${TABLE}.metrics.timespan.migration_telemetry_identifiers_total_duration.value ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Timespan Migration Telemetry Identifiers Total Duration"
     group_item_label: "Value"
   }
@@ -928,6 +1048,7 @@ view: migration_table {
   dimension: metrics__uuid__migration_telemetry_identifiers_fennec_client_id {
     sql: ${TABLE}.metrics.uuid.migration_telemetry_identifiers_fennec_client_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metrics Uuid"
     group_item_label: "Migration Telemetry Identifiers Fennec Client Id"
   }
@@ -935,38 +1056,45 @@ view: migration_table {
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "App ID of the channel data was received from"
   }
 
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: ping_info__end_time {
     sql: ${TABLE}.ping_info.end_time ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "End Time"
   }
@@ -979,6 +1107,7 @@ view: migration_table {
   dimension: ping_info__ping_type {
     sql: ${TABLE}.ping_info.ping_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Ping Type"
   }
@@ -986,6 +1115,7 @@ view: migration_table {
   dimension: ping_info__reason {
     sql: ${TABLE}.ping_info.reason ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Reason"
   }
@@ -993,6 +1123,7 @@ view: migration_table {
   dimension: ping_info__seq {
     sql: ${TABLE}.ping_info.seq ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Seq"
   }
@@ -1000,6 +1131,7 @@ view: migration_table {
   dimension: ping_info__start_time {
     sql: ${TABLE}.ping_info.start_time ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Start Time"
   }
@@ -1007,11 +1139,13 @@ view: migration_table {
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1027,6 +1161,7 @@ view: migration_table {
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1042,6 +1177,7 @@ view: migration_table {
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1057,6 +1193,7 @@ view: migration_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1105,6 +1242,7 @@ view: migration_table__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: extra {
@@ -1115,11 +1253,13 @@ view: migration_table__events {
   dimension: name {
     sql: ${TABLE}.name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: timestamp {
     sql: ${TABLE}.timestamp ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1127,11 +1267,13 @@ view: migration_table__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1139,11 +1281,13 @@ view: migration_table__metrics__jwe {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1151,6 +1295,7 @@ view: migration_table__metrics__labeled_rate {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
@@ -1163,11 +1308,13 @@ view: migration_table__metrics__labeled_rate__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value__denominator {
     sql: ${TABLE}.value.denominator ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Denominator"
   }
@@ -1175,6 +1322,7 @@ view: migration_table__metrics__labeled_rate__value {
   dimension: value__numerator {
     sql: ${TABLE}.value.numerator ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Numerator"
   }
@@ -1184,11 +1332,13 @@ view: migration_table__metrics__labeled_string__migration_migration_versions {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1196,11 +1346,13 @@ view: migration_table__metrics__text {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1208,11 +1360,13 @@ view: migration_table__metrics__url {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1220,11 +1374,13 @@ view: migration_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value__branch {
     sql: ${TABLE}.value.branch ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Branch"
   }
@@ -1232,6 +1388,7 @@ view: migration_table__ping_info__experiments {
   dimension: value__extra__enrollment_id {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value Extra"
     group_item_label: "Enrollment Id"
   }
@@ -1239,6 +1396,7 @@ view: migration_table__ping_info__experiments {
   dimension: value__extra__type {
     sql: ${TABLE}.value.extra.type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value Extra"
     group_item_label: "Type"
   }
