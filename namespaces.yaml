@@ -9334,10 +9334,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 10
+            default: Windows 7
             options:
-            - Windows 10
             - Windows 7
+            - Windows 10
             - Windows 8
             - Windows 8.1
             - Windows 11
@@ -9376,10 +9376,10 @@ operational_monitoring:
             default: release
             options:
             - release
-            - aurora
             - esr
-            - beta
             - nightly
+            - beta
+            - aurora
             - default
             - nightly-pine
             - nightly-oak
@@ -9718,11 +9718,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id185
           normalized_channel:
-            default: aurora
+            default: nightly
             options:
-            - aurora
-            - beta
             - nightly
+            - beta
+            - aurora
             - release
             - esr
             - Other
@@ -10329,8 +10329,8 @@ operational_monitoring:
             default: Mac
             options:
             - Mac
-            - Linux
             - Windows
+            - Linux
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -11489,14 +11489,14 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id326
           app:
-            default: Android - vpn_session
+            default: iOS - daemon_session
             options:
-            - Android - vpn_session
-            - Linux - vpn_session
             - iOS - daemon_session
+            - Android - vpn_session
+            - Darwin - vpn_session
             - Windows - vpn_session
             - iOS - vpn_session
-            - Darwin - vpn_session
+            - Linux - vpn_session
             - Android - daemon_session
         explore: mozilla_vpn
         group_by_dimension: app
@@ -12474,16 +12474,16 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id392
           channel:
-            default: nightly
+            default: beta
             options:
-            - nightly
             - beta
+            - nightly
             - release
           os:
-            default: Windows_NT
+            default: Linux
             options:
-            - Windows_NT
             - Linux
+            - Windows_NT
             - Darwin
         explore: print_background_task_times
         group_by_dimension: null
