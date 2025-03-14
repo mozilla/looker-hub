@@ -882,6 +882,15 @@ view: new_profile {
     description: "The number of logical CPUs. Desktop only, e.g. 8, or `null` on failure."
   }
 
+  dimension: environment__system__cpu__ecount {
+    sql: ${TABLE}.environment.system.cpu.ecount ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Environment System Cpu"
+    group_item_label: "Ecount"
+    description: "Heterogeneous CPU info for little CPUs."
+  }
+
   dimension: environment__system__cpu__extensions {
     sql: ${TABLE}.environment.system.cpu.extensions ;;
     hidden: yes
@@ -923,6 +932,15 @@ view: new_profile {
     description: "The CPU L3 cache size in KB. `null` on failure. Desktop only."
   }
 
+  dimension: environment__system__cpu__mcount {
+    sql: ${TABLE}.environment.system.cpu.mcount ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Environment System Cpu"
+    group_item_label: "Mcount"
+    description: "Heterogeneous CPU info for medium CPUs."
+  }
+
   dimension: environment__system__cpu__model {
     sql: ${TABLE}.environment.system.cpu.model ;;
     type: number
@@ -939,6 +957,15 @@ view: new_profile {
     group_label: "Environment System Cpu"
     group_item_label: "Name"
     description: "The CPU name, e.g. 'Intel(R) Core(TM) i9-8950HK CPU @ 2.90GHz', or `null` on failure. Desktop only."
+  }
+
+  dimension: environment__system__cpu__pcount {
+    sql: ${TABLE}.environment.system.cpu.pcount ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Environment System Cpu"
+    group_item_label: "Pcount"
+    description: "Heterogeneous CPU info for big CPUs."
   }
 
   dimension: environment__system__cpu__speed_m_hz {
