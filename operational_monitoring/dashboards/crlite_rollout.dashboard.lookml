@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: crlite_rollout
+    type: looker_line
+    fields: [
+      crlite_rollout.submission_date,
+      crlite_rollout.branch,
+      crlite_rollout.point
+    ]
+    pivots: [
+      crlite_rollout.branch
+    ]
+    filters:
+      crlite_rollout.metric: 'active_hours'
+      crlite_rollout.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: crlite_rollout.submission_date
+    field_y: crlite_rollout.point
+    log_scale: false
+    ci_lower: crlite_rollout.lower
+    ci_upper: crlite_rollout.upper
+    show_grid: true
+    listen:
+      Date: crlite_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -31,7 +65,7 @@
       crlite_rollout.metric: 'memory_total'
       crlite_rollout.statistic: percentile
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: crlite_rollout.submission_date
@@ -43,108 +77,6 @@
     listen:
       Date: crlite_rollout.submission_date
       Percentile: crlite_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: crlite_rollout
-    type: looker_line
-    fields: [
-      crlite_rollout.submission_date,
-      crlite_rollout.branch,
-      crlite_rollout.point
-    ]
-    pivots: [
-      crlite_rollout.branch
-    ]
-    filters:
-      crlite_rollout.metric: 'search_count'
-      crlite_rollout.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: crlite_rollout.submission_date
-    field_y: crlite_rollout.point
-    log_scale: false
-    ci_lower: crlite_rollout.lower
-    ci_upper: crlite_rollout.upper
-    show_grid: true
-    listen:
-      Date: crlite_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: crlite_rollout
-    type: looker_line
-    fields: [
-      crlite_rollout.submission_date,
-      crlite_rollout.branch,
-      crlite_rollout.point
-    ]
-    pivots: [
-      crlite_rollout.branch
-    ]
-    filters:
-      crlite_rollout.metric: 'active_hours'
-      crlite_rollout.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: crlite_rollout.submission_date
-    field_y: crlite_rollout.point
-    log_scale: false
-    ci_lower: crlite_rollout.lower
-    ci_upper: crlite_rollout.upper
-    show_grid: true
-    listen:
-      Date: crlite_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: crlite_rollout
-    type: looker_line
-    fields: [
-      crlite_rollout.submission_date,
-      crlite_rollout.branch,
-      crlite_rollout.point
-    ]
-    pivots: [
-      crlite_rollout.branch
-    ]
-    filters:
-      crlite_rollout.metric: 'retained'
-      crlite_rollout.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: crlite_rollout.submission_date
-    field_y: crlite_rollout.point
-    log_scale: false
-    ci_lower: crlite_rollout.lower
-    ci_upper: crlite_rollout.upper
-    show_grid: true
-    listen:
-      Date: crlite_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -167,7 +99,7 @@
     filters:
       crlite_rollout.metric: 'days_of_use'
       crlite_rollout.statistic: mean
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -201,8 +133,42 @@
     filters:
       crlite_rollout.metric: 'uri_count'
       crlite_rollout.statistic: mean
-    row: 20
+    row: 10
     col: 12
+    width: 12
+    height: 8
+    field_x: crlite_rollout.submission_date
+    field_y: crlite_rollout.point
+    log_scale: false
+    ci_lower: crlite_rollout.lower
+    ci_upper: crlite_rollout.upper
+    show_grid: true
+    listen:
+      Date: crlite_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: crlite_rollout
+    type: looker_line
+    fields: [
+      crlite_rollout.submission_date,
+      crlite_rollout.branch,
+      crlite_rollout.point
+    ]
+    pivots: [
+      crlite_rollout.branch
+    ]
+    filters:
+      crlite_rollout.metric: 'retained'
+      crlite_rollout.statistic: mean
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: crlite_rollout.submission_date
@@ -234,6 +200,40 @@
     ]
     filters:
       crlite_rollout.metric: 'qualified_cumulative_days_of_use'
+      crlite_rollout.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: crlite_rollout.submission_date
+    field_y: crlite_rollout.point
+    log_scale: false
+    ci_lower: crlite_rollout.lower
+    ci_upper: crlite_rollout.upper
+    show_grid: true
+    listen:
+      Date: crlite_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: crlite_rollout
+    type: looker_line
+    fields: [
+      crlite_rollout.submission_date,
+      crlite_rollout.branch,
+      crlite_rollout.point
+    ]
+    pivots: [
+      crlite_rollout.branch
+    ]
+    filters:
+      crlite_rollout.metric: 'search_count'
       crlite_rollout.statistic: mean
     row: 30
     col: 0

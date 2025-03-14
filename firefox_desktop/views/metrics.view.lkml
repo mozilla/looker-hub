@@ -5018,6 +5018,26 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__sap_deprecated_counts {
+    label: "Sap Deprecated Counts"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.sap_deprecated_counts ;;
+    group_label: "Sap"
+    group_item_label: "Deprecated Counts"
+
+    link: {
+      label: "Glean Dictionary reference for Sap Deprecated Counts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/sap_deprecated_counts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This is deprecated metric that should not be incoporated into dashboards. Use the `sap.counts` event instead.
+This metric has been added to Glean to aid transition of histograms and allow the legacy telemetry SEARCH_COUNTS to continue to be recorded.
+Records search counts for search access points. The format is: <engine-name>.<search-access-point>. For the urlbar when in search mode, the format is <engine name>.urlbar-searchmode. For the urlbar when an internal @engine shortcut is used, the format is: <engine-name>.alias.
+This metric was generated to correspond to the Legacy Telemetry count histogram SEARCH_COUNTS.
+"
+  }
+
   dimension: metrics__string__search_engine_default_display_name {
     label: "Search Engine Default Display Name"
     hidden: no
@@ -5294,6 +5314,24 @@ success - search service successfully initialized.
     }
 
     description: "The time duration it takes for the search service to start up.
+"
+  }
+
+  dimension: metrics__labeled_counter__searchbar_selected_result_method {
+    label: "Searchbar Selected Result Method"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.searchbar_selected_result_method ;;
+    group_label: "Searchbar"
+    group_item_label: "Selected Result Method"
+
+    link: {
+      label: "Glean Dictionary reference for Searchbar Selected Result Method"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/searchbar_selected_result_method"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The input method the user used to select a result in the searchbar. 'enter' => The user hit the Enter key without choosing a result in the popup. 'enterSelection' => The user chose a result and then hit the Enter key. 'click' => The user clicked a result with the mouse.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram FX_SEARCHBAR_SELECTED_RESULT_METHOD.
 "
   }
 
@@ -52168,8 +52206,90 @@ view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_
   }
 }
 
+view: metrics__metrics__labeled_counter__sap_deprecated_counts {
+  label: "Sap - Deprecated Counts"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__search_service_initialization_status {
   label: "Search Service - Initialization Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__searchbar_selected_result_method {
+  label: "Searchbar - Selected Result Method"
 
   dimension: document_id {
     type: string
@@ -67234,6 +67354,95 @@ view: metrics__metrics__labeled_timing_distribution__orb_receive_data_for_valida
 }
 
 view: metrics__metrics__labeled_timing_distribution__orb_receive_data_for_validation__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__search_suggestions_latency {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__search_suggestions_latency__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -12835,6 +12835,16 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__sap_deprecated_counts {
+    sql: ${TABLE}.metrics.labeled_counter.sap_deprecated_counts ;;
+    hidden: yes
+    description: "This is deprecated metric that should not be incoporated into dashboards. Use the `sap.counts` event instead.
+This metric has been added to Glean to aid transition of histograms and allow the legacy telemetry SEARCH_COUNTS to continue to be recorded.
+Records search counts for search access points. The format is: <engine-name>.<search-access-point>. For the urlbar when in search mode, the format is <engine name>.urlbar-searchmode. For the urlbar when an internal @engine shortcut is used, the format is: <engine-name>.alias.
+This metric was generated to correspond to the Legacy Telemetry count histogram SEARCH_COUNTS.
+"
+  }
+
   dimension: metrics__labeled_counter__search_service_initialization_status {
     sql: ${TABLE}.metrics.labeled_counter.search_service_initialization_status ;;
     hidden: yes
@@ -12846,6 +12856,14 @@ failedLoadEngines - failed to create all the search engines from the
                     configuration or user installed engines.
 failedLoadSettingsAddonManager - the addon manager ready promise was rejected. (from FF135)
 success - search service successfully initialized.
+"
+  }
+
+  dimension: metrics__labeled_counter__searchbar_selected_result_method {
+    sql: ${TABLE}.metrics.labeled_counter.searchbar_selected_result_method ;;
+    hidden: yes
+    description: "The input method the user used to select a result in the searchbar. 'enter' => The user hit the Enter key without choosing a result in the popup. 'enterSelection' => The user chose a result and then hit the Enter key. 'click' => The user clicked a result with the mouse.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram FX_SEARCHBAR_SELECTED_RESULT_METHOD.
 "
   }
 
@@ -14453,6 +14471,14 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     hidden: yes
     description: "Time (in ms) that it takes to receive data for ORB JavaScript validation, including IPC to the validator actor.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram ORB_RECEIVE_DATA_FOR_VALIDATION_MS.
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__search_suggestions_latency {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.search_suggestions_latency ;;
+    hidden: yes
+    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are search engine IDs for built-in search engines and 'other' for non-built-in search engines.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SEARCH_SUGGESTIONS_LATENCY_MS.
 "
   }
 
@@ -52774,6 +52800,95 @@ view: metrics_table__metrics__labeled_timing_distribution__orb_receive_data_for_
 }
 
 view: metrics_table__metrics__labeled_timing_distribution__orb_receive_data_for_validation__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__search_suggestions_latency {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__search_suggestions_latency__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
