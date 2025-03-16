@@ -1737,6 +1737,38 @@ view: metrics_table {
     group_item_label: "Gfx Skipped Composites"
   }
 
+  dimension: metrics__counter__glam_experiment_cpu_time_bogus_values {
+    sql: ${TABLE}.metrics.counter.glam_experiment_cpu_time_bogus_values ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Glam Experiment Cpu Time Bogus Values"
+  }
+
+  dimension: metrics__counter__glam_experiment_os_socket_limit_reached {
+    sql: ${TABLE}.metrics.counter.glam_experiment_os_socket_limit_reached ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Glam Experiment Os Socket Limit Reached"
+  }
+
+  dimension: metrics__counter__glam_experiment_total_cpu_time_ms {
+    sql: ${TABLE}.metrics.counter.glam_experiment_total_cpu_time_ms ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Glam Experiment Total Cpu Time Ms"
+  }
+
+  dimension: metrics__counter__glam_experiment_used {
+    sql: ${TABLE}.metrics.counter.glam_experiment_used ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Glam Experiment Used"
+  }
+
   dimension: metrics__counter__glean_error_io {
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
@@ -20230,6 +20262,402 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__gfx_webrender_sceneswap_time__values {
     sql: ${TABLE}.metrics.timing_distribution.gfx_webrender_sceneswap_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_async_sheet_load__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_async_sheet_load.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Async Sheet Load"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_async_sheet_load__count {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_async_sheet_load.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Async Sheet Load"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_async_sheet_load__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_async_sheet_load.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Async Sheet Load"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_async_sheet_load__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_async_sheet_load.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Async Sheet Load"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_async_sheet_load__range {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_async_sheet_load.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_async_sheet_load__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_async_sheet_load.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Async Sheet Load"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_async_sheet_load__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_async_sheet_load.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Async Sheet Load"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_async_sheet_load__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_async_sheet_load.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Async Sheet Load"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_async_sheet_load__values {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_async_sheet_load.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay__count {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay__range {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay__values {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_largest_contentful_paint__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_largest_contentful_paint.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Largest Contentful Paint"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_largest_contentful_paint__count {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_largest_contentful_paint.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Largest Contentful Paint"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_largest_contentful_paint__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_largest_contentful_paint.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Largest Contentful Paint"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_largest_contentful_paint__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_largest_contentful_paint.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Largest Contentful Paint"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_largest_contentful_paint__range {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_largest_contentful_paint.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_largest_contentful_paint__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_largest_contentful_paint.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Largest Contentful Paint"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_largest_contentful_paint__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_largest_contentful_paint.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Largest Contentful Paint"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_largest_contentful_paint__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_largest_contentful_paint.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Largest Contentful Paint"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_largest_contentful_paint__values {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_largest_contentful_paint.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_protect_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_protect_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Protect Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_protect_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_protect_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Protect Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_protect_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_protect_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Protect Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_protect_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_protect_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Protect Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_protect_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_protect_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_protect_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_protect_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Protect Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_protect_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_protect_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Protect Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_protect_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_protect_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Protect Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_protect_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_protect_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_sub_complete_load_net__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_sub_complete_load_net.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Sub Complete Load Net"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_sub_complete_load_net__count {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_sub_complete_load_net.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Sub Complete Load Net"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_sub_complete_load_net__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_sub_complete_load_net.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Sub Complete Load Net"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_sub_complete_load_net__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_sub_complete_load_net.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Sub Complete Load Net"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_sub_complete_load_net__range {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_sub_complete_load_net.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_sub_complete_load_net__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_sub_complete_load_net.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Sub Complete Load Net"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_sub_complete_load_net__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_sub_complete_load_net.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Sub Complete Load Net"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_sub_complete_load_net__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_sub_complete_load_net.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Sub Complete Load Net"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_sub_complete_load_net__values {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_sub_complete_load_net.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Glam Experiment Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_time.values ;;
     hidden: yes
   }
 
@@ -50168,6 +50596,90 @@ view: metrics_table__metrics__timing_distribution__gfx_webrender_scenebuild_time
 }
 
 view: metrics_table__metrics__timing_distribution__gfx_webrender_sceneswap_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__glam_experiment_async_sheet_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__glam_experiment_largest_contentful_paint__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__glam_experiment_protect_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__glam_experiment_sub_complete_load_net__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__glam_experiment_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
