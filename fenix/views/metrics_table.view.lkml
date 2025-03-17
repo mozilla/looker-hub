@@ -9006,6 +9006,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__creditcard_detected_cc_number_fields_count {
+    sql: ${TABLE}.metrics.labeled_counter.creditcard_detected_cc_number_fields_count ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__cycle_collector_finish_igc {
     sql: ${TABLE}.metrics.labeled_counter.cycle_collector_finish_igc ;;
     hidden: yes

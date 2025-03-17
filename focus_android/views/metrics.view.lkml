@@ -3215,6 +3215,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__creditcard_detected_cc_number_fields_count {
+    label: "Creditcard Detected Cc Number Fields Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.creditcard_detected_cc_number_fields_count ;;
+    group_label: "Creditcard"
+    group_item_label: "Detected Cc Number Fields Count"
+
+    link: {
+      label: "Glean Dictionary reference for Creditcard Detected Cc Number Fields Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/creditcard_detected_cc_number_fields_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of detected input fields that a website plans on splitting the cc number digits across
+"
+  }
+
   dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__sum {
     label: "Cycle Collector Async Snow White Freeing Sum"
     hidden: no
@@ -32096,6 +32113,47 @@ view: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load {
 
 view: metrics__metrics__labeled_counter__crash_metrics_crash_count {
   label: "Crash Metrics - Crash Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__creditcard_detected_cc_number_fields_count {
+  label: "Creditcard - Detected Cc Number Fields Count"
 
   dimension: document_id {
     type: string
