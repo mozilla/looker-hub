@@ -343,6 +343,10 @@ combined_browser_metrics:
       tables:
       - table: mozilla-public-data.telemetry_derived.fenix_and_firefox_use_counters
       type: table_view
+    firefox_desktop_baseline_active_users_aggregates:
+      tables:
+      - table: moz-fx-data-shared-prod.firefox_desktop.baseline_active_users_aggregates
+      type: table_view
 contextual_services:
   glean_app: false
   owners:

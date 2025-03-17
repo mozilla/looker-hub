@@ -3215,6 +3215,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__creditcard_detected_cc_number_fields_count {
+    label: "Creditcard Detected Cc Number Fields Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.creditcard_detected_cc_number_fields_count ;;
+    group_label: "Creditcard"
+    group_item_label: "Detected Cc Number Fields Count"
+
+    link: {
+      label: "Glean Dictionary reference for Creditcard Detected Cc Number Fields Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/creditcard_detected_cc_number_fields_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of detected input fields that a website plans on splitting the cc number digits across
+"
+  }
+
   dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__sum {
     label: "Cycle Collector Async Snow White Freeing Sum"
     hidden: no
@@ -8139,6 +8156,196 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     description: "The value `true`, recorded when a Firefox Telemetry \"main\" ping is about
 to be assembled.
 To be used to validate GIFFT.
+"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_async_sheet_load__sum {
+    label: "Glam Experiment Async Sheet Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_async_sheet_load.sum ;;
+    type: number
+    group_label: "Glam Experiment"
+    group_item_label: "Async Sheet Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glam Experiment Async Sheet Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glam_experiment_async_sheet_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Duplicate of: `performance.pageload.async_sheet_load`
+Intended for the purpose of testing client side sampling of data. This metric is disabled by default and will be enabled only for the purpose of the experiment. See Bug 1947604 for more information.
+"
+  }
+
+  dimension: metrics__counter__glam_experiment_cpu_time_bogus_values {
+    label: "Glam Experiment Cpu Time Bogus Values"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.glam_experiment_cpu_time_bogus_values ;;
+    type: number
+    group_label: "Glam Experiment"
+    group_item_label: "Cpu Time Bogus Values"
+
+    link: {
+      label: "Glean Dictionary reference for Glam Experiment Cpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glam_experiment_cpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Duplicate of: `power.cpu_time_bogus_values`
+Intended for the purpose of testing client side sampling of data. This metric is disabled by default and will be enabled only for the purpose of the experiment. See Bug 1947604 for more information.
+"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay__sum {
+    label: "Glam Experiment Http Content Html5Parser Ondatafinished To Onstop Delay Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay.sum ;;
+    type: number
+    group_label: "Glam Experiment"
+    group_item_label: "Http Content Html5Parser Ondatafinished To Onstop Delay Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glam Experiment Http Content Html5Parser Ondatafinished To Onstop Delay Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Duplicate of: `networking.http_content_html5parser_ondatafinished_to_onstop_delay`
+Intended for the purpose of testing client side sampling of data. This metric is disabled by default and will be enabled only for the purpose of the experiment. See Bug 1947604 for more information.
+"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_largest_contentful_paint__sum {
+    label: "Glam Experiment Largest Contentful Paint Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_largest_contentful_paint.sum ;;
+    type: number
+    group_label: "Glam Experiment"
+    group_item_label: "Largest Contentful Paint Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glam Experiment Largest Contentful Paint Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glam_experiment_largest_contentful_paint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Duplicate of: `perf.largest_contentful_paint`
+Intended for the purpose of testing client side sampling of data. This metric is disabled by default and will be enabled only for the purpose of the experiment. See Bug 1947604 for more information.
+"
+  }
+
+  dimension: metrics__counter__glam_experiment_os_socket_limit_reached {
+    label: "Glam Experiment Os Socket Limit Reached"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.glam_experiment_os_socket_limit_reached ;;
+    type: number
+    group_label: "Glam Experiment"
+    group_item_label: "Os Socket Limit Reached"
+
+    link: {
+      label: "Glean Dictionary reference for Glam Experiment Os Socket Limit Reached"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glam_experiment_os_socket_limit_reached"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Duplicate of: `networking.os_socket_limit_reached`
+Intended for the purpose of testing client side sampling of data. This metric is disabled by default and will be enabled only for the purpose of the experiment. See Bug 1947604 for more information.
+"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_protect_time__sum {
+    label: "Glam Experiment Protect Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_protect_time.sum ;;
+    type: number
+    group_label: "Glam Experiment"
+    group_item_label: "Protect Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glam Experiment Protect Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glam_experiment_protect_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Duplicate of: `javascript_pageload.protect_time`
+Intended for the purpose of testing client side sampling of data. This metric is disabled by default and will be enabled only for the purpose of the experiment. See Bug 1947604 for more information.
+"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_sub_complete_load_net__sum {
+    label: "Glam Experiment Sub Complete Load Net Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_sub_complete_load_net.sum ;;
+    type: number
+    group_label: "Glam Experiment"
+    group_item_label: "Sub Complete Load Net Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glam Experiment Sub Complete Load Net Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glam_experiment_sub_complete_load_net"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Duplicate of: `network.sub_complete_load_net`
+Intended for the purpose of testing client side sampling of data. This metric is disabled by default and will be enabled only for the purpose of the experiment. See Bug 1947604 for more information.
+"
+  }
+
+  dimension: metrics__timing_distribution__glam_experiment_time__sum {
+    label: "Glam Experiment Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glam_experiment_time.sum ;;
+    type: number
+    group_label: "Glam Experiment"
+    group_item_label: "Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glam Experiment Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glam_experiment_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Duplicate of: `performance.clone.deserialize.time`
+Intended for the purpose of testing client side sampling of data. This metric is disabled by default and will be enabled only for the purpose of the experiment. See Bug 1947604 for more information.
+"
+  }
+
+  dimension: metrics__counter__glam_experiment_total_cpu_time_ms {
+    label: "Glam Experiment Total Cpu Time Ms"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.glam_experiment_total_cpu_time_ms ;;
+    type: number
+    group_label: "Glam Experiment"
+    group_item_label: "Total Cpu Time Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Glam Experiment Total Cpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glam_experiment_total_cpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Duplicate of: `power.total_cpu_time_ms`
+Intended for the purpose of testing client side sampling of data. This metric is disabled by default and will be enabled only for the purpose of the experiment. See Bug 1947604 for more information.
+"
+  }
+
+  dimension: metrics__counter__glam_experiment_used {
+    label: "Glam Experiment Used"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.glam_experiment_used ;;
+    type: number
+    group_label: "Glam Experiment"
+    group_item_label: "Used"
+
+    link: {
+      label: "Glean Dictionary reference for Glam Experiment Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glam_experiment_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Duplicate of: `pdfjs.used`
+Intended for the purpose of testing client side sampling of data. This metric is disabled by default and will be enabled only for the purpose of the experiment. See Bug 1947604 for more information.
 "
   }
 
@@ -26669,6 +26876,106 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: glam_experiment_cpu_time_bogus_values {
+    type: sum
+    sql: ${metrics__counter__glam_experiment_cpu_time_bogus_values} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glam Experiment Cpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glam_experiment_cpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glam_experiment_cpu_time_bogus_values_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__glam_experiment_cpu_time_bogus_values: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glam Experiment Cpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glam_experiment_cpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glam_experiment_os_socket_limit_reached {
+    type: sum
+    sql: ${metrics__counter__glam_experiment_os_socket_limit_reached} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glam Experiment Os Socket Limit Reached"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glam_experiment_os_socket_limit_reached"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glam_experiment_os_socket_limit_reached_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__glam_experiment_os_socket_limit_reached: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glam Experiment Os Socket Limit Reached"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glam_experiment_os_socket_limit_reached"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glam_experiment_total_cpu_time_ms {
+    type: sum
+    sql: ${metrics__counter__glam_experiment_total_cpu_time_ms} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glam Experiment Total Cpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glam_experiment_total_cpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glam_experiment_total_cpu_time_ms_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__glam_experiment_total_cpu_time_ms: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glam Experiment Total Cpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glam_experiment_total_cpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glam_experiment_used {
+    type: sum
+    sql: ${metrics__counter__glam_experiment_used} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glam Experiment Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glam_experiment_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glam_experiment_used_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__glam_experiment_used: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glam Experiment Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glam_experiment_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: hls_canplay_requested {
     type: sum
     sql: ${metrics__counter__hls_canplay_requested} ;;
@@ -31830,6 +32137,47 @@ view: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load {
 
 view: metrics__metrics__labeled_counter__crash_metrics_crash_count {
   label: "Crash Metrics - Crash Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__creditcard_detected_cc_number_fields_count {
+  label: "Creditcard - Detected Cc Number Fields Count"
 
   dimension: document_id {
     type: string
@@ -52915,6 +53263,90 @@ view: metrics__metrics__timing_distribution__gfx_content_paint_time__values {
 }
 
 view: metrics__metrics__timing_distribution__gfx_scroll_present_latency__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__glam_experiment_async_sheet_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__glam_experiment_largest_contentful_paint__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__glam_experiment_protect_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__glam_experiment_sub_complete_load_net__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__glam_experiment_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
