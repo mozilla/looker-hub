@@ -521,6 +521,18 @@ debug_ping_view:
       - channel: null
         table: mozdata.debug_ping_view.events_unnested
       type: table_view
+device_manufacturer_partnerships:
+  glean_app: false
+  owners:
+  - mbowerman@mozilla.com
+  - kik@mozilla.com
+  pretty_name: Device Manufacturer Partnerships
+  spoke: looker-spoke-default
+  views:
+    shipment_and_activation_vivo:
+      tables:
+      - table: mozdata.device_manufacturer_partnerships.shipment_and_activation_vivo
+      type: table_view
 duet:
   explores:
     gplay_installs_by_country:
