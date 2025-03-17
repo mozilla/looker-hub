@@ -757,6 +757,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__crash_submission_collector_errors}) AS metrics__metrics__labeled_counter__crash_submission_collector_errors ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__crash_submission_collector_errors.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__creditcard_detected_cc_number_fields_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__creditcard_detected_cc_number_fields_count}) AS metrics__metrics__labeled_counter__creditcard_detected_cc_number_fields_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__creditcard_detected_cc_number_fields_count.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__cycle_collector_finish_igc {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cycle_collector_finish_igc}) AS metrics__metrics__labeled_counter__cycle_collector_finish_igc ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cycle_collector_finish_igc.document_id} ;;
