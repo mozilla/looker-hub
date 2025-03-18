@@ -66,6 +66,24 @@ view: usage_reporting_active_users_table {
     map_layer_name: countries
   }
 
+  dimension: days_active_bits {
+    sql: ${TABLE}.days_active_bits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: days_created_profile_bits {
+    sql: ${TABLE}.days_created_profile_bits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: days_seen_bits {
+    sql: ${TABLE}.days_seen_bits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: distribution_id {
     sql: ${TABLE}.distribution_id ;;
     type: string
@@ -184,6 +202,22 @@ view: usage_reporting_active_users_table {
     sql: ${TABLE}.windows_build_number ;;
     type: number
     suggest_persist_for: "24 hours"
+  }
+
+  dimension_group: date {
+    sql: ${TABLE}.date ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
   }
 
   dimension_group: first_run {
