@@ -14726,89 +14726,16 @@ operational_monitoring:
         xaxis: submission_date
       title: User Restricted For Content Process Rollout 134
       type: operational_monitoring_dashboard
-    user_restricted_for_content_process_userrestricted_rollout:
+    viewpoint_android_feb_2025:
       tables:
       - branches: &id568
         - enabled
         - disabled
         compact_visualization: false
         dimensions: &id569 {}
-        explore: user_restricted_for_content_process_userrestricted_rollout
-        group_by_dimension: null
-        summaries: &id570
-        - metric: uri_count
-          metric_groups: []
-          statistic: mean
-        - metric: search_count
-          metric_groups: []
-          statistic: mean
-        - metric: qualified_cumulative_days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        table: moz-fx-data-shared-prod.operational_monitoring.user_restricted_for_content_process_userrestricted_rollout_statistics
-        xaxis: submission_date
-      title: User Restricted For Content Process Userrestricted Rollout
-      type: operational_monitoring_dashboard
-    viewpoint_android_dec_2024:
-      tables:
-      - branches: &id571
-        - enabled
-        - disabled
-        compact_visualization: false
-        dimensions: &id572 {}
-        explore: viewpoint_android_dec_2024
-        group_by_dimension: null
-        summaries: &id573
-        - metric: uri_count
-          metric_groups: []
-          statistic: mean
-        - metric: search_count
-          metric_groups: []
-          statistic: mean
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: tagged_sap_searches
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_android_dec_2024_statistics
-        xaxis: submission_date
-      title: Viewpoint Android Dec 2024
-      type: operational_monitoring_dashboard
-    viewpoint_android_feb_2025:
-      tables:
-      - branches: &id574
-        - enabled
-        - disabled
-        compact_visualization: false
-        dimensions: &id575 {}
         explore: viewpoint_android_feb_2025
         group_by_dimension: null
-        summaries: &id576
+        summaries: &id570
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
@@ -14836,14 +14763,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_android_jan_2025:
       tables:
-      - branches: &id577
+      - branches: &id571
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id578 {}
+        dimensions: &id572 {}
         explore: viewpoint_android_jan_2025
         group_by_dimension: null
-        summaries: &id579
+        summaries: &id573
         - metric: active_hours
           metric_groups: []
           statistic: mean
@@ -14871,14 +14798,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_desktop_2024:
       tables:
-      - branches: &id580
+      - branches: &id574
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id581 {}
+        dimensions: &id575 {}
         explore: viewpoint_desktop_2024
         group_by_dimension: null
-        summaries: &id582
+        summaries: &id576
         - metric: active_hours
           metric_groups: []
           statistic: mean
@@ -14907,45 +14834,16 @@ operational_monitoring:
         xaxis: submission_date
       title: Viewpoint Desktop 2024
       type: operational_monitoring_dashboard
-    viewpoint_ios_dec_2024:
-      tables:
-      - branches: &id583
-        - enabled
-        - disabled
-        compact_visualization: false
-        dimensions: &id584 {}
-        explore: viewpoint_ios_dec_2024
-        group_by_dimension: null
-        summaries: &id585
-        - metric: search_count
-          metric_groups: []
-          statistic: mean
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_dec_2024_statistics
-        xaxis: submission_date
-      title: Viewpoint Ios Dec 2024
-      type: operational_monitoring_dashboard
     viewpoint_ios_feb_2025:
       tables:
-      - branches: &id586
+      - branches: &id577
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id587 {}
+        dimensions: &id578 {}
         explore: viewpoint_ios_feb_2025
         group_by_dimension: null
-        summaries: &id588
+        summaries: &id579
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
@@ -14967,14 +14865,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_ios_jan_2025:
       tables:
-      - branches: &id589
+      - branches: &id580
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id590 {}
+        dimensions: &id581 {}
         explore: viewpoint_ios_jan_2025
         group_by_dimension: null
-        summaries: &id591
+        summaries: &id582
         - metric: active_hours
           metric_groups: []
           statistic: mean
@@ -14996,14 +14894,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     vpn_suggestions_potential_exposures:
       tables:
-      - branches: &id592
+      - branches: &id583
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id593 {}
+        dimensions: &id584 {}
         explore: vpn_suggestions_potential_exposures
         group_by_dimension: null
-        summaries: &id594
+        summaries: &id585
         - metric: retained
           metric_groups: []
           statistic: mean
@@ -16561,74 +16459,50 @@ operational_monitoring:
       views:
         base_view: user_restricted_for_content_process_rollout_134
       xaxis: submission_date
-    user_restricted_for_content_process_userrestricted_rollout:
+    viewpoint_android_feb_2025:
       branches: *id568
       dimensions: *id569
       summaries: *id570
       type: operational_monitoring_explore
       views:
-        base_view: user_restricted_for_content_process_userrestricted_rollout
+        base_view: viewpoint_android_feb_2025
       xaxis: submission_date
-    viewpoint_android_dec_2024:
+    viewpoint_android_jan_2025:
       branches: *id571
       dimensions: *id572
       summaries: *id573
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_android_dec_2024
+        base_view: viewpoint_android_jan_2025
       xaxis: submission_date
-    viewpoint_android_feb_2025:
+    viewpoint_desktop_2024:
       branches: *id574
       dimensions: *id575
       summaries: *id576
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_android_feb_2025
+        base_view: viewpoint_desktop_2024
       xaxis: submission_date
-    viewpoint_android_jan_2025:
+    viewpoint_ios_feb_2025:
       branches: *id577
       dimensions: *id578
       summaries: *id579
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_android_jan_2025
+        base_view: viewpoint_ios_feb_2025
       xaxis: submission_date
-    viewpoint_desktop_2024:
+    viewpoint_ios_jan_2025:
       branches: *id580
       dimensions: *id581
       summaries: *id582
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_desktop_2024
-      xaxis: submission_date
-    viewpoint_ios_dec_2024:
-      branches: *id583
-      dimensions: *id584
-      summaries: *id585
-      type: operational_monitoring_explore
-      views:
-        base_view: viewpoint_ios_dec_2024
-      xaxis: submission_date
-    viewpoint_ios_feb_2025:
-      branches: *id586
-      dimensions: *id587
-      summaries: *id588
-      type: operational_monitoring_explore
-      views:
-        base_view: viewpoint_ios_feb_2025
-      xaxis: submission_date
-    viewpoint_ios_jan_2025:
-      branches: *id589
-      dimensions: *id590
-      summaries: *id591
-      type: operational_monitoring_explore
-      views:
         base_view: viewpoint_ios_jan_2025
       xaxis: submission_date
     vpn_suggestions_potential_exposures:
-      branches: *id592
-      dimensions: *id593
-      summaries: *id594
+      branches: *id583
+      dimensions: *id584
+      summaries: *id585
       type: operational_monitoring_explore
       views:
         base_view: vpn_suggestions_potential_exposures
@@ -17789,57 +17663,39 @@ operational_monitoring:
         table: moz-fx-data-shared-prod.operational_monitoring.user_restricted_for_content_process_rollout_134_statistics
         xaxis: submission_date
       type: operational_monitoring_view
-    user_restricted_for_content_process_userrestricted_rollout:
-      tables:
-      - dimensions: *id569
-        table: moz-fx-data-shared-prod.operational_monitoring.user_restricted_for_content_process_userrestricted_rollout_statistics
-        xaxis: submission_date
-      type: operational_monitoring_view
-    viewpoint_android_dec_2024:
-      tables:
-      - dimensions: *id572
-        table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_android_dec_2024_statistics
-        xaxis: submission_date
-      type: operational_monitoring_view
     viewpoint_android_feb_2025:
       tables:
-      - dimensions: *id575
+      - dimensions: *id569
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_android_feb_2025_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_android_jan_2025:
       tables:
-      - dimensions: *id578
+      - dimensions: *id572
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_android_jan_2025_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_desktop_2024:
       tables:
-      - dimensions: *id581
+      - dimensions: *id575
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_desktop_2024_statistics
-        xaxis: submission_date
-      type: operational_monitoring_view
-    viewpoint_ios_dec_2024:
-      tables:
-      - dimensions: *id584
-        table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_dec_2024_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_ios_feb_2025:
       tables:
-      - dimensions: *id587
+      - dimensions: *id578
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_feb_2025_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_ios_jan_2025:
       tables:
-      - dimensions: *id590
+      - dimensions: *id581
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_jan_2025_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     vpn_suggestions_potential_exposures:
       tables:
-      - dimensions: *id593
+      - dimensions: *id584
         table: moz-fx-data-shared-prod.operational_monitoring.vpn_suggestions_potential_exposures_statistics
         xaxis: submission_date
       type: operational_monitoring_view
