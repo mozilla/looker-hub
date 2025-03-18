@@ -219,5 +219,5 @@ that was processed for generating the metrics.
 "
   }
 
-  sql_table_name: `moz-fx-data-shared-prod.firefox_desktop.baseline_active_users_aggregates` ;;
+  sql_table_name: `mozdata.firefox_desktop.baseline_active_users_aggregates` ;;
 }
