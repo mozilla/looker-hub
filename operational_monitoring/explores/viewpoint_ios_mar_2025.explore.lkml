@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/user_restricted_for_content_process_userrestricted_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/views/viewpoint_ios_mar_2025.view.lkml"
 
-explore: user_restricted_for_content_process_userrestricted_rollout {
+explore: viewpoint_ios_mar_2025 {
   always_filter: {
     filters: [
       branch: "enabled, disabled",

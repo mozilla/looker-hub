@@ -14193,6 +14193,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Js Optimize Get Iterator Fuse"
   }
 
+  dimension: metrics__counter__use_counter_doc_js_optimize_promise_lookup_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_optimize_promise_lookup_fuse ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Optimize Promise Lookup Fuse"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_2 {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_array_type_2 ;;
     type: number
@@ -17671,6 +17679,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Optimize Get Iterator Fuse"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_optimize_promise_lookup_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_optimize_promise_lookup_fuse ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Optimize Promise Lookup Fuse"
   }
 
   dimension: metrics__counter__use_counter_page_js_subclassing_array_type_2 {

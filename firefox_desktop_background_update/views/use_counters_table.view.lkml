@@ -17689,6 +17689,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_js_optimize_promise_lookup_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_optimize_promise_lookup_fuse ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Optimize Promise Lookup Fuse"
+    description: "Whether a document has modified builtin Promise objects such that the PromiseLookup fuse is popped. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_2 {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_array_type_2 ;;
     type: number
@@ -22036,6 +22046,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Optimize Get Iterator Fuse"
     description: "Whether a page has modified any builtins such that the GetIterator fuse is popped. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_optimize_promise_lookup_fuse {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_optimize_promise_lookup_fuse ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Optimize Promise Lookup Fuse"
+    description: "Whether a page has modified builtin Promise objects such that the PromiseLookup fuse is popped. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
