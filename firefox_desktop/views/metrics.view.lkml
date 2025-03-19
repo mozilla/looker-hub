@@ -5006,7 +5006,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__region_fetch_result__sum {
     label: "Region Fetch Result Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.region_fetch_result.sum ;;
     type: number
     group_label: "Region"
@@ -5025,7 +5025,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__timing_distribution__region_fetch_time__sum {
     label: "Region Fetch Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.region_fetch_time.sum ;;
     type: number
     group_label: "Region"
@@ -48120,19 +48120,19 @@ view: metrics__metrics__labeled_counter__mozstorage_sqlitejsm_transaction_timeou
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
