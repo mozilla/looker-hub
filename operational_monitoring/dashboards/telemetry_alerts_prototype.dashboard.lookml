@@ -37,7 +37,7 @@
     listen:
       Date: telemetry_alerts_prototype.build_id
       Percentile: telemetry_alerts_prototype.parameter
-      Os: telemetry_alerts_prototype.os
+      OS: telemetry_alerts_prototype.os
       Metric: telemetry_alerts_prototype.metric
       Statistic: telemetry_alerts_prototype.statistic
       
@@ -156,8 +156,8 @@
     listens_to_filters: [Metric]
     field: telemetry_alerts_prototype.statistic
   
-  - title: Os
-    name: Os
+  - title: OS
+    name: OS
     type: string_filter
     default_value: 'Linux'
     allow_multiple_values: false

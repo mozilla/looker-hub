@@ -40,7 +40,7 @@ view: tasks_base {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Tags"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: tags__owned_by {

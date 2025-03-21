@@ -5,7 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 - dashboard: improved_mailto_handling_with_os_integration_treatment_a_rollout
-  title: Improved Mailto Handling With Os Integration Treatment A Rollout
+  title: Improved Mailto Handling With OS Integration Treatment A Rollout
   layout: newspaper
   preferred_viewer: dashboards-next
 
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean

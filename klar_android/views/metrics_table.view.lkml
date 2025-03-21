@@ -34,7 +34,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Android Sdk Version"
+    group_item_label: "Android SDK Version"
     description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
@@ -130,7 +130,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os"
+    group_item_label: "OS"
     description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
@@ -139,7 +139,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os Version"
+    group_item_label: "OS Version"
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
@@ -157,7 +157,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Session Id"
+    group_item_label: "Session ID"
     description: "An optional UUID uniquely identifying the client's current session."
   }
 
@@ -166,7 +166,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Telemetry Sdk Build"
+    group_item_label: "Telemetry SDK Build"
     description: "The version of the Glean SDK"
   }
 
@@ -213,7 +213,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
 
@@ -249,7 +249,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "Dnt"
+    group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
 
@@ -257,16 +257,16 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Cipher Hex"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Cipher Hex"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Version"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -279,7 +279,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Debug Id"
+    group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
 
@@ -288,7 +288,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Foxsec Ip Reputation"
+    group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
 
@@ -297,7 +297,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Lb Tags"
+    group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
 
@@ -332,8 +332,8 @@ view: metrics_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
-    group_item_label: "Db Version"
+    group_label: "Metadata ISP"
+    group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
 
@@ -341,7 +341,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -350,7 +350,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -368,7 +368,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: metadata__user_agent__version {
@@ -455,7 +455,7 @@ changes the default browser through the app settings.
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
-    group_item_label: "Browser Ui Proton Enabled"
+    group_item_label: "Browser UI Proton Enabled"
     description: "True if the Proton default theme is enabled.
 "
   }
@@ -525,7 +525,7 @@ changes the default browser through the app settings.
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
-    group_item_label: "Dom Parentprocess Private Window Used"
+    group_item_label: "DOM Parentprocess Private Window Used"
     description: "Whether a private browsing window has been used in the session. This metric was generated to correspond to the Legacy Telemetry scalar dom.parentprocess.private_window_used.
 "
   }
@@ -577,7 +577,7 @@ Child-process data will likely be absent, or incomplete.
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
-    group_item_label: "Formautofill Os Auth Enabled"
+    group_item_label: "Formautofill OS Auth Enabled"
     description: "Check at startup whether OS Authentication has been enabled for credit cards.
 "
   }
@@ -587,7 +587,7 @@ Child-process data will likely be absent, or incomplete.
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
-    group_item_label: "Gfx Os Compositor"
+    group_item_label: "Gfx OS Compositor"
     description: "Boolean indicating whether the os compositor is being used by WebRender. Only collected in the first subsession. This metric was generated to correspond to the Legacy Telemetry scalar gfx.os_compositor.
 "
   }
@@ -735,7 +735,7 @@ starting with Android 13,the user must explicitly grant the permission.
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
-    group_item_label: "Os Environment Is Admin Without Uac"
+    group_item_label: "OS Environment Is Admin Without Uac"
     description: "Indicates that the process is lauched with Admin privileges but without UAC. This metric was generated to correspond to the Legacy Telemetry scalar os.environment.is_admin_without_uac.
 "
   }
@@ -765,7 +765,7 @@ starting with Android 13,the user must explicitly grant the permission.
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
-    group_item_label: "Pwmgr Os Auth Enabled"
+    group_item_label: "Pwmgr OS Auth Enabled"
     description: "Check at startup whether OS Authentication has been enabled for passwords.
 "
   }
@@ -945,7 +945,7 @@ the report site issue from browser menu
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Browser Total Uri Count"
+    group_item_label: "Browser Total URI Count"
     description: "Records count of URIs visited by the user in the current session,
 including page reloads.
 It does not include background page requests and URIs from embedded pages
@@ -1115,7 +1115,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Devtools Dom Opened Count"
+    group_item_label: "Devtools DOM Opened Count"
     description: "Number of times the DevTools DOM Inspector has been opened.
 This metric was generated to correspond to the Legacy Telemetry count histogram DEVTOOLS_DOM_OPENED_COUNT.
 "
@@ -1414,7 +1414,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Dom Contentprocess Build Id Mismatch"
+    group_item_label: "DOM Contentprocess Build ID Mismatch"
     description: "The number of times the about:restartrequired page appeared due to a buildID mismatch between the parent and the content processes. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.buildID_mismatch.
 "
   }
@@ -1424,7 +1424,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Dom Contentprocess Build Id Mismatch False Positive"
+    group_item_label: "DOM Contentprocess Build ID Mismatch False Positive"
     description: "The number of times a process crashed early but we could verify it was not because of buildID mismatch between the parent and the content processes. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.buildID_mismatch_false_positive.
 "
   }
@@ -1434,7 +1434,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Dom Contentprocess Os Priority Change Considered"
+    group_item_label: "DOM Contentprocess OS Priority Change Considered"
     description: "The number of times we've had the opportunity to change content process priority due to a tab switch or a tab being opened. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_change_considered.
 "
   }
@@ -1444,7 +1444,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Dom Contentprocess Os Priority Lowered"
+    group_item_label: "DOM Contentprocess OS Priority Lowered"
     description: "The number of times a content process has had its OS priority lowered due to only containing background tabs without audible media playing. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_lowered.
 "
   }
@@ -1454,7 +1454,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Dom Contentprocess Os Priority Raised"
+    group_item_label: "DOM Contentprocess OS Priority Raised"
     description: "The number of times a content process has had its OS priority raised due to containing at least one foregrounded tab, or a tab with audible media has started playing in it. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_raised.
 "
   }
@@ -1666,7 +1666,7 @@ Will likely be obsoleted by bug 1641989.
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Glam Experiment Cpu Time Bogus Values"
+    group_item_label: "Glam Experiment CPU Time Bogus Values"
     description: "Duplicate of: `power.cpu_time_bogus_values`
 Intended for the purpose of testing client side sampling of data. This metric is disabled by default and will be enabled only for the purpose of the experiment. See Bug 1947604 for more information.
 "
@@ -1677,7 +1677,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Glam Experiment Os Socket Limit Reached"
+    group_item_label: "Glam Experiment OS Socket Limit Reached"
     description: "Duplicate of: `networking.os_socket_limit_reached`
 Intended for the purpose of testing client side sampling of data. This metric is disabled by default and will be enabled only for the purpose of the experiment. See Bug 1947604 for more information.
 "
@@ -1688,7 +1688,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Glam Experiment Total Cpu Time Ms"
+    group_item_label: "Glam Experiment Total CPU Time Ms"
     description: "Duplicate of: `power.total_cpu_time_ms`
 Intended for the purpose of testing client side sampling of data. This metric is disabled by default and will be enabled only for the purpose of the experiment. See Bug 1947604 for more information.
 "
@@ -1710,7 +1710,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Glean Error Io"
+    group_item_label: "Glean Error IO"
     description: "The number of times we encountered an IO error
 when writing a pending ping to disk.
 "
@@ -1972,7 +1972,7 @@ This does not include deletion-request pings.
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Networking Cookie Count Invalid First Party Partitioned In Db"
+    group_item_label: "Networking Cookie Count Invalid First Party Partitioned In DB"
     description: "This counts the number of invalid first-party partitioned cookies that don't have the partitioned cookie attribution(CHIPS).
 "
   }
@@ -1982,7 +1982,7 @@ This does not include deletion-request pings.
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Networking Os Socket Limit Reached"
+    group_item_label: "Networking OS Socket Limit Reached"
     description: "Counts the number of times the os socket limit was reached. i.e. CanAttachSocket() returned false.
 "
   }
@@ -2122,7 +2122,7 @@ This does not include deletion-request pings.
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Power Cpu Time Bogus Values"
+    group_item_label: "Power CPU Time Bogus Values"
     description: "Impossibly large CPU time values that were discarded.
 "
   }
@@ -2132,7 +2132,7 @@ This does not include deletion-request pings.
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Power Gpu Time Bogus Values"
+    group_item_label: "Power GPU Time Bogus Values"
     description: "Impossibly large GPU time values that were discarded.
 "
   }
@@ -2142,7 +2142,7 @@ This does not include deletion-request pings.
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Power Total Cpu Time Ms"
+    group_item_label: "Power Total CPU Time Ms"
     description: "Total CPU time used by all processes in ms.
 "
   }
@@ -2152,7 +2152,7 @@ This does not include deletion-request pings.
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Power Total Gpu Time Ms"
+    group_item_label: "Power Total GPU Time Ms"
     description: "Total GPU time used by all processes in ms.
 "
   }
@@ -2262,7 +2262,7 @@ This does not include deletion-request pings.
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Security Ui Protectionspopup Smartblockembeds Shown"
+    group_item_label: "Security UI Protectionspopup Smartblockembeds Shown"
     description: "How many times the SmartBlock placeholders are shown on the page
 "
   }
@@ -2316,7 +2316,7 @@ a website from a shortcut in the home screen.
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Tls Certificate Verifications"
+    group_item_label: "TLS Certificate Verifications"
     description: "The total number of successful TLS server certificate verifications.
 "
   }
@@ -3068,7 +3068,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.cert_validation_http_request_result.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Cert Validation Http Request Result"
+    group_label: "Metrics Custom Distribution Cert Validation HTTP Request Result"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -3077,7 +3077,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.cert_validation_http_request_result.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Cert Validation Http Request Result"
+    group_label: "Metrics Custom Distribution Cert Validation HTTP Request Result"
     group_item_label: "Sum"
   }
 
@@ -3618,7 +3618,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.dns_blocklist_count.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Dns Blocklist Count"
+    group_label: "Metrics Custom Distribution DNS Blocklist Count"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -3627,7 +3627,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.dns_blocklist_count.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Dns Blocklist Count"
+    group_label: "Metrics Custom Distribution DNS Blocklist Count"
     group_item_label: "Sum"
   }
 
@@ -3640,7 +3640,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.dns_lookup_method.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Dns Lookup Method"
+    group_label: "Metrics Custom Distribution DNS Lookup Method"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -3649,7 +3649,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.dns_lookup_method.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Dns Lookup Method"
+    group_label: "Metrics Custom Distribution DNS Lookup Method"
     group_item_label: "Sum"
   }
 
@@ -4278,7 +4278,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_altsvc_entries_per_header.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Altsvc Entries Per Header"
+    group_label: "Metrics Custom Distribution HTTP Altsvc Entries Per Header"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4287,7 +4287,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_altsvc_entries_per_header.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Altsvc Entries Per Header"
+    group_label: "Metrics Custom Distribution HTTP Altsvc Entries Per Header"
     group_item_label: "Sum"
   }
 
@@ -4300,7 +4300,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_channel_disposition.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Channel Disposition"
+    group_label: "Metrics Custom Distribution HTTP Channel Disposition"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4309,7 +4309,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_channel_disposition.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Channel Disposition"
+    group_label: "Metrics Custom Distribution HTTP Channel Disposition"
     group_item_label: "Sum"
   }
 
@@ -4322,7 +4322,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_content_encoding.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Content Encoding"
+    group_label: "Metrics Custom Distribution HTTP Content Encoding"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4331,7 +4331,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_content_encoding.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Content Encoding"
+    group_label: "Metrics Custom Distribution HTTP Content Encoding"
     group_item_label: "Sum"
   }
 
@@ -4344,7 +4344,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_proxy_type.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Proxy Type"
+    group_label: "Metrics Custom Distribution HTTP Proxy Type"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4353,7 +4353,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_proxy_type.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Proxy Type"
+    group_label: "Metrics Custom Distribution HTTP Proxy Type"
     group_item_label: "Sum"
   }
 
@@ -4366,7 +4366,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_request_per_conn.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Request Per Conn"
+    group_label: "Metrics Custom Distribution HTTP Request Per Conn"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4375,7 +4375,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_request_per_conn.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Request Per Conn"
+    group_label: "Metrics Custom Distribution HTTP Request Per Conn"
     group_item_label: "Sum"
   }
 
@@ -4388,7 +4388,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_request_per_page.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Request Per Page"
+    group_label: "Metrics Custom Distribution HTTP Request Per Page"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4397,7 +4397,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_request_per_page.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Request Per Page"
+    group_label: "Metrics Custom Distribution HTTP Request Per Page"
     group_item_label: "Sum"
   }
 
@@ -4410,7 +4410,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_request_per_page_from_cache.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Request Per Page From Cache"
+    group_label: "Metrics Custom Distribution HTTP Request Per Page From Cache"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4419,7 +4419,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_request_per_page_from_cache.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Request Per Page From Cache"
+    group_label: "Metrics Custom Distribution HTTP Request Per Page From Cache"
     group_item_label: "Sum"
   }
 
@@ -4432,7 +4432,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_response_version.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Response Version"
+    group_label: "Metrics Custom Distribution HTTP Response Version"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4441,7 +4441,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_response_version.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Response Version"
+    group_label: "Metrics Custom Distribution HTTP Response Version"
     group_item_label: "Sum"
   }
 
@@ -4454,7 +4454,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_saw_quic_alt_protocol.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Saw Quic Alt Protocol"
+    group_label: "Metrics Custom Distribution HTTP Saw Quic Alt Protocol"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4463,7 +4463,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_saw_quic_alt_protocol.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Saw Quic Alt Protocol"
+    group_label: "Metrics Custom Distribution HTTP Saw Quic Alt Protocol"
     group_item_label: "Sum"
   }
 
@@ -4476,7 +4476,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_transaction_ech_retry_ech_failed_count.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Transaction Ech Retry Ech Failed Count"
+    group_label: "Metrics Custom Distribution HTTP Transaction Ech Retry Ech Failed Count"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4485,7 +4485,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_transaction_ech_retry_ech_failed_count.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Transaction Ech Retry Ech Failed Count"
+    group_label: "Metrics Custom Distribution HTTP Transaction Ech Retry Ech Failed Count"
     group_item_label: "Sum"
   }
 
@@ -4498,7 +4498,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_transaction_ech_retry_others_count.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Transaction Ech Retry Others Count"
+    group_label: "Metrics Custom Distribution HTTP Transaction Ech Retry Others Count"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4507,7 +4507,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_transaction_ech_retry_others_count.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Transaction Ech Retry Others Count"
+    group_label: "Metrics Custom Distribution HTTP Transaction Ech Retry Others Count"
     group_item_label: "Sum"
   }
 
@@ -4520,7 +4520,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_transaction_ech_retry_with_ech_count.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Transaction Ech Retry With Ech Count"
+    group_label: "Metrics Custom Distribution HTTP Transaction Ech Retry With Ech Count"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4529,7 +4529,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_transaction_ech_retry_with_ech_count.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Transaction Ech Retry With Ech Count"
+    group_label: "Metrics Custom Distribution HTTP Transaction Ech Retry With Ech Count"
     group_item_label: "Sum"
   }
 
@@ -4542,7 +4542,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_transaction_ech_retry_without_ech_count.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Transaction Ech Retry Without Ech Count"
+    group_label: "Metrics Custom Distribution HTTP Transaction Ech Retry Without Ech Count"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4551,7 +4551,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_transaction_ech_retry_without_ech_count.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Transaction Ech Retry Without Ech Count"
+    group_label: "Metrics Custom Distribution HTTP Transaction Ech Retry Without Ech Count"
     group_item_label: "Sum"
   }
 
@@ -4564,7 +4564,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_transaction_restart_reason.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Transaction Restart Reason"
+    group_label: "Metrics Custom Distribution HTTP Transaction Restart Reason"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4573,7 +4573,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.http_transaction_restart_reason.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Http Transaction Restart Reason"
+    group_label: "Metrics Custom Distribution HTTP Transaction Restart Reason"
     group_item_label: "Sum"
   }
 
@@ -4630,7 +4630,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_effectiveness.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Effectiveness"
+    group_label: "Metrics Custom Distribution Javascript GC Effectiveness"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4639,7 +4639,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_effectiveness.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Effectiveness"
+    group_label: "Metrics Custom Distribution Javascript GC Effectiveness"
     group_item_label: "Sum"
   }
 
@@ -4652,7 +4652,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mark_rate.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Mark Rate"
+    group_label: "Metrics Custom Distribution Javascript GC Mark Rate"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4661,7 +4661,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mark_rate.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Mark Rate"
+    group_label: "Metrics Custom Distribution Javascript GC Mark Rate"
     group_item_label: "Sum"
   }
 
@@ -4674,7 +4674,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mmu_50.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Mmu 50"
+    group_label: "Metrics Custom Distribution Javascript GC Mmu 50"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4683,7 +4683,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_mmu_50.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Mmu 50"
+    group_label: "Metrics Custom Distribution Javascript GC Mmu 50"
     group_item_label: "Sum"
   }
 
@@ -4696,7 +4696,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_nursery_promotion_rate.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Nursery Promotion Rate"
+    group_label: "Metrics Custom Distribution Javascript GC Nursery Promotion Rate"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4705,7 +4705,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_nursery_promotion_rate.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Nursery Promotion Rate"
+    group_label: "Metrics Custom Distribution Javascript GC Nursery Promotion Rate"
     group_item_label: "Sum"
   }
 
@@ -4718,7 +4718,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_interruptions.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Interruptions"
+    group_label: "Metrics Custom Distribution Javascript GC Parallel Mark Interruptions"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4727,7 +4727,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_interruptions.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Interruptions"
+    group_label: "Metrics Custom Distribution Javascript GC Parallel Mark Interruptions"
     group_item_label: "Sum"
   }
 
@@ -4740,7 +4740,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_speedup.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Speedup"
+    group_label: "Metrics Custom Distribution Javascript GC Parallel Mark Speedup"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4749,7 +4749,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_speedup.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Speedup"
+    group_label: "Metrics Custom Distribution Javascript GC Parallel Mark Speedup"
     group_item_label: "Sum"
   }
 
@@ -4762,7 +4762,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_utilization.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Utilization"
+    group_label: "Metrics Custom Distribution Javascript GC Parallel Mark Utilization"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4771,7 +4771,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_parallel_mark_utilization.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Parallel Mark Utilization"
+    group_label: "Metrics Custom Distribution Javascript GC Parallel Mark Utilization"
     group_item_label: "Sum"
   }
 
@@ -4784,7 +4784,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_pretenure_count.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Pretenure Count"
+    group_label: "Metrics Custom Distribution Javascript GC Pretenure Count"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4793,7 +4793,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_pretenure_count.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Pretenure Count"
+    group_label: "Metrics Custom Distribution Javascript GC Pretenure Count"
     group_item_label: "Sum"
   }
 
@@ -4806,7 +4806,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_slice_count.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Slice Count"
+    group_label: "Metrics Custom Distribution Javascript GC Slice Count"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4815,7 +4815,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_slice_count.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Slice Count"
+    group_label: "Metrics Custom Distribution Javascript GC Slice Count"
     group_item_label: "Sum"
   }
 
@@ -4828,7 +4828,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_tenured_survival_rate.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Tenured Survival Rate"
+    group_label: "Metrics Custom Distribution Javascript GC Tenured Survival Rate"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4837,7 +4837,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_tenured_survival_rate.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Tenured Survival Rate"
+    group_label: "Metrics Custom Distribution Javascript GC Tenured Survival Rate"
     group_item_label: "Sum"
   }
 
@@ -4850,7 +4850,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zone_count.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Zone Count"
+    group_label: "Metrics Custom Distribution Javascript GC Zone Count"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4859,7 +4859,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zone_count.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Zone Count"
+    group_label: "Metrics Custom Distribution Javascript GC Zone Count"
     group_item_label: "Sum"
   }
 
@@ -4872,7 +4872,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zones_collected.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Zones Collected"
+    group_label: "Metrics Custom Distribution Javascript GC Zones Collected"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4881,7 +4881,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zones_collected.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Javascript Gc Zones Collected"
+    group_label: "Metrics Custom Distribution Javascript GC Zones Collected"
     group_item_label: "Sum"
   }
 
@@ -5202,7 +5202,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.network_http_cache_entry_reuse_count.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Network Http Cache Entry Reuse Count"
+    group_label: "Metrics Custom Distribution Network HTTP Cache Entry Reuse Count"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5211,7 +5211,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.network_http_cache_entry_reuse_count.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Network Http Cache Entry Reuse Count"
+    group_label: "Metrics Custom Distribution Network HTTP Cache Entry Reuse Count"
     group_item_label: "Sum"
   }
 
@@ -5224,7 +5224,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Network Tls Early Data Bytes Written"
+    group_label: "Metrics Custom Distribution Network TLS Early Data Bytes Written"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5233,7 +5233,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Network Tls Early Data Bytes Written"
+    group_label: "Metrics Custom Distribution Network TLS Early Data Bytes Written"
     group_item_label: "Sum"
   }
 
@@ -5466,7 +5466,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 1 Download Throughput"
+    group_label: "Metrics Custom Distribution Networking HTTP 1 Download Throughput"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5475,7 +5475,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 1 Download Throughput"
+    group_label: "Metrics Custom Distribution Networking HTTP 1 Download Throughput"
     group_item_label: "Sum"
   }
 
@@ -5488,7 +5488,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput_100.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 1 Download Throughput 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 1 Download Throughput 100"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5497,7 +5497,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput_100.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 1 Download Throughput 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 1 Download Throughput 100"
     group_item_label: "Sum"
   }
 
@@ -5510,7 +5510,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput_10_50.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 1 Download Throughput 10 50"
+    group_label: "Metrics Custom Distribution Networking HTTP 1 Download Throughput 10 50"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5519,7 +5519,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput_10_50.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 1 Download Throughput 10 50"
+    group_label: "Metrics Custom Distribution Networking HTTP 1 Download Throughput 10 50"
     group_item_label: "Sum"
   }
 
@@ -5532,7 +5532,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput_50_100.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 1 Download Throughput 50 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 1 Download Throughput 50 100"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5541,7 +5541,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput_50_100.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 1 Download Throughput 50 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 1 Download Throughput 50 100"
     group_item_label: "Sum"
   }
 
@@ -5554,7 +5554,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput"
+    group_label: "Metrics Custom Distribution Networking HTTP 1 Upload Throughput"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5563,7 +5563,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput"
+    group_label: "Metrics Custom Distribution Networking HTTP 1 Upload Throughput"
     group_item_label: "Sum"
   }
 
@@ -5576,7 +5576,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_100.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 1 Upload Throughput 100"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5585,7 +5585,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_100.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 1 Upload Throughput 100"
     group_item_label: "Sum"
   }
 
@@ -5598,7 +5598,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_10_50.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput 10 50"
+    group_label: "Metrics Custom Distribution Networking HTTP 1 Upload Throughput 10 50"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5607,7 +5607,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_10_50.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput 10 50"
+    group_label: "Metrics Custom Distribution Networking HTTP 1 Upload Throughput 10 50"
     group_item_label: "Sum"
   }
 
@@ -5620,7 +5620,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_50_100.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput 50 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 1 Upload Throughput 50 100"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5629,7 +5629,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_50_100.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput 50 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 1 Upload Throughput 50 100"
     group_item_label: "Sum"
   }
 
@@ -5642,7 +5642,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 2 Download Throughput"
+    group_label: "Metrics Custom Distribution Networking HTTP 2 Download Throughput"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5651,7 +5651,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 2 Download Throughput"
+    group_label: "Metrics Custom Distribution Networking HTTP 2 Download Throughput"
     group_item_label: "Sum"
   }
 
@@ -5664,7 +5664,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput_100.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 2 Download Throughput 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 2 Download Throughput 100"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5673,7 +5673,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput_100.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 2 Download Throughput 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 2 Download Throughput 100"
     group_item_label: "Sum"
   }
 
@@ -5686,7 +5686,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput_10_50.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 2 Download Throughput 10 50"
+    group_label: "Metrics Custom Distribution Networking HTTP 2 Download Throughput 10 50"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5695,7 +5695,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput_10_50.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 2 Download Throughput 10 50"
+    group_label: "Metrics Custom Distribution Networking HTTP 2 Download Throughput 10 50"
     group_item_label: "Sum"
   }
 
@@ -5708,7 +5708,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput_50_100.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 2 Download Throughput 50 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 2 Download Throughput 50 100"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5717,7 +5717,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput_50_100.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 2 Download Throughput 50 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 2 Download Throughput 50 100"
     group_item_label: "Sum"
   }
 
@@ -5730,7 +5730,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput"
+    group_label: "Metrics Custom Distribution Networking HTTP 2 Upload Throughput"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5739,7 +5739,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput"
+    group_label: "Metrics Custom Distribution Networking HTTP 2 Upload Throughput"
     group_item_label: "Sum"
   }
 
@@ -5752,7 +5752,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_100.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 2 Upload Throughput 100"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5761,7 +5761,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_100.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 2 Upload Throughput 100"
     group_item_label: "Sum"
   }
 
@@ -5774,7 +5774,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_10_50.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput 10 50"
+    group_label: "Metrics Custom Distribution Networking HTTP 2 Upload Throughput 10 50"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5783,7 +5783,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_10_50.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput 10 50"
+    group_label: "Metrics Custom Distribution Networking HTTP 2 Upload Throughput 10 50"
     group_item_label: "Sum"
   }
 
@@ -5796,7 +5796,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_50_100.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput 50 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 2 Upload Throughput 50 100"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5805,7 +5805,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_50_100.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput 50 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 2 Upload Throughput 50 100"
     group_item_label: "Sum"
   }
 
@@ -5818,7 +5818,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Download Throughput"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5827,7 +5827,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Download Throughput"
     group_item_label: "Sum"
   }
 
@@ -5840,7 +5840,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_100.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Download Throughput 100"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5849,7 +5849,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_100.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Download Throughput 100"
     group_item_label: "Sum"
   }
 
@@ -5862,7 +5862,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_10_50.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput 10 50"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Download Throughput 10 50"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5871,7 +5871,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_10_50.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput 10 50"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Download Throughput 10 50"
     group_item_label: "Sum"
   }
 
@@ -5884,7 +5884,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_50_100.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput 50 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Download Throughput 50 100"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5893,7 +5893,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput_50_100.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput 50 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Download Throughput 50 100"
     group_item_label: "Sum"
   }
 
@@ -5906,7 +5906,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_received.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Ecn Ce Ect0 Ratio Received"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Ecn Ce Ect0 Ratio Received"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5915,7 +5915,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_received.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Ecn Ce Ect0 Ratio Received"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Ecn Ce Ect0 Ratio Received"
     group_item_label: "Sum"
   }
 
@@ -5928,7 +5928,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_sent.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Ecn Ce Ect0 Ratio Sent"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Ecn Ce Ect0 Ratio Sent"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5937,7 +5937,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_ecn_ce_ect0_ratio_sent.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Ecn Ce Ect0 Ratio Sent"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Ecn Ce Ect0 Ratio Sent"
     group_item_label: "Sum"
   }
 
@@ -5950,7 +5950,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Loss Ratio"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Loss Ratio"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5959,7 +5959,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Loss Ratio"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Loss Ratio"
     group_item_label: "Sum"
   }
 
@@ -5972,7 +5972,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_received.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Udp Datagram Segments Received"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Udp Datagram Segments Received"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -5981,7 +5981,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_received.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Udp Datagram Segments Received"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Udp Datagram Segments Received"
     group_item_label: "Sum"
   }
 
@@ -5994,7 +5994,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Upload Throughput"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -6003,7 +6003,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Upload Throughput"
     group_item_label: "Sum"
   }
 
@@ -6016,7 +6016,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_100.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Upload Throughput 100"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -6025,7 +6025,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_100.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Upload Throughput 100"
     group_item_label: "Sum"
   }
 
@@ -6038,7 +6038,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_10_50.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput 10 50"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Upload Throughput 10 50"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -6047,7 +6047,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_10_50.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput 10 50"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Upload Throughput 10 50"
     group_item_label: "Sum"
   }
 
@@ -6060,7 +6060,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_50_100.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput 50 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Upload Throughput 50 100"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -6069,7 +6069,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_50_100.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput 50 100"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Upload Throughput 50 100"
     group_item_label: "Sum"
   }
 
@@ -6698,7 +6698,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_auth_algorithm_full.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Auth Algorithm Full"
+    group_label: "Metrics Custom Distribution SSL Auth Algorithm Full"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -6707,7 +6707,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_auth_algorithm_full.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Auth Algorithm Full"
+    group_label: "Metrics Custom Distribution SSL Auth Algorithm Full"
     group_item_label: "Sum"
   }
 
@@ -6720,7 +6720,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_auth_ecdsa_curve_full.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Auth Ecdsa Curve Full"
+    group_label: "Metrics Custom Distribution SSL Auth Ecdsa Curve Full"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -6729,7 +6729,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_auth_ecdsa_curve_full.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Auth Ecdsa Curve Full"
+    group_label: "Metrics Custom Distribution SSL Auth Ecdsa Curve Full"
     group_item_label: "Sum"
   }
 
@@ -6742,7 +6742,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_auth_rsa_key_size_full.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Auth Rsa Key Size Full"
+    group_label: "Metrics Custom Distribution SSL Auth Rsa Key Size Full"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -6751,7 +6751,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_auth_rsa_key_size_full.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Auth Rsa Key Size Full"
+    group_label: "Metrics Custom Distribution SSL Auth Rsa Key Size Full"
     group_item_label: "Sum"
   }
 
@@ -6764,7 +6764,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_cert_error_overrides.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Cert Error Overrides"
+    group_label: "Metrics Custom Distribution SSL Cert Error Overrides"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -6773,7 +6773,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_cert_error_overrides.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Cert Error Overrides"
+    group_label: "Metrics Custom Distribution SSL Cert Error Overrides"
     group_item_label: "Sum"
   }
 
@@ -6786,7 +6786,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_cert_verification_errors.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Cert Verification Errors"
+    group_label: "Metrics Custom Distribution SSL Cert Verification Errors"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -6795,7 +6795,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_cert_verification_errors.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Cert Verification Errors"
+    group_label: "Metrics Custom Distribution SSL Cert Verification Errors"
     group_item_label: "Sum"
   }
 
@@ -6808,7 +6808,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_ct_policy_non_compliant_connections_by_ca.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Ct Policy Non Compliant Connections By Ca"
+    group_label: "Metrics Custom Distribution SSL Ct Policy Non Compliant Connections By Ca"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -6817,7 +6817,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_ct_policy_non_compliant_connections_by_ca.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Ct Policy Non Compliant Connections By Ca"
+    group_label: "Metrics Custom Distribution SSL Ct Policy Non Compliant Connections By Ca"
     group_item_label: "Sum"
   }
 
@@ -6830,7 +6830,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_completed.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Handshake Completed"
+    group_label: "Metrics Custom Distribution SSL Handshake Completed"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -6839,7 +6839,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_completed.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Handshake Completed"
+    group_label: "Metrics Custom Distribution SSL Handshake Completed"
     group_item_label: "Sum"
   }
 
@@ -6852,7 +6852,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_privacy.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Handshake Privacy"
+    group_label: "Metrics Custom Distribution SSL Handshake Privacy"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -6861,7 +6861,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_privacy.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Handshake Privacy"
+    group_label: "Metrics Custom Distribution SSL Handshake Privacy"
     group_item_label: "Sum"
   }
 
@@ -6874,7 +6874,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Handshake Result"
+    group_label: "Metrics Custom Distribution SSL Handshake Result"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -6883,7 +6883,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Handshake Result"
+    group_label: "Metrics Custom Distribution SSL Handshake Result"
     group_item_label: "Sum"
   }
 
@@ -6896,7 +6896,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result_conservative.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Handshake Result Conservative"
+    group_label: "Metrics Custom Distribution SSL Handshake Result Conservative"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -6905,7 +6905,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result_conservative.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Handshake Result Conservative"
+    group_label: "Metrics Custom Distribution SSL Handshake Result Conservative"
     group_item_label: "Sum"
   }
 
@@ -6918,7 +6918,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result_ech.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Handshake Result Ech"
+    group_label: "Metrics Custom Distribution SSL Handshake Result Ech"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -6927,7 +6927,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result_ech.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Handshake Result Ech"
+    group_label: "Metrics Custom Distribution SSL Handshake Result Ech"
     group_item_label: "Sum"
   }
 
@@ -6940,7 +6940,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result_ech_grease.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Handshake Result Ech Grease"
+    group_label: "Metrics Custom Distribution SSL Handshake Result Ech Grease"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -6949,7 +6949,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result_ech_grease.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Handshake Result Ech Grease"
+    group_label: "Metrics Custom Distribution SSL Handshake Result Ech Grease"
     group_item_label: "Sum"
   }
 
@@ -6962,7 +6962,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result_first_try.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Handshake Result First Try"
+    group_label: "Metrics Custom Distribution SSL Handshake Result First Try"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -6971,7 +6971,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result_first_try.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Handshake Result First Try"
+    group_label: "Metrics Custom Distribution SSL Handshake Result First Try"
     group_item_label: "Sum"
   }
 
@@ -6984,7 +6984,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_version.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Handshake Version"
+    group_label: "Metrics Custom Distribution SSL Handshake Version"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -6993,7 +6993,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_version.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Handshake Version"
+    group_label: "Metrics Custom Distribution SSL Handshake Version"
     group_item_label: "Sum"
   }
 
@@ -7006,7 +7006,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_kea_dhe_key_size_full.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Kea Dhe Key Size Full"
+    group_label: "Metrics Custom Distribution SSL Kea Dhe Key Size Full"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7015,7 +7015,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_kea_dhe_key_size_full.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Kea Dhe Key Size Full"
+    group_label: "Metrics Custom Distribution SSL Kea Dhe Key Size Full"
     group_item_label: "Sum"
   }
 
@@ -7028,7 +7028,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_kea_ecdhe_curve_full.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Kea Ecdhe Curve Full"
+    group_label: "Metrics Custom Distribution SSL Kea Ecdhe Curve Full"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7037,7 +7037,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_kea_ecdhe_curve_full.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Kea Ecdhe Curve Full"
+    group_label: "Metrics Custom Distribution SSL Kea Ecdhe Curve Full"
     group_item_label: "Sum"
   }
 
@@ -7050,7 +7050,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_kea_rsa_key_size_full.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Kea Rsa Key Size Full"
+    group_label: "Metrics Custom Distribution SSL Kea Rsa Key Size Full"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7059,7 +7059,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_kea_rsa_key_size_full.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Kea Rsa Key Size Full"
+    group_label: "Metrics Custom Distribution SSL Kea Rsa Key Size Full"
     group_item_label: "Sum"
   }
 
@@ -7072,7 +7072,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_key_exchange_algorithm_full.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Key Exchange Algorithm Full"
+    group_label: "Metrics Custom Distribution SSL Key Exchange Algorithm Full"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7081,7 +7081,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_key_exchange_algorithm_full.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Key Exchange Algorithm Full"
+    group_label: "Metrics Custom Distribution SSL Key Exchange Algorithm Full"
     group_item_label: "Sum"
   }
 
@@ -7094,7 +7094,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_key_exchange_algorithm_resumed.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Key Exchange Algorithm Resumed"
+    group_label: "Metrics Custom Distribution SSL Key Exchange Algorithm Resumed"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7103,7 +7103,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_key_exchange_algorithm_resumed.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Key Exchange Algorithm Resumed"
+    group_label: "Metrics Custom Distribution SSL Key Exchange Algorithm Resumed"
     group_item_label: "Sum"
   }
 
@@ -7116,7 +7116,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_npn_type.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Npn Type"
+    group_label: "Metrics Custom Distribution SSL Npn Type"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7125,7 +7125,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_npn_type.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Npn Type"
+    group_label: "Metrics Custom Distribution SSL Npn Type"
     group_item_label: "Sum"
   }
 
@@ -7138,7 +7138,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_ocsp_stapling.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Ocsp Stapling"
+    group_label: "Metrics Custom Distribution SSL Ocsp Stapling"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7147,7 +7147,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_ocsp_stapling.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Ocsp Stapling"
+    group_label: "Metrics Custom Distribution SSL Ocsp Stapling"
     group_item_label: "Sum"
   }
 
@@ -7160,7 +7160,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_permanent_cert_error_overrides.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Permanent Cert Error Overrides"
+    group_label: "Metrics Custom Distribution SSL Permanent Cert Error Overrides"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7169,7 +7169,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_permanent_cert_error_overrides.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Permanent Cert Error Overrides"
+    group_label: "Metrics Custom Distribution SSL Permanent Cert Error Overrides"
     group_item_label: "Sum"
   }
 
@@ -7182,7 +7182,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_reasons_for_not_false_starting.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Reasons For Not False Starting"
+    group_label: "Metrics Custom Distribution SSL Reasons For Not False Starting"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7191,7 +7191,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_reasons_for_not_false_starting.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Reasons For Not False Starting"
+    group_label: "Metrics Custom Distribution SSL Reasons For Not False Starting"
     group_item_label: "Sum"
   }
 
@@ -7204,7 +7204,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_scts_origin.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Scts Origin"
+    group_label: "Metrics Custom Distribution SSL Scts Origin"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7213,7 +7213,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_scts_origin.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Scts Origin"
+    group_label: "Metrics Custom Distribution SSL Scts Origin"
     group_item_label: "Sum"
   }
 
@@ -7226,7 +7226,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_scts_per_connection.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Scts Per Connection"
+    group_label: "Metrics Custom Distribution SSL Scts Per Connection"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7235,7 +7235,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_scts_per_connection.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Scts Per Connection"
+    group_label: "Metrics Custom Distribution SSL Scts Per Connection"
     group_item_label: "Sum"
   }
 
@@ -7248,7 +7248,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_scts_verification_status.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Scts Verification Status"
+    group_label: "Metrics Custom Distribution SSL Scts Verification Status"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7257,7 +7257,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_scts_verification_status.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Scts Verification Status"
+    group_label: "Metrics Custom Distribution SSL Scts Verification Status"
     group_item_label: "Sum"
   }
 
@@ -7270,7 +7270,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_tls10_intolerance_reason_post.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Tls10 Intolerance Reason Post"
+    group_label: "Metrics Custom Distribution SSL Tls10 Intolerance Reason Post"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7279,7 +7279,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_tls10_intolerance_reason_post.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Tls10 Intolerance Reason Post"
+    group_label: "Metrics Custom Distribution SSL Tls10 Intolerance Reason Post"
     group_item_label: "Sum"
   }
 
@@ -7292,7 +7292,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_tls10_intolerance_reason_pre.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Tls10 Intolerance Reason Pre"
+    group_label: "Metrics Custom Distribution SSL Tls10 Intolerance Reason Pre"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7301,7 +7301,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_tls10_intolerance_reason_pre.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Tls10 Intolerance Reason Pre"
+    group_label: "Metrics Custom Distribution SSL Tls10 Intolerance Reason Pre"
     group_item_label: "Sum"
   }
 
@@ -7314,7 +7314,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_tls11_intolerance_reason_post.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Tls11 Intolerance Reason Post"
+    group_label: "Metrics Custom Distribution SSL Tls11 Intolerance Reason Post"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7323,7 +7323,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_tls11_intolerance_reason_post.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Tls11 Intolerance Reason Post"
+    group_label: "Metrics Custom Distribution SSL Tls11 Intolerance Reason Post"
     group_item_label: "Sum"
   }
 
@@ -7336,7 +7336,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_tls11_intolerance_reason_pre.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Tls11 Intolerance Reason Pre"
+    group_label: "Metrics Custom Distribution SSL Tls11 Intolerance Reason Pre"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7345,7 +7345,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_tls11_intolerance_reason_pre.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Tls11 Intolerance Reason Pre"
+    group_label: "Metrics Custom Distribution SSL Tls11 Intolerance Reason Pre"
     group_item_label: "Sum"
   }
 
@@ -7358,7 +7358,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_tls12_intolerance_reason_post.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Tls12 Intolerance Reason Post"
+    group_label: "Metrics Custom Distribution SSL Tls12 Intolerance Reason Post"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7367,7 +7367,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_tls12_intolerance_reason_post.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Tls12 Intolerance Reason Post"
+    group_label: "Metrics Custom Distribution SSL Tls12 Intolerance Reason Post"
     group_item_label: "Sum"
   }
 
@@ -7380,7 +7380,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_tls12_intolerance_reason_pre.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Tls12 Intolerance Reason Pre"
+    group_label: "Metrics Custom Distribution SSL Tls12 Intolerance Reason Pre"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7389,7 +7389,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_tls12_intolerance_reason_pre.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Tls12 Intolerance Reason Pre"
+    group_label: "Metrics Custom Distribution SSL Tls12 Intolerance Reason Pre"
     group_item_label: "Sum"
   }
 
@@ -7402,7 +7402,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_tls13_intolerance_reason_post.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Tls13 Intolerance Reason Post"
+    group_label: "Metrics Custom Distribution SSL Tls13 Intolerance Reason Post"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7411,7 +7411,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_tls13_intolerance_reason_post.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Tls13 Intolerance Reason Post"
+    group_label: "Metrics Custom Distribution SSL Tls13 Intolerance Reason Post"
     group_item_label: "Sum"
   }
 
@@ -7424,7 +7424,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_tls13_intolerance_reason_pre.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Tls13 Intolerance Reason Pre"
+    group_label: "Metrics Custom Distribution SSL Tls13 Intolerance Reason Pre"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7433,7 +7433,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_tls13_intolerance_reason_pre.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Tls13 Intolerance Reason Pre"
+    group_label: "Metrics Custom Distribution SSL Tls13 Intolerance Reason Pre"
     group_item_label: "Sum"
   }
 
@@ -7446,7 +7446,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_version_fallback_inappropriate.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Version Fallback Inappropriate"
+    group_label: "Metrics Custom Distribution SSL Version Fallback Inappropriate"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7455,7 +7455,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.ssl_version_fallback_inappropriate.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Ssl Version Fallback Inappropriate"
+    group_label: "Metrics Custom Distribution SSL Version Fallback Inappropriate"
     group_item_label: "Sum"
   }
 
@@ -7556,7 +7556,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.tls_cipher_suite.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Tls Cipher Suite"
+    group_label: "Metrics Custom Distribution TLS Cipher Suite"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -7565,7 +7565,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.tls_cipher_suite.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Tls Cipher Suite"
+    group_label: "Metrics Custom Distribution TLS Cipher Suite"
     group_item_label: "Sum"
   }
 
@@ -8216,7 +8216,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.urlclassifier_ui_events.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Urlclassifier Ui Events"
+    group_label: "Metrics Custom Distribution Urlclassifier UI Events"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -8225,7 +8225,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.custom_distribution.urlclassifier_ui_events.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Urlclassifier Ui Events"
+    group_label: "Metrics Custom Distribution Urlclassifier UI Events"
     group_item_label: "Sum"
   }
 
@@ -12126,7 +12126,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.memory_distribution.http_kbread_per_conn2.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Http Kbread Per Conn2"
+    group_label: "Metrics Memory Distribution HTTP Kbread Per Conn2"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -12135,7 +12135,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.memory_distribution.http_kbread_per_conn2.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Http Kbread Per Conn2"
+    group_label: "Metrics Memory Distribution HTTP Kbread Per Conn2"
     group_item_label: "Sum"
   }
 
@@ -12258,7 +12258,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.memory_distribution.javascript_gc_nursery_bytes.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Javascript Gc Nursery Bytes"
+    group_label: "Metrics Memory Distribution Javascript GC Nursery Bytes"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -12267,7 +12267,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.memory_distribution.javascript_gc_nursery_bytes.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Javascript Gc Nursery Bytes"
+    group_label: "Metrics Memory Distribution Javascript GC Nursery Bytes"
     group_item_label: "Sum"
   }
 
@@ -12390,7 +12390,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_received.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Segment Size Received"
+    group_label: "Metrics Memory Distribution Networking HTTP 3 Udp Datagram Segment Size Received"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -12399,7 +12399,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_received.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Segment Size Received"
+    group_label: "Metrics Memory Distribution Networking HTTP 3 Udp Datagram Segment Size Received"
     group_item_label: "Sum"
   }
 
@@ -12412,7 +12412,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_sent.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Segment Size Sent"
+    group_label: "Metrics Memory Distribution Networking HTTP 3 Udp Datagram Segment Size Sent"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -12421,7 +12421,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_sent.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Segment Size Sent"
+    group_label: "Metrics Memory Distribution Networking HTTP 3 Udp Datagram Segment Size Sent"
     group_item_label: "Sum"
   }
 
@@ -12434,7 +12434,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_received.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Size Received"
+    group_label: "Metrics Memory Distribution Networking HTTP 3 Udp Datagram Size Received"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -12443,7 +12443,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_received.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Networking Http 3 Udp Datagram Size Received"
+    group_label: "Metrics Memory Distribution Networking HTTP 3 Udp Datagram Size Received"
     group_item_label: "Sum"
   }
 
@@ -12610,7 +12610,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.memory_distribution.ssl_bytes_before_cert_callback.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Ssl Bytes Before Cert Callback"
+    group_label: "Metrics Memory Distribution SSL Bytes Before Cert Callback"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -12619,7 +12619,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.memory_distribution.ssl_bytes_before_cert_callback.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Ssl Bytes Before Cert Callback"
+    group_label: "Metrics Memory Distribution SSL Bytes Before Cert Callback"
     group_item_label: "Sum"
   }
 
@@ -12849,7 +12849,7 @@ API for the purposes of Validation (hence GVSV).
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
-    group_item_label: "Gpu Process Total Launch Attempts"
+    group_item_label: "GPU Process Total Launch Attempts"
     description: "The number of total GPU process launch attempts.
 "
   }
@@ -12859,7 +12859,7 @@ API for the purposes of Validation (hence GVSV).
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
-    group_item_label: "Gpu Process Unstable Launch Attempts"
+    group_item_label: "GPU Process Unstable Launch Attempts"
     description: "The number of consecutive unstable launch attempts.
 "
   }
@@ -13155,7 +13155,7 @@ Similar to the legacy telemetry histogram PWMGR_NUM_SAVED_PASSWORDS.
     sql: ${TABLE}.metrics.rate.pkcs11_nss_cert_db.denominator ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Rate Pkcs11 Nss Cert Db"
+    group_label: "Metrics Rate Pkcs11 Nss Cert DB"
     group_item_label: "Denominator"
   }
 
@@ -13163,7 +13163,7 @@ Similar to the legacy telemetry histogram PWMGR_NUM_SAVED_PASSWORDS.
     sql: ${TABLE}.metrics.rate.pkcs11_nss_cert_db.numerator ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Rate Pkcs11 Nss Cert Db"
+    group_label: "Metrics Rate Pkcs11 Nss Cert DB"
     group_item_label: "Numerator"
   }
 
@@ -13427,7 +13427,7 @@ Similar to the legacy telemetry histogram PWMGR_NUM_SAVED_PASSWORDS.
     sql: ${TABLE}.metrics.rate.verification_used_cert_from_nss_cert_db.denominator ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Rate Verification Used Cert From Nss Cert Db"
+    group_label: "Metrics Rate Verification Used Cert From Nss Cert DB"
     group_item_label: "Denominator"
   }
 
@@ -13435,7 +13435,7 @@ Similar to the legacy telemetry histogram PWMGR_NUM_SAVED_PASSWORDS.
     sql: ${TABLE}.metrics.rate.verification_used_cert_from_nss_cert_db.numerator ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Rate Verification Used Cert From Nss Cert Db"
+    group_label: "Metrics Rate Verification Used Cert From Nss Cert DB"
     group_item_label: "Numerator"
   }
 
@@ -13475,7 +13475,7 @@ Similar to the legacy telemetry histogram PWMGR_NUM_SAVED_PASSWORDS.
     sql: ${TABLE}.metrics.rate.verification_used_cert_from_tls_handshake.denominator ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Rate Verification Used Cert From Tls Handshake"
+    group_label: "Metrics Rate Verification Used Cert From TLS Handshake"
     group_item_label: "Denominator"
   }
 
@@ -13483,7 +13483,7 @@ Similar to the legacy telemetry histogram PWMGR_NUM_SAVED_PASSWORDS.
     sql: ${TABLE}.metrics.rate.verification_used_cert_from_tls_handshake.numerator ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Rate Verification Used Cert From Tls Handshake"
+    group_label: "Metrics Rate Verification Used Cert From TLS Handshake"
     group_item_label: "Numerator"
   }
 
@@ -13572,7 +13572,7 @@ specifically overrides it for the app.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Gecko Build Id"
+    group_item_label: "Gecko Build ID"
     description: "The Buildid of the Gecko engine, example: 20200205124310 (Migrated from the geckoview metric of the same name).
 "
   }
@@ -13592,7 +13592,7 @@ specifically overrides it for the app.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Geckoview Validation Build Id"
+    group_item_label: "Geckoview Validation Build ID"
     description: "The Buildid of the Gecko engine, example: 20200205124310 Mirror of `geckoview.build_id` for validation of migrated data.
 "
   }
@@ -13622,7 +13622,7 @@ specifically overrides it for the app.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Gfx Adapter Primary Device Id"
+    group_item_label: "Gfx Adapter Primary Device ID"
     description: "Graphics adapter device identification (Migrated from the geckoview metric of the same name).
 "
   }
@@ -13672,7 +13672,7 @@ specifically overrides it for the app.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Gfx Adapter Primary Subsystem Id"
+    group_item_label: "Gfx Adapter Primary Subsystem ID"
     description: "Graphics adapter subsystem identification (Migrated from the geckoview metric of the same name).
 "
   }
@@ -13682,7 +13682,7 @@ specifically overrides it for the app.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Gfx Adapter Primary Vendor Id"
+    group_item_label: "Gfx Adapter Primary Vendor ID"
     description: "Graphics adapter vendor identification (Migrated from the geckoview metric of the same name).
 "
   }
@@ -13732,7 +13732,7 @@ specifically overrides it for the app.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Glean Client Annotation Experimentation Id"
+    group_item_label: "Glean Client Annotation Experimentation ID"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
 "
@@ -13753,7 +13753,7 @@ for the purpose of experimentation enrollment.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Gpu Process Feature Status"
+    group_item_label: "GPU Process Feature Status"
     description: "Current status of the GPU process feature
 "
   }
@@ -15783,7 +15783,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_label: "Metrics Timing Distribution Devtools DOM Time Active"
     group_item_label: "Bucket Count"
   }
 
@@ -15791,7 +15791,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_label: "Metrics Timing Distribution Devtools DOM Time Active"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -15800,7 +15800,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_label: "Metrics Timing Distribution Devtools DOM Time Active"
     group_item_label: "Histogram Type"
   }
 
@@ -15808,7 +15808,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_label: "Metrics Timing Distribution Devtools DOM Time Active"
     group_item_label: "Overflow"
   }
 
@@ -15821,7 +15821,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_label: "Metrics Timing Distribution Devtools DOM Time Active"
     group_item_label: "Sum"
   }
 
@@ -15829,7 +15829,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_label: "Metrics Timing Distribution Devtools DOM Time Active"
     group_item_label: "Time Unit"
   }
 
@@ -15837,7 +15837,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.devtools_dom_time_active.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Devtools Dom Time Active"
+    group_label: "Metrics Timing Distribution Devtools DOM Time Active"
     group_item_label: "Underflow"
   }
 
@@ -17190,7 +17190,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_cleanup_age.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Cleanup Age"
+    group_label: "Metrics Timing Distribution DNS By Type Cleanup Age"
     group_item_label: "Bucket Count"
   }
 
@@ -17198,7 +17198,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_cleanup_age.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Cleanup Age"
+    group_label: "Metrics Timing Distribution DNS By Type Cleanup Age"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -17207,7 +17207,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_cleanup_age.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Cleanup Age"
+    group_label: "Metrics Timing Distribution DNS By Type Cleanup Age"
     group_item_label: "Histogram Type"
   }
 
@@ -17215,7 +17215,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_cleanup_age.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Cleanup Age"
+    group_label: "Metrics Timing Distribution DNS By Type Cleanup Age"
     group_item_label: "Overflow"
   }
 
@@ -17228,7 +17228,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_cleanup_age.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Cleanup Age"
+    group_label: "Metrics Timing Distribution DNS By Type Cleanup Age"
     group_item_label: "Sum"
   }
 
@@ -17236,7 +17236,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_cleanup_age.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Cleanup Age"
+    group_label: "Metrics Timing Distribution DNS By Type Cleanup Age"
     group_item_label: "Time Unit"
   }
 
@@ -17244,7 +17244,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_cleanup_age.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Cleanup Age"
+    group_label: "Metrics Timing Distribution DNS By Type Cleanup Age"
     group_item_label: "Underflow"
   }
 
@@ -17257,7 +17257,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_failed_lookup_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Failed Lookup Time"
+    group_label: "Metrics Timing Distribution DNS By Type Failed Lookup Time"
     group_item_label: "Bucket Count"
   }
 
@@ -17265,7 +17265,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_failed_lookup_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Failed Lookup Time"
+    group_label: "Metrics Timing Distribution DNS By Type Failed Lookup Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -17274,7 +17274,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_failed_lookup_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Failed Lookup Time"
+    group_label: "Metrics Timing Distribution DNS By Type Failed Lookup Time"
     group_item_label: "Histogram Type"
   }
 
@@ -17282,7 +17282,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_failed_lookup_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Failed Lookup Time"
+    group_label: "Metrics Timing Distribution DNS By Type Failed Lookup Time"
     group_item_label: "Overflow"
   }
 
@@ -17295,7 +17295,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_failed_lookup_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Failed Lookup Time"
+    group_label: "Metrics Timing Distribution DNS By Type Failed Lookup Time"
     group_item_label: "Sum"
   }
 
@@ -17303,7 +17303,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_failed_lookup_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Failed Lookup Time"
+    group_label: "Metrics Timing Distribution DNS By Type Failed Lookup Time"
     group_item_label: "Time Unit"
   }
 
@@ -17311,7 +17311,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_failed_lookup_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Failed Lookup Time"
+    group_label: "Metrics Timing Distribution DNS By Type Failed Lookup Time"
     group_item_label: "Underflow"
   }
 
@@ -17324,7 +17324,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_premature_eviction.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Premature Eviction"
+    group_label: "Metrics Timing Distribution DNS By Type Premature Eviction"
     group_item_label: "Bucket Count"
   }
 
@@ -17332,7 +17332,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_premature_eviction.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Premature Eviction"
+    group_label: "Metrics Timing Distribution DNS By Type Premature Eviction"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -17341,7 +17341,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_premature_eviction.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Premature Eviction"
+    group_label: "Metrics Timing Distribution DNS By Type Premature Eviction"
     group_item_label: "Histogram Type"
   }
 
@@ -17349,7 +17349,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_premature_eviction.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Premature Eviction"
+    group_label: "Metrics Timing Distribution DNS By Type Premature Eviction"
     group_item_label: "Overflow"
   }
 
@@ -17362,7 +17362,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_premature_eviction.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Premature Eviction"
+    group_label: "Metrics Timing Distribution DNS By Type Premature Eviction"
     group_item_label: "Sum"
   }
 
@@ -17370,7 +17370,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_premature_eviction.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Premature Eviction"
+    group_label: "Metrics Timing Distribution DNS By Type Premature Eviction"
     group_item_label: "Time Unit"
   }
 
@@ -17378,7 +17378,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_premature_eviction.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Premature Eviction"
+    group_label: "Metrics Timing Distribution DNS By Type Premature Eviction"
     group_item_label: "Underflow"
   }
 
@@ -17391,7 +17391,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_succeeded_lookup_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Succeeded Lookup Time"
+    group_label: "Metrics Timing Distribution DNS By Type Succeeded Lookup Time"
     group_item_label: "Bucket Count"
   }
 
@@ -17399,7 +17399,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_succeeded_lookup_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Succeeded Lookup Time"
+    group_label: "Metrics Timing Distribution DNS By Type Succeeded Lookup Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -17408,7 +17408,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_succeeded_lookup_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Succeeded Lookup Time"
+    group_label: "Metrics Timing Distribution DNS By Type Succeeded Lookup Time"
     group_item_label: "Histogram Type"
   }
 
@@ -17416,7 +17416,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_succeeded_lookup_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Succeeded Lookup Time"
+    group_label: "Metrics Timing Distribution DNS By Type Succeeded Lookup Time"
     group_item_label: "Overflow"
   }
 
@@ -17429,7 +17429,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_succeeded_lookup_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Succeeded Lookup Time"
+    group_label: "Metrics Timing Distribution DNS By Type Succeeded Lookup Time"
     group_item_label: "Sum"
   }
 
@@ -17437,7 +17437,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_succeeded_lookup_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Succeeded Lookup Time"
+    group_label: "Metrics Timing Distribution DNS By Type Succeeded Lookup Time"
     group_item_label: "Time Unit"
   }
 
@@ -17445,7 +17445,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_succeeded_lookup_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns By Type Succeeded Lookup Time"
+    group_label: "Metrics Timing Distribution DNS By Type Succeeded Lookup Time"
     group_item_label: "Underflow"
   }
 
@@ -17458,7 +17458,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_cleanup_age.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Cleanup Age"
+    group_label: "Metrics Timing Distribution DNS Cleanup Age"
     group_item_label: "Bucket Count"
   }
 
@@ -17466,7 +17466,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_cleanup_age.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Cleanup Age"
+    group_label: "Metrics Timing Distribution DNS Cleanup Age"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -17475,7 +17475,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_cleanup_age.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Cleanup Age"
+    group_label: "Metrics Timing Distribution DNS Cleanup Age"
     group_item_label: "Histogram Type"
   }
 
@@ -17483,7 +17483,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_cleanup_age.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Cleanup Age"
+    group_label: "Metrics Timing Distribution DNS Cleanup Age"
     group_item_label: "Overflow"
   }
 
@@ -17496,7 +17496,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_cleanup_age.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Cleanup Age"
+    group_label: "Metrics Timing Distribution DNS Cleanup Age"
     group_item_label: "Sum"
   }
 
@@ -17504,7 +17504,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_cleanup_age.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Cleanup Age"
+    group_label: "Metrics Timing Distribution DNS Cleanup Age"
     group_item_label: "Time Unit"
   }
 
@@ -17512,7 +17512,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_cleanup_age.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Cleanup Age"
+    group_label: "Metrics Timing Distribution DNS Cleanup Age"
     group_item_label: "Underflow"
   }
 
@@ -17525,7 +17525,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_native_lookup_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Native Lookup Time"
+    group_label: "Metrics Timing Distribution DNS Native Lookup Time"
     group_item_label: "Bucket Count"
   }
 
@@ -17533,7 +17533,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_native_lookup_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Native Lookup Time"
+    group_label: "Metrics Timing Distribution DNS Native Lookup Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -17542,7 +17542,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_native_lookup_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Native Lookup Time"
+    group_label: "Metrics Timing Distribution DNS Native Lookup Time"
     group_item_label: "Histogram Type"
   }
 
@@ -17550,7 +17550,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_native_lookup_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Native Lookup Time"
+    group_label: "Metrics Timing Distribution DNS Native Lookup Time"
     group_item_label: "Overflow"
   }
 
@@ -17563,7 +17563,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_native_lookup_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Native Lookup Time"
+    group_label: "Metrics Timing Distribution DNS Native Lookup Time"
     group_item_label: "Sum"
   }
 
@@ -17571,7 +17571,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_native_lookup_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Native Lookup Time"
+    group_label: "Metrics Timing Distribution DNS Native Lookup Time"
     group_item_label: "Time Unit"
   }
 
@@ -17579,7 +17579,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_native_lookup_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Native Lookup Time"
+    group_label: "Metrics Timing Distribution DNS Native Lookup Time"
     group_item_label: "Underflow"
   }
 
@@ -17592,7 +17592,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_native_queuing.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Native Queuing"
+    group_label: "Metrics Timing Distribution DNS Native Queuing"
     group_item_label: "Bucket Count"
   }
 
@@ -17600,7 +17600,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_native_queuing.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Native Queuing"
+    group_label: "Metrics Timing Distribution DNS Native Queuing"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -17609,7 +17609,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_native_queuing.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Native Queuing"
+    group_label: "Metrics Timing Distribution DNS Native Queuing"
     group_item_label: "Histogram Type"
   }
 
@@ -17617,7 +17617,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_native_queuing.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Native Queuing"
+    group_label: "Metrics Timing Distribution DNS Native Queuing"
     group_item_label: "Overflow"
   }
 
@@ -17630,7 +17630,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_native_queuing.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Native Queuing"
+    group_label: "Metrics Timing Distribution DNS Native Queuing"
     group_item_label: "Sum"
   }
 
@@ -17638,7 +17638,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_native_queuing.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Native Queuing"
+    group_label: "Metrics Timing Distribution DNS Native Queuing"
     group_item_label: "Time Unit"
   }
 
@@ -17646,7 +17646,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_native_queuing.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Native Queuing"
+    group_label: "Metrics Timing Distribution DNS Native Queuing"
     group_item_label: "Underflow"
   }
 
@@ -17659,7 +17659,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_premature_eviction.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Premature Eviction"
+    group_label: "Metrics Timing Distribution DNS Premature Eviction"
     group_item_label: "Bucket Count"
   }
 
@@ -17667,7 +17667,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_premature_eviction.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Premature Eviction"
+    group_label: "Metrics Timing Distribution DNS Premature Eviction"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -17676,7 +17676,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_premature_eviction.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Premature Eviction"
+    group_label: "Metrics Timing Distribution DNS Premature Eviction"
     group_item_label: "Histogram Type"
   }
 
@@ -17684,7 +17684,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_premature_eviction.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Premature Eviction"
+    group_label: "Metrics Timing Distribution DNS Premature Eviction"
     group_item_label: "Overflow"
   }
 
@@ -17697,7 +17697,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_premature_eviction.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Premature Eviction"
+    group_label: "Metrics Timing Distribution DNS Premature Eviction"
     group_item_label: "Sum"
   }
 
@@ -17705,7 +17705,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_premature_eviction.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Premature Eviction"
+    group_label: "Metrics Timing Distribution DNS Premature Eviction"
     group_item_label: "Time Unit"
   }
 
@@ -17713,7 +17713,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_premature_eviction.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Premature Eviction"
+    group_label: "Metrics Timing Distribution DNS Premature Eviction"
     group_item_label: "Underflow"
   }
 
@@ -17726,7 +17726,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_trr_processing_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Trr Processing Time"
+    group_label: "Metrics Timing Distribution DNS Trr Processing Time"
     group_item_label: "Bucket Count"
   }
 
@@ -17734,7 +17734,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_trr_processing_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Trr Processing Time"
+    group_label: "Metrics Timing Distribution DNS Trr Processing Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -17743,7 +17743,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_trr_processing_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Trr Processing Time"
+    group_label: "Metrics Timing Distribution DNS Trr Processing Time"
     group_item_label: "Histogram Type"
   }
 
@@ -17751,7 +17751,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_trr_processing_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Trr Processing Time"
+    group_label: "Metrics Timing Distribution DNS Trr Processing Time"
     group_item_label: "Overflow"
   }
 
@@ -17764,7 +17764,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_trr_processing_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Trr Processing Time"
+    group_label: "Metrics Timing Distribution DNS Trr Processing Time"
     group_item_label: "Sum"
   }
 
@@ -17772,7 +17772,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_trr_processing_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Trr Processing Time"
+    group_label: "Metrics Timing Distribution DNS Trr Processing Time"
     group_item_label: "Time Unit"
   }
 
@@ -17780,7 +17780,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dns_trr_processing_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dns Trr Processing Time"
+    group_label: "Metrics Timing Distribution DNS Trr Processing Time"
     group_item_label: "Underflow"
   }
 
@@ -17793,7 +17793,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Launch Mainthread"
     group_item_label: "Bucket Count"
   }
 
@@ -17801,7 +17801,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Launch Mainthread"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -17810,7 +17810,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Launch Mainthread"
     group_item_label: "Histogram Type"
   }
 
@@ -17818,7 +17818,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Launch Mainthread"
     group_item_label: "Overflow"
   }
 
@@ -17831,7 +17831,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Launch Mainthread"
     group_item_label: "Sum"
   }
 
@@ -17839,7 +17839,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Launch Mainthread"
     group_item_label: "Time Unit"
   }
 
@@ -17847,7 +17847,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_mainthread.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Mainthread"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Launch Mainthread"
     group_item_label: "Underflow"
   }
 
@@ -17860,7 +17860,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Launch Total"
     group_item_label: "Bucket Count"
   }
 
@@ -17868,7 +17868,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Launch Total"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -17877,7 +17877,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Launch Total"
     group_item_label: "Histogram Type"
   }
 
@@ -17885,7 +17885,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Launch Total"
     group_item_label: "Overflow"
   }
 
@@ -17898,7 +17898,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Launch Total"
     group_item_label: "Sum"
   }
 
@@ -17906,7 +17906,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Launch Total"
     group_item_label: "Time Unit"
   }
 
@@ -17914,7 +17914,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_launch_total.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Launch Total"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Launch Total"
     group_item_label: "Underflow"
   }
 
@@ -17927,7 +17927,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Sync Launch"
     group_item_label: "Bucket Count"
   }
 
@@ -17935,7 +17935,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Sync Launch"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -17944,7 +17944,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Sync Launch"
     group_item_label: "Histogram Type"
   }
 
@@ -17952,7 +17952,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Sync Launch"
     group_item_label: "Overflow"
   }
 
@@ -17965,7 +17965,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Sync Launch"
     group_item_label: "Sum"
   }
 
@@ -17973,7 +17973,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Sync Launch"
     group_item_label: "Time Unit"
   }
 
@@ -17981,7 +17981,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.dom_contentprocess_sync_launch.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Dom Contentprocess Sync Launch"
+    group_label: "Metrics Timing Distribution DOM Contentprocess Sync Launch"
     group_item_label: "Underflow"
   }
 
@@ -20674,7 +20674,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glam Experiment Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Glam Experiment HTTP Content Html5Parser Ondatafinished To Onstop Delay"
     group_item_label: "Bucket Count"
   }
 
@@ -20682,7 +20682,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glam Experiment Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Glam Experiment HTTP Content Html5Parser Ondatafinished To Onstop Delay"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -20691,7 +20691,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glam Experiment Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Glam Experiment HTTP Content Html5Parser Ondatafinished To Onstop Delay"
     group_item_label: "Histogram Type"
   }
 
@@ -20699,7 +20699,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glam Experiment Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Glam Experiment HTTP Content Html5Parser Ondatafinished To Onstop Delay"
     group_item_label: "Overflow"
   }
 
@@ -20712,7 +20712,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glam Experiment Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Glam Experiment HTTP Content Html5Parser Ondatafinished To Onstop Delay"
     group_item_label: "Sum"
   }
 
@@ -20720,7 +20720,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glam Experiment Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Glam Experiment HTTP Content Html5Parser Ondatafinished To Onstop Delay"
     group_item_label: "Time Unit"
   }
 
@@ -20728,7 +20728,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glam Experiment Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Glam Experiment HTTP Content Html5Parser Ondatafinished To Onstop Delay"
     group_item_label: "Underflow"
   }
 
@@ -21344,7 +21344,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.gpu_process_initialization_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Gpu Process Initialization Time"
+    group_label: "Metrics Timing Distribution GPU Process Initialization Time"
     group_item_label: "Bucket Count"
   }
 
@@ -21352,7 +21352,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.gpu_process_initialization_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Gpu Process Initialization Time"
+    group_label: "Metrics Timing Distribution GPU Process Initialization Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -21361,7 +21361,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.gpu_process_initialization_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Gpu Process Initialization Time"
+    group_label: "Metrics Timing Distribution GPU Process Initialization Time"
     group_item_label: "Histogram Type"
   }
 
@@ -21369,7 +21369,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.gpu_process_initialization_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Gpu Process Initialization Time"
+    group_label: "Metrics Timing Distribution GPU Process Initialization Time"
     group_item_label: "Overflow"
   }
 
@@ -21382,7 +21382,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.gpu_process_initialization_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Gpu Process Initialization Time"
+    group_label: "Metrics Timing Distribution GPU Process Initialization Time"
     group_item_label: "Sum"
   }
 
@@ -21390,7 +21390,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.gpu_process_initialization_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Gpu Process Initialization Time"
+    group_label: "Metrics Timing Distribution GPU Process Initialization Time"
     group_item_label: "Time Unit"
   }
 
@@ -21398,7 +21398,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.gpu_process_initialization_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Gpu Process Initialization Time"
+    group_label: "Metrics Timing Distribution GPU Process Initialization Time"
     group_item_label: "Underflow"
   }
 
@@ -21411,7 +21411,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.gpu_process_launch_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Gpu Process Launch Time"
+    group_label: "Metrics Timing Distribution GPU Process Launch Time"
     group_item_label: "Bucket Count"
   }
 
@@ -21419,7 +21419,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.gpu_process_launch_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Gpu Process Launch Time"
+    group_label: "Metrics Timing Distribution GPU Process Launch Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -21428,7 +21428,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.gpu_process_launch_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Gpu Process Launch Time"
+    group_label: "Metrics Timing Distribution GPU Process Launch Time"
     group_item_label: "Histogram Type"
   }
 
@@ -21436,7 +21436,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.gpu_process_launch_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Gpu Process Launch Time"
+    group_label: "Metrics Timing Distribution GPU Process Launch Time"
     group_item_label: "Overflow"
   }
 
@@ -21449,7 +21449,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.gpu_process_launch_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Gpu Process Launch Time"
+    group_label: "Metrics Timing Distribution GPU Process Launch Time"
     group_item_label: "Sum"
   }
 
@@ -21457,7 +21457,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.gpu_process_launch_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Gpu Process Launch Time"
+    group_label: "Metrics Timing Distribution GPU Process Launch Time"
     group_item_label: "Time Unit"
   }
 
@@ -21465,7 +21465,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.gpu_process_launch_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Gpu Process Launch Time"
+    group_label: "Metrics Timing Distribution GPU Process Launch Time"
     group_item_label: "Underflow"
   }
 
@@ -21545,7 +21545,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_subitem_first_byte_latency_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Subitem First Byte Latency Time"
+    group_label: "Metrics Timing Distribution HTTP Subitem First Byte Latency Time"
     group_item_label: "Bucket Count"
   }
 
@@ -21553,7 +21553,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_subitem_first_byte_latency_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Subitem First Byte Latency Time"
+    group_label: "Metrics Timing Distribution HTTP Subitem First Byte Latency Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -21562,7 +21562,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_subitem_first_byte_latency_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Subitem First Byte Latency Time"
+    group_label: "Metrics Timing Distribution HTTP Subitem First Byte Latency Time"
     group_item_label: "Histogram Type"
   }
 
@@ -21570,7 +21570,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_subitem_first_byte_latency_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Subitem First Byte Latency Time"
+    group_label: "Metrics Timing Distribution HTTP Subitem First Byte Latency Time"
     group_item_label: "Overflow"
   }
 
@@ -21583,7 +21583,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_subitem_first_byte_latency_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Subitem First Byte Latency Time"
+    group_label: "Metrics Timing Distribution HTTP Subitem First Byte Latency Time"
     group_item_label: "Sum"
   }
 
@@ -21591,7 +21591,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_subitem_first_byte_latency_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Subitem First Byte Latency Time"
+    group_label: "Metrics Timing Distribution HTTP Subitem First Byte Latency Time"
     group_item_label: "Time Unit"
   }
 
@@ -21599,7 +21599,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_subitem_first_byte_latency_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Subitem First Byte Latency Time"
+    group_label: "Metrics Timing Distribution HTTP Subitem First Byte Latency Time"
     group_item_label: "Underflow"
   }
 
@@ -21612,7 +21612,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_subitem_open_latency_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Subitem Open Latency Time"
+    group_label: "Metrics Timing Distribution HTTP Subitem Open Latency Time"
     group_item_label: "Bucket Count"
   }
 
@@ -21620,7 +21620,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_subitem_open_latency_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Subitem Open Latency Time"
+    group_label: "Metrics Timing Distribution HTTP Subitem Open Latency Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -21629,7 +21629,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_subitem_open_latency_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Subitem Open Latency Time"
+    group_label: "Metrics Timing Distribution HTTP Subitem Open Latency Time"
     group_item_label: "Histogram Type"
   }
 
@@ -21637,7 +21637,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_subitem_open_latency_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Subitem Open Latency Time"
+    group_label: "Metrics Timing Distribution HTTP Subitem Open Latency Time"
     group_item_label: "Overflow"
   }
 
@@ -21650,7 +21650,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_subitem_open_latency_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Subitem Open Latency Time"
+    group_label: "Metrics Timing Distribution HTTP Subitem Open Latency Time"
     group_item_label: "Sum"
   }
 
@@ -21658,7 +21658,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_subitem_open_latency_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Subitem Open Latency Time"
+    group_label: "Metrics Timing Distribution HTTP Subitem Open Latency Time"
     group_item_label: "Time Unit"
   }
 
@@ -21666,7 +21666,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_subitem_open_latency_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Subitem Open Latency Time"
+    group_label: "Metrics Timing Distribution HTTP Subitem Open Latency Time"
     group_item_label: "Underflow"
   }
 
@@ -21679,7 +21679,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time HTTP"
     group_item_label: "Bucket Count"
   }
 
@@ -21687,7 +21687,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time HTTP"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -21696,7 +21696,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time HTTP"
     group_item_label: "Histogram Type"
   }
 
@@ -21704,7 +21704,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time HTTP"
     group_item_label: "Overflow"
   }
 
@@ -21717,7 +21717,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time HTTP"
     group_item_label: "Sum"
   }
 
@@ -21725,7 +21725,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time HTTP"
     group_item_label: "Time Unit"
   }
 
@@ -21733,7 +21733,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time HTTP"
     group_item_label: "Underflow"
   }
 
@@ -21746,7 +21746,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http2_sup_http3.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http2 Sup Http3"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Http2 Sup Http3"
     group_item_label: "Bucket Count"
   }
 
@@ -21754,7 +21754,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http2_sup_http3.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http2 Sup Http3"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Http2 Sup Http3"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -21763,7 +21763,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http2_sup_http3.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http2 Sup Http3"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Http2 Sup Http3"
     group_item_label: "Histogram Type"
   }
 
@@ -21771,7 +21771,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http2_sup_http3.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http2 Sup Http3"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Http2 Sup Http3"
     group_item_label: "Overflow"
   }
 
@@ -21784,7 +21784,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http2_sup_http3.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http2 Sup Http3"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Http2 Sup Http3"
     group_item_label: "Sum"
   }
 
@@ -21792,7 +21792,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http2_sup_http3.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http2 Sup Http3"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Http2 Sup Http3"
     group_item_label: "Time Unit"
   }
 
@@ -21800,7 +21800,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http2_sup_http3.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http2 Sup Http3"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Http2 Sup Http3"
     group_item_label: "Underflow"
   }
 
@@ -21813,7 +21813,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http3.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http3"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Http3"
     group_item_label: "Bucket Count"
   }
 
@@ -21821,7 +21821,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http3.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http3"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Http3"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -21830,7 +21830,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http3.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http3"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Http3"
     group_item_label: "Histogram Type"
   }
 
@@ -21838,7 +21838,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http3.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http3"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Http3"
     group_item_label: "Overflow"
   }
 
@@ -21851,7 +21851,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http3.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http3"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Http3"
     group_item_label: "Sum"
   }
 
@@ -21859,7 +21859,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http3.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http3"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Http3"
     group_item_label: "Time Unit"
   }
 
@@ -21867,7 +21867,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http3.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Http3"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Http3"
     group_item_label: "Underflow"
   }
 
@@ -21880,7 +21880,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_spdy.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Spdy"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Spdy"
     group_item_label: "Bucket Count"
   }
 
@@ -21888,7 +21888,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_spdy.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Spdy"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Spdy"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -21897,7 +21897,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_spdy.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Spdy"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Spdy"
     group_item_label: "Histogram Type"
   }
 
@@ -21905,7 +21905,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_spdy.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Spdy"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Spdy"
     group_item_label: "Overflow"
   }
 
@@ -21918,7 +21918,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_spdy.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Spdy"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Spdy"
     group_item_label: "Sum"
   }
 
@@ -21926,7 +21926,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_spdy.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Spdy"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Spdy"
     group_item_label: "Time Unit"
   }
 
@@ -21934,7 +21934,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_spdy.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Http Transaction Wait Time Spdy"
+    group_label: "Metrics Timing Distribution HTTP Transaction Wait Time Spdy"
     group_item_label: "Underflow"
   }
 
@@ -22215,7 +22215,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_animation.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Animation"
+    group_label: "Metrics Timing Distribution Javascript GC Animation"
     group_item_label: "Bucket Count"
   }
 
@@ -22223,7 +22223,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_animation.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Animation"
+    group_label: "Metrics Timing Distribution Javascript GC Animation"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -22232,7 +22232,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_animation.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Animation"
+    group_label: "Metrics Timing Distribution Javascript GC Animation"
     group_item_label: "Histogram Type"
   }
 
@@ -22240,7 +22240,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_animation.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Animation"
+    group_label: "Metrics Timing Distribution Javascript GC Animation"
     group_item_label: "Overflow"
   }
 
@@ -22253,7 +22253,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_animation.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Animation"
+    group_label: "Metrics Timing Distribution Javascript GC Animation"
     group_item_label: "Sum"
   }
 
@@ -22261,7 +22261,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_animation.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Animation"
+    group_label: "Metrics Timing Distribution Javascript GC Animation"
     group_item_label: "Time Unit"
   }
 
@@ -22269,7 +22269,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_animation.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Animation"
+    group_label: "Metrics Timing Distribution Javascript GC Animation"
     group_item_label: "Underflow"
   }
 
@@ -22282,7 +22282,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Budget"
+    group_label: "Metrics Timing Distribution Javascript GC Budget"
     group_item_label: "Bucket Count"
   }
 
@@ -22290,7 +22290,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Budget"
+    group_label: "Metrics Timing Distribution Javascript GC Budget"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -22299,7 +22299,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Budget"
+    group_label: "Metrics Timing Distribution Javascript GC Budget"
     group_item_label: "Histogram Type"
   }
 
@@ -22307,7 +22307,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Budget"
+    group_label: "Metrics Timing Distribution Javascript GC Budget"
     group_item_label: "Overflow"
   }
 
@@ -22320,7 +22320,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Budget"
+    group_label: "Metrics Timing Distribution Javascript GC Budget"
     group_item_label: "Sum"
   }
 
@@ -22328,7 +22328,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Budget"
+    group_label: "Metrics Timing Distribution Javascript GC Budget"
     group_item_label: "Time Unit"
   }
 
@@ -22336,7 +22336,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Budget"
+    group_label: "Metrics Timing Distribution Javascript GC Budget"
     group_item_label: "Underflow"
   }
 
@@ -22349,7 +22349,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget_overrun.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Budget Overrun"
+    group_label: "Metrics Timing Distribution Javascript GC Budget Overrun"
     group_item_label: "Bucket Count"
   }
 
@@ -22357,7 +22357,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget_overrun.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Budget Overrun"
+    group_label: "Metrics Timing Distribution Javascript GC Budget Overrun"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -22366,7 +22366,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget_overrun.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Budget Overrun"
+    group_label: "Metrics Timing Distribution Javascript GC Budget Overrun"
     group_item_label: "Histogram Type"
   }
 
@@ -22374,7 +22374,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget_overrun.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Budget Overrun"
+    group_label: "Metrics Timing Distribution Javascript GC Budget Overrun"
     group_item_label: "Overflow"
   }
 
@@ -22387,7 +22387,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget_overrun.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Budget Overrun"
+    group_label: "Metrics Timing Distribution Javascript GC Budget Overrun"
     group_item_label: "Sum"
   }
 
@@ -22395,7 +22395,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget_overrun.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Budget Overrun"
+    group_label: "Metrics Timing Distribution Javascript GC Budget Overrun"
     group_item_label: "Time Unit"
   }
 
@@ -22403,7 +22403,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget_overrun.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Budget Overrun"
+    group_label: "Metrics Timing Distribution Javascript GC Budget Overrun"
     group_item_label: "Underflow"
   }
 
@@ -22416,7 +22416,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Compact Time"
+    group_label: "Metrics Timing Distribution Javascript GC Compact Time"
     group_item_label: "Bucket Count"
   }
 
@@ -22424,7 +22424,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Compact Time"
+    group_label: "Metrics Timing Distribution Javascript GC Compact Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -22433,7 +22433,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Compact Time"
+    group_label: "Metrics Timing Distribution Javascript GC Compact Time"
     group_item_label: "Histogram Type"
   }
 
@@ -22441,7 +22441,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Compact Time"
+    group_label: "Metrics Timing Distribution Javascript GC Compact Time"
     group_item_label: "Overflow"
   }
 
@@ -22454,7 +22454,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Compact Time"
+    group_label: "Metrics Timing Distribution Javascript GC Compact Time"
     group_item_label: "Sum"
   }
 
@@ -22462,7 +22462,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Compact Time"
+    group_label: "Metrics Timing Distribution Javascript GC Compact Time"
     group_item_label: "Time Unit"
   }
 
@@ -22470,7 +22470,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Compact Time"
+    group_label: "Metrics Timing Distribution Javascript GC Compact Time"
     group_item_label: "Underflow"
   }
 
@@ -22483,7 +22483,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_gray.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Gray"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Gray"
     group_item_label: "Bucket Count"
   }
 
@@ -22491,7 +22491,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_gray.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Gray"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Gray"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -22500,7 +22500,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_gray.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Gray"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Gray"
     group_item_label: "Histogram Type"
   }
 
@@ -22508,7 +22508,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_gray.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Gray"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Gray"
     group_item_label: "Overflow"
   }
 
@@ -22521,7 +22521,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_gray.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Gray"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Gray"
     group_item_label: "Sum"
   }
 
@@ -22529,7 +22529,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_gray.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Gray"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Gray"
     group_item_label: "Time Unit"
   }
 
@@ -22537,7 +22537,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_gray.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Gray"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Gray"
     group_item_label: "Underflow"
   }
 
@@ -22550,7 +22550,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Roots Time"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Roots Time"
     group_item_label: "Bucket Count"
   }
 
@@ -22558,7 +22558,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Roots Time"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Roots Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -22567,7 +22567,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Roots Time"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Roots Time"
     group_item_label: "Histogram Type"
   }
 
@@ -22575,7 +22575,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Roots Time"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Roots Time"
     group_item_label: "Overflow"
   }
 
@@ -22588,7 +22588,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Roots Time"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Roots Time"
     group_item_label: "Sum"
   }
 
@@ -22596,7 +22596,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Roots Time"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Roots Time"
     group_item_label: "Time Unit"
   }
 
@@ -22604,7 +22604,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Roots Time"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Roots Time"
     group_item_label: "Underflow"
   }
 
@@ -22617,7 +22617,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Time"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Time"
     group_item_label: "Bucket Count"
   }
 
@@ -22625,7 +22625,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Time"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -22634,7 +22634,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Time"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Time"
     group_item_label: "Histogram Type"
   }
 
@@ -22642,7 +22642,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Time"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Time"
     group_item_label: "Overflow"
   }
 
@@ -22655,7 +22655,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Time"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Time"
     group_item_label: "Sum"
   }
 
@@ -22663,7 +22663,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Time"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Time"
     group_item_label: "Time Unit"
   }
 
@@ -22671,7 +22671,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Time"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Time"
     group_item_label: "Underflow"
   }
 
@@ -22684,7 +22684,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_weak.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Weak"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Weak"
     group_item_label: "Bucket Count"
   }
 
@@ -22692,7 +22692,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_weak.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Weak"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Weak"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -22701,7 +22701,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_weak.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Weak"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Weak"
     group_item_label: "Histogram Type"
   }
 
@@ -22709,7 +22709,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_weak.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Weak"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Weak"
     group_item_label: "Overflow"
   }
 
@@ -22722,7 +22722,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_weak.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Weak"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Weak"
     group_item_label: "Sum"
   }
 
@@ -22730,7 +22730,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_weak.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Weak"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Weak"
     group_item_label: "Time Unit"
   }
 
@@ -22738,7 +22738,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_weak.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Mark Weak"
+    group_label: "Metrics Timing Distribution Javascript GC Mark Weak"
     group_item_label: "Underflow"
   }
 
@@ -22751,7 +22751,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_max_pause.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Max Pause"
+    group_label: "Metrics Timing Distribution Javascript GC Max Pause"
     group_item_label: "Bucket Count"
   }
 
@@ -22759,7 +22759,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_max_pause.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Max Pause"
+    group_label: "Metrics Timing Distribution Javascript GC Max Pause"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -22768,7 +22768,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_max_pause.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Max Pause"
+    group_label: "Metrics Timing Distribution Javascript GC Max Pause"
     group_item_label: "Histogram Type"
   }
 
@@ -22776,7 +22776,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_max_pause.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Max Pause"
+    group_label: "Metrics Timing Distribution Javascript GC Max Pause"
     group_item_label: "Overflow"
   }
 
@@ -22789,7 +22789,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_max_pause.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Max Pause"
+    group_label: "Metrics Timing Distribution Javascript GC Max Pause"
     group_item_label: "Sum"
   }
 
@@ -22797,7 +22797,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_max_pause.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Max Pause"
+    group_label: "Metrics Timing Distribution Javascript GC Max Pause"
     group_item_label: "Time Unit"
   }
 
@@ -22805,7 +22805,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_max_pause.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Max Pause"
+    group_label: "Metrics Timing Distribution Javascript GC Max Pause"
     group_item_label: "Underflow"
   }
 
@@ -22818,7 +22818,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Minor Time"
+    group_label: "Metrics Timing Distribution Javascript GC Minor Time"
     group_item_label: "Bucket Count"
   }
 
@@ -22826,7 +22826,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Minor Time"
+    group_label: "Metrics Timing Distribution Javascript GC Minor Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -22835,7 +22835,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Minor Time"
+    group_label: "Metrics Timing Distribution Javascript GC Minor Time"
     group_item_label: "Histogram Type"
   }
 
@@ -22843,7 +22843,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Minor Time"
+    group_label: "Metrics Timing Distribution Javascript GC Minor Time"
     group_item_label: "Overflow"
   }
 
@@ -22856,7 +22856,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Minor Time"
+    group_label: "Metrics Timing Distribution Javascript GC Minor Time"
     group_item_label: "Sum"
   }
 
@@ -22864,7 +22864,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Minor Time"
+    group_label: "Metrics Timing Distribution Javascript GC Minor Time"
     group_item_label: "Time Unit"
   }
 
@@ -22872,7 +22872,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Minor Time"
+    group_label: "Metrics Timing Distribution Javascript GC Minor Time"
     group_item_label: "Underflow"
   }
 
@@ -22885,7 +22885,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Prepare Time"
+    group_label: "Metrics Timing Distribution Javascript GC Prepare Time"
     group_item_label: "Bucket Count"
   }
 
@@ -22893,7 +22893,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Prepare Time"
+    group_label: "Metrics Timing Distribution Javascript GC Prepare Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -22902,7 +22902,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Prepare Time"
+    group_label: "Metrics Timing Distribution Javascript GC Prepare Time"
     group_item_label: "Histogram Type"
   }
 
@@ -22910,7 +22910,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Prepare Time"
+    group_label: "Metrics Timing Distribution Javascript GC Prepare Time"
     group_item_label: "Overflow"
   }
 
@@ -22923,7 +22923,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Prepare Time"
+    group_label: "Metrics Timing Distribution Javascript GC Prepare Time"
     group_item_label: "Sum"
   }
 
@@ -22931,7 +22931,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Prepare Time"
+    group_label: "Metrics Timing Distribution Javascript GC Prepare Time"
     group_item_label: "Time Unit"
   }
 
@@ -22939,7 +22939,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Prepare Time"
+    group_label: "Metrics Timing Distribution Javascript GC Prepare Time"
     group_item_label: "Underflow"
   }
 
@@ -22952,7 +22952,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Slice Time"
+    group_label: "Metrics Timing Distribution Javascript GC Slice Time"
     group_item_label: "Bucket Count"
   }
 
@@ -22960,7 +22960,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Slice Time"
+    group_label: "Metrics Timing Distribution Javascript GC Slice Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -22969,7 +22969,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Slice Time"
+    group_label: "Metrics Timing Distribution Javascript GC Slice Time"
     group_item_label: "Histogram Type"
   }
 
@@ -22977,7 +22977,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Slice Time"
+    group_label: "Metrics Timing Distribution Javascript GC Slice Time"
     group_item_label: "Overflow"
   }
 
@@ -22990,7 +22990,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Slice Time"
+    group_label: "Metrics Timing Distribution Javascript GC Slice Time"
     group_item_label: "Sum"
   }
 
@@ -22998,7 +22998,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Slice Time"
+    group_label: "Metrics Timing Distribution Javascript GC Slice Time"
     group_item_label: "Time Unit"
   }
 
@@ -23006,7 +23006,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Slice Time"
+    group_label: "Metrics Timing Distribution Javascript GC Slice Time"
     group_item_label: "Underflow"
   }
 
@@ -23019,7 +23019,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Sweep Time"
+    group_label: "Metrics Timing Distribution Javascript GC Sweep Time"
     group_item_label: "Bucket Count"
   }
 
@@ -23027,7 +23027,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Sweep Time"
+    group_label: "Metrics Timing Distribution Javascript GC Sweep Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -23036,7 +23036,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Sweep Time"
+    group_label: "Metrics Timing Distribution Javascript GC Sweep Time"
     group_item_label: "Histogram Type"
   }
 
@@ -23044,7 +23044,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Sweep Time"
+    group_label: "Metrics Timing Distribution Javascript GC Sweep Time"
     group_item_label: "Overflow"
   }
 
@@ -23057,7 +23057,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Sweep Time"
+    group_label: "Metrics Timing Distribution Javascript GC Sweep Time"
     group_item_label: "Sum"
   }
 
@@ -23065,7 +23065,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Sweep Time"
+    group_label: "Metrics Timing Distribution Javascript GC Sweep Time"
     group_item_label: "Time Unit"
   }
 
@@ -23073,7 +23073,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Sweep Time"
+    group_label: "Metrics Timing Distribution Javascript GC Sweep Time"
     group_item_label: "Underflow"
   }
 
@@ -23086,7 +23086,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_task_start_delay.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Task Start Delay"
+    group_label: "Metrics Timing Distribution Javascript GC Task Start Delay"
     group_item_label: "Bucket Count"
   }
 
@@ -23094,7 +23094,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_task_start_delay.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Task Start Delay"
+    group_label: "Metrics Timing Distribution Javascript GC Task Start Delay"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -23103,7 +23103,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_task_start_delay.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Task Start Delay"
+    group_label: "Metrics Timing Distribution Javascript GC Task Start Delay"
     group_item_label: "Histogram Type"
   }
 
@@ -23111,7 +23111,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_task_start_delay.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Task Start Delay"
+    group_label: "Metrics Timing Distribution Javascript GC Task Start Delay"
     group_item_label: "Overflow"
   }
 
@@ -23124,7 +23124,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_task_start_delay.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Task Start Delay"
+    group_label: "Metrics Timing Distribution Javascript GC Task Start Delay"
     group_item_label: "Sum"
   }
 
@@ -23132,7 +23132,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_task_start_delay.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Task Start Delay"
+    group_label: "Metrics Timing Distribution Javascript GC Task Start Delay"
     group_item_label: "Time Unit"
   }
 
@@ -23140,7 +23140,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_task_start_delay.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Task Start Delay"
+    group_label: "Metrics Timing Distribution Javascript GC Task Start Delay"
     group_item_label: "Underflow"
   }
 
@@ -23153,7 +23153,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Time Between"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between"
     group_item_label: "Bucket Count"
   }
 
@@ -23161,7 +23161,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Time Between"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -23170,7 +23170,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Time Between"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between"
     group_item_label: "Histogram Type"
   }
 
@@ -23178,7 +23178,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Time Between"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between"
     group_item_label: "Overflow"
   }
 
@@ -23191,7 +23191,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Time Between"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between"
     group_item_label: "Sum"
   }
 
@@ -23199,7 +23199,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Time Between"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between"
     group_item_label: "Time Unit"
   }
 
@@ -23207,7 +23207,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Time Between"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between"
     group_item_label: "Underflow"
   }
 
@@ -23220,7 +23220,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_slices.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Time Between Slices"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Slices"
     group_item_label: "Bucket Count"
   }
 
@@ -23228,7 +23228,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_slices.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Time Between Slices"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Slices"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -23237,7 +23237,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_slices.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Time Between Slices"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Slices"
     group_item_label: "Histogram Type"
   }
 
@@ -23245,7 +23245,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_slices.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Time Between Slices"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Slices"
     group_item_label: "Overflow"
   }
 
@@ -23258,7 +23258,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_slices.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Time Between Slices"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Slices"
     group_item_label: "Sum"
   }
 
@@ -23266,7 +23266,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_slices.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Time Between Slices"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Slices"
     group_item_label: "Time Unit"
   }
 
@@ -23274,7 +23274,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_slices.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Time Between Slices"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Slices"
     group_item_label: "Underflow"
   }
 
@@ -23287,7 +23287,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Total Time"
+    group_label: "Metrics Timing Distribution Javascript GC Total Time"
     group_item_label: "Bucket Count"
   }
 
@@ -23295,7 +23295,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Total Time"
+    group_label: "Metrics Timing Distribution Javascript GC Total Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -23304,7 +23304,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Total Time"
+    group_label: "Metrics Timing Distribution Javascript GC Total Time"
     group_item_label: "Histogram Type"
   }
 
@@ -23312,7 +23312,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Total Time"
+    group_label: "Metrics Timing Distribution Javascript GC Total Time"
     group_item_label: "Overflow"
   }
 
@@ -23325,7 +23325,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Total Time"
+    group_label: "Metrics Timing Distribution Javascript GC Total Time"
     group_item_label: "Sum"
   }
 
@@ -23333,7 +23333,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Total Time"
+    group_label: "Metrics Timing Distribution Javascript GC Total Time"
     group_item_label: "Time Unit"
   }
 
@@ -23341,7 +23341,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Gc Total Time"
+    group_label: "Metrics Timing Distribution Javascript GC Total Time"
     group_item_label: "Underflow"
   }
 
@@ -23622,7 +23622,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Pageload Gc Time"
+    group_label: "Metrics Timing Distribution Javascript Pageload GC Time"
     group_item_label: "Bucket Count"
   }
 
@@ -23630,7 +23630,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Pageload Gc Time"
+    group_label: "Metrics Timing Distribution Javascript Pageload GC Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -23639,7 +23639,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Pageload Gc Time"
+    group_label: "Metrics Timing Distribution Javascript Pageload GC Time"
     group_item_label: "Histogram Type"
   }
 
@@ -23647,7 +23647,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Pageload Gc Time"
+    group_label: "Metrics Timing Distribution Javascript Pageload GC Time"
     group_item_label: "Overflow"
   }
 
@@ -23660,7 +23660,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Pageload Gc Time"
+    group_label: "Metrics Timing Distribution Javascript Pageload GC Time"
     group_item_label: "Sum"
   }
 
@@ -23668,7 +23668,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Pageload Gc Time"
+    group_label: "Metrics Timing Distribution Javascript Pageload GC Time"
     group_item_label: "Time Unit"
   }
 
@@ -23676,7 +23676,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Javascript Pageload Gc Time"
+    group_label: "Metrics Timing Distribution Javascript Pageload GC Time"
     group_item_label: "Underflow"
   }
 
@@ -25297,7 +25297,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_dns_end.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Dns End"
+    group_label: "Metrics Timing Distribution Network DNS End"
     group_item_label: "Bucket Count"
   }
 
@@ -25305,7 +25305,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_dns_end.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Dns End"
+    group_label: "Metrics Timing Distribution Network DNS End"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -25314,7 +25314,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_dns_end.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Dns End"
+    group_label: "Metrics Timing Distribution Network DNS End"
     group_item_label: "Histogram Type"
   }
 
@@ -25322,7 +25322,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_dns_end.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Dns End"
+    group_label: "Metrics Timing Distribution Network DNS End"
     group_item_label: "Overflow"
   }
 
@@ -25335,7 +25335,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_dns_end.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Dns End"
+    group_label: "Metrics Timing Distribution Network DNS End"
     group_item_label: "Sum"
   }
 
@@ -25343,7 +25343,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_dns_end.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Dns End"
+    group_label: "Metrics Timing Distribution Network DNS End"
     group_item_label: "Time Unit"
   }
 
@@ -25351,7 +25351,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_dns_end.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Dns End"
+    group_label: "Metrics Timing Distribution Network DNS End"
     group_item_label: "Underflow"
   }
 
@@ -25364,7 +25364,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_dns_start.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_label: "Metrics Timing Distribution Network DNS Start"
     group_item_label: "Bucket Count"
   }
 
@@ -25372,7 +25372,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_dns_start.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_label: "Metrics Timing Distribution Network DNS Start"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -25381,7 +25381,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_dns_start.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_label: "Metrics Timing Distribution Network DNS Start"
     group_item_label: "Histogram Type"
   }
 
@@ -25389,7 +25389,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_dns_start.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_label: "Metrics Timing Distribution Network DNS Start"
     group_item_label: "Overflow"
   }
 
@@ -25402,7 +25402,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_dns_start.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_label: "Metrics Timing Distribution Network DNS Start"
     group_item_label: "Sum"
   }
 
@@ -25410,7 +25410,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_dns_start.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_label: "Metrics Timing Distribution Network DNS Start"
     group_item_label: "Time Unit"
   }
 
@@ -25418,7 +25418,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_dns_start.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_label: "Metrics Timing Distribution Network DNS Start"
     group_item_label: "Underflow"
   }
 
@@ -25632,7 +25632,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_cache_entry_alive_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Cache Entry Alive Time"
+    group_label: "Metrics Timing Distribution Network HTTP Cache Entry Alive Time"
     group_item_label: "Bucket Count"
   }
 
@@ -25640,7 +25640,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_cache_entry_alive_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Cache Entry Alive Time"
+    group_label: "Metrics Timing Distribution Network HTTP Cache Entry Alive Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -25649,7 +25649,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_cache_entry_alive_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Cache Entry Alive Time"
+    group_label: "Metrics Timing Distribution Network HTTP Cache Entry Alive Time"
     group_item_label: "Histogram Type"
   }
 
@@ -25657,7 +25657,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_cache_entry_alive_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Cache Entry Alive Time"
+    group_label: "Metrics Timing Distribution Network HTTP Cache Entry Alive Time"
     group_item_label: "Overflow"
   }
 
@@ -25670,7 +25670,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_cache_entry_alive_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Cache Entry Alive Time"
+    group_label: "Metrics Timing Distribution Network HTTP Cache Entry Alive Time"
     group_item_label: "Sum"
   }
 
@@ -25678,7 +25678,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_cache_entry_alive_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Cache Entry Alive Time"
+    group_label: "Metrics Timing Distribution Network HTTP Cache Entry Alive Time"
     group_item_label: "Time Unit"
   }
 
@@ -25686,7 +25686,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_cache_entry_alive_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Cache Entry Alive Time"
+    group_label: "Metrics Timing Distribution Network HTTP Cache Entry Alive Time"
     group_item_label: "Underflow"
   }
 
@@ -25699,7 +25699,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_cache_entry_reload_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Cache Entry Reload Time"
+    group_label: "Metrics Timing Distribution Network HTTP Cache Entry Reload Time"
     group_item_label: "Bucket Count"
   }
 
@@ -25707,7 +25707,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_cache_entry_reload_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Cache Entry Reload Time"
+    group_label: "Metrics Timing Distribution Network HTTP Cache Entry Reload Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -25716,7 +25716,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_cache_entry_reload_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Cache Entry Reload Time"
+    group_label: "Metrics Timing Distribution Network HTTP Cache Entry Reload Time"
     group_item_label: "Histogram Type"
   }
 
@@ -25724,7 +25724,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_cache_entry_reload_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Cache Entry Reload Time"
+    group_label: "Metrics Timing Distribution Network HTTP Cache Entry Reload Time"
     group_item_label: "Overflow"
   }
 
@@ -25737,7 +25737,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_cache_entry_reload_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Cache Entry Reload Time"
+    group_label: "Metrics Timing Distribution Network HTTP Cache Entry Reload Time"
     group_item_label: "Sum"
   }
 
@@ -25745,7 +25745,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_cache_entry_reload_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Cache Entry Reload Time"
+    group_label: "Metrics Timing Distribution Network HTTP Cache Entry Reload Time"
     group_item_label: "Time Unit"
   }
 
@@ -25753,7 +25753,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_cache_entry_reload_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Cache Entry Reload Time"
+    group_label: "Metrics Timing Distribution Network HTTP Cache Entry Reload Time"
     group_item_label: "Underflow"
   }
 
@@ -25766,7 +25766,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_revalidation.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Revalidation"
+    group_label: "Metrics Timing Distribution Network HTTP Revalidation"
     group_item_label: "Bucket Count"
   }
 
@@ -25774,7 +25774,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_revalidation.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Revalidation"
+    group_label: "Metrics Timing Distribution Network HTTP Revalidation"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -25783,7 +25783,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_revalidation.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Revalidation"
+    group_label: "Metrics Timing Distribution Network HTTP Revalidation"
     group_item_label: "Histogram Type"
   }
 
@@ -25791,7 +25791,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_revalidation.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Revalidation"
+    group_label: "Metrics Timing Distribution Network HTTP Revalidation"
     group_item_label: "Overflow"
   }
 
@@ -25804,7 +25804,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_revalidation.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Revalidation"
+    group_label: "Metrics Timing Distribution Network HTTP Revalidation"
     group_item_label: "Sum"
   }
 
@@ -25812,7 +25812,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_revalidation.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Revalidation"
+    group_label: "Metrics Timing Distribution Network HTTP Revalidation"
     group_item_label: "Time Unit"
   }
 
@@ -25820,7 +25820,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_http_revalidation.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Http Revalidation"
+    group_label: "Metrics Timing Distribution Network HTTP Revalidation"
     group_item_label: "Underflow"
   }
 
@@ -26436,7 +26436,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_end.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Dns End"
+    group_label: "Metrics Timing Distribution Network Sub DNS End"
     group_item_label: "Bucket Count"
   }
 
@@ -26444,7 +26444,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_end.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Dns End"
+    group_label: "Metrics Timing Distribution Network Sub DNS End"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -26453,7 +26453,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_end.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Dns End"
+    group_label: "Metrics Timing Distribution Network Sub DNS End"
     group_item_label: "Histogram Type"
   }
 
@@ -26461,7 +26461,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_end.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Dns End"
+    group_label: "Metrics Timing Distribution Network Sub DNS End"
     group_item_label: "Overflow"
   }
 
@@ -26474,7 +26474,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_end.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Dns End"
+    group_label: "Metrics Timing Distribution Network Sub DNS End"
     group_item_label: "Sum"
   }
 
@@ -26482,7 +26482,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_end.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Dns End"
+    group_label: "Metrics Timing Distribution Network Sub DNS End"
     group_item_label: "Time Unit"
   }
 
@@ -26490,7 +26490,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_end.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Dns End"
+    group_label: "Metrics Timing Distribution Network Sub DNS End"
     group_item_label: "Underflow"
   }
 
@@ -26503,7 +26503,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_start.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Dns Start"
+    group_label: "Metrics Timing Distribution Network Sub DNS Start"
     group_item_label: "Bucket Count"
   }
 
@@ -26511,7 +26511,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_start.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Dns Start"
+    group_label: "Metrics Timing Distribution Network Sub DNS Start"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -26520,7 +26520,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_start.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Dns Start"
+    group_label: "Metrics Timing Distribution Network Sub DNS Start"
     group_item_label: "Histogram Type"
   }
 
@@ -26528,7 +26528,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_start.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Dns Start"
+    group_label: "Metrics Timing Distribution Network Sub DNS Start"
     group_item_label: "Overflow"
   }
 
@@ -26541,7 +26541,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_start.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Dns Start"
+    group_label: "Metrics Timing Distribution Network Sub DNS Start"
     group_item_label: "Sum"
   }
 
@@ -26549,7 +26549,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_start.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Dns Start"
+    group_label: "Metrics Timing Distribution Network Sub DNS Start"
     group_item_label: "Time Unit"
   }
 
@@ -26557,7 +26557,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_dns_start.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Dns Start"
+    group_label: "Metrics Timing Distribution Network Sub DNS Start"
     group_item_label: "Underflow"
   }
 
@@ -26704,7 +26704,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_http_revalidation.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Http Revalidation"
+    group_label: "Metrics Timing Distribution Network Sub HTTP Revalidation"
     group_item_label: "Bucket Count"
   }
 
@@ -26712,7 +26712,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_http_revalidation.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Http Revalidation"
+    group_label: "Metrics Timing Distribution Network Sub HTTP Revalidation"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -26721,7 +26721,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_http_revalidation.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Http Revalidation"
+    group_label: "Metrics Timing Distribution Network Sub HTTP Revalidation"
     group_item_label: "Histogram Type"
   }
 
@@ -26729,7 +26729,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_http_revalidation.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Http Revalidation"
+    group_label: "Metrics Timing Distribution Network Sub HTTP Revalidation"
     group_item_label: "Overflow"
   }
 
@@ -26742,7 +26742,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_http_revalidation.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Http Revalidation"
+    group_label: "Metrics Timing Distribution Network Sub HTTP Revalidation"
     group_item_label: "Sum"
   }
 
@@ -26750,7 +26750,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_http_revalidation.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Http Revalidation"
+    group_label: "Metrics Timing Distribution Network Sub HTTP Revalidation"
     group_item_label: "Time Unit"
   }
 
@@ -26758,7 +26758,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_http_revalidation.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Http Revalidation"
+    group_label: "Metrics Timing Distribution Network Sub HTTP Revalidation"
     group_item_label: "Underflow"
   }
 
@@ -26972,7 +26972,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_tls_handshake.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Tls Handshake"
+    group_label: "Metrics Timing Distribution Network Sub TLS Handshake"
     group_item_label: "Bucket Count"
   }
 
@@ -26980,7 +26980,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_tls_handshake.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Tls Handshake"
+    group_label: "Metrics Timing Distribution Network Sub TLS Handshake"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -26989,7 +26989,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_tls_handshake.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Tls Handshake"
+    group_label: "Metrics Timing Distribution Network Sub TLS Handshake"
     group_item_label: "Histogram Type"
   }
 
@@ -26997,7 +26997,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_tls_handshake.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Tls Handshake"
+    group_label: "Metrics Timing Distribution Network Sub TLS Handshake"
     group_item_label: "Overflow"
   }
 
@@ -27010,7 +27010,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_tls_handshake.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Tls Handshake"
+    group_label: "Metrics Timing Distribution Network Sub TLS Handshake"
     group_item_label: "Sum"
   }
 
@@ -27018,7 +27018,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_tls_handshake.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Tls Handshake"
+    group_label: "Metrics Timing Distribution Network Sub TLS Handshake"
     group_item_label: "Time Unit"
   }
 
@@ -27026,7 +27026,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_sub_tls_handshake.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Sub Tls Handshake"
+    group_label: "Metrics Timing Distribution Network Sub TLS Handshake"
     group_item_label: "Underflow"
   }
 
@@ -27106,7 +27106,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_label: "Metrics Timing Distribution Network TLS Handshake"
     group_item_label: "Bucket Count"
   }
 
@@ -27114,7 +27114,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_label: "Metrics Timing Distribution Network TLS Handshake"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -27123,7 +27123,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_label: "Metrics Timing Distribution Network TLS Handshake"
     group_item_label: "Histogram Type"
   }
 
@@ -27131,7 +27131,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_label: "Metrics Timing Distribution Network TLS Handshake"
     group_item_label: "Overflow"
   }
 
@@ -27144,7 +27144,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_label: "Metrics Timing Distribution Network TLS Handshake"
     group_item_label: "Sum"
   }
 
@@ -27152,7 +27152,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_label: "Metrics Timing Distribution Network TLS Handshake"
     group_item_label: "Time Unit"
   }
 
@@ -27160,7 +27160,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_label: "Metrics Timing Distribution Network TLS Handshake"
     group_item_label: "Underflow"
   }
 
@@ -27307,7 +27307,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_label: "Metrics Timing Distribution Networking DNS Failed Lookup Time"
     group_item_label: "Bucket Count"
   }
 
@@ -27315,7 +27315,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_label: "Metrics Timing Distribution Networking DNS Failed Lookup Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -27324,7 +27324,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_label: "Metrics Timing Distribution Networking DNS Failed Lookup Time"
     group_item_label: "Histogram Type"
   }
 
@@ -27332,7 +27332,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_label: "Metrics Timing Distribution Networking DNS Failed Lookup Time"
     group_item_label: "Overflow"
   }
 
@@ -27345,7 +27345,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_label: "Metrics Timing Distribution Networking DNS Failed Lookup Time"
     group_item_label: "Sum"
   }
 
@@ -27353,7 +27353,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_label: "Metrics Timing Distribution Networking DNS Failed Lookup Time"
     group_item_label: "Time Unit"
   }
 
@@ -27361,7 +27361,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_label: "Metrics Timing Distribution Networking DNS Failed Lookup Time"
     group_item_label: "Underflow"
   }
 
@@ -27374,7 +27374,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_label: "Metrics Timing Distribution Networking DNS Lookup Time"
     group_item_label: "Bucket Count"
   }
 
@@ -27382,7 +27382,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_label: "Metrics Timing Distribution Networking DNS Lookup Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -27391,7 +27391,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_label: "Metrics Timing Distribution Networking DNS Lookup Time"
     group_item_label: "Histogram Type"
   }
 
@@ -27399,7 +27399,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_label: "Metrics Timing Distribution Networking DNS Lookup Time"
     group_item_label: "Overflow"
   }
 
@@ -27412,7 +27412,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_label: "Metrics Timing Distribution Networking DNS Lookup Time"
     group_item_label: "Sum"
   }
 
@@ -27420,7 +27420,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_label: "Metrics Timing Distribution Networking DNS Lookup Time"
     group_item_label: "Time Unit"
   }
 
@@ -27428,7 +27428,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_label: "Metrics Timing Distribution Networking DNS Lookup Time"
     group_item_label: "Underflow"
   }
 
@@ -27441,7 +27441,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_label: "Metrics Timing Distribution Networking DNS Native Https Call Time"
     group_item_label: "Bucket Count"
   }
 
@@ -27449,7 +27449,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_label: "Metrics Timing Distribution Networking DNS Native Https Call Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -27458,7 +27458,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_label: "Metrics Timing Distribution Networking DNS Native Https Call Time"
     group_item_label: "Histogram Type"
   }
 
@@ -27466,7 +27466,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_label: "Metrics Timing Distribution Networking DNS Native Https Call Time"
     group_item_label: "Overflow"
   }
 
@@ -27479,7 +27479,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_label: "Metrics Timing Distribution Networking DNS Native Https Call Time"
     group_item_label: "Sum"
   }
 
@@ -27487,7 +27487,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_label: "Metrics Timing Distribution Networking DNS Native Https Call Time"
     group_item_label: "Time Unit"
   }
 
@@ -27495,7 +27495,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_label: "Metrics Timing Distribution Networking DNS Native Https Call Time"
     group_item_label: "Underflow"
   }
 
@@ -27508,7 +27508,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_label: "Metrics Timing Distribution Networking DNS Renewal Time"
     group_item_label: "Bucket Count"
   }
 
@@ -27516,7 +27516,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_label: "Metrics Timing Distribution Networking DNS Renewal Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -27525,7 +27525,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_label: "Metrics Timing Distribution Networking DNS Renewal Time"
     group_item_label: "Histogram Type"
   }
 
@@ -27533,7 +27533,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_label: "Metrics Timing Distribution Networking DNS Renewal Time"
     group_item_label: "Overflow"
   }
 
@@ -27546,7 +27546,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_label: "Metrics Timing Distribution Networking DNS Renewal Time"
     group_item_label: "Sum"
   }
 
@@ -27554,7 +27554,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_label: "Metrics Timing Distribution Networking DNS Renewal Time"
     group_item_label: "Time Unit"
   }
 
@@ -27562,7 +27562,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_label: "Metrics Timing Distribution Networking DNS Renewal Time"
     group_item_label: "Underflow"
   }
 
@@ -27575,7 +27575,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_label: "Metrics Timing Distribution Networking DNS Renewal Time For Ttl"
     group_item_label: "Bucket Count"
   }
 
@@ -27583,7 +27583,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_label: "Metrics Timing Distribution Networking DNS Renewal Time For Ttl"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -27592,7 +27592,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_label: "Metrics Timing Distribution Networking DNS Renewal Time For Ttl"
     group_item_label: "Histogram Type"
   }
 
@@ -27600,7 +27600,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_label: "Metrics Timing Distribution Networking DNS Renewal Time For Ttl"
     group_item_label: "Overflow"
   }
 
@@ -27613,7 +27613,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_label: "Metrics Timing Distribution Networking DNS Renewal Time For Ttl"
     group_item_label: "Sum"
   }
 
@@ -27621,7 +27621,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_label: "Metrics Timing Distribution Networking DNS Renewal Time For Ttl"
     group_item_label: "Time Unit"
   }
 
@@ -27629,7 +27629,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_label: "Metrics Timing Distribution Networking DNS Renewal Time For Ttl"
     group_item_label: "Underflow"
   }
 
@@ -27642,7 +27642,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Page Open To First Sent"
     group_item_label: "Bucket Count"
   }
 
@@ -27650,7 +27650,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Page Open To First Sent"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -27659,7 +27659,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Page Open To First Sent"
     group_item_label: "Histogram Type"
   }
 
@@ -27667,7 +27667,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Page Open To First Sent"
     group_item_label: "Overflow"
   }
 
@@ -27680,7 +27680,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Page Open To First Sent"
     group_item_label: "Sum"
   }
 
@@ -27688,7 +27688,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Page Open To First Sent"
     group_item_label: "Time Unit"
   }
 
@@ -27696,7 +27696,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Page Open To First Sent"
     group_item_label: "Underflow"
   }
 
@@ -27709,7 +27709,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Page Open To First Sent Https Rr"
     group_item_label: "Bucket Count"
   }
 
@@ -27717,7 +27717,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Page Open To First Sent Https Rr"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -27726,7 +27726,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Page Open To First Sent Https Rr"
     group_item_label: "Histogram Type"
   }
 
@@ -27734,7 +27734,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Page Open To First Sent Https Rr"
     group_item_label: "Overflow"
   }
 
@@ -27747,7 +27747,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Page Open To First Sent Https Rr"
     group_item_label: "Sum"
   }
 
@@ -27755,7 +27755,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Page Open To First Sent Https Rr"
     group_item_label: "Time Unit"
   }
 
@@ -27763,7 +27763,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Page Open To First Sent Https Rr"
     group_item_label: "Underflow"
   }
 
@@ -27776,7 +27776,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Sub Open To First Sent"
     group_item_label: "Bucket Count"
   }
 
@@ -27784,7 +27784,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Sub Open To First Sent"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -27793,7 +27793,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Sub Open To First Sent"
     group_item_label: "Histogram Type"
   }
 
@@ -27801,7 +27801,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Sub Open To First Sent"
     group_item_label: "Overflow"
   }
 
@@ -27814,7 +27814,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Sub Open To First Sent"
     group_item_label: "Sum"
   }
 
@@ -27822,7 +27822,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Sub Open To First Sent"
     group_item_label: "Time Unit"
   }
 
@@ -27830,7 +27830,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Sub Open To First Sent"
     group_item_label: "Underflow"
   }
 
@@ -27843,7 +27843,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Sub Open To First Sent Https Rr"
     group_item_label: "Bucket Count"
   }
 
@@ -27851,7 +27851,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Sub Open To First Sent Https Rr"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -27860,7 +27860,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Sub Open To First Sent Https Rr"
     group_item_label: "Histogram Type"
   }
 
@@ -27868,7 +27868,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Sub Open To First Sent Https Rr"
     group_item_label: "Overflow"
   }
 
@@ -27881,7 +27881,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Sub Open To First Sent Https Rr"
     group_item_label: "Sum"
   }
 
@@ -27889,7 +27889,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Sub Open To First Sent Https Rr"
     group_item_label: "Time Unit"
   }
 
@@ -27897,7 +27897,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_label: "Metrics Timing Distribution Networking HTTP Channel Sub Open To First Sent Https Rr"
     group_item_label: "Underflow"
   }
 
@@ -27910,7 +27910,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Cssloader Ondatafinished To Onstop Delay"
     group_item_label: "Bucket Count"
   }
 
@@ -27918,7 +27918,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Cssloader Ondatafinished To Onstop Delay"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -27927,7 +27927,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Cssloader Ondatafinished To Onstop Delay"
     group_item_label: "Histogram Type"
   }
 
@@ -27935,7 +27935,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Cssloader Ondatafinished To Onstop Delay"
     group_item_label: "Overflow"
   }
 
@@ -27948,7 +27948,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Cssloader Ondatafinished To Onstop Delay"
     group_item_label: "Sum"
   }
 
@@ -27956,7 +27956,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Cssloader Ondatafinished To Onstop Delay"
     group_item_label: "Time Unit"
   }
 
@@ -27964,7 +27964,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Cssloader Ondatafinished To Onstop Delay"
     group_item_label: "Underflow"
   }
 
@@ -27977,7 +27977,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Html5Parser Ondatafinished To Onstop Delay"
     group_item_label: "Bucket Count"
   }
 
@@ -27985,7 +27985,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Html5Parser Ondatafinished To Onstop Delay"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -27994,7 +27994,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Html5Parser Ondatafinished To Onstop Delay"
     group_item_label: "Histogram Type"
   }
 
@@ -28002,7 +28002,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Html5Parser Ondatafinished To Onstop Delay"
     group_item_label: "Overflow"
   }
 
@@ -28015,7 +28015,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Html5Parser Ondatafinished To Onstop Delay"
     group_item_label: "Sum"
   }
 
@@ -28023,7 +28023,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Html5Parser Ondatafinished To Onstop Delay"
     group_item_label: "Time Unit"
   }
 
@@ -28031,7 +28031,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Html5Parser Ondatafinished To Onstop Delay"
     group_item_label: "Underflow"
   }
 
@@ -28044,7 +28044,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Html5Parser Ondatafinished To Onstop Delay Negative"
     group_item_label: "Bucket Count"
   }
 
@@ -28052,7 +28052,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Html5Parser Ondatafinished To Onstop Delay Negative"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -28061,7 +28061,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Html5Parser Ondatafinished To Onstop Delay Negative"
     group_item_label: "Histogram Type"
   }
 
@@ -28069,7 +28069,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Html5Parser Ondatafinished To Onstop Delay Negative"
     group_item_label: "Overflow"
   }
 
@@ -28082,7 +28082,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Html5Parser Ondatafinished To Onstop Delay Negative"
     group_item_label: "Sum"
   }
 
@@ -28090,7 +28090,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Html5Parser Ondatafinished To Onstop Delay Negative"
     group_item_label: "Time Unit"
   }
 
@@ -28098,7 +28098,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Html5Parser Ondatafinished To Onstop Delay Negative"
     group_item_label: "Underflow"
   }
 
@@ -28111,7 +28111,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished Delay"
     group_item_label: "Bucket Count"
   }
 
@@ -28119,7 +28119,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished Delay"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -28128,7 +28128,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished Delay"
     group_item_label: "Histogram Type"
   }
 
@@ -28136,7 +28136,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished Delay"
     group_item_label: "Overflow"
   }
 
@@ -28149,7 +28149,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished Delay"
     group_item_label: "Sum"
   }
 
@@ -28157,7 +28157,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished Delay"
     group_item_label: "Time Unit"
   }
 
@@ -28165,7 +28165,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished Delay"
     group_item_label: "Underflow"
   }
 
@@ -28178,7 +28178,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished Delay 2"
     group_item_label: "Bucket Count"
   }
 
@@ -28186,7 +28186,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished Delay 2"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -28195,7 +28195,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished Delay 2"
     group_item_label: "Histogram Type"
   }
 
@@ -28203,7 +28203,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished Delay 2"
     group_item_label: "Overflow"
   }
 
@@ -28216,7 +28216,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished Delay 2"
     group_item_label: "Sum"
   }
 
@@ -28224,7 +28224,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished Delay 2"
     group_item_label: "Time Unit"
   }
 
@@ -28232,7 +28232,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay 2"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished Delay 2"
     group_item_label: "Underflow"
   }
 
@@ -28245,7 +28245,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished To Onstop Delay"
     group_item_label: "Bucket Count"
   }
 
@@ -28253,7 +28253,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished To Onstop Delay"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -28262,7 +28262,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished To Onstop Delay"
     group_item_label: "Histogram Type"
   }
 
@@ -28270,7 +28270,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished To Onstop Delay"
     group_item_label: "Overflow"
   }
 
@@ -28283,7 +28283,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished To Onstop Delay"
     group_item_label: "Sum"
   }
 
@@ -28291,7 +28291,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished To Onstop Delay"
     group_item_label: "Time Unit"
   }
 
@@ -28299,7 +28299,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished To Onstop Delay"
     group_item_label: "Underflow"
   }
 
@@ -28312,7 +28312,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished To Onstop Delay Negative"
     group_item_label: "Bucket Count"
   }
 
@@ -28320,7 +28320,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished To Onstop Delay Negative"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -28329,7 +28329,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished To Onstop Delay Negative"
     group_item_label: "Histogram Type"
   }
 
@@ -28337,7 +28337,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished To Onstop Delay Negative"
     group_item_label: "Overflow"
   }
 
@@ -28350,7 +28350,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished To Onstop Delay Negative"
     group_item_label: "Sum"
   }
 
@@ -28358,7 +28358,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished To Onstop Delay Negative"
     group_item_label: "Time Unit"
   }
 
@@ -28366,7 +28366,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Ondatafinished To Onstop Delay Negative"
     group_item_label: "Underflow"
   }
 
@@ -28379,7 +28379,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Onstart Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Onstart Delay"
     group_item_label: "Bucket Count"
   }
 
@@ -28387,7 +28387,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Onstart Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Onstart Delay"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -28396,7 +28396,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Onstart Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Onstart Delay"
     group_item_label: "Histogram Type"
   }
 
@@ -28404,7 +28404,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Onstart Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Onstart Delay"
     group_item_label: "Overflow"
   }
 
@@ -28417,7 +28417,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Onstart Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Onstart Delay"
     group_item_label: "Sum"
   }
 
@@ -28425,7 +28425,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Onstart Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Onstart Delay"
     group_item_label: "Time Unit"
   }
 
@@ -28433,7 +28433,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Onstart Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Onstart Delay"
     group_item_label: "Underflow"
   }
 
@@ -28446,7 +28446,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Onstop Delay"
     group_item_label: "Bucket Count"
   }
 
@@ -28454,7 +28454,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Onstop Delay"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -28463,7 +28463,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Onstop Delay"
     group_item_label: "Histogram Type"
   }
 
@@ -28471,7 +28471,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Onstop Delay"
     group_item_label: "Overflow"
   }
 
@@ -28484,7 +28484,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Onstop Delay"
     group_item_label: "Sum"
   }
 
@@ -28492,7 +28492,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Onstop Delay"
     group_item_label: "Time Unit"
   }
 
@@ -28500,7 +28500,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Content Onstop Delay"
+    group_label: "Metrics Timing Distribution Networking HTTP Content Onstop Delay"
     group_item_label: "Underflow"
   }
 
@@ -28513,7 +28513,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_label: "Metrics Timing Distribution Networking HTTP Onstart Suspend Total Time"
     group_item_label: "Bucket Count"
   }
 
@@ -28521,7 +28521,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_label: "Metrics Timing Distribution Networking HTTP Onstart Suspend Total Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -28530,7 +28530,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_label: "Metrics Timing Distribution Networking HTTP Onstart Suspend Total Time"
     group_item_label: "Histogram Type"
   }
 
@@ -28538,7 +28538,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_label: "Metrics Timing Distribution Networking HTTP Onstart Suspend Total Time"
     group_item_label: "Overflow"
   }
 
@@ -28551,7 +28551,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_label: "Metrics Timing Distribution Networking HTTP Onstart Suspend Total Time"
     group_item_label: "Sum"
   }
 
@@ -28559,7 +28559,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_label: "Metrics Timing Distribution Networking HTTP Onstart Suspend Total Time"
     group_item_label: "Time Unit"
   }
 
@@ -28567,7 +28567,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_label: "Metrics Timing Distribution Networking HTTP Onstart Suspend Total Time"
     group_item_label: "Underflow"
   }
 
@@ -32466,7 +32466,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Complete"
+    group_label: "Metrics Timing Distribution Performance Time DOM Complete"
     group_item_label: "Bucket Count"
   }
 
@@ -32474,7 +32474,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Complete"
+    group_label: "Metrics Timing Distribution Performance Time DOM Complete"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -32483,7 +32483,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Complete"
+    group_label: "Metrics Timing Distribution Performance Time DOM Complete"
     group_item_label: "Histogram Type"
   }
 
@@ -32491,7 +32491,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Complete"
+    group_label: "Metrics Timing Distribution Performance Time DOM Complete"
     group_item_label: "Overflow"
   }
 
@@ -32504,7 +32504,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Complete"
+    group_label: "Metrics Timing Distribution Performance Time DOM Complete"
     group_item_label: "Sum"
   }
 
@@ -32512,7 +32512,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Complete"
+    group_label: "Metrics Timing Distribution Performance Time DOM Complete"
     group_item_label: "Time Unit"
   }
 
@@ -32520,7 +32520,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Complete"
+    group_label: "Metrics Timing Distribution Performance Time DOM Complete"
     group_item_label: "Underflow"
   }
 
@@ -32533,7 +32533,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded End"
+    group_label: "Metrics Timing Distribution Performance Time DOM Content Loaded End"
     group_item_label: "Bucket Count"
   }
 
@@ -32541,7 +32541,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded End"
+    group_label: "Metrics Timing Distribution Performance Time DOM Content Loaded End"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -32550,7 +32550,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded End"
+    group_label: "Metrics Timing Distribution Performance Time DOM Content Loaded End"
     group_item_label: "Histogram Type"
   }
 
@@ -32558,7 +32558,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded End"
+    group_label: "Metrics Timing Distribution Performance Time DOM Content Loaded End"
     group_item_label: "Overflow"
   }
 
@@ -32571,7 +32571,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded End"
+    group_label: "Metrics Timing Distribution Performance Time DOM Content Loaded End"
     group_item_label: "Sum"
   }
 
@@ -32579,7 +32579,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded End"
+    group_label: "Metrics Timing Distribution Performance Time DOM Content Loaded End"
     group_item_label: "Time Unit"
   }
 
@@ -32587,7 +32587,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded End"
+    group_label: "Metrics Timing Distribution Performance Time DOM Content Loaded End"
     group_item_label: "Underflow"
   }
 
@@ -32600,7 +32600,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded Start"
+    group_label: "Metrics Timing Distribution Performance Time DOM Content Loaded Start"
     group_item_label: "Bucket Count"
   }
 
@@ -32608,7 +32608,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded Start"
+    group_label: "Metrics Timing Distribution Performance Time DOM Content Loaded Start"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -32617,7 +32617,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded Start"
+    group_label: "Metrics Timing Distribution Performance Time DOM Content Loaded Start"
     group_item_label: "Histogram Type"
   }
 
@@ -32625,7 +32625,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded Start"
+    group_label: "Metrics Timing Distribution Performance Time DOM Content Loaded Start"
     group_item_label: "Overflow"
   }
 
@@ -32638,7 +32638,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded Start"
+    group_label: "Metrics Timing Distribution Performance Time DOM Content Loaded Start"
     group_item_label: "Sum"
   }
 
@@ -32646,7 +32646,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded Start"
+    group_label: "Metrics Timing Distribution Performance Time DOM Content Loaded Start"
     group_item_label: "Time Unit"
   }
 
@@ -32654,7 +32654,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded Start"
+    group_label: "Metrics Timing Distribution Performance Time DOM Content Loaded Start"
     group_item_label: "Underflow"
   }
 
@@ -32667,7 +32667,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Interactive"
+    group_label: "Metrics Timing Distribution Performance Time DOM Interactive"
     group_item_label: "Bucket Count"
   }
 
@@ -32675,7 +32675,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Interactive"
+    group_label: "Metrics Timing Distribution Performance Time DOM Interactive"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -32684,7 +32684,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Interactive"
+    group_label: "Metrics Timing Distribution Performance Time DOM Interactive"
     group_item_label: "Histogram Type"
   }
 
@@ -32692,7 +32692,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Interactive"
+    group_label: "Metrics Timing Distribution Performance Time DOM Interactive"
     group_item_label: "Overflow"
   }
 
@@ -32705,7 +32705,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Interactive"
+    group_label: "Metrics Timing Distribution Performance Time DOM Interactive"
     group_item_label: "Sum"
   }
 
@@ -32713,7 +32713,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Interactive"
+    group_label: "Metrics Timing Distribution Performance Time DOM Interactive"
     group_item_label: "Time Unit"
   }
 
@@ -32721,7 +32721,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Performance Time Dom Interactive"
+    group_label: "Metrics Timing Distribution Performance Time DOM Interactive"
     group_item_label: "Underflow"
   }
 
@@ -33739,7 +33739,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready"
     group_item_label: "Bucket Count"
   }
 
@@ -33747,7 +33747,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -33756,7 +33756,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready"
     group_item_label: "Histogram Type"
   }
 
@@ -33764,7 +33764,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready"
     group_item_label: "Overflow"
   }
 
@@ -33777,7 +33777,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready"
     group_item_label: "Sum"
   }
 
@@ -33785,7 +33785,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready"
     group_item_label: "Time Unit"
   }
 
@@ -33793,7 +33793,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready"
     group_item_label: "Underflow"
   }
 
@@ -33806,7 +33806,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_conservative.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Conservative"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Conservative"
     group_item_label: "Bucket Count"
   }
 
@@ -33814,7 +33814,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_conservative.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Conservative"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Conservative"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -33823,7 +33823,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_conservative.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Conservative"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Conservative"
     group_item_label: "Histogram Type"
   }
 
@@ -33831,7 +33831,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_conservative.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Conservative"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Conservative"
     group_item_label: "Overflow"
   }
 
@@ -33844,7 +33844,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_conservative.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Conservative"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Conservative"
     group_item_label: "Sum"
   }
 
@@ -33852,7 +33852,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_conservative.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Conservative"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Conservative"
     group_item_label: "Time Unit"
   }
 
@@ -33860,7 +33860,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_conservative.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Conservative"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Conservative"
     group_item_label: "Underflow"
   }
 
@@ -33873,7 +33873,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_ech.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Ech"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Ech"
     group_item_label: "Bucket Count"
   }
 
@@ -33881,7 +33881,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_ech.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Ech"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Ech"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -33890,7 +33890,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_ech.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Ech"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Ech"
     group_item_label: "Histogram Type"
   }
 
@@ -33898,7 +33898,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_ech.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Ech"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Ech"
     group_item_label: "Overflow"
   }
 
@@ -33911,7 +33911,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_ech.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Ech"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Ech"
     group_item_label: "Sum"
   }
 
@@ -33919,7 +33919,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_ech.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Ech"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Ech"
     group_item_label: "Time Unit"
   }
 
@@ -33927,7 +33927,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_ech.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Ech"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Ech"
     group_item_label: "Underflow"
   }
 
@@ -33940,7 +33940,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_ech_grease.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Ech Grease"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Ech Grease"
     group_item_label: "Bucket Count"
   }
 
@@ -33948,7 +33948,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_ech_grease.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Ech Grease"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Ech Grease"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -33957,7 +33957,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_ech_grease.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Ech Grease"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Ech Grease"
     group_item_label: "Histogram Type"
   }
 
@@ -33965,7 +33965,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_ech_grease.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Ech Grease"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Ech Grease"
     group_item_label: "Overflow"
   }
 
@@ -33978,7 +33978,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_ech_grease.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Ech Grease"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Ech Grease"
     group_item_label: "Sum"
   }
 
@@ -33986,7 +33986,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_ech_grease.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Ech Grease"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Ech Grease"
     group_item_label: "Time Unit"
   }
 
@@ -33994,7 +33994,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_ech_grease.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready Ech Grease"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready Ech Grease"
     group_item_label: "Underflow"
   }
 
@@ -34007,7 +34007,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_first_try.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready First Try"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready First Try"
     group_item_label: "Bucket Count"
   }
 
@@ -34015,7 +34015,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_first_try.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready First Try"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready First Try"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -34024,7 +34024,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_first_try.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready First Try"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready First Try"
     group_item_label: "Histogram Type"
   }
 
@@ -34032,7 +34032,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_first_try.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready First Try"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready First Try"
     group_item_label: "Overflow"
   }
 
@@ -34045,7 +34045,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_first_try.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready First Try"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready First Try"
     group_item_label: "Sum"
   }
 
@@ -34053,7 +34053,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_first_try.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready First Try"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready First Try"
     group_item_label: "Time Unit"
   }
 
@@ -34061,7 +34061,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.ssl_time_until_ready_first_try.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ssl Time Until Ready First Try"
+    group_label: "Metrics Timing Distribution SSL Time Until Ready First Try"
     group_item_label: "Underflow"
   }
 
@@ -35950,7 +35950,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Wr Gpu Wait Time"
+    group_label: "Metrics Timing Distribution Wr GPU Wait Time"
     group_item_label: "Bucket Count"
   }
 
@@ -35958,7 +35958,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Wr Gpu Wait Time"
+    group_label: "Metrics Timing Distribution Wr GPU Wait Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -35967,7 +35967,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Wr Gpu Wait Time"
+    group_label: "Metrics Timing Distribution Wr GPU Wait Time"
     group_item_label: "Histogram Type"
   }
 
@@ -35975,7 +35975,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Wr Gpu Wait Time"
+    group_label: "Metrics Timing Distribution Wr GPU Wait Time"
     group_item_label: "Overflow"
   }
 
@@ -35988,7 +35988,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Wr Gpu Wait Time"
+    group_label: "Metrics Timing Distribution Wr GPU Wait Time"
     group_item_label: "Sum"
   }
 
@@ -35996,7 +35996,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Wr Gpu Wait Time"
+    group_label: "Metrics Timing Distribution Wr GPU Wait Time"
     group_item_label: "Time Unit"
   }
 
@@ -36004,7 +36004,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Wr Gpu Wait Time"
+    group_label: "Metrics Timing Distribution Wr GPU Wait Time"
     group_item_label: "Underflow"
   }
 
@@ -36687,8 +36687,8 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Uuid"
-    group_item_label: "Legacy Ids Client Id"
+    group_label: "Metrics UUID"
+    group_item_label: "Legacy Ids Client ID"
     description: "Sets the legacy client ID as part of the deletion-request ping.
 **No longer reported set since Focus 124, where legacy telemetry was removed**.
 "
@@ -51944,7 +51944,7 @@ view: metrics_table__ping_info__experiments {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Value Extra"
-    group_item_label: "Enrollment Id"
+    group_item_label: "Enrollment ID"
   }
 
   dimension: value__extra__type {

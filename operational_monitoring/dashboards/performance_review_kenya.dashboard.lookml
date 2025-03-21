@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Networking Http 1 Download Throughput
-    name: Networking Http 1 Download Throughput_percentile
+  - title: Networking HTTP 1 Download Throughput
+    name: Networking HTTP 1 Download Throughput_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -46,8 +46,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Networking Http 2 Download Throughput
-    name: Networking Http 2 Download Throughput_percentile
+  - title: Networking HTTP 2 Download Throughput
+    name: Networking HTTP 2 Download Throughput_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -118,8 +118,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Networking Http 3 Upload Throughput
-    name: Networking Http 3 Upload Throughput_percentile
+  - title: Networking HTTP 3 Upload Throughput
+    name: Networking HTTP 3 Upload Throughput_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -154,8 +154,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Networking Dns Lookup Time
-    name: Networking Dns Lookup Time_percentile
+  - title: Networking DNS Lookup Time
+    name: Networking DNS Lookup Time_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -226,8 +226,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Networking Http 2 Upload Throughput
-    name: Networking Http 2 Upload Throughput_percentile
+  - title: Networking HTTP 2 Upload Throughput
+    name: Networking HTTP 2 Upload Throughput_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -334,8 +334,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Networking Http 3 Download Throughput
-    name: Networking Http 3 Download Throughput_percentile
+  - title: Networking HTTP 3 Download Throughput
+    name: Networking HTTP 3 Download Throughput_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -370,8 +370,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Networking Http 1 Upload Throughput
-    name: Networking Http 1 Upload Throughput_percentile
+  - title: Networking HTTP 1 Upload Throughput
+    name: Networking HTTP 1 Upload Throughput_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile

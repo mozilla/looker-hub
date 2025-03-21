@@ -43,7 +43,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -80,7 +80,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -117,7 +117,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -154,7 +154,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -191,7 +191,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -228,7 +228,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -265,7 +265,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -302,7 +302,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -339,12 +339,12 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Perf Dom Contentperf Dom Content Loaded Time From Responsestart Ms Loaded Time
-    name: Perf Dom Contentperf Dom Content Loaded Time From Responsestart Ms Loaded Time_percentile
+  - title: Perf DOM Contentperf DOM Content Loaded Time From Responsestart Ms Loaded Time
+    name: Perf DOM Contentperf DOM Content Loaded Time From Responsestart Ms Loaded Time_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -376,7 +376,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -413,7 +413,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -450,7 +450,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -487,7 +487,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -524,7 +524,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -561,7 +561,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -598,7 +598,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -635,7 +635,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -672,7 +672,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -709,7 +709,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -746,12 +746,12 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Perf Dom Content Loaded Time
-    name: Perf Dom Content Loaded Time_percentile
+  - title: Perf DOM Content Loaded Time
+    name: Perf DOM Content Loaded Time_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -783,7 +783,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -820,7 +820,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -857,7 +857,7 @@
     listen:
       Date: performance_desktop_build_by_build_beta.build_id
       Percentile: performance_desktop_build_by_build_beta.parameter
-      Os: performance_desktop_build_by_build_beta.os
+      OS: performance_desktop_build_by_build_beta.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -890,8 +890,8 @@
     listens_to_filters: []
     field: performance_desktop_build_by_build_beta.parameter
   
-  - title: Os
-    name: Os
+  - title: OS
+    name: OS
     type: string_filter
     default_value: 'Linux'
     allow_multiple_values: false

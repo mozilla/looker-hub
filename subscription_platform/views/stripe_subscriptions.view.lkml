@@ -33,7 +33,7 @@ view: stripe_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Customer"
-    group_item_label: "Default Source Id"
+    group_item_label: "Default Source ID"
     description: "ID of the default payment source for the customer.
 This isn't available for customers that were deleted before the initial Fivetran Stripe sync."
   }
@@ -82,7 +82,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Customer Discount Coupon"
-    group_item_label: "Id"
+    group_item_label: "ID"
     description: "Coupon ID."
   }
 
@@ -115,7 +115,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Customer Discount"
-    group_item_label: "Id"
+    group_item_label: "ID"
     description: "Discount ID."
   }
 
@@ -124,7 +124,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Customer Discount"
-    group_item_label: "Invoice Id"
+    group_item_label: "Invoice ID"
     description: "ID of the invoice that the discount's coupon was applied to, if it was applied directly to a particular invoice."
   }
 
@@ -133,7 +133,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Customer Discount"
-    group_item_label: "Invoice Item Id"
+    group_item_label: "Invoice Item ID"
     description: "ID of the invoice item (or invoice line item for invoice line items of `type` = \"subscription\") that the discount's coupon was applied to, if it was applied directly to a particular invoice item or invoice line item."
   }
 
@@ -142,7 +142,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Customer Discount"
-    group_item_label: "Promotion Code Id"
+    group_item_label: "Promotion Code ID"
     description: "ID of the promotion code applied to create this discount."
   }
 
@@ -151,7 +151,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Customer Discount"
-    group_item_label: "Subscription Id"
+    group_item_label: "Subscription ID"
     description: "ID of the subscription that this coupon is applied to, if it is applied to a particular subscription."
   }
 
@@ -160,7 +160,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Customer"
-    group_item_label: "Id"
+    group_item_label: "ID"
     description: "Customer ID."
   }
 
@@ -291,7 +291,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Discount Coupon"
-    group_item_label: "Id"
+    group_item_label: "ID"
     description: "Coupon ID."
   }
 
@@ -324,7 +324,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Discount"
-    group_item_label: "Id"
+    group_item_label: "ID"
     description: "Discount ID."
   }
 
@@ -333,7 +333,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Discount"
-    group_item_label: "Invoice Id"
+    group_item_label: "Invoice ID"
     description: "ID of the invoice that the discount's coupon was applied to, if it was applied directly to a particular invoice."
   }
 
@@ -342,7 +342,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Discount"
-    group_item_label: "Invoice Item Id"
+    group_item_label: "Invoice Item ID"
     description: "ID of the invoice item (or invoice line item for invoice line items of `type` = \"subscription\") that the discount's coupon was applied to, if it was applied directly to a particular invoice item or invoice line item."
   }
 
@@ -351,7 +351,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Discount"
-    group_item_label: "Promotion Code Id"
+    group_item_label: "Promotion Code ID"
     description: "ID of the promotion code applied to create this discount."
   }
 
@@ -398,7 +398,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata"
-    group_item_label: "Previous Plan Id"
+    group_item_label: "Previous Plan ID"
     description: "ID of the previous plan the customer was subscribed to via this subscription (if any)."
   }
 
@@ -893,7 +893,7 @@ view: stripe_subscriptions__items {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Plan"
-    group_item_label: "Id"
+    group_item_label: "ID"
     description: "Plan ID."
   }
 
@@ -944,7 +944,7 @@ view: stripe_subscriptions__items {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Plan Product"
-    group_item_label: "Id"
+    group_item_label: "ID"
     description: "Product ID."
   }
 

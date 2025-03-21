@@ -365,7 +365,7 @@ fenix_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Android Sdk Version"
+    group_item_label: "Android SDK Version"
   }
 
   dimension: client_info__app_build {
@@ -451,7 +451,7 @@ fenix_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: client_info__os_version {
@@ -459,7 +459,7 @@ fenix_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Os Version"
+    group_item_label: "OS Version"
   }
 
   dimension: client_info__session_count {
@@ -475,7 +475,7 @@ fenix_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Session Id"
+    group_item_label: "Session ID"
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -483,7 +483,7 @@ fenix_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Telemetry Sdk Build"
+    group_item_label: "Telemetry SDK Build"
   }
 
   dimension: client_info__windows_build_number {
@@ -522,7 +522,7 @@ fenix_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -554,7 +554,7 @@ fenix_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Dnt"
+    group_item_label: "DNT"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -562,7 +562,7 @@ fenix_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Tls Cipher Hex"
+    group_item_label: "TLS Cipher Hex"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
@@ -570,7 +570,7 @@ fenix_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Tls Version"
+    group_item_label: "TLS Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -584,7 +584,7 @@ fenix_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "X Debug Id"
+    group_item_label: "X Debug ID"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -592,7 +592,7 @@ fenix_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "X Foxsec Ip Reputation"
+    group_item_label: "X Foxsec IP Reputation"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -600,7 +600,7 @@ fenix_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "X Lb Tags"
+    group_item_label: "X LB Tags"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -632,7 +632,7 @@ fenix_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
   }
 
   dimension: metadata__isp__name {
@@ -664,7 +664,7 @@ fenix_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: metadata__user_agent__version {

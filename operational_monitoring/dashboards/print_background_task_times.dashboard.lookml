@@ -41,7 +41,7 @@
     listen:
       Date: print_background_task_times.submission_date
       Channel: print_background_task_times.channel
-      Os: print_background_task_times.os
+      OS: print_background_task_times.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -76,7 +76,7 @@
     listen:
       Date: print_background_task_times.submission_date
       Channel: print_background_task_times.channel
-      Os: print_background_task_times.os
+      OS: print_background_task_times.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -111,7 +111,7 @@
     listen:
       Date: print_background_task_times.submission_date
       Channel: print_background_task_times.channel
-      Os: print_background_task_times.os
+      OS: print_background_task_times.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -149,7 +149,7 @@
       Date: print_background_task_times.submission_date
       Percentile: print_background_task_times.parameter
       Channel: print_background_task_times.channel
-      Os: print_background_task_times.os
+      OS: print_background_task_times.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -198,8 +198,8 @@
       
   
   
-  - title: Os
-    name: Os
+  - title: OS
+    name: OS
     type: string_filter
     default_value: 'Windows_NT'
     allow_multiple_values: false

@@ -8852,7 +8852,7 @@ operational_monitoring:
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.default_ui_experiment_logo_in_corner_rollout_statistics
         xaxis: submission_date
-      title: Default Ui Experiment Logo In Corner Rollout
+      title: Default UI Experiment Logo In Corner Rollout
       type: operational_monitoring_dashboard
     desktop_address_autofill_holdback_uk_beta:
       tables:
@@ -10777,7 +10777,7 @@ operational_monitoring:
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.improved_mailto_handling_with_os_integration_treatment_a_rollout_statistics
         xaxis: submission_date
-      title: Improved Mailto Handling With Os Integration Treatment A Rollout
+      title: Improved Mailto Handling With OS Integration Treatment A Rollout
       type: operational_monitoring_dashboard
     ios_apple_store_rating_dialog:
       tables:
@@ -11231,7 +11231,7 @@ operational_monitoring:
           statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.launch_firefox_on_os_restart_treatment_a_rollout_statistics
         xaxis: submission_date
-      title: Launch Firefox On Os Restart Treatment A Rollout
+      title: Launch Firefox On OS Restart Treatment A Rollout
       type: operational_monitoring_dashboard
     microsurvey_chatbot_csat_and_productivity_left_position:
       tables:
@@ -11899,7 +11899,7 @@ operational_monitoring:
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.new_tab_content_card_ui_updates_statistics
         xaxis: submission_date
-      title: New Tab Content Card Ui Updates
+      title: New Tab Content Card UI Updates
       type: operational_monitoring_dashboard
     new_tab_layout_variant_b_and_content_card_ui_release_rollout_global:
       tables:
@@ -11937,7 +11937,7 @@ operational_monitoring:
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.new_tab_layout_variant_b_and_content_card_ui_release_rollout_global_statistics
         xaxis: submission_date
-      title: New Tab Layout Variant B And Content Card Ui Release Rollout Global
+      title: New Tab Layout Variant B And Content Card UI Release Rollout Global
       type: operational_monitoring_dashboard
     new_tab_layout_variant_b_and_content_card_ui_release_rollout_global_v2:
       tables:
@@ -11975,7 +11975,7 @@ operational_monitoring:
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.new_tab_layout_variant_b_and_content_card_ui_release_rollout_global_v2_statistics
         xaxis: submission_date
-      title: New Tab Layout Variant B And Content Card Ui Release Rollout Global V2
+      title: New Tab Layout Variant B And Content Card UI Release Rollout Global V2
       type: operational_monitoring_dashboard
     new_tab_layout_variant_b_and_content_card_ui_rollout_global:
       tables:
@@ -12013,7 +12013,7 @@ operational_monitoring:
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.new_tab_layout_variant_b_and_content_card_ui_rollout_global_statistics
         xaxis: submission_date
-      title: New Tab Layout Variant B And Content Card Ui Rollout Global
+      title: New Tab Layout Variant B And Content Card UI Rollout Global
       type: operational_monitoring_dashboard
     new_toolbar_ios_new_tab_button_rollout:
       tables:
@@ -12846,7 +12846,7 @@ operational_monitoring:
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.print_background_task_times_by_build_statistics
         xaxis: build_id
-      title: 'Print Background Task Times By Build Id  1Pct Sample '
+      title: 'Print Background Task Times By Build ID  1Pct Sample '
       type: operational_monitoring_dashboard
     product_insight_telemetry_via_server_knobs_rollout_release:
       tables:
@@ -14011,7 +14011,7 @@ operational_monitoring:
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.serp_categorization_and_consolidated_search_config_us_desktop_relaunch_statistics
         xaxis: submission_date
-      title: Serp Categorization And Consolidated Search Config Us Desktop Relaunch
+      title: SERP Categorization And Consolidated Search Config Us Desktop Relaunch
       type: operational_monitoring_dashboard
     set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout:
       tables:

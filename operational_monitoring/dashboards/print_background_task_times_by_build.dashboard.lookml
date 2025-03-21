@@ -5,7 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 - dashboard: print_background_task_times_by_build
-  title: Print Background Task Times By Build Id  1Pct Sample 
+  title: Print Background Task Times By Build ID  1Pct Sample 
   layout: newspaper
   preferred_viewer: dashboards-next
 
@@ -41,12 +41,12 @@
     listen:
       Date: print_background_task_times_by_build.build_id
       Channel: print_background_task_times_by_build.channel
-      Os: print_background_task_times_by_build.os
+      OS: print_background_task_times_by_build.os
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Print Error By Ui
-    name: Print Error By Ui_sum
+  - title: Print Error By UI
+    name: Print Error By UI_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -76,7 +76,7 @@
     listen:
       Date: print_background_task_times_by_build.build_id
       Channel: print_background_task_times_by_build.channel
-      Os: print_background_task_times_by_build.os
+      OS: print_background_task_times_by_build.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -111,7 +111,7 @@
     listen:
       Date: print_background_task_times_by_build.build_id
       Channel: print_background_task_times_by_build.channel
-      Os: print_background_task_times_by_build.os
+      OS: print_background_task_times_by_build.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -160,8 +160,8 @@
       
   
   
-  - title: Os
-    name: Os
+  - title: OS
+    name: OS
     type: string_filter
     default_value: 'Linux'
     allow_multiple_values: false

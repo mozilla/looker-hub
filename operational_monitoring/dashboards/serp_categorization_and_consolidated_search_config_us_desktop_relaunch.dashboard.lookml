@@ -5,13 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 - dashboard: serp_categorization_and_consolidated_search_config_us_desktop_relaunch
-  title: Serp Categorization And Consolidated Search Config Us Desktop Relaunch
+  title: SERP Categorization And Consolidated Search Config Us Desktop Relaunch
   layout: newspaper
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
