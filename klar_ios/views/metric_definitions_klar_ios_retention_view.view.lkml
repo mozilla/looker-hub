@@ -296,7 +296,7 @@ klar_ios_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Android Sdk Version"
+    group_item_label: "Android SDK Version"
   }
 
   dimension: client_info__app_build {
@@ -382,7 +382,7 @@ klar_ios_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: client_info__os_version {
@@ -390,7 +390,7 @@ klar_ios_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Os Version"
+    group_item_label: "OS Version"
   }
 
   dimension: client_info__session_count {
@@ -406,7 +406,7 @@ klar_ios_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Session Id"
+    group_item_label: "Session ID"
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -414,7 +414,7 @@ klar_ios_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Telemetry Sdk Build"
+    group_item_label: "Telemetry SDK Build"
   }
 
   dimension: client_info__windows_build_number {
@@ -452,7 +452,7 @@ klar_ios_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
   }
 
   dimension: geo__subdivision1 {
@@ -533,7 +533,7 @@ klar_ios_retention_view_retained_week_4_new_profiles,
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: user_agent__version {

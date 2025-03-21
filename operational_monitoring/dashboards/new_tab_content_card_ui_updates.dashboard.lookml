@@ -5,7 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 - dashboard: new_tab_content_card_ui_updates
-  title: New Tab Content Card Ui Updates
+  title: New Tab Content Card UI Updates
   layout: newspaper
   preferred_viewer: dashboards-next
 
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean

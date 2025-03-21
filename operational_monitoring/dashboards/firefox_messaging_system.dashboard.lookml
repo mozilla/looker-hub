@@ -41,7 +41,7 @@
     listen:
       Date: firefox_messaging_system.submission_date
       Normalized Channel: firefox_messaging_system.normalized_channel
-      Normalized Os: firefox_messaging_system.normalized_os
+      Normalized OS: firefox_messaging_system.normalized_os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -76,7 +76,7 @@
     listen:
       Date: firefox_messaging_system.submission_date
       Normalized Channel: firefox_messaging_system.normalized_channel
-      Normalized Os: firefox_messaging_system.normalized_os
+      Normalized OS: firefox_messaging_system.normalized_os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -111,7 +111,7 @@
     listen:
       Date: firefox_messaging_system.submission_date
       Normalized Channel: firefox_messaging_system.normalized_channel
-      Normalized Os: firefox_messaging_system.normalized_os
+      Normalized OS: firefox_messaging_system.normalized_os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -146,7 +146,7 @@
     listen:
       Date: firefox_messaging_system.submission_date
       Normalized Channel: firefox_messaging_system.normalized_channel
-      Normalized Os: firefox_messaging_system.normalized_os
+      Normalized OS: firefox_messaging_system.normalized_os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -181,7 +181,7 @@
     listen:
       Date: firefox_messaging_system.submission_date
       Normalized Channel: firefox_messaging_system.normalized_channel
-      Normalized Os: firefox_messaging_system.normalized_os
+      Normalized OS: firefox_messaging_system.normalized_os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -292,8 +292,8 @@
       
   
   
-  - title: Normalized Os
-    name: Normalized Os
+  - title: Normalized OS
+    name: Normalized OS
     type: string_filter
     default_value: 'Windows'
     allow_multiple_values: false

@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Installs By Os
-    name: Installs By Os_sum
+  - title: Installs By OS
+    name: Installs By OS_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -43,8 +43,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Installs By Os
-    name: Installs By Os_mean
+  - title: Installs By OS
+    name: Installs By OS_mean
     note_state: expanded
     note_display: above
     note_text: Mean

@@ -142,8 +142,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Cpu Exception
-    name: Cpu Exception_total_ratio
+  - title: CPU Exception
+    name: CPU Exception_total_ratio
     note_state: expanded
     note_display: above
     note_text: Total_Ratio

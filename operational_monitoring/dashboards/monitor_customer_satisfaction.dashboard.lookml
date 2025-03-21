@@ -42,7 +42,7 @@
       Date: monitor_customer_satisfaction.submission_date
       Experiment Branch: monitor_customer_satisfaction.experiment_branch
       Plan Tier: monitor_customer_satisfaction.plan_tier
-      Survey Id: monitor_customer_satisfaction.survey_id
+      Survey ID: monitor_customer_satisfaction.survey_id
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -105,8 +105,8 @@
       
   
   
-  - title: Survey Id
-    name: Survey Id
+  - title: Survey ID
+    name: Survey ID
     type: string_filter
     default_value: 'csat_survey'
     allow_multiple_values: false

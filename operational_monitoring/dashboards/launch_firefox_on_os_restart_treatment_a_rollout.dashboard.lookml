@@ -5,7 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 - dashboard: launch_firefox_on_os_restart_treatment_a_rollout
-  title: Launch Firefox On Os Restart Treatment A Rollout
+  title: Launch Firefox On OS Restart Treatment A Rollout
   layout: newspaper
   preferred_viewer: dashboards-next
 
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean

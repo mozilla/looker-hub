@@ -33,7 +33,7 @@ view: topsites_impression_fenix {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Android Sdk Version"
+    group_item_label: "Android SDK Version"
   }
 
   dimension: client_info__app_build {
@@ -118,7 +118,7 @@ view: topsites_impression_fenix {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: client_info__os_version {
@@ -126,7 +126,7 @@ view: topsites_impression_fenix {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os Version"
+    group_item_label: "OS Version"
   }
 
   dimension: client_info__session_count {
@@ -142,7 +142,7 @@ view: topsites_impression_fenix {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Session Id"
+    group_item_label: "Session ID"
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -150,7 +150,7 @@ view: topsites_impression_fenix {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Telemetry Sdk Build"
+    group_item_label: "Telemetry SDK Build"
   }
 
   dimension: client_info__windows_build_number {
@@ -194,7 +194,7 @@ view: topsites_impression_fenix {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -226,23 +226,23 @@ view: topsites_impression_fenix {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "Dnt"
+    group_item_label: "DNT"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Cipher Hex"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Cipher Hex"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Version"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -255,7 +255,7 @@ view: topsites_impression_fenix {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Debug Id"
+    group_item_label: "X Debug ID"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -263,7 +263,7 @@ view: topsites_impression_fenix {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Foxsec Ip Reputation"
+    group_item_label: "X Foxsec IP Reputation"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -271,7 +271,7 @@ view: topsites_impression_fenix {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Lb Tags"
+    group_item_label: "X LB Tags"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -302,15 +302,15 @@ view: topsites_impression_fenix {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
-    group_item_label: "Db Version"
+    group_label: "Metadata ISP"
+    group_item_label: "DB Version"
   }
 
   dimension: metadata__isp__name {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Name"
   }
 
@@ -318,7 +318,7 @@ view: topsites_impression_fenix {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Organization"
   }
 
@@ -335,7 +335,7 @@ view: topsites_impression_fenix {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: metadata__user_agent__version {
@@ -379,7 +379,7 @@ view: topsites_impression_fenix {
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
-    group_item_label: "Top Sites Contile Tile Id"
+    group_item_label: "Top Sites Contile Tile ID"
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
@@ -387,7 +387,7 @@ view: topsites_impression_fenix {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Glean Client Annotation Experimentation Id"
+    group_item_label: "Glean Client Annotation Experimentation ID"
   }
 
   dimension: metrics__string__top_sites_contile_advertiser {
@@ -402,8 +402,8 @@ view: topsites_impression_fenix {
     sql: ${TABLE}.metrics.url.top_sites_contile_reporting_url ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Url"
-    group_item_label: "Top Sites Contile Reporting Url"
+    group_label: "Metrics URL"
+    group_item_label: "Top Sites Contile Reporting URL"
   }
 
   dimension: metrics__url2__top_sites_contile_reporting_url {
@@ -411,15 +411,15 @@ view: topsites_impression_fenix {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics Url2"
-    group_item_label: "Top Sites Contile Reporting Url"
+    group_item_label: "Top Sites Contile Reporting URL"
   }
 
   dimension: metrics__uuid__top_sites_context_id {
     sql: ${TABLE}.metrics.uuid.top_sites_context_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Uuid"
-    group_item_label: "Top Sites Context Id"
+    group_label: "Metrics UUID"
+    group_item_label: "Top Sites Context ID"
   }
 
   dimension: normalized_app_id {
@@ -653,7 +653,7 @@ view: topsites_impression_fenix__ping_info__experiments {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Value Extra"
-    group_item_label: "Enrollment Id"
+    group_item_label: "Enrollment ID"
   }
 
   dimension: value__extra__type {

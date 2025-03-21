@@ -81,13 +81,13 @@ explore: client_counts {
   }
 
   join: clients_daily_table__scalar_parent_browser_ui_interaction_content_context_sum {
-    view_label: "Client Counts  Scalar Parent Browser Ui Interaction Content Context Sum"
+    view_label: "Client Counts  Scalar Parent Browser UI Interaction Content Context Sum"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_browser_ui_interaction_content_context_sum}) AS clients_daily_table__scalar_parent_browser_ui_interaction_content_context_sum ;;
   }
 
   join: clients_daily_table__scalar_parent_browser_ui_interaction_preferences_pane_home_sum {
-    view_label: "Client Counts  Scalar Parent Browser Ui Interaction Preferences Pane Home Sum"
+    view_label: "Client Counts  Scalar Parent Browser UI Interaction Preferences Pane Home Sum"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_browser_ui_interaction_preferences_pane_home_sum}) AS clients_daily_table__scalar_parent_browser_ui_interaction_preferences_pane_home_sum ;;
   }

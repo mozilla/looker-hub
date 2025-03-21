@@ -1624,15 +1624,15 @@ default browser card is clicked.
   }
 
   dimension: metrics__uuid__legacy_ids_client_id {
-    label: "Legacy Ids Client Id"
+    label: "Legacy Ids Client ID"
     hidden: no
     sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
     type: string
     group_label: "Legacy Ids"
-    group_item_label: "Client Id"
+    group_item_label: "Client ID"
 
     link: {
-      label: "Glean Dictionary reference for Legacy Ids Client Id"
+      label: "Glean Dictionary reference for Legacy Ids Client ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/legacy_ids_client_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -2944,15 +2944,15 @@ browser menu option is tapped.
   }
 
   dimension: metrics__timing_distribution__share_deeplink_open_url_startup_time__sum {
-    label: "Share Deeplink Open Url Startup Time Sum"
+    label: "Share Deeplink Open URL Startup Time Sum"
     hidden: no
     sql: ${TABLE}.metrics.timing_distribution.share_deeplink_open_url_startup_time.sum ;;
     type: number
     group_label: "Share"
-    group_item_label: "Deeplink Open Url Startup Time Sum"
+    group_item_label: "Deeplink Open URL Startup Time Sum"
 
     link: {
-      label: "Glean Dictionary reference for Share Deeplink Open Url Startup Time Sum"
+      label: "Glean Dictionary reference for Share Deeplink Open URL Startup Time Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/share_deeplink_open_url_startup_time"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -3329,15 +3329,15 @@ pressed
   }
 
   dimension: metrics__counter__tabs_normal_and_private_uri_count {
-    label: "Tabs Normal And Private Uri Count"
+    label: "Tabs Normal And Private URI Count"
     hidden: no
     sql: ${TABLE}.metrics.counter.tabs_normal_and_private_uri_count ;;
     type: number
     group_label: "Tabs"
-    group_item_label: "Normal And Private Uri Count"
+    group_item_label: "Normal And Private URI Count"
 
     link: {
-      label: "Glean Dictionary reference for Tabs Normal And Private Uri Count"
+      label: "Glean Dictionary reference for Tabs Normal And Private URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_normal_and_private_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -3404,15 +3404,15 @@ closes the application.
   }
 
   dimension: metrics__counter__tabs_reload_from_url_bar {
-    label: "Tabs Reload From Url Bar"
+    label: "Tabs Reload From URL Bar"
     hidden: no
     sql: ${TABLE}.metrics.counter.tabs_reload_from_url_bar ;;
     type: number
     group_label: "Tabs"
-    group_item_label: "Reload From Url Bar"
+    group_item_label: "Reload From URL Bar"
 
     link: {
-      label: "Glean Dictionary reference for Tabs Reload From Url Bar"
+      label: "Glean Dictionary reference for Tabs Reload From URL Bar"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_reload_from_url_bar"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -3648,15 +3648,15 @@ the currently selected wallpaper if it's not the default.
   }
 
   dimension: metrics__counter__widget_l_tabs_open_url {
-    label: "Widget L Tabs Open Url"
+    label: "Widget L Tabs Open URL"
     hidden: no
     sql: ${TABLE}.metrics.counter.widget_l_tabs_open_url ;;
     type: number
     group_label: "Widget"
-    group_item_label: "L Tabs Open Url"
+    group_item_label: "L Tabs Open URL"
 
     link: {
-      label: "Glean Dictionary reference for Widget L Tabs Open Url"
+      label: "Glean Dictionary reference for Widget L Tabs Open URL"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/widget_l_tabs_open_url"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -3742,15 +3742,15 @@ widget opens firefox for regular search
   }
 
   dimension: metrics__counter__widget_m_tabs_open_url {
-    label: "Widget M Tabs Open Url"
+    label: "Widget M Tabs Open URL"
     hidden: no
     sql: ${TABLE}.metrics.counter.widget_m_tabs_open_url ;;
     type: number
     group_label: "Widget"
-    group_item_label: "M Tabs Open Url"
+    group_item_label: "M Tabs Open URL"
 
     link: {
-      label: "Glean Dictionary reference for Widget M Tabs Open Url"
+      label: "Glean Dictionary reference for Widget M Tabs Open URL"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/widget_m_tabs_open_url"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -3815,15 +3815,15 @@ widget opens firefox for regular search
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation Id"
+    label: "Glean Client Annotation Experimentation ID"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     group_label: "Glean Client Annotation"
-    group_item_label: "Experimentation Id"
+    group_item_label: "Experimentation ID"
 
     link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -3960,15 +3960,15 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__counter__glean_error_io {
-    label: "Glean Error Io"
+    label: "Glean Error IO"
     hidden: no
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
     group_label: "Glean Error"
-    group_item_label: "Io"
+    group_item_label: "IO"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Io"
+      label: "Glean Dictionary reference for Glean Error IO"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_io"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -4658,7 +4658,7 @@ startup, as part of the initialization sequence.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Android Sdk Version"
+    group_item_label: "Android SDK Version"
   }
 
   dimension: client_info__app_build {
@@ -4743,7 +4743,7 @@ startup, as part of the initialization sequence.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: client_info__os_version {
@@ -4751,7 +4751,7 @@ startup, as part of the initialization sequence.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os Version"
+    group_item_label: "OS Version"
   }
 
   dimension: client_info__session_count {
@@ -4767,7 +4767,7 @@ startup, as part of the initialization sequence.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Session Id"
+    group_item_label: "Session ID"
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -4775,7 +4775,7 @@ startup, as part of the initialization sequence.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Telemetry Sdk Build"
+    group_item_label: "Telemetry SDK Build"
   }
 
   dimension: client_info__windows_build_number {
@@ -4819,7 +4819,7 @@ startup, as part of the initialization sequence.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -4851,23 +4851,23 @@ startup, as part of the initialization sequence.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "Dnt"
+    group_item_label: "DNT"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Cipher Hex"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Cipher Hex"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Version"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -4880,7 +4880,7 @@ startup, as part of the initialization sequence.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Debug Id"
+    group_item_label: "X Debug ID"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -4888,7 +4888,7 @@ startup, as part of the initialization sequence.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Foxsec Ip Reputation"
+    group_item_label: "X Foxsec IP Reputation"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -4896,7 +4896,7 @@ startup, as part of the initialization sequence.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Lb Tags"
+    group_item_label: "X LB Tags"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -4927,15 +4927,15 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
-    group_item_label: "Db Version"
+    group_label: "Metadata ISP"
+    group_item_label: "DB Version"
   }
 
   dimension: metadata__isp__name {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Name"
   }
 
@@ -4943,7 +4943,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Organization"
   }
 
@@ -4960,7 +4960,7 @@ startup, as part of the initialization sequence.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: metadata__user_agent__version {
@@ -7573,7 +7573,7 @@ startup, as part of the initialization sequence.
     sql: ${metrics__counter__tabs_normal_and_private_uri_count} ;;
 
     link: {
-      label: "Glean Dictionary reference for Tabs Normal And Private Uri Count"
+      label: "Glean Dictionary reference for Tabs Normal And Private URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_normal_and_private_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -7587,7 +7587,7 @@ startup, as part of the initialization sequence.
     sql: ${client_info__client_id} ;;
 
     link: {
-      label: "Glean Dictionary reference for Tabs Normal And Private Uri Count"
+      label: "Glean Dictionary reference for Tabs Normal And Private URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_normal_and_private_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -7598,7 +7598,7 @@ startup, as part of the initialization sequence.
     sql: ${metrics__counter__tabs_reload_from_url_bar} ;;
 
     link: {
-      label: "Glean Dictionary reference for Tabs Reload From Url Bar"
+      label: "Glean Dictionary reference for Tabs Reload From URL Bar"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_reload_from_url_bar"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -7612,7 +7612,7 @@ startup, as part of the initialization sequence.
     sql: ${client_info__client_id} ;;
 
     link: {
-      label: "Glean Dictionary reference for Tabs Reload From Url Bar"
+      label: "Glean Dictionary reference for Tabs Reload From URL Bar"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_reload_from_url_bar"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -7623,7 +7623,7 @@ startup, as part of the initialization sequence.
     sql: ${metrics__counter__widget_l_tabs_open_url} ;;
 
     link: {
-      label: "Glean Dictionary reference for Widget L Tabs Open Url"
+      label: "Glean Dictionary reference for Widget L Tabs Open URL"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/widget_l_tabs_open_url"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -7637,7 +7637,7 @@ startup, as part of the initialization sequence.
     sql: ${client_info__client_id} ;;
 
     link: {
-      label: "Glean Dictionary reference for Widget L Tabs Open Url"
+      label: "Glean Dictionary reference for Widget L Tabs Open URL"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/widget_l_tabs_open_url"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -7748,7 +7748,7 @@ startup, as part of the initialization sequence.
     sql: ${metrics__counter__widget_m_tabs_open_url} ;;
 
     link: {
-      label: "Glean Dictionary reference for Widget M Tabs Open Url"
+      label: "Glean Dictionary reference for Widget M Tabs Open URL"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/widget_m_tabs_open_url"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -7762,7 +7762,7 @@ startup, as part of the initialization sequence.
     sql: ${client_info__client_id} ;;
 
     link: {
-      label: "Glean Dictionary reference for Widget M Tabs Open Url"
+      label: "Glean Dictionary reference for Widget M Tabs Open URL"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/widget_m_tabs_open_url"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -7823,7 +7823,7 @@ startup, as part of the initialization sequence.
     sql: ${metrics__counter__glean_error_io} ;;
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Io"
+      label: "Glean Dictionary reference for Glean Error IO"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_io"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -7837,7 +7837,7 @@ startup, as part of the initialization sequence.
     sql: ${client_info__client_id} ;;
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Io"
+      label: "Glean Dictionary reference for Glean Error IO"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_io"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -10242,7 +10242,7 @@ view: metrics__ping_info__experiments {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Value Extra"
-    group_item_label: "Enrollment Id"
+    group_item_label: "Enrollment ID"
   }
 
   dimension: value__extra__type {

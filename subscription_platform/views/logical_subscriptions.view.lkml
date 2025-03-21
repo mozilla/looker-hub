@@ -76,7 +76,7 @@ view: logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "First Touch Attribution"
-    group_item_label: "Utm Campaign"
+    group_item_label: "UTM Campaign"
   }
 
   dimension: first_touch_attribution__utm_content {
@@ -84,7 +84,7 @@ view: logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "First Touch Attribution"
-    group_item_label: "Utm Content"
+    group_item_label: "UTM Content"
   }
 
   dimension: first_touch_attribution__utm_medium {
@@ -92,7 +92,7 @@ view: logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "First Touch Attribution"
-    group_item_label: "Utm Medium"
+    group_item_label: "UTM Medium"
   }
 
   dimension: first_touch_attribution__utm_source {
@@ -100,7 +100,7 @@ view: logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "First Touch Attribution"
-    group_item_label: "Utm Source"
+    group_item_label: "UTM Source"
   }
 
   dimension: first_touch_attribution__utm_term {
@@ -108,7 +108,7 @@ view: logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "First Touch Attribution"
-    group_item_label: "Utm Term"
+    group_item_label: "UTM Term"
   }
 
   dimension: has_fraudulent_charges {
@@ -188,7 +188,7 @@ view: logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Last Touch Attribution"
-    group_item_label: "Utm Campaign"
+    group_item_label: "UTM Campaign"
   }
 
   dimension: last_touch_attribution__utm_content {
@@ -196,7 +196,7 @@ view: logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Last Touch Attribution"
-    group_item_label: "Utm Content"
+    group_item_label: "UTM Content"
   }
 
   dimension: last_touch_attribution__utm_medium {
@@ -204,7 +204,7 @@ view: logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Last Touch Attribution"
-    group_item_label: "Utm Medium"
+    group_item_label: "UTM Medium"
   }
 
   dimension: last_touch_attribution__utm_source {
@@ -212,7 +212,7 @@ view: logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Last Touch Attribution"
-    group_item_label: "Utm Source"
+    group_item_label: "UTM Source"
   }
 
   dimension: last_touch_attribution__utm_term {
@@ -220,7 +220,7 @@ view: logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Last Touch Attribution"
-    group_item_label: "Utm Term"
+    group_item_label: "UTM Term"
   }
 
   dimension: mozilla_account_id {

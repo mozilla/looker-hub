@@ -158,8 +158,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Networking Http 1 Download Throughput - By country
-    name: Networking Http 1 Download Throughput - By country_percentile
+  - title: Networking HTTP 1 Download Throughput - By country
+    name: Networking HTTP 1 Download Throughput - By country_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -195,8 +195,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Networking Http 3 Upload Throughput - By country
-    name: Networking Http 3 Upload Throughput - By country_percentile
+  - title: Networking HTTP 3 Upload Throughput - By country
+    name: Networking HTTP 3 Upload Throughput - By country_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -306,8 +306,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Networking Dns Lookup Time - By country
-    name: Networking Dns Lookup Time - By country_percentile
+  - title: Networking DNS Lookup Time - By country
+    name: Networking DNS Lookup Time - By country_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -343,8 +343,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Networking Http 2 Download Throughput - By country
-    name: Networking Http 2 Download Throughput - By country_percentile
+  - title: Networking HTTP 2 Download Throughput - By country
+    name: Networking HTTP 2 Download Throughput - By country_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -380,8 +380,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Networking Http 2 Upload Throughput - By country
-    name: Networking Http 2 Upload Throughput - By country_percentile
+  - title: Networking HTTP 2 Upload Throughput - By country
+    name: Networking HTTP 2 Upload Throughput - By country_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -417,8 +417,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Networking Http 1 Upload Throughput - By country
-    name: Networking Http 1 Upload Throughput - By country_percentile
+  - title: Networking HTTP 1 Upload Throughput - By country
+    name: Networking HTTP 1 Upload Throughput - By country_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -454,8 +454,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Networking Http 3 Download Throughput - By country
-    name: Networking Http 3 Download Throughput - By country_percentile
+  - title: Networking HTTP 3 Download Throughput - By country
+    name: Networking HTTP 3 Download Throughput - By country_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile

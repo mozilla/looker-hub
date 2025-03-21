@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Dns Lookup Time
-    name: Dns Lookup Time_percentile
+  - title: DNS Lookup Time
+    name: DNS Lookup Time_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -43,12 +43,12 @@
     listen:
       Date: network_performance_desktop_build_by_build.build_id
       Percentile: network_performance_desktop_build_by_build.parameter
-      Os: network_performance_desktop_build_by_build.os
+      OS: network_performance_desktop_build_by_build.os
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Http Sub Tls Handshake
-    name: Http Sub Tls Handshake_percentile
+  - title: HTTP Sub TLS Handshake
+    name: HTTP Sub TLS Handshake_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -80,7 +80,7 @@
     listen:
       Date: network_performance_desktop_build_by_build.build_id
       Percentile: network_performance_desktop_build_by_build.parameter
-      Os: network_performance_desktop_build_by_build.os
+      OS: network_performance_desktop_build_by_build.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -117,12 +117,12 @@
     listen:
       Date: network_performance_desktop_build_by_build.build_id
       Percentile: network_performance_desktop_build_by_build.parameter
-      Os: network_performance_desktop_build_by_build.os
+      OS: network_performance_desktop_build_by_build.os
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Http Page Open To First Sent
-    name: Http Page Open To First Sent_percentile
+  - title: HTTP Page Open To First Sent
+    name: HTTP Page Open To First Sent_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -154,12 +154,12 @@
     listen:
       Date: network_performance_desktop_build_by_build.build_id
       Percentile: network_performance_desktop_build_by_build.parameter
-      Os: network_performance_desktop_build_by_build.os
+      OS: network_performance_desktop_build_by_build.os
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Http Page Tls Handshake
-    name: Http Page Tls Handshake_percentile
+  - title: HTTP Page TLS Handshake
+    name: HTTP Page TLS Handshake_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -191,7 +191,7 @@
     listen:
       Date: network_performance_desktop_build_by_build.build_id
       Percentile: network_performance_desktop_build_by_build.parameter
-      Os: network_performance_desktop_build_by_build.os
+      OS: network_performance_desktop_build_by_build.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -224,8 +224,8 @@
     listens_to_filters: []
     field: network_performance_desktop_build_by_build.parameter
   
-  - title: Os
-    name: Os
+  - title: OS
+    name: OS
     type: string_filter
     default_value: 'Linux'
     allow_multiple_values: false

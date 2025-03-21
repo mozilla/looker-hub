@@ -33,7 +33,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Android Sdk Version"
+    group_item_label: "Android SDK Version"
   }
 
   dimension: client_info__app_build {
@@ -118,7 +118,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: client_info__os_version {
@@ -126,7 +126,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os Version"
+    group_item_label: "OS Version"
   }
 
   dimension: client_info__session_count {
@@ -142,7 +142,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Session Id"
+    group_item_label: "Session ID"
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -150,7 +150,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Telemetry Sdk Build"
+    group_item_label: "Telemetry SDK Build"
   }
 
   dimension: client_info__windows_build_number {
@@ -193,7 +193,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -225,23 +225,23 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "Dnt"
+    group_item_label: "DNT"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Cipher Hex"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Cipher Hex"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Version"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -254,7 +254,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Debug Id"
+    group_item_label: "X Debug ID"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -262,7 +262,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Foxsec Ip Reputation"
+    group_item_label: "X Foxsec IP Reputation"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -270,7 +270,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Lb Tags"
+    group_item_label: "X LB Tags"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -301,15 +301,15 @@ view: metrics_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
-    group_item_label: "Db Version"
+    group_label: "Metadata ISP"
+    group_item_label: "DB Version"
   }
 
   dimension: metadata__isp__name {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Name"
   }
 
@@ -317,7 +317,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Organization"
   }
 
@@ -334,7 +334,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: metadata__user_agent__version {
@@ -942,7 +942,7 @@ view: metrics_table {
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Glean Error Io"
+    group_item_label: "Glean Error IO"
   }
 
   dimension: metrics__counter__glean_error_preinit_tasks_overflow {
@@ -1518,7 +1518,7 @@ view: metrics_table {
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Tabs Normal And Private Uri Count"
+    group_item_label: "Tabs Normal And Private URI Count"
   }
 
   dimension: metrics__counter__tabs_pull_to_refresh {
@@ -1534,7 +1534,7 @@ view: metrics_table {
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Tabs Reload From Url Bar"
+    group_item_label: "Tabs Reload From URL Bar"
   }
 
   dimension: metrics__counter__widget_l_tabs_open_url {
@@ -1542,7 +1542,7 @@ view: metrics_table {
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Widget L Tabs Open Url"
+    group_item_label: "Widget L Tabs Open URL"
   }
 
   dimension: metrics__counter__widget_m_quick_action_close_private {
@@ -1582,7 +1582,7 @@ view: metrics_table {
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Widget M Tabs Open Url"
+    group_item_label: "Widget M Tabs Open URL"
   }
 
   dimension: metrics__counter__widget_m_top_sites_widget {
@@ -2052,7 +2052,7 @@ view: metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Glean Client Annotation Experimentation Id"
+    group_item_label: "Glean Client Annotation Experimentation ID"
   }
 
   dimension: metrics__string__glean_database_rkv_load_error {
@@ -2952,7 +2952,7 @@ view: metrics_table {
     sql: ${TABLE}.metrics.timing_distribution.share_deeplink_open_url_startup_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Share Deeplink Open Url Startup Time"
+    group_label: "Metrics Timing Distribution Share Deeplink Open URL Startup Time"
     group_item_label: "Bucket Count"
   }
 
@@ -2960,7 +2960,7 @@ view: metrics_table {
     sql: ${TABLE}.metrics.timing_distribution.share_deeplink_open_url_startup_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Share Deeplink Open Url Startup Time"
+    group_label: "Metrics Timing Distribution Share Deeplink Open URL Startup Time"
     group_item_label: "Count"
   }
 
@@ -2968,7 +2968,7 @@ view: metrics_table {
     sql: ${TABLE}.metrics.timing_distribution.share_deeplink_open_url_startup_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Share Deeplink Open Url Startup Time"
+    group_label: "Metrics Timing Distribution Share Deeplink Open URL Startup Time"
     group_item_label: "Histogram Type"
   }
 
@@ -2976,7 +2976,7 @@ view: metrics_table {
     sql: ${TABLE}.metrics.timing_distribution.share_deeplink_open_url_startup_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Share Deeplink Open Url Startup Time"
+    group_label: "Metrics Timing Distribution Share Deeplink Open URL Startup Time"
     group_item_label: "Overflow"
   }
 
@@ -2989,7 +2989,7 @@ view: metrics_table {
     sql: ${TABLE}.metrics.timing_distribution.share_deeplink_open_url_startup_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Share Deeplink Open Url Startup Time"
+    group_label: "Metrics Timing Distribution Share Deeplink Open URL Startup Time"
     group_item_label: "Sum"
   }
 
@@ -2997,7 +2997,7 @@ view: metrics_table {
     sql: ${TABLE}.metrics.timing_distribution.share_deeplink_open_url_startup_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Share Deeplink Open Url Startup Time"
+    group_label: "Metrics Timing Distribution Share Deeplink Open URL Startup Time"
     group_item_label: "Time Unit"
   }
 
@@ -3005,7 +3005,7 @@ view: metrics_table {
     sql: ${TABLE}.metrics.timing_distribution.share_deeplink_open_url_startup_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Share Deeplink Open Url Startup Time"
+    group_label: "Metrics Timing Distribution Share Deeplink Open URL Startup Time"
     group_item_label: "Underflow"
   }
 
@@ -3150,8 +3150,8 @@ view: metrics_table {
     sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Uuid"
-    group_item_label: "Legacy Ids Client Id"
+    group_label: "Metrics UUID"
+    group_item_label: "Legacy Ids Client ID"
   }
 
   dimension: normalized_app_id {
@@ -3672,7 +3672,7 @@ view: metrics_table__ping_info__experiments {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Value Extra"
-    group_item_label: "Enrollment Id"
+    group_item_label: "Enrollment ID"
   }
 
   dimension: value__extra__type {
