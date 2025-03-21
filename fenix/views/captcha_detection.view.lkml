@@ -5,6 +5,42 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: captcha_detection {
+  dimension: metrics__counter__captcha_detection_arkoselabs_oc {
+    label: "Captcha Detection Arkoselabs Oc"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.captcha_detection_arkoselabs_oc ;;
+    type: number
+    group_label: "Captcha Detection"
+    group_item_label: "Arkoselabs Oc"
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Arkoselabs Oc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_arkoselabs_oc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the ArkoseLabs was loaded since last ping submission.
+"
+  }
+
+  dimension: metrics__counter__captcha_detection_arkoselabs_oc_pbm {
+    label: "Captcha Detection Arkoselabs Oc Pbm"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.captcha_detection_arkoselabs_oc_pbm ;;
+    type: number
+    group_label: "Captcha Detection"
+    group_item_label: "Arkoselabs Oc Pbm"
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Arkoselabs Oc Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_arkoselabs_oc_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the ArkoseLabs was loaded since last ping submission.
+"
+  }
+
   dimension: metrics__counter__captcha_detection_arkoselabs_pc {
     label: "Captcha Detection Arkoselabs Pc"
     hidden: no
@@ -365,6 +401,42 @@ view: captcha_detection {
 "
   }
 
+  dimension: metrics__counter__captcha_detection_cloudflare_turnstile_oc {
+    label: "Captcha Detection Cloudflare Turnstile Oc"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.captcha_detection_cloudflare_turnstile_oc ;;
+    type: number
+    group_label: "Captcha Detection"
+    group_item_label: "Cloudflare Turnstile Oc"
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Cloudflare Turnstile Oc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_cloudflare_turnstile_oc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the Cloudflare Turnstile challenge was loaded since last ping submission.
+"
+  }
+
+  dimension: metrics__counter__captcha_detection_cloudflare_turnstile_oc_pbm {
+    label: "Captcha Detection Cloudflare Turnstile Oc Pbm"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.captcha_detection_cloudflare_turnstile_oc_pbm ;;
+    type: number
+    group_label: "Captcha Detection"
+    group_item_label: "Cloudflare Turnstile Oc Pbm"
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Cloudflare Turnstile Oc Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_cloudflare_turnstile_oc_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the Cloudflare Turnstile challenge was loaded since last ping submission.
+"
+  }
+
   dimension: metrics__counter__captcha_detection_datadome_bl {
     label: "Captcha Detection Datadome Bl"
     hidden: no
@@ -398,6 +470,24 @@ view: captcha_detection {
     }
 
     description: "How many times the Datadome blocked a user.
+"
+  }
+
+  dimension: metrics__counter__captcha_detection_datadome_oc {
+    label: "Captcha Detection Datadome Oc"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.captcha_detection_datadome_oc ;;
+    type: number
+    group_label: "Captcha Detection"
+    group_item_label: "Datadome Oc"
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Datadome Oc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_datadome_oc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the Datadome was loaded since last ping submission.
 "
   }
 
@@ -509,6 +599,42 @@ view: captcha_detection {
 "
   }
 
+  dimension: metrics__counter__captcha_detection_google_recaptcha_v2_oc {
+    label: "Captcha Detection Google Recaptcha V2 Oc"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.captcha_detection_google_recaptcha_v2_oc ;;
+    type: number
+    group_label: "Captcha Detection"
+    group_item_label: "Google Recaptcha V2 Oc"
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Google Recaptcha V2 Oc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_google_recaptcha_v2_oc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the Google reCAPTCHA v2 was loaded since last ping submission.
+"
+  }
+
+  dimension: metrics__counter__captcha_detection_google_recaptcha_v2_oc_pbm {
+    label: "Captcha Detection Google Recaptcha V2 Oc Pbm"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.captcha_detection_google_recaptcha_v2_oc_pbm ;;
+    type: number
+    group_label: "Captcha Detection"
+    group_item_label: "Google Recaptcha V2 Oc Pbm"
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Google Recaptcha V2 Oc Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_google_recaptcha_v2_oc_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the Google reCAPTCHA v2 was loaded since last ping submission.
+"
+  }
+
   dimension: metrics__counter__captcha_detection_google_recaptcha_v2_pc {
     label: "Captcha Detection Google Recaptcha V2 Pc"
     hidden: no
@@ -614,6 +740,42 @@ view: captcha_detection {
     }
 
     description: "Number of times the user completed an hCaptcha challenge automatically.
+"
+  }
+
+  dimension: metrics__counter__captcha_detection_hcaptcha_oc {
+    label: "Captcha Detection Hcaptcha Oc"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.captcha_detection_hcaptcha_oc ;;
+    type: number
+    group_label: "Captcha Detection"
+    group_item_label: "Hcaptcha Oc"
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Hcaptcha Oc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_hcaptcha_oc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the hCaptcha was loaded since last ping submission.
+"
+  }
+
+  dimension: metrics__counter__captcha_detection_hcaptcha_oc_pbm {
+    label: "Captcha Detection Hcaptcha Oc Pbm"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.captcha_detection_hcaptcha_oc_pbm ;;
+    type: number
+    group_label: "Captcha Detection"
+    group_item_label: "Hcaptcha Oc Pbm"
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Hcaptcha Oc Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_hcaptcha_oc_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the hCaptcha was loaded since last ping submission.
 "
   }
 
@@ -1516,6 +1678,56 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
+  measure: captcha_detection_arkoselabs_oc {
+    type: sum
+    sql: ${metrics__counter__captcha_detection_arkoselabs_oc} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Arkoselabs Oc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_arkoselabs_oc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: captcha_detection_arkoselabs_oc_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__captcha_detection_arkoselabs_oc: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Arkoselabs Oc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_arkoselabs_oc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: captcha_detection_arkoselabs_oc_pbm {
+    type: sum
+    sql: ${metrics__counter__captcha_detection_arkoselabs_oc_pbm} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Arkoselabs Oc Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_arkoselabs_oc_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: captcha_detection_arkoselabs_oc_pbm_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__captcha_detection_arkoselabs_oc_pbm: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Arkoselabs Oc Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_arkoselabs_oc_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: captcha_detection_arkoselabs_pc {
     type: sum
     sql: ${metrics__counter__captcha_detection_arkoselabs_pc} ;;
@@ -1916,6 +2128,56 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: captcha_detection_cloudflare_turnstile_oc {
+    type: sum
+    sql: ${metrics__counter__captcha_detection_cloudflare_turnstile_oc} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Cloudflare Turnstile Oc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_cloudflare_turnstile_oc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: captcha_detection_cloudflare_turnstile_oc_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__captcha_detection_cloudflare_turnstile_oc: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Cloudflare Turnstile Oc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_cloudflare_turnstile_oc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: captcha_detection_cloudflare_turnstile_oc_pbm {
+    type: sum
+    sql: ${metrics__counter__captcha_detection_cloudflare_turnstile_oc_pbm} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Cloudflare Turnstile Oc Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_cloudflare_turnstile_oc_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: captcha_detection_cloudflare_turnstile_oc_pbm_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__captcha_detection_cloudflare_turnstile_oc_pbm: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Cloudflare Turnstile Oc Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_cloudflare_turnstile_oc_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: captcha_detection_datadome_bl {
     type: sum
     sql: ${metrics__counter__captcha_detection_datadome_bl} ;;
@@ -1962,6 +2224,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Captcha Detection Datadome Bl Pbm"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_datadome_bl_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: captcha_detection_datadome_oc {
+    type: sum
+    sql: ${metrics__counter__captcha_detection_datadome_oc} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Datadome Oc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_datadome_oc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: captcha_detection_datadome_oc_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__captcha_detection_datadome_oc: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Datadome Oc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_datadome_oc"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -2116,6 +2403,56 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: captcha_detection_google_recaptcha_v2_oc {
+    type: sum
+    sql: ${metrics__counter__captcha_detection_google_recaptcha_v2_oc} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Google Recaptcha V2 Oc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_google_recaptcha_v2_oc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: captcha_detection_google_recaptcha_v2_oc_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__captcha_detection_google_recaptcha_v2_oc: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Google Recaptcha V2 Oc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_google_recaptcha_v2_oc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: captcha_detection_google_recaptcha_v2_oc_pbm {
+    type: sum
+    sql: ${metrics__counter__captcha_detection_google_recaptcha_v2_oc_pbm} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Google Recaptcha V2 Oc Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_google_recaptcha_v2_oc_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: captcha_detection_google_recaptcha_v2_oc_pbm_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__captcha_detection_google_recaptcha_v2_oc_pbm: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Google Recaptcha V2 Oc Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_google_recaptcha_v2_oc_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: captcha_detection_google_recaptcha_v2_pc {
     type: sum
     sql: ${metrics__counter__captcha_detection_google_recaptcha_v2_pc} ;;
@@ -2262,6 +2599,56 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Captcha Detection Hcaptcha Ac Pbm"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_hcaptcha_ac_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: captcha_detection_hcaptcha_oc {
+    type: sum
+    sql: ${metrics__counter__captcha_detection_hcaptcha_oc} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Hcaptcha Oc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_hcaptcha_oc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: captcha_detection_hcaptcha_oc_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__captcha_detection_hcaptcha_oc: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Hcaptcha Oc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_hcaptcha_oc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: captcha_detection_hcaptcha_oc_pbm {
+    type: sum
+    sql: ${metrics__counter__captcha_detection_hcaptcha_oc_pbm} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Hcaptcha Oc Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_hcaptcha_oc_pbm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: captcha_detection_hcaptcha_oc_pbm_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__captcha_detection_hcaptcha_oc_pbm: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Captcha Detection Hcaptcha Oc Pbm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/captcha_detection_hcaptcha_oc_pbm"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

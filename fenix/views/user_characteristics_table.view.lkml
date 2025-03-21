@@ -1990,6 +1990,14 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Languages"
   }
 
+  dimension: metrics__string__characteristics_machine_model_name {
+    sql: ${TABLE}.metrics.string.characteristics_machine_model_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Machine Model Name"
+  }
+
   dimension: metrics__string__characteristics_mathml1 {
     sql: ${TABLE}.metrics.string.characteristics_mathml1 ;;
     type: string

@@ -425,6 +425,22 @@ view: captcha_detection_table {
     group_item_label: "Captcha Detection Privacy Trackingprotection Pbm Enabled"
   }
 
+  dimension: metrics__counter__captcha_detection_arkoselabs_oc {
+    sql: ${TABLE}.metrics.counter.captcha_detection_arkoselabs_oc ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Captcha Detection Arkoselabs Oc"
+  }
+
+  dimension: metrics__counter__captcha_detection_arkoselabs_oc_pbm {
+    sql: ${TABLE}.metrics.counter.captcha_detection_arkoselabs_oc_pbm ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Captcha Detection Arkoselabs Oc Pbm"
+  }
+
   dimension: metrics__counter__captcha_detection_arkoselabs_pc {
     sql: ${TABLE}.metrics.counter.captcha_detection_arkoselabs_pc ;;
     type: number
@@ -553,6 +569,22 @@ view: captcha_detection_table {
     group_item_label: "Captcha Detection Cloudflare Turnstile Cf Pbm"
   }
 
+  dimension: metrics__counter__captcha_detection_cloudflare_turnstile_oc {
+    sql: ${TABLE}.metrics.counter.captcha_detection_cloudflare_turnstile_oc ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Captcha Detection Cloudflare Turnstile Oc"
+  }
+
+  dimension: metrics__counter__captcha_detection_cloudflare_turnstile_oc_pbm {
+    sql: ${TABLE}.metrics.counter.captcha_detection_cloudflare_turnstile_oc_pbm ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Captcha Detection Cloudflare Turnstile Oc Pbm"
+  }
+
   dimension: metrics__counter__captcha_detection_datadome_bl {
     sql: ${TABLE}.metrics.counter.captcha_detection_datadome_bl ;;
     type: number
@@ -567,6 +599,14 @@ view: captcha_detection_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Datadome Bl Pbm"
+  }
+
+  dimension: metrics__counter__captcha_detection_datadome_oc {
+    sql: ${TABLE}.metrics.counter.captcha_detection_datadome_oc ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Captcha Detection Datadome Oc"
   }
 
   dimension: metrics__counter__captcha_detection_datadome_pc {
@@ -617,6 +657,22 @@ view: captcha_detection_table {
     group_item_label: "Captcha Detection Google Recaptcha V2 Ac Pbm"
   }
 
+  dimension: metrics__counter__captcha_detection_google_recaptcha_v2_oc {
+    sql: ${TABLE}.metrics.counter.captcha_detection_google_recaptcha_v2_oc ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Captcha Detection Google Recaptcha V2 Oc"
+  }
+
+  dimension: metrics__counter__captcha_detection_google_recaptcha_v2_oc_pbm {
+    sql: ${TABLE}.metrics.counter.captcha_detection_google_recaptcha_v2_oc_pbm ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Captcha Detection Google Recaptcha V2 Oc Pbm"
+  }
+
   dimension: metrics__counter__captcha_detection_google_recaptcha_v2_pc {
     sql: ${TABLE}.metrics.counter.captcha_detection_google_recaptcha_v2_pc ;;
     type: number
@@ -663,6 +719,22 @@ view: captcha_detection_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Captcha Detection Hcaptcha Ac Pbm"
+  }
+
+  dimension: metrics__counter__captcha_detection_hcaptcha_oc {
+    sql: ${TABLE}.metrics.counter.captcha_detection_hcaptcha_oc ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Captcha Detection Hcaptcha Oc"
+  }
+
+  dimension: metrics__counter__captcha_detection_hcaptcha_oc_pbm {
+    sql: ${TABLE}.metrics.counter.captcha_detection_hcaptcha_oc_pbm ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Captcha Detection Hcaptcha Oc Pbm"
   }
 
   dimension: metrics__counter__captcha_detection_hcaptcha_pc {

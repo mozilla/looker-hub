@@ -3029,6 +3029,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_machine_model_name {
+    label: "Characteristics Machine Model Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_machine_model_name ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Machine Model Name"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Machine Model Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/characteristics_machine_model_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Machine model name
+"
+  }
+
   dimension: metrics__text2__characteristics_math_ops {
     label: "Characteristics Math Ops"
     hidden: no
