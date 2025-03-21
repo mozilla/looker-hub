@@ -1279,6 +1279,11 @@ fenix:
       - channel: release
         table: mozdata.fenix.clients_yearly
       type: table_view
+    composite_active_users_aggregates_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.composite_active_users_aggregates
+      type: table_view
     composite_active_users_table:
       tables:
       - channel: release
@@ -3118,6 +3123,11 @@ firefox_desktop:
       tables:
       - table: mozdata.telemetry.clients_last_seen
       type: table_view
+    composite_active_users_aggregates_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.composite_active_users_aggregates
+      type: table_view
     composite_active_users_table:
       tables:
       - channel: null
@@ -4438,6 +4448,11 @@ firefox_ios:
       - channel: release
         table: mozdata.firefox_ios.clients_last_seen_joined
       type: table_view
+    composite_active_users_aggregates_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.composite_active_users_aggregates
+      type: table_view
     composite_active_users_table:
       tables:
       - channel: release
@@ -5469,6 +5484,11 @@ focus_android:
       - channel: release
         table: mozdata.focus_android.clients_last_seen_joined
       type: table_view
+    composite_active_users_aggregates_table:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.composite_active_users_aggregates
+      type: table_view
     composite_active_users_table:
       tables:
       - channel: release
@@ -6008,6 +6028,21 @@ focus_ios:
       tables:
       - table: mozdata.org_mozilla_ios_focus.usage_reporting
       type: glean_ping_view
+    usage_reporting_clients_daily_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_ios_focus.usage_reporting_clients_daily
+      type: table_view
+    usage_reporting_clients_first_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_ios_focus.usage_reporting_clients_first_seen
+      type: table_view
+    usage_reporting_clients_last_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_ios_focus.usage_reporting_clients_last_seen
+      type: table_view
     usage_reporting_table:
       tables:
       - channel: null

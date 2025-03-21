@@ -491,6 +491,16 @@ by query parameter `entrypoint_variation` in the URL.
 "
   }
 
+  dimension: metrics__string__event_nimbus_user_id {
+    sql: ${TABLE}.metrics.string.event_nimbus_user_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Event Nimbus User Id"
+    description: "The name of the client ID for Nimbus experiments.
+"
+  }
+
   dimension: metrics__string__event_reason {
     sql: ${TABLE}.metrics.string.event_reason ;;
     type: string

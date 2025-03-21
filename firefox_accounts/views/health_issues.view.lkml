@@ -107,6 +107,12 @@ view: health_issues {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: workcategory {
+    sql: ${TABLE}.workcategory ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension_group: created {
     sql: ${TABLE}.created ;;
     type: time

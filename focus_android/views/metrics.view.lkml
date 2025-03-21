@@ -11736,6 +11736,23 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__mozstorage_sqlitejsm_transaction_timeout {
+    label: "Mozstorage Sqlitejsm Transaction Timeout"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.mozstorage_sqlitejsm_transaction_timeout ;;
+    group_label: "Mozstorage"
+    group_item_label: "Sqlitejsm Transaction Timeout"
+
+    link: {
+      label: "Glean Dictionary reference for Mozstorage Sqlitejsm Transaction Timeout"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/mozstorage_sqlitejsm_transaction_timeout"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Collection of javascript modules that created a Sqlite.sys.mjs transaction taking too long and timing out. This can be used to identify and optimize those modules transactions. This metric was generated to correspond to the Legacy Telemetry scalar mozstorage.sqlitejsm_transaction_timeout.
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_early_hints {
     label: "Netwerk Early Hints"
     hidden: yes
@@ -18076,6 +18093,44 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__custom_distribution__region_fetch_result__sum {
+    label: "Region Fetch Result Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.region_fetch_result.sum ;;
+    type: number
+    group_label: "Region"
+    group_item_label: "Fetch Result Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Region Fetch Result Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/region_fetch_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Result of XHR request fetching the country-code. 0=SUCCESS, 1=SUCCESS_WITHOUT_DATA, 2=XHRTIMEOUT, 3=ERROR (rest reserved for finer-grained error codes later)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SEARCH_SERVICE_COUNTRY_FETCH_RESULT.
+"
+  }
+
+  dimension: metrics__timing_distribution__region_fetch_time__sum {
+    label: "Region Fetch Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.region_fetch_time.sum ;;
+    type: number
+    group_label: "Region"
+    group_item_label: "Fetch Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Region Fetch Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/region_fetch_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time (ms) it takes to fetch the country code
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SEARCH_SERVICE_COUNTRY_FETCH_TIME_MS.
+"
+  }
+
   dimension: metrics__counter__rtcrtpsender_count {
     label: "Rtcrtpsender Count"
     hidden: no
@@ -18645,6 +18700,44 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "The proportion of RTCRtpSenders that were created by an addTransceivers call that was passed a sendEncodings.
+"
+  }
+
+  dimension: metrics__timing_distribution__screenwakelock_held_duration__sum {
+    label: "Screenwakelock Held Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.screenwakelock_held_duration.sum ;;
+    type: number
+    group_label: "Screenwakelock"
+    group_item_label: "Held Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Screenwakelock Held Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/screenwakelock_held_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long a screen wake lock was held in ms
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SCREENWAKELOCK_HELD_DURATION_MS.
+"
+  }
+
+  dimension: metrics__custom_distribution__screenwakelock_release_battery_level_discharging__sum {
+    label: "Screenwakelock Release Battery Level Discharging Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.screenwakelock_release_battery_level_discharging.sum ;;
+    type: number
+    group_label: "Screenwakelock"
+    group_item_label: "Release Battery Level Discharging Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Screenwakelock Release Battery Level Discharging Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/screenwakelock_release_battery_level_discharging"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Battery level when discharging and the wake lock was released
+This metric was generated to correspond to the Legacy Telemetry linear histogram SCREENWAKELOCK_RELEASE_BATTERY_LEVEL_DISCHARGING.
 "
   }
 
@@ -23560,6 +23653,24 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "WebRender scene swap time.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_shaderload_time__sum {
+    label: "Wr Shaderload Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_shaderload_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Shaderload Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Shaderload Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/wr_shaderload_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocking on the shader compilation for LazilyCompiled shaders created with ASYNC_COMPILE or FULL_COMPILE.
 "
   }
 
@@ -35762,6 +35873,47 @@ view: metrics__metrics__labeled_counter__mixed_content_video {
   }
 }
 
+view: metrics__metrics__labeled_counter__mozstorage_sqlitejsm_transaction_timeout {
+  label: "Mozstorage - Sqlitejsm Transaction Timeout"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__netwerk_early_hints {
   label: "Netwerk - Early Hints"
 
@@ -44227,6 +44379,34 @@ view: metrics__metrics__custom_distribution__readermode_download_result__values 
 }
 
 view: metrics__metrics__custom_distribution__readermode_parse_result__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__region_fetch_result__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__screenwakelock_release_battery_level_discharging__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -56020,6 +56200,34 @@ view: metrics__metrics__timing_distribution__privacy_sanitize_load_time__values 
   }
 }
 
+view: metrics__metrics__timing_distribution__region_fetch_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__screenwakelock_held_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__timing_distribution__service_worker_isolated_launch_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -56609,6 +56817,20 @@ view: metrics__metrics__timing_distribution__wr_scenebuild_time__values {
 }
 
 view: metrics__metrics__timing_distribution__wr_sceneswap_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_shaderload_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
