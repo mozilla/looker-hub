@@ -772,6 +772,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mixed_content_video}) AS metrics__metrics__labeled_counter__mixed_content_video ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mixed_content_video.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__mozstorage_sqlitejsm_transaction_timeout {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mozstorage_sqlitejsm_transaction_timeout}) AS metrics__metrics__labeled_counter__mozstorage_sqlitejsm_transaction_timeout ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mozstorage_sqlitejsm_transaction_timeout.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__netwerk_early_hints {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_early_hints}) AS metrics__metrics__labeled_counter__netwerk_early_hints ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_early_hints.document_id} ;;

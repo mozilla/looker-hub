@@ -6132,6 +6132,60 @@ in browser.
 "
   }
 
+  dimension: metrics__labeled_quantity__tabgroup_active_groups {
+    label: "Tabgroup Active Groups"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_quantity.tabgroup_active_groups ;;
+    type: string
+    group_label: "Tabgroup"
+    group_item_label: "Active Groups"
+
+    link: {
+      label: "Glean Dictionary reference for Tabgroup Active Groups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/tabgroup_active_groups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of groups present in the tab bar, split by expanded or collapsed.
+"
+  }
+
+  dimension: metrics__labeled_quantity__tabgroup_tab_count_in_groups {
+    label: "Tabgroup Tab Count In Groups"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_quantity.tabgroup_tab_count_in_groups ;;
+    type: string
+    group_label: "Tabgroup"
+    group_item_label: "Tab Count In Groups"
+
+    link: {
+      label: "Glean Dictionary reference for Tabgroup Tab Count In Groups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/tabgroup_tab_count_in_groups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the latest number of tabs in the tab bar, split by being inside a group or outside.
+"
+  }
+
+  dimension: metrics__labeled_quantity__tabgroup_tabs_per_active_group {
+    label: "Tabgroup Tabs Per Active Group"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_quantity.tabgroup_tabs_per_active_group ;;
+    type: string
+    group_label: "Tabgroup"
+    group_item_label: "Tabs Per Active Group"
+
+    link: {
+      label: "Glean Dictionary reference for Tabgroup Tabs Per Active Group"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/tabgroup_tabs_per_active_group"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records statistics about the number of tabs per active group: max, median, average and min.
+"
+  }
+
   dimension: metrics__timing_distribution__telemetry_archive_checking_over_quota__sum {
     label: "Telemetry Archive Checking Over Quota Sum"
     hidden: no
@@ -26329,6 +26383,44 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__timing_distribution__screenwakelock_held_duration__sum {
+    label: "Screenwakelock Held Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.screenwakelock_held_duration.sum ;;
+    type: number
+    group_label: "Screenwakelock"
+    group_item_label: "Held Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Screenwakelock Held Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/screenwakelock_held_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long a screen wake lock was held in ms
+This metric was generated to correspond to the Legacy Telemetry exponential histogram SCREENWAKELOCK_HELD_DURATION_MS.
+"
+  }
+
+  dimension: metrics__custom_distribution__screenwakelock_release_battery_level_discharging__sum {
+    label: "Screenwakelock Release Battery Level Discharging Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.screenwakelock_release_battery_level_discharging.sum ;;
+    type: number
+    group_label: "Screenwakelock"
+    group_item_label: "Release Battery Level Discharging Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Screenwakelock Release Battery Level Discharging Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/screenwakelock_release_battery_level_discharging"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Battery level when discharging and the wake lock was released
+This metric was generated to correspond to the Legacy Telemetry linear histogram SCREENWAKELOCK_RELEASE_BATTERY_LEVEL_DISCHARGING.
+"
+  }
+
   dimension: metrics__counter__script_preloader_mainthread_recompile {
     label: "Script Preloader Mainthread Recompile"
     hidden: no
@@ -31205,6 +31297,24 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "WebRender scene swap time.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_shaderload_time__sum {
+    label: "Wr Shaderload Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_shaderload_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Shaderload Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Shaderload Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/wr_shaderload_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent blocking on the shader compilation for LazilyCompiled shaders created with ASYNC_COMPILE or FULL_COMPILE.
 "
   }
 
@@ -60950,6 +61060,20 @@ view: metrics__metrics__custom_distribution__region_fetch_result__values {
   }
 }
 
+view: metrics__metrics__custom_distribution__screenwakelock_release_battery_level_discharging__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__session_restore_number_of_eager_tabs_restored__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -64867,6 +64991,48 @@ view: metrics__metrics__labeled_quantity__browser_searchinit_engine_invalid_webe
 }
 
 view: metrics__metrics__labeled_quantity__normandy_recipe_freshness {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_quantity__tabgroup_active_groups {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_quantity__tabgroup_tab_count_in_groups {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_quantity__tabgroup_tabs_per_active_group {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -74220,6 +74386,20 @@ view: metrics__metrics__timing_distribution__relevancy_classify_duration__values
   }
 }
 
+view: metrics__metrics__timing_distribution__screenwakelock_held_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__timing_distribution__search_service_startup_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -75159,6 +75339,20 @@ view: metrics__metrics__timing_distribution__wr_scenebuild_time__values {
 }
 
 view: metrics__metrics__timing_distribution__wr_sceneswap_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_shaderload_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

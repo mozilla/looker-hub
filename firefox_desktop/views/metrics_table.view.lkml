@@ -7663,6 +7663,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__screenwakelock_release_battery_level_discharging__count {
+    sql: ${TABLE}.metrics.custom_distribution.screenwakelock_release_battery_level_discharging.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Screenwakelock Release Battery Level Discharging"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__screenwakelock_release_battery_level_discharging__sum {
+    sql: ${TABLE}.metrics.custom_distribution.screenwakelock_release_battery_level_discharging.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Screenwakelock Release Battery Level Discharging"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__screenwakelock_release_battery_level_discharging__values {
+    sql: ${TABLE}.metrics.custom_distribution.screenwakelock_release_battery_level_discharging.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__session_restore_number_of_eager_tabs_restored__count {
     sql: ${TABLE}.metrics.custom_distribution.session_restore_number_of_eager_tabs_restored.count ;;
     type: number
@@ -14291,6 +14313,27 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     sql: ${TABLE}.metrics.labeled_quantity.normandy_recipe_freshness ;;
     hidden: yes
     description: "For each recipe ID seen by the Normandy client, its last_modified. This metric was generated to correspond to the Legacy Telemetry scalar normandy.recipe_freshness.
+"
+  }
+
+  dimension: metrics__labeled_quantity__tabgroup_active_groups {
+    sql: ${TABLE}.metrics.labeled_quantity.tabgroup_active_groups ;;
+    hidden: yes
+    description: "Records the number of groups present in the tab bar, split by expanded or collapsed.
+"
+  }
+
+  dimension: metrics__labeled_quantity__tabgroup_tab_count_in_groups {
+    sql: ${TABLE}.metrics.labeled_quantity.tabgroup_tab_count_in_groups ;;
+    hidden: yes
+    description: "Records the latest number of tabs in the tab bar, split by being inside a group or outside.
+"
+  }
+
+  dimension: metrics__labeled_quantity__tabgroup_tabs_per_active_group {
+    sql: ${TABLE}.metrics.labeled_quantity.tabgroup_tabs_per_active_group ;;
+    hidden: yes
+    description: "Records statistics about the number of tabs per active group: max, median, average and min.
 "
   }
 
@@ -38761,6 +38804,73 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__screenwakelock_held_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.screenwakelock_held_duration.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Screenwakelock Held Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__screenwakelock_held_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.screenwakelock_held_duration.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Screenwakelock Held Duration"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__screenwakelock_held_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.screenwakelock_held_duration.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Screenwakelock Held Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__screenwakelock_held_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.screenwakelock_held_duration.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Screenwakelock Held Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__screenwakelock_held_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.screenwakelock_held_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__screenwakelock_held_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.screenwakelock_held_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Screenwakelock Held Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__screenwakelock_held_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.screenwakelock_held_duration.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Screenwakelock Held Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__screenwakelock_held_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.screenwakelock_held_duration.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Screenwakelock Held Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__screenwakelock_held_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.screenwakelock_held_duration.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__search_service_startup_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.bucket_count ;;
     type: number
@@ -43317,6 +43427,73 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__wr_shaderload_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_shaderload_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Wr Shaderload Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_shaderload_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_shaderload_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Wr Shaderload Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__wr_shaderload_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.wr_shaderload_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Wr Shaderload Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__wr_shaderload_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_shaderload_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Wr Shaderload Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_shaderload_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.wr_shaderload_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_shaderload_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.wr_shaderload_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Wr Shaderload Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__wr_shaderload_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.wr_shaderload_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Wr Shaderload Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__wr_shaderload_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_shaderload_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Wr Shaderload Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_shaderload_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.wr_shaderload_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__wr_texture_cache_update_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.wr_texture_cache_update_time.bucket_count ;;
     type: number
@@ -46534,6 +46711,20 @@ view: metrics_table__metrics__custom_distribution__readermode_parse_result__valu
 }
 
 view: metrics_table__metrics__custom_distribution__region_fetch_result__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__screenwakelock_release_battery_level_discharging__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -50464,6 +50655,48 @@ view: metrics_table__metrics__labeled_quantity__browser_searchinit_engine_invali
 }
 
 view: metrics_table__metrics__labeled_quantity__normandy_recipe_freshness {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__tabgroup_active_groups {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__tabgroup_tab_count_in_groups {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__tabgroup_tabs_per_active_group {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -59817,6 +60050,20 @@ view: metrics_table__metrics__timing_distribution__relevancy_classify_duration__
   }
 }
 
+view: metrics_table__metrics__timing_distribution__screenwakelock_held_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__search_service_startup_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -60756,6 +61003,20 @@ view: metrics_table__metrics__timing_distribution__wr_scenebuild_time__values {
 }
 
 view: metrics_table__metrics__timing_distribution__wr_sceneswap_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__wr_shaderload_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

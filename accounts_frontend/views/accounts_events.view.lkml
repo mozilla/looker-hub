@@ -97,6 +97,24 @@ by query parameter `entrypoint_variation` in the URL.
 "
   }
 
+  dimension: metrics__string__event_nimbus_user_id {
+    label: "Event Nimbus User Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.event_nimbus_user_id ;;
+    type: string
+    group_label: "Event"
+    group_item_label: "Nimbus User Id"
+
+    link: {
+      label: "Glean Dictionary reference for Event Nimbus User Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/event_nimbus_user_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the client ID for Nimbus experiments.
+"
+  }
+
   dimension: metrics__string__event_reason {
     label: "Event Reason"
     hidden: no

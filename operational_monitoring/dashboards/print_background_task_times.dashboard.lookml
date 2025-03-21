@@ -193,8 +193,8 @@
       display: inline
       options:
       - 'release'
-      - 'nightly'
       - 'beta'
+      - 'nightly'
       
   
   
@@ -209,8 +209,8 @@
       display: inline
       options:
       - 'Windows_NT'
-      - 'Linux'
       - 'Darwin'
+      - 'Linux'
       
   
   

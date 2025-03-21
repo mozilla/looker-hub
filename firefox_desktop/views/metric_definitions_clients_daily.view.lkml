@@ -341,7 +341,7 @@ looker_base_fields_sample_id,
   dimension: fxa_signed_in {
     group_label: "Metrics"
     label: "FxA Sign-in Rate"
-    description: "Did the client sign in to Firefox Desktop"
+    description: "Is the client signed in at any point during the experiment"
     type: number
     sql: ${TABLE}.fxa_signed_in ;;
   }
