@@ -14289,6 +14289,405 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__timing_distribution__memory_collection_time__sum {
+    label: "Memory Collection Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.memory_collection_time.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Collection Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Collection Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_collection_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent gathering memory telemetry in milliseconds
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_COLLECTION_TIME.
+"
+  }
+
+  dimension: metrics__timing_distribution__memory_free_purged_pages__sum {
+    label: "Memory Free Purged Pages Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.memory_free_purged_pages.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Free Purged Pages Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Free Purged Pages Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_free_purged_pages"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time(ms) to purge dirty heap pages.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_FREE_PURGED_PAGES_MS.
+"
+  }
+
+  dimension: metrics__custom_distribution__memory_ghost_windows__sum {
+    label: "Memory Ghost Windows Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.memory_ghost_windows.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Ghost Windows Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Ghost Windows Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_ghost_windows"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of ghost windows
+This metric was generated to correspond to the Legacy Telemetry exponential histogram GHOST_WINDOWS.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_heap_allocated__sum {
+    label: "Memory Heap Allocated Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_heap_allocated.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Heap Allocated Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Heap Allocated Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_heap_allocated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Heap memory allocated (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_HEAP_ALLOCATED.
+"
+  }
+
+  dimension: metrics__custom_distribution__memory_heap_overhead_fraction__sum {
+    label: "Memory Heap Overhead Fraction Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.memory_heap_overhead_fraction.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Heap Overhead Fraction Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Heap Overhead Fraction Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_heap_overhead_fraction"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Fraction of committed heap memory that is overhead (percentage).
+This metric was generated to correspond to the Legacy Telemetry linear histogram MEMORY_HEAP_OVERHEAD_FRACTION.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_images_content_used_uncompressed__sum {
+    label: "Memory Images Content Used Uncompressed Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_images_content_used_uncompressed.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Images Content Used Uncompressed Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Images Content Used Uncompressed Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_images_content_used_uncompressed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Memory used for uncompressed, in-use content images (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_IMAGES_CONTENT_USED_UNCOMPRESSED.
+"
+  }
+
+  dimension: metrics__custom_distribution__memory_js_compartments_system__sum {
+    label: "Memory Js Compartments System Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_compartments_system.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Js Compartments System Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Js Compartments System Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_js_compartments_system"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total JavaScript compartments used for add-ons and internals.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_JS_COMPARTMENTS_SYSTEM.
+"
+  }
+
+  dimension: metrics__custom_distribution__memory_js_compartments_user__sum {
+    label: "Memory Js Compartments User Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_compartments_user.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Js Compartments User Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Js Compartments User Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_js_compartments_user"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total JavaScript compartments used for web pages
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_JS_COMPARTMENTS_USER.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_js_gc_heap__sum {
+    label: "Memory Js GC Heap Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_js_gc_heap.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Js GC Heap Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Js GC Heap Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_js_gc_heap"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Memory used by the garbage-collected JavaScript heap (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_JS_GC_HEAP.
+"
+  }
+
+  dimension: metrics__custom_distribution__memory_js_realms_system__sum {
+    label: "Memory Js Realms System Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_realms_system.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Js Realms System Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Js Realms System Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_js_realms_system"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total JavaScript realms used for add-ons and internals.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_JS_REALMS_SYSTEM.
+"
+  }
+
+  dimension: metrics__custom_distribution__memory_js_realms_user__sum {
+    label: "Memory Js Realms User Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_realms_user.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Js Realms User Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Js Realms User Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_js_realms_user"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total JavaScript realms used for web pages.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_JS_REALMS_USER.
+"
+  }
+
+  dimension: metrics__custom_distribution__memory_low_memory_events_physical__sum {
+    label: "Memory Low Memory Events Physical Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.memory_low_memory_events_physical.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Low Memory Events Physical Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Low Memory Events Physical Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_low_memory_events_physical"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of low-physical-memory events fired since last ping
+This metric was generated to correspond to the Legacy Telemetry exponential histogram LOW_MEMORY_EVENTS_PHYSICAL.
+"
+  }
+
+  dimension: metrics__custom_distribution__memory_page_faults_hard__sum {
+    label: "Memory Page Faults Hard Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.memory_page_faults_hard.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Page Faults Hard Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Page Faults Hard Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_page_faults_hard"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Hard page faults (since last telemetry ping)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PAGE_FAULTS_HARD.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_resident_fast__sum {
+    label: "Memory Resident Fast Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_resident_fast.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Resident Fast Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Resident Fast Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_resident_fast"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Resident memory size (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_RESIDENT_FAST.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_resident_peak__sum {
+    label: "Memory Resident Peak Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_resident_peak.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Resident Peak Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Resident Peak Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_resident_peak"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Peak resident memory size (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_RESIDENT_PEAK.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_storage_sqlite__sum {
+    label: "Memory Storage Sqlite Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_storage_sqlite.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Storage Sqlite Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Storage Sqlite Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_storage_sqlite"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Memory used by SQLite (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_STORAGE_SQLITE.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_total__sum {
+    label: "Memory Total Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_total.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Total Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Total Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total Memory Across All Processes (KB) (inaccurate WRT shared memory. See MemoryTelemetry.cpp)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_TOTAL.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_unique__sum {
+    label: "Memory Unique Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_unique.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Unique Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Unique Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_unique"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Unique Set Size (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_UNIQUE.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_unique_content_startup__sum {
+    label: "Memory Unique Content Startup Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_unique_content_startup.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Unique Content Startup Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Unique Content Startup Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_unique_content_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Unique Set Size of Content Process at Startup (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_UNIQUE_CONTENT_STARTUP.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_vsize__sum {
+    label: "Memory Vsize Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_vsize.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Vsize Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Vsize Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_vsize"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Virtual memory size (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_VSIZE.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_vsize_max_contiguous__sum {
+    label: "Memory Vsize Max Contiguous Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_vsize_max_contiguous.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Vsize Max Contiguous Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Vsize Max Contiguous Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_vsize_max_contiguous"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Maximum-sized block of contiguous virtual memory (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_VSIZE_MAX_CONTIGUOUS.
+"
+  }
+
   dimension: metrics__memory_distribution__memory_phc_slop__sum {
     label: "Memory Phc Slop Sum"
     hidden: no
@@ -26155,6 +26554,25 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Whether the OS theme is dark. This metric was generated to correspond to the Legacy Telemetry scalar widget.dark_mode.
+"
+  }
+
+  dimension: metrics__timing_distribution__widget_notify_idle__sum {
+    label: "Widget Notify Idle Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.widget_notify_idle.sum ;;
+    type: number
+    group_label: "Widget"
+    group_item_label: "Notify Idle Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Widget Notify Idle Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/widget_notify_idle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent checking for and notifying listeners that the user is idle (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram IDLE_NOTIFY_IDLE_MS.
 "
   }
 
@@ -48735,6 +49153,118 @@ view: metrics__metrics__custom_distribution__media_video_dropped_sink_frames_pro
   }
 }
 
+view: metrics__metrics__custom_distribution__memory_ghost_windows__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__memory_heap_overhead_fraction__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__memory_js_compartments_system__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__memory_js_compartments_user__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__memory_js_realms_system__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__memory_js_realms_user__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__memory_low_memory_events_physical__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__memory_page_faults_hard__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__memory_phc_slots_allocated__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -52445,6 +52975,49 @@ view: metrics__metrics__labeled_custom_distribution__media_video_hidden_play_tim
 }
 
 view: metrics__metrics__labeled_custom_distribution__media_video_hidden_play_time_percentage__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__memory_distribution_among_content {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__memory_distribution_among_content__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -57169,7 +57742,161 @@ view: metrics__metrics__memory_distribution__javascript_gc_nursery_bytes__values
   }
 }
 
+view: metrics__metrics__memory_distribution__memory_heap_allocated__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_images_content_used_uncompressed__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_js_gc_heap__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__memory_distribution__memory_phc_slop__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_resident_fast__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_resident_peak__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_storage_sqlite__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_total__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_unique__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_unique_content_startup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_vsize__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_vsize_max_contiguous__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -59872,6 +60599,34 @@ view: metrics__metrics__timing_distribution__media_video_play_time__values {
 }
 
 view: metrics__metrics__timing_distribution__media_video_widevine_play_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__memory_collection_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__memory_free_purged_pages__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -62756,6 +63511,20 @@ view: metrics__metrics__timing_distribution__webrtc_video_quality_outbound_jitte
 }
 
 view: metrics__metrics__timing_distribution__webrtc_video_quality_outbound_rtt__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__widget_notify_idle__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
