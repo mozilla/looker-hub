@@ -5035,6 +5035,174 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__memory_ghost_windows__count {
+    sql: ${TABLE}.metrics.custom_distribution.memory_ghost_windows.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Memory Ghost Windows"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__memory_ghost_windows__sum {
+    sql: ${TABLE}.metrics.custom_distribution.memory_ghost_windows.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Memory Ghost Windows"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__memory_ghost_windows__values {
+    sql: ${TABLE}.metrics.custom_distribution.memory_ghost_windows.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__memory_heap_overhead_fraction__count {
+    sql: ${TABLE}.metrics.custom_distribution.memory_heap_overhead_fraction.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Memory Heap Overhead Fraction"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__memory_heap_overhead_fraction__sum {
+    sql: ${TABLE}.metrics.custom_distribution.memory_heap_overhead_fraction.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Memory Heap Overhead Fraction"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__memory_heap_overhead_fraction__values {
+    sql: ${TABLE}.metrics.custom_distribution.memory_heap_overhead_fraction.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__memory_js_compartments_system__count {
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_compartments_system.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Memory Js Compartments System"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__memory_js_compartments_system__sum {
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_compartments_system.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Memory Js Compartments System"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__memory_js_compartments_system__values {
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_compartments_system.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__memory_js_compartments_user__count {
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_compartments_user.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Memory Js Compartments User"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__memory_js_compartments_user__sum {
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_compartments_user.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Memory Js Compartments User"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__memory_js_compartments_user__values {
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_compartments_user.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__memory_js_realms_system__count {
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_realms_system.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Memory Js Realms System"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__memory_js_realms_system__sum {
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_realms_system.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Memory Js Realms System"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__memory_js_realms_system__values {
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_realms_system.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__memory_js_realms_user__count {
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_realms_user.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Memory Js Realms User"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__memory_js_realms_user__sum {
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_realms_user.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Memory Js Realms User"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__memory_js_realms_user__values {
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_realms_user.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__memory_low_memory_events_physical__count {
+    sql: ${TABLE}.metrics.custom_distribution.memory_low_memory_events_physical.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Memory Low Memory Events Physical"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__memory_low_memory_events_physical__sum {
+    sql: ${TABLE}.metrics.custom_distribution.memory_low_memory_events_physical.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Memory Low Memory Events Physical"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__memory_low_memory_events_physical__values {
+    sql: ${TABLE}.metrics.custom_distribution.memory_low_memory_events_physical.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__memory_page_faults_hard__count {
+    sql: ${TABLE}.metrics.custom_distribution.memory_page_faults_hard.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Memory Page Faults Hard"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__memory_page_faults_hard__sum {
+    sql: ${TABLE}.metrics.custom_distribution.memory_page_faults_hard.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Memory Page Faults Hard"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__memory_page_faults_hard__values {
+    sql: ${TABLE}.metrics.custom_distribution.memory_page_faults_hard.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__memory_phc_slots_allocated__count {
     sql: ${TABLE}.metrics.custom_distribution.memory_phc_slots_allocated.count ;;
     type: number
@@ -10448,6 +10616,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_custom_distribution__memory_distribution_among_content {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.memory_distribution_among_content ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_custom_distribution__network_cache_entry_count {
     sql: ${TABLE}.metrics.labeled_custom_distribution.network_cache_entry_count ;;
     hidden: yes
@@ -11121,6 +11294,69 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__memory_heap_allocated__count {
+    sql: ${TABLE}.metrics.memory_distribution.memory_heap_allocated.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Heap Allocated"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__memory_heap_allocated__sum {
+    sql: ${TABLE}.metrics.memory_distribution.memory_heap_allocated.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Heap Allocated"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__memory_heap_allocated__values {
+    sql: ${TABLE}.metrics.memory_distribution.memory_heap_allocated.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__memory_images_content_used_uncompressed__count {
+    sql: ${TABLE}.metrics.memory_distribution.memory_images_content_used_uncompressed.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Images Content Used Uncompressed"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__memory_images_content_used_uncompressed__sum {
+    sql: ${TABLE}.metrics.memory_distribution.memory_images_content_used_uncompressed.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Images Content Used Uncompressed"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__memory_images_content_used_uncompressed__values {
+    sql: ${TABLE}.metrics.memory_distribution.memory_images_content_used_uncompressed.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__memory_js_gc_heap__count {
+    sql: ${TABLE}.metrics.memory_distribution.memory_js_gc_heap.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Js GC Heap"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__memory_js_gc_heap__sum {
+    sql: ${TABLE}.metrics.memory_distribution.memory_js_gc_heap.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Js GC Heap"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__memory_js_gc_heap__values {
+    sql: ${TABLE}.metrics.memory_distribution.memory_js_gc_heap.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__memory_distribution__memory_phc_slop__count {
     sql: ${TABLE}.metrics.memory_distribution.memory_phc_slop.count ;;
     type: number
@@ -11139,6 +11375,174 @@ view: metrics_table {
 
   dimension: metrics__memory_distribution__memory_phc_slop__values {
     sql: ${TABLE}.metrics.memory_distribution.memory_phc_slop.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__memory_resident_fast__count {
+    sql: ${TABLE}.metrics.memory_distribution.memory_resident_fast.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Resident Fast"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__memory_resident_fast__sum {
+    sql: ${TABLE}.metrics.memory_distribution.memory_resident_fast.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Resident Fast"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__memory_resident_fast__values {
+    sql: ${TABLE}.metrics.memory_distribution.memory_resident_fast.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__memory_resident_peak__count {
+    sql: ${TABLE}.metrics.memory_distribution.memory_resident_peak.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Resident Peak"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__memory_resident_peak__sum {
+    sql: ${TABLE}.metrics.memory_distribution.memory_resident_peak.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Resident Peak"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__memory_resident_peak__values {
+    sql: ${TABLE}.metrics.memory_distribution.memory_resident_peak.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__memory_storage_sqlite__count {
+    sql: ${TABLE}.metrics.memory_distribution.memory_storage_sqlite.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Storage Sqlite"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__memory_storage_sqlite__sum {
+    sql: ${TABLE}.metrics.memory_distribution.memory_storage_sqlite.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Storage Sqlite"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__memory_storage_sqlite__values {
+    sql: ${TABLE}.metrics.memory_distribution.memory_storage_sqlite.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__memory_total__count {
+    sql: ${TABLE}.metrics.memory_distribution.memory_total.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Total"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__memory_total__sum {
+    sql: ${TABLE}.metrics.memory_distribution.memory_total.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Total"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__memory_total__values {
+    sql: ${TABLE}.metrics.memory_distribution.memory_total.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__memory_unique__count {
+    sql: ${TABLE}.metrics.memory_distribution.memory_unique.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Unique"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__memory_unique__sum {
+    sql: ${TABLE}.metrics.memory_distribution.memory_unique.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Unique"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__memory_unique__values {
+    sql: ${TABLE}.metrics.memory_distribution.memory_unique.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__memory_unique_content_startup__count {
+    sql: ${TABLE}.metrics.memory_distribution.memory_unique_content_startup.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Unique Content Startup"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__memory_unique_content_startup__sum {
+    sql: ${TABLE}.metrics.memory_distribution.memory_unique_content_startup.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Unique Content Startup"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__memory_unique_content_startup__values {
+    sql: ${TABLE}.metrics.memory_distribution.memory_unique_content_startup.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__memory_vsize__count {
+    sql: ${TABLE}.metrics.memory_distribution.memory_vsize.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Vsize"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__memory_vsize__sum {
+    sql: ${TABLE}.metrics.memory_distribution.memory_vsize.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Vsize"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__memory_vsize__values {
+    sql: ${TABLE}.metrics.memory_distribution.memory_vsize.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__memory_vsize_max_contiguous__count {
+    sql: ${TABLE}.metrics.memory_distribution.memory_vsize_max_contiguous.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Vsize Max Contiguous"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__memory_vsize_max_contiguous__sum {
+    sql: ${TABLE}.metrics.memory_distribution.memory_vsize_max_contiguous.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Memory Vsize Max Contiguous"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__memory_vsize_max_contiguous__values {
+    sql: ${TABLE}.metrics.memory_distribution.memory_vsize_max_contiguous.values ;;
     hidden: yes
   }
 
@@ -24614,6 +25018,138 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__media_video_widevine_play_time__values {
     sql: ${TABLE}.metrics.timing_distribution.media_video_widevine_play_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__memory_collection_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.memory_collection_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Memory Collection Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__memory_collection_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.memory_collection_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Memory Collection Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__memory_collection_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.memory_collection_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Memory Collection Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__memory_collection_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.memory_collection_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Memory Collection Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__memory_collection_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.memory_collection_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__memory_collection_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.memory_collection_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Memory Collection Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__memory_collection_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.memory_collection_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Memory Collection Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__memory_collection_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.memory_collection_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Memory Collection Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__memory_collection_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.memory_collection_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__memory_free_purged_pages__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.memory_free_purged_pages.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Memory Free Purged Pages"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__memory_free_purged_pages__count {
+    sql: ${TABLE}.metrics.timing_distribution.memory_free_purged_pages.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Memory Free Purged Pages"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__memory_free_purged_pages__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.memory_free_purged_pages.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Memory Free Purged Pages"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__memory_free_purged_pages__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.memory_free_purged_pages.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Memory Free Purged Pages"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__memory_free_purged_pages__range {
+    sql: ${TABLE}.metrics.timing_distribution.memory_free_purged_pages.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__memory_free_purged_pages__sum {
+    sql: ${TABLE}.metrics.timing_distribution.memory_free_purged_pages.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Memory Free Purged Pages"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__memory_free_purged_pages__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.memory_free_purged_pages.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Memory Free Purged Pages"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__memory_free_purged_pages__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.memory_free_purged_pages.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Memory Free Purged Pages"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__memory_free_purged_pages__values {
+    sql: ${TABLE}.metrics.timing_distribution.memory_free_purged_pages.values ;;
     hidden: yes
   }
 
@@ -38213,6 +38749,72 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__widget_notify_idle__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.widget_notify_idle.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Widget Notify Idle"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__widget_notify_idle__count {
+    sql: ${TABLE}.metrics.timing_distribution.widget_notify_idle.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Widget Notify Idle"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__widget_notify_idle__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.widget_notify_idle.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Widget Notify Idle"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__widget_notify_idle__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.widget_notify_idle.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Widget Notify Idle"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__widget_notify_idle__range {
+    sql: ${TABLE}.metrics.timing_distribution.widget_notify_idle.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__widget_notify_idle__sum {
+    sql: ${TABLE}.metrics.timing_distribution.widget_notify_idle.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Widget Notify Idle"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__widget_notify_idle__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.widget_notify_idle.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Widget Notify Idle"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__widget_notify_idle__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.widget_notify_idle.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Widget Notify Idle"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__widget_notify_idle__values {
+    sql: ${TABLE}.metrics.timing_distribution.widget_notify_idle.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__wr_framebuild_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.bucket_count ;;
     type: number
@@ -40820,6 +41422,118 @@ view: metrics_table__metrics__custom_distribution__media_video_dropped_frames_pr
 }
 
 view: metrics_table__metrics__custom_distribution__media_video_dropped_sink_frames_proportion_exponential__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__memory_ghost_windows__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__memory_heap_overhead_fraction__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__memory_js_compartments_system__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__memory_js_compartments_user__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__memory_js_realms_system__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__memory_js_realms_user__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__memory_low_memory_events_physical__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__memory_page_faults_hard__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -44543,6 +45257,49 @@ view: metrics_table__metrics__labeled_custom_distribution__media_video_hidden_pl
 }
 
 view: metrics_table__metrics__labeled_custom_distribution__media_video_hidden_play_time_percentage__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__memory_distribution_among_content {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__memory_distribution_among_content__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -49267,7 +50024,161 @@ view: metrics_table__metrics__memory_distribution__javascript_gc_nursery_bytes__
   }
 }
 
+view: metrics_table__metrics__memory_distribution__memory_heap_allocated__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__memory_images_content_used_uncompressed__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__memory_js_gc_heap__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__memory_distribution__memory_phc_slop__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__memory_resident_fast__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__memory_resident_peak__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__memory_storage_sqlite__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__memory_total__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__memory_unique__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__memory_unique_content_startup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__memory_vsize__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__memory_vsize_max_contiguous__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -51970,6 +52881,34 @@ view: metrics_table__metrics__timing_distribution__media_video_play_time__values
 }
 
 view: metrics_table__metrics__timing_distribution__media_video_widevine_play_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__memory_collection_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__memory_free_purged_pages__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -54854,6 +55793,20 @@ view: metrics_table__metrics__timing_distribution__webrtc_video_quality_outbound
 }
 
 view: metrics_table__metrics__timing_distribution__webrtc_video_quality_outbound_rtt__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__widget_notify_idle__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

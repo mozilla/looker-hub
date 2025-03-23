@@ -5790,7 +5790,7 @@ of the shopping experiment.
 
   dimension: metrics__boolean__shopping_settings_auto_close_user_disabled {
     label: "Shopping Settings Auto Close User Disabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.shopping_settings_auto_close_user_disabled ;;
     type: yesno
     group_label: "Shopping Settings"

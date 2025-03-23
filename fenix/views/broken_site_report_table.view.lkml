@@ -517,6 +517,16 @@ view: broken_site_report_table {
     hidden: yes
   }
 
+  dimension: metrics__object__broken_site_report_browser_info_addons {
+    sql: ${TABLE}.metrics.object.broken_site_report_browser_info_addons ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__broken_site_report_browser_info_experiments {
+    sql: ${TABLE}.metrics.object.broken_site_report_browser_info_experiments ;;
+    hidden: yes
+  }
+
   dimension: metrics__quantity__broken_site_report_browser_info_prefs_cookie_behavior {
     sql: ${TABLE}.metrics.quantity.broken_site_report_browser_info_prefs_cookie_behavior ;;
     type: number
