@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/contextual_services_private/views/topsites_impression_fenix.view.lkml"
+include: "/looker-hub/contextual_services_private/datagroups/topsites_impression_fenix_last_updated.datagroup.lkml"
 
 explore: topsites_impressions_fenix {
   sql_always_where: ${topsites_impression_fenix.submission_date} >= '2010-01-01' ;;
@@ -34,4 +35,6 @@ explore: topsites_impressions_fenix {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${topsites_impression_fenix.ping_info__experiments}) AS topsites_impression_fenix__ping_info__experiments ;;
   }
+
+  persist_with: topsites_impression_fenix_last_updated
 }

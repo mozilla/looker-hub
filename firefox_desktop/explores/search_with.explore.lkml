@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/search_with.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/search_with_last_updated.datagroup.lkml"
 
 explore: search_with {
   sql_always_where: ${search_with.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: search_with {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${search_with.ping_info__experiments}) AS search_with__ping_info__experiments ;;
   }
+
+  persist_with: search_with_last_updated
 
   always_filter: {
     filters: [

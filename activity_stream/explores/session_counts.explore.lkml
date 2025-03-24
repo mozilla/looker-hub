@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/activity_stream/views/sessions.view.lkml"
+include: "/looker-hub/activity_stream/datagroups/sessions_last_updated.datagroup.lkml"
 
 explore: session_counts {
   sql_always_where: ${sessions.submission_date} >= '2010-01-01' ;;
@@ -21,4 +22,6 @@ explore: session_counts {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${sessions.experiments}) AS sessions__experiments ;;
   }
+
+  persist_with: sessions_last_updated
 }

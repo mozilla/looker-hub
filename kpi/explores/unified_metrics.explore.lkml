@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/kpi/views/unified_metrics.view.lkml"
+include: "/looker-hub/kpi/datagroups/unified_metrics_last_updated.datagroup.lkml"
 
 explore: unified_metrics {
   sql_always_where: ${unified_metrics.submission_date} >= '2010-01-01' ;;
@@ -15,4 +16,6 @@ explore: unified_metrics {
       submission_date: "28 days",
     ]
   }
+
+  persist_with: unified_metrics_last_updated
 }

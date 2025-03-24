@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/font_list.view.lkml"
+include: "/looker-hub/fenix/datagroups/font_list_last_updated.datagroup.lkml"
 
 explore: font_list {
   sql_always_where: ${font_list.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: font_list {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${font_list.ping_info__experiments}) AS font_list__ping_info__experiments ;;
   }
+
+  persist_with: font_list_last_updated
 
   always_filter: {
     filters: [

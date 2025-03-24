@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/activity_stream/views/impression_stats_flat.view.lkml"
+include: "/looker-hub/activity_stream/datagroups/impression_stats_flat_last_updated.datagroup.lkml"
 
 explore: pocket_tile_impressions {
   sql_always_where: ${impression_stats_flat.submission_date} >= '2010-01-01' ;;
@@ -21,4 +22,6 @@ explore: pocket_tile_impressions {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${impression_stats_flat.experiments}) AS impression_stats_flat__experiments ;;
   }
+
+  persist_with: impression_stats_flat_last_updated
 }

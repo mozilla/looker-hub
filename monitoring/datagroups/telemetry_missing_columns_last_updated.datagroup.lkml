@@ -9,7 +9,7 @@ datagroup: telemetry_missing_columns_last_updated {
   label: "telemetry_missing_columns Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'region-us' AND table_name = 'INFORMATION_SCHEMA') ;;
+    WHERE (table_schema = 'monitoring_derived' AND table_name = 'telemetry_missing_columns_v3') OR (table_schema = 'region-us' AND table_name = 'INFORMATION_SCHEMA') ;;
   description: "Updates for telemetry_missing_columns when referenced tables are modified."
   max_cache_age: "24 hours"
 }

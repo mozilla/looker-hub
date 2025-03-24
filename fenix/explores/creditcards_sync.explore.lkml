@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/creditcards_sync.view.lkml"
+include: "/looker-hub/fenix/datagroups/creditcards_sync_last_updated.datagroup.lkml"
 
 explore: creditcards_sync {
   sql_always_where: ${creditcards_sync.submission_date} >= '2010-01-01' ;;
@@ -66,6 +67,8 @@ explore: creditcards_sync {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${creditcards_sync.ping_info__experiments}) AS creditcards_sync__ping_info__experiments ;;
   }
+
+  persist_with: creditcards_sync_last_updated
 
   always_filter: {
     filters: [

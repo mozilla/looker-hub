@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/installation.view.lkml"
+include: "/looker-hub/fenix/datagroups/installation_last_updated.datagroup.lkml"
 
 explore: installation {
   sql_always_where: ${installation.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: installation {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${installation.ping_info__experiments}) AS installation__ping_info__experiments ;;
   }
+
+  persist_with: installation_last_updated
 
   always_filter: {
     filters: [

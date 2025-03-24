@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/fog_validation.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/fog_validation_last_updated.datagroup.lkml"
 
 explore: fog_validation {
   sql_always_where: ${fog_validation.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: fog_validation {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${fog_validation.ping_info__experiments}) AS fog_validation__ping_info__experiments ;;
   }
+
+  persist_with: fog_validation_last_updated
 
   always_filter: {
     filters: [

@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/pocket_button.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/pocket_button_last_updated.datagroup.lkml"
 
 explore: pocket_button {
   sql_always_where: ${pocket_button.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: pocket_button {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${pocket_button.ping_info__experiments}) AS pocket_button__ping_info__experiments ;;
   }
+
+  persist_with: pocket_button_last_updated
 
   always_filter: {
     filters: [

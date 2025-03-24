@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/monitoring/views/stable_and_derived_table_sizes.view.lkml"
+include: "/looker-hub/monitoring/datagroups/stable_and_derived_table_sizes_last_updated.datagroup.lkml"
 
 explore: stable_and_dervied_table_sizes {
   sql_always_where: ${stable_and_derived_table_sizes.submission_date} >= '2010-01-01' ;;
@@ -15,4 +16,6 @@ explore: stable_and_dervied_table_sizes {
       submission_date: "28 days",
     ]
   }
+
+  persist_with: stable_and_derived_table_sizes_last_updated
 }

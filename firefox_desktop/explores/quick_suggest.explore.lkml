@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/quick_suggest.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/quick_suggest_last_updated.datagroup.lkml"
 
 explore: quick_suggest {
   sql_always_where: ${quick_suggest.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: quick_suggest {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${quick_suggest.ping_info__experiments}) AS quick_suggest__ping_info__experiments ;;
   }
+
+  persist_with: quick_suggest_last_updated
 
   always_filter: {
     filters: [

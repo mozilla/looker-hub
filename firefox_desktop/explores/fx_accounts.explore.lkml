@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/fx_accounts.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/fx_accounts_last_updated.datagroup.lkml"
 
 explore: fx_accounts {
   sql_always_where: ${fx_accounts.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: fx_accounts {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${fx_accounts.ping_info__experiments}) AS fx_accounts__ping_info__experiments ;;
   }
+
+  persist_with: fx_accounts_last_updated
 
   always_filter: {
     filters: [

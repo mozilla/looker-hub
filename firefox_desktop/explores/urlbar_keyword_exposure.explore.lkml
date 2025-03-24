@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/urlbar_keyword_exposure.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/urlbar_keyword_exposure_last_updated.datagroup.lkml"
 
 explore: urlbar_keyword_exposure {
   sql_always_where: ${urlbar_keyword_exposure.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: urlbar_keyword_exposure {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${urlbar_keyword_exposure.ping_info__experiments}) AS urlbar_keyword_exposure__ping_info__experiments ;;
   }
+
+  persist_with: urlbar_keyword_exposure_last_updated
 
   always_filter: {
     filters: [

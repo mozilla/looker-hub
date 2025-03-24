@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/migration.view.lkml"
+include: "/looker-hub/fenix/datagroups/migration_last_updated.datagroup.lkml"
 
 explore: migration {
   sql_always_where: ${migration.submission_date} >= '2010-01-01' ;;
@@ -61,6 +62,8 @@ explore: migration {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${migration.ping_info__experiments}) AS migration__ping_info__experiments ;;
   }
+
+  persist_with: migration_last_updated
 
   always_filter: {
     filters: [

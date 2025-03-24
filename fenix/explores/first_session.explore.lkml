@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/first_session.view.lkml"
+include: "/looker-hub/fenix/datagroups/first_session_last_updated.datagroup.lkml"
 
 explore: first_session {
   sql_always_where: ${first_session.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: first_session {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${first_session.ping_info__experiments}) AS first_session__ping_info__experiments ;;
   }
+
+  persist_with: first_session_last_updated
 
   always_filter: {
     filters: [

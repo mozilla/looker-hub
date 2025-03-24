@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/prototype_no_code_events.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/prototype_no_code_events_last_updated.datagroup.lkml"
 
 explore: prototype_no_code_events {
   sql_always_where: ${prototype_no_code_events.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: prototype_no_code_events {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${prototype_no_code_events.ping_info__experiments}) AS prototype_no_code_events__ping_info__experiments ;;
   }
+
+  persist_with: prototype_no_code_events_last_updated
 
   always_filter: {
     filters: [

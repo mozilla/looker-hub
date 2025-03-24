@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_ios/views/history_sync.view.lkml"
+include: "/looker-hub/firefox_ios/datagroups/history_sync_last_updated.datagroup.lkml"
 
 explore: history_sync {
   sql_always_where: ${history_sync.submission_date} >= '2010-01-01' ;;
@@ -66,6 +67,8 @@ explore: history_sync {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${history_sync.ping_info__experiments}) AS history_sync__ping_info__experiments ;;
   }
+
+  persist_with: history_sync_last_updated
 
   always_filter: {
     filters: [

@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/dau_reporting.view.lkml"
+include: "/looker-hub/fenix/datagroups/dau_reporting_last_updated.datagroup.lkml"
 
 explore: dau_reporting {
   sql_always_where: ${dau_reporting.submission_date} >= '2010-01-01' ;;
@@ -66,6 +67,8 @@ explore: dau_reporting {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${dau_reporting.ping_info__experiments}) AS dau_reporting__ping_info__experiments ;;
   }
+
+  persist_with: dau_reporting_last_updated
 
   always_filter: {
     filters: [

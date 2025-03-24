@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_ios/views/fx_suggest.view.lkml"
+include: "/looker-hub/firefox_ios/datagroups/fx_suggest_last_updated.datagroup.lkml"
 
 explore: fx_suggest {
   sql_always_where: ${fx_suggest.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: fx_suggest {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${fx_suggest.ping_info__experiments}) AS fx_suggest__ping_info__experiments ;;
   }
+
+  persist_with: fx_suggest_last_updated
 
   always_filter: {
     filters: [

@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/startup_timeline.view.lkml"
+include: "/looker-hub/fenix/datagroups/startup_timeline_last_updated.datagroup.lkml"
 
 explore: startup_timeline {
   sql_always_where: ${startup_timeline.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: startup_timeline {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${startup_timeline.ping_info__experiments}) AS startup_timeline__ping_info__experiments ;;
   }
+
+  persist_with: startup_timeline_last_updated
 
   always_filter: {
     filters: [

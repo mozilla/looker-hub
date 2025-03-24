@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/ads_backend/views/request_stats.view.lkml"
+include: "/looker-hub/ads_backend/datagroups/request_stats_last_updated.datagroup.lkml"
 
 explore: request_stats {
   sql_always_where: ${request_stats.submission_date} >= '2010-01-01' ;;
@@ -26,6 +27,8 @@ explore: request_stats {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${request_stats.ping_info__experiments}) AS request_stats__ping_info__experiments ;;
   }
+
+  persist_with: request_stats_last_updated
 
   always_filter: {
     filters: [

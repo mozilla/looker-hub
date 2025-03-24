@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/client_counts.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/client_counts_last_updated.datagroup.lkml"
 
 explore: client_counts {
   sql_always_where: ${client_counts.submission_date} >= '2010-01-01' ;;
@@ -463,4 +464,6 @@ explore: client_counts {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_counts.search_withads_webextension_sum}) AS clients_daily_table__search_withads_webextension_sum ;;
   }
+
+  persist_with: client_counts_last_updated
 }

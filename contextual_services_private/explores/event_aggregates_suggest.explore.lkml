@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/contextual_services_private/views/event_aggregates_suggest.view.lkml"
+include: "/looker-hub/contextual_services_private/datagroups/event_aggregates_suggest_last_updated.datagroup.lkml"
 
 explore: event_aggregates_suggest {
   sql_always_where: ${event_aggregates_suggest.submission_date} >= '2010-01-01' ;;
@@ -15,4 +16,6 @@ explore: event_aggregates_suggest {
       submission_date: "28 days",
     ]
   }
+
+  persist_with: event_aggregates_suggest_last_updated
 }

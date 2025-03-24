@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/klar_android/views/bounce_tracking_protection.view.lkml"
+include: "/looker-hub/klar_android/datagroups/bounce_tracking_protection_last_updated.datagroup.lkml"
 
 explore: bounce_tracking_protection {
   sql_always_where: ${bounce_tracking_protection.submission_date} >= '2010-01-01' ;;
@@ -41,6 +42,8 @@ explore: bounce_tracking_protection {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${bounce_tracking_protection__events.extra}) AS bounce_tracking_protection__events__extra ;;
   }
+
+  persist_with: bounce_tracking_protection_last_updated
 
   always_filter: {
     filters: [

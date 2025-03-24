@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_ios/views/feature_usage_metrics.view.lkml"
+include: "/looker-hub/firefox_ios/datagroups/feature_usage_metrics_last_updated.datagroup.lkml"
 
 explore: feature_usage_metrics {
   sql_always_where: ${feature_usage_metrics.submission_date} >= '2010-01-01' ;;
@@ -15,4 +16,6 @@ explore: feature_usage_metrics {
       submission_date: "28 days",
     ]
   }
+
+  persist_with: feature_usage_metrics_last_updated
 }

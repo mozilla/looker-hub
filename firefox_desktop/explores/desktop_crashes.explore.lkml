@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/desktop_crashes.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/desktop_crashes_last_updated.datagroup.lkml"
 
 explore: desktop_crashes {
   sql_always_where: ${desktop_crashes.submission_date} >= '2010-01-01' ;;
@@ -26,6 +27,8 @@ explore: desktop_crashes {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${desktop_crashes.ping_info__experiments}) AS desktop_crashes__ping_info__experiments ;;
   }
+
+  persist_with: desktop_crashes_last_updated
 
   always_filter: {
     filters: [
