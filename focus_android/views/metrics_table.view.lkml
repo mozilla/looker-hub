@@ -16626,6 +16626,138 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__dom_textfragment_create_directive__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_create_directive.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution DOM Textfragment Create Directive"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_create_directive__count {
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_create_directive.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution DOM Textfragment Create Directive"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_create_directive__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_create_directive.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution DOM Textfragment Create Directive"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_create_directive__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_create_directive.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution DOM Textfragment Create Directive"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_create_directive__range {
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_create_directive.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_create_directive__sum {
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_create_directive.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution DOM Textfragment Create Directive"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_create_directive__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_create_directive.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution DOM Textfragment Create Directive"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_create_directive__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_create_directive.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution DOM Textfragment Create Directive"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_create_directive__values {
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_create_directive.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_find_directives__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_find_directives.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution DOM Textfragment Find Directives"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_find_directives__count {
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_find_directives.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution DOM Textfragment Find Directives"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_find_directives__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_find_directives.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution DOM Textfragment Find Directives"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_find_directives__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_find_directives.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution DOM Textfragment Find Directives"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_find_directives__range {
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_find_directives.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_find_directives__sum {
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_find_directives.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution DOM Textfragment Find Directives"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_find_directives__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_find_directives.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution DOM Textfragment Find Directives"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_find_directives__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_find_directives.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution DOM Textfragment Find Directives"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_find_directives__values {
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_find_directives.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__extensions_apis_dnr_evaluate_rules_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_evaluate_rules_time.bucket_count ;;
     type: number
@@ -47036,6 +47168,34 @@ view: metrics_table__metrics__timing_distribution__dom_contentprocess_launch_tot
 }
 
 view: metrics_table__metrics__timing_distribution__dom_contentprocess_sync_launch__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__dom_textfragment_create_directive__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__dom_textfragment_find_directives__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

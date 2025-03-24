@@ -1514,6 +1514,119 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__browser_engagement_total_top_visits {
+    label: "Browser Engagement Total Top Visits"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_total_top_visits ;;
+    group_label: "Browser Engagement"
+    group_item_label: "Total Top Visits"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Total Top Visits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/browser_engagement_total_top_visits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count the number of times a new top page was starting to load
+This metric was generated to correspond to the Legacy Telemetry boolean histogram FX_TOTAL_TOP_VISITS.
+"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_new_window__sum {
+    label: "Browser Timings New Window Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_new_window.sum ;;
+    type: number
+    group_label: "Browser Timings"
+    group_item_label: "New Window Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Timings New Window Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/browser_timings_new_window"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Firefox: Time taken to open a new browser window (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_NEW_WINDOW_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_load__sum {
+    label: "Browser Timings Page Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_load.sum ;;
+    type: number
+    group_label: "Browser Timings"
+    group_item_label: "Page Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Timings Page Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/browser_timings_page_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Firefox: Time taken to load a page (ms). This includes all static contents, no dynamic content. Page reloads and loading of about: pages are not included.
+This metric was generated to correspond to the Legacy Telemetry linear histogram FX_PAGE_LOAD_MS_2.
+"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_normal__sum {
+    label: "Browser Timings Page Reload Normal Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_normal.sum ;;
+    type: number
+    group_label: "Browser Timings"
+    group_item_label: "Page Reload Normal Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Timings Page Reload Normal Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/browser_timings_page_reload_normal"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Firefox: Time taken to reload a page (ms) when using the LOAD_RELOAD_NORMAL flag
+This metric was generated to correspond to the Legacy Telemetry linear histogram FX_PAGE_RELOAD_NORMAL_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_skip_cache__sum {
+    label: "Browser Timings Page Reload Skip Cache Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_skip_cache.sum ;;
+    type: number
+    group_label: "Browser Timings"
+    group_item_label: "Page Reload Skip Cache Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Timings Page Reload Skip Cache Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/browser_timings_page_reload_skip_cache"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Firefox: Time taken to reload a page (ms) when caches are skipped
+This metric was generated to correspond to the Legacy Telemetry linear histogram FX_PAGE_RELOAD_SKIP_CACHE_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_tab_click__sum {
+    label: "Browser Timings Tab Click Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_tab_click.sum ;;
+    type: number
+    group_label: "Browser Timings"
+    group_item_label: "Tab Click Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Timings Tab Click Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/browser_timings_tab_click"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Firefox: Time in ms spent on switching tabs in response to a tab click
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_TAB_CLICK_MS.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_ui_interaction_keyboard {
     label: "Browser UI Interaction Keyboard"
     hidden: yes
@@ -5504,6 +5617,42 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Collect precise set of error code and calling site upon process creation failure path. This metric was generated to correspond to the Legacy Telemetry scalar dom.parentprocess.process_launch_errors.
+"
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_create_directive__sum {
+    label: "DOM Textfragment Create Directive Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_create_directive.sum ;;
+    type: number
+    group_label: "DOM Textfragment"
+    group_item_label: "Create Directive Sum"
+
+    link: {
+      label: "Glean Dictionary reference for DOM Textfragment Create Directive Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/dom_textfragment_create_directive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in FragmentDirective::CreateTextDirective()
+"
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_find_directives__sum {
+    label: "DOM Textfragment Find Directives Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_find_directives.sum ;;
+    type: number
+    group_label: "DOM Textfragment"
+    group_item_label: "Find Directives Sum"
+
+    link: {
+      label: "Glean Dictionary reference for DOM Textfragment Find Directives Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/dom_textfragment_find_directives"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in TextDirectiveFinder::FindTextDirectivesInDocument() per page load
 "
   }
 
@@ -11341,6 +11490,405 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__timing_distribution__memory_collection_time__sum {
+    label: "Memory Collection Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.memory_collection_time.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Collection Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Collection Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_collection_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent gathering memory telemetry in milliseconds
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_COLLECTION_TIME.
+"
+  }
+
+  dimension: metrics__timing_distribution__memory_free_purged_pages__sum {
+    label: "Memory Free Purged Pages Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.memory_free_purged_pages.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Free Purged Pages Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Free Purged Pages Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_free_purged_pages"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time(ms) to purge dirty heap pages.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_FREE_PURGED_PAGES_MS.
+"
+  }
+
+  dimension: metrics__custom_distribution__memory_ghost_windows__sum {
+    label: "Memory Ghost Windows Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.memory_ghost_windows.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Ghost Windows Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Ghost Windows Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_ghost_windows"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of ghost windows
+This metric was generated to correspond to the Legacy Telemetry exponential histogram GHOST_WINDOWS.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_heap_allocated__sum {
+    label: "Memory Heap Allocated Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_heap_allocated.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Heap Allocated Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Heap Allocated Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_heap_allocated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Heap memory allocated (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_HEAP_ALLOCATED.
+"
+  }
+
+  dimension: metrics__custom_distribution__memory_heap_overhead_fraction__sum {
+    label: "Memory Heap Overhead Fraction Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.memory_heap_overhead_fraction.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Heap Overhead Fraction Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Heap Overhead Fraction Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_heap_overhead_fraction"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Fraction of committed heap memory that is overhead (percentage).
+This metric was generated to correspond to the Legacy Telemetry linear histogram MEMORY_HEAP_OVERHEAD_FRACTION.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_images_content_used_uncompressed__sum {
+    label: "Memory Images Content Used Uncompressed Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_images_content_used_uncompressed.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Images Content Used Uncompressed Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Images Content Used Uncompressed Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_images_content_used_uncompressed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Memory used for uncompressed, in-use content images (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_IMAGES_CONTENT_USED_UNCOMPRESSED.
+"
+  }
+
+  dimension: metrics__custom_distribution__memory_js_compartments_system__sum {
+    label: "Memory Js Compartments System Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_compartments_system.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Js Compartments System Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Js Compartments System Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_js_compartments_system"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total JavaScript compartments used for add-ons and internals.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_JS_COMPARTMENTS_SYSTEM.
+"
+  }
+
+  dimension: metrics__custom_distribution__memory_js_compartments_user__sum {
+    label: "Memory Js Compartments User Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_compartments_user.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Js Compartments User Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Js Compartments User Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_js_compartments_user"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total JavaScript compartments used for web pages
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_JS_COMPARTMENTS_USER.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_js_gc_heap__sum {
+    label: "Memory Js GC Heap Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_js_gc_heap.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Js GC Heap Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Js GC Heap Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_js_gc_heap"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Memory used by the garbage-collected JavaScript heap (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_JS_GC_HEAP.
+"
+  }
+
+  dimension: metrics__custom_distribution__memory_js_realms_system__sum {
+    label: "Memory Js Realms System Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_realms_system.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Js Realms System Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Js Realms System Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_js_realms_system"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total JavaScript realms used for add-ons and internals.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_JS_REALMS_SYSTEM.
+"
+  }
+
+  dimension: metrics__custom_distribution__memory_js_realms_user__sum {
+    label: "Memory Js Realms User Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.memory_js_realms_user.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Js Realms User Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Js Realms User Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_js_realms_user"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total JavaScript realms used for web pages.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_JS_REALMS_USER.
+"
+  }
+
+  dimension: metrics__custom_distribution__memory_low_memory_events_physical__sum {
+    label: "Memory Low Memory Events Physical Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.memory_low_memory_events_physical.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Low Memory Events Physical Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Low Memory Events Physical Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_low_memory_events_physical"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of low-physical-memory events fired since last ping
+This metric was generated to correspond to the Legacy Telemetry exponential histogram LOW_MEMORY_EVENTS_PHYSICAL.
+"
+  }
+
+  dimension: metrics__custom_distribution__memory_page_faults_hard__sum {
+    label: "Memory Page Faults Hard Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.memory_page_faults_hard.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Page Faults Hard Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Page Faults Hard Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_page_faults_hard"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Hard page faults (since last telemetry ping)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PAGE_FAULTS_HARD.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_resident_fast__sum {
+    label: "Memory Resident Fast Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_resident_fast.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Resident Fast Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Resident Fast Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_resident_fast"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Resident memory size (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_RESIDENT_FAST.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_resident_peak__sum {
+    label: "Memory Resident Peak Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_resident_peak.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Resident Peak Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Resident Peak Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_resident_peak"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Peak resident memory size (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_RESIDENT_PEAK.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_storage_sqlite__sum {
+    label: "Memory Storage Sqlite Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_storage_sqlite.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Storage Sqlite Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Storage Sqlite Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_storage_sqlite"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Memory used by SQLite (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_STORAGE_SQLITE.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_total__sum {
+    label: "Memory Total Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_total.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Total Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Total Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total Memory Across All Processes (KB) (inaccurate WRT shared memory. See MemoryTelemetry.cpp)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_TOTAL.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_unique__sum {
+    label: "Memory Unique Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_unique.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Unique Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Unique Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_unique"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Unique Set Size (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_UNIQUE.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_unique_content_startup__sum {
+    label: "Memory Unique Content Startup Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_unique_content_startup.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Unique Content Startup Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Unique Content Startup Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_unique_content_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Unique Set Size of Content Process at Startup (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_UNIQUE_CONTENT_STARTUP.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_vsize__sum {
+    label: "Memory Vsize Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_vsize.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Vsize Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Vsize Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_vsize"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Virtual memory size (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_VSIZE.
+"
+  }
+
+  dimension: metrics__memory_distribution__memory_vsize_max_contiguous__sum {
+    label: "Memory Vsize Max Contiguous Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.memory_vsize_max_contiguous.sum ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Vsize Max Contiguous Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Vsize Max Contiguous Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/memory_vsize_max_contiguous"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Maximum-sized block of contiguous virtual memory (KB)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_VSIZE_MAX_CONTIGUOUS.
+"
+  }
+
   dimension: metrics__memory_distribution__memory_phc_slop__sum {
     label: "Memory Phc Slop Sum"
     hidden: no
@@ -11913,6 +12461,25 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "In the HTTP page channel, time from connection open to the last byte received. Corresponds to Legacy histogram HTTP_PAGE_COMPLETE_LOAD_NET_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_cookies_sqlite_open_readahead__sum {
+    label: "Network Cookies Sqlite Open Readahead Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_cookies_sqlite_open_readahead.sum ;;
+    type: number
+    group_label: "Network Cookies"
+    group_item_label: "Sqlite Open Readahead Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Cookies Sqlite Open Readahead Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/network_cookies_sqlite_open_readahead"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent on cookie DB open with readahead (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MOZ_SQLITE_COOKIES_OPEN_READAHEAD_MS.
 "
   }
 
@@ -17754,6 +18321,79 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     description: "The result of auto-filling a login form."
   }
 
+  dimension: metrics__labeled_counter__pwmgr_import_logins_from_file_categorical {
+    label: "Pwmgr Import Logins From File Categorical"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pwmgr_import_logins_from_file_categorical ;;
+    group_label: "Pwmgr"
+    group_item_label: "Import Logins From File Categorical"
+
+    link: {
+      label: "Glean Dictionary reference for Pwmgr Import Logins From File Categorical"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/pwmgr_import_logins_from_file_categorical"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Results of login import from a CSV/TSV file, by category
+This metric was generated to correspond to the Legacy Telemetry categorical histogram PWMGR_IMPORT_LOGINS_FROM_FILE_CATEGORICAL.
+"
+  }
+
+  dimension: metrics__labeled_counter__pwmgr_is_username_only_form {
+    label: "Pwmgr Is Username Only Form"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pwmgr_is_username_only_form ;;
+    group_label: "Pwmgr"
+    group_item_label: "Is Username Only Form"
+
+    link: {
+      label: "Glean Dictionary reference for Pwmgr Is Username Only Form"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/pwmgr_is_username_only_form"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a <form> is a username-only form. (0=Form has a possible username field but is not considered as a username-only form, 1=Form is considered as a username-only form)
+This metric was generated to correspond to the Legacy Telemetry boolean histogram PWMGR_IS_USERNAME_ONLY_FORM.
+"
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_login_page_safety__sum {
+    label: "Pwmgr Login Page Safety Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_login_page_safety.sum ;;
+    type: number
+    group_label: "Pwmgr"
+    group_item_label: "Login Page Safety Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Pwmgr Login Page Safety Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/pwmgr_login_page_safety"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The safety of a page where we see a password field. (0: safe page & safe submit; 1: safe page & unsafe submit; 2: safe page & unknown submit; 3: unsafe page & safe submit; 4: unsafe page & unsafe submit; 5: unsafe page & unknown submit)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram PWMGR_LOGIN_PAGE_SAFETY.
+"
+  }
+
+  dimension: metrics__labeled_counter__pwmgr_num_improved_generated_passwords {
+    label: "Pwmgr Num Improved Generated Passwords"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pwmgr_num_improved_generated_passwords ;;
+    group_label: "Pwmgr"
+    group_item_label: "Num Improved Generated Passwords"
+
+    link: {
+      label: "Glean Dictionary reference for Pwmgr Num Improved Generated Passwords"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/pwmgr_num_improved_generated_passwords"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of passwords generated when 'signon.improvedPasswordRules.enabled' is true. 0 = Password generated by default rules, 1 = Password generated by custom rules
+This metric was generated to correspond to the Legacy Telemetry boolean histogram PWMGR_NUM_IMPROVED_GENERATED_PASSWORDS.
+"
+  }
+
   dimension: metrics__quantity__pwmgr_num_saved_passwords {
     label: "Pwmgr Num Saved Passwords"
     hidden: no
@@ -17809,6 +18449,44 @@ Similar to the legacy telemetry histogram PWMGR_NUM_SAVED_PASSWORDS.
 "
   }
 
+  dimension: metrics__custom_distribution__pwmgr_prompt_remember_action__sum {
+    label: "Pwmgr Prompt Remember Action Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_remember_action.sum ;;
+    type: number
+    group_label: "Pwmgr"
+    group_item_label: "Prompt Remember Action Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Pwmgr Prompt Remember Action Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/pwmgr_prompt_remember_action"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Action taken by user through prompt for creating a login. (0=Prompt displayed [always recorded], 1=Add login, 2=Don't save now, 3=Never save)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram PWMGR_PROMPT_REMEMBER_ACTION.
+"
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_prompt_update_action__sum {
+    label: "Pwmgr Prompt Update Action Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_update_action.sum ;;
+    type: number
+    group_label: "Pwmgr"
+    group_item_label: "Prompt Update Action Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Pwmgr Prompt Update Action Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/pwmgr_prompt_update_action"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Action taken by user through prompt for modifying a login. (0=Prompt displayed [always recorded], 1=Update login, 2=Don't update, 3=Remove saved login)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram PWMGR_PROMPT_UPDATE_ACTION.
+"
+  }
+
   dimension: metrics__boolean__pwmgr_saving_enabled {
     label: "Pwmgr Saving Enabled"
     hidden: no
@@ -17825,6 +18503,25 @@ Similar to the legacy telemetry histogram PWMGR_NUM_SAVED_PASSWORDS.
 
     description: "Whether password saving is enabled globally.
 Tracks the pref `signon.rememberSignons`.
+"
+  }
+
+  dimension: metrics__timing_distribution__pwmgr_signup_form_detection__sum {
+    label: "Pwmgr Signup Form Detection Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.pwmgr_signup_form_detection.sum ;;
+    type: number
+    group_label: "Pwmgr"
+    group_item_label: "Signup Form Detection Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Pwmgr Signup Form Detection Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/pwmgr_signup_form_detection"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Elapsed time to detect whether a <form> element is a signup form.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PWMGR_SIGNUP_FORM_DETECTION_MS.
 "
   }
 
@@ -23207,6 +23904,25 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Whether the OS theme is dark. This metric was generated to correspond to the Legacy Telemetry scalar widget.dark_mode.
+"
+  }
+
+  dimension: metrics__timing_distribution__widget_notify_idle__sum {
+    label: "Widget Notify Idle Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.widget_notify_idle.sum ;;
+    type: number
+    group_label: "Widget"
+    group_item_label: "Notify Idle Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Widget Notify Idle Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/widget_notify_idle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent checking for and notifying listeners that the user is idle (ms)
+This metric was generated to correspond to the Legacy Telemetry exponential histogram IDLE_NOTIFY_IDLE_MS.
 "
   }
 
@@ -30172,6 +30888,47 @@ view: metrics__metrics__labeled_counter__bfcache_page_restored {
 
 view: metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count {
   label: "Bounce Tracking Protection - Purge Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_engagement_total_top_visits {
+  label: "Browser Engagement - Total Top Visits"
 
   dimension: document_id {
     type: string
@@ -39561,6 +40318,129 @@ view: metrics__metrics__labeled_counter__pwmgr_form_autofill_result {
   }
 }
 
+view: metrics__metrics__labeled_counter__pwmgr_import_logins_from_file_categorical {
+  label: "Pwmgr - Import Logins From File Categorical"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pwmgr_is_username_only_form {
+  label: "Pwmgr - Is Username Only Form"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pwmgr_num_improved_generated_passwords {
+  label: "Pwmgr - Num Improved Generated Passwords"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
   label: "Rtcrtpsender Setparameters - Blame Length Changed"
 
@@ -43070,6 +43950,118 @@ view: metrics__metrics__custom_distribution__media_video_dropped_sink_frames_pro
   }
 }
 
+view: metrics__metrics__custom_distribution__memory_ghost_windows__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__memory_heap_overhead_fraction__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__memory_js_compartments_system__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__memory_js_compartments_user__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__memory_js_realms_system__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__memory_js_realms_user__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__memory_low_memory_events_physical__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__memory_page_faults_hard__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__memory_phc_slots_allocated__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -43953,6 +44945,48 @@ view: metrics__metrics__custom_distribution__predictor_total_prefetches__values 
 }
 
 view: metrics__metrics__custom_distribution__predictor_total_preresolves__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__pwmgr_login_page_safety__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__pwmgr_prompt_remember_action__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__pwmgr_prompt_update_action__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -46835,6 +47869,50 @@ view: metrics__metrics__labeled_custom_distribution__media_video_hidden_play_tim
 }
 
 view: metrics__metrics__labeled_custom_distribution__media_video_hidden_play_time_percentage__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__memory_distribution_among_content {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__memory_distribution_among_content__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -51784,7 +52862,161 @@ view: metrics__metrics__memory_distribution__mail_compact_space_recovered__value
   }
 }
 
+view: metrics__metrics__memory_distribution__memory_heap_allocated__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_images_content_used_uncompressed__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_js_gc_heap__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__memory_distribution__memory_phc_slop__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_resident_fast__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_resident_peak__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_storage_sqlite__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_total__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_unique__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_unique_content_startup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_vsize__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__memory_vsize_max_contiguous__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -52037,6 +53269,76 @@ view: metrics__metrics__timing_distribution__application_reputation_remote_looku
 }
 
 view: metrics__metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__browser_timings_new_window__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__browser_timings_page_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__browser_timings_page_reload_normal__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__browser_timings_page_reload_skip_cache__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__browser_timings_tab_click__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -52849,6 +54151,34 @@ view: metrics__metrics__timing_distribution__dom_contentprocess_launch_total__va
 }
 
 view: metrics__metrics__timing_distribution__dom_contentprocess_sync_launch__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__dom_textfragment_create_directive__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__dom_textfragment_find_directives__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -54276,6 +55606,34 @@ view: metrics__metrics__timing_distribution__media_video_widevine_play_time__val
   }
 }
 
+view: metrics__metrics__timing_distribution__memory_collection_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__memory_free_purged_pages__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__timing_distribution__network_back_pressure_suspension_delay_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -54361,6 +55719,20 @@ view: metrics__metrics__timing_distribution__network_complete_load_cached__value
 }
 
 view: metrics__metrics__timing_distribution__network_complete_load_net__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_cookies_sqlite_open_readahead__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -56068,6 +57440,20 @@ view: metrics__metrics__timing_distribution__privacy_sanitize_load_time__values 
   }
 }
 
+view: metrics__metrics__timing_distribution__pwmgr_signup_form_detection__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__timing_distribution__region_fetch_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -56573,6 +57959,20 @@ view: metrics__metrics__timing_distribution__webrtc_video_quality_outbound_jitte
 }
 
 view: metrics__metrics__timing_distribution__webrtc_video_quality_outbound_rtt__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__widget_notify_idle__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

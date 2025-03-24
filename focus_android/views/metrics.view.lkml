@@ -5847,6 +5847,42 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__timing_distribution__dom_textfragment_create_directive__sum {
+    label: "DOM Textfragment Create Directive Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_create_directive.sum ;;
+    type: number
+    group_label: "DOM Textfragment"
+    group_item_label: "Create Directive Sum"
+
+    link: {
+      label: "Glean Dictionary reference for DOM Textfragment Create Directive Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/dom_textfragment_create_directive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in FragmentDirective::CreateTextDirective()
+"
+  }
+
+  dimension: metrics__timing_distribution__dom_textfragment_find_directives__sum {
+    label: "DOM Textfragment Find Directives Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.dom_textfragment_find_directives.sum ;;
+    type: number
+    group_label: "DOM Textfragment"
+    group_item_label: "Find Directives Sum"
+
+    link: {
+      label: "Glean Dictionary reference for DOM Textfragment Find Directives Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/dom_textfragment_find_directives"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in TextDirectiveFinder::FindTextDirectivesInDocument() per page load
+"
+  }
+
   dimension: metrics__counter__dotprint_android_dialog_requested {
     label: "Dotprint Android Dialog Requested"
     hidden: yes
@@ -54232,6 +54268,34 @@ view: metrics__metrics__timing_distribution__dom_contentprocess_launch_total__va
 }
 
 view: metrics__metrics__timing_distribution__dom_contentprocess_sync_launch__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__dom_textfragment_create_directive__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__dom_textfragment_find_directives__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

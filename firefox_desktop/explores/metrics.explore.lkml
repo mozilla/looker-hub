@@ -217,6 +217,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_sessionrestore_interstitial}) AS metrics__metrics__labeled_counter__browser_engagement_sessionrestore_interstitial ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_sessionrestore_interstitial.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_engagement_total_top_visits {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_total_top_visits}) AS metrics__metrics__labeled_counter__browser_engagement_total_top_visits ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_total_top_visits.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_is_user_default {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_is_user_default}) AS metrics__metrics__labeled_counter__browser_is_user_default ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_is_user_default.document_id} ;;
@@ -445,6 +450,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__browser_set_default_user_choice_result {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_set_default_user_choice_result}) AS metrics__metrics__labeled_counter__browser_set_default_user_choice_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_set_default_user_choice_result.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_tabswitch_spinner_visible_trigger {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_tabswitch_spinner_visible_trigger}) AS metrics__metrics__labeled_counter__browser_tabswitch_spinner_visible_trigger ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_tabswitch_spinner_visible_trigger.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__browser_ui_customized_widgets {
@@ -1770,6 +1780,21 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__pwmgr_form_autofill_result {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pwmgr_form_autofill_result}) AS metrics__metrics__labeled_counter__pwmgr_form_autofill_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pwmgr_form_autofill_result.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__pwmgr_import_logins_from_file_categorical {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pwmgr_import_logins_from_file_categorical}) AS metrics__metrics__labeled_counter__pwmgr_import_logins_from_file_categorical ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pwmgr_import_logins_from_file_categorical.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__pwmgr_is_username_only_form {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pwmgr_is_username_only_form}) AS metrics__metrics__labeled_counter__pwmgr_is_username_only_form ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pwmgr_is_username_only_form.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__pwmgr_num_improved_generated_passwords {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pwmgr_num_improved_generated_passwords}) AS metrics__metrics__labeled_counter__pwmgr_num_improved_generated_passwords ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pwmgr_num_improved_generated_passwords.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
