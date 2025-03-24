@@ -21899,6 +21899,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_invalid_text_directives {
+    sql: ${TABLE}.metrics.counter.use_counter_page_invalid_text_directives ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Invalid Text Directives"
+    description: "Amount of pages where a text directive could be found after loading has finished
+"
+  }
+
   dimension: metrics__counter__use_counter_page_js_asmjs {
     sql: ${TABLE}.metrics.counter.use_counter_page_js_asmjs ;;
     type: number
@@ -22896,6 +22906,26 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Svgsvgelement Getelementbyid"
     description: "Whether a page called called SVGSVGElement.getElementById. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_text_directive_not_created {
+    sql: ${TABLE}.metrics.counter.use_counter_page_text_directive_not_created ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Text Directive Not Created"
+    description: "How often does FragmentDirective::CreateTextDirective() not find a text fragment
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_text_directive_pages {
+    sql: ${TABLE}.metrics.counter.use_counter_page_text_directive_pages ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Text Directive Pages"
+    description: "Number of opened pages using text-fragments.
 "
   }
 

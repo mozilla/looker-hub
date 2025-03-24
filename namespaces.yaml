@@ -18483,6 +18483,10 @@ subscription_platform:
       tables:
       - table: mozdata.subscription_platform.daily_active_logical_subscriptions
       type: table_view
+    daily_active_service_subscriptions:
+      tables:
+      - table: mozdata.subscription_platform.daily_active_service_subscriptions
+      type: table_view
     google_subscriptions_v1:
       measures:
         count:
@@ -18501,6 +18505,18 @@ subscription_platform:
     monthly_active_logical_subscriptions:
       tables:
       - table: mozdata.subscription_platform.monthly_active_logical_subscriptions
+      type: table_view
+    monthly_active_service_subscriptions:
+      tables:
+      - table: mozdata.subscription_platform.monthly_active_service_subscriptions
+      type: table_view
+    service_subscription_events:
+      tables:
+      - table: mozdata.subscription_platform.service_subscription_events
+      type: table_view
+    service_subscriptions:
+      tables:
+      - table: mozdata.subscription_platform.service_subscriptions
       type: table_view
     stripe_plans:
       tables:

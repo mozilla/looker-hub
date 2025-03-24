@@ -20,6 +20,7 @@ SUM(billed_revenue) AS billed_revenue,
                 admarketplace_advertiser,
 admarketplace_alternative_revenue,
 admarketplace_avg_pub_cpc,
+admarketplace_contractual_rate,
 admarketplace_country_code,
 admarketplace_country_name,
 admarketplace_device,
@@ -68,6 +69,7 @@ admarketplace_valid_impressions,
                         admarketplace.advertiser AS admarketplace_advertiser,
 admarketplace.alternative_revenue AS admarketplace_alternative_revenue,
 admarketplace.avg_pub_cpc AS admarketplace_avg_pub_cpc,
+admarketplace.contractual_rate AS admarketplace_contractual_rate,
 admarketplace.country_code AS admarketplace_country_code,
 admarketplace.country_name AS admarketplace_country_name,
 admarketplace.device AS admarketplace_device,
@@ -107,6 +109,7 @@ admarketplace.valid_impressions AS admarketplace_valid_impressions,
                 admarketplace_advertiser,
 admarketplace_alternative_revenue,
 admarketplace_avg_pub_cpc,
+admarketplace_contractual_rate,
 admarketplace_country_code,
 admarketplace_country_name,
 admarketplace_device,
@@ -222,6 +225,13 @@ admarketplace_valid_impressions,
 
   dimension: avg_pub_cpc {
     sql: ${TABLE}.admarketplace_avg_pub_cpc ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: contractual_rate {
+    sql: ${TABLE}.admarketplace_contractual_rate ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
