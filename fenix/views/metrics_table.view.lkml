@@ -6547,6 +6547,69 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__pwmgr_login_page_safety__count {
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_login_page_safety.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Pwmgr Login Page Safety"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_login_page_safety__sum {
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_login_page_safety.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Pwmgr Login Page Safety"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_login_page_safety__values {
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_login_page_safety.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_prompt_remember_action__count {
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_remember_action.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Pwmgr Prompt Remember Action"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_prompt_remember_action__sum {
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_remember_action.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Pwmgr Prompt Remember Action"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_prompt_remember_action__values {
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_remember_action.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_prompt_update_action__count {
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_update_action.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Pwmgr Prompt Update Action"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_prompt_update_action__sum {
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_update_action.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Pwmgr Prompt Update Action"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_prompt_update_action__values {
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_update_action.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__readermode_download_result__count {
     sql: ${TABLE}.metrics.custom_distribution.readermode_download_result.count ;;
     type: number
@@ -9036,6 +9099,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__browser_engagement_total_top_visits {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_total_top_visits ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     hidden: yes
@@ -10213,6 +10281,21 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__pwmgr_form_autofill_result {
     sql: ${TABLE}.metrics.labeled_counter.pwmgr_form_autofill_result ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__pwmgr_import_logins_from_file_categorical {
+    sql: ${TABLE}.metrics.labeled_counter.pwmgr_import_logins_from_file_categorical ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__pwmgr_is_username_only_form {
+    sql: ${TABLE}.metrics.labeled_counter.pwmgr_is_username_only_form ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__pwmgr_num_improved_generated_passwords {
+    sql: ${TABLE}.metrics.labeled_counter.pwmgr_num_improved_generated_passwords ;;
     hidden: yes
   }
 
@@ -13732,6 +13815,336 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
     sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_new_window__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_new_window.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings New Window"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_new_window__count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_new_window.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings New Window"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_new_window__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_new_window.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings New Window"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_new_window__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_new_window.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings New Window"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_new_window__range {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_new_window.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_new_window__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_new_window.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings New Window"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_new_window__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_new_window.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings New Window"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_new_window__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_new_window.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings New Window"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_new_window__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_new_window.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_load__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_load.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Load"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_load__count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_load.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Load"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_load__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_load.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Load"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_load__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_load.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Load"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_load__range {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_load.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_load__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_load.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Load"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_load__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_load.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Load"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_load__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_load.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Load"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_load__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_load.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_normal__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_normal.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Reload Normal"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_normal__count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_normal.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Reload Normal"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_normal__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_normal.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Reload Normal"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_normal__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_normal.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Reload Normal"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_normal__range {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_normal.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_normal__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_normal.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Reload Normal"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_normal__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_normal.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Reload Normal"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_normal__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_normal.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Reload Normal"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_normal__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_normal.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_skip_cache__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_skip_cache.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Reload Skip Cache"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_skip_cache__count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_skip_cache.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Reload Skip Cache"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_skip_cache__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_skip_cache.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Reload Skip Cache"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_skip_cache__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_skip_cache.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Reload Skip Cache"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_skip_cache__range {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_skip_cache.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_skip_cache__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_skip_cache.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Reload Skip Cache"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_skip_cache__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_skip_cache.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Reload Skip Cache"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_skip_cache__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_skip_cache.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Page Reload Skip Cache"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_page_reload_skip_cache__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_page_reload_skip_cache.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_tab_click__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_tab_click.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Tab Click"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_tab_click__count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_tab_click.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Tab Click"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_tab_click__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_tab_click.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Tab Click"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_tab_click__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_tab_click.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Tab Click"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_tab_click__range {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_tab_click.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_tab_click__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_tab_click.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Tab Click"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_tab_click__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_tab_click.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Tab Click"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_tab_click__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_tab_click.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Browser Timings Tab Click"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_timings_tab_click__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_timings_tab_click.values ;;
     hidden: yes
   }
 
@@ -25681,6 +26094,72 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__network_cookies_sqlite_open_readahead__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cookies_sqlite_open_readahead.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Network Cookies Sqlite Open Readahead"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_cookies_sqlite_open_readahead__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cookies_sqlite_open_readahead.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Network Cookies Sqlite Open Readahead"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__network_cookies_sqlite_open_readahead__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_cookies_sqlite_open_readahead.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Network Cookies Sqlite Open Readahead"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_cookies_sqlite_open_readahead__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cookies_sqlite_open_readahead.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Network Cookies Sqlite Open Readahead"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cookies_sqlite_open_readahead__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_cookies_sqlite_open_readahead.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_cookies_sqlite_open_readahead__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_cookies_sqlite_open_readahead.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Network Cookies Sqlite Open Readahead"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_cookies_sqlite_open_readahead__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_cookies_sqlite_open_readahead.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Network Cookies Sqlite Open Readahead"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_cookies_sqlite_open_readahead__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cookies_sqlite_open_readahead.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Network Cookies Sqlite Open Readahead"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cookies_sqlite_open_readahead__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_cookies_sqlite_open_readahead.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__network_disk_cache2_shutdown_clear_private__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.network_disk_cache2_shutdown_clear_private.bucket_count ;;
     type: number
@@ -36175,6 +36654,72 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__pwmgr_signup_form_detection__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.pwmgr_signup_form_detection.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Pwmgr Signup Form Detection"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__pwmgr_signup_form_detection__count {
+    sql: ${TABLE}.metrics.timing_distribution.pwmgr_signup_form_detection.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Pwmgr Signup Form Detection"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__pwmgr_signup_form_detection__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.pwmgr_signup_form_detection.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Pwmgr Signup Form Detection"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__pwmgr_signup_form_detection__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.pwmgr_signup_form_detection.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Pwmgr Signup Form Detection"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__pwmgr_signup_form_detection__range {
+    sql: ${TABLE}.metrics.timing_distribution.pwmgr_signup_form_detection.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__pwmgr_signup_form_detection__sum {
+    sql: ${TABLE}.metrics.timing_distribution.pwmgr_signup_form_detection.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Pwmgr Signup Form Detection"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__pwmgr_signup_form_detection__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.pwmgr_signup_form_detection.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Pwmgr Signup Form Detection"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__pwmgr_signup_form_detection__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.pwmgr_signup_form_detection.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Pwmgr Signup Form Detection"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__pwmgr_signup_form_detection__values {
+    sql: ${TABLE}.metrics.timing_distribution.pwmgr_signup_form_detection.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__recent_synced_tabs_recent_synced_tab_time_to_load__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.recent_synced_tabs_recent_synced_tab_time_to_load.bucket_count ;;
     type: number
@@ -42430,6 +42975,48 @@ view: metrics_table__metrics__custom_distribution__predictor_total_prefetches__v
 }
 
 view: metrics_table__metrics__custom_distribution__predictor_total_preresolves__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__pwmgr_login_page_safety__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__pwmgr_prompt_remember_action__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__pwmgr_prompt_update_action__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -50500,6 +51087,76 @@ view: metrics_table__metrics__timing_distribution__bounce_tracking_protection_pu
   }
 }
 
+view: metrics_table__metrics__timing_distribution__browser_timings_new_window__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_timings_page_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_timings_page_reload_normal__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_timings_page_reload_skip_cache__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_timings_tab_click__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__cert_verification_time_failure__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -53034,6 +53691,20 @@ view: metrics_table__metrics__timing_distribution__network_complete_load_net__va
   }
 }
 
+view: metrics_table__metrics__timing_distribution__network_cookies_sqlite_open_readahead__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__network_disk_cache2_shutdown_clear_private__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -55247,6 +55918,20 @@ view: metrics_table__metrics__timing_distribution__predictor_wait_time__values {
 }
 
 view: metrics_table__metrics__timing_distribution__privacy_sanitize_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__pwmgr_signup_form_detection__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
