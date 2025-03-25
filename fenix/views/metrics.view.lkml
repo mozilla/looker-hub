@@ -637,6 +637,25 @@ for a downloaded pdf.
 "
   }
 
+  dimension: metrics__string__downloads_filtered {
+    label: "Downloads Filtered"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.downloads_filtered ;;
+    type: string
+    group_label: "Downloads"
+    group_item_label: "Filtered"
+
+    link: {
+      label: "Glean Dictionary reference for Downloads Filtered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/downloads_filtered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A user chose a filter for the downloads page.
+The filter can be All, Image, Video, Document or Other.
+"
+  }
+
   dimension: metrics__counter__downloads_pdf_download_count {
     label: "Downloads Pdf Download Count"
     hidden: yes
