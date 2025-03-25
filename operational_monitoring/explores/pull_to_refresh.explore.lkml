@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/pull_to_refresh.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/pull_to_refresh_last_updated.datagroup.lkml"
 
 explore: pull_to_refresh {
   always_filter: {
@@ -14,4 +15,5 @@ explore: pull_to_refresh {
   }
 
   hidden: yes
+  persist_with: pull_to_refresh_last_updated
 }

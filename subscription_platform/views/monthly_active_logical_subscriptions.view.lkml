@@ -102,7 +102,7 @@ view: monthly_active_logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Subscription First Touch Attribution"
-    group_item_label: "Utm Campaign"
+    group_item_label: "UTM Campaign"
   }
 
   dimension: subscription__first_touch_attribution__utm_content {
@@ -110,7 +110,7 @@ view: monthly_active_logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Subscription First Touch Attribution"
-    group_item_label: "Utm Content"
+    group_item_label: "UTM Content"
   }
 
   dimension: subscription__first_touch_attribution__utm_medium {
@@ -118,7 +118,7 @@ view: monthly_active_logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Subscription First Touch Attribution"
-    group_item_label: "Utm Medium"
+    group_item_label: "UTM Medium"
   }
 
   dimension: subscription__first_touch_attribution__utm_source {
@@ -126,7 +126,7 @@ view: monthly_active_logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Subscription First Touch Attribution"
-    group_item_label: "Utm Source"
+    group_item_label: "UTM Source"
   }
 
   dimension: subscription__first_touch_attribution__utm_term {
@@ -134,7 +134,7 @@ view: monthly_active_logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Subscription First Touch Attribution"
-    group_item_label: "Utm Term"
+    group_item_label: "UTM Term"
   }
 
   dimension: subscription__has_fraudulent_charges {
@@ -158,7 +158,7 @@ view: monthly_active_logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
-    group_item_label: "Id"
+    group_item_label: "ID"
   }
 
   dimension: subscription__initial_discount_name {
@@ -230,7 +230,7 @@ view: monthly_active_logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Subscription Last Touch Attribution"
-    group_item_label: "Utm Campaign"
+    group_item_label: "UTM Campaign"
   }
 
   dimension: subscription__last_touch_attribution__utm_content {
@@ -238,7 +238,7 @@ view: monthly_active_logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Subscription Last Touch Attribution"
-    group_item_label: "Utm Content"
+    group_item_label: "UTM Content"
   }
 
   dimension: subscription__last_touch_attribution__utm_medium {
@@ -246,7 +246,7 @@ view: monthly_active_logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Subscription Last Touch Attribution"
-    group_item_label: "Utm Medium"
+    group_item_label: "UTM Medium"
   }
 
   dimension: subscription__last_touch_attribution__utm_source {
@@ -254,7 +254,7 @@ view: monthly_active_logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Subscription Last Touch Attribution"
-    group_item_label: "Utm Source"
+    group_item_label: "UTM Source"
   }
 
   dimension: subscription__last_touch_attribution__utm_term {
@@ -262,7 +262,7 @@ view: monthly_active_logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Subscription Last Touch Attribution"
-    group_item_label: "Utm Term"
+    group_item_label: "UTM Term"
   }
 
   dimension: subscription__mozilla_account_id {
@@ -270,7 +270,7 @@ view: monthly_active_logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
-    group_item_label: "Mozilla Account Id"
+    group_item_label: "Mozilla Account ID"
   }
 
   dimension: subscription__mozilla_account_id_sha256 {
@@ -278,7 +278,7 @@ view: monthly_active_logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
-    group_item_label: "Mozilla Account Id Sha256"
+    group_item_label: "Mozilla Account ID Sha256"
   }
 
   dimension: subscription__ongoing_discount_amount {
@@ -390,7 +390,7 @@ view: monthly_active_logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
-    group_item_label: "Provider Customer Id"
+    group_item_label: "Provider Customer ID"
   }
 
   dimension: subscription__provider_plan_id {
@@ -398,7 +398,7 @@ view: monthly_active_logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
-    group_item_label: "Provider Plan Id"
+    group_item_label: "Provider Plan ID"
   }
 
   dimension: subscription__provider_product_id {
@@ -406,7 +406,7 @@ view: monthly_active_logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
-    group_item_label: "Provider Product Id"
+    group_item_label: "Provider Product ID"
   }
 
   dimension: subscription__provider_status {
@@ -422,7 +422,7 @@ view: monthly_active_logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
-    group_item_label: "Provider Subscription Id"
+    group_item_label: "Provider Subscription ID"
   }
 
   dimension: subscription__provider_subscription_item_id {
@@ -430,7 +430,7 @@ view: monthly_active_logical_subscriptions {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
-    group_item_label: "Provider Subscription Item Id"
+    group_item_label: "Provider Subscription Item ID"
   }
 
   dimension: subscription__services {

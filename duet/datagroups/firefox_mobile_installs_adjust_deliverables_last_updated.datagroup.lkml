@@ -8,9 +8,13 @@
 datagroup: firefox_mobile_installs_adjust_deliverables_last_updated {
   label: "firefox_mobile_installs_adjust_deliverables Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'adjust_derived'
-    AND table_name = 'adjust_deliverables_v1' ;;
-  description: "Updates for firefox_mobile_installs_adjust_deliverables when moz-fx-data-shared-prod.adjust_derived.adjust_deliverables_v1 is modified."
+    WHERE (table_schema = 'adjust_derived' AND table_name = 'adjust_deliverables_v1')
+
+    ) ;;
+  description: "Updates for firefox_mobile_installs_adjust_deliverables when referenced tables are modified."
   max_cache_age: "24 hours"
 }

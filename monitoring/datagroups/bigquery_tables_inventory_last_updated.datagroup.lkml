@@ -8,9 +8,13 @@
 datagroup: bigquery_tables_inventory_last_updated {
   label: "bigquery_tables_inventory Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'monitoring_derived'
-    AND table_name = 'bigquery_tables_inventory_v1' ;;
-  description: "Updates for bigquery_tables_inventory when moz-fx-data-shared-prod.monitoring_derived.bigquery_tables_inventory_v1 is modified."
+    WHERE (table_schema = 'monitoring_derived' AND table_name = 'bigquery_tables_inventory_v1')
+
+    ) ;;
+  description: "Updates for bigquery_tables_inventory when referenced tables are modified."
   max_cache_age: "24 hours"
 }

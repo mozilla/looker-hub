@@ -8,9 +8,13 @@
 datagroup: monitor_mozilla_accounts_funnels_last_updated {
   label: "monitor_mozilla_accounts_funnels Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'accounts_frontend_derived'
-    AND table_name = 'monitor_mozilla_accounts_funnels_v1' ;;
-  description: "Updates for monitor_mozilla_accounts_funnels when moz-fx-data-shared-prod.accounts_frontend_derived.monitor_mozilla_accounts_funnels_v1 is modified."
+    WHERE (table_schema = 'accounts_frontend_derived' AND table_name = 'monitor_mozilla_accounts_funnels_v1')
+
+    ) ;;
+  description: "Updates for monitor_mozilla_accounts_funnels when referenced tables are modified."
   max_cache_age: "24 hours"
 }

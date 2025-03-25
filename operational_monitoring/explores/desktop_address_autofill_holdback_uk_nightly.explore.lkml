@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/desktop_address_autofill_holdback_uk_nightly.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/desktop_address_autofill_holdback_uk_nightly_last_updated.datagroup.lkml"
 
 explore: desktop_address_autofill_holdback_uk_nightly {
   always_filter: {
@@ -14,4 +15,5 @@ explore: desktop_address_autofill_holdback_uk_nightly {
   }
 
   hidden: yes
+  persist_with: desktop_address_autofill_holdback_uk_nightly_last_updated
 }

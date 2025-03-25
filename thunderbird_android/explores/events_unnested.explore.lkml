@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/thunderbird_android/views/events_unnested.view.lkml"
+include: "/looker-hub/thunderbird_android/datagroups/events_unnested_last_updated.datagroup.lkml"
 
 explore: events_unnested {
   sql_always_where: ${events_unnested.submission_date} >= '2010-01-01' ;;
@@ -21,6 +22,8 @@ explore: events_unnested {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${events_unnested.ping_info__experiments}) AS events_unnested__ping_info__experiments ;;
   }
+
+  persist_with: events_unnested_last_updated
 
   always_filter: {
     filters: [

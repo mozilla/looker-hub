@@ -174,6 +174,13 @@ view: cohort_weekly_statistics {
     description: "Play Store Attribution Content"
   }
 
+  dimension: play_store_attribution_install_referrer_response {
+    sql: ${TABLE}.play_store_attribution_install_referrer_response ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Play Store Attribution Install Referrer Response"
+  }
+
   dimension: play_store_attribution_medium {
     sql: ${TABLE}.play_store_attribution_medium ;;
     type: string

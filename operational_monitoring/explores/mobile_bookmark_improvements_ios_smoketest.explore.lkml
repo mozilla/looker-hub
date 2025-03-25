@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/mobile_bookmark_improvements_ios_smoketest.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/mobile_bookmark_improvements_ios_smoketest_last_updated.datagroup.lkml"
 
 explore: mobile_bookmark_improvements_ios_smoketest {
   always_filter: {
@@ -14,4 +15,5 @@ explore: mobile_bookmark_improvements_ios_smoketest {
   }
 
   hidden: yes
+  persist_with: mobile_bookmark_improvements_ios_smoketest_last_updated
 }

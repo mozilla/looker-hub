@@ -73,15 +73,15 @@ where:
   }
 
   dimension: metrics__counter__events_normal_and_private_uri_count {
-    label: "Events Normal And Private Uri Count"
+    label: "Events Normal And Private URI Count"
     hidden: no
     sql: ${TABLE}.metrics.counter.events_normal_and_private_uri_count ;;
     type: number
     group_label: "Events"
-    group_item_label: "Normal And Private Uri Count"
+    group_item_label: "Normal And Private URI Count"
 
     link: {
-      label: "Glean Dictionary reference for Events Normal And Private Uri Count"
+      label: "Glean Dictionary reference for Events Normal And Private URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_normal_and_private_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -95,15 +95,15 @@ programmatically redirect to a new location.
   }
 
   dimension: metrics__counter__events_total_uri_count {
-    label: "Events Total Uri Count"
+    label: "Events Total URI Count"
     hidden: yes
     sql: ${TABLE}.metrics.counter.events_total_uri_count ;;
     type: number
     group_label: "Events"
-    group_item_label: "Total Uri Count"
+    group_item_label: "Total URI Count"
 
     link: {
-      label: "Glean Dictionary reference for Events Total Uri Count"
+      label: "Glean Dictionary reference for Events Total URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_total_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -153,15 +153,15 @@ location.
   }
 
   dimension: metrics__string__metrics_distribution_id {
-    label: "Metrics Distribution Id"
+    label: "Metrics Distribution ID"
     hidden: no
     sql: ${TABLE}.metrics.string.metrics_distribution_id ;;
     type: string
     group_label: "Metrics"
-    group_item_label: "Distribution Id"
+    group_item_label: "Distribution ID"
 
     link: {
-      label: "Glean Dictionary reference for Metrics Distribution Id"
+      label: "Glean Dictionary reference for Metrics Distribution ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_distribution_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -280,15 +280,15 @@ to indicate \"undetermined\".
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation Id"
+    label: "Glean Client Annotation Experimentation ID"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     group_label: "Glean Client Annotation"
-    group_item_label: "Experimentation Id"
+    group_item_label: "Experimentation ID"
 
     link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -442,7 +442,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Android Sdk Version"
+    group_item_label: "Android SDK Version"
   }
 
   dimension: client_info__app_build {
@@ -527,7 +527,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: client_info__os_version {
@@ -535,7 +535,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os Version"
+    group_item_label: "OS Version"
   }
 
   dimension: client_info__session_count {
@@ -551,7 +551,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Session Id"
+    group_item_label: "Session ID"
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -559,7 +559,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Telemetry Sdk Build"
+    group_item_label: "Telemetry SDK Build"
   }
 
   dimension: client_info__windows_build_number {
@@ -603,7 +603,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -635,23 +635,23 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "Dnt"
+    group_item_label: "DNT"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Cipher Hex"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Cipher Hex"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Version"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -664,7 +664,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Debug Id"
+    group_item_label: "X Debug ID"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -672,7 +672,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Foxsec Ip Reputation"
+    group_item_label: "X Foxsec IP Reputation"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -680,7 +680,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Lb Tags"
+    group_item_label: "X LB Tags"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -711,15 +711,15 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
-    group_item_label: "Db Version"
+    group_label: "Metadata ISP"
+    group_item_label: "DB Version"
   }
 
   dimension: metadata__isp__name {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Name"
   }
 
@@ -727,7 +727,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Organization"
   }
 
@@ -744,7 +744,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: metadata__user_agent__version {
@@ -939,7 +939,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${metrics__counter__events_normal_and_private_uri_count} ;;
 
     link: {
-      label: "Glean Dictionary reference for Events Normal And Private Uri Count"
+      label: "Glean Dictionary reference for Events Normal And Private URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_normal_and_private_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -953,7 +953,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${client_info__client_id} ;;
 
     link: {
-      label: "Glean Dictionary reference for Events Normal And Private Uri Count"
+      label: "Glean Dictionary reference for Events Normal And Private URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_normal_and_private_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -964,7 +964,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${metrics__counter__events_total_uri_count} ;;
 
     link: {
-      label: "Glean Dictionary reference for Events Total Uri Count"
+      label: "Glean Dictionary reference for Events Total URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_total_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -978,7 +978,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${client_info__client_id} ;;
 
     link: {
-      label: "Glean Dictionary reference for Events Total Uri Count"
+      label: "Glean Dictionary reference for Events Total URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_total_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -1469,7 +1469,7 @@ view: baseline__ping_info__experiments {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Value Extra"
-    group_item_label: "Enrollment Id"
+    group_item_label: "Enrollment ID"
   }
 
   dimension: value__extra__type {

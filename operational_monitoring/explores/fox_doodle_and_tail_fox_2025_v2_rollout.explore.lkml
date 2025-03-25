@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/fox_doodle_and_tail_fox_2025_v2_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/fox_doodle_and_tail_fox_2025_v2_rollout_last_updated.datagroup.lkml"
 
 explore: fox_doodle_and_tail_fox_2025_v2_rollout {
   always_filter: {
@@ -14,4 +15,5 @@ explore: fox_doodle_and_tail_fox_2025_v2_rollout {
   }
 
   hidden: yes
+  persist_with: fox_doodle_and_tail_fox_2025_v2_rollout_last_updated
 }

@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/ios_sent_from_firefox_rollout_increase_to_10.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/ios_sent_from_firefox_rollout_increase_to_10_last_updated.datagroup.lkml"
 
 explore: ios_sent_from_firefox_rollout_increase_to_10 {
   always_filter: {
@@ -14,4 +15,5 @@ explore: ios_sent_from_firefox_rollout_increase_to_10 {
   }
 
   hidden: yes
+  persist_with: ios_sent_from_firefox_rollout_increase_to_10_last_updated
 }

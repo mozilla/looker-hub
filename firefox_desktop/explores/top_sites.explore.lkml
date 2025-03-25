@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/top_sites.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/top_sites_last_updated.datagroup.lkml"
 
 explore: top_sites {
   sql_always_where: ${top_sites.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: top_sites {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${top_sites.ping_info__experiments}) AS top_sites__ping_info__experiments ;;
   }
+
+  persist_with: top_sites_last_updated
 
   always_filter: {
     filters: [

@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/fpp_floating_point_protection_rollout_linux_only.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/fpp_floating_point_protection_rollout_linux_only_last_updated.datagroup.lkml"
 
 explore: fpp_floating_point_protection_rollout_linux_only {
   always_filter: {
@@ -14,4 +15,5 @@ explore: fpp_floating_point_protection_rollout_linux_only {
   }
 
   hidden: yes
+  persist_with: fpp_floating_point_protection_rollout_linux_only_last_updated
 }

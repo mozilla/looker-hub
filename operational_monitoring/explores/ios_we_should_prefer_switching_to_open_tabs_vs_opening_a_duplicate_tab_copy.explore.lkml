@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/ios_we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_copy.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/ios_we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_copy_last_updated.datagroup.lkml"
 
 explore: ios_we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_copy {
   always_filter: {
@@ -14,4 +15,5 @@ explore: ios_we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_
   }
 
   hidden: yes
+  persist_with: ios_we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_copy_last_updated
 }

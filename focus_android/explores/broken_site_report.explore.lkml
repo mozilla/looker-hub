@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/focus_android/views/broken_site_report.view.lkml"
+include: "/looker-hub/focus_android/datagroups/broken_site_report_last_updated.datagroup.lkml"
 
 explore: broken_site_report {
   sql_always_where: ${broken_site_report.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: broken_site_report {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${broken_site_report.ping_info__experiments}) AS broken_site_report__ping_info__experiments ;;
   }
+
+  persist_with: broken_site_report_last_updated
 
   always_filter: {
     filters: [

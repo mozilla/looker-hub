@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/new_toolbar_ios_new_tab_button_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/new_toolbar_ios_new_tab_button_rollout_last_updated.datagroup.lkml"
 
 explore: new_toolbar_ios_new_tab_button_rollout {
   always_filter: {
@@ -14,4 +15,5 @@ explore: new_toolbar_ios_new_tab_button_rollout {
   }
 
   hidden: yes
+  persist_with: new_toolbar_ios_new_tab_button_rollout_last_updated
 }

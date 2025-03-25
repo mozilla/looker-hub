@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/mdn_yari/views/page.view.lkml"
+include: "/looker-hub/mdn_yari/datagroups/page_last_updated.datagroup.lkml"
 
 explore: page {
   sql_always_where: ${page.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: page {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${page.ping_info__experiments}) AS page__ping_info__experiments ;;
   }
+
+  persist_with: page_last_updated
 
   always_filter: {
     filters: [

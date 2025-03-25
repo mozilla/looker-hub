@@ -8,9 +8,13 @@
 datagroup: first_startup_table_last_updated {
   label: "first_startup_table Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'firefox_desktop_stable'
-    AND table_name = 'first_startup_v1' ;;
-  description: "Updates for first_startup_table when moz-fx-data-shared-prod.firefox_desktop_stable.first_startup_v1 is modified."
+    WHERE (table_schema = 'firefox_desktop_stable' AND table_name = 'first_startup_v1')
+
+    ) ;;
+  description: "Updates for first_startup_table when referenced tables are modified."
   max_cache_age: "24 hours"
 }

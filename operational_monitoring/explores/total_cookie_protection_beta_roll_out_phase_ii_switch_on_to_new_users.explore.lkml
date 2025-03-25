@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users_last_updated.datagroup.lkml"
 
 explore: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users {
   always_filter: {
@@ -14,4 +15,5 @@ explore: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users {
   }
 
   hidden: yes
+  persist_with: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users_last_updated
 }

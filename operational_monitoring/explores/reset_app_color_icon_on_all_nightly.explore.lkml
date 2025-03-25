@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/reset_app_color_icon_on_all_nightly.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/reset_app_color_icon_on_all_nightly_last_updated.datagroup.lkml"
 
 explore: reset_app_color_icon_on_all_nightly {
   always_filter: {
@@ -14,4 +15,5 @@ explore: reset_app_color_icon_on_all_nightly {
   }
 
   hidden: yes
+  persist_with: reset_app_color_icon_on_all_nightly_last_updated
 }

@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/monitor_show_last_scan_date_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/monitor_show_last_scan_date_rollout_last_updated.datagroup.lkml"
 
 explore: monitor_show_last_scan_date_rollout {
   always_filter: {
@@ -14,4 +15,5 @@ explore: monitor_show_last_scan_date_rollout {
   }
 
   hidden: yes
+  persist_with: monitor_show_last_scan_date_rollout_last_updated
 }

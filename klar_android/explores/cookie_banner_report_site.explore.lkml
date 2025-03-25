@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/klar_android/views/cookie_banner_report_site.view.lkml"
+include: "/looker-hub/klar_android/datagroups/cookie_banner_report_site_last_updated.datagroup.lkml"
 
 explore: cookie_banner_report_site {
   sql_always_where: ${cookie_banner_report_site.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: cookie_banner_report_site {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${cookie_banner_report_site.ping_info__experiments}) AS cookie_banner_report_site__ping_info__experiments ;;
   }
+
+  persist_with: cookie_banner_report_site_last_updated
 
   always_filter: {
     filters: [

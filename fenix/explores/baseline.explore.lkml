@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/baseline.view.lkml"
+include: "/looker-hub/fenix/datagroups/baseline_last_updated.datagroup.lkml"
 
 explore: baseline {
   sql_always_where: ${baseline.submission_date} >= '2010-01-01' ;;
@@ -71,6 +72,8 @@ explore: baseline {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${baseline.ping_info__experiments}) AS baseline__ping_info__experiments ;;
   }
+
+  persist_with: baseline_last_updated
 
   always_filter: {
     filters: [

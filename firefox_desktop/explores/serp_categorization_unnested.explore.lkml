@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/serp_categorization_unnested_table.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/serp_categorization_unnested_table_last_updated.datagroup.lkml"
 
 explore: serp_categorization_unnested {
   sql_always_where: ${serp_categorization_unnested_table.submission_date} >= '2010-01-01' ;;
@@ -15,4 +16,6 @@ explore: serp_categorization_unnested {
       submission_date: "28 days",
     ]
   }
+
+  persist_with: serp_categorization_unnested_table_last_updated
 }

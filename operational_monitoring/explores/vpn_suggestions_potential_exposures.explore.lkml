@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/vpn_suggestions_potential_exposures.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/vpn_suggestions_potential_exposures_last_updated.datagroup.lkml"
 
 explore: vpn_suggestions_potential_exposures {
   always_filter: {
@@ -14,4 +15,5 @@ explore: vpn_suggestions_potential_exposures {
   }
 
   hidden: yes
+  persist_with: vpn_suggestions_potential_exposures_last_updated
 }

@@ -8,9 +8,13 @@
 datagroup: cohort_daily_statistics_last_updated {
   label: "cohort_daily_statistics Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'telemetry_derived'
-    AND table_name = 'cohort_daily_statistics_v2' ;;
-  description: "Updates for cohort_daily_statistics when moz-fx-data-shared-prod.telemetry_derived.cohort_daily_statistics_v2 is modified."
+    WHERE (table_schema = 'telemetry_derived' AND table_name = 'cohort_daily_statistics_v2')
+
+    ) ;;
+  description: "Updates for cohort_daily_statistics when referenced tables are modified."
   max_cache_age: "24 hours"
 }

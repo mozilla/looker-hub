@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/metrics.view.lkml"
+include: "/looker-hub/fenix/datagroups/metrics_last_updated.datagroup.lkml"
 
 explore: metrics {
   sql_always_where: ${metrics.submission_date} >= '2010-01-01' ;;
@@ -160,6 +161,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__bounce_tracking_protection_purge_count}) AS metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_engagement_total_top_visits {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_total_top_visits}) AS metrics__metrics__labeled_counter__browser_engagement_total_top_visits ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_total_top_visits.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__browser_search_ad_clicks {
@@ -837,6 +843,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mixed_content_video}) AS metrics__metrics__labeled_counter__mixed_content_video ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mixed_content_video.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__mozstorage_sqlitejsm_transaction_timeout {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mozstorage_sqlitejsm_transaction_timeout}) AS metrics__metrics__labeled_counter__mozstorage_sqlitejsm_transaction_timeout ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mozstorage_sqlitejsm_transaction_timeout.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__netwerk_early_hints {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_early_hints}) AS metrics__metrics__labeled_counter__netwerk_early_hints ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_early_hints.document_id} ;;
@@ -1337,6 +1348,21 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pwmgr_form_autofill_result}) AS metrics__metrics__labeled_counter__pwmgr_form_autofill_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pwmgr_form_autofill_result.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__pwmgr_import_logins_from_file_categorical {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pwmgr_import_logins_from_file_categorical}) AS metrics__metrics__labeled_counter__pwmgr_import_logins_from_file_categorical ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pwmgr_import_logins_from_file_categorical.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__pwmgr_is_username_only_form {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pwmgr_is_username_only_form}) AS metrics__metrics__labeled_counter__pwmgr_is_username_only_form ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pwmgr_is_username_only_form.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__pwmgr_num_improved_generated_passwords {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pwmgr_num_improved_generated_passwords}) AS metrics__metrics__labeled_counter__pwmgr_num_improved_generated_passwords ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pwmgr_num_improved_generated_passwords.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened}) AS metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened.document_id} ;;
@@ -1616,6 +1642,8 @@ explore: metrics {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.ping_info__experiments}) AS metrics__ping_info__experiments ;;
   }
+
+  persist_with: metrics_last_updated
 
   always_filter: {
     filters: [

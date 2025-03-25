@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/pdf_annotations_highlight_treatment_b_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/pdf_annotations_highlight_treatment_b_rollout_last_updated.datagroup.lkml"
 
 explore: pdf_annotations_highlight_treatment_b_rollout {
   always_filter: {
@@ -14,4 +15,5 @@ explore: pdf_annotations_highlight_treatment_b_rollout {
   }
 
   hidden: yes
+  persist_with: pdf_annotations_highlight_treatment_b_rollout_last_updated
 }

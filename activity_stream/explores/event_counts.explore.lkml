@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/activity_stream/views/events.view.lkml"
+include: "/looker-hub/activity_stream/datagroups/events_last_updated.datagroup.lkml"
 
 explore: event_counts {
   sql_always_where: ${events.submission_date} >= '2010-01-01' ;;
@@ -21,4 +22,6 @@ explore: event_counts {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${events.experiments}) AS events__experiments ;;
   }
+
+  persist_with: events_last_updated
 }

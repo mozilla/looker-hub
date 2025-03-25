@@ -42,7 +42,7 @@ view: usage_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -74,23 +74,23 @@ view: usage_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "Dnt"
+    group_item_label: "DNT"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Cipher Hex"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Cipher Hex"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Version"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -103,7 +103,7 @@ view: usage_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Debug Id"
+    group_item_label: "X Debug ID"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -111,7 +111,7 @@ view: usage_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Foxsec Ip Reputation"
+    group_item_label: "X Foxsec IP Reputation"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -119,7 +119,7 @@ view: usage_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Lb Tags"
+    group_item_label: "X LB Tags"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -150,15 +150,15 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
-    group_item_label: "Db Version"
+    group_label: "Metadata ISP"
+    group_item_label: "DB Version"
   }
 
   dimension: metadata__isp__name {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Name"
   }
 
@@ -166,7 +166,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Organization"
   }
 
@@ -183,7 +183,7 @@ view: usage_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: metadata__user_agent__version {
@@ -235,7 +235,7 @@ view: usage_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Glean Client Annotation Experimentation Id"
+    group_item_label: "Glean Client Annotation Experimentation ID"
   }
 
   dimension: metrics__string__metrics_distribution_id {
@@ -243,7 +243,7 @@ view: usage_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Metrics Distribution Id"
+    group_item_label: "Metrics Distribution ID"
   }
 
   dimension: metrics__string__usage_app_build {
@@ -275,7 +275,7 @@ view: usage_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Usage Os"
+    group_item_label: "Usage OS"
   }
 
   dimension: metrics__string__usage_os_version {
@@ -283,7 +283,7 @@ view: usage_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Usage Os Version"
+    group_item_label: "Usage OS Version"
   }
 
   dimension: metrics__string__usage_reason {
@@ -314,8 +314,8 @@ view: usage_reporting_table {
     sql: ${TABLE}.metrics.uuid.usage_profile_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Uuid"
-    group_item_label: "Usage Profile Id"
+    group_label: "Metrics UUID"
+    group_item_label: "Usage Profile ID"
   }
 
   dimension: normalized_app_id {

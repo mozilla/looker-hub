@@ -34,7 +34,7 @@ view: dau_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Android Sdk Version"
+    group_item_label: "Android SDK Version"
     description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
@@ -130,7 +130,7 @@ view: dau_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os"
+    group_item_label: "OS"
     description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
@@ -139,7 +139,7 @@ view: dau_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os Version"
+    group_item_label: "OS Version"
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
@@ -157,7 +157,7 @@ view: dau_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Session Id"
+    group_item_label: "Session ID"
     description: "An optional UUID uniquely identifying the client's current session."
   }
 
@@ -166,7 +166,7 @@ view: dau_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Telemetry Sdk Build"
+    group_item_label: "Telemetry SDK Build"
     description: "The version of the Glean SDK"
   }
 
@@ -213,7 +213,7 @@ view: dau_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
 
@@ -249,7 +249,7 @@ view: dau_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "Dnt"
+    group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
 
@@ -257,16 +257,16 @@ view: dau_reporting_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Cipher Hex"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Cipher Hex"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Version"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -279,7 +279,7 @@ view: dau_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Debug Id"
+    group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
 
@@ -288,7 +288,7 @@ view: dau_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Foxsec Ip Reputation"
+    group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
 
@@ -297,7 +297,7 @@ view: dau_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Lb Tags"
+    group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
 
@@ -332,8 +332,8 @@ view: dau_reporting_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
-    group_item_label: "Db Version"
+    group_label: "Metadata ISP"
+    group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
 
@@ -341,7 +341,7 @@ view: dau_reporting_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -350,7 +350,7 @@ view: dau_reporting_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -368,7 +368,7 @@ view: dau_reporting_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: metadata__user_agent__version {
@@ -401,7 +401,7 @@ Migrated from Telemetry's `browser.engagement.active_ticks`.
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
-    group_item_label: "Browser Engagement Uri Count"
+    group_item_label: "Browser Engagement URI Count"
     description: "The number of total non-unique http(s) URIs visited, including page
 reloads, after the session has been restored. URIs on minimized or
 background tabs may also be counted. Private browsing uris are included.
@@ -448,7 +448,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Glean Client Annotation Experimentation Id"
+    group_item_label: "Glean Client Annotation Experimentation ID"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
 "
@@ -458,8 +458,8 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.uuid.legacy_telemetry_client_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Uuid"
-    group_item_label: "Legacy Telemetry Client Id"
+    group_label: "Metrics UUID"
+    group_item_label: "Legacy Telemetry Client ID"
     description: "The client_id according to Telemetry.
 Might not always have a value due to being too early for it to have
 loaded.
@@ -475,8 +475,8 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
     sql: ${TABLE}.metrics.uuid.legacy_telemetry_profile_group_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Uuid"
-    group_item_label: "Legacy Telemetry Profile Group Id"
+    group_label: "Metrics UUID"
+    group_item_label: "Legacy Telemetry Profile Group ID"
     description: "The profile_group_id according to Telemetry.
 Might not always have a value due to being too early for it to have
 loaded.
@@ -488,8 +488,8 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
     sql: ${TABLE}.metrics.uuid.usage_profile_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Uuid"
-    group_item_label: "Usage Profile Id"
+    group_label: "Metrics UUID"
+    group_item_label: "Usage Profile ID"
     description: "A UUID uniquely identifying the profile,
 not shared with other telemetry data.
 "
@@ -707,7 +707,7 @@ view: dau_reporting_table__ping_info__experiments {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Value Extra"
-    group_item_label: "Enrollment Id"
+    group_item_label: "Enrollment ID"
   }
 
   dimension: value__extra__type {

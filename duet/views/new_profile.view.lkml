@@ -24,7 +24,7 @@ view: new_profile {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Application"
-    group_item_label: "Build Id"
+    group_item_label: "Build ID"
   }
 
   dimension: application__channel {
@@ -119,7 +119,7 @@ view: new_profile {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Environment Addons Active Experiment"
-    group_item_label: "Id"
+    group_item_label: "ID"
   }
 
   dimension: environment__addons__active_gm_plugins {
@@ -189,7 +189,7 @@ view: new_profile {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Environment Addons Theme"
-    group_item_label: "Id"
+    group_item_label: "ID"
     description: "The id of the theme."
   }
 
@@ -270,7 +270,7 @@ view: new_profile {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Environment Build"
-    group_item_label: "Application Id"
+    group_item_label: "Application ID"
     description: "The application UUID."
   }
 
@@ -306,7 +306,7 @@ view: new_profile {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Environment Build"
-    group_item_label: "Build Id"
+    group_item_label: "Build ID"
     description: "The build ID/date of the application."
   }
 
@@ -382,7 +382,7 @@ view: new_profile {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Environment Partner"
-    group_item_label: "Distribution Id"
+    group_item_label: "Distribution ID"
     description: "The value of the `distribution.id` pref that identifies the Firefox distribution."
   }
 
@@ -418,7 +418,7 @@ view: new_profile {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Environment Partner"
-    group_item_label: "Partner Id"
+    group_item_label: "Partner ID"
     description: "The value of the `mozilla.partner.id` pref."
   }
 
@@ -631,7 +631,7 @@ view: new_profile {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Environment Settings Default Private Search Engine Data"
-    group_item_label: "Submission Url"
+    group_item_label: "Submission URL"
   }
 
   dimension: environment__settings__default_search_engine {
@@ -675,7 +675,7 @@ view: new_profile {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Environment Settings Default Search Engine Data"
-    group_item_label: "Submission Url"
+    group_item_label: "Submission URL"
     description: "The HTTP url we would use to search. For privacy, we don’t record this for user-installed engines."
   }
 
@@ -860,7 +860,7 @@ view: new_profile {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Environment System"
-    group_item_label: "Apple Model Id"
+    group_item_label: "Apple Model ID"
     description: "The model IDs for Apple desktop devices. This is Mac only."
   }
 
@@ -868,7 +868,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.cpu.cores ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Cpu"
+    group_label: "Environment System CPU"
     group_item_label: "Cores"
     description: "The number of physical CPU cores. Desktop only, e.g. 4, or `null` on failure."
   }
@@ -877,7 +877,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.cpu.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Cpu"
+    group_label: "Environment System CPU"
     group_item_label: "Count"
     description: "The number of logical CPUs. Desktop only, e.g. 8, or `null` on failure."
   }
@@ -886,7 +886,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.cpu.ecount ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Cpu"
+    group_label: "Environment System CPU"
     group_item_label: "Ecount"
     description: "Heterogeneous CPU info for little CPUs."
   }
@@ -900,7 +900,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.cpu.family ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Cpu"
+    group_label: "Environment System CPU"
     group_item_label: "Family"
     description: "The CPU family, `null` on failure. Desktop only."
   }
@@ -909,7 +909,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.cpu.is_windows_s_mode ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Cpu"
+    group_label: "Environment System CPU"
     group_item_label: "Is Windows S Mode"
     description: "Whether or not the system is Windows 10 or 11 in S Mode. S Mode existed prior to us being able to query it, so this is unreliable on Windows versions prior to 1810."
   }
@@ -918,7 +918,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.cpu.l2cache_kb ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Cpu"
+    group_label: "Environment System CPU"
     group_item_label: "L2Cache Kb"
     description: "The CPU L2 cache size in KB. `null` on failure. Desktop only."
   }
@@ -927,7 +927,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.cpu.l3cache_kb ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Cpu"
+    group_label: "Environment System CPU"
     group_item_label: "L3Cache Kb"
     description: "The CPU L3 cache size in KB. `null` on failure. Desktop only."
   }
@@ -936,7 +936,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.cpu.mcount ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Cpu"
+    group_label: "Environment System CPU"
     group_item_label: "Mcount"
     description: "Heterogeneous CPU info for medium CPUs."
   }
@@ -945,7 +945,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.cpu.model ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Cpu"
+    group_label: "Environment System CPU"
     group_item_label: "Model"
     description: "The CPU model, `null` on failure. Desktop only."
   }
@@ -954,7 +954,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.cpu.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Cpu"
+    group_label: "Environment System CPU"
     group_item_label: "Name"
     description: "The CPU name, e.g. 'Intel(R) Core(TM) i9-8950HK CPU @ 2.90GHz', or `null` on failure. Desktop only."
   }
@@ -963,7 +963,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.cpu.pcount ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Cpu"
+    group_label: "Environment System CPU"
     group_item_label: "Pcount"
     description: "Heterogeneous CPU info for big CPUs."
   }
@@ -972,7 +972,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.cpu.speed_m_hz ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Cpu"
+    group_label: "Environment System CPU"
     group_item_label: "Speed M Hz"
     description: "Only available on Firefox desktop. The CPU clock speed in MHz."
   }
@@ -981,7 +981,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.cpu.stepping ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Cpu"
+    group_label: "Environment System CPU"
     group_item_label: "Stepping"
     description: "The CPU stepping, `null` on failure. Desktop only."
   }
@@ -990,7 +990,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.cpu.vendor ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Cpu"
+    group_label: "Environment System CPU"
     group_item_label: "Vendor"
     description: "The CPU vendor, e.g. 'GenuineIntel', or `null` on failure. Desktop only."
   }
@@ -1163,7 +1163,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.gfx.features.gpu_process.status ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Gfx Features Gpu Process"
+    group_label: "Environment System Gfx Features GPU Process"
     group_item_label: "Status"
   }
 
@@ -1267,7 +1267,7 @@ view: new_profile {
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Environment System"
-    group_item_label: "Has Win Package Id"
+    group_item_label: "Has Win Package ID"
     description: "Is the process running with a package identity (e.g. from an MSIX install)? See bug 1709892. This is Windows only."
   }
 
@@ -1379,7 +1379,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.os.distro ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Os"
+    group_label: "Environment System OS"
     group_item_label: "Distro"
     description: "The name of the Linux distribution. This is Linux only. `null` on failure."
   }
@@ -1388,7 +1388,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.os.distro_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Os"
+    group_label: "Environment System OS"
     group_item_label: "Distro Version"
     description: "The version of the Linux distribution. This is Linux only. `null` on failure."
   }
@@ -1397,7 +1397,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.os.has_prefetch ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Os"
+    group_label: "Environment System OS"
     group_item_label: "Has Prefetch"
     description: "Whether or not the OS-based prefetch application start-up optimization is set. This is Windows-only. `null` on failure."
   }
@@ -1406,7 +1406,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.os.has_superfetch ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Os"
+    group_label: "Environment System OS"
     group_item_label: "Has Superfetch"
     description: "Whether or not the OS-based superfetch application start-up optimization service is running and using the default settings. This is Windows-only. `null` on failure."
   }
@@ -1415,7 +1415,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.os.install_year ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Os"
+    group_label: "Environment System OS"
     group_item_label: "Install Year"
     description: "The year Windows was installed. This is Windows only. `null` on failure."
   }
@@ -1424,7 +1424,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.os.kernel_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Os"
+    group_label: "Environment System OS"
     group_item_label: "Kernel Version"
     description: "The kernel version of Android. This is Android only. `null` on failure."
   }
@@ -1433,7 +1433,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.os.locale ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Os"
+    group_label: "Environment System OS"
     group_item_label: "Locale"
     description: "The locale of the OS, e.g. 'en'. This is `null` on failure."
   }
@@ -1442,7 +1442,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.os.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Os"
+    group_label: "Environment System OS"
     group_item_label: "Name"
     description: "The name of the OS, e.g. 'Windows_NT'. This is `null` on failure."
   }
@@ -1451,7 +1451,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.os.service_pack_major ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Os"
+    group_label: "Environment System OS"
     group_item_label: "Service Pack Major"
     description: "The Windows service pack major version. This is Windows only. `null` on failure."
   }
@@ -1460,7 +1460,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.os.service_pack_minor ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Os"
+    group_label: "Environment System OS"
     group_item_label: "Service Pack Minor"
     description: "The Windows service pack minor version. This is Windows only. `null` on failure."
   }
@@ -1469,7 +1469,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.os.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Os"
+    group_label: "Environment System OS"
     group_item_label: "Version"
     description: "The version of the OS, e.g. '6.1'. This is `null` on failure."
   }
@@ -1478,7 +1478,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.os.windows_build_number ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Os"
+    group_label: "Environment System OS"
     group_item_label: "Windows Build Number"
     description: "The Windows build number. This is Windows only. `null` on failure."
   }
@@ -1487,7 +1487,7 @@ view: new_profile {
     sql: ${TABLE}.environment.system.os.windows_ubr ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Environment System Os"
+    group_label: "Environment System OS"
     group_item_label: "Windows Ubr"
     description: "The Windows UBR. This is Windows 10 only. `null` on failure."
   }
@@ -1557,7 +1557,7 @@ view: new_profile {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
 
@@ -1593,7 +1593,7 @@ view: new_profile {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "Dnt"
+    group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
 
@@ -1601,16 +1601,16 @@ view: new_profile {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Cipher Hex"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Cipher Hex"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Version"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -1623,7 +1623,7 @@ view: new_profile {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Debug Id"
+    group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
 
@@ -1632,7 +1632,7 @@ view: new_profile {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Foxsec Ip Reputation"
+    group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
 
@@ -1641,7 +1641,7 @@ view: new_profile {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Lb Tags"
+    group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
 
@@ -1676,8 +1676,8 @@ view: new_profile {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
-    group_item_label: "Db Version"
+    group_label: "Metadata ISP"
+    group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
 
@@ -1685,7 +1685,7 @@ view: new_profile {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -1694,7 +1694,7 @@ view: new_profile {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -1703,15 +1703,15 @@ view: new_profile {
     sql: ${TABLE}.metadata.uri.app_build_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Uri"
-    group_item_label: "App Build Id"
+    group_label: "Metadata URI"
+    group_item_label: "App Build ID"
   }
 
   dimension: metadata__uri__app_name {
     sql: ${TABLE}.metadata.uri.app_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Uri"
+    group_label: "Metadata URI"
     group_item_label: "App Name"
   }
 
@@ -1719,7 +1719,7 @@ view: new_profile {
     sql: ${TABLE}.metadata.uri.app_update_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Uri"
+    group_label: "Metadata URI"
     group_item_label: "App Update Channel"
   }
 
@@ -1727,7 +1727,7 @@ view: new_profile {
     sql: ${TABLE}.metadata.uri.app_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Uri"
+    group_label: "Metadata URI"
     group_item_label: "App Version"
   }
 
@@ -1744,7 +1744,7 @@ view: new_profile {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: metadata__user_agent__version {
@@ -1824,7 +1824,7 @@ view: new_profile {
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Payload Processes Parent Scalars"
-    group_item_label: "Attribution Provenance Host Url Exists"
+    group_item_label: "Attribution Provenance Host URL Exists"
     description: "Will be true if the zone identifier ADS contained a host URL. Will be false if a host URL is specified, but it isn't a valid URL. Only sent if attribution.provenance.zone_id.ads_exists is true.
 "
   }
@@ -1834,7 +1834,7 @@ view: new_profile {
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Payload Processes Parent Scalars"
-    group_item_label: "Attribution Provenance Host Url Is Mozilla"
+    group_item_label: "Attribution Provenance Host URL Is Mozilla"
     description: "Will be true if the host URL from the zone identifier ADS appeared to be a Mozilla URL. Only sent if attribution.provenance.zone_id.host_url_exists is true.
 "
   }
@@ -1844,7 +1844,7 @@ view: new_profile {
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Payload Processes Parent Scalars"
-    group_item_label: "Attribution Provenance Referrer Url Exists"
+    group_item_label: "Attribution Provenance Referrer URL Exists"
     description: "Will be true if the zone identifier ADS contained a referrer URL. Will be false if a referrer URL is specified, but it isn't a valid URL. Only sent if attribution.provenance.zone_id.ads_exists is true.
 "
   }
@@ -1854,7 +1854,7 @@ view: new_profile {
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Payload Processes Parent Scalars"
-    group_item_label: "Attribution Provenance Referrer Url Is Mozilla"
+    group_item_label: "Attribution Provenance Referrer URL Is Mozilla"
     description: "Will be true if the referrer URL from the zone identifier ADS appeared to be a Mozilla URL. Only sent if attribution.provenance.zone_id.referrer_url_exists is true.
 "
   }
@@ -2386,7 +2386,7 @@ view: new_profile__environment__experiments {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Value"
-    group_item_label: "Enrollment Id"
+    group_item_label: "Enrollment ID"
   }
 
   dimension: value__type {

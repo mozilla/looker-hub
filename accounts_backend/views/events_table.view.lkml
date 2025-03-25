@@ -34,7 +34,7 @@ view: events_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Android Sdk Version"
+    group_item_label: "Android SDK Version"
     description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
@@ -130,7 +130,7 @@ view: events_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os"
+    group_item_label: "OS"
     description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
@@ -139,7 +139,7 @@ view: events_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os Version"
+    group_item_label: "OS Version"
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
@@ -157,7 +157,7 @@ view: events_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Session Id"
+    group_item_label: "Session ID"
     description: "An optional UUID uniquely identifying the client's current session."
   }
 
@@ -166,7 +166,7 @@ view: events_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Telemetry Sdk Build"
+    group_item_label: "Telemetry SDK Build"
     description: "The version of the Glean SDK"
   }
 
@@ -213,7 +213,7 @@ view: events_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
 
@@ -249,7 +249,7 @@ view: events_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "Dnt"
+    group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
 
@@ -257,16 +257,16 @@ view: events_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Cipher Hex"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Cipher Hex"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Version"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -279,7 +279,7 @@ view: events_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Debug Id"
+    group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
 
@@ -288,7 +288,7 @@ view: events_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Foxsec Ip Reputation"
+    group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
 
@@ -297,7 +297,7 @@ view: events_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Lb Tags"
+    group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
 
@@ -332,8 +332,8 @@ view: events_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
-    group_item_label: "Db Version"
+    group_label: "Metadata ISP"
+    group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
 
@@ -341,7 +341,7 @@ view: events_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -350,7 +350,7 @@ view: events_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -368,7 +368,7 @@ view: events_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: metadata__user_agent__version {
@@ -416,7 +416,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Account User Id"
+    group_item_label: "Account User ID"
     description: "The firefox/mozilla account id
 "
   }
@@ -426,7 +426,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Account User Id Sha256"
+    group_item_label: "Account User ID Sha256"
     description: "A hex string of a sha256 hash of the account's uid
 "
   }
@@ -436,7 +436,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Glean Client Annotation Experimentation Id"
+    group_item_label: "Glean Client Annotation Experimentation ID"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
 "
@@ -447,7 +447,7 @@ for the purpose of experimentation enrollment.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Relying Party Oauth Client Id"
+    group_item_label: "Relying Party Oauth Client ID"
     description: "The client id of the relying party
 "
   }
@@ -503,7 +503,7 @@ for the purpose of experimentation enrollment.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Session Flow Id"
+    group_item_label: "Session Flow ID"
     description: "an ID generated by FxA for its flow metrics"
   }
 
@@ -512,7 +512,7 @@ for the purpose of experimentation enrollment.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Utm Campaign"
+    group_item_label: "UTM Campaign"
     description: "A marketing campaign.  For example, if a user signs into FxA from selecting a
 Mozilla VPN plan on Mozilla VPN's product site, then the value of this metric could
 be 'vpn-product-page'.  The value has a max length of 128 characters with the
@@ -527,7 +527,7 @@ special value of 'page+referral+-+not+part+of+a+campaign' is also allowed.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Utm Content"
+    group_item_label: "UTM Content"
     description: "The content on which the user acted.  For example, if the user clicked on the
 (previously available) \"Get started here\" link in \"Looking for Firefox Sync? Get
 started here\", then the value for this metric would be 'fx-sync-get-started'.
@@ -542,7 +542,7 @@ in the allowed set of characters.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Utm Medium"
+    group_item_label: "UTM Medium"
     description: "The \"medium\" on which the user acted.  For example, if the user clicked on a
 link in an email, then the value of this metric would be 'email'.  The value
 has a max length of 128 characters with the alphanumeric characters, _
@@ -556,7 +556,7 @@ has a max length of 128 characters with the alphanumeric characters, _
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Utm Source"
+    group_item_label: "UTM Source"
     description: "The source from where the user started.  For example, if the user clicked on a
 link on the Mozilla accounts web site, this value could be 'fx-website'.  The
 value has a max length of 128 characters with the alphanumeric characters, _
@@ -570,7 +570,7 @@ value has a max length of 128 characters with the alphanumeric characters, _
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Utm Term"
+    group_item_label: "UTM Term"
     description: "This metric is similar to the `utm.source`; it is used in the Firefox
 browser.  For example, if the user started from about:welcome, then the value
 could be 'aboutwelcome-default-screen'.  The value has a max length of 128
@@ -792,7 +792,7 @@ view: events_table__ping_info__experiments {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Value Extra"
-    group_item_label: "Enrollment Id"
+    group_item_label: "Enrollment ID"
   }
 
   dimension: value__extra__type {

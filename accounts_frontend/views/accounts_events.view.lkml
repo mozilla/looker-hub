@@ -6,15 +6,15 @@
 
 view: accounts_events {
   dimension: metrics__string__account_user_id {
-    label: "Account User Id"
+    label: "Account User ID"
     hidden: no
     sql: ${TABLE}.metrics.string.account_user_id ;;
     type: string
     group_label: "Account"
-    group_item_label: "User Id"
+    group_item_label: "User ID"
 
     link: {
-      label: "Glean Dictionary reference for Account User Id"
+      label: "Glean Dictionary reference for Account User ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/account_user_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -24,15 +24,15 @@ view: accounts_events {
   }
 
   dimension: metrics__string__account_user_id_sha256 {
-    label: "Account User Id Sha256"
+    label: "Account User ID Sha256"
     hidden: no
     sql: ${TABLE}.metrics.string.account_user_id_sha256 ;;
     type: string
     group_label: "Account"
-    group_item_label: "User Id Sha256"
+    group_item_label: "User ID Sha256"
 
     link: {
-      label: "Glean Dictionary reference for Account User Id Sha256"
+      label: "Glean Dictionary reference for Account User ID Sha256"
       url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/account_user_id_sha256"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -97,6 +97,24 @@ by query parameter `entrypoint_variation` in the URL.
 "
   }
 
+  dimension: metrics__string__event_nimbus_user_id {
+    label: "Event Nimbus User ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.event_nimbus_user_id ;;
+    type: string
+    group_label: "Event"
+    group_item_label: "Nimbus User ID"
+
+    link: {
+      label: "Glean Dictionary reference for Event Nimbus User ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/event_nimbus_user_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the client ID for Nimbus experiments.
+"
+  }
+
   dimension: metrics__string__event_reason {
     label: "Event Reason"
     hidden: no
@@ -132,15 +150,15 @@ by query parameter `entrypoint_variation` in the URL.
   }
 
   dimension: metrics__string__relying_party_oauth_client_id {
-    label: "Relying Party Oauth Client Id"
+    label: "Relying Party Oauth Client ID"
     hidden: no
     sql: ${TABLE}.metrics.string.relying_party_oauth_client_id ;;
     type: string
     group_label: "Relying Party"
-    group_item_label: "Oauth Client Id"
+    group_item_label: "Oauth Client ID"
 
     link: {
-      label: "Glean Dictionary reference for Relying Party Oauth Client Id"
+      label: "Glean Dictionary reference for Relying Party Oauth Client ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/relying_party_oauth_client_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -202,15 +220,15 @@ by query parameter `entrypoint_variation` in the URL.
   }
 
   dimension: metrics__string__session_flow_id {
-    label: "Session Flow Id"
+    label: "Session Flow ID"
     hidden: no
     sql: ${TABLE}.metrics.string.session_flow_id ;;
     type: string
     group_label: "Session"
-    group_item_label: "Flow Id"
+    group_item_label: "Flow ID"
 
     link: {
-      label: "Glean Dictionary reference for Session Flow Id"
+      label: "Glean Dictionary reference for Session Flow ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/session_flow_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -260,15 +278,15 @@ their values, while the rest of the labels will have false.
   }
 
   dimension: metrics__string__utm_campaign {
-    label: "Utm Campaign"
+    label: "UTM Campaign"
     hidden: no
     sql: ${TABLE}.metrics.string.utm_campaign ;;
     type: string
-    group_label: "Utm"
+    group_label: "UTM"
     group_item_label: "Campaign"
 
     link: {
-      label: "Glean Dictionary reference for Utm Campaign"
+      label: "Glean Dictionary reference for UTM Campaign"
       url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/utm_campaign"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -283,15 +301,15 @@ special value of 'page+referral+-+not+part+of+a+campaign' is also allowed.
   }
 
   dimension: metrics__string__utm_content {
-    label: "Utm Content"
+    label: "UTM Content"
     hidden: no
     sql: ${TABLE}.metrics.string.utm_content ;;
     type: string
-    group_label: "Utm"
+    group_label: "UTM"
     group_item_label: "Content"
 
     link: {
-      label: "Glean Dictionary reference for Utm Content"
+      label: "Glean Dictionary reference for UTM Content"
       url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/utm_content"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -306,15 +324,15 @@ in the allowed set of characters.
   }
 
   dimension: metrics__string__utm_medium {
-    label: "Utm Medium"
+    label: "UTM Medium"
     hidden: no
     sql: ${TABLE}.metrics.string.utm_medium ;;
     type: string
-    group_label: "Utm"
+    group_label: "UTM"
     group_item_label: "Medium"
 
     link: {
-      label: "Glean Dictionary reference for Utm Medium"
+      label: "Glean Dictionary reference for UTM Medium"
       url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/utm_medium"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -328,15 +346,15 @@ has a max length of 128 characters with the alphanumeric characters, _
   }
 
   dimension: metrics__string__utm_source {
-    label: "Utm Source"
+    label: "UTM Source"
     hidden: no
     sql: ${TABLE}.metrics.string.utm_source ;;
     type: string
-    group_label: "Utm"
+    group_label: "UTM"
     group_item_label: "Source"
 
     link: {
-      label: "Glean Dictionary reference for Utm Source"
+      label: "Glean Dictionary reference for UTM Source"
       url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/utm_source"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -350,15 +368,15 @@ value has a max length of 128 characters with the alphanumeric characters, _
   }
 
   dimension: metrics__string__utm_term {
-    label: "Utm Term"
+    label: "UTM Term"
     hidden: no
     sql: ${TABLE}.metrics.string.utm_term ;;
     type: string
-    group_label: "Utm"
+    group_label: "UTM"
     group_item_label: "Term"
 
     link: {
-      label: "Glean Dictionary reference for Utm Term"
+      label: "Glean Dictionary reference for UTM Term"
       url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/utm_term"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -373,15 +391,15 @@ characters.
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation Id"
+    label: "Glean Client Annotation Experimentation ID"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     group_label: "Glean Client Annotation"
-    group_item_label: "Experimentation Id"
+    group_item_label: "Experimentation ID"
 
     link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -492,7 +510,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Android Sdk Version"
+    group_item_label: "Android SDK Version"
     description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
@@ -588,7 +606,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os"
+    group_item_label: "OS"
     description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
@@ -597,7 +615,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os Version"
+    group_item_label: "OS Version"
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
@@ -615,7 +633,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Session Id"
+    group_item_label: "Session ID"
     description: "An optional UUID uniquely identifying the client's current session."
   }
 
@@ -624,7 +642,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Telemetry Sdk Build"
+    group_item_label: "Telemetry SDK Build"
     description: "The version of the Glean SDK"
   }
 
@@ -672,7 +690,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
 
@@ -708,7 +726,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "Dnt"
+    group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
 
@@ -716,16 +734,16 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Cipher Hex"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Cipher Hex"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Version"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -738,7 +756,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Debug Id"
+    group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
 
@@ -747,7 +765,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Foxsec Ip Reputation"
+    group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
 
@@ -756,7 +774,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Lb Tags"
+    group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
 
@@ -791,8 +809,8 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
-    group_item_label: "Db Version"
+    group_label: "Metadata ISP"
+    group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
 
@@ -800,7 +818,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -809,7 +827,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -827,7 +845,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: metadata__user_agent__version {
@@ -1272,7 +1290,7 @@ view: accounts_events__ping_info__experiments {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Value Extra"
-    group_item_label: "Enrollment Id"
+    group_item_label: "Enrollment ID"
   }
 
   dimension: value__extra__type {

@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/fx_view_discoverability_2025_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/fx_view_discoverability_2025_rollout_last_updated.datagroup.lkml"
 
 explore: fx_view_discoverability_2025_rollout {
   always_filter: {
@@ -14,4 +15,5 @@ explore: fx_view_discoverability_2025_rollout {
   }
 
   hidden: yes
+  persist_with: fx_view_discoverability_2025_rollout_last_updated
 }

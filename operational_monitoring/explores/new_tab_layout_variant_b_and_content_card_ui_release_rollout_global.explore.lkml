@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/new_tab_layout_variant_b_and_content_card_ui_release_rollout_global.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/new_tab_layout_variant_b_and_content_card_ui_release_rollout_global_last_updated.datagroup.lkml"
 
 explore: new_tab_layout_variant_b_and_content_card_ui_release_rollout_global {
   always_filter: {
@@ -14,4 +15,5 @@ explore: new_tab_layout_variant_b_and_content_card_ui_release_rollout_global {
   }
 
   hidden: yes
+  persist_with: new_tab_layout_variant_b_and_content_card_ui_release_rollout_global_last_updated
 }

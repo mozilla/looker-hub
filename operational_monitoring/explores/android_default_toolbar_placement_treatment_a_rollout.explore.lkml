@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/android_default_toolbar_placement_treatment_a_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/android_default_toolbar_placement_treatment_a_rollout_last_updated.datagroup.lkml"
 
 explore: android_default_toolbar_placement_treatment_a_rollout {
   always_filter: {
@@ -14,4 +15,5 @@ explore: android_default_toolbar_placement_treatment_a_rollout {
   }
 
   hidden: yes
+  persist_with: android_default_toolbar_placement_treatment_a_rollout_last_updated
 }

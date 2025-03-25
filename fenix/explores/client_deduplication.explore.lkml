@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/client_deduplication.view.lkml"
+include: "/looker-hub/fenix/datagroups/client_deduplication_last_updated.datagroup.lkml"
 
 explore: client_deduplication {
   sql_always_where: ${client_deduplication.submission_date} >= '2010-01-01' ;;
@@ -66,6 +67,8 @@ explore: client_deduplication {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_deduplication.ping_info__experiments}) AS client_deduplication__ping_info__experiments ;;
   }
+
+  persist_with: client_deduplication_last_updated
 
   always_filter: {
     filters: [

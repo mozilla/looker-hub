@@ -5,6 +5,52 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: nimbus_targeting_context {
+  dimension: metrics__uuid__legacy_telemetry_client_id {
+    label: "Legacy Telemetry Client ID"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_client_id ;;
+    type: string
+    group_label: "Legacy Telemetry"
+    group_item_label: "Client ID"
+
+    link: {
+      label: "Glean Dictionary reference for Legacy Telemetry Client ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/legacy_telemetry_client_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The client_id according to Telemetry.
+Might not always have a value due to being too early for it to have
+loaded.
+Value may be the canary client id `c0ffeec0-ffee-c0ff-eec0-ffeec0ffeec0`
+in pings near when the data upload pref is disabled (if Telemetry gets
+to go first), or between when a client_id has been removed and when it
+has been regenerated.
+Does not need to be sent in the Glean \"deletion-request\" ping.
+"
+  }
+
+  dimension: metrics__uuid__legacy_telemetry_profile_group_id {
+    label: "Legacy Telemetry Profile Group ID"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_profile_group_id ;;
+    type: string
+    group_label: "Legacy Telemetry"
+    group_item_label: "Profile Group ID"
+
+    link: {
+      label: "Glean Dictionary reference for Legacy Telemetry Profile Group ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/legacy_telemetry_profile_group_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The profile_group_id according to Telemetry.
+Might not always have a value due to being too early for it to have
+loaded.
+Does not need to be sent in the Glean \"deletion-request\" ping.
+"
+  }
+
   dimension: metrics__quantity__nimbus_targeting_context_addresses_saved {
     label: "Nimbus Targeting Context Addresses Saved"
     hidden: no
@@ -58,15 +104,15 @@ view: nimbus_targeting_context {
   }
 
   dimension: metrics__string__nimbus_targeting_context_distribution_id {
-    label: "Nimbus Targeting Context Distribution Id"
+    label: "Nimbus Targeting Context Distribution ID"
     hidden: no
     sql: ${TABLE}.metrics.string.nimbus_targeting_context_distribution_id ;;
     type: string
     group_label: "Nimbus Targeting Context"
-    group_item_label: "Distribution Id"
+    group_item_label: "Distribution ID"
 
     link: {
-      label: "Glean Dictionary reference for Nimbus Targeting Context Distribution Id"
+      label: "Glean Dictionary reference for Nimbus Targeting Context Distribution ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/nimbus_targeting_context_distribution_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -402,15 +448,15 @@ This is disabled by default and only intended to be enabled via server knobs to 
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation Id"
+    label: "Glean Client Annotation Experimentation ID"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     group_label: "Glean Client Annotation"
-    group_item_label: "Experimentation Id"
+    group_item_label: "Experimentation ID"
 
     link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -521,7 +567,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Android Sdk Version"
+    group_item_label: "Android SDK Version"
     description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
@@ -617,7 +663,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os"
+    group_item_label: "OS"
     description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
@@ -626,7 +672,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os Version"
+    group_item_label: "OS Version"
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
@@ -644,7 +690,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Session Id"
+    group_item_label: "Session ID"
     description: "An optional UUID uniquely identifying the client's current session."
   }
 
@@ -653,7 +699,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Telemetry Sdk Build"
+    group_item_label: "Telemetry SDK Build"
     description: "The version of the Glean SDK"
   }
 
@@ -701,7 +747,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
 
@@ -737,7 +783,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "Dnt"
+    group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
 
@@ -745,16 +791,16 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Cipher Hex"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Cipher Hex"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Version"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -767,7 +813,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Debug Id"
+    group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
 
@@ -776,7 +822,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Foxsec Ip Reputation"
+    group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
 
@@ -785,7 +831,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Lb Tags"
+    group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
 
@@ -820,8 +866,8 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
-    group_item_label: "Db Version"
+    group_label: "Metadata ISP"
+    group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
 
@@ -829,7 +875,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -838,7 +884,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -856,7 +902,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: metadata__user_agent__version {
@@ -1355,7 +1401,7 @@ view: nimbus_targeting_context__ping_info__experiments {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Value Extra"
-    group_item_label: "Enrollment Id"
+    group_item_label: "Enrollment ID"
   }
 
   dimension: value__extra__type {

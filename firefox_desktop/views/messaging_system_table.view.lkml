@@ -34,7 +34,7 @@ view: messaging_system_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Android Sdk Version"
+    group_item_label: "Android SDK Version"
     description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
@@ -130,7 +130,7 @@ view: messaging_system_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os"
+    group_item_label: "OS"
     description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
@@ -139,7 +139,7 @@ view: messaging_system_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os Version"
+    group_item_label: "OS Version"
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
@@ -157,7 +157,7 @@ view: messaging_system_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Session Id"
+    group_item_label: "Session ID"
     description: "An optional UUID uniquely identifying the client's current session."
   }
 
@@ -166,7 +166,7 @@ view: messaging_system_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Telemetry Sdk Build"
+    group_item_label: "Telemetry SDK Build"
     description: "The version of the Glean SDK"
   }
 
@@ -213,7 +213,7 @@ view: messaging_system_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
 
@@ -249,7 +249,7 @@ view: messaging_system_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "Dnt"
+    group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
 
@@ -257,16 +257,16 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Cipher Hex"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Cipher Hex"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Version"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -279,7 +279,7 @@ view: messaging_system_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Debug Id"
+    group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
 
@@ -288,7 +288,7 @@ view: messaging_system_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Foxsec Ip Reputation"
+    group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
 
@@ -297,7 +297,7 @@ view: messaging_system_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Lb Tags"
+    group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
 
@@ -332,8 +332,8 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
-    group_item_label: "Db Version"
+    group_label: "Metadata ISP"
+    group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
 
@@ -341,7 +341,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -350,7 +350,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -368,7 +368,7 @@ view: messaging_system_table {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: metadata__user_agent__version {
@@ -486,7 +486,7 @@ You may have forgotten to define an appropriate metric in
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Glean Client Annotation Experimentation Id"
+    group_item_label: "Glean Client Annotation Experimentation ID"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
 "
@@ -627,7 +627,7 @@ name.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
-    group_item_label: "Messaging System Bucket Id"
+    group_item_label: "Messaging System Bucket ID"
     description: "A name shared between multiple messages that may individually be too targetted. e.g. a message that gets shown on specific websites or a message asking about personal information.
 "
   }
@@ -742,7 +742,7 @@ name.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics Text"
-    group_item_label: "Messaging System Event Screen Id"
+    group_item_label: "Messaging System Event Screen ID"
   }
 
   dimension: metrics__text__messaging_system_event_screen_initials {
@@ -758,7 +758,7 @@ name.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics Text"
-    group_item_label: "Messaging System Message Id"
+    group_item_label: "Messaging System Message ID"
   }
 
   dimension: metrics__text2__messaging_system_cfr_action {
@@ -797,7 +797,7 @@ name.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics Text2"
-    group_item_label: "Messaging System Event Screen Id"
+    group_item_label: "Messaging System Event Screen ID"
     description: "A string identifier of the message screen id
 (e.g. AW_MOBILE_DOWNLOAD).
 "
@@ -819,7 +819,7 @@ name.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics Text2"
-    group_item_label: "Messaging System Message Id"
+    group_item_label: "Messaging System Message ID"
     description: "A string identifier of the message in Activity Stream Router.
 "
   }
@@ -828,8 +828,8 @@ name.
     sql: ${TABLE}.metrics.uuid.messaging_system_browser_session_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Uuid"
-    group_item_label: "Messaging System Browser Session Id"
+    group_label: "Metrics UUID"
+    group_item_label: "Messaging System Browser Session ID"
     description: "The Legacy Telemetry browser \"session id\". Identifies a specific period from application start to shutdown. See [the \"main\" ping docs](https://firefox-source-docs.mozilla.org/toolkit/components/telemetry/data/main-ping.html) for details.
 "
   }
@@ -838,8 +838,8 @@ name.
     sql: ${TABLE}.metrics.uuid.messaging_system_client_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Uuid"
-    group_item_label: "Messaging System Client Id"
+    group_label: "Metrics UUID"
+    group_item_label: "Messaging System Client ID"
     description: "The client_id according to Telemetry.
 Might not always have a value due to policy around specific types of
 ping being sent. Value may be the canary client id
@@ -856,8 +856,8 @@ Present only in some circumstances (see
     sql: ${TABLE}.metrics.uuid.messaging_system_impression_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Uuid"
-    group_item_label: "Messaging System Impression Id"
+    group_label: "Metrics UUID"
+    group_item_label: "Messaging System Impression ID"
     description: "The unique impression identifier for a specific client.
 "
   }
@@ -1074,7 +1074,7 @@ view: messaging_system_table__ping_info__experiments {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Value Extra"
-    group_item_label: "Enrollment Id"
+    group_item_label: "Enrollment ID"
   }
 
   dimension: value__extra__type {

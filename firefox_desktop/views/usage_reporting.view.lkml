@@ -31,15 +31,15 @@ Migrated from Telemetry's `browser.engagement.active_ticks`.
   }
 
   dimension: metrics__counter__browser_engagement_uri_count {
-    label: "Browser Engagement Uri Count"
+    label: "Browser Engagement URI Count"
     hidden: no
     sql: ${TABLE}.metrics.counter.browser_engagement_uri_count ;;
     type: number
     group_label: "Browser Engagement"
-    group_item_label: "Uri Count"
+    group_item_label: "URI Count"
 
     link: {
-      label: "Glean Dictionary reference for Browser Engagement Uri Count"
+      label: "Glean Dictionary reference for Browser Engagement URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -112,15 +112,15 @@ this metric gets set to `Unknown`.
   }
 
   dimension: metrics__string__usage_distribution_id {
-    label: "Usage Distribution Id"
+    label: "Usage Distribution ID"
     hidden: no
     sql: ${TABLE}.metrics.string.usage_distribution_id ;;
     type: string
     group_label: "Usage"
-    group_item_label: "Distribution Id"
+    group_item_label: "Distribution ID"
 
     link: {
-      label: "Glean Dictionary reference for Usage Distribution Id"
+      label: "Glean Dictionary reference for Usage Distribution ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/usage_distribution_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -166,15 +166,15 @@ this metric gets set to `Unknown`.
   }
 
   dimension: metrics__string__usage_os {
-    label: "Usage Os"
+    label: "Usage OS"
     hidden: no
     sql: ${TABLE}.metrics.string.usage_os ;;
     type: string
     group_label: "Usage"
-    group_item_label: "Os"
+    group_item_label: "OS"
 
     link: {
-      label: "Glean Dictionary reference for Usage Os"
+      label: "Glean Dictionary reference for Usage OS"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/usage_os"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -187,15 +187,15 @@ FreeBSD, NetBSD, OpenBSD, Solaris, Unknown
   }
 
   dimension: metrics__string__usage_os_version {
-    label: "Usage Os Version"
+    label: "Usage OS Version"
     hidden: no
     sql: ${TABLE}.metrics.string.usage_os_version ;;
     type: string
     group_label: "Usage"
-    group_item_label: "Os Version"
+    group_item_label: "OS Version"
 
     link: {
-      label: "Glean Dictionary reference for Usage Os Version"
+      label: "Glean Dictionary reference for Usage OS Version"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/usage_os_version"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -206,15 +206,15 @@ If the version detection fails, this metric gets set to `Unknown`.
   }
 
   dimension: metrics__uuid__usage_profile_id {
-    label: "Usage Profile Id"
+    label: "Usage Profile ID"
     hidden: no
     sql: ${TABLE}.metrics.uuid.usage_profile_id ;;
     type: string
     group_label: "Usage"
-    group_item_label: "Profile Id"
+    group_item_label: "Profile ID"
 
     link: {
-      label: "Glean Dictionary reference for Usage Profile Id"
+      label: "Glean Dictionary reference for Usage Profile ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/usage_profile_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -262,15 +262,15 @@ not shared with other telemetry data.
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation Id"
+    label: "Glean Client Annotation Experimentation ID"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     group_label: "Glean Client Annotation"
-    group_item_label: "Experimentation Id"
+    group_item_label: "Experimentation ID"
 
     link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -393,7 +393,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
 
@@ -429,7 +429,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "Dnt"
+    group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
 
@@ -437,16 +437,16 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Cipher Hex"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Cipher Hex"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Version"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -459,7 +459,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Debug Id"
+    group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
 
@@ -468,7 +468,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Foxsec Ip Reputation"
+    group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
 
@@ -477,7 +477,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Lb Tags"
+    group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
 
@@ -512,8 +512,8 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
-    group_item_label: "Db Version"
+    group_label: "Metadata ISP"
+    group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
 
@@ -521,7 +521,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -530,7 +530,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -548,7 +548,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: metadata__user_agent__version {
@@ -652,7 +652,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${metrics__counter__browser_engagement_uri_count} ;;
 
     link: {
-      label: "Glean Dictionary reference for Browser Engagement Uri Count"
+      label: "Glean Dictionary reference for Browser Engagement URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }

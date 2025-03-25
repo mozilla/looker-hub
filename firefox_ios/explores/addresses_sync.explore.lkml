@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_ios/views/addresses_sync.view.lkml"
+include: "/looker-hub/firefox_ios/datagroups/addresses_sync_last_updated.datagroup.lkml"
 
 explore: addresses_sync {
   sql_always_where: ${addresses_sync.submission_date} >= '2010-01-01' ;;
@@ -66,6 +67,8 @@ explore: addresses_sync {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${addresses_sync.ping_info__experiments}) AS addresses_sync__ping_info__experiments ;;
   }
+
+  persist_with: addresses_sync_last_updated
 
   always_filter: {
     filters: [

@@ -8,9 +8,13 @@
 datagroup: airflow_dag_note_last_updated {
   label: "airflow_dag_note Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'monitoring_derived'
-    AND table_name = 'airflow_dag_note_v1' ;;
-  description: "Updates for airflow_dag_note when moz-fx-data-shared-prod.monitoring_derived.airflow_dag_note_v1 is modified."
+    WHERE (table_schema = 'monitoring_derived' AND table_name = 'airflow_dag_note_v1')
+
+    ) ;;
+  description: "Updates for airflow_dag_note when referenced tables are modified."
   max_cache_age: "24 hours"
 }

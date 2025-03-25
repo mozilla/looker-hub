@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/firefox_user_choice.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/firefox_user_choice_last_updated.datagroup.lkml"
 
 explore: firefox_user_choice {
   always_filter: {
@@ -14,4 +15,5 @@ explore: firefox_user_choice {
   }
 
   hidden: yes
+  persist_with: firefox_user_choice_last_updated
 }

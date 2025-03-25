@@ -8,9 +8,13 @@
 datagroup: acoustic_contact_change_events_last_updated {
   label: "acoustic_contact_change_events Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'acoustic_derived'
-    AND table_name = 'contact_v1' ;;
-  description: "Updates for acoustic_contact_change_events when moz-fx-data-shared-prod.acoustic_derived.contact_v1 is modified."
+    WHERE (table_schema = 'acoustic_derived' AND table_name = 'contact_v1')
+
+    ) ;;
+  description: "Updates for acoustic_contact_change_events when referenced tables are modified."
   max_cache_age: "24 hours"
 }

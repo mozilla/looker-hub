@@ -31,15 +31,15 @@ Migrated from Telemetry's `browser.engagement.active_ticks`.
   }
 
   dimension: metrics__counter__browser_engagement_uri_count {
-    label: "Browser Engagement Uri Count"
+    label: "Browser Engagement URI Count"
     hidden: no
     sql: ${TABLE}.metrics.counter.browser_engagement_uri_count ;;
     type: number
     group_label: "Browser Engagement"
-    group_item_label: "Uri Count"
+    group_item_label: "URI Count"
 
     link: {
-      label: "Glean Dictionary reference for Browser Engagement Uri Count"
+      label: "Glean Dictionary reference for Browser Engagement URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -54,15 +54,15 @@ Migrated from Telemetry's
   }
 
   dimension: metrics__uuid__legacy_telemetry_client_id {
-    label: "Legacy Telemetry Client Id"
+    label: "Legacy Telemetry Client ID"
     hidden: no
     sql: ${TABLE}.metrics.uuid.legacy_telemetry_client_id ;;
     type: string
     group_label: "Legacy Telemetry"
-    group_item_label: "Client Id"
+    group_item_label: "Client ID"
 
     link: {
-      label: "Glean Dictionary reference for Legacy Telemetry Client Id"
+      label: "Glean Dictionary reference for Legacy Telemetry Client ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/legacy_telemetry_client_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -79,15 +79,15 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
   }
 
   dimension: metrics__uuid__legacy_telemetry_profile_group_id {
-    label: "Legacy Telemetry Profile Group Id"
+    label: "Legacy Telemetry Profile Group ID"
     hidden: no
     sql: ${TABLE}.metrics.uuid.legacy_telemetry_profile_group_id ;;
     type: string
     group_label: "Legacy Telemetry"
-    group_item_label: "Profile Group Id"
+    group_item_label: "Profile Group ID"
 
     link: {
-      label: "Glean Dictionary reference for Legacy Telemetry Profile Group Id"
+      label: "Glean Dictionary reference for Legacy Telemetry Profile Group ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/legacy_telemetry_profile_group_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -100,15 +100,15 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
   }
 
   dimension: metrics__string__usage_distribution_id {
-    label: "Usage Distribution Id"
+    label: "Usage Distribution ID"
     hidden: no
     sql: ${TABLE}.metrics.string.usage_distribution_id ;;
     type: string
     group_label: "Usage"
-    group_item_label: "Distribution Id"
+    group_item_label: "Distribution ID"
 
     link: {
-      label: "Glean Dictionary reference for Usage Distribution Id"
+      label: "Glean Dictionary reference for Usage Distribution ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/usage_distribution_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -175,15 +175,15 @@ to indicate \"undetermined\".
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation Id"
+    label: "Glean Client Annotation Experimentation ID"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     group_label: "Glean Client Annotation"
-    group_item_label: "Experimentation Id"
+    group_item_label: "Experimentation ID"
 
     link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -338,7 +338,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Android Sdk Version"
+    group_item_label: "Android SDK Version"
     description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
@@ -434,7 +434,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os"
+    group_item_label: "OS"
     description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
@@ -443,7 +443,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os Version"
+    group_item_label: "OS Version"
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
@@ -461,7 +461,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Session Id"
+    group_item_label: "Session ID"
     description: "An optional UUID uniquely identifying the client's current session."
   }
 
@@ -470,7 +470,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Telemetry Sdk Build"
+    group_item_label: "Telemetry SDK Build"
     description: "The version of the Glean SDK"
   }
 
@@ -518,7 +518,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
 
@@ -554,7 +554,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "Dnt"
+    group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
 
@@ -562,16 +562,16 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Cipher Hex"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Cipher Hex"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Version"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -584,7 +584,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Debug Id"
+    group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
 
@@ -593,7 +593,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Foxsec Ip Reputation"
+    group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
 
@@ -602,7 +602,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Lb Tags"
+    group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
 
@@ -637,8 +637,8 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
-    group_item_label: "Db Version"
+    group_label: "Metadata ISP"
+    group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
 
@@ -646,7 +646,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -655,7 +655,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -673,7 +673,7 @@ Now it only records counts for the Glean built-in pings.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: metadata__user_agent__version {
@@ -891,7 +891,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${metrics__counter__browser_engagement_uri_count} ;;
 
     link: {
-      label: "Glean Dictionary reference for Browser Engagement Uri Count"
+      label: "Glean Dictionary reference for Browser Engagement URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -905,7 +905,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${client_info__client_id} ;;
 
     link: {
-      label: "Glean Dictionary reference for Browser Engagement Uri Count"
+      label: "Glean Dictionary reference for Browser Engagement URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -1224,7 +1224,7 @@ view: baseline__ping_info__experiments {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Value Extra"
-    group_item_label: "Enrollment Id"
+    group_item_label: "Enrollment ID"
   }
 
   dimension: value__extra__type {

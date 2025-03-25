@@ -8,9 +8,13 @@
 datagroup: ios_clients_last_updated {
   label: "ios_clients Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'org_mozilla_ios_firefox_derived'
-    AND table_name = 'review_checker_clients_v1' ;;
-  description: "Updates for ios_clients when moz-fx-data-shared-prod.org_mozilla_ios_firefox_derived.review_checker_clients_v1 is modified."
+    WHERE (table_schema = 'org_mozilla_ios_firefox_derived' AND table_name = 'review_checker_clients_v1')
+
+    ) ;;
+  description: "Updates for ios_clients when referenced tables are modified."
   max_cache_age: "24 hours"
 }

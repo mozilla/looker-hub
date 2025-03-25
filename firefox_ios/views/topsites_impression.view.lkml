@@ -6,15 +6,15 @@
 
 view: topsites_impression {
   dimension: metrics__uuid__top_site_context_id {
-    label: "Top Site Context Id"
+    label: "Top Site Context ID"
     hidden: yes
     sql: ${TABLE}.metrics.uuid.top_site_context_id ;;
     type: string
     group_label: "Top Site"
-    group_item_label: "Context Id"
+    group_item_label: "Context ID"
 
     link: {
-      label: "Glean Dictionary reference for Top Site Context Id"
+      label: "Glean Dictionary reference for Top Site Context ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/top_site_context_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -44,15 +44,15 @@ contextual services features.
   }
 
   dimension: metrics__url2__top_site_contile_reporting_url {
-    label: "Top Site Contile Reporting Url"
+    label: "Top Site Contile Reporting URL"
     hidden: yes
     sql: ${TABLE}.metrics.url2.top_site_contile_reporting_url ;;
     type: string
     group_label: "Top Site"
-    group_item_label: "Contile Reporting Url"
+    group_item_label: "Contile Reporting URL"
 
     link: {
-      label: "Glean Dictionary reference for Top Site Contile Reporting Url"
+      label: "Glean Dictionary reference for Top Site Contile Reporting URL"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/top_site_contile_reporting_url"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -63,15 +63,15 @@ click_url for “click” event).
   }
 
   dimension: metrics__quantity__top_site_contile_tile_id {
-    label: "Top Site Contile Tile Id"
+    label: "Top Site Contile Tile ID"
     hidden: yes
     sql: ${TABLE}.metrics.quantity.top_site_contile_tile_id ;;
     type: number
     group_label: "Top Site"
-    group_item_label: "Contile Tile Id"
+    group_item_label: "Contile Tile ID"
 
     link: {
-      label: "Glean Dictionary reference for Top Site Contile Tile Id"
+      label: "Glean Dictionary reference for Top Site Contile Tile ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/top_site_contile_tile_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -81,15 +81,15 @@ click_url for “click” event).
   }
 
   dimension: metrics__uuid__top_sites_context_id {
-    label: "Top Sites Context Id"
+    label: "Top Sites Context ID"
     hidden: no
     sql: ${TABLE}.metrics.uuid.top_sites_context_id ;;
     type: string
     group_label: "Top Sites"
-    group_item_label: "Context Id"
+    group_item_label: "Context ID"
 
     link: {
-      label: "Glean Dictionary reference for Top Sites Context Id"
+      label: "Glean Dictionary reference for Top Sites Context ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/top_sites_context_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -119,15 +119,15 @@ contextual services features.
   }
 
   dimension: metrics__url2__top_sites_contile_reporting_url {
-    label: "Top Sites Contile Reporting Url"
+    label: "Top Sites Contile Reporting URL"
     hidden: no
     sql: ${TABLE}.metrics.url2.top_sites_contile_reporting_url ;;
     type: string
     group_label: "Top Sites"
-    group_item_label: "Contile Reporting Url"
+    group_item_label: "Contile Reporting URL"
 
     link: {
-      label: "Glean Dictionary reference for Top Sites Contile Reporting Url"
+      label: "Glean Dictionary reference for Top Sites Contile Reporting URL"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/top_sites_contile_reporting_url"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -138,15 +138,15 @@ click_url for “click” event).
   }
 
   dimension: metrics__quantity__top_sites_contile_tile_id {
-    label: "Top Sites Contile Tile Id"
+    label: "Top Sites Contile Tile ID"
     hidden: no
     sql: ${TABLE}.metrics.quantity.top_sites_contile_tile_id ;;
     type: number
     group_label: "Top Sites"
-    group_item_label: "Contile Tile Id"
+    group_item_label: "Contile Tile ID"
 
     link: {
-      label: "Glean Dictionary reference for Top Sites Contile Tile Id"
+      label: "Glean Dictionary reference for Top Sites Contile Tile ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/top_sites_contile_tile_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -156,15 +156,15 @@ click_url for “click” event).
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation Id"
+    label: "Glean Client Annotation Experimentation ID"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     group_label: "Glean Client Annotation"
-    group_item_label: "Experimentation Id"
+    group_item_label: "Experimentation ID"
 
     link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -274,7 +274,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Android Sdk Version"
+    group_item_label: "Android SDK Version"
   }
 
   dimension: client_info__app_build {
@@ -359,7 +359,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: client_info__os_version {
@@ -367,7 +367,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os Version"
+    group_item_label: "OS Version"
   }
 
   dimension: client_info__session_count {
@@ -383,7 +383,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Session Id"
+    group_item_label: "Session ID"
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -391,7 +391,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Telemetry Sdk Build"
+    group_item_label: "Telemetry SDK Build"
   }
 
   dimension: client_info__windows_build_number {
@@ -435,7 +435,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -467,23 +467,23 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "Dnt"
+    group_item_label: "DNT"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Cipher Hex"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Cipher Hex"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Version"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -496,7 +496,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Debug Id"
+    group_item_label: "X Debug ID"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -504,7 +504,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Foxsec Ip Reputation"
+    group_item_label: "X Foxsec IP Reputation"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -512,7 +512,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Lb Tags"
+    group_item_label: "X LB Tags"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -543,15 +543,15 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
-    group_item_label: "Db Version"
+    group_label: "Metadata ISP"
+    group_item_label: "DB Version"
   }
 
   dimension: metadata__isp__name {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Name"
   }
 
@@ -559,7 +559,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Isp"
+    group_label: "Metadata ISP"
     group_item_label: "Organization"
   }
 
@@ -576,7 +576,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: metadata__user_agent__version {
@@ -1003,7 +1003,7 @@ view: topsites_impression__ping_info__experiments {
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Value Extra"
-    group_item_label: "Enrollment Id"
+    group_item_label: "Enrollment ID"
   }
 
   dimension: value__extra__type {

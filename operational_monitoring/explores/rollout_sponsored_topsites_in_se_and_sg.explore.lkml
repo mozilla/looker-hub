@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/rollout_sponsored_topsites_in_se_and_sg.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/rollout_sponsored_topsites_in_se_and_sg_last_updated.datagroup.lkml"
 
 explore: rollout_sponsored_topsites_in_se_and_sg {
   always_filter: {
@@ -14,4 +15,5 @@ explore: rollout_sponsored_topsites_in_se_and_sg {
   }
 
   hidden: yes
+  persist_with: rollout_sponsored_topsites_in_se_and_sg_last_updated
 }

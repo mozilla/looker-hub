@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/viewpoint_ios_jan_2025.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/viewpoint_ios_jan_2025_last_updated.datagroup.lkml"
 
 explore: viewpoint_ios_jan_2025 {
   always_filter: {
@@ -14,4 +15,5 @@ explore: viewpoint_ios_jan_2025 {
   }
 
   hidden: yes
+  persist_with: viewpoint_ios_jan_2025_last_updated
 }

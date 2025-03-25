@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/tab_hover_preview_release_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/tab_hover_preview_release_rollout_last_updated.datagroup.lkml"
 
 explore: tab_hover_preview_release_rollout {
   always_filter: {
@@ -14,4 +15,5 @@ explore: tab_hover_preview_release_rollout {
   }
 
   hidden: yes
+  persist_with: tab_hover_preview_release_rollout_last_updated
 }

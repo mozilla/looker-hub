@@ -8,9 +8,13 @@
 datagroup: desktop_mobile_search_clients_monthly_last_updated {
   label: "desktop_mobile_search_clients_monthly Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'search_derived'
-    AND table_name = 'desktop_mobile_search_clients_monthly_v1' ;;
-  description: "Updates for desktop_mobile_search_clients_monthly when moz-fx-data-shared-prod.search_derived.desktop_mobile_search_clients_monthly_v1 is modified."
+    WHERE (table_schema = 'search_derived' AND table_name = 'desktop_mobile_search_clients_monthly_v1')
+
+    ) ;;
+  description: "Updates for desktop_mobile_search_clients_monthly when referenced tables are modified."
   max_cache_age: "24 hours"
 }

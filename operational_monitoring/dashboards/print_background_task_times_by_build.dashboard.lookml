@@ -5,46 +5,11 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 - dashboard: print_background_task_times_by_build
-  title: Print Background Task Times By Build Id  1Pct Sample 
+  title: Print Background Task Times By Build ID  1Pct Sample 
   layout: newspaper
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Print Error By Ui
-    name: Print Error By Ui_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: print_background_task_times_by_build
-    type: looker_line
-    fields: [
-      print_background_task_times_by_build.build_id,
-      print_background_task_times_by_build.branch,
-      print_background_task_times_by_build.point
-    ]
-    pivots: [
-      print_background_task_times_by_build.branch, print_background_task_times_by_build.metric
-    ]
-    filters:
-      print_background_task_times_by_build.metric: '"total_printing_errors_new_ui", "total_printing_errors_old_ui"'
-      print_background_task_times_by_build.statistic: sum
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: print_background_task_times_by_build.build_id
-    field_y: print_background_task_times_by_build.point
-    log_scale: false
-    ci_lower: print_background_task_times_by_build.lower
-    ci_upper: print_background_task_times_by_build.upper
-    show_grid: true
-    listen:
-      Date: print_background_task_times_by_build.build_id
-      Channel: print_background_task_times_by_build.channel
-      Os: print_background_task_times_by_build.os
-      
-    active: "#3FE1B0"
-    defaults_version: 0
   - title: Print Error Breakdown
     name: Print Error Breakdown_sum
     note_state: expanded
@@ -61,10 +26,10 @@
       print_background_task_times_by_build.branch, print_background_task_times_by_build.metric
     ]
     filters:
-      print_background_task_times_by_build.metric: '"abort", "no_printer", "not_available", "gfx_printer_doc_is_busy", "print_failure", "cannot_open_file", "startdoc", "enddoc", "unexpected", "name_not_found", "start_page", "oom", "notimplemented"'
+      print_background_task_times_by_build.metric: '"print_failure", "not_available", "cannot_open_file", "enddoc", "unexpected", "abort", "notimplemented", "oom", "name_not_found", "start_page", "no_printer", "startdoc", "gfx_printer_doc_is_busy"'
       print_background_task_times_by_build.statistic: sum
     row: 0
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: print_background_task_times_by_build.build_id
@@ -76,7 +41,7 @@
     listen:
       Date: print_background_task_times_by_build.build_id
       Channel: print_background_task_times_by_build.channel
-      Os: print_background_task_times_by_build.os
+      OS: print_background_task_times_by_build.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -98,6 +63,41 @@
     filters:
       print_background_task_times_by_build.metric: 'total_printing_errors'
       print_background_task_times_by_build.statistic: sum
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: print_background_task_times_by_build.build_id
+    field_y: print_background_task_times_by_build.point
+    log_scale: false
+    ci_lower: print_background_task_times_by_build.lower
+    ci_upper: print_background_task_times_by_build.upper
+    show_grid: true
+    listen:
+      Date: print_background_task_times_by_build.build_id
+      Channel: print_background_task_times_by_build.channel
+      OS: print_background_task_times_by_build.os
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Print Error By UI
+    name: Print Error By UI_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: print_background_task_times_by_build
+    type: looker_line
+    fields: [
+      print_background_task_times_by_build.build_id,
+      print_background_task_times_by_build.branch,
+      print_background_task_times_by_build.point
+    ]
+    pivots: [
+      print_background_task_times_by_build.branch, print_background_task_times_by_build.metric
+    ]
+    filters:
+      print_background_task_times_by_build.metric: '"total_printing_errors_new_ui", "total_printing_errors_old_ui"'
+      print_background_task_times_by_build.statistic: sum
     row: 10
     col: 0
     width: 12
@@ -111,7 +111,7 @@
     listen:
       Date: print_background_task_times_by_build.build_id
       Channel: print_background_task_times_by_build.channel
-      Os: print_background_task_times_by_build.os
+      OS: print_background_task_times_by_build.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -160,8 +160,8 @@
       
   
   
-  - title: Os
-    name: Os
+  - title: OS
+    name: OS
     type: string_filter
     default_value: 'Linux'
     allow_multiple_values: false
