@@ -9476,10 +9476,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 10
+            default: Windows 7
             options:
-            - Windows 10
             - Windows 7
+            - Windows 10
             - Windows 8
             - Windows 8.1
             - Windows 11
@@ -9518,10 +9518,10 @@ operational_monitoring:
             default: release
             options:
             - release
+            - nightly
+            - esr
             - beta
             - aurora
-            - esr
-            - nightly
             - default
             - nightly-pine
             - nightly-oak
@@ -10468,11 +10468,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id215
           os:
-            default: Linux
+            default: Windows
             options:
+            - Windows
             - Linux
             - Mac
-            - Windows
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -11704,15 +11704,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id329
           app:
-            default: Android - vpn_session
+            default: iOS - vpn_session
             options:
-            - Android - vpn_session
+            - iOS - vpn_session
+            - Android - daemon_session
             - Linux - vpn_session
             - iOS - daemon_session
-            - Android - daemon_session
-            - iOS - vpn_session
-            - Windows - vpn_session
             - Darwin - vpn_session
+            - Windows - vpn_session
+            - Android - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id330
@@ -12733,11 +12733,11 @@ operational_monitoring:
             - release
             - nightly
           os:
-            default: Linux
+            default: Windows_NT
             options:
-            - Linux
             - Windows_NT
             - Darwin
+            - Linux
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id399
