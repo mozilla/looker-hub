@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/microsurvey_chatbot_csat_and_productivity_new_users.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/microsurvey_chatbot_csat_and_productivity_new_users_last_updated.datagroup.lkml"
 
 explore: microsurvey_chatbot_csat_and_productivity_new_users {
   always_filter: {
@@ -14,4 +15,5 @@ explore: microsurvey_chatbot_csat_and_productivity_new_users {
   }
 
   hidden: yes
+  persist_with: microsurvey_chatbot_csat_and_productivity_new_users_last_updated
 }

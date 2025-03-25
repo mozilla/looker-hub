@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/usage_deletion_request.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/usage_deletion_request_last_updated.datagroup.lkml"
 
 explore: usage_deletion_request {
   sql_always_where: ${usage_deletion_request.submission_date} >= '2010-01-01' ;;
@@ -41,6 +42,8 @@ explore: usage_deletion_request {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${usage_deletion_request__events.extra}) AS usage_deletion_request__events__extra ;;
   }
+
+  persist_with: usage_deletion_request_last_updated
 
   always_filter: {
     filters: [

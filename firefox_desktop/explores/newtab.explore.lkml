@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/newtab.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/newtab_last_updated.datagroup.lkml"
 
 explore: newtab {
   sql_always_where: ${newtab.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: newtab {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${newtab.ping_info__experiments}) AS newtab__ping_info__experiments ;;
   }
+
+  persist_with: newtab_last_updated
 
   always_filter: {
     filters: [

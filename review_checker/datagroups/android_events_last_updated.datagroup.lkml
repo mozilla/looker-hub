@@ -8,9 +8,13 @@
 datagroup: android_events_last_updated {
   label: "android_events Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'org_mozilla_fenix_derived'
-    AND table_name = 'review_checker_events_v1' ;;
-  description: "Updates for android_events when moz-fx-data-shared-prod.org_mozilla_fenix_derived.review_checker_events_v1 is modified."
+    WHERE (table_schema = 'org_mozilla_fenix_derived' AND table_name = 'review_checker_events_v1')
+
+    ) ;;
+  description: "Updates for android_events when referenced tables are modified."
   max_cache_age: "24 hours"
 }

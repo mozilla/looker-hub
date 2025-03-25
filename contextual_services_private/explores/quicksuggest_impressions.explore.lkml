@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/contextual_services_private/views/quicksuggest_impression.view.lkml"
+include: "/looker-hub/contextual_services_private/datagroups/quicksuggest_impression_last_updated.datagroup.lkml"
 
 explore: quicksuggest_impressions {
   sql_always_where: ${quicksuggest_impression.submission_date} >= '2010-01-01' ;;
@@ -21,4 +22,6 @@ explore: quicksuggest_impressions {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${quicksuggest_impression.experiments}) AS quicksuggest_impression__experiments ;;
   }
+
+  persist_with: quicksuggest_impression_last_updated
 }

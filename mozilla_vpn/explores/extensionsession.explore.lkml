@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/mozilla_vpn/views/extensionsession.view.lkml"
+include: "/looker-hub/mozilla_vpn/datagroups/extensionsession_last_updated.datagroup.lkml"
 
 explore: extensionsession {
   sql_always_where: ${extensionsession.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: extensionsession {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${extensionsession.ping_info__experiments}) AS extensionsession__ping_info__experiments ;;
   }
+
+  persist_with: extensionsession_last_updated
 
   always_filter: {
     filters: [

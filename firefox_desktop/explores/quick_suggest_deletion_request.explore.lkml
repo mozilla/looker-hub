@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/quick_suggest_deletion_request.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/quick_suggest_deletion_request_last_updated.datagroup.lkml"
 
 explore: quick_suggest_deletion_request {
   sql_always_where: ${quick_suggest_deletion_request.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: quick_suggest_deletion_request {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${quick_suggest_deletion_request.ping_info__experiments}) AS quick_suggest_deletion_request__ping_info__experiments ;;
   }
+
+  persist_with: quick_suggest_deletion_request_last_updated
 
   always_filter: {
     filters: [

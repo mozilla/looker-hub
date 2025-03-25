@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/thunderbird_android/views/client_counts.view.lkml"
+include: "/looker-hub/thunderbird_android/datagroups/client_counts_last_updated.datagroup.lkml"
 
 explore: client_counts {
   sql_always_where: ${client_counts.submission_date} >= '2010-01-01' ;;
@@ -41,4 +42,6 @@ explore: client_counts {
       submission_date: asc,
     ]
   }
+
+  persist_with: client_counts_last_updated
 }

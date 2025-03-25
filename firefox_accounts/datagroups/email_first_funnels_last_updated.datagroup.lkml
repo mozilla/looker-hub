@@ -8,9 +8,13 @@
 datagroup: email_first_funnels_last_updated {
   label: "email_first_funnels Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'accounts_frontend_derived'
-    AND table_name = 'email_first_reg_login_funnels_v1' ;;
-  description: "Updates for email_first_funnels when moz-fx-data-shared-prod.accounts_frontend_derived.email_first_reg_login_funnels_v1 is modified."
+    WHERE (table_schema = 'accounts_frontend_derived' AND table_name = 'email_first_reg_login_funnels_v1')
+
+    ) ;;
+  description: "Updates for email_first_funnels when referenced tables are modified."
   max_cache_age: "24 hours"
 }

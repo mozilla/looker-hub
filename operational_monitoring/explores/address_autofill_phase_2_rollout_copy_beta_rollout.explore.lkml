@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/address_autofill_phase_2_rollout_copy_beta_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/address_autofill_phase_2_rollout_copy_beta_rollout_last_updated.datagroup.lkml"
 
 explore: address_autofill_phase_2_rollout_copy_beta_rollout {
   always_filter: {
@@ -14,4 +15,5 @@ explore: address_autofill_phase_2_rollout_copy_beta_rollout {
   }
 
   hidden: yes
+  persist_with: address_autofill_phase_2_rollout_copy_beta_rollout_last_updated
 }

@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/user_characteristics.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/user_characteristics_last_updated.datagroup.lkml"
 
 explore: user_characteristics {
   sql_always_where: ${user_characteristics.submission_date} >= '2010-01-01' ;;
@@ -41,6 +42,8 @@ explore: user_characteristics {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${user_characteristics__events.extra}) AS user_characteristics__events__extra ;;
   }
+
+  persist_with: user_characteristics_last_updated
 
   always_filter: {
     filters: [

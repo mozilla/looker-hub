@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/activation.view.lkml"
+include: "/looker-hub/fenix/datagroups/activation_last_updated.datagroup.lkml"
 
 explore: activation {
   sql_always_where: ${activation.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: activation {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${activation.ping_info__experiments}) AS activation__ping_info__experiments ;;
   }
+
+  persist_with: activation_last_updated
 
   always_filter: {
     filters: [

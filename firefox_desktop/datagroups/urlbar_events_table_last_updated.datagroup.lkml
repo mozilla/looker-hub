@@ -8,9 +8,13 @@
 datagroup: urlbar_events_table_last_updated {
   label: "urlbar_events_table Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'firefox_desktop_derived'
-    AND table_name = 'urlbar_events_v2' ;;
-  description: "Updates for urlbar_events_table when moz-fx-data-shared-prod.firefox_desktop_derived.urlbar_events_v2 is modified."
+    WHERE (table_schema = 'firefox_desktop_derived' AND table_name = 'urlbar_events_v2')
+
+    ) ;;
+  description: "Updates for urlbar_events_table when referenced tables are modified."
   max_cache_age: "24 hours"
 }

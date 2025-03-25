@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/merino_recommendations_beta.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/merino_recommendations_beta_last_updated.datagroup.lkml"
 
 explore: merino_recommendations_beta {
   always_filter: {
@@ -14,4 +15,5 @@ explore: merino_recommendations_beta {
   }
 
   hidden: yes
+  persist_with: merino_recommendations_beta_last_updated
 }

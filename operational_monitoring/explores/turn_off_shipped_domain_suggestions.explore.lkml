@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/turn_off_shipped_domain_suggestions.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/turn_off_shipped_domain_suggestions_last_updated.datagroup.lkml"
 
 explore: turn_off_shipped_domain_suggestions {
   always_filter: {
@@ -14,4 +15,5 @@ explore: turn_off_shipped_domain_suggestions {
   }
 
   hidden: yes
+  persist_with: turn_off_shipped_domain_suggestions_last_updated
 }

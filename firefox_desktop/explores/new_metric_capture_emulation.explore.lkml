@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/new_metric_capture_emulation.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/new_metric_capture_emulation_last_updated.datagroup.lkml"
 
 explore: new_metric_capture_emulation {
   sql_always_where: ${new_metric_capture_emulation.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: new_metric_capture_emulation {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${new_metric_capture_emulation.ping_info__experiments}) AS new_metric_capture_emulation__ping_info__experiments ;;
   }
+
+  persist_with: new_metric_capture_emulation_last_updated
 
   always_filter: {
     filters: [

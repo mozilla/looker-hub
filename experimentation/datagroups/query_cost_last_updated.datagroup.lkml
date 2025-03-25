@@ -8,9 +8,13 @@
 datagroup: query_cost_last_updated {
   label: "query_cost Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-experiments`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'monitoring'
-    AND table_name = 'query_cost_v1' ;;
-  description: "Updates for query_cost when moz-fx-data-experiments.monitoring.query_cost_v1 is modified."
+    WHERE (table_schema = 'monitoring' AND table_name = 'query_cost_v1')
+
+    ) ;;
+  description: "Updates for query_cost when referenced tables are modified."
   max_cache_age: "24 hours"
 }

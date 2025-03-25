@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/contextual_services_private/views/topsites_click.view.lkml"
+include: "/looker-hub/contextual_services_private/datagroups/topsites_click_last_updated.datagroup.lkml"
 
 explore: topsites_clicks {
   sql_always_where: ${topsites_click.submission_date} >= '2010-01-01' ;;
@@ -21,4 +22,6 @@ explore: topsites_clicks {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${topsites_click.experiments}) AS topsites_click__experiments ;;
   }
+
+  persist_with: topsites_click_last_updated
 }

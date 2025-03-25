@@ -8,9 +8,13 @@
 datagroup: glean_event_counts_last_updated {
   label: "glean_event_counts Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'monitoring_derived'
-    AND table_name = 'event_counts_glean_v1' ;;
-  description: "Updates for glean_event_counts when moz-fx-data-shared-prod.monitoring_derived.event_counts_glean_v1 is modified."
+    WHERE (table_schema = 'monitoring_derived' AND table_name = 'event_counts_glean_v1')
+
+    ) ;;
+  description: "Updates for glean_event_counts when referenced tables are modified."
   max_cache_age: "24 hours"
 }

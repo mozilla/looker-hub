@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/klar_android/views/metrics.view.lkml"
+include: "/looker-hub/klar_android/datagroups/metrics_last_updated.datagroup.lkml"
 
 explore: metrics {
   sql_always_where: ${metrics.submission_date} >= '2010-01-01' ;;
@@ -1566,6 +1567,8 @@ explore: metrics {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.ping_info__experiments}) AS metrics__ping_info__experiments ;;
   }
+
+  persist_with: metrics_last_updated
 
   always_filter: {
     filters: [

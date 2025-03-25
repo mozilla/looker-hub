@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/section_layout_newtab_rollout_v1.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/section_layout_newtab_rollout_v1_last_updated.datagroup.lkml"
 
 explore: section_layout_newtab_rollout_v1 {
   always_filter: {
@@ -14,4 +15,5 @@ explore: section_layout_newtab_rollout_v1 {
   }
 
   hidden: yes
+  persist_with: section_layout_newtab_rollout_v1_last_updated
 }

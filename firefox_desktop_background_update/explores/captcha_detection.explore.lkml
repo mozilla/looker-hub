@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop_background_update/views/captcha_detection.view.lkml"
+include: "/looker-hub/firefox_desktop_background_update/datagroups/captcha_detection_last_updated.datagroup.lkml"
 
 explore: captcha_detection {
   sql_always_where: ${captcha_detection.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: captcha_detection {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${captcha_detection.ping_info__experiments}) AS captcha_detection__ping_info__experiments ;;
   }
+
+  persist_with: captcha_detection_last_updated
 
   always_filter: {
     filters: [

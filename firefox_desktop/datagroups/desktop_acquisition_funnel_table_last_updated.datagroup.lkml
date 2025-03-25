@@ -8,9 +8,13 @@
 datagroup: desktop_acquisition_funnel_table_last_updated {
   label: "desktop_acquisition_funnel_table Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'telemetry_derived'
-    AND table_name = 'clients_first_seen_28_days_later_v1' ;;
-  description: "Updates for desktop_acquisition_funnel_table when moz-fx-data-shared-prod.telemetry_derived.clients_first_seen_28_days_later_v1 is modified."
+    WHERE (table_schema = 'telemetry_derived' AND table_name = 'clients_first_seen_28_days_later_v1')
+
+    ) ;;
+  description: "Updates for desktop_acquisition_funnel_table when referenced tables are modified."
   max_cache_age: "24 hours"
 }

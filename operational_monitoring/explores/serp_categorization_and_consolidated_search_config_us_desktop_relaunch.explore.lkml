@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/serp_categorization_and_consolidated_search_config_us_desktop_relaunch.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/serp_categorization_and_consolidated_search_config_us_desktop_relaunch_last_updated.datagroup.lkml"
 
 explore: serp_categorization_and_consolidated_search_config_us_desktop_relaunch {
   always_filter: {
@@ -14,4 +15,5 @@ explore: serp_categorization_and_consolidated_search_config_us_desktop_relaunch 
   }
 
   hidden: yes
+  persist_with: serp_categorization_and_consolidated_search_config_us_desktop_relaunch_last_updated
 }

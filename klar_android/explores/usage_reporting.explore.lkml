@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/klar_android/views/usage_reporting.view.lkml"
+include: "/looker-hub/klar_android/datagroups/usage_reporting_last_updated.datagroup.lkml"
 
 explore: usage_reporting {
   sql_always_where: ${usage_reporting.submission_date} >= '2010-01-01' ;;
@@ -41,6 +42,8 @@ explore: usage_reporting {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${usage_reporting__events.extra}) AS usage_reporting__events__extra ;;
   }
+
+  persist_with: usage_reporting_last_updated
 
   always_filter: {
     filters: [

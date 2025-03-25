@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/backgroundupdate_enable_unelevated_installations_rollout_3_nightly.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/backgroundupdate_enable_unelevated_installations_rollout_3_nightly_last_updated.datagroup.lkml"
 
 explore: backgroundupdate_enable_unelevated_installations_rollout_3_nightly {
   always_filter: {
@@ -14,4 +15,5 @@ explore: backgroundupdate_enable_unelevated_installations_rollout_3_nightly {
   }
 
   hidden: yes
+  persist_with: backgroundupdate_enable_unelevated_installations_rollout_3_nightly_last_updated
 }

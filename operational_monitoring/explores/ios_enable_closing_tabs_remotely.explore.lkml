@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/ios_enable_closing_tabs_remotely.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/ios_enable_closing_tabs_remotely_last_updated.datagroup.lkml"
 
 explore: ios_enable_closing_tabs_remotely {
   always_filter: {
@@ -14,4 +15,5 @@ explore: ios_enable_closing_tabs_remotely {
   }
 
   hidden: yes
+  persist_with: ios_enable_closing_tabs_remotely_last_updated
 }

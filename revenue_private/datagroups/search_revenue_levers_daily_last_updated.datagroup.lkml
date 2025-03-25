@@ -8,9 +8,13 @@
 datagroup: search_revenue_levers_daily_last_updated {
   label: "search_revenue_levers_daily Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'search_derived'
-    AND table_name = 'search_revenue_levers_daily_v1' ;;
-  description: "Updates for search_revenue_levers_daily when moz-fx-data-shared-prod.search_derived.search_revenue_levers_daily_v1 is modified."
+    WHERE (table_schema = 'search_derived' AND table_name = 'search_revenue_levers_daily_v1')
+
+    ) ;;
+  description: "Updates for search_revenue_levers_daily when referenced tables are modified."
   max_cache_age: "24 hours"
 }

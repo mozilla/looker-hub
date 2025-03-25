@@ -8,9 +8,13 @@
 datagroup: usage_reporting_active_users_aggregates_table_last_updated {
   label: "usage_reporting_active_users_aggregates_table Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'focus_android_derived'
-    AND table_name = 'usage_reporting_active_users_aggregates_v1' ;;
-  description: "Updates for usage_reporting_active_users_aggregates_table when moz-fx-data-shared-prod.focus_android_derived.usage_reporting_active_users_aggregates_v1 is modified."
+    WHERE (table_schema = 'focus_android_derived' AND table_name = 'usage_reporting_active_users_aggregates_v1')
+
+    ) ;;
+  description: "Updates for usage_reporting_active_users_aggregates_table when referenced tables are modified."
   max_cache_age: "24 hours"
 }
