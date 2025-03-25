@@ -7,9 +7,14 @@
 
 datagroup: microsurvey_chatbot_csat_and_productivity_left_position_last_updated {
   label: "microsurvey_chatbot_csat_and_productivity_left_position Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'microsurvey_chatbot_csat_and_productivity_left_position_statistics') ;;
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'microsurvey_chatbot_csat_and_productivity_left_position_statistics')
+
+    ) ;;
   description: "Updates for microsurvey_chatbot_csat_and_productivity_left_position when referenced tables are modified."
   max_cache_age: "24 hours"
 }

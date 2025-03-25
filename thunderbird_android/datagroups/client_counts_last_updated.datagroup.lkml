@@ -7,9 +7,22 @@
 
 datagroup: client_counts_last_updated {
   label: "client_counts Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'thunderbird_android' AND table_name = 'baseline_clients_daily') ;;
+    WHERE (table_schema = 'net_thunderbird_android_derived' AND table_name = 'baseline_clients_daily_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'net_thunderbird_android_beta_derived' AND table_name = 'baseline_clients_daily_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'net_thunderbird_android_daily_derived' AND table_name = 'baseline_clients_daily_v1')
+
+    ) ;;
   description: "Updates for client_counts when referenced tables are modified."
   max_cache_age: "24 hours"
 }

@@ -7,9 +7,14 @@
 
 datagroup: vat_rates_table_last_updated {
   label: "vat_rates_table Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'mozilla_vpn' AND table_name = 'vat_rates') ;;
+    WHERE (table_schema = 'mozilla_vpn_derived' AND table_name = 'vat_rates_v2')
+
+    ) ;;
   description: "Updates for vat_rates_table when referenced tables are modified."
   max_cache_age: "24 hours"
 }

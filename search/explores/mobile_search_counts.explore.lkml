@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/search/views/mobile_search_clients_engines_sources_daily.view.lkml"
+include: "/looker-hub/search/datagroups/mobile_search_clients_engines_sources_daily_last_updated.datagroup.lkml"
 
 explore: mobile_search_counts {
   sql_always_where: ${mobile_search_clients_engines_sources_daily.submission_date} >= '2010-01-01' ;;
@@ -21,4 +22,6 @@ explore: mobile_search_counts {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${mobile_search_clients_engines_sources_daily.experiments}) AS mobile_search_clients_engines_sources_daily__experiments ;;
   }
+
+  persist_with: mobile_search_clients_engines_sources_daily_last_updated
 }

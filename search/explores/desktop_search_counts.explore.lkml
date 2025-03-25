@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/search/views/search_clients_engines_sources_daily.view.lkml"
+include: "/looker-hub/search/datagroups/search_clients_engines_sources_daily_last_updated.datagroup.lkml"
 
 explore: desktop_search_counts {
   sql_always_where: ${search_clients_engines_sources_daily.submission_date} >= '2010-01-01' ;;
@@ -99,4 +100,6 @@ explore: desktop_search_counts {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${search_clients_engines_sources_daily.scalar_parent_urlbar_searchmode_typed_sum}) AS search_clients_engines_sources_daily__scalar_parent_urlbar_searchmode_typed_sum ;;
   }
+
+  persist_with: search_clients_engines_sources_daily_last_updated
 }

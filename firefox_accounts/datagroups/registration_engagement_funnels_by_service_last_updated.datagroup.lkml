@@ -7,9 +7,14 @@
 
 datagroup: registration_engagement_funnels_by_service_last_updated {
   label: "registration_engagement_funnels_by_service Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'accounts_frontend_derived' AND table_name = 'reg_engagement_funnel_v1') ;;
+    WHERE (table_schema = 'accounts_frontend_derived' AND table_name = 'reg_engagement_funnel_v1')
+
+    ) ;;
   description: "Updates for registration_engagement_funnels_by_service when referenced tables are modified."
   max_cache_age: "24 hours"
 }

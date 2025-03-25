@@ -7,9 +7,14 @@
 
 datagroup: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_last_updated {
   label: "tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_statistics') ;;
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_statistics')
+
+    ) ;;
   description: "Updates for tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles when referenced tables are modified."
   max_cache_age: "24 hours"
 }

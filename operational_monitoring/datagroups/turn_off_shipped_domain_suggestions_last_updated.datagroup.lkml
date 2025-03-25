@@ -7,9 +7,14 @@
 
 datagroup: turn_off_shipped_domain_suggestions_last_updated {
   label: "turn_off_shipped_domain_suggestions Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'turn_off_shipped_domain_suggestions_statistics') ;;
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'turn_off_shipped_domain_suggestions_statistics')
+
+    ) ;;
   description: "Updates for turn_off_shipped_domain_suggestions when referenced tables are modified."
   max_cache_age: "24 hours"
 }

@@ -7,9 +7,22 @@
 
 datagroup: sponsored_tiles_ad_request_fill_last_updated {
   label: "sponsored_tiles_ad_request_fill Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'telemetry_derived' AND table_name = 'contile_filter_adm_empty_response') OR (table_schema = 'telemetry_derived' AND table_name = 'contile_tiles_adm_request') OR (table_schema = 'telemetry_derived' AND table_name = 'contile_tiles_adm_response_tiles_count') ;;
+    WHERE (table_schema = 'telemetry_derived' AND table_name = 'contile_filter_adm_empty_response')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'telemetry_derived' AND table_name = 'contile_tiles_adm_request')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'telemetry_derived' AND table_name = 'contile_tiles_adm_response_tiles_count')
+
+    ) ;;
   description: "Updates for sponsored_tiles_ad_request_fill when referenced tables are modified."
   max_cache_age: "24 hours"
 }

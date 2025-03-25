@@ -7,9 +7,14 @@
 
 datagroup: task_continuity_sync_after_tab_change_rollout_60_last_updated {
   label: "task_continuity_sync_after_tab_change_rollout_60 Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'task_continuity_sync_after_tab_change_rollout_60_statistics') ;;
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'task_continuity_sync_after_tab_change_rollout_60_statistics')
+
+    ) ;;
   description: "Updates for task_continuity_sync_after_tab_change_rollout_60 when referenced tables are modified."
   max_cache_age: "24 hours"
 }

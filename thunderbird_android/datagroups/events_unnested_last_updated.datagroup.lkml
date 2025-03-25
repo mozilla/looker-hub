@@ -7,9 +7,22 @@
 
 datagroup: events_unnested_last_updated {
   label: "events_unnested Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'net_thunderbird_android' AND table_name = 'events') OR (table_schema = 'net_thunderbird_android_beta' AND table_name = 'events') OR (table_schema = 'net_thunderbird_android_daily' AND table_name = 'events') ;;
+    WHERE (table_schema = 'net_thunderbird_android_stable' AND table_name = 'events_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'net_thunderbird_android_beta_stable' AND table_name = 'events_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'net_thunderbird_android_daily_stable' AND table_name = 'events_v1')
+
+    ) ;;
   description: "Updates for events_unnested when referenced tables are modified."
   max_cache_age: "24 hours"
 }

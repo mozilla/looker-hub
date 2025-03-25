@@ -7,9 +7,14 @@
 
 datagroup: resolution_last_updated {
   label: "resolution Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'jira_service_desk_syndicate' AND table_name = 'resolution') ;;
+    WHERE (table_schema = 'jira_service_desk_syndicate' AND table_name = 'resolution')
+
+    ) ;;
   description: "Updates for resolution when referenced tables are modified."
   max_cache_age: "24 hours"
 }

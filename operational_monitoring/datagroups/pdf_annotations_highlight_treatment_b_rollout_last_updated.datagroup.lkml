@@ -7,9 +7,14 @@
 
 datagroup: pdf_annotations_highlight_treatment_b_rollout_last_updated {
   label: "pdf_annotations_highlight_treatment_b_rollout Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'pdf_annotations_highlight_treatment_b_rollout_statistics') ;;
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'pdf_annotations_highlight_treatment_b_rollout_statistics')
+
+    ) ;;
   description: "Updates for pdf_annotations_highlight_treatment_b_rollout when referenced tables are modified."
   max_cache_age: "24 hours"
 }

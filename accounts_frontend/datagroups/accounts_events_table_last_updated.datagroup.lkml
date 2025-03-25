@@ -7,9 +7,14 @@
 
 datagroup: accounts_events_table_last_updated {
   label: "accounts_events_table Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'accounts_frontend' AND table_name = 'accounts_events') ;;
+    WHERE (table_schema = 'accounts_frontend_stable' AND table_name = 'accounts_events_v1')
+
+    ) ;;
   description: "Updates for accounts_events_table when referenced tables are modified."
   max_cache_age: "24 hours"
 }

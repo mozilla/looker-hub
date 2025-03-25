@@ -7,9 +7,14 @@
 
 datagroup: new_tab_layout_variant_b_and_content_card_ui_rollout_global_last_updated {
   label: "new_tab_layout_variant_b_and_content_card_ui_rollout_global Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'new_tab_layout_variant_b_and_content_card_ui_rollout_global_statistics') ;;
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'new_tab_layout_variant_b_and_content_card_ui_rollout_global_statistics')
+
+    ) ;;
   description: "Updates for new_tab_layout_variant_b_and_content_card_ui_rollout_global when referenced tables are modified."
   max_cache_age: "24 hours"
 }

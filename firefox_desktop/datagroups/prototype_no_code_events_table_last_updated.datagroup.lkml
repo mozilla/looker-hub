@@ -7,9 +7,14 @@
 
 datagroup: prototype_no_code_events_table_last_updated {
   label: "prototype_no_code_events_table Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'firefox_desktop' AND table_name = 'prototype_no_code_events') ;;
+    WHERE (table_schema = 'firefox_desktop_stable' AND table_name = 'prototype_no_code_events_v1')
+
+    ) ;;
   description: "Updates for prototype_no_code_events_table when referenced tables are modified."
   max_cache_age: "24 hours"
 }

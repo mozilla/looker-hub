@@ -7,9 +7,14 @@
 
 datagroup: tab_tray_refactor_rollout_ios_last_updated {
   label: "tab_tray_refactor_rollout_ios Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'tab_tray_refactor_rollout_ios_statistics') ;;
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'tab_tray_refactor_rollout_ios_statistics')
+
+    ) ;;
   description: "Updates for tab_tray_refactor_rollout_ios when referenced tables are modified."
   max_cache_age: "24 hours"
 }

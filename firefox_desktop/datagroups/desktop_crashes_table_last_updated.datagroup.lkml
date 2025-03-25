@@ -7,9 +7,18 @@
 
 datagroup: desktop_crashes_table_last_updated {
   label: "desktop_crashes_table Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'firefox_desktop' AND table_name = 'desktop_crashes') ;;
+    WHERE (table_schema = 'firefox_crashreporter_stable' AND table_name = 'crash_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'firefox_desktop_stable' AND table_name = 'crash_v1')
+
+    ) ;;
   description: "Updates for desktop_crashes_table when referenced tables are modified."
   max_cache_age: "24 hours"
 }

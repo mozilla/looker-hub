@@ -7,9 +7,14 @@
 
 datagroup: serp_categorization_and_consolidated_search_config_us_desktop_relaunch_last_updated {
   label: "serp_categorization_and_consolidated_search_config_us_desktop_relaunch Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'serp_categorization_and_consolidated_search_config_us_desktop_relaunch_statistics') ;;
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'serp_categorization_and_consolidated_search_config_us_desktop_relaunch_statistics')
+
+    ) ;;
   description: "Updates for serp_categorization_and_consolidated_search_config_us_desktop_relaunch when referenced tables are modified."
   max_cache_age: "24 hours"
 }

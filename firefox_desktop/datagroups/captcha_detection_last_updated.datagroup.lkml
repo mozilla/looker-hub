@@ -7,9 +7,14 @@
 
 datagroup: captcha_detection_last_updated {
   label: "captcha_detection Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'firefox_desktop_stable' AND table_name = 'captcha_detection_v1') ;;
+    WHERE (table_schema = 'firefox_desktop_stable' AND table_name = 'captcha_detection_v1')
+
+    ) ;;
   description: "Updates for captcha_detection when referenced tables are modified."
   max_cache_age: "24 hours"
 }

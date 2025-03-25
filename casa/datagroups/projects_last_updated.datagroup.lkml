@@ -7,9 +7,14 @@
 
 datagroup: projects_last_updated {
   label: "projects Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'casa' AND table_name = 'projects') ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `mozdata`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'casa' AND table_name = 'projects')
+
+    ) ;;
   description: "Updates for projects when referenced tables are modified."
   max_cache_age: "24 hours"
 }

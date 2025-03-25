@@ -7,9 +7,14 @@
 
 datagroup: new_profile_last_updated {
   label: "new_profile Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'telemetry_stable' AND table_name = 'new_profile_v4') ;;
+    WHERE (table_schema = 'telemetry_stable' AND table_name = 'new_profile_v4')
+
+    ) ;;
   description: "Updates for new_profile when referenced tables are modified."
   max_cache_age: "24 hours"
 }

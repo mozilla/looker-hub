@@ -7,9 +7,30 @@
 
 datagroup: adjust_attribution_last_updated {
   label: "adjust_attribution Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'org_mozilla_fenix' AND table_name = 'adjust_attribution') OR (table_schema = 'org_mozilla_fenix_nightly' AND table_name = 'adjust_attribution') OR (table_schema = 'org_mozilla_fennec_aurora' AND table_name = 'adjust_attribution') OR (table_schema = 'org_mozilla_firefox' AND table_name = 'adjust_attribution') OR (table_schema = 'org_mozilla_firefox_beta' AND table_name = 'adjust_attribution') ;;
+    WHERE (table_schema = 'org_mozilla_fenix_stable' AND table_name = 'adjust_attribution_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'org_mozilla_fenix_nightly_stable' AND table_name = 'adjust_attribution_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'org_mozilla_fennec_aurora_stable' AND table_name = 'adjust_attribution_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'org_mozilla_firefox_stable' AND table_name = 'adjust_attribution_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'org_mozilla_firefox_beta_stable' AND table_name = 'adjust_attribution_v1')
+
+    ) ;;
   description: "Updates for adjust_attribution when referenced tables are modified."
   max_cache_age: "24 hours"
 }

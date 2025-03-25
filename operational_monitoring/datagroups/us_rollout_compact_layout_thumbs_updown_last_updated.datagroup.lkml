@@ -7,9 +7,14 @@
 
 datagroup: us_rollout_compact_layout_thumbs_updown_last_updated {
   label: "us_rollout_compact_layout_thumbs_updown Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'us_rollout_compact_layout_thumbs_updown_statistics') ;;
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'us_rollout_compact_layout_thumbs_updown_statistics')
+
+    ) ;;
   description: "Updates for us_rollout_compact_layout_thumbs_updown when referenced tables are modified."
   max_cache_age: "24 hours"
 }

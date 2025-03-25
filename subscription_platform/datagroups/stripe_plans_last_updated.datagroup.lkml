@@ -7,9 +7,14 @@
 
 datagroup: stripe_plans_last_updated {
   label: "stripe_plans Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'subscription_platform_derived' AND table_name = 'stripe_plans_v1') ;;
+    WHERE (table_schema = 'subscription_platform_derived' AND table_name = 'stripe_plans_v1')
+
+    ) ;;
   description: "Updates for stripe_plans when referenced tables are modified."
   max_cache_age: "24 hours"
 }

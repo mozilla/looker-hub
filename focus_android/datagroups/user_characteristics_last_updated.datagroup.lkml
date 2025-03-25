@@ -7,9 +7,22 @@
 
 datagroup: user_characteristics_last_updated {
   label: "user_characteristics Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'org_mozilla_focus' AND table_name = 'user_characteristics') OR (table_schema = 'org_mozilla_focus_beta' AND table_name = 'user_characteristics') OR (table_schema = 'org_mozilla_focus_nightly' AND table_name = 'user_characteristics') ;;
+    WHERE (table_schema = 'org_mozilla_focus_stable' AND table_name = 'user_characteristics_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'org_mozilla_focus_beta_stable' AND table_name = 'user_characteristics_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'org_mozilla_focus_nightly_stable' AND table_name = 'user_characteristics_v1')
+
+    ) ;;
   description: "Updates for user_characteristics when referenced tables are modified."
   max_cache_age: "24 hours"
 }

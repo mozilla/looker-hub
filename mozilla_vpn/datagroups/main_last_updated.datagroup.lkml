@@ -7,9 +7,26 @@
 
 datagroup: main_last_updated {
   label: "main Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'mozillavpn' AND table_name = 'main') OR (table_schema = 'org_mozilla_firefox_vpn' AND table_name = 'main') OR (table_schema = 'org_mozilla_ios_firefoxvpn' AND table_name = 'main') OR (table_schema = 'org_mozilla_ios_firefoxvpn_network_extension' AND table_name = 'main') ;;
+    WHERE (table_schema = 'mozillavpn_stable' AND table_name = 'main_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'org_mozilla_firefox_vpn_stable' AND table_name = 'main_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'org_mozilla_ios_firefoxvpn_stable' AND table_name = 'main_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'org_mozilla_ios_firefoxvpn_network_extension_stable' AND table_name = 'main_v1')
+
+    ) ;;
   description: "Updates for main when referenced tables are modified."
   max_cache_age: "24 hours"
 }

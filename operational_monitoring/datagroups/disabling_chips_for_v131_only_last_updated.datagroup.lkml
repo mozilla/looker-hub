@@ -7,9 +7,14 @@
 
 datagroup: disabling_chips_for_v131_only_last_updated {
   label: "disabling_chips_for_v131_only Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'disabling_chips_for_v131_only_statistics') ;;
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'disabling_chips_for_v131_only_statistics')
+
+    ) ;;
   description: "Updates for disabling_chips_for_v131_only when referenced tables are modified."
   max_cache_age: "24 hours"
 }

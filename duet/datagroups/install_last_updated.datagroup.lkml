@@ -7,9 +7,14 @@
 
 datagroup: install_last_updated {
   label: "install Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'firefox_installer_stable' AND table_name = 'install_v1') ;;
+    WHERE (table_schema = 'firefox_installer_stable' AND table_name = 'install_v1')
+
+    ) ;;
   description: "Updates for install when referenced tables are modified."
   max_cache_age: "24 hours"
 }

@@ -7,9 +7,14 @@
 
 datagroup: tiles_addressable_inventory_hourly_last_updated {
   label: "tiles_addressable_inventory_hourly Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'ads' AND table_name = 'tiles_addressable_inventory_hourly') ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `mozdata`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'ads' AND table_name = 'tiles_addressable_inventory_hourly')
+
+    ) ;;
   description: "Updates for tiles_addressable_inventory_hourly when referenced tables are modified."
   max_cache_age: "24 hours"
 }

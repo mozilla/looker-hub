@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/thunderbird_desktop/views/pageload.view.lkml"
+include: "/looker-hub/thunderbird_desktop/datagroups/pageload_last_updated.datagroup.lkml"
 
 explore: pageload {
   sql_always_where: ${pageload.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: pageload {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${pageload.ping_info__experiments}) AS pageload__ping_info__experiments ;;
   }
+
+  persist_with: pageload_last_updated
 
   always_filter: {
     filters: [

@@ -7,9 +7,14 @@
 
 datagroup: fenix_homescreen_activation_event_validation_last_updated {
   label: "fenix_homescreen_activation_event_validation Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'fenix_homescreen_activation_event_validation_statistics') ;;
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'fenix_homescreen_activation_event_validation_statistics')
+
+    ) ;;
   description: "Updates for fenix_homescreen_activation_event_validation when referenced tables are modified."
   max_cache_age: "24 hours"
 }

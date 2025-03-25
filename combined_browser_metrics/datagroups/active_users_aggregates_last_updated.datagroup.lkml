@@ -7,9 +7,38 @@
 
 datagroup: active_users_aggregates_last_updated {
   label: "active_users_aggregates Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'firefox_desktop' AND table_name = 'active_users_aggregates') OR (table_schema = 'telemetry' AND table_name = 'active_users_aggregates_mobile') ;;
+    WHERE (table_schema = 'firefox_desktop_derived' AND table_name = 'active_users_aggregates_v4')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'fenix_derived' AND table_name = 'active_users_aggregates_v3')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'firefox_ios_derived' AND table_name = 'active_users_aggregates_v3')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'focus_android_derived' AND table_name = 'active_users_aggregates_v3')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'focus_ios_derived' AND table_name = 'active_users_aggregates_v3')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'klar_android_derived' AND table_name = 'active_users_aggregates_v3')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'klar_ios_derived' AND table_name = 'active_users_aggregates_v3')
+
+    ) ;;
   description: "Updates for active_users_aggregates when referenced tables are modified."
   max_cache_age: "24 hours"
 }

@@ -7,9 +7,14 @@
 
 datagroup: topsites_impression_firefox_ios_last_updated {
   label: "topsites_impression_firefox_ios Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'org_mozilla_ios_firefox_stable' AND table_name = 'topsites_impression_v1') ;;
+    WHERE (table_schema = 'org_mozilla_ios_firefox_stable' AND table_name = 'topsites_impression_v1')
+
+    ) ;;
   description: "Updates for topsites_impression_firefox_ios when referenced tables are modified."
   max_cache_age: "24 hours"
 }

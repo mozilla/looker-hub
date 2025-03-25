@@ -7,9 +7,30 @@
 
 datagroup: events_table_last_updated {
   label: "events_table Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'org_mozilla_fenix' AND table_name = 'events') OR (table_schema = 'org_mozilla_fenix_nightly' AND table_name = 'events') OR (table_schema = 'org_mozilla_fennec_aurora' AND table_name = 'events') OR (table_schema = 'org_mozilla_firefox' AND table_name = 'events') OR (table_schema = 'org_mozilla_firefox_beta' AND table_name = 'events') ;;
+    WHERE (table_schema = 'org_mozilla_fenix_stable' AND table_name = 'events_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'org_mozilla_fenix_nightly_stable' AND table_name = 'events_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'org_mozilla_fennec_aurora_stable' AND table_name = 'events_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'org_mozilla_firefox_stable' AND table_name = 'events_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'org_mozilla_firefox_beta_stable' AND table_name = 'events_v1')
+
+    ) ;;
   description: "Updates for events_table when referenced tables are modified."
   max_cache_age: "24 hours"
 }

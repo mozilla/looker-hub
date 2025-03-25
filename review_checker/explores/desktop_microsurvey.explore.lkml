@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/review_checker/views/desktop_microsurvey.view.lkml"
+include: "/looker-hub/review_checker/datagroups/desktop_microsurvey_last_updated.datagroup.lkml"
 
 explore: desktop_microsurvey {
   sql_always_where: ${desktop_microsurvey.submission_date} >= '2010-01-01' ;;
@@ -21,4 +22,6 @@ explore: desktop_microsurvey {
       submission_date: "28 days",
     ]
   }
+
+  persist_with: desktop_microsurvey_last_updated
 }

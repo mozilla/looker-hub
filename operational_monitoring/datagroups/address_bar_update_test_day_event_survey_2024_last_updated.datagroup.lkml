@@ -7,9 +7,14 @@
 
 datagroup: address_bar_update_test_day_event_survey_2024_last_updated {
   label: "address_bar_update_test_day_event_survey_2024 Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'address_bar_update_test_day_event_survey_2024_statistics') ;;
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'address_bar_update_test_day_event_survey_2024_statistics')
+
+    ) ;;
   description: "Updates for address_bar_update_test_day_event_survey_2024 when referenced tables are modified."
   max_cache_age: "24 hours"
 }

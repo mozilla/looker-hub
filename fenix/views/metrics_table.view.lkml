@@ -12918,6 +12918,14 @@ view: metrics_table {
     group_item_label: "Customize Home Opening Screen"
   }
 
+  dimension: metrics__string__downloads_filtered {
+    sql: ${TABLE}.metrics.string.downloads_filtered ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Downloads Filtered"
+  }
+
   dimension: metrics__string__experiments_metrics_active_experiment {
     sql: ${TABLE}.metrics.string.experiments_metrics_active_experiment ;;
     type: string

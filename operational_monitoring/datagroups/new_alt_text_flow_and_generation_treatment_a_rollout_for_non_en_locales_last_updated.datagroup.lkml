@@ -7,9 +7,14 @@
 
 datagroup: new_alt_text_flow_and_generation_treatment_a_rollout_for_non_en_locales_last_updated {
   label: "new_alt_text_flow_and_generation_treatment_a_rollout_for_non_en_locales Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'new_alt_text_flow_and_generation_treatment_a_rollout_for_non_en_locales_statistics') ;;
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'new_alt_text_flow_and_generation_treatment_a_rollout_for_non_en_locales_statistics')
+
+    ) ;;
   description: "Updates for new_alt_text_flow_and_generation_treatment_a_rollout_for_non_en_locales when referenced tables are modified."
   max_cache_age: "24 hours"
 }

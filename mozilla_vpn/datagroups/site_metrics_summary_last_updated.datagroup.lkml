@@ -7,9 +7,14 @@
 
 datagroup: site_metrics_summary_last_updated {
   label: "site_metrics_summary Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'mozilla_vpn_derived' AND table_name = 'site_metrics_summary_v2') ;;
+    WHERE (table_schema = 'mozilla_vpn_derived' AND table_name = 'site_metrics_summary_v2')
+
+    ) ;;
   description: "Updates for site_metrics_summary when referenced tables are modified."
   max_cache_age: "24 hours"
 }

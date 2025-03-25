@@ -7,9 +7,14 @@
 
 datagroup: clients_last_updated {
   label: "clients Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'firefox_desktop' AND table_name = 'review_checker_clients') ;;
+    WHERE (table_schema = 'firefox_desktop_derived' AND table_name = 'review_checker_clients_v1')
+
+    ) ;;
   description: "Updates for clients when referenced tables are modified."
   max_cache_age: "24 hours"
 }

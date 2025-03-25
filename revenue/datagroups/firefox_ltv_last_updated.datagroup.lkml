@@ -7,9 +7,14 @@
 
 datagroup: firefox_ltv_last_updated {
   label: "firefox_ltv Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'revenue' AND table_name = 'firefox_ltv') ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `mozdata`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'revenue' AND table_name = 'firefox_ltv')
+
+    ) ;;
   description: "Updates for firefox_ltv when referenced tables are modified."
   max_cache_age: "24 hours"
 }

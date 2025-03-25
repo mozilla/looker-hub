@@ -7,9 +7,14 @@
 
 datagroup: fenix_marketing_metrics_last_updated {
   label: "fenix_marketing_metrics Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'fenix' AND table_name = 'attributable_clients') ;;
+    WHERE (table_schema = 'fenix_derived' AND table_name = 'attributable_clients_v1')
+
+    ) ;;
   description: "Updates for fenix_marketing_metrics when referenced tables are modified."
   max_cache_age: "24 hours"
 }

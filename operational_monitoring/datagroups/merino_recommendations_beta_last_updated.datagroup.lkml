@@ -7,9 +7,14 @@
 
 datagroup: merino_recommendations_beta_last_updated {
   label: "merino_recommendations_beta Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'merino_recommendations_beta_statistics') ;;
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'merino_recommendations_beta_statistics')
+
+    ) ;;
   description: "Updates for merino_recommendations_beta when referenced tables are modified."
   max_cache_age: "24 hours"
 }

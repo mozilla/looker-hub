@@ -7,9 +7,18 @@
 
 datagroup: fxa_users_services_daily_table_last_updated {
   label: "fxa_users_services_daily_table Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'firefox_accounts_derived' AND table_name = 'fxa_users_services_daily_v1') OR (table_schema = 'static' AND table_name = 'country_names_v1') ;;
+    WHERE (table_schema = 'firefox_accounts_derived' AND table_name = 'fxa_users_services_daily_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'static' AND table_name = 'country_names_v1')
+
+    ) ;;
   description: "Updates for fxa_users_services_daily_table when referenced tables are modified."
   max_cache_age: "24 hours"
 }

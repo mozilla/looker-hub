@@ -7,9 +7,14 @@
 
 datagroup: product_insight_telemetry_via_server_knobs_v123_and_earlier_last_updated {
   label: "product_insight_telemetry_via_server_knobs_v123_and_earlier Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'product_insight_telemetry_via_server_knobs_v123_and_earlier_statistics') ;;
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'product_insight_telemetry_via_server_knobs_v123_and_earlier_statistics')
+
+    ) ;;
   description: "Updates for product_insight_telemetry_via_server_knobs_v123_and_earlier when referenced tables are modified."
   max_cache_age: "24 hours"
 }

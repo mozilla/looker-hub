@@ -7,9 +7,14 @@
 
 datagroup: disable_redirects_for_authretries_last_updated {
   label: "disable_redirects_for_authretries Last Updated"
-  sql_trigger: SELECT MAX(storage_last_modified_time)
+  sql_trigger: SELECT MAX(storage_last_modified_time) 
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'disable_redirects_for_authretries_statistics') ;;
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'disable_redirects_for_authretries_statistics')
+
+    ) ;;
   description: "Updates for disable_redirects_for_authretries when referenced tables are modified."
   max_cache_age: "24 hours"
 }
