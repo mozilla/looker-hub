@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_ios/views/temp_sync.view.lkml"
+include: "/looker-hub/firefox_ios/datagroups/temp_sync_last_updated.datagroup.lkml"
 
 explore: temp_sync {
   sql_always_where: ${temp_sync.submission_date} >= '2010-01-01' ;;
@@ -51,6 +52,8 @@ explore: temp_sync {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${temp_sync.ping_info__experiments}) AS temp_sync__ping_info__experiments ;;
   }
+
+  persist_with: temp_sync_last_updated
 
   always_filter: {
     filters: [

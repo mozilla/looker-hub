@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/rollout_npo_account_login_screen_windows_select_locales.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/rollout_npo_account_login_screen_windows_select_locales_last_updated.datagroup.lkml"
 
 explore: rollout_npo_account_login_screen_windows_select_locales {
   always_filter: {
@@ -14,4 +15,5 @@ explore: rollout_npo_account_login_screen_windows_select_locales {
   }
 
   hidden: yes
+  persist_with: rollout_npo_account_login_screen_windows_select_locales_last_updated
 }

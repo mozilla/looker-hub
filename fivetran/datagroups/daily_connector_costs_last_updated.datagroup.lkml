@@ -8,9 +8,13 @@
 datagroup: daily_connector_costs_last_updated {
   label: "daily_connector_costs Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'fivetran_costs_derived'
-    AND table_name = 'daily_connector_costs_v1' ;;
-  description: "Updates for daily_connector_costs when moz-fx-data-shared-prod.fivetran_costs_derived.daily_connector_costs_v1 is modified."
+    WHERE (table_schema = 'fivetran_costs_derived' AND table_name = 'daily_connector_costs_v1')
+
+    ) ;;
+  description: "Updates for daily_connector_costs when referenced tables are modified."
   max_cache_age: "24 hours"
 }

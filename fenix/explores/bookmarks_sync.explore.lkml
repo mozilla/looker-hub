@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/bookmarks_sync.view.lkml"
+include: "/looker-hub/fenix/datagroups/bookmarks_sync_last_updated.datagroup.lkml"
 
 explore: bookmarks_sync {
   sql_always_where: ${bookmarks_sync.submission_date} >= '2010-01-01' ;;
@@ -76,6 +77,8 @@ explore: bookmarks_sync {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${bookmarks_sync.ping_info__experiments}) AS bookmarks_sync__ping_info__experiments ;;
   }
+
+  persist_with: bookmarks_sync_last_updated
 
   always_filter: {
     filters: [

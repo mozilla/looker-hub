@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/134_sidebar_microsurvey.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/134_sidebar_microsurvey_last_updated.datagroup.lkml"
 
 explore: 134_sidebar_microsurvey {
   always_filter: {
@@ -14,4 +15,5 @@ explore: 134_sidebar_microsurvey {
   }
 
   hidden: yes
+  persist_with: 134_sidebar_microsurvey_last_updated
 }

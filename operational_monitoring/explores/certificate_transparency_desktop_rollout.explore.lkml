@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/certificate_transparency_desktop_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/certificate_transparency_desktop_rollout_last_updated.datagroup.lkml"
 
 explore: certificate_transparency_desktop_rollout {
   always_filter: {
@@ -14,4 +15,5 @@ explore: certificate_transparency_desktop_rollout {
   }
 
   hidden: yes
+  persist_with: certificate_transparency_desktop_rollout_last_updated
 }

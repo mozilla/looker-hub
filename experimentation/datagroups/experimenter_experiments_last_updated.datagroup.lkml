@@ -8,9 +8,13 @@
 datagroup: experimenter_experiments_last_updated {
   label: "experimenter_experiments Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-experiments`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'monitoring'
-    AND table_name = 'experimenter_experiments_v1' ;;
-  description: "Updates for experimenter_experiments when moz-fx-data-experiments.monitoring.experimenter_experiments_v1 is modified."
+    WHERE (table_schema = 'monitoring' AND table_name = 'experimenter_experiments_v1')
+
+    ) ;;
+  description: "Updates for experimenter_experiments when referenced tables are modified."
   max_cache_age: "24 hours"
 }

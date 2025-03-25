@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/play_store_attribution.view.lkml"
+include: "/looker-hub/fenix/datagroups/play_store_attribution_last_updated.datagroup.lkml"
 
 explore: play_store_attribution {
   sql_always_where: ${play_store_attribution.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: play_store_attribution {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${play_store_attribution.ping_info__experiments}) AS play_store_attribution__ping_info__experiments ;;
   }
+
+  persist_with: play_store_attribution_last_updated
 
   always_filter: {
     filters: [

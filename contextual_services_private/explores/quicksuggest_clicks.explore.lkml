@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/contextual_services_private/views/quicksuggest_click.view.lkml"
+include: "/looker-hub/contextual_services_private/datagroups/quicksuggest_click_last_updated.datagroup.lkml"
 
 explore: quicksuggest_clicks {
   sql_always_where: ${quicksuggest_click.submission_date} >= '2010-01-01' ;;
@@ -21,4 +22,6 @@ explore: quicksuggest_clicks {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${quicksuggest_click.experiments}) AS quicksuggest_click__experiments ;;
   }
+
+  persist_with: quicksuggest_click_last_updated
 }

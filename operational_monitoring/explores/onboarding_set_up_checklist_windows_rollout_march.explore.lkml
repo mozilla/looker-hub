@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/onboarding_set_up_checklist_windows_rollout_march.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/onboarding_set_up_checklist_windows_rollout_march_last_updated.datagroup.lkml"
 
 explore: onboarding_set_up_checklist_windows_rollout_march {
   always_filter: {
@@ -14,4 +15,5 @@ explore: onboarding_set_up_checklist_windows_rollout_march {
   }
 
   hidden: yes
+  persist_with: onboarding_set_up_checklist_windows_rollout_march_last_updated
 }

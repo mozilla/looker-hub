@@ -8,9 +8,13 @@
 datagroup: desktop_new_profiles_last_updated {
   label: "desktop_new_profiles Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'telemetry_derived'
-    AND table_name = 'desktop_new_profiles_aggregates_v1' ;;
-  description: "Updates for desktop_new_profiles when moz-fx-data-shared-prod.telemetry_derived.desktop_new_profiles_aggregates_v1 is modified."
+    WHERE (table_schema = 'telemetry_derived' AND table_name = 'desktop_new_profiles_aggregates_v1')
+
+    ) ;;
+  description: "Updates for desktop_new_profiles when referenced tables are modified."
   max_cache_age: "24 hours"
 }

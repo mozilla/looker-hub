@@ -8,9 +8,13 @@
 datagroup: logical_subscriptions_last_updated {
   label: "logical_subscriptions Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'subscription_platform_derived'
-    AND table_name = 'logical_subscriptions_history_v1' ;;
-  description: "Updates for logical_subscriptions when moz-fx-data-shared-prod.subscription_platform_derived.logical_subscriptions_history_v1 is modified."
+    WHERE (table_schema = 'subscription_platform_derived' AND table_name = 'logical_subscriptions_history_v1')
+
+    ) ;;
+  description: "Updates for logical_subscriptions when referenced tables are modified."
   max_cache_age: "24 hours"
 }

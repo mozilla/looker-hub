@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/product_insight_telemetry_via_server_knobs_rollout_release.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/product_insight_telemetry_via_server_knobs_rollout_release_last_updated.datagroup.lkml"
 
 explore: product_insight_telemetry_via_server_knobs_rollout_release {
   always_filter: {
@@ -14,4 +15,5 @@ explore: product_insight_telemetry_via_server_knobs_rollout_release {
   }
 
   hidden: yes
+  persist_with: product_insight_telemetry_via_server_knobs_rollout_release_last_updated
 }

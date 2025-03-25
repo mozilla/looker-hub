@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/monitoring/views/payload_bytes_error_all.view.lkml"
+include: "/looker-hub/monitoring/datagroups/payload_bytes_error_all_last_updated.datagroup.lkml"
 
 explore: payload_bytes_error_all {
   sql_always_where: ${payload_bytes_error_all.submission_date} >= '2010-01-01' ;;
@@ -15,4 +16,6 @@ explore: payload_bytes_error_all {
       submission_date: "28 days",
     ]
   }
+
+  persist_with: payload_bytes_error_all_last_updated
 }

@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/unified_api_rollout_android.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/unified_api_rollout_android_last_updated.datagroup.lkml"
 
 explore: unified_api_rollout_android {
   always_filter: {
@@ -14,4 +15,5 @@ explore: unified_api_rollout_android {
   }
 
   hidden: yes
+  persist_with: unified_api_rollout_android_last_updated
 }

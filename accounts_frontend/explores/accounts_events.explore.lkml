@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/accounts_frontend/views/accounts_events.view.lkml"
+include: "/looker-hub/accounts_frontend/datagroups/accounts_events_last_updated.datagroup.lkml"
 
 explore: accounts_events {
   hidden: yes
@@ -47,6 +48,8 @@ explore: accounts_events {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${accounts_events.ping_info__experiments}) AS accounts_events__ping_info__experiments ;;
   }
+
+  persist_with: accounts_events_last_updated
 
   always_filter: {
     filters: [

@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/https_first_in_release.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/https_first_in_release_last_updated.datagroup.lkml"
 
 explore: https_first_in_release {
   always_filter: {
@@ -14,4 +15,5 @@ explore: https_first_in_release {
   }
 
   hidden: yes
+  persist_with: https_first_in_release_last_updated
 }

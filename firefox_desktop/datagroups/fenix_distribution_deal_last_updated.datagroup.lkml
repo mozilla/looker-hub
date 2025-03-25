@@ -8,9 +8,13 @@
 datagroup: fenix_distribution_deal_last_updated {
   label: "fenix_distribution_deal Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `mozdata`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'analysis'
-    AND table_name = 'fenix_distribution_deal_v1' ;;
-  description: "Updates for fenix_distribution_deal when mozdata.analysis.fenix_distribution_deal_v1 is modified."
+    WHERE (table_schema = 'analysis' AND table_name = 'fenix_distribution_deal_v1')
+
+    ) ;;
+  description: "Updates for fenix_distribution_deal when referenced tables are modified."
   max_cache_age: "24 hours"
 }

@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop_background_update/views/background_update.view.lkml"
+include: "/looker-hub/firefox_desktop_background_update/datagroups/background_update_last_updated.datagroup.lkml"
 
 explore: background_update {
   sql_always_where: ${background_update.submission_date} >= '2010-01-01' ;;
@@ -61,6 +62,8 @@ explore: background_update {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${background_update.ping_info__experiments}) AS background_update__ping_info__experiments ;;
   }
+
+  persist_with: background_update_last_updated
 
   always_filter: {
     filters: [

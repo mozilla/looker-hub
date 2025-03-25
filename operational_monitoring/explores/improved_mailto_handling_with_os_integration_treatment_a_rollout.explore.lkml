@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/improved_mailto_handling_with_os_integration_treatment_a_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/improved_mailto_handling_with_os_integration_treatment_a_rollout_last_updated.datagroup.lkml"
 
 explore: improved_mailto_handling_with_os_integration_treatment_a_rollout {
   always_filter: {
@@ -14,4 +15,5 @@ explore: improved_mailto_handling_with_os_integration_treatment_a_rollout {
   }
 
   hidden: yes
+  persist_with: improved_mailto_handling_with_os_integration_treatment_a_rollout_last_updated
 }

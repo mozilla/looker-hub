@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/sectionsv2control.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/sectionsv2control_last_updated.datagroup.lkml"
 
 explore: sectionsv2control {
   always_filter: {
@@ -14,4 +15,5 @@ explore: sectionsv2control {
   }
 
   hidden: yes
+  persist_with: sectionsv2control_last_updated
 }

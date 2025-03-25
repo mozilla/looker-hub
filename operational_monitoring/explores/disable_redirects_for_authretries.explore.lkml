@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/disable_redirects_for_authretries.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/disable_redirects_for_authretries_last_updated.datagroup.lkml"
 
 explore: disable_redirects_for_authretries {
   always_filter: {
@@ -14,4 +15,5 @@ explore: disable_redirects_for_authretries {
   }
 
   hidden: yes
+  persist_with: disable_redirects_for_authretries_last_updated
 }

@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/first_startup.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/first_startup_last_updated.datagroup.lkml"
 
 explore: first_startup {
   sql_always_where: ${first_startup.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: first_startup {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${first_startup.ping_info__experiments}) AS first_startup__ping_info__experiments ;;
   }
+
+  persist_with: first_startup_last_updated
 
   always_filter: {
     filters: [

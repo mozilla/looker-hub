@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/h2_2024_post_choice_in_product_survey_ios.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/h2_2024_post_choice_in_product_survey_ios_last_updated.datagroup.lkml"
 
 explore: h2_2024_post_choice_in_product_survey_ios {
   always_filter: {
@@ -14,4 +15,5 @@ explore: h2_2024_post_choice_in_product_survey_ios {
   }
 
   hidden: yes
+  persist_with: h2_2024_post_choice_in_product_survey_ios_last_updated
 }

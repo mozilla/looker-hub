@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/clean_up_history_release_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/clean_up_history_release_rollout_last_updated.datagroup.lkml"
 
 explore: clean_up_history_release_rollout {
   always_filter: {
@@ -14,4 +15,5 @@ explore: clean_up_history_release_rollout {
   }
 
   hidden: yes
+  persist_with: clean_up_history_release_rollout_last_updated
 }

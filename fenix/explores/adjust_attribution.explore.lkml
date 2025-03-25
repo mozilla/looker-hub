@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/adjust_attribution.view.lkml"
+include: "/looker-hub/fenix/datagroups/adjust_attribution_last_updated.datagroup.lkml"
 
 explore: adjust_attribution {
   sql_always_where: ${adjust_attribution.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: adjust_attribution {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${adjust_attribution.ping_info__experiments}) AS adjust_attribution__ping_info__experiments ;;
   }
+
+  persist_with: adjust_attribution_last_updated
 
   always_filter: {
     filters: [

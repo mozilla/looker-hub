@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_ios/views/topsites_impression.view.lkml"
+include: "/looker-hub/firefox_ios/datagroups/topsites_impression_last_updated.datagroup.lkml"
 
 explore: topsites_impression {
   sql_always_where: ${topsites_impression.submission_date} >= '2010-01-01' ;;
@@ -46,6 +47,8 @@ explore: topsites_impression {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${topsites_impression.ping_info__experiments}) AS topsites_impression__ping_info__experiments ;;
   }
+
+  persist_with: topsites_impression_last_updated
 
   always_filter: {
     filters: [

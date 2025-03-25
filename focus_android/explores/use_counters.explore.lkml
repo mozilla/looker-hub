@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/focus_android/views/use_counters.view.lkml"
+include: "/looker-hub/focus_android/datagroups/use_counters_last_updated.datagroup.lkml"
 
 explore: use_counters {
   sql_always_where: ${use_counters.submission_date} >= '2010-01-01' ;;
@@ -51,6 +52,8 @@ explore: use_counters {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${use_counters.ping_info__experiments}) AS use_counters__ping_info__experiments ;;
   }
+
+  persist_with: use_counters_last_updated
 
   always_filter: {
     filters: [

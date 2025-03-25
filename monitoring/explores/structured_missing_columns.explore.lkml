@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/monitoring/views/structured_missing_columns.view.lkml"
+include: "/looker-hub/monitoring/datagroups/structured_missing_columns_last_updated.datagroup.lkml"
 
 explore: structured_missing_columns {
   sql_always_where: ${structured_missing_columns.submission_date} >= '2010-01-01' ;;
@@ -15,4 +16,6 @@ explore: structured_missing_columns {
       submission_date: "28 days",
     ]
   }
+
+  persist_with: structured_missing_columns_last_updated
 }
