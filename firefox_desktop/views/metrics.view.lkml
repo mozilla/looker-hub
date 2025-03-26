@@ -4222,6 +4222,25 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__timing_distribution__newtab_abouthome_cache_construction__sum {
+    label: "Newtab Abouthome Cache Construction Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.newtab_abouthome_cache_construction.sum ;;
+    type: number
+    group_label: "Newtab"
+    group_item_label: "Abouthome Cache Construction Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Abouthome Cache Construction Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_abouthome_cache_construction"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The length of time (in milliseconds) that it takes for the cache worker to generate the cache and return it to the main thread
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_ABOUTHOME_CACHE_CONSTRUCTION.
+"
+  }
+
   dimension: metrics__boolean__newtab_handoff_preference_enabled {
     label: "Newtab Handoff Preference Enabled"
     hidden: no
@@ -75317,6 +75336,20 @@ view: metrics__metrics__timing_distribution__networking_transaction_wait_time__v
 }
 
 view: metrics__metrics__timing_distribution__networking_transaction_wait_time_https_rr__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__newtab_abouthome_cache_construction__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

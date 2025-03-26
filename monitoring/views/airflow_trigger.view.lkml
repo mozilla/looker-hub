@@ -23,10 +23,31 @@ view: airflow_trigger {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: trigger_id {
+    sql: ${TABLE}.trigger_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: triggerer_id {
     sql: ${TABLE}.triggerer_id ;;
     type: number
     suggest_persist_for: "24 hours"
+  }
+
+  dimension_group: created_at {
+    sql: ${TABLE}.created_at ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
   }
 
   dimension_group: created {
