@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: microsurvey_csat_microsurvey_for_fakespot_experiment_firefox_133 {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.microsurvey_csat_microsurvey_for_fakespot_experiment_firefox_133_statistics ;;
+view: fission_android_rollout {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.fission_android_rollout_statistics ;;
 
   dimension: submission_date {
     type: date
