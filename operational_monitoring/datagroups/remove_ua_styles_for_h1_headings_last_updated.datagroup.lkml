@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: microsurvey_csat_microsurvey_for_fakespot_experiment_firefox_133_last_updated {
-  label: "microsurvey_csat_microsurvey_for_fakespot_experiment_firefox_133 Last Updated"
+datagroup: remove_ua_styles_for_h1_headings_last_updated {
+  label: "remove_ua_styles_for_h1_headings Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'microsurvey_csat_microsurvey_for_fakespot_experiment_firefox_133_statistics')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'remove_ua_styles_for_h1_headings_statistics')
 
     ) ;;
-  description: "Updates for microsurvey_csat_microsurvey_for_fakespot_experiment_firefox_133 when referenced tables are modified."
+  description: "Updates for remove_ua_styles_for_h1_headings when referenced tables are modified."
   max_cache_age: "24 hours"
 }
