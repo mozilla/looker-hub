@@ -1607,6 +1607,114 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_fonts_fpjs_allowlisted {
+    label: "Characteristics Fonts Fpjs Allowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_fpjs_allowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Fpjs Allowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Fonts Fpjs Allowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_fonts_fpjs_allowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of allowlisted fonts queried by FPJS
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_fpjs_nonallowlisted {
+    label: "Characteristics Fonts Fpjs Nonallowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_fpjs_nonallowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Fpjs Nonallowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Fonts Fpjs Nonallowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_fonts_fpjs_nonallowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of non-allowlisted fonts queried by FPJS
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_a_allowlisted {
+    label: "Characteristics Fonts Variant A Allowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_a_allowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant A Allowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Fonts Variant A Allowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_fonts_variant_a_allowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of allowlisted fonts queried of variant A
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_a_nonallowlisted {
+    label: "Characteristics Fonts Variant A Nonallowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_a_nonallowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant A Nonallowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Fonts Variant A Nonallowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_fonts_variant_a_nonallowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of non-allowlisted fonts queried of variant A
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_b_allowlisted {
+    label: "Characteristics Fonts Variant B Allowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_b_allowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant B Allowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Fonts Variant B Allowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_fonts_variant_b_allowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of allowlisted fonts queried of variant B
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_b_nonallowlisted {
+    label: "Characteristics Fonts Variant B Nonallowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_b_nonallowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant B Nonallowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Fonts Variant B Nonallowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_fonts_variant_b_nonallowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of non-allowlisted fonts queried of variant B
+"
+  }
+
   dimension: metrics__string__characteristics_gl2_context_type {
     label: "Characteristics Gl2 Context Type"
     hidden: no

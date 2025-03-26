@@ -2113,6 +2113,66 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_fonts_fpjs_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_fpjs_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Fonts Fpjs Allowlisted"
+    description: "SHA256 of allowlisted fonts queried by FPJS
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_fpjs_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_fpjs_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Fonts Fpjs Nonallowlisted"
+    description: "SHA256 of non-allowlisted fonts queried by FPJS
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_a_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_a_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Fonts Variant A Allowlisted"
+    description: "SHA256 of allowlisted fonts queried of variant A
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_a_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_a_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Fonts Variant A Nonallowlisted"
+    description: "SHA256 of non-allowlisted fonts queried of variant A
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_b_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_b_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Fonts Variant B Allowlisted"
+    description: "SHA256 of allowlisted fonts queried of variant B
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_b_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_b_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Fonts Variant B Nonallowlisted"
+    description: "SHA256 of non-allowlisted fonts queried of variant B
+"
+  }
+
   dimension: metrics__string__characteristics_gl2_context_type {
     sql: ${TABLE}.metrics.string.characteristics_gl2_context_type ;;
     type: string

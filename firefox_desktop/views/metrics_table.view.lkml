@@ -36857,6 +36857,73 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__newtab_abouthome_cache_construction__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_abouthome_cache_construction.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Newtab Abouthome Cache Construction"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__newtab_abouthome_cache_construction__count {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_abouthome_cache_construction.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Newtab Abouthome Cache Construction"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__newtab_abouthome_cache_construction__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_abouthome_cache_construction.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Newtab Abouthome Cache Construction"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__newtab_abouthome_cache_construction__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_abouthome_cache_construction.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Newtab Abouthome Cache Construction"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__newtab_abouthome_cache_construction__range {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_abouthome_cache_construction.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__newtab_abouthome_cache_construction__sum {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_abouthome_cache_construction.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Newtab Abouthome Cache Construction"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__newtab_abouthome_cache_construction__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_abouthome_cache_construction.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Newtab Abouthome Cache Construction"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__newtab_abouthome_cache_construction__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_abouthome_cache_construction.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Newtab Abouthome Cache Construction"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__newtab_abouthome_cache_construction__values {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_abouthome_cache_construction.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__ocsp_request_time_cancel__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.bucket_count ;;
     type: number
@@ -61810,6 +61877,20 @@ view: metrics_table__metrics__timing_distribution__networking_transaction_wait_t
 }
 
 view: metrics_table__metrics__timing_distribution__networking_transaction_wait_time_https_rr__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__newtab_abouthome_cache_construction__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
