@@ -3803,6 +3803,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_pixel_ratio {
+    label: "Characteristics Pixel Ratio"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_pixel_ratio ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Pixel Ratio"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pixel Ratio"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_pixel_ratio"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of window.devicePixelRatio
+"
+  }
+
   dimension: metrics__string__characteristics_platform {
     label: "Characteristics Platform"
     hidden: no
@@ -4340,6 +4358,24 @@ view: user_characteristics {
     }
 
     description: "Screen width from a window.
+"
+  }
+
+  dimension: metrics__text2__characteristics_screens {
+    label: "Characteristics Screens"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_screens ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Screens"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Screens"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_screens"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "JSON string of screen properties
 "
   }
 
