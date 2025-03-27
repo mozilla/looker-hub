@@ -13676,6 +13676,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__dns_grace_period_renewal {
+    label: "DNS Grace Period Renewal"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.dns_grace_period_renewal ;;
+    group_label: "DNS"
+    group_item_label: "Grace Period Renewal"
+
+    link: {
+      label: "Glean Dictionary reference for DNS Grace Period Renewal"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dns_grace_period_renewal"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the amount of times that we get a record that is different (or identical) from the one that was used from the cache after a grace period induced renewal.
+This is to keep track of the amount of possible breakage that is occuring due to the grace period and useful for evaluating experiments increasing the grace period.
+"
+  }
+
   dimension: metrics__labeled_counter__dns_lookup_algorithm {
     label: "DNS Lookup Algorithm"
     hidden: yes
@@ -29456,6 +29474,25 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
     description: "Update: count of systems that have a last update time greater than the current time (timer initiated)
 This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_INVALID_LASTUPDATETIME_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__timing_distribution__update_langpack_overtime__sum {
+    label: "Update Langpack Overtime Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.update_langpack_overtime.sum ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Langpack Overtime Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Update Langpack Overtime Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_langpack_overtime"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: How much longer langpacks took to download than the app update in seconds.
+This metric was generated to correspond to the Legacy Telemetry linear histogram UPDATE_LANGPACK_OVERTIME.
 "
   }
 
@@ -46051,6 +46088,47 @@ view: metrics__metrics__labeled_counter__devtools_toolbox_tabs_reordered {
 
 view: metrics__metrics__labeled_counter__devtools_tooltip_shown {
   label: "Devtools Tooltip - Shown"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__dns_grace_period_renewal {
+  label: "DNS - Grace Period Renewal"
 
   dimension: document_id {
     type: string
@@ -76708,6 +76786,20 @@ view: metrics__metrics__timing_distribution__thumbnails_capture_time__values {
 }
 
 view: metrics__metrics__timing_distribution__thumbnails_store_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__update_langpack_overtime__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
