@@ -44,45 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: section_layout_newtab_rollout_v1
-    type: "ci-line-chart"
-    fields: [
-      section_layout_newtab_rollout_v1.submission_date,
-      section_layout_newtab_rollout_v1.branch,
-      section_layout_newtab_rollout_v1.upper,
-      section_layout_newtab_rollout_v1.lower,
-      section_layout_newtab_rollout_v1.point
-    ]
-    pivots: [
-      section_layout_newtab_rollout_v1.branch
-    ]
-    filters:
-      section_layout_newtab_rollout_v1.metric: 'memory_total'
-      section_layout_newtab_rollout_v1.statistic: percentile
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: section_layout_newtab_rollout_v1.submission_date
-    field_y: section_layout_newtab_rollout_v1.point
-    log_scale: false
-    ci_lower: section_layout_newtab_rollout_v1.lower
-    ci_upper: section_layout_newtab_rollout_v1.upper
-    show_grid: true
-    listen:
-      Date: section_layout_newtab_rollout_v1.submission_date
-      Percentile: section_layout_newtab_rollout_v1.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -97,7 +60,41 @@
       section_layout_newtab_rollout_v1.branch
     ]
     filters:
-      section_layout_newtab_rollout_v1.metric: 'search_count'
+      section_layout_newtab_rollout_v1.metric: 'retained'
+      section_layout_newtab_rollout_v1.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: section_layout_newtab_rollout_v1.submission_date
+    field_y: section_layout_newtab_rollout_v1.point
+    log_scale: false
+    ci_lower: section_layout_newtab_rollout_v1.lower
+    ci_upper: section_layout_newtab_rollout_v1.upper
+    show_grid: true
+    listen:
+      Date: section_layout_newtab_rollout_v1.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: section_layout_newtab_rollout_v1
+    type: looker_line
+    fields: [
+      section_layout_newtab_rollout_v1.submission_date,
+      section_layout_newtab_rollout_v1.branch,
+      section_layout_newtab_rollout_v1.point
+    ]
+    pivots: [
+      section_layout_newtab_rollout_v1.branch
+    ]
+    filters:
+      section_layout_newtab_rollout_v1.metric: 'uri_count'
       section_layout_newtab_rollout_v1.statistic: mean
     row: 10
     col: 0
@@ -149,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,9 +162,80 @@
       section_layout_newtab_rollout_v1.branch
     ]
     filters:
-      section_layout_newtab_rollout_v1.metric: 'uri_count'
+      section_layout_newtab_rollout_v1.metric: 'active_hours'
       section_layout_newtab_rollout_v1.statistic: mean
     row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: section_layout_newtab_rollout_v1.submission_date
+    field_y: section_layout_newtab_rollout_v1.point
+    log_scale: false
+    ci_lower: section_layout_newtab_rollout_v1.lower
+    ci_upper: section_layout_newtab_rollout_v1.upper
+    show_grid: true
+    listen:
+      Date: section_layout_newtab_rollout_v1.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: section_layout_newtab_rollout_v1
+    type: "ci-line-chart"
+    fields: [
+      section_layout_newtab_rollout_v1.submission_date,
+      section_layout_newtab_rollout_v1.branch,
+      section_layout_newtab_rollout_v1.upper,
+      section_layout_newtab_rollout_v1.lower,
+      section_layout_newtab_rollout_v1.point
+    ]
+    pivots: [
+      section_layout_newtab_rollout_v1.branch
+    ]
+    filters:
+      section_layout_newtab_rollout_v1.metric: 'memory_total'
+      section_layout_newtab_rollout_v1.statistic: percentile
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: section_layout_newtab_rollout_v1.submission_date
+    field_y: section_layout_newtab_rollout_v1.point
+    log_scale: false
+    ci_lower: section_layout_newtab_rollout_v1.lower
+    ci_upper: section_layout_newtab_rollout_v1.upper
+    show_grid: true
+    listen:
+      Date: section_layout_newtab_rollout_v1.submission_date
+      Percentile: section_layout_newtab_rollout_v1.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: section_layout_newtab_rollout_v1
+    type: looker_line
+    fields: [
+      section_layout_newtab_rollout_v1.submission_date,
+      section_layout_newtab_rollout_v1.branch,
+      section_layout_newtab_rollout_v1.point
+    ]
+    pivots: [
+      section_layout_newtab_rollout_v1.branch
+    ]
+    filters:
+      section_layout_newtab_rollout_v1.metric: 'search_count'
+      section_layout_newtab_rollout_v1.statistic: mean
+    row: 30
     col: 0
     width: 12
     height: 8
@@ -200,74 +268,6 @@
     ]
     filters:
       section_layout_newtab_rollout_v1.metric: 'qualified_cumulative_days_of_use'
-      section_layout_newtab_rollout_v1.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: section_layout_newtab_rollout_v1.submission_date
-    field_y: section_layout_newtab_rollout_v1.point
-    log_scale: false
-    ci_lower: section_layout_newtab_rollout_v1.lower
-    ci_upper: section_layout_newtab_rollout_v1.upper
-    show_grid: true
-    listen:
-      Date: section_layout_newtab_rollout_v1.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: section_layout_newtab_rollout_v1
-    type: looker_line
-    fields: [
-      section_layout_newtab_rollout_v1.submission_date,
-      section_layout_newtab_rollout_v1.branch,
-      section_layout_newtab_rollout_v1.point
-    ]
-    pivots: [
-      section_layout_newtab_rollout_v1.branch
-    ]
-    filters:
-      section_layout_newtab_rollout_v1.metric: 'retained'
-      section_layout_newtab_rollout_v1.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: section_layout_newtab_rollout_v1.submission_date
-    field_y: section_layout_newtab_rollout_v1.point
-    log_scale: false
-    ci_lower: section_layout_newtab_rollout_v1.lower
-    ci_upper: section_layout_newtab_rollout_v1.upper
-    show_grid: true
-    listen:
-      Date: section_layout_newtab_rollout_v1.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: section_layout_newtab_rollout_v1
-    type: looker_line
-    fields: [
-      section_layout_newtab_rollout_v1.submission_date,
-      section_layout_newtab_rollout_v1.branch,
-      section_layout_newtab_rollout_v1.point
-    ]
-    pivots: [
-      section_layout_newtab_rollout_v1.branch
-    ]
-    filters:
-      section_layout_newtab_rollout_v1.metric: 'active_hours'
       section_layout_newtab_rollout_v1.statistic: mean
     row: 30
     col: 12

@@ -2150,6 +2150,14 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Oscpu"
   }
 
+  dimension: metrics__string__characteristics_pixel_ratio {
+    sql: ${TABLE}.metrics.string.characteristics_pixel_ratio ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Pixel Ratio"
+  }
+
   dimension: metrics__string__characteristics_platform {
     sql: ${TABLE}.metrics.string.characteristics_platform ;;
     type: string
@@ -2745,6 +2753,14 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Missing Fonts"
+  }
+
+  dimension: metrics__text2__characteristics_screens {
+    sql: ${TABLE}.metrics.text2.characteristics_screens ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Screens"
   }
 
   dimension: metrics__text2__characteristics_user_agent {

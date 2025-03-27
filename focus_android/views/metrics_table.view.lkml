@@ -8658,6 +8658,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__dns_grace_period_renewal {
+    sql: ${TABLE}.metrics.labeled_counter.dns_grace_period_renewal ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__dns_lookup_algorithm {
     sql: ${TABLE}.metrics.labeled_counter.dns_lookup_algorithm ;;
     hidden: yes
@@ -33456,6 +33461,72 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__update_langpack_overtime__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.update_langpack_overtime.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Langpack Overtime"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__update_langpack_overtime__count {
+    sql: ${TABLE}.metrics.timing_distribution.update_langpack_overtime.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Langpack Overtime"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__update_langpack_overtime__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.update_langpack_overtime.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Langpack Overtime"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__update_langpack_overtime__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.update_langpack_overtime.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Langpack Overtime"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__update_langpack_overtime__range {
+    sql: ${TABLE}.metrics.timing_distribution.update_langpack_overtime.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__update_langpack_overtime__sum {
+    sql: ${TABLE}.metrics.timing_distribution.update_langpack_overtime.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Langpack Overtime"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__update_langpack_overtime__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.update_langpack_overtime.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Langpack Overtime"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__update_langpack_overtime__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.update_langpack_overtime.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Langpack Overtime"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__update_langpack_overtime__values {
+    sql: ${TABLE}.metrics.timing_distribution.update_langpack_overtime.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__update_last_notify_interval_days_external__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.update_last_notify_interval_days_external.bucket_count ;;
     type: number
@@ -50738,6 +50809,20 @@ view: metrics_table__metrics__timing_distribution__thumbnails_capture_time__valu
 }
 
 view: metrics_table__metrics__timing_distribution__thumbnails_store_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__update_langpack_overtime__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
