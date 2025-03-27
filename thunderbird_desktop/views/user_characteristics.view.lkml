@@ -961,7 +961,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_color_depth {
     label: "Characteristics Color Depth"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_color_depth ;;
     type: number
     group_label: "Characteristics"
@@ -979,7 +979,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_color_gamut {
     label: "Characteristics Color Gamut"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_color_gamut ;;
     type: number
     group_label: "Characteristics"
@@ -3589,7 +3589,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_orientation_angle {
     label: "Characteristics Orientation Angle"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_orientation_angle ;;
     type: number
     group_label: "Characteristics"
@@ -3787,7 +3787,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_pixel_depth {
     label: "Characteristics Pixel Depth"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_pixel_depth ;;
     type: number
     group_label: "Characteristics"
@@ -3800,24 +3800,6 @@ view: user_characteristics {
     }
 
     description: "Screen pixel depth property
-"
-  }
-
-  dimension: metrics__quantity__characteristics_pixel_ratio {
-    label: "Characteristics Pixel Ratio"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_pixel_ratio ;;
-    type: number
-    group_label: "Characteristics"
-    group_item_label: "Pixel Ratio"
-
-    link: {
-      label: "Glean Dictionary reference for Characteristics Pixel Ratio"
-      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/characteristics_pixel_ratio"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The value of window.devicePixelRatio multiplied by 100 to include some of the decimal places
 "
   }
 
@@ -3985,7 +3967,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_posx {
     label: "Characteristics Posx"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_posx ;;
     type: number
     group_label: "Characteristics"
@@ -4003,7 +3985,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_posy {
     label: "Characteristics Posy"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_posy ;;
     type: number
     group_label: "Characteristics"
@@ -4291,7 +4273,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_scalings {
     label: "Characteristics Scalings"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_scalings ;;
     type: string
     group_label: "Characteristics"
@@ -4321,13 +4303,13 @@ view: user_characteristics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Height of the primary screen in pixels.
+    description: "Screen height from a window.
 "
   }
 
   dimension: metrics__quantity__characteristics_screen_orientation {
     label: "Characteristics Screen Orientation"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_screen_orientation ;;
     type: number
     group_label: "Characteristics"
@@ -4357,7 +4339,7 @@ view: user_characteristics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Width of the primary screen in pixels.
+    description: "Screen width from a window.
 "
   }
 
@@ -4579,7 +4561,7 @@ view: user_characteristics {
 
   dimension: metrics__boolean__characteristics_video_dynamic_range {
     label: "Characteristics Video Dynamic Range"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.characteristics_video_dynamic_range ;;
     type: yesno
     group_label: "Characteristics"
