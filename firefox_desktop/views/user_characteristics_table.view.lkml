@@ -1049,7 +1049,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Pixel Ratio"
-    description: "The value of window.devicePixelRatio multiplied by 100 to include some of the decimal places
+    description: "The value of window.devicePixelRatio
 "
   }
 
@@ -1169,7 +1169,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Screen Height"
-    description: "Height of the primary screen in pixels.
+    description: "Screen height from a window.
 "
   }
 
@@ -1189,7 +1189,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Screen Width"
-    description: "Width of the primary screen in pixels.
+    description: "Screen width from a window.
 "
   }
 
@@ -2663,6 +2663,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_pixel_ratio {
+    sql: ${TABLE}.metrics.string.characteristics_pixel_ratio ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Pixel Ratio"
+    description: "The value of window.devicePixelRatio
+"
+  }
+
   dimension: metrics__string__characteristics_platform {
     sql: ${TABLE}.metrics.string.characteristics_platform ;;
     type: string
@@ -3406,6 +3416,16 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Missing Fonts"
     description: "If a Font List is available for the user's platform, this string_list contains the fonts that are missing from the user's computer.
+"
+  }
+
+  dimension: metrics__text2__characteristics_screens {
+    sql: ${TABLE}.metrics.text2.characteristics_screens ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Screens"
+    description: "JSON string of screen properties
 "
   }
 
