@@ -9,101 +9,50 @@ view: android_app_campaign_stats {
     sql: ${TABLE}.activated_profiles ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of activated profiles for this ad group on this day."
-  }
-
-  dimension: ad_group {
-    sql: ${TABLE}.ad_group ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    description: "Name of the Ad Group."
-  }
-
-  dimension: ad_group_segments {
-    sql: ${TABLE}.ad_group_segments ;;
-    hidden: yes
-  }
-
-  dimension: campaign {
-    sql: ${TABLE}.campaign ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    description: "Name of the campaign."
-  }
-
-  dimension: campaign_country_code {
-    sql: ${TABLE}.campaign_country_code ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    description: "Country the campaign ran in."
-  }
-
-  dimension: campaign_language {
-    sql: ${TABLE}.campaign_language ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    description: "Language the campaign ran in."
-  }
-
-  dimension: campaign_region {
-    sql: ${TABLE}.campaign_region ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    description: "Region the campaign ran in."
-  }
-
-  dimension: campaign_segments {
-    sql: ${TABLE}.campaign_segments ;;
-    hidden: yes
+    description: "Activated Profiles on Date"
   }
 
   dimension: clicks {
     sql: ${TABLE}.clicks ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Clicks on our ads, only occurs after an impression, as reported by Google Ads, for this ad group on this day."
+    description: "Google Ad Clicks on Date"
+  }
+
+  dimension: country {
+    sql: ${TABLE}.country ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    map_layer_name: countries
+    description: "Country"
   }
 
   dimension: impressions {
     sql: ${TABLE}.impressions ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Ad impressions, as reported by Google Ads, for this ad group on this day."
+    description: "Google Ad Impressions on Date"
   }
 
   dimension: lifetime_value {
     sql: ${TABLE}.lifetime_value ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Lifetime Value (LTV) of the users acquired by this ad group on this day."
+    description: "Lifetime Value (Estimated after 14 days)"
   }
 
   dimension: new_profiles {
     sql: ${TABLE}.new_profiles ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of new profiles reported for this ad group on this day."
-  }
-
-  dimension: repeat_users {
-    sql: ${TABLE}.repeat_users ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    description: "Number of repeat users on this day."
+    description: "New Profiles Seen on Date"
   }
 
   dimension: spend {
     sql: ${TABLE}.spend ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Spend in US dollars attributed to this ad group on this day."
-  }
-
-  dimension: week_4_retained_users {
-    sql: ${TABLE}.week_4_retained_users ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    description: "Number of week 4 retained users on this day."
+    description: "Google Ad Spend"
   }
 
   dimension_group: date {
@@ -120,36 +69,8 @@ view: android_app_campaign_stats {
     ]
     convert_tz: no
     datatype: date
-    description: "Date on which ad spend is attributed, and user were considered new profiles."
+    description: "Date"
   }
 
-  sql_table_name: `moz-fx-data-shared-prod.google_ads_derived.android_app_campaign_stats_v1` ;;
-}
-
-view: android_app_campaign_stats__ad_group_segments {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-}
-
-view: android_app_campaign_stats__campaign_segments {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
+  sql_table_name: `moz-fx-data-shared-prod.google_ads.android_app_campaign_stats` ;;
 }
