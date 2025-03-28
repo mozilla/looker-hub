@@ -6101,13 +6101,55 @@ fxci:
       - table: moz-fx-data-shared-prod.fxci.worker_metrics
       type: table_view
 glam:
-  explores: {}
+  explores:
+    deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: deletion_request
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
+    events_stream_table:
+      type: table_explore
+      views:
+        base_view: events_stream_table
   glean_app: true
   owners:
   - efilho@mozilla.com
   pretty_name: GLAM
   spoke: looker-spoke-default
-  views: {}
+  views:
+    deletion_request:
+      tables:
+      - table: mozdata.glam.deletion_request
+      type: glean_ping_view
+    deletion_request_table:
+      tables:
+      - channel: null
+        table: mozdata.glam.deletion_request
+      type: table_view
+    events:
+      tables:
+      - base_table: mozdata.glam.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
+    events_stream_table:
+      tables:
+      - channel: null
+        table: mozdata.glam.events_stream
+      type: table_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.glam.events
+      type: table_view
+    events_unnested_table:
+      tables:
+      - channel: null
+        table: mozdata.glam.events_unnested
+      type: table_view
 growth:
   glean_app: false
   owners:
