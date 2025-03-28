@@ -123,7 +123,7 @@ view: android_app_campaign_stats {
     description: "Date on which ad spend is attributed, and user were considered new profiles."
   }
 
-  sql_table_name: `moz-fx-data-shared-prod.google_ads_derived.android_app_campaign_stats_v1` ;;
+  sql_table_name: `moz-fx-data-shared-prod.google_ads.android_app_campaign_stats` ;;
 }
 
 view: android_app_campaign_stats__ad_group_segments {
