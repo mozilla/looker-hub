@@ -215,6 +215,10 @@ ads:
       tables:
       - table: mozdata.ads.amp_search_with
       type: table_view
+    android_pocket_spocs:
+      tables:
+      - table: mozdata.ads.android_pocket_spocs
+      type: table_view
     consolidated_ad_metrics_daily_pt:
       tables:
       - table: mozdata.ads.consolidated_ad_metrics_daily_pt
@@ -6096,6 +6100,14 @@ fxci:
       tables:
       - table: moz-fx-data-shared-prod.fxci.worker_metrics
       type: table_view
+glam:
+  explores: {}
+  glean_app: true
+  owners:
+  - efilho@mozilla.com
+  pretty_name: GLAM
+  spoke: looker-spoke-default
+  views: {}
 growth:
   glean_app: false
   owners:
