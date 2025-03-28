@@ -639,7 +639,7 @@ for a downloaded pdf.
 
   dimension: metrics__string__downloads_filtered {
     label: "Downloads Filtered"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.downloads_filtered ;;
     type: string
     group_label: "Downloads"
