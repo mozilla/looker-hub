@@ -221,6 +221,24 @@ view: broken_site_report {
 "
   }
 
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_h1_in_section_useragent_styles_enabled {
+    label: "Broken Site Report Browser Info Prefs H1 In Section Useragent Styles Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_h1_in_section_useragent_styles_enabled ;;
+    type: yesno
+    group_label: "Broken Site Report Browser Info Prefs"
+    group_item_label: "H1 In Section Useragent Styles Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs H1 In Section Useragent Styles Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/broken_site_report_browser_info_prefs_h1_in_section_useragent_styles_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of `layout.css.h1-in-section-ua-styles.enabled`
+"
+  }
+
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_installtrigger_enabled {
     label: "Broken Site Report Browser Info Prefs Installtrigger Enabled"
     hidden: no

@@ -9,14 +9,18 @@ view: android_app_campaign_stats {
     sql: ${TABLE}.activated_profiles ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Activated Profiles on Date"
+  }
+
+  dimension: campaign_region {
+    sql: ${TABLE}.campaign_region ;;
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: clicks {
     sql: ${TABLE}.clicks ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Google Ad Clicks on Date"
   }
 
   dimension: country {
@@ -24,35 +28,36 @@ view: android_app_campaign_stats {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
-    description: "Country"
+  }
+
+  dimension: country_code {
+    sql: ${TABLE}.country_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: impressions {
     sql: ${TABLE}.impressions ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Google Ad Impressions on Date"
   }
 
   dimension: lifetime_value {
     sql: ${TABLE}.lifetime_value ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Lifetime Value (Estimated after 14 days)"
   }
 
   dimension: new_profiles {
     sql: ${TABLE}.new_profiles ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "New Profiles Seen on Date"
   }
 
   dimension: spend {
     sql: ${TABLE}.spend ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Google Ad Spend"
   }
 
   dimension_group: date {
@@ -69,7 +74,6 @@ view: android_app_campaign_stats {
     ]
     convert_tz: no
     datatype: date
-    description: "Date"
   }
 
   sql_table_name: `moz-fx-data-shared-prod.google_ads.android_app_campaign_stats` ;;

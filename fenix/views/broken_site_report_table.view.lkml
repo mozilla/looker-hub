@@ -377,6 +377,14 @@ view: broken_site_report_table {
     group_item_label: "Broken Site Report Browser Info Prefs Global Privacy Control Enabled"
   }
 
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_h1_in_section_useragent_styles_enabled {
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_h1_in_section_useragent_styles_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Broken Site Report Browser Info Prefs H1 In Section Useragent Styles Enabled"
+  }
+
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_installtrigger_enabled {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_installtrigger_enabled ;;
     type: yesno

@@ -23847,7 +23847,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__rate__translations_error_rate__numerator {
     label: "Translations Error Rate Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.translations_error_rate.numerator ;;
     type: number
     group_label: "Translations"
@@ -23865,7 +23865,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__rate__translations_error_rate__denominator {
     label: "Translations Error Rate Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.translations_error_rate.denominator ;;
     type: number
     group_label: "Translations"
@@ -23900,7 +23900,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__counter__translations_requests_count {
     label: "Translations Requests Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.translations_requests_count ;;
     type: number
     group_label: "Translations"
