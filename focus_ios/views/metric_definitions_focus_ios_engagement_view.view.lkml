@@ -17,9 +17,15 @@ looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
 looker_base_fields_client_info__architecture,
+looker_base_fields_client_info__attribution__campaign,
+looker_base_fields_client_info__attribution__content,
+looker_base_fields_client_info__attribution__medium,
+looker_base_fields_client_info__attribution__source,
+looker_base_fields_client_info__attribution__term,
 looker_base_fields_client_info__build_date,
 looker_base_fields_client_info__device_manufacturer,
 looker_base_fields_client_info__device_model,
+looker_base_fields_client_info__distribution__name,
 looker_base_fields_client_info__first_run_date,
 looker_base_fields_client_info__locale,
 looker_base_fields_client_info__os,
@@ -96,9 +102,15 @@ looker_base_fields.client_info.app_build AS looker_base_fields_client_info__app_
 looker_base_fields.client_info.app_channel AS looker_base_fields_client_info__app_channel,
 looker_base_fields.client_info.app_display_version AS looker_base_fields_client_info__app_display_version,
 looker_base_fields.client_info.architecture AS looker_base_fields_client_info__architecture,
+looker_base_fields.client_info.attribution.campaign AS looker_base_fields_client_info__attribution__campaign,
+looker_base_fields.client_info.attribution.content AS looker_base_fields_client_info__attribution__content,
+looker_base_fields.client_info.attribution.medium AS looker_base_fields_client_info__attribution__medium,
+looker_base_fields.client_info.attribution.source AS looker_base_fields_client_info__attribution__source,
+looker_base_fields.client_info.attribution.term AS looker_base_fields_client_info__attribution__term,
 looker_base_fields.client_info.build_date AS looker_base_fields_client_info__build_date,
 looker_base_fields.client_info.device_manufacturer AS looker_base_fields_client_info__device_manufacturer,
 looker_base_fields.client_info.device_model AS looker_base_fields_client_info__device_model,
+looker_base_fields.client_info.distribution.name AS looker_base_fields_client_info__distribution__name,
 looker_base_fields.client_info.first_run_date AS looker_base_fields_client_info__first_run_date,
 looker_base_fields.client_info.locale AS looker_base_fields_client_info__locale,
 looker_base_fields.client_info.os AS looker_base_fields_client_info__os,
@@ -184,9 +196,15 @@ looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
 looker_base_fields_client_info__architecture,
+looker_base_fields_client_info__attribution__campaign,
+looker_base_fields_client_info__attribution__content,
+looker_base_fields_client_info__attribution__medium,
+looker_base_fields_client_info__attribution__source,
+looker_base_fields_client_info__attribution__term,
 looker_base_fields_client_info__build_date,
 looker_base_fields_client_info__device_manufacturer,
 looker_base_fields_client_info__device_model,
+looker_base_fields_client_info__distribution__name,
 looker_base_fields_client_info__first_run_date,
 looker_base_fields_client_info__locale,
 looker_base_fields_client_info__os,
@@ -310,6 +328,46 @@ focus_ios_engagement_view_wau,
     group_item_label: "Architecture"
   }
 
+  dimension: client_info__attribution__campaign {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Campaign"
+  }
+
+  dimension: client_info__attribution__content {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Content"
+  }
+
+  dimension: client_info__attribution__medium {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Medium"
+  }
+
+  dimension: client_info__attribution__source {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Source"
+  }
+
+  dimension: client_info__attribution__term {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Term"
+  }
+
   dimension: client_info__build_date {
     sql: ${TABLE}.looker_base_fields_client_info__build_date ;;
     type: string
@@ -338,6 +396,14 @@ focus_ios_engagement_view_wau,
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Device Model"
+  }
+
+  dimension: client_info__distribution__name {
+    sql: ${TABLE}.looker_base_fields_client_info__distribution__name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Name"
   }
 
   dimension: client_info__first_run_date {
