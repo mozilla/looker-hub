@@ -12,7 +12,11 @@ datagroup: android_app_campaign_stats_last_updated {
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'google_ads_derived' AND table_name = 'android_app_campaign_stats_v1')
+    WHERE (table_schema = 'google_ads_derived' AND table_name = 'android_app_campaign_stats_v2')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'static' AND table_name = 'country_codes_v1')
 
     ) ;;
   description: "Updates for android_app_campaign_stats when referenced tables are modified."

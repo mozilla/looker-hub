@@ -961,7 +961,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_color_depth {
     label: "Characteristics Color Depth"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_color_depth ;;
     type: number
     group_label: "Characteristics"
@@ -979,7 +979,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_color_gamut {
     label: "Characteristics Color Gamut"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_color_gamut ;;
     type: number
     group_label: "Characteristics"
@@ -1604,6 +1604,114 @@ view: user_characteristics {
     }
 
     description: "The value of the font.size.variable.x-western pref
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_fpjs_allowlisted {
+    label: "Characteristics Fonts Fpjs Allowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_fpjs_allowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Fpjs Allowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Fonts Fpjs Allowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_fpjs_allowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of allowlisted fonts queried by FPJS
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_fpjs_nonallowlisted {
+    label: "Characteristics Fonts Fpjs Nonallowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_fpjs_nonallowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Fpjs Nonallowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Fonts Fpjs Nonallowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_fpjs_nonallowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of non-allowlisted fonts queried by FPJS
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_a_allowlisted {
+    label: "Characteristics Fonts Variant A Allowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_a_allowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant A Allowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Fonts Variant A Allowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_a_allowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of allowlisted fonts queried of variant A
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_a_nonallowlisted {
+    label: "Characteristics Fonts Variant A Nonallowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_a_nonallowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant A Nonallowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Fonts Variant A Nonallowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_a_nonallowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of non-allowlisted fonts queried of variant A
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_b_allowlisted {
+    label: "Characteristics Fonts Variant B Allowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_b_allowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant B Allowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Fonts Variant B Allowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_b_allowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of allowlisted fonts queried of variant B
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_b_nonallowlisted {
+    label: "Characteristics Fonts Variant B Nonallowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_b_nonallowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant B Nonallowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Fonts Variant B Nonallowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_b_nonallowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of non-allowlisted fonts queried of variant B
 "
   }
 
@@ -3481,7 +3589,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_orientation_angle {
     label: "Characteristics Orientation Angle"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_orientation_angle ;;
     type: number
     group_label: "Characteristics"
@@ -3679,7 +3787,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_pixel_depth {
     label: "Characteristics Pixel Depth"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_pixel_depth ;;
     type: number
     group_label: "Characteristics"
@@ -3695,11 +3803,11 @@ view: user_characteristics {
 "
   }
 
-  dimension: metrics__quantity__characteristics_pixel_ratio {
+  dimension: metrics__string__characteristics_pixel_ratio {
     label: "Characteristics Pixel Ratio"
     hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_pixel_ratio ;;
-    type: number
+    sql: ${TABLE}.metrics.string.characteristics_pixel_ratio ;;
+    type: string
     group_label: "Characteristics"
     group_item_label: "Pixel Ratio"
 
@@ -3709,7 +3817,7 @@ view: user_characteristics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The value of window.devicePixelRatio multiplied by 100 to include some of the decimal places
+    description: "The value of window.devicePixelRatio
 "
   }
 
@@ -3877,7 +3985,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_posx {
     label: "Characteristics Posx"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_posx ;;
     type: number
     group_label: "Characteristics"
@@ -3895,7 +4003,7 @@ view: user_characteristics {
 
   dimension: metrics__quantity__characteristics_posy {
     label: "Characteristics Posy"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_posy ;;
     type: number
     group_label: "Characteristics"
@@ -4183,7 +4291,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_scalings {
     label: "Characteristics Scalings"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_scalings ;;
     type: string
     group_label: "Characteristics"
@@ -4213,13 +4321,13 @@ view: user_characteristics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Height of the primary screen in pixels.
+    description: "Screen height from a window.
 "
   }
 
   dimension: metrics__quantity__characteristics_screen_orientation {
     label: "Characteristics Screen Orientation"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.characteristics_screen_orientation ;;
     type: number
     group_label: "Characteristics"
@@ -4249,7 +4357,25 @@ view: user_characteristics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Width of the primary screen in pixels.
+    description: "Screen width from a window.
+"
+  }
+
+  dimension: metrics__text2__characteristics_screens {
+    label: "Characteristics Screens"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_screens ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Screens"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Screens"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_screens"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "JSON string of screen properties
 "
   }
 
@@ -4471,7 +4597,7 @@ view: user_characteristics {
 
   dimension: metrics__boolean__characteristics_video_dynamic_range {
     label: "Characteristics Video Dynamic Range"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.characteristics_video_dynamic_range ;;
     type: yesno
     group_label: "Characteristics"

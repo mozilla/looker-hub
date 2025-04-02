@@ -1710,6 +1710,54 @@ view: user_characteristics_table {
     group_item_label: "Characteristics Font Size Variable Western"
   }
 
+  dimension: metrics__string__characteristics_fonts_fpjs_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_fpjs_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Fonts Fpjs Allowlisted"
+  }
+
+  dimension: metrics__string__characteristics_fonts_fpjs_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_fpjs_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Fonts Fpjs Nonallowlisted"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_a_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_a_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Fonts Variant A Allowlisted"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_a_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_a_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Fonts Variant A Nonallowlisted"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_b_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_b_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Fonts Variant B Allowlisted"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_b_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_b_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Fonts Variant B Nonallowlisted"
+  }
+
   dimension: metrics__string__characteristics_gl2_context_type {
     sql: ${TABLE}.metrics.string.characteristics_gl2_context_type ;;
     type: string
@@ -2100,6 +2148,14 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Characteristics Oscpu"
+  }
+
+  dimension: metrics__string__characteristics_pixel_ratio {
+    sql: ${TABLE}.metrics.string.characteristics_pixel_ratio ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Pixel Ratio"
   }
 
   dimension: metrics__string__characteristics_platform {
@@ -2697,6 +2753,14 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Text2"
     group_item_label: "Characteristics Missing Fonts"
+  }
+
+  dimension: metrics__text2__characteristics_screens {
+    sql: ${TABLE}.metrics.text2.characteristics_screens ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Screens"
   }
 
   dimension: metrics__text2__characteristics_user_agent {

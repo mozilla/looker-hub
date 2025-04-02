@@ -251,6 +251,12 @@ view: issue {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: status_category {
+    sql: ${TABLE}.status_category ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: summary {
     sql: ${TABLE}.summary ;;
     type: string

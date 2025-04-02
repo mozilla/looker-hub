@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Firefox Lost Default Volume
-    name: Firefox Lost Default Volume_sum
+  - title: Firefox Default Changed Volume
+    name: Firefox Default Changed Volume_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,7 +26,7 @@
       firefox_default_browser_agent.branch
     ]
     filters:
-      firefox_default_browser_agent.metric: 'firefox_lost_default_volume'
+      firefox_default_browser_agent.metric: 'firefox_default_changed_volume'
       firefox_default_browser_agent.statistic: sum
     row: 0
     col: 0
@@ -45,8 +45,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Firefox Lost Default Volume
-    name: Firefox Lost Default Volume_mean
+  - title: Firefox Default Changed Volume
+    name: Firefox Default Changed Volume_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -61,7 +61,7 @@
       firefox_default_browser_agent.branch
     ]
     filters:
-      firefox_default_browser_agent.metric: 'firefox_lost_default_volume'
+      firefox_default_browser_agent.metric: 'firefox_default_changed_volume'
       firefox_default_browser_agent.statistic: mean
     row: 0
     col: 12
@@ -150,8 +150,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Ping Volume
-    name: Ping Volume_sum
+  - title: Firefox Lost Default Volume
+    name: Firefox Lost Default Volume_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -166,7 +166,7 @@
       firefox_default_browser_agent.branch
     ]
     filters:
-      firefox_default_browser_agent.metric: 'ping_volume'
+      firefox_default_browser_agent.metric: 'firefox_lost_default_volume'
       firefox_default_browser_agent.statistic: sum
     row: 20
     col: 0
@@ -185,11 +185,11 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Firefox Default Changed Volume
-    name: Firefox Default Changed Volume_sum
+  - title: Firefox Lost Default Volume
+    name: Firefox Lost Default Volume_mean
     note_state: expanded
     note_display: above
-    note_text: Sum
+    note_text: Mean
     explore: firefox_default_browser_agent
     type: looker_line
     fields: [
@@ -201,8 +201,8 @@
       firefox_default_browser_agent.branch
     ]
     filters:
-      firefox_default_browser_agent.metric: 'firefox_default_changed_volume'
-      firefox_default_browser_agent.statistic: sum
+      firefox_default_browser_agent.metric: 'firefox_lost_default_volume'
+      firefox_default_browser_agent.statistic: mean
     row: 20
     col: 12
     width: 12
@@ -220,11 +220,11 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Firefox Default Changed Volume
-    name: Firefox Default Changed Volume_mean
+  - title: Ping Volume
+    name: Ping Volume_sum
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Sum
     explore: firefox_default_browser_agent
     type: looker_line
     fields: [
@@ -236,8 +236,8 @@
       firefox_default_browser_agent.branch
     ]
     filters:
-      firefox_default_browser_agent.metric: 'firefox_default_changed_volume'
-      firefox_default_browser_agent.statistic: mean
+      firefox_default_browser_agent.metric: 'ping_volume'
+      firefox_default_browser_agent.statistic: sum
     row: 30
     col: 0
     width: 12
@@ -365,9 +365,9 @@
       display: inline
       options:
       - 'release'
-      - 'nightly'
-      - 'esr'
       - 'beta'
+      - 'esr'
+      - 'nightly'
       - 'aurora'
       - 'default'
       - 'nightly-pine'

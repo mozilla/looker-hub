@@ -63,5 +63,5 @@ view: macroeconomic_indices {
     datatype: date
   }
 
-  sql_table_name: `mozdata.reference.macroeconomic_indices` ;;
+  sql_table_name: `mozdata.external.macroeconomic_indices` ;;
 }

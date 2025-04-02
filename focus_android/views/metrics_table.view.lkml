@@ -68,6 +68,46 @@ view: metrics_table {
     group_item_label: "Architecture"
   }
 
+  dimension: client_info__attribution__campaign {
+    sql: ${TABLE}.client_info.attribution.campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Campaign"
+  }
+
+  dimension: client_info__attribution__content {
+    sql: ${TABLE}.client_info.attribution.content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Content"
+  }
+
+  dimension: client_info__attribution__medium {
+    sql: ${TABLE}.client_info.attribution.medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Medium"
+  }
+
+  dimension: client_info__attribution__source {
+    sql: ${TABLE}.client_info.attribution.source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Source"
+  }
+
+  dimension: client_info__attribution__term {
+    sql: ${TABLE}.client_info.attribution.term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Term"
+  }
+
   dimension: client_info__build_date {
     sql: ${TABLE}.client_info.build_date ;;
     type: string
@@ -95,6 +135,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
+  }
+
+  dimension: client_info__distribution__name {
+    sql: ${TABLE}.client_info.distribution.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Distribution"
+    group_item_label: "Name"
   }
 
   dimension: client_info__first_run_date {
@@ -8658,6 +8706,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__dns_grace_period_renewal {
+    sql: ${TABLE}.metrics.labeled_counter.dns_grace_period_renewal ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__dns_lookup_algorithm {
     sql: ${TABLE}.metrics.labeled_counter.dns_lookup_algorithm ;;
     hidden: yes
@@ -8690,6 +8743,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__extensions_counters_event_page_idle_result {
     sql: ${TABLE}.metrics.labeled_counter.extensions_counters_event_page_idle_result ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__extensions_data_migrate_result_count {
+    sql: ${TABLE}.metrics.labeled_counter.extensions_data_migrate_result_count ;;
     hidden: yes
   }
 
@@ -8880,6 +8938,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__ipc_sent_messages_parent_inactive {
     sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_parent_inactive ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__ipc_transaction_cancel {
+    sql: ${TABLE}.metrics.labeled_counter.ipc_transaction_cancel ;;
     hidden: yes
   }
 
@@ -9558,6 +9621,26 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__subprocess_abnormal_abort {
+    sql: ${TABLE}.metrics.labeled_counter.subprocess_abnormal_abort ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__subprocess_crashes_with_dump {
+    sql: ${TABLE}.metrics.labeled_counter.subprocess_crashes_with_dump ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__subprocess_kill_hard {
+    sql: ${TABLE}.metrics.labeled_counter.subprocess_kill_hard ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__subprocess_launch_failure {
+    sql: ${TABLE}.metrics.labeled_counter.subprocess_launch_failure ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__tls_xyber_intolerance_reason {
     sql: ${TABLE}.metrics.labeled_counter.tls_xyber_intolerance_reason ;;
     hidden: yes
@@ -10015,6 +10098,46 @@ view: metrics_table {
 
   dimension: metrics__labeled_timing_distribution__dom_quota_shutdown_time {
     sql: ${TABLE}.metrics.labeled_timing_distribution.dom_quota_shutdown_time ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__extensions_timing_background_page_load_by_addonid {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.extensions_timing_background_page_load_by_addonid ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__extensions_timing_browser_action_popup_open_by_addonid {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.extensions_timing_browser_action_popup_open_by_addonid ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__extensions_timing_content_script_injection_by_addonid {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.extensions_timing_content_script_injection_by_addonid ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__extensions_timing_event_page_running_time_by_addonid {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.extensions_timing_event_page_running_time_by_addonid ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__extensions_timing_extension_startup_by_addonid {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.extensions_timing_extension_startup_by_addonid ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__extensions_timing_page_action_popup_open_by_addonid {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.extensions_timing_page_action_popup_open_by_addonid ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__extensions_timing_storage_local_get_idb_by_addonid {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.extensions_timing_storage_local_get_idb_by_addonid ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__extensions_timing_storage_local_set_idb_by_addonid {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.extensions_timing_storage_local_set_idb_by_addonid ;;
     hidden: yes
   }
 
@@ -32136,6 +32259,138 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__process_child_launch__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__count {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__range {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__sum {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__values {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__count {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__range {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__sum {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__values {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__pwmgr_signup_form_detection__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.pwmgr_signup_form_detection.bucket_count ;;
     type: number
@@ -33453,6 +33708,72 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__thumbnails_store_time__values {
     sql: ${TABLE}.metrics.timing_distribution.thumbnails_store_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__update_langpack_overtime__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.update_langpack_overtime.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Langpack Overtime"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__update_langpack_overtime__count {
+    sql: ${TABLE}.metrics.timing_distribution.update_langpack_overtime.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Langpack Overtime"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__update_langpack_overtime__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.update_langpack_overtime.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Langpack Overtime"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__update_langpack_overtime__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.update_langpack_overtime.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Langpack Overtime"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__update_langpack_overtime__range {
+    sql: ${TABLE}.metrics.timing_distribution.update_langpack_overtime.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__update_langpack_overtime__sum {
+    sql: ${TABLE}.metrics.timing_distribution.update_langpack_overtime.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Langpack Overtime"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__update_langpack_overtime__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.update_langpack_overtime.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Langpack Overtime"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__update_langpack_overtime__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.update_langpack_overtime.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Update Langpack Overtime"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__update_langpack_overtime__values {
+    sql: ${TABLE}.metrics.timing_distribution.update_langpack_overtime.values ;;
     hidden: yes
   }
 
@@ -42283,6 +42604,710 @@ view: metrics_table__metrics__labeled_timing_distribution__dom_quota_shutdown_ti
   }
 }
 
+view: metrics_table__metrics__labeled_timing_distribution__extensions_timing_background_page_load_by_addonid {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__extensions_timing_background_page_load_by_addonid__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__extensions_timing_browser_action_popup_open_by_addonid {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__extensions_timing_browser_action_popup_open_by_addonid__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__extensions_timing_content_script_injection_by_addonid {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__extensions_timing_content_script_injection_by_addonid__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__extensions_timing_event_page_running_time_by_addonid {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__extensions_timing_event_page_running_time_by_addonid__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__extensions_timing_extension_startup_by_addonid {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__extensions_timing_extension_startup_by_addonid__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__extensions_timing_page_action_popup_open_by_addonid {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__extensions_timing_page_action_popup_open_by_addonid__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__extensions_timing_storage_local_get_idb_by_addonid {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__extensions_timing_storage_local_get_idb_by_addonid__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__extensions_timing_storage_local_set_idb_by_addonid {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__extensions_timing_storage_local_set_idb_by_addonid__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_timing_distribution__firefox_ai_runtime_engine_creation_success {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -50471,6 +51496,34 @@ view: metrics_table__metrics__timing_distribution__privacy_sanitize_load_time__v
   }
 }
 
+view: metrics_table__metrics__timing_distribution__process_child_launch__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__process_lifetime__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__pwmgr_signup_form_detection__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -50738,6 +51791,20 @@ view: metrics_table__metrics__timing_distribution__thumbnails_capture_time__valu
 }
 
 view: metrics_table__metrics__timing_distribution__thumbnails_store_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__update_langpack_overtime__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
