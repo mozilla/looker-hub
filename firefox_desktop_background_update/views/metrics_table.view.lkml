@@ -74,6 +74,51 @@ view: metrics_table {
     description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
   }
 
+  dimension: client_info__attribution__campaign {
+    sql: ${TABLE}.client_info.attribution.campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Campaign"
+    description: "The attribution campaign (e.g. 'mozilla-org')."
+  }
+
+  dimension: client_info__attribution__content {
+    sql: ${TABLE}.client_info.attribution.content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Content"
+    description: "The attribution content (e.g. 'firefoxview')."
+  }
+
+  dimension: client_info__attribution__medium {
+    sql: ${TABLE}.client_info.attribution.medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Medium"
+    description: "The attribution medium (e.g. 'organic' for a search engine)."
+  }
+
+  dimension: client_info__attribution__source {
+    sql: ${TABLE}.client_info.attribution.source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Source"
+    description: "The attribution source (e.g. 'google-play')."
+  }
+
+  dimension: client_info__attribution__term {
+    sql: ${TABLE}.client_info.attribution.term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Term"
+    description: "The attribution term (e.g. 'browser with developer tools for android')."
+  }
+
   dimension: client_info__build_date {
     sql: ${TABLE}.client_info.build_date ;;
     type: string
@@ -105,6 +150,15 @@ view: metrics_table {
     group_label: "Client Info"
     group_item_label: "Device Model"
     description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
+  }
+
+  dimension: client_info__distribution__name {
+    sql: ${TABLE}.client_info.distribution.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Distribution"
+    group_item_label: "Name"
+    description: "The distribution name (e.g. 'MozillaOnline')."
   }
 
   dimension: client_info__first_run_date {
@@ -9375,6 +9429,14 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__crash_submit_attempt {
+    sql: ${TABLE}.metrics.labeled_counter.crash_submit_attempt ;;
+    hidden: yes
+    description: "An attempt to submit a crash. Keyed on the CrashManager Crash.type.
+This metric was generated to correspond to the Legacy Telemetry count histogram PROCESS_CRASH_SUBMIT_ATTEMPT.
+"
+  }
+
   dimension: metrics__labeled_counter__creditcard_detected_cc_number_fields_count {
     sql: ${TABLE}.metrics.labeled_counter.creditcard_detected_cc_number_fields_count ;;
     hidden: yes
@@ -11952,6 +12014,28 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__cert_storage_memory__values {
     sql: ${TABLE}.metrics.memory_distribution.cert_storage_memory.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__crash_compressed_store_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.crash_compressed_store_size.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Crash Compressed Store Size"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__crash_compressed_store_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.crash_compressed_store_size.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Crash Compressed Store Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__crash_compressed_store_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.crash_compressed_store_size.values ;;
     hidden: yes
   }
 
@@ -48561,6 +48645,20 @@ view: metrics_table__metrics__labeled_timing_distribution__workers_sync_worker_o
 }
 
 view: metrics_table__metrics__memory_distribution__cert_storage_memory__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__crash_compressed_store_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

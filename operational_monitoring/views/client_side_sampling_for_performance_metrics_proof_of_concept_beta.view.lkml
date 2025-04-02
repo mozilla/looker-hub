@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: kayak_suggestions_potential_exposures {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.kayak_suggestions_potential_exposures_statistics ;;
+view: client_side_sampling_for_performance_metrics_proof_of_concept_beta {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.client_side_sampling_for_performance_metrics_proof_of_concept_beta_statistics ;;
 
   dimension: submission_date {
     type: date

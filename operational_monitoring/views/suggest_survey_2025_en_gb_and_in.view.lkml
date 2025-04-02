@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: enable_activation_telemetry_android {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.enable_activation_telemetry_android_statistics ;;
+view: suggest_survey_2025_en_gb_and_in {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.suggest_survey_2025_en_gb_and_in_statistics ;;
 
   dimension: submission_date {
     type: date

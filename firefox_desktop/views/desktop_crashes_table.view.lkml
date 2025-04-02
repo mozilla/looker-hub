@@ -10,6 +10,24 @@ view: desktop_crashes_table {
     hidden: yes
   }
 
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
@@ -50,6 +68,46 @@ view: desktop_crashes_table {
     group_item_label: "Architecture"
   }
 
+  dimension: client_info__attribution__campaign {
+    sql: ${TABLE}.client_info.attribution.campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Campaign"
+  }
+
+  dimension: client_info__attribution__content {
+    sql: ${TABLE}.client_info.attribution.content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Content"
+  }
+
+  dimension: client_info__attribution__medium {
+    sql: ${TABLE}.client_info.attribution.medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Medium"
+  }
+
+  dimension: client_info__attribution__source {
+    sql: ${TABLE}.client_info.attribution.source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Source"
+  }
+
+  dimension: client_info__attribution__term {
+    sql: ${TABLE}.client_info.attribution.term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Term"
+  }
+
   dimension: client_info__build_date {
     sql: ${TABLE}.client_info.build_date ;;
     type: string
@@ -77,6 +135,14 @@ view: desktop_crashes_table {
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
+  }
+
+  dimension: client_info__distribution__name {
+    sql: ${TABLE}.client_info.distribution.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Distribution"
+    group_item_label: "Name"
   }
 
   dimension: client_info__first_run_date {
@@ -208,6 +274,27 @@ view: desktop_crashes_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "DNT"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Cipher Hex"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_version {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Version"
+  }
+
+  dimension: metadata__header__parsed_x_source_tags {
+    sql: ${TABLE}.metadata.header.parsed_x_source_tags ;;
+    hidden: yes
   }
 
   dimension: metadata__header__x_debug_id {
@@ -354,12 +441,12 @@ view: desktop_crashes_table {
     group_item_label: "Environment Headless Mode"
   }
 
-  dimension: metrics__datetime__crash_time {
-    sql: ${TABLE}.metrics.datetime.crash_time ;;
+  dimension: metrics__datetime__raw_crash_time {
+    sql: ${TABLE}.metrics.datetime.raw_crash_time ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics Datetime"
-    group_item_label: "Crash Time"
+    group_item_label: "Raw Crash Time"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -768,6 +855,70 @@ view: desktop_crashes_table {
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
+  }
+
+  dimension_group: metadata__header__parsed {
+    sql: ${TABLE}.metadata.header.parsed_date ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metadata Header: Parsed Date"
+  }
+
+  dimension_group: metrics__datetime__crash {
+    sql: ${TABLE}.metrics.datetime.crash_time ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Crash Time"
+  }
+
+  dimension_group: ping_info__parsed_end {
+    sql: ${TABLE}.ping_info.parsed_end_time ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Ping Info: Parsed End Time"
+  }
+
+  dimension_group: ping_info__parsed_start {
+    sql: ${TABLE}.ping_info.parsed_start_time ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Ping Info: Parsed Start Time"
   }
 
   dimension_group: submission {
