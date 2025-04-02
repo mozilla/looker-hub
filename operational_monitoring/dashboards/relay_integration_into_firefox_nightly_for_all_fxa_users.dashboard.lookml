@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: relay_integration_into_firefox_nightly_for_all_fxa_users
-    type: looker_line
-    fields: [
-      relay_integration_into_firefox_nightly_for_all_fxa_users.submission_date,
-      relay_integration_into_firefox_nightly_for_all_fxa_users.branch,
-      relay_integration_into_firefox_nightly_for_all_fxa_users.point
-    ]
-    pivots: [
-      relay_integration_into_firefox_nightly_for_all_fxa_users.branch
-    ]
-    filters:
-      relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'active_hours'
-      relay_integration_into_firefox_nightly_for_all_fxa_users.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: relay_integration_into_firefox_nightly_for_all_fxa_users.submission_date
-    field_y: relay_integration_into_firefox_nightly_for_all_fxa_users.point
-    log_scale: false
-    ci_lower: relay_integration_into_firefox_nightly_for_all_fxa_users.lower
-    ci_upper: relay_integration_into_firefox_nightly_for_all_fxa_users.upper
-    show_grid: true
-    listen:
-      Date: relay_integration_into_firefox_nightly_for_all_fxa_users.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -63,6 +29,108 @@
       relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'search_count'
       relay_integration_into_firefox_nightly_for_all_fxa_users.statistic: mean
     row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: relay_integration_into_firefox_nightly_for_all_fxa_users.submission_date
+    field_y: relay_integration_into_firefox_nightly_for_all_fxa_users.point
+    log_scale: false
+    ci_lower: relay_integration_into_firefox_nightly_for_all_fxa_users.lower
+    ci_upper: relay_integration_into_firefox_nightly_for_all_fxa_users.upper
+    show_grid: true
+    listen:
+      Date: relay_integration_into_firefox_nightly_for_all_fxa_users.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: relay_integration_into_firefox_nightly_for_all_fxa_users
+    type: looker_line
+    fields: [
+      relay_integration_into_firefox_nightly_for_all_fxa_users.submission_date,
+      relay_integration_into_firefox_nightly_for_all_fxa_users.branch,
+      relay_integration_into_firefox_nightly_for_all_fxa_users.point
+    ]
+    pivots: [
+      relay_integration_into_firefox_nightly_for_all_fxa_users.branch
+    ]
+    filters:
+      relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'days_of_use'
+      relay_integration_into_firefox_nightly_for_all_fxa_users.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: relay_integration_into_firefox_nightly_for_all_fxa_users.submission_date
+    field_y: relay_integration_into_firefox_nightly_for_all_fxa_users.point
+    log_scale: false
+    ci_lower: relay_integration_into_firefox_nightly_for_all_fxa_users.lower
+    ci_upper: relay_integration_into_firefox_nightly_for_all_fxa_users.upper
+    show_grid: true
+    listen:
+      Date: relay_integration_into_firefox_nightly_for_all_fxa_users.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: relay_integration_into_firefox_nightly_for_all_fxa_users
+    type: looker_line
+    fields: [
+      relay_integration_into_firefox_nightly_for_all_fxa_users.submission_date,
+      relay_integration_into_firefox_nightly_for_all_fxa_users.branch,
+      relay_integration_into_firefox_nightly_for_all_fxa_users.point
+    ]
+    pivots: [
+      relay_integration_into_firefox_nightly_for_all_fxa_users.branch
+    ]
+    filters:
+      relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'retained'
+      relay_integration_into_firefox_nightly_for_all_fxa_users.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: relay_integration_into_firefox_nightly_for_all_fxa_users.submission_date
+    field_y: relay_integration_into_firefox_nightly_for_all_fxa_users.point
+    log_scale: false
+    ci_lower: relay_integration_into_firefox_nightly_for_all_fxa_users.lower
+    ci_upper: relay_integration_into_firefox_nightly_for_all_fxa_users.upper
+    show_grid: true
+    listen:
+      Date: relay_integration_into_firefox_nightly_for_all_fxa_users.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: relay_integration_into_firefox_nightly_for_all_fxa_users
+    type: looker_line
+    fields: [
+      relay_integration_into_firefox_nightly_for_all_fxa_users.submission_date,
+      relay_integration_into_firefox_nightly_for_all_fxa_users.branch,
+      relay_integration_into_firefox_nightly_for_all_fxa_users.point
+    ]
+    pivots: [
+      relay_integration_into_firefox_nightly_for_all_fxa_users.branch
+    ]
+    filters:
+      relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'uri_count'
+      relay_integration_into_firefox_nightly_for_all_fxa_users.statistic: mean
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -98,7 +166,7 @@
     filters:
       relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'memory_total'
       relay_integration_into_firefox_nightly_for_all_fxa_users.statistic: percentile
-    row: 10
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -133,7 +201,7 @@
     filters:
       relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'ad_clicks'
       relay_integration_into_firefox_nightly_for_all_fxa_users.statistic: mean
-    row: 10
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -149,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,44 +233,10 @@
       relay_integration_into_firefox_nightly_for_all_fxa_users.branch
     ]
     filters:
-      relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'days_of_use'
+      relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'active_hours'
       relay_integration_into_firefox_nightly_for_all_fxa_users.statistic: mean
-    row: 20
+    row: 30
     col: 0
-    width: 12
-    height: 8
-    field_x: relay_integration_into_firefox_nightly_for_all_fxa_users.submission_date
-    field_y: relay_integration_into_firefox_nightly_for_all_fxa_users.point
-    log_scale: false
-    ci_lower: relay_integration_into_firefox_nightly_for_all_fxa_users.lower
-    ci_upper: relay_integration_into_firefox_nightly_for_all_fxa_users.upper
-    show_grid: true
-    listen:
-      Date: relay_integration_into_firefox_nightly_for_all_fxa_users.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: relay_integration_into_firefox_nightly_for_all_fxa_users
-    type: looker_line
-    fields: [
-      relay_integration_into_firefox_nightly_for_all_fxa_users.submission_date,
-      relay_integration_into_firefox_nightly_for_all_fxa_users.branch,
-      relay_integration_into_firefox_nightly_for_all_fxa_users.point
-    ]
-    pivots: [
-      relay_integration_into_firefox_nightly_for_all_fxa_users.branch
-    ]
-    filters:
-      relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'retained'
-      relay_integration_into_firefox_nightly_for_all_fxa_users.statistic: mean
-    row: 20
-    col: 12
     width: 12
     height: 8
     field_x: relay_integration_into_firefox_nightly_for_all_fxa_users.submission_date
@@ -234,40 +268,6 @@
     ]
     filters:
       relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'qualified_cumulative_days_of_use'
-      relay_integration_into_firefox_nightly_for_all_fxa_users.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: relay_integration_into_firefox_nightly_for_all_fxa_users.submission_date
-    field_y: relay_integration_into_firefox_nightly_for_all_fxa_users.point
-    log_scale: false
-    ci_lower: relay_integration_into_firefox_nightly_for_all_fxa_users.lower
-    ci_upper: relay_integration_into_firefox_nightly_for_all_fxa_users.upper
-    show_grid: true
-    listen:
-      Date: relay_integration_into_firefox_nightly_for_all_fxa_users.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: relay_integration_into_firefox_nightly_for_all_fxa_users
-    type: looker_line
-    fields: [
-      relay_integration_into_firefox_nightly_for_all_fxa_users.submission_date,
-      relay_integration_into_firefox_nightly_for_all_fxa_users.branch,
-      relay_integration_into_firefox_nightly_for_all_fxa_users.point
-    ]
-    pivots: [
-      relay_integration_into_firefox_nightly_for_all_fxa_users.branch
-    ]
-    filters:
-      relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'uri_count'
       relay_integration_into_firefox_nightly_for_all_fxa_users.statistic: mean
     row: 30
     col: 12

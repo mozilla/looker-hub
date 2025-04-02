@@ -2960,6 +2960,43 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__memory_distribution__crash_compressed_store_size__sum {
+    label: "Crash Compressed Store Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.crash_compressed_store_size.sum ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "Compressed Store Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Compressed Store Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_compressed_store_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size (in bytes) of the compressed crash store JSON file.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram CRASH_STORE_COMPRESSED_BYTES.
+"
+  }
+
+  dimension: metrics__labeled_counter__crash_submit_attempt {
+    label: "Crash Submit Attempt"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.crash_submit_attempt ;;
+    group_label: "Crash"
+    group_item_label: "Submit Attempt"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Submit Attempt"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_submit_attempt"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An attempt to submit a crash. Keyed on the CrashManager Crash.type.
+This metric was generated to correspond to the Legacy Telemetry count histogram PROCESS_CRASH_SUBMIT_ATTEMPT.
+"
+  }
+
   dimension: metrics__labeled_counter__crash_submission_channel_status {
     label: "Crash Submission Channel Status"
     hidden: yes
@@ -33100,6 +33137,51 @@ documented in the ping's pings.yaml file.
     description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
   }
 
+  dimension: client_info__attribution__campaign {
+    sql: ${TABLE}.client_info.attribution.campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Campaign"
+    description: "The attribution campaign (e.g. 'mozilla-org')."
+  }
+
+  dimension: client_info__attribution__content {
+    sql: ${TABLE}.client_info.attribution.content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Content"
+    description: "The attribution content (e.g. 'firefoxview')."
+  }
+
+  dimension: client_info__attribution__medium {
+    sql: ${TABLE}.client_info.attribution.medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Medium"
+    description: "The attribution medium (e.g. 'organic' for a search engine)."
+  }
+
+  dimension: client_info__attribution__source {
+    sql: ${TABLE}.client_info.attribution.source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Source"
+    description: "The attribution source (e.g. 'google-play')."
+  }
+
+  dimension: client_info__attribution__term {
+    sql: ${TABLE}.client_info.attribution.term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Term"
+    description: "The attribution term (e.g. 'browser with developer tools for android')."
+  }
+
   dimension: client_info__build_date {
     sql: ${TABLE}.client_info.build_date ;;
     type: string
@@ -33131,6 +33213,15 @@ documented in the ping's pings.yaml file.
     group_label: "Client Info"
     group_item_label: "Device Model"
     description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
+  }
+
+  dimension: client_info__distribution__name {
+    sql: ${TABLE}.client_info.distribution.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Distribution"
+    group_item_label: "Name"
+    description: "The distribution name (e.g. 'MozillaOnline')."
   }
 
   dimension: client_info__first_run_date {
@@ -45510,6 +45601,47 @@ view: metrics__metrics__labeled_counter__crash_submission_channel_status {
 
 view: metrics__metrics__labeled_counter__crash_submission_collector_errors {
   label: "Crash Submission - Collector Errors"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__crash_submit_attempt {
+  label: "Crash - Submit Attempt"
 
   dimension: document_id {
     type: string
@@ -72014,6 +72146,20 @@ view: metrics__metrics__memory_distribution__browser_backup_total_backup_size__v
 }
 
 view: metrics__metrics__memory_distribution__cert_storage_memory__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__crash_compressed_store_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
