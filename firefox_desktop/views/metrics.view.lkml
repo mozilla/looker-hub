@@ -18270,6 +18270,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__ipc_transaction_cancel {
+    label: "Ipc Transaction Cancel"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_transaction_cancel ;;
+    group_label: "Ipc"
+    group_item_label: "Transaction Cancel"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Transaction Cancel"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipc_transaction_cancel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True when an IPC transaction is canceled
+This metric was generated to correspond to the Legacy Telemetry boolean histogram IPC_TRANSACTION_CANCEL.
+"
+  }
+
   dimension: metrics__timing_distribution__javascript_gc_animation__sum {
     label: "Javascript GC Animation Sum"
     hidden: no
@@ -26664,6 +26682,44 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__timing_distribution__process_child_launch__sum {
+    label: "Process Child Launch Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.sum ;;
+    type: number
+    group_label: "Process"
+    group_item_label: "Child Launch Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Process Child Launch Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/process_child_launch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in the generic child process launching code, which is run off-main-thread and used by all child process types
+This metric was generated to correspond to the Legacy Telemetry exponential histogram CHILD_PROCESS_LAUNCH_MS.
+"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__sum {
+    label: "Process Lifetime Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.sum ;;
+    type: number
+    group_label: "Process"
+    group_item_label: "Lifetime Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Process Lifetime Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/process_lifetime"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Average lifetime of a content process in seconds
+This metric was generated to correspond to the Legacy Telemetry exponential histogram PROCESS_LIFETIME.
+"
+  }
+
   dimension: metrics__labeled_counter__pwmgr_form_autofill_result {
     label: "Pwmgr Form Autofill Result"
     hidden: yes
@@ -28919,6 +28975,78 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "The duration of poll. (ms)
 This metric was generated to correspond to the Legacy Telemetry exponential histogram STS_POLL_CYCLE.
+"
+  }
+
+  dimension: metrics__labeled_counter__subprocess_abnormal_abort {
+    label: "Subprocess Abnormal Abort"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.subprocess_abnormal_abort ;;
+    group_label: "Subprocess"
+    group_item_label: "Abnormal Abort"
+
+    link: {
+      label: "Glean Dictionary reference for Subprocess Abnormal Abort"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/subprocess_abnormal_abort"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts of plugin/content process abnormal shutdown, whether or not a crash report was available.
+This metric was generated to correspond to the Legacy Telemetry count histogram SUBPROCESS_ABNORMAL_ABORT.
+"
+  }
+
+  dimension: metrics__labeled_counter__subprocess_crashes_with_dump {
+    label: "Subprocess Crashes With Dump"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.subprocess_crashes_with_dump ;;
+    group_label: "Subprocess"
+    group_item_label: "Crashes With Dump"
+
+    link: {
+      label: "Glean Dictionary reference for Subprocess Crashes With Dump"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/subprocess_crashes_with_dump"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts of plugin and content process crashes which are reported with a crash dump.
+This metric was generated to correspond to the Legacy Telemetry count histogram SUBPROCESS_CRASHES_WITH_DUMP.
+"
+  }
+
+  dimension: metrics__labeled_counter__subprocess_kill_hard {
+    label: "Subprocess Kill Hard"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.subprocess_kill_hard ;;
+    group_label: "Subprocess"
+    group_item_label: "Kill Hard"
+
+    link: {
+      label: "Glean Dictionary reference for Subprocess Kill Hard"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/subprocess_kill_hard"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a subprocess was forcibly killed, and the reason.
+This metric was generated to correspond to the Legacy Telemetry count histogram SUBPROCESS_KILL_HARD.
+"
+  }
+
+  dimension: metrics__labeled_counter__subprocess_launch_failure {
+    label: "Subprocess Launch Failure"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.subprocess_launch_failure ;;
+    group_label: "Subprocess"
+    group_item_label: "Launch Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Subprocess Launch Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/subprocess_launch_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times launching a subprocess fails. Counts are by subprocess-type using the GeckoProcessType enum.
+This metric was generated to correspond to the Legacy Telemetry count histogram SUBPROCESS_LAUNCH_FAILURE.
 "
   }
 
@@ -48430,6 +48558,47 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
   }
 }
 
+view: metrics__metrics__labeled_counter__ipc_transaction_cancel {
+  label: "Ipc - Transaction Cancel"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__javascript_gc_budget_was_increased {
   label: "Javascript GC - Budget Was Increased"
 
@@ -54746,6 +54915,170 @@ view: metrics__metrics__labeled_counter__sidebar_search {
 
 view: metrics__metrics__labeled_counter__ssl_resumed_session {
   label: "SSL - Resumed Session"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__subprocess_abnormal_abort {
+  label: "Subprocess - Abnormal Abort"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__subprocess_crashes_with_dump {
+  label: "Subprocess - Crashes With Dump"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__subprocess_kill_hard {
+  label: "Subprocess - Kill Hard"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__subprocess_launch_failure {
+  label: "Subprocess - Launch Failure"
 
   dimension: document_id {
     type: string
@@ -77592,6 +77925,34 @@ view: metrics__metrics__timing_distribution__predictor_wait_time__values {
 }
 
 view: metrics__metrics__timing_distribution__privacy_sanitize_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__process_child_launch__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__process_lifetime__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

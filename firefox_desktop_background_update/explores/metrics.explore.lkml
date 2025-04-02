@@ -663,6 +663,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ipc_sent_messages_parent_inactive}) AS metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__ipc_transaction_cancel {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ipc_transaction_cancel}) AS metrics__metrics__labeled_counter__ipc_transaction_cancel ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ipc_transaction_cancel.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__javascript_gc_budget_was_increased {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__javascript_gc_budget_was_increased}) AS metrics__metrics__labeled_counter__javascript_gc_budget_was_increased ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__javascript_gc_budget_was_increased.document_id} ;;
@@ -1326,6 +1331,26 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__ssl_resumed_session {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ssl_resumed_session}) AS metrics__metrics__labeled_counter__ssl_resumed_session ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ssl_resumed_session.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__subprocess_abnormal_abort {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__subprocess_abnormal_abort}) AS metrics__metrics__labeled_counter__subprocess_abnormal_abort ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__subprocess_abnormal_abort.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__subprocess_crashes_with_dump {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__subprocess_crashes_with_dump}) AS metrics__metrics__labeled_counter__subprocess_crashes_with_dump ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__subprocess_crashes_with_dump.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__subprocess_kill_hard {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__subprocess_kill_hard}) AS metrics__metrics__labeled_counter__subprocess_kill_hard ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__subprocess_kill_hard.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__subprocess_launch_failure {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__subprocess_launch_failure}) AS metrics__metrics__labeled_counter__subprocess_launch_failure ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__subprocess_launch_failure.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {

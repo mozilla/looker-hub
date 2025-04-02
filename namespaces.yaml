@@ -18418,7 +18418,7 @@ reference:
   views:
     macroeconomic_indices:
       tables:
-      - table: mozdata.reference.macroeconomic_indices
+      - table: mozdata.external.macroeconomic_indices
       type: table_view
 relay:
   glean_app: false
