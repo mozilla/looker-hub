@@ -12260,6 +12260,14 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__ipc_transaction_cancel {
+    sql: ${TABLE}.metrics.labeled_counter.ipc_transaction_cancel ;;
+    hidden: yes
+    description: "True when an IPC transaction is canceled
+This metric was generated to correspond to the Legacy Telemetry boolean histogram IPC_TRANSACTION_CANCEL.
+"
+  }
+
   dimension: metrics__labeled_counter__javascript_gc_budget_was_increased {
     sql: ${TABLE}.metrics.labeled_counter.javascript_gc_budget_was_increased ;;
     hidden: yes
@@ -13419,6 +13427,38 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     hidden: yes
     description: "complete TLS connect that used TLS Session Resumption (collected at same time as SSL_TIME_UNTIL_HANDSHAKE_FINISHED)
 This metric was generated to correspond to the Legacy Telemetry boolean histogram SSL_RESUMED_SESSION.
+"
+  }
+
+  dimension: metrics__labeled_counter__subprocess_abnormal_abort {
+    sql: ${TABLE}.metrics.labeled_counter.subprocess_abnormal_abort ;;
+    hidden: yes
+    description: "Counts of plugin/content process abnormal shutdown, whether or not a crash report was available.
+This metric was generated to correspond to the Legacy Telemetry count histogram SUBPROCESS_ABNORMAL_ABORT.
+"
+  }
+
+  dimension: metrics__labeled_counter__subprocess_crashes_with_dump {
+    sql: ${TABLE}.metrics.labeled_counter.subprocess_crashes_with_dump ;;
+    hidden: yes
+    description: "Counts of plugin and content process crashes which are reported with a crash dump.
+This metric was generated to correspond to the Legacy Telemetry count histogram SUBPROCESS_CRASHES_WITH_DUMP.
+"
+  }
+
+  dimension: metrics__labeled_counter__subprocess_kill_hard {
+    sql: ${TABLE}.metrics.labeled_counter.subprocess_kill_hard ;;
+    hidden: yes
+    description: "Counts the number of times a subprocess was forcibly killed, and the reason.
+This metric was generated to correspond to the Legacy Telemetry count histogram SUBPROCESS_KILL_HARD.
+"
+  }
+
+  dimension: metrics__labeled_counter__subprocess_launch_failure {
+    sql: ${TABLE}.metrics.labeled_counter.subprocess_launch_failure ;;
+    hidden: yes
+    description: "Counts the number of times launching a subprocess fails. Counts are by subprocess-type using the GeckoProcessType enum.
+This metric was generated to correspond to the Legacy Telemetry count histogram SUBPROCESS_LAUNCH_FAILURE.
 "
   }
 
@@ -40916,6 +40956,140 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__process_child_launch__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__count {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__range {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__sum {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__values {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__count {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__range {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__sum {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__values {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__pwmgr_signup_form_detection__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.pwmgr_signup_form_detection.bucket_count ;;
     type: number
@@ -64256,6 +64430,34 @@ view: metrics_table__metrics__timing_distribution__predictor_wait_time__values {
 }
 
 view: metrics_table__metrics__timing_distribution__privacy_sanitize_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__process_child_launch__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__process_lifetime__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

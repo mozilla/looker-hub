@@ -9667,6 +9667,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__ipc_transaction_cancel {
+    sql: ${TABLE}.metrics.labeled_counter.ipc_transaction_cancel ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__javascript_gc_budget_was_increased {
     sql: ${TABLE}.metrics.labeled_counter.javascript_gc_budget_was_increased ;;
     hidden: yes
@@ -10394,6 +10399,26 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__ssl_resumed_session {
     sql: ${TABLE}.metrics.labeled_counter.ssl_resumed_session ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__subprocess_abnormal_abort {
+    sql: ${TABLE}.metrics.labeled_counter.subprocess_abnormal_abort ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__subprocess_crashes_with_dump {
+    sql: ${TABLE}.metrics.labeled_counter.subprocess_crashes_with_dump ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__subprocess_kill_hard {
+    sql: ${TABLE}.metrics.labeled_counter.subprocess_kill_hard ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__subprocess_launch_failure {
+    sql: ${TABLE}.metrics.labeled_counter.subprocess_launch_failure ;;
     hidden: yes
   }
 
@@ -36892,6 +36917,138 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__process_child_launch__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__count {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__range {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__sum {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Child Launch"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__process_child_launch__values {
+    sql: ${TABLE}.metrics.timing_distribution.process_child_launch.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__count {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__range {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__sum {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Process Lifetime"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__process_lifetime__values {
+    sql: ${TABLE}.metrics.timing_distribution.process_lifetime.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__pwmgr_signup_form_detection__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.pwmgr_signup_form_detection.bucket_count ;;
     type: number
@@ -56954,6 +57111,34 @@ view: metrics_table__metrics__timing_distribution__predictor_wait_time__values {
 }
 
 view: metrics_table__metrics__timing_distribution__privacy_sanitize_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__process_child_launch__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__process_lifetime__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
