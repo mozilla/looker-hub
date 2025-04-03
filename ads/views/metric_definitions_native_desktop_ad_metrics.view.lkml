@@ -210,7 +210,7 @@ native_desktop_ad_metrics_zone_name,
 
   dimension: campaign_id {
     sql: ${TABLE}.native_desktop_ad_metrics_campaign_id ;;
-    type: string
+    type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
