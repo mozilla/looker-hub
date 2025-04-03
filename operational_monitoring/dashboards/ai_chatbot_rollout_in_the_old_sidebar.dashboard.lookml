@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,9 +26,77 @@
       ai_chatbot_rollout_in_the_old_sidebar.branch
     ]
     filters:
-      ai_chatbot_rollout_in_the_old_sidebar.metric: 'search_count'
+      ai_chatbot_rollout_in_the_old_sidebar.metric: 'qualified_cumulative_days_of_use'
       ai_chatbot_rollout_in_the_old_sidebar.statistic: mean
     row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: ai_chatbot_rollout_in_the_old_sidebar.submission_date
+    field_y: ai_chatbot_rollout_in_the_old_sidebar.point
+    log_scale: false
+    ci_lower: ai_chatbot_rollout_in_the_old_sidebar.lower
+    ci_upper: ai_chatbot_rollout_in_the_old_sidebar.upper
+    show_grid: true
+    listen:
+      Date: ai_chatbot_rollout_in_the_old_sidebar.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ai_chatbot_rollout_in_the_old_sidebar
+    type: looker_line
+    fields: [
+      ai_chatbot_rollout_in_the_old_sidebar.submission_date,
+      ai_chatbot_rollout_in_the_old_sidebar.branch,
+      ai_chatbot_rollout_in_the_old_sidebar.point
+    ]
+    pivots: [
+      ai_chatbot_rollout_in_the_old_sidebar.branch
+    ]
+    filters:
+      ai_chatbot_rollout_in_the_old_sidebar.metric: 'ad_clicks'
+      ai_chatbot_rollout_in_the_old_sidebar.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: ai_chatbot_rollout_in_the_old_sidebar.submission_date
+    field_y: ai_chatbot_rollout_in_the_old_sidebar.point
+    log_scale: false
+    ci_lower: ai_chatbot_rollout_in_the_old_sidebar.lower
+    ci_upper: ai_chatbot_rollout_in_the_old_sidebar.upper
+    show_grid: true
+    listen:
+      Date: ai_chatbot_rollout_in_the_old_sidebar.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ai_chatbot_rollout_in_the_old_sidebar
+    type: looker_line
+    fields: [
+      ai_chatbot_rollout_in_the_old_sidebar.submission_date,
+      ai_chatbot_rollout_in_the_old_sidebar.branch,
+      ai_chatbot_rollout_in_the_old_sidebar.point
+    ]
+    pivots: [
+      ai_chatbot_rollout_in_the_old_sidebar.branch
+    ]
+    filters:
+      ai_chatbot_rollout_in_the_old_sidebar.metric: 'active_hours'
+      ai_chatbot_rollout_in_the_old_sidebar.statistic: mean
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -61,74 +129,6 @@
     ]
     filters:
       ai_chatbot_rollout_in_the_old_sidebar.metric: 'days_of_use'
-      ai_chatbot_rollout_in_the_old_sidebar.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: ai_chatbot_rollout_in_the_old_sidebar.submission_date
-    field_y: ai_chatbot_rollout_in_the_old_sidebar.point
-    log_scale: false
-    ci_lower: ai_chatbot_rollout_in_the_old_sidebar.lower
-    ci_upper: ai_chatbot_rollout_in_the_old_sidebar.upper
-    show_grid: true
-    listen:
-      Date: ai_chatbot_rollout_in_the_old_sidebar.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ai_chatbot_rollout_in_the_old_sidebar
-    type: looker_line
-    fields: [
-      ai_chatbot_rollout_in_the_old_sidebar.submission_date,
-      ai_chatbot_rollout_in_the_old_sidebar.branch,
-      ai_chatbot_rollout_in_the_old_sidebar.point
-    ]
-    pivots: [
-      ai_chatbot_rollout_in_the_old_sidebar.branch
-    ]
-    filters:
-      ai_chatbot_rollout_in_the_old_sidebar.metric: 'retained'
-      ai_chatbot_rollout_in_the_old_sidebar.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: ai_chatbot_rollout_in_the_old_sidebar.submission_date
-    field_y: ai_chatbot_rollout_in_the_old_sidebar.point
-    log_scale: false
-    ci_lower: ai_chatbot_rollout_in_the_old_sidebar.lower
-    ci_upper: ai_chatbot_rollout_in_the_old_sidebar.upper
-    show_grid: true
-    listen:
-      Date: ai_chatbot_rollout_in_the_old_sidebar.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ai_chatbot_rollout_in_the_old_sidebar
-    type: looker_line
-    fields: [
-      ai_chatbot_rollout_in_the_old_sidebar.submission_date,
-      ai_chatbot_rollout_in_the_old_sidebar.branch,
-      ai_chatbot_rollout_in_the_old_sidebar.point
-    ]
-    pivots: [
-      ai_chatbot_rollout_in_the_old_sidebar.branch
-    ]
-    filters:
-      ai_chatbot_rollout_in_the_old_sidebar.metric: 'uri_count'
       ai_chatbot_rollout_in_the_old_sidebar.statistic: mean
     row: 10
     col: 12
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       ai_chatbot_rollout_in_the_old_sidebar.branch
     ]
     filters:
-      ai_chatbot_rollout_in_the_old_sidebar.metric: 'ad_clicks'
+      ai_chatbot_rollout_in_the_old_sidebar.metric: 'uri_count'
       ai_chatbot_rollout_in_the_old_sidebar.statistic: mean
     row: 20
     col: 12
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       ai_chatbot_rollout_in_the_old_sidebar.branch
     ]
     filters:
-      ai_chatbot_rollout_in_the_old_sidebar.metric: 'active_hours'
+      ai_chatbot_rollout_in_the_old_sidebar.metric: 'search_count'
       ai_chatbot_rollout_in_the_old_sidebar.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       ai_chatbot_rollout_in_the_old_sidebar.branch
     ]
     filters:
-      ai_chatbot_rollout_in_the_old_sidebar.metric: 'qualified_cumulative_days_of_use'
+      ai_chatbot_rollout_in_the_old_sidebar.metric: 'retained'
       ai_chatbot_rollout_in_the_old_sidebar.statistic: mean
     row: 30
     col: 12
