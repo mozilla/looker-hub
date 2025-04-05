@@ -210,9 +210,11 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
     }
 
     description: "The telemetry id of the search engine.
-For application provided engines, this is either supplied by the
-configuration or from the first part of the associated WebExtension Id.
-For other engines, this is `other-<extensionName>`.
+For example: \"engine1\"
+
+For application-provided engines, this is the identifier plus telemetry
+suffix supplied by the configuration.
+For other engines, this is `other-<engineName>`.
 "
   }
 
@@ -231,9 +233,12 @@ For other engines, this is `other-<extensionName>`.
     }
 
     description: "The telemetry id of the search engine.
-For application provided engines, this is either supplied by the
-configuration or from the first part of the associated WebExtension Id.
-For other engines, this is `other-<extensionName>`.
+For example: \"engine1\"
+
+For application-provided engines, this is the identifier plus telemetry
+suffix supplied by the configuration.
+For other engines, this is `other-<engineName>`.
+
 If this string is an empty string (`\"\"`), this means that one or both of
 the preferences `browser.search.separatePrivateDefault` and
 `browser.search.separatePrivateDefault.ui.enabled` are set to false.
