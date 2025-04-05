@@ -5434,9 +5434,11 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "The telemetry id of the search engine.
-For application provided engines, this is either supplied by the
-configuration or from the first part of the associated WebExtension Id.
-For other engines, this is `other-<extensionName>`.
+For example: \"engine1\"
+
+For application-provided engines, this is the identifier plus telemetry
+suffix supplied by the configuration.
+For other engines, this is `other-<engineName>`.
 "
   }
 
@@ -5456,10 +5458,13 @@ For other engines, this is `other-<extensionName>`.
 
     description: "A path relating to where the search engine was installed/loaded from.
 For example:
-  `[addon]<extension id>` for a WebExtension based
+  `[app]appDefault` for an app-provided engine.
+  `[addon]<extension id>` for a WebExtension-based engine.
+  `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch-based
   engine.
-  `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch based
-  engine.
+  `[policy]` for an enteprise policy engine.
+  `[user]` for a search engine defined by the user or generated from a
+  web page.
 Note: this metric is truncated at 100 characters.
 "
   }
@@ -5522,6 +5527,7 @@ on if the loadPathHash is valid.
     }
 
     description: "The display name of the user's default engine.
+
 If this string is an empty string (`\"\"`), this means that one or both of
 the preferences `browser.search.separatePrivateDefault` and
 `browser.search.separatePrivateDefault.ui.enabled` are set to false.
@@ -5545,9 +5551,12 @@ default engine, and hence both versions of these fields will be filled in.
     }
 
     description: "The telemetry id of the search engine.
-For application provided engines, this is either supplied by the
-configuration or from the first part of the associated WebExtension Id.
-For other engines, this is `other-<extensionName>`.
+For example: \"engine1\"
+
+For application-provided engines, this is the identifier plus telemetry
+suffix supplied by the configuration.
+For other engines, this is `other-<engineName>`.
+
 If this string is an empty string (`\"\"`), this means that one or both of
 the preferences `browser.search.separatePrivateDefault` and
 `browser.search.separatePrivateDefault.ui.enabled` are set to false.
@@ -5572,11 +5581,15 @@ default engine, and hence both versions of these fields will be filled in.
 
     description: "A path relating to where the search engine was installed/loaded from.
 For example:
-  `[addon]<extension id>` for a WebExtension based
+  `[app]appDefault` for an app-provided engine.
+  `[addon]<extension id>` for a WebExtension-based engine.
+  `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch-based
   engine.
-  `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch based
-  engine.
+  `[policy]` for an enteprise policy engine.
+  `[user]` for a search engine defined by the user or generated from a
+  web page.
 Note: this metric is truncated at 100 characters.
+
 If this string is an empty string (`\"\"`), this means that one or both of
 the preferences `browser.search.separatePrivateDefault` and
 `browser.search.separatePrivateDefault.ui.enabled` are set to false.
