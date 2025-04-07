@@ -2924,6 +2924,10 @@ firefox_desktop:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_normandy_events
+    metric_definitions_protections_popup_events:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_protections_popup_events
     metric_definitions_search_clients_engines_sources_daily:
       type: metric_definitions_explore
       views:
@@ -2932,6 +2936,10 @@ firefox_desktop:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_serp_events
+    metric_definitions_site_breakage_events:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_site_breakage_events
     metric_definitions_sponsored_tiles_clients_daily:
       type: metric_definitions_explore
       views:
@@ -3347,9 +3355,13 @@ firefox_desktop:
       type: metric_definitions_view
     metric_definitions_normandy_events:
       type: metric_definitions_view
+    metric_definitions_protections_popup_events:
+      type: metric_definitions_view
     metric_definitions_search_clients_engines_sources_daily:
       type: metric_definitions_view
     metric_definitions_serp_events:
+      type: metric_definitions_view
+    metric_definitions_site_breakage_events:
       type: metric_definitions_view
     metric_definitions_sponsored_tiles_clients_daily:
       type: metric_definitions_view
@@ -9493,10 +9505,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 7
+            default: Windows 10
             options:
-            - Windows 7
             - Windows 10
+            - Windows 7
             - Windows 8
             - Windows 8.1
             - Windows 11
@@ -9535,10 +9547,10 @@ operational_monitoring:
             default: release
             options:
             - release
-            - beta
             - esr
-            - nightly
             - aurora
+            - nightly
+            - beta
             - default
             - nightly-pine
             - nightly-oak
@@ -9953,11 +9965,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id185
           normalized_channel:
-            default: beta
+            default: aurora
             options:
-            - beta
             - aurora
             - nightly
+            - beta
             - release
             - esr
             - Other
@@ -10523,8 +10535,8 @@ operational_monitoring:
             default: Linux
             options:
             - Linux
-            - Mac
             - Windows
+            - Mac
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -11691,15 +11703,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id326
           app:
-            default: Windows - vpn_session
+            default: Linux - vpn_session
             options:
-            - Windows - vpn_session
-            - Darwin - vpn_session
             - Linux - vpn_session
-            - iOS - daemon_session
-            - iOS - vpn_session
-            - Android - vpn_session
             - Android - daemon_session
+            - Darwin - vpn_session
+            - Windows - vpn_session
+            - Android - vpn_session
+            - iOS - vpn_session
+            - iOS - daemon_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id327
@@ -12922,17 +12934,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id413
           channel:
-            default: release
+            default: nightly
             options:
-            - release
             - nightly
             - beta
+            - release
           os:
-            default: Windows_NT
+            default: Darwin
             options:
-            - Windows_NT
-            - Linux
             - Darwin
+            - Linux
+            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id414
