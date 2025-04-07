@@ -2956,6 +2956,10 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: newtab
+    newtab_items_daily:
+      type: table_explore
+      views:
+        base_view: newtab_items_daily
     nimbus_targeting_context:
       type: glean_ping_explore
       views:
@@ -3400,6 +3404,10 @@ firefox_desktop:
     newtab_interactions_table:
       tables:
       - table: mozdata.telemetry.newtab_interactions
+      type: table_view
+    newtab_items_daily:
+      tables:
+      - table: moz-fx-data-shared-prod.firefox_desktop_derived.newtab_items_daily_v1
       type: table_view
     newtab_live_table:
       tables:
@@ -9505,10 +9513,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 7
+            default: Windows 10
             options:
-            - Windows 7
             - Windows 10
+            - Windows 7
             - Windows 8
             - Windows 8.1
             - Windows 11
@@ -9549,8 +9557,8 @@ operational_monitoring:
             - release
             - beta
             - esr
-            - nightly
             - aurora
+            - nightly
             - default
             - nightly-pine
             - nightly-oak
@@ -9965,11 +9973,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id185
           normalized_channel:
-            default: beta
+            default: nightly
             options:
-            - beta
-            - aurora
             - nightly
+            - aurora
+            - beta
             - release
             - esr
             - Other
@@ -10108,136 +10116,25 @@ operational_monitoring:
         explore: firefox_user_choice
         group_by_dimension: null
         summaries: &id192
-        - metric: Success_event_volume
+        - metric: ErrExeHash_client_volume
           metric_groups: []
           statistic: sum
-        - metric: Success_event_volume
+        - metric: ErrExeHash_client_volume
           metric_groups: []
           statistic: total_ratio
-        - metric: Success_client_volume
+        - metric: ErrExeOther_client_volume
           metric_groups: []
           statistic: sum
-        - metric: Success_client_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrOther_client_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrOther_client_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrHash_event_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrHash_event_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrHash_client_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrHash_client_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrExeRejected_client_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrExeRejected_client_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrExeProgID_client_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrExeProgID_client_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrProgID_event_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrProgID_event_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: total_client_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrOther_event_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrOther_event_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrBuild_client_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrBuild_client_volume
+        - metric: ErrExeOther_client_volume
           metric_groups: []
           statistic: total_ratio
         - metric: total_event_volume
           metric_groups: []
           statistic: sum
-        - metric: ErrProgID_client_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrProgID_client_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrExeOther_client_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrExeOther_client_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: not_Success_client_volume
-          metric_groups: []
-          statistic: sum
-        - metric: not_Success_client_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrExeTimeout_event_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrExeTimeout_event_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrBuild_event_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrBuild_event_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: not_Success_event_volume
-          metric_groups: []
-          statistic: sum
-        - metric: not_Success_event_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrExeOther_event_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrExeOther_event_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrLaunchExe_client_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrLaunchExe_client_volume
-          metric_groups: []
-          statistic: total_ratio
         - metric: ErrExeProgID_event_volume
           metric_groups: []
           statistic: sum
         - metric: ErrExeProgID_event_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrExeHash_event_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrExeHash_event_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrExeTimeout_client_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrExeTimeout_client_volume
           metric_groups: []
           statistic: total_ratio
         - metric: ErrExeRejected_event_volume
@@ -10246,16 +10143,127 @@ operational_monitoring:
         - metric: ErrExeRejected_event_volume
           metric_groups: []
           statistic: total_ratio
-        - metric: ErrExeHash_client_volume
+        - metric: ErrBuild_event_volume
           metric_groups: []
           statistic: sum
-        - metric: ErrExeHash_client_volume
+        - metric: ErrBuild_event_volume
           metric_groups: []
           statistic: total_ratio
         - metric: ErrLaunchExe_event_volume
           metric_groups: []
           statistic: sum
         - metric: ErrLaunchExe_event_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrExeProgID_client_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrExeProgID_client_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrOther_client_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrOther_client_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: not_Success_client_volume
+          metric_groups: []
+          statistic: sum
+        - metric: not_Success_client_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrExeTimeout_client_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrExeTimeout_client_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrOther_event_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrOther_event_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrHash_client_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrHash_client_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: Success_event_volume
+          metric_groups: []
+          statistic: sum
+        - metric: Success_event_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrBuild_client_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrBuild_client_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: total_client_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrHash_event_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrHash_event_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: not_Success_event_volume
+          metric_groups: []
+          statistic: sum
+        - metric: not_Success_event_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrExeRejected_client_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrExeRejected_client_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrProgID_client_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrProgID_client_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrLaunchExe_client_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrLaunchExe_client_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrExeTimeout_event_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrExeTimeout_event_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrExeOther_event_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrExeOther_event_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrProgID_event_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrProgID_event_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: Success_client_volume
+          metric_groups: []
+          statistic: sum
+        - metric: Success_client_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrExeHash_event_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrExeHash_event_volume
           metric_groups: []
           statistic: total_ratio
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_user_choice_statistics
@@ -11703,15 +11711,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id326
           app:
-            default: Windows - vpn_session
+            default: iOS - daemon_session
             options:
-            - Windows - vpn_session
-            - Darwin - vpn_session
-            - Linux - vpn_session
             - iOS - daemon_session
-            - iOS - vpn_session
-            - Android - vpn_session
+            - Darwin - vpn_session
             - Android - daemon_session
+            - Windows - vpn_session
+            - Linux - vpn_session
+            - Android - vpn_session
+            - iOS - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id327
@@ -12934,17 +12942,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id413
           channel:
-            default: release
+            default: beta
             options:
+            - beta
             - release
             - nightly
-            - beta
           os:
-            default: Windows_NT
+            default: Darwin
             options:
+            - Darwin
             - Windows_NT
             - Linux
-            - Darwin
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id414
