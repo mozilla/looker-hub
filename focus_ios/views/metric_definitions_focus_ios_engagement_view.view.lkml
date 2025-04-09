@@ -344,6 +344,12 @@ focus_ios_engagement_view_wau,
     group_item_label: "Content"
   }
 
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__ext ;;
+    hidden: yes
+    group_label: "Base Fields"
+  }
+
   dimension: client_info__attribution__medium {
     sql: ${TABLE}.looker_base_fields_client_info__attribution__medium ;;
     type: string
@@ -396,6 +402,12 @@ focus_ios_engagement_view_wau,
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Device Model"
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.looker_base_fields_client_info__distribution__ext ;;
+    hidden: yes
+    group_label: "Base Fields"
   }
 
   dimension: client_info__distribution__name {

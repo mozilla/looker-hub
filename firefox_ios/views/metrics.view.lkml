@@ -4709,6 +4709,11 @@ startup, as part of the initialization sequence.
     group_item_label: "Content"
   }
 
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.client_info.attribution.ext ;;
+    hidden: yes
+  }
+
   dimension: client_info__attribution__medium {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
@@ -4760,6 +4765,11 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.client_info.distribution.ext ;;
+    hidden: yes
   }
 
   dimension: client_info__distribution__name {
