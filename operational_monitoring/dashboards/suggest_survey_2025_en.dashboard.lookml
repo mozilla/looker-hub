@@ -10,26 +10,24 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: suggest_survey_2025_en
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       suggest_survey_2025_en.submission_date,
       suggest_survey_2025_en.branch,
-      suggest_survey_2025_en.upper,
-      suggest_survey_2025_en.lower,
       suggest_survey_2025_en.point
     ]
     pivots: [
       suggest_survey_2025_en.branch
     ]
     filters:
-      suggest_survey_2025_en.metric: 'memory_total'
-      suggest_survey_2025_en.statistic: percentile
+      suggest_survey_2025_en.metric: 'uri_count'
+      suggest_survey_2025_en.statistic: mean
     row: 0
     col: 0
     width: 12
@@ -42,7 +40,40 @@
     show_grid: true
     listen:
       Date: suggest_survey_2025_en.submission_date
-      Percentile: suggest_survey_2025_en.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: suggest_survey_2025_en
+    type: looker_line
+    fields: [
+      suggest_survey_2025_en.submission_date,
+      suggest_survey_2025_en.branch,
+      suggest_survey_2025_en.point
+    ]
+    pivots: [
+      suggest_survey_2025_en.branch
+    ]
+    filters:
+      suggest_survey_2025_en.metric: 'active_hours'
+      suggest_survey_2025_en.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: suggest_survey_2025_en.submission_date
+    field_y: suggest_survey_2025_en.point
+    log_scale: false
+    ci_lower: suggest_survey_2025_en.lower
+    ci_upper: suggest_survey_2025_en.upper
+    show_grid: true
+    listen:
+      Date: suggest_survey_2025_en.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -65,8 +96,8 @@
     filters:
       suggest_survey_2025_en.metric: 'qualified_cumulative_days_of_use'
       suggest_survey_2025_en.statistic: mean
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: suggest_survey_2025_en.submission_date
@@ -100,75 +131,7 @@
       suggest_survey_2025_en.metric: 'retained'
       suggest_survey_2025_en.statistic: mean
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: suggest_survey_2025_en.submission_date
-    field_y: suggest_survey_2025_en.point
-    log_scale: false
-    ci_lower: suggest_survey_2025_en.lower
-    ci_upper: suggest_survey_2025_en.upper
-    show_grid: true
-    listen:
-      Date: suggest_survey_2025_en.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: suggest_survey_2025_en
-    type: looker_line
-    fields: [
-      suggest_survey_2025_en.submission_date,
-      suggest_survey_2025_en.branch,
-      suggest_survey_2025_en.point
-    ]
-    pivots: [
-      suggest_survey_2025_en.branch
-    ]
-    filters:
-      suggest_survey_2025_en.metric: 'days_of_use'
-      suggest_survey_2025_en.statistic: mean
-    row: 10
     col: 12
-    width: 12
-    height: 8
-    field_x: suggest_survey_2025_en.submission_date
-    field_y: suggest_survey_2025_en.point
-    log_scale: false
-    ci_lower: suggest_survey_2025_en.lower
-    ci_upper: suggest_survey_2025_en.upper
-    show_grid: true
-    listen:
-      Date: suggest_survey_2025_en.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: suggest_survey_2025_en
-    type: looker_line
-    fields: [
-      suggest_survey_2025_en.submission_date,
-      suggest_survey_2025_en.branch,
-      suggest_survey_2025_en.point
-    ]
-    pivots: [
-      suggest_survey_2025_en.branch
-    ]
-    filters:
-      suggest_survey_2025_en.metric: 'search_count'
-      suggest_survey_2025_en.statistic: mean
-    row: 20
-    col: 0
     width: 12
     height: 8
     field_x: suggest_survey_2025_en.submission_date
@@ -202,6 +165,40 @@
       suggest_survey_2025_en.metric: 'ad_clicks'
       suggest_survey_2025_en.statistic: mean
     row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: suggest_survey_2025_en.submission_date
+    field_y: suggest_survey_2025_en.point
+    log_scale: false
+    ci_lower: suggest_survey_2025_en.lower
+    ci_upper: suggest_survey_2025_en.upper
+    show_grid: true
+    listen:
+      Date: suggest_survey_2025_en.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: suggest_survey_2025_en
+    type: looker_line
+    fields: [
+      suggest_survey_2025_en.submission_date,
+      suggest_survey_2025_en.branch,
+      suggest_survey_2025_en.point
+    ]
+    pivots: [
+      suggest_survey_2025_en.branch
+    ]
+    filters:
+      suggest_survey_2025_en.metric: 'days_of_use'
+      suggest_survey_2025_en.statistic: mean
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -217,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +230,7 @@
       suggest_survey_2025_en.branch
     ]
     filters:
-      suggest_survey_2025_en.metric: 'active_hours'
+      suggest_survey_2025_en.metric: 'search_count'
       suggest_survey_2025_en.statistic: mean
     row: 30
     col: 0
@@ -251,24 +248,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: suggest_survey_2025_en
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       suggest_survey_2025_en.submission_date,
       suggest_survey_2025_en.branch,
+      suggest_survey_2025_en.upper,
+      suggest_survey_2025_en.lower,
       suggest_survey_2025_en.point
     ]
     pivots: [
       suggest_survey_2025_en.branch
     ]
     filters:
-      suggest_survey_2025_en.metric: 'uri_count'
-      suggest_survey_2025_en.statistic: mean
+      suggest_survey_2025_en.metric: 'memory_total'
+      suggest_survey_2025_en.statistic: percentile
     row: 30
     col: 12
     width: 12
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: suggest_survey_2025_en.submission_date
+      Percentile: suggest_survey_2025_en.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

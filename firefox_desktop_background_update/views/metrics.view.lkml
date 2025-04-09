@@ -25957,6 +25957,11 @@ documented in the ping's pings.yaml file.
     description: "The attribution content (e.g. 'firefoxview')."
   }
 
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.client_info.attribution.ext ;;
+    hidden: yes
+  }
+
   dimension: client_info__attribution__medium {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
@@ -26015,6 +26020,11 @@ documented in the ping's pings.yaml file.
     group_label: "Client Info"
     group_item_label: "Device Model"
     description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.client_info.distribution.ext ;;
+    hidden: yes
   }
 
   dimension: client_info__distribution__name {
