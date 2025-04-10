@@ -4679,6 +4679,69 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__http_dns_httpssvc_connection_failed_reason__count {
+    sql: ${TABLE}.metrics.custom_distribution.http_dns_httpssvc_connection_failed_reason.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution HTTP DNS Httpssvc Connection Failed Reason"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__http_dns_httpssvc_connection_failed_reason__sum {
+    sql: ${TABLE}.metrics.custom_distribution.http_dns_httpssvc_connection_failed_reason.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution HTTP DNS Httpssvc Connection Failed Reason"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__http_dns_httpssvc_connection_failed_reason__values {
+    sql: ${TABLE}.metrics.custom_distribution.http_dns_httpssvc_connection_failed_reason.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__http_dns_httpssvc_record_receiving_stage__count {
+    sql: ${TABLE}.metrics.custom_distribution.http_dns_httpssvc_record_receiving_stage.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution HTTP DNS Httpssvc Record Receiving Stage"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__http_dns_httpssvc_record_receiving_stage__sum {
+    sql: ${TABLE}.metrics.custom_distribution.http_dns_httpssvc_record_receiving_stage.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution HTTP DNS Httpssvc Record Receiving Stage"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__http_dns_httpssvc_record_receiving_stage__values {
+    sql: ${TABLE}.metrics.custom_distribution.http_dns_httpssvc_record_receiving_stage.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__http_dnt_usage__count {
+    sql: ${TABLE}.metrics.custom_distribution.http_dnt_usage.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution HTTP DNT Usage"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__http_dnt_usage__sum {
+    sql: ${TABLE}.metrics.custom_distribution.http_dnt_usage.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution HTTP DNT Usage"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__http_dnt_usage__values {
+    sql: ${TABLE}.metrics.custom_distribution.http_dnt_usage.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__http_proxy_type__count {
     sql: ${TABLE}.metrics.custom_distribution.http_proxy_type.count ;;
     type: number
@@ -4802,6 +4865,27 @@ view: metrics_table {
 
   dimension: metrics__custom_distribution__http_saw_quic_alt_protocol__values {
     sql: ${TABLE}.metrics.custom_distribution.http_saw_quic_alt_protocol.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__http_tls_early_data_negotiated__count {
+    sql: ${TABLE}.metrics.custom_distribution.http_tls_early_data_negotiated.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution HTTP TLS Early Data Negotiated"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__http_tls_early_data_negotiated__sum {
+    sql: ${TABLE}.metrics.custom_distribution.http_tls_early_data_negotiated.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution HTTP TLS Early Data Negotiated"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__http_tls_early_data_negotiated__values {
+    sql: ${TABLE}.metrics.custom_distribution.http_tls_early_data_negotiated.values ;;
     hidden: yes
   }
 
@@ -5708,6 +5792,27 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__network_backgroundfilesaver_thread_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.network_backgroundfilesaver_thread_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Network Backgroundfilesaver Thread Count"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__network_backgroundfilesaver_thread_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.network_backgroundfilesaver_thread_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Network Backgroundfilesaver Thread Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__network_backgroundfilesaver_thread_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.network_backgroundfilesaver_thread_count.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__network_cache_v2_input_stream_status__count {
     sql: ${TABLE}.metrics.custom_distribution.network_cache_v2_input_stream_status.count ;;
     type: number
@@ -5768,6 +5873,48 @@ view: metrics_table {
 
   dimension: metrics__custom_distribution__network_http_cache_entry_reuse_count__values {
     sql: ${TABLE}.metrics.custom_distribution.network_http_cache_entry_reuse_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__network_id__count {
+    sql: ${TABLE}.metrics.custom_distribution.network_id.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Network ID"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__network_id__sum {
+    sql: ${TABLE}.metrics.custom_distribution.network_id.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Network ID"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__network_id__values {
+    sql: ${TABLE}.metrics.custom_distribution.network_id.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__network_ipv4_and_ipv6_address_connectivity__count {
+    sql: ${TABLE}.metrics.custom_distribution.network_ipv4_and_ipv6_address_connectivity.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Network Ipv4 And Ipv6 Address Connectivity"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__network_ipv4_and_ipv6_address_connectivity__sum {
+    sql: ${TABLE}.metrics.custom_distribution.network_ipv4_and_ipv6_address_connectivity.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Network Ipv4 And Ipv6 Address Connectivity"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__network_ipv4_and_ipv6_address_connectivity__values {
+    sql: ${TABLE}.metrics.custom_distribution.network_ipv4_and_ipv6_address_connectivity.values ;;
     hidden: yes
   }
 
@@ -10194,6 +10341,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__http_cache_lm_inconsistent {
+    sql: ${TABLE}.metrics.labeled_counter.http_cache_lm_inconsistent ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__http_channel_onstart_success {
     sql: ${TABLE}.metrics.labeled_counter.http_channel_onstart_success ;;
     hidden: yes
@@ -10204,8 +10356,28 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__http_echconfig_success_rate {
+    sql: ${TABLE}.metrics.labeled_counter.http_echconfig_success_rate ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__http_http2_fail_before_settings {
+    sql: ${TABLE}.metrics.labeled_counter.http_http2_fail_before_settings ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__http_pageload_is_ssl {
     sql: ${TABLE}.metrics.labeled_counter.http_pageload_is_ssl ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__http_script_block_incorrect_mime {
+    sql: ${TABLE}.metrics.labeled_counter.http_script_block_incorrect_mime ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__http_tls_early_data_accepted {
+    sql: ${TABLE}.metrics.labeled_counter.http_tls_early_data_accepted ;;
     hidden: yes
   }
 
@@ -10524,6 +10696,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__network_id_online {
+    sql: ${TABLE}.metrics.labeled_counter.network_id_online ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__network_race_cache_validation {
     sql: ${TABLE}.metrics.labeled_counter.network_race_cache_validation ;;
     hidden: yes
@@ -10531,6 +10708,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__network_race_cache_with_network_usage {
     sql: ${TABLE}.metrics.labeled_counter.network_race_cache_with_network_usage ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__network_rel_preload_miss_ratio {
+    sql: ${TABLE}.metrics.labeled_counter.network_rel_preload_miss_ratio ;;
     hidden: yes
   }
 
@@ -44268,6 +44450,48 @@ view: metrics_table__metrics__custom_distribution__http_content_encoding__values
   }
 }
 
+view: metrics_table__metrics__custom_distribution__http_dns_httpssvc_connection_failed_reason__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__http_dns_httpssvc_record_receiving_stage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__http_dnt_usage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__http_proxy_type__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -44339,6 +44563,20 @@ view: metrics_table__metrics__custom_distribution__http_response_version__values
 }
 
 view: metrics_table__metrics__custom_distribution__http_saw_quic_alt_protocol__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__http_tls_early_data_negotiated__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -44954,6 +45192,20 @@ view: metrics_table__metrics__custom_distribution__network_back_pressure_suspens
   }
 }
 
+view: metrics_table__metrics__custom_distribution__network_backgroundfilesaver_thread_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__network_cache_v2_input_stream_status__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -44983,6 +45235,34 @@ view: metrics_table__metrics__custom_distribution__network_cache_v2_output_strea
 }
 
 view: metrics_table__metrics__custom_distribution__network_http_cache_entry_reuse_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__network_id__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__network_ipv4_and_ipv6_address_connectivity__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

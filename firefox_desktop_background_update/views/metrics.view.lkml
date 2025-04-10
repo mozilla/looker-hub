@@ -9008,6 +9008,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__http_cache_lm_inconsistent {
+    label: "HTTP Cache Lm Inconsistent"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.http_cache_lm_inconsistent ;;
+    group_label: "HTTP"
+    group_item_label: "Cache Lm Inconsistent"
+
+    link: {
+      label: "Glean Dictionary reference for HTTP Cache Lm Inconsistent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/http_cache_lm_inconsistent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Cache discovered inconsistent last-modified entry
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CACHE_LM_INCONSISTENT.
+"
+  }
+
   dimension: metrics__custom_distribution__http_channel_disposition__sum {
     label: "HTTP Channel Disposition Sum"
     hidden: no
@@ -9079,6 +9097,99 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
     description: "encoding removed: 0=unknown, 1=gzip, 2=deflate, 3=brotli, 4=zstd
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram HTTP_CONTENT_ENCODING.
+"
+  }
+
+  dimension: metrics__custom_distribution__http_dns_httpssvc_connection_failed_reason__sum {
+    label: "HTTP DNS Httpssvc Connection Failed Reason Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http_dns_httpssvc_connection_failed_reason.sum ;;
+    type: number
+    group_label: "HTTP"
+    group_item_label: "DNS Httpssvc Connection Failed Reason Sum"
+
+    link: {
+      label: "Glean Dictionary reference for HTTP DNS Httpssvc Connection Failed Reason Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/http_dns_httpssvc_connection_failed_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The reason why we failed to connect with an HTTPSSVC record
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram DNS_HTTPSSVC_CONNECTION_FAILED_REASON.
+"
+  }
+
+  dimension: metrics__custom_distribution__http_dns_httpssvc_record_receiving_stage__sum {
+    label: "HTTP DNS Httpssvc Record Receiving Stage Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http_dns_httpssvc_record_receiving_stage.sum ;;
+    type: number
+    group_label: "HTTP"
+    group_item_label: "DNS Httpssvc Record Receiving Stage Sum"
+
+    link: {
+      label: "Glean Dictionary reference for HTTP DNS Httpssvc Record Receiving Stage Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/http_dns_httpssvc_record_receiving_stage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record at which stage an HTTPSSVC record is received
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram DNS_HTTPSSVC_RECORD_RECEIVING_STAGE.
+"
+  }
+
+  dimension: metrics__custom_distribution__http_dnt_usage__sum {
+    label: "HTTP DNT Usage Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http_dnt_usage.sum ;;
+    type: number
+    group_label: "HTTP"
+    group_item_label: "DNT Usage Sum"
+
+    link: {
+      label: "Glean Dictionary reference for HTTP DNT Usage Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/http_dnt_usage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "I want to be tracked, I do NOT want to be tracked, DNT unset
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram DNT_USAGE.
+"
+  }
+
+  dimension: metrics__labeled_counter__http_echconfig_success_rate {
+    label: "HTTP Echconfig Success Rate"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.http_echconfig_success_rate ;;
+    group_label: "HTTP"
+    group_item_label: "Echconfig Success Rate"
+
+    link: {
+      label: "Glean Dictionary reference for HTTP Echconfig Success Rate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/http_echconfig_success_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "TLS handshake with and without EchConfig success rate.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram ECHCONFIG_SUCCESS_RATE.
+"
+  }
+
+  dimension: metrics__labeled_counter__http_http2_fail_before_settings {
+    label: "HTTP Http2 Fail Before Settings"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.http_http2_fail_before_settings ;;
+    group_label: "HTTP"
+    group_item_label: "Http2 Fail Before Settings"
+
+    link: {
+      label: "Glean Dictionary reference for HTTP Http2 Fail Before Settings"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/http_http2_fail_before_settings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether an HTTP/2 session failed because the peer did not handshake properly
+This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP2_FAIL_BEFORE_SETTINGS.
 "
   }
 
@@ -9233,6 +9344,24 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__labeled_counter__http_script_block_incorrect_mime {
+    label: "HTTP Script Block Incorrect Mime"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.http_script_block_incorrect_mime ;;
+    group_label: "HTTP"
+    group_item_label: "Script Block Incorrect Mime"
+
+    link: {
+      label: "Glean Dictionary reference for HTTP Script Block Incorrect Mime"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/http_script_block_incorrect_mime"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the script load has a MIME type of ...?  (unknown, javaScript, image, audio, video, text_plain, text_csv, text_xml, app_octet_stream, app_xml, app_json, text_json, text_html, empty). Whether the script load is from ...?  (serviceworker_load, worker_load, importSript_load, script_load). Whether the script load is of ...?  (same_origin, CORS_origin, cross_origin)
+This metric was generated to correspond to the Legacy Telemetry categorical histogram SCRIPT_BLOCK_INCORRECT_MIME_3.
+"
+  }
+
   dimension: metrics__timing_distribution__http_subitem_first_byte_latency_time__sum {
     label: "HTTP Subitem First Byte Latency Time Sum"
     hidden: no
@@ -9268,6 +9397,43 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "HTTP subitem channel: Page start -> subitem open() (ms)
 This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP_SUBITEM_OPEN_LATENCY_TIME.
+"
+  }
+
+  dimension: metrics__labeled_counter__http_tls_early_data_accepted {
+    label: "HTTP TLS Early Data Accepted"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.http_tls_early_data_accepted ;;
+    group_label: "HTTP"
+    group_item_label: "TLS Early Data Accepted"
+
+    link: {
+      label: "Glean Dictionary reference for HTTP TLS Early Data Accepted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/http_tls_early_data_accepted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "TLS early data was used and it was accepted (true) or rejected (false) by the remote host.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram TLS_EARLY_DATA_ACCEPTED.
+"
+  }
+
+  dimension: metrics__custom_distribution__http_tls_early_data_negotiated__sum {
+    label: "HTTP TLS Early Data Negotiated Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.http_tls_early_data_negotiated.sum ;;
+    type: number
+    group_label: "HTTP"
+    group_item_label: "TLS Early Data Negotiated Sum"
+
+    link: {
+      label: "Glean Dictionary reference for HTTP TLS Early Data Negotiated Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/http_tls_early_data_negotiated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sending TLS early data was possible: 0 - not possible, 1 - possible but not used, 2 - possible and used.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram TLS_EARLY_DATA_NEGOTIATED.
 "
   }
 
@@ -12786,6 +12952,25 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__custom_distribution__network_backgroundfilesaver_thread_count__sum {
+    label: "Network Backgroundfilesaver Thread Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.network_backgroundfilesaver_thread_count.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Backgroundfilesaver Thread Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Backgroundfilesaver Thread Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_backgroundfilesaver_thread_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Maximum number of concurrent threads reached during a given download session
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram BACKGROUNDFILESAVER_THREAD_COUNT.
+"
+  }
+
   dimension: metrics__labeled_counter__network_byte_range_request {
     label: "Network Byte Range Request"
     hidden: yes
@@ -13239,6 +13424,62 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 "
   }
 
+  dimension: metrics__custom_distribution__network_id__sum {
+    label: "Network ID Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.network_id.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "ID Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network ID Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Network identification (0=None, 1=New Ipv4, 2=Same, 3=New IPv6, 4=New dual)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram NETWORK_ID2.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_id_online {
+    label: "Network ID Online"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_id_online ;;
+    group_label: "Network"
+    group_item_label: "ID Online"
+
+    link: {
+      label: "Glean Dictionary reference for Network ID Online"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_id_online"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Network ID presence when the network connectivity checker reports that we have connectivity
+This metric was generated to correspond to the Legacy Telemetry categorical histogram NETWORK_ID_ONLINE.
+"
+  }
+
+  dimension: metrics__custom_distribution__network_ipv4_and_ipv6_address_connectivity__sum {
+    label: "Network Ipv4 And Ipv6 Address Connectivity Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.network_ipv4_and_ipv6_address_connectivity.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Ipv4 And Ipv6 Address Connectivity Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Ipv4 And Ipv6 Address Connectivity Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_ipv4_and_ipv6_address_connectivity"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count the number of 0) successful connections to an ipv4 address, 1) failed connection an ipv4 address, 2) successful connection to an ipv6 address and 3) failed connections to an ipv6 address.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram IPV4_AND_IPV6_ADDRESS_CONNECTIVITY.
+"
+  }
+
   dimension: metrics__timing_distribution__network_open_to_first_received__sum {
     label: "Network Open To First Received Sum"
     hidden: no
@@ -13421,6 +13662,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "Whether we raced network with the cache.
 This metric was generated to correspond to the Legacy Telemetry categorical histogram NETWORK_RACE_CACHE_WITH_NETWORK_USAGE_2.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_rel_preload_miss_ratio {
+    label: "Network Rel Preload Miss Ratio"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_rel_preload_miss_ratio ;;
+    group_label: "Network"
+    group_item_label: "Rel Preload Miss Ratio"
+
+    link: {
+      label: "Glean Dictionary reference for Network Rel Preload Miss Ratio"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_rel_preload_miss_ratio"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Ratio of used and unused resources preloaded with link rel=preload tag or response header, broken down by supported resource type.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram REL_PRELOAD_MISS_RATIO.
 "
   }
 
@@ -36138,6 +36397,47 @@ view: metrics__metrics__labeled_counter__http_altsvc_mapping_changed_target {
   }
 }
 
+view: metrics__metrics__labeled_counter__http_cache_lm_inconsistent {
+  label: "HTTP - Cache Lm Inconsistent"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__http_channel_onstart_success {
   label: "HTTP - Channel Onstart Success"
 
@@ -36220,8 +36520,172 @@ view: metrics__metrics__labeled_counter__http_connection_entry_cache_hit {
   }
 }
 
+view: metrics__metrics__labeled_counter__http_echconfig_success_rate {
+  label: "HTTP - Echconfig Success Rate"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__http_http2_fail_before_settings {
+  label: "HTTP - Http2 Fail Before Settings"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__http_pageload_is_ssl {
   label: "HTTP - Pageload Is SSL"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__http_script_block_incorrect_mime {
+  label: "HTTP - Script Block Incorrect Mime"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__http_tls_early_data_accepted {
+  label: "HTTP - TLS Early Data Accepted"
 
   dimension: document_id {
     type: string
@@ -38516,6 +38980,47 @@ view: metrics__metrics__labeled_counter__network_data_size_per_type {
   }
 }
 
+view: metrics__metrics__labeled_counter__network_id_online {
+  label: "Network - ID Online"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__network_race_cache_validation {
   label: "Network - Race Cache Validation"
 
@@ -38559,6 +39064,47 @@ view: metrics__metrics__labeled_counter__network_race_cache_validation {
 
 view: metrics__metrics__labeled_counter__network_race_cache_with_network_usage {
   label: "Network - Race Cache With Network Usage"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_rel_preload_miss_ratio {
+  label: "Network - Rel Preload Miss Ratio"
 
   dimension: document_id {
     type: string
@@ -45736,6 +46282,48 @@ view: metrics__metrics__custom_distribution__http_content_encoding__values {
   }
 }
 
+view: metrics__metrics__custom_distribution__http_dns_httpssvc_connection_failed_reason__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__http_dns_httpssvc_record_receiving_stage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__http_dnt_usage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__http_proxy_type__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -45807,6 +46395,20 @@ view: metrics__metrics__custom_distribution__http_response_version__values {
 }
 
 view: metrics__metrics__custom_distribution__http_saw_quic_alt_protocol__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__http_tls_early_data_negotiated__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -46366,6 +46968,20 @@ view: metrics__metrics__custom_distribution__network_back_pressure_suspension_cp
   }
 }
 
+view: metrics__metrics__custom_distribution__network_backgroundfilesaver_thread_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__network_cache_v2_input_stream_status__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -46395,6 +47011,34 @@ view: metrics__metrics__custom_distribution__network_cache_v2_output_stream_stat
 }
 
 view: metrics__metrics__custom_distribution__network_http_cache_entry_reuse_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__network_id__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__network_ipv4_and_ipv6_address_connectivity__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -14,21 +14,18 @@ view: pageload_nightly_table {
     sql: ${TABLE}.app_version_major ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The major version parsed from client_info.app_display_version, for example, 130.0.3 would return 130"
   }
 
   dimension: app_version_minor {
     sql: ${TABLE}.app_version_minor ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The minor version parsed from client_info.app_display_version, for example, 130.0.3 would return 0"
   }
 
   dimension: app_version_patch {
     sql: ${TABLE}.app_version_patch ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The patch number parsed from client_info.app_display_version, for example, 130.0.3 would return 3."
   }
 
   dimension: client_info__android_sdk_version {
@@ -87,6 +84,11 @@ view: pageload_nightly_table {
     group_item_label: "Content"
   }
 
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.client_info.attribution.ext ;;
+    hidden: yes
+  }
+
   dimension: client_info__attribution__medium {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
@@ -138,6 +140,11 @@ view: pageload_nightly_table {
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.client_info.distribution.ext ;;
+    hidden: yes
   }
 
   dimension: client_info__distribution__name {
