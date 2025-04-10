@@ -85,7 +85,7 @@ health check is started because of the return.
 
   dimension: metrics__timing_distribution__connection_health_no_signal_time__sum {
     label: "Connection Health No Signal Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.sum ;;
     type: number
     group_label: "Connection Health"
@@ -132,7 +132,7 @@ health check is started because of the return.
 
   dimension: metrics__timing_distribution__connection_health_stable_time__sum {
     label: "Connection Health Stable Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.sum ;;
     type: number
     group_label: "Connection Health"
@@ -180,7 +180,7 @@ health check is started because of the return.
 
   dimension: metrics__timing_distribution__connection_health_unstable_time__sum {
     label: "Connection Health Unstable Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.sum ;;
     type: number
     group_label: "Connection Health"

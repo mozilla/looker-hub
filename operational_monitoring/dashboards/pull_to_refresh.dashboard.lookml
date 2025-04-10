@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       pull_to_refresh.branch
     ]
     filters:
-      pull_to_refresh.metric: 'ad_clicks'
+      pull_to_refresh.metric: 'search_count'
       pull_to_refresh.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       pull_to_refresh.branch
     ]
     filters:
-      pull_to_refresh.metric: 'search_count'
+      pull_to_refresh.metric: 'ad_clicks'
       pull_to_refresh.statistic: mean
     row: 20
     col: 0

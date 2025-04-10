@@ -4532,6 +4532,72 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__http_dns_httpssvc_connection_failed_reason__count {
+    sql: ${TABLE}.metrics.custom_distribution.http_dns_httpssvc_connection_failed_reason.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution HTTP DNS Httpssvc Connection Failed Reason"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__http_dns_httpssvc_connection_failed_reason__sum {
+    sql: ${TABLE}.metrics.custom_distribution.http_dns_httpssvc_connection_failed_reason.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution HTTP DNS Httpssvc Connection Failed Reason"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__http_dns_httpssvc_connection_failed_reason__values {
+    sql: ${TABLE}.metrics.custom_distribution.http_dns_httpssvc_connection_failed_reason.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__http_dns_httpssvc_record_receiving_stage__count {
+    sql: ${TABLE}.metrics.custom_distribution.http_dns_httpssvc_record_receiving_stage.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution HTTP DNS Httpssvc Record Receiving Stage"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__http_dns_httpssvc_record_receiving_stage__sum {
+    sql: ${TABLE}.metrics.custom_distribution.http_dns_httpssvc_record_receiving_stage.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution HTTP DNS Httpssvc Record Receiving Stage"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__http_dns_httpssvc_record_receiving_stage__values {
+    sql: ${TABLE}.metrics.custom_distribution.http_dns_httpssvc_record_receiving_stage.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__http_dnt_usage__count {
+    sql: ${TABLE}.metrics.custom_distribution.http_dnt_usage.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution HTTP DNT Usage"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__http_dnt_usage__sum {
+    sql: ${TABLE}.metrics.custom_distribution.http_dnt_usage.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution HTTP DNT Usage"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__http_dnt_usage__values {
+    sql: ${TABLE}.metrics.custom_distribution.http_dnt_usage.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__http_proxy_type__count {
     sql: ${TABLE}.metrics.custom_distribution.http_proxy_type.count ;;
     type: number
@@ -4661,6 +4727,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__http_saw_quic_alt_protocol__values {
     sql: ${TABLE}.metrics.custom_distribution.http_saw_quic_alt_protocol.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__http_tls_early_data_negotiated__count {
+    sql: ${TABLE}.metrics.custom_distribution.http_tls_early_data_negotiated.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution HTTP TLS Early Data Negotiated"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__http_tls_early_data_negotiated__sum {
+    sql: ${TABLE}.metrics.custom_distribution.http_tls_early_data_negotiated.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution HTTP TLS Early Data Negotiated"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__http_tls_early_data_negotiated__values {
+    sql: ${TABLE}.metrics.custom_distribution.http_tls_early_data_negotiated.values ;;
     hidden: yes
   }
 
@@ -5522,6 +5610,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__network_backgroundfilesaver_thread_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.network_backgroundfilesaver_thread_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Network Backgroundfilesaver Thread Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__network_backgroundfilesaver_thread_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.network_backgroundfilesaver_thread_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Network Backgroundfilesaver Thread Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__network_backgroundfilesaver_thread_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.network_backgroundfilesaver_thread_count.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__network_cache_v2_input_stream_status__count {
     sql: ${TABLE}.metrics.custom_distribution.network_cache_v2_input_stream_status.count ;;
     type: number
@@ -5585,6 +5695,50 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__network_http_cache_entry_reuse_count__values {
     sql: ${TABLE}.metrics.custom_distribution.network_http_cache_entry_reuse_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__network_id__count {
+    sql: ${TABLE}.metrics.custom_distribution.network_id.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Network ID"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__network_id__sum {
+    sql: ${TABLE}.metrics.custom_distribution.network_id.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Network ID"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__network_id__values {
+    sql: ${TABLE}.metrics.custom_distribution.network_id.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__network_ipv4_and_ipv6_address_connectivity__count {
+    sql: ${TABLE}.metrics.custom_distribution.network_ipv4_and_ipv6_address_connectivity.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Network Ipv4 And Ipv6 Address Connectivity"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__network_ipv4_and_ipv6_address_connectivity__sum {
+    sql: ${TABLE}.metrics.custom_distribution.network_ipv4_and_ipv6_address_connectivity.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Network Ipv4 And Ipv6 Address Connectivity"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__network_ipv4_and_ipv6_address_connectivity__values {
+    sql: ${TABLE}.metrics.custom_distribution.network_ipv4_and_ipv6_address_connectivity.values ;;
     hidden: yes
   }
 
@@ -10488,6 +10642,14 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__http_cache_lm_inconsistent {
+    sql: ${TABLE}.metrics.labeled_counter.http_cache_lm_inconsistent ;;
+    hidden: yes
+    description: "Cache discovered inconsistent last-modified entry
+This metric was generated to correspond to the Legacy Telemetry boolean histogram CACHE_LM_INCONSISTENT.
+"
+  }
+
   dimension: metrics__labeled_counter__http_channel_onstart_success {
     sql: ${TABLE}.metrics.labeled_counter.http_channel_onstart_success ;;
     hidden: yes
@@ -10504,11 +10666,43 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__http_echconfig_success_rate {
+    sql: ${TABLE}.metrics.labeled_counter.http_echconfig_success_rate ;;
+    hidden: yes
+    description: "TLS handshake with and without EchConfig success rate.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram ECHCONFIG_SUCCESS_RATE.
+"
+  }
+
+  dimension: metrics__labeled_counter__http_http2_fail_before_settings {
+    sql: ${TABLE}.metrics.labeled_counter.http_http2_fail_before_settings ;;
+    hidden: yes
+    description: "Whether an HTTP/2 session failed because the peer did not handshake properly
+This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP2_FAIL_BEFORE_SETTINGS.
+"
+  }
+
   dimension: metrics__labeled_counter__http_pageload_is_ssl {
     sql: ${TABLE}.metrics.labeled_counter.http_pageload_is_ssl ;;
     hidden: yes
     description: "Whether a HTTP page load was over SSL or not. Recorded during response processing for all first-party page loads.
 This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP_PAGELOAD_IS_SSL.
+"
+  }
+
+  dimension: metrics__labeled_counter__http_script_block_incorrect_mime {
+    sql: ${TABLE}.metrics.labeled_counter.http_script_block_incorrect_mime ;;
+    hidden: yes
+    description: "Whether the script load has a MIME type of ...?  (unknown, javaScript, image, audio, video, text_plain, text_csv, text_xml, app_octet_stream, app_xml, app_json, text_json, text_html, empty). Whether the script load is from ...?  (serviceworker_load, worker_load, importSript_load, script_load). Whether the script load is of ...?  (same_origin, CORS_origin, cross_origin)
+This metric was generated to correspond to the Legacy Telemetry categorical histogram SCRIPT_BLOCK_INCORRECT_MIME_3.
+"
+  }
+
+  dimension: metrics__labeled_counter__http_tls_early_data_accepted {
+    sql: ${TABLE}.metrics.labeled_counter.http_tls_early_data_accepted ;;
+    hidden: yes
+    description: "TLS early data was used and it was accepted (true) or rejected (false) by the remote host.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram TLS_EARLY_DATA_ACCEPTED.
 "
   }
 
@@ -10910,6 +11104,14 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__network_id_online {
+    sql: ${TABLE}.metrics.labeled_counter.network_id_online ;;
+    hidden: yes
+    description: "Network ID presence when the network connectivity checker reports that we have connectivity
+This metric was generated to correspond to the Legacy Telemetry categorical histogram NETWORK_ID_ONLINE.
+"
+  }
+
   dimension: metrics__labeled_counter__network_race_cache_validation {
     sql: ${TABLE}.metrics.labeled_counter.network_race_cache_validation ;;
     hidden: yes
@@ -10923,6 +11125,14 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     hidden: yes
     description: "Whether we raced network with the cache.
 This metric was generated to correspond to the Legacy Telemetry categorical histogram NETWORK_RACE_CACHE_WITH_NETWORK_USAGE_2.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_rel_preload_miss_ratio {
+    sql: ${TABLE}.metrics.labeled_counter.network_rel_preload_miss_ratio ;;
+    hidden: yes
+    description: "Ratio of used and unused resources preloaded with link rel=preload tag or response header, broken down by supported resource type.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram REL_PRELOAD_MISS_RATIO.
 "
   }
 
@@ -41688,6 +41898,48 @@ view: metrics_table__metrics__custom_distribution__http_content_encoding__values
   }
 }
 
+view: metrics_table__metrics__custom_distribution__http_dns_httpssvc_connection_failed_reason__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__http_dns_httpssvc_record_receiving_stage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__http_dnt_usage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__http_proxy_type__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -41759,6 +42011,20 @@ view: metrics_table__metrics__custom_distribution__http_response_version__values
 }
 
 view: metrics_table__metrics__custom_distribution__http_saw_quic_alt_protocol__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__http_tls_early_data_negotiated__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -42318,6 +42584,20 @@ view: metrics_table__metrics__custom_distribution__network_back_pressure_suspens
   }
 }
 
+view: metrics_table__metrics__custom_distribution__network_backgroundfilesaver_thread_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__network_cache_v2_input_stream_status__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -42347,6 +42627,34 @@ view: metrics_table__metrics__custom_distribution__network_cache_v2_output_strea
 }
 
 view: metrics_table__metrics__custom_distribution__network_http_cache_entry_reuse_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__network_id__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__network_ipv4_and_ipv6_address_connectivity__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
