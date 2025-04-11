@@ -1468,6 +1468,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown}) AS metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__region_store_region_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__region_store_region_result}) AS metrics__metrics__labeled_counter__region_store_region_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__region_store_region_result.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed}) AS metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed.document_id} ;;

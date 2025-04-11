@@ -195,6 +195,23 @@ view: metrics {
 "
   }
 
+  dimension: metrics__labeled_boolean__inappnotifications_preferences {
+    label: "Inappnotifications Preferences"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.inappnotifications_preferences ;;
+    type: string
+    group_label: "Inappnotifications"
+    group_item_label: "Preferences"
+
+    link: {
+      label: "Glean Dictionary reference for Inappnotifications Preferences"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/inappnotifications_preferences"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If in app notifications are being shown based on preferences."
+  }
+
   dimension: metrics__labeled_string__mail_account_count {
     label: "Mail Account Count"
     hidden: no
@@ -398,6 +415,23 @@ view: metrics {
     }
 
     description: "Counts mbox write oddities which might indicate problems.
+"
+  }
+
+  dimension: metrics__labeled_counter__mail_notification_used_actions {
+    label: "Mail Notification Used Actions"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.mail_notification_used_actions ;;
+    group_label: "Mail"
+    group_item_label: "Notification Used Actions"
+
+    link: {
+      label: "Glean Dictionary reference for Mail Notification Used Actions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/mail_notification_used_actions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A count of how many times each new mail notification action is used. Labels identify the actions, as defined in MailNotificationManager.sys.mjs.
 "
   }
 
@@ -19777,6 +19811,43 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__string__region_home_region {
+    label: "Region Home Region"
+    hidden: no
+    sql: ${TABLE}.metrics.string.region_home_region ;;
+    type: string
+    group_label: "Region"
+    group_item_label: "Home Region"
+
+    link: {
+      label: "Glean Dictionary reference for Region Home Region"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/region_home_region"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the detected home region of the user. This is the general region of the user's machine.
+If a machine moves location, there is a minimum 2-week delay before this will be updated.
+See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/modules/toolkit_modules/Region.html) for more information about updates.
+"
+  }
+
+  dimension: metrics__labeled_counter__region_store_region_result {
+    label: "Region Store Region Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.region_store_region_result ;;
+    group_label: "Region"
+    group_item_label: "Store Region Result"
+
+    link: {
+      label: "Glean Dictionary reference for Region Store Region Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/region_store_region_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if a detected region value was stored or ignored. A region might be ignored if it is the US but the set timezone is not the US.
+"
+  }
+
   dimension: metrics__counter__rtcrtpsender_count {
     label: "Rtcrtpsender Count"
     hidden: no
@@ -25567,6 +25638,25 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "The SRTPProtectionProfile (see RFC 5764) used for each webrtc SRTP connection, as a string representation of the SRTPProtectionProfile's ID in 4 hex digits (eg; SRTP_AES128_CM_HMAC_SHA1_80 would be \"0x0001\")
+"
+  }
+
+  dimension: metrics__custom_distribution__websockets_handshake_type__sum {
+    label: "Websockets Handshake Type Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.websockets_handshake_type.sum ;;
+    type: number
+    group_label: "Websockets"
+    group_item_label: "Handshake Type Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Websockets Handshake Type Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/websockets_handshake_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Websockets Handshake Results (ws-ok-plain, ws-ok-proxy, ws-failed-plain, ws-failed-proxy, wss-ok-plain, wss-ok-proxy, wss-failed-plain, wss-failed-proxy)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram WEBSOCKETS_HANDSHAKE_TYPE.
 "
   }
 
@@ -38318,6 +38408,47 @@ view: metrics__metrics__labeled_counter__mail_mbox_write_errors {
   }
 }
 
+view: metrics__metrics__labeled_counter__mail_notification_used_actions {
+  label: "Mail - Notification Used Actions"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__mail_successful_email_account_setup {
   label: "Mail - Successful Email Account Setup"
 
@@ -43076,6 +43207,47 @@ view: metrics__metrics__labeled_counter__pwmgr_is_username_only_form {
 
 view: metrics__metrics__labeled_counter__pwmgr_num_improved_generated_passwords {
   label: "Pwmgr - Num Improved Generated Passwords"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__region_store_region_result {
+  label: "Region - Store Region Result"
 
   dimension: document_id {
     type: string
@@ -49906,6 +50078,20 @@ view: metrics__metrics__custom_distribution__webrtc_video_quality_outbound_packe
   }
 }
 
+view: metrics__metrics__custom_distribution__websockets_handshake_type__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__labeled_boolean__a11y_theme {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -49991,6 +50177,20 @@ view: metrics__metrics__labeled_boolean__devtools_tool_registered {
 }
 
 view: metrics__metrics__labeled_boolean__geolocation_linux_provider {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_boolean__inappnotifications_preferences {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -52141,6 +52341,94 @@ view: metrics__metrics__labeled_memory_distribution__network_cache_size {
 }
 
 view: metrics__metrics__labeled_memory_distribution__network_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__networking_trr_request_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__networking_trr_request_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__networking_trr_response_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__networking_trr_response_size__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

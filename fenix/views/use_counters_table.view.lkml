@@ -14131,6 +14131,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Imagedata Colorspace"
   }
 
+  dimension: metrics__counter__use_counter_doc_invalid_text_directives {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_invalid_text_directives ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Invalid Text Directives"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_asmjs {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_asmjs ;;
     type: number
@@ -14929,6 +14937,22 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Svgsvgelement Getelementbyid"
+  }
+
+  dimension: metrics__counter__use_counter_doc_text_directive_not_created {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_text_directive_not_created ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Text Directive Not Created"
+  }
+
+  dimension: metrics__counter__use_counter_doc_text_directive_pages {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_text_directive_pages ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Text Directive Pages"
   }
 
   dimension: metrics__counter__use_counter_doc_window_absoluteorientationsensor {

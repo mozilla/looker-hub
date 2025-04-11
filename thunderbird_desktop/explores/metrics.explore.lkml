@@ -833,6 +833,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mail_mbox_write_errors}) AS metrics__metrics__labeled_counter__mail_mbox_write_errors ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mail_mbox_write_errors.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__mail_notification_used_actions {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mail_notification_used_actions}) AS metrics__metrics__labeled_counter__mail_notification_used_actions ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mail_notification_used_actions.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__mail_successful_email_account_setup {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mail_successful_email_account_setup}) AS metrics__metrics__labeled_counter__mail_successful_email_account_setup ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mail_successful_email_account_setup.document_id} ;;
@@ -1416,6 +1421,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__pwmgr_num_improved_generated_passwords {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pwmgr_num_improved_generated_passwords}) AS metrics__metrics__labeled_counter__pwmgr_num_improved_generated_passwords ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pwmgr_num_improved_generated_passwords.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__region_store_region_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__region_store_region_result}) AS metrics__metrics__labeled_counter__region_store_region_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__region_store_region_result.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
