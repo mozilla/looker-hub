@@ -9569,6 +9569,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__websockets_handshake_type__count {
+    sql: ${TABLE}.metrics.custom_distribution.websockets_handshake_type.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Websockets Handshake Type"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__websockets_handshake_type__sum {
+    sql: ${TABLE}.metrics.custom_distribution.websockets_handshake_type.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Websockets Handshake Type"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__websockets_handshake_type__values {
+    sql: ${TABLE}.metrics.custom_distribution.websockets_handshake_type.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__datetime__raw_blocklist_last_modified_rs_addons_mblf {
     sql: ${TABLE}.metrics.datetime.raw_blocklist_last_modified_rs_addons_mblf ;;
     type: string
@@ -10957,6 +10979,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__mail_notification_used_actions {
+    sql: ${TABLE}.metrics.labeled_counter.mail_notification_used_actions ;;
+    hidden: yes
+    description: "A count of how many times each new mail notification action is used. Labels identify the actions, as defined in MailNotificationManager.sys.mjs.
+"
+  }
+
   dimension: metrics__labeled_counter__mail_successful_email_account_setup {
     sql: ${TABLE}.metrics.labeled_counter.mail_successful_email_account_setup ;;
     hidden: yes
@@ -11829,6 +11858,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__region_store_region_result {
+    sql: ${TABLE}.metrics.labeled_counter.region_store_region_result ;;
+    hidden: yes
+    description: "Records if a detected region value was stored or ignored. A region might be ignored if it is the US but the set timezone is not the US.
+"
+  }
+
   dimension: metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
     sql: ${TABLE}.metrics.labeled_counter.rtcrtpsender_setparameters_blame_length_changed ;;
     hidden: yes
@@ -12623,6 +12659,20 @@ timeout, 2 = overall timeout). Keyed by provider This metric was generated to co
     hidden: yes
     description: "Cache size in megabytes keyed by cache capacity calculation type. Numbers are sampled periodically, every time 2GB of data is written to the cache.
 This metric was generated to correspond to the Legacy Telemetry linear histogram NETWORK_CACHE_SIZE.
+"
+  }
+
+  dimension: metrics__labeled_memory_distribution__networking_trr_request_size {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.networking_trr_request_size ;;
+    hidden: yes
+    description: "In TRR channel, the size of the HTTP request.
+"
+  }
+
+  dimension: metrics__labeled_memory_distribution__networking_trr_response_size {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.networking_trr_response_size ;;
+    hidden: yes
+    description: "In TRR channel, the size of the HTTP response.
 "
   }
 
@@ -15395,6 +15445,11 @@ documented in the ping's pings.yaml file.
     profile and created a new profile.
   restart-claimed-default:
     A first run of a dedicate"
+  }
+
+  dimension: metrics__string_list__mail_notification_enabled_actions {
+    sql: ${TABLE}.metrics.string_list.mail_notification_enabled_actions ;;
+    hidden: yes
   }
 
   dimension: metrics__string_list__mail_ui_configuration_folder_tree_modes {
@@ -45287,6 +45342,20 @@ view: metrics_table__metrics__custom_distribution__webrtc_video_quality_outbound
   }
 }
 
+view: metrics_table__metrics__custom_distribution__websockets_handshake_type__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_boolean__a11y_theme {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -47522,6 +47591,94 @@ view: metrics_table__metrics__labeled_memory_distribution__network_cache_size {
 }
 
 view: metrics_table__metrics__labeled_memory_distribution__network_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__networking_trr_request_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__networking_trr_request_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__networking_trr_response_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__networking_trr_response_size__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

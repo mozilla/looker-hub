@@ -1898,6 +1898,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pwmgr_num_improved_generated_passwords}) AS metrics__metrics__labeled_counter__pwmgr_num_improved_generated_passwords ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pwmgr_num_improved_generated_passwords.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__region_store_region_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__region_store_region_result}) AS metrics__metrics__labeled_counter__region_store_region_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__region_store_region_result.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed}) AS metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed.document_id} ;;
@@ -1941,6 +1946,21 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__search_service_initialization_status {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__search_service_initialization_status}) AS metrics__metrics__labeled_counter__search_service_initialization_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__search_service_initialization_status.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__search_suggestions_aborted_requests {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__search_suggestions_aborted_requests}) AS metrics__metrics__labeled_counter__search_suggestions_aborted_requests ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__search_suggestions_aborted_requests.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__search_suggestions_failed_requests {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__search_suggestions_failed_requests}) AS metrics__metrics__labeled_counter__search_suggestions_failed_requests ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__search_suggestions_failed_requests.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__search_suggestions_successful_requests {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__search_suggestions_successful_requests}) AS metrics__metrics__labeled_counter__search_suggestions_successful_requests ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__search_suggestions_successful_requests.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__searchbar_selected_result_method {

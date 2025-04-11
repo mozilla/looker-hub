@@ -8877,6 +8877,27 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__websockets_handshake_type__count {
+    sql: ${TABLE}.metrics.custom_distribution.websockets_handshake_type.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Websockets Handshake Type"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__websockets_handshake_type__sum {
+    sql: ${TABLE}.metrics.custom_distribution.websockets_handshake_type.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Websockets Handshake Type"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__websockets_handshake_type__values {
+    sql: ${TABLE}.metrics.custom_distribution.websockets_handshake_type.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__datetime__raw_blocklist_last_modified_rs_addons_mblf {
     sql: ${TABLE}.metrics.datetime.raw_blocklist_last_modified_rs_addons_mblf ;;
     type: string
@@ -10375,6 +10396,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__region_store_region_result {
+    sql: ${TABLE}.metrics.labeled_counter.region_store_region_result ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
     sql: ${TABLE}.metrics.labeled_counter.rtcrtpsender_setparameters_blame_length_changed ;;
     hidden: yes
@@ -10892,6 +10918,16 @@ view: metrics_table {
 
   dimension: metrics__labeled_memory_distribution__network_cache_size {
     sql: ${TABLE}.metrics.labeled_memory_distribution.network_cache_size ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_memory_distribution__networking_trr_request_size {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.networking_trr_request_size ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_memory_distribution__networking_trr_response_size {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.networking_trr_response_size ;;
     hidden: yes
   }
 
@@ -42854,6 +42890,20 @@ view: metrics_table__metrics__custom_distribution__webrtc_video_quality_outbound
   }
 }
 
+view: metrics_table__metrics__custom_distribution__websockets_handshake_type__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_boolean__a11y_theme {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -45001,6 +45051,92 @@ view: metrics_table__metrics__labeled_memory_distribution__network_cache_size {
 }
 
 view: metrics_table__metrics__labeled_memory_distribution__network_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__networking_trr_request_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__networking_trr_request_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__networking_trr_response_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__networking_trr_response_size__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

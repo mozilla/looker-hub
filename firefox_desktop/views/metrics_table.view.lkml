@@ -11301,6 +11301,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__websockets_handshake_type__count {
+    sql: ${TABLE}.metrics.custom_distribution.websockets_handshake_type.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Websockets Handshake Type"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__websockets_handshake_type__sum {
+    sql: ${TABLE}.metrics.custom_distribution.websockets_handshake_type.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Websockets Handshake Type"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__websockets_handshake_type__values {
+    sql: ${TABLE}.metrics.custom_distribution.websockets_handshake_type.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__datetime__raw_background_update_time_last_update_scheduled {
     sql: ${TABLE}.metrics.datetime.raw_background_update_time_last_update_scheduled ;;
     type: string
@@ -14302,6 +14324,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__region_store_region_result {
+    sql: ${TABLE}.metrics.labeled_counter.region_store_region_result ;;
+    hidden: yes
+    description: "Records if a detected region value was stored or ignored. A region might be ignored if it is the US but the set timezone is not the US.
+"
+  }
+
   dimension: metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
     sql: ${TABLE}.metrics.labeled_counter.rtcrtpsender_setparameters_blame_length_changed ;;
     hidden: yes
@@ -14375,6 +14404,27 @@ failedLoadEngines - failed to create all the search engines from the
                     configuration or user installed engines.
 failedLoadSettingsAddonManager - the addon manager ready promise was rejected. (from FF135)
 success - search service successfully initialized.
+"
+  }
+
+  dimension: metrics__labeled_counter__search_suggestions_aborted_requests {
+    sql: ${TABLE}.metrics.labeled_counter.search_suggestions_aborted_requests ;;
+    hidden: yes
+    description: "Counts the number of aborted search suggestion fetches per search engine. Only records app provided engines using their short IDs ('id', not 'identifier') as labels.
+"
+  }
+
+  dimension: metrics__labeled_counter__search_suggestions_failed_requests {
+    sql: ${TABLE}.metrics.labeled_counter.search_suggestions_failed_requests ;;
+    hidden: yes
+    description: "Counts the number of failed search suggestion fetches per search engine. Only records app provided engines using their short IDs ('id', not 'identifier') as labels.
+"
+  }
+
+  dimension: metrics__labeled_counter__search_suggestions_successful_requests {
+    sql: ${TABLE}.metrics.labeled_counter.search_suggestions_successful_requests ;;
+    hidden: yes
+    description: "Counts the number of successful search suggestion fetches per search engine. Only records app provided engines using their short IDs ('id', not 'identifier') as labels.
 "
   }
 
@@ -15842,6 +15892,20 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 "
   }
 
+  dimension: metrics__labeled_memory_distribution__networking_trr_request_size {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.networking_trr_request_size ;;
+    hidden: yes
+    description: "In TRR channel, the size of the HTTP request.
+"
+  }
+
+  dimension: metrics__labeled_memory_distribution__networking_trr_response_size {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.networking_trr_response_size ;;
+    hidden: yes
+    description: "In TRR channel, the size of the HTTP response.
+"
+  }
+
   dimension: metrics__labeled_quantity__browser_searchinit_engine_invalid_webextension {
     sql: ${TABLE}.metrics.labeled_quantity.browser_searchinit_engine_invalid_webextension ;;
     hidden: yes
@@ -16310,7 +16374,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__search_suggestions_latency {
     sql: ${TABLE}.metrics.labeled_timing_distribution.search_suggestions_latency ;;
     hidden: yes
-    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are search engine IDs for built-in search engines and 'other' for non-built-in search engines.
+    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are search engine identifiers for built-in search engines and 'other' for non-built-in search engines.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram SEARCH_SUGGESTIONS_LATENCY_MS.
 "
   }
@@ -54379,6 +54443,20 @@ view: metrics_table__metrics__custom_distribution__webrtc_video_quality_outbound
   }
 }
 
+view: metrics_table__metrics__custom_distribution__websockets_handshake_type__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_boolean__a11y_theme {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -57080,6 +57158,94 @@ view: metrics_table__metrics__labeled_memory_distribution__network_cache_size {
 }
 
 view: metrics_table__metrics__labeled_memory_distribution__network_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__networking_trr_request_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__networking_trr_request_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__networking_trr_response_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__networking_trr_response_size__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

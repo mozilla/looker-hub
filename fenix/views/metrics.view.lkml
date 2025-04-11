@@ -22744,6 +22744,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__region_store_region_result {
+    label: "Region Store Region Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.region_store_region_result ;;
+    group_label: "Region"
+    group_item_label: "Store Region Result"
+
+    link: {
+      label: "Glean Dictionary reference for Region Store Region Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/region_store_region_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if a detected region value was stored or ignored. A region might be ignored if it is the US but the set timezone is not the US.
+"
+  }
+
   dimension: metrics__counter__rtcrtpsender_count {
     label: "Rtcrtpsender Count"
     hidden: no
@@ -28534,6 +28551,25 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "The SRTPProtectionProfile (see RFC 5764) used for each webrtc SRTP connection, as a string representation of the SRTPProtectionProfile's ID in 4 hex digits (eg; SRTP_AES128_CM_HMAC_SHA1_80 would be \"0x0001\")
+"
+  }
+
+  dimension: metrics__custom_distribution__websockets_handshake_type__sum {
+    label: "Websockets Handshake Type Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.websockets_handshake_type.sum ;;
+    type: number
+    group_label: "Websockets"
+    group_item_label: "Handshake Type Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Websockets Handshake Type Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/websockets_handshake_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Websockets Handshake Results (ws-ok-plain, ws-ok-proxy, ws-failed-plain, ws-failed-proxy, wss-ok-plain, wss-ok-proxy, wss-failed-plain, wss-failed-proxy)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram WEBSOCKETS_HANDSHAKE_TYPE.
 "
   }
 
@@ -48669,6 +48705,47 @@ view: metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_sh
   }
 }
 
+view: metrics__metrics__labeled_counter__region_store_region_result {
+  label: "Region - Store Region Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
   label: "Rtcrtpsender Setparameters - Blame Length Changed"
 
@@ -55598,6 +55675,20 @@ view: metrics__metrics__custom_distribution__webrtc_video_quality_outbound_packe
   }
 }
 
+view: metrics__metrics__custom_distribution__websockets_handshake_type__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__labeled_boolean__a11y_theme {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -57745,6 +57836,92 @@ view: metrics__metrics__labeled_memory_distribution__network_cache_size {
 }
 
 view: metrics__metrics__labeled_memory_distribution__network_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__networking_trr_request_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__networking_trr_request_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__networking_trr_response_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__networking_trr_response_size__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
