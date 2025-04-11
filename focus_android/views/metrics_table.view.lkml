@@ -13264,6 +13264,14 @@ view: metrics_table {
     group_item_label: "Preferences User Theme"
   }
 
+  dimension: metrics__string__region_home_region {
+    sql: ${TABLE}.metrics.string.region_home_region ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Region Home Region"
+  }
+
   dimension: metrics__string__startup_profile_database_version {
     sql: ${TABLE}.metrics.string.startup_profile_database_version ;;
     type: string

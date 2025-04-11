@@ -14368,6 +14368,14 @@ view: metrics_table {
     group_item_label: "Preferences User Theme"
   }
 
+  dimension: metrics__string__region_home_region {
+    sql: ${TABLE}.metrics.string.region_home_region ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Region Home Region"
+  }
+
   dimension: metrics__string__search_default_engine_code {
     sql: ${TABLE}.metrics.string.search_default_engine_code ;;
     type: string
