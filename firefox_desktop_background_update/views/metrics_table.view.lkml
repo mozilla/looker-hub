@@ -15278,6 +15278,18 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__string__region_home_region {
+    sql: ${TABLE}.metrics.string.region_home_region ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Region Home Region"
+    description: "Records the detected home region of the user. This is the general region of the user's machine.
+If a machine moves location, there is a minimum 2-week delay before this will be updated.
+See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/modules/toolkit_modules/Region.html) for more information about updates.
+"
+  }
+
   dimension: metrics__string__startup_profile_database_version {
     sql: ${TABLE}.metrics.string.startup_profile_database_version ;;
     type: string

@@ -20004,6 +20004,26 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__string__region_home_region {
+    label: "Region Home Region"
+    hidden: no
+    sql: ${TABLE}.metrics.string.region_home_region ;;
+    type: string
+    group_label: "Region"
+    group_item_label: "Home Region"
+
+    link: {
+      label: "Glean Dictionary reference for Region Home Region"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/region_home_region"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the detected home region of the user. This is the general region of the user's machine.
+If a machine moves location, there is a minimum 2-week delay before this will be updated.
+See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/modules/toolkit_modules/Region.html) for more information about updates.
+"
+  }
+
   dimension: metrics__labeled_counter__region_store_region_result {
     label: "Region Store Region Result"
     hidden: yes

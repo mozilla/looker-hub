@@ -9686,6 +9686,12 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__labeled_boolean__inappnotifications_preferences {
+    sql: ${TABLE}.metrics.labeled_boolean.inappnotifications_preferences ;;
+    hidden: yes
+    description: "If in app notifications are being shown based on preferences."
+  }
+
   dimension: metrics__labeled_boolean__mail_preferences_boolean {
     sql: ${TABLE}.metrics.labeled_boolean.mail_preferences_boolean ;;
     hidden: yes
@@ -15401,6 +15407,18 @@ for the purpose of experimentation enrollment.
     description: "The optional reason the ping was submitted.
 The specific values for reason are specific to each ping, and are
 documented in the ping's pings.yaml file.
+"
+  }
+
+  dimension: metrics__string__region_home_region {
+    sql: ${TABLE}.metrics.string.region_home_region ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Region Home Region"
+    description: "Records the detected home region of the user. This is the general region of the user's machine.
+If a machine moves location, there is a minimum 2-week delay before this will be updated.
+See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/modules/toolkit_modules/Region.html) for more information about updates.
 "
   }
 
@@ -45441,6 +45459,20 @@ view: metrics_table__metrics__labeled_boolean__devtools_tool_registered {
 }
 
 view: metrics_table__metrics__labeled_boolean__geolocation_linux_provider {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__inappnotifications_preferences {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
