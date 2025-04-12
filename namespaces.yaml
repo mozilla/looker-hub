@@ -11414,11 +11414,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id251
           os:
-            default: Windows
+            default: Mac
             options:
-            - Windows
-            - Linux
             - Mac
+            - Linux
+            - Windows
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -12585,15 +12585,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id362
           app:
-            default: Linux - vpn_session
+            default: Android - daemon_session
             options:
-            - Linux - vpn_session
             - Android - daemon_session
+            - Windows - vpn_session
             - iOS - vpn_session
             - iOS - daemon_session
             - Darwin - vpn_session
             - Android - vpn_session
-            - Windows - vpn_session
+            - Linux - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id363
@@ -13816,17 +13816,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id449
           channel:
-            default: beta
+            default: nightly
             options:
-            - beta
             - nightly
             - release
+            - beta
           os:
-            default: Linux
+            default: Darwin
             options:
-            - Linux
             - Darwin
             - Windows_NT
+            - Linux
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id450
