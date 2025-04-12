@@ -3311,7 +3311,7 @@ button on a tab's toolbar.
 
   dimension: metrics__counter__tabs_new_tab_pressed {
     label: "Tabs New Tab Pressed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.tabs_new_tab_pressed ;;
     type: number
     group_label: "Tabs"
