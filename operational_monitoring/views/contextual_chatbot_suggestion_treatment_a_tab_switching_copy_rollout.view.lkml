@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: launch_firefox_on_os_restart_treatment_a_rollout {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.launch_firefox_on_os_restart_treatment_a_rollout_statistics ;;
+view: contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout_statistics ;;
 
   dimension: submission_date {
     type: date

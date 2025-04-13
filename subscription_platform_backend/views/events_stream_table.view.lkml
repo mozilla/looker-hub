@@ -486,6 +486,14 @@ view: events_stream_table {
     group_item_label: "Subscription Promotion Code"
   }
 
+  dimension: metrics__string__subscription_provider_event_id {
+    sql: ${TABLE}.metrics.string.subscription_provider_event_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Subscription Provider Event ID"
+  }
+
   dimension: metrics__string__subscription_subscribed_plan_ids {
     sql: ${TABLE}.metrics.string.subscription_subscribed_plan_ids ;;
     type: string

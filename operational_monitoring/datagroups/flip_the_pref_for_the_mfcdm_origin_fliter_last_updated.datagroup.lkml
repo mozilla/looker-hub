@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: launch_firefox_on_os_restart_treatment_a_rollout_last_updated {
-  label: "launch_firefox_on_os_restart_treatment_a_rollout Last Updated"
+datagroup: flip_the_pref_for_the_mfcdm_origin_fliter_last_updated {
+  label: "flip_the_pref_for_the_mfcdm_origin_fliter Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'launch_firefox_on_os_restart_treatment_a_rollout_statistics')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'flip_the_pref_for_the_mfcdm_origin_fliter_statistics')
 
     ) ;;
-  description: "Updates for launch_firefox_on_os_restart_treatment_a_rollout when referenced tables are modified."
+  description: "Updates for flip_the_pref_for_the_mfcdm_origin_fliter when referenced tables are modified."
   max_cache_age: "24 hours"
 }
