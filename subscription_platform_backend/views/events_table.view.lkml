@@ -552,7 +552,7 @@ One of “with-account” or “without-account\"
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Subscription Offering ID"
-    description: "ID of the offering a customer subscribed to"
+    description: "The API ID of the offering a customer subscribed to"
   }
 
   dimension: metrics__string__subscription_payment_provider {
@@ -579,7 +579,7 @@ One of “with-account” or “without-account\"
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Subscription Product ID"
-    description: "Product ID of a subscription."
+    description: "Stripe product ID of a subscription."
   }
 
   dimension: metrics__string__subscription_promotion_code {
@@ -589,6 +589,18 @@ One of “with-account” or “without-account\"
     group_label: "Metrics String"
     group_item_label: "Subscription Promotion Code"
     description: "The Stripe customer-facing promotion code applied, if any"
+  }
+
+  dimension: metrics__string__subscription_provider_event_id {
+    sql: ${TABLE}.metrics.string.subscription_provider_event_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Subscription Provider Event ID"
+    description: "A unique identifier for the subscription notification from a payment provider.
+For Stripe and Stripe-managed providers like PayPal, this is the Stripe webhook event id.
+This will be used to deduplicate notifications that may have been sent multiple times by the payment provider.
+"
   }
 
   dimension: metrics__string__subscription_subscribed_plan_ids {

@@ -2418,6 +2418,10 @@ firefox_accounts:
       type: table_explore
       views:
         base_view: health_tags
+    health_twilio:
+      type: table_explore
+      views:
+        base_view: health_twilio
     login_engagement_funnels_by_service:
       type: table_explore
       views:
@@ -2600,6 +2604,19 @@ firefox_accounts:
           type: count
       tables:
       - table: moz-fx-data-shared-prod.firefox_accounts_derived.health_tags_v1
+      type: table_view
+    health_twilio:
+      measures:
+        count_sum:
+          sql: ${count}
+          type: sum
+        price_sum:
+          sql: ${price}
+          type: sum
+        row_count:
+          type: count
+      tables:
+      - table: moz-fx-data-shared-prod.firefox_accounts_derived.health_twilio_v1
       type: table_view
     login_engagement_funnels_by_service:
       tables:
