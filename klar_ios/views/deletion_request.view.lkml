@@ -7,7 +7,7 @@
 view: deletion_request {
   dimension: metrics__uuid__legacy_ids_client_id {
     label: "Legacy Ids Client ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
     type: string
     group_label: "Legacy Ids"

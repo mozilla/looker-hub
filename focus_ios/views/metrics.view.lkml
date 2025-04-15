@@ -7,7 +7,7 @@
 view: metrics {
   dimension: metrics__string__app_keyboard_type {
     label: "App Keyboard Type"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.app_keyboard_type ;;
     type: string
     group_label: "App"
@@ -26,7 +26,7 @@ the keyboard appears on the screen.
 
   dimension: metrics__counter__app_opened_as_default_browser {
     label: "App Opened As Default Browser"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_opened_as_default_browser ;;
     type: number
     group_label: "App"
@@ -46,7 +46,7 @@ recorded in the extra keys.
 
   dimension: metrics__counter__browser_pdf_viewer_used {
     label: "Browser Pdf Viewer Used"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.browser_pdf_viewer_used ;;
     type: number
     group_label: "Browser"
@@ -64,7 +64,7 @@ recorded in the extra keys.
 
   dimension: metrics__counter__browser_total_uri_count {
     label: "Browser Total URI Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.browser_total_uri_count ;;
     type: number
     group_label: "Browser"
@@ -163,7 +163,7 @@ The key format is ‘<provider-name>’.
 
   dimension: metrics__counter__default_browser_onboarding_dismiss_pressed {
     label: "Default Browser Onboarding Dismiss Pressed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.default_browser_onboarding_dismiss_pressed ;;
     type: number
     group_label: "Default Browser Onboarding"
@@ -181,7 +181,7 @@ The key format is ‘<provider-name>’.
 
   dimension: metrics__counter__default_browser_onboarding_go_to_settings_pressed {
     label: "Default Browser Onboarding Go To Settings Pressed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.default_browser_onboarding_go_to_settings_pressed ;;
     type: number
     group_label: "Default Browser Onboarding"
@@ -200,7 +200,7 @@ default browser onboarding is clicked.
 
   dimension: metrics__boolean__mozilla_products_has_firefox_installed {
     label: "Mozilla Products Has Firefox Installed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.mozilla_products_has_firefox_installed ;;
     type: yesno
     group_label: "Mozilla Products"
@@ -218,7 +218,7 @@ default browser onboarding is clicked.
 
   dimension: metrics__string__preferences_user_theme {
     label: "Preferences User Theme"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.preferences_user_theme ;;
     type: string
     group_label: "Preferences"
@@ -236,7 +236,7 @@ default browser onboarding is clicked.
 
   dimension: metrics__string__search_default_engine {
     label: "Search Default Engine"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_default_engine ;;
     type: string
     group_label: "Search"
@@ -256,7 +256,7 @@ then the value will be 'custom'.
 
   dimension: metrics__counter__settings_screen_autocomplete_domain_added {
     label: "Settings Screen Autocomplete Domain Added"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.settings_screen_autocomplete_domain_added ;;
     type: number
     group_label: "Settings Screen"
@@ -275,7 +275,7 @@ a website to the autocomplete list.
 
   dimension: metrics__counter__settings_screen_set_as_default_browser_pressed {
     label: "Settings Screen Set As Default Browser Pressed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.settings_screen_set_as_default_browser_pressed ;;
     type: number
     group_label: "Settings Screen"
@@ -294,7 +294,7 @@ browser menu option is tapped.
 
   dimension: metrics__counter__shortcuts_shortcut_added_counter {
     label: "Shortcuts Shortcut Added Counter"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.shortcuts_shortcut_added_counter ;;
     type: number
     group_label: "Shortcuts"
@@ -313,7 +313,7 @@ a website to shortcuts.
 
   dimension: metrics__counter__shortcuts_shortcut_opened_counter {
     label: "Shortcuts Shortcut Opened Counter"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.shortcuts_shortcut_opened_counter ;;
     type: number
     group_label: "Shortcuts"
@@ -351,7 +351,7 @@ It also indicates the screen it was removed from, home or browser.
 
   dimension: metrics__quantity__shortcuts_shortcuts_on_home_number {
     label: "Shortcuts Shortcuts On Home Number"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.shortcuts_shortcuts_on_home_number ;;
     type: number
     group_label: "Shortcuts"
@@ -370,7 +370,7 @@ It also indicates the screen it was removed from, home or browser.
 
   dimension: metrics__boolean__tracking_protection_has_advertising_blocked {
     label: "Tracking Protection Has Advertising Blocked"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_advertising_blocked ;;
     type: yesno
     group_label: "Tracking Protection"
@@ -389,7 +389,7 @@ at least once.
 
   dimension: metrics__boolean__tracking_protection_has_analytics_blocked {
     label: "Tracking Protection Has Analytics Blocked"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_analytics_blocked ;;
     type: yesno
     group_label: "Tracking Protection"
@@ -408,7 +408,7 @@ at least once.
 
   dimension: metrics__boolean__tracking_protection_has_content_blocked {
     label: "Tracking Protection Has Content Blocked"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_content_blocked ;;
     type: yesno
     group_label: "Tracking Protection"
@@ -427,7 +427,7 @@ at least once.
 
   dimension: metrics__boolean__tracking_protection_has_ever_changed_etp {
     label: "Tracking Protection Has Ever Changed Etp"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_ever_changed_etp ;;
     type: yesno
     group_label: "Tracking Protection"
@@ -446,7 +446,7 @@ at least once.
 
   dimension: metrics__boolean__tracking_protection_has_social_blocked {
     label: "Tracking Protection Has Social Blocked"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_social_blocked ;;
     type: yesno
     group_label: "Tracking Protection"
@@ -465,7 +465,7 @@ at least once.
 
   dimension: metrics__counter__tracking_protection_toolbar_shield_clicked {
     label: "Tracking Protection Toolbar Shield Clicked"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.tracking_protection_toolbar_shield_clicked ;;
     type: number
     group_label: "Tracking Protection"
@@ -2110,19 +2110,19 @@ view: metrics__metrics__labeled_counter__browser_search_ad_clicks {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -2151,19 +2151,19 @@ view: metrics__metrics__labeled_counter__browser_search_in_content {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -2192,19 +2192,19 @@ view: metrics__metrics__labeled_counter__browser_search_search_count {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -2233,19 +2233,19 @@ view: metrics__metrics__labeled_counter__browser_search_with_ads {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -2522,19 +2522,19 @@ view: metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
