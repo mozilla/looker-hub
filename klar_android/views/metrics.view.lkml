@@ -929,6 +929,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__boolean__addons_manager_compatibility_check_enabled {
+    label: "Addons Manager Compatibility Check Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.addons_manager_compatibility_check_enabled ;;
+    type: yesno
+    group_label: "Addons Manager"
+    group_item_label: "Compatibility Check Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Addons Manager Compatibility Check Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/addons_manager_compatibility_check_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether application compatibility is enforced for add-ons.
+"
+  }
+
   dimension: metrics__labeled_counter__application_reputation_binary_archive {
     label: "Application Reputation Binary Archive"
     hidden: yes
@@ -1578,6 +1596,25 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Counts how many times we do not resolve a blob URL because of different partition keys
+"
+  }
+
+  dimension: metrics__boolean__blocklist_enabled {
+    label: "Blocklist Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.blocklist_enabled ;;
+    type: yesno
+    group_label: "Blocklist"
+    group_item_label: "Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Blocklist Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/blocklist_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the extension blocklist is enabled.
+Corresponds to the `extensions.blocklist.enabled` pref.
 "
   }
 
@@ -6269,6 +6306,45 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__boolean__e10s_enabled {
+    label: "E10S Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.e10s_enabled ;;
+    type: yesno
+    group_label: "E10S"
+    group_item_label: "Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for E10S Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/e10s_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether e10s is on, i.e. browser tabs open by default in a different
+process.
+See `nsIXULRuntime.browserTabsRemoteAutostart`
+"
+  }
+
+  dimension: metrics__quantity__e10s_multi_processes {
+    label: "E10S Multi Processes"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.e10s_multi_processes ;;
+    type: number
+    group_label: "E10S"
+    group_item_label: "Multi Processes"
+
+    link: {
+      label: "Glean Dictionary reference for E10S Multi Processes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/e10s_multi_processes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Maximum number of processes that will be launched for regular web content.
+See `nsIXULRuntime.maxWebProcessCount`
+"
+  }
+
   dimension: metrics__quantity__extensions_apis_dnr_evaluate_rules_count_max {
     label: "Extensions Apis Dnr Evaluate Rules Count Max"
     hidden: no
@@ -6990,6 +7066,26 @@ startup function is called to when the startup promise resolves.
     }
 
     description: "Counts how long to generate canvas random noises.
+"
+  }
+
+  dimension: metrics__boolean__fission_enabled {
+    label: "Fission Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.fission_enabled ;;
+    type: yesno
+    group_label: "Fission"
+    group_item_label: "Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Fission Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fission_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether fission is enabled this session, and subframes can load in a
+different process.
+See `nsIXULRuntime.fissionAutostart`
 "
   }
 
@@ -11748,6 +11844,25 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Time spent during page load XDR encoding Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__quantity__launcher_process_state {
+    label: "Launcher Process State"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.launcher_process_state ;;
+    type: number
+    group_label: "Launcher Process"
+    group_item_label: "State"
+
+    link: {
+      label: "Glean Dictionary reference for Launcher Process State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/launcher_process_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether, and in what mode, the launcher process is enabled (or not).
+See `nsIXULRuntime.launcherProcessState`
 "
   }
 
@@ -24003,6 +24118,25 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__boolean__updater_available {
+    label: "Updater Available"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.updater_available ;;
+    type: yesno
+    group_label: "Updater"
+    group_item_label: "Available"
+
+    link: {
+      label: "Glean Dictionary reference for Updater Available"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/updater_available"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the app was built with the updater binary.
+Corresponds to the value of the `MOZ_UPDATER` define.
+"
+  }
+
   dimension: metrics__timing_distribution__urlclassifier_async_classifylocal_time__sum {
     label: "Urlclassifier Async Classifylocal Time Sum"
     hidden: no
@@ -26178,6 +26312,34 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "Time elapsed between the construction of a frame and the start of rendering.
+"
+  }
+
+  dimension: metrics__string__xpcom_abi {
+    label: "Xpcom Abi"
+    hidden: no
+    sql: ${TABLE}.metrics.string.xpcom_abi ;;
+    type: string
+    group_label: "Xpcom"
+    group_item_label: "Abi"
+
+    link: {
+      label: "Glean Dictionary reference for Xpcom Abi"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/xpcom_abi"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A string tag identifying the binary ABI of the current processor and
+compiler vtable. This is taken from the TARGET_XPCOM_ABI configure
+variable. It may not be available on all platforms, especially
+unusual processor or compiler combinations.
+
+The result takes the form <processor>-<compilerABI>, for example:
+  - x86-msvc
+  - ppc-gcc3
+
+This value should almost always be used in combination with the
+operating system.
 "
   }
 

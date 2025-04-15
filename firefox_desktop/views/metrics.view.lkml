@@ -571,6 +571,27 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__boolean__browser_default_at_launch {
+    label: "Browser Default At Launch"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.browser_default_at_launch ;;
+    type: yesno
+    group_label: "Browser"
+    group_item_label: "Default At Launch"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Default At Launch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_default_at_launch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the shell service identified this app as the default browser.
+Checked once near startup.
+On Windows, this is operationalized as whether Firefox is the default
+HTTP protocol handler and the default HTML file handler.
+"
+  }
+
   dimension: metrics__counter__browser_engagement_active_ticks {
     label: "Browser Engagement Active Ticks"
     hidden: no
@@ -6668,6 +6689,24 @@ in browser.
 "
   }
 
+  dimension: metrics__quantity__tabgroup_saved_groups {
+    label: "Tabgroup Saved Groups"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.tabgroup_saved_groups ;;
+    type: number
+    group_label: "Tabgroup"
+    group_item_label: "Saved Groups"
+
+    link: {
+      label: "Glean Dictionary reference for Tabgroup Saved Groups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/tabgroup_saved_groups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of saved tab groups present in the user's session
+"
+  }
+
   dimension: metrics__labeled_quantity__tabgroup_tab_count_in_groups {
     label: "Tabgroup Tab Count In Groups"
     hidden: no
@@ -6701,6 +6740,24 @@ in browser.
     }
 
     description: "Records statistics about the number of tabs per active group: max, median, average and min.
+"
+  }
+
+  dimension: metrics__labeled_quantity__tabgroup_tabs_per_saved_group {
+    label: "Tabgroup Tabs Per Saved Group"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_quantity.tabgroup_tabs_per_saved_group ;;
+    type: string
+    group_label: "Tabgroup"
+    group_item_label: "Tabs Per Saved Group"
+
+    link: {
+      label: "Glean Dictionary reference for Tabgroup Tabs Per Saved Group"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/tabgroup_tabs_per_saved_group"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records statistics about the number of tabs per saved tab group: max, median, average and min.
 "
   }
 
@@ -9456,6 +9513,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__boolean__addons_manager_compatibility_check_enabled {
+    label: "Addons Manager Compatibility Check Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.addons_manager_compatibility_check_enabled ;;
+    type: yesno
+    group_label: "Addons Manager"
+    group_item_label: "Compatibility Check Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Addons Manager Compatibility Check Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/addons_manager_compatibility_check_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether application compatibility is enforced for add-ons.
+"
+  }
+
   dimension: metrics__labeled_counter__application_reputation_binary_archive {
     label: "Application Reputation Binary Archive"
     hidden: yes
@@ -10105,6 +10180,25 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Counts how many times we do not resolve a blob URL because of different partition keys
+"
+  }
+
+  dimension: metrics__boolean__blocklist_enabled {
+    label: "Blocklist Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.blocklist_enabled ;;
+    type: yesno
+    group_label: "Blocklist"
+    group_item_label: "Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Blocklist Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/blocklist_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the extension blocklist is enabled.
+Corresponds to the `extensions.blocklist.enabled` pref.
 "
   }
 
@@ -14796,6 +14890,45 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__boolean__e10s_enabled {
+    label: "E10S Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.e10s_enabled ;;
+    type: yesno
+    group_label: "E10S"
+    group_item_label: "Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for E10S Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/e10s_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether e10s is on, i.e. browser tabs open by default in a different
+process.
+See `nsIXULRuntime.browserTabsRemoteAutostart`
+"
+  }
+
+  dimension: metrics__quantity__e10s_multi_processes {
+    label: "E10S Multi Processes"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.e10s_multi_processes ;;
+    type: number
+    group_label: "E10S"
+    group_item_label: "Multi Processes"
+
+    link: {
+      label: "Glean Dictionary reference for E10S Multi Processes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/e10s_multi_processes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Maximum number of processes that will be launched for regular web content.
+See `nsIXULRuntime.maxWebProcessCount`
+"
+  }
+
   dimension: metrics__labeled_counter__extensions_counters_browser_action_preload_result {
     label: "Extensions Counters Browser Action Preload Result"
     hidden: yes
@@ -15354,6 +15487,26 @@ startup function is called to when the startup promise resolves.
     }
 
     description: "Counts how long to generate canvas random noises.
+"
+  }
+
+  dimension: metrics__boolean__fission_enabled {
+    label: "Fission Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.fission_enabled ;;
+    type: yesno
+    group_label: "Fission"
+    group_item_label: "Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Fission Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fission_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether fission is enabled this session, and subframes can load in a
+different process.
+See `nsIXULRuntime.fissionAutostart`
 "
   }
 
@@ -20076,6 +20229,25 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Time spent during page load XDR encoding Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__quantity__launcher_process_state {
+    label: "Launcher Process State"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.launcher_process_state ;;
+    type: number
+    group_label: "Launcher Process"
+    group_item_label: "State"
+
+    link: {
+      label: "Glean Dictionary reference for Launcher Process State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/launcher_process_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether, and in what mode, the launcher process is enabled (or not).
+See `nsIXULRuntime.launcherProcessState`
 "
   }
 
@@ -32276,6 +32448,25 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__boolean__updater_available {
+    label: "Updater Available"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.updater_available ;;
+    type: yesno
+    group_label: "Updater"
+    group_item_label: "Available"
+
+    link: {
+      label: "Glean Dictionary reference for Updater Available"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/updater_available"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the app was built with the updater binary.
+Corresponds to the value of the `MOZ_UPDATER` define.
+"
+  }
+
   dimension: metrics__timing_distribution__urlclassifier_async_classifylocal_time__sum {
     label: "Urlclassifier Async Classifylocal Time Sum"
     hidden: no
@@ -34415,6 +34606,34 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "Time elapsed between the construction of a frame and the start of rendering.
+"
+  }
+
+  dimension: metrics__string__xpcom_abi {
+    label: "Xpcom Abi"
+    hidden: no
+    sql: ${TABLE}.metrics.string.xpcom_abi ;;
+    type: string
+    group_label: "Xpcom"
+    group_item_label: "Abi"
+
+    link: {
+      label: "Glean Dictionary reference for Xpcom Abi"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/xpcom_abi"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A string tag identifying the binary ABI of the current processor and
+compiler vtable. This is taken from the TARGET_XPCOM_ABI configure
+variable. It may not be available on all platforms, especially
+unusual processor or compiler combinations.
+
+The result takes the form <processor>-<compilerABI>, for example:
+  - x86-msvc
+  - ppc-gcc3
+
+This value should almost always be used in combination with the
+operating system.
 "
   }
 
@@ -71054,6 +71273,20 @@ view: metrics__metrics__labeled_quantity__tabgroup_tab_count_in_groups {
 }
 
 view: metrics__metrics__labeled_quantity__tabgroup_tabs_per_active_group {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_quantity__tabgroup_tabs_per_saved_group {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

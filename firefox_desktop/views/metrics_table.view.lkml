@@ -483,6 +483,27 @@ view: metrics_table {
 "
   }
 
+  dimension: metrics__boolean__addons_manager_compatibility_check_enabled {
+    sql: ${TABLE}.metrics.boolean.addons_manager_compatibility_check_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Addons Manager Compatibility Check Enabled"
+    description: "Whether application compatibility is enforced for add-ons.
+"
+  }
+
+  dimension: metrics__boolean__blocklist_enabled {
+    sql: ${TABLE}.metrics.boolean.blocklist_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Blocklist Enabled"
+    description: "Whether the extension blocklist is enabled.
+Corresponds to the `extensions.blocklist.enabled` pref.
+"
+  }
+
   dimension: metrics__boolean__bounce_tracking_protection_enabled_at_startup {
     sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_at_startup ;;
     type: yesno
@@ -530,6 +551,19 @@ view: metrics_table {
     group_label: "Metrics Boolean"
     group_item_label: "Browser Backup Scheduler Enabled"
     description: "True if the BackupService is configured to automatically create backups in the background.
+"
+  }
+
+  dimension: metrics__boolean__browser_default_at_launch {
+    sql: ${TABLE}.metrics.boolean.browser_default_at_launch ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Browser Default At Launch"
+    description: "Whether the shell service identified this app as the default browser.
+Checked once near startup.
+On Windows, this is operationalized as whether Firefox is the default
+HTTP protocol handler and the default HTML file handler.
 "
   }
 
@@ -723,6 +757,18 @@ view: metrics_table {
 "
   }
 
+  dimension: metrics__boolean__e10s_enabled {
+    sql: ${TABLE}.metrics.boolean.e10s_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "E10S Enabled"
+    description: "Whether e10s is on, i.e. browser tabs open by default in a different
+process.
+See `nsIXULRuntime.browserTabsRemoteAutostart`
+"
+  }
+
   dimension: metrics__boolean__extensions_use_remote_policy {
     sql: ${TABLE}.metrics.boolean.extensions_use_remote_policy ;;
     type: yesno
@@ -740,6 +786,18 @@ view: metrics_table {
     group_label: "Metrics Boolean"
     group_item_label: "Extensions Use Remote Pref"
     description: "Corresponds to the value of `extensions.webextensions.remote` pref.
+"
+  }
+
+  dimension: metrics__boolean__fission_enabled {
+    sql: ${TABLE}.metrics.boolean.fission_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Fission Enabled"
+    description: "Whether fission is enabled this session, and subframes can load in a
+different process.
+See `nsIXULRuntime.fissionAutostart`
 "
   }
 
@@ -1219,6 +1277,17 @@ in browser.
     group_label: "Metrics Boolean"
     group_item_label: "Update Suppress Prompts"
     description: "When an update is available and app.update.auto is disabled, a popup is opened prompting the user to download and install the update. The pref app.update.suppressPrompts causes Firefox Nightly to wait up to 7 days before showing the prompt, instead showing a badge and banner in the meantime. It also prevents Nightly from showing update restart prompts, instead showing a badge and banner immediately. This value is set for the users who set this pref to true. This metric was generated to correspond to the Legacy Telemetry scalar update.suppress_prompts.
+"
+  }
+
+  dimension: metrics__boolean__updater_available {
+    sql: ${TABLE}.metrics.boolean.updater_available ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Updater Available"
+    description: "Whether the app was built with the updater binary.
+Corresponds to the value of the `MOZ_UPDATER` define.
 "
   }
 
@@ -14403,6 +14472,8 @@ failedFetchEngines - failed to load or parse the configuration from remote
 failedLoadEngines - failed to create all the search engines from the
                     configuration or user installed engines.
 failedLoadSettingsAddonManager - the addon manager ready promise was rejected. (from FF135)
+settingsCorrupt - the search settings were reset because of an exception, but
+                  the search service still finished initializing. (from FF136)
 success - search service successfully initialized.
 "
   }
@@ -15909,7 +15980,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
   dimension: metrics__labeled_quantity__browser_searchinit_engine_invalid_webextension {
     sql: ${TABLE}.metrics.labeled_quantity.browser_searchinit_engine_invalid_webextension ;;
     hidden: yes
-    description: "Records the WebExtension ID of a search engine where the WebExtension is not installed (= 1), disabled (= 2), search engine no longer specified (= 4), a different name (= 5), where the submission URL is different between the search engine and the WebExtension (= 6). The value '3' has been replaced by '6' to distinguish newer entries. This metric was generated to correspond to the Legacy Telemetry scalar browser.searchinit.engine_invalid_webextension.
+    description: "Records the WebExtension ID of a search engine where the WebExtension is not installed (= 1), disabled (= 2), search engine no longer specified (= 4), a different name (= 5), where the submission URL is different between the search engine and the WebExtension (= 6). The value '3' has been replaced by '6' to distinguish newer entries. This metric was generated to correspond to the Legacy Telemetry scalar browser.searchinit.engine_invalid_webextension, which was removed in Fx 139.
 "
   }
 
@@ -15938,6 +16009,13 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     sql: ${TABLE}.metrics.labeled_quantity.tabgroup_tabs_per_active_group ;;
     hidden: yes
     description: "Records statistics about the number of tabs per active group: max, median, average and min.
+"
+  }
+
+  dimension: metrics__labeled_quantity__tabgroup_tabs_per_saved_group {
+    sql: ${TABLE}.metrics.labeled_quantity.tabgroup_tabs_per_saved_group ;;
+    hidden: yes
+    description: "Records statistics about the number of tabs per saved tab group: max, median, average and min.
 "
   }
 
@@ -17767,6 +17845,19 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__object__preferences_user_prefs {
+    sql: ${TABLE}.metrics.object.preferences_user_prefs ;;
+    hidden: yes
+    description: "The fossilized remains of the Legacy Telemetry Environment's
+`settings.userPrefs` structure.
+A list of pref names and values.
+Some values will be the string \"<user-set>\" to obscure the value.
+Do not add more prefs to this list.
+Prefer instead to instrument your prefs directly with individual metrics.
+See Environment.sys.mjs' `DEFAULT_ENVIRONMENT_PREFS`.
+"
+  }
+
   dimension: metrics__quantity__a11y_hcm_background {
     sql: ${TABLE}.metrics.quantity.a11y_hcm_background ;;
     type: number
@@ -18204,6 +18295,17 @@ This metric was generated to correspond to the Legacy Telemetry scalar browser.s
 "
   }
 
+  dimension: metrics__quantity__e10s_multi_processes {
+    sql: ${TABLE}.metrics.quantity.e10s_multi_processes ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "E10S Multi Processes"
+    description: "Maximum number of processes that will be launched for regular web content.
+See `nsIXULRuntime.maxWebProcessCount`
+"
+  }
+
   dimension: metrics__quantity__extensions_apis_dnr_evaluate_rules_count_max {
     sql: ${TABLE}.metrics.quantity.extensions_apis_dnr_evaluate_rules_count_max ;;
     type: number
@@ -18353,6 +18455,17 @@ API for the purposes of Validation (hence GVSV).
     group_label: "Metrics Quantity"
     group_item_label: "GPU Process Unstable Launch Attempts"
     description: "The number of consecutive unstable launch attempts.
+"
+  }
+
+  dimension: metrics__quantity__launcher_process_state {
+    sql: ${TABLE}.metrics.quantity.launcher_process_state ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Launcher Process State"
+    description: "Whether, and in what mode, the launcher process is enabled (or not).
+See `nsIXULRuntime.launcherProcessState`
 "
   }
 
@@ -18523,6 +18636,16 @@ Similar to the legacy telemetry histogram PWMGR_NUM_SAVED_PASSWORDS.
     group_label: "Metrics Quantity"
     group_item_label: "Startup Seconds Since Last OS Restart"
     description: "The time in seconds between the first browser window loading, and the time the OS started. This can give us an indication of whether starting the browser may have been the first thing the user did after starting their computer. This metric was generated to correspond to the Legacy Telemetry scalar startup.seconds_since_last_os_restart.
+"
+  }
+
+  dimension: metrics__quantity__tabgroup_saved_groups {
+    sql: ${TABLE}.metrics.quantity.tabgroup_saved_groups ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Tabgroup Saved Groups"
+    description: "Records the number of saved tab groups present in the user's session
 "
   }
 
@@ -19636,6 +19759,26 @@ default engine, and hence both versions of these fields will be filled in.
     group_label: "Metrics String"
     group_item_label: "Widget Gtk Version"
     description: "The version of Gtk 3 in use. This metric was generated to correspond to the Legacy Telemetry scalar widget.gtk_version.
+"
+  }
+
+  dimension: metrics__string__xpcom_abi {
+    sql: ${TABLE}.metrics.string.xpcom_abi ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Xpcom Abi"
+    description: "A string tag identifying the binary ABI of the current processor and
+compiler vtable. This is taken from the TARGET_XPCOM_ABI configure
+variable. It may not be available on all platforms, especially
+unusual processor or compiler combinations.
+
+The result takes the form <processor>-<compilerABI>, for example:
+  - x86-msvc
+  - ppc-gcc3
+
+This value should almost always be used in combination with the
+operating system.
 "
   }
 
@@ -57328,6 +57471,20 @@ view: metrics_table__metrics__labeled_quantity__tabgroup_tab_count_in_groups {
 }
 
 view: metrics_table__metrics__labeled_quantity__tabgroup_tabs_per_active_group {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__tabgroup_tabs_per_saved_group {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
