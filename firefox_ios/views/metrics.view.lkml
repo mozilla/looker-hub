@@ -947,7 +947,7 @@ with a home page origin.
 
   dimension: metrics__counter__firefox_home_page_history_highlights_show_all {
     label: "Firefox Home Page History Highlights Show All"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.firefox_home_page_history_highlights_show_all ;;
     type: number
     group_label: "Firefox Home Page"
