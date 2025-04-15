@@ -4,84 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: dau_reporting {
-  dimension: metrics__labeled_counter__browser_search_ad_clicks {
-    label: "Browser Search Ad Clicks"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
-    group_label: "Browser Search"
-    group_item_label: "Ad Clicks"
-
-    link: {
-      label: "Glean Dictionary reference for Browser Search Ad Clicks"
-      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/browser_search_ad_clicks"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records clicks of adverts on SERP pages.
-The key format is ‘<provider-name>’.
-"
-  }
-
-  dimension: metrics__labeled_counter__browser_search_in_content {
-    label: "Browser Search In Content"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
-    group_label: "Browser Search"
-    group_item_label: "In Content"
-
-    link: {
-      label: "Glean Dictionary reference for Browser Search In Content"
-      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/browser_search_in_content"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records the type of interaction a user has on SERP pages.
-"
-  }
-
-  dimension: metrics__labeled_counter__browser_search_search_count {
-    label: "Browser Search Search Count"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.browser_search_search_count ;;
-    group_label: "Browser Search"
-    group_item_label: "Search Count"
-
-    link: {
-      label: "Glean Dictionary reference for Browser Search Search Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/browser_search_search_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The labels for this counter are `<search-engine-name>.<source>`.
-If the search engine is bundled with Focus `search-engine-name` will be
-the name of the search engine. If it's a custom search engine (defined:
-https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
-`custom`.
-`source` will be: `action`, `suggestion`, `widget`, `shortcut`, `topsite`
-(depending on the source from which the search started). Also added the
-`other` option for the source but it should never enter on this case.
-"
-  }
-
-  dimension: metrics__labeled_counter__browser_search_with_ads {
-    label: "Browser Search With Ads"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
-    group_label: "Browser Search"
-    group_item_label: "With Ads"
-
-    link: {
-      label: "Glean Dictionary reference for Browser Search With Ads"
-      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/browser_search_with_ads"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records counts of SERP pages with adverts displayed.
-The key format is ‘<provider-name>’.
-"
-  }
-
+view: hang_report {
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation ID"
     hidden: no
@@ -92,7 +15,7 @@ The key format is ‘<provider-name>’.
 
     link: {
       label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
-      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_client_annotation_experimentation_id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -110,7 +33,7 @@ for the purpose of experimentation enrollment.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Label"
-      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_error_invalid_label"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/glean_error_invalid_label"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -128,7 +51,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Overflow"
-      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_error_invalid_overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/glean_error_invalid_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -146,7 +69,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid State"
-      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_error_invalid_state"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/glean_error_invalid_state"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -164,7 +87,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Value"
-      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_error_invalid_value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/glean_error_invalid_value"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -176,7 +99,6 @@ The labels are the `category.name` identifier of the metric.
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
-    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: app_version_major {
@@ -203,7 +125,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Android SDK Version"
-    description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
   dimension: client_info__app_build {
@@ -212,7 +133,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Build"
-    description: "The build identifier generated by the CI system (e.g. \"1234/A\"). For language bindings that provide automatic detection for this value, (e.g. Android/Kotlin), in the unlikely event that the build identifier can not be retrieved from the OS, it is set to \"inaccessible\". For other language bindings, if the value was not provided through configuration, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__app_channel {
@@ -221,7 +141,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Channel"
-    description: "The channel the application is being distributed on."
   }
 
   dimension: client_info__app_display_version {
@@ -230,7 +149,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Display Version"
-    description: "The user visible version string (e.g. \"1.0.3\").  In the unlikely event that the display version can not be retrieved, it is set to \"inaccessible\"."
   }
 
   dimension: client_info__architecture {
@@ -239,7 +157,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Architecture"
-    description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
   }
 
   dimension: client_info__attribution__campaign {
@@ -248,7 +165,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info Attribution"
     group_item_label: "Campaign"
-    description: "The attribution campaign (e.g. 'mozilla-org')."
   }
 
   dimension: client_info__attribution__content {
@@ -257,7 +173,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info Attribution"
     group_item_label: "Content"
-    description: "The attribution content (e.g. 'firefoxview')."
   }
 
   dimension: client_info__attribution__ext {
@@ -271,7 +186,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info Attribution"
     group_item_label: "Medium"
-    description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
 
   dimension: client_info__attribution__source {
@@ -280,7 +194,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info Attribution"
     group_item_label: "Source"
-    description: "The attribution source (e.g. 'google-play')."
   }
 
   dimension: client_info__attribution__term {
@@ -289,7 +202,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info Attribution"
     group_item_label: "Term"
-    description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
 
   dimension: client_info__build_date {
@@ -298,13 +210,11 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Build Date"
-    description: "The date & time the application was built"
   }
 
   dimension: client_info__client_id {
     sql: ${TABLE}.client_info.client_id ;;
     hidden: yes
-    description: "A UUID uniquely identifying the client."
   }
 
   dimension: client_info__device_manufacturer {
@@ -313,7 +223,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
-    description: "The manufacturer of the device the application is running on. Not set if the device manufacturer can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__device_model {
@@ -322,7 +231,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
-    description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__distribution__ext {
@@ -336,7 +244,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info Distribution"
     group_item_label: "Name"
-    description: "The distribution name (e.g. 'MozillaOnline')."
   }
 
   dimension: client_info__first_run_date {
@@ -345,7 +252,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "First Run Date"
-    description: "The date of the first run of the application."
   }
 
   dimension: client_info__locale {
@@ -354,7 +260,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Locale"
-    description: "The locale of the application during initialization (e.g. \"es-ES\"). If the locale can't be determined on the system, the value is [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers), to indicate \"undetermined\"."
   }
 
   dimension: client_info__os {
@@ -363,7 +268,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "OS"
-    description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
   dimension: client_info__os_version {
@@ -372,7 +276,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "OS Version"
-    description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__session_count {
@@ -381,7 +284,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session Count"
-    description: "An optional running counter of the number of sessions for a client."
   }
 
   dimension: client_info__session_id {
@@ -390,7 +292,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session ID"
-    description: "An optional UUID uniquely identifying the client's current session."
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -399,7 +300,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Telemetry SDK Build"
-    description: "The version of the Glean SDK"
   }
 
   dimension: client_info__windows_build_number {
@@ -408,13 +308,11 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Windows Build Number"
-    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
-    description: "The document ID specified in the URI when the client sent this message"
     primary_key: yes
   }
 
@@ -438,7 +336,6 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
-    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -447,7 +344,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "DB Version"
-    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -456,7 +352,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
-    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -465,7 +360,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
-    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -474,7 +368,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "Date"
-    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -483,7 +376,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "DNT"
-    description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -513,7 +405,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Debug ID"
-    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -522,7 +413,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Foxsec IP Reputation"
-    description: "X-Foxsec-IP-Reputation header"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -531,7 +421,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X LB Tags"
-    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -540,7 +429,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
-    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -549,7 +437,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
-    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -558,7 +445,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
-    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -567,7 +453,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata ISP"
     group_item_label: "DB Version"
-    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -576,7 +461,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata ISP"
     group_item_label: "Name"
-    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -585,7 +469,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata ISP"
     group_item_label: "Organization"
-    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -612,32 +495,36 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Version"
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "App ID of the channel data was received from"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Set to \"Other\" if this message contained an unrecognized channel name"
+    description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -695,7 +582,6 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: metadata__header__parsed {
@@ -759,7 +645,6 @@ The labels are the `category.name` identifier of the metric.
       quarter,
       year,
     ]
-    description: "Time when the ingestion edge server accepted this message"
   }
 
   measure: clients {
@@ -771,185 +656,29 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
-  sql_table_name: `mozdata.org_mozilla_ios_focus.dau_reporting` ;;
+  filter: channel {
+    type: string
+    description: "Filter by the app's channel"
+    sql: {% condition %} ${TABLE}.normalized_channel {% endcondition %} ;;
+    default_value: "release"
+    suggestions: ["release", "beta", "nightly"]
+  }
+
+  sql_table_name: `mozdata.focus_android.hang_report` ;;
 }
 
-view: dau_reporting__metrics__labeled_counter__browser_search_ad_clicks {
-  label: "Browser Search - Ad Clicks"
-
-  dimension: document_id {
-    type: string
-    sql: ${dau_reporting.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${dau_reporting.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: yes
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
-    hidden: yes
-  }
-}
-
-view: dau_reporting__metrics__labeled_counter__browser_search_in_content {
-  label: "Browser Search - In Content"
-
-  dimension: document_id {
-    type: string
-    sql: ${dau_reporting.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${dau_reporting.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: yes
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
-    hidden: yes
-  }
-}
-
-view: dau_reporting__metrics__labeled_counter__browser_search_search_count {
-  label: "Browser Search - Search Count"
-
-  dimension: document_id {
-    type: string
-    sql: ${dau_reporting.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${dau_reporting.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: yes
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
-    hidden: yes
-  }
-}
-
-view: dau_reporting__metrics__labeled_counter__browser_search_with_ads {
-  label: "Browser Search - With Ads"
-
-  dimension: document_id {
-    type: string
-    sql: ${dau_reporting.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${dau_reporting.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: yes
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
-    hidden: yes
-  }
-}
-
-view: dau_reporting__metrics__labeled_counter__glean_error_invalid_label {
+view: hang_report__metrics__labeled_counter__glean_error_invalid_label {
   label: "Glean Error - Invalid Label"
 
   dimension: document_id {
     type: string
-    sql: ${dau_reporting.document_id} ;;
+    sql: ${hang_report.document_id} ;;
     hidden: yes
   }
 
   dimension: document_label_id {
     type: string
-    sql: ${dau_reporting.document_id}-${label} ;;
+    sql: ${hang_report.document_id}-${label} ;;
     primary_key: yes
     hidden: yes
   }
@@ -963,8 +692,8 @@ view: dau_reporting__metrics__labeled_counter__glean_error_invalid_label {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    suggest_explore: suggest__dau_reporting__metrics__labeled_counter__glean_error_invalid_label
-    suggest_dimension: suggest__dau_reporting__metrics__labeled_counter__glean_error_invalid_label.key
+    suggest_explore: suggest__hang_report__metrics__labeled_counter__glean_error_invalid_label
+    suggest_dimension: suggest__hang_report__metrics__labeled_counter__glean_error_invalid_label.key
     hidden: no
   }
 
@@ -976,23 +705,23 @@ view: dau_reporting__metrics__labeled_counter__glean_error_invalid_label {
 
   measure: client_count {
     type: count_distinct
-    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
+    sql: case when ${value} > 0 then ${hang_report.client_info__client_id} end ;;
     hidden: no
   }
 }
 
-view: dau_reporting__metrics__labeled_counter__glean_error_invalid_overflow {
+view: hang_report__metrics__labeled_counter__glean_error_invalid_overflow {
   label: "Glean Error - Invalid Overflow"
 
   dimension: document_id {
     type: string
-    sql: ${dau_reporting.document_id} ;;
+    sql: ${hang_report.document_id} ;;
     hidden: yes
   }
 
   dimension: document_label_id {
     type: string
-    sql: ${dau_reporting.document_id}-${label} ;;
+    sql: ${hang_report.document_id}-${label} ;;
     primary_key: yes
     hidden: yes
   }
@@ -1017,23 +746,23 @@ view: dau_reporting__metrics__labeled_counter__glean_error_invalid_overflow {
 
   measure: client_count {
     type: count_distinct
-    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
+    sql: case when ${value} > 0 then ${hang_report.client_info__client_id} end ;;
     hidden: no
   }
 }
 
-view: dau_reporting__metrics__labeled_counter__glean_error_invalid_state {
+view: hang_report__metrics__labeled_counter__glean_error_invalid_state {
   label: "Glean Error - Invalid State"
 
   dimension: document_id {
     type: string
-    sql: ${dau_reporting.document_id} ;;
+    sql: ${hang_report.document_id} ;;
     hidden: yes
   }
 
   dimension: document_label_id {
     type: string
-    sql: ${dau_reporting.document_id}-${label} ;;
+    sql: ${hang_report.document_id}-${label} ;;
     primary_key: yes
     hidden: yes
   }
@@ -1058,23 +787,23 @@ view: dau_reporting__metrics__labeled_counter__glean_error_invalid_state {
 
   measure: client_count {
     type: count_distinct
-    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
+    sql: case when ${value} > 0 then ${hang_report.client_info__client_id} end ;;
     hidden: no
   }
 }
 
-view: dau_reporting__metrics__labeled_counter__glean_error_invalid_value {
+view: hang_report__metrics__labeled_counter__glean_error_invalid_value {
   label: "Glean Error - Invalid Value"
 
   dimension: document_id {
     type: string
-    sql: ${dau_reporting.document_id} ;;
+    sql: ${hang_report.document_id} ;;
     hidden: yes
   }
 
   dimension: document_label_id {
     type: string
-    sql: ${dau_reporting.document_id}-${label} ;;
+    sql: ${hang_report.document_id}-${label} ;;
     primary_key: yes
     hidden: yes
   }
@@ -1099,17 +828,17 @@ view: dau_reporting__metrics__labeled_counter__glean_error_invalid_value {
 
   measure: client_count {
     type: count_distinct
-    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
+    sql: case when ${value} > 0 then ${hang_report.client_info__client_id} end ;;
     hidden: no
   }
 }
 
-view: suggest__dau_reporting__metrics__labeled_counter__glean_error_invalid_label {
+view: suggest__hang_report__metrics__labeled_counter__glean_error_invalid_label {
   derived_table: {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_ios_focus.dau_reporting as t,
+from mozdata.focus_android.hang_report as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -1123,7 +852,7 @@ order by n desc ;;
   }
 }
 
-view: dau_reporting__events {
+view: hang_report__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
@@ -1148,7 +877,7 @@ view: dau_reporting__events {
   }
 }
 
-view: dau_reporting__events__extra {
+view: hang_report__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -1162,7 +891,7 @@ view: dau_reporting__events__extra {
   }
 }
 
-view: dau_reporting__ping_info__experiments {
+view: hang_report__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

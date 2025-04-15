@@ -435,6 +435,22 @@ view: metrics_table {
     group_item_label: "A11Y Use System Colors"
   }
 
+  dimension: metrics__boolean__addons_manager_compatibility_check_enabled {
+    sql: ${TABLE}.metrics.boolean.addons_manager_compatibility_check_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Addons Manager Compatibility Check Enabled"
+  }
+
+  dimension: metrics__boolean__blocklist_enabled {
+    sql: ${TABLE}.metrics.boolean.blocklist_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Blocklist Enabled"
+  }
+
   dimension: metrics__boolean__bounce_tracking_protection_enabled_at_startup {
     sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_at_startup ;;
     type: yesno
@@ -523,6 +539,14 @@ view: metrics_table {
     group_item_label: "DOM Parentprocess Private Window Used"
   }
 
+  dimension: metrics__boolean__e10s_enabled {
+    sql: ${TABLE}.metrics.boolean.e10s_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "E10S Enabled"
+  }
+
   dimension: metrics__boolean__extensions_use_remote_policy {
     sql: ${TABLE}.metrics.boolean.extensions_use_remote_policy ;;
     type: yesno
@@ -537,6 +561,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Extensions Use Remote Pref"
+  }
+
+  dimension: metrics__boolean__fission_enabled {
+    sql: ${TABLE}.metrics.boolean.fission_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Fission Enabled"
   }
 
   dimension: metrics__boolean__fog_failed_idle_registration {
@@ -753,6 +785,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Tracking Protection Has Social Blocked"
+  }
+
+  dimension: metrics__boolean__updater_available {
+    sql: ${TABLE}.metrics.boolean.updater_available ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Updater Available"
   }
 
   dimension: metrics__boolean__widget_dark_mode {
@@ -12248,6 +12288,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__object__preferences_user_prefs {
+    sql: ${TABLE}.metrics.object.preferences_user_prefs ;;
+    hidden: yes
+  }
+
   dimension: metrics__quantity__a11y_hcm_background {
     sql: ${TABLE}.metrics.quantity.a11y_hcm_background ;;
     type: number
@@ -12310,6 +12355,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Data Storage Site Security Service State"
+  }
+
+  dimension: metrics__quantity__e10s_multi_processes {
+    sql: ${TABLE}.metrics.quantity.e10s_multi_processes ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "E10S Multi Processes"
   }
 
   dimension: metrics__quantity__extensions_apis_dnr_evaluate_rules_count_max {
@@ -12430,6 +12483,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "GPU Process Unstable Launch Attempts"
+  }
+
+  dimension: metrics__quantity__launcher_process_state {
+    sql: ${TABLE}.metrics.quantity.launcher_process_state ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Launcher Process State"
   }
 
   dimension: metrics__quantity__networking_https_rr_prefs_usage {
@@ -13286,6 +13347,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Startup Profile Selection Reason"
+  }
+
+  dimension: metrics__string__xpcom_abi {
+    sql: ${TABLE}.metrics.string.xpcom_abi ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Xpcom Abi"
   }
 
   dimension: metrics__timespan__extensions_startup_cache_load_time__time_unit {

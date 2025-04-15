@@ -670,6 +670,24 @@ experimentation:
       - channel: release
         table: moz-fx-data-experiments.monitoring.task_monitoring_logs
       type: table_view
+external:
+  explores:
+    metric_definitions_chrome_extensions:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_chrome_extensions
+    metric_definitions_population_by_country:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_population_by_country
+  glean_app: false
+  pretty_name: External
+  spoke: looker-spoke-default
+  views:
+    metric_definitions_chrome_extensions:
+      type: metric_definitions_view
+    metric_definitions_population_by_country:
+      type: metric_definitions_view
 fakespot:
   glean_app: false
   owners:
@@ -800,6 +818,10 @@ fenix:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
+    hang_report:
+      type: glean_ping_explore
+      views:
+        base_view: hang_report
     history_sync:
       type: glean_ping_explore
       views:
@@ -1653,6 +1675,32 @@ fenix:
       tables:
       - table: mozdata.fenix.baseline_clients_last_seen
       type: growth_accounting_view
+    hang_report:
+      tables:
+      - channel: release
+        table: mozdata.fenix.hang_report
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.hang_report
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.hang_report
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.hang_report
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.hang_report
+      type: glean_ping_view
+    hang_report_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.hang_report
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.hang_report
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.hang_report
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.hang_report
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.hang_report
+      type: table_view
     history_sync:
       tables:
       - channel: release
@@ -2861,6 +2909,10 @@ firefox_desktop:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
+    hang_report:
+      type: glean_ping_explore
+      views:
+        base_view: hang_report
     messaging_system:
       type: glean_ping_explore
       views:
@@ -3319,6 +3371,15 @@ firefox_desktop:
       tables:
       - table: mozdata.telemetry.clients_last_seen
       type: growth_accounting_view
+    hang_report:
+      tables:
+      - table: mozdata.firefox_desktop.hang_report
+      type: glean_ping_view
+    hang_report_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.hang_report
+      type: table_view
     locale_aggregates_table:
       tables:
       - channel: null
@@ -3898,6 +3959,10 @@ firefox_desktop_background_update:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
+    hang_report:
+      type: glean_ping_explore
+      views:
+        base_view: hang_report
     metrics:
       type: glean_ping_explore
       views:
@@ -4049,6 +4114,15 @@ firefox_desktop_background_update:
       tables:
       - table: mozdata.firefox_desktop_background_update.baseline_clients_last_seen
       type: growth_accounting_view
+    hang_report:
+      tables:
+      - table: mozdata.firefox_desktop_background_update.hang_report
+      type: glean_ping_view
+    hang_report_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_update.hang_report
+      type: table_view
     metrics:
       tables:
       - table: mozdata.firefox_desktop_background_update.metrics
@@ -5298,6 +5372,10 @@ focus_android:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
+    hang_report:
+      type: glean_ping_explore
+      views:
+        base_view: hang_report
     metric_definitions_baseline:
       type: metric_definitions_explore
       views:
@@ -5681,6 +5759,24 @@ focus_android:
       tables:
       - table: mozdata.focus_android.baseline_clients_last_seen
       type: growth_accounting_view
+    hang_report:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.hang_report
+      - channel: beta
+        table: mozdata.org_mozilla_focus_beta.hang_report
+      - channel: nightly
+        table: mozdata.org_mozilla_focus_nightly.hang_report
+      type: glean_ping_view
+    hang_report_table:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.hang_report
+      - channel: beta
+        table: mozdata.org_mozilla_focus_beta.hang_report
+      - channel: nightly
+        table: mozdata.org_mozilla_focus_nightly.hang_report
+      type: table_view
     metric_definitions_baseline:
       type: metric_definitions_view
     metric_definitions_baseline_v2:
@@ -6379,6 +6475,10 @@ klar_android:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
+    hang_report:
+      type: glean_ping_explore
+      views:
+        base_view: hang_report
     metric_definitions_baseline:
       type: metric_definitions_explore
       views:
@@ -6557,6 +6657,15 @@ klar_android:
       tables:
       - table: mozdata.org_mozilla_klar.baseline_clients_last_seen
       type: growth_accounting_view
+    hang_report:
+      tables:
+      - table: mozdata.org_mozilla_klar.hang_report
+      type: glean_ping_view
+    hang_report_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_klar.hang_report
+      type: table_view
     metric_definitions_baseline:
       type: metric_definitions_view
     metric_definitions_klar_android_active_users_view:
@@ -20785,6 +20894,10 @@ thunderbird_desktop:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
+    hang_report:
+      type: glean_ping_explore
+      views:
+        base_view: hang_report
     metrics:
       type: glean_ping_explore
       views:
@@ -20914,6 +21027,15 @@ thunderbird_desktop:
       tables:
       - table: mozdata.thunderbird_desktop.baseline_clients_last_seen
       type: growth_accounting_view
+    hang_report:
+      tables:
+      - table: mozdata.thunderbird_desktop.hang_report
+      type: glean_ping_view
+    hang_report_table:
+      tables:
+      - channel: null
+        table: mozdata.thunderbird_desktop.hang_report
+      type: table_view
     metrics:
       tables:
       - table: mozdata.thunderbird_desktop.metrics

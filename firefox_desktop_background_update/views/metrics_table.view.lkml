@@ -483,6 +483,27 @@ view: metrics_table {
 "
   }
 
+  dimension: metrics__boolean__addons_manager_compatibility_check_enabled {
+    sql: ${TABLE}.metrics.boolean.addons_manager_compatibility_check_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Addons Manager Compatibility Check Enabled"
+    description: "Whether application compatibility is enforced for add-ons.
+"
+  }
+
+  dimension: metrics__boolean__blocklist_enabled {
+    sql: ${TABLE}.metrics.boolean.blocklist_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Blocklist Enabled"
+    description: "Whether the extension blocklist is enabled.
+Corresponds to the `extensions.blocklist.enabled` pref.
+"
+  }
+
   dimension: metrics__boolean__bounce_tracking_protection_enabled_at_startup {
     sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_at_startup ;;
     type: yesno
@@ -583,6 +604,18 @@ view: metrics_table {
 "
   }
 
+  dimension: metrics__boolean__e10s_enabled {
+    sql: ${TABLE}.metrics.boolean.e10s_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "E10S Enabled"
+    description: "Whether e10s is on, i.e. browser tabs open by default in a different
+process.
+See `nsIXULRuntime.browserTabsRemoteAutostart`
+"
+  }
+
   dimension: metrics__boolean__extensions_use_remote_policy {
     sql: ${TABLE}.metrics.boolean.extensions_use_remote_policy ;;
     type: yesno
@@ -600,6 +633,18 @@ view: metrics_table {
     group_label: "Metrics Boolean"
     group_item_label: "Extensions Use Remote Pref"
     description: "Corresponds to the value of `extensions.webextensions.remote` pref.
+"
+  }
+
+  dimension: metrics__boolean__fission_enabled {
+    sql: ${TABLE}.metrics.boolean.fission_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Fission Enabled"
+    description: "Whether fission is enabled this session, and subframes can load in a
+different process.
+See `nsIXULRuntime.fissionAutostart`
 "
   }
 
@@ -764,6 +809,17 @@ Tracks the pref `signon.rememberSignons`.
     group_label: "Metrics Boolean"
     group_item_label: "Update Suppress Prompts"
     description: "When an update is available and app.update.auto is disabled, a popup is opened prompting the user to download and install the update. The pref app.update.suppressPrompts causes Firefox Nightly to wait up to 7 days before showing the prompt, instead showing a badge and banner in the meantime. It also prevents Nightly from showing update restart prompts, instead showing a badge and banner immediately. This value is set for the users who set this pref to true. This metric was generated to correspond to the Legacy Telemetry scalar update.suppress_prompts.
+"
+  }
+
+  dimension: metrics__boolean__updater_available {
+    sql: ${TABLE}.metrics.boolean.updater_available ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Updater Available"
+    description: "Whether the app was built with the updater binary.
+Corresponds to the value of the `MOZ_UPDATER` define.
 "
   }
 
@@ -14184,6 +14240,19 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__object__preferences_user_prefs {
+    sql: ${TABLE}.metrics.object.preferences_user_prefs ;;
+    hidden: yes
+    description: "The fossilized remains of the Legacy Telemetry Environment's
+`settings.userPrefs` structure.
+A list of pref names and values.
+Some values will be the string \"<user-set>\" to obscure the value.
+Do not add more prefs to this list.
+Prefer instead to instrument your prefs directly with individual metrics.
+See Environment.sys.mjs' `DEFAULT_ENVIRONMENT_PREFS`.
+"
+  }
+
   dimension: metrics__quantity__a11y_hcm_background {
     sql: ${TABLE}.metrics.quantity.a11y_hcm_background ;;
     type: number
@@ -14259,6 +14328,17 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     group_label: "Metrics Quantity"
     group_item_label: "Data Storage Site Security Service State"
     description: "The number of entries stored in the SiteSecurityServiceState nsIDataStorage"
+  }
+
+  dimension: metrics__quantity__e10s_multi_processes {
+    sql: ${TABLE}.metrics.quantity.e10s_multi_processes ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "E10S Multi Processes"
+    description: "Maximum number of processes that will be launched for regular web content.
+See `nsIXULRuntime.maxWebProcessCount`
+"
   }
 
   dimension: metrics__quantity__extensions_apis_dnr_evaluate_rules_count_max {
@@ -14410,6 +14490,17 @@ API for the purposes of Validation (hence GVSV).
     group_label: "Metrics Quantity"
     group_item_label: "GPU Process Unstable Launch Attempts"
     description: "The number of consecutive unstable launch attempts.
+"
+  }
+
+  dimension: metrics__quantity__launcher_process_state {
+    sql: ${TABLE}.metrics.quantity.launcher_process_state ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Launcher Process State"
+    description: "Whether, and in what mode, the launcher process is enabled (or not).
+See `nsIXULRuntime.launcherProcessState`
 "
   }
 
@@ -15340,6 +15431,26 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
     group_label: "Metrics String"
     group_item_label: "Update Version Pin"
     description: "The AppUpdatePin Enterprise Policy controls the maximum version that the browser can update to. If the policy is set, this probe will report the policy's value. The possible policy values are \"X.\" and \"X.Y.\", where X is the pinned major version and Y is the pinned minor version. This metric was generated to correspond to the Legacy Telemetry scalar update.version_pin.
+"
+  }
+
+  dimension: metrics__string__xpcom_abi {
+    sql: ${TABLE}.metrics.string.xpcom_abi ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Xpcom Abi"
+    description: "A string tag identifying the binary ABI of the current processor and
+compiler vtable. This is taken from the TARGET_XPCOM_ABI configure
+variable. It may not be available on all platforms, especially
+unusual processor or compiler combinations.
+
+The result takes the form <processor>-<compilerABI>, for example:
+  - x86-msvc
+  - ppc-gcc3
+
+This value should almost always be used in combination with the
+operating system.
 "
   }
 

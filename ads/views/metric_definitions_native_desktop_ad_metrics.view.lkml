@@ -18,6 +18,7 @@ native_desktop_ad_metrics_advertiser,
 native_desktop_ad_metrics_campaign_id,
 native_desktop_ad_metrics_campaign_name,
 native_desktop_ad_metrics_campaign_name_custom,
+native_desktop_ad_metrics_campaign_name_custom_2,
 native_desktop_ad_metrics_click_rate,
 native_desktop_ad_metrics_clicks,
 native_desktop_ad_metrics_country,
@@ -75,6 +76,7 @@ native_desktop_ad_metrics.advertiser AS native_desktop_ad_metrics_advertiser,
 native_desktop_ad_metrics.campaign_id AS native_desktop_ad_metrics_campaign_id,
 native_desktop_ad_metrics.campaign_name AS native_desktop_ad_metrics_campaign_name,
 native_desktop_ad_metrics.campaign_name_custom AS native_desktop_ad_metrics_campaign_name_custom,
+native_desktop_ad_metrics.campaign_name_custom_2 AS native_desktop_ad_metrics_campaign_name_custom_2,
 native_desktop_ad_metrics.click_rate AS native_desktop_ad_metrics_click_rate,
 native_desktop_ad_metrics.clicks AS native_desktop_ad_metrics_clicks,
 native_desktop_ad_metrics.country AS native_desktop_ad_metrics_country,
@@ -104,7 +106,8 @@ native_desktop_ad_metrics.zone_name AS native_desktop_ad_metrics_zone_name,
                 (
   SELECT
     *,
-    REGEXP_EXTRACT(ad_url, r'utm_campaign=([^&]+)') AS campaign_name_custom
+    REGEXP_EXTRACT(ad_url, r'utm_campaign=([^&]+)') AS campaign_name_custom,
+    REGEXP_EXTRACT(ad_url, r'ref=([^&]+)') AS campaign_name_custom_2
   FROM `mozdata.ads.native_desktop_ad_metrics_hourly`
 )
 
@@ -129,6 +132,7 @@ native_desktop_ad_metrics_advertiser,
 native_desktop_ad_metrics_campaign_id,
 native_desktop_ad_metrics_campaign_name,
 native_desktop_ad_metrics_campaign_name_custom,
+native_desktop_ad_metrics_campaign_name_custom_2,
 native_desktop_ad_metrics_click_rate,
 native_desktop_ad_metrics_clicks,
 native_desktop_ad_metrics_country,
@@ -233,6 +237,13 @@ native_desktop_ad_metrics_zone_name,
 
   dimension: campaign_name_custom {
     sql: ${TABLE}.native_desktop_ad_metrics_campaign_name_custom ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: campaign_name_custom_2 {
+    sql: ${TABLE}.native_desktop_ad_metrics_campaign_name_custom_2 ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"

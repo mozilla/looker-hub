@@ -4,84 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: dau_reporting {
-  dimension: metrics__labeled_counter__browser_search_ad_clicks {
-    label: "Browser Search Ad Clicks"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
-    group_label: "Browser Search"
-    group_item_label: "Ad Clicks"
-
-    link: {
-      label: "Glean Dictionary reference for Browser Search Ad Clicks"
-      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/browser_search_ad_clicks"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records clicks of adverts on SERP pages.
-The key format is ‘<provider-name>’.
-"
-  }
-
-  dimension: metrics__labeled_counter__browser_search_in_content {
-    label: "Browser Search In Content"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
-    group_label: "Browser Search"
-    group_item_label: "In Content"
-
-    link: {
-      label: "Glean Dictionary reference for Browser Search In Content"
-      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/browser_search_in_content"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records the type of interaction a user has on SERP pages.
-"
-  }
-
-  dimension: metrics__labeled_counter__browser_search_search_count {
-    label: "Browser Search Search Count"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.browser_search_search_count ;;
-    group_label: "Browser Search"
-    group_item_label: "Search Count"
-
-    link: {
-      label: "Glean Dictionary reference for Browser Search Search Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/browser_search_search_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The labels for this counter are `<search-engine-name>.<source>`.
-If the search engine is bundled with Focus `search-engine-name` will be
-the name of the search engine. If it's a custom search engine (defined:
-https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
-`custom`.
-`source` will be: `action`, `suggestion`, `widget`, `shortcut`, `topsite`
-(depending on the source from which the search started). Also added the
-`other` option for the source but it should never enter on this case.
-"
-  }
-
-  dimension: metrics__labeled_counter__browser_search_with_ads {
-    label: "Browser Search With Ads"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
-    group_label: "Browser Search"
-    group_item_label: "With Ads"
-
-    link: {
-      label: "Glean Dictionary reference for Browser Search With Ads"
-      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/browser_search_with_ads"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records counts of SERP pages with adverts displayed.
-The key format is ‘<provider-name>’.
-"
-  }
-
+view: hang_report {
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation ID"
     hidden: no
@@ -92,7 +15,7 @@ The key format is ‘<provider-name>’.
 
     link: {
       label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
-      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_client_annotation_experimentation_id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -110,7 +33,7 @@ for the purpose of experimentation enrollment.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Label"
-      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_error_invalid_label"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_label"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -128,7 +51,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Overflow"
-      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_error_invalid_overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -146,7 +69,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid State"
-      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_error_invalid_state"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_state"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -164,7 +87,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Value"
-      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_error_invalid_value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_value"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -771,185 +694,21 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
-  sql_table_name: `mozdata.org_mozilla_ios_focus.dau_reporting` ;;
+  sql_table_name: `mozdata.firefox_desktop.hang_report` ;;
 }
 
-view: dau_reporting__metrics__labeled_counter__browser_search_ad_clicks {
-  label: "Browser Search - Ad Clicks"
-
-  dimension: document_id {
-    type: string
-    sql: ${dau_reporting.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${dau_reporting.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: yes
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
-    hidden: yes
-  }
-}
-
-view: dau_reporting__metrics__labeled_counter__browser_search_in_content {
-  label: "Browser Search - In Content"
-
-  dimension: document_id {
-    type: string
-    sql: ${dau_reporting.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${dau_reporting.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: yes
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
-    hidden: yes
-  }
-}
-
-view: dau_reporting__metrics__labeled_counter__browser_search_search_count {
-  label: "Browser Search - Search Count"
-
-  dimension: document_id {
-    type: string
-    sql: ${dau_reporting.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${dau_reporting.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: yes
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
-    hidden: yes
-  }
-}
-
-view: dau_reporting__metrics__labeled_counter__browser_search_with_ads {
-  label: "Browser Search - With Ads"
-
-  dimension: document_id {
-    type: string
-    sql: ${dau_reporting.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${dau_reporting.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: yes
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
-    hidden: yes
-  }
-}
-
-view: dau_reporting__metrics__labeled_counter__glean_error_invalid_label {
+view: hang_report__metrics__labeled_counter__glean_error_invalid_label {
   label: "Glean Error - Invalid Label"
 
   dimension: document_id {
     type: string
-    sql: ${dau_reporting.document_id} ;;
+    sql: ${hang_report.document_id} ;;
     hidden: yes
   }
 
   dimension: document_label_id {
     type: string
-    sql: ${dau_reporting.document_id}-${label} ;;
+    sql: ${hang_report.document_id}-${label} ;;
     primary_key: yes
     hidden: yes
   }
@@ -963,8 +722,8 @@ view: dau_reporting__metrics__labeled_counter__glean_error_invalid_label {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    suggest_explore: suggest__dau_reporting__metrics__labeled_counter__glean_error_invalid_label
-    suggest_dimension: suggest__dau_reporting__metrics__labeled_counter__glean_error_invalid_label.key
+    suggest_explore: suggest__hang_report__metrics__labeled_counter__glean_error_invalid_label
+    suggest_dimension: suggest__hang_report__metrics__labeled_counter__glean_error_invalid_label.key
     hidden: no
   }
 
@@ -976,23 +735,23 @@ view: dau_reporting__metrics__labeled_counter__glean_error_invalid_label {
 
   measure: client_count {
     type: count_distinct
-    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
+    sql: case when ${value} > 0 then ${hang_report.client_info__client_id} end ;;
     hidden: no
   }
 }
 
-view: dau_reporting__metrics__labeled_counter__glean_error_invalid_overflow {
+view: hang_report__metrics__labeled_counter__glean_error_invalid_overflow {
   label: "Glean Error - Invalid Overflow"
 
   dimension: document_id {
     type: string
-    sql: ${dau_reporting.document_id} ;;
+    sql: ${hang_report.document_id} ;;
     hidden: yes
   }
 
   dimension: document_label_id {
     type: string
-    sql: ${dau_reporting.document_id}-${label} ;;
+    sql: ${hang_report.document_id}-${label} ;;
     primary_key: yes
     hidden: yes
   }
@@ -1017,23 +776,23 @@ view: dau_reporting__metrics__labeled_counter__glean_error_invalid_overflow {
 
   measure: client_count {
     type: count_distinct
-    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
+    sql: case when ${value} > 0 then ${hang_report.client_info__client_id} end ;;
     hidden: no
   }
 }
 
-view: dau_reporting__metrics__labeled_counter__glean_error_invalid_state {
+view: hang_report__metrics__labeled_counter__glean_error_invalid_state {
   label: "Glean Error - Invalid State"
 
   dimension: document_id {
     type: string
-    sql: ${dau_reporting.document_id} ;;
+    sql: ${hang_report.document_id} ;;
     hidden: yes
   }
 
   dimension: document_label_id {
     type: string
-    sql: ${dau_reporting.document_id}-${label} ;;
+    sql: ${hang_report.document_id}-${label} ;;
     primary_key: yes
     hidden: yes
   }
@@ -1058,23 +817,23 @@ view: dau_reporting__metrics__labeled_counter__glean_error_invalid_state {
 
   measure: client_count {
     type: count_distinct
-    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
+    sql: case when ${value} > 0 then ${hang_report.client_info__client_id} end ;;
     hidden: no
   }
 }
 
-view: dau_reporting__metrics__labeled_counter__glean_error_invalid_value {
+view: hang_report__metrics__labeled_counter__glean_error_invalid_value {
   label: "Glean Error - Invalid Value"
 
   dimension: document_id {
     type: string
-    sql: ${dau_reporting.document_id} ;;
+    sql: ${hang_report.document_id} ;;
     hidden: yes
   }
 
   dimension: document_label_id {
     type: string
-    sql: ${dau_reporting.document_id}-${label} ;;
+    sql: ${hang_report.document_id}-${label} ;;
     primary_key: yes
     hidden: yes
   }
@@ -1099,17 +858,17 @@ view: dau_reporting__metrics__labeled_counter__glean_error_invalid_value {
 
   measure: client_count {
     type: count_distinct
-    sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
+    sql: case when ${value} > 0 then ${hang_report.client_info__client_id} end ;;
     hidden: no
   }
 }
 
-view: suggest__dau_reporting__metrics__labeled_counter__glean_error_invalid_label {
+view: suggest__hang_report__metrics__labeled_counter__glean_error_invalid_label {
   derived_table: {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_ios_focus.dau_reporting as t,
+from mozdata.firefox_desktop.hang_report as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -1123,7 +882,7 @@ order by n desc ;;
   }
 }
 
-view: dau_reporting__events {
+view: hang_report__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
@@ -1148,7 +907,7 @@ view: dau_reporting__events {
   }
 }
 
-view: dau_reporting__events__extra {
+view: hang_report__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -1162,7 +921,7 @@ view: dau_reporting__events__extra {
   }
 }
 
-view: dau_reporting__ping_info__experiments {
+view: hang_report__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
