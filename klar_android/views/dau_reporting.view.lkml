@@ -813,19 +813,19 @@ view: dau_reporting__metrics__labeled_counter__browser_search_ad_clicks {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -854,19 +854,19 @@ view: dau_reporting__metrics__labeled_counter__browser_search_in_content {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -895,19 +895,19 @@ view: dau_reporting__metrics__labeled_counter__browser_search_search_count {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -936,19 +936,19 @@ view: dau_reporting__metrics__labeled_counter__browser_search_with_ads {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${dau_reporting.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 

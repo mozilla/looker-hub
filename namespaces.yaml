@@ -1964,6 +1964,11 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.nimbus
       type: glean_ping_view
+    nimbus_recorded_targeting_context_table:
+      tables:
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.nimbus_recorded_targeting_context
+      type: table_view
     nimbus_table:
       tables:
       - channel: release
