@@ -141,6 +141,24 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__string__newtab_content_surface_id {
+    label: "Newtab Content Surface ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.newtab_content_surface_id ;;
+    type: string
+    group_label: "Newtab Content"
+    group_item_label: "Surface ID"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Content Surface ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_content_surface_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Surface id sent to the client from merino api
+"
+  }
+
   dimension: metrics__boolean__pocket_enabled {
     label: "Pocket Enabled"
     hidden: no

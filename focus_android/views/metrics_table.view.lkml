@@ -12565,6 +12565,94 @@ view: metrics_table {
     group_item_label: "Startup Profile Count"
   }
 
+  dimension: metrics__quantity__system_cpu_big_cores {
+    sql: ${TABLE}.metrics.quantity.system_cpu_big_cores ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU Big Cores"
+  }
+
+  dimension: metrics__quantity__system_cpu_family {
+    sql: ${TABLE}.metrics.quantity.system_cpu_family ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU Family"
+  }
+
+  dimension: metrics__quantity__system_cpu_l2_cache {
+    sql: ${TABLE}.metrics.quantity.system_cpu_l2_cache ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU L2 Cache"
+  }
+
+  dimension: metrics__quantity__system_cpu_l3_cache {
+    sql: ${TABLE}.metrics.quantity.system_cpu_l3_cache ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU L3 Cache"
+  }
+
+  dimension: metrics__quantity__system_cpu_little_cores {
+    sql: ${TABLE}.metrics.quantity.system_cpu_little_cores ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU Little Cores"
+  }
+
+  dimension: metrics__quantity__system_cpu_logical_cores {
+    sql: ${TABLE}.metrics.quantity.system_cpu_logical_cores ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU Logical Cores"
+  }
+
+  dimension: metrics__quantity__system_cpu_medium_cores {
+    sql: ${TABLE}.metrics.quantity.system_cpu_medium_cores ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU Medium Cores"
+  }
+
+  dimension: metrics__quantity__system_cpu_model {
+    sql: ${TABLE}.metrics.quantity.system_cpu_model ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU Model"
+  }
+
+  dimension: metrics__quantity__system_cpu_physical_cores {
+    sql: ${TABLE}.metrics.quantity.system_cpu_physical_cores ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU Physical Cores"
+  }
+
+  dimension: metrics__quantity__system_cpu_speed {
+    sql: ${TABLE}.metrics.quantity.system_cpu_speed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU Speed"
+  }
+
+  dimension: metrics__quantity__system_cpu_stepping {
+    sql: ${TABLE}.metrics.quantity.system_cpu_stepping ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU Stepping"
+  }
+
   dimension: metrics__quantity__timestamps_first_paint {
     sql: ${TABLE}.metrics.quantity.timestamps_first_paint ;;
     type: number
@@ -13347,6 +13435,22 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Startup Profile Selection Reason"
+  }
+
+  dimension: metrics__string__system_cpu_name {
+    sql: ${TABLE}.metrics.string.system_cpu_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System CPU Name"
+  }
+
+  dimension: metrics__string__system_cpu_vendor {
+    sql: ${TABLE}.metrics.string.system_cpu_vendor ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System CPU Vendor"
   }
 
   dimension: metrics__string__xpcom_abi {

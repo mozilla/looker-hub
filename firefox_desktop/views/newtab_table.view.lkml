@@ -576,6 +576,16 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__string__newtab_content_surface_id {
+    sql: ${TABLE}.metrics.string.newtab_content_surface_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Newtab Content Surface ID"
+    description: "Surface id sent to the client from merino api
+"
+  }
+
   dimension: metrics__string__newtab_homepage_category {
     sql: ${TABLE}.metrics.string.newtab_homepage_category ;;
     type: string

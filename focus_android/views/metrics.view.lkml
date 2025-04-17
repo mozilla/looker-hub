@@ -22471,6 +22471,240 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__quantity__system_cpu_big_cores {
+    label: "System CPU Big Cores"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_big_cores ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "Big Cores"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Big Cores"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/system_cpu_big_cores"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Big (or Performance) CPU cores.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_family {
+    label: "System CPU Family"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_family ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "Family"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Family"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/system_cpu_family"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "CPU family.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_l2_cache {
+    label: "System CPU L2 Cache"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_l2_cache ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "L2 Cache"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU L2 Cache"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/system_cpu_l2_cache"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "L2 cache size (only on Windows and Mac).
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_l3_cache {
+    label: "System CPU L3 Cache"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_l3_cache ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "L3 Cache"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU L3 Cache"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/system_cpu_l3_cache"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "L3 cache size.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_little_cores {
+    label: "System CPU Little Cores"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_little_cores ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "Little Cores"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Little Cores"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/system_cpu_little_cores"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Little (or Efficient) CPU cores.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_logical_cores {
+    label: "System CPU Logical Cores"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_logical_cores ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "Logical Cores"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Logical Cores"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/system_cpu_logical_cores"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Logical CPU cores.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_medium_cores {
+    label: "System CPU Medium Cores"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_medium_cores ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "Medium Cores"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Medium Cores"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/system_cpu_medium_cores"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Medium CPU cores.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_model {
+    label: "System CPU Model"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_model ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "Model"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Model"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/system_cpu_model"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "CPU model.
+"
+  }
+
+  dimension: metrics__string__system_cpu_name {
+    label: "System CPU Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_cpu_name ;;
+    type: string
+    group_label: "System CPU"
+    group_item_label: "Name"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/system_cpu_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The user readable CPU name. (e.g. \"Intel(R) Core(TM) i9-8950HK CPU @ 2.90GHz\")
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_physical_cores {
+    label: "System CPU Physical Cores"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_physical_cores ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "Physical Cores"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Physical Cores"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/system_cpu_physical_cores"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Physical CPU cores.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_speed {
+    label: "System CPU Speed"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_speed ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "Speed"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Speed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/system_cpu_speed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "CPU speed in MHz.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_stepping {
+    label: "System CPU Stepping"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_stepping ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "Stepping"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Stepping"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/system_cpu_stepping"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "CPU stepping.
+"
+  }
+
+  dimension: metrics__string__system_cpu_vendor {
+    label: "System CPU Vendor"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_cpu_vendor ;;
+    type: string
+    group_label: "System CPU"
+    group_item_label: "Vendor"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Vendor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/system_cpu_vendor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The CPU vendor (e.g. \"GenuineIntel\").
+"
+  }
+
   dimension: metrics__timing_distribution__thumbnails_capture_canvas_draw_time__sum {
     label: "Thumbnails Capture Canvas Draw Time Sum"
     hidden: no
