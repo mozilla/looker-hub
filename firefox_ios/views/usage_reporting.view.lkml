@@ -99,6 +99,24 @@ this metric gets set to `Unknown`.
 "
   }
 
+  dimension: metrics__boolean__usage_is_managed_device {
+    label: "Usage Is Managed Device"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.usage_is_managed_device ;;
+    type: yesno
+    group_label: "Usage"
+    group_item_label: "Is Managed Device"
+
+    link: {
+      label: "Glean Dictionary reference for Usage Is Managed Device"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/usage_is_managed_device"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Was the app installed using MDM software.
+"
+  }
+
   dimension: metrics__string__usage_os {
     label: "Usage OS"
     hidden: no

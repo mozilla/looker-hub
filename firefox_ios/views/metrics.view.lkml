@@ -947,7 +947,7 @@ with a home page origin.
 
   dimension: metrics__counter__firefox_home_page_history_highlights_show_all {
     label: "Firefox Home Page History Highlights Show All"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.firefox_home_page_history_highlights_show_all ;;
     type: number
     group_label: "Firefox Home Page"
@@ -2963,7 +2963,7 @@ browser menu option is tapped.
 
   dimension: metrics__counter__shopping_product_page_visits {
     label: "Shopping Product Page Visits"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.shopping_product_page_visits ;;
     type: number
     group_label: "Shopping"
@@ -2981,7 +2981,7 @@ browser menu option is tapped.
 
   dimension: metrics__boolean__shopping_settings_component_opted_out {
     label: "Shopping Settings Component Opted Out"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.shopping_settings_component_opted_out ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -3000,7 +3000,7 @@ Set in BrowserViewController and updated when changed by user.
 
   dimension: metrics__boolean__shopping_settings_disabled_ads {
     label: "Shopping Settings Disabled Ads"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.shopping_settings_disabled_ads ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -3019,7 +3019,7 @@ experience. Set in BrowserViewController and updated when changed by user.
 
   dimension: metrics__boolean__shopping_settings_nimbus_disabled_shopping {
     label: "Shopping Settings Nimbus Disabled Shopping"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.shopping_settings_nimbus_disabled_shopping ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -3037,7 +3037,7 @@ experience. Set in BrowserViewController and updated when changed by user.
 
   dimension: metrics__boolean__shopping_settings_user_has_onboarded {
     label: "Shopping Settings User Has Onboarded"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.shopping_settings_user_has_onboarded ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -3311,7 +3311,7 @@ button on a tab's toolbar.
 
   dimension: metrics__counter__tabs_new_tab_pressed {
     label: "Tabs New Tab Pressed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.tabs_new_tab_pressed ;;
     type: number
     group_label: "Tabs"
@@ -4709,6 +4709,11 @@ startup, as part of the initialization sequence.
     group_item_label: "Content"
   }
 
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.client_info.attribution.ext ;;
+    hidden: yes
+  }
+
   dimension: client_info__attribution__medium {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
@@ -4760,6 +4765,11 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.client_info.distribution.ext ;;
+    hidden: yes
   }
 
   dimension: client_info__distribution__name {

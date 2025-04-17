@@ -7,7 +7,7 @@
 view: deletion_request {
   dimension: metrics__uuid__legacy_ids_client_id {
     label: "Legacy Ids Client ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
     type: string
     group_label: "Legacy Ids"
@@ -230,6 +230,11 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Content"
   }
 
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.client_info.attribution.ext ;;
+    hidden: yes
+  }
+
   dimension: client_info__attribution__medium {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
@@ -281,6 +286,11 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.client_info.distribution.ext ;;
+    hidden: yes
   }
 
   dimension: client_info__distribution__name {

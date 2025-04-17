@@ -78,6 +78,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_pdf_improvements
+    type: looker_line
+    fields: [
+      ios_pdf_improvements.submission_date,
+      ios_pdf_improvements.branch,
+      ios_pdf_improvements.point
+    ]
+    pivots: [
+      ios_pdf_improvements.branch
+    ]
+    filters:
+      ios_pdf_improvements.metric: 'active_hours'
+      ios_pdf_improvements.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: ios_pdf_improvements.submission_date
+    field_y: ios_pdf_improvements.point
+    log_scale: false
+    ci_lower: ios_pdf_improvements.lower
+    ci_upper: ios_pdf_improvements.upper
+    show_grid: true
+    listen:
+      Date: ios_pdf_improvements.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -97,7 +131,7 @@
       ios_pdf_improvements.metric: 'retained'
       ios_pdf_improvements.statistic: mean
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: ios_pdf_improvements.submission_date
@@ -129,40 +163,6 @@
     ]
     filters:
       ios_pdf_improvements.metric: 'ad_clicks'
-      ios_pdf_improvements.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: ios_pdf_improvements.submission_date
-    field_y: ios_pdf_improvements.point
-    log_scale: false
-    ci_lower: ios_pdf_improvements.lower
-    ci_upper: ios_pdf_improvements.upper
-    show_grid: true
-    listen:
-      Date: ios_pdf_improvements.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ios_pdf_improvements
-    type: looker_line
-    fields: [
-      ios_pdf_improvements.submission_date,
-      ios_pdf_improvements.branch,
-      ios_pdf_improvements.point
-    ]
-    pivots: [
-      ios_pdf_improvements.branch
-    ]
-    filters:
-      ios_pdf_improvements.metric: 'active_hours'
       ios_pdf_improvements.statistic: mean
     row: 20
     col: 0

@@ -92,6 +92,11 @@ view: newtab_table {
     description: "The attribution content (e.g. 'firefoxview')."
   }
 
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.client_info.attribution.ext ;;
+    hidden: yes
+  }
+
   dimension: client_info__attribution__medium {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
@@ -150,6 +155,11 @@ view: newtab_table {
     group_label: "Client Info"
     group_item_label: "Device Model"
     description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.client_info.distribution.ext ;;
+    hidden: yes
   }
 
   dimension: client_info__distribution__name {
@@ -566,6 +576,16 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__string__newtab_content_surface_id {
+    sql: ${TABLE}.metrics.string.newtab_content_surface_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Newtab Content Surface ID"
+    description: "Surface id sent to the client from merino api
+"
+  }
+
   dimension: metrics__string__newtab_homepage_category {
     sql: ${TABLE}.metrics.string.newtab_homepage_category ;;
     type: string
@@ -603,9 +623,11 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics String"
     group_item_label: "Search Engine Default Engine ID"
     description: "The telemetry id of the search engine.
-For application provided engines, this is either supplied by the
-configuration or from the first part of the associated WebExtension Id.
-For other engines, this is `other-<extensionName>`.
+For example: \"engine1\"
+
+For application-provided engines, this is the identifier plus telemetry
+suffix supplied by the configuration.
+For other engines, this is `other-<engineName>`.
 "
   }
 
@@ -616,9 +638,12 @@ For other engines, this is `other-<extensionName>`.
     group_label: "Metrics String"
     group_item_label: "Search Engine Private Engine ID"
     description: "The telemetry id of the search engine.
-For application provided engines, this is either supplied by the
-configuration or from the first part of the associated WebExtension Id.
-For other engines, this is `other-<extensionName>`.
+For example: \"engine1\"
+
+For application-provided engines, this is the identifier plus telemetry
+suffix supplied by the configuration.
+For other engines, this is `other-<engineName>`.
+
 If this string is an empty string (`\"\"`), this means that one or both of
 the preferences `browser.search.separatePrivateDefault` and
 `browser.search.separatePrivateDefault.ui.enabled` are set to false.

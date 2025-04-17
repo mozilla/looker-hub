@@ -85,7 +85,7 @@ health check is started because of the return.
 
   dimension: metrics__timing_distribution__connection_health_no_signal_time__sum {
     label: "Connection Health No Signal Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.sum ;;
     type: number
     group_label: "Connection Health"
@@ -132,7 +132,7 @@ health check is started because of the return.
 
   dimension: metrics__timing_distribution__connection_health_stable_time__sum {
     label: "Connection Health Stable Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.sum ;;
     type: number
     group_label: "Connection Health"
@@ -180,7 +180,7 @@ health check is started because of the return.
 
   dimension: metrics__timing_distribution__connection_health_unstable_time__sum {
     label: "Connection Health Unstable Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.sum ;;
     type: number
     group_label: "Connection Health"
@@ -474,6 +474,11 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Content"
   }
 
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.client_info.attribution.ext ;;
+    hidden: yes
+  }
+
   dimension: client_info__attribution__medium {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
@@ -525,6 +530,11 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.client_info.distribution.ext ;;
+    hidden: yes
   }
 
   dimension: client_info__distribution__name {

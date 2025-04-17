@@ -92,6 +92,11 @@ view: use_counters_table {
     description: "The attribution content (e.g. 'firefoxview')."
   }
 
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.client_info.attribution.ext ;;
+    hidden: yes
+  }
+
   dimension: client_info__attribution__medium {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
@@ -150,6 +155,11 @@ view: use_counters_table {
     group_label: "Client Info"
     group_item_label: "Device Model"
     description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.client_info.distribution.ext ;;
+    hidden: yes
   }
 
   dimension: client_info__distribution__name {
@@ -17593,6 +17603,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_invalid_text_directives {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_invalid_text_directives ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Invalid Text Directives"
+    description: "Whether a document had a text fragment that could not be found after loading has finished. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_asmjs {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_asmjs ;;
     type: number
@@ -18590,6 +18610,26 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Svgsvgelement Getelementbyid"
     description: "Whether a document called called SVGSVGElement.getElementById. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_text_directive_not_created {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_text_directive_not_created ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Text Directive Not Created"
+    description: "Whether a document has not succeeded in creating a text fragment. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_text_directive_pages {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_text_directive_pages ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Text Directive Pages"
+    description: "Whether a document used text fragments. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21959,7 +21999,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Invalid Text Directives"
-    description: "Amount of pages where a text directive could be found after loading has finished
+    description: "Whether a page had a text fragment that could not be found after loading has finished. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -22969,7 +23009,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Text Directive Not Created"
-    description: "How often does FragmentDirective::CreateTextDirective() not find a text fragment
+    description: "Whether a page has not succeeded in creating a text fragment. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -22979,7 +23019,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Text Directive Pages"
-    description: "Number of opened pages using text-fragments.
+    description: "Whether a page used text fragments. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

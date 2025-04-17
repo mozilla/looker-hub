@@ -59,6 +59,30 @@ view: tasks_base {
     group_item_label: "Project"
   }
 
+  dimension: tags__test_platform {
+    sql: ${TABLE}.tags.test_platform ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Tags"
+    group_item_label: "Test Platform"
+  }
+
+  dimension: tags__test_suite {
+    sql: ${TABLE}.tags.test_suite ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Tags"
+    group_item_label: "Test Suite"
+  }
+
+  dimension: tags__test_variant {
+    sql: ${TABLE}.tags.test_variant ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Tags"
+    group_item_label: "Test Variant"
+  }
+
   dimension: tags__trust_domain {
     sql: ${TABLE}.tags.trust_domain ;;
     type: string

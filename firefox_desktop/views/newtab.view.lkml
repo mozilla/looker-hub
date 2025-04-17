@@ -141,6 +141,24 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__string__newtab_content_surface_id {
+    label: "Newtab Content Surface ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.newtab_content_surface_id ;;
+    type: string
+    group_label: "Newtab Content"
+    group_item_label: "Surface ID"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Content Surface ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_content_surface_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Surface id sent to the client from merino api
+"
+  }
+
   dimension: metrics__boolean__pocket_enabled {
     label: "Pocket Enabled"
     hidden: no
@@ -210,9 +228,11 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
     }
 
     description: "The telemetry id of the search engine.
-For application provided engines, this is either supplied by the
-configuration or from the first part of the associated WebExtension Id.
-For other engines, this is `other-<extensionName>`.
+For example: \"engine1\"
+
+For application-provided engines, this is the identifier plus telemetry
+suffix supplied by the configuration.
+For other engines, this is `other-<engineName>`.
 "
   }
 
@@ -231,9 +251,12 @@ For other engines, this is `other-<extensionName>`.
     }
 
     description: "The telemetry id of the search engine.
-For application provided engines, this is either supplied by the
-configuration or from the first part of the associated WebExtension Id.
-For other engines, this is `other-<extensionName>`.
+For example: \"engine1\"
+
+For application-provided engines, this is the identifier plus telemetry
+suffix supplied by the configuration.
+For other engines, this is `other-<engineName>`.
+
 If this string is an empty string (`\"\"`), this means that one or both of
 the preferences `browser.search.separatePrivateDefault` and
 `browser.search.separatePrivateDefault.ui.enabled` are set to false.
@@ -510,6 +533,11 @@ The labels are the `category.name` identifier of the metric.
     description: "The attribution content (e.g. 'firefoxview')."
   }
 
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.client_info.attribution.ext ;;
+    hidden: yes
+  }
+
   dimension: client_info__attribution__medium {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
@@ -568,6 +596,11 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Client Info"
     group_item_label: "Device Model"
     description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.client_info.distribution.ext ;;
+    hidden: yes
   }
 
   dimension: client_info__distribution__name {

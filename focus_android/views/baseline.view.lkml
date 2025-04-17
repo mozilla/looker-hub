@@ -7,7 +7,7 @@
 view: baseline {
   dimension: metrics__string__browser_default_search_engine {
     label: "Browser Default Search Engine"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.browser_default_search_engine ;;
     type: string
     group_label: "Browser"
@@ -91,7 +91,7 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
 
   dimension: metrics__counter__browser_total_uri_count {
     label: "Browser Total URI Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.browser_total_uri_count ;;
     type: number
     group_label: "Browser"
@@ -113,7 +113,7 @@ that programmatically redirect to a new location.
 
   dimension: metrics__uuid__legacy_ids_client_id {
     label: "Legacy Ids Client ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
     type: string
     group_label: "Legacy Ids"
@@ -383,6 +383,11 @@ Now it only records counts for the Glean built-in pings.
     group_item_label: "Content"
   }
 
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.client_info.attribution.ext ;;
+    hidden: yes
+  }
+
   dimension: client_info__attribution__medium {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
@@ -434,6 +439,11 @@ Now it only records counts for the Glean built-in pings.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.client_info.distribution.ext ;;
+    hidden: yes
   }
 
   dimension: client_info__distribution__name {
@@ -958,19 +968,19 @@ view: baseline__metrics__labeled_counter__browser_search_ad_clicks {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -999,19 +1009,19 @@ view: baseline__metrics__labeled_counter__browser_search_in_content {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -1040,19 +1050,19 @@ view: baseline__metrics__labeled_counter__browser_search_search_count {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 

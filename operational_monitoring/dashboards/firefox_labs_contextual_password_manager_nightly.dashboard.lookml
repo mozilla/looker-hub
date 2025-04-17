@@ -78,40 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: firefox_labs_contextual_password_manager_nightly
-    type: looker_line
-    fields: [
-      firefox_labs_contextual_password_manager_nightly.submission_date,
-      firefox_labs_contextual_password_manager_nightly.branch,
-      firefox_labs_contextual_password_manager_nightly.point
-    ]
-    pivots: [
-      firefox_labs_contextual_password_manager_nightly.branch
-    ]
-    filters:
-      firefox_labs_contextual_password_manager_nightly.metric: 'retained'
-      firefox_labs_contextual_password_manager_nightly.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: firefox_labs_contextual_password_manager_nightly.submission_date
-    field_y: firefox_labs_contextual_password_manager_nightly.point
-    log_scale: false
-    ci_lower: firefox_labs_contextual_password_manager_nightly.lower
-    ci_upper: firefox_labs_contextual_password_manager_nightly.upper
-    show_grid: true
-    listen:
-      Date: firefox_labs_contextual_password_manager_nightly.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -131,7 +97,7 @@
       firefox_labs_contextual_password_manager_nightly.metric: 'uri_count'
       firefox_labs_contextual_password_manager_nightly.statistic: mean
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: firefox_labs_contextual_password_manager_nightly.submission_date
@@ -166,42 +132,7 @@
     filters:
       firefox_labs_contextual_password_manager_nightly.metric: 'memory_total'
       firefox_labs_contextual_password_manager_nightly.statistic: percentile
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: firefox_labs_contextual_password_manager_nightly.submission_date
-    field_y: firefox_labs_contextual_password_manager_nightly.point
-    log_scale: false
-    ci_lower: firefox_labs_contextual_password_manager_nightly.lower
-    ci_upper: firefox_labs_contextual_password_manager_nightly.upper
-    show_grid: true
-    listen:
-      Date: firefox_labs_contextual_password_manager_nightly.submission_date
-      Percentile: firefox_labs_contextual_password_manager_nightly.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: firefox_labs_contextual_password_manager_nightly
-    type: looker_line
-    fields: [
-      firefox_labs_contextual_password_manager_nightly.submission_date,
-      firefox_labs_contextual_password_manager_nightly.branch,
-      firefox_labs_contextual_password_manager_nightly.point
-    ]
-    pivots: [
-      firefox_labs_contextual_password_manager_nightly.branch
-    ]
-    filters:
-      firefox_labs_contextual_password_manager_nightly.metric: 'ad_clicks'
-      firefox_labs_contextual_password_manager_nightly.statistic: mean
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -213,6 +144,7 @@
     show_grid: true
     listen:
       Date: firefox_labs_contextual_password_manager_nightly.submission_date
+      Percentile: firefox_labs_contextual_password_manager_nightly.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -235,8 +167,42 @@
     filters:
       firefox_labs_contextual_password_manager_nightly.metric: 'active_hours'
       firefox_labs_contextual_password_manager_nightly.statistic: mean
-    row: 30
+    row: 20
     col: 0
+    width: 12
+    height: 8
+    field_x: firefox_labs_contextual_password_manager_nightly.submission_date
+    field_y: firefox_labs_contextual_password_manager_nightly.point
+    log_scale: false
+    ci_lower: firefox_labs_contextual_password_manager_nightly.lower
+    ci_upper: firefox_labs_contextual_password_manager_nightly.upper
+    show_grid: true
+    listen:
+      Date: firefox_labs_contextual_password_manager_nightly.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: firefox_labs_contextual_password_manager_nightly
+    type: looker_line
+    fields: [
+      firefox_labs_contextual_password_manager_nightly.submission_date,
+      firefox_labs_contextual_password_manager_nightly.branch,
+      firefox_labs_contextual_password_manager_nightly.point
+    ]
+    pivots: [
+      firefox_labs_contextual_password_manager_nightly.branch
+    ]
+    filters:
+      firefox_labs_contextual_password_manager_nightly.metric: 'retained'
+      firefox_labs_contextual_password_manager_nightly.statistic: mean
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: firefox_labs_contextual_password_manager_nightly.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       firefox_labs_contextual_password_manager_nightly.metric: 'qualified_cumulative_days_of_use'
+      firefox_labs_contextual_password_manager_nightly.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: firefox_labs_contextual_password_manager_nightly.submission_date
+    field_y: firefox_labs_contextual_password_manager_nightly.point
+    log_scale: false
+    ci_lower: firefox_labs_contextual_password_manager_nightly.lower
+    ci_upper: firefox_labs_contextual_password_manager_nightly.upper
+    show_grid: true
+    listen:
+      Date: firefox_labs_contextual_password_manager_nightly.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: firefox_labs_contextual_password_manager_nightly
+    type: looker_line
+    fields: [
+      firefox_labs_contextual_password_manager_nightly.submission_date,
+      firefox_labs_contextual_password_manager_nightly.branch,
+      firefox_labs_contextual_password_manager_nightly.point
+    ]
+    pivots: [
+      firefox_labs_contextual_password_manager_nightly.branch
+    ]
+    filters:
+      firefox_labs_contextual_password_manager_nightly.metric: 'ad_clicks'
       firefox_labs_contextual_password_manager_nightly.statistic: mean
     row: 30
     col: 12
