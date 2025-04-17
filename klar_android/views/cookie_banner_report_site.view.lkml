@@ -7,7 +7,7 @@
 view: cookie_banner_report_site {
   dimension: metrics__url2__cookie_banner_report_site_domain {
     label: "Cookie Banner Report Site Domain"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.url2.cookie_banner_report_site_domain ;;
     type: string
     group_label: "Cookie Banner"

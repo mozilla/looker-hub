@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: pull_to_refresh
-    type: looker_line
-    fields: [
-      pull_to_refresh.submission_date,
-      pull_to_refresh.branch,
-      pull_to_refresh.point
-    ]
-    pivots: [
-      pull_to_refresh.branch
-    ]
-    filters:
-      pull_to_refresh.metric: 'ad_clicks'
-      pull_to_refresh.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: pull_to_refresh.submission_date
-    field_y: pull_to_refresh.point
-    log_scale: false
-    ci_lower: pull_to_refresh.lower
-    ci_upper: pull_to_refresh.upper
-    show_grid: true
-    listen:
-      Date: pull_to_refresh.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -61,6 +27,40 @@
     ]
     filters:
       pull_to_refresh.metric: 'search_count'
+      pull_to_refresh.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: pull_to_refresh.submission_date
+    field_y: pull_to_refresh.point
+    log_scale: false
+    ci_lower: pull_to_refresh.lower
+    ci_upper: pull_to_refresh.upper
+    show_grid: true
+    listen:
+      Date: pull_to_refresh.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: pull_to_refresh
+    type: looker_line
+    fields: [
+      pull_to_refresh.submission_date,
+      pull_to_refresh.branch,
+      pull_to_refresh.point
+    ]
+    pivots: [
+      pull_to_refresh.branch
+    ]
+    filters:
+      pull_to_refresh.metric: 'days_of_use'
       pull_to_refresh.statistic: mean
     row: 0
     col: 12
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       pull_to_refresh.branch
     ]
     filters:
-      pull_to_refresh.metric: 'days_of_use'
+      pull_to_refresh.metric: 'ad_clicks'
       pull_to_refresh.statistic: mean
     row: 20
     col: 0

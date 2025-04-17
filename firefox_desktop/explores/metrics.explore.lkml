@@ -2043,6 +2043,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__suggest_relevance_status}) AS metrics__metrics__labeled_counter__suggest_relevance_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__suggest_relevance_status.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__tabgroup_tab_interactions {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tabgroup_tab_interactions}) AS metrics__metrics__labeled_counter__tabgroup_tab_interactions ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tabgroup_tab_interactions.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__telemetry_clamping_time_hgrams {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__telemetry_clamping_time_hgrams}) AS metrics__metrics__labeled_counter__telemetry_clamping_time_hgrams ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__telemetry_clamping_time_hgrams.document_id} ;;

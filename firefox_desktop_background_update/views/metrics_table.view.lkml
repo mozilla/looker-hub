@@ -14584,6 +14584,116 @@ Similar to the legacy telemetry histogram PWMGR_NUM_SAVED_PASSWORDS.
 "
   }
 
+  dimension: metrics__quantity__system_cpu_big_cores {
+    sql: ${TABLE}.metrics.quantity.system_cpu_big_cores ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU Big Cores"
+    description: "Big (or Performance) CPU cores.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_family {
+    sql: ${TABLE}.metrics.quantity.system_cpu_family ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU Family"
+    description: "CPU family.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_l2_cache {
+    sql: ${TABLE}.metrics.quantity.system_cpu_l2_cache ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU L2 Cache"
+    description: "L2 cache size (only on Windows and Mac).
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_l3_cache {
+    sql: ${TABLE}.metrics.quantity.system_cpu_l3_cache ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU L3 Cache"
+    description: "L3 cache size.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_little_cores {
+    sql: ${TABLE}.metrics.quantity.system_cpu_little_cores ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU Little Cores"
+    description: "Little (or Efficient) CPU cores.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_logical_cores {
+    sql: ${TABLE}.metrics.quantity.system_cpu_logical_cores ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU Logical Cores"
+    description: "Logical CPU cores.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_medium_cores {
+    sql: ${TABLE}.metrics.quantity.system_cpu_medium_cores ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU Medium Cores"
+    description: "Medium CPU cores.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_model {
+    sql: ${TABLE}.metrics.quantity.system_cpu_model ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU Model"
+    description: "CPU model.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_physical_cores {
+    sql: ${TABLE}.metrics.quantity.system_cpu_physical_cores ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU Physical Cores"
+    description: "Physical CPU cores.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_speed {
+    sql: ${TABLE}.metrics.quantity.system_cpu_speed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU Speed"
+    description: "CPU speed in MHz.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_stepping {
+    sql: ${TABLE}.metrics.quantity.system_cpu_stepping ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System CPU Stepping"
+    description: "CPU stepping.
+"
+  }
+
   dimension: metrics__quantity__timestamps_first_paint {
     sql: ${TABLE}.metrics.quantity.timestamps_first_paint ;;
     type: number
@@ -15422,6 +15532,26 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
     profile and created a new profile.
   restart-claimed-default:
     A first run of a dedicate"
+  }
+
+  dimension: metrics__string__system_cpu_name {
+    sql: ${TABLE}.metrics.string.system_cpu_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System CPU Name"
+    description: "The user readable CPU name. (e.g. \"Intel(R) Core(TM) i9-8950HK CPU @ 2.90GHz\")
+"
+  }
+
+  dimension: metrics__string__system_cpu_vendor {
+    sql: ${TABLE}.metrics.string.system_cpu_vendor ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System CPU Vendor"
+    description: "The CPU vendor (e.g. \"GenuineIntel\").
+"
   }
 
   dimension: metrics__string__update_version_pin {

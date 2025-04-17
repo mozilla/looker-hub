@@ -7,7 +7,7 @@
 view: activation {
   dimension: metrics__uuid__activation_activation_id {
     label: "Activation Activation ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.activation_activation_id ;;
     type: string
     group_label: "Activation"
@@ -26,7 +26,7 @@ and only sent with the activation ping.
 
   dimension: metrics__uuid__legacy_ids_client_id {
     label: "Legacy Ids Client ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
     type: string
     group_label: "Legacy Ids"

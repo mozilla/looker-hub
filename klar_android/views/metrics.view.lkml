@@ -7,7 +7,7 @@
 view: metrics {
   dimension: metrics__counter__autocomplete_domain_added {
     label: "Autocomplete Domain Added"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.autocomplete_domain_added ;;
     type: number
     group_label: "Autocomplete"
@@ -26,7 +26,7 @@ a website to the autocomplete list.
 
   dimension: metrics__counter__autocomplete_domain_removed {
     label: "Autocomplete Domain Removed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.autocomplete_domain_removed ;;
     type: number
     group_label: "Autocomplete"
@@ -45,7 +45,7 @@ a website from the autocomplete list.
 
   dimension: metrics__counter__autocomplete_list_order_changed {
     label: "Autocomplete List Order Changed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.autocomplete_list_order_changed ;;
     type: number
     group_label: "Autocomplete"
@@ -64,7 +64,7 @@ the autocomplete list.
 
   dimension: metrics__string__browser_default_search_engine {
     label: "Browser Default Search Engine"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.browser_default_search_engine ;;
     type: string
     group_label: "Browser"
@@ -82,7 +82,7 @@ the autocomplete list.
 
   dimension: metrics__string__browser_install_source {
     label: "Browser Install Source"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.browser_install_source ;;
     type: string
     group_label: "Browser"
@@ -118,7 +118,7 @@ changes the default browser through the app settings.
 
   dimension: metrics__string__browser_locale_override {
     label: "Browser Locale Override"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.browser_locale_override ;;
     type: string
     group_label: "Browser"
@@ -137,7 +137,7 @@ specifically overrides it for the app.
 
   dimension: metrics__counter__browser_report_site_issue_counter {
     label: "Browser Report Site Issue Counter"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.browser_report_site_issue_counter ;;
     type: number
     group_label: "Browser"
@@ -247,7 +247,7 @@ where:
 
   dimension: metrics__counter__browser_total_uri_count {
     label: "Browser Total URI Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.browser_total_uri_count ;;
     type: number
     group_label: "Browser"
@@ -269,7 +269,7 @@ that programmatically redirect to a new location.
 
   dimension: metrics__uuid__legacy_ids_client_id {
     label: "Legacy Ids Client ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
     type: string
     group_label: "Legacy Ids"
@@ -288,7 +288,7 @@ that programmatically redirect to a new location.
 
   dimension: metrics__boolean__metrics_search_widget_installed {
     label: "Metrics Search Widget Installed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.metrics_search_widget_installed ;;
     type: yesno
     group_label: "Metrics"
@@ -306,7 +306,7 @@ that programmatically redirect to a new location.
 
   dimension: metrics__boolean__metrics_start_reason_activity_error {
     label: "Metrics Start Reason Activity Error"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.metrics_start_reason_activity_error ;;
     type: yesno
     group_label: "Metrics"
@@ -327,7 +327,7 @@ once we validate these assumptions.
 
   dimension: metrics__boolean__metrics_start_reason_process_error {
     label: "Metrics Start Reason Process Error"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.metrics_start_reason_process_error ;;
     type: yesno
     group_label: "Metrics"
@@ -348,7 +348,7 @@ once we validate these assumptions.
 
   dimension: metrics__boolean__mozilla_products_has_fenix_installed {
     label: "Mozilla Products Has Fenix Installed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.mozilla_products_has_fenix_installed ;;
     type: yesno
     group_label: "Mozilla Products"
@@ -366,7 +366,7 @@ once we validate these assumptions.
 
   dimension: metrics__boolean__mozilla_products_is_fenix_default_browser {
     label: "Mozilla Products Is Fenix Default Browser"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.mozilla_products_is_fenix_default_browser ;;
     type: yesno
     group_label: "Mozilla Products"
@@ -402,7 +402,7 @@ once we validate these assumptions.
 
   dimension: metrics__boolean__notifications_permission_granted {
     label: "Notifications Permission Granted"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.notifications_permission_granted ;;
     type: yesno
     group_label: "Notifications"
@@ -486,7 +486,7 @@ homescreen because the link was invalid).
 
   dimension: metrics__string__preferences_user_theme {
     label: "Preferences User Theme"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.preferences_user_theme ;;
     type: string
     group_label: "Preferences"
@@ -542,7 +542,7 @@ the whats new button from settings screen.
 
   dimension: metrics__counter__shortcuts_shortcut_added_counter {
     label: "Shortcuts Shortcut Added Counter"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.shortcuts_shortcut_added_counter ;;
     type: number
     group_label: "Shortcuts"
@@ -561,7 +561,7 @@ a website to shortcuts.
 
   dimension: metrics__counter__shortcuts_shortcut_opened_counter {
     label: "Shortcuts Shortcut Opened Counter"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.shortcuts_shortcut_opened_counter ;;
     type: number
     group_label: "Shortcuts"
@@ -599,7 +599,7 @@ It also indicates the screen it was removed from, home or browser.
 
   dimension: metrics__quantity__shortcuts_shortcuts_on_home_number {
     label: "Shortcuts Shortcuts On Home Number"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.shortcuts_shortcuts_on_home_number ;;
     type: number
     group_label: "Shortcuts"
@@ -618,7 +618,7 @@ It also indicates the screen it was removed from, home or browser.
 
   dimension: metrics__custom_distribution__tab_count_app_backgrounded__sum {
     label: "Tab Count App Backgrounded Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.tab_count_app_backgrounded.sum ;;
     type: number
     group_label: "Tab Count"
@@ -635,7 +635,7 @@ It also indicates the screen it was removed from, home or browser.
 
   dimension: metrics__boolean__tracking_protection_has_advertising_blocked {
     label: "Tracking Protection Has Advertising Blocked"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_advertising_blocked ;;
     type: yesno
     group_label: "Tracking Protection"
@@ -654,7 +654,7 @@ at least once.
 
   dimension: metrics__boolean__tracking_protection_has_analytics_blocked {
     label: "Tracking Protection Has Analytics Blocked"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_analytics_blocked ;;
     type: yesno
     group_label: "Tracking Protection"
@@ -673,7 +673,7 @@ at least once.
 
   dimension: metrics__boolean__tracking_protection_has_content_blocked {
     label: "Tracking Protection Has Content Blocked"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_content_blocked ;;
     type: yesno
     group_label: "Tracking Protection"
@@ -692,7 +692,7 @@ at least once.
 
   dimension: metrics__boolean__tracking_protection_has_ever_changed_etp {
     label: "Tracking Protection Has Ever Changed Etp"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_ever_changed_etp ;;
     type: yesno
     group_label: "Tracking Protection"
@@ -711,7 +711,7 @@ at least once.
 
   dimension: metrics__boolean__tracking_protection_has_social_blocked {
     label: "Tracking Protection Has Social Blocked"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_social_blocked ;;
     type: yesno
     group_label: "Tracking Protection"
@@ -730,7 +730,7 @@ at least once.
 
   dimension: metrics__counter__tracking_protection_toolbar_shield_clicked {
     label: "Tracking Protection Toolbar Shield Clicked"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.tracking_protection_toolbar_shield_clicked ;;
     type: number
     group_label: "Tracking Protection"
@@ -22471,6 +22471,240 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__quantity__system_cpu_big_cores {
+    label: "System CPU Big Cores"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_big_cores ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "Big Cores"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Big Cores"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_cpu_big_cores"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Big (or Performance) CPU cores.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_family {
+    label: "System CPU Family"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_family ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "Family"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Family"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_cpu_family"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "CPU family.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_l2_cache {
+    label: "System CPU L2 Cache"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_l2_cache ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "L2 Cache"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU L2 Cache"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_cpu_l2_cache"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "L2 cache size (only on Windows and Mac).
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_l3_cache {
+    label: "System CPU L3 Cache"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_l3_cache ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "L3 Cache"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU L3 Cache"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_cpu_l3_cache"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "L3 cache size.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_little_cores {
+    label: "System CPU Little Cores"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_little_cores ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "Little Cores"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Little Cores"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_cpu_little_cores"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Little (or Efficient) CPU cores.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_logical_cores {
+    label: "System CPU Logical Cores"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_logical_cores ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "Logical Cores"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Logical Cores"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_cpu_logical_cores"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Logical CPU cores.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_medium_cores {
+    label: "System CPU Medium Cores"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_medium_cores ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "Medium Cores"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Medium Cores"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_cpu_medium_cores"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Medium CPU cores.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_model {
+    label: "System CPU Model"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_model ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "Model"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Model"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_cpu_model"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "CPU model.
+"
+  }
+
+  dimension: metrics__string__system_cpu_name {
+    label: "System CPU Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_cpu_name ;;
+    type: string
+    group_label: "System CPU"
+    group_item_label: "Name"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_cpu_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The user readable CPU name. (e.g. \"Intel(R) Core(TM) i9-8950HK CPU @ 2.90GHz\")
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_physical_cores {
+    label: "System CPU Physical Cores"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_physical_cores ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "Physical Cores"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Physical Cores"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_cpu_physical_cores"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Physical CPU cores.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_speed {
+    label: "System CPU Speed"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_speed ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "Speed"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Speed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_cpu_speed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "CPU speed in MHz.
+"
+  }
+
+  dimension: metrics__quantity__system_cpu_stepping {
+    label: "System CPU Stepping"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_cpu_stepping ;;
+    type: number
+    group_label: "System CPU"
+    group_item_label: "Stepping"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Stepping"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_cpu_stepping"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "CPU stepping.
+"
+  }
+
+  dimension: metrics__string__system_cpu_vendor {
+    label: "System CPU Vendor"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_cpu_vendor ;;
+    type: string
+    group_label: "System CPU"
+    group_item_label: "Vendor"
+
+    link: {
+      label: "Glean Dictionary reference for System CPU Vendor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_cpu_vendor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The CPU vendor (e.g. \"GenuineIntel\").
+"
+  }
+
   dimension: metrics__timing_distribution__thumbnails_capture_canvas_draw_time__sum {
     label: "Thumbnails Capture Canvas Draw Time Sum"
     hidden: no
@@ -33706,19 +33940,19 @@ view: metrics__metrics__labeled_counter__browser_search_ad_clicks {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -33747,19 +33981,19 @@ view: metrics__metrics__labeled_counter__browser_search_in_content {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -33788,19 +34022,19 @@ view: metrics__metrics__labeled_counter__browser_search_search_count {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -33829,19 +34063,19 @@ view: metrics__metrics__labeled_counter__browser_search_with_ads {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -42769,19 +43003,19 @@ view: metrics__metrics__labeled_counter__perf_startup_startup_type {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -44122,19 +44356,19 @@ view: metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
