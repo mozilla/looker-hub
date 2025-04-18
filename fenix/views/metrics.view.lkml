@@ -15015,7 +15015,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__mathml_doc_count {
     label: "Mathml Doc Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.mathml_doc_count ;;
     type: number
     group_label: "Mathml"
