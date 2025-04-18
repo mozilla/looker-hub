@@ -17,6 +17,12 @@ view: nimbus_recorded_targeting_context_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: appVersion {
+    sql: ${TABLE}.appVersion ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes

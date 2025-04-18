@@ -77,6 +77,11 @@ view: chrome_extensions {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: manifest_json {
+    sql: ${TABLE}.manifest_json ;;
+    hidden: yes
+  }
+
   dimension: number_of_ratings_numeric {
     sql: ${TABLE}.number_of_ratings_numeric ;;
     type: number
