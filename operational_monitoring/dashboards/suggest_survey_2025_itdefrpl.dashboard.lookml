@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       suggest_survey_2025_itdefrpl.branch
     ]
     filters:
-      suggest_survey_2025_itdefrpl.metric: 'search_count'
+      suggest_survey_2025_itdefrpl.metric: 'qualified_cumulative_days_of_use'
       suggest_survey_2025_itdefrpl.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       suggest_survey_2025_itdefrpl.branch
     ]
     filters:
-      suggest_survey_2025_itdefrpl.metric: 'days_of_use'
+      suggest_survey_2025_itdefrpl.metric: 'retained'
       suggest_survey_2025_itdefrpl.statistic: mean
     row: 0
     col: 12
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       suggest_survey_2025_itdefrpl.branch
     ]
     filters:
-      suggest_survey_2025_itdefrpl.metric: 'uri_count'
+      suggest_survey_2025_itdefrpl.metric: 'search_count'
       suggest_survey_2025_itdefrpl.statistic: mean
     row: 10
     col: 0
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       suggest_survey_2025_itdefrpl.branch
     ]
     filters:
-      suggest_survey_2025_itdefrpl.metric: 'retained'
+      suggest_survey_2025_itdefrpl.metric: 'uri_count'
       suggest_survey_2025_itdefrpl.statistic: mean
     row: 20
     col: 12
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       suggest_survey_2025_itdefrpl.branch
     ]
     filters:
-      suggest_survey_2025_itdefrpl.metric: 'qualified_cumulative_days_of_use'
+      suggest_survey_2025_itdefrpl.metric: 'days_of_use'
       suggest_survey_2025_itdefrpl.statistic: mean
     row: 30
     col: 0
