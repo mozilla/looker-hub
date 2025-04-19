@@ -10585,9 +10585,9 @@ operational_monitoring:
             options:
             - release
             - nightly
-            - beta
             - esr
             - aurora
+            - beta
             - default
             - nightly-pine
             - nightly-oak
@@ -11116,11 +11116,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id233
           normalized_channel:
-            default: beta
+            default: nightly
             options:
+            - nightly
             - beta
             - aurora
-            - nightly
             - release
             - esr
             - Other
@@ -11721,11 +11721,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id266
           os:
-            default: Windows
+            default: Linux
             options:
+            - Linux
             - Windows
             - Mac
-            - Linux
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -12804,15 +12804,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id368
           app:
-            default: Darwin - vpn_session
+            default: Windows - vpn_session
             options:
-            - Darwin - vpn_session
-            - Android - daemon_session
-            - iOS - vpn_session
             - Windows - vpn_session
-            - Android - vpn_session
+            - Android - daemon_session
             - Linux - vpn_session
             - iOS - daemon_session
+            - Android - vpn_session
+            - Darwin - vpn_session
+            - iOS - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id369
@@ -14035,11 +14035,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id455
           channel:
-            default: beta
+            default: release
             options:
+            - release
             - beta
             - nightly
-            - release
           os:
             default: Linux
             options:
