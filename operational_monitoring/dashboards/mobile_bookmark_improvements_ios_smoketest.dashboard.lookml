@@ -44,40 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: mobile_bookmark_improvements_ios_smoketest
-    type: looker_line
-    fields: [
-      mobile_bookmark_improvements_ios_smoketest.submission_date,
-      mobile_bookmark_improvements_ios_smoketest.branch,
-      mobile_bookmark_improvements_ios_smoketest.point
-    ]
-    pivots: [
-      mobile_bookmark_improvements_ios_smoketest.branch
-    ]
-    filters:
-      mobile_bookmark_improvements_ios_smoketest.metric: 'days_of_use'
-      mobile_bookmark_improvements_ios_smoketest.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: mobile_bookmark_improvements_ios_smoketest.submission_date
-    field_y: mobile_bookmark_improvements_ios_smoketest.point
-    log_scale: false
-    ci_lower: mobile_bookmark_improvements_ios_smoketest.lower
-    ci_upper: mobile_bookmark_improvements_ios_smoketest.upper
-    show_grid: true
-    listen:
-      Date: mobile_bookmark_improvements_ios_smoketest.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -96,8 +62,8 @@
     filters:
       mobile_bookmark_improvements_ios_smoketest.metric: 'ad_clicks'
       mobile_bookmark_improvements_ios_smoketest.statistic: mean
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: mobile_bookmark_improvements_ios_smoketest.submission_date
@@ -131,7 +97,7 @@
       mobile_bookmark_improvements_ios_smoketest.metric: 'search_count'
       mobile_bookmark_improvements_ios_smoketest.statistic: mean
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: mobile_bookmark_improvements_ios_smoketest.submission_date
@@ -163,6 +129,40 @@
     ]
     filters:
       mobile_bookmark_improvements_ios_smoketest.metric: 'retained'
+      mobile_bookmark_improvements_ios_smoketest.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: mobile_bookmark_improvements_ios_smoketest.submission_date
+    field_y: mobile_bookmark_improvements_ios_smoketest.point
+    log_scale: false
+    ci_lower: mobile_bookmark_improvements_ios_smoketest.lower
+    ci_upper: mobile_bookmark_improvements_ios_smoketest.upper
+    show_grid: true
+    listen:
+      Date: mobile_bookmark_improvements_ios_smoketest.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: mobile_bookmark_improvements_ios_smoketest
+    type: looker_line
+    fields: [
+      mobile_bookmark_improvements_ios_smoketest.submission_date,
+      mobile_bookmark_improvements_ios_smoketest.branch,
+      mobile_bookmark_improvements_ios_smoketest.point
+    ]
+    pivots: [
+      mobile_bookmark_improvements_ios_smoketest.branch
+    ]
+    filters:
+      mobile_bookmark_improvements_ios_smoketest.metric: 'days_of_use'
       mobile_bookmark_improvements_ios_smoketest.statistic: mean
     row: 20
     col: 0
