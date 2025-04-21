@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: address_bar_update_test_day_event_survey_2024 {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.address_bar_update_test_day_event_survey_2024_statistics ;;
+view: unified_api_rollout_android_beta {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.unified_api_rollout_android_beta_statistics ;;
 
   dimension: submission_date {
     type: date

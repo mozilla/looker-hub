@@ -14403,6 +14403,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Location Ancestororigins"
   }
 
+  dimension: metrics__counter__use_counter_doc_math_mlused {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_math_mlused ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Math Mlused"
+  }
+
   dimension: metrics__counter__use_counter_doc_mediadevices_enumeratedevices {
     sql: ${TABLE}.metrics.counter.use_counter_doc_mediadevices_enumeratedevices ;;
     type: number
@@ -17913,6 +17921,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Location Ancestororigins"
+  }
+
+  dimension: metrics__counter__use_counter_page_math_mlused {
+    sql: ${TABLE}.metrics.counter.use_counter_page_math_mlused ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Math Mlused"
   }
 
   dimension: metrics__counter__use_counter_page_mediadevices_enumeratedevices {
