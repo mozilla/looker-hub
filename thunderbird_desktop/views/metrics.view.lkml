@@ -18567,6 +18567,23 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__boolean__pkcs11_external_trust_anchor_module_loaded {
+    label: "Pkcs11 External Trust Anchor Module Loaded"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.pkcs11_external_trust_anchor_module_loaded ;;
+    type: yesno
+    group_label: "Pkcs11"
+    group_item_label: "External Trust Anchor Module Loaded"
+
+    link: {
+      label: "Glean Dictionary reference for Pkcs11 External Trust Anchor Module Loaded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/pkcs11_external_trust_anchor_module_loaded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not an external trust anchor module was loaded."
+  }
+
   dimension: metrics__rate__pkcs11_nss_cert_db__numerator {
     label: "Pkcs11 Nss Cert DB Numerator"
     hidden: yes
