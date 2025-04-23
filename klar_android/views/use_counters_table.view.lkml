@@ -15923,6 +15923,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_animation_commitstyles {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_animation_commitstyles ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Animation Commitstyles"
+    description: "Whether a document called called Animation.commitStyles. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_clipboard_read {
     sql: ${TABLE}.metrics.counter.use_counter_doc_clipboard_read ;;
     type: number
@@ -15950,6 +15960,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Clipboard Write"
     description: "Whether a document called called Clipboard.write. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_commit_styles_non_filling_final_value {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_commit_styles_non_filling_final_value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Commit Styles Non Filling Final Value"
+    description: "Whether a document calls commitStyles and its result differs depending on whether the endpoint-inclusive pref is enabled or not. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -20323,6 +20343,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_animation_commitstyles {
+    sql: ${TABLE}.metrics.counter.use_counter_page_animation_commitstyles ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Animation Commitstyles"
+    description: "Whether a page called called Animation.commitStyles. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_clipboard_read {
     sql: ${TABLE}.metrics.counter.use_counter_page_clipboard_read ;;
     type: number
@@ -20350,6 +20380,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Clipboard Write"
     description: "Whether a page called called Clipboard.write. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_commit_styles_non_filling_final_value {
+    sql: ${TABLE}.metrics.counter.use_counter_page_commit_styles_non_filling_final_value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Commit Styles Non Filling Final Value"
+    description: "Whether a page calls commitStyles and its result differs depending on whether the endpoint-inclusive pref is enabled or not. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
