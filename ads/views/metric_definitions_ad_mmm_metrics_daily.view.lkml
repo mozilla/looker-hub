@@ -20,8 +20,6 @@ ad_mmm_metrics_daily_click_rate,
 ad_mmm_metrics_daily_clicks,
 ad_mmm_metrics_daily_country,
 ad_mmm_metrics_daily_impressions,
-ad_mmm_metrics_daily_price,
-ad_mmm_metrics_daily_rate_type,
 ad_mmm_metrics_daily_spend,
 
                 NULL AS client_id,
@@ -64,8 +62,6 @@ ad_mmm_metrics_daily.click_rate AS ad_mmm_metrics_daily_click_rate,
 ad_mmm_metrics_daily.clicks AS ad_mmm_metrics_daily_clicks,
 ad_mmm_metrics_daily.country AS ad_mmm_metrics_daily_country,
 ad_mmm_metrics_daily.impressions AS ad_mmm_metrics_daily_impressions,
-ad_mmm_metrics_daily.price AS ad_mmm_metrics_daily_price,
-ad_mmm_metrics_daily.rate_type AS ad_mmm_metrics_daily_rate_type,
 ad_mmm_metrics_daily.spend AS ad_mmm_metrics_daily_spend,
 
                     FROM
@@ -99,8 +95,6 @@ ad_mmm_metrics_daily_click_rate,
 ad_mmm_metrics_daily_clicks,
 ad_mmm_metrics_daily_country,
 ad_mmm_metrics_daily_impressions,
-ad_mmm_metrics_daily_price,
-ad_mmm_metrics_daily_rate_type,
 ad_mmm_metrics_daily_spend,
 
                 client_id,
@@ -200,20 +194,6 @@ ad_mmm_metrics_daily_spend,
   dimension: impressions {
     sql: ${TABLE}.ad_mmm_metrics_daily_impressions ;;
     type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: price {
-    sql: ${TABLE}.ad_mmm_metrics_daily_price ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: rate_type {
-    sql: ${TABLE}.ad_mmm_metrics_daily_rate_type ;;
-    type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
