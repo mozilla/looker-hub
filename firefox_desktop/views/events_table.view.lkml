@@ -545,6 +545,38 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__object__glean_attribution_ext {
+    sql: ${TABLE}.metrics.object.glean_attribution_ext ;;
+    hidden: yes
+    description: "Extended attribution information.
+Mapped to client_info.attribution.ext in datasets.
+* `experiment`: name/id of the enrolled funnel experiment
+* `variation`: name/id of the variation cohort used in the enrolled funnel experiment
+* `ua`: identifier derived from the user agent downloading the installer
+        e.g. chrome, Google Chrome 123
+* `dltoken`: Unique token created at Firefox download time.
+             e.g. c18f86a3-f228-4d98-91bb-f90135c0aa9c
+* `msstoresignedin`: only present if the installation was done through the Microsoft Store,
+                     and was able to retrieve the \"campaign ID\" it was first installed with.
+                     This value is \"true\" if the user was signed into the Microsoft Store
+                     when they first installed, and false otherwise.
+* `dlsource`: identifier that indicate where installations of Firefox originate
+"
+  }
+
+  dimension: metrics__object__glean_distribution_ext {
+    sql: ${TABLE}.metrics.object.glean_distribution_ext ;;
+    hidden: yes
+    description: "Extended distribution information.
+Mapped to client_info.distribution.ext in datasets.
+* `distributionVersion`: pref `distribution.version`, `null` on failure
+* `partnerId`: pref `mozilla.partner.id`, `null` on failure
+* `distributor`:  pref `app.distributor`, `null` on failure
+* `distributorChannel`: pref `app.distributor.channel`, `null` on failure
+* `partnerNames`: list from prefs `app.partner.<name>=<name>`
+"
+  }
+
   dimension: metrics__quantity__urlbar_pref_max_results {
     sql: ${TABLE}.metrics.quantity.urlbar_pref_max_results ;;
     type: number
