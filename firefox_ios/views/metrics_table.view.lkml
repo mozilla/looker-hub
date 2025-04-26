@@ -1795,6 +1795,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__homepage_section_viewed {
+    sql: ${TABLE}.metrics.labeled_counter.homepage_section_viewed ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
     sql: ${TABLE}.metrics.labeled_counter.inactive_tabs_tray_toggle_inactive_tab_tray ;;
     hidden: yes

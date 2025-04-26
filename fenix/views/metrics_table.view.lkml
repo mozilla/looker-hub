@@ -835,6 +835,14 @@ view: metrics_table {
     group_item_label: "Metrics Has Top Sites"
   }
 
+  dimension: metrics__boolean__metrics_is_large_device {
+    sql: ${TABLE}.metrics.boolean.metrics_is_large_device ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Metrics Is Large Device"
+  }
+
   dimension: metrics__boolean__metrics_notifications_allowed {
     sql: ${TABLE}.metrics.boolean.metrics_notifications_allowed ;;
     type: yesno
@@ -2275,6 +2283,22 @@ view: metrics_table {
     group_item_label: "Networking Cookie Count Invalid First Party Partitioned In DB"
   }
 
+  dimension: metrics__counter__networking_doh_heuristics_attempts {
+    sql: ${TABLE}.metrics.counter.networking_doh_heuristics_attempts ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Doh Heuristics Attempts"
+  }
+
+  dimension: metrics__counter__networking_doh_heuristics_pass_count {
+    sql: ${TABLE}.metrics.counter.networking_doh_heuristics_pass_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Doh Heuristics Pass Count"
+  }
+
   dimension: metrics__counter__networking_os_socket_limit_reached {
     sql: ${TABLE}.metrics.counter.networking_os_socket_limit_reached ;;
     type: number
@@ -2497,6 +2521,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Printing Silent Print"
+  }
+
+  dimension: metrics__counter__quotamanager_restore_origin_directory_metadata_counter {
+    sql: ${TABLE}.metrics.counter.quotamanager_restore_origin_directory_metadata_counter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Quotamanager Restore Origin Directory Metadata Counter"
   }
 
   dimension: metrics__counter__recent_bookmarks_bookmark_clicked {
@@ -9760,6 +9792,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_boolean__networking_doh_heuristic_ever_tripped {
+    sql: ${TABLE}.metrics.labeled_boolean.networking_doh_heuristic_ever_tripped ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_boolean__oskeystore_self_test {
     sql: ${TABLE}.metrics.labeled_boolean.oskeystore_self_test ;;
     hidden: yes
@@ -13166,6 +13203,21 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__object__addons_active_addons {
+    sql: ${TABLE}.metrics.object.addons_active_addons ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__addons_active_g_m_plugins {
+    sql: ${TABLE}.metrics.object.addons_active_g_m_plugins ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__addons_theme {
+    sql: ${TABLE}.metrics.object.addons_theme ;;
+    hidden: yes
+  }
+
   dimension: metrics__object__fog_validation_some_object {
     sql: ${TABLE}.metrics.object.fog_validation_some_object ;;
     hidden: yes
@@ -13443,6 +13495,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Metrics Inactive Tabs Count"
+  }
+
+  dimension: metrics__quantity__networking_doh_heuristics_result {
+    sql: ${TABLE}.metrics.quantity.networking_doh_heuristics_result ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Networking Doh Heuristics Result"
   }
 
   dimension: metrics__quantity__networking_https_rr_prefs_usage {
@@ -48092,6 +48152,20 @@ view: metrics_table__metrics__labeled_boolean__media_video_hd_hardware_decoding_
 }
 
 view: metrics_table__metrics__labeled_boolean__mediadrm_decryption {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__networking_doh_heuristic_ever_tripped {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

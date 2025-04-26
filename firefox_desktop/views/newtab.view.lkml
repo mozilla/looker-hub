@@ -227,12 +227,77 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The telemetry id of the search engine.
+    description: "Deprecated in Fx139, please use provider_id, partner_code,
+overridden_by_third_party and display_name instead.
+
+The telemetry id of the search engine.
 For example: \"engine1\"
 
 For application-provided engines, this is the identifier plus telemetry
 suffix supplied by the configuration.
 For other engines, this is `other-<engineName>`.
+"
+  }
+
+  dimension: metrics__boolean__search_engine_default_overridden_by_third_party {
+    label: "Search Engine Default Overridden By Third Party"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.search_engine_default_overridden_by_third_party ;;
+    type: yesno
+    group_label: "Search Engine Default"
+    group_item_label: "Overridden By Third Party"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Default Overridden By Third Party"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_default_overridden_by_third_party"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to true if the user's default search engine has been allowed to be
+overridden by a third-party add-on or OpenSearch engine.
+"
+  }
+
+  dimension: metrics__string__search_engine_default_partner_code {
+    label: "Search Engine Default Partner Code"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_engine_default_partner_code ;;
+    type: string
+    group_label: "Search Engine Default"
+    group_item_label: "Partner Code"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Default Partner Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_default_partner_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The partner code of the user's default search engine, if defined/known,
+that is being used for the search. Not all search engines have partner
+codes.
+
+May be empty for engines that are overridden by a third-party add-on or
+OpenSearch engine.
+"
+  }
+
+  dimension: metrics__string__search_engine_default_provider_id {
+    label: "Search Engine Default Provider ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_engine_default_provider_id ;;
+    type: string
+    group_label: "Search Engine Default"
+    group_item_label: "Provider ID"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Default Provider ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_default_provider_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The identifier of the user's default search engine if the search engine is
+an application provided engine. For user installed engines, this value will
+be `other`.
 "
   }
 
@@ -250,7 +315,10 @@ For other engines, this is `other-<engineName>`.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The telemetry id of the search engine.
+    description: "Deprecated in Fx139, please use provider_id, partner_code,
+overridden_by_third_party and display_name instead.
+
+The telemetry id of the search engine.
 For example: \"engine1\"
 
 For application-provided engines, this is the identifier plus telemetry
@@ -262,6 +330,68 @@ the preferences `browser.search.separatePrivateDefault` and
 `browser.search.separatePrivateDefault.ui.enabled` are set to false.
 It is possible that the user selects the same private engine as for the
 default engine, and hence both versions of these fields will be filled in.
+"
+  }
+
+  dimension: metrics__boolean__search_engine_private_overridden_by_third_party {
+    label: "Search Engine Private Overridden By Third Party"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.search_engine_private_overridden_by_third_party ;;
+    type: yesno
+    group_label: "Search Engine Private"
+    group_item_label: "Overridden By Third Party"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Private Overridden By Third Party"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_private_overridden_by_third_party"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to true if the user's default search engine has been allowed to be
+overridden by a third-party add-on or OpenSearch engine.
+"
+  }
+
+  dimension: metrics__string__search_engine_private_partner_code {
+    label: "Search Engine Private Partner Code"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_engine_private_partner_code ;;
+    type: string
+    group_label: "Search Engine Private"
+    group_item_label: "Partner Code"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Private Partner Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_private_partner_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The partner code of the user's default search engine, if defined/known,
+that is being used for the search. Not all search engines have partner
+codes.
+
+May be empty for engines that are overridden by a third-party add-on or
+OpenSearch engine.
+"
+  }
+
+  dimension: metrics__string__search_engine_private_provider_id {
+    label: "Search Engine Private Provider ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_engine_private_provider_id ;;
+    type: string
+    group_label: "Search Engine Private"
+    group_item_label: "Provider ID"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Private Provider ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_private_provider_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The identifier of the user's default search engine if the search engine is
+an application provided engine. For user installed engines, this value will
+be `other`.
 "
   }
 

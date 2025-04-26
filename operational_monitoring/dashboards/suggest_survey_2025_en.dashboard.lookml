@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: suggest_survey_2025_en
-    type: looker_line
-    fields: [
-      suggest_survey_2025_en.submission_date,
-      suggest_survey_2025_en.branch,
-      suggest_survey_2025_en.point
-    ]
-    pivots: [
-      suggest_survey_2025_en.branch
-    ]
-    filters:
-      suggest_survey_2025_en.metric: 'days_of_use'
-      suggest_survey_2025_en.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: suggest_survey_2025_en.submission_date
-    field_y: suggest_survey_2025_en.point
-    log_scale: false
-    ci_lower: suggest_survey_2025_en.lower
-    ci_upper: suggest_survey_2025_en.upper
-    show_grid: true
-    listen:
-      Date: suggest_survey_2025_en.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -61,6 +27,40 @@
     ]
     filters:
       suggest_survey_2025_en.metric: 'retained'
+      suggest_survey_2025_en.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: suggest_survey_2025_en.submission_date
+    field_y: suggest_survey_2025_en.point
+    log_scale: false
+    ci_lower: suggest_survey_2025_en.lower
+    ci_upper: suggest_survey_2025_en.upper
+    show_grid: true
+    listen:
+      Date: suggest_survey_2025_en.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: suggest_survey_2025_en
+    type: looker_line
+    fields: [
+      suggest_survey_2025_en.submission_date,
+      suggest_survey_2025_en.branch,
+      suggest_survey_2025_en.point
+    ]
+    pivots: [
+      suggest_survey_2025_en.branch
+    ]
+    filters:
+      suggest_survey_2025_en.metric: 'ad_clicks'
       suggest_survey_2025_en.statistic: mean
     row: 0
     col: 12
@@ -146,40 +146,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: suggest_survey_2025_en
-    type: looker_line
-    fields: [
-      suggest_survey_2025_en.submission_date,
-      suggest_survey_2025_en.branch,
-      suggest_survey_2025_en.point
-    ]
-    pivots: [
-      suggest_survey_2025_en.branch
-    ]
-    filters:
-      suggest_survey_2025_en.metric: 'active_hours'
-      suggest_survey_2025_en.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: suggest_survey_2025_en.submission_date
-    field_y: suggest_survey_2025_en.point
-    log_scale: false
-    ci_lower: suggest_survey_2025_en.lower
-    ci_upper: suggest_survey_2025_en.upper
-    show_grid: true
-    listen:
-      Date: suggest_survey_2025_en.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -201,7 +167,7 @@
       suggest_survey_2025_en.metric: 'memory_total'
       suggest_survey_2025_en.statistic: percentile
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: suggest_survey_2025_en.submission_date
@@ -217,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,10 +199,10 @@
       suggest_survey_2025_en.branch
     ]
     filters:
-      suggest_survey_2025_en.metric: 'ad_clicks'
+      suggest_survey_2025_en.metric: 'active_hours'
       suggest_survey_2025_en.statistic: mean
-    row: 30
-    col: 0
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: suggest_survey_2025_en.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       suggest_survey_2025_en.metric: 'search_count'
+      suggest_survey_2025_en.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: suggest_survey_2025_en.submission_date
+    field_y: suggest_survey_2025_en.point
+    log_scale: false
+    ci_lower: suggest_survey_2025_en.lower
+    ci_upper: suggest_survey_2025_en.upper
+    show_grid: true
+    listen:
+      Date: suggest_survey_2025_en.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: suggest_survey_2025_en
+    type: looker_line
+    fields: [
+      suggest_survey_2025_en.submission_date,
+      suggest_survey_2025_en.branch,
+      suggest_survey_2025_en.point
+    ]
+    pivots: [
+      suggest_survey_2025_en.branch
+    ]
+    filters:
+      suggest_survey_2025_en.metric: 'days_of_use'
       suggest_survey_2025_en.statistic: mean
     row: 30
     col: 12

@@ -73,20 +73,6 @@ view: campaign_metrics_daily {
     description: "A sum of the number of impressions of this piece of content."
   }
 
-  dimension: price {
-    sql: ${TABLE}.price ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    description: "The price the advertiser paid as calculated on rate and impressions or clicks."
-  }
-
-  dimension: rate_type {
-    sql: ${TABLE}.rate_type ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    description: "The type of rate being charged (CPM or CPC)."
-  }
-
   dimension: spend {
     sql: ${TABLE}.spend ;;
     type: number
