@@ -14283,6 +14283,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Js Optimize Promise Lookup Fuse"
   }
 
+  dimension: metrics__counter__use_counter_doc_js_regexp_symbol_protocol_on_primitive {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_regexp_symbol_protocol_on_primitive ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Regexp Symbol Protocol On Primitive"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_2 {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_array_type_2 ;;
     type: number
@@ -17817,6 +17825,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Optimize Promise Lookup Fuse"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_regexp_symbol_protocol_on_primitive {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_regexp_symbol_protocol_on_primitive ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Regexp Symbol Protocol On Primitive"
   }
 
   dimension: metrics__counter__use_counter_page_js_subclassing_array_type_2 {
