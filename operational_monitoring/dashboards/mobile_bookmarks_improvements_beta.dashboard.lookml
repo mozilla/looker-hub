@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: mobile_bookmarks_improvements_beta
-    type: looker_line
-    fields: [
-      mobile_bookmarks_improvements_beta.submission_date,
-      mobile_bookmarks_improvements_beta.branch,
-      mobile_bookmarks_improvements_beta.point
-    ]
-    pivots: [
-      mobile_bookmarks_improvements_beta.branch
-    ]
-    filters:
-      mobile_bookmarks_improvements_beta.metric: 'search_count'
-      mobile_bookmarks_improvements_beta.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: mobile_bookmarks_improvements_beta.submission_date
-    field_y: mobile_bookmarks_improvements_beta.point
-    log_scale: false
-    ci_lower: mobile_bookmarks_improvements_beta.lower
-    ci_upper: mobile_bookmarks_improvements_beta.upper
-    show_grid: true
-    listen:
-      Date: mobile_bookmarks_improvements_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -61,6 +27,40 @@
     ]
     filters:
       mobile_bookmarks_improvements_beta.metric: 'retained'
+      mobile_bookmarks_improvements_beta.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: mobile_bookmarks_improvements_beta.submission_date
+    field_y: mobile_bookmarks_improvements_beta.point
+    log_scale: false
+    ci_lower: mobile_bookmarks_improvements_beta.lower
+    ci_upper: mobile_bookmarks_improvements_beta.upper
+    show_grid: true
+    listen:
+      Date: mobile_bookmarks_improvements_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: mobile_bookmarks_improvements_beta
+    type: looker_line
+    fields: [
+      mobile_bookmarks_improvements_beta.submission_date,
+      mobile_bookmarks_improvements_beta.branch,
+      mobile_bookmarks_improvements_beta.point
+    ]
+    pivots: [
+      mobile_bookmarks_improvements_beta.branch
+    ]
+    filters:
+      mobile_bookmarks_improvements_beta.metric: 'uri_count'
       mobile_bookmarks_improvements_beta.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       mobile_bookmarks_improvements_beta.branch
     ]
     filters:
-      mobile_bookmarks_improvements_beta.metric: 'uri_count'
+      mobile_bookmarks_improvements_beta.metric: 'ad_clicks'
       mobile_bookmarks_improvements_beta.statistic: mean
     row: 10
     col: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       mobile_bookmarks_improvements_beta.branch
     ]
     filters:
-      mobile_bookmarks_improvements_beta.metric: 'days_of_use'
+      mobile_bookmarks_improvements_beta.metric: 'search_count'
       mobile_bookmarks_improvements_beta.statistic: mean
     row: 20
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       mobile_bookmarks_improvements_beta.branch
     ]
     filters:
-      mobile_bookmarks_improvements_beta.metric: 'ad_clicks'
+      mobile_bookmarks_improvements_beta.metric: 'days_of_use'
       mobile_bookmarks_improvements_beta.statistic: mean
     row: 30
     col: 0
