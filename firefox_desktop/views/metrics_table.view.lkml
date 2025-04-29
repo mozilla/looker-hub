@@ -11571,6 +11571,20 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__labeled_boolean__newtab_metric_registered {
+    sql: ${TABLE}.metrics.labeled_boolean.newtab_metric_registered ;;
+    hidden: yes
+    description: "Records technical data about whether the metric registration at runtime succeeded
+"
+  }
+
+  dimension: metrics__labeled_boolean__newtab_ping_registered {
+    sql: ${TABLE}.metrics.labeled_boolean.newtab_ping_registered ;;
+    hidden: yes
+    description: "Records technical data about whether the ping registration at runtime succeeded
+"
+  }
+
   dimension: metrics__labeled_boolean__os_environment_is_default_handler {
     sql: ${TABLE}.metrics.labeled_boolean.os_environment_is_default_handler ;;
     hidden: yes
@@ -55096,6 +55110,34 @@ view: metrics_table__metrics__labeled_boolean__mediadrm_decryption {
 }
 
 view: metrics_table__metrics__labeled_boolean__networking_doh_heuristic_ever_tripped {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__newtab_metric_registered {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__newtab_ping_registered {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

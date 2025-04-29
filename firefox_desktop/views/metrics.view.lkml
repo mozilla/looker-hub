@@ -4506,6 +4506,42 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_boolean__newtab_metric_registered {
+    label: "Newtab Metric Registered"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.newtab_metric_registered ;;
+    type: string
+    group_label: "Newtab"
+    group_item_label: "Metric Registered"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Metric Registered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_metric_registered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records technical data about whether the metric registration at runtime succeeded
+"
+  }
+
+  dimension: metrics__labeled_boolean__newtab_ping_registered {
+    label: "Newtab Ping Registered"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.newtab_ping_registered ;;
+    type: string
+    group_label: "Newtab"
+    group_item_label: "Ping Registered"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Ping Registered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_ping_registered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records technical data about whether the ping registration at runtime succeeded
+"
+  }
+
   dimension: metrics__custom_distribution__newtab_page_blocked_sites_count__sum {
     label: "Newtab Page Blocked Sites Count Sum"
     hidden: no
@@ -69109,6 +69145,34 @@ view: metrics__metrics__labeled_boolean__mediadrm_decryption {
 }
 
 view: metrics__metrics__labeled_boolean__networking_doh_heuristic_ever_tripped {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_boolean__newtab_metric_registered {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_boolean__newtab_ping_registered {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

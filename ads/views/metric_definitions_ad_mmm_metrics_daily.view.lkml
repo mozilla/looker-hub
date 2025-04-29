@@ -21,6 +21,7 @@ ad_mmm_metrics_daily_clicks,
 ad_mmm_metrics_daily_country,
 ad_mmm_metrics_daily_impressions,
 ad_mmm_metrics_daily_spend,
+ad_mmm_metrics_daily_sponsor,
 
                 NULL AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
@@ -63,6 +64,7 @@ ad_mmm_metrics_daily.clicks AS ad_mmm_metrics_daily_clicks,
 ad_mmm_metrics_daily.country AS ad_mmm_metrics_daily_country,
 ad_mmm_metrics_daily.impressions AS ad_mmm_metrics_daily_impressions,
 ad_mmm_metrics_daily.spend AS ad_mmm_metrics_daily_spend,
+ad_mmm_metrics_daily.sponsor AS ad_mmm_metrics_daily_sponsor,
 
                     FROM
                     (
@@ -96,6 +98,7 @@ ad_mmm_metrics_daily_clicks,
 ad_mmm_metrics_daily_country,
 ad_mmm_metrics_daily_impressions,
 ad_mmm_metrics_daily_spend,
+ad_mmm_metrics_daily_sponsor,
 
                 client_id,
                 analysis_basis ;;
@@ -201,6 +204,13 @@ ad_mmm_metrics_daily_spend,
   dimension: spend {
     sql: ${TABLE}.ad_mmm_metrics_daily_spend ;;
     type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsor {
+    sql: ${TABLE}.ad_mmm_metrics_daily_sponsor ;;
+    type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
