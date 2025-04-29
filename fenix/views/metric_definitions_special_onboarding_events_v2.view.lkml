@@ -44,6 +44,7 @@ looker_base_fields_metadata__geo__subdivision1,
 looker_base_fields_metadata__geo__subdivision2,
 looker_base_fields_metadata__header__date,
 looker_base_fields_metadata__header__dnt,
+looker_base_fields_metadata__header__parsed,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_cipher_hex,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_version,
 looker_base_fields_metadata__header__x_debug_id,
@@ -129,6 +130,7 @@ looker_base_fields.metadata.geo.subdivision1 AS looker_base_fields_metadata__geo
 looker_base_fields.metadata.geo.subdivision2 AS looker_base_fields_metadata__geo__subdivision2,
 looker_base_fields.metadata.header.date AS looker_base_fields_metadata__header__date,
 looker_base_fields.metadata.header.dnt AS looker_base_fields_metadata__header__dnt,
+looker_base_fields.metadata.header.parsed AS looker_base_fields_metadata__header__parsed,
 looker_base_fields.metadata.header.parsed_x_lb_tags.tls_cipher_hex AS looker_base_fields_metadata__header__parsed_x_lb_tags__tls_cipher_hex,
 looker_base_fields.metadata.header.parsed_x_lb_tags.tls_version AS looker_base_fields_metadata__header__parsed_x_lb_tags__tls_version,
 looker_base_fields.metadata.header.x_debug_id AS looker_base_fields_metadata__header__x_debug_id,
@@ -288,6 +290,7 @@ looker_base_fields_metadata__geo__subdivision1,
 looker_base_fields_metadata__geo__subdivision2,
 looker_base_fields_metadata__header__date,
 looker_base_fields_metadata__header__dnt,
+looker_base_fields_metadata__header__parsed,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_cipher_hex,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_version,
 looker_base_fields_metadata__header__x_debug_id,
@@ -813,6 +816,23 @@ looker_base_fields_sample_id,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: metadata__header__parsed {
+    sql: ${TABLE}.looker_base_fields_metadata__header__parsed ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metadata Header: Parsed Date"
+    group_label: "Base Fields"
   }
 
   set: metrics {

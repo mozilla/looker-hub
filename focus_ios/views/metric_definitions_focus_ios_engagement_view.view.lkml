@@ -55,11 +55,11 @@ focus_ios_engagement_view_country,
 focus_ios_engagement_view_dau,
 focus_ios_engagement_view_device_manufacturer,
 focus_ios_engagement_view_device_type,
+focus_ios_engagement_view_first_seen,
 focus_ios_engagement_view_is_mobile,
 focus_ios_engagement_view_lifecycle_stage,
 focus_ios_engagement_view_locale,
 focus_ios_engagement_view_mau,
-focus_ios_engagement_view_normalized_channel,
 focus_ios_engagement_view_paid_vs_organic,
 focus_ios_engagement_view_wau,
 
@@ -140,11 +140,11 @@ focus_ios_engagement_view.country AS focus_ios_engagement_view_country,
 focus_ios_engagement_view.dau AS focus_ios_engagement_view_dau,
 focus_ios_engagement_view.device_manufacturer AS focus_ios_engagement_view_device_manufacturer,
 focus_ios_engagement_view.device_type AS focus_ios_engagement_view_device_type,
+focus_ios_engagement_view.first_seen AS focus_ios_engagement_view_first_seen,
 focus_ios_engagement_view.is_mobile AS focus_ios_engagement_view_is_mobile,
 focus_ios_engagement_view.lifecycle_stage AS focus_ios_engagement_view_lifecycle_stage,
 focus_ios_engagement_view.locale AS focus_ios_engagement_view_locale,
 focus_ios_engagement_view.mau AS focus_ios_engagement_view_mau,
-focus_ios_engagement_view.normalized_channel AS focus_ios_engagement_view_normalized_channel,
 focus_ios_engagement_view.paid_vs_organic AS focus_ios_engagement_view_paid_vs_organic,
 focus_ios_engagement_view.wau AS focus_ios_engagement_view_wau,
 
@@ -234,11 +234,11 @@ focus_ios_engagement_view_country,
 focus_ios_engagement_view_dau,
 focus_ios_engagement_view_device_manufacturer,
 focus_ios_engagement_view_device_type,
+focus_ios_engagement_view_first_seen,
 focus_ios_engagement_view_is_mobile,
 focus_ios_engagement_view_lifecycle_stage,
 focus_ios_engagement_view_locale,
 focus_ios_engagement_view_mau,
-focus_ios_engagement_view_normalized_channel,
 focus_ios_engagement_view_paid_vs_organic,
 focus_ios_engagement_view_wau,
 
@@ -699,6 +699,23 @@ focus_ios_engagement_view_wau,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.focus_ios_engagement_view_first_seen ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   set: metrics {

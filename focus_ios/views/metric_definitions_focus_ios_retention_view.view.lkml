@@ -56,11 +56,12 @@ focus_ios_retention_view_app_version,
 focus_ios_retention_view_country,
 focus_ios_retention_view_device_manufacturer,
 focus_ios_retention_view_device_type,
+focus_ios_retention_view_first_seen,
 focus_ios_retention_view_is_mobile,
 focus_ios_retention_view_lifecycle_stage,
 focus_ios_retention_view_locale,
+focus_ios_retention_view_metric,
 focus_ios_retention_view_new_profiles_metric_date,
-focus_ios_retention_view_normalized_channel,
 focus_ios_retention_view_paid_vs_organic,
 focus_ios_retention_view_ping_sent_metric_date,
 focus_ios_retention_view_ping_sent_week_4,
@@ -145,11 +146,12 @@ focus_ios_retention_view.app_version AS focus_ios_retention_view_app_version,
 focus_ios_retention_view.country AS focus_ios_retention_view_country,
 focus_ios_retention_view.device_manufacturer AS focus_ios_retention_view_device_manufacturer,
 focus_ios_retention_view.device_type AS focus_ios_retention_view_device_type,
+focus_ios_retention_view.first_seen AS focus_ios_retention_view_first_seen,
 focus_ios_retention_view.is_mobile AS focus_ios_retention_view_is_mobile,
 focus_ios_retention_view.lifecycle_stage AS focus_ios_retention_view_lifecycle_stage,
 focus_ios_retention_view.locale AS focus_ios_retention_view_locale,
+focus_ios_retention_view.metric AS focus_ios_retention_view_metric,
 focus_ios_retention_view.new_profiles_metric_date AS focus_ios_retention_view_new_profiles_metric_date,
-focus_ios_retention_view.normalized_channel AS focus_ios_retention_view_normalized_channel,
 focus_ios_retention_view.paid_vs_organic AS focus_ios_retention_view_paid_vs_organic,
 focus_ios_retention_view.ping_sent_metric_date AS focus_ios_retention_view_ping_sent_metric_date,
 focus_ios_retention_view.ping_sent_week_4 AS focus_ios_retention_view_ping_sent_week_4,
@@ -243,11 +245,12 @@ focus_ios_retention_view_app_version,
 focus_ios_retention_view_country,
 focus_ios_retention_view_device_manufacturer,
 focus_ios_retention_view_device_type,
+focus_ios_retention_view_first_seen,
 focus_ios_retention_view_is_mobile,
 focus_ios_retention_view_lifecycle_stage,
 focus_ios_retention_view_locale,
+focus_ios_retention_view_metric,
 focus_ios_retention_view_new_profiles_metric_date,
-focus_ios_retention_view_normalized_channel,
 focus_ios_retention_view_paid_vs_organic,
 focus_ios_retention_view_ping_sent_metric_date,
 focus_ios_retention_view_ping_sent_week_4,
@@ -748,6 +751,40 @@ focus_ios_retention_view_retained_week_4_new_profiles,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.focus_ios_retention_view_first_seen ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
+  dimension_group: metric {
+    sql: ${TABLE}.focus_ios_retention_view_metric ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   set: metrics {

@@ -41,6 +41,7 @@ looker_base_fields_metadata__geo__subdivision1,
 looker_base_fields_metadata__geo__subdivision2,
 looker_base_fields_metadata__header__date,
 looker_base_fields_metadata__header__dnt,
+looker_base_fields_metadata__header__parsed,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_cipher_hex,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_version,
 looker_base_fields_metadata__header__x_debug_id,
@@ -66,8 +67,6 @@ fenix_active_users_aggregates_view_adjust_network,
 fenix_active_users_aggregates_view_app_name,
 fenix_active_users_aggregates_view_app_version,
 fenix_active_users_aggregates_view_app_version_is_major_release,
-fenix_active_users_aggregates_view_app_version_major,
-fenix_active_users_aggregates_view_app_version_minor,
 fenix_active_users_aggregates_view_app_version_patch_revision,
 fenix_active_users_aggregates_view_attributed,
 fenix_active_users_aggregates_view_attribution_medium,
@@ -157,6 +156,7 @@ looker_base_fields.metadata.geo.subdivision1 AS looker_base_fields_metadata__geo
 looker_base_fields.metadata.geo.subdivision2 AS looker_base_fields_metadata__geo__subdivision2,
 looker_base_fields.metadata.header.date AS looker_base_fields_metadata__header__date,
 looker_base_fields.metadata.header.dnt AS looker_base_fields_metadata__header__dnt,
+looker_base_fields.metadata.header.parsed AS looker_base_fields_metadata__header__parsed,
 looker_base_fields.metadata.header.parsed_x_lb_tags.tls_cipher_hex AS looker_base_fields_metadata__header__parsed_x_lb_tags__tls_cipher_hex,
 looker_base_fields.metadata.header.parsed_x_lb_tags.tls_version AS looker_base_fields_metadata__header__parsed_x_lb_tags__tls_version,
 looker_base_fields.metadata.header.x_debug_id AS looker_base_fields_metadata__header__x_debug_id,
@@ -182,8 +182,6 @@ fenix_active_users_aggregates_view.adjust_network AS fenix_active_users_aggregat
 fenix_active_users_aggregates_view.app_name AS fenix_active_users_aggregates_view_app_name,
 fenix_active_users_aggregates_view.app_version AS fenix_active_users_aggregates_view_app_version,
 fenix_active_users_aggregates_view.app_version_is_major_release AS fenix_active_users_aggregates_view_app_version_is_major_release,
-fenix_active_users_aggregates_view.app_version_major AS fenix_active_users_aggregates_view_app_version_major,
-fenix_active_users_aggregates_view.app_version_minor AS fenix_active_users_aggregates_view_app_version_minor,
 fenix_active_users_aggregates_view.app_version_patch_revision AS fenix_active_users_aggregates_view_app_version_patch_revision,
 fenix_active_users_aggregates_view.attributed AS fenix_active_users_aggregates_view_attributed,
 fenix_active_users_aggregates_view.attribution_medium AS fenix_active_users_aggregates_view_attribution_medium,
@@ -282,6 +280,7 @@ looker_base_fields_metadata__geo__subdivision1,
 looker_base_fields_metadata__geo__subdivision2,
 looker_base_fields_metadata__header__date,
 looker_base_fields_metadata__header__dnt,
+looker_base_fields_metadata__header__parsed,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_cipher_hex,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_version,
 looker_base_fields_metadata__header__x_debug_id,
@@ -307,8 +306,6 @@ fenix_active_users_aggregates_view_adjust_network,
 fenix_active_users_aggregates_view_app_name,
 fenix_active_users_aggregates_view_app_version,
 fenix_active_users_aggregates_view_app_version_is_major_release,
-fenix_active_users_aggregates_view_app_version_major,
-fenix_active_users_aggregates_view_app_version_minor,
 fenix_active_users_aggregates_view_app_version_patch_revision,
 fenix_active_users_aggregates_view_attributed,
 fenix_active_users_aggregates_view_attribution_medium,
@@ -1027,6 +1024,23 @@ fenix_active_users_aggregates_view_weekly_users,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: metadata__header__parsed {
+    sql: ${TABLE}.looker_base_fields_metadata__header__parsed ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metadata Header: Parsed Date"
+    group_label: "Base Fields"
   }
 
   set: metrics {

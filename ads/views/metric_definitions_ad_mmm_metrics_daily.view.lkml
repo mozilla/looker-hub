@@ -13,8 +13,10 @@ SUM(spend) AS ad_spend,
 
                 ad_mmm_metrics_daily_ad_product,
 ad_mmm_metrics_daily_advertiser,
+ad_mmm_metrics_daily_campaign_end,
 ad_mmm_metrics_daily_campaign_id,
 ad_mmm_metrics_daily_campaign_name,
+ad_mmm_metrics_daily_campaign_start,
 ad_mmm_metrics_daily_campaign_status,
 ad_mmm_metrics_daily_click_rate,
 ad_mmm_metrics_daily_clicks,
@@ -56,8 +58,10 @@ ad_mmm_metrics_daily_sponsor,
                         ad_mmm_metrics_daily.*,
                         ad_mmm_metrics_daily.ad_product AS ad_mmm_metrics_daily_ad_product,
 ad_mmm_metrics_daily.advertiser AS ad_mmm_metrics_daily_advertiser,
+ad_mmm_metrics_daily.campaign_end AS ad_mmm_metrics_daily_campaign_end,
 ad_mmm_metrics_daily.campaign_id AS ad_mmm_metrics_daily_campaign_id,
 ad_mmm_metrics_daily.campaign_name AS ad_mmm_metrics_daily_campaign_name,
+ad_mmm_metrics_daily.campaign_start AS ad_mmm_metrics_daily_campaign_start,
 ad_mmm_metrics_daily.campaign_status AS ad_mmm_metrics_daily_campaign_status,
 ad_mmm_metrics_daily.click_rate AS ad_mmm_metrics_daily_click_rate,
 ad_mmm_metrics_daily.clicks AS ad_mmm_metrics_daily_clicks,
@@ -90,8 +94,10 @@ ad_mmm_metrics_daily.sponsor AS ad_mmm_metrics_daily_sponsor,
             GROUP BY
                 ad_mmm_metrics_daily_ad_product,
 ad_mmm_metrics_daily_advertiser,
+ad_mmm_metrics_daily_campaign_end,
 ad_mmm_metrics_daily_campaign_id,
 ad_mmm_metrics_daily_campaign_name,
+ad_mmm_metrics_daily_campaign_start,
 ad_mmm_metrics_daily_campaign_status,
 ad_mmm_metrics_daily_click_rate,
 ad_mmm_metrics_daily_clicks,
@@ -228,6 +234,40 @@ ad_mmm_metrics_daily_sponsor,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: campaign_end {
+    sql: ${TABLE}.ad_mmm_metrics_daily_campaign_end ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
+  dimension_group: campaign_start {
+    sql: ${TABLE}.ad_mmm_metrics_daily_campaign_start ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   measure: ad_impressions_sum {

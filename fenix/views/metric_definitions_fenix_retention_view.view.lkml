@@ -42,6 +42,7 @@ looker_base_fields_metadata__geo__subdivision1,
 looker_base_fields_metadata__geo__subdivision2,
 looker_base_fields_metadata__header__date,
 looker_base_fields_metadata__header__dnt,
+looker_base_fields_metadata__header__parsed,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_cipher_hex,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_version,
 looker_base_fields_metadata__header__x_debug_id,
@@ -74,13 +75,14 @@ fenix_retention_view_country,
 fenix_retention_view_device_manufacturer,
 fenix_retention_view_device_type,
 fenix_retention_view_distribution_id,
+fenix_retention_view_first_seen,
 fenix_retention_view_install_source,
 fenix_retention_view_is_mobile,
 fenix_retention_view_lifecycle_stage,
 fenix_retention_view_locale,
 fenix_retention_view_meta_attribution_app,
+fenix_retention_view_metric,
 fenix_retention_view_new_profiles_metric_date,
-fenix_retention_view_normalized_channel,
 fenix_retention_view_paid_vs_organic,
 fenix_retention_view_ping_sent_metric_date,
 fenix_retention_view_ping_sent_week_4,
@@ -154,6 +156,7 @@ looker_base_fields.metadata.geo.subdivision1 AS looker_base_fields_metadata__geo
 looker_base_fields.metadata.geo.subdivision2 AS looker_base_fields_metadata__geo__subdivision2,
 looker_base_fields.metadata.header.date AS looker_base_fields_metadata__header__date,
 looker_base_fields.metadata.header.dnt AS looker_base_fields_metadata__header__dnt,
+looker_base_fields.metadata.header.parsed AS looker_base_fields_metadata__header__parsed,
 looker_base_fields.metadata.header.parsed_x_lb_tags.tls_cipher_hex AS looker_base_fields_metadata__header__parsed_x_lb_tags__tls_cipher_hex,
 looker_base_fields.metadata.header.parsed_x_lb_tags.tls_version AS looker_base_fields_metadata__header__parsed_x_lb_tags__tls_version,
 looker_base_fields.metadata.header.x_debug_id AS looker_base_fields_metadata__header__x_debug_id,
@@ -186,13 +189,14 @@ fenix_retention_view.country AS fenix_retention_view_country,
 fenix_retention_view.device_manufacturer AS fenix_retention_view_device_manufacturer,
 fenix_retention_view.device_type AS fenix_retention_view_device_type,
 fenix_retention_view.distribution_id AS fenix_retention_view_distribution_id,
+fenix_retention_view.first_seen AS fenix_retention_view_first_seen,
 fenix_retention_view.install_source AS fenix_retention_view_install_source,
 fenix_retention_view.is_mobile AS fenix_retention_view_is_mobile,
 fenix_retention_view.lifecycle_stage AS fenix_retention_view_lifecycle_stage,
 fenix_retention_view.locale AS fenix_retention_view_locale,
 fenix_retention_view.meta_attribution_app AS fenix_retention_view_meta_attribution_app,
+fenix_retention_view.metric AS fenix_retention_view_metric,
 fenix_retention_view.new_profiles_metric_date AS fenix_retention_view_new_profiles_metric_date,
-fenix_retention_view.normalized_channel AS fenix_retention_view_normalized_channel,
 fenix_retention_view.paid_vs_organic AS fenix_retention_view_paid_vs_organic,
 fenix_retention_view.ping_sent_metric_date AS fenix_retention_view_ping_sent_metric_date,
 fenix_retention_view.ping_sent_week_4 AS fenix_retention_view_ping_sent_week_4,
@@ -275,6 +279,7 @@ looker_base_fields_metadata__geo__subdivision1,
 looker_base_fields_metadata__geo__subdivision2,
 looker_base_fields_metadata__header__date,
 looker_base_fields_metadata__header__dnt,
+looker_base_fields_metadata__header__parsed,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_cipher_hex,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_version,
 looker_base_fields_metadata__header__x_debug_id,
@@ -307,13 +312,14 @@ fenix_retention_view_country,
 fenix_retention_view_device_manufacturer,
 fenix_retention_view_device_type,
 fenix_retention_view_distribution_id,
+fenix_retention_view_first_seen,
 fenix_retention_view_install_source,
 fenix_retention_view_is_mobile,
 fenix_retention_view_lifecycle_stage,
 fenix_retention_view_locale,
 fenix_retention_view_meta_attribution_app,
+fenix_retention_view_metric,
 fenix_retention_view_new_profiles_metric_date,
-fenix_retention_view_normalized_channel,
 fenix_retention_view_paid_vs_organic,
 fenix_retention_view_ping_sent_metric_date,
 fenix_retention_view_ping_sent_week_4,
@@ -998,6 +1004,57 @@ fenix_retention_view_retained_week_4_new_profiles,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: metadata__header__parsed {
+    sql: ${TABLE}.looker_base_fields_metadata__header__parsed ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metadata Header: Parsed Date"
+    group_label: "Base Fields"
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.fenix_retention_view_first_seen ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
+  dimension_group: metric {
+    sql: ${TABLE}.fenix_retention_view_metric ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   set: metrics {
