@@ -74,6 +74,56 @@ view: use_counters_table {
     description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
   }
 
+  dimension: client_info__attribution__campaign {
+    sql: ${TABLE}.client_info.attribution.campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Campaign"
+    description: "The attribution campaign (e.g. 'mozilla-org')."
+  }
+
+  dimension: client_info__attribution__content {
+    sql: ${TABLE}.client_info.attribution.content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Content"
+    description: "The attribution content (e.g. 'firefoxview')."
+  }
+
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.client_info.attribution.ext ;;
+    hidden: yes
+  }
+
+  dimension: client_info__attribution__medium {
+    sql: ${TABLE}.client_info.attribution.medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Medium"
+    description: "The attribution medium (e.g. 'organic' for a search engine)."
+  }
+
+  dimension: client_info__attribution__source {
+    sql: ${TABLE}.client_info.attribution.source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Source"
+    description: "The attribution source (e.g. 'google-play')."
+  }
+
+  dimension: client_info__attribution__term {
+    sql: ${TABLE}.client_info.attribution.term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Term"
+    description: "The attribution term (e.g. 'browser with developer tools for android')."
+  }
+
   dimension: client_info__build_date {
     sql: ${TABLE}.client_info.build_date ;;
     type: string
@@ -105,6 +155,20 @@ view: use_counters_table {
     group_label: "Client Info"
     group_item_label: "Device Model"
     description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.client_info.distribution.ext ;;
+    hidden: yes
+  }
+
+  dimension: client_info__distribution__name {
+    sql: ${TABLE}.client_info.distribution.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Distribution"
+    group_item_label: "Name"
+    description: "The distribution name (e.g. 'MozillaOnline')."
   }
 
   dimension: client_info__first_run_date {
@@ -15859,6 +15923,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_animation_commitstyles {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_animation_commitstyles ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Animation Commitstyles"
+    description: "Whether a document called called Animation.commitStyles. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_clipboard_read {
     sql: ${TABLE}.metrics.counter.use_counter_doc_clipboard_read ;;
     type: number
@@ -15886,6 +15960,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Clipboard Write"
     description: "Whether a document called called Clipboard.write. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_commit_styles_non_filling_final_value {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_commit_styles_non_filling_final_value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Commit Styles Non Filling Final Value"
+    description: "Whether a document calls commitStyles and its result differs depending on whether the endpoint-inclusive pref is enabled or not. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17539,6 +17623,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_invalid_text_directives {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_invalid_text_directives ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Invalid Text Directives"
+    description: "Whether a document had a text fragment that could not be found after loading has finished. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_asmjs {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_asmjs ;;
     type: number
@@ -17696,6 +17790,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Optimize Promise Lookup Fuse"
     description: "Whether a document has modified builtin Promise objects such that the PromiseLookup fuse is popped. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_regexp_symbol_protocol_on_primitive {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_regexp_symbol_protocol_on_primitive ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Regexp Symbol Protocol On Primitive"
+    description: "Whether a document passed a primitive with a custom implementation of the regexp protocol symbols to one of the String methods that accept a regexp. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17866,6 +17970,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Location Ancestororigins"
     description: "Whether a document called called Location.ancestorOrigins. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_math_mlused {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_math_mlused ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Math Mlused"
+    description: "Whether a document has used MathML. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -18536,6 +18650,26 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Svgsvgelement Getelementbyid"
     description: "Whether a document called called SVGSVGElement.getElementById. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_text_directive_not_created {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_text_directive_not_created ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Text Directive Not Created"
+    description: "Whether a document has not succeeded in creating a text fragment. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_text_directive_pages {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_text_directive_pages ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Text Directive Pages"
+    description: "Whether a document used text fragments. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -20219,6 +20353,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_animation_commitstyles {
+    sql: ${TABLE}.metrics.counter.use_counter_page_animation_commitstyles ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Animation Commitstyles"
+    description: "Whether a page called called Animation.commitStyles. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_clipboard_read {
     sql: ${TABLE}.metrics.counter.use_counter_page_clipboard_read ;;
     type: number
@@ -20246,6 +20390,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Clipboard Write"
     description: "Whether a page called called Clipboard.write. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_commit_styles_non_filling_final_value {
+    sql: ${TABLE}.metrics.counter.use_counter_page_commit_styles_non_filling_final_value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Commit Styles Non Filling Final Value"
+    description: "Whether a page calls commitStyles and its result differs depending on whether the endpoint-inclusive pref is enabled or not. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21905,7 +22059,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Invalid Text Directives"
-    description: "Amount of pages where a text directive could be found after loading has finished
+    description: "Whether a page had a text fragment that could not be found after loading has finished. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -22066,6 +22220,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Optimize Promise Lookup Fuse"
     description: "Whether a page has modified builtin Promise objects such that the PromiseLookup fuse is popped. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_regexp_symbol_protocol_on_primitive {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_regexp_symbol_protocol_on_primitive ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Regexp Symbol Protocol On Primitive"
+    description: "Whether a page passed a primitive with a custom implementation of the regexp protocol symbols to one of the String methods that accept a regexp. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -22236,6 +22400,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Location Ancestororigins"
     description: "Whether a page called called Location.ancestorOrigins. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_math_mlused {
+    sql: ${TABLE}.metrics.counter.use_counter_page_math_mlused ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Math Mlused"
+    description: "Whether a page has used MathML. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -22915,7 +23089,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Text Directive Not Created"
-    description: "How often does FragmentDirective::CreateTextDirective() not find a text fragment
+    description: "Whether a page has not succeeded in creating a text fragment. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -22925,7 +23099,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Text Directive Pages"
-    description: "Number of opened pages using text-fragments.
+    description: "Whether a page used text fragments. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

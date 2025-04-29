@@ -19,9 +19,15 @@ looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
 looker_base_fields_client_info__architecture,
+looker_base_fields_client_info__attribution__campaign,
+looker_base_fields_client_info__attribution__content,
+looker_base_fields_client_info__attribution__medium,
+looker_base_fields_client_info__attribution__source,
+looker_base_fields_client_info__attribution__term,
 looker_base_fields_client_info__build_date,
 looker_base_fields_client_info__device_manufacturer,
 looker_base_fields_client_info__device_model,
+looker_base_fields_client_info__distribution__name,
 looker_base_fields_client_info__first_run_date,
 looker_base_fields_client_info__locale,
 looker_base_fields_client_info__os,
@@ -55,12 +61,13 @@ funnel_retention_app_version,
 funnel_retention_country,
 funnel_retention_device_manufacturer,
 funnel_retention_device_type,
+funnel_retention_first_seen,
 funnel_retention_is_mobile,
 funnel_retention_is_suspicious_device_client,
 funnel_retention_lifecycle_stage,
 funnel_retention_locale,
+funnel_retention_metric,
 funnel_retention_new_profiles_metric_date,
-funnel_retention_normalized_channel,
 funnel_retention_paid_vs_organic,
 funnel_retention_ping_sent_metric_date,
 funnel_retention_ping_sent_week_4,
@@ -107,9 +114,15 @@ looker_base_fields.client_info.app_build AS looker_base_fields_client_info__app_
 looker_base_fields.client_info.app_channel AS looker_base_fields_client_info__app_channel,
 looker_base_fields.client_info.app_display_version AS looker_base_fields_client_info__app_display_version,
 looker_base_fields.client_info.architecture AS looker_base_fields_client_info__architecture,
+looker_base_fields.client_info.attribution.campaign AS looker_base_fields_client_info__attribution__campaign,
+looker_base_fields.client_info.attribution.content AS looker_base_fields_client_info__attribution__content,
+looker_base_fields.client_info.attribution.medium AS looker_base_fields_client_info__attribution__medium,
+looker_base_fields.client_info.attribution.source AS looker_base_fields_client_info__attribution__source,
+looker_base_fields.client_info.attribution.term AS looker_base_fields_client_info__attribution__term,
 looker_base_fields.client_info.build_date AS looker_base_fields_client_info__build_date,
 looker_base_fields.client_info.device_manufacturer AS looker_base_fields_client_info__device_manufacturer,
 looker_base_fields.client_info.device_model AS looker_base_fields_client_info__device_model,
+looker_base_fields.client_info.distribution.name AS looker_base_fields_client_info__distribution__name,
 looker_base_fields.client_info.first_run_date AS looker_base_fields_client_info__first_run_date,
 looker_base_fields.client_info.locale AS looker_base_fields_client_info__locale,
 looker_base_fields.client_info.os AS looker_base_fields_client_info__os,
@@ -143,12 +156,13 @@ funnel_retention.app_version AS funnel_retention_app_version,
 funnel_retention.country AS funnel_retention_country,
 funnel_retention.device_manufacturer AS funnel_retention_device_manufacturer,
 funnel_retention.device_type AS funnel_retention_device_type,
+funnel_retention.first_seen AS funnel_retention_first_seen,
 funnel_retention.is_mobile AS funnel_retention_is_mobile,
 funnel_retention.is_suspicious_device_client AS funnel_retention_is_suspicious_device_client,
 funnel_retention.lifecycle_stage AS funnel_retention_lifecycle_stage,
 funnel_retention.locale AS funnel_retention_locale,
+funnel_retention.metric AS funnel_retention_metric,
 funnel_retention.new_profiles_metric_date AS funnel_retention_new_profiles_metric_date,
-funnel_retention.normalized_channel AS funnel_retention_normalized_channel,
 funnel_retention.paid_vs_organic AS funnel_retention_paid_vs_organic,
 funnel_retention.ping_sent_metric_date AS funnel_retention_ping_sent_metric_date,
 funnel_retention.ping_sent_week_4 AS funnel_retention_ping_sent_week_4,
@@ -204,9 +218,15 @@ looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
 looker_base_fields_client_info__architecture,
+looker_base_fields_client_info__attribution__campaign,
+looker_base_fields_client_info__attribution__content,
+looker_base_fields_client_info__attribution__medium,
+looker_base_fields_client_info__attribution__source,
+looker_base_fields_client_info__attribution__term,
 looker_base_fields_client_info__build_date,
 looker_base_fields_client_info__device_manufacturer,
 looker_base_fields_client_info__device_model,
+looker_base_fields_client_info__distribution__name,
 looker_base_fields_client_info__first_run_date,
 looker_base_fields_client_info__locale,
 looker_base_fields_client_info__os,
@@ -240,12 +260,13 @@ funnel_retention_app_version,
 funnel_retention_country,
 funnel_retention_device_manufacturer,
 funnel_retention_device_type,
+funnel_retention_first_seen,
 funnel_retention_is_mobile,
 funnel_retention_is_suspicious_device_client,
 funnel_retention_lifecycle_stage,
 funnel_retention_locale,
+funnel_retention_metric,
 funnel_retention_new_profiles_metric_date,
-funnel_retention_normalized_channel,
 funnel_retention_paid_vs_organic,
 funnel_retention_ping_sent_metric_date,
 funnel_retention_ping_sent_week_4,
@@ -363,6 +384,52 @@ funnel_retention_retained_week_4_new_profiles,
     group_item_label: "Architecture"
   }
 
+  dimension: client_info__attribution__campaign {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Campaign"
+  }
+
+  dimension: client_info__attribution__content {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Content"
+  }
+
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__ext ;;
+    hidden: yes
+    group_label: "Base Fields"
+  }
+
+  dimension: client_info__attribution__medium {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Medium"
+  }
+
+  dimension: client_info__attribution__source {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Source"
+  }
+
+  dimension: client_info__attribution__term {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Term"
+  }
+
   dimension: client_info__build_date {
     sql: ${TABLE}.looker_base_fields_client_info__build_date ;;
     type: string
@@ -391,6 +458,20 @@ funnel_retention_retained_week_4_new_profiles,
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Device Model"
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.looker_base_fields_client_info__distribution__ext ;;
+    hidden: yes
+    group_label: "Base Fields"
+  }
+
+  dimension: client_info__distribution__name {
+    sql: ${TABLE}.looker_base_fields_client_info__distribution__name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Name"
   }
 
   dimension: client_info__first_run_date {
@@ -737,6 +818,40 @@ funnel_retention_retained_week_4_new_profiles,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.funnel_retention_first_seen ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
+  dimension_group: metric {
+    sql: ${TABLE}.funnel_retention_metric ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   set: metrics {

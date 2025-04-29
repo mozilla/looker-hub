@@ -68,6 +68,51 @@ view: use_counters_table {
     group_item_label: "Architecture"
   }
 
+  dimension: client_info__attribution__campaign {
+    sql: ${TABLE}.client_info.attribution.campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Campaign"
+  }
+
+  dimension: client_info__attribution__content {
+    sql: ${TABLE}.client_info.attribution.content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Content"
+  }
+
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.client_info.attribution.ext ;;
+    hidden: yes
+  }
+
+  dimension: client_info__attribution__medium {
+    sql: ${TABLE}.client_info.attribution.medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Medium"
+  }
+
+  dimension: client_info__attribution__source {
+    sql: ${TABLE}.client_info.attribution.source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Source"
+  }
+
+  dimension: client_info__attribution__term {
+    sql: ${TABLE}.client_info.attribution.term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Term"
+  }
+
   dimension: client_info__build_date {
     sql: ${TABLE}.client_info.build_date ;;
     type: string
@@ -95,6 +140,19 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.client_info.distribution.ext ;;
+    hidden: yes
+  }
+
+  dimension: client_info__distribution__name {
+    sql: ${TABLE}.client_info.distribution.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Distribution"
+    group_item_label: "Name"
   }
 
   dimension: client_info__first_run_date {
@@ -12729,6 +12787,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Deprecated Ops Page Window Content Untrusted"
   }
 
+  dimension: metrics__counter__use_counter_doc_animation_commitstyles {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_animation_commitstyles ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Animation Commitstyles"
+  }
+
   dimension: metrics__counter__use_counter_doc_clipboard_read {
     sql: ${TABLE}.metrics.counter.use_counter_doc_clipboard_read ;;
     type: number
@@ -12751,6 +12817,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Clipboard Write"
+  }
+
+  dimension: metrics__counter__use_counter_doc_commit_styles_non_filling_final_value {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_commit_styles_non_filling_final_value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Commit Styles Non Filling Final Value"
   }
 
   dimension: metrics__counter__use_counter_doc_components_shim_resolved {
@@ -14073,6 +14147,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Imagedata Colorspace"
   }
 
+  dimension: metrics__counter__use_counter_doc_invalid_text_directives {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_invalid_text_directives ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Invalid Text Directives"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_asmjs {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_asmjs ;;
     type: number
@@ -14199,6 +14281,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Optimize Promise Lookup Fuse"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_regexp_symbol_protocol_on_primitive {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_regexp_symbol_protocol_on_primitive ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Regexp Symbol Protocol On Primitive"
   }
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_2 {
@@ -14335,6 +14425,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Location Ancestororigins"
+  }
+
+  dimension: metrics__counter__use_counter_doc_math_mlused {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_math_mlused ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Math Mlused"
   }
 
   dimension: metrics__counter__use_counter_doc_mediadevices_enumeratedevices {
@@ -14871,6 +14969,22 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Svgsvgelement Getelementbyid"
+  }
+
+  dimension: metrics__counter__use_counter_doc_text_directive_not_created {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_text_directive_not_created ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Text Directive Not Created"
+  }
+
+  dimension: metrics__counter__use_counter_doc_text_directive_pages {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_text_directive_pages ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Text Directive Pages"
   }
 
   dimension: metrics__counter__use_counter_doc_window_absoluteorientationsensor {
@@ -16217,6 +16331,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc You Tube Flash Embed"
   }
 
+  dimension: metrics__counter__use_counter_page_animation_commitstyles {
+    sql: ${TABLE}.metrics.counter.use_counter_page_animation_commitstyles ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Animation Commitstyles"
+  }
+
   dimension: metrics__counter__use_counter_page_clipboard_read {
     sql: ${TABLE}.metrics.counter.use_counter_page_clipboard_read ;;
     type: number
@@ -16239,6 +16361,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Clipboard Write"
+  }
+
+  dimension: metrics__counter__use_counter_page_commit_styles_non_filling_final_value {
+    sql: ${TABLE}.metrics.counter.use_counter_page_commit_styles_non_filling_final_value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Commit Styles Non Filling Final Value"
   }
 
   dimension: metrics__counter__use_counter_page_components_shim_resolved {
@@ -17697,6 +17827,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Page Js Optimize Promise Lookup Fuse"
   }
 
+  dimension: metrics__counter__use_counter_page_js_regexp_symbol_protocol_on_primitive {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_regexp_symbol_protocol_on_primitive ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Regexp Symbol Protocol On Primitive"
+  }
+
   dimension: metrics__counter__use_counter_page_js_subclassing_array_type_2 {
     sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_array_type_2 ;;
     type: number
@@ -17831,6 +17969,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Location Ancestororigins"
+  }
+
+  dimension: metrics__counter__use_counter_page_math_mlused {
+    sql: ${TABLE}.metrics.counter.use_counter_page_math_mlused ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Math Mlused"
   }
 
   dimension: metrics__counter__use_counter_page_mediadevices_enumeratedevices {

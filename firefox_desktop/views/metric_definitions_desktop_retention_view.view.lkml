@@ -23,7 +23,6 @@ looker_base_fields_os,
 looker_base_fields_partner_id,
 looker_base_fields_sample_id,
 desktop_retention_view_active_metric_date,
-desktop_retention_view_app_version,
 desktop_retention_view_attribution_campaign,
 desktop_retention_view_attribution_content,
 desktop_retention_view_attribution_dlsource,
@@ -31,15 +30,12 @@ desktop_retention_view_attribution_experiment,
 desktop_retention_view_attribution_medium,
 desktop_retention_view_attribution_ua,
 desktop_retention_view_attribution_variation,
-desktop_retention_view_country,
-desktop_retention_view_distribution_id,
+desktop_retention_view_first_seen,
 desktop_retention_view_is_desktop,
 desktop_retention_view_lifecycle_stage,
-desktop_retention_view_locale,
+desktop_retention_view_metric,
 desktop_retention_view_new_profiles_metric_date,
-desktop_retention_view_normalized_channel,
 desktop_retention_view_normalized_os,
-desktop_retention_view_normalized_os_version,
 desktop_retention_view_paid_vs_organic,
 desktop_retention_view_ping_sent_metric_date,
 desktop_retention_view_ping_sent_week_4,
@@ -92,7 +88,6 @@ looker_base_fields.os AS looker_base_fields_os,
 looker_base_fields.partner_id AS looker_base_fields_partner_id,
 looker_base_fields.sample_id AS looker_base_fields_sample_id,
 desktop_retention_view.active_metric_date AS desktop_retention_view_active_metric_date,
-desktop_retention_view.app_version AS desktop_retention_view_app_version,
 desktop_retention_view.attribution_campaign AS desktop_retention_view_attribution_campaign,
 desktop_retention_view.attribution_content AS desktop_retention_view_attribution_content,
 desktop_retention_view.attribution_dlsource AS desktop_retention_view_attribution_dlsource,
@@ -100,15 +95,12 @@ desktop_retention_view.attribution_experiment AS desktop_retention_view_attribut
 desktop_retention_view.attribution_medium AS desktop_retention_view_attribution_medium,
 desktop_retention_view.attribution_ua AS desktop_retention_view_attribution_ua,
 desktop_retention_view.attribution_variation AS desktop_retention_view_attribution_variation,
-desktop_retention_view.country AS desktop_retention_view_country,
-desktop_retention_view.distribution_id AS desktop_retention_view_distribution_id,
+desktop_retention_view.first_seen AS desktop_retention_view_first_seen,
 desktop_retention_view.is_desktop AS desktop_retention_view_is_desktop,
 desktop_retention_view.lifecycle_stage AS desktop_retention_view_lifecycle_stage,
-desktop_retention_view.locale AS desktop_retention_view_locale,
+desktop_retention_view.metric AS desktop_retention_view_metric,
 desktop_retention_view.new_profiles_metric_date AS desktop_retention_view_new_profiles_metric_date,
-desktop_retention_view.normalized_channel AS desktop_retention_view_normalized_channel,
 desktop_retention_view.normalized_os AS desktop_retention_view_normalized_os,
-desktop_retention_view.normalized_os_version AS desktop_retention_view_normalized_os_version,
 desktop_retention_view.paid_vs_organic AS desktop_retention_view_paid_vs_organic,
 desktop_retention_view.ping_sent_metric_date AS desktop_retention_view_ping_sent_metric_date,
 desktop_retention_view.ping_sent_week_4 AS desktop_retention_view_ping_sent_week_4,
@@ -170,7 +162,6 @@ looker_base_fields_os,
 looker_base_fields_partner_id,
 looker_base_fields_sample_id,
 desktop_retention_view_active_metric_date,
-desktop_retention_view_app_version,
 desktop_retention_view_attribution_campaign,
 desktop_retention_view_attribution_content,
 desktop_retention_view_attribution_dlsource,
@@ -178,15 +169,12 @@ desktop_retention_view_attribution_experiment,
 desktop_retention_view_attribution_medium,
 desktop_retention_view_attribution_ua,
 desktop_retention_view_attribution_variation,
-desktop_retention_view_country,
-desktop_retention_view_distribution_id,
+desktop_retention_view_first_seen,
 desktop_retention_view_is_desktop,
 desktop_retention_view_lifecycle_stage,
-desktop_retention_view_locale,
+desktop_retention_view_metric,
 desktop_retention_view_new_profiles_metric_date,
-desktop_retention_view_normalized_channel,
 desktop_retention_view_normalized_os,
-desktop_retention_view_normalized_os_version,
 desktop_retention_view_paid_vs_organic,
 desktop_retention_view_ping_sent_metric_date,
 desktop_retention_view_ping_sent_week_4,
@@ -465,6 +453,40 @@ desktop_retention_view_startup_profile_selection_reason,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.desktop_retention_view_first_seen ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
+  dimension_group: metric {
+    sql: ${TABLE}.desktop_retention_view_metric ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   set: metrics {

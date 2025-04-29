@@ -133,6 +133,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__history_selected_item}) AS metrics__metrics__labeled_counter__history_selected_item ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__history_selected_item.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__homepage_section_viewed {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__homepage_section_viewed}) AS metrics__metrics__labeled_counter__homepage_section_viewed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__homepage_section_viewed.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__library_panel_pressed {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__library_panel_pressed}) AS metrics__metrics__labeled_counter__library_panel_pressed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__library_panel_pressed.document_id} ;;

@@ -17,9 +17,15 @@ looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
 looker_base_fields_client_info__architecture,
+looker_base_fields_client_info__attribution__campaign,
+looker_base_fields_client_info__attribution__content,
+looker_base_fields_client_info__attribution__medium,
+looker_base_fields_client_info__attribution__source,
+looker_base_fields_client_info__attribution__term,
 looker_base_fields_client_info__build_date,
 looker_base_fields_client_info__device_manufacturer,
 looker_base_fields_client_info__device_model,
+looker_base_fields_client_info__distribution__name,
 looker_base_fields_client_info__first_run_date,
 looker_base_fields_client_info__locale,
 looker_base_fields_client_info__os,
@@ -35,6 +41,7 @@ looker_base_fields_metadata__geo__subdivision1,
 looker_base_fields_metadata__geo__subdivision2,
 looker_base_fields_metadata__header__date,
 looker_base_fields_metadata__header__dnt,
+looker_base_fields_metadata__header__parsed,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_cipher_hex,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_version,
 looker_base_fields_metadata__header__x_debug_id,
@@ -67,13 +74,13 @@ fenix_engagement_view_dau,
 fenix_engagement_view_device_manufacturer,
 fenix_engagement_view_device_type,
 fenix_engagement_view_distribution_id,
+fenix_engagement_view_first_seen,
 fenix_engagement_view_install_source,
 fenix_engagement_view_is_mobile,
 fenix_engagement_view_lifecycle_stage,
 fenix_engagement_view_locale,
 fenix_engagement_view_mau,
 fenix_engagement_view_meta_attribution_app,
-fenix_engagement_view_normalized_channel,
 fenix_engagement_view_paid_vs_organic,
 fenix_engagement_view_play_store_attribution_campaign,
 fenix_engagement_view_play_store_attribution_medium,
@@ -119,9 +126,15 @@ looker_base_fields.client_info.app_build AS looker_base_fields_client_info__app_
 looker_base_fields.client_info.app_channel AS looker_base_fields_client_info__app_channel,
 looker_base_fields.client_info.app_display_version AS looker_base_fields_client_info__app_display_version,
 looker_base_fields.client_info.architecture AS looker_base_fields_client_info__architecture,
+looker_base_fields.client_info.attribution.campaign AS looker_base_fields_client_info__attribution__campaign,
+looker_base_fields.client_info.attribution.content AS looker_base_fields_client_info__attribution__content,
+looker_base_fields.client_info.attribution.medium AS looker_base_fields_client_info__attribution__medium,
+looker_base_fields.client_info.attribution.source AS looker_base_fields_client_info__attribution__source,
+looker_base_fields.client_info.attribution.term AS looker_base_fields_client_info__attribution__term,
 looker_base_fields.client_info.build_date AS looker_base_fields_client_info__build_date,
 looker_base_fields.client_info.device_manufacturer AS looker_base_fields_client_info__device_manufacturer,
 looker_base_fields.client_info.device_model AS looker_base_fields_client_info__device_model,
+looker_base_fields.client_info.distribution.name AS looker_base_fields_client_info__distribution__name,
 looker_base_fields.client_info.first_run_date AS looker_base_fields_client_info__first_run_date,
 looker_base_fields.client_info.locale AS looker_base_fields_client_info__locale,
 looker_base_fields.client_info.os AS looker_base_fields_client_info__os,
@@ -137,6 +150,7 @@ looker_base_fields.metadata.geo.subdivision1 AS looker_base_fields_metadata__geo
 looker_base_fields.metadata.geo.subdivision2 AS looker_base_fields_metadata__geo__subdivision2,
 looker_base_fields.metadata.header.date AS looker_base_fields_metadata__header__date,
 looker_base_fields.metadata.header.dnt AS looker_base_fields_metadata__header__dnt,
+looker_base_fields.metadata.header.parsed AS looker_base_fields_metadata__header__parsed,
 looker_base_fields.metadata.header.parsed_x_lb_tags.tls_cipher_hex AS looker_base_fields_metadata__header__parsed_x_lb_tags__tls_cipher_hex,
 looker_base_fields.metadata.header.parsed_x_lb_tags.tls_version AS looker_base_fields_metadata__header__parsed_x_lb_tags__tls_version,
 looker_base_fields.metadata.header.x_debug_id AS looker_base_fields_metadata__header__x_debug_id,
@@ -169,13 +183,13 @@ fenix_engagement_view.dau AS fenix_engagement_view_dau,
 fenix_engagement_view.device_manufacturer AS fenix_engagement_view_device_manufacturer,
 fenix_engagement_view.device_type AS fenix_engagement_view_device_type,
 fenix_engagement_view.distribution_id AS fenix_engagement_view_distribution_id,
+fenix_engagement_view.first_seen AS fenix_engagement_view_first_seen,
 fenix_engagement_view.install_source AS fenix_engagement_view_install_source,
 fenix_engagement_view.is_mobile AS fenix_engagement_view_is_mobile,
 fenix_engagement_view.lifecycle_stage AS fenix_engagement_view_lifecycle_stage,
 fenix_engagement_view.locale AS fenix_engagement_view_locale,
 fenix_engagement_view.mau AS fenix_engagement_view_mau,
 fenix_engagement_view.meta_attribution_app AS fenix_engagement_view_meta_attribution_app,
-fenix_engagement_view.normalized_channel AS fenix_engagement_view_normalized_channel,
 fenix_engagement_view.paid_vs_organic AS fenix_engagement_view_paid_vs_organic,
 fenix_engagement_view.play_store_attribution_campaign AS fenix_engagement_view_play_store_attribution_campaign,
 fenix_engagement_view.play_store_attribution_medium AS fenix_engagement_view_play_store_attribution_medium,
@@ -230,9 +244,15 @@ looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
 looker_base_fields_client_info__architecture,
+looker_base_fields_client_info__attribution__campaign,
+looker_base_fields_client_info__attribution__content,
+looker_base_fields_client_info__attribution__medium,
+looker_base_fields_client_info__attribution__source,
+looker_base_fields_client_info__attribution__term,
 looker_base_fields_client_info__build_date,
 looker_base_fields_client_info__device_manufacturer,
 looker_base_fields_client_info__device_model,
+looker_base_fields_client_info__distribution__name,
 looker_base_fields_client_info__first_run_date,
 looker_base_fields_client_info__locale,
 looker_base_fields_client_info__os,
@@ -248,6 +268,7 @@ looker_base_fields_metadata__geo__subdivision1,
 looker_base_fields_metadata__geo__subdivision2,
 looker_base_fields_metadata__header__date,
 looker_base_fields_metadata__header__dnt,
+looker_base_fields_metadata__header__parsed,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_cipher_hex,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_version,
 looker_base_fields_metadata__header__x_debug_id,
@@ -280,13 +301,13 @@ fenix_engagement_view_dau,
 fenix_engagement_view_device_manufacturer,
 fenix_engagement_view_device_type,
 fenix_engagement_view_distribution_id,
+fenix_engagement_view_first_seen,
 fenix_engagement_view_install_source,
 fenix_engagement_view_is_mobile,
 fenix_engagement_view_lifecycle_stage,
 fenix_engagement_view_locale,
 fenix_engagement_view_mau,
 fenix_engagement_view_meta_attribution_app,
-fenix_engagement_view_normalized_channel,
 fenix_engagement_view_paid_vs_organic,
 fenix_engagement_view_play_store_attribution_campaign,
 fenix_engagement_view_play_store_attribution_medium,
@@ -379,6 +400,52 @@ fenix_engagement_view_wau,
     group_item_label: "Architecture"
   }
 
+  dimension: client_info__attribution__campaign {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Campaign"
+  }
+
+  dimension: client_info__attribution__content {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Content"
+  }
+
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__ext ;;
+    hidden: yes
+    group_label: "Base Fields"
+  }
+
+  dimension: client_info__attribution__medium {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Medium"
+  }
+
+  dimension: client_info__attribution__source {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Source"
+  }
+
+  dimension: client_info__attribution__term {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Term"
+  }
+
   dimension: client_info__build_date {
     sql: ${TABLE}.looker_base_fields_client_info__build_date ;;
     type: string
@@ -407,6 +474,20 @@ fenix_engagement_view_wau,
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Device Model"
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.looker_base_fields_client_info__distribution__ext ;;
+    hidden: yes
+    group_label: "Base Fields"
+  }
+
+  dimension: client_info__distribution__name {
+    sql: ${TABLE}.looker_base_fields_client_info__distribution__name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Name"
   }
 
   dimension: client_info__first_run_date {
@@ -871,6 +952,40 @@ fenix_engagement_view_wau,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: metadata__header__parsed {
+    sql: ${TABLE}.looker_base_fields_metadata__header__parsed ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metadata Header: Parsed Date"
+    group_label: "Base Fields"
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.fenix_engagement_view_first_seen ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   set: metrics {

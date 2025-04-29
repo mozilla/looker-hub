@@ -43,6 +43,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__application_reputation_should_block}) AS metrics__metrics__labeled_counter__application_reputation_should_block ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__application_reputation_should_block.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__apz_zoom_activity {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__apz_zoom_activity}) AS metrics__metrics__labeled_counter__apz_zoom_activity ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__apz_zoom_activity.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__avif_a1lx {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_a1lx}) AS metrics__metrics__labeled_counter__avif_a1lx ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_a1lx.document_id} ;;
@@ -443,14 +448,44 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dns_lookup_algorithm}) AS metrics__metrics__labeled_counter__dns_lookup_algorithm ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dns_lookup_algorithm.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__dom_blink_filesystem_used {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dom_blink_filesystem_used}) AS metrics__metrics__labeled_counter__dom_blink_filesystem_used ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dom_blink_filesystem_used.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__dom_contentprocess_launch_is_sync {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dom_contentprocess_launch_is_sync}) AS metrics__metrics__labeled_counter__dom_contentprocess_launch_is_sync ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dom_contentprocess_launch_is_sync.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__dom_innerwindows_with_mutation_listeners {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dom_innerwindows_with_mutation_listeners}) AS metrics__metrics__labeled_counter__dom_innerwindows_with_mutation_listeners ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dom_innerwindows_with_mutation_listeners.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__dom_parentprocess_process_launch_errors {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dom_parentprocess_process_launch_errors}) AS metrics__metrics__labeled_counter__dom_parentprocess_process_launch_errors ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dom_parentprocess_process_launch_errors.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__dom_script_loading_source {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dom_script_loading_source}) AS metrics__metrics__labeled_counter__dom_script_loading_source ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dom_script_loading_source.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__dom_storage_access_api_ui {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dom_storage_access_api_ui}) AS metrics__metrics__labeled_counter__dom_storage_access_api_ui ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dom_storage_access_api_ui.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__dom_webkit_directory_used {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dom_webkit_directory_used}) AS metrics__metrics__labeled_counter__dom_webkit_directory_used ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dom_webkit_directory_used.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__dom_xmlhttprequest_async_or_sync {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dom_xmlhttprequest_async_or_sync}) AS metrics__metrics__labeled_counter__dom_xmlhttprequest_async_or_sync ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dom_xmlhttprequest_async_or_sync.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__dotprint_failure {
@@ -476,6 +511,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_counters_event_page_idle_result}) AS metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__extensions_data_migrate_result_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_data_migrate_result_count}) AS metrics__metrics__labeled_counter__extensions_data_migrate_result_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_data_migrate_result_count.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__extensions_process_event {
@@ -536,6 +576,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__gfx_content_frame_time_reason}) AS metrics__metrics__labeled_counter__gfx_content_frame_time_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__gfx_content_frame_time_reason.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__gfx_macos_video_low_power {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__gfx_macos_video_low_power}) AS metrics__metrics__labeled_counter__gfx_macos_video_low_power ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__gfx_macos_video_low_power.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__glean_error_invalid_label {
@@ -603,6 +648,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__http_altsvc_mapping_changed_target}) AS metrics__metrics__labeled_counter__http_altsvc_mapping_changed_target ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__http_altsvc_mapping_changed_target.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__http_cache_lm_inconsistent {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__http_cache_lm_inconsistent}) AS metrics__metrics__labeled_counter__http_cache_lm_inconsistent ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__http_cache_lm_inconsistent.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__http_channel_onstart_success {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__http_channel_onstart_success}) AS metrics__metrics__labeled_counter__http_channel_onstart_success ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__http_channel_onstart_success.document_id} ;;
@@ -613,9 +663,29 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__http_connection_entry_cache_hit}) AS metrics__metrics__labeled_counter__http_connection_entry_cache_hit ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__http_connection_entry_cache_hit.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__http_echconfig_success_rate {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__http_echconfig_success_rate}) AS metrics__metrics__labeled_counter__http_echconfig_success_rate ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__http_echconfig_success_rate.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__http_http2_fail_before_settings {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__http_http2_fail_before_settings}) AS metrics__metrics__labeled_counter__http_http2_fail_before_settings ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__http_http2_fail_before_settings.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__http_pageload_is_ssl {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__http_pageload_is_ssl}) AS metrics__metrics__labeled_counter__http_pageload_is_ssl ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__http_pageload_is_ssl.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__http_script_block_incorrect_mime {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__http_script_block_incorrect_mime}) AS metrics__metrics__labeled_counter__http_script_block_incorrect_mime ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__http_script_block_incorrect_mime.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__http_tls_early_data_accepted {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__http_tls_early_data_accepted}) AS metrics__metrics__labeled_counter__http_tls_early_data_accepted ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__http_tls_early_data_accepted.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__http_transaction_is_ssl {
@@ -676,6 +746,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ipc_sent_messages_parent_inactive}) AS metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__ipc_transaction_cancel {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ipc_transaction_cancel}) AS metrics__metrics__labeled_counter__ipc_transaction_cancel ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ipc_transaction_cancel.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__javascript_gc_budget_was_increased {
@@ -741,6 +816,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__javascript_gc_slow_task {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__javascript_gc_slow_task}) AS metrics__metrics__labeled_counter__javascript_gc_slow_task ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__javascript_gc_slow_task.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__layout_long_reflow_interruptible {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__layout_long_reflow_interruptible}) AS metrics__metrics__labeled_counter__layout_long_reflow_interruptible ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__layout_long_reflow_interruptible.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__localdomstorage_preload_pending_on_first_access {
@@ -923,6 +1003,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_data_size_per_type}) AS metrics__metrics__labeled_counter__network_data_size_per_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_data_size_per_type.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__network_id_online {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_id_online}) AS metrics__metrics__labeled_counter__network_id_online ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_id_online.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__network_race_cache_validation {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_race_cache_validation}) AS metrics__metrics__labeled_counter__network_race_cache_validation ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_race_cache_validation.document_id} ;;
@@ -931,6 +1016,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__network_race_cache_with_network_usage {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_race_cache_with_network_usage}) AS metrics__metrics__labeled_counter__network_race_cache_with_network_usage ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_race_cache_with_network_usage.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__network_rel_preload_miss_ratio {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_rel_preload_miss_ratio}) AS metrics__metrics__labeled_counter__network_rel_preload_miss_ratio ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_rel_preload_miss_ratio.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__network_sso_entra_success {
@@ -1378,6 +1468,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown}) AS metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__region_store_region_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__region_store_region_result}) AS metrics__metrics__labeled_counter__region_store_region_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__region_store_region_result.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed}) AS metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed.document_id} ;;
@@ -1398,6 +1493,21 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid}) AS metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__sandbox_has_user_namespaces {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__sandbox_has_user_namespaces}) AS metrics__metrics__labeled_counter__sandbox_has_user_namespaces ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__sandbox_has_user_namespaces.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__sandbox_rejected_syscalls {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__sandbox_rejected_syscalls}) AS metrics__metrics__labeled_counter__sandbox_rejected_syscalls ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__sandbox_rejected_syscalls.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__script_preloader_requests {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__script_preloader_requests}) AS metrics__metrics__labeled_counter__script_preloader_requests ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__script_preloader_requests.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__security_client_auth_cert_usage {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__security_client_auth_cert_usage}) AS metrics__metrics__labeled_counter__security_client_auth_cert_usage ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__security_client_auth_cert_usage.document_id} ;;
@@ -1406,6 +1516,31 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__ssl_resumed_session {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ssl_resumed_session}) AS metrics__metrics__labeled_counter__ssl_resumed_session ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ssl_resumed_session.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__startup_cache_requests {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__startup_cache_requests}) AS metrics__metrics__labeled_counter__startup_cache_requests ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__startup_cache_requests.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__subprocess_abnormal_abort {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__subprocess_abnormal_abort}) AS metrics__metrics__labeled_counter__subprocess_abnormal_abort ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__subprocess_abnormal_abort.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__subprocess_crashes_with_dump {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__subprocess_crashes_with_dump}) AS metrics__metrics__labeled_counter__subprocess_crashes_with_dump ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__subprocess_crashes_with_dump.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__subprocess_kill_hard {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__subprocess_kill_hard}) AS metrics__metrics__labeled_counter__subprocess_kill_hard ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__subprocess_kill_hard.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__subprocess_launch_failure {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__subprocess_launch_failure}) AS metrics__metrics__labeled_counter__subprocess_launch_failure ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__subprocess_launch_failure.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__tabs_tray_access_point {

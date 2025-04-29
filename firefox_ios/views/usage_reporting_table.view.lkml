@@ -194,6 +194,14 @@ view: usage_reporting_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__usage_is_managed_device {
+    sql: ${TABLE}.metrics.boolean.usage_is_managed_device ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Usage Is Managed Device"
+  }
+
   dimension: metrics__datetime__usage_first_run_date {
     sql: ${TABLE}.metrics.datetime.usage_first_run_date ;;
     type: string

@@ -947,7 +947,7 @@ with a home page origin.
 
   dimension: metrics__counter__firefox_home_page_history_highlights_show_all {
     label: "Firefox Home Page History Highlights Show All"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.firefox_home_page_history_highlights_show_all ;;
     type: number
     group_label: "Firefox Home Page"
@@ -1474,6 +1474,23 @@ of all Site items that appear in that group.
     description: "Counts the number of times a user selected an item from
 the history panel. This labeled counter will tell apart
 items that appear inside a group, and those that do not.
+"
+  }
+
+  dimension: metrics__labeled_counter__homepage_section_viewed {
+    label: "Homepage Section Viewed"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.homepage_section_viewed ;;
+    group_label: "Homepage"
+    group_item_label: "Section Viewed"
+
+    link: {
+      label: "Glean Dictionary reference for Homepage Section Viewed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/homepage_section_viewed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records when a section has been viewed on the homepage. See `homepage.viewed` for more details on what is considered a homepage view. This event refers to a section that has been scrolled to or seen on an homepage that has been viewed. The labels matches the values in `HomepageTelemetry.ItemType` under `sectionName`
 "
   }
 
@@ -2963,7 +2980,7 @@ browser menu option is tapped.
 
   dimension: metrics__counter__shopping_product_page_visits {
     label: "Shopping Product Page Visits"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.shopping_product_page_visits ;;
     type: number
     group_label: "Shopping"
@@ -2981,7 +2998,7 @@ browser menu option is tapped.
 
   dimension: metrics__boolean__shopping_settings_component_opted_out {
     label: "Shopping Settings Component Opted Out"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.shopping_settings_component_opted_out ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -3000,7 +3017,7 @@ Set in BrowserViewController and updated when changed by user.
 
   dimension: metrics__boolean__shopping_settings_disabled_ads {
     label: "Shopping Settings Disabled Ads"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.shopping_settings_disabled_ads ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -3019,7 +3036,7 @@ experience. Set in BrowserViewController and updated when changed by user.
 
   dimension: metrics__boolean__shopping_settings_nimbus_disabled_shopping {
     label: "Shopping Settings Nimbus Disabled Shopping"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.shopping_settings_nimbus_disabled_shopping ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -3037,7 +3054,7 @@ experience. Set in BrowserViewController and updated when changed by user.
 
   dimension: metrics__boolean__shopping_settings_user_has_onboarded {
     label: "Shopping Settings User Has Onboarded"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.shopping_settings_user_has_onboarded ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -3311,7 +3328,7 @@ button on a tab's toolbar.
 
   dimension: metrics__counter__tabs_new_tab_pressed {
     label: "Tabs New Tab Pressed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.tabs_new_tab_pressed ;;
     type: number
     group_label: "Tabs"
@@ -4693,6 +4710,51 @@ startup, as part of the initialization sequence.
     group_item_label: "Architecture"
   }
 
+  dimension: client_info__attribution__campaign {
+    sql: ${TABLE}.client_info.attribution.campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Campaign"
+  }
+
+  dimension: client_info__attribution__content {
+    sql: ${TABLE}.client_info.attribution.content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Content"
+  }
+
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.client_info.attribution.ext ;;
+    hidden: yes
+  }
+
+  dimension: client_info__attribution__medium {
+    sql: ${TABLE}.client_info.attribution.medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Medium"
+  }
+
+  dimension: client_info__attribution__source {
+    sql: ${TABLE}.client_info.attribution.source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Source"
+  }
+
+  dimension: client_info__attribution__term {
+    sql: ${TABLE}.client_info.attribution.term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Term"
+  }
+
   dimension: client_info__build_date {
     sql: ${TABLE}.client_info.build_date ;;
     type: string
@@ -4720,6 +4782,19 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.client_info.distribution.ext ;;
+    hidden: yes
+  }
+
+  dimension: client_info__distribution__name {
+    sql: ${TABLE}.client_info.distribution.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Distribution"
+    group_item_label: "Name"
   }
 
   dimension: client_info__first_run_date {
@@ -9176,6 +9251,47 @@ view: metrics__metrics__labeled_counter__glean_validation_pings_submitted {
 
 view: metrics__metrics__labeled_counter__history_selected_item {
   label: "History - Selected Item"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__homepage_section_viewed {
+  label: "Homepage - Section Viewed"
 
   dimension: document_id {
     type: string

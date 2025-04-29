@@ -141,6 +141,24 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__string__newtab_content_surface_id {
+    label: "Newtab Content Surface ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.newtab_content_surface_id ;;
+    type: string
+    group_label: "Newtab Content"
+    group_item_label: "Surface ID"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Content Surface ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_content_surface_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Surface id sent to the client from merino api
+"
+  }
+
   dimension: metrics__boolean__pocket_enabled {
     label: "Pocket Enabled"
     hidden: no
@@ -209,10 +227,77 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The telemetry id of the search engine.
-For application provided engines, this is either supplied by the
-configuration or from the first part of the associated WebExtension Id.
-For other engines, this is `other-<extensionName>`.
+    description: "Deprecated in Fx139, please use provider_id, partner_code,
+overridden_by_third_party and display_name instead.
+
+The telemetry id of the search engine.
+For example: \"engine1\"
+
+For application-provided engines, this is the identifier plus telemetry
+suffix supplied by the configuration.
+For other engines, this is `other-<engineName>`.
+"
+  }
+
+  dimension: metrics__boolean__search_engine_default_overridden_by_third_party {
+    label: "Search Engine Default Overridden By Third Party"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.search_engine_default_overridden_by_third_party ;;
+    type: yesno
+    group_label: "Search Engine Default"
+    group_item_label: "Overridden By Third Party"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Default Overridden By Third Party"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_default_overridden_by_third_party"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to true if the user's default search engine has been allowed to be
+overridden by a third-party add-on or OpenSearch engine.
+"
+  }
+
+  dimension: metrics__string__search_engine_default_partner_code {
+    label: "Search Engine Default Partner Code"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_engine_default_partner_code ;;
+    type: string
+    group_label: "Search Engine Default"
+    group_item_label: "Partner Code"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Default Partner Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_default_partner_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The partner code of the user's default search engine, if defined/known,
+that is being used for the search. Not all search engines have partner
+codes.
+
+May be empty for engines that are overridden by a third-party add-on or
+OpenSearch engine.
+"
+  }
+
+  dimension: metrics__string__search_engine_default_provider_id {
+    label: "Search Engine Default Provider ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_engine_default_provider_id ;;
+    type: string
+    group_label: "Search Engine Default"
+    group_item_label: "Provider ID"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Default Provider ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_default_provider_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The identifier of the user's default search engine if the search engine is
+an application provided engine. For user installed engines, this value will
+be `other`.
 "
   }
 
@@ -230,15 +315,83 @@ For other engines, this is `other-<extensionName>`.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The telemetry id of the search engine.
-For application provided engines, this is either supplied by the
-configuration or from the first part of the associated WebExtension Id.
-For other engines, this is `other-<extensionName>`.
+    description: "Deprecated in Fx139, please use provider_id, partner_code,
+overridden_by_third_party and display_name instead.
+
+The telemetry id of the search engine.
+For example: \"engine1\"
+
+For application-provided engines, this is the identifier plus telemetry
+suffix supplied by the configuration.
+For other engines, this is `other-<engineName>`.
+
 If this string is an empty string (`\"\"`), this means that one or both of
 the preferences `browser.search.separatePrivateDefault` and
 `browser.search.separatePrivateDefault.ui.enabled` are set to false.
 It is possible that the user selects the same private engine as for the
 default engine, and hence both versions of these fields will be filled in.
+"
+  }
+
+  dimension: metrics__boolean__search_engine_private_overridden_by_third_party {
+    label: "Search Engine Private Overridden By Third Party"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.search_engine_private_overridden_by_third_party ;;
+    type: yesno
+    group_label: "Search Engine Private"
+    group_item_label: "Overridden By Third Party"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Private Overridden By Third Party"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_private_overridden_by_third_party"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to true if the user's default search engine has been allowed to be
+overridden by a third-party add-on or OpenSearch engine.
+"
+  }
+
+  dimension: metrics__string__search_engine_private_partner_code {
+    label: "Search Engine Private Partner Code"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_engine_private_partner_code ;;
+    type: string
+    group_label: "Search Engine Private"
+    group_item_label: "Partner Code"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Private Partner Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_private_partner_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The partner code of the user's default search engine, if defined/known,
+that is being used for the search. Not all search engines have partner
+codes.
+
+May be empty for engines that are overridden by a third-party add-on or
+OpenSearch engine.
+"
+  }
+
+  dimension: metrics__string__search_engine_private_provider_id {
+    label: "Search Engine Private Provider ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_engine_private_provider_id ;;
+    type: string
+    group_label: "Search Engine Private"
+    group_item_label: "Provider ID"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Private Provider ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_private_provider_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The identifier of the user's default search engine if the search engine is
+an application provided engine. For user installed engines, this value will
+be `other`.
 "
   }
 
@@ -492,6 +645,56 @@ The labels are the `category.name` identifier of the metric.
     description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
   }
 
+  dimension: client_info__attribution__campaign {
+    sql: ${TABLE}.client_info.attribution.campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Campaign"
+    description: "The attribution campaign (e.g. 'mozilla-org')."
+  }
+
+  dimension: client_info__attribution__content {
+    sql: ${TABLE}.client_info.attribution.content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Content"
+    description: "The attribution content (e.g. 'firefoxview')."
+  }
+
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.client_info.attribution.ext ;;
+    hidden: yes
+  }
+
+  dimension: client_info__attribution__medium {
+    sql: ${TABLE}.client_info.attribution.medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Medium"
+    description: "The attribution medium (e.g. 'organic' for a search engine)."
+  }
+
+  dimension: client_info__attribution__source {
+    sql: ${TABLE}.client_info.attribution.source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Source"
+    description: "The attribution source (e.g. 'google-play')."
+  }
+
+  dimension: client_info__attribution__term {
+    sql: ${TABLE}.client_info.attribution.term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Term"
+    description: "The attribution term (e.g. 'browser with developer tools for android')."
+  }
+
   dimension: client_info__build_date {
     sql: ${TABLE}.client_info.build_date ;;
     type: string
@@ -523,6 +726,20 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Client Info"
     group_item_label: "Device Model"
     description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.client_info.distribution.ext ;;
+    hidden: yes
+  }
+
+  dimension: client_info__distribution__name {
+    sql: ${TABLE}.client_info.distribution.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Distribution"
+    group_item_label: "Name"
+    description: "The distribution name (e.g. 'MozillaOnline')."
   }
 
   dimension: client_info__first_run_date {

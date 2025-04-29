@@ -85,7 +85,7 @@ health check is started because of the return.
 
   dimension: metrics__timing_distribution__connection_health_no_signal_time__sum {
     label: "Connection Health No Signal Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.sum ;;
     type: number
     group_label: "Connection Health"
@@ -132,7 +132,7 @@ health check is started because of the return.
 
   dimension: metrics__timing_distribution__connection_health_pending_time__sum {
     label: "Connection Health Pending Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.connection_health_pending_time.sum ;;
     type: number
     group_label: "Connection Health"
@@ -175,7 +175,7 @@ health check is started because of the return.
 
   dimension: metrics__timing_distribution__connection_health_stable_time__sum {
     label: "Connection Health Stable Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.sum ;;
     type: number
     group_label: "Connection Health"
@@ -223,7 +223,7 @@ health check is started because of the return.
 
   dimension: metrics__timing_distribution__connection_health_unstable_time__sum {
     label: "Connection Health Unstable Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.sum ;;
     type: number
     group_label: "Connection Health"
@@ -475,6 +475,51 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Architecture"
   }
 
+  dimension: client_info__attribution__campaign {
+    sql: ${TABLE}.client_info.attribution.campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Campaign"
+  }
+
+  dimension: client_info__attribution__content {
+    sql: ${TABLE}.client_info.attribution.content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Content"
+  }
+
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.client_info.attribution.ext ;;
+    hidden: yes
+  }
+
+  dimension: client_info__attribution__medium {
+    sql: ${TABLE}.client_info.attribution.medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Medium"
+  }
+
+  dimension: client_info__attribution__source {
+    sql: ${TABLE}.client_info.attribution.source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Source"
+  }
+
+  dimension: client_info__attribution__term {
+    sql: ${TABLE}.client_info.attribution.term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Term"
+  }
+
   dimension: client_info__build_date {
     sql: ${TABLE}.client_info.build_date ;;
     type: string
@@ -502,6 +547,19 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.client_info.distribution.ext ;;
+    hidden: yes
+  }
+
+  dimension: client_info__distribution__name {
+    sql: ${TABLE}.client_info.distribution.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Distribution"
+    group_item_label: "Name"
   }
 
   dimension: client_info__first_run_date {

@@ -5,9 +5,21 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: status_category {
+  dimension: color_name {
+    sql: ${TABLE}.color_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: id {
     sql: ${TABLE}.id ;;
     type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 

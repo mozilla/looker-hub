@@ -11,6 +11,12 @@ view: payload_bytes_error_all {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: channel {
+    sql: ${TABLE}.channel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
