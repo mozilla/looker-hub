@@ -23,6 +23,7 @@ search_revenue_levers_monthly_revenue,
 search_revenue_levers_monthly_sap,
 search_revenue_levers_monthly_search_with_ads,
 search_revenue_levers_monthly_search_with_ads_organic,
+search_revenue_levers_monthly_submission_month,
 search_revenue_levers_monthly_tagged_follow_on,
 search_revenue_levers_monthly_tagged_sap,
 
@@ -71,6 +72,7 @@ search_revenue_levers_monthly.revenue AS search_revenue_levers_monthly_revenue,
 search_revenue_levers_monthly.sap AS search_revenue_levers_monthly_sap,
 search_revenue_levers_monthly.search_with_ads AS search_revenue_levers_monthly_search_with_ads,
 search_revenue_levers_monthly.search_with_ads_organic AS search_revenue_levers_monthly_search_with_ads_organic,
+search_revenue_levers_monthly.submission_month AS search_revenue_levers_monthly_submission_month,
 search_revenue_levers_monthly.tagged_follow_on AS search_revenue_levers_monthly_tagged_follow_on,
 search_revenue_levers_monthly.tagged_sap AS search_revenue_levers_monthly_tagged_sap,
 
@@ -110,6 +112,7 @@ search_revenue_levers_monthly_revenue,
 search_revenue_levers_monthly_sap,
 search_revenue_levers_monthly_search_with_ads,
 search_revenue_levers_monthly_search_with_ads_organic,
+search_revenue_levers_monthly_submission_month,
 search_revenue_levers_monthly_tagged_follow_on,
 search_revenue_levers_monthly_tagged_sap,
 
@@ -261,6 +264,23 @@ search_revenue_levers_monthly_tagged_sap,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: submission_month {
+    sql: ${TABLE}.search_revenue_levers_monthly_submission_month ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   set: metrics {

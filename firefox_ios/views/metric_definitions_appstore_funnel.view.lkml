@@ -51,6 +51,7 @@ looker_base_fields_user_agent__browser,
 looker_base_fields_user_agent__os,
 looker_base_fields_user_agent__version,
 appstore_funnel_country,
+appstore_funnel_first_seen,
 appstore_funnel_first_time_downloads,
 appstore_funnel_new_profiles,
 appstore_funnel_redownloads,
@@ -128,6 +129,7 @@ looker_base_fields.user_agent.browser AS looker_base_fields_user_agent__browser,
 looker_base_fields.user_agent.os AS looker_base_fields_user_agent__os,
 looker_base_fields.user_agent.version AS looker_base_fields_user_agent__version,
 appstore_funnel.country AS appstore_funnel_country,
+appstore_funnel.first_seen AS appstore_funnel_first_seen,
 appstore_funnel.first_time_downloads AS appstore_funnel_first_time_downloads,
 appstore_funnel.new_profiles AS appstore_funnel_new_profiles,
 appstore_funnel.redownloads AS appstore_funnel_redownloads,
@@ -213,6 +215,7 @@ looker_base_fields_user_agent__browser,
 looker_base_fields_user_agent__os,
 looker_base_fields_user_agent__version,
 appstore_funnel_country,
+appstore_funnel_first_seen,
 appstore_funnel_first_time_downloads,
 appstore_funnel_new_profiles,
 appstore_funnel_redownloads,
@@ -638,6 +641,23 @@ appstore_funnel_total_downloads,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.appstore_funnel_first_seen ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   set: metrics {

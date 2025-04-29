@@ -9,7 +9,8 @@ view: metric_definitions_www_site_landing_page_metrics {
     sql: SELECT
                 SUM(downloads) AS firefox_downloads_v1,
 
-                www_site_landing_page_metrics_downloads,
+                www_site_landing_page_metrics_date,
+www_site_landing_page_metrics_downloads,
 www_site_landing_page_metrics_operating_system,
 
                 NULL AS client_id,
@@ -43,7 +44,8 @@ www_site_landing_page_metrics_operating_system,
                 (
                     SELECT
                         www_site_landing_page_metrics.*,
-                        www_site_landing_page_metrics.downloads AS www_site_landing_page_metrics_downloads,
+                        www_site_landing_page_metrics.date AS www_site_landing_page_metrics_date,
+www_site_landing_page_metrics.downloads AS www_site_landing_page_metrics_downloads,
 www_site_landing_page_metrics.operating_system AS www_site_landing_page_metrics_operating_system,
 
                     FROM
@@ -76,7 +78,8 @@ www_site_landing_page_metrics.operating_system AS www_site_landing_page_metrics_
                 
                 )
             GROUP BY
-                www_site_landing_page_metrics_downloads,
+                www_site_landing_page_metrics_date,
+www_site_landing_page_metrics_downloads,
 www_site_landing_page_metrics_operating_system,
 
                 client_id,
@@ -127,6 +130,23 @@ www_site_landing_page_metrics_operating_system,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: date {
+    sql: ${TABLE}.www_site_landing_page_metrics_date ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   measure: firefox_downloads_v1_sum {

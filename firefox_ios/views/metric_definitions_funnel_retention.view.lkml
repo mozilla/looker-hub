@@ -61,12 +61,13 @@ funnel_retention_app_version,
 funnel_retention_country,
 funnel_retention_device_manufacturer,
 funnel_retention_device_type,
+funnel_retention_first_seen,
 funnel_retention_is_mobile,
 funnel_retention_is_suspicious_device_client,
 funnel_retention_lifecycle_stage,
 funnel_retention_locale,
+funnel_retention_metric,
 funnel_retention_new_profiles_metric_date,
-funnel_retention_normalized_channel,
 funnel_retention_paid_vs_organic,
 funnel_retention_ping_sent_metric_date,
 funnel_retention_ping_sent_week_4,
@@ -155,12 +156,13 @@ funnel_retention.app_version AS funnel_retention_app_version,
 funnel_retention.country AS funnel_retention_country,
 funnel_retention.device_manufacturer AS funnel_retention_device_manufacturer,
 funnel_retention.device_type AS funnel_retention_device_type,
+funnel_retention.first_seen AS funnel_retention_first_seen,
 funnel_retention.is_mobile AS funnel_retention_is_mobile,
 funnel_retention.is_suspicious_device_client AS funnel_retention_is_suspicious_device_client,
 funnel_retention.lifecycle_stage AS funnel_retention_lifecycle_stage,
 funnel_retention.locale AS funnel_retention_locale,
+funnel_retention.metric AS funnel_retention_metric,
 funnel_retention.new_profiles_metric_date AS funnel_retention_new_profiles_metric_date,
-funnel_retention.normalized_channel AS funnel_retention_normalized_channel,
 funnel_retention.paid_vs_organic AS funnel_retention_paid_vs_organic,
 funnel_retention.ping_sent_metric_date AS funnel_retention_ping_sent_metric_date,
 funnel_retention.ping_sent_week_4 AS funnel_retention_ping_sent_week_4,
@@ -258,12 +260,13 @@ funnel_retention_app_version,
 funnel_retention_country,
 funnel_retention_device_manufacturer,
 funnel_retention_device_type,
+funnel_retention_first_seen,
 funnel_retention_is_mobile,
 funnel_retention_is_suspicious_device_client,
 funnel_retention_lifecycle_stage,
 funnel_retention_locale,
+funnel_retention_metric,
 funnel_retention_new_profiles_metric_date,
-funnel_retention_normalized_channel,
 funnel_retention_paid_vs_organic,
 funnel_retention_ping_sent_metric_date,
 funnel_retention_ping_sent_week_4,
@@ -815,6 +818,40 @@ funnel_retention_retained_week_4_new_profiles,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.funnel_retention_first_seen ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
+  dimension_group: metric {
+    sql: ${TABLE}.funnel_retention_metric ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   set: metrics {

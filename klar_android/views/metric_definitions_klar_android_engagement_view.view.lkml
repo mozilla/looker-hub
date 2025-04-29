@@ -55,11 +55,11 @@ klar_android_engagement_view_country,
 klar_android_engagement_view_dau,
 klar_android_engagement_view_device_manufacturer,
 klar_android_engagement_view_device_type,
+klar_android_engagement_view_first_seen,
 klar_android_engagement_view_is_mobile,
 klar_android_engagement_view_lifecycle_stage,
 klar_android_engagement_view_locale,
 klar_android_engagement_view_mau,
-klar_android_engagement_view_normalized_channel,
 klar_android_engagement_view_paid_vs_organic,
 klar_android_engagement_view_wau,
 
@@ -140,11 +140,11 @@ klar_android_engagement_view.country AS klar_android_engagement_view_country,
 klar_android_engagement_view.dau AS klar_android_engagement_view_dau,
 klar_android_engagement_view.device_manufacturer AS klar_android_engagement_view_device_manufacturer,
 klar_android_engagement_view.device_type AS klar_android_engagement_view_device_type,
+klar_android_engagement_view.first_seen AS klar_android_engagement_view_first_seen,
 klar_android_engagement_view.is_mobile AS klar_android_engagement_view_is_mobile,
 klar_android_engagement_view.lifecycle_stage AS klar_android_engagement_view_lifecycle_stage,
 klar_android_engagement_view.locale AS klar_android_engagement_view_locale,
 klar_android_engagement_view.mau AS klar_android_engagement_view_mau,
-klar_android_engagement_view.normalized_channel AS klar_android_engagement_view_normalized_channel,
 klar_android_engagement_view.paid_vs_organic AS klar_android_engagement_view_paid_vs_organic,
 klar_android_engagement_view.wau AS klar_android_engagement_view_wau,
 
@@ -234,11 +234,11 @@ klar_android_engagement_view_country,
 klar_android_engagement_view_dau,
 klar_android_engagement_view_device_manufacturer,
 klar_android_engagement_view_device_type,
+klar_android_engagement_view_first_seen,
 klar_android_engagement_view_is_mobile,
 klar_android_engagement_view_lifecycle_stage,
 klar_android_engagement_view_locale,
 klar_android_engagement_view_mau,
-klar_android_engagement_view_normalized_channel,
 klar_android_engagement_view_paid_vs_organic,
 klar_android_engagement_view_wau,
 
@@ -699,6 +699,23 @@ klar_android_engagement_view_wau,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.klar_android_engagement_view_first_seen ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   set: metrics {
