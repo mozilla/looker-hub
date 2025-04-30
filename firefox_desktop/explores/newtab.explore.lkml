@@ -10,7 +10,7 @@ include: "/looker-hub/firefox_desktop/datagroups/newtab_last_updated.datagroup.l
 explore: newtab {
   sql_always_where: ${newtab.submission_date} >= '2010-01-01' ;;
   view_label: " Newtab"
-  description: "Explore for the newtab ping. Newtab-related instrumentation. Can be disabled via the `newtabPingEnabled` variable of the `glean` Nimbus feature, or the `browser.newtabpage.ping.enabled` pref."
+  description: "Explore for the newtab ping. Newtab-related instrumentation. Can be disabled via the `browser.newtabpage.ping.enabled` pref."
   view_name: newtab
 
   join: newtab__metrics__labeled_counter__glean_error_invalid_label {
