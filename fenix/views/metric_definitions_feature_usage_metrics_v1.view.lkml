@@ -68,6 +68,7 @@ feature_usage_metrics_v1_logins_deleted,
 feature_usage_metrics_v1_logins_deleted_users,
 feature_usage_metrics_v1_logins_modified,
 feature_usage_metrics_v1_logins_modified_users,
+feature_usage_metrics_v1_metric,
 feature_usage_metrics_v1_metrics_default_browser,
 feature_usage_metrics_v1_metrics_default_browser_users,
 feature_usage_metrics_v1_metrics_desktop_bookmarks_count,
@@ -171,6 +172,7 @@ feature_usage_metrics_v1.logins_deleted AS feature_usage_metrics_v1_logins_delet
 feature_usage_metrics_v1.logins_deleted_users AS feature_usage_metrics_v1_logins_deleted_users,
 feature_usage_metrics_v1.logins_modified AS feature_usage_metrics_v1_logins_modified,
 feature_usage_metrics_v1.logins_modified_users AS feature_usage_metrics_v1_logins_modified_users,
+feature_usage_metrics_v1.metric_date AS feature_usage_metrics_v1_metric,
 feature_usage_metrics_v1.metrics_default_browser AS feature_usage_metrics_v1_metrics_default_browser,
 feature_usage_metrics_v1.metrics_default_browser_users AS feature_usage_metrics_v1_metrics_default_browser_users,
 feature_usage_metrics_v1.metrics_desktop_bookmarks_count AS feature_usage_metrics_v1_metrics_desktop_bookmarks_count,
@@ -278,6 +280,7 @@ feature_usage_metrics_v1_logins_deleted,
 feature_usage_metrics_v1_logins_deleted_users,
 feature_usage_metrics_v1_logins_modified,
 feature_usage_metrics_v1_logins_modified_users,
+feature_usage_metrics_v1_metric,
 feature_usage_metrics_v1_metrics_default_browser,
 feature_usage_metrics_v1_metrics_default_browser_users,
 feature_usage_metrics_v1_metrics_desktop_bookmarks_count,
@@ -859,6 +862,23 @@ feature_usage_metrics_v1_metrics_tabs_open_count_users,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: metric {
+    sql: ${TABLE}.feature_usage_metrics_v1_metric ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   measure: bookmarks_add_v1_sum {

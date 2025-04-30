@@ -1477,6 +1477,23 @@ items that appear inside a group, and those that do not.
 "
   }
 
+  dimension: metrics__labeled_counter__homepage_section_viewed {
+    label: "Homepage Section Viewed"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.homepage_section_viewed ;;
+    group_label: "Homepage"
+    group_item_label: "Section Viewed"
+
+    link: {
+      label: "Glean Dictionary reference for Homepage Section Viewed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/homepage_section_viewed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records when a section has been viewed on the homepage. See `homepage.viewed` for more details on what is considered a homepage view. This event refers to a section that has been scrolled to or seen on an homepage that has been viewed. The labels matches the values in `HomepageTelemetry.ItemType` under `sectionName`
+"
+  }
+
   dimension: metrics__counter__inactive_tabs_tray_inactive_tab_shown {
     label: "Inactive Tabs Tray Inactive Tab Shown"
     hidden: no
@@ -9234,6 +9251,47 @@ view: metrics__metrics__labeled_counter__glean_validation_pings_submitted {
 
 view: metrics__metrics__labeled_counter__history_selected_item {
   label: "History - Selected Item"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__homepage_section_viewed {
+  label: "Homepage - Section Viewed"
 
   dimension: document_id {
     type: string

@@ -761,6 +761,15 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__boolean__pkcs11_external_trust_anchor_module_loaded {
+    sql: ${TABLE}.metrics.boolean.pkcs11_external_trust_anchor_module_loaded ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Pkcs11 External Trust Anchor Module Loaded"
+    description: "Whether or not an external trust anchor module was loaded."
+  }
+
   dimension: metrics__boolean__policies_is_enterprise {
     sql: ${TABLE}.metrics.boolean.policies_is_enterprise ;;
     type: yesno
@@ -1940,6 +1949,26 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__networking_doh_heuristics_attempts {
+    sql: ${TABLE}.metrics.counter.networking_doh_heuristics_attempts ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Doh Heuristics Attempts"
+    description: "The number of times we ran DoH heuristics. This metric was generated to correspond to the Legacy Telemetry scalar networking.doh_heuristics_attempts.
+"
+  }
+
+  dimension: metrics__counter__networking_doh_heuristics_pass_count {
+    sql: ${TABLE}.metrics.counter.networking_doh_heuristics_pass_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Doh Heuristics Pass Count"
+    description: "The number of times we passed DoH heuristics. This metric was generated to correspond to the Legacy Telemetry scalar networking.doh_heuristics_pass_count.
+"
+  }
+
   dimension: metrics__counter__networking_os_socket_limit_reached {
     sql: ${TABLE}.metrics.counter.networking_os_socket_limit_reached ;;
     type: number
@@ -2199,6 +2228,16 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     group_label: "Metrics Counter"
     group_item_label: "Printing Silent Print"
     description: "A counter incremented every time a silent print (a print without a print settings dialog being opened) is initiated.  This happens when extensions invoke ExtensionAPI.tabs.saveAsPDF, for example, or when the print.always_print_silent pref is set. This metric was generated to correspond to the Legacy Telemetry scalar printing.silent_print.
+"
+  }
+
+  dimension: metrics__counter__quotamanager_restore_origin_directory_metadata_counter {
+    sql: ${TABLE}.metrics.counter.quotamanager_restore_origin_directory_metadata_counter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Quotamanager Restore Origin Directory Metadata Counter"
+    description: "Increments each time QuotaManager::RestoreDirectoryMetadata2 is called to restore origin directory metadata. This typically occurs when expected directory metadata is missing or needs to be regenerated. The counter is incremented regardless of whether the restoration ultimately succeeds or fails. This can provide insight into the impacts of specific code changes, including potential optimizations or regressions.
 "
   }
 
@@ -9764,6 +9803,13 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__labeled_boolean__networking_doh_heuristic_ever_tripped {
+    sql: ${TABLE}.metrics.labeled_boolean.networking_doh_heuristic_ever_tripped ;;
+    hidden: yes
+    description: "True if this heuristic (key) was ever tripped during the session. This metric was generated to correspond to the Legacy Telemetry scalar networking.doh_heuristic_ever_tripped.
+"
+  }
+
   dimension: metrics__labeled_boolean__oskeystore_self_test {
     sql: ${TABLE}.metrics.labeled_boolean.oskeystore_self_test ;;
     hidden: yes
@@ -14233,6 +14279,58 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     hidden: yes
   }
 
+  dimension: metrics__object__addons_active_addons {
+    sql: ${TABLE}.metrics.object.addons_active_addons ;;
+    hidden: yes
+    description: "The list of currently enabled addons.
+
+Some of the addon fields are not available during startup. The fields
+that will always be present are id, version, addonType, updateDay, scope,
+isSystem, isWebExtension, and multiprocessCompatible. All the other
+fields become present shortly after the `sessionstore-windows-restored`
+observer topic is notified.
+
+This metric is an echo of the Legacy Telemetry Environment field
+addons.activeAddons. Like its counterpart, it will only have data in
+Firefox Desktop and at times and on platforms where the environment would
+have values.
+"
+  }
+
+  dimension: metrics__object__addons_active_g_m_plugins {
+    sql: ${TABLE}.metrics.object.addons_active_g_m_plugins ;;
+    hidden: yes
+    description: "The list of currently enabled Gecko Media Plugins.
+
+Some of the addon fields are not available during startup. The fields
+that will always be present are id and version. All the other
+fields become present shortly after the `sessionstore-windows-restored`
+observer topic is notified.
+
+This metric is an echo of the Legacy Telemetry Environment field
+addons.activeGMPlugins. Like its counterpart, it will only have data in
+Firefox Desktop and at times and on platforms where the environment would
+have values.
+"
+  }
+
+  dimension: metrics__object__addons_theme {
+    sql: ${TABLE}.metrics.object.addons_theme ;;
+    hidden: yes
+    description: "The currently active theme.
+
+Some of the addon fields are not available during startup. The fields
+that will always be present are id, version, updateDay, and scope. All
+the other fields become present shortly after the
+`sessionstore-windows-restored` observer topic is notified.
+
+This metric is an echo of the Legacy Telemetry Environment field
+addons.theme. Like its counterpart, it will only have data in Firefox
+Desktop and at times and on platforms where the environment would have
+values.
+"
+  }
+
   dimension: metrics__object__fog_validation_some_object {
     sql: ${TABLE}.metrics.object.fog_validation_some_object ;;
     hidden: yes
@@ -14501,6 +14599,16 @@ API for the purposes of Validation (hence GVSV).
     group_item_label: "Launcher Process State"
     description: "Whether, and in what mode, the launcher process is enabled (or not).
 See `nsIXULRuntime.launcherProcessState`
+"
+  }
+
+  dimension: metrics__quantity__networking_doh_heuristics_result {
+    sql: ${TABLE}.metrics.quantity.networking_doh_heuristics_result ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Networking Doh Heuristics Result"
+    description: "The value of this scalar indicates the result of the last heuristic run. 0: \"incomplete\" 1: \"pass\" 2: \"opt-out\" 3: \"manually-disabled\" 4: \"manually-enabled\" 5: \"enterprise-disabled\" 6: \"enterprise- present\" 7: \"enterprise-enabled\" 8: \"vpn\" 9: \"proxy\" 10: \"nrpt\" 11: \"parental\" 12: \"modifiedRoots\" 13: \"thirdPartyRoots\" 14: \"google\" 15: \"youtube\" 16: \"zscaler\" 17: \"canary\" 18: \"ignored\" This metric was generated to correspond to the Legacy Telemetry scalar networking.doh_heuristics_result.
 "
   }
 
@@ -45541,6 +45649,20 @@ view: metrics_table__metrics__labeled_boolean__media_video_hd_hardware_decoding_
 }
 
 view: metrics_table__metrics__labeled_boolean__mediadrm_decryption {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__networking_doh_heuristic_ever_tripped {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

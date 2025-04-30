@@ -4399,7 +4399,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__labeled_boolean__networking_doh_heuristic_ever_tripped {
     label: "Networking Doh Heuristic Ever Tripped"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_boolean.networking_doh_heuristic_ever_tripped ;;
     type: string
     group_label: "Networking"
@@ -4417,7 +4417,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__networking_doh_heuristics_attempts {
     label: "Networking Doh Heuristics Attempts"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.networking_doh_heuristics_attempts ;;
     type: number
     group_label: "Networking"
@@ -4435,7 +4435,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__networking_doh_heuristics_pass_count {
     label: "Networking Doh Heuristics Pass Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.networking_doh_heuristics_pass_count ;;
     type: number
     group_label: "Networking"
@@ -4453,7 +4453,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__quantity__networking_doh_heuristics_result {
     label: "Networking Doh Heuristics Result"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.networking_doh_heuristics_result ;;
     type: number
     group_label: "Networking"
@@ -4503,6 +4503,42 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Records whether the browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar preference is enabled or disabled
+"
+  }
+
+  dimension: metrics__labeled_boolean__newtab_metric_registered {
+    label: "Newtab Metric Registered"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.newtab_metric_registered ;;
+    type: string
+    group_label: "Newtab"
+    group_item_label: "Metric Registered"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Metric Registered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_metric_registered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records technical data about whether the metric registration at runtime succeeded
+"
+  }
+
+  dimension: metrics__labeled_boolean__newtab_ping_registered {
+    label: "Newtab Ping Registered"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.newtab_ping_registered ;;
+    type: string
+    group_label: "Newtab"
+    group_item_label: "Ping Registered"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Ping Registered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_ping_registered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records technical data about whether the ping registration at runtime succeeded
 "
   }
 
@@ -5567,7 +5603,10 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The telemetry id of the search engine.
+    description: "Deprecated in Fx139, please use provider_id, partner_code,
+overridden_by_third_party and display_name instead.
+
+The telemetry id of the search engine.
 For example: \"engine1\"
 
 For application-provided engines, this is the identifier plus telemetry
@@ -5600,6 +5639,68 @@ For example:
   `[user]` for a search engine defined by the user or generated from a
   web page.
 Note: this metric is truncated at 100 characters.
+"
+  }
+
+  dimension: metrics__boolean__search_engine_default_overridden_by_third_party {
+    label: "Search Engine Default Overridden By Third Party"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.search_engine_default_overridden_by_third_party ;;
+    type: yesno
+    group_label: "Search Engine Default"
+    group_item_label: "Overridden By Third Party"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Default Overridden By Third Party"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_default_overridden_by_third_party"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to true if the user's default search engine has been allowed to be
+overridden by a third-party add-on or OpenSearch engine.
+"
+  }
+
+  dimension: metrics__string__search_engine_default_partner_code {
+    label: "Search Engine Default Partner Code"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_engine_default_partner_code ;;
+    type: string
+    group_label: "Search Engine Default"
+    group_item_label: "Partner Code"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Default Partner Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_default_partner_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The partner code of the user's default search engine, if defined/known,
+that is being used for the search. Not all search engines have partner
+codes.
+
+May be empty for engines that are overridden by a third-party add-on or
+OpenSearch engine.
+"
+  }
+
+  dimension: metrics__string__search_engine_default_provider_id {
+    label: "Search Engine Default Provider ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_engine_default_provider_id ;;
+    type: string
+    group_label: "Search Engine Default"
+    group_item_label: "Provider ID"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Default Provider ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_default_provider_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The identifier of the user's default search engine if the search engine is
+an application provided engine. For user installed engines, this value will
+be `other`.
 "
   }
 
@@ -5684,7 +5785,10 @@ default engine, and hence both versions of these fields will be filled in.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The telemetry id of the search engine.
+    description: "Deprecated in Fx139, please use provider_id, partner_code,
+overridden_by_third_party and display_name instead.
+
+The telemetry id of the search engine.
 For example: \"engine1\"
 
 For application-provided engines, this is the identifier plus telemetry
@@ -5729,6 +5833,68 @@ the preferences `browser.search.separatePrivateDefault` and
 `browser.search.separatePrivateDefault.ui.enabled` are set to false.
 It is possible that the user selects the same private engine as for the
 default engine, and hence both versions of these fields will be filled in.
+"
+  }
+
+  dimension: metrics__boolean__search_engine_private_overridden_by_third_party {
+    label: "Search Engine Private Overridden By Third Party"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.search_engine_private_overridden_by_third_party ;;
+    type: yesno
+    group_label: "Search Engine Private"
+    group_item_label: "Overridden By Third Party"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Private Overridden By Third Party"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_private_overridden_by_third_party"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to true if the user's default search engine has been allowed to be
+overridden by a third-party add-on or OpenSearch engine.
+"
+  }
+
+  dimension: metrics__string__search_engine_private_partner_code {
+    label: "Search Engine Private Partner Code"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_engine_private_partner_code ;;
+    type: string
+    group_label: "Search Engine Private"
+    group_item_label: "Partner Code"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Private Partner Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_private_partner_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The partner code of the user's default search engine, if defined/known,
+that is being used for the search. Not all search engines have partner
+codes.
+
+May be empty for engines that are overridden by a third-party add-on or
+OpenSearch engine.
+"
+  }
+
+  dimension: metrics__string__search_engine_private_provider_id {
+    label: "Search Engine Private Provider ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_engine_private_provider_id ;;
+    type: string
+    group_label: "Search Engine Private"
+    group_item_label: "Provider ID"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Private Provider ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_private_provider_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The identifier of the user's default search engine if the search engine is
+an application provided engine. For user installed engines, this value will
+be `other`.
 "
   }
 
@@ -6686,6 +6852,23 @@ in browser.
     }
 
     description: "Records the number of groups present in the tab bar, split by expanded or collapsed.
+"
+  }
+
+  dimension: metrics__labeled_counter__tabgroup_group_interactions {
+    label: "Tabgroup Group Interactions"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.tabgroup_group_interactions ;;
+    group_label: "Tabgroup"
+    group_item_label: "Group Interactions"
+
+    link: {
+      label: "Glean Dictionary reference for Tabgroup Group Interactions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/tabgroup_group_interactions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records interactions with tab groups: expand/collapse; rename, change color; save/reopen/delete; ungroup tabs; open from tab menu/recent/ Awesomebar; move to another window
 "
   }
 
@@ -27145,6 +27328,23 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__boolean__pkcs11_external_trust_anchor_module_loaded {
+    label: "Pkcs11 External Trust Anchor Module Loaded"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.pkcs11_external_trust_anchor_module_loaded ;;
+    type: yesno
+    group_label: "Pkcs11"
+    group_item_label: "External Trust Anchor Module Loaded"
+
+    link: {
+      label: "Glean Dictionary reference for Pkcs11 External Trust Anchor Module Loaded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pkcs11_external_trust_anchor_module_loaded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not an external trust anchor module was loaded."
+  }
+
   dimension: metrics__rate__pkcs11_nss_cert_db__numerator {
     label: "Pkcs11 Nss Cert DB Numerator"
     hidden: yes
@@ -28118,7 +28318,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__privacy_sanitize_load_time__sum {
     label: "Privacy Sanitize Load Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.sum ;;
     type: number
     group_label: "Privacy Sanitize"
@@ -28407,6 +28607,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "This metric logs the total time required to initialize temporary storage within the QuotaManager after startup on the I/O thread. The duration excludes any periods when the system was suspended (e.g. system sleep or hibernation), to better reflect actual time spent performing temporary storage initialization. The primary goal is to measure the actual runtime cost of temporary storage initialization under typical conditions, without distortion from system-level suspension delays. This data can help detect performance regressions or improvements during startup-related phases, particularly for users with significant amounts of temporary storage data on disk.
+"
+  }
+
+  dimension: metrics__counter__quotamanager_restore_origin_directory_metadata_counter {
+    label: "Quotamanager Restore Origin Directory Metadata Counter"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.quotamanager_restore_origin_directory_metadata_counter ;;
+    type: number
+    group_label: "Quotamanager"
+    group_item_label: "Restore Origin Directory Metadata Counter"
+
+    link: {
+      label: "Glean Dictionary reference for Quotamanager Restore Origin Directory Metadata Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quotamanager_restore_origin_directory_metadata_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Increments each time QuotaManager::RestoreDirectoryMetadata2 is called to restore origin directory metadata. This typically occurs when expected directory metadata is missing or needs to be regenerated. The counter is incremented regardless of whether the restoration ultimately succeeds or fails. This can provide insight into the impacts of specific code changes, including potential optimizations or regressions.
 "
   }
 
@@ -40469,6 +40687,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Printing Silent Print"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/printing_silent_print"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: quotamanager_restore_origin_directory_metadata_counter {
+    type: sum
+    sql: ${metrics__counter__quotamanager_restore_origin_directory_metadata_counter} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Quotamanager Restore Origin Directory Metadata Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quotamanager_restore_origin_directory_metadata_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: quotamanager_restore_origin_directory_metadata_counter_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__quotamanager_restore_origin_directory_metadata_counter: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Quotamanager Restore Origin Directory Metadata Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quotamanager_restore_origin_directory_metadata_counter"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -58624,6 +58867,47 @@ view: metrics__metrics__labeled_counter__suggest_relevance_status {
   }
 }
 
+view: metrics__metrics__labeled_counter__tabgroup_group_interactions {
+  label: "Tabgroup - Group Interactions"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__tabgroup_tab_interactions {
   label: "Tabgroup - Tab Interactions"
 
@@ -59715,19 +59999,19 @@ view: metrics__metrics__labeled_counter__update_skip_startup_update_reason {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -68861,6 +69145,34 @@ view: metrics__metrics__labeled_boolean__mediadrm_decryption {
 }
 
 view: metrics__metrics__labeled_boolean__networking_doh_heuristic_ever_tripped {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_boolean__newtab_metric_registered {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_boolean__newtab_ping_registered {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

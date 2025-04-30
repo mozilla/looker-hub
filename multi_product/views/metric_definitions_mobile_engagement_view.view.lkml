@@ -20,6 +20,7 @@ mobile_engagement_view_dau,
 mobile_engagement_view_device_manufacturer,
 mobile_engagement_view_device_type,
 mobile_engagement_view_distribution_id,
+mobile_engagement_view_first_seen,
 mobile_engagement_view_install_source,
 mobile_engagement_view_is_mobile,
 mobile_engagement_view_is_suspicious_device_client,
@@ -77,6 +78,7 @@ mobile_engagement_view.dau AS mobile_engagement_view_dau,
 mobile_engagement_view.device_manufacturer AS mobile_engagement_view_device_manufacturer,
 mobile_engagement_view.device_type AS mobile_engagement_view_device_type,
 mobile_engagement_view.distribution_id AS mobile_engagement_view_distribution_id,
+mobile_engagement_view.first_seen_date AS mobile_engagement_view_first_seen,
 mobile_engagement_view.install_source AS mobile_engagement_view_install_source,
 mobile_engagement_view.is_mobile AS mobile_engagement_view_is_mobile,
 mobile_engagement_view.is_suspicious_device_client AS mobile_engagement_view_is_suspicious_device_client,
@@ -129,6 +131,7 @@ mobile_engagement_view_dau,
 mobile_engagement_view_device_manufacturer,
 mobile_engagement_view_device_type,
 mobile_engagement_view_distribution_id,
+mobile_engagement_view_first_seen,
 mobile_engagement_view_install_source,
 mobile_engagement_view_is_mobile,
 mobile_engagement_view_is_suspicious_device_client,
@@ -358,6 +361,23 @@ mobile_engagement_view_wau,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.mobile_engagement_view_first_seen ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   set: metrics {

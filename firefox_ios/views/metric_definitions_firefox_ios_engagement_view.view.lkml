@@ -59,12 +59,12 @@ firefox_ios_engagement_view_country,
 firefox_ios_engagement_view_dau,
 firefox_ios_engagement_view_device_manufacturer,
 firefox_ios_engagement_view_device_type,
+firefox_ios_engagement_view_first_seen,
 firefox_ios_engagement_view_is_mobile,
 firefox_ios_engagement_view_is_suspicious_device_client,
 firefox_ios_engagement_view_lifecycle_stage,
 firefox_ios_engagement_view_locale,
 firefox_ios_engagement_view_mau,
-firefox_ios_engagement_view_normalized_channel,
 firefox_ios_engagement_view_paid_vs_organic,
 firefox_ios_engagement_view_wau,
 
@@ -149,12 +149,12 @@ firefox_ios_engagement_view.country AS firefox_ios_engagement_view_country,
 firefox_ios_engagement_view.dau AS firefox_ios_engagement_view_dau,
 firefox_ios_engagement_view.device_manufacturer AS firefox_ios_engagement_view_device_manufacturer,
 firefox_ios_engagement_view.device_type AS firefox_ios_engagement_view_device_type,
+firefox_ios_engagement_view.first_seen_date AS firefox_ios_engagement_view_first_seen,
 firefox_ios_engagement_view.is_mobile AS firefox_ios_engagement_view_is_mobile,
 firefox_ios_engagement_view.is_suspicious_device_client AS firefox_ios_engagement_view_is_suspicious_device_client,
 firefox_ios_engagement_view.lifecycle_stage AS firefox_ios_engagement_view_lifecycle_stage,
 firefox_ios_engagement_view.locale AS firefox_ios_engagement_view_locale,
 firefox_ios_engagement_view.mau AS firefox_ios_engagement_view_mau,
-firefox_ios_engagement_view.normalized_channel AS firefox_ios_engagement_view_normalized_channel,
 firefox_ios_engagement_view.paid_vs_organic AS firefox_ios_engagement_view_paid_vs_organic,
 firefox_ios_engagement_view.wau AS firefox_ios_engagement_view_wau,
 
@@ -248,12 +248,12 @@ firefox_ios_engagement_view_country,
 firefox_ios_engagement_view_dau,
 firefox_ios_engagement_view_device_manufacturer,
 firefox_ios_engagement_view_device_type,
+firefox_ios_engagement_view_first_seen,
 firefox_ios_engagement_view_is_mobile,
 firefox_ios_engagement_view_is_suspicious_device_client,
 firefox_ios_engagement_view_lifecycle_stage,
 firefox_ios_engagement_view_locale,
 firefox_ios_engagement_view_mau,
-firefox_ios_engagement_view_normalized_channel,
 firefox_ios_engagement_view_paid_vs_organic,
 firefox_ios_engagement_view_wau,
 
@@ -749,6 +749,23 @@ firefox_ios_engagement_view_wau,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.firefox_ios_engagement_view_first_seen ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   set: metrics {

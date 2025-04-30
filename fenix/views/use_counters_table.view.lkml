@@ -12787,6 +12787,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Deprecated Ops Page Window Content Untrusted"
   }
 
+  dimension: metrics__counter__use_counter_doc_animation_commitstyles {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_animation_commitstyles ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Animation Commitstyles"
+  }
+
   dimension: metrics__counter__use_counter_doc_clipboard_read {
     sql: ${TABLE}.metrics.counter.use_counter_doc_clipboard_read ;;
     type: number
@@ -12809,6 +12817,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Clipboard Write"
+  }
+
+  dimension: metrics__counter__use_counter_doc_commit_styles_non_filling_final_value {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_commit_styles_non_filling_final_value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Commit Styles Non Filling Final Value"
   }
 
   dimension: metrics__counter__use_counter_doc_components_shim_resolved {
@@ -14265,6 +14281,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Optimize Promise Lookup Fuse"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_regexp_symbol_protocol_on_primitive {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_regexp_symbol_protocol_on_primitive ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Regexp Symbol Protocol On Primitive"
   }
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_2 {
@@ -16307,6 +16331,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc You Tube Flash Embed"
   }
 
+  dimension: metrics__counter__use_counter_page_animation_commitstyles {
+    sql: ${TABLE}.metrics.counter.use_counter_page_animation_commitstyles ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Animation Commitstyles"
+  }
+
   dimension: metrics__counter__use_counter_page_clipboard_read {
     sql: ${TABLE}.metrics.counter.use_counter_page_clipboard_read ;;
     type: number
@@ -16329,6 +16361,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Clipboard Write"
+  }
+
+  dimension: metrics__counter__use_counter_page_commit_styles_non_filling_final_value {
+    sql: ${TABLE}.metrics.counter.use_counter_page_commit_styles_non_filling_final_value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Commit Styles Non Filling Final Value"
   }
 
   dimension: metrics__counter__use_counter_page_components_shim_resolved {
@@ -17785,6 +17825,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Optimize Promise Lookup Fuse"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_regexp_symbol_protocol_on_primitive {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_regexp_symbol_protocol_on_primitive ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Regexp Symbol Protocol On Primitive"
   }
 
   dimension: metrics__counter__use_counter_page_js_subclassing_array_type_2 {

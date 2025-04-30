@@ -31,6 +31,7 @@ desktop_engagement_v1_attribution_variation,
 desktop_engagement_v1_country,
 desktop_engagement_v1_dau,
 desktop_engagement_v1_distribution_id,
+desktop_engagement_v1_first_seen,
 desktop_engagement_v1_is_desktop,
 desktop_engagement_v1_lifecycle_stage,
 desktop_engagement_v1_locale,
@@ -93,6 +94,7 @@ desktop_engagement_v1.attribution_variation AS desktop_engagement_v1_attribution
 desktop_engagement_v1.country AS desktop_engagement_v1_country,
 desktop_engagement_v1.dau AS desktop_engagement_v1_dau,
 desktop_engagement_v1.distribution_id AS desktop_engagement_v1_distribution_id,
+desktop_engagement_v1.first_seen_date AS desktop_engagement_v1_first_seen,
 desktop_engagement_v1.is_desktop AS desktop_engagement_v1_is_desktop,
 desktop_engagement_v1.lifecycle_stage AS desktop_engagement_v1_lifecycle_stage,
 desktop_engagement_v1.locale AS desktop_engagement_v1_locale,
@@ -157,6 +159,7 @@ desktop_engagement_v1_attribution_variation,
 desktop_engagement_v1_country,
 desktop_engagement_v1_dau,
 desktop_engagement_v1_distribution_id,
+desktop_engagement_v1_first_seen,
 desktop_engagement_v1_is_desktop,
 desktop_engagement_v1_lifecycle_stage,
 desktop_engagement_v1_locale,
@@ -429,6 +432,23 @@ desktop_engagement_v1_wau,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.desktop_engagement_v1_first_seen ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   measure: desktop_engagement_dau_v1_sum {

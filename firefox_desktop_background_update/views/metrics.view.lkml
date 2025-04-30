@@ -14755,6 +14755,78 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_boolean__networking_doh_heuristic_ever_tripped {
+    label: "Networking Doh Heuristic Ever Tripped"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.networking_doh_heuristic_ever_tripped ;;
+    type: string
+    group_label: "Networking"
+    group_item_label: "Doh Heuristic Ever Tripped"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Doh Heuristic Ever Tripped"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_doh_heuristic_ever_tripped"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if this heuristic (key) was ever tripped during the session. This metric was generated to correspond to the Legacy Telemetry scalar networking.doh_heuristic_ever_tripped.
+"
+  }
+
+  dimension: metrics__counter__networking_doh_heuristics_attempts {
+    label: "Networking Doh Heuristics Attempts"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.networking_doh_heuristics_attempts ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Doh Heuristics Attempts"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Doh Heuristics Attempts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_doh_heuristics_attempts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we ran DoH heuristics. This metric was generated to correspond to the Legacy Telemetry scalar networking.doh_heuristics_attempts.
+"
+  }
+
+  dimension: metrics__counter__networking_doh_heuristics_pass_count {
+    label: "Networking Doh Heuristics Pass Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.networking_doh_heuristics_pass_count ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Doh Heuristics Pass Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Doh Heuristics Pass Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_doh_heuristics_pass_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we passed DoH heuristics. This metric was generated to correspond to the Legacy Telemetry scalar networking.doh_heuristics_pass_count.
+"
+  }
+
+  dimension: metrics__quantity__networking_doh_heuristics_result {
+    label: "Networking Doh Heuristics Result"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.networking_doh_heuristics_result ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Doh Heuristics Result"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Doh Heuristics Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_doh_heuristics_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of this scalar indicates the result of the last heuristic run. 0: \"incomplete\" 1: \"pass\" 2: \"opt-out\" 3: \"manually-disabled\" 4: \"manually-enabled\" 5: \"enterprise-disabled\" 6: \"enterprise- present\" 7: \"enterprise-enabled\" 8: \"vpn\" 9: \"proxy\" 10: \"nrpt\" 11: \"parental\" 12: \"modifiedRoots\" 13: \"thirdPartyRoots\" 14: \"google\" 15: \"youtube\" 16: \"zscaler\" 17: \"canary\" 18: \"ignored\" This metric was generated to correspond to the Legacy Telemetry scalar networking.doh_heuristics_result.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_fetch_keepalive_discard_count {
     label: "Networking Fetch Keepalive Discard Count"
     hidden: yes
@@ -18268,6 +18340,23 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__boolean__pkcs11_external_trust_anchor_module_loaded {
+    label: "Pkcs11 External Trust Anchor Module Loaded"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.pkcs11_external_trust_anchor_module_loaded ;;
+    type: yesno
+    group_label: "Pkcs11"
+    group_item_label: "External Trust Anchor Module Loaded"
+
+    link: {
+      label: "Glean Dictionary reference for Pkcs11 External Trust Anchor Module Loaded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/pkcs11_external_trust_anchor_module_loaded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not an external trust anchor module was loaded."
+  }
+
   dimension: metrics__rate__pkcs11_nss_cert_db__numerator {
     label: "Pkcs11 Nss Cert DB Numerator"
     hidden: yes
@@ -19241,7 +19330,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__privacy_sanitize_load_time__sum {
     label: "Privacy Sanitize Load Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.sum ;;
     type: number
     group_label: "Privacy Sanitize"
@@ -19530,6 +19619,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "This metric logs the total time required to initialize temporary storage within the QuotaManager after startup on the I/O thread. The duration excludes any periods when the system was suspended (e.g. system sleep or hibernation), to better reflect actual time spent performing temporary storage initialization. The primary goal is to measure the actual runtime cost of temporary storage initialization under typical conditions, without distortion from system-level suspension delays. This data can help detect performance regressions or improvements during startup-related phases, particularly for users with significant amounts of temporary storage data on disk.
+"
+  }
+
+  dimension: metrics__counter__quotamanager_restore_origin_directory_metadata_counter {
+    label: "Quotamanager Restore Origin Directory Metadata Counter"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.quotamanager_restore_origin_directory_metadata_counter ;;
+    type: number
+    group_label: "Quotamanager"
+    group_item_label: "Restore Origin Directory Metadata Counter"
+
+    link: {
+      label: "Glean Dictionary reference for Quotamanager Restore Origin Directory Metadata Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/quotamanager_restore_origin_directory_metadata_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Increments each time QuotaManager::RestoreDirectoryMetadata2 is called to restore origin directory metadata. This typically occurs when expected directory metadata is missing or needs to be regenerated. The counter is incremented regardless of whether the restoration ultimately succeeds or fails. This can provide insight into the impacts of specific code changes, including potential optimizations or regressions.
 "
   }
 
@@ -29701,6 +29808,56 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: networking_doh_heuristics_attempts {
+    type: sum
+    sql: ${metrics__counter__networking_doh_heuristics_attempts} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Doh Heuristics Attempts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_doh_heuristics_attempts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_doh_heuristics_attempts_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__networking_doh_heuristics_attempts: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Doh Heuristics Attempts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_doh_heuristics_attempts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_doh_heuristics_pass_count {
+    type: sum
+    sql: ${metrics__counter__networking_doh_heuristics_pass_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Doh Heuristics Pass Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_doh_heuristics_pass_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_doh_heuristics_pass_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__networking_doh_heuristics_pass_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Doh Heuristics Pass Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_doh_heuristics_pass_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: networking_os_socket_limit_reached {
     type: sum
     sql: ${metrics__counter__networking_os_socket_limit_reached} ;;
@@ -30347,6 +30504,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Printing Silent Print"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/printing_silent_print"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: quotamanager_restore_origin_directory_metadata_counter {
+    type: sum
+    sql: ${metrics__counter__quotamanager_restore_origin_directory_metadata_counter} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Quotamanager Restore Origin Directory Metadata Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/quotamanager_restore_origin_directory_metadata_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: quotamanager_restore_origin_directory_metadata_counter_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__quotamanager_restore_origin_directory_metadata_counter: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Quotamanager Restore Origin Directory Metadata Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/quotamanager_restore_origin_directory_metadata_counter"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -44418,19 +44600,19 @@ view: metrics__metrics__labeled_counter__update_skip_startup_update_reason {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -50122,6 +50304,20 @@ view: metrics__metrics__labeled_boolean__media_video_hd_hardware_decoding_suppor
 }
 
 view: metrics__metrics__labeled_boolean__mediadrm_decryption {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_boolean__networking_doh_heuristic_ever_tripped {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

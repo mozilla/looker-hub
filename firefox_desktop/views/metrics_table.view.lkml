@@ -1113,6 +1113,15 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__boolean__pkcs11_external_trust_anchor_module_loaded {
+    sql: ${TABLE}.metrics.boolean.pkcs11_external_trust_anchor_module_loaded ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Pkcs11 External Trust Anchor Module Loaded"
+    description: "Whether or not an external trust anchor module was loaded."
+  }
+
   dimension: metrics__boolean__policies_is_enterprise {
     sql: ${TABLE}.metrics.boolean.policies_is_enterprise ;;
     type: yesno
@@ -1161,6 +1170,28 @@ To be used to validate GIFFT.
     group_item_label: "Pwmgr Saving Enabled"
     description: "Whether password saving is enabled globally.
 Tracks the pref `signon.rememberSignons`.
+"
+  }
+
+  dimension: metrics__boolean__search_engine_default_overridden_by_third_party {
+    sql: ${TABLE}.metrics.boolean.search_engine_default_overridden_by_third_party ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Search Engine Default Overridden By Third Party"
+    description: "Set to true if the user's default search engine has been allowed to be
+overridden by a third-party add-on or OpenSearch engine.
+"
+  }
+
+  dimension: metrics__boolean__search_engine_private_overridden_by_third_party {
+    sql: ${TABLE}.metrics.boolean.search_engine_private_overridden_by_third_party ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Search Engine Private Overridden By Third Party"
+    description: "Set to true if the user's default search engine has been allowed to be
+overridden by a third-party add-on or OpenSearch engine.
 "
   }
 
@@ -2956,6 +2987,16 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     group_label: "Metrics Counter"
     group_item_label: "Printing Silent Print"
     description: "A counter incremented every time a silent print (a print without a print settings dialog being opened) is initiated.  This happens when extensions invoke ExtensionAPI.tabs.saveAsPDF, for example, or when the print.always_print_silent pref is set. This metric was generated to correspond to the Legacy Telemetry scalar printing.silent_print.
+"
+  }
+
+  dimension: metrics__counter__quotamanager_restore_origin_directory_metadata_counter {
+    sql: ${TABLE}.metrics.counter.quotamanager_restore_origin_directory_metadata_counter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Quotamanager Restore Origin Directory Metadata Counter"
+    description: "Increments each time QuotaManager::RestoreDirectoryMetadata2 is called to restore origin directory metadata. This typically occurs when expected directory metadata is missing or needs to be regenerated. The counter is incremented regardless of whether the restoration ultimately succeeds or fails. This can provide insight into the impacts of specific code changes, including potential optimizations or regressions.
 "
   }
 
@@ -11530,6 +11571,20 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__labeled_boolean__newtab_metric_registered {
+    sql: ${TABLE}.metrics.labeled_boolean.newtab_metric_registered ;;
+    hidden: yes
+    description: "Records technical data about whether the metric registration at runtime succeeded
+"
+  }
+
+  dimension: metrics__labeled_boolean__newtab_ping_registered {
+    sql: ${TABLE}.metrics.labeled_boolean.newtab_ping_registered ;;
+    hidden: yes
+    description: "Records technical data about whether the ping registration at runtime succeeded
+"
+  }
+
   dimension: metrics__labeled_boolean__os_environment_is_default_handler {
     sql: ${TABLE}.metrics.labeled_boolean.os_environment_is_default_handler ;;
     hidden: yes
@@ -14618,6 +14673,13 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.labeled_counter.suggest_relevance_status ;;
     hidden: yes
     description: "Count the successful / failed attempts of relevance scoring in Firefox Suggest.
+"
+  }
+
+  dimension: metrics__labeled_counter__tabgroup_group_interactions {
+    sql: ${TABLE}.metrics.labeled_counter.tabgroup_group_interactions ;;
+    hidden: yes
+    description: "Records interactions with tab groups: expand/collapse; rename, change color; save/reopen/delete; ungroup tabs; open from tab menu/recent/ Awesomebar; move to another window
 "
   }
 
@@ -17838,6 +17900,58 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     hidden: yes
   }
 
+  dimension: metrics__object__addons_active_addons {
+    sql: ${TABLE}.metrics.object.addons_active_addons ;;
+    hidden: yes
+    description: "The list of currently enabled addons.
+
+Some of the addon fields are not available during startup. The fields
+that will always be present are id, version, addonType, updateDay, scope,
+isSystem, isWebExtension, and multiprocessCompatible. All the other
+fields become present shortly after the `sessionstore-windows-restored`
+observer topic is notified.
+
+This metric is an echo of the Legacy Telemetry Environment field
+addons.activeAddons. Like its counterpart, it will only have data in
+Firefox Desktop and at times and on platforms where the environment would
+have values.
+"
+  }
+
+  dimension: metrics__object__addons_active_g_m_plugins {
+    sql: ${TABLE}.metrics.object.addons_active_g_m_plugins ;;
+    hidden: yes
+    description: "The list of currently enabled Gecko Media Plugins.
+
+Some of the addon fields are not available during startup. The fields
+that will always be present are id and version. All the other
+fields become present shortly after the `sessionstore-windows-restored`
+observer topic is notified.
+
+This metric is an echo of the Legacy Telemetry Environment field
+addons.activeGMPlugins. Like its counterpart, it will only have data in
+Firefox Desktop and at times and on platforms where the environment would
+have values.
+"
+  }
+
+  dimension: metrics__object__addons_theme {
+    sql: ${TABLE}.metrics.object.addons_theme ;;
+    hidden: yes
+    description: "The currently active theme.
+
+Some of the addon fields are not available during startup. The fields
+that will always be present are id, version, updateDay, and scope. All
+the other fields become present shortly after the
+`sessionstore-windows-restored` observer topic is notified.
+
+This metric is an echo of the Legacy Telemetry Environment field
+addons.theme. Like its counterpart, it will only have data in Firefox
+Desktop and at times and on platforms where the environment would have
+values.
+"
+  }
+
   dimension: metrics__object__browser_ui_toolbar_widgets {
     sql: ${TABLE}.metrics.object.browser_ui_toolbar_widgets ;;
     hidden: yes
@@ -17849,6 +17963,38 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.object.fog_validation_some_object ;;
     hidden: yes
     description: "Static data recorded to verify the new object metric type end-to-end.
+"
+  }
+
+  dimension: metrics__object__glean_attribution_ext {
+    sql: ${TABLE}.metrics.object.glean_attribution_ext ;;
+    hidden: yes
+    description: "Extended attribution information.
+Mapped to client_info.attribution.ext in datasets.
+* `experiment`: name/id of the enrolled funnel experiment
+* `variation`: name/id of the variation cohort used in the enrolled funnel experiment
+* `ua`: identifier derived from the user agent downloading the installer
+        e.g. chrome, Google Chrome 123
+* `dltoken`: Unique token created at Firefox download time.
+             e.g. c18f86a3-f228-4d98-91bb-f90135c0aa9c
+* `msstoresignedin`: only present if the installation was done through the Microsoft Store,
+                     and was able to retrieve the \"campaign ID\" it was first installed with.
+                     This value is \"true\" if the user was signed into the Microsoft Store
+                     when they first installed, and false otherwise.
+* `dlsource`: identifier that indicate where installations of Firefox originate
+"
+  }
+
+  dimension: metrics__object__glean_distribution_ext {
+    sql: ${TABLE}.metrics.object.glean_distribution_ext ;;
+    hidden: yes
+    description: "Extended distribution information.
+Mapped to client_info.distribution.ext in datasets.
+* `distributionVersion`: pref `distribution.version`, `null` on failure
+* `partnerId`: pref `mozilla.partner.id`, `null` on failure
+* `distributor`:  pref `app.distributor`, `null` on failure
+* `distributorChannel`: pref `app.distributor.channel`, `null` on failure
+* `partnerNames`: list from prefs `app.partner.<name>=<name>`
 "
   }
 
@@ -19665,7 +19811,10 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Search Engine Default Engine ID"
-    description: "The telemetry id of the search engine.
+    description: "Deprecated in Fx139, please use provider_id, partner_code,
+overridden_by_third_party and display_name instead.
+
+The telemetry id of the search engine.
 For example: \"engine1\"
 
 For application-provided engines, this is the identifier plus telemetry
@@ -19690,6 +19839,33 @@ For example:
   `[user]` for a search engine defined by the user or generated from a
   web page.
 Note: this metric is truncated at 100 characters.
+"
+  }
+
+  dimension: metrics__string__search_engine_default_partner_code {
+    sql: ${TABLE}.metrics.string.search_engine_default_partner_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Search Engine Default Partner Code"
+    description: "The partner code of the user's default search engine, if defined/known,
+that is being used for the search. Not all search engines have partner
+codes.
+
+May be empty for engines that are overridden by a third-party add-on or
+OpenSearch engine.
+"
+  }
+
+  dimension: metrics__string__search_engine_default_provider_id {
+    sql: ${TABLE}.metrics.string.search_engine_default_provider_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Search Engine Default Provider ID"
+    description: "The identifier of the user's default search engine if the search engine is
+an application provided engine. For user installed engines, this value will
+be `other`.
 "
   }
 
@@ -19728,7 +19904,10 @@ default engine, and hence both versions of these fields will be filled in.
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Search Engine Private Engine ID"
-    description: "The telemetry id of the search engine.
+    description: "Deprecated in Fx139, please use provider_id, partner_code,
+overridden_by_third_party and display_name instead.
+
+The telemetry id of the search engine.
 For example: \"engine1\"
 
 For application-provided engines, this is the identifier plus telemetry
@@ -19765,6 +19944,33 @@ the preferences `browser.search.separatePrivateDefault` and
 `browser.search.separatePrivateDefault.ui.enabled` are set to false.
 It is possible that the user selects the same private engine as for the
 default engine, and hence both versions of these fields will be filled in.
+"
+  }
+
+  dimension: metrics__string__search_engine_private_partner_code {
+    sql: ${TABLE}.metrics.string.search_engine_private_partner_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Search Engine Private Partner Code"
+    description: "The partner code of the user's default search engine, if defined/known,
+that is being used for the search. Not all search engines have partner
+codes.
+
+May be empty for engines that are overridden by a third-party add-on or
+OpenSearch engine.
+"
+  }
+
+  dimension: metrics__string__search_engine_private_provider_id {
+    sql: ${TABLE}.metrics.string.search_engine_private_provider_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Search Engine Private Provider ID"
+    description: "The identifier of the user's default search engine if the search engine is
+an application provided engine. For user installed engines, this value will
+be `other`.
 "
   }
 
@@ -54904,6 +55110,34 @@ view: metrics_table__metrics__labeled_boolean__mediadrm_decryption {
 }
 
 view: metrics_table__metrics__labeled_boolean__networking_doh_heuristic_ever_tripped {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__newtab_metric_registered {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__newtab_ping_registered {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

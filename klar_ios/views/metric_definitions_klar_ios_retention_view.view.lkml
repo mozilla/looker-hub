@@ -56,11 +56,12 @@ klar_ios_retention_view_app_version,
 klar_ios_retention_view_country,
 klar_ios_retention_view_device_manufacturer,
 klar_ios_retention_view_device_type,
+klar_ios_retention_view_first_seen,
 klar_ios_retention_view_is_mobile,
 klar_ios_retention_view_lifecycle_stage,
 klar_ios_retention_view_locale,
+klar_ios_retention_view_metric,
 klar_ios_retention_view_new_profiles_metric_date,
-klar_ios_retention_view_normalized_channel,
 klar_ios_retention_view_paid_vs_organic,
 klar_ios_retention_view_ping_sent_metric_date,
 klar_ios_retention_view_ping_sent_week_4,
@@ -145,11 +146,12 @@ klar_ios_retention_view.app_version AS klar_ios_retention_view_app_version,
 klar_ios_retention_view.country AS klar_ios_retention_view_country,
 klar_ios_retention_view.device_manufacturer AS klar_ios_retention_view_device_manufacturer,
 klar_ios_retention_view.device_type AS klar_ios_retention_view_device_type,
+klar_ios_retention_view.first_seen_date AS klar_ios_retention_view_first_seen,
 klar_ios_retention_view.is_mobile AS klar_ios_retention_view_is_mobile,
 klar_ios_retention_view.lifecycle_stage AS klar_ios_retention_view_lifecycle_stage,
 klar_ios_retention_view.locale AS klar_ios_retention_view_locale,
+klar_ios_retention_view.metric_date AS klar_ios_retention_view_metric,
 klar_ios_retention_view.new_profiles_metric_date AS klar_ios_retention_view_new_profiles_metric_date,
-klar_ios_retention_view.normalized_channel AS klar_ios_retention_view_normalized_channel,
 klar_ios_retention_view.paid_vs_organic AS klar_ios_retention_view_paid_vs_organic,
 klar_ios_retention_view.ping_sent_metric_date AS klar_ios_retention_view_ping_sent_metric_date,
 klar_ios_retention_view.ping_sent_week_4 AS klar_ios_retention_view_ping_sent_week_4,
@@ -243,11 +245,12 @@ klar_ios_retention_view_app_version,
 klar_ios_retention_view_country,
 klar_ios_retention_view_device_manufacturer,
 klar_ios_retention_view_device_type,
+klar_ios_retention_view_first_seen,
 klar_ios_retention_view_is_mobile,
 klar_ios_retention_view_lifecycle_stage,
 klar_ios_retention_view_locale,
+klar_ios_retention_view_metric,
 klar_ios_retention_view_new_profiles_metric_date,
-klar_ios_retention_view_normalized_channel,
 klar_ios_retention_view_paid_vs_organic,
 klar_ios_retention_view_ping_sent_metric_date,
 klar_ios_retention_view_ping_sent_week_4,
@@ -748,6 +751,40 @@ klar_ios_retention_view_retained_week_4_new_profiles,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.klar_ios_retention_view_first_seen ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
+  dimension_group: metric {
+    sql: ${TABLE}.klar_ios_retention_view_metric ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   set: metrics {

@@ -60,12 +60,13 @@ firefox_ios_retention_view_app_version,
 firefox_ios_retention_view_country,
 firefox_ios_retention_view_device_manufacturer,
 firefox_ios_retention_view_device_type,
+firefox_ios_retention_view_first_seen,
 firefox_ios_retention_view_is_mobile,
 firefox_ios_retention_view_is_suspicious_device_client,
 firefox_ios_retention_view_lifecycle_stage,
 firefox_ios_retention_view_locale,
+firefox_ios_retention_view_metric,
 firefox_ios_retention_view_new_profiles_metric_date,
-firefox_ios_retention_view_normalized_channel,
 firefox_ios_retention_view_paid_vs_organic,
 firefox_ios_retention_view_ping_sent_metric_date,
 firefox_ios_retention_view_ping_sent_week_4,
@@ -154,12 +155,13 @@ firefox_ios_retention_view.app_version AS firefox_ios_retention_view_app_version
 firefox_ios_retention_view.country AS firefox_ios_retention_view_country,
 firefox_ios_retention_view.device_manufacturer AS firefox_ios_retention_view_device_manufacturer,
 firefox_ios_retention_view.device_type AS firefox_ios_retention_view_device_type,
+firefox_ios_retention_view.first_seen_date AS firefox_ios_retention_view_first_seen,
 firefox_ios_retention_view.is_mobile AS firefox_ios_retention_view_is_mobile,
 firefox_ios_retention_view.is_suspicious_device_client AS firefox_ios_retention_view_is_suspicious_device_client,
 firefox_ios_retention_view.lifecycle_stage AS firefox_ios_retention_view_lifecycle_stage,
 firefox_ios_retention_view.locale AS firefox_ios_retention_view_locale,
+firefox_ios_retention_view.metric_date AS firefox_ios_retention_view_metric,
 firefox_ios_retention_view.new_profiles_metric_date AS firefox_ios_retention_view_new_profiles_metric_date,
-firefox_ios_retention_view.normalized_channel AS firefox_ios_retention_view_normalized_channel,
 firefox_ios_retention_view.paid_vs_organic AS firefox_ios_retention_view_paid_vs_organic,
 firefox_ios_retention_view.ping_sent_metric_date AS firefox_ios_retention_view_ping_sent_metric_date,
 firefox_ios_retention_view.ping_sent_week_4 AS firefox_ios_retention_view_ping_sent_week_4,
@@ -257,12 +259,13 @@ firefox_ios_retention_view_app_version,
 firefox_ios_retention_view_country,
 firefox_ios_retention_view_device_manufacturer,
 firefox_ios_retention_view_device_type,
+firefox_ios_retention_view_first_seen,
 firefox_ios_retention_view_is_mobile,
 firefox_ios_retention_view_is_suspicious_device_client,
 firefox_ios_retention_view_lifecycle_stage,
 firefox_ios_retention_view_locale,
+firefox_ios_retention_view_metric,
 firefox_ios_retention_view_new_profiles_metric_date,
-firefox_ios_retention_view_normalized_channel,
 firefox_ios_retention_view_paid_vs_organic,
 firefox_ios_retention_view_ping_sent_metric_date,
 firefox_ios_retention_view_ping_sent_week_4,
@@ -798,6 +801,40 @@ firefox_ios_retention_view_retained_week_4_new_profiles,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.firefox_ios_retention_view_first_seen ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
+  dimension_group: metric {
+    sql: ${TABLE}.firefox_ios_retention_view_metric ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   set: metrics {
