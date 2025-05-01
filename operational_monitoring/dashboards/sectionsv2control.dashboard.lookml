@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sectionsv2control
+    type: looker_line
+    fields: [
+      sectionsv2control.submission_date,
+      sectionsv2control.branch,
+      sectionsv2control.point
+    ]
+    pivots: [
+      sectionsv2control.branch
+    ]
+    filters:
+      sectionsv2control.metric: 'ad_clicks'
+      sectionsv2control.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: sectionsv2control.submission_date
+    field_y: sectionsv2control.point
+    log_scale: false
+    ci_lower: sectionsv2control.lower
+    ci_upper: sectionsv2control.upper
+    show_grid: true
+    listen:
+      Date: sectionsv2control.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -29,7 +63,7 @@
       sectionsv2control.metric: 'uri_count'
       sectionsv2control.statistic: mean
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: sectionsv2control.submission_date
@@ -62,7 +96,41 @@
     filters:
       sectionsv2control.metric: 'days_of_use'
       sectionsv2control.statistic: mean
-    row: 0
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: sectionsv2control.submission_date
+    field_y: sectionsv2control.point
+    log_scale: false
+    ci_lower: sectionsv2control.lower
+    ci_upper: sectionsv2control.upper
+    show_grid: true
+    listen:
+      Date: sectionsv2control.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sectionsv2control
+    type: looker_line
+    fields: [
+      sectionsv2control.submission_date,
+      sectionsv2control.branch,
+      sectionsv2control.point
+    ]
+    pivots: [
+      sectionsv2control.branch
+    ]
+    filters:
+      sectionsv2control.metric: 'active_hours'
+      sectionsv2control.statistic: mean
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -78,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,10 +162,44 @@
       sectionsv2control.branch
     ]
     filters:
-      sectionsv2control.metric: 'ad_clicks'
+      sectionsv2control.metric: 'retained'
       sectionsv2control.statistic: mean
-    row: 10
+    row: 20
     col: 0
+    width: 12
+    height: 8
+    field_x: sectionsv2control.submission_date
+    field_y: sectionsv2control.point
+    log_scale: false
+    ci_lower: sectionsv2control.lower
+    ci_upper: sectionsv2control.upper
+    show_grid: true
+    listen:
+      Date: sectionsv2control.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sectionsv2control
+    type: looker_line
+    fields: [
+      sectionsv2control.submission_date,
+      sectionsv2control.branch,
+      sectionsv2control.point
+    ]
+    pivots: [
+      sectionsv2control.branch
+    ]
+    filters:
+      sectionsv2control.metric: 'search_count'
+      sectionsv2control.statistic: mean
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: sectionsv2control.submission_date
@@ -130,8 +232,8 @@
     filters:
       sectionsv2control.metric: 'qualified_cumulative_days_of_use'
       sectionsv2control.statistic: mean
-    row: 10
-    col: 12
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: sectionsv2control.submission_date
@@ -166,8 +268,8 @@
     filters:
       sectionsv2control.metric: 'memory_total'
       sectionsv2control.statistic: percentile
-    row: 20
-    col: 0
+    row: 30
+    col: 12
     width: 12
     height: 8
     field_x: sectionsv2control.submission_date
@@ -179,108 +281,6 @@
     listen:
       Date: sectionsv2control.submission_date
       Percentile: sectionsv2control.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sectionsv2control
-    type: looker_line
-    fields: [
-      sectionsv2control.submission_date,
-      sectionsv2control.branch,
-      sectionsv2control.point
-    ]
-    pivots: [
-      sectionsv2control.branch
-    ]
-    filters:
-      sectionsv2control.metric: 'active_hours'
-      sectionsv2control.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: sectionsv2control.submission_date
-    field_y: sectionsv2control.point
-    log_scale: false
-    ci_lower: sectionsv2control.lower
-    ci_upper: sectionsv2control.upper
-    show_grid: true
-    listen:
-      Date: sectionsv2control.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sectionsv2control
-    type: looker_line
-    fields: [
-      sectionsv2control.submission_date,
-      sectionsv2control.branch,
-      sectionsv2control.point
-    ]
-    pivots: [
-      sectionsv2control.branch
-    ]
-    filters:
-      sectionsv2control.metric: 'retained'
-      sectionsv2control.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: sectionsv2control.submission_date
-    field_y: sectionsv2control.point
-    log_scale: false
-    ci_lower: sectionsv2control.lower
-    ci_upper: sectionsv2control.upper
-    show_grid: true
-    listen:
-      Date: sectionsv2control.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sectionsv2control
-    type: looker_line
-    fields: [
-      sectionsv2control.submission_date,
-      sectionsv2control.branch,
-      sectionsv2control.point
-    ]
-    pivots: [
-      sectionsv2control.branch
-    ]
-    filters:
-      sectionsv2control.metric: 'search_count'
-      sectionsv2control.statistic: mean
-    row: 30
-    col: 12
-    width: 12
-    height: 8
-    field_x: sectionsv2control.submission_date
-    field_y: sectionsv2control.point
-    log_scale: false
-    ci_lower: sectionsv2control.lower
-    ci_upper: sectionsv2control.upper
-    show_grid: true
-    listen:
-      Date: sectionsv2control.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
