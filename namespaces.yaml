@@ -10517,10 +10517,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 7
+            default: Windows 10
             options:
-            - Windows 7
             - Windows 10
+            - Windows 7
             - Windows 8.1
             - Windows 8
             - Windows 11
@@ -10559,9 +10559,9 @@ operational_monitoring:
             default: release
             options:
             - release
-            - esr
-            - nightly
             - beta
+            - nightly
+            - esr
             - aurora
             - default
             - nightly-pine
@@ -11243,11 +11243,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id242
           normalized_channel:
-            default: nightly
+            default: beta
             options:
-            - nightly
             - beta
             - aurora
+            - nightly
             - release
             - esr
             - Other
@@ -11810,11 +11810,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id272
           os:
-            default: Mac
+            default: Windows
             options:
-            - Mac
             - Windows
             - Linux
+            - Mac
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -13065,15 +13065,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id389
           app:
-            default: Windows - vpn_session
+            default: Android - daemon_session
             options:
-            - Windows - vpn_session
             - Android - daemon_session
-            - Android - vpn_session
-            - iOS - daemon_session
-            - Darwin - vpn_session
             - Linux - vpn_session
             - iOS - vpn_session
+            - Windows - vpn_session
+            - iOS - daemon_session
+            - Darwin - vpn_session
+            - Android - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id390
@@ -14296,10 +14296,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id476
           channel:
-            default: release
+            default: beta
             options:
-            - release
             - beta
+            - release
             - nightly
           os:
             default: Windows_NT
