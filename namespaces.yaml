@@ -10517,10 +10517,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 10
+            default: Windows 7
             options:
-            - Windows 10
             - Windows 7
+            - Windows 10
             - Windows 8.1
             - Windows 8
             - Windows 11
@@ -10560,9 +10560,9 @@ operational_monitoring:
             options:
             - release
             - beta
+            - aurora
             - nightly
             - esr
-            - aurora
             - default
             - nightly-pine
             - nightly-oak
@@ -11246,8 +11246,8 @@ operational_monitoring:
             default: beta
             options:
             - beta
-            - aurora
             - nightly
+            - aurora
             - release
             - esr
             - Other
@@ -11813,8 +11813,8 @@ operational_monitoring:
             default: Windows
             options:
             - Windows
-            - Linux
             - Mac
+            - Linux
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -13069,11 +13069,11 @@ operational_monitoring:
             options:
             - Android - daemon_session
             - Linux - vpn_session
-            - iOS - vpn_session
             - Windows - vpn_session
-            - iOS - daemon_session
-            - Darwin - vpn_session
             - Android - vpn_session
+            - Darwin - vpn_session
+            - iOS - daemon_session
+            - iOS - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id390
@@ -14296,17 +14296,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id476
           channel:
-            default: beta
+            default: nightly
             options:
-            - beta
-            - release
             - nightly
+            - release
+            - beta
           os:
-            default: Windows_NT
+            default: Darwin
             options:
-            - Windows_NT
             - Darwin
             - Linux
+            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id477
