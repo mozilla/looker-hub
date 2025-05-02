@@ -35,6 +35,51 @@ view: baseline_clients_last_seen_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: attribution__campaign {
+    sql: ${TABLE}.attribution.campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Attribution"
+    group_item_label: "Campaign"
+    description: "The attribution campaign (e.g. 'mozilla-org')."
+  }
+
+  dimension: attribution__content {
+    sql: ${TABLE}.attribution.content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Attribution"
+    group_item_label: "Content"
+    description: "The attribution content (e.g. 'firefoxview')."
+  }
+
+  dimension: attribution__medium {
+    sql: ${TABLE}.attribution.medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Attribution"
+    group_item_label: "Medium"
+    description: "The attribution medium (e.g. 'organic' for a search engine)."
+  }
+
+  dimension: attribution__source {
+    sql: ${TABLE}.attribution.source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Attribution"
+    group_item_label: "Source"
+    description: "The attribution source (e.g. 'google-play')."
+  }
+
+  dimension: attribution__term {
+    sql: ${TABLE}.attribution.term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Attribution"
+    group_item_label: "Term"
+    description: "The attribution term (e.g. 'browser with developer tools for android')."
+  }
+
   dimension: browser_engagement_active_ticks {
     sql: ${TABLE}.browser_engagement_active_ticks ;;
     type: number
@@ -148,6 +193,15 @@ view: baseline_clients_last_seen_table {
     sql: ${TABLE}.device_model ;;
     type: string
     suggest_persist_for: "24 hours"
+  }
+
+  dimension: distribution__name {
+    sql: ${TABLE}.distribution.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Distribution"
+    group_item_label: "Name"
+    description: "The distribution name (e.g. 'MozillaOnline')."
   }
 
   dimension: distribution_id {
