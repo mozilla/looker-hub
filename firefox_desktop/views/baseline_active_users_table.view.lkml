@@ -71,44 +71,34 @@ view: baseline_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: attribution__campaign {
-    sql: ${TABLE}.attribution.campaign ;;
+  dimension: attribution_campaign {
+    sql: ${TABLE}.attribution_campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Attribution"
-    group_item_label: "Campaign"
   }
 
-  dimension: attribution__content {
-    sql: ${TABLE}.attribution.content ;;
+  dimension: attribution_content {
+    sql: ${TABLE}.attribution_content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Attribution"
-    group_item_label: "Content"
   }
 
-  dimension: attribution__medium {
-    sql: ${TABLE}.attribution.medium ;;
+  dimension: attribution_medium {
+    sql: ${TABLE}.attribution_medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Attribution"
-    group_item_label: "Medium"
   }
 
-  dimension: attribution__source {
-    sql: ${TABLE}.attribution.source ;;
+  dimension: attribution_source {
+    sql: ${TABLE}.attribution_source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Attribution"
-    group_item_label: "Source"
   }
 
-  dimension: attribution__term {
-    sql: ${TABLE}.attribution.term ;;
+  dimension: attribution_term {
+    sql: ${TABLE}.attribution_term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Attribution"
-    group_item_label: "Term"
   }
 
   dimension: browser_engagement_active_ticks {
@@ -231,14 +221,6 @@ view: baseline_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: distribution__name {
-    sql: ${TABLE}.distribution.name ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Distribution"
-    group_item_label: "Name"
-  }
-
   dimension: distribution_id {
     sql: ${TABLE}.distribution_id ;;
     type: string
@@ -251,9 +233,51 @@ view: baseline_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: distribution_name {
+    sql: ${TABLE}.distribution_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: durations {
     sql: ${TABLE}.durations ;;
     type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: first_seen_attribution_campaign {
+    sql: ${TABLE}.first_seen_attribution_campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: first_seen_attribution_content {
+    sql: ${TABLE}.first_seen_attribution_content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: first_seen_attribution_medium {
+    sql: ${TABLE}.first_seen_attribution_medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: first_seen_attribution_source {
+    sql: ${TABLE}.first_seen_attribution_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: first_seen_attribution_term {
+    sql: ${TABLE}.first_seen_attribution_term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: first_seen_distribution_name {
+    sql: ${TABLE}.first_seen_distribution_name ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 
