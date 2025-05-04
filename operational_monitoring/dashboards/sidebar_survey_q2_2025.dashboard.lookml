@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sidebar_survey_q2_2025
+    type: looker_line
+    fields: [
+      sidebar_survey_q2_2025.submission_date,
+      sidebar_survey_q2_2025.branch,
+      sidebar_survey_q2_2025.point
+    ]
+    pivots: [
+      sidebar_survey_q2_2025.branch
+    ]
+    filters:
+      sidebar_survey_q2_2025.metric: 'ad_clicks'
+      sidebar_survey_q2_2025.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: sidebar_survey_q2_2025.submission_date
+    field_y: sidebar_survey_q2_2025.point
+    log_scale: false
+    ci_lower: sidebar_survey_q2_2025.lower
+    ci_upper: sidebar_survey_q2_2025.upper
+    show_grid: true
+    listen:
+      Date: sidebar_survey_q2_2025.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -29,7 +63,7 @@
       sidebar_survey_q2_2025.metric: 'uri_count'
       sidebar_survey_q2_2025.statistic: mean
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: sidebar_survey_q2_2025.submission_date
@@ -62,7 +96,41 @@
     filters:
       sidebar_survey_q2_2025.metric: 'days_of_use'
       sidebar_survey_q2_2025.statistic: mean
-    row: 0
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: sidebar_survey_q2_2025.submission_date
+    field_y: sidebar_survey_q2_2025.point
+    log_scale: false
+    ci_lower: sidebar_survey_q2_2025.lower
+    ci_upper: sidebar_survey_q2_2025.upper
+    show_grid: true
+    listen:
+      Date: sidebar_survey_q2_2025.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sidebar_survey_q2_2025
+    type: looker_line
+    fields: [
+      sidebar_survey_q2_2025.submission_date,
+      sidebar_survey_q2_2025.branch,
+      sidebar_survey_q2_2025.point
+    ]
+    pivots: [
+      sidebar_survey_q2_2025.branch
+    ]
+    filters:
+      sidebar_survey_q2_2025.metric: 'active_hours'
+      sidebar_survey_q2_2025.statistic: mean
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -78,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,10 +162,44 @@
       sidebar_survey_q2_2025.branch
     ]
     filters:
-      sidebar_survey_q2_2025.metric: 'ad_clicks'
+      sidebar_survey_q2_2025.metric: 'retained'
       sidebar_survey_q2_2025.statistic: mean
-    row: 10
+    row: 20
     col: 0
+    width: 12
+    height: 8
+    field_x: sidebar_survey_q2_2025.submission_date
+    field_y: sidebar_survey_q2_2025.point
+    log_scale: false
+    ci_lower: sidebar_survey_q2_2025.lower
+    ci_upper: sidebar_survey_q2_2025.upper
+    show_grid: true
+    listen:
+      Date: sidebar_survey_q2_2025.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sidebar_survey_q2_2025
+    type: looker_line
+    fields: [
+      sidebar_survey_q2_2025.submission_date,
+      sidebar_survey_q2_2025.branch,
+      sidebar_survey_q2_2025.point
+    ]
+    pivots: [
+      sidebar_survey_q2_2025.branch
+    ]
+    filters:
+      sidebar_survey_q2_2025.metric: 'search_count'
+      sidebar_survey_q2_2025.statistic: mean
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: sidebar_survey_q2_2025.submission_date
@@ -130,8 +232,8 @@
     filters:
       sidebar_survey_q2_2025.metric: 'qualified_cumulative_days_of_use'
       sidebar_survey_q2_2025.statistic: mean
-    row: 10
-    col: 12
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: sidebar_survey_q2_2025.submission_date
@@ -166,8 +268,8 @@
     filters:
       sidebar_survey_q2_2025.metric: 'memory_total'
       sidebar_survey_q2_2025.statistic: percentile
-    row: 20
-    col: 0
+    row: 30
+    col: 12
     width: 12
     height: 8
     field_x: sidebar_survey_q2_2025.submission_date
@@ -179,108 +281,6 @@
     listen:
       Date: sidebar_survey_q2_2025.submission_date
       Percentile: sidebar_survey_q2_2025.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sidebar_survey_q2_2025
-    type: looker_line
-    fields: [
-      sidebar_survey_q2_2025.submission_date,
-      sidebar_survey_q2_2025.branch,
-      sidebar_survey_q2_2025.point
-    ]
-    pivots: [
-      sidebar_survey_q2_2025.branch
-    ]
-    filters:
-      sidebar_survey_q2_2025.metric: 'active_hours'
-      sidebar_survey_q2_2025.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: sidebar_survey_q2_2025.submission_date
-    field_y: sidebar_survey_q2_2025.point
-    log_scale: false
-    ci_lower: sidebar_survey_q2_2025.lower
-    ci_upper: sidebar_survey_q2_2025.upper
-    show_grid: true
-    listen:
-      Date: sidebar_survey_q2_2025.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sidebar_survey_q2_2025
-    type: looker_line
-    fields: [
-      sidebar_survey_q2_2025.submission_date,
-      sidebar_survey_q2_2025.branch,
-      sidebar_survey_q2_2025.point
-    ]
-    pivots: [
-      sidebar_survey_q2_2025.branch
-    ]
-    filters:
-      sidebar_survey_q2_2025.metric: 'retained'
-      sidebar_survey_q2_2025.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: sidebar_survey_q2_2025.submission_date
-    field_y: sidebar_survey_q2_2025.point
-    log_scale: false
-    ci_lower: sidebar_survey_q2_2025.lower
-    ci_upper: sidebar_survey_q2_2025.upper
-    show_grid: true
-    listen:
-      Date: sidebar_survey_q2_2025.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sidebar_survey_q2_2025
-    type: looker_line
-    fields: [
-      sidebar_survey_q2_2025.submission_date,
-      sidebar_survey_q2_2025.branch,
-      sidebar_survey_q2_2025.point
-    ]
-    pivots: [
-      sidebar_survey_q2_2025.branch
-    ]
-    filters:
-      sidebar_survey_q2_2025.metric: 'search_count'
-      sidebar_survey_q2_2025.statistic: mean
-    row: 30
-    col: 12
-    width: 12
-    height: 8
-    field_x: sidebar_survey_q2_2025.submission_date
-    field_y: sidebar_survey_q2_2025.point
-    log_scale: false
-    ci_lower: sidebar_survey_q2_2025.lower
-    ci_upper: sidebar_survey_q2_2025.upper
-    show_grid: true
-    listen:
-      Date: sidebar_survey_q2_2025.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
