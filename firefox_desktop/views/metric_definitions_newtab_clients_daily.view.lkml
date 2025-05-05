@@ -1349,6 +1349,22 @@ a wallpaper.
     description: "Average of Newtab Ad Click Rate"
   }
 
+  measure: newtab_sponsored_tiles_enabled_sum {
+    type: sum
+    sql: ${TABLE}.newtab_sponsored_tiles_enabled*1 ;;
+    label: "Newtab Sponsored Tiles Enabled Sum"
+    group_label: "Statistics"
+    description: "Sum of Newtab Sponsored Tiles Enabled"
+  }
+
+  measure: newtab_sponsored_pocket_stories_enabled_sum {
+    type: sum
+    sql: ${TABLE}.newtab_sponsored_pocket_stories_enabled*1 ;;
+    label: "Newtab Sponsored Pocket Stories Enabled Sum"
+    group_label: "Statistics"
+    description: "Sum of Newtab Sponsored Pocket Stories Enabled"
+  }
+
   measure: newtab_visits_sum {
     type: sum
     sql: ${TABLE}.newtab_visits*1 ;;
@@ -1380,6 +1396,38 @@ a wallpaper.
     label: "Newtab Engaged Visit Count Sum"
     group_label: "Statistics"
     description: "Sum of Newtab Engaged Visit Count"
+  }
+
+  measure: newtab_clients_with_sponsored_tile_impressions_sum {
+    type: sum
+    sql: ${TABLE}.newtab_clients_with_sponsored_tile_impressions*1 ;;
+    label: "Newtab Clients with Sponsored Tile Impressions Sum"
+    group_label: "Statistics"
+    description: "Sum of Newtab Clients with Sponsored Tile Impressions"
+  }
+
+  measure: newtab_clients_with_sponsored_tile_clicks_sum {
+    type: sum
+    sql: ${TABLE}.newtab_clients_with_sponsored_tile_clicks*1 ;;
+    label: "Newtab Clients with Sponsored Tile Clicks Sum"
+    group_label: "Statistics"
+    description: "Sum of Newtab Clients with Sponsored Tile Clicks"
+  }
+
+  measure: newtab_clients_with_sponsored_content_impressions_sum {
+    type: sum
+    sql: ${TABLE}.newtab_clients_with_sponsored_content_impressions*1 ;;
+    label: "Newtab Clients with Sponsored Content Impressions Sum"
+    group_label: "Statistics"
+    description: "Sum of Newtab Clients with Sponsored Content Impressions"
+  }
+
+  measure: newtab_clients_with_sponsored_content_clicks_sum {
+    type: sum
+    sql: ${TABLE}.newtab_clients_with_sponsored_content_clicks*1 ;;
+    label: "Newtab Clients with Sponsored Content Clicks Sum"
+    group_label: "Statistics"
+    description: "Sum of Newtab Clients with Sponsored Content Clicks"
   }
 
   set: metrics {
@@ -1423,10 +1471,16 @@ a wallpaper.
       newtab_clients_with_sponsored_content_impressions,
       newtab_clients_with_sponsored_content_clicks,
       newtab_ad_click_rate_average,
+      newtab_sponsored_tiles_enabled_sum,
+      newtab_sponsored_pocket_stories_enabled_sum,
       newtab_visits_sum,
       newtab_visits_client_count_sampled,
       newtab_visits_client_count,
       newtab_engaged_visits_sum,
+      newtab_clients_with_sponsored_tile_impressions_sum,
+      newtab_clients_with_sponsored_tile_clicks_sum,
+      newtab_clients_with_sponsored_content_impressions_sum,
+      newtab_clients_with_sponsored_content_clicks_sum,
     ]
   }
 
