@@ -9080,7 +9080,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
 
   dimension: metrics__timing_distribution__glam_experiment_time__sum {
     label: "Glam Experiment Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.glam_experiment_time.sum ;;
     type: number
     group_label: "Glam Experiment"
@@ -18182,7 +18182,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__custom_distribution__performance_clone_deserialize_items__sum {
     label: "Performance Clone Deserialize Items Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.performance_clone_deserialize_items.sum ;;
     type: number
     group_label: "Performance Clone Deserialize"
@@ -18200,7 +18200,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__memory_distribution__performance_clone_deserialize_size__sum {
     label: "Performance Clone Deserialize Size Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.performance_clone_deserialize_size.sum ;;
     type: number
     group_label: "Performance Clone Deserialize"
@@ -18218,7 +18218,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__performance_clone_deserialize_time__sum {
     label: "Performance Clone Deserialize Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.sum ;;
     type: number
     group_label: "Performance Clone Deserialize"
