@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_ios/views/topsites_impression.view.lkml"
+include: "/looker-hub/firefox_ios/datagroups/topsites_impression_last_updated.datagroup.lkml"
 
 explore: topsites_impression {
   sql_always_where: ${topsites_impression.submission_date} >= '2010-01-01' ;;
   view_label: " Topsites_Impression"
   description: "Explore for the topsites_impression ping. Recorded when a sponsored top site is rendered and visible on the newtab page. Visibility is qualified as when the homepage is brought to the front of the Browser, and sponsored tiles are 100% visible on screen."
   view_name: topsites_impression
-
-  always_filter: {
-    filters: [
-      channel: "mozdata.firefox^_ios.topsites^_impression",
-      submission_date: "28 days",
-    ]
-  }
 
   join: topsites_impression__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -38,20 +32,32 @@ explore: topsites_impression {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${topsites_impression.metrics__labeled_counter__glean_error_invalid_value}) AS topsites_impression__metrics__labeled_counter__glean_error_invalid_value ON ${topsites_impression.document_id} = ${topsites_impression__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: topsites_impression__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${topsites_impression.events}) AS topsites_impression__events ;;
+  }
+
+  join: topsites_impression__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${topsites_impression__events.extra}) AS topsites_impression__events__extra ;;
+  }
+
+  join: topsites_impression__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${topsites_impression.ping_info__experiments}) AS topsites_impression__ping_info__experiments ;;
+  }
+
+  persist_with: topsites_impression_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
+  }
 }
 
 explore: suggest__topsites_impression__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}
-
-explore: suggest__topsites_impression__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__topsites_impression__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__topsites_impression__metrics__labeled_counter__glean_error_invalid_value {
   hidden: yes
 }

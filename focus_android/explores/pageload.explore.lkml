@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/focus_android/views/pageload.view.lkml"
+include: "/looker-hub/focus_android/datagroups/pageload_last_updated.datagroup.lkml"
 
 explore: pageload {
   sql_always_where: ${pageload.submission_date} >= '2010-01-01' ;;
   view_label: " Pageload"
   description: "Explore for the pageload ping. Instrumentation collected during a page load."
   view_name: pageload
-
-  always_filter: {
-    filters: [
-      channel: "mozdata.focus^_android.pageload",
-      submission_date: "28 days",
-    ]
-  }
 
   join: pageload__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -38,20 +32,32 @@ explore: pageload {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${pageload.metrics__labeled_counter__glean_error_invalid_value}) AS pageload__metrics__labeled_counter__glean_error_invalid_value ON ${pageload.document_id} = ${pageload__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: pageload__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${pageload.events}) AS pageload__events ;;
+  }
+
+  join: pageload__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${pageload__events.extra}) AS pageload__events__extra ;;
+  }
+
+  join: pageload__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${pageload.ping_info__experiments}) AS pageload__ping_info__experiments ;;
+  }
+
+  persist_with: pageload_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
+  }
 }
 
 explore: suggest__pageload__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}
-
-explore: suggest__pageload__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__pageload__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__pageload__metrics__labeled_counter__glean_error_invalid_value {
   hidden: yes
 }

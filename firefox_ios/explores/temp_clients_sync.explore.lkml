@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_ios/views/temp_clients_sync.view.lkml"
+include: "/looker-hub/firefox_ios/datagroups/temp_clients_sync_last_updated.datagroup.lkml"
 
 explore: temp_clients_sync {
   sql_always_where: ${temp_clients_sync.submission_date} >= '2010-01-01' ;;
   view_label: " Temp_Clients_Sync"
   description: "Explore for the temp_clients_sync ping. A ping sent for every Clients engine sync performed by the application services clients component. It doesn't include the `client_id` because it reports a hashed version of the user's Firefox Account ID."
   view_name: temp_clients_sync
-
-  always_filter: {
-    filters: [
-      channel: "mozdata.firefox^_ios.temp^_clients^_sync",
-      submission_date: "28 days",
-    ]
-  }
 
   join: temp_clients_sync__metrics__labeled_counter__clients_sync_failure_reason {
     relationship: one_to_many
@@ -53,32 +47,32 @@ explore: temp_clients_sync {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${temp_clients_sync.metrics__labeled_counter__glean_error_invalid_value}) AS temp_clients_sync__metrics__labeled_counter__glean_error_invalid_value ON ${temp_clients_sync.document_id} = ${temp_clients_sync__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
-}
 
-explore: suggest__temp_clients_sync__metrics__labeled_counter__clients_sync_failure_reason {
-  hidden: yes
-}
+  join: temp_clients_sync__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${temp_clients_sync.events}) AS temp_clients_sync__events ;;
+  }
 
-explore: suggest__temp_clients_sync__metrics__labeled_counter__clients_sync_incoming {
-  hidden: yes
-}
+  join: temp_clients_sync__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${temp_clients_sync__events.extra}) AS temp_clients_sync__events__extra ;;
+  }
 
-explore: suggest__temp_clients_sync__metrics__labeled_counter__clients_sync_outgoing {
-  hidden: yes
+  join: temp_clients_sync__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${temp_clients_sync.ping_info__experiments}) AS temp_clients_sync__ping_info__experiments ;;
+  }
+
+  persist_with: temp_clients_sync_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
+  }
 }
 
 explore: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}
-
-explore: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_value {
   hidden: yes
 }

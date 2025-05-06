@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/bookmarks_sync.view.lkml"
+include: "/looker-hub/fenix/datagroups/bookmarks_sync_last_updated.datagroup.lkml"
 
 explore: bookmarks_sync {
   sql_always_where: ${bookmarks_sync.submission_date} >= '2010-01-01' ;;
   view_label: " Bookmarks_Sync"
   description: "Explore for the bookmarks_sync ping. A ping sent for every bookmarks sync. It doesn't include the `client_id` because it reports a hashed version of the user's Firefox Account ID."
   view_name: bookmarks_sync
-
-  always_filter: {
-    filters: [
-      channel: "mozdata.fenix.bookmarks^_sync",
-      submission_date: "28 days",
-    ]
-  }
 
   join: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming {
     relationship: one_to_many
@@ -32,6 +26,21 @@ explore: bookmarks_sync {
   join: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_remote_tree_problems {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${bookmarks_sync.metrics__labeled_counter__bookmarks_sync_remote_tree_problems}) AS bookmarks_sync__metrics__labeled_counter__bookmarks_sync_remote_tree_problems ON ${bookmarks_sync.document_id} = ${bookmarks_sync__metrics__labeled_counter__bookmarks_sync_remote_tree_problems.document_id} ;;
+  }
+
+  join: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_incoming {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${bookmarks_sync.metrics__labeled_counter__bookmarks_sync_v2_incoming}) AS bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_incoming ON ${bookmarks_sync.document_id} = ${bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_incoming.document_id} ;;
+  }
+
+  join: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_outgoing {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${bookmarks_sync.metrics__labeled_counter__bookmarks_sync_v2_outgoing}) AS bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_outgoing ON ${bookmarks_sync.document_id} = ${bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_outgoing.document_id} ;;
+  }
+
+  join: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_remote_tree_problems {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${bookmarks_sync.metrics__labeled_counter__bookmarks_sync_v2_remote_tree_problems}) AS bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_remote_tree_problems ON ${bookmarks_sync.document_id} = ${bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_remote_tree_problems.document_id} ;;
   }
 
   join: bookmarks_sync__metrics__labeled_counter__glean_error_invalid_label {
@@ -53,32 +62,32 @@ explore: bookmarks_sync {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${bookmarks_sync.metrics__labeled_counter__glean_error_invalid_value}) AS bookmarks_sync__metrics__labeled_counter__glean_error_invalid_value ON ${bookmarks_sync.document_id} = ${bookmarks_sync__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
-}
 
-explore: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming {
-  hidden: yes
-}
+  join: bookmarks_sync__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${bookmarks_sync.events}) AS bookmarks_sync__events ;;
+  }
 
-explore: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_outgoing {
-  hidden: yes
-}
+  join: bookmarks_sync__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${bookmarks_sync__events.extra}) AS bookmarks_sync__events__extra ;;
+  }
 
-explore: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_remote_tree_problems {
-  hidden: yes
+  join: bookmarks_sync__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${bookmarks_sync.ping_info__experiments}) AS bookmarks_sync__ping_info__experiments ;;
+  }
+
+  persist_with: bookmarks_sync_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
+  }
 }
 
 explore: suggest__bookmarks_sync__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}
-
-explore: suggest__bookmarks_sync__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__bookmarks_sync__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__bookmarks_sync__metrics__labeled_counter__glean_error_invalid_value {
   hidden: yes
 }

@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/default_browser.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/default_browser_last_updated.datagroup.lkml"
 
 explore: default_browser {
   sql_always_where: ${default_browser.submission_date} >= '2010-01-01' ;;
@@ -15,4 +16,6 @@ explore: default_browser {
       submission_date: "28 days",
     ]
   }
+
+  persist_with: default_browser_last_updated
 }

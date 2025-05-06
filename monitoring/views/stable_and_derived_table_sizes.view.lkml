@@ -8,21 +8,25 @@ view: stable_and_derived_table_sizes {
   dimension: byte_size {
     sql: ${TABLE}.byte_size ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: dataset_id {
     sql: ${TABLE}.dataset_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: table_id {
     sql: ${TABLE}.table_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

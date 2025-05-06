@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/baseline.view.lkml"
+include: "/looker-hub/fenix/datagroups/baseline_last_updated.datagroup.lkml"
 
 explore: baseline {
   sql_always_where: ${baseline.submission_date} >= '2010-01-01' ;;
   view_label: " Baseline"
   description: "Explore for the baseline ping. This ping is intended to provide metrics that are managed by the library itself, and not explicitly set by the application or included in the application's `metrics.yaml` file. The `baseline` ping is automatically sent when the application becomes inactive and when the application becomes active again (including application start). Please see the Reasons section for more information."
   view_name: baseline
-
-  always_filter: {
-    filters: [
-      channel: "mozdata.fenix.baseline",
-      submission_date: "28 days",
-    ]
-  }
 
   join: baseline__metrics__labeled_counter__browser_search_ad_clicks {
     relationship: one_to_many
@@ -63,40 +57,32 @@ explore: baseline {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${baseline.metrics__labeled_counter__metrics_search_count}) AS baseline__metrics__labeled_counter__metrics_search_count ON ${baseline.document_id} = ${baseline__metrics__labeled_counter__metrics_search_count.document_id} ;;
   }
-}
 
-explore: suggest__baseline__metrics__labeled_counter__browser_search_ad_clicks {
-  hidden: yes
-}
+  join: baseline__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${baseline.events}) AS baseline__events ;;
+  }
 
-explore: suggest__baseline__metrics__labeled_counter__browser_search_in_content {
-  hidden: yes
-}
+  join: baseline__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${baseline__events.extra}) AS baseline__events__extra ;;
+  }
 
-explore: suggest__baseline__metrics__labeled_counter__browser_search_with_ads {
-  hidden: yes
+  join: baseline__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${baseline.ping_info__experiments}) AS baseline__ping_info__experiments ;;
+  }
+
+  persist_with: baseline_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
+  }
 }
 
 explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}
-
-explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_value {
-  hidden: yes
-}
-
-explore: suggest__baseline__metrics__labeled_counter__glean_validation_pings_submitted {
-  hidden: yes
-}
-
-explore: suggest__baseline__metrics__labeled_counter__metrics_search_count {
   hidden: yes
 }

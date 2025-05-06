@@ -7,9 +7,14 @@
 
 datagroup: desktop_search_alert_latest_daily_last_updated {
   label: "desktop_search_alert_latest_daily Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `mozdata`.analysis.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'desktop_search_alert_latest_daily' ;;
-  description: "Updates when mozdata:analysis.desktop_search_alert_latest_daily is modified."
+  sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `mozdata`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'analysis' AND table_name = 'desktop_search_alert_latest_daily')
+
+    ) ;;
+  description: "Updates for desktop_search_alert_latest_daily when referenced tables are modified."
   max_cache_age: "24 hours"
 }

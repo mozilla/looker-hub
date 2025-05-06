@@ -8,172 +8,206 @@ view: fxa_auth_events_table {
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: connect_device_flow {
     sql: ${TABLE}.connect_device_flow ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: connect_device_os {
     sql: ${TABLE}.connect_device_os ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
   }
 
   dimension: email_provider {
     sql: ${TABLE}.email_provider ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: email_sender {
     sql: ${TABLE}.email_sender ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: email_service {
     sql: ${TABLE}.email_service ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: email_template {
     sql: ${TABLE}.email_template ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: email_type {
     sql: ${TABLE}.email_type ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: email_version {
     sql: ${TABLE}.email_version ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: entrypoint {
     sql: ${TABLE}.entrypoint ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: entrypoint_experiment {
     sql: ${TABLE}.entrypoint_experiment ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: entrypoint_variation {
     sql: ${TABLE}.entrypoint_variation ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: event_type {
     sql: ${TABLE}.event_type ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: flow_id {
     sql: ${TABLE}.flow_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: language {
     sql: ${TABLE}.language ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: logger {
     sql: ${TABLE}.logger ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: oauth_client_id {
     sql: ${TABLE}.oauth_client_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: os_name {
     sql: ${TABLE}.os_name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: os_version {
     sql: ${TABLE}.os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: service {
     sql: ${TABLE}.service ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: sync_active_devices_day {
     sql: ${TABLE}.sync_active_devices_day ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: sync_active_devices_month {
     sql: ${TABLE}.sync_active_devices_month ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: sync_active_devices_week {
     sql: ${TABLE}.sync_active_devices_week ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: sync_device_count {
     sql: ${TABLE}.sync_device_count ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: ua_browser {
     sql: ${TABLE}.ua_browser ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: ua_version {
     sql: ${TABLE}.ua_version ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: user_id {
     sql: ${TABLE}.user_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: utm_campaign {
     sql: ${TABLE}.utm_campaign ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: utm_content {
     sql: ${TABLE}.utm_content ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: utm_medium {
     sql: ${TABLE}.utm_medium ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: utm_source {
     sql: ${TABLE}.utm_source ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: utm_term {
     sql: ${TABLE}.utm_term ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: receiveTimestamp {
     sql: ${TABLE}.receiveTimestamp ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -188,6 +222,7 @@ view: fxa_auth_events_table {
   dimension_group: timestamp {
     sql: ${TABLE}.timestamp ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

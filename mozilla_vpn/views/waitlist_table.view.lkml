@@ -8,6 +8,7 @@ view: waitlist_table {
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
   }
 
@@ -19,16 +20,19 @@ view: waitlist_table {
   dimension: region {
     sql: ${TABLE}.region ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: region_subdivision {
     sql: ${TABLE}.region_subdivision ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: joined {
     sql: ${TABLE}.joined_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -44,6 +48,7 @@ view: waitlist_table {
   dimension_group: waitlist {
     sql: ${TABLE}.waitlist_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

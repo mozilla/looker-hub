@@ -5,7 +5,9 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/firefox_install_demo_alerts.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/firefox_install_demo_alerts_last_updated.datagroup.lkml"
 
 explore: firefox_install_demo_alerts {
   hidden: yes
+  persist_with: firefox_install_demo_alerts_last_updated
 }

@@ -10,16 +10,19 @@ view: telemetry_alerts_prototype_alerts {
   dimension: active_ticks {
     sql: ${TABLE}.active_ticks ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: branch {
     sql: ${TABLE}.branch ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: build_id {
     sql: ${TABLE}.build_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: checkerboard_severity {
@@ -55,6 +58,7 @@ view: telemetry_alerts_prototype_alerts {
   dimension: main_crashes {
     sql: ${TABLE}.main_crashes ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: memory_total {
@@ -65,26 +69,31 @@ view: telemetry_alerts_prototype_alerts {
   dimension: message {
     sql: ${TABLE}.message ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: metric {
     sql: ${TABLE}.metric ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: oom_crashes {
     sql: ${TABLE}.oom_crashes ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: os {
     sql: ${TABLE}.os ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: parameter {
     sql: ${TABLE}.parameter ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: perf_first_contentful_paint_ms {
@@ -95,11 +104,13 @@ view: telemetry_alerts_prototype_alerts {
   dimension: statistic {
     sql: ${TABLE}.statistic ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: subsession_length {
     sql: ${TABLE}.subsession_length ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: submission_date {

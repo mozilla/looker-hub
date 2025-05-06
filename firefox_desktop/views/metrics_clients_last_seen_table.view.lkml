@@ -13,26 +13,37 @@ view: metrics_clients_last_seen_table {
   dimension: days_sent_metrics_ping_bits {
     sql: ${TABLE}.days_sent_metrics_ping_bits ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: n_metrics_ping {
     sql: ${TABLE}.n_metrics_ping ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: profile_group_id {
+    sql: ${TABLE}.profile_group_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

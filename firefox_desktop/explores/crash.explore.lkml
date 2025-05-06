@@ -5,18 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/crash.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/crash_last_updated.datagroup.lkml"
 
 explore: crash {
   sql_always_where: ${crash.submission_date} >= '2010-01-01' ;;
   view_label: " Crash"
   description: "Explore for the crash ping. A ping to report crash information. This information is sent as soon as possible after a crash occurs (whether the crash is a background/content process or the main process). It is expected to be used for crash report analysis and to reduce blind spots in crash reporting."
   view_name: crash
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: crash__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -37,20 +32,31 @@ explore: crash {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${crash.metrics__labeled_counter__glean_error_invalid_value}) AS crash__metrics__labeled_counter__glean_error_invalid_value ON ${crash.document_id} = ${crash__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: crash__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${crash.events}) AS crash__events ;;
+  }
+
+  join: crash__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${crash__events.extra}) AS crash__events__extra ;;
+  }
+
+  join: crash__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${crash.ping_info__experiments}) AS crash__ping_info__experiments ;;
+  }
+
+  persist_with: crash_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
+  }
 }
 
 explore: suggest__crash__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}
-
-explore: suggest__crash__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__crash__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__crash__metrics__labeled_counter__glean_error_invalid_value {
   hidden: yes
 }

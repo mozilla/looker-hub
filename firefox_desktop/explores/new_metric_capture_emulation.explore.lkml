@@ -5,18 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/new_metric_capture_emulation.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/new_metric_capture_emulation_last_updated.datagroup.lkml"
 
 explore: new_metric_capture_emulation {
   sql_always_where: ${new_metric_capture_emulation.submission_date} >= '2010-01-01' ;;
   view_label: " New_Metric_Capture_Emulation"
   description: "Explore for the new_metric_capture_emulation ping. Experimental ping to emulate the capture of new measures that would usually be collected in the metrics ping, to see if it would speed up measure completeness. Sends only EXISTING measures."
   view_name: new_metric_capture_emulation
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: new_metric_capture_emulation__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -37,20 +32,31 @@ explore: new_metric_capture_emulation {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${new_metric_capture_emulation.metrics__labeled_counter__glean_error_invalid_value}) AS new_metric_capture_emulation__metrics__labeled_counter__glean_error_invalid_value ON ${new_metric_capture_emulation.document_id} = ${new_metric_capture_emulation__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: new_metric_capture_emulation__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${new_metric_capture_emulation.events}) AS new_metric_capture_emulation__events ;;
+  }
+
+  join: new_metric_capture_emulation__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${new_metric_capture_emulation__events.extra}) AS new_metric_capture_emulation__events__extra ;;
+  }
+
+  join: new_metric_capture_emulation__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${new_metric_capture_emulation.ping_info__experiments}) AS new_metric_capture_emulation__ping_info__experiments ;;
+  }
+
+  persist_with: new_metric_capture_emulation_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
+  }
 }
 
 explore: suggest__new_metric_capture_emulation__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}
-
-explore: suggest__new_metric_capture_emulation__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__new_metric_capture_emulation__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__new_metric_capture_emulation__metrics__labeled_counter__glean_error_invalid_value {
   hidden: yes
 }

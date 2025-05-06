@@ -5,75 +5,54 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: growth_accounting {
-  dimension: app_version {
-    sql: ${TABLE}.app_version ;;
-    type: string
-  }
-
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
   }
 
   dimension: days_registered_bits {
     sql: ${TABLE}.days_registered_bits ;;
     type: number
+    suggest_persist_for: "24 hours"
+    description: "No. of days since registration event.
+"
   }
 
   dimension: days_seen_bits {
     sql: ${TABLE}.days_seen_bits ;;
     type: number
+    suggest_persist_for: "24 hours"
+    description: "No. of days since the user had activity event.
+"
   }
 
   dimension: days_seen_in_tier1_country_bits {
     sql: ${TABLE}.days_seen_in_tier1_country_bits ;;
     type: number
+    suggest_persist_for: "24 hours"
+    description: "No. of days since seen_in_tier1_country was last True.
+"
   }
 
-  dimension: days_seen_no_monitor_bits {
-    sql: ${TABLE}.days_seen_no_monitor_bits ;;
-    type: number
-  }
-
-  dimension: days_since_registered {
-    sql: ${TABLE}.days_since_registered ;;
-    type: number
-  }
-
-  dimension: days_since_seen {
-    sql: ${TABLE}.days_since_seen ;;
-    type: number
-  }
-
-  dimension: days_since_seen_in_tier1_country {
-    sql: ${TABLE}.days_since_seen_in_tier1_country ;;
-    type: number
-  }
-
-  dimension: days_since_seen_no_monitor {
-    sql: ${TABLE}.days_since_seen_no_monitor ;;
-    type: number
-  }
-
-  dimension: language {
-    sql: ${TABLE}.language ;;
+  dimension: service {
+    sql: ${TABLE}.service ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
-  dimension: os_name {
-    sql: ${TABLE}.os_name ;;
-    type: string
+  dimension: user_agent_device_count {
+    sql: ${TABLE}.user_agent_device_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of devices associated with the user, per service, per day. Estimated from the number of unique user agent strings."
   }
 
-  dimension: os_version {
-    sql: ${TABLE}.os_version ;;
+  dimension: user_id_sha256 {
+    sql: ${TABLE}.user_id_sha256 ;;
     type: string
-  }
-
-  dimension: user_id {
-    sql: ${TABLE}.user_id ;;
-    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: active_this_week {
@@ -100,8 +79,8 @@ view: growth_accounting {
     hidden: yes
   }
 
-  dimension: user_id_day {
-    sql: CONCAT(CAST(${TABLE}.submission_date AS STRING), ${user_id}) ;;
+  dimension: user_id_sha256_day {
+    sql: CONCAT(CAST(${TABLE}.submission_date AS STRING), ${user_id_sha256}) ;;
     type: string
     hidden: yes
     primary_key: yes
@@ -110,6 +89,7 @@ view: growth_accounting {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -252,5 +232,5 @@ view: growth_accounting {
     sql: SAFE_DIVIDE(${new_users} + ${overall_resurrected},${established_users_churned_count} + ${new_users_churned_count}) ;;
   }
 
-  sql_table_name: `mozdata.firefox_accounts.fxa_users_last_seen` ;;
+  sql_table_name: `mozdata.accounts_backend.users_services_last_seen` ;;
 }

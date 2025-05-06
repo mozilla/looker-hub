@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_ios/views/metrics.view.lkml"
+include: "/looker-hub/firefox_ios/datagroups/metrics_last_updated.datagroup.lkml"
 
 explore: metrics {
   sql_always_where: ${metrics.submission_date} >= '2010-01-01' ;;
   view_label: " Metrics"
   description: "Explore for the metrics ping. The `metrics` ping is intended for all of the metrics that are explicitly set by the application or are included in the application's `metrics.yaml` file (except events). The reported data is tied to the ping's *measurement window*, which is the time between the collection of two `metrics` ping. Ideally, this window is expected to be about 24 hours, given that the collection is scheduled daily at 4AM. Data in the `ping_info` section of the ping can be used to infer the length of this window."
   view_name: metrics
-
-  always_filter: {
-    filters: [
-      channel: "mozdata.firefox^_ios.metrics",
-      submission_date: "28 days",
-    ]
-  }
 
   join: metrics__metrics__labeled_counter__bookmarks_add {
     relationship: one_to_many
@@ -139,9 +133,9 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__history_selected_item}) AS metrics__metrics__labeled_counter__history_selected_item ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__history_selected_item.document_id} ;;
   }
 
-  join: metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
+  join: metrics__metrics__labeled_counter__homepage_section_viewed {
     relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray}) AS metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray.document_id} ;;
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__homepage_section_viewed}) AS metrics__metrics__labeled_counter__homepage_section_viewed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__homepage_section_viewed.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__library_panel_pressed {
@@ -228,172 +222,32 @@ explore: metrics {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__wallpaper_analytics_themed_wallpaper}) AS metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper.document_id} ;;
   }
-}
 
-explore: suggest__metrics__metrics__labeled_counter__bookmarks_add {
-  hidden: yes
-}
+  join: metrics__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.events}) AS metrics__events ;;
+  }
 
-explore: suggest__metrics__metrics__labeled_counter__bookmarks_delete {
-  hidden: yes
-}
+  join: metrics__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.extra}) AS metrics__events__extra ;;
+  }
 
-explore: suggest__metrics__metrics__labeled_counter__bookmarks_edit {
-  hidden: yes
-}
+  join: metrics__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.ping_info__experiments}) AS metrics__ping_info__experiments ;;
+  }
 
-explore: suggest__metrics__metrics__labeled_counter__bookmarks_open {
-  hidden: yes
-}
+  persist_with: metrics_last_updated
 
-explore: suggest__metrics__metrics__labeled_counter__bookmarks_view_list {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__browser_search_with_ads {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_firefox_homepage_origin {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_group_open_origin {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_show_all_origin {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_tab_opened_origin {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_bookmark_origin {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_read_origin {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_show_all_origin {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_synced_tab_opened_origin {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_synced_tab_show_all_origin {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_your_library {
-  hidden: yes
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
+  }
 }
 
 explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failure {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__history_selected_item {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__library_panel_pressed {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__logins_store_read_query_error_count {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_count {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error_count {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__pocket_open_story_origin {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__pocket_open_story_position {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__reading_list_add {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__reading_list_delete {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__search_counts {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__search_google_topsite_pressed {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__search_in_content {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__tabs_close {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__tabs_close_all {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__tabs_open {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__top_site_pressed_tile_origin {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__top_sites_pressed_tile_origin {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper {
   hidden: yes
 }

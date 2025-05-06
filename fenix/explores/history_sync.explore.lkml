@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/history_sync.view.lkml"
+include: "/looker-hub/fenix/datagroups/history_sync_last_updated.datagroup.lkml"
 
 explore: history_sync {
   sql_always_where: ${history_sync.submission_date} >= '2010-01-01' ;;
   view_label: " History_Sync"
   description: "Explore for the history_sync ping. A ping sent for every history sync. It doesn't include the `client_id` because it reports a hashed version of the user's Firefox Account ID."
   view_name: history_sync
-
-  always_filter: {
-    filters: [
-      channel: "mozdata.fenix.history^_sync",
-      submission_date: "28 days",
-    ]
-  }
 
   join: history_sync__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -48,28 +42,42 @@ explore: history_sync {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${history_sync.metrics__labeled_counter__history_sync_outgoing}) AS history_sync__metrics__labeled_counter__history_sync_outgoing ON ${history_sync.document_id} = ${history_sync__metrics__labeled_counter__history_sync_outgoing.document_id} ;;
   }
+
+  join: history_sync__metrics__labeled_counter__history_sync_v2_incoming {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${history_sync.metrics__labeled_counter__history_sync_v2_incoming}) AS history_sync__metrics__labeled_counter__history_sync_v2_incoming ON ${history_sync.document_id} = ${history_sync__metrics__labeled_counter__history_sync_v2_incoming.document_id} ;;
+  }
+
+  join: history_sync__metrics__labeled_counter__history_sync_v2_outgoing {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${history_sync.metrics__labeled_counter__history_sync_v2_outgoing}) AS history_sync__metrics__labeled_counter__history_sync_v2_outgoing ON ${history_sync.document_id} = ${history_sync__metrics__labeled_counter__history_sync_v2_outgoing.document_id} ;;
+  }
+
+  join: history_sync__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${history_sync.events}) AS history_sync__events ;;
+  }
+
+  join: history_sync__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${history_sync__events.extra}) AS history_sync__events__extra ;;
+  }
+
+  join: history_sync__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${history_sync.ping_info__experiments}) AS history_sync__ping_info__experiments ;;
+  }
+
+  persist_with: history_sync_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
+  }
 }
 
 explore: suggest__history_sync__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}
-
-explore: suggest__history_sync__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__history_sync__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__history_sync__metrics__labeled_counter__glean_error_invalid_value {
-  hidden: yes
-}
-
-explore: suggest__history_sync__metrics__labeled_counter__history_sync_incoming {
-  hidden: yes
-}
-
-explore: suggest__history_sync__metrics__labeled_counter__history_sync_outgoing {
   hidden: yes
 }

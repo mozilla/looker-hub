@@ -7,9 +7,14 @@
 
 datagroup: task_monitoring_logs_last_updated {
   label: "task_monitoring_logs Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-experiments`.monitoring.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'task_monitoring_logs' ;;
-  description: "Updates when moz-fx-data-experiments:monitoring.task_monitoring_logs is modified."
+  sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-experiments`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'monitoring' AND table_name = 'task_monitoring_logs')
+
+    ) ;;
+  description: "Updates for task_monitoring_logs when referenced tables are modified."
   max_cache_age: "24 hours"
 }

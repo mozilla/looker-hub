@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/task_continuity_sync_after_tab_change_rollout_40.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/task_continuity_sync_after_tab_change_rollout_40_last_updated.datagroup.lkml"
 
 explore: task_continuity_sync_after_tab_change_rollout_40 {
   always_filter: {
@@ -14,4 +15,5 @@ explore: task_continuity_sync_after_tab_change_rollout_40 {
   }
 
   hidden: yes
+  persist_with: task_continuity_sync_after_tab_change_rollout_40_last_updated
 }

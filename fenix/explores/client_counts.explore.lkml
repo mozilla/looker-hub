@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/client_counts.view.lkml"
+include: "/looker-hub/fenix/datagroups/client_counts_last_updated.datagroup.lkml"
 
 explore: client_counts {
   sql_always_where: ${client_counts.submission_date} >= '2010-01-01' ;;
@@ -13,7 +14,6 @@ explore: client_counts {
 
   always_filter: {
     filters: [
-      channel: "mozdata.fenix.baseline^_clients^_daily",
       submission_date: "28 days",
     ]
   }
@@ -42,4 +42,6 @@ explore: client_counts {
       submission_date: asc,
     ]
   }
+
+  persist_with: client_counts_last_updated
 }

@@ -8,11 +8,13 @@ view: protected_table {
   dimension: fxa_uid {
     sql: ${TABLE}.fxa_uid ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: first_protected {
     sql: ${TABLE}.first_protected ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

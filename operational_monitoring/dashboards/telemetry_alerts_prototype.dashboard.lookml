@@ -37,7 +37,7 @@
     listen:
       Date: telemetry_alerts_prototype.build_id
       Percentile: telemetry_alerts_prototype.parameter
-      Os: telemetry_alerts_prototype.os
+      OS: telemetry_alerts_prototype.os
       Metric: telemetry_alerts_prototype.metric
       Statistic: telemetry_alerts_prototype.statistic
       
@@ -49,7 +49,7 @@
     model: operational_monitoring
     explore: telemetry_alerts_prototype_alerts
     type: looker_grid
-    fields: [telemetry_alerts_prototype_alerts.submission_date, telemetry_alerts_prototype_alerts.build_id,
+    fields: [telemetry_alerts_prototype_alerts.build_id,
       telemetry_alerts_prototype_alerts.os,
       telemetry_alerts_prototype_alerts.metric, telemetry_alerts_prototype_alerts.statistic, telemetry_alerts_prototype_alerts.parameter,
       telemetry_alerts_prototype_alerts.message, telemetry_alerts_prototype_alerts.branch, telemetry_alerts_prototype_alerts.errors]
@@ -132,7 +132,7 @@
   - name: Metric
     title: Metric
     type: field_filter
-    default_value: 'checkerboard_severity'
+    default_value: 'gc_budget_overrun'
     allow_multiple_values: false
     required: true
     ui_config:
@@ -156,8 +156,8 @@
     listens_to_filters: [Metric]
     field: telemetry_alerts_prototype.statistic
   
-  - title: Os
-    name: Os
+  - title: OS
+    name: OS
     type: string_filter
     default_value: 'Linux'
     allow_multiple_values: false

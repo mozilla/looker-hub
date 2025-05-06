@@ -8,26 +8,31 @@ view: task_monitoring_logs {
   dimension: experiment {
     sql: ${TABLE}.experiment ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: state {
     sql: ${TABLE}.state ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: worker_address {
     sql: ${TABLE}.worker_address ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: timestamp {
     sql: ${TABLE}.timestamp ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

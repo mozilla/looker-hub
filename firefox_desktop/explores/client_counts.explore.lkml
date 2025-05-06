@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/client_counts.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/client_counts_last_updated.datagroup.lkml"
 
 explore: client_counts {
   sql_always_where: ${client_counts.submission_date} >= '2010-01-01' ;;
@@ -81,13 +82,13 @@ explore: client_counts {
   }
 
   join: clients_daily_table__scalar_parent_browser_ui_interaction_content_context_sum {
-    view_label: "Client Counts  Scalar Parent Browser Ui Interaction Content Context Sum"
+    view_label: "Client Counts  Scalar Parent Browser UI Interaction Content Context Sum"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_browser_ui_interaction_content_context_sum}) AS clients_daily_table__scalar_parent_browser_ui_interaction_content_context_sum ;;
   }
 
   join: clients_daily_table__scalar_parent_browser_ui_interaction_preferences_pane_home_sum {
-    view_label: "Client Counts  Scalar Parent Browser Ui Interaction Preferences Pane Home Sum"
+    view_label: "Client Counts  Scalar Parent Browser UI Interaction Preferences Pane Home Sum"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_browser_ui_interaction_preferences_pane_home_sum}) AS clients_daily_table__scalar_parent_browser_ui_interaction_preferences_pane_home_sum ;;
   }
@@ -96,6 +97,42 @@ explore: client_counts {
     view_label: "Client Counts  Scalar Parent Devtools Accessibility Select Accessible For Node Sum"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_devtools_accessibility_select_accessible_for_node_sum}) AS clients_daily_table__scalar_parent_devtools_accessibility_select_accessible_for_node_sum ;;
+  }
+
+  join: clients_daily_table__scalar_parent_library_link_sum {
+    view_label: "Client Counts  Scalar Parent Library Link Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_library_link_sum}) AS clients_daily_table__scalar_parent_library_link_sum ;;
+  }
+
+  join: clients_daily_table__scalar_parent_library_opened_sum {
+    view_label: "Client Counts  Scalar Parent Library Opened Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_library_opened_sum}) AS clients_daily_table__scalar_parent_library_opened_sum ;;
+  }
+
+  join: clients_daily_table__scalar_parent_library_search_sum {
+    view_label: "Client Counts  Scalar Parent Library Search Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_library_search_sum}) AS clients_daily_table__scalar_parent_library_search_sum ;;
+  }
+
+  join: clients_daily_table__scalar_parent_sidebar_link_sum {
+    view_label: "Client Counts  Scalar Parent Sidebar Link Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_sidebar_link_sum}) AS clients_daily_table__scalar_parent_sidebar_link_sum ;;
+  }
+
+  join: clients_daily_table__scalar_parent_sidebar_opened_sum {
+    view_label: "Client Counts  Scalar Parent Sidebar Opened Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_sidebar_opened_sum}) AS clients_daily_table__scalar_parent_sidebar_opened_sum ;;
+  }
+
+  join: clients_daily_table__scalar_parent_sidebar_search_sum {
+    view_label: "Client Counts  Scalar Parent Sidebar Search Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_sidebar_search_sum}) AS clients_daily_table__scalar_parent_sidebar_search_sum ;;
   }
 
   join: clients_daily_table__scalar_parent_telemetry_event_counts_sum {
@@ -427,4 +464,6 @@ explore: client_counts {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_counts.search_withads_webextension_sum}) AS clients_daily_table__search_withads_webextension_sum ;;
   }
+
+  persist_with: client_counts_last_updated
 }

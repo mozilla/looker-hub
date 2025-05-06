@@ -10,6 +10,72 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Installs By OS
+    name: Installs By OS_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: firefox_install_demo
+    type: looker_line
+    fields: [
+      firefox_install_demo.submission_date,
+      firefox_install_demo.branch,
+      firefox_install_demo.point
+    ]
+    pivots: [
+      firefox_install_demo.branch, firefox_install_demo.metric
+    ]
+    filters:
+      firefox_install_demo.metric: '"install_volume_win8", "install_volume_win10", "install_volume_win7", "install_volume_win8_1"'
+      firefox_install_demo.statistic: sum
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: firefox_install_demo.submission_date
+    field_y: firefox_install_demo.point
+    log_scale: false
+    ci_lower: firefox_install_demo.lower
+    ci_upper: firefox_install_demo.upper
+    show_grid: true
+    listen:
+      Date: firefox_install_demo.submission_date
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Installs By OS
+    name: Installs By OS_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: firefox_install_demo
+    type: looker_line
+    fields: [
+      firefox_install_demo.submission_date,
+      firefox_install_demo.branch,
+      firefox_install_demo.point
+    ]
+    pivots: [
+      firefox_install_demo.branch, firefox_install_demo.metric
+    ]
+    filters:
+      firefox_install_demo.metric: '"install_volume_win8", "install_volume_win10", "install_volume_win7", "install_volume_win8_1"'
+      firefox_install_demo.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: firefox_install_demo.submission_date
+    field_y: firefox_install_demo.point
+    log_scale: false
+    ci_lower: firefox_install_demo.lower
+    ci_upper: firefox_install_demo.upper
+    show_grid: true
+    listen:
+      Date: firefox_install_demo.submission_date
+      
+    active: "#3FE1B0"
+    defaults_version: 0
   - title: Install Volume Total
     name: Install Volume Total_sum
     note_state: expanded
@@ -28,7 +94,7 @@
     filters:
       firefox_install_demo.metric: 'install_volume_total'
       firefox_install_demo.statistic: sum
-    row: 0
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -61,72 +127,6 @@
     filters:
       firefox_install_demo.metric: 'install_volume_total'
       firefox_install_demo.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: firefox_install_demo.submission_date
-    field_y: firefox_install_demo.point
-    log_scale: false
-    ci_lower: firefox_install_demo.lower
-    ci_upper: firefox_install_demo.upper
-    show_grid: true
-    listen:
-      Date: firefox_install_demo.submission_date
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Installs By Os
-    name: Installs By Os_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: firefox_install_demo
-    type: looker_line
-    fields: [
-      firefox_install_demo.submission_date,
-      firefox_install_demo.branch,
-      firefox_install_demo.point
-    ]
-    pivots: [
-      firefox_install_demo.branch, firefox_install_demo.metric 
-    ]
-    filters:
-      firefox_install_demo.metric: '"install_volume_win8_1", "install_volume_win10", "install_volume_win8", "install_volume_win7"'
-      firefox_install_demo.statistic: sum
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: firefox_install_demo.submission_date
-    field_y: firefox_install_demo.point
-    log_scale: false
-    ci_lower: firefox_install_demo.lower
-    ci_upper: firefox_install_demo.upper
-    show_grid: true
-    listen:
-      Date: firefox_install_demo.submission_date
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Installs By Os
-    name: Installs By Os_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: firefox_install_demo
-    type: looker_line
-    fields: [
-      firefox_install_demo.submission_date,
-      firefox_install_demo.branch,
-      firefox_install_demo.point
-    ]
-    pivots: [
-      firefox_install_demo.branch, firefox_install_demo.metric 
-    ]
-    filters:
-      firefox_install_demo.metric: '"install_volume_win8_1", "install_volume_win10", "install_volume_win8", "install_volume_win7"'
-      firefox_install_demo.statistic: mean
     row: 10
     col: 12
     width: 12
@@ -148,7 +148,7 @@
     model: operational_monitoring
     explore: firefox_install_demo_alerts
     type: looker_grid
-    fields: [firefox_install_demo_alerts.submission_date, firefox_install_demo_alerts.build_id,
+    fields: [firefox_install_demo_alerts.submission_date,
       firefox_install_demo_alerts.metric, firefox_install_demo_alerts.statistic, firefox_install_demo_alerts.parameter,
       firefox_install_demo_alerts.message, firefox_install_demo_alerts.branch, firefox_install_demo_alerts.errors]
     sorts: [firefox_install_demo_alerts.submission_date
