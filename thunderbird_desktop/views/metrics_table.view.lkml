@@ -680,6 +680,36 @@ Child-process data will likely be absent, or incomplete.
 "
   }
 
+  dimension: metrics__boolean__gfx_d2d_enabled {
+    sql: ${TABLE}.metrics.boolean.gfx_d2d_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Gfx D2D Enabled"
+    description: "Whether Direct2D is enabled. (Windows-only)
+"
+  }
+
+  dimension: metrics__boolean__gfx_dwrite_enabled {
+    sql: ${TABLE}.metrics.boolean.gfx_dwrite_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Gfx Dwrite Enabled"
+    description: "Whether DirectWrite is enabled. (Windows-only)
+"
+  }
+
+  dimension: metrics__boolean__gfx_headless {
+    sql: ${TABLE}.metrics.boolean.gfx_headless ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Gfx Headless"
+    description: "Whether the app's running in headless mode (e.g. via `MOZ_HEADLESS`).
+"
+  }
+
   dimension: metrics__boolean__gfx_os_compositor {
     sql: ${TABLE}.metrics.boolean.gfx_os_compositor ;;
     type: yesno
@@ -808,6 +838,69 @@ To be used to validate GIFFT.
     group_item_label: "Pwmgr Saving Enabled"
     description: "Whether password saving is enabled globally.
 Tracks the pref `signon.rememberSignons`.
+"
+  }
+
+  dimension: metrics__boolean__system_has_win_package_id {
+    sql: ${TABLE}.metrics.boolean.system_has_win_package_id ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "System Has Win Package ID"
+    description: "Whether the app has a package identity.
+Windows only.
+"
+  }
+
+  dimension: metrics__boolean__system_is_wow_64 {
+    sql: ${TABLE}.metrics.boolean.system_is_wow_64 ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "System Is Wow 64"
+    description: "Whether we're in Windows32-on-Windows64 mode.
+Windows only.
+"
+  }
+
+  dimension: metrics__boolean__system_is_wow_arm_64 {
+    sql: ${TABLE}.metrics.boolean.system_is_wow_arm_64 ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "System Is Wow Arm 64"
+    description: "Whether we're in Windows32-on-WindowsForArm64 mode.
+Windows only.
+"
+  }
+
+  dimension: metrics__boolean__update_settings_auto_download {
+    sql: ${TABLE}.metrics.boolean.update_settings_auto_download ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Update Settings Auto Download"
+    description: "Whether app updates are set to auto-download.
+"
+  }
+
+  dimension: metrics__boolean__update_settings_background {
+    sql: ${TABLE}.metrics.boolean.update_settings_background ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Update Settings Background"
+    description: "Whether updates can be delivered in the background.
+"
+  }
+
+  dimension: metrics__boolean__update_settings_enabled {
+    sql: ${TABLE}.metrics.boolean.update_settings_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Update Settings Enabled"
+    description: "Whether updates are available.
 "
   }
 
@@ -12770,6 +12863,13 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 "
   }
 
+  dimension: metrics__labeled_memory_distribution__network_page_load_size {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.network_page_load_size ;;
+    hidden: yes
+    description: "The size of the HTTP response for a document load, keyed by the page itself or the sum of subresources.
+"
+  }
+
   dimension: metrics__labeled_memory_distribution__networking_trr_request_size {
     sql: ${TABLE}.metrics.labeled_memory_distribution.networking_trr_request_size ;;
     hidden: yes
@@ -14464,6 +14564,221 @@ values.
 "
   }
 
+  dimension: metrics__object__gfx_adapters {
+    sql: ${TABLE}.metrics.object.gfx_adapters ;;
+    hidden: yes
+    description: "Information about the primary (and secondary, if available) graphics adapter.
+* description - e.g. \"Intel(R) HD Graphics 4600\"
+* vendorID - Hex vendor id
+* deviceID - Hex device id
+* subsysID - Hex subsys id
+* RAM - reported RAM in megabytes.
+* driver - Platform-specific driver information.
+* driverVendor - Driver vendor information.
+* driverVersion - Driver version.
+* driverDate - Driver date.
+* GPUActive - Whether this adapter is active.
+"
+  }
+
+  dimension: metrics__object__gfx_features_d2d {
+    sql: ${TABLE}.metrics.object.gfx_features_d2d ;;
+    hidden: yes
+    description: "(Windows-only) information about the D2D compositor.
+* status - One of
+  * \"unused\"      - This feature has not been requested.
+  * \"unavailable\" - Safe Mode or OS restriction prevents use.
+  * \"blocked\"     - An internal condition (such as safe mode) prevents use.
+  * \"blocklisted\" - Blocked due to a blocklist restriction.
+  * \"denied\"      - Blocked due to allowlist restrictions.
+  * \"disabled\"    - User explicitly disabled this default feature.
+  * \"failed\"      - Feature failed to initialize.
+  * \"available\"   - User has this feature available by default.
+            optionally including \":\" followed by a reason
+            e.g. \"FEATURE_FAILURE_WEBRENDER_VIDEO_CRASH_INTEL_23.20.16.4973\".
+* version - The feature version, either \"1.0\" or \"1.1\"
+"
+  }
+
+  dimension: metrics__object__gfx_features_d3d11 {
+    sql: ${TABLE}.metrics.object.gfx_features_d3d11 ;;
+    hidden: yes
+    description: "(Windows-only) information about the D3D11 compositor.
+* status - One of
+  * \"unused\"      - This feature has not been requested.
+  * \"unavailable\" - Safe Mode or OS restriction prevents use.
+  * \"blocked\"     - An internal condition (such as safe mode) prevents use.
+  * \"blocklisted\" - Blocked due to a blocklist restriction.
+  * \"denied\"      - Blocked due to allowlist restrictions.
+  * \"disabled\"    - User explicitly disabled this default feature.
+  * \"failed\"      - Feature failed to initialize.
+  * \"available\"   - User has this feature available by default.
+            optionally including \":\" followed by a reason
+            e.g. \"FEATURE_FAILURE_WEBRENDER_VIDEO_CRASH_INTEL_23.20.16.4973\".
+* warp - Software rendering (WARP) mode was chosen.
+* textureSharing - Whether or not texture sharing works.
+* version - The D3D11 device feature level.
+* blocklisted - Whether D3D11 is blocklisted; use to see whether WARP
+                was blacklist induced or driver-failure induced.
+"
+  }
+
+  dimension: metrics__object__gfx_features_gpu_process {
+    sql: ${TABLE}.metrics.object.gfx_features_gpu_process ;;
+    hidden: yes
+    description: "Information about the out-of-process compositing (\"GPU Process\") GFX feature.
+* status - One of
+  * \"unused\"      - This feature has not been requested.
+  * \"unavailable\" - Safe Mode or OS restriction prevents use.
+  * \"blocked\"     - An internal condition (such as safe mode) prevents use.
+  * \"blocklisted\" - Blocked due to a blocklist restriction.
+  * \"denied\"      - Blocked due to allowlist restrictions.
+  * \"disabled\"    - User explicitly disabled this default feature.
+  * \"failed\"      - Feature failed to initialize.
+  * \"available\"   - User has this feature available by default and it's in use.
+            optionally including \":\" followed by a reason
+            e.g. \"FEATURE_FAILURE_WEBRENDER_VIDEO_CRASH_INTEL_23.20.16.4973\".
+"
+  }
+
+  dimension: metrics__object__gfx_features_hw_compositing {
+    sql: ${TABLE}.metrics.object.gfx_features_hw_compositing ;;
+    hidden: yes
+    description: "Information about the hardware acceleration GFX feature.
+(i.e. whether we try using the GPU)
+* status - One of
+  * \"unused\"      - This feature has not been requested.
+  * \"unavailable\" - Safe Mode or OS restriction prevents use.
+  * \"blocked\"     - An internal condition (such as safe mode) prevents use.
+  * \"blocklisted\" - Blocked due to a blocklist restriction.
+  * \"denied\"      - Blocked due to allowlist restrictions.
+  * \"disabled\"    - User explicitly disabled this default feature.
+  * \"failed\"      - Feature failed to initialize.
+  * \"available\"   - User has this feature available by default.
+            optionally including \":\" followed by a reason
+            e.g. \"FEATURE_FAILURE_WEBRENDER_VIDEO_CRASH_INTEL_23.20.16.4973\".
+"
+  }
+
+  dimension: metrics__object__gfx_features_omtp {
+    sql: ${TABLE}.metrics.object.gfx_features_omtp ;;
+    hidden: yes
+    description: "Information about the Off Main Thread Painting GFX feature.
+* status - One of
+  * \"unused\"      - This feature has not been requested.
+  * \"unavailable\" - Safe Mode or OS restriction prevents use.
+  * \"blocked\"     - An internal condition (such as safe mode) prevents use.
+  * \"blocklisted\" - Blocked due to a blocklist restriction.
+  * \"denied\"      - Blocked due to allowlist restrictions.
+  * \"disabled\"    - User explicitly disabled this default feature.
+  * \"failed\"      - Feature failed to initialize.
+  * \"available\"   - User has this feature available by default.
+            optionally including \":\" followed by a reason
+            e.g. \"FEATURE_FAILURE_WEBRENDER_VIDEO_CRASH_INTEL_23.20.16.4973\".
+"
+  }
+
+  dimension: metrics__object__gfx_features_opengl_compositing {
+    sql: ${TABLE}.metrics.object.gfx_features_opengl_compositing ;;
+    hidden: yes
+    description: "Information about the OpenGL Compositing GFX feature.
+* status - One of
+  * \"unused\"      - This feature has not been requested.
+  * \"unavailable\" - Safe Mode or OS restriction prevents use.
+  * \"blocked\"     - An internal condition (such as safe mode) prevents use.
+  * \"blocklisted\" - Blocked due to a blocklist restriction.
+  * \"denied\"      - Blocked due to allowlist restrictions.
+  * \"disabled\"    - User explicitly disabled this default feature.
+  * \"failed\"      - Feature failed to initialize.
+  * \"available\"   - User has this feature available by default.
+            optionally including \":\" followed by a reason
+            e.g. \"FEATURE_FAILURE_WEBRENDER_VIDEO_CRASH_INTEL_23.20.16.4973\".
+"
+  }
+
+  dimension: metrics__object__gfx_features_webrender {
+    sql: ${TABLE}.metrics.object.gfx_features_webrender ;;
+    hidden: yes
+    description: "Information about the Webrender GFX feature.
+* status - One of
+  * \"unused\"      - This feature has not been requested.
+  * \"unavailable\" - Safe Mode or OS restriction prevents use.
+  * \"blocked\"     - An internal condition (such as safe mode) prevents use.
+  * \"blocklisted\" - Blocked due to a blocklist restriction.
+  * \"denied\"      - Blocked due to allowlist restrictions.
+  * \"disabled\"    - User explicitly disabled this default feature.
+  * \"failed\"      - Feature failed to initialize.
+  * \"available\"   - User has this feature available by default.
+            optionally including \":\" followed by a reason
+            e.g. \"FEATURE_FAILURE_WEBRENDER_VIDEO_CRASH_INTEL_23.20.16.4973\".
+"
+  }
+
+  dimension: metrics__object__gfx_features_wr_compositor {
+    sql: ${TABLE}.metrics.object.gfx_features_wr_compositor ;;
+    hidden: yes
+    description: "Information about the native OS compositor (CA, DCamp, etc.).
+* status - One of
+  * \"unused\"      - This feature has not been requested.
+  * \"unavailable\" - Safe Mode or OS restriction prevents use.
+  * \"blocked\"     - An internal condition (such as safe mode) prevents use.
+  * \"blocklisted\" - Blocked due to a blocklist restriction.
+  * \"denied\"      - Blocked due to allowlist restrictions.
+  * \"disabled\"    - User explicitly disabled this default feature.
+  * \"failed\"      - Feature failed to initialize.
+  * \"available\"   - User has this feature available by default.
+            optionally including \":\" followed by a reason
+            e.g. \"FEATURE_FAILURE_WEBRENDER_VIDEO_CRASH_INTEL_23.20.16.4973\".
+"
+  }
+
+  dimension: metrics__object__gfx_monitors {
+    sql: ${TABLE}.metrics.object.gfx_monitors ;;
+    hidden: yes
+    description: "Information about connected monitors.
+On Linux only a single monitor is returned for the primary screen.
+* screenWidth - Screen width in pixels
+* screenHeight - Screen height in pixels
+* defaultCSSScaleFactor - The default number of device pixels per unscaled CSS pixel for this screen.
+* contentsScaleFactor - The number of device pixels per desktop pixel for this screen.
+* refreshRate - (Windows only) The target screen refresh rate, in Hz, or 0 if unknown.
+* pseudoDislay - (Windows only) Whether the screen is a pseudo display.
+"
+  }
+
+  dimension: metrics__object__hdd_binary {
+    sql: ${TABLE}.metrics.object.hdd_binary ;;
+    hidden: yes
+    description: "Information about the disk the application binary is stored on.
+Windows only.
+* model - The disk's self-reported model string
+* revision - The disk's self-reported revision string
+* diskType - Either \"HDD\" or \"SSD\"
+"
+  }
+
+  dimension: metrics__object__hdd_profile {
+    sql: ${TABLE}.metrics.object.hdd_profile ;;
+    hidden: yes
+    description: "Information about the disk the profile is stored on.
+Windows only.
+* model - The disk's self-reported model string
+* revision - The disk's self-reported revision string
+* diskType - Either \"HDD\" or \"SSD\"
+"
+  }
+
+  dimension: metrics__object__hdd_system {
+    sql: ${TABLE}.metrics.object.hdd_system ;;
+    hidden: yes
+    description: "Information about the disk the system files are stored on.
+Windows only.
+* model - The disk's self-reported model string
+* revision - The disk's self-reported revision string
+* diskType - Either \"HDD\" or \"SSD\"
+"
+  }
+
   dimension: metrics__object__mail_account_preferences {
     sql: ${TABLE}.metrics.object.mail_account_preferences ;;
     hidden: yes
@@ -14703,6 +15018,16 @@ API for the purposes of Validation (hence GVSV).
 "
   }
 
+  dimension: metrics__quantity__gfx_target_frame_rate {
+    sql: ${TABLE}.metrics.quantity.gfx_target_frame_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Gfx Target Frame Rate"
+    description: "The frame rate in Hz, typically 60 or more.
+"
+  }
+
   dimension: metrics__quantity__gpu_process_total_launch_attempts {
     sql: ${TABLE}.metrics.quantity.gpu_process_total_launch_attempts ;;
     type: number
@@ -14793,6 +15118,60 @@ See `nsIXULRuntime.launcherProcessState`
 "
   }
 
+  dimension: metrics__quantity__profiles_creation_date {
+    sql: ${TABLE}.metrics.quantity.profiles_creation_date ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Profiles Creation Date"
+    description: "The day the profile was created,
+as determined by checking various file metadata in the profile directory.
+Not considered to be particularly reliable in practice.
+Prefer `client_info.first_run_date` in most cases.
+e.g. 16446
+"
+  }
+
+  dimension: metrics__quantity__profiles_first_use_date {
+    sql: ${TABLE}.metrics.quantity.profiles_first_use_date ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Profiles First Use Date"
+    description: "Optional.
+The day the profile was first used,
+as determined by noticing that `times.json` wasn't present.
+Prefer `client_info.first_run_date` in most cases.
+e.g. 16446
+"
+  }
+
+  dimension: metrics__quantity__profiles_recovered_from_backup {
+    sql: ${TABLE}.metrics.quantity.profiles_recovered_from_backup ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Profiles Recovered From Backup"
+    description: "Optional.
+The day the profile was recovered from backup,
+persisted in `times.json`.
+e.g. 16446
+"
+  }
+
+  dimension: metrics__quantity__profiles_reset_date {
+    sql: ${TABLE}.metrics.quantity.profiles_reset_date ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Profiles Reset Date"
+    description: "Optional.
+The day the profile was most recently reset,
+persisted in `times.json`.
+e.g. 16446
+"
+  }
+
   dimension: metrics__quantity__pwmgr_num_saved_passwords {
     sql: ${TABLE}.metrics.quantity.pwmgr_num_saved_passwords ;;
     type: number
@@ -14811,6 +15190,30 @@ Similar to the legacy telemetry histogram PWMGR_NUM_SAVED_PASSWORDS.
     group_label: "Metrics Quantity"
     group_item_label: "Pwmgr Potentially Breached Passwords"
     description: "The number of potentially breached passwords, as determined by LoginBreaches.getPotentialBreachesByLoginGUID. This metric was generated to correspond to the Legacy Telemetry scalar pwmgr.potentially_breached_passwords.
+"
+  }
+
+  dimension: metrics__quantity__sandbox_content_win32k_lockdown_state {
+    sql: ${TABLE}.metrics.quantity.sandbox_content_win32k_lockdown_state ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Sandbox Content Win32K Lockdown State"
+    description: "The current win32k.sys lockdown state.
+Possible values are defined in the ContentWin32kLockdownState enum.
+Reported even on non-Windows machines.
+"
+  }
+
+  dimension: metrics__quantity__sandbox_effective_content_process_level {
+    sql: ${TABLE}.metrics.quantity.sandbox_effective_content_process_level ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Sandbox Effective Content Process Level"
+    description: "The current sandbox level.
+The \"security.sandbox.content.level\" preference rounded up to the current minimum allowed level.
+0 if `MOZ_DISABLE_CONTENT_SANDBOX` is set.
 "
   }
 
@@ -14931,6 +15334,79 @@ Similar to the legacy telemetry histogram PWMGR_NUM_SAVED_PASSWORDS.
     group_label: "Metrics Quantity"
     group_item_label: "System CPU Stepping"
     description: "CPU stepping.
+"
+  }
+
+  dimension: metrics__quantity__system_memory {
+    sql: ${TABLE}.metrics.quantity.system_memory ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System Memory"
+    description: "The physical memory size in MB (2^20 bytes).
+e.g. 32211
+"
+  }
+
+  dimension: metrics__quantity__system_os_service_pack_major {
+    sql: ${TABLE}.metrics.quantity.system_os_service_pack_major ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System OS Service Pack Major"
+    description: "The Windows service pack's major version, according to WindowsVersionInfo.
+Windows only.
+e.g. 0
+"
+  }
+
+  dimension: metrics__quantity__system_os_service_pack_minor {
+    sql: ${TABLE}.metrics.quantity.system_os_service_pack_minor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System OS Service Pack Minor"
+    description: "The Windows service pack's minor version, according to WindowsVersionInfo.
+Windows only.
+e.g. 0
+"
+  }
+
+  dimension: metrics__quantity__system_os_windows_build_number {
+    sql: ${TABLE}.metrics.quantity.system_os_windows_build_number ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System OS Windows Build Number"
+    description: "The Windows build number, according to WindowsVersionInfo.
+Windows only.
+e.g. 26100
+Expected in most cases to be identical to `client_info.windows_build_number`.
+"
+  }
+
+  dimension: metrics__quantity__system_os_windows_ubr {
+    sql: ${TABLE}.metrics.quantity.system_os_windows_ubr ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System OS Windows Ubr"
+    description: "The Windows update build revision number, according to
+`SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion`.
+Windows only.
+e.g. 3775
+"
+  }
+
+  dimension: metrics__quantity__system_virtual_memory {
+    sql: ${TABLE}.metrics.quantity.system_virtual_memory ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System Virtual Memory"
+    description: "The size of the user-mode portion of the virtual address space of the parent process.
+Windows only.
+e.g. 134217728
 "
   }
 
@@ -15636,6 +16112,16 @@ Similar to the legacy telemetry histogram PWMGR_NUM_SAVED_PASSWORDS.
 "
   }
 
+  dimension: metrics__string__gfx_content_backend {
+    sql: ${TABLE}.metrics.string.gfx_content_backend ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Gfx Content Backend"
+    description: "The content backend (e.g. \"Direct2D 1.1\", \"Skia\", \"Cairo\").
+"
+  }
+
   dimension: metrics__string__gfx_feature_webrender {
     sql: ${TABLE}.metrics.string.gfx_feature_webrender ;;
     type: string
@@ -15643,6 +16129,18 @@ Similar to the legacy telemetry histogram PWMGR_NUM_SAVED_PASSWORDS.
     group_label: "Metrics String"
     group_item_label: "Gfx Feature Webrender"
     description: "Whether webrender is enabled or disabled, and why. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_features_compositor {
+    sql: ${TABLE}.metrics.string.gfx_features_compositor ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Gfx Features Compositor"
+    description: "Layers backend for compositing.
+One of \"d3d9\", \"d3d11\", \"opengl\", \"basic\", or \"none\".
+\"none\" indicates no compositors have been created.
 "
   }
 
@@ -15673,6 +16171,16 @@ Similar to the legacy telemetry histogram PWMGR_NUM_SAVED_PASSWORDS.
     group_label: "Metrics String"
     group_item_label: "Gfx Status Last Compositor Gecko Version"
     description: "The gecko version at the last time a compositor was initialized, and therefore when gfx_status_compositor was last updated. Due to gfx_status_compositor's user lifetime we see lots of unexpected values for the current gecko version. We believe this is because the user has not opened a tab since they were updated to a version where webrender should be enabled on their device. This can be used to verify that theory. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_text_scale_factor {
+    sql: ${TABLE}.metrics.string.gfx_text_scale_factor ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Gfx Text Scale Factor"
+    description: "The text scale factor.
 "
   }
 
@@ -15774,6 +16282,18 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
     A first run of a dedicate"
   }
 
+  dimension: metrics__string__system_apple_model_id {
+    sql: ${TABLE}.metrics.string.system_apple_model_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System Apple Model ID"
+    description: "The `hw.model` of the hardware running this software.
+Mac only.
+e.g. \"MacBookPro14,1\"
+"
+  }
+
   dimension: metrics__string__system_cpu_name {
     sql: ${TABLE}.metrics.string.system_cpu_name ;;
     type: string
@@ -15791,6 +16311,92 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
     group_label: "Metrics String"
     group_item_label: "System CPU Vendor"
     description: "The CPU vendor (e.g. \"GenuineIntel\").
+"
+  }
+
+  dimension: metrics__string__system_os_distro {
+    sql: ${TABLE}.metrics.string.system_os_distro ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System OS Distro"
+    description: "The Operating System's distribution, according to sysinfo.
+Linux only.
+e.g. \"Linuxmint\"
+"
+  }
+
+  dimension: metrics__string__system_os_distro_version {
+    sql: ${TABLE}.metrics.string.system_os_distro_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System OS Distro Version"
+    description: "The Operating System's distribution's version, according to sysinfo.
+Linux only.
+e.g. \"22\"
+"
+  }
+
+  dimension: metrics__string__system_os_locale {
+    sql: ${TABLE}.metrics.string.system_os_locale ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System OS Locale"
+    description: "The Operating System's local, according to ospreferences.
+e.g. \"en-US\"
+"
+  }
+
+  dimension: metrics__string__system_os_name {
+    sql: ${TABLE}.metrics.string.system_os_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System OS Name"
+    description: "The Operating System's name, according to sysinfo.
+e.g. \"Windows_NT\"
+Expected in most cases to be identical to `client_info.os`.
+"
+  }
+
+  dimension: metrics__string__system_os_version {
+    sql: ${TABLE}.metrics.string.system_os_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System OS Version"
+    description: "The Operating System's version, according to sysinfo.
+e.g. \"6.3\"
+Expected in most cases to be identical to `client_info.os_version`.
+"
+  }
+
+  dimension: metrics__string__system_win_package_family_name {
+    sql: ${TABLE}.metrics.string.system_win_package_family_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System Win Package Family Name"
+    description: "The full application package name without any of the components that might change
+during the life cycle of the app (such as the version number or the architecture).
+Uniquely identifies the application within one Windows installation.
+Windows only.
+Only included if it begins with \"Mozilla.\" or \"MozillaCorporation.\".
+e.g. \"Mozilla.Firefox_n80bbvh6b1yt2\"
+"
+  }
+
+  dimension: metrics__string__update_settings_channel {
+    sql: ${TABLE}.metrics.string.update_settings_channel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Update Settings Channel"
+    description: "The update channel according to defaults,
+including partner bits.
+e.g. \"nightly-cck\"
 "
   }
 
@@ -15814,6 +16420,36 @@ operating system.
 "
   }
 
+  dimension: metrics__string_list__intl_accept_languages {
+    sql: ${TABLE}.metrics.string_list.intl_accept_languages ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__intl_app_locales {
+    sql: ${TABLE}.metrics.string_list.intl_app_locales ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__intl_available_locales {
+    sql: ${TABLE}.metrics.string_list.intl_available_locales ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__intl_regional_prefs_locales {
+    sql: ${TABLE}.metrics.string_list.intl_regional_prefs_locales ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__intl_requested_locales {
+    sql: ${TABLE}.metrics.string_list.intl_requested_locales ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__intl_system_locales {
+    sql: ${TABLE}.metrics.string_list.intl_system_locales ;;
+    hidden: yes
+  }
+
   dimension: metrics__string_list__mail_notification_enabled_actions {
     sql: ${TABLE}.metrics.string_list.mail_notification_enabled_actions ;;
     hidden: yes
@@ -15821,6 +16457,11 @@ operating system.
 
   dimension: metrics__string_list__mail_ui_configuration_folder_tree_modes {
     sql: ${TABLE}.metrics.string_list.mail_ui_configuration_folder_tree_modes ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__system_cpu_extensions {
+    sql: ${TABLE}.metrics.string_list.system_cpu_extensions ;;
     hidden: yes
   }
 
@@ -47986,6 +48627,50 @@ view: metrics_table__metrics__labeled_memory_distribution__network_cache_size {
 }
 
 view: metrics_table__metrics__labeled_memory_distribution__network_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__network_page_load_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__network_page_load_size__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

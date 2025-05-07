@@ -254,6 +254,17 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__uuid__usage_profile_group_id {
+    sql: ${TABLE}.metrics.uuid.usage_profile_group_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics UUID"
+    group_item_label: "Usage Profile Group ID"
+    description: "A UUID uniquely identifying the profile group,
+not shared with other telemetry data.
+"
+  }
+
   dimension: metrics__uuid__usage_profile_id {
     sql: ${TABLE}.metrics.uuid.usage_profile_id ;;
     type: string
