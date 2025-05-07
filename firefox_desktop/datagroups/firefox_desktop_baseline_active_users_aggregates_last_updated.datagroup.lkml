@@ -12,7 +12,7 @@ datagroup: firefox_desktop_baseline_active_users_aggregates_last_updated {
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'firefox_desktop_derived' AND table_name = 'baseline_active_users_aggregates_v1')
+    WHERE (table_schema = 'firefox_desktop_derived' AND table_name = 'baseline_active_users_aggregates_v2')
 
     ) ;;
   description: "Updates for firefox_desktop_baseline_active_users_aggregates when referenced tables are modified."
