@@ -55,6 +55,22 @@ this is appended to the app_name.
     suggest_persist_for: "24 hours"
   }
 
+  dimension: attribution_medium {
+    sql: ${TABLE}.attribution_medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Medium to which the ping should be attributed e.g. referral, firefox desktop.
+"
+  }
+
+  dimension: attribution_source {
+    sql: ${TABLE}.attribution_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Source to which the ping should be attributed e.g. firefox browser, search fox.
+"
+  }
+
   dimension: channel {
     sql: ${TABLE}.channel ;;
     type: string

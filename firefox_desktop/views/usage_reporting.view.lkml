@@ -205,6 +205,25 @@ If the version detection fails, this metric gets set to `Unknown`.
 "
   }
 
+  dimension: metrics__uuid__usage_profile_group_id {
+    label: "Usage Profile Group ID"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.usage_profile_group_id ;;
+    type: string
+    group_label: "Usage"
+    group_item_label: "Profile Group ID"
+
+    link: {
+      label: "Glean Dictionary reference for Usage Profile Group ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/usage_profile_group_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A UUID uniquely identifying the profile group,
+not shared with other telemetry data.
+"
+  }
+
   dimension: metrics__uuid__usage_profile_id {
     label: "Usage Profile ID"
     hidden: no

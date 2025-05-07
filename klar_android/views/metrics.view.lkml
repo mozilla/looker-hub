@@ -8522,6 +8522,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__string__gfx_content_backend {
+    label: "Gfx Content Backend"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_content_backend ;;
+    type: string
+    group_label: "Gfx"
+    group_item_label: "Content Backend"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Backend"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_content_backend"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The content backend (e.g. \"Direct2D 1.1\", \"Skia\", \"Cairo\").
+"
+  }
+
   dimension: metrics__custom_distribution__gfx_content_failed_to_acquire_device__sum {
     label: "Gfx Content Failed To Acquire Device Sum"
     hidden: no
@@ -8557,6 +8575,24 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
     description: "Graphics Crash Reason (...)
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram GFX_CRASH.
+"
+  }
+
+  dimension: metrics__boolean__gfx_d2d_enabled {
+    label: "Gfx D2D Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.gfx_d2d_enabled ;;
+    type: yesno
+    group_label: "Gfx"
+    group_item_label: "D2D Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx D2D Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_d2d_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether Direct2D is enabled. (Windows-only)
 "
   }
 
@@ -8652,6 +8688,24 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 "
   }
 
+  dimension: metrics__boolean__gfx_dwrite_enabled {
+    label: "Gfx Dwrite Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.gfx_dwrite_enabled ;;
+    type: yesno
+    group_label: "Gfx"
+    group_item_label: "Dwrite Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Dwrite Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_dwrite_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether DirectWrite is enabled. (Windows-only)
+"
+  }
+
   dimension: metrics__string__gfx_feature_webrender {
     label: "Gfx Feature Webrender"
     hidden: no
@@ -8667,6 +8721,26 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     }
 
     description: "Whether webrender is enabled or disabled, and why. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_features_compositor {
+    label: "Gfx Features Compositor"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_features_compositor ;;
+    type: string
+    group_label: "Gfx Features"
+    group_item_label: "Compositor"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Features Compositor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_features_compositor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Layers backend for compositing.
+One of \"d3d9\", \"d3d11\", \"opengl\", \"basic\", or \"none\".
+\"none\" indicates no compositors have been created.
 "
   }
 
@@ -8723,6 +8797,24 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "A bitfield representation of the available DXGI color spaces of the connected displays on Windows. See (https://docs.microsoft.com/en- us/windows/desktop/api/dxgicommon/ne-dxgicommon- dxgi_color_space_type) for definitions of color spaces. Each N'th bit of this scalar indicates whether the DXGI color space with index 'N' is available on at least one connected monitor. This metric was generated to correspond to the Legacy Telemetry scalar gfx.hdr.windows_display_colorspace_bitfield.
+"
+  }
+
+  dimension: metrics__boolean__gfx_headless {
+    label: "Gfx Headless"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.gfx_headless ;;
+    type: yesno
+    group_label: "Gfx"
+    group_item_label: "Headless"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Headless"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_headless"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the app's running in headless mode (e.g. via `MOZ_HEADLESS`).
 "
   }
 
@@ -8904,6 +8996,42 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Does the hardware support accurate display of HDR content This metric was generated to correspond to the Legacy Telemetry scalar gfx.supports_hdr.
+"
+  }
+
+  dimension: metrics__quantity__gfx_target_frame_rate {
+    label: "Gfx Target Frame Rate"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gfx_target_frame_rate ;;
+    type: number
+    group_label: "Gfx"
+    group_item_label: "Target Frame Rate"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Target Frame Rate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_target_frame_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The frame rate in Hz, typically 60 or more.
+"
+  }
+
+  dimension: metrics__string__gfx_text_scale_factor {
+    label: "Gfx Text Scale Factor"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_text_scale_factor ;;
+    type: string
+    group_label: "Gfx"
+    group_item_label: "Text Scale Factor"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Text Scale Factor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_text_scale_factor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The text scale factor.
 "
   }
 
@@ -19876,6 +20004,92 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__quantity__profiles_creation_date {
+    label: "Profiles Creation Date"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.profiles_creation_date ;;
+    type: number
+    group_label: "Profiles"
+    group_item_label: "Creation Date"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles Creation Date"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/profiles_creation_date"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The day the profile was created,
+as determined by checking various file metadata in the profile directory.
+Not considered to be particularly reliable in practice.
+Prefer `client_info.first_run_date` in most cases.
+e.g. 16446
+"
+  }
+
+  dimension: metrics__quantity__profiles_first_use_date {
+    label: "Profiles First Use Date"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.profiles_first_use_date ;;
+    type: number
+    group_label: "Profiles"
+    group_item_label: "First Use Date"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles First Use Date"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/profiles_first_use_date"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Optional.
+The day the profile was first used,
+as determined by noticing that `times.json` wasn't present.
+Prefer `client_info.first_run_date` in most cases.
+e.g. 16446
+"
+  }
+
+  dimension: metrics__quantity__profiles_recovered_from_backup {
+    label: "Profiles Recovered From Backup"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.profiles_recovered_from_backup ;;
+    type: number
+    group_label: "Profiles"
+    group_item_label: "Recovered From Backup"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles Recovered From Backup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/profiles_recovered_from_backup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Optional.
+The day the profile was recovered from backup,
+persisted in `times.json`.
+e.g. 16446
+"
+  }
+
+  dimension: metrics__quantity__profiles_reset_date {
+    label: "Profiles Reset Date"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.profiles_reset_date ;;
+    type: number
+    group_label: "Profiles"
+    group_item_label: "Reset Date"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles Reset Date"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/profiles_reset_date"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Optional.
+The day the profile was most recently reset,
+persisted in `times.json`.
+e.g. 16446
+"
+  }
+
   dimension: metrics__labeled_counter__pwmgr_form_autofill_result {
     label: "Pwmgr Form Autofill Result"
     hidden: yes
@@ -20832,6 +21046,46 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
     }
 
     description: "The proportion of RTCRtpSenders that were created by an addTransceivers call that was passed a sendEncodings.
+"
+  }
+
+  dimension: metrics__quantity__sandbox_content_win32k_lockdown_state {
+    label: "Sandbox Content Win32K Lockdown State"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.sandbox_content_win32k_lockdown_state ;;
+    type: number
+    group_label: "Sandbox"
+    group_item_label: "Content Win32K Lockdown State"
+
+    link: {
+      label: "Glean Dictionary reference for Sandbox Content Win32K Lockdown State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/sandbox_content_win32k_lockdown_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The current win32k.sys lockdown state.
+Possible values are defined in the ContentWin32kLockdownState enum.
+Reported even on non-Windows machines.
+"
+  }
+
+  dimension: metrics__quantity__sandbox_effective_content_process_level {
+    label: "Sandbox Effective Content Process Level"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.sandbox_effective_content_process_level ;;
+    type: number
+    group_label: "Sandbox"
+    group_item_label: "Effective Content Process Level"
+
+    link: {
+      label: "Glean Dictionary reference for Sandbox Effective Content Process Level"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/sandbox_effective_content_process_level"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The current sandbox level.
+The \"security.sandbox.content.level\" preference rounded up to the current minimum allowed level.
+0 if `MOZ_DISABLE_CONTENT_SANDBOX` is set.
 "
   }
 
@@ -22578,6 +22832,26 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__string__system_apple_model_id {
+    label: "System Apple Model ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_apple_model_id ;;
+    type: string
+    group_label: "System"
+    group_item_label: "Apple Model ID"
+
+    link: {
+      label: "Glean Dictionary reference for System Apple Model ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_apple_model_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The `hw.model` of the hardware running this software.
+Mac only.
+e.g. \"MacBookPro14,1\"
+"
+  }
+
   dimension: metrics__quantity__system_cpu_big_cores {
     label: "System CPU Big Cores"
     hidden: no
@@ -22809,6 +23083,306 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "The CPU vendor (e.g. \"GenuineIntel\").
+"
+  }
+
+  dimension: metrics__boolean__system_has_win_package_id {
+    label: "System Has Win Package ID"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.system_has_win_package_id ;;
+    type: yesno
+    group_label: "System"
+    group_item_label: "Has Win Package ID"
+
+    link: {
+      label: "Glean Dictionary reference for System Has Win Package ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_has_win_package_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the app has a package identity.
+Windows only.
+"
+  }
+
+  dimension: metrics__boolean__system_is_wow_64 {
+    label: "System Is Wow 64"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.system_is_wow_64 ;;
+    type: yesno
+    group_label: "System"
+    group_item_label: "Is Wow 64"
+
+    link: {
+      label: "Glean Dictionary reference for System Is Wow 64"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_is_wow_64"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether we're in Windows32-on-Windows64 mode.
+Windows only.
+"
+  }
+
+  dimension: metrics__boolean__system_is_wow_arm_64 {
+    label: "System Is Wow Arm 64"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.system_is_wow_arm_64 ;;
+    type: yesno
+    group_label: "System"
+    group_item_label: "Is Wow Arm 64"
+
+    link: {
+      label: "Glean Dictionary reference for System Is Wow Arm 64"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_is_wow_arm_64"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether we're in Windows32-on-WindowsForArm64 mode.
+Windows only.
+"
+  }
+
+  dimension: metrics__quantity__system_memory {
+    label: "System Memory"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_memory ;;
+    type: number
+    group_label: "System"
+    group_item_label: "Memory"
+
+    link: {
+      label: "Glean Dictionary reference for System Memory"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_memory"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The physical memory size in MB (2^20 bytes).
+e.g. 32211
+"
+  }
+
+  dimension: metrics__string__system_os_distro {
+    label: "System OS Distro"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_os_distro ;;
+    type: string
+    group_label: "System OS"
+    group_item_label: "Distro"
+
+    link: {
+      label: "Glean Dictionary reference for System OS Distro"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_os_distro"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Operating System's distribution, according to sysinfo.
+Linux only.
+e.g. \"Linuxmint\"
+"
+  }
+
+  dimension: metrics__string__system_os_distro_version {
+    label: "System OS Distro Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_os_distro_version ;;
+    type: string
+    group_label: "System OS"
+    group_item_label: "Distro Version"
+
+    link: {
+      label: "Glean Dictionary reference for System OS Distro Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_os_distro_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Operating System's distribution's version, according to sysinfo.
+Linux only.
+e.g. \"22\"
+"
+  }
+
+  dimension: metrics__string__system_os_locale {
+    label: "System OS Locale"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_os_locale ;;
+    type: string
+    group_label: "System OS"
+    group_item_label: "Locale"
+
+    link: {
+      label: "Glean Dictionary reference for System OS Locale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_os_locale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Operating System's local, according to ospreferences.
+e.g. \"en-US\"
+"
+  }
+
+  dimension: metrics__string__system_os_name {
+    label: "System OS Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_os_name ;;
+    type: string
+    group_label: "System OS"
+    group_item_label: "Name"
+
+    link: {
+      label: "Glean Dictionary reference for System OS Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_os_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Operating System's name, according to sysinfo.
+e.g. \"Windows_NT\"
+Expected in most cases to be identical to `client_info.os`.
+"
+  }
+
+  dimension: metrics__quantity__system_os_service_pack_major {
+    label: "System OS Service Pack Major"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_os_service_pack_major ;;
+    type: number
+    group_label: "System OS"
+    group_item_label: "Service Pack Major"
+
+    link: {
+      label: "Glean Dictionary reference for System OS Service Pack Major"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_os_service_pack_major"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Windows service pack's major version, according to WindowsVersionInfo.
+Windows only.
+e.g. 0
+"
+  }
+
+  dimension: metrics__quantity__system_os_service_pack_minor {
+    label: "System OS Service Pack Minor"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_os_service_pack_minor ;;
+    type: number
+    group_label: "System OS"
+    group_item_label: "Service Pack Minor"
+
+    link: {
+      label: "Glean Dictionary reference for System OS Service Pack Minor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_os_service_pack_minor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Windows service pack's minor version, according to WindowsVersionInfo.
+Windows only.
+e.g. 0
+"
+  }
+
+  dimension: metrics__string__system_os_version {
+    label: "System OS Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_os_version ;;
+    type: string
+    group_label: "System OS"
+    group_item_label: "Version"
+
+    link: {
+      label: "Glean Dictionary reference for System OS Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_os_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Operating System's version, according to sysinfo.
+e.g. \"6.3\"
+Expected in most cases to be identical to `client_info.os_version`.
+"
+  }
+
+  dimension: metrics__quantity__system_os_windows_build_number {
+    label: "System OS Windows Build Number"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_os_windows_build_number ;;
+    type: number
+    group_label: "System OS"
+    group_item_label: "Windows Build Number"
+
+    link: {
+      label: "Glean Dictionary reference for System OS Windows Build Number"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_os_windows_build_number"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Windows build number, according to WindowsVersionInfo.
+Windows only.
+e.g. 26100
+Expected in most cases to be identical to `client_info.windows_build_number`.
+"
+  }
+
+  dimension: metrics__quantity__system_os_windows_ubr {
+    label: "System OS Windows Ubr"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_os_windows_ubr ;;
+    type: number
+    group_label: "System OS"
+    group_item_label: "Windows Ubr"
+
+    link: {
+      label: "Glean Dictionary reference for System OS Windows Ubr"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_os_windows_ubr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Windows update build revision number, according to
+`SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion`.
+Windows only.
+e.g. 3775
+"
+  }
+
+  dimension: metrics__quantity__system_virtual_memory {
+    label: "System Virtual Memory"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_virtual_memory ;;
+    type: number
+    group_label: "System"
+    group_item_label: "Virtual Memory"
+
+    link: {
+      label: "Glean Dictionary reference for System Virtual Memory"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_virtual_memory"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The size of the user-mode portion of the virtual address space of the parent process.
+Windows only.
+e.g. 134217728
+"
+  }
+
+  dimension: metrics__string__system_win_package_family_name {
+    label: "System Win Package Family Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_win_package_family_name ;;
+    type: string
+    group_label: "System"
+    group_item_label: "Win Package Family Name"
+
+    link: {
+      label: "Glean Dictionary reference for System Win Package Family Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/system_win_package_family_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The full application package name without any of the components that might change
+during the life cycle of the app (such as the version number or the architecture).
+Uniquely identifies the application within one Windows installation.
+Windows only.
+Only included if it begins with \"Mozilla.\" or \"MozillaCorporation.\".
+e.g. \"Mozilla.Firefox_n80bbvh6b1yt2\"
 "
   }
 
@@ -24171,6 +24745,80 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
     description: "Update: count of systems that manually uninstalled the service (timer initiated)
 This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_SERVICE_MANUALLY_UNINSTALLED_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__boolean__update_settings_auto_download {
+    label: "Update Settings Auto Download"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.update_settings_auto_download ;;
+    type: yesno
+    group_label: "Update Settings"
+    group_item_label: "Auto Download"
+
+    link: {
+      label: "Glean Dictionary reference for Update Settings Auto Download"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/update_settings_auto_download"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether app updates are set to auto-download.
+"
+  }
+
+  dimension: metrics__boolean__update_settings_background {
+    label: "Update Settings Background"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.update_settings_background ;;
+    type: yesno
+    group_label: "Update Settings"
+    group_item_label: "Background"
+
+    link: {
+      label: "Glean Dictionary reference for Update Settings Background"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/update_settings_background"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether updates can be delivered in the background.
+"
+  }
+
+  dimension: metrics__string__update_settings_channel {
+    label: "Update Settings Channel"
+    hidden: no
+    sql: ${TABLE}.metrics.string.update_settings_channel ;;
+    type: string
+    group_label: "Update Settings"
+    group_item_label: "Channel"
+
+    link: {
+      label: "Glean Dictionary reference for Update Settings Channel"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/update_settings_channel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The update channel according to defaults,
+including partner bits.
+e.g. \"nightly-cck\"
+"
+  }
+
+  dimension: metrics__boolean__update_settings_enabled {
+    label: "Update Settings Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.update_settings_enabled ;;
+    type: yesno
+    group_label: "Update Settings"
+    group_item_label: "Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Update Settings Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/update_settings_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether updates are available.
 "
   }
 
@@ -53238,6 +53886,50 @@ view: metrics__metrics__labeled_memory_distribution__network_cache_size {
 }
 
 view: metrics__metrics__labeled_memory_distribution__network_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__network_page_load_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__network_page_load_size__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

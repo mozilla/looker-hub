@@ -3188,7 +3188,7 @@ is closed.
 
   dimension: metrics__counter__tabs_cumulative_count {
     label: "Tabs Cumulative Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.tabs_cumulative_count ;;
     type: number
     group_label: "Tabs"
@@ -3214,7 +3214,7 @@ average open tabs per foreground \"session\".
 
   dimension: metrics__counter__tabs_grouped_tab_closed {
     label: "Tabs Grouped Tab Closed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.tabs_grouped_tab_closed ;;
     type: number
     group_label: "Tabs"
@@ -3232,7 +3232,7 @@ average open tabs per foreground \"session\".
 
   dimension: metrics__counter__tabs_grouped_tab_search {
     label: "Tabs Grouped Tab Search"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.tabs_grouped_tab_search ;;
     type: number
     group_label: "Tabs"
@@ -3251,7 +3251,7 @@ icon for grouped tabs in the tab tray.
 
   dimension: metrics__quantity__tabs_inactive_tabs_count {
     label: "Tabs Inactive Tabs Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.tabs_inactive_tabs_count ;;
     type: number
     group_label: "Tabs"
@@ -3365,7 +3365,7 @@ pressed
 
   dimension: metrics__quantity__tabs_normal_tabs_quantity {
     label: "Tabs Normal Tabs Quantity"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.tabs_normal_tabs_quantity ;;
     type: number
     group_label: "Tabs"
@@ -3403,7 +3403,7 @@ is opened.
 
   dimension: metrics__quantity__tabs_private_tabs_quantity {
     label: "Tabs Private Tabs Quantity"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.tabs_private_tabs_quantity ;;
     type: number
     group_label: "Tabs"
@@ -9807,19 +9807,19 @@ view: metrics__metrics__labeled_counter__tabs_close {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -9848,19 +9848,19 @@ view: metrics__metrics__labeled_counter__tabs_close_all {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -9889,19 +9889,19 @@ view: metrics__metrics__labeled_counter__tabs_open {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
