@@ -583,6 +583,12 @@ The labels are the `category.name` identifier of the metric.
     description: "The slugs of the actively enrolled rollouts"
   }
 
+  dimension: metrics__object__nimbus_targeting_context_addons_info {
+    sql: ${TABLE}.metrics.object.nimbus_targeting_context_addons_info ;;
+    hidden: yes
+    description: "Information about installed addons."
+  }
+
   dimension: metrics__object__nimbus_targeting_context_attribution_data {
     sql: ${TABLE}.metrics.object.nimbus_targeting_context_attribution_data ;;
     hidden: yes
