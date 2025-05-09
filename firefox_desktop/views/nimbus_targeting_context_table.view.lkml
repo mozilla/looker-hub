@@ -677,6 +677,15 @@ The labels are the `category.name` identifier of the metric.
     description: "The architecture of the user's CPU (32-bit or 64-bit)"
   }
 
+  dimension: metrics__quantity__nimbus_targeting_context_build_id {
+    sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_build_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Nimbus Targeting Context Build ID"
+    description: "The Build ID."
+  }
+
   dimension: metrics__quantity__nimbus_targeting_context_firefox_version {
     sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_firefox_version ;;
     type: number

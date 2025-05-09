@@ -8583,7 +8583,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__glam_experiment_async_sheet_load__sum {
     label: "Glam Experiment Async Sheet Load Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.glam_experiment_async_sheet_load.sum ;;
     type: number
     group_label: "Glam Experiment"
