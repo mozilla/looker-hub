@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       hnt_weather_with_location_selector_non_eu_expansion.branch
     ]
     filters:
-      hnt_weather_with_location_selector_non_eu_expansion.metric: 'active_hours'
+      hnt_weather_with_location_selector_non_eu_expansion.metric: 'days_of_use'
       hnt_weather_with_location_selector_non_eu_expansion.statistic: mean
     row: 0
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       hnt_weather_with_location_selector_non_eu_expansion.branch
     ]
     filters:
-      hnt_weather_with_location_selector_non_eu_expansion.metric: 'days_of_use'
+      hnt_weather_with_location_selector_non_eu_expansion.metric: 'active_hours'
       hnt_weather_with_location_selector_non_eu_expansion.statistic: mean
     row: 30
     col: 12

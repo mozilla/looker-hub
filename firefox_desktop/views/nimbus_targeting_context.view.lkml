@@ -85,6 +85,23 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
     description: "The architecture of the user's CPU (32-bit or 64-bit)"
   }
 
+  dimension: metrics__quantity__nimbus_targeting_context_build_id {
+    label: "Nimbus Targeting Context Build ID"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_build_id ;;
+    type: number
+    group_label: "Nimbus Targeting Context"
+    group_item_label: "Build ID"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Targeting Context Build ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/nimbus_targeting_context_build_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Build ID."
+  }
+
   dimension: metrics__string__nimbus_targeting_context_current_date {
     label: "Nimbus Targeting Context Current Date"
     hidden: no

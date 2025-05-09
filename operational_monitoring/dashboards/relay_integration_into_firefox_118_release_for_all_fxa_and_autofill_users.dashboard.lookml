@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.branch
     ]
     filters:
-      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.metric: 'active_hours'
+      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.metric: 'days_of_use'
       relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.statistic: mean
     row: 0
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.branch
     ]
     filters:
-      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.metric: 'days_of_use'
+      relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.metric: 'active_hours'
       relay_integration_into_firefox_118_release_for_all_fxa_and_autofill_users.statistic: mean
     row: 30
     col: 12
