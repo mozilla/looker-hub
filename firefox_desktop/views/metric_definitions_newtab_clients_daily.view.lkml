@@ -41,10 +41,6 @@ COALESCE(SUM(weather_widget_clicks), 0) AS weather_widget_clicks,
 COALESCE(SUM(weather_widget_load_errors), 0) AS weather_widget_load_errors,
 COALESCE(SUM(weather_widget_change_display_to_detailed), 0) AS weather_widget_change_display_to_detailed,
 COALESCE(SUM(weather_widget_change_display_to_simple), 0) AS weather_widget_change_display_to_simple,
-COALESCE(COUNTIF(sponsored_topsite_tile_impressions>0), 0) AS newtab_clients_with_sponsored_tile_impressions,
-COALESCE(COUNTIF(sponsored_topsite_tile_clicks>0), 0) AS newtab_clients_with_sponsored_tile_clicks,
-COALESCE(COUNTIF(sponsored_pocket_impressions>0), 0) AS newtab_clients_with_sponsored_content_impressions,
-COALESCE(COUNTIF(sponsored_pocket_clicks>0), 0) AS newtab_clients_with_sponsored_content_clicks,
 
                 countries_ads_value_tier,
 countries_code,
@@ -689,42 +685,6 @@ a wallpaper.
     sql: ${TABLE}.weather_widget_change_display_to_simple ;;
   }
 
-  dimension: newtab_clients_with_sponsored_tile_impressions {
-    group_label: "Metrics"
-    label: "Newtab Clients with Sponsored Tile Impressions"
-    description: "Count of clients with any sponsored tile impressions.
-"
-    type: number
-    sql: ${TABLE}.newtab_clients_with_sponsored_tile_impressions ;;
-  }
-
-  dimension: newtab_clients_with_sponsored_tile_clicks {
-    group_label: "Metrics"
-    label: "Newtab Clients with Sponsored Tile Clicks"
-    description: "Count of clients with any sponsored tile clicks.
-"
-    type: number
-    sql: ${TABLE}.newtab_clients_with_sponsored_tile_clicks ;;
-  }
-
-  dimension: newtab_clients_with_sponsored_content_impressions {
-    group_label: "Metrics"
-    label: "Newtab Clients with Sponsored Content Impressions"
-    description: "Count of clients with any sponsored content impressions.
-"
-    type: number
-    sql: ${TABLE}.newtab_clients_with_sponsored_content_impressions ;;
-  }
-
-  dimension: newtab_clients_with_sponsored_content_clicks {
-    group_label: "Metrics"
-    label: "Newtab Clients with Sponsored Content Clicks"
-    description: "Count of clients with any sponsored content clicks.
-"
-    type: number
-    sql: ${TABLE}.newtab_clients_with_sponsored_content_clicks ;;
-  }
-
   dimension: ads_value_tier {
     sql: ${TABLE}.countries_ads_value_tier ;;
     type: string
@@ -1349,20 +1309,106 @@ a wallpaper.
     description: "Average of Newtab Ad Click Rate"
   }
 
-  measure: newtab_sponsored_tiles_enabled_sum {
-    type: sum
-    sql: ${TABLE}.newtab_sponsored_tiles_enabled*1 ;;
-    label: "Newtab Sponsored Tiles Enabled Sum"
+  measure: sponsored_pocket_clicks_client_count_sampled {
+    type: count_distinct
+    label: "Sponsored Pocket Clicks Client Count"
     group_label: "Statistics"
-    description: "Sum of Newtab Sponsored Tiles Enabled"
+    sql: IF(${TABLE}.sponsored_pocket_clicks > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
+    description: "Number of clients with Sponsored Pocket Clicks"
+    hidden: yes
   }
 
-  measure: newtab_sponsored_pocket_stories_enabled_sum {
-    type: sum
-    sql: ${TABLE}.newtab_sponsored_pocket_stories_enabled*1 ;;
-    label: "Newtab Sponsored Pocket Stories Enabled Sum"
+  measure: sponsored_pocket_clicks_client_count {
+    type: number
+    label: "Sponsored Pocket Clicks Client Count"
     group_label: "Statistics"
-    description: "Sum of Newtab Sponsored Pocket Stories Enabled"
+    sql: ${sponsored_pocket_clicks_client_count_sampled} *1 ;;
+    description: "Number of clients with Sponsored Pocket Clicks"
+  }
+
+  measure: sponsored_pocket_impressions_client_count_sampled {
+    type: count_distinct
+    label: "Sponsored Pocket Impressions Client Count"
+    group_label: "Statistics"
+    sql: IF(${TABLE}.sponsored_pocket_impressions > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
+    description: "Number of clients with Sponsored Pocket Impressions"
+    hidden: yes
+  }
+
+  measure: sponsored_pocket_impressions_client_count {
+    type: number
+    label: "Sponsored Pocket Impressions Client Count"
+    group_label: "Statistics"
+    sql: ${sponsored_pocket_impressions_client_count_sampled} *1 ;;
+    description: "Number of clients with Sponsored Pocket Impressions"
+  }
+
+  measure: sponsored_tile_impressions_client_count_sampled {
+    type: count_distinct
+    label: "Sponsored Tile Impressions Client Count"
+    group_label: "Statistics"
+    sql: IF(${TABLE}.sponsored_tile_impressions > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
+    description: "Number of clients with Sponsored Tile Impressions"
+    hidden: yes
+  }
+
+  measure: sponsored_tile_impressions_client_count {
+    type: number
+    label: "Sponsored Tile Impressions Client Count"
+    group_label: "Statistics"
+    sql: ${sponsored_tile_impressions_client_count_sampled} *1 ;;
+    description: "Number of clients with Sponsored Tile Impressions"
+  }
+
+  measure: sponsored_tile_clicks_client_count_sampled {
+    type: count_distinct
+    label: "Sponsored Tile Clicks Client Count"
+    group_label: "Statistics"
+    sql: IF(${TABLE}.sponsored_tile_clicks > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
+    description: "Number of clients with Sponsored Tile Clicks"
+    hidden: yes
+  }
+
+  measure: sponsored_tile_clicks_client_count {
+    type: number
+    label: "Sponsored Tile Clicks Client Count"
+    group_label: "Statistics"
+    sql: ${sponsored_tile_clicks_client_count_sampled} *1 ;;
+    description: "Number of clients with Sponsored Tile Clicks"
+  }
+
+  measure: newtab_sponsored_tiles_enabled_client_count_sampled {
+    type: count_distinct
+    label: "Newtab Sponsored Tiles Enabled Client Count"
+    group_label: "Statistics"
+    sql: IF(${TABLE}.newtab_sponsored_tiles_enabled > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
+    description: "Number of clients with Newtab Sponsored Tiles Enabled"
+    hidden: yes
+  }
+
+  measure: newtab_sponsored_tiles_enabled_client_count {
+    type: number
+    label: "Newtab Sponsored Tiles Enabled Client Count"
+    group_label: "Statistics"
+    sql: ${newtab_sponsored_tiles_enabled_client_count_sampled} *1 ;;
+    description: "Number of clients with Newtab Sponsored Tiles Enabled"
+  }
+
+  measure: newtab_sponsored_pocket_stories_enabled_client_count_sampled {
+    type: count_distinct
+    label: "Newtab Sponsored Pocket Stories Enabled Client Count"
+    group_label: "Statistics"
+    sql: IF(${TABLE}.newtab_sponsored_pocket_stories_enabled > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
+    description: "Number of clients with Newtab Sponsored Pocket Stories Enabled"
+    hidden: yes
+  }
+
+  measure: newtab_sponsored_pocket_stories_enabled_client_count {
+    type: number
+    label: "Newtab Sponsored Pocket Stories Enabled Client Count"
+    group_label: "Statistics"
+    sql: ${newtab_sponsored_pocket_stories_enabled_client_count_sampled} *1 ;;
+    description: "Number of clients with Newtab Sponsored Pocket Stories Enabled"
   }
 
   measure: newtab_visits_sum {
@@ -1396,38 +1442,6 @@ a wallpaper.
     label: "Newtab Engaged Visit Count Sum"
     group_label: "Statistics"
     description: "Sum of Newtab Engaged Visit Count"
-  }
-
-  measure: newtab_clients_with_sponsored_tile_impressions_sum {
-    type: sum
-    sql: ${TABLE}.newtab_clients_with_sponsored_tile_impressions*1 ;;
-    label: "Newtab Clients with Sponsored Tile Impressions Sum"
-    group_label: "Statistics"
-    description: "Sum of Newtab Clients with Sponsored Tile Impressions"
-  }
-
-  measure: newtab_clients_with_sponsored_tile_clicks_sum {
-    type: sum
-    sql: ${TABLE}.newtab_clients_with_sponsored_tile_clicks*1 ;;
-    label: "Newtab Clients with Sponsored Tile Clicks Sum"
-    group_label: "Statistics"
-    description: "Sum of Newtab Clients with Sponsored Tile Clicks"
-  }
-
-  measure: newtab_clients_with_sponsored_content_impressions_sum {
-    type: sum
-    sql: ${TABLE}.newtab_clients_with_sponsored_content_impressions*1 ;;
-    label: "Newtab Clients with Sponsored Content Impressions Sum"
-    group_label: "Statistics"
-    description: "Sum of Newtab Clients with Sponsored Content Impressions"
-  }
-
-  measure: newtab_clients_with_sponsored_content_clicks_sum {
-    type: sum
-    sql: ${TABLE}.newtab_clients_with_sponsored_content_clicks*1 ;;
-    label: "Newtab Clients with Sponsored Content Clicks Sum"
-    group_label: "Statistics"
-    description: "Sum of Newtab Clients with Sponsored Content Clicks"
   }
 
   set: metrics {
@@ -1466,21 +1480,23 @@ a wallpaper.
       weather_widget_load_errors,
       weather_widget_change_display_to_detailed,
       weather_widget_change_display_to_simple,
-      newtab_clients_with_sponsored_tile_impressions,
-      newtab_clients_with_sponsored_tile_clicks,
-      newtab_clients_with_sponsored_content_impressions,
-      newtab_clients_with_sponsored_content_clicks,
       newtab_ad_click_rate_average,
-      newtab_sponsored_tiles_enabled_sum,
-      newtab_sponsored_pocket_stories_enabled_sum,
+      sponsored_pocket_clicks_client_count_sampled,
+      sponsored_pocket_clicks_client_count,
+      sponsored_pocket_impressions_client_count_sampled,
+      sponsored_pocket_impressions_client_count,
+      sponsored_tile_impressions_client_count_sampled,
+      sponsored_tile_impressions_client_count,
+      sponsored_tile_clicks_client_count_sampled,
+      sponsored_tile_clicks_client_count,
+      newtab_sponsored_tiles_enabled_client_count_sampled,
+      newtab_sponsored_tiles_enabled_client_count,
+      newtab_sponsored_pocket_stories_enabled_client_count_sampled,
+      newtab_sponsored_pocket_stories_enabled_client_count,
       newtab_visits_sum,
       newtab_visits_client_count_sampled,
       newtab_visits_client_count,
       newtab_engaged_visits_sum,
-      newtab_clients_with_sponsored_tile_impressions_sum,
-      newtab_clients_with_sponsored_tile_clicks_sum,
-      newtab_clients_with_sponsored_content_impressions_sum,
-      newtab_clients_with_sponsored_content_clicks_sum,
     ]
   }
 
