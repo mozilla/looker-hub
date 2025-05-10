@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       unified_search_button_callout.branch
     ]
     filters:
-      unified_search_button_callout.metric: 'days_of_use'
+      unified_search_button_callout.metric: 'ad_clicks'
       unified_search_button_callout.statistic: mean
     row: 0
     col: 0
@@ -115,40 +115,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: unified_search_button_callout
-    type: looker_line
-    fields: [
-      unified_search_button_callout.submission_date,
-      unified_search_button_callout.branch,
-      unified_search_button_callout.point
-    ]
-    pivots: [
-      unified_search_button_callout.branch
-    ]
-    filters:
-      unified_search_button_callout.metric: 'ad_clicks'
-      unified_search_button_callout.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: unified_search_button_callout.submission_date
-    field_y: unified_search_button_callout.point
-    log_scale: false
-    ci_lower: unified_search_button_callout.lower
-    ci_upper: unified_search_button_callout.upper
-    show_grid: true
-    listen:
-      Date: unified_search_button_callout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Qualified Cumulative Days Of Use
     name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
@@ -167,8 +133,8 @@
     filters:
       unified_search_button_callout.metric: 'qualified_cumulative_days_of_use'
       unified_search_button_callout.statistic: mean
-    row: 20
-    col: 0
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: unified_search_button_callout.submission_date
@@ -183,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,10 +165,10 @@
       unified_search_button_callout.branch
     ]
     filters:
-      unified_search_button_callout.metric: 'retained'
+      unified_search_button_callout.metric: 'days_of_use'
       unified_search_button_callout.statistic: mean
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: unified_search_button_callout.submission_date
@@ -234,6 +200,40 @@
     ]
     filters:
       unified_search_button_callout.metric: 'search_count'
+      unified_search_button_callout.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: unified_search_button_callout.submission_date
+    field_y: unified_search_button_callout.point
+    log_scale: false
+    ci_lower: unified_search_button_callout.lower
+    ci_upper: unified_search_button_callout.upper
+    show_grid: true
+    listen:
+      Date: unified_search_button_callout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: unified_search_button_callout
+    type: looker_line
+    fields: [
+      unified_search_button_callout.submission_date,
+      unified_search_button_callout.branch,
+      unified_search_button_callout.point
+    ]
+    pivots: [
+      unified_search_button_callout.branch
+    ]
+    filters:
+      unified_search_button_callout.metric: 'retained'
       unified_search_button_callout.statistic: mean
     row: 30
     col: 0
