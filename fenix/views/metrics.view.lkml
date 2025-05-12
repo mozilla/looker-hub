@@ -31842,6 +31842,12 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     hidden: yes
   }
 
+  dimension: is_bot_generated {
+    sql: ${TABLE}.is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
