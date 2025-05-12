@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       address_bar_engagement_android.branch
     ]
     filters:
-      address_bar_engagement_android.metric: 'tagged_sap_searches'
+      address_bar_engagement_android.metric: 'search_count'
       address_bar_engagement_android.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,10 +94,44 @@
       address_bar_engagement_android.branch
     ]
     filters:
-      address_bar_engagement_android.metric: 'uri_count'
+      address_bar_engagement_android.metric: 'active_hours'
       address_bar_engagement_android.statistic: mean
     row: 10
     col: 0
+    width: 12
+    height: 8
+    field_x: address_bar_engagement_android.submission_date
+    field_y: address_bar_engagement_android.point
+    log_scale: false
+    ci_lower: address_bar_engagement_android.lower
+    ci_upper: address_bar_engagement_android.upper
+    show_grid: true
+    listen:
+      Date: address_bar_engagement_android.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: address_bar_engagement_android
+    type: looker_line
+    fields: [
+      address_bar_engagement_android.submission_date,
+      address_bar_engagement_android.branch,
+      address_bar_engagement_android.point
+    ]
+    pivots: [
+      address_bar_engagement_android.branch
+    ]
+    filters:
+      address_bar_engagement_android.metric: 'tagged_sap_searches'
+      address_bar_engagement_android.statistic: mean
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: address_bar_engagement_android.submission_date
@@ -130,8 +164,8 @@
     filters:
       address_bar_engagement_android.metric: 'days_of_use'
       address_bar_engagement_android.statistic: mean
-    row: 10
-    col: 12
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: address_bar_engagement_android.submission_date
@@ -146,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,10 +196,10 @@
       address_bar_engagement_android.branch
     ]
     filters:
-      address_bar_engagement_android.metric: 'search_count'
+      address_bar_engagement_android.metric: 'uri_count'
       address_bar_engagement_android.statistic: mean
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: address_bar_engagement_android.submission_date
@@ -197,40 +231,6 @@
     ]
     filters:
       address_bar_engagement_android.metric: 'retained'
-      address_bar_engagement_android.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: address_bar_engagement_android.submission_date
-    field_y: address_bar_engagement_android.point
-    log_scale: false
-    ci_lower: address_bar_engagement_android.lower
-    ci_upper: address_bar_engagement_android.upper
-    show_grid: true
-    listen:
-      Date: address_bar_engagement_android.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: address_bar_engagement_android
-    type: looker_line
-    fields: [
-      address_bar_engagement_android.submission_date,
-      address_bar_engagement_android.branch,
-      address_bar_engagement_android.point
-    ]
-    pivots: [
-      address_bar_engagement_android.branch
-    ]
-    filters:
-      address_bar_engagement_android.metric: 'active_hours'
       address_bar_engagement_android.statistic: mean
     row: 30
     col: 0
