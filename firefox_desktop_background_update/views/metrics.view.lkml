@@ -17944,7 +17944,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__performance_pageload_async_sheet_load__sum {
     label: "Performance Pageload Async Sheet Load Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_async_sheet_load.sum ;;
     type: number
     group_label: "Performance Pageload"
