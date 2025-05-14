@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: h2_2024_post_choice_in_product_survey_ios {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.h2_2024_post_choice_in_product_survey_ios_statistics ;;
+view: new_ios_redesign_new_users_full_release {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.new_ios_redesign_new_users_full_release_statistics ;;
 
   dimension: submission_date {
     type: date

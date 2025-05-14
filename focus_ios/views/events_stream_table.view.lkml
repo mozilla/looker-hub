@@ -178,6 +178,12 @@ view: events_stream_table {
     hidden: yes
   }
 
+  dimension: is_bot_generated {
+    sql: ${TABLE}.is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: legacy_telemetry_client_id {
     sql: ${TABLE}.legacy_telemetry_client_id ;;
     type: string

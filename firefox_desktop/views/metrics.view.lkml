@@ -26987,7 +26987,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__performance_pageload_async_sheet_load__sum {
     label: "Performance Pageload Async Sheet Load Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_async_sheet_load.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -36604,6 +36604,12 @@ documented in the ping's pings.yaml file.
   dimension: events {
     sql: ${TABLE}.events ;;
     hidden: yes
+  }
+
+  dimension: is_bot_generated {
+    sql: ${TABLE}.is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: metadata__geo__city {

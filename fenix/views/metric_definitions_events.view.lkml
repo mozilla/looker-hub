@@ -51,6 +51,7 @@ looker_base_fields_client_info__session_count,
 looker_base_fields_client_info__session_id,
 looker_base_fields_client_info__telemetry_sdk_build,
 looker_base_fields_client_info__windows_build_number,
+looker_base_fields_is_bot_generated,
 looker_base_fields_metadata__geo__city,
 looker_base_fields_metadata__geo__country,
 looker_base_fields_metadata__geo__db_version,
@@ -137,6 +138,7 @@ looker_base_fields.client_info.session_count AS looker_base_fields_client_info__
 looker_base_fields.client_info.session_id AS looker_base_fields_client_info__session_id,
 looker_base_fields.client_info.telemetry_sdk_build AS looker_base_fields_client_info__telemetry_sdk_build,
 looker_base_fields.client_info.windows_build_number AS looker_base_fields_client_info__windows_build_number,
+looker_base_fields.is_bot_generated AS looker_base_fields_is_bot_generated,
 looker_base_fields.metadata.geo.city AS looker_base_fields_metadata__geo__city,
 looker_base_fields.metadata.geo.country AS looker_base_fields_metadata__geo__country,
 looker_base_fields.metadata.geo.db_version AS looker_base_fields_metadata__geo__db_version,
@@ -259,6 +261,7 @@ looker_base_fields_client_info__session_count,
 looker_base_fields_client_info__session_id,
 looker_base_fields_client_info__telemetry_sdk_build,
 looker_base_fields_client_info__windows_build_number,
+looker_base_fields_is_bot_generated,
 looker_base_fields_metadata__geo__city,
 looker_base_fields_metadata__geo__country,
 looker_base_fields_metadata__geo__db_version,
@@ -560,6 +563,13 @@ looker_base_fields_sample_id,
   dimension: document_id {
     sql: ${TABLE}.looker_base_fields_document_id ;;
     hidden: yes
+    group_label: "Base Fields"
+  }
+
+  dimension: is_bot_generated {
+    sql: ${TABLE}.looker_base_fields_is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 

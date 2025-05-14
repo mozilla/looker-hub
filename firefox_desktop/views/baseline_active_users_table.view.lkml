@@ -317,6 +317,12 @@ view: baseline_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: is_desktop {
+    sql: ${TABLE}.is_desktop ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: is_mau {
     sql: ${TABLE}.is_mau ;;
     type: yesno
