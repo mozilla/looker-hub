@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,44 +26,10 @@
       firefox_labs_link_previews_release.branch
     ]
     filters:
-      firefox_labs_link_previews_release.metric: 'days_of_use'
+      firefox_labs_link_previews_release.metric: 'uri_count'
       firefox_labs_link_previews_release.statistic: mean
     row: 0
     col: 0
-    width: 12
-    height: 8
-    field_x: firefox_labs_link_previews_release.submission_date
-    field_y: firefox_labs_link_previews_release.point
-    log_scale: false
-    ci_lower: firefox_labs_link_previews_release.lower
-    ci_upper: firefox_labs_link_previews_release.upper
-    show_grid: true
-    listen:
-      Date: firefox_labs_link_previews_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: firefox_labs_link_previews_release
-    type: looker_line
-    fields: [
-      firefox_labs_link_previews_release.submission_date,
-      firefox_labs_link_previews_release.branch,
-      firefox_labs_link_previews_release.point
-    ]
-    pivots: [
-      firefox_labs_link_previews_release.branch
-    ]
-    filters:
-      firefox_labs_link_previews_release.metric: 'retained'
-      firefox_labs_link_previews_release.statistic: mean
-    row: 0
-    col: 12
     width: 12
     height: 8
     field_x: firefox_labs_link_previews_release.submission_date
@@ -98,6 +64,41 @@
     filters:
       firefox_labs_link_previews_release.metric: 'memory_total'
       firefox_labs_link_previews_release.statistic: percentile
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: firefox_labs_link_previews_release.submission_date
+    field_y: firefox_labs_link_previews_release.point
+    log_scale: false
+    ci_lower: firefox_labs_link_previews_release.lower
+    ci_upper: firefox_labs_link_previews_release.upper
+    show_grid: true
+    listen:
+      Date: firefox_labs_link_previews_release.submission_date
+      Percentile: firefox_labs_link_previews_release.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: firefox_labs_link_previews_release
+    type: looker_line
+    fields: [
+      firefox_labs_link_previews_release.submission_date,
+      firefox_labs_link_previews_release.branch,
+      firefox_labs_link_previews_release.point
+    ]
+    pivots: [
+      firefox_labs_link_previews_release.branch
+    ]
+    filters:
+      firefox_labs_link_previews_release.metric: 'search_count'
+      firefox_labs_link_previews_release.statistic: mean
     row: 10
     col: 0
     width: 12
@@ -110,7 +111,40 @@
     show_grid: true
     listen:
       Date: firefox_labs_link_previews_release.submission_date
-      Percentile: firefox_labs_link_previews_release.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: firefox_labs_link_previews_release
+    type: looker_line
+    fields: [
+      firefox_labs_link_previews_release.submission_date,
+      firefox_labs_link_previews_release.branch,
+      firefox_labs_link_previews_release.point
+    ]
+    pivots: [
+      firefox_labs_link_previews_release.branch
+    ]
+    filters:
+      firefox_labs_link_previews_release.metric: 'qualified_cumulative_days_of_use'
+      firefox_labs_link_previews_release.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: firefox_labs_link_previews_release.submission_date
+    field_y: firefox_labs_link_previews_release.point
+    log_scale: false
+    ci_lower: firefox_labs_link_previews_release.lower
+    ci_upper: firefox_labs_link_previews_release.upper
+    show_grid: true
+    listen:
+      Date: firefox_labs_link_previews_release.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -133,8 +167,8 @@
     filters:
       firefox_labs_link_previews_release.metric: 'active_hours'
       firefox_labs_link_previews_release.statistic: mean
-    row: 10
-    col: 12
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: firefox_labs_link_previews_release.submission_date
@@ -168,40 +202,6 @@
       firefox_labs_link_previews_release.metric: 'ad_clicks'
       firefox_labs_link_previews_release.statistic: mean
     row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: firefox_labs_link_previews_release.submission_date
-    field_y: firefox_labs_link_previews_release.point
-    log_scale: false
-    ci_lower: firefox_labs_link_previews_release.lower
-    ci_upper: firefox_labs_link_previews_release.upper
-    show_grid: true
-    listen:
-      Date: firefox_labs_link_previews_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: firefox_labs_link_previews_release
-    type: looker_line
-    fields: [
-      firefox_labs_link_previews_release.submission_date,
-      firefox_labs_link_previews_release.branch,
-      firefox_labs_link_previews_release.point
-    ]
-    pivots: [
-      firefox_labs_link_previews_release.branch
-    ]
-    filters:
-      firefox_labs_link_previews_release.metric: 'search_count'
-      firefox_labs_link_previews_release.statistic: mean
-    row: 20
     col: 12
     width: 12
     height: 8
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       firefox_labs_link_previews_release.branch
     ]
     filters:
-      firefox_labs_link_previews_release.metric: 'uri_count'
+      firefox_labs_link_previews_release.metric: 'days_of_use'
       firefox_labs_link_previews_release.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       firefox_labs_link_previews_release.branch
     ]
     filters:
-      firefox_labs_link_previews_release.metric: 'qualified_cumulative_days_of_use'
+      firefox_labs_link_previews_release.metric: 'retained'
       firefox_labs_link_previews_release.statistic: mean
     row: 30
     col: 12
