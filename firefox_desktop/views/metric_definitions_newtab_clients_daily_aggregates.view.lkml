@@ -13,7 +13,6 @@ SUM(nonsearch_engagement_clients) AS nonsearch_engagement_clients,
 SUM(default_ui_clients) AS default_ui_clients,
 
                 newtab_clients_daily_aggregates_base_fields_app_version,
-newtab_clients_daily_aggregates_base_fields_browser_version,
 newtab_clients_daily_aggregates_base_fields_channel,
 newtab_clients_daily_aggregates_base_fields_country,
 newtab_clients_daily_aggregates_base_fields_locale,
@@ -58,7 +57,6 @@ newtab_clients_daily_aggregates_base_fields_sponsored_topsites_enabled,
                     SELECT
                         newtab_clients_daily_aggregates.*,
                         newtab_clients_daily_aggregates_base_fields.app_version AS newtab_clients_daily_aggregates_base_fields_app_version,
-newtab_clients_daily_aggregates_base_fields.browser_version AS newtab_clients_daily_aggregates_base_fields_browser_version,
 newtab_clients_daily_aggregates_base_fields.channel AS newtab_clients_daily_aggregates_base_fields_channel,
 newtab_clients_daily_aggregates_base_fields.country AS newtab_clients_daily_aggregates_base_fields_country,
 newtab_clients_daily_aggregates_base_fields.locale AS newtab_clients_daily_aggregates_base_fields_locale,
@@ -84,7 +82,7 @@ newtab_clients_daily_aggregates_base_fields.sponsored_topsites_enabled AS newtab
                 *
             FROM
                 (SELECT
-submission_date, app_version, os, channel, locale, browser_version, country, newtab_homepage_category, newtab_newtab_category,
+submission_date, app_version, os, channel, locale, country, newtab_homepage_category, newtab_newtab_category,
 organic_content_enabled, sponsored_content_enabled, sponsored_topsites_enabled, organic_topsites_enabled, newtab_search_enabled
 FROM moz-fx-data-shared-prod.analysis.gkatre__newtab_clients_daily_aggregates_v2)
             ) AS newtab_clients_daily_aggregates_base_fields
@@ -95,7 +93,6 @@ AND (newtab_clients_daily_aggregates.app_version = newtab_clients_daily_aggregat
 AND (newtab_clients_daily_aggregates.os = newtab_clients_daily_aggregates_base_fields.os OR (newtab_clients_daily_aggregates.os IS NULL AND newtab_clients_daily_aggregates_base_fields.os IS NULL ))
 AND (newtab_clients_daily_aggregates.channel = newtab_clients_daily_aggregates_base_fields.channel OR (newtab_clients_daily_aggregates.channel IS NULL AND newtab_clients_daily_aggregates_base_fields.channel IS NULL ))
 AND (newtab_clients_daily_aggregates.locale = newtab_clients_daily_aggregates_base_fields.locale OR (newtab_clients_daily_aggregates.locale IS NULL AND newtab_clients_daily_aggregates_base_fields.locale IS NULL ))
-AND (newtab_clients_daily_aggregates.browser_version = newtab_clients_daily_aggregates_base_fields.browser_version OR (newtab_clients_daily_aggregates.browser_version IS NULL AND newtab_clients_daily_aggregates_base_fields.browser_version IS NULL ))
 AND (newtab_clients_daily_aggregates.country = newtab_clients_daily_aggregates_base_fields.country OR (newtab_clients_daily_aggregates.country IS NULL AND newtab_clients_daily_aggregates_base_fields.country IS NULL ))
 AND (newtab_clients_daily_aggregates.newtab_homepage_category = newtab_clients_daily_aggregates_base_fields.newtab_homepage_category OR (newtab_clients_daily_aggregates.newtab_homepage_category IS NULL AND newtab_clients_daily_aggregates_base_fields.newtab_homepage_category IS NULL ))
 AND (newtab_clients_daily_aggregates.newtab_newtab_category = newtab_clients_daily_aggregates_base_fields.newtab_newtab_category OR (newtab_clients_daily_aggregates.newtab_newtab_category IS NULL AND newtab_clients_daily_aggregates_base_fields.newtab_newtab_category IS NULL ))
@@ -133,7 +130,6 @@ AND (newtab_clients_daily_aggregates.newtab_search_enabled = newtab_clients_dail
                 )
             GROUP BY
                 newtab_clients_daily_aggregates_base_fields_app_version,
-newtab_clients_daily_aggregates_base_fields_browser_version,
 newtab_clients_daily_aggregates_base_fields_channel,
 newtab_clients_daily_aggregates_base_fields_country,
 newtab_clients_daily_aggregates_base_fields_locale,
@@ -194,13 +190,6 @@ newtab_clients_daily_aggregates_base_fields_sponsored_topsites_enabled,
   dimension: app_version {
     sql: ${TABLE}.newtab_clients_daily_aggregates_base_fields_app_version ;;
     type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: browser_version {
-    sql: ${TABLE}.newtab_clients_daily_aggregates_base_fields_browser_version ;;
-    type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
