@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: microsurvey_chatbot_csat_and_productivity_new_users_last_updated {
-  label: "microsurvey_chatbot_csat_and_productivity_new_users Last Updated"
+datagroup: rollout_sponsored_tiles_in_hungary_hu_and_slovakia_sk_last_updated {
+  label: "rollout_sponsored_tiles_in_hungary_hu_and_slovakia_sk Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'microsurvey_chatbot_csat_and_productivity_new_users_statistics')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'rollout_sponsored_tiles_in_hungary_hu_and_slovakia_sk_statistics')
 
     ) ;;
-  description: "Updates for microsurvey_chatbot_csat_and_productivity_new_users when referenced tables are modified."
+  description: "Updates for rollout_sponsored_tiles_in_hungary_hu_and_slovakia_sk when referenced tables are modified."
   max_cache_age: "24 hours"
 }

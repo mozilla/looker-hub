@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: microsurvey_chatbot_csat_and_productivity_left_position {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.microsurvey_chatbot_csat_and_productivity_left_position_statistics ;;
+view: microsurvey_search_csat_for_suggest_optin_2025 {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.microsurvey_search_csat_for_suggest_optin_2025_statistics ;;
 
   dimension: submission_date {
     type: date
