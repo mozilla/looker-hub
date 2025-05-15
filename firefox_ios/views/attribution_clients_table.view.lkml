@@ -38,8 +38,12 @@ view: attribution_clients_table {
     sql: ${TABLE}.is_suspicious_device_client ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Flag to identify suspicious device users, see bug-1846554 for more info.
-"
+  }
+
+  dimension: normalized_channel {
+    sql: ${TABLE}.normalized_channel ;;
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: paid_vs_organic {

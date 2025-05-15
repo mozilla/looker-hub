@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: android_pocket_spocs {
+view: android_pocket_spoc {
   dimension: app_display_version {
     sql: ${TABLE}.app_display_version ;;
     type: string
