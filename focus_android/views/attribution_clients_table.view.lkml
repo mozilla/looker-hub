@@ -10,6 +10,12 @@ view: attribution_clients_table {
     hidden: yes
   }
 
+  dimension: normalized_channel {
+    sql: ${TABLE}.normalized_channel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: paid_vs_organic {
     sql: ${TABLE}.paid_vs_organic ;;
     type: string

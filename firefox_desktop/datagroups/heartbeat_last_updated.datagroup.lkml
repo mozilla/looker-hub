@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: android_pocket_spocs_last_updated {
-  label: "android_pocket_spocs Last Updated"
+datagroup: heartbeat_last_updated {
+  label: "heartbeat Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
-    FROM `mozdata`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'ads' AND table_name = 'android_pocket_spocs')
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'firefox_desktop_stable' AND table_name = 'heartbeat_v1')
 
     ) ;;
-  description: "Updates for android_pocket_spocs when referenced tables are modified."
+  description: "Updates for heartbeat when referenced tables are modified."
   max_cache_age: "24 hours"
 }
