@@ -17,10 +17,6 @@ datagroup: temp_baseline_last_updated {
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE (table_schema = 'org_mozilla_ios_firefox_stable' AND table_name = 'temp_baseline_v1')
- UNION ALL 
-    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'org_mozilla_ios_firefoxbeta_stable' AND table_name = 'temp_baseline_v1')
 
     ) ;;
   description: "Updates for temp_baseline when referenced tables are modified."

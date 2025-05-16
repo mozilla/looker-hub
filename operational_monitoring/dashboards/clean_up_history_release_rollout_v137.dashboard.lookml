@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       clean_up_history_release_rollout_v137.branch
     ]
     filters:
-      clean_up_history_release_rollout_v137.metric: 'search_count'
+      clean_up_history_release_rollout_v137.metric: 'ad_clicks'
       clean_up_history_release_rollout_v137.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       clean_up_history_release_rollout_v137.branch
     ]
     filters:
-      clean_up_history_release_rollout_v137.metric: 'ad_clicks'
+      clean_up_history_release_rollout_v137.metric: 'search_count'
       clean_up_history_release_rollout_v137.statistic: mean
     row: 10
     col: 0
