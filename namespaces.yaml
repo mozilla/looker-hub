@@ -10730,8 +10730,8 @@ operational_monitoring:
             default: release
             options:
             - release
-            - esr
             - beta
+            - esr
             - nightly
             - aurora
             - default
@@ -11452,10 +11452,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id257
           normalized_channel:
-            default: nightly
+            default: beta
             options:
-            - nightly
             - beta
+            - nightly
             - aurora
             - release
             - esr
@@ -12057,8 +12057,8 @@ operational_monitoring:
             default: Windows
             options:
             - Windows
-            - Mac
             - Linux
+            - Mac
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -13158,15 +13158,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id392
           app:
-            default: iOS - vpn_session
+            default: Windows - vpn_session
             options:
-            - iOS - vpn_session
-            - Darwin - vpn_session
-            - Android - daemon_session
             - Windows - vpn_session
             - iOS - daemon_session
-            - Android - vpn_session
+            - Darwin - vpn_session
+            - Android - daemon_session
             - Linux - vpn_session
+            - Android - vpn_session
+            - iOS - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id393
@@ -14532,17 +14532,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id491
           channel:
-            default: beta
+            default: nightly
             options:
+            - nightly
             - beta
             - release
-            - nightly
           os:
             default: Windows_NT
             options:
             - Windows_NT
-            - Linux
             - Darwin
+            - Linux
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id492
