@@ -18,13 +18,6 @@ view: android_pocket_spoc {
     description: "A UUID uniquely identifying the client."
   }
 
-  dimension: country_code {
-    sql: ${TABLE}.country_code ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    description: "Country associated with user's IP address, represented as a two letter code."
-  }
-
   dimension: interaction_type {
     sql: ${TABLE}.interaction_type ;;
     type: string
@@ -37,6 +30,13 @@ view: android_pocket_spoc {
     type: string
     suggest_persist_for: "24 hours"
     description: "Normalized release channel (e.g. \"release\", \"nightly\")."
+  }
+
+  dimension: normalized_country_code {
+    sql: ${TABLE}.normalized_country_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Country associated with user's IP address, represented as a two letter code."
   }
 
   dimension: spoc_id {
