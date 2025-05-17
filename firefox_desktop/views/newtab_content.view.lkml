@@ -25,7 +25,7 @@ view: newtab_content {
 
   dimension: metrics__string__newtab_content_coarse_os_version {
     label: "Newtab Content Coarse OS Version"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.newtab_content_coarse_os_version ;;
     type: string
     group_label: "Newtab Content"
