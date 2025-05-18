@@ -14249,6 +14249,22 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Js Is Htmldda Fuse"
   }
 
+  dimension: metrics__counter__use_counter_doc_js_large_oom_recovered {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_large_oom_recovered ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Large Oom Recovered"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_large_oom_reported {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_large_oom_reported ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Large Oom Reported"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_late_weekday {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_late_weekday ;;
     type: number
@@ -14295,6 +14311,22 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Regexp Symbol Protocol On Primitive"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_small_oom_recovered {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_small_oom_recovered ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Small Oom Recovered"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_small_oom_reported {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_small_oom_reported ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Small Oom Reported"
   }
 
   dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_2 {
@@ -17793,6 +17825,22 @@ view: use_counters_table {
     group_item_label: "Use Counter Page Js Is Htmldda Fuse"
   }
 
+  dimension: metrics__counter__use_counter_page_js_large_oom_recovered {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_large_oom_recovered ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Large Oom Recovered"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_large_oom_reported {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_large_oom_reported ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Large Oom Reported"
+  }
+
   dimension: metrics__counter__use_counter_page_js_late_weekday {
     sql: ${TABLE}.metrics.counter.use_counter_page_js_late_weekday ;;
     type: number
@@ -17839,6 +17887,22 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Regexp Symbol Protocol On Primitive"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_small_oom_recovered {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_small_oom_recovered ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Small Oom Recovered"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_small_oom_reported {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_small_oom_reported ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Small Oom Reported"
   }
 
   dimension: metrics__counter__use_counter_page_js_subclassing_array_type_2 {
