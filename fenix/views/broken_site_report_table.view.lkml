@@ -639,6 +639,14 @@ view: broken_site_report_table {
     group_item_label: "Broken Site Report Tab Info Antitracking Block List"
   }
 
+  dimension: metrics__string__broken_site_report_tab_info_antitracking_etp_category {
+    sql: ${TABLE}.metrics.string.broken_site_report_tab_info_antitracking_etp_category ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Broken Site Report Tab Info Antitracking Etp Category"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string

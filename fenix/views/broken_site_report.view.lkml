@@ -437,6 +437,24 @@ view: broken_site_report {
 "
   }
 
+  dimension: metrics__string__broken_site_report_tab_info_antitracking_etp_category {
+    label: "Broken Site Report Tab Info Antitracking Etp Category"
+    hidden: no
+    sql: ${TABLE}.metrics.string.broken_site_report_tab_info_antitracking_etp_category ;;
+    type: string
+    group_label: "Broken Site Report Tab Info Antitracking"
+    group_item_label: "Etp Category"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking Etp Category"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/broken_site_report_tab_info_antitracking_etp_category"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The current ETP category, either `standard`, `strict`, or `custom`.
+"
+  }
+
   dimension: metrics__boolean__broken_site_report_tab_info_antitracking_has_mixed_active_content_blocked {
     label: "Broken Site Report Tab Info Antitracking Has Mixed Active Content Blocked"
     hidden: no
