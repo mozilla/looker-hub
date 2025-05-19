@@ -80,8 +80,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Large File Write
-    name: Large File Write_total_ratio
+  - title: Dirty Startup
+    name: Dirty Startup_total_ratio
     note_state: expanded
     note_display: above
     note_text: Total_Ratio
@@ -96,7 +96,7 @@
       firefox_ios_beta_health.branch
     ]
     filters:
-      firefox_ios_beta_health.metric: 'large_file_write'
+      firefox_ios_beta_health.metric: 'dirty_startup'
       firefox_ios_beta_health.statistic: total_ratio
     row: 10
     col: 0
@@ -115,8 +115,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Dirty Startup
-    name: Dirty Startup_total_ratio
+  - title: Large File Write
+    name: Large File Write_total_ratio
     note_state: expanded
     note_display: above
     note_text: Total_Ratio
@@ -131,7 +131,7 @@
       firefox_ios_beta_health.branch
     ]
     filters:
-      firefox_ios_beta_health.metric: 'dirty_startup'
+      firefox_ios_beta_health.metric: 'large_file_write'
       firefox_ios_beta_health.statistic: total_ratio
     row: 10
     col: 12
