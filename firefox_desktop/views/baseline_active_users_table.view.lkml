@@ -377,6 +377,12 @@ view: baseline_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: os_grouped {
+    sql: ${TABLE}.os_grouped ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: os_version {
     sql: ${TABLE}.os_version ;;
     type: string

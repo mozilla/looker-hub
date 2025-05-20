@@ -206,6 +206,10 @@ ads:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_native_desktop_ad_metrics
+    metric_definitions_native_desktop_ad_metrics_by_position:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_native_desktop_ad_metrics_by_position
   glean_app: false
   owners:
   - cmorales@mozilla.com
@@ -243,6 +247,8 @@ ads:
     metric_definitions_consolidated_ads_spocs:
       type: metric_definitions_view
     metric_definitions_native_desktop_ad_metrics:
+      type: metric_definitions_view
+    metric_definitions_native_desktop_ad_metrics_by_position:
       type: metric_definitions_view
     tiles_addressable_inventory_hourly:
       tables:
@@ -2859,6 +2865,10 @@ firefox_desktop:
       views:
         base_view: client_counts
         extended_view: clients_daily_table
+    context_id_deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: context_id_deletion_request
     crash:
       type: glean_ping_explore
       views:
@@ -3241,6 +3251,15 @@ firefox_desktop:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.composite_active_users
+      type: table_view
+    context_id_deletion_request:
+      tables:
+      - table: mozdata.firefox_desktop.context_id_deletion_request
+      type: glean_ping_view
+    context_id_deletion_request_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.context_id_deletion_request
       type: table_view
     crash:
       tables:
@@ -11024,10 +11043,10 @@ operational_monitoring:
             default: release
             options:
             - release
-            - nightly
-            - esr
             - beta
+            - esr
             - aurora
+            - nightly
             - default
             - nightly-pine
             - nightly-oak
@@ -11746,10 +11765,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id281
           normalized_channel:
-            default: nightly
+            default: aurora
             options:
-            - nightly
             - aurora
+            - nightly
             - beta
             - release
             - esr
@@ -13685,15 +13704,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id437
           app:
-            default: iOS - daemon_session
+            default: Android - daemon_session
             options:
-            - iOS - daemon_session
-            - iOS - vpn_session
             - Android - daemon_session
+            - iOS - vpn_session
             - Windows - vpn_session
+            - Darwin - vpn_session
             - Android - vpn_session
             - Linux - vpn_session
-            - Darwin - vpn_session
+            - iOS - daemon_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id438
@@ -15155,17 +15174,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id545
           channel:
-            default: release
+            default: beta
             options:
-            - release
             - beta
             - nightly
+            - release
           os:
-            default: Darwin
+            default: Linux
             options:
-            - Darwin
             - Linux
             - Windows_NT
+            - Darwin
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id546
