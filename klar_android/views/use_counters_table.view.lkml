@@ -5719,6 +5719,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_view_transition_class {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_view_transition_class ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css View Transition Class"
+    description: "Whether a document used the CSS property view-transition-class. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_view_transition_name {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_view_transition_name ;;
     type: number
@@ -12849,6 +12859,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_view_transition_class {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_view_transition_class ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css View Transition Class"
+    description: "Whether a page used the CSS property view-transition-class. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_view_transition_name {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_view_transition_name ;;
     type: number
@@ -17749,6 +17769,26 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_js_large_oom_recovered {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_large_oom_recovered ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Large Oom Recovered"
+    description: "Whether a document recovered a large oom. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_large_oom_reported {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_large_oom_reported ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Large Oom Reported"
+    description: "Whether a document reported a large oom. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_late_weekday {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_late_weekday ;;
     type: number
@@ -17806,6 +17846,26 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Regexp Symbol Protocol On Primitive"
     description: "Whether a document passed a primitive with a custom implementation of the regexp protocol symbols to one of the String methods that accept a regexp. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_small_oom_recovered {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_small_oom_recovered ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Small Oom Recovered"
+    description: "Whether a document recovered a small oom. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_small_oom_reported {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_small_oom_reported ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Small Oom Reported"
+    description: "Whether a document reported a small oom. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -22179,6 +22239,26 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_js_large_oom_recovered {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_large_oom_recovered ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Large Oom Recovered"
+    description: "Whether a page recovered a large oom. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_large_oom_reported {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_large_oom_reported ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Large Oom Reported"
+    description: "Whether a page reported a large oom. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_js_late_weekday {
     sql: ${TABLE}.metrics.counter.use_counter_page_js_late_weekday ;;
     type: number
@@ -22236,6 +22316,26 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Regexp Symbol Protocol On Primitive"
     description: "Whether a page passed a primitive with a custom implementation of the regexp protocol symbols to one of the String methods that accept a regexp. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_small_oom_recovered {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_small_oom_recovered ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Small Oom Recovered"
+    description: "Whether a page recovered a small oom. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_small_oom_reported {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_small_oom_reported ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Small Oom Reported"
+    description: "Whether a page reported a small oom. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

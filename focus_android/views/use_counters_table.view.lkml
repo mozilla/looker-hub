@@ -4625,6 +4625,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css View Timeline Name"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_view_transition_class {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_view_transition_class ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css View Transition Class"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_view_transition_name {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_view_transition_name ;;
     type: number
@@ -10327,6 +10335,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css View Timeline Name"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_view_transition_class {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_view_transition_class ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css View Transition Class"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_view_transition_name {
