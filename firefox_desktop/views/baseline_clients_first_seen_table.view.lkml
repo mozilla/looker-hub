@@ -173,6 +173,12 @@ view: baseline_clients_first_seen_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: is_desktop {
+    sql: ${TABLE}.is_desktop ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: is_new_profile {
     sql: ${TABLE}.is_new_profile ;;
     type: yesno
@@ -236,6 +242,12 @@ view: baseline_clients_first_seen_table {
   dimension: windows_build_number {
     sql: ${TABLE}.windows_build_number ;;
     type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: windows_version {
+    sql: ${TABLE}.windows_version ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 
