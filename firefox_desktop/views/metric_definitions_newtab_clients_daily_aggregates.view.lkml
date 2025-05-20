@@ -35,6 +35,10 @@ SUM(sponsored_topsites_impression_count) AS sponsored_topsite_impression_count,
 SUM(any_topsites_click_count) AS any_topsite_click_count,
 SUM(organic_topsites_click_count) AS organic_topsite_click_count,
 SUM(sponsored_topsites_click_count) AS sponsored_topsite_click_count,
+SUM(widget_engagement_visits) AS widget_engagement_visits,
+SUM(widget_engagement_clients) AS widget_engagement_clients,
+SUM(others_engagement_visits) AS others_engagement_visits,
+SUM(others_engagement_clients) AS others_engagement_clients,
 
                 newtab_clients_daily_aggregates_base_fields_app_version,
 newtab_clients_daily_aggregates_base_fields_channel,
@@ -403,6 +407,38 @@ newtab_clients_daily_aggregates_base_fields_sponsored_topsites_enabled,
     sql: ${TABLE}.sponsored_topsite_click_count ;;
   }
 
+  dimension: widget_engagement_visits {
+    group_label: "Metrics"
+    label: "Widget Engagement Visits"
+    description: "Count of visits with widget engagement"
+    type: number
+    sql: ${TABLE}.widget_engagement_visits ;;
+  }
+
+  dimension: widget_engagement_clients {
+    group_label: "Metrics"
+    label: "Widget Engagement Clients"
+    description: "Count of clients with widget engagement"
+    type: number
+    sql: ${TABLE}.widget_engagement_clients ;;
+  }
+
+  dimension: others_engagement_visits {
+    group_label: "Metrics"
+    label: "Others Engagement Visits"
+    description: "Count of visits with others engagement"
+    type: number
+    sql: ${TABLE}.others_engagement_visits ;;
+  }
+
+  dimension: others_engagement_clients {
+    group_label: "Metrics"
+    label: "Others Engagement Clients"
+    description: "Count of clients with others engagement"
+    type: number
+    sql: ${TABLE}.others_engagement_clients ;;
+  }
+
   dimension: app_version {
     sql: ${TABLE}.newtab_clients_daily_aggregates_base_fields_app_version ;;
     type: number
@@ -695,6 +731,16 @@ newtab_clients_daily_aggregates_base_fields_sponsored_topsites_enabled,
     description: "Sum of Sum of all Content clicks "
   }
 
+  measure: any_content_click_count_ratio {
+    type: number
+    label: "Sum of all Content clicks  Ratio"
+    sql: SAFE_DIVIDE(${any_content_click_count_sum}, ${any_content_impression_count_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between any_content_click_count.sum and
+                                        any_content_impression_count.sum"
+  }
+
   measure: organic_content_click_count_sum {
     type: sum
     sql: ${TABLE}.organic_content_click_count*1 ;;
@@ -703,12 +749,32 @@ newtab_clients_daily_aggregates_base_fields_sponsored_topsites_enabled,
     description: "Sum of Sum of Organic Content Clicks "
   }
 
+  measure: organic_content_click_count_ratio {
+    type: number
+    label: "Sum of Organic Content Clicks  Ratio"
+    sql: SAFE_DIVIDE(${organic_content_click_count_sum}, ${organic_content_impression_count_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between organic_content_click_count.sum and
+                                        organic_content_impression_count.sum"
+  }
+
   measure: sponsored_content_click_count_sum {
     type: sum
     sql: ${TABLE}.sponsored_content_click_count*1 ;;
     label: "Sum of Sponsored Content Clicks  Sum"
     group_label: "Statistics"
     description: "Sum of Sum of Sponsored Content Clicks "
+  }
+
+  measure: sponsored_content_click_count_ratio {
+    type: number
+    label: "Sum of Sponsored Content Clicks  Ratio"
+    sql: SAFE_DIVIDE(${sponsored_content_click_count_sum}, ${sponsored_content_impression_count_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between sponsored_content_click_count.sum and
+                                        sponsored_content_impression_count.sum"
   }
 
   measure: any_topsite_engagement_visits_sum {
@@ -851,6 +917,16 @@ newtab_clients_daily_aggregates_base_fields_sponsored_topsites_enabled,
     description: "Sum of Sum of all Topsite clicks "
   }
 
+  measure: any_topsite_click_count_ratio {
+    type: number
+    label: "Sum of all Topsite clicks  Ratio"
+    sql: SAFE_DIVIDE(${any_topsite_click_count_sum}, ${any_topsite_impression_count_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between any_topsite_click_count.sum and
+                                        any_topsite_impression_count.sum"
+  }
+
   measure: organic_topsite_click_count_sum {
     type: sum
     sql: ${TABLE}.organic_topsite_click_count*1 ;;
@@ -859,12 +935,56 @@ newtab_clients_daily_aggregates_base_fields_sponsored_topsites_enabled,
     description: "Sum of Sum of Organic Topsite Clicks "
   }
 
+  measure: organic_topsite_click_count_ratio {
+    type: number
+    label: "Sum of Organic Topsite Clicks  Ratio"
+    sql: SAFE_DIVIDE(${organic_topsite_click_count_sum}, ${organic_topsite_impression_count_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between organic_topsite_click_count.sum and
+                                        organic_topsite_impression_count.sum"
+  }
+
   measure: sponsored_topsite_click_count_sum {
     type: sum
     sql: ${TABLE}.sponsored_topsite_click_count*1 ;;
     label: "Sum of Sponsored Topsite Clicks  Sum"
     group_label: "Statistics"
     description: "Sum of Sum of Sponsored Topsite Clicks "
+  }
+
+  measure: sponsored_topsite_click_count_ratio {
+    type: number
+    label: "Sum of Sponsored Topsite Clicks  Ratio"
+    sql: SAFE_DIVIDE(${sponsored_topsite_click_count_sum}, ${sponsored_topsite_impression_count_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between sponsored_topsite_click_count.sum and
+                                        sponsored_topsite_impression_count.sum"
+  }
+
+  measure: widget_engagement_visits_sum {
+    type: sum
+    sql: ${TABLE}.widget_engagement_visits*1 ;;
+    label: "Widget Engagement Visits Sum"
+    group_label: "Statistics"
+    description: "Sum of Widget Engagement Visits"
+  }
+
+  measure: widget_engagement_clients_sum {
+    type: sum
+    sql: ${TABLE}.widget_engagement_clients*1 ;;
+    label: "Widget Engagement Clients Sum"
+    group_label: "Statistics"
+    description: "Sum of Widget Engagement Clients"
+  }
+
+  measure: others_engagement_visits_sum {
+    type: sum
+    sql: ${TABLE}.others_engagement_visits*1 ;;
+    label: "Others Engagement Visits Sum"
+    group_label: "Statistics"
+    description: "Sum of Others Engagement Visits"
   }
 
   set: metrics {
@@ -897,6 +1017,10 @@ newtab_clients_daily_aggregates_base_fields_sponsored_topsites_enabled,
       any_topsite_click_count,
       organic_topsite_click_count,
       sponsored_topsite_click_count,
+      widget_engagement_visits,
+      widget_engagement_clients,
+      others_engagement_visits,
+      others_engagement_clients,
       nonsearch_engagement_visits_sum,
       nonsearch_engagement_visits_ratio,
       default_ui_visits_sum,
@@ -919,8 +1043,11 @@ newtab_clients_daily_aggregates_base_fields_sponsored_topsites_enabled,
       organic_content_impression_count_sum,
       sponsored_content_impression_count_sum,
       any_content_click_count_sum,
+      any_content_click_count_ratio,
       organic_content_click_count_sum,
+      organic_content_click_count_ratio,
       sponsored_content_click_count_sum,
+      sponsored_content_click_count_ratio,
       any_topsite_engagement_visits_sum,
       any_topsite_engagement_visits_ratio,
       organic_topsite_engagement_visits_sum,
@@ -937,8 +1064,14 @@ newtab_clients_daily_aggregates_base_fields_sponsored_topsites_enabled,
       organic_topsite_impression_count_sum,
       sponsored_topsite_impression_count_sum,
       any_topsite_click_count_sum,
+      any_topsite_click_count_ratio,
       organic_topsite_click_count_sum,
+      organic_topsite_click_count_ratio,
       sponsored_topsite_click_count_sum,
+      sponsored_topsite_click_count_ratio,
+      widget_engagement_visits_sum,
+      widget_engagement_clients_sum,
+      others_engagement_visits_sum,
     ]
   }
 
