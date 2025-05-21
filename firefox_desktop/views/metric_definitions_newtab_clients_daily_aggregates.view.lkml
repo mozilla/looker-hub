@@ -23,18 +23,18 @@ SUM(sponsored_content_impression_count) AS sponsored_content_impression_count,
 SUM(any_content_click_count) AS any_content_click_count,
 SUM(organic_content_click_count) AS organic_content_click_count,
 SUM(sponsored_content_click_count) AS sponsored_content_click_count,
-SUM(any_topsites_engagement_visits) AS any_topsite_engagement_visits,
+SUM(any_topsite_engagement_visits) AS any_topsite_engagement_visits,
 SUM(organic_topsite_engagement_visits) AS organic_topsite_engagement_visits,
 SUM(sponsored_topsite_engagement_visits) AS sponsored_topsite_engagement_visits,
-SUM(any_topsites_engagement_clients) AS any_topsite_engagement_clients,
+SUM(any_topsite_engagement_clients) AS any_topsite_engagement_clients,
 SUM(organic_topsite_engagement_clients) AS organic_topsite_engagement_clients,
 SUM(sponsored_topsite_engagement_clients) AS sponsored_topsite_engagement_clients,
-SUM(any_topsites_impression_count) AS any_topsite_impression_count,
-SUM(organic_topsites_impression_count) AS organic_topsite_impression_count,
-SUM(sponsored_topsites_impression_count) AS sponsored_topsite_impression_count,
-SUM(any_topsites_click_count) AS any_topsite_click_count,
-SUM(organic_topsites_click_count) AS organic_topsite_click_count,
-SUM(sponsored_topsites_click_count) AS sponsored_topsite_click_count,
+SUM(any_topsite_impression_count) AS any_topsite_impression_count,
+SUM(organic_topsite_impression_count) AS organic_topsite_impression_count,
+SUM(sponsored_topsite_impression_count) AS sponsored_topsite_impression_count,
+SUM(any_topsite_click_count) AS any_topsite_click_count,
+SUM(organic_topsite_click_count) AS organic_topsite_click_count,
+SUM(sponsored_topsite_click_count) AS sponsored_topsite_click_count,
 SUM(widget_engagement_visits) AS widget_engagement_visits,
 SUM(widget_engagement_clients) AS widget_engagement_clients,
 SUM(others_engagement_visits) AS others_engagement_visits,
@@ -43,9 +43,9 @@ SUM(others_engagement_clients) AS others_engagement_clients,
                 newtab_clients_daily_aggregates_base_fields_app_version,
 newtab_clients_daily_aggregates_base_fields_channel,
 newtab_clients_daily_aggregates_base_fields_country,
+newtab_clients_daily_aggregates_base_fields_homepage_category,
 newtab_clients_daily_aggregates_base_fields_locale,
-newtab_clients_daily_aggregates_base_fields_newtab_homepage_category,
-newtab_clients_daily_aggregates_base_fields_newtab_newtab_category,
+newtab_clients_daily_aggregates_base_fields_newtab_category,
 newtab_clients_daily_aggregates_base_fields_newtab_search_enabled,
 newtab_clients_daily_aggregates_base_fields_organic_content_enabled,
 newtab_clients_daily_aggregates_base_fields_organic_topsites_enabled,
@@ -87,9 +87,9 @@ newtab_clients_daily_aggregates_base_fields_sponsored_topsites_enabled,
                         newtab_clients_daily_aggregates_base_fields.app_version AS newtab_clients_daily_aggregates_base_fields_app_version,
 newtab_clients_daily_aggregates_base_fields.channel AS newtab_clients_daily_aggregates_base_fields_channel,
 newtab_clients_daily_aggregates_base_fields.country AS newtab_clients_daily_aggregates_base_fields_country,
+newtab_clients_daily_aggregates_base_fields.homepage_category AS newtab_clients_daily_aggregates_base_fields_homepage_category,
 newtab_clients_daily_aggregates_base_fields.locale AS newtab_clients_daily_aggregates_base_fields_locale,
-newtab_clients_daily_aggregates_base_fields.newtab_homepage_category AS newtab_clients_daily_aggregates_base_fields_newtab_homepage_category,
-newtab_clients_daily_aggregates_base_fields.newtab_newtab_category AS newtab_clients_daily_aggregates_base_fields_newtab_newtab_category,
+newtab_clients_daily_aggregates_base_fields.newtab_category AS newtab_clients_daily_aggregates_base_fields_newtab_category,
 newtab_clients_daily_aggregates_base_fields.newtab_search_enabled AS newtab_clients_daily_aggregates_base_fields_newtab_search_enabled,
 newtab_clients_daily_aggregates_base_fields.organic_content_enabled AS newtab_clients_daily_aggregates_base_fields_organic_content_enabled,
 newtab_clients_daily_aggregates_base_fields.organic_topsites_enabled AS newtab_clients_daily_aggregates_base_fields_organic_topsites_enabled,
@@ -102,7 +102,7 @@ newtab_clients_daily_aggregates_base_fields.sponsored_topsites_enabled AS newtab
             SELECT
                 *
             FROM
-                moz-fx-data-shared-prod.analysis.gkatre__newtab_clients_daily_aggregates_v2
+                moz-fx-data-shared-prod.firefox_desktop_derived.newtab_clients_daily_aggregates_v2
             ) AS newtab_clients_daily_aggregates
         INNER JOIN
     (
@@ -110,9 +110,9 @@ newtab_clients_daily_aggregates_base_fields.sponsored_topsites_enabled AS newtab
                 *
             FROM
                 (SELECT
-submission_date, app_version, os, channel, locale, country, newtab_homepage_category, newtab_newtab_category,
+submission_date, app_version, os, channel, locale, country, homepage_category, newtab_category,
 organic_content_enabled, sponsored_content_enabled, sponsored_topsites_enabled, organic_topsites_enabled, newtab_search_enabled
-FROM moz-fx-data-shared-prod.analysis.gkatre__newtab_clients_daily_aggregates_v2)
+FROM moz-fx-data-shared-prod.firefox_desktop_derived.newtab_clients_daily_aggregates_v2)
             ) AS newtab_clients_daily_aggregates_base_fields
         
     ON 
@@ -122,8 +122,8 @@ AND (newtab_clients_daily_aggregates.os = newtab_clients_daily_aggregates_base_f
 AND (newtab_clients_daily_aggregates.channel = newtab_clients_daily_aggregates_base_fields.channel OR (newtab_clients_daily_aggregates.channel IS NULL AND newtab_clients_daily_aggregates_base_fields.channel IS NULL ))
 AND (newtab_clients_daily_aggregates.locale = newtab_clients_daily_aggregates_base_fields.locale OR (newtab_clients_daily_aggregates.locale IS NULL AND newtab_clients_daily_aggregates_base_fields.locale IS NULL ))
 AND (newtab_clients_daily_aggregates.country = newtab_clients_daily_aggregates_base_fields.country OR (newtab_clients_daily_aggregates.country IS NULL AND newtab_clients_daily_aggregates_base_fields.country IS NULL ))
-AND (newtab_clients_daily_aggregates.newtab_homepage_category = newtab_clients_daily_aggregates_base_fields.newtab_homepage_category OR (newtab_clients_daily_aggregates.newtab_homepage_category IS NULL AND newtab_clients_daily_aggregates_base_fields.newtab_homepage_category IS NULL ))
-AND (newtab_clients_daily_aggregates.newtab_newtab_category = newtab_clients_daily_aggregates_base_fields.newtab_newtab_category OR (newtab_clients_daily_aggregates.newtab_newtab_category IS NULL AND newtab_clients_daily_aggregates_base_fields.newtab_newtab_category IS NULL ))
+AND (newtab_clients_daily_aggregates.homepage_category = clients_daily_aggregates_base_fields.homepage_category OR (newtab_clients_daily_aggregates.homepage_category IS NULL AND newtab_clients_daily_aggregates_base_fields.homepage_category IS NULL ))
+AND (newtab_clients_daily_aggregates.newtab_category = clients_daily_aggregates_base_fields.newtab_category OR (newtab_clients_daily_aggregates.newtab_category IS NULL AND newtab_clients_daily_aggregates_base_fields.newtab_category IS NULL ))
 AND (newtab_clients_daily_aggregates.organic_content_enabled = newtab_clients_daily_aggregates_base_fields.organic_content_enabled OR (newtab_clients_daily_aggregates.organic_content_enabled IS NULL AND newtab_clients_daily_aggregates_base_fields.organic_content_enabled IS NULL ))
 AND (newtab_clients_daily_aggregates.sponsored_content_enabled = newtab_clients_daily_aggregates_base_fields.sponsored_content_enabled OR (newtab_clients_daily_aggregates.sponsored_content_enabled IS NULL AND newtab_clients_daily_aggregates_base_fields.sponsored_content_enabled IS NULL ))
 AND (newtab_clients_daily_aggregates.sponsored_topsites_enabled = newtab_clients_daily_aggregates_base_fields.sponsored_topsites_enabled OR (newtab_clients_daily_aggregates.sponsored_topsites_enabled IS NULL AND newtab_clients_daily_aggregates_base_fields.sponsored_topsites_enabled IS NULL ))
@@ -160,9 +160,9 @@ AND (newtab_clients_daily_aggregates.newtab_search_enabled = newtab_clients_dail
                 newtab_clients_daily_aggregates_base_fields_app_version,
 newtab_clients_daily_aggregates_base_fields_channel,
 newtab_clients_daily_aggregates_base_fields_country,
+newtab_clients_daily_aggregates_base_fields_homepage_category,
 newtab_clients_daily_aggregates_base_fields_locale,
-newtab_clients_daily_aggregates_base_fields_newtab_homepage_category,
-newtab_clients_daily_aggregates_base_fields_newtab_newtab_category,
+newtab_clients_daily_aggregates_base_fields_newtab_category,
 newtab_clients_daily_aggregates_base_fields_newtab_search_enabled,
 newtab_clients_daily_aggregates_base_fields_organic_content_enabled,
 newtab_clients_daily_aggregates_base_fields_organic_topsites_enabled,
@@ -461,6 +461,13 @@ newtab_clients_daily_aggregates_base_fields_sponsored_topsites_enabled,
     group_label: "Base Fields"
   }
 
+  dimension: homepage_category {
+    sql: ${TABLE}.newtab_clients_daily_aggregates_base_fields_homepage_category ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
   dimension: locale {
     sql: ${TABLE}.newtab_clients_daily_aggregates_base_fields_locale ;;
     type: string
@@ -468,15 +475,8 @@ newtab_clients_daily_aggregates_base_fields_sponsored_topsites_enabled,
     group_label: "Base Fields"
   }
 
-  dimension: newtab_homepage_category {
-    sql: ${TABLE}.newtab_clients_daily_aggregates_base_fields_newtab_homepage_category ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: newtab_newtab_category {
-    sql: ${TABLE}.newtab_clients_daily_aggregates_base_fields_newtab_newtab_category ;;
+  dimension: newtab_category {
+    sql: ${TABLE}.newtab_clients_daily_aggregates_base_fields_newtab_category ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
