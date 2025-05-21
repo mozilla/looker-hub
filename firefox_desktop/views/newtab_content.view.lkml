@@ -94,7 +94,7 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "<0-24> positive UTC offset, rounded to the nearest integer number greater than 0. (If less than 0, then add 24.)
+    description: "<0-24> positive UTC offset, rounded to the nearest integer number greater than 0. (If less than 0, then add 24.). The value may be clamped by expected time zone ranges for a surface.
 "
   }
 

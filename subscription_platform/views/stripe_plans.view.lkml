@@ -26,6 +26,12 @@ view: stripe_plans {
     description: "The unit amount in cents to be charged, represented as a whole integer if possible. Only set if `billing_scheme` = \"per_unit\"."
   }
 
+  dimension: apple_product_ids {
+    sql: ${TABLE}.apple_product_ids ;;
+    hidden: yes
+    description: "Apple products IDs specified in the plan's metadata."
+  }
+
   dimension: billing_scheme {
     sql: ${TABLE}.billing_scheme ;;
     type: string
@@ -38,6 +44,12 @@ view: stripe_plans {
     type: string
     suggest_persist_for: "24 hours"
     description: "Three-letter ISO currency code, in lowercase."
+  }
+
+  dimension: google_sku_ids {
+    sql: ${TABLE}.google_sku_ids ;;
+    hidden: yes
+    description: "Google SKU IDs specified in the plan's metadata."
   }
 
   dimension: id {
