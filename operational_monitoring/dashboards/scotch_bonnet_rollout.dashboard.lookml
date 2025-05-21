@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,10 +60,44 @@
       scotch_bonnet_rollout.branch
     ]
     filters:
-      scotch_bonnet_rollout.metric: 'search_count'
+      scotch_bonnet_rollout.metric: 'ad_clicks'
       scotch_bonnet_rollout.statistic: mean
     row: 0
     col: 12
+    width: 12
+    height: 8
+    field_x: scotch_bonnet_rollout.submission_date
+    field_y: scotch_bonnet_rollout.point
+    log_scale: false
+    ci_lower: scotch_bonnet_rollout.lower
+    ci_upper: scotch_bonnet_rollout.upper
+    show_grid: true
+    listen:
+      Date: scotch_bonnet_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: scotch_bonnet_rollout
+    type: looker_line
+    fields: [
+      scotch_bonnet_rollout.submission_date,
+      scotch_bonnet_rollout.branch,
+      scotch_bonnet_rollout.point
+    ]
+    pivots: [
+      scotch_bonnet_rollout.branch
+    ]
+    filters:
+      scotch_bonnet_rollout.metric: 'active_hours'
+      scotch_bonnet_rollout.statistic: mean
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: scotch_bonnet_rollout.submission_date
@@ -97,6 +131,40 @@
       scotch_bonnet_rollout.metric: 'qualified_cumulative_days_of_use'
       scotch_bonnet_rollout.statistic: mean
     row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: scotch_bonnet_rollout.submission_date
+    field_y: scotch_bonnet_rollout.point
+    log_scale: false
+    ci_lower: scotch_bonnet_rollout.lower
+    ci_upper: scotch_bonnet_rollout.upper
+    show_grid: true
+    listen:
+      Date: scotch_bonnet_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: scotch_bonnet_rollout
+    type: looker_line
+    fields: [
+      scotch_bonnet_rollout.submission_date,
+      scotch_bonnet_rollout.branch,
+      scotch_bonnet_rollout.point
+    ]
+    pivots: [
+      scotch_bonnet_rollout.branch
+    ]
+    filters:
+      scotch_bonnet_rollout.metric: 'retained'
+      scotch_bonnet_rollout.statistic: mean
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -112,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,9 +196,9 @@
       scotch_bonnet_rollout.branch
     ]
     filters:
-      scotch_bonnet_rollout.metric: 'ad_clicks'
+      scotch_bonnet_rollout.metric: 'uri_count'
       scotch_bonnet_rollout.statistic: mean
-    row: 10
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -166,7 +234,7 @@
     filters:
       scotch_bonnet_rollout.metric: 'memory_total'
       scotch_bonnet_rollout.statistic: percentile
-    row: 20
+    row: 30
     col: 0
     width: 12
     height: 8
@@ -183,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,75 +267,7 @@
       scotch_bonnet_rollout.branch
     ]
     filters:
-      scotch_bonnet_rollout.metric: 'active_hours'
-      scotch_bonnet_rollout.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: scotch_bonnet_rollout.submission_date
-    field_y: scotch_bonnet_rollout.point
-    log_scale: false
-    ci_lower: scotch_bonnet_rollout.lower
-    ci_upper: scotch_bonnet_rollout.upper
-    show_grid: true
-    listen:
-      Date: scotch_bonnet_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: scotch_bonnet_rollout
-    type: looker_line
-    fields: [
-      scotch_bonnet_rollout.submission_date,
-      scotch_bonnet_rollout.branch,
-      scotch_bonnet_rollout.point
-    ]
-    pivots: [
-      scotch_bonnet_rollout.branch
-    ]
-    filters:
-      scotch_bonnet_rollout.metric: 'retained'
-      scotch_bonnet_rollout.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: scotch_bonnet_rollout.submission_date
-    field_y: scotch_bonnet_rollout.point
-    log_scale: false
-    ci_lower: scotch_bonnet_rollout.lower
-    ci_upper: scotch_bonnet_rollout.upper
-    show_grid: true
-    listen:
-      Date: scotch_bonnet_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: scotch_bonnet_rollout
-    type: looker_line
-    fields: [
-      scotch_bonnet_rollout.submission_date,
-      scotch_bonnet_rollout.branch,
-      scotch_bonnet_rollout.point
-    ]
-    pivots: [
-      scotch_bonnet_rollout.branch
-    ]
-    filters:
-      scotch_bonnet_rollout.metric: 'uri_count'
+      scotch_bonnet_rollout.metric: 'search_count'
       scotch_bonnet_rollout.statistic: mean
     row: 30
     col: 12
