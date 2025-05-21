@@ -62,6 +62,60 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
 "
   }
 
+  dimension: metrics__string__newtab_content_experiment_branch {
+    label: "Newtab Content Experiment Branch"
+    hidden: no
+    sql: ${TABLE}.metrics.string.newtab_content_experiment_branch ;;
+    type: string
+    group_label: "Newtab Content"
+    group_item_label: "Experiment Branch"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Content Experiment Branch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_content_experiment_branch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The branch of the primary new tab content experiment. We don't include all experiments to prevent user fingerprinting.
+"
+  }
+
+  dimension: metrics__string__newtab_content_experiment_name {
+    label: "Newtab Content Experiment Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.newtab_content_experiment_name ;;
+    type: string
+    group_label: "Newtab Content"
+    group_item_label: "Experiment Name"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Content Experiment Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_content_experiment_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the primary new tab content experiment. We don't include all experiments to prevent user fingerprinting.
+"
+  }
+
+  dimension: metrics__string__newtab_content_inferred_interests {
+    label: "Newtab Content Inferred Interests"
+    hidden: no
+    sql: ${TABLE}.metrics.string.newtab_content_inferred_interests ;;
+    type: string
+    group_label: "Newtab Content"
+    group_item_label: "Inferred Interests"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Content Inferred Interests"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_content_inferred_interests"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Differentially private high-level inferred interests (e.g. Entertainment or News), encoded in a JSON string. Key is the feature, and the value is a unary encoded string that must be decoded based on known differential privacy q and p values. Example \"{\"arts\":\"001\"}\"
+"
+  }
+
   dimension: metrics__string__newtab_content_surface_id {
     label: "Newtab Content Surface ID"
     hidden: no
