@@ -78,40 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: backgroundupdate_enable_unelevated_installations_rollout_3_release
-    type: looker_line
-    fields: [
-      backgroundupdate_enable_unelevated_installations_rollout_3_release.submission_date,
-      backgroundupdate_enable_unelevated_installations_rollout_3_release.branch,
-      backgroundupdate_enable_unelevated_installations_rollout_3_release.point
-    ]
-    pivots: [
-      backgroundupdate_enable_unelevated_installations_rollout_3_release.branch
-    ]
-    filters:
-      backgroundupdate_enable_unelevated_installations_rollout_3_release.metric: 'active_hours'
-      backgroundupdate_enable_unelevated_installations_rollout_3_release.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: backgroundupdate_enable_unelevated_installations_rollout_3_release.submission_date
-    field_y: backgroundupdate_enable_unelevated_installations_rollout_3_release.point
-    log_scale: false
-    ci_lower: backgroundupdate_enable_unelevated_installations_rollout_3_release.lower
-    ci_upper: backgroundupdate_enable_unelevated_installations_rollout_3_release.upper
-    show_grid: true
-    listen:
-      Date: backgroundupdate_enable_unelevated_installations_rollout_3_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Qualified Cumulative Days Of Use
     name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
@@ -129,6 +95,40 @@
     ]
     filters:
       backgroundupdate_enable_unelevated_installations_rollout_3_release.metric: 'qualified_cumulative_days_of_use'
+      backgroundupdate_enable_unelevated_installations_rollout_3_release.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: backgroundupdate_enable_unelevated_installations_rollout_3_release.submission_date
+    field_y: backgroundupdate_enable_unelevated_installations_rollout_3_release.point
+    log_scale: false
+    ci_lower: backgroundupdate_enable_unelevated_installations_rollout_3_release.lower
+    ci_upper: backgroundupdate_enable_unelevated_installations_rollout_3_release.upper
+    show_grid: true
+    listen:
+      Date: backgroundupdate_enable_unelevated_installations_rollout_3_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: backgroundupdate_enable_unelevated_installations_rollout_3_release
+    type: looker_line
+    fields: [
+      backgroundupdate_enable_unelevated_installations_rollout_3_release.submission_date,
+      backgroundupdate_enable_unelevated_installations_rollout_3_release.branch,
+      backgroundupdate_enable_unelevated_installations_rollout_3_release.point
+    ]
+    pivots: [
+      backgroundupdate_enable_unelevated_installations_rollout_3_release.branch
+    ]
+    filters:
+      backgroundupdate_enable_unelevated_installations_rollout_3_release.metric: 'active_hours'
       backgroundupdate_enable_unelevated_installations_rollout_3_release.statistic: mean
     row: 10
     col: 12

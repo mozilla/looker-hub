@@ -78,40 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: address_bar_engagement_survey_en_us
-    type: looker_line
-    fields: [
-      address_bar_engagement_survey_en_us.submission_date,
-      address_bar_engagement_survey_en_us.branch,
-      address_bar_engagement_survey_en_us.point
-    ]
-    pivots: [
-      address_bar_engagement_survey_en_us.branch
-    ]
-    filters:
-      address_bar_engagement_survey_en_us.metric: 'active_hours'
-      address_bar_engagement_survey_en_us.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: address_bar_engagement_survey_en_us.submission_date
-    field_y: address_bar_engagement_survey_en_us.point
-    log_scale: false
-    ci_lower: address_bar_engagement_survey_en_us.lower
-    ci_upper: address_bar_engagement_survey_en_us.upper
-    show_grid: true
-    listen:
-      Date: address_bar_engagement_survey_en_us.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Qualified Cumulative Days Of Use
     name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
@@ -129,6 +95,40 @@
     ]
     filters:
       address_bar_engagement_survey_en_us.metric: 'qualified_cumulative_days_of_use'
+      address_bar_engagement_survey_en_us.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: address_bar_engagement_survey_en_us.submission_date
+    field_y: address_bar_engagement_survey_en_us.point
+    log_scale: false
+    ci_lower: address_bar_engagement_survey_en_us.lower
+    ci_upper: address_bar_engagement_survey_en_us.upper
+    show_grid: true
+    listen:
+      Date: address_bar_engagement_survey_en_us.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: address_bar_engagement_survey_en_us
+    type: looker_line
+    fields: [
+      address_bar_engagement_survey_en_us.submission_date,
+      address_bar_engagement_survey_en_us.branch,
+      address_bar_engagement_survey_en_us.point
+    ]
+    pivots: [
+      address_bar_engagement_survey_en_us.branch
+    ]
+    filters:
+      address_bar_engagement_survey_en_us.metric: 'active_hours'
       address_bar_engagement_survey_en_us.statistic: mean
     row: 10
     col: 12
