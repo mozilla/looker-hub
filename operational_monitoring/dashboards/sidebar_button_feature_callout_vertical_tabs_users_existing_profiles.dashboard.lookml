@@ -78,40 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sidebar_button_feature_callout_vertical_tabs_users_existing_profiles
-    type: looker_line
-    fields: [
-      sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.submission_date,
-      sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.branch,
-      sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.point
-    ]
-    pivots: [
-      sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.branch
-    ]
-    filters:
-      sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.metric: 'active_hours'
-      sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.submission_date
-    field_y: sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.point
-    log_scale: false
-    ci_lower: sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.lower
-    ci_upper: sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.upper
-    show_grid: true
-    listen:
-      Date: sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Qualified Cumulative Days Of Use
     name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
@@ -129,6 +95,40 @@
     ]
     filters:
       sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.metric: 'qualified_cumulative_days_of_use'
+      sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.submission_date
+    field_y: sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.point
+    log_scale: false
+    ci_lower: sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.lower
+    ci_upper: sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.upper
+    show_grid: true
+    listen:
+      Date: sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sidebar_button_feature_callout_vertical_tabs_users_existing_profiles
+    type: looker_line
+    fields: [
+      sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.submission_date,
+      sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.branch,
+      sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.point
+    ]
+    pivots: [
+      sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.branch
+    ]
+    filters:
+      sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.metric: 'active_hours'
       sidebar_button_feature_callout_vertical_tabs_users_existing_profiles.statistic: mean
     row: 10
     col: 12

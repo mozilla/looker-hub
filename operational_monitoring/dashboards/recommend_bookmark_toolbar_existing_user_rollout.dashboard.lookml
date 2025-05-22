@@ -78,40 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: recommend_bookmark_toolbar_existing_user_rollout
-    type: looker_line
-    fields: [
-      recommend_bookmark_toolbar_existing_user_rollout.submission_date,
-      recommend_bookmark_toolbar_existing_user_rollout.branch,
-      recommend_bookmark_toolbar_existing_user_rollout.point
-    ]
-    pivots: [
-      recommend_bookmark_toolbar_existing_user_rollout.branch
-    ]
-    filters:
-      recommend_bookmark_toolbar_existing_user_rollout.metric: 'active_hours'
-      recommend_bookmark_toolbar_existing_user_rollout.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: recommend_bookmark_toolbar_existing_user_rollout.submission_date
-    field_y: recommend_bookmark_toolbar_existing_user_rollout.point
-    log_scale: false
-    ci_lower: recommend_bookmark_toolbar_existing_user_rollout.lower
-    ci_upper: recommend_bookmark_toolbar_existing_user_rollout.upper
-    show_grid: true
-    listen:
-      Date: recommend_bookmark_toolbar_existing_user_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Qualified Cumulative Days Of Use
     name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
@@ -129,6 +95,40 @@
     ]
     filters:
       recommend_bookmark_toolbar_existing_user_rollout.metric: 'qualified_cumulative_days_of_use'
+      recommend_bookmark_toolbar_existing_user_rollout.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: recommend_bookmark_toolbar_existing_user_rollout.submission_date
+    field_y: recommend_bookmark_toolbar_existing_user_rollout.point
+    log_scale: false
+    ci_lower: recommend_bookmark_toolbar_existing_user_rollout.lower
+    ci_upper: recommend_bookmark_toolbar_existing_user_rollout.upper
+    show_grid: true
+    listen:
+      Date: recommend_bookmark_toolbar_existing_user_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: recommend_bookmark_toolbar_existing_user_rollout
+    type: looker_line
+    fields: [
+      recommend_bookmark_toolbar_existing_user_rollout.submission_date,
+      recommend_bookmark_toolbar_existing_user_rollout.branch,
+      recommend_bookmark_toolbar_existing_user_rollout.point
+    ]
+    pivots: [
+      recommend_bookmark_toolbar_existing_user_rollout.branch
+    ]
+    filters:
+      recommend_bookmark_toolbar_existing_user_rollout.metric: 'active_hours'
       recommend_bookmark_toolbar_existing_user_rollout.statistic: mean
     row: 10
     col: 12

@@ -4543,6 +4543,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__boolean__newtab_addon_ready_success {
+    label: "Newtab Addon Ready Success"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.newtab_addon_ready_success ;;
+    type: yesno
+    group_label: "Newtab"
+    group_item_label: "Addon Ready Success"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Addon Ready Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_addon_ready_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records technical data about whether waiting for the newtab built-in addon readyPromise succeeded.
+"
+  }
+
   dimension: metrics__boolean__newtab_handoff_preference_enabled {
     label: "Newtab Handoff Preference Enabled"
     hidden: no

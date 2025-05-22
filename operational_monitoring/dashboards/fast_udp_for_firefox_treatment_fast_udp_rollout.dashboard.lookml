@@ -78,40 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: fast_udp_for_firefox_treatment_fast_udp_rollout
-    type: looker_line
-    fields: [
-      fast_udp_for_firefox_treatment_fast_udp_rollout.submission_date,
-      fast_udp_for_firefox_treatment_fast_udp_rollout.branch,
-      fast_udp_for_firefox_treatment_fast_udp_rollout.point
-    ]
-    pivots: [
-      fast_udp_for_firefox_treatment_fast_udp_rollout.branch
-    ]
-    filters:
-      fast_udp_for_firefox_treatment_fast_udp_rollout.metric: 'active_hours'
-      fast_udp_for_firefox_treatment_fast_udp_rollout.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: fast_udp_for_firefox_treatment_fast_udp_rollout.submission_date
-    field_y: fast_udp_for_firefox_treatment_fast_udp_rollout.point
-    log_scale: false
-    ci_lower: fast_udp_for_firefox_treatment_fast_udp_rollout.lower
-    ci_upper: fast_udp_for_firefox_treatment_fast_udp_rollout.upper
-    show_grid: true
-    listen:
-      Date: fast_udp_for_firefox_treatment_fast_udp_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Qualified Cumulative Days Of Use
     name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
@@ -129,6 +95,40 @@
     ]
     filters:
       fast_udp_for_firefox_treatment_fast_udp_rollout.metric: 'qualified_cumulative_days_of_use'
+      fast_udp_for_firefox_treatment_fast_udp_rollout.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: fast_udp_for_firefox_treatment_fast_udp_rollout.submission_date
+    field_y: fast_udp_for_firefox_treatment_fast_udp_rollout.point
+    log_scale: false
+    ci_lower: fast_udp_for_firefox_treatment_fast_udp_rollout.lower
+    ci_upper: fast_udp_for_firefox_treatment_fast_udp_rollout.upper
+    show_grid: true
+    listen:
+      Date: fast_udp_for_firefox_treatment_fast_udp_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: fast_udp_for_firefox_treatment_fast_udp_rollout
+    type: looker_line
+    fields: [
+      fast_udp_for_firefox_treatment_fast_udp_rollout.submission_date,
+      fast_udp_for_firefox_treatment_fast_udp_rollout.branch,
+      fast_udp_for_firefox_treatment_fast_udp_rollout.point
+    ]
+    pivots: [
+      fast_udp_for_firefox_treatment_fast_udp_rollout.branch
+    ]
+    filters:
+      fast_udp_for_firefox_treatment_fast_udp_rollout.metric: 'active_hours'
       fast_udp_for_firefox_treatment_fast_udp_rollout.statistic: mean
     row: 10
     col: 12
