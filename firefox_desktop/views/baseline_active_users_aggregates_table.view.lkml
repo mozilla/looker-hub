@@ -35,24 +35,32 @@ this is appended to the app_name.
     sql: ${TABLE}.app_version_is_major_release ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Boolean flag indicating if the app version was a major release
+"
   }
 
   dimension: app_version_major {
     sql: ${TABLE}.app_version_major ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The major version of the application version (e.g. if 123.0, then 123)
+"
   }
 
   dimension: app_version_minor {
     sql: ${TABLE}.app_version_minor ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The minor version of the application version (e.g. if 123.0, then 0)
+"
   }
 
   dimension: app_version_patch_revision {
     sql: ${TABLE}.app_version_patch_revision ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The patch revision number of the app version
+"
   }
 
   dimension: attribution_medium {
@@ -83,6 +91,8 @@ this is appended to the app_name.
     sql: ${TABLE}.city ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "City reported by the client.
+"
   }
 
   dimension: country {
@@ -166,6 +176,14 @@ this is appended to the app_name.
 "
   }
 
+  dimension: os_grouped {
+    sql: ${TABLE}.os_grouped ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Operating system group reported by the client.
+"
+  }
+
   dimension: os_version {
     sql: ${TABLE}.os_version ;;
     type: string
@@ -178,18 +196,24 @@ this is appended to the app_name.
     sql: ${TABLE}.os_version_build ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "OS version build reported by the client.
+"
   }
 
   dimension: os_version_major {
     sql: ${TABLE}.os_version_major ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "OS version major version reported by the client.
+"
   }
 
   dimension: os_version_minor {
     sql: ${TABLE}.os_version_minor ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "OS version minor version reported by the client.
+"
   }
 
   dimension: wau {

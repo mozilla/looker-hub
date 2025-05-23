@@ -276,7 +276,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Newtab Content Utc Offset"
-    description: "<0-24> positive UTC offset, rounded to the nearest integer number greater than 0. (If less than 0, then add 24.)
+    description: "<0-24> positive UTC offset, rounded to the nearest integer number greater than 0. (If less than 0, then add 24.). The value may be clamped by expected time zone ranges for a surface.
 "
   }
 
@@ -309,6 +309,48 @@ for the purpose of experimentation enrollment.
     group_item_label: "Newtab Content Coarse OS Version"
     description: "The user-visible version of the operating system (e.g. \"1.2.3\").
 If the version detection fails, this metric gets set to 0.
+"
+  }
+
+  dimension: metrics__string__newtab_content_country {
+    sql: ${TABLE}.metrics.string.newtab_content_country ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Newtab Content Country"
+    description: "Records the detected home region of the user. This is the general region of the user's machine.
+If a machine moves location, there is a minimum 2-week delay before this will be updated.
+See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/modules/toolkit_modules/Region.html) for more information about updates.
+"
+  }
+
+  dimension: metrics__string__newtab_content_experiment_branch {
+    sql: ${TABLE}.metrics.string.newtab_content_experiment_branch ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Newtab Content Experiment Branch"
+    description: "The branch of the primary new tab content experiment. We don't include all experiments to prevent user fingerprinting.
+"
+  }
+
+  dimension: metrics__string__newtab_content_experiment_name {
+    sql: ${TABLE}.metrics.string.newtab_content_experiment_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Newtab Content Experiment Name"
+    description: "The name of the primary new tab content experiment. We don't include all experiments to prevent user fingerprinting.
+"
+  }
+
+  dimension: metrics__string__newtab_content_inferred_interests {
+    sql: ${TABLE}.metrics.string.newtab_content_inferred_interests ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Newtab Content Inferred Interests"
+    description: "Differentially private high-level inferred interests (e.g. Entertainment or News), encoded in a JSON string. Key is the feature, and the value is a unary encoded string that must be decoded based on known differential privacy q and p values. Example \"{\"arts\":\"001\"}\"
 "
   }
 

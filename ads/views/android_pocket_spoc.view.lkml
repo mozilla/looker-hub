@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: android_pocket_spocs {
+view: android_pocket_spoc {
   dimension: app_display_version {
     sql: ${TABLE}.app_display_version ;;
     type: string
@@ -16,13 +16,6 @@ view: android_pocket_spocs {
     sql: ${TABLE}.client_id ;;
     hidden: yes
     description: "A UUID uniquely identifying the client."
-  }
-
-  dimension: country_code {
-    sql: ${TABLE}.country_code ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    description: "Country associated with user's IP address, represented as a two letter code."
   }
 
   dimension: interaction_type {
@@ -37,6 +30,13 @@ view: android_pocket_spocs {
     type: string
     suggest_persist_for: "24 hours"
     description: "Normalized release channel (e.g. \"release\", \"nightly\")."
+  }
+
+  dimension: normalized_country_code {
+    sql: ${TABLE}.normalized_country_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Country associated with user's IP address, represented as a two letter code."
   }
 
   dimension: spoc_id {

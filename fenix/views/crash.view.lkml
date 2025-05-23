@@ -546,6 +546,42 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__memory_js_large_allocation_failure {
+    label: "Memory Js Large Allocation Failure"
+    hidden: no
+    sql: ${TABLE}.metrics.string.memory_js_large_allocation_failure ;;
+    type: string
+    group_label: "Memory"
+    group_item_label: "Js Large Allocation Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Js Large Allocation Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_js_large_allocation_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A large allocation couldn't be satisfied: What was its state when the crash happened.
+"
+  }
+
+  dimension: metrics__string__memory_js_out_of_memory {
+    label: "Memory Js Out Of Memory"
+    hidden: no
+    sql: ${TABLE}.metrics.string.memory_js_out_of_memory ;;
+    type: string
+    group_label: "Memory"
+    group_item_label: "Js Out Of Memory"
+
+    link: {
+      label: "Glean Dictionary reference for Memory Js Out Of Memory"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_js_out_of_memory"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A small allocation couldn't be satisfied: What was its state when the crash happened.
+"
+  }
+
   dimension: metrics__quantity__memory_low_physical {
     label: "Memory Low Physical"
     hidden: no

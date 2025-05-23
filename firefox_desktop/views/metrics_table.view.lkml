@@ -1110,6 +1110,26 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__boolean__newtab_activity_stream_ctor_success {
+    sql: ${TABLE}.metrics.boolean.newtab_activity_stream_ctor_success ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Newtab Activity Stream Ctor Success"
+    description: "Records technical data about whether Activity Stream construction completed successfully
+"
+  }
+
+  dimension: metrics__boolean__newtab_addon_ready_success {
+    sql: ${TABLE}.metrics.boolean.newtab_addon_ready_success ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Newtab Addon Ready Success"
+    description: "Records technical data about whether waiting for the newtab built-in addon readyPromise succeeded.
+"
+  }
+
   dimension: metrics__boolean__newtab_handoff_preference_enabled {
     sql: ${TABLE}.metrics.boolean.newtab_handoff_preference_enabled ;;
     type: yesno

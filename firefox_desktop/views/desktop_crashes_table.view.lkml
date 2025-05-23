@@ -732,6 +732,22 @@ view: desktop_crashes_table {
     group_item_label: "Glean Client Annotation Experimentation ID"
   }
 
+  dimension: metrics__string__memory_js_large_allocation_failure {
+    sql: ${TABLE}.metrics.string.memory_js_large_allocation_failure ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Memory Js Large Allocation Failure"
+  }
+
+  dimension: metrics__string__memory_js_out_of_memory {
+    sql: ${TABLE}.metrics.string.memory_js_out_of_memory ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Memory Js Out Of Memory"
+  }
+
   dimension: metrics__string__windows_package_family_name {
     sql: ${TABLE}.metrics.string.windows_package_family_name ;;
     type: string
