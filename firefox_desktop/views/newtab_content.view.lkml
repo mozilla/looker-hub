@@ -98,24 +98,6 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
 "
   }
 
-  dimension: metrics__string__newtab_content_inferred_interests {
-    label: "Newtab Content Inferred Interests"
-    hidden: no
-    sql: ${TABLE}.metrics.string.newtab_content_inferred_interests ;;
-    type: string
-    group_label: "Newtab Content"
-    group_item_label: "Inferred Interests"
-
-    link: {
-      label: "Glean Dictionary reference for Newtab Content Inferred Interests"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_content_inferred_interests"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Differentially private high-level inferred interests (e.g. Entertainment or News), encoded in a JSON string. Key is the feature, and the value is a unary encoded string that must be decoded based on known differential privacy q and p values. Example \"{\"arts\":\"001\"}\"
-"
-  }
-
   dimension: metrics__string__newtab_content_surface_id {
     label: "Newtab Content Surface ID"
     hidden: no

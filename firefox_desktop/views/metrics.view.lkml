@@ -6548,7 +6548,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__shopping_product_page_visits {
     label: "Shopping Product Page Visits"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.shopping_product_page_visits ;;
     type: number
     group_label: "Shopping"
@@ -6587,7 +6587,7 @@ Set during shopping component init and updated when changed in browser.
 
   dimension: metrics__boolean__shopping_settings_auto_open_user_disabled {
     label: "Shopping Settings Auto Open User Disabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.shopping_settings_auto_open_user_disabled ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -6606,7 +6606,7 @@ Set during shopping component init and updated when changed in browser.
 
   dimension: metrics__boolean__shopping_settings_component_opted_out {
     label: "Shopping Settings Component Opted Out"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.shopping_settings_component_opted_out ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -6625,7 +6625,7 @@ Set during shopping component init and updated when changed in browser.
 
   dimension: metrics__boolean__shopping_settings_disabled_ads {
     label: "Shopping Settings Disabled Ads"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.shopping_settings_disabled_ads ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -6644,7 +6644,7 @@ component init and updated when changed in browser.
 
   dimension: metrics__boolean__shopping_settings_has_onboarded {
     label: "Shopping Settings Has Onboarded"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.shopping_settings_has_onboarded ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -6664,7 +6664,7 @@ in browser.
 
   dimension: metrics__boolean__shopping_settings_nimbus_disabled_shopping {
     label: "Shopping Settings Nimbus Disabled Shopping"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.shopping_settings_nimbus_disabled_shopping ;;
     type: yesno
     group_label: "Shopping Settings"

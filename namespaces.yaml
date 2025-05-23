@@ -317,22 +317,6 @@ ads_backend:
       - channel: null
         table: mozdata.ads_backend.request_stats
       type: table_view
-casa:
-  connection: bigquery-casa
-  glean_app: false
-  owners:
-  - anicholson@mozilla.com
-  pretty_name: CASA
-  spoke: looker-spoke-private
-  views:
-    projects:
-      tables:
-      - table: mozdata.casa.projects
-      type: table_view
-    users:
-      tables:
-      - table: mozdata.casa.users
-      type: table_view
 combined_browser_metrics:
   glean_app: false
   owners:
