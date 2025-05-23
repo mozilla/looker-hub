@@ -3525,6 +3525,16 @@ firefox_desktop:
       tables:
       - table: mozdata.firefox_desktop.newtab
       type: glean_ping_view
+    newtab_clients_daily_aggregates_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.newtab_clients_daily_aggregates
+      type: table_view
+    newtab_clients_daily_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.newtab_clients_daily
+      type: table_view
     newtab_content:
       tables:
       - table: mozdata.firefox_desktop.newtab_content
