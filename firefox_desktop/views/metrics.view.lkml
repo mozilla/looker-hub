@@ -2358,6 +2358,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar browser.s
 "
   }
 
+  dimension: metrics__boolean__browser_startup_kiosk_mode {
+    label: "Browser Startup Kiosk Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.browser_startup_kiosk_mode ;;
+    type: yesno
+    group_label: "Browser Startup"
+    group_item_label: "Kiosk Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Startup Kiosk Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_startup_kiosk_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True when the browser was started in kiosk mode.
+"
+  }
+
   dimension: metrics__timing_distribution__browser_tabclose_permit_unload_time__sum {
     label: "Browser Tabclose Permit Unload Time Sum"
     hidden: no
@@ -25320,6 +25338,41 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "The time in milliseconds to load any external certificates. This occurs off of the main-thread, but can block main-thread operations. This metric was generated to correspond to the Legacy Telemetry scalar networking.loading_certs_task.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_local_network_access {
+    label: "Networking Local Network Access"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_local_network_access ;;
+    group_label: "Networking"
+    group_item_label: "Local Network Access"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Local Network Access"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_local_network_access"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the request is crossing to a more private addresspace
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_local_network_access_port__sum {
+    label: "Networking Local Network Access Port Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_local_network_access_port.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Local Network Access Port Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Local Network Access Port Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_local_network_access_port"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "port used for local network access
 "
   }
 
@@ -56250,6 +56303,47 @@ view: metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr 
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_local_network_access {
+  label: "Networking - Local Network Access"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_proxy_info_type {
   label: "Networking - Proxy Info Type"
 
@@ -67538,6 +67632,20 @@ view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput
 }
 
 view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_local_network_access_port__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
