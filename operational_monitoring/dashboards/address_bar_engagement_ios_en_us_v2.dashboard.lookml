@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       address_bar_engagement_ios_en_us_v2.branch
     ]
     filters:
-      address_bar_engagement_ios_en_us_v2.metric: 'retained'
+      address_bar_engagement_ios_en_us_v2.metric: 'active_hours'
       address_bar_engagement_ios_en_us_v2.statistic: mean
     row: 0
     col: 0
@@ -78,6 +78,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: address_bar_engagement_ios_en_us_v2
+    type: looker_line
+    fields: [
+      address_bar_engagement_ios_en_us_v2.submission_date,
+      address_bar_engagement_ios_en_us_v2.branch,
+      address_bar_engagement_ios_en_us_v2.point
+    ]
+    pivots: [
+      address_bar_engagement_ios_en_us_v2.branch
+    ]
+    filters:
+      address_bar_engagement_ios_en_us_v2.metric: 'retained'
+      address_bar_engagement_ios_en_us_v2.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: address_bar_engagement_ios_en_us_v2.submission_date
+    field_y: address_bar_engagement_ios_en_us_v2.point
+    log_scale: false
+    ci_lower: address_bar_engagement_ios_en_us_v2.lower
+    ci_upper: address_bar_engagement_ios_en_us_v2.upper
+    show_grid: true
+    listen:
+      Date: address_bar_engagement_ios_en_us_v2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -97,7 +131,7 @@
       address_bar_engagement_ios_en_us_v2.metric: 'days_of_use'
       address_bar_engagement_ios_en_us_v2.statistic: mean
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: address_bar_engagement_ios_en_us_v2.submission_date
@@ -129,40 +163,6 @@
     ]
     filters:
       address_bar_engagement_ios_en_us_v2.metric: 'ad_clicks'
-      address_bar_engagement_ios_en_us_v2.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: address_bar_engagement_ios_en_us_v2.submission_date
-    field_y: address_bar_engagement_ios_en_us_v2.point
-    log_scale: false
-    ci_lower: address_bar_engagement_ios_en_us_v2.lower
-    ci_upper: address_bar_engagement_ios_en_us_v2.upper
-    show_grid: true
-    listen:
-      Date: address_bar_engagement_ios_en_us_v2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: address_bar_engagement_ios_en_us_v2
-    type: looker_line
-    fields: [
-      address_bar_engagement_ios_en_us_v2.submission_date,
-      address_bar_engagement_ios_en_us_v2.branch,
-      address_bar_engagement_ios_en_us_v2.point
-    ]
-    pivots: [
-      address_bar_engagement_ios_en_us_v2.branch
-    ]
-    filters:
-      address_bar_engagement_ios_en_us_v2.metric: 'active_hours'
       address_bar_engagement_ios_en_us_v2.statistic: mean
     row: 20
     col: 0
