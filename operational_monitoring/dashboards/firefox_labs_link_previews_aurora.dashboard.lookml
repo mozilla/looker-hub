@@ -44,40 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: firefox_labs_link_previews_aurora
-    type: looker_line
-    fields: [
-      firefox_labs_link_previews_aurora.submission_date,
-      firefox_labs_link_previews_aurora.branch,
-      firefox_labs_link_previews_aurora.point
-    ]
-    pivots: [
-      firefox_labs_link_previews_aurora.branch
-    ]
-    filters:
-      firefox_labs_link_previews_aurora.metric: 'active_hours'
-      firefox_labs_link_previews_aurora.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: firefox_labs_link_previews_aurora.submission_date
-    field_y: firefox_labs_link_previews_aurora.point
-    log_scale: false
-    ci_lower: firefox_labs_link_previews_aurora.lower
-    ci_upper: firefox_labs_link_previews_aurora.upper
-    show_grid: true
-    listen:
-      Date: firefox_labs_link_previews_aurora.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -98,42 +64,7 @@
     filters:
       firefox_labs_link_previews_aurora.metric: 'memory_total'
       firefox_labs_link_previews_aurora.statistic: percentile
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: firefox_labs_link_previews_aurora.submission_date
-    field_y: firefox_labs_link_previews_aurora.point
-    log_scale: false
-    ci_lower: firefox_labs_link_previews_aurora.lower
-    ci_upper: firefox_labs_link_previews_aurora.upper
-    show_grid: true
-    listen:
-      Date: firefox_labs_link_previews_aurora.submission_date
-      Percentile: firefox_labs_link_previews_aurora.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: firefox_labs_link_previews_aurora
-    type: looker_line
-    fields: [
-      firefox_labs_link_previews_aurora.submission_date,
-      firefox_labs_link_previews_aurora.branch,
-      firefox_labs_link_previews_aurora.point
-    ]
-    pivots: [
-      firefox_labs_link_previews_aurora.branch
-    ]
-    filters:
-      firefox_labs_link_previews_aurora.metric: 'search_count'
-      firefox_labs_link_previews_aurora.statistic: mean
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -145,6 +76,7 @@
     show_grid: true
     listen:
       Date: firefox_labs_link_previews_aurora.submission_date
+      Percentile: firefox_labs_link_previews_aurora.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -167,7 +99,7 @@
     filters:
       firefox_labs_link_previews_aurora.metric: 'retained'
       firefox_labs_link_previews_aurora.statistic: mean
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -201,7 +133,7 @@
     filters:
       firefox_labs_link_previews_aurora.metric: 'days_of_use'
       firefox_labs_link_previews_aurora.statistic: mean
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -235,7 +167,7 @@
     filters:
       firefox_labs_link_previews_aurora.metric: 'ad_clicks'
       firefox_labs_link_previews_aurora.statistic: mean
-    row: 30
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -268,6 +200,74 @@
     ]
     filters:
       firefox_labs_link_previews_aurora.metric: 'qualified_cumulative_days_of_use'
+      firefox_labs_link_previews_aurora.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: firefox_labs_link_previews_aurora.submission_date
+    field_y: firefox_labs_link_previews_aurora.point
+    log_scale: false
+    ci_lower: firefox_labs_link_previews_aurora.lower
+    ci_upper: firefox_labs_link_previews_aurora.upper
+    show_grid: true
+    listen:
+      Date: firefox_labs_link_previews_aurora.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: firefox_labs_link_previews_aurora
+    type: looker_line
+    fields: [
+      firefox_labs_link_previews_aurora.submission_date,
+      firefox_labs_link_previews_aurora.branch,
+      firefox_labs_link_previews_aurora.point
+    ]
+    pivots: [
+      firefox_labs_link_previews_aurora.branch
+    ]
+    filters:
+      firefox_labs_link_previews_aurora.metric: 'active_hours'
+      firefox_labs_link_previews_aurora.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: firefox_labs_link_previews_aurora.submission_date
+    field_y: firefox_labs_link_previews_aurora.point
+    log_scale: false
+    ci_lower: firefox_labs_link_previews_aurora.lower
+    ci_upper: firefox_labs_link_previews_aurora.upper
+    show_grid: true
+    listen:
+      Date: firefox_labs_link_previews_aurora.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: firefox_labs_link_previews_aurora
+    type: looker_line
+    fields: [
+      firefox_labs_link_previews_aurora.submission_date,
+      firefox_labs_link_previews_aurora.branch,
+      firefox_labs_link_previews_aurora.point
+    ]
+    pivots: [
+      firefox_labs_link_previews_aurora.branch
+    ]
+    filters:
+      firefox_labs_link_previews_aurora.metric: 'search_count'
       firefox_labs_link_previews_aurora.statistic: mean
     row: 30
     col: 12
