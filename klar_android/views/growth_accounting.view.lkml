@@ -80,6 +80,41 @@ view: growth_accounting {
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
 
+  dimension: attribution_dlsource {
+    sql: ${TABLE}.attribution_dlsource ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Identifier that indicates where installations of Firefox originate."
+  }
+
+  dimension: attribution_dltoken {
+    sql: ${TABLE}.attribution_dltoken ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Unique token created at Firefox download time."
+  }
+
+  dimension: attribution_experiment {
+    sql: ${TABLE}.attribution_experiment ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Name/id of the enrolled funnel experiment."
+  }
+
+  dimension: attribution_ua {
+    sql: ${TABLE}.attribution_ua ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Identifier derived from the user agent downloading the installer."
+  }
+
+  dimension: attribution_variation {
+    sql: ${TABLE}.attribution_variation ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Name/id of the variation cohort used in the enrolled funnel experiment."
+  }
+
   dimension: browser_engagement_active_ticks {
     sql: ${TABLE}.browser_engagement_active_ticks ;;
     type: number

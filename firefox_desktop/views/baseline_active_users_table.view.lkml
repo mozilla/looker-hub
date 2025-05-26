@@ -83,6 +83,24 @@ view: baseline_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: attribution_dlsource {
+    sql: ${TABLE}.attribution_dlsource ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: attribution_dltoken {
+    sql: ${TABLE}.attribution_dltoken ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: attribution_experiment {
+    sql: ${TABLE}.attribution_experiment ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: attribution_medium {
     sql: ${TABLE}.attribution_medium ;;
     type: string
@@ -97,6 +115,18 @@ view: baseline_active_users_table {
 
   dimension: attribution_term {
     sql: ${TABLE}.attribution_term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: attribution_ua {
+    sql: ${TABLE}.attribution_ua ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: attribution_variation {
+    sql: ${TABLE}.attribution_variation ;;
     type: string
     suggest_persist_for: "24 hours"
   }
