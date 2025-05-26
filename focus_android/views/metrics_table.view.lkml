@@ -6171,6 +6171,27 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_local_network_access_port__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_local_network_access_port.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Networking Local Network Access Port"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_local_network_access_port__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_local_network_access_port.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Networking Local Network Access Port"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_local_network_access_port__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_local_network_access_port.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__pdfjs_editing_highlight_thickness__count {
     sql: ${TABLE}.metrics.custom_distribution.pdfjs_editing_highlight_thickness.count ;;
     type: number
@@ -10323,6 +10344,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__networking_https_upgrade_with_https_rr {
     sql: ${TABLE}.metrics.labeled_counter.networking_https_upgrade_with_https_rr ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_local_network_access {
+    sql: ${TABLE}.metrics.labeled_counter.networking_local_network_access ;;
     hidden: yes
   }
 
@@ -41589,6 +41615,20 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_upload_thro
 }
 
 view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_local_network_access_port__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

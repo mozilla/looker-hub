@@ -59,6 +59,24 @@ view: quick_suggest {
 "
   }
 
+  dimension: metrics__string__quick_suggest_country {
+    label: "Quick Suggest Country"
+    hidden: no
+    sql: ${TABLE}.metrics.string.quick_suggest_country ;;
+    type: string
+    group_label: "Quick Suggest"
+    group_item_label: "Country"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest Country"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quick_suggest_country"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the home region of the user as determined by `Region.sys.mjs` and the `browser.search.region` pref.
+"
+  }
+
   dimension: metrics__string__quick_suggest_iab_category {
     label: "Quick Suggest Iab Category"
     hidden: no

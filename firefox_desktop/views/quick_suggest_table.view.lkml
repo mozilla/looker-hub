@@ -552,6 +552,16 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__string__quick_suggest_country {
+    sql: ${TABLE}.metrics.string.quick_suggest_country ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Quick Suggest Country"
+    description: "Records the home region of the user as determined by `Region.sys.mjs` and the `browser.search.region` pref.
+"
+  }
+
   dimension: metrics__string__quick_suggest_iab_category {
     sql: ${TABLE}.metrics.string.quick_suggest_iab_category ;;
     type: string

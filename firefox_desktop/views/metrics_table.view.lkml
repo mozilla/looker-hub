@@ -583,6 +583,16 @@ HTTP protocol handler and the default HTML file handler.
 "
   }
 
+  dimension: metrics__boolean__browser_startup_kiosk_mode {
+    sql: ${TABLE}.metrics.boolean.browser_startup_kiosk_mode ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Browser Startup Kiosk Mode"
+    description: "True when the browser was started in kiosk mode.
+"
+  }
+
   dimension: metrics__boolean__browser_ui_proton_enabled {
     sql: ${TABLE}.metrics.boolean.browser_ui_proton_enabled ;;
     type: yesno
@@ -8151,6 +8161,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_local_network_access_port__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_local_network_access_port.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Networking Local Network Access Port"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_local_network_access_port__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_local_network_access_port.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Networking Local Network Access Port"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_local_network_access_port__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_local_network_access_port.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__newtab_page_blocked_sites_count__count {
     sql: ${TABLE}.metrics.custom_distribution.newtab_page_blocked_sites_count.count ;;
     type: number
@@ -14216,6 +14248,13 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     sql: ${TABLE}.metrics.labeled_counter.networking_https_upgrade_with_https_rr ;;
     hidden: yes
     description: "Whether an HTTP request gets upgraded to HTTPS because of HTTPS RR
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_local_network_access {
+    sql: ${TABLE}.metrics.labeled_counter.networking_local_network_access ;;
+    hidden: yes
+    description: "Whether the request is crossing to a more private addresspace
 "
   }
 
@@ -53471,6 +53510,20 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_upload_thro
 }
 
 view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_local_network_access_port__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
