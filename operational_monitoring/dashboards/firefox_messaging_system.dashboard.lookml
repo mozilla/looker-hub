@@ -61,7 +61,7 @@
       firefox_messaging_system.branch, firefox_messaging_system.metric
     ]
     filters:
-      firefox_messaging_system.metric: '"null_ping_volume", "toast_notification_ping_volume", "infobar_ping_volume", "moments_ping_volume", "spotlight_ping_volume", "toolbar_badge_ping_volume", "whats_new_panel_ping_volume", "other_ping_volume", "cfr_ping_volume"'
+      firefox_messaging_system.metric: '"cfr_ping_volume", "spotlight_ping_volume", "moments_ping_volume", "toolbar_badge_ping_volume", "null_ping_volume", "whats_new_panel_ping_volume", "other_ping_volume", "infobar_ping_volume", "toast_notification_ping_volume"'
       firefox_messaging_system.statistic: sum
     row: 0
     col: 12
@@ -115,8 +115,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Ping Volume
-    name: Ping Volume_sum
+  - title: Unexpected Data
+    name: Unexpected Data_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -128,10 +128,10 @@
       firefox_messaging_system.point
     ]
     pivots: [
-      firefox_messaging_system.branch
+      firefox_messaging_system.branch, firefox_messaging_system.metric
     ]
     filters:
-      firefox_messaging_system.metric: 'ping_volume'
+      firefox_messaging_system.metric: '"invalid_nested_data_volume", "unknown_keys_volume"'
       firefox_messaging_system.statistic: sum
     row: 10
     col: 12
@@ -150,8 +150,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Unexpected Data
-    name: Unexpected Data_sum
+  - title: Ping Volume
+    name: Ping Volume_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -163,10 +163,10 @@
       firefox_messaging_system.point
     ]
     pivots: [
-      firefox_messaging_system.branch, firefox_messaging_system.metric
+      firefox_messaging_system.branch
     ]
     filters:
-      firefox_messaging_system.metric: '"invalid_nested_data_volume", "unknown_keys_volume"'
+      firefox_messaging_system.metric: 'ping_volume'
       firefox_messaging_system.statistic: sum
     row: 20
     col: 0
@@ -284,8 +284,8 @@
       display: inline
       options:
       - 'beta'
-      - 'aurora'
       - 'nightly'
+      - 'aurora'
       - 'release'
       - 'esr'
       - 'Other'
