@@ -3289,6 +3289,16 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.desktop_crashes
       type: table_view
+    desktop_engagement_aggregates_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.desktop_engagement_aggregates
+      type: table_view
+    desktop_engagement_clients_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.desktop_engagement_clients
+      type: table_view
     desktop_events_table:
       tables:
       - channel: release
@@ -3302,6 +3312,16 @@ firefox_desktop:
     desktop_new_profiles:
       tables:
       - table: moz-fx-data-shared-prod.telemetry.desktop_new_profiles
+      type: table_view
+    desktop_retention_aggregates_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.desktop_retention_aggregates
+      type: table_view
+    desktop_retention_clients_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.desktop_retention_clients
       type: table_view
     events:
       tables:
