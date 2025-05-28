@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: flip_the_pref_for_the_mfcdm_origin_fliter
+    type: looker_line
+    fields: [
+      flip_the_pref_for_the_mfcdm_origin_fliter.submission_date,
+      flip_the_pref_for_the_mfcdm_origin_fliter.branch,
+      flip_the_pref_for_the_mfcdm_origin_fliter.point
+    ]
+    pivots: [
+      flip_the_pref_for_the_mfcdm_origin_fliter.branch
+    ]
+    filters:
+      flip_the_pref_for_the_mfcdm_origin_fliter.metric: 'days_of_use'
+      flip_the_pref_for_the_mfcdm_origin_fliter.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: flip_the_pref_for_the_mfcdm_origin_fliter.submission_date
+    field_y: flip_the_pref_for_the_mfcdm_origin_fliter.point
+    log_scale: false
+    ci_lower: flip_the_pref_for_the_mfcdm_origin_fliter.lower
+    ci_upper: flip_the_pref_for_the_mfcdm_origin_fliter.upper
+    show_grid: true
+    listen:
+      Date: flip_the_pref_for_the_mfcdm_origin_fliter.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -29,7 +63,7 @@
       flip_the_pref_for_the_mfcdm_origin_fliter.metric: 'ad_clicks'
       flip_the_pref_for_the_mfcdm_origin_fliter.statistic: mean
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: flip_the_pref_for_the_mfcdm_origin_fliter.submission_date
@@ -62,109 +96,7 @@
     filters:
       flip_the_pref_for_the_mfcdm_origin_fliter.metric: 'qualified_cumulative_days_of_use'
       flip_the_pref_for_the_mfcdm_origin_fliter.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: flip_the_pref_for_the_mfcdm_origin_fliter.submission_date
-    field_y: flip_the_pref_for_the_mfcdm_origin_fliter.point
-    log_scale: false
-    ci_lower: flip_the_pref_for_the_mfcdm_origin_fliter.lower
-    ci_upper: flip_the_pref_for_the_mfcdm_origin_fliter.upper
-    show_grid: true
-    listen:
-      Date: flip_the_pref_for_the_mfcdm_origin_fliter.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: flip_the_pref_for_the_mfcdm_origin_fliter
-    type: looker_line
-    fields: [
-      flip_the_pref_for_the_mfcdm_origin_fliter.submission_date,
-      flip_the_pref_for_the_mfcdm_origin_fliter.branch,
-      flip_the_pref_for_the_mfcdm_origin_fliter.point
-    ]
-    pivots: [
-      flip_the_pref_for_the_mfcdm_origin_fliter.branch
-    ]
-    filters:
-      flip_the_pref_for_the_mfcdm_origin_fliter.metric: 'retained'
-      flip_the_pref_for_the_mfcdm_origin_fliter.statistic: mean
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: flip_the_pref_for_the_mfcdm_origin_fliter.submission_date
-    field_y: flip_the_pref_for_the_mfcdm_origin_fliter.point
-    log_scale: false
-    ci_lower: flip_the_pref_for_the_mfcdm_origin_fliter.lower
-    ci_upper: flip_the_pref_for_the_mfcdm_origin_fliter.upper
-    show_grid: true
-    listen:
-      Date: flip_the_pref_for_the_mfcdm_origin_fliter.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: flip_the_pref_for_the_mfcdm_origin_fliter
-    type: looker_line
-    fields: [
-      flip_the_pref_for_the_mfcdm_origin_fliter.submission_date,
-      flip_the_pref_for_the_mfcdm_origin_fliter.branch,
-      flip_the_pref_for_the_mfcdm_origin_fliter.point
-    ]
-    pivots: [
-      flip_the_pref_for_the_mfcdm_origin_fliter.branch
-    ]
-    filters:
-      flip_the_pref_for_the_mfcdm_origin_fliter.metric: 'uri_count'
-      flip_the_pref_for_the_mfcdm_origin_fliter.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: flip_the_pref_for_the_mfcdm_origin_fliter.submission_date
-    field_y: flip_the_pref_for_the_mfcdm_origin_fliter.point
-    log_scale: false
-    ci_lower: flip_the_pref_for_the_mfcdm_origin_fliter.lower
-    ci_upper: flip_the_pref_for_the_mfcdm_origin_fliter.upper
-    show_grid: true
-    listen:
-      Date: flip_the_pref_for_the_mfcdm_origin_fliter.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: flip_the_pref_for_the_mfcdm_origin_fliter
-    type: looker_line
-    fields: [
-      flip_the_pref_for_the_mfcdm_origin_fliter.submission_date,
-      flip_the_pref_for_the_mfcdm_origin_fliter.branch,
-      flip_the_pref_for_the_mfcdm_origin_fliter.point
-    ]
-    pivots: [
-      flip_the_pref_for_the_mfcdm_origin_fliter.branch
-    ]
-    filters:
-      flip_the_pref_for_the_mfcdm_origin_fliter.metric: 'active_hours'
-      flip_the_pref_for_the_mfcdm_origin_fliter.statistic: mean
-    row: 20
     col: 0
     width: 12
     height: 8
@@ -198,7 +130,7 @@
     filters:
       flip_the_pref_for_the_mfcdm_origin_fliter.metric: 'search_count'
       flip_the_pref_for_the_mfcdm_origin_fliter.statistic: mean
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -234,7 +166,7 @@
     filters:
       flip_the_pref_for_the_mfcdm_origin_fliter.metric: 'memory_total'
       flip_the_pref_for_the_mfcdm_origin_fliter.statistic: percentile
-    row: 30
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -251,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +199,75 @@
       flip_the_pref_for_the_mfcdm_origin_fliter.branch
     ]
     filters:
-      flip_the_pref_for_the_mfcdm_origin_fliter.metric: 'days_of_use'
+      flip_the_pref_for_the_mfcdm_origin_fliter.metric: 'retained'
+      flip_the_pref_for_the_mfcdm_origin_fliter.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: flip_the_pref_for_the_mfcdm_origin_fliter.submission_date
+    field_y: flip_the_pref_for_the_mfcdm_origin_fliter.point
+    log_scale: false
+    ci_lower: flip_the_pref_for_the_mfcdm_origin_fliter.lower
+    ci_upper: flip_the_pref_for_the_mfcdm_origin_fliter.upper
+    show_grid: true
+    listen:
+      Date: flip_the_pref_for_the_mfcdm_origin_fliter.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: flip_the_pref_for_the_mfcdm_origin_fliter
+    type: looker_line
+    fields: [
+      flip_the_pref_for_the_mfcdm_origin_fliter.submission_date,
+      flip_the_pref_for_the_mfcdm_origin_fliter.branch,
+      flip_the_pref_for_the_mfcdm_origin_fliter.point
+    ]
+    pivots: [
+      flip_the_pref_for_the_mfcdm_origin_fliter.branch
+    ]
+    filters:
+      flip_the_pref_for_the_mfcdm_origin_fliter.metric: 'uri_count'
+      flip_the_pref_for_the_mfcdm_origin_fliter.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: flip_the_pref_for_the_mfcdm_origin_fliter.submission_date
+    field_y: flip_the_pref_for_the_mfcdm_origin_fliter.point
+    log_scale: false
+    ci_lower: flip_the_pref_for_the_mfcdm_origin_fliter.lower
+    ci_upper: flip_the_pref_for_the_mfcdm_origin_fliter.upper
+    show_grid: true
+    listen:
+      Date: flip_the_pref_for_the_mfcdm_origin_fliter.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: flip_the_pref_for_the_mfcdm_origin_fliter
+    type: looker_line
+    fields: [
+      flip_the_pref_for_the_mfcdm_origin_fliter.submission_date,
+      flip_the_pref_for_the_mfcdm_origin_fliter.branch,
+      flip_the_pref_for_the_mfcdm_origin_fliter.point
+    ]
+    pivots: [
+      flip_the_pref_for_the_mfcdm_origin_fliter.branch
+    ]
+    filters:
+      flip_the_pref_for_the_mfcdm_origin_fliter.metric: 'active_hours'
       flip_the_pref_for_the_mfcdm_origin_fliter.statistic: mean
     row: 30
     col: 12

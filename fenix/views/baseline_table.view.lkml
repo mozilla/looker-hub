@@ -542,6 +542,14 @@ view: baseline_table {
     group_item_label: "Search Default Engine Name"
   }
 
+  dimension: metrics__string__startup_profile_selection_reason {
+    sql: ${TABLE}.metrics.string.startup_profile_selection_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Startup Profile Selection Reason"
+  }
+
   dimension: metrics__timespan__glean_baseline_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.glean_baseline_duration.time_unit ;;
     type: string
