@@ -11299,10 +11299,10 @@ operational_monitoring:
             default: release
             options:
             - release
-            - aurora
             - nightly
-            - esr
             - beta
+            - aurora
+            - esr
             - default
             - nightly-pine
             - nightly-oak
@@ -12725,11 +12725,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id344
           os:
-            default: Windows
+            default: Linux
             options:
+            - Linux
             - Windows
             - Mac
-            - Linux
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -14111,15 +14111,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id473
           app:
-            default: Android - daemon_session
+            default: Darwin - vpn_session
             options:
-            - Android - daemon_session
             - Darwin - vpn_session
-            - Windows - vpn_session
-            - iOS - vpn_session
-            - Android - vpn_session
-            - iOS - daemon_session
             - Linux - vpn_session
+            - iOS - vpn_session
+            - iOS - daemon_session
+            - Android - daemon_session
+            - Android - vpn_session
+            - Windows - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id474
@@ -15581,17 +15581,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id581
           channel:
-            default: nightly
+            default: release
             options:
+            - release
             - nightly
             - beta
-            - release
           os:
-            default: Linux
+            default: Windows_NT
             options:
+            - Windows_NT
             - Linux
             - Darwin
-            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id582
@@ -18547,51 +18547,16 @@ operational_monitoring:
         xaxis: submission_date
       title: Viewpoint Android 2025 Rolling
       type: operational_monitoring_dashboard
-    viewpoint_android_feb_2025:
+    viewpoint_android_mar_2025:
       tables:
       - branches: &id817
         - enabled
         - disabled
         compact_visualization: false
         dimensions: &id818 {}
-        explore: viewpoint_android_feb_2025
-        group_by_dimension: null
-        summaries: &id819
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: tagged_sap_searches
-          metric_groups: []
-          statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
-          metric_groups: []
-          statistic: mean
-        - metric: search_count
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_android_feb_2025_statistics
-        xaxis: submission_date
-      title: Viewpoint Android Feb 2025
-      type: operational_monitoring_dashboard
-    viewpoint_android_mar_2025:
-      tables:
-      - branches: &id820
-        - enabled
-        - disabled
-        compact_visualization: false
-        dimensions: &id821 {}
         explore: viewpoint_android_mar_2025
         group_by_dimension: null
-        summaries: &id822
+        summaries: &id819
         - metric: days_of_use
           metric_groups: []
           statistic: mean
@@ -18619,14 +18584,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_desktop_2024:
       tables:
-      - branches: &id823
+      - branches: &id820
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id824 {}
+        dimensions: &id821 {}
         explore: viewpoint_desktop_2024
         group_by_dimension: null
-        summaries: &id825
+        summaries: &id822
         - metric: search_count
           metric_groups: []
           statistic: mean
@@ -18657,14 +18622,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_desktop_2025:
       tables:
-      - branches: &id826
+      - branches: &id823
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id827 {}
+        dimensions: &id824 {}
         explore: viewpoint_desktop_2025
         group_by_dimension: null
-        summaries: &id828
+        summaries: &id825
         - metric: days_of_use
           metric_groups: []
           statistic: mean
@@ -18695,14 +18660,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_ios_2025_rolling:
       tables:
-      - branches: &id829
+      - branches: &id826
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id830 {}
+        dimensions: &id827 {}
         explore: viewpoint_ios_2025_rolling
         group_by_dimension: null
-        summaries: &id831
+        summaries: &id828
         - metric: days_of_use
           metric_groups: []
           statistic: mean
@@ -18722,45 +18687,16 @@ operational_monitoring:
         xaxis: submission_date
       title: Viewpoint Ios 2025 Rolling
       type: operational_monitoring_dashboard
-    viewpoint_ios_feb_2025:
-      tables:
-      - branches: &id832
-        - enabled
-        - disabled
-        compact_visualization: false
-        dimensions: &id833 {}
-        explore: viewpoint_ios_feb_2025
-        group_by_dimension: null
-        summaries: &id834
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
-          metric_groups: []
-          statistic: mean
-        - metric: search_count
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_feb_2025_statistics
-        xaxis: submission_date
-      title: Viewpoint Ios Feb 2025
-      type: operational_monitoring_dashboard
     viewpoint_ios_mar_2025:
       tables:
-      - branches: &id835
+      - branches: &id829
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id836 {}
+        dimensions: &id830 {}
         explore: viewpoint_ios_mar_2025
         group_by_dimension: null
-        summaries: &id837
+        summaries: &id831
         - metric: days_of_use
           metric_groups: []
           statistic: mean
@@ -20973,58 +20909,42 @@ operational_monitoring:
       views:
         base_view: viewpoint_android_2025_rolling
       xaxis: submission_date
-    viewpoint_android_feb_2025:
+    viewpoint_android_mar_2025:
       branches: *id817
       dimensions: *id818
       summaries: *id819
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_android_feb_2025
+        base_view: viewpoint_android_mar_2025
       xaxis: submission_date
-    viewpoint_android_mar_2025:
+    viewpoint_desktop_2024:
       branches: *id820
       dimensions: *id821
       summaries: *id822
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_android_mar_2025
+        base_view: viewpoint_desktop_2024
       xaxis: submission_date
-    viewpoint_desktop_2024:
+    viewpoint_desktop_2025:
       branches: *id823
       dimensions: *id824
       summaries: *id825
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_desktop_2024
+        base_view: viewpoint_desktop_2025
       xaxis: submission_date
-    viewpoint_desktop_2025:
+    viewpoint_ios_2025_rolling:
       branches: *id826
       dimensions: *id827
       summaries: *id828
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_desktop_2025
+        base_view: viewpoint_ios_2025_rolling
       xaxis: submission_date
-    viewpoint_ios_2025_rolling:
+    viewpoint_ios_mar_2025:
       branches: *id829
       dimensions: *id830
       summaries: *id831
-      type: operational_monitoring_explore
-      views:
-        base_view: viewpoint_ios_2025_rolling
-      xaxis: submission_date
-    viewpoint_ios_feb_2025:
-      branches: *id832
-      dimensions: *id833
-      summaries: *id834
-      type: operational_monitoring_explore
-      views:
-        base_view: viewpoint_ios_feb_2025
-      xaxis: submission_date
-    viewpoint_ios_mar_2025:
-      branches: *id835
-      dimensions: *id836
-      summaries: *id837
       type: operational_monitoring_explore
       views:
         base_view: viewpoint_ios_mar_2025
@@ -22683,45 +22603,33 @@ operational_monitoring:
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_android_2025_rolling_statistics
         xaxis: submission_date
       type: operational_monitoring_view
-    viewpoint_android_feb_2025:
-      tables:
-      - dimensions: *id818
-        table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_android_feb_2025_statistics
-        xaxis: submission_date
-      type: operational_monitoring_view
     viewpoint_android_mar_2025:
       tables:
-      - dimensions: *id821
+      - dimensions: *id818
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_android_mar_2025_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_desktop_2024:
       tables:
-      - dimensions: *id824
+      - dimensions: *id821
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_desktop_2024_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_desktop_2025:
       tables:
-      - dimensions: *id827
+      - dimensions: *id824
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_desktop_2025_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_ios_2025_rolling:
       tables:
-      - dimensions: *id830
+      - dimensions: *id827
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_2025_rolling_statistics
-        xaxis: submission_date
-      type: operational_monitoring_view
-    viewpoint_ios_feb_2025:
-      tables:
-      - dimensions: *id833
-        table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_feb_2025_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_ios_mar_2025:
       tables:
-      - dimensions: *id836
+      - dimensions: *id830
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_mar_2025_statistics
         xaxis: submission_date
       type: operational_monitoring_view
