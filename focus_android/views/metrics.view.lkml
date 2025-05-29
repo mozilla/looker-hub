@@ -16736,6 +16736,41 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_local_network_access {
+    label: "Networking Local Network Access"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_local_network_access ;;
+    group_label: "Networking"
+    group_item_label: "Local Network Access"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Local Network Access"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_local_network_access"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the request is crossing to a more private addresspace
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_local_network_access_port__sum {
+    label: "Networking Local Network Access Port Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_local_network_access_port.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Local Network Access Port Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Local Network Access Port Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_local_network_access_port"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "port used for local network access
+"
+  }
+
   dimension: metrics__quantity__networking_nss_initialization {
     label: "Networking Nss Initialization"
     hidden: no
@@ -42923,6 +42958,47 @@ view: metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr 
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_local_network_access {
+  label: "Networking - Local Network Access"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_proxy_info_type {
   label: "Networking - Proxy Info Type"
 
@@ -49724,6 +49800,20 @@ view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput
 }
 
 view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_local_network_access_port__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

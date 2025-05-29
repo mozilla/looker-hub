@@ -240,6 +240,57 @@ value will be \"custom\"
 "
   }
 
+  dimension: metrics__string__startup_profile_selection_reason {
+    label: "Startup Profile Selection Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.string.startup_profile_selection_reason ;;
+    type: string
+    group_label: "Startup"
+    group_item_label: "Profile Selection Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Startup Profile Selection Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/startup_profile_selection_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How the profile was selected during startup. One of the following reasons:
+  unknown:
+    Generally should not happen, set as a default in case no other reason
+    occured.
+  profile-manager:
+    The profile was selected by the profile manager.
+  profile-selector:
+    The profile was selected by the profile selector window.
+  profile-reset:
+    The profile was selected for reset, normally this would mean a restart.
+  restart:
+    The user restarted the application, the same profile as previous will
+    be used.
+  argument-profile:
+    The profile was selected by the --profile command line argument.
+  argument-p:
+    The profile was selected by the -p command line argument.
+  firstrun-claimed-default:
+    A first run of a dedicated profiles build chose the old default
+    profile to be the default for this install.
+  firstrun-skipped-default:
+    A first run of a dedicated profiles build skipped over the old default
+    profile and created a new profile.
+  restart-claimed-default:
+    A first run of a dedicated profiles build after a restart chose the
+    old default profile to be the default for this install.
+  restart-skipped-default:
+    A first run of a dedicated profiles build after a restart skipped over
+    the old default profile and created a new profile.
+  firstrun-created-default:
+    A first run of the application created a new profile to use.
+  default:
+    The default profile was selected as normal.
+This metric was generated to correspond to the Legacy Telemetry scalar startup.profile_selection_reason.
+"
+  }
+
   dimension: metrics__timespan__glean_baseline_duration__value {
     label: "Glean Baseline Duration Value"
     hidden: no

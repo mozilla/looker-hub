@@ -270,6 +270,13 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__object__newtab_content_inferred_interests {
+    sql: ${TABLE}.metrics.object.newtab_content_inferred_interests ;;
+    hidden: yes
+    description: "Differentially private high-level inferred interests (e.g. Entertainment or News), encoded in a JSON string. Key is the feature, and the value is a unary encoded string that must be decoded based on known differential privacy q and p values. Example \"{\"arts\":\"001\"}\"
+"
+  }
+
   dimension: metrics__quantity__newtab_content_utc_offset {
     sql: ${TABLE}.metrics.quantity.newtab_content_utc_offset ;;
     type: number
