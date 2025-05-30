@@ -102,6 +102,7 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
                 (
     SELECT
       p.*,
+      p.metrics.uuid.legacy_telemetry_profile_group_id as profile_group_id,
       DATE(p.submission_timestamp) AS submission_date
     FROM `mozdata.firefox_desktop.metrics` p
     )
