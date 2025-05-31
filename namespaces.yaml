@@ -3139,6 +3139,11 @@ firefox_desktop:
       tables:
       - table: mozdata.firefox_desktop.baseline
       type: glean_ping_view
+    baseline_active_users_aggregates_full_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.baseline_active_users_aggregates_full
+      type: table_view
     baseline_active_users_aggregates_table:
       tables:
       - channel: null
@@ -5341,6 +5346,10 @@ firefox_okrs:
     glean_desktop_engagement:
       tables:
       - table: moz-fx-data-shared-prod.firefox_desktop.desktop_engagement_aggregates
+      type: table_view
+    glean_desktop_retention:
+      tables:
+      - table: moz-fx-data-shared-prod.firefox_desktop.desktop_retention_aggregates
       type: table_view
     mobile_engagement:
       tables:
