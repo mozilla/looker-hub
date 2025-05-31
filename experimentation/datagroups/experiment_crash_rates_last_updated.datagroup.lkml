@@ -45,10 +45,6 @@ datagroup: experiment_crash_rates_last_updated {
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE (table_schema = 'telemetry_derived' AND table_name = 'experiment_crash_aggregates_v1')
- UNION ALL 
-    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'telemetry_derived' AND table_name = 'experiment_crash_events_live_v1')
 
     ) ;;
   description: "Updates for experiment_crash_rates when referenced tables are modified."

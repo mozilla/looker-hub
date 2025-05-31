@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: baseline_active_users_aggregates_table {
+view: baseline_active_users_aggregates_full_table {
   dimension: activity_segment {
     sql: ${TABLE}.activity_segment ;;
     type: string
@@ -47,6 +47,22 @@ this is appended to the app_name.
 "
   }
 
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "The minor version of the application version (e.g. if 123.0, then 0)
+"
+  }
+
+  dimension: app_version_patch_revision {
+    sql: ${TABLE}.app_version_patch_revision ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "The patch revision number of the app version
+"
+  }
+
   dimension: attribution_medium {
     sql: ${TABLE}.attribution_medium ;;
     type: string
@@ -68,6 +84,14 @@ this is appended to the app_name.
     type: string
     suggest_persist_for: "24 hours"
     description: "The channel the application is being distributed on, example values include: relase, beta, nightly.
+"
+  }
+
+  dimension: city {
+    sql: ${TABLE}.city ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "City reported by the client.
 "
   }
 
@@ -144,11 +168,27 @@ this is appended to the app_name.
 "
   }
 
+  dimension: os {
+    sql: ${TABLE}.os ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Operating system reported by the client.
+"
+  }
+
   dimension: os_grouped {
     sql: ${TABLE}.os_grouped ;;
     type: string
     suggest_persist_for: "24 hours"
     description: "Operating system group reported by the client.
+"
+  }
+
+  dimension: os_version {
+    sql: ${TABLE}.os_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "OS version reported by the client.
 "
   }
 
@@ -225,5 +265,5 @@ that was processed for generating the metrics.
 "
   }
 
-  sql_table_name: `mozdata.firefox_desktop.baseline_active_users_aggregates` ;;
+  sql_table_name: `mozdata.firefox_desktop.baseline_active_users_aggregates_full` ;;
 }
