@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,10 +26,44 @@
       iab_billboard_rollout_in_release.branch
     ]
     filters:
-      iab_billboard_rollout_in_release.metric: 'active_hours'
+      iab_billboard_rollout_in_release.metric: 'days_of_use'
       iab_billboard_rollout_in_release.statistic: mean
     row: 0
     col: 0
+    width: 12
+    height: 8
+    field_x: iab_billboard_rollout_in_release.submission_date
+    field_y: iab_billboard_rollout_in_release.point
+    log_scale: false
+    ci_lower: iab_billboard_rollout_in_release.lower
+    ci_upper: iab_billboard_rollout_in_release.upper
+    show_grid: true
+    listen:
+      Date: iab_billboard_rollout_in_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: iab_billboard_rollout_in_release
+    type: looker_line
+    fields: [
+      iab_billboard_rollout_in_release.submission_date,
+      iab_billboard_rollout_in_release.branch,
+      iab_billboard_rollout_in_release.point
+    ]
+    pivots: [
+      iab_billboard_rollout_in_release.branch
+    ]
+    filters:
+      iab_billboard_rollout_in_release.metric: 'retained'
+      iab_billboard_rollout_in_release.statistic: mean
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: iab_billboard_rollout_in_release.submission_date
@@ -64,8 +98,8 @@
     filters:
       iab_billboard_rollout_in_release.metric: 'memory_total'
       iab_billboard_rollout_in_release.statistic: percentile
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: iab_billboard_rollout_in_release.submission_date
@@ -100,108 +134,6 @@
       iab_billboard_rollout_in_release.metric: 'search_count'
       iab_billboard_rollout_in_release.statistic: mean
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: iab_billboard_rollout_in_release.submission_date
-    field_y: iab_billboard_rollout_in_release.point
-    log_scale: false
-    ci_lower: iab_billboard_rollout_in_release.lower
-    ci_upper: iab_billboard_rollout_in_release.upper
-    show_grid: true
-    listen:
-      Date: iab_billboard_rollout_in_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: iab_billboard_rollout_in_release
-    type: looker_line
-    fields: [
-      iab_billboard_rollout_in_release.submission_date,
-      iab_billboard_rollout_in_release.branch,
-      iab_billboard_rollout_in_release.point
-    ]
-    pivots: [
-      iab_billboard_rollout_in_release.branch
-    ]
-    filters:
-      iab_billboard_rollout_in_release.metric: 'qualified_cumulative_days_of_use'
-      iab_billboard_rollout_in_release.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: iab_billboard_rollout_in_release.submission_date
-    field_y: iab_billboard_rollout_in_release.point
-    log_scale: false
-    ci_lower: iab_billboard_rollout_in_release.lower
-    ci_upper: iab_billboard_rollout_in_release.upper
-    show_grid: true
-    listen:
-      Date: iab_billboard_rollout_in_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: iab_billboard_rollout_in_release
-    type: looker_line
-    fields: [
-      iab_billboard_rollout_in_release.submission_date,
-      iab_billboard_rollout_in_release.branch,
-      iab_billboard_rollout_in_release.point
-    ]
-    pivots: [
-      iab_billboard_rollout_in_release.branch
-    ]
-    filters:
-      iab_billboard_rollout_in_release.metric: 'days_of_use'
-      iab_billboard_rollout_in_release.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: iab_billboard_rollout_in_release.submission_date
-    field_y: iab_billboard_rollout_in_release.point
-    log_scale: false
-    ci_lower: iab_billboard_rollout_in_release.lower
-    ci_upper: iab_billboard_rollout_in_release.upper
-    show_grid: true
-    listen:
-      Date: iab_billboard_rollout_in_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: iab_billboard_rollout_in_release
-    type: looker_line
-    fields: [
-      iab_billboard_rollout_in_release.submission_date,
-      iab_billboard_rollout_in_release.branch,
-      iab_billboard_rollout_in_release.point
-    ]
-    pivots: [
-      iab_billboard_rollout_in_release.branch
-    ]
-    filters:
-      iab_billboard_rollout_in_release.metric: 'retained'
-      iab_billboard_rollout_in_release.statistic: mean
-    row: 20
     col: 12
     width: 12
     height: 8
@@ -235,8 +167,42 @@
     filters:
       iab_billboard_rollout_in_release.metric: 'ad_clicks'
       iab_billboard_rollout_in_release.statistic: mean
-    row: 30
+    row: 20
     col: 0
+    width: 12
+    height: 8
+    field_x: iab_billboard_rollout_in_release.submission_date
+    field_y: iab_billboard_rollout_in_release.point
+    log_scale: false
+    ci_lower: iab_billboard_rollout_in_release.lower
+    ci_upper: iab_billboard_rollout_in_release.upper
+    show_grid: true
+    listen:
+      Date: iab_billboard_rollout_in_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: iab_billboard_rollout_in_release
+    type: looker_line
+    fields: [
+      iab_billboard_rollout_in_release.submission_date,
+      iab_billboard_rollout_in_release.branch,
+      iab_billboard_rollout_in_release.point
+    ]
+    pivots: [
+      iab_billboard_rollout_in_release.branch
+    ]
+    filters:
+      iab_billboard_rollout_in_release.metric: 'qualified_cumulative_days_of_use'
+      iab_billboard_rollout_in_release.statistic: mean
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: iab_billboard_rollout_in_release.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       iab_billboard_rollout_in_release.metric: 'uri_count'
+      iab_billboard_rollout_in_release.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: iab_billboard_rollout_in_release.submission_date
+    field_y: iab_billboard_rollout_in_release.point
+    log_scale: false
+    ci_lower: iab_billboard_rollout_in_release.lower
+    ci_upper: iab_billboard_rollout_in_release.upper
+    show_grid: true
+    listen:
+      Date: iab_billboard_rollout_in_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: iab_billboard_rollout_in_release
+    type: looker_line
+    fields: [
+      iab_billboard_rollout_in_release.submission_date,
+      iab_billboard_rollout_in_release.branch,
+      iab_billboard_rollout_in_release.point
+    ]
+    pivots: [
+      iab_billboard_rollout_in_release.branch
+    ]
+    filters:
+      iab_billboard_rollout_in_release.metric: 'active_hours'
       iab_billboard_rollout_in_release.statistic: mean
     row: 30
     col: 12

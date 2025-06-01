@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,10 +26,44 @@
       remove_ua_styles_for_h1_headings.branch
     ]
     filters:
-      remove_ua_styles_for_h1_headings.metric: 'active_hours'
+      remove_ua_styles_for_h1_headings.metric: 'days_of_use'
       remove_ua_styles_for_h1_headings.statistic: mean
     row: 0
     col: 0
+    width: 12
+    height: 8
+    field_x: remove_ua_styles_for_h1_headings.submission_date
+    field_y: remove_ua_styles_for_h1_headings.point
+    log_scale: false
+    ci_lower: remove_ua_styles_for_h1_headings.lower
+    ci_upper: remove_ua_styles_for_h1_headings.upper
+    show_grid: true
+    listen:
+      Date: remove_ua_styles_for_h1_headings.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: remove_ua_styles_for_h1_headings
+    type: looker_line
+    fields: [
+      remove_ua_styles_for_h1_headings.submission_date,
+      remove_ua_styles_for_h1_headings.branch,
+      remove_ua_styles_for_h1_headings.point
+    ]
+    pivots: [
+      remove_ua_styles_for_h1_headings.branch
+    ]
+    filters:
+      remove_ua_styles_for_h1_headings.metric: 'retained'
+      remove_ua_styles_for_h1_headings.statistic: mean
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: remove_ua_styles_for_h1_headings.submission_date
@@ -64,8 +98,8 @@
     filters:
       remove_ua_styles_for_h1_headings.metric: 'memory_total'
       remove_ua_styles_for_h1_headings.statistic: percentile
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: remove_ua_styles_for_h1_headings.submission_date
@@ -100,108 +134,6 @@
       remove_ua_styles_for_h1_headings.metric: 'search_count'
       remove_ua_styles_for_h1_headings.statistic: mean
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: remove_ua_styles_for_h1_headings.submission_date
-    field_y: remove_ua_styles_for_h1_headings.point
-    log_scale: false
-    ci_lower: remove_ua_styles_for_h1_headings.lower
-    ci_upper: remove_ua_styles_for_h1_headings.upper
-    show_grid: true
-    listen:
-      Date: remove_ua_styles_for_h1_headings.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: remove_ua_styles_for_h1_headings
-    type: looker_line
-    fields: [
-      remove_ua_styles_for_h1_headings.submission_date,
-      remove_ua_styles_for_h1_headings.branch,
-      remove_ua_styles_for_h1_headings.point
-    ]
-    pivots: [
-      remove_ua_styles_for_h1_headings.branch
-    ]
-    filters:
-      remove_ua_styles_for_h1_headings.metric: 'qualified_cumulative_days_of_use'
-      remove_ua_styles_for_h1_headings.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: remove_ua_styles_for_h1_headings.submission_date
-    field_y: remove_ua_styles_for_h1_headings.point
-    log_scale: false
-    ci_lower: remove_ua_styles_for_h1_headings.lower
-    ci_upper: remove_ua_styles_for_h1_headings.upper
-    show_grid: true
-    listen:
-      Date: remove_ua_styles_for_h1_headings.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: remove_ua_styles_for_h1_headings
-    type: looker_line
-    fields: [
-      remove_ua_styles_for_h1_headings.submission_date,
-      remove_ua_styles_for_h1_headings.branch,
-      remove_ua_styles_for_h1_headings.point
-    ]
-    pivots: [
-      remove_ua_styles_for_h1_headings.branch
-    ]
-    filters:
-      remove_ua_styles_for_h1_headings.metric: 'days_of_use'
-      remove_ua_styles_for_h1_headings.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: remove_ua_styles_for_h1_headings.submission_date
-    field_y: remove_ua_styles_for_h1_headings.point
-    log_scale: false
-    ci_lower: remove_ua_styles_for_h1_headings.lower
-    ci_upper: remove_ua_styles_for_h1_headings.upper
-    show_grid: true
-    listen:
-      Date: remove_ua_styles_for_h1_headings.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: remove_ua_styles_for_h1_headings
-    type: looker_line
-    fields: [
-      remove_ua_styles_for_h1_headings.submission_date,
-      remove_ua_styles_for_h1_headings.branch,
-      remove_ua_styles_for_h1_headings.point
-    ]
-    pivots: [
-      remove_ua_styles_for_h1_headings.branch
-    ]
-    filters:
-      remove_ua_styles_for_h1_headings.metric: 'retained'
-      remove_ua_styles_for_h1_headings.statistic: mean
-    row: 20
     col: 12
     width: 12
     height: 8
@@ -235,8 +167,42 @@
     filters:
       remove_ua_styles_for_h1_headings.metric: 'ad_clicks'
       remove_ua_styles_for_h1_headings.statistic: mean
-    row: 30
+    row: 20
     col: 0
+    width: 12
+    height: 8
+    field_x: remove_ua_styles_for_h1_headings.submission_date
+    field_y: remove_ua_styles_for_h1_headings.point
+    log_scale: false
+    ci_lower: remove_ua_styles_for_h1_headings.lower
+    ci_upper: remove_ua_styles_for_h1_headings.upper
+    show_grid: true
+    listen:
+      Date: remove_ua_styles_for_h1_headings.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: remove_ua_styles_for_h1_headings
+    type: looker_line
+    fields: [
+      remove_ua_styles_for_h1_headings.submission_date,
+      remove_ua_styles_for_h1_headings.branch,
+      remove_ua_styles_for_h1_headings.point
+    ]
+    pivots: [
+      remove_ua_styles_for_h1_headings.branch
+    ]
+    filters:
+      remove_ua_styles_for_h1_headings.metric: 'qualified_cumulative_days_of_use'
+      remove_ua_styles_for_h1_headings.statistic: mean
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: remove_ua_styles_for_h1_headings.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       remove_ua_styles_for_h1_headings.metric: 'uri_count'
+      remove_ua_styles_for_h1_headings.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: remove_ua_styles_for_h1_headings.submission_date
+    field_y: remove_ua_styles_for_h1_headings.point
+    log_scale: false
+    ci_lower: remove_ua_styles_for_h1_headings.lower
+    ci_upper: remove_ua_styles_for_h1_headings.upper
+    show_grid: true
+    listen:
+      Date: remove_ua_styles_for_h1_headings.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: remove_ua_styles_for_h1_headings
+    type: looker_line
+    fields: [
+      remove_ua_styles_for_h1_headings.submission_date,
+      remove_ua_styles_for_h1_headings.branch,
+      remove_ua_styles_for_h1_headings.point
+    ]
+    pivots: [
+      remove_ua_styles_for_h1_headings.branch
+    ]
+    filters:
+      remove_ua_styles_for_h1_headings.metric: 'active_hours'
       remove_ua_styles_for_h1_headings.statistic: mean
     row: 30
     col: 12
