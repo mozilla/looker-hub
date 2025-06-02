@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/https_first_in_release.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/https_first_in_release_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/sections_with_follow_block.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/sections_with_follow_block_last_updated.datagroup.lkml"
 
-explore: https_first_in_release {
+explore: sections_with_follow_block {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: https_first_in_release {
   }
 
   hidden: yes
-  persist_with: https_first_in_release_last_updated
+  persist_with: sections_with_follow_block_last_updated
 }
