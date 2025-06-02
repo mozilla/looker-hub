@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: https_first_in_release {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.https_first_in_release_statistics ;;
+view: anti_fingerprinting_characteristic_evaluation_androidnightlyworld_round_1 {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.anti_fingerprinting_characteristic_evaluation_androidnightlyworld_round_1_statistics ;;
 
   dimension: submission_date {
     type: date
