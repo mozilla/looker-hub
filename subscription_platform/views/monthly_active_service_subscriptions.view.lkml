@@ -9,18 +9,21 @@ view: monthly_active_service_subscriptions {
     sql: ${TABLE}.id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Monthly snapshot record ID."
   }
 
   dimension: service_id {
     sql: ${TABLE}.service_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "ID of the service provided by the subscription, as defined in the `services_v1` ETL."
   }
 
   dimension: service_subscriptions_history_id {
     sql: ${TABLE}.service_subscriptions_history_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "ID of the `service_subscriptions_history_v1` record this monthly snapshot record was derived from."
   }
 
   dimension: subscription__auto_renew {
@@ -29,6 +32,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Auto Renew"
+    description: "Whether the subscription is set to auto-renew."
   }
 
   dimension: subscription__country_code {
@@ -37,6 +41,8 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Country Code"
+    description: "ISO 3166-1 alpha-2 code for the country the subscription is in.
+This may be missing for some subscriptions."
   }
 
   dimension: subscription__country_name {
@@ -45,6 +51,8 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Country Name"
+    description: "Name of the country the subscription is in.
+This may be \"Unknown\" for some subscriptions."
   }
 
   dimension: subscription__current_period_discount_amount {
@@ -53,6 +61,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Current Period Discount Amount"
+    description: "Current period discount amount (if any)."
   }
 
   dimension: subscription__current_period_discount_name {
@@ -61,6 +70,8 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Current Period Discount Name"
+    description: "Current period discount name (if any).
+This will be null for Google subscriptions."
   }
 
   dimension: subscription__current_period_discount_promotion_code {
@@ -69,6 +80,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Current Period Discount Promotion Code"
+    description: "Current period discount promotion code (if any)."
   }
 
   dimension: subscription__customer_logical_subscription_number {
@@ -77,6 +89,8 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Customer Logical Subscription Number"
+    description: "Number of the associated logical subscription in the overall sequence of all of the customer's logical subscriptions.
+For example, this should be `1` for their first logical subscription, `2` for their second logical subscription, etc."
   }
 
   dimension: subscription__customer_service_subscription_number {
@@ -85,6 +99,8 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Customer Service Subscription Number"
+    description: "Number of this service subscription in the overall sequence of all of the customer's service subscriptions to this service.
+For example, this should be `1` for their first service subscription to this service, `2` for their second service subscription to this service, etc."
   }
 
   dimension: subscription__first_touch_attribution__entrypoint {
@@ -93,6 +109,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription First Touch Attribution"
     group_item_label: "Entrypoint"
+    description: "First-touch attribution entrypoint."
   }
 
   dimension: subscription__first_touch_attribution__entrypoint_experiment {
@@ -101,6 +118,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription First Touch Attribution"
     group_item_label: "Entrypoint Experiment"
+    description: "First-touch attribution entrypoint experiment."
   }
 
   dimension: subscription__first_touch_attribution__entrypoint_variation {
@@ -109,6 +127,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription First Touch Attribution"
     group_item_label: "Entrypoint Variation"
+    description: "First-touch attribution entrypoint experiment variation."
   }
 
   dimension: subscription__first_touch_attribution__utm_campaign {
@@ -117,6 +136,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription First Touch Attribution"
     group_item_label: "UTM Campaign"
+    description: "First-touch attribution UTM campaign."
   }
 
   dimension: subscription__first_touch_attribution__utm_content {
@@ -125,6 +145,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription First Touch Attribution"
     group_item_label: "UTM Content"
+    description: "First-touch attribution UTM content."
   }
 
   dimension: subscription__first_touch_attribution__utm_medium {
@@ -133,6 +154,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription First Touch Attribution"
     group_item_label: "UTM Medium"
+    description: "First-touch attribution UTM medium."
   }
 
   dimension: subscription__first_touch_attribution__utm_source {
@@ -141,6 +163,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription First Touch Attribution"
     group_item_label: "UTM Source"
+    description: "First-touch attribution UTM source."
   }
 
   dimension: subscription__first_touch_attribution__utm_term {
@@ -149,6 +172,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription First Touch Attribution"
     group_item_label: "UTM Term"
+    description: "First-touch attribution UTM term."
   }
 
   dimension: subscription__has_fraudulent_charges {
@@ -157,6 +181,8 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Has Fraudulent Charges"
+    description: "Whether the subscription has had fraudulent charges.
+This will be null for Google subscriptions."
   }
 
   dimension: subscription__has_refunds {
@@ -165,6 +191,8 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Has Refunds"
+    description: "Whether the subscription has had refunds.
+This will be null for Google subscriptions."
   }
 
   dimension: subscription__id {
@@ -173,6 +201,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "ID"
+    description: "Service subscription ID."
   }
 
   dimension: subscription__initial_discount_name {
@@ -181,6 +210,8 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Initial Discount Name"
+    description: "Initial discount name (if any).
+This will be null for Google subscriptions."
   }
 
   dimension: subscription__initial_discount_promotion_code {
@@ -189,6 +220,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Initial Discount Promotion Code"
+    description: "Initial discount promotion code (if any)."
   }
 
   dimension: subscription__is_active {
@@ -197,6 +229,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Is Active"
+    description: "Whether the subscription is active (i.e. providing the customer access to the services)."
   }
 
   dimension: subscription__is_bundle {
@@ -205,6 +238,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Is Bundle"
+    description: "Whether the subscription is a bundle (i.e. providing multiple services)."
   }
 
   dimension: subscription__is_trial {
@@ -213,6 +247,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Is Trial"
+    description: "Whether the subscription is a free trial."
   }
 
   dimension: subscription__last_touch_attribution__entrypoint {
@@ -221,6 +256,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription Last Touch Attribution"
     group_item_label: "Entrypoint"
+    description: "Last-touch attribution entrypoint."
   }
 
   dimension: subscription__last_touch_attribution__entrypoint_experiment {
@@ -229,6 +265,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription Last Touch Attribution"
     group_item_label: "Entrypoint Experiment"
+    description: "Last-touch attribution entrypoint experiment."
   }
 
   dimension: subscription__last_touch_attribution__entrypoint_variation {
@@ -237,6 +274,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription Last Touch Attribution"
     group_item_label: "Entrypoint Variation"
+    description: "Last-touch attribution entrypoint experiment variation."
   }
 
   dimension: subscription__last_touch_attribution__utm_campaign {
@@ -245,6 +283,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription Last Touch Attribution"
     group_item_label: "UTM Campaign"
+    description: "Last-touch attribution UTM campaign."
   }
 
   dimension: subscription__last_touch_attribution__utm_content {
@@ -253,6 +292,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription Last Touch Attribution"
     group_item_label: "UTM Content"
+    description: "Last-touch attribution UTM content."
   }
 
   dimension: subscription__last_touch_attribution__utm_medium {
@@ -261,6 +301,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription Last Touch Attribution"
     group_item_label: "UTM Medium"
+    description: "Last-touch attribution UTM medium."
   }
 
   dimension: subscription__last_touch_attribution__utm_source {
@@ -269,6 +310,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription Last Touch Attribution"
     group_item_label: "UTM Source"
+    description: "Last-touch attribution UTM source."
   }
 
   dimension: subscription__last_touch_attribution__utm_term {
@@ -277,6 +319,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription Last Touch Attribution"
     group_item_label: "UTM Term"
+    description: "Last-touch attribution UTM term."
   }
 
   dimension: subscription__logical_subscription_id {
@@ -285,6 +328,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Logical Subscription ID"
+    description: "ID of the associated logical subscription this service subscription was derived from."
   }
 
   dimension: subscription__mozilla_account_id {
@@ -293,6 +337,8 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Mozilla Account ID"
+    description: "ID of the Mozilla Account associated with the subscription (if any) as a hexadecimal string.
+This may be missing for some subscriptions, particularly older subscriptions when we were only recording hashed Mozilla Account IDs."
   }
 
   dimension: subscription__mozilla_account_id_sha256 {
@@ -301,6 +347,8 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Mozilla Account ID Sha256"
+    description: "SHA256 hash of the `mozilla_account_id` string value (if any) as a hexadecimal string.
+This may be missing for some subscriptions."
   }
 
   dimension: subscription__ongoing_discount_amount {
@@ -309,6 +357,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Ongoing Discount Amount"
+    description: "Ongoing discount amount (if any)."
   }
 
   dimension: subscription__ongoing_discount_name {
@@ -317,6 +366,8 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Ongoing Discount Name"
+    description: "Ongoing discount name (if any).
+This will be null for Google subscriptions."
   }
 
   dimension: subscription__ongoing_discount_promotion_code {
@@ -325,11 +376,13 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Ongoing Discount Promotion Code"
+    description: "Ongoing discount promotion code (if any)."
   }
 
   dimension: subscription__other_services {
     sql: ${TABLE}.subscription.other_services ;;
     hidden: yes
+    description: "Array of zero or more other services provided by the subscription, as defined in the `services_v1` ETL."
   }
 
   dimension: subscription__payment_provider {
@@ -338,6 +391,9 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Payment Provider"
+    description: "Payment provider for the subscription.
+For Stripe subscriptions this will be \"Stripe\" or \"PayPal\".
+For Google subscriptions this will be \"Google\"."
   }
 
   dimension: subscription__plan_amount {
@@ -346,6 +402,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Plan Amount"
+    description: "Subscription plan's amount in the specified currency."
   }
 
   dimension: subscription__plan_currency {
@@ -354,6 +411,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Plan Currency"
+    description: "ISO 4217 code for the subscription plan's currency."
   }
 
   dimension: subscription__plan_interval {
@@ -362,6 +420,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Plan Interval"
+    description: "Text summary of the subscription plan's interval (e.g. \"1 month\", \"6 months\", \"1 year\")."
   }
 
   dimension: subscription__plan_interval_count {
@@ -370,6 +429,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Plan Interval Count"
+    description: "Subscription plan's interval count."
   }
 
   dimension: subscription__plan_interval_months {
@@ -378,6 +438,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Plan Interval Months"
+    description: "Number of months in the subscription plan's interval."
   }
 
   dimension: subscription__plan_interval_type {
@@ -386,6 +447,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Plan Interval Type"
+    description: "Subscription plan's interval type (e.g. \"month\" or \"year\")."
   }
 
   dimension: subscription__plan_summary {
@@ -394,6 +456,8 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Plan Summary"
+    description: "Text summary of the subscription plan's interval, currency, and amount, along with an indication if it's a bundle (i.e. providing multiple services).
+For example, \"1 month EUR 4.99\" or \"1 year USD 99.00 bundle\"."
   }
 
   dimension: subscription__product_name {
@@ -402,6 +466,8 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Product Name"
+    description: "Product name.
+For all subscriptions this will be the associated Stripe product name."
   }
 
   dimension: subscription__provider {
@@ -410,6 +476,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Provider"
+    description: "Provider of the subscription (\"Stripe\" or \"Google\")."
   }
 
   dimension: subscription__provider_customer_id {
@@ -418,6 +485,8 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Provider Customer ID"
+    description: "Provider customer ID (if any).
+This will be null for Google subscriptions."
   }
 
   dimension: subscription__provider_plan_id {
@@ -426,6 +495,9 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Provider Plan ID"
+    description: "Provider \"plan ID\".
+For Stripe subscriptions this will be the plan/price ID.
+For Google subscriptions this will be the SKU."
   }
 
   dimension: subscription__provider_product_id {
@@ -434,6 +506,9 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Provider Product ID"
+    description: "Provider \"product ID\".
+For Stripe subscriptions this will be the product ID.
+For Google subscriptions this will be the package name."
   }
 
   dimension: subscription__provider_status {
@@ -442,6 +517,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Provider Status"
+    description: "The provider's status indicator for the subscription."
   }
 
   dimension: subscription__provider_subscription_id {
@@ -450,6 +526,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Provider Subscription ID"
+    description: "Provider subscription ID."
   }
 
   dimension: subscription__provider_subscription_item_id {
@@ -458,6 +535,8 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Provider Subscription Item ID"
+    description: "Provider subscription item ID (if any).
+This will be null for Google subscriptions."
   }
 
   dimension: subscription__service__id {
@@ -466,6 +545,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription Service"
     group_item_label: "ID"
+    description: "Service ID."
   }
 
   dimension: subscription__service__name {
@@ -474,6 +554,7 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription Service"
     group_item_label: "Name"
+    description: "Service name."
   }
 
   dimension: subscription__service__tier {
@@ -482,18 +563,21 @@ view: monthly_active_service_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Subscription Service"
     group_item_label: "Tier"
+    description: "Service tier."
   }
 
   dimension: was_active_at_month_end {
     sql: ${TABLE}.was_active_at_month_end ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Whether the subscription was active at the end of the month."
   }
 
   dimension: was_active_at_month_start {
     sql: ${TABLE}.was_active_at_month_start ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Whether the subscription was active at the start of the month."
   }
 
   dimension_group: month_end {
@@ -510,6 +594,7 @@ view: monthly_active_service_subscriptions {
     ]
     convert_tz: no
     datatype: date
+    description: "The end date of the month during which the service subscription was active."
   }
 
   dimension_group: month_start {
@@ -526,6 +611,7 @@ view: monthly_active_service_subscriptions {
     ]
     convert_tz: no
     datatype: date
+    description: "The start date of the month during which the service subscription was active."
   }
 
   dimension_group: subscription__auto_renew_disabled_at {
@@ -542,6 +628,8 @@ view: monthly_active_service_subscriptions {
       year,
     ]
     label: "Subscription: Auto Renew Disabled At"
+    description: "When the subscription's auto-renewal setting was disabled.
+This will be null for subscriptions set to auto-renew."
   }
 
   dimension_group: subscription__current_period_ends_at {
@@ -558,6 +646,8 @@ view: monthly_active_service_subscriptions {
       year,
     ]
     label: "Subscription: Current Period Ends At"
+    description: "When the current subscription period ends.
+This will be null for inactive subscriptions."
   }
 
   dimension_group: subscription__current_period_started_at {
@@ -574,6 +664,8 @@ view: monthly_active_service_subscriptions {
       year,
     ]
     label: "Subscription: Current Period Started At"
+    description: "When the current subscription period started.
+This will be null for inactive subscriptions and for all Google subcriptions."
   }
 
   dimension_group: subscription__ended_at {
@@ -590,6 +682,8 @@ view: monthly_active_service_subscriptions {
       year,
     ]
     label: "Subscription: Ended At"
+    description: "When the subscription ended.
+This will be null for active subscriptions."
   }
 
   dimension_group: subscription__first_touch_attribution__impression_at {
@@ -606,6 +700,7 @@ view: monthly_active_service_subscriptions {
       year,
     ]
     label: "Subscription First Touch Attribution: Impression At"
+    description: "When the first-touch attribution impression occurred."
   }
 
   dimension_group: subscription__last_touch_attribution__impression_at {
@@ -622,6 +717,7 @@ view: monthly_active_service_subscriptions {
       year,
     ]
     label: "Subscription Last Touch Attribution: Impression At"
+    description: "When the last-touch attribution impression occurred."
   }
 
   dimension_group: subscription__logical_subscription_started_at {
@@ -638,6 +734,7 @@ view: monthly_active_service_subscriptions {
       year,
     ]
     label: "Subscription: Logical Subscription Started At"
+    description: "When the associated logical subscription started."
   }
 
   dimension_group: subscription__ongoing_discount_ends_at {
@@ -654,6 +751,7 @@ view: monthly_active_service_subscriptions {
       year,
     ]
     label: "Subscription: Ongoing Discount Ends At"
+    description: "When the ongoing discount ends (if any)."
   }
 
   dimension_group: subscription__provider_subscription_created_at {
@@ -670,6 +768,7 @@ view: monthly_active_service_subscriptions {
       year,
     ]
     label: "Subscription: Provider Subscription Created At"
+    description: "When the provider subscription was created."
   }
 
   dimension_group: subscription__provider_subscription_updated_at {
@@ -686,6 +785,7 @@ view: monthly_active_service_subscriptions {
       year,
     ]
     label: "Subscription: Provider Subscription Updated At"
+    description: "When the provider subscription was last updated."
   }
 
   dimension_group: subscription__started_at {
@@ -702,6 +802,7 @@ view: monthly_active_service_subscriptions {
       year,
     ]
     label: "Subscription: Started At"
+    description: "When the subscription started."
   }
 
   sql_table_name: `mozdata.subscription_platform.monthly_active_service_subscriptions` ;;
@@ -712,17 +813,20 @@ view: monthly_active_service_subscriptions__subscription__other_services {
     sql: ${TABLE}.id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Other service ID."
   }
 
   dimension: name {
     sql: ${TABLE}.name ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Other service name."
   }
 
   dimension: tier {
     sql: ${TABLE}.tier ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Other service tier."
   }
 }
