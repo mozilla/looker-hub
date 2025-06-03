@@ -785,6 +785,16 @@ See `nsIXULRuntime.browserTabsRemoteAutostart`
 "
   }
 
+  dimension: metrics__boolean__extensions_button_prefers_hidden_button {
+    sql: ${TABLE}.metrics.boolean.extensions_button_prefers_hidden_button ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Extensions Button Prefers Hidden Button"
+    description: "Records whether the user prefers the Extensions Button to be hidden. Corresponds to the inverse value of the `exceptions.unifiedExtensions.button.always_visible` pref.
+"
+  }
+
   dimension: metrics__boolean__extensions_use_remote_policy {
     sql: ${TABLE}.metrics.boolean.extensions_use_remote_policy ;;
     type: yesno
@@ -13167,6 +13177,15 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     description: "Counters for startup cache data hits or misses on initializating
 DNR rules for extensions loaded on application startup.
 "
+  }
+
+  dimension: metrics__labeled_counter__extensions_button_temporarily_unhidden {
+    sql: ${TABLE}.metrics.labeled_counter.extensions_button_temporarily_unhidden ;;
+    hidden: yes
+    description: "Counts how often the hidden Extensions Button is temporarily shown. There are multiple possible triggers for showing the extensions button, only the first that would trigger the transition from hidden to shown is going to be counted. For example, if the button is shown because the \"attention\" dot is shown, and a permission prompt is shown, then we only count the trigger for the attention dot, not the permission prompt.
+customize is when the user entered Customize Mode, which causes the Extensions Button to show unconditionally until the user exits the mode.
+addon_install_doorhanger covers notifications related to add-on installations, including blocked installations, add-on download progress, and failed installations. Permission prompts are NOT part of this, but covered by extension_permission_prompt. A typical installation flow triggers both addon_install_doorhanger and extension_permission_prompt.
+extension_controlled_setting is when a notification is anchored to the Extensions Button that notifies the user"
   }
 
   dimension: metrics__labeled_counter__extensions_counters_browser_action_preload_result {
