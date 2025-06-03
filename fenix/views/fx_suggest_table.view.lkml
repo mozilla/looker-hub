@@ -461,6 +461,14 @@ view: fx_suggest_table {
     group_item_label: "Fx Suggest Advertiser"
   }
 
+  dimension: metrics__string__fx_suggest_country {
+    sql: ${TABLE}.metrics.string.fx_suggest_country ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Fx Suggest Country"
+  }
+
   dimension: metrics__string__fx_suggest_iab_category {
     sql: ${TABLE}.metrics.string.fx_suggest_iab_category ;;
     type: string

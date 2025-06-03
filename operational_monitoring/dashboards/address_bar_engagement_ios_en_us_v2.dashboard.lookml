@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       address_bar_engagement_ios_en_us_v2.branch
     ]
     filters:
-      address_bar_engagement_ios_en_us_v2.metric: 'ad_clicks'
+      address_bar_engagement_ios_en_us_v2.metric: 'retained'
       address_bar_engagement_ios_en_us_v2.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       address_bar_engagement_ios_en_us_v2.branch
     ]
     filters:
-      address_bar_engagement_ios_en_us_v2.metric: 'retained'
+      address_bar_engagement_ios_en_us_v2.metric: 'ad_clicks'
       address_bar_engagement_ios_en_us_v2.statistic: mean
     row: 10
     col: 12

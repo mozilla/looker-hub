@@ -47,22 +47,6 @@ this is appended to the app_name.
 "
   }
 
-  dimension: app_version_minor {
-    sql: ${TABLE}.app_version_minor ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    description: "The minor version of the application version (e.g. if 123.0, then 0)
-"
-  }
-
-  dimension: app_version_patch_revision {
-    sql: ${TABLE}.app_version_patch_revision ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    description: "The patch revision number of the app version
-"
-  }
-
   dimension: attribution_medium {
     sql: ${TABLE}.attribution_medium ;;
     type: string
@@ -84,14 +68,6 @@ this is appended to the app_name.
     type: string
     suggest_persist_for: "24 hours"
     description: "The channel the application is being distributed on, example values include: relase, beta, nightly.
-"
-  }
-
-  dimension: city {
-    sql: ${TABLE}.city ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    description: "City reported by the client.
 "
   }
 
@@ -168,27 +144,11 @@ this is appended to the app_name.
 "
   }
 
-  dimension: os {
-    sql: ${TABLE}.os ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    description: "Operating system reported by the client.
-"
-  }
-
   dimension: os_grouped {
     sql: ${TABLE}.os_grouped ;;
     type: string
     suggest_persist_for: "24 hours"
     description: "Operating system group reported by the client.
-"
-  }
-
-  dimension: os_version {
-    sql: ${TABLE}.os_version ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    description: "OS version reported by the client.
 "
   }
 
@@ -238,6 +198,12 @@ this is appended to the app_name.
     suggest_persist_for: "24 hours"
     description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms (Windows only).
 "
+  }
+
+  dimension: windows_version {
+    sql: ${TABLE}.windows_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: submission {

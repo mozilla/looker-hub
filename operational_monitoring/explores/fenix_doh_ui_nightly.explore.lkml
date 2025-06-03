@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/https_first_in_release.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/https_first_in_release_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/fenix_doh_ui_nightly.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/fenix_doh_ui_nightly_last_updated.datagroup.lkml"
 
-explore: https_first_in_release {
+explore: fenix_doh_ui_nightly {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: https_first_in_release {
   }
 
   hidden: yes
-  persist_with: https_first_in_release_last_updated
+  persist_with: fenix_doh_ui_nightly_last_updated
 }

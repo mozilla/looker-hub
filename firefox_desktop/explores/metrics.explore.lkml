@@ -933,6 +933,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries}) AS metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__extensions_button_temporarily_unhidden {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_button_temporarily_unhidden}) AS metrics__metrics__labeled_counter__extensions_button_temporarily_unhidden ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_button_temporarily_unhidden.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_counters_browser_action_preload_result}) AS metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result.document_id} ;;

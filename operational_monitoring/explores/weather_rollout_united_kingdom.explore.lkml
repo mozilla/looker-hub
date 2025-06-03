@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/viewpoint_android_feb_2025.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/viewpoint_android_feb_2025_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/weather_rollout_united_kingdom.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/weather_rollout_united_kingdom_last_updated.datagroup.lkml"
 
-explore: viewpoint_android_feb_2025 {
+explore: weather_rollout_united_kingdom {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: viewpoint_android_feb_2025 {
   }
 
   hidden: yes
-  persist_with: viewpoint_android_feb_2025_last_updated
+  persist_with: weather_rollout_united_kingdom_last_updated
 }

@@ -3594,6 +3594,49 @@ when dynamic or static rulesets have been loaded from disk.
 "
   }
 
+  dimension: metrics__boolean__extensions_button_prefers_hidden_button {
+    label: "Extensions Button Prefers Hidden Button"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.extensions_button_prefers_hidden_button ;;
+    type: yesno
+    group_label: "Extensions Button"
+    group_item_label: "Prefers Hidden Button"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Button Prefers Hidden Button"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_button_prefers_hidden_button"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records whether the user prefers the Extensions Button to be hidden. Corresponds to the inverse value of the `exceptions.unifiedExtensions.button.always_visible` pref.
+"
+  }
+
+  dimension: metrics__labeled_counter__extensions_button_temporarily_unhidden {
+    label: "Extensions Button Temporarily Unhidden"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.extensions_button_temporarily_unhidden ;;
+    group_label: "Extensions Button"
+    group_item_label: "Temporarily Unhidden"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Button Temporarily Unhidden"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_button_temporarily_unhidden"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often the hidden Extensions Button is temporarily shown. There are multiple possible triggers for showing the extensions button, only the first that would trigger the transition from hidden to shown is going to be counted. For example, if the button is shown because the \"attention\" dot is shown, and a permission prompt is shown, then we only count the trigger for the attention dot, not the permission prompt.
+customize is when the user entered Customize Mode, which causes the Extensions Button to show unconditionally until the user exits the mode.
+addon_install_doorhanger covers notifications related to add-on installations, including blocked installations, add-on download progress, and failed installations. Permission prompts are NOT part of this, but covered by extension_permission_prompt. A typical installation flow triggers both addon_install_doorhanger and extension_permission_prompt.
+extension_controlled_setting is when a notification is anchored to the Extensions Button that notifies the user of an extension-triggered change (new tab page, home page, first use of tabs.hide()). This is shown on first use of the relevant feature after the installation of an extension.
+browser_action_open_popup is when the browserAction popup is opened. This is usually user-triggered (shortcut, context menu) or via the `action.openPopup()` API.
+extension_permission_prompt is when an extension permission prompt is shown. This does not distinguish between install-time permission prompts, permission prompts on update or optional permission prompts at runtime.
+extensions_panel_showing is when the Extensions Panel is being shown, for example via the Extensions appmenu item.
+attention_blocklist is when the browser wants to draw attention to the fact that one of the add-ons has been blocklisted.
+attention_permission_denied is when the browser wants to draw attention to the fact that one of the extensions was denied access to the page in the currently displayed tab. The access request is not a strong signal: a MV3 extension with content scripts whose permissions have been revoked by the user could trigger such an attention request on all websites.
+"
+  }
+
   dimension: metrics__timing_distribution__fullscreen_change__sum {
     label: "Fullscreen Change Sum"
     hidden: no
@@ -50558,6 +50601,47 @@ view: metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entri
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__extensions_button_temporarily_unhidden {
+  label: "Extensions Button - Temporarily Unhidden"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
