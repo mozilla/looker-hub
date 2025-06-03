@@ -3091,6 +3091,10 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: top_sites
+    update:
+      type: glean_ping_explore
+      views:
+        base_view: update
     urlbar_events_daily:
       type: table_explore
       views:
@@ -3748,6 +3752,15 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.tos_rollout_enrollments
       type: table_view
+    update:
+      tables:
+      - table: mozdata.firefox_desktop.update
+      type: glean_ping_view
+    update_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.update
+      type: table_view
     urlbar_events:
       tables:
       - base_table: mozdata.firefox_desktop.urlbar_events
@@ -4045,6 +4058,10 @@ firefox_desktop_background_update:
       type: glean_ping_explore
       views:
         base_view: pageload
+    update:
+      type: glean_ping_explore
+      views:
+        base_view: update
     use_counters:
       type: glean_ping_explore
       views:
@@ -4224,6 +4241,15 @@ firefox_desktop_background_update:
       tables:
       - channel: null
         table: mozdata.firefox_desktop_background_update.pageload
+      type: table_view
+    update:
+      tables:
+      - table: mozdata.firefox_desktop_background_update.update
+      type: glean_ping_view
+    update_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_update.update
       type: table_view
     use_counters:
       tables:
@@ -11561,8 +11587,8 @@ operational_monitoring:
             - release
             - nightly
             - beta
-            - esr
             - aurora
+            - esr
             - default
             - nightly-pine
             - nightly-oak
@@ -12281,11 +12307,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id323
           normalized_channel:
-            default: aurora
+            default: beta
             options:
-            - aurora
             - beta
             - nightly
+            - aurora
             - release
             - esr
             - Other
@@ -12985,10 +13011,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id365
           os:
-            default: Linux
+            default: Mac
             options:
-            - Linux
             - Mac
+            - Linux
             - Windows
             - Other
         explore: garbage_collection
@@ -14365,9 +14391,9 @@ operational_monitoring:
             default: Windows - vpn_session
             options:
             - Windows - vpn_session
-            - iOS - daemon_session
-            - Darwin - vpn_session
             - Android - vpn_session
+            - Darwin - vpn_session
+            - iOS - daemon_session
             - Linux - vpn_session
             - Android - daemon_session
             - iOS - vpn_session
@@ -15838,11 +15864,11 @@ operational_monitoring:
             - release
             - nightly
           os:
-            default: Darwin
+            default: Windows_NT
             options:
-            - Darwin
-            - Linux
             - Windows_NT
+            - Linux
+            - Darwin
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id603
