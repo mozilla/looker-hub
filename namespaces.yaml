@@ -3143,11 +3143,6 @@ firefox_desktop:
       tables:
       - table: mozdata.firefox_desktop.baseline
       type: glean_ping_view
-    baseline_active_users_aggregates_full_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop.baseline_active_users_aggregates_full
-      type: table_view
     baseline_active_users_aggregates_table:
       tables:
       - channel: null
@@ -7240,6 +7235,18 @@ monitoring:
       type: table_explore
       views:
         base_view: looker_dashboard_load_times
+    looker_usage_explores:
+      type: table_explore
+      views:
+        base_view: looker_usage_explores
+    looker_usage_models:
+      type: table_explore
+      views:
+        base_view: looker_usage_models
+    looker_usage_unused_explores:
+      type: table_explore
+      views:
+        base_view: looker_usage_unused_explores
     payload_bytes_error_all:
       type: ping_explore
       views:
@@ -7402,6 +7409,18 @@ monitoring:
     looker_dashboard_load_times:
       tables:
       - table: mozdata.monitoring.looker_dashboard_load_times
+      type: table_view
+    looker_usage_explores:
+      tables:
+      - table: moz-fx-data-shared-prod.monitoring.looker_usage_explores
+      type: table_view
+    looker_usage_models:
+      tables:
+      - table: moz-fx-data-shared-prod.monitoring.looker_usage_models
+      type: table_view
+    looker_usage_unused_explores:
+      tables:
+      - table: moz-fx-data-shared-prod.monitoring.looker_usage_unused_explores
       type: table_view
     metadata_completeness:
       tables:
