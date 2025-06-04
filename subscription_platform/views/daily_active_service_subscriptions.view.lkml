@@ -495,7 +495,7 @@ This will be null for Google subscriptions."
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Provider Plan ID"
-    description: "Provider \"plan ID\".
+    description: "Provider plan ID.
 For Stripe subscriptions this will be the plan/price ID.
 For Google subscriptions this will be the SKU."
   }
@@ -506,7 +506,7 @@ For Google subscriptions this will be the SKU."
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Provider Product ID"
-    description: "Provider \"product ID\".
+    description: "Provider product ID.
 For Stripe subscriptions this will be the product ID.
 For Google subscriptions this will be the package name."
   }
@@ -526,7 +526,9 @@ For Google subscriptions this will be the package name."
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Provider Subscription ID"
-    description: "Provider subscription ID."
+    description: "Provider subscription ID.
+For Stripe subscriptions this will be the subscription ID.
+For Google subscriptions this will be the purchase token."
   }
 
   dimension: subscription__provider_subscription_item_id {
