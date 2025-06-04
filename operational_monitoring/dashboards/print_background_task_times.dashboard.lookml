@@ -201,16 +201,16 @@
   - title: OS
     name: OS
     type: string_filter
-    default_value: 'Linux'
+    default_value: 'Windows_NT'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'Linux'
-      - 'Darwin'
       - 'Windows_NT'
+      - 'Darwin'
+      - 'Linux'
       
   
   
