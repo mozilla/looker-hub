@@ -3819,6 +3819,24 @@ Implies `fxa.account_enabled`.
 "
   }
 
+  dimension: metrics__boolean__genai_linkpreview_ai_optin {
+    label: "Genai Linkpreview Ai Optin"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.genai_linkpreview_ai_optin ;;
+    type: yesno
+    group_label: "Genai Linkpreview"
+    group_item_label: "Ai Optin"
+
+    link: {
+      label: "Glean Dictionary reference for Genai Linkpreview Ai Optin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/genai_linkpreview_ai_optin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if the user has opted-in to use AI for key points generation
+"
+  }
+
   dimension: metrics__boolean__genai_linkpreview_enabled {
     label: "Genai Linkpreview Enabled"
     hidden: no
@@ -3834,6 +3852,42 @@ Implies `fxa.account_enabled`.
     }
 
     description: "Records if the user has link previews enabled
+"
+  }
+
+  dimension: metrics__boolean__genai_linkpreview_key_points {
+    label: "Genai Linkpreview Key Points"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.genai_linkpreview_key_points ;;
+    type: yesno
+    group_label: "Genai Linkpreview"
+    group_item_label: "Key Points"
+
+    link: {
+      label: "Glean Dictionary reference for Genai Linkpreview Key Points"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/genai_linkpreview_key_points"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if the user defaults to expanded state for key point generation
+"
+  }
+
+  dimension: metrics__string__genai_linkpreview_shortcut {
+    label: "Genai Linkpreview Shortcut"
+    hidden: no
+    sql: ${TABLE}.metrics.string.genai_linkpreview_shortcut ;;
+    type: string
+    group_label: "Genai Linkpreview"
+    group_item_label: "Shortcut"
+
+    link: {
+      label: "Glean Dictionary reference for Genai Linkpreview Shortcut"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/genai_linkpreview_shortcut"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records which type of shortcut the user selected for Link Previews (comma separated if more than one)
 "
   }
 
