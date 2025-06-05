@@ -920,6 +920,16 @@ Implies `fxa.account_enabled`.
 "
   }
 
+  dimension: metrics__boolean__genai_linkpreview_ai_optin {
+    sql: ${TABLE}.metrics.boolean.genai_linkpreview_ai_optin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Genai Linkpreview Ai Optin"
+    description: "Records if the user has opted-in to use AI for key points generation
+"
+  }
+
   dimension: metrics__boolean__genai_linkpreview_enabled {
     sql: ${TABLE}.metrics.boolean.genai_linkpreview_enabled ;;
     type: yesno
@@ -927,6 +937,16 @@ Implies `fxa.account_enabled`.
     group_label: "Metrics Boolean"
     group_item_label: "Genai Linkpreview Enabled"
     description: "Records if the user has link previews enabled
+"
+  }
+
+  dimension: metrics__boolean__genai_linkpreview_key_points {
+    sql: ${TABLE}.metrics.boolean.genai_linkpreview_key_points ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Genai Linkpreview Key Points"
+    description: "Records if the user defaults to expanded state for key point generation
 "
   }
 
@@ -20164,6 +20184,16 @@ e.g. 134217728
     group_label: "Metrics String"
     group_item_label: "Genai Chatbot Provider"
     description: "Indicates id of activated chatbot provider or \"custom\" or \"none\"
+"
+  }
+
+  dimension: metrics__string__genai_linkpreview_shortcut {
+    sql: ${TABLE}.metrics.string.genai_linkpreview_shortcut ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Genai Linkpreview Shortcut"
+    description: "Records which type of shortcut the user selected for Link Previews (comma separated if more than one)
 "
   }
 
