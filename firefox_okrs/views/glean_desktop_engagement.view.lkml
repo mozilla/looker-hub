@@ -90,6 +90,12 @@ view: glean_desktop_engagement {
     description: "Indicates if the client is included in the desktop KPI"
   }
 
+  dimension: lifecycle_stage {
+    sql: ${TABLE}.lifecycle_stage ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
@@ -123,6 +129,12 @@ view: glean_desktop_engagement {
     type: string
     suggest_persist_for: "24 hours"
     description: "Normalized Operating System Version"
+  }
+
+  dimension: paid_vs_organic {
+    sql: ${TABLE}.paid_vs_organic ;;
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: wau {
