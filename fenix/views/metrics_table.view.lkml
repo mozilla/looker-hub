@@ -10981,6 +10981,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_connection_address_type {
+    sql: ${TABLE}.metrics.labeled_counter.networking_connection_address_type ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
     sql: ${TABLE}.metrics.labeled_counter.networking_cookie_timestamp_fixed_count ;;
     hidden: yes
@@ -15083,6 +15088,11 @@ view: metrics_table {
 
   dimension: metrics__string_list__metrics_syncing_items {
     sql: ${TABLE}.metrics.string_list.metrics_syncing_items ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__pkcs11_third_party_module_profile_entries {
+    sql: ${TABLE}.metrics.string_list.pkcs11_third_party_module_profile_entries ;;
     hidden: yes
   }
 
@@ -25859,6 +25869,72 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__javascript_gc_time_between__values {
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Minor"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Minor"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Minor"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Minor"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Minor"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Minor"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Minor"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.values ;;
     hidden: yes
   }
 
@@ -59242,6 +59318,20 @@ view: metrics_table__metrics__timing_distribution__javascript_gc_task_start_dela
 }
 
 view: metrics_table__metrics__timing_distribution__javascript_gc_time_between__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_gc_time_between_minor__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -61,6 +61,12 @@ view: newtab_clients_daily_table {
     description: "Count of topsite impressions with newtab opened in default ui"
   }
 
+  dimension: app_name {
+    sql: ${TABLE}.app_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
     type: number
