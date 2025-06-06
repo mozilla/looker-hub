@@ -3529,6 +3529,11 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.new_metric_capture_emulation
       type: table_view
+    new_profiles_aggregates_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.new_profiles_aggregates
+      type: table_view
     newtab:
       tables:
       - table: mozdata.firefox_desktop.newtab
@@ -11651,10 +11656,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 10
+            default: Windows 7
             options:
-            - Windows 10
             - Windows 7
+            - Windows 10
             - Windows 8.1
             - Windows 8
             - Windows 11
@@ -11693,8 +11698,8 @@ operational_monitoring:
             default: release
             options:
             - release
-            - aurora
             - nightly
+            - aurora
             - esr
             - beta
             - default
@@ -12456,8 +12461,8 @@ operational_monitoring:
             default: beta
             options:
             - beta
-            - aurora
             - nightly
+            - aurora
             - release
             - esr
             - Other
@@ -13157,10 +13162,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id374
           os:
-            default: Windows
+            default: Linux
             options:
-            - Windows
             - Linux
+            - Windows
             - Mac
             - Other
         explore: garbage_collection
@@ -14563,15 +14568,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id506
           app:
-            default: Linux - vpn_session
+            default: Android - daemon_session
             options:
-            - Linux - vpn_session
-            - Darwin - vpn_session
             - Android - daemon_session
             - Windows - vpn_session
+            - Linux - vpn_session
+            - iOS - vpn_session
+            - Darwin - vpn_session
             - iOS - daemon_session
             - Android - vpn_session
-            - iOS - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id507
@@ -16065,14 +16070,14 @@ operational_monitoring:
             default: nightly
             options:
             - nightly
-            - beta
             - release
+            - beta
           os:
-            default: Linux
+            default: Darwin
             options:
+            - Darwin
             - Linux
             - Windows_NT
-            - Darwin
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id618
