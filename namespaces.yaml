@@ -3019,6 +3019,10 @@ firefox_desktop:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_sponsored_tiles_clients_daily
+    metric_definitions_urlbar_events:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_urlbar_events
     metrics:
       type: glean_ping_explore
       views:
@@ -3500,6 +3504,8 @@ firefox_desktop:
     metric_definitions_site_breakage_events:
       type: metric_definitions_view
     metric_definitions_sponsored_tiles_clients_daily:
+      type: metric_definitions_view
+    metric_definitions_urlbar_events:
       type: metric_definitions_view
     metrics:
       tables:
@@ -11656,10 +11662,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 7
+            default: Windows 10
             options:
-            - Windows 7
             - Windows 10
+            - Windows 7
             - Windows 8.1
             - Windows 8
             - Windows 11
@@ -11698,8 +11704,8 @@ operational_monitoring:
             default: release
             options:
             - release
-            - nightly
             - aurora
+            - nightly
             - esr
             - beta
             - default
@@ -12458,11 +12464,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id332
           normalized_channel:
-            default: beta
+            default: aurora
             options:
+            - aurora
             - beta
             - nightly
-            - aurora
             - release
             - esr
             - Other
@@ -13162,11 +13168,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id374
           os:
-            default: Linux
+            default: Mac
             options:
-            - Linux
-            - Windows
             - Mac
+            - Windows
+            - Linux
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -14568,14 +14574,14 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id506
           app:
-            default: Android - daemon_session
+            default: Darwin - vpn_session
             options:
-            - Android - daemon_session
-            - Windows - vpn_session
-            - Linux - vpn_session
-            - iOS - vpn_session
             - Darwin - vpn_session
+            - Linux - vpn_session
             - iOS - daemon_session
+            - Windows - vpn_session
+            - iOS - vpn_session
+            - Android - daemon_session
             - Android - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
@@ -16067,17 +16073,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id617
           channel:
-            default: nightly
+            default: release
             options:
-            - nightly
             - release
+            - nightly
             - beta
           os:
             default: Darwin
             options:
             - Darwin
-            - Linux
             - Windows_NT
+            - Linux
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id618
