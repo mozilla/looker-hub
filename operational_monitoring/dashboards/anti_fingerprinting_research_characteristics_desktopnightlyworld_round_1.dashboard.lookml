@@ -10,6 +10,74 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1
+    type: looker_line
+    fields: [
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date,
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.branch,
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.point
+    ]
+    pivots: [
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.branch
+    ]
+    filters:
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.metric: 'days_of_use'
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date
+    field_y: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.point
+    log_scale: false
+    ci_lower: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.lower
+    ci_upper: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.upper
+    show_grid: true
+    listen:
+      Date: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1
+    type: looker_line
+    fields: [
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date,
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.branch,
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.point
+    ]
+    pivots: [
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.branch
+    ]
+    filters:
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.metric: 'uri_count'
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date
+    field_y: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.point
+    log_scale: false
+    ci_lower: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.lower
+    ci_upper: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.upper
+    show_grid: true
+    listen:
+      Date: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -28,7 +96,7 @@
     filters:
       anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.metric: 'ad_clicks'
       anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.statistic: mean
-    row: 0
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -61,77 +129,6 @@
     ]
     filters:
       anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.metric: 'search_count'
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date
-    field_y: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.point
-    log_scale: false
-    ci_lower: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.lower
-    ci_upper: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.upper
-    show_grid: true
-    listen:
-      Date: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1
-    type: "ci-line-chart"
-    fields: [
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date,
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.branch,
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.upper,
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.lower,
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.point
-    ]
-    pivots: [
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.branch
-    ]
-    filters:
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.metric: 'memory_total'
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.statistic: percentile
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date
-    field_y: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.point
-    log_scale: false
-    ci_lower: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.lower
-    ci_upper: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.upper
-    show_grid: true
-    listen:
-      Date: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date
-      Percentile: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1
-    type: looker_line
-    fields: [
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date,
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.branch,
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.point
-    ]
-    pivots: [
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.branch
-    ]
-    filters:
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.metric: 'uri_count'
       anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.statistic: mean
     row: 10
     col: 12
@@ -183,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date,
       anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.branch,
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.upper,
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.lower,
       anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.point
     ]
     pivots: [
       anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.branch
     ]
     filters:
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.metric: 'active_hours'
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.statistic: mean
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.metric: 'memory_total'
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -213,40 +212,7 @@
     show_grid: true
     listen:
       Date: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1
-    type: looker_line
-    fields: [
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date,
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.branch,
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.point
-    ]
-    pivots: [
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.branch
-    ]
-    filters:
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.metric: 'days_of_use'
-      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date
-    field_y: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.point
-    log_scale: false
-    ci_lower: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.lower
-    ci_upper: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.upper
-    show_grid: true
-    listen:
-      Date: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date
+      Percentile: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -268,6 +234,40 @@
     ]
     filters:
       anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.metric: 'retained'
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date
+    field_y: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.point
+    log_scale: false
+    ci_lower: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.lower
+    ci_upper: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.upper
+    show_grid: true
+    listen:
+      Date: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1
+    type: looker_line
+    fields: [
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.submission_date,
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.branch,
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.point
+    ]
+    pivots: [
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.branch
+    ]
+    filters:
+      anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.metric: 'active_hours'
       anti_fingerprinting_research_characteristics_desktopnightlyworld_round_1.statistic: mean
     row: 30
     col: 12
