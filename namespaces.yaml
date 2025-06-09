@@ -4282,10 +4282,6 @@ firefox_desktop_background_update:
       type: table_view
 firefox_ios:
   explores:
-    addresses_sync:
-      type: glean_ping_explore
-      views:
-        base_view: addresses_sync
     baseline:
       type: glean_ping_explore
       views:
@@ -4529,15 +4525,6 @@ firefox_ios:
       - channel: release
         table: mozdata.firefox_ios.ad_activation_performance
       type: table_view
-    addresses_sync:
-      tables:
-      - channel: release
-        table: mozdata.firefox_ios.addresses_sync
-      - channel: beta
-        table: mozdata.org_mozilla_ios_firefoxbeta.addresses_sync
-      - channel: nightly
-        table: mozdata.org_mozilla_ios_fennec.addresses_sync
-      type: glean_ping_view
     addresses_sync_table:
       tables:
       - channel: release
@@ -24290,6 +24277,34 @@ websites:
     blogs_landing_page_summary:
       tables:
       - table: moz-fx-data-shared-prod.mozilla_org.blogs_landing_page_summary
+      type: table_view
+    firefox_com_firefox_whatsnew_summary:
+      tables:
+      - table: mozdata.firefoxdotcom.firefox_whatsnew_summary
+      type: table_view
+    firefox_com_ga4_sessions:
+      tables:
+      - table: mozdata.firefoxdotcom.ga_sessions
+      type: table_view
+    firefox_com_ga4_www_site_downloads:
+      tables:
+      - table: moz-fx-data-shared-prod.firefoxdotcom.www_site_downloads
+      type: table_view
+    firefox_com_landing_page_metrics:
+      tables:
+      - table: moz-fx-data-shared-prod.firefoxdotcom.www_site_landing_page_metrics
+      type: table_view
+    firefox_com_metrics_summary:
+      tables:
+      - table: moz-fx-data-shared-prod.firefoxdotcom.wwww_site_metrics_summary
+      type: table_view
+    firefox_com_page_metrics:
+      tables:
+      - table: moz-fx-data-shared-prod.firefoxdotcom.www_site_page_metrics
+      type: table_view
+    firefox_com_www_site_events_metrics:
+      tables:
+      - table: mozdata.firefoxdotcom.www_site_events_metrics
       type: table_view
     firefox_whatsnew_summary:
       tables:
