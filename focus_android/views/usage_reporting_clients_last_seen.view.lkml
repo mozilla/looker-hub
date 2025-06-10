@@ -5,12 +5,6 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: usage_reporting_clients_last_seen {
-  dimension: app_channel {
-    sql: ${TABLE}.app_channel ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
   dimension: days_active_bits {
     sql: ${TABLE}.days_active_bits ;;
     type: number

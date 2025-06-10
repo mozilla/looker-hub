@@ -10,28 +10,8 @@ include: "/looker-hub/firefox_desktop/datagroups/heartbeat_last_updated.datagrou
 explore: heartbeat {
   sql_always_where: ${heartbeat.submission_date} >= '2010-01-01' ;;
   view_label: " Heartbeat"
-  description: "Explore for the heartbeat ping. Reports the user's response to a Firefox Heartbeat survey, after the survey is complete. (\"response\" includes ignoring or abandoning the survey.)"
+  description: "Explore for the heartbeat ping. "
   view_name: heartbeat
-
-  join: heartbeat__metrics__labeled_counter__glean_error_invalid_label {
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${heartbeat.metrics__labeled_counter__glean_error_invalid_label}) AS heartbeat__metrics__labeled_counter__glean_error_invalid_label ON ${heartbeat.document_id} = ${heartbeat__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
-  }
-
-  join: heartbeat__metrics__labeled_counter__glean_error_invalid_overflow {
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${heartbeat.metrics__labeled_counter__glean_error_invalid_overflow}) AS heartbeat__metrics__labeled_counter__glean_error_invalid_overflow ON ${heartbeat.document_id} = ${heartbeat__metrics__labeled_counter__glean_error_invalid_overflow.document_id} ;;
-  }
-
-  join: heartbeat__metrics__labeled_counter__glean_error_invalid_state {
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${heartbeat.metrics__labeled_counter__glean_error_invalid_state}) AS heartbeat__metrics__labeled_counter__glean_error_invalid_state ON ${heartbeat.document_id} = ${heartbeat__metrics__labeled_counter__glean_error_invalid_state.document_id} ;;
-  }
-
-  join: heartbeat__metrics__labeled_counter__glean_error_invalid_value {
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${heartbeat.metrics__labeled_counter__glean_error_invalid_value}) AS heartbeat__metrics__labeled_counter__glean_error_invalid_value ON ${heartbeat.document_id} = ${heartbeat__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
-  }
 
   join: heartbeat__events {
     relationship: one_to_many
@@ -55,8 +35,4 @@ explore: heartbeat {
       submission_date: "28 days",
     ]
   }
-}
-
-explore: suggest__heartbeat__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
 }
