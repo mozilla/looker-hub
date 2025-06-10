@@ -630,20 +630,40 @@ experimentation:
       - channel: release
         table: mozdata.telemetry.experiment_enrollment_cumulative_population_estimate
       type: table_view
+    experiment_enrollment_cumulative_population_estimate_v2:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_enrollment_cumulative_population_estimate_v2
+      type: table_view
     experiment_enrollment_daily_active_population:
       tables:
       - channel: release
         table: mozdata.telemetry.experiment_enrollment_daily_active_population
+      type: table_view
+    experiment_enrollment_daily_active_population_v2:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_enrollment_daily_active_population_v2
       type: table_view
     experiment_enrollment_other_events_overall:
       tables:
       - channel: release
         table: mozdata.telemetry.experiment_enrollment_other_events_overall
       type: table_view
+    experiment_enrollment_other_events_overall_v2:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_enrollment_other_events_overall_v2
+      type: table_view
     experiment_enrollment_overall:
       tables:
       - channel: release
         table: mozdata.telemetry.experiment_enrollment_overall
+      type: table_view
+    experiment_enrollment_overall_v2:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_enrollment_overall_v2
       type: table_view
     experiment_search_aggregates_live:
       tables:
@@ -654,6 +674,11 @@ experimentation:
       tables:
       - channel: release
         table: mozdata.telemetry.experiment_unenrollment_overall
+      type: table_view
+    experiment_unenrollment_overall_v2:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_unenrollment_overall_v2
       type: table_view
     experimenter_experiments:
       tables:
