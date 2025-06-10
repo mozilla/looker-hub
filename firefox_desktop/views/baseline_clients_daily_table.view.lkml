@@ -274,6 +274,12 @@ view: baseline_clients_daily_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: windows_version {
+    sql: ${TABLE}.windows_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension_group: first_run {
     sql: ${TABLE}.first_run_date ;;
     type: time
