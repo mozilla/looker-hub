@@ -605,6 +605,26 @@ view: interaction_table {
 "
   }
 
+  dimension: metrics__string__technical_operations_creative_id {
+    sql: ${TABLE}.metrics.string.technical_operations_creative_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Technical Operations Creative ID"
+    description: "Advertiser/partner provided identifier for assets used in a specific ad.  May be null.
+"
+  }
+
+  dimension: metrics__string__technical_operations_report_reason {
+    sql: ${TABLE}.metrics.string.technical_operations_report_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Technical Operations Report Reason"
+    description: "Reason selected by the user for reporting the ad
+"
+  }
+
   dimension: metrics__string__technical_operations_request_id {
     sql: ${TABLE}.metrics.string.technical_operations_request_id ;;
     type: string
