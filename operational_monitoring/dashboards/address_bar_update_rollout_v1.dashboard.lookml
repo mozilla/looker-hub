@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       address_bar_update_rollout_v1.branch
     ]
     filters:
-      address_bar_update_rollout_v1.metric: 'days_of_use'
+      address_bar_update_rollout_v1.metric: 'ad_clicks'
       address_bar_update_rollout_v1.statistic: mean
     row: 0
     col: 0
@@ -78,24 +78,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: address_bar_update_rollout_v1
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       address_bar_update_rollout_v1.submission_date,
       address_bar_update_rollout_v1.branch,
+      address_bar_update_rollout_v1.upper,
+      address_bar_update_rollout_v1.lower,
       address_bar_update_rollout_v1.point
     ]
     pivots: [
       address_bar_update_rollout_v1.branch
     ]
     filters:
-      address_bar_update_rollout_v1.metric: 'ad_clicks'
-      address_bar_update_rollout_v1.statistic: mean
+      address_bar_update_rollout_v1.metric: 'memory_total'
+      address_bar_update_rollout_v1.statistic: percentile
     row: 10
     col: 0
     width: 12
@@ -108,6 +110,7 @@
     show_grid: true
     listen:
       Date: address_bar_update_rollout_v1.submission_date
+      Percentile: address_bar_update_rollout_v1.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -180,45 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: address_bar_update_rollout_v1
-    type: "ci-line-chart"
-    fields: [
-      address_bar_update_rollout_v1.submission_date,
-      address_bar_update_rollout_v1.branch,
-      address_bar_update_rollout_v1.upper,
-      address_bar_update_rollout_v1.lower,
-      address_bar_update_rollout_v1.point
-    ]
-    pivots: [
-      address_bar_update_rollout_v1.branch
-    ]
-    filters:
-      address_bar_update_rollout_v1.metric: 'memory_total'
-      address_bar_update_rollout_v1.statistic: percentile
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: address_bar_update_rollout_v1.submission_date
-    field_y: address_bar_update_rollout_v1.point
-    log_scale: false
-    ci_lower: address_bar_update_rollout_v1.lower
-    ci_upper: address_bar_update_rollout_v1.upper
-    show_grid: true
-    listen:
-      Date: address_bar_update_rollout_v1.submission_date
-      Percentile: address_bar_update_rollout_v1.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,10 +199,10 @@
       address_bar_update_rollout_v1.branch
     ]
     filters:
-      address_bar_update_rollout_v1.metric: 'retained'
+      address_bar_update_rollout_v1.metric: 'days_of_use'
       address_bar_update_rollout_v1.statistic: mean
-    row: 30
-    col: 0
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: address_bar_update_rollout_v1.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       address_bar_update_rollout_v1.metric: 'active_hours'
+      address_bar_update_rollout_v1.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: address_bar_update_rollout_v1.submission_date
+    field_y: address_bar_update_rollout_v1.point
+    log_scale: false
+    ci_lower: address_bar_update_rollout_v1.lower
+    ci_upper: address_bar_update_rollout_v1.upper
+    show_grid: true
+    listen:
+      Date: address_bar_update_rollout_v1.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: address_bar_update_rollout_v1
+    type: looker_line
+    fields: [
+      address_bar_update_rollout_v1.submission_date,
+      address_bar_update_rollout_v1.branch,
+      address_bar_update_rollout_v1.point
+    ]
+    pivots: [
+      address_bar_update_rollout_v1.branch
+    ]
+    filters:
+      address_bar_update_rollout_v1.metric: 'retained'
       address_bar_update_rollout_v1.statistic: mean
     row: 30
     col: 12
