@@ -40,6 +40,7 @@ looker_base_fields_geo__country,
 looker_base_fields_geo__db_version,
 looker_base_fields_geo__subdivision1,
 looker_base_fields_geo__subdivision2,
+looker_base_fields_is_bot_generated,
 looker_base_fields_normalized_app_id,
 looker_base_fields_normalized_app_name,
 looker_base_fields_normalized_channel,
@@ -135,6 +136,7 @@ looker_base_fields.geo.country AS looker_base_fields_geo__country,
 looker_base_fields.geo.db_version AS looker_base_fields_geo__db_version,
 looker_base_fields.geo.subdivision1 AS looker_base_fields_geo__subdivision1,
 looker_base_fields.geo.subdivision2 AS looker_base_fields_geo__subdivision2,
+looker_base_fields.is_bot_generated AS looker_base_fields_is_bot_generated,
 looker_base_fields.normalized_app_id AS looker_base_fields_normalized_app_id,
 looker_base_fields.normalized_app_name AS looker_base_fields_normalized_app_name,
 looker_base_fields.normalized_channel AS looker_base_fields_normalized_channel,
@@ -155,12 +157,12 @@ firefox_ios_retention_view.app_version AS firefox_ios_retention_view_app_version
 firefox_ios_retention_view.country AS firefox_ios_retention_view_country,
 firefox_ios_retention_view.device_manufacturer AS firefox_ios_retention_view_device_manufacturer,
 firefox_ios_retention_view.device_type AS firefox_ios_retention_view_device_type,
-firefox_ios_retention_view.first_seen AS firefox_ios_retention_view_first_seen,
+firefox_ios_retention_view.first_seen_date AS firefox_ios_retention_view_first_seen,
 firefox_ios_retention_view.is_mobile AS firefox_ios_retention_view_is_mobile,
 firefox_ios_retention_view.is_suspicious_device_client AS firefox_ios_retention_view_is_suspicious_device_client,
 firefox_ios_retention_view.lifecycle_stage AS firefox_ios_retention_view_lifecycle_stage,
 firefox_ios_retention_view.locale AS firefox_ios_retention_view_locale,
-firefox_ios_retention_view.metric AS firefox_ios_retention_view_metric,
+firefox_ios_retention_view.metric_date AS firefox_ios_retention_view_metric,
 firefox_ios_retention_view.new_profiles_metric_date AS firefox_ios_retention_view_new_profiles_metric_date,
 firefox_ios_retention_view.paid_vs_organic AS firefox_ios_retention_view_paid_vs_organic,
 firefox_ios_retention_view.ping_sent_metric_date AS firefox_ios_retention_view_ping_sent_metric_date,
@@ -239,6 +241,7 @@ looker_base_fields_geo__country,
 looker_base_fields_geo__db_version,
 looker_base_fields_geo__subdivision1,
 looker_base_fields_geo__subdivision2,
+looker_base_fields_is_bot_generated,
 looker_base_fields_normalized_app_id,
 looker_base_fields_normalized_app_name,
 looker_base_fields_normalized_channel,
@@ -565,6 +568,13 @@ firefox_ios_retention_view_retained_week_4_new_profiles,
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Subdivision2"
+  }
+
+  dimension: is_bot_generated {
+    sql: ${TABLE}.looker_base_fields_is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
   }
 
   dimension: normalized_app_id {

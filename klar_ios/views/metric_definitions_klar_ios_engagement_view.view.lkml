@@ -39,6 +39,7 @@ looker_base_fields_geo__country,
 looker_base_fields_geo__db_version,
 looker_base_fields_geo__subdivision1,
 looker_base_fields_geo__subdivision2,
+looker_base_fields_is_bot_generated,
 looker_base_fields_normalized_app_id,
 looker_base_fields_normalized_app_name,
 looker_base_fields_normalized_channel,
@@ -124,6 +125,7 @@ looker_base_fields.geo.country AS looker_base_fields_geo__country,
 looker_base_fields.geo.db_version AS looker_base_fields_geo__db_version,
 looker_base_fields.geo.subdivision1 AS looker_base_fields_geo__subdivision1,
 looker_base_fields.geo.subdivision2 AS looker_base_fields_geo__subdivision2,
+looker_base_fields.is_bot_generated AS looker_base_fields_is_bot_generated,
 looker_base_fields.normalized_app_id AS looker_base_fields_normalized_app_id,
 looker_base_fields.normalized_app_name AS looker_base_fields_normalized_app_name,
 looker_base_fields.normalized_channel AS looker_base_fields_normalized_channel,
@@ -140,7 +142,7 @@ klar_ios_engagement_view.country AS klar_ios_engagement_view_country,
 klar_ios_engagement_view.dau AS klar_ios_engagement_view_dau,
 klar_ios_engagement_view.device_manufacturer AS klar_ios_engagement_view_device_manufacturer,
 klar_ios_engagement_view.device_type AS klar_ios_engagement_view_device_type,
-klar_ios_engagement_view.first_seen AS klar_ios_engagement_view_first_seen,
+klar_ios_engagement_view.first_seen_date AS klar_ios_engagement_view_first_seen,
 klar_ios_engagement_view.is_mobile AS klar_ios_engagement_view_is_mobile,
 klar_ios_engagement_view.lifecycle_stage AS klar_ios_engagement_view_lifecycle_stage,
 klar_ios_engagement_view.locale AS klar_ios_engagement_view_locale,
@@ -218,6 +220,7 @@ looker_base_fields_geo__country,
 looker_base_fields_geo__db_version,
 looker_base_fields_geo__subdivision1,
 looker_base_fields_geo__subdivision2,
+looker_base_fields_is_bot_generated,
 looker_base_fields_normalized_app_id,
 looker_base_fields_normalized_app_name,
 looker_base_fields_normalized_channel,
@@ -526,6 +529,13 @@ klar_ios_engagement_view_wau,
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Subdivision2"
+  }
+
+  dimension: is_bot_generated {
+    sql: ${TABLE}.looker_base_fields_is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
   }
 
   dimension: normalized_app_id {

@@ -19,6 +19,26 @@ view: looker_dashboard_load_times {
     description: "A unique string identifier assigned to a particular dashboard each time a dashboard page is loaded"
   }
 
+  dimension: dashboard_run_session {
+    sql: ${TABLE}.dashboard_run_session ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "A unique string identifier assigned to a particular dashboard each time a dashboard is run"
+  }
+
+  dimension: is_auto_refreshed {
+    sql: ${TABLE}.is_auto_refreshed ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: refresh_interval {
+    sql: ${TABLE}.refresh_interval ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Indicates that the dashboard is refreshed automatically"
+  }
+
   dimension: seconds_until_controller_initialized {
     sql: ${TABLE}.seconds_until_controller_initialized ;;
     type: number

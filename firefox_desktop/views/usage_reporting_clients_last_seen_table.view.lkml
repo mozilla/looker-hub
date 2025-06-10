@@ -9,8 +9,6 @@ view: usage_reporting_clients_last_seen_table {
     sql: ${TABLE}.app_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The channel the application is being distributed on.
-"
   }
 
   dimension: days_active_bits {
@@ -35,18 +33,6 @@ view: usage_reporting_clients_last_seen_table {
     suggest_persist_for: "24 hours"
     description: "Bit field shows on which of the last 28 days a client sent us the usage_reporting ping.
 "
-  }
-
-  dimension: normalized_app_id {
-    sql: ${TABLE}.normalized_app_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: normalized_channel {
-    sql: ${TABLE}.normalized_channel ;;
-    type: string
-    suggest_persist_for: "24 hours"
   }
 
   dimension: usage_profile_id {

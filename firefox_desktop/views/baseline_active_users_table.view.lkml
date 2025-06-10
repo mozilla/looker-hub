@@ -71,6 +71,66 @@ view: baseline_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: attribution_campaign {
+    sql: ${TABLE}.attribution_campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: attribution_content {
+    sql: ${TABLE}.attribution_content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: attribution_dlsource {
+    sql: ${TABLE}.attribution_dlsource ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: attribution_dltoken {
+    sql: ${TABLE}.attribution_dltoken ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: attribution_experiment {
+    sql: ${TABLE}.attribution_experiment ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: attribution_medium {
+    sql: ${TABLE}.attribution_medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: attribution_source {
+    sql: ${TABLE}.attribution_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: attribution_term {
+    sql: ${TABLE}.attribution_term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: attribution_ua {
+    sql: ${TABLE}.attribution_ua ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: attribution_variation {
+    sql: ${TABLE}.attribution_variation ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: browser_engagement_active_ticks {
     sql: ${TABLE}.browser_engagement_active_ticks ;;
     type: number
@@ -203,9 +263,51 @@ view: baseline_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: distribution_name {
+    sql: ${TABLE}.distribution_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: durations {
     sql: ${TABLE}.durations ;;
     type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: first_seen_attribution_campaign {
+    sql: ${TABLE}.first_seen_attribution_campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: first_seen_attribution_content {
+    sql: ${TABLE}.first_seen_attribution_content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: first_seen_attribution_medium {
+    sql: ${TABLE}.first_seen_attribution_medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: first_seen_attribution_source {
+    sql: ${TABLE}.first_seen_attribution_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: first_seen_attribution_term {
+    sql: ${TABLE}.first_seen_attribution_term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: first_seen_distribution_name {
+    sql: ${TABLE}.first_seen_distribution_name ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 
@@ -241,6 +343,12 @@ view: baseline_active_users_table {
 
   dimension: is_default_browser {
     sql: ${TABLE}.is_default_browser ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: is_desktop {
+    sql: ${TABLE}.is_desktop ;;
     type: yesno
     suggest_persist_for: "24 hours"
   }
@@ -295,6 +403,12 @@ view: baseline_active_users_table {
 
   dimension: os {
     sql: ${TABLE}.os ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: os_grouped {
+    sql: ${TABLE}.os_grouped ;;
     type: string
     suggest_persist_for: "24 hours"
   }

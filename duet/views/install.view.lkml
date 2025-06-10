@@ -226,6 +226,12 @@ view: install {
     description: "Seconds spent on the intro screen"
   }
 
+  dimension: is_bot_generated {
+    sql: ${TABLE}.is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string

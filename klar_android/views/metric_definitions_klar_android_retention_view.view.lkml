@@ -40,6 +40,7 @@ looker_base_fields_geo__country,
 looker_base_fields_geo__db_version,
 looker_base_fields_geo__subdivision1,
 looker_base_fields_geo__subdivision2,
+looker_base_fields_is_bot_generated,
 looker_base_fields_normalized_app_id,
 looker_base_fields_normalized_app_name,
 looker_base_fields_normalized_channel,
@@ -130,6 +131,7 @@ looker_base_fields.geo.country AS looker_base_fields_geo__country,
 looker_base_fields.geo.db_version AS looker_base_fields_geo__db_version,
 looker_base_fields.geo.subdivision1 AS looker_base_fields_geo__subdivision1,
 looker_base_fields.geo.subdivision2 AS looker_base_fields_geo__subdivision2,
+looker_base_fields.is_bot_generated AS looker_base_fields_is_bot_generated,
 looker_base_fields.normalized_app_id AS looker_base_fields_normalized_app_id,
 looker_base_fields.normalized_app_name AS looker_base_fields_normalized_app_name,
 looker_base_fields.normalized_channel AS looker_base_fields_normalized_channel,
@@ -146,11 +148,11 @@ klar_android_retention_view.app_version AS klar_android_retention_view_app_versi
 klar_android_retention_view.country AS klar_android_retention_view_country,
 klar_android_retention_view.device_manufacturer AS klar_android_retention_view_device_manufacturer,
 klar_android_retention_view.device_type AS klar_android_retention_view_device_type,
-klar_android_retention_view.first_seen AS klar_android_retention_view_first_seen,
+klar_android_retention_view.first_seen_date AS klar_android_retention_view_first_seen,
 klar_android_retention_view.is_mobile AS klar_android_retention_view_is_mobile,
 klar_android_retention_view.lifecycle_stage AS klar_android_retention_view_lifecycle_stage,
 klar_android_retention_view.locale AS klar_android_retention_view_locale,
-klar_android_retention_view.metric AS klar_android_retention_view_metric,
+klar_android_retention_view.metric_date AS klar_android_retention_view_metric,
 klar_android_retention_view.new_profiles_metric_date AS klar_android_retention_view_new_profiles_metric_date,
 klar_android_retention_view.paid_vs_organic AS klar_android_retention_view_paid_vs_organic,
 klar_android_retention_view.ping_sent_metric_date AS klar_android_retention_view_ping_sent_metric_date,
@@ -229,6 +231,7 @@ looker_base_fields_geo__country,
 looker_base_fields_geo__db_version,
 looker_base_fields_geo__subdivision1,
 looker_base_fields_geo__subdivision2,
+looker_base_fields_is_bot_generated,
 looker_base_fields_normalized_app_id,
 looker_base_fields_normalized_app_name,
 looker_base_fields_normalized_channel,
@@ -550,6 +553,13 @@ klar_android_retention_view_retained_week_4_new_profiles,
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Subdivision2"
+  }
+
+  dimension: is_bot_generated {
+    sql: ${TABLE}.looker_base_fields_is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
   }
 
   dimension: normalized_app_id {

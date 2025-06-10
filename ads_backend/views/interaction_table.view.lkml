@@ -254,6 +254,12 @@ view: interaction_table {
     hidden: yes
   }
 
+  dimension: is_bot_generated {
+    sql: ${TABLE}.is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
@@ -596,6 +602,26 @@ view: interaction_table {
     group_label: "Metrics String"
     group_item_label: "Ad Region Code"
     description: "Region code associated with the client when the ad was requested.  May be null.
+"
+  }
+
+  dimension: metrics__string__technical_operations_creative_id {
+    sql: ${TABLE}.metrics.string.technical_operations_creative_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Technical Operations Creative ID"
+    description: "Advertiser/partner provided identifier for assets used in a specific ad.  May be null.
+"
+  }
+
+  dimension: metrics__string__technical_operations_report_reason {
+    sql: ${TABLE}.metrics.string.technical_operations_report_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Technical Operations Report Reason"
+    description: "Reason selected by the user for reporting the ad
 "
   }
 

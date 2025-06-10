@@ -31194,6 +31194,12 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     hidden: yes
   }
 
+  dimension: is_bot_generated {
+    sql: ${TABLE}.is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
@@ -54386,6 +54392,20 @@ view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput
   }
 }
 
+view: metrics__metrics__custom_distribution__networking_local_network_access_port__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__pdfjs_editing_highlight_thickness__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -58465,6 +58485,49 @@ view: metrics__metrics__labeled_memory_distribution__network_cache_size {
 }
 
 view: metrics__metrics__labeled_memory_distribution__network_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__network_page_load_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__network_page_load_size__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -67063,6 +67126,20 @@ view: metrics__metrics__timing_distribution__javascript_gc_task_start_delay__val
 }
 
 view: metrics__metrics__timing_distribution__javascript_gc_time_between__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_time_between_minor__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

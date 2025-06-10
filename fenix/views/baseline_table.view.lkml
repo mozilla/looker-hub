@@ -229,6 +229,12 @@ view: baseline_table {
     hidden: yes
   }
 
+  dimension: is_bot_generated {
+    sql: ${TABLE}.is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
@@ -534,6 +540,14 @@ view: baseline_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Search Default Engine Name"
+  }
+
+  dimension: metrics__string__startup_profile_selection_reason {
+    sql: ${TABLE}.metrics.string.startup_profile_selection_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Startup Profile Selection Reason"
   }
 
   dimension: metrics__timespan__glean_baseline_duration__time_unit {

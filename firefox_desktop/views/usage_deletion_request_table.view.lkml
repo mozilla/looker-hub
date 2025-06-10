@@ -22,6 +22,12 @@ view: usage_deletion_request_table {
     hidden: yes
   }
 
+  dimension: is_bot_generated {
+    sql: ${TABLE}.is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
@@ -251,6 +257,17 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Glean Client Annotation Experimentation ID"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
+"
+  }
+
+  dimension: metrics__uuid__usage_profile_group_id {
+    sql: ${TABLE}.metrics.uuid.usage_profile_group_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics UUID"
+    group_item_label: "Usage Profile Group ID"
+    description: "A UUID uniquely identifying the profile group,
+not shared with other telemetry data.
 "
   }
 

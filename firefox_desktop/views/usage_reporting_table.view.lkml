@@ -22,6 +22,12 @@ view: usage_reporting_table {
     hidden: yes
   }
 
+  dimension: is_bot_generated {
+    sql: ${TABLE}.is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
@@ -392,6 +398,17 @@ If the version detection fails, this metric gets set to `Unknown`.
     group_label: "Metrics String"
     group_item_label: "Usage Reason"
     description: "The reason the usage-reporting ping was sent.
+"
+  }
+
+  dimension: metrics__uuid__usage_profile_group_id {
+    sql: ${TABLE}.metrics.uuid.usage_profile_group_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics UUID"
+    group_item_label: "Usage Profile Group ID"
+    description: "A UUID uniquely identifying the profile group,
+not shared with other telemetry data.
 "
   }
 

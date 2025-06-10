@@ -35,6 +35,76 @@ view: clients_last_seen_joined_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: attribution__campaign {
+    sql: ${TABLE}.attribution.campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Attribution"
+    group_item_label: "Campaign"
+  }
+
+  dimension: attribution__content {
+    sql: ${TABLE}.attribution.content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Attribution"
+    group_item_label: "Content"
+  }
+
+  dimension: attribution__medium {
+    sql: ${TABLE}.attribution.medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Attribution"
+    group_item_label: "Medium"
+  }
+
+  dimension: attribution__source {
+    sql: ${TABLE}.attribution.source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Attribution"
+    group_item_label: "Source"
+  }
+
+  dimension: attribution__term {
+    sql: ${TABLE}.attribution.term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Attribution"
+    group_item_label: "Term"
+  }
+
+  dimension: attribution_dlsource {
+    sql: ${TABLE}.attribution_dlsource ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: attribution_dltoken {
+    sql: ${TABLE}.attribution_dltoken ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: attribution_experiment {
+    sql: ${TABLE}.attribution_experiment ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: attribution_ua {
+    sql: ${TABLE}.attribution_ua ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: attribution_variation {
+    sql: ${TABLE}.attribution_variation ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: baseline_profile_group_id {
     sql: ${TABLE}.baseline_profile_group_id ;;
     type: string
@@ -159,6 +229,14 @@ view: clients_last_seen_joined_table {
     sql: ${TABLE}.device_model ;;
     type: string
     suggest_persist_for: "24 hours"
+  }
+
+  dimension: distribution__name {
+    sql: ${TABLE}.distribution.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Distribution"
+    group_item_label: "Name"
   }
 
   dimension: distribution_id {

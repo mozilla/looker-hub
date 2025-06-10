@@ -41,6 +41,7 @@ looker_base_fields_geo__country,
 looker_base_fields_geo__db_version,
 looker_base_fields_geo__subdivision1,
 looker_base_fields_geo__subdivision2,
+looker_base_fields_is_bot_generated,
 looker_base_fields_normalized_app_id,
 looker_base_fields_normalized_app_name,
 looker_base_fields_normalized_channel,
@@ -136,6 +137,7 @@ looker_base_fields.geo.country AS looker_base_fields_geo__country,
 looker_base_fields.geo.db_version AS looker_base_fields_geo__db_version,
 looker_base_fields.geo.subdivision1 AS looker_base_fields_geo__subdivision1,
 looker_base_fields.geo.subdivision2 AS looker_base_fields_geo__subdivision2,
+looker_base_fields.is_bot_generated AS looker_base_fields_is_bot_generated,
 looker_base_fields.normalized_app_id AS looker_base_fields_normalized_app_id,
 looker_base_fields.normalized_app_name AS looker_base_fields_normalized_app_name,
 looker_base_fields.normalized_channel AS looker_base_fields_normalized_channel,
@@ -156,12 +158,12 @@ funnel_retention.app_version AS funnel_retention_app_version,
 funnel_retention.country AS funnel_retention_country,
 funnel_retention.device_manufacturer AS funnel_retention_device_manufacturer,
 funnel_retention.device_type AS funnel_retention_device_type,
-funnel_retention.first_seen AS funnel_retention_first_seen,
+funnel_retention.first_seen_date AS funnel_retention_first_seen,
 funnel_retention.is_mobile AS funnel_retention_is_mobile,
 funnel_retention.is_suspicious_device_client AS funnel_retention_is_suspicious_device_client,
 funnel_retention.lifecycle_stage AS funnel_retention_lifecycle_stage,
 funnel_retention.locale AS funnel_retention_locale,
-funnel_retention.metric AS funnel_retention_metric,
+funnel_retention.metric_date AS funnel_retention_metric,
 funnel_retention.new_profiles_metric_date AS funnel_retention_new_profiles_metric_date,
 funnel_retention.paid_vs_organic AS funnel_retention_paid_vs_organic,
 funnel_retention.ping_sent_metric_date AS funnel_retention_ping_sent_metric_date,
@@ -240,6 +242,7 @@ looker_base_fields_geo__country,
 looker_base_fields_geo__db_version,
 looker_base_fields_geo__subdivision1,
 looker_base_fields_geo__subdivision2,
+looker_base_fields_is_bot_generated,
 looker_base_fields_normalized_app_id,
 looker_base_fields_normalized_app_name,
 looker_base_fields_normalized_channel,
@@ -582,6 +585,13 @@ funnel_retention_retained_week_4_new_profiles,
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Subdivision2"
+  }
+
+  dimension: is_bot_generated {
+    sql: ${TABLE}.looker_base_fields_is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
   }
 
   dimension: normalized_app_id {

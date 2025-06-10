@@ -254,6 +254,12 @@ view: broken_site_report_table {
     hidden: yes
   }
 
+  dimension: is_bot_generated {
+    sql: ${TABLE}.is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
@@ -736,6 +742,16 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics String"
     group_item_label: "Broken Site Report Tab Info Antitracking Block List"
     description: "Currently either `basic` or `strict`, may change in the future.
+"
+  }
+
+  dimension: metrics__string__broken_site_report_tab_info_antitracking_etp_category {
+    sql: ${TABLE}.metrics.string.broken_site_report_tab_info_antitracking_etp_category ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Broken Site Report Tab Info Antitracking Etp Category"
+    description: "The current ETP category, either `standard`, `strict`, or `custom`.
 "
   }
 

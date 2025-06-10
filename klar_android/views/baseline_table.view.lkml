@@ -254,6 +254,12 @@ view: baseline_table {
     hidden: yes
   }
 
+  dimension: is_bot_generated {
+    sql: ${TABLE}.is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
@@ -591,6 +597,39 @@ to indicate \"undetermined\".
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
 "
+  }
+
+  dimension: metrics__string__startup_profile_selection_reason {
+    sql: ${TABLE}.metrics.string.startup_profile_selection_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Startup Profile Selection Reason"
+    description: "How the profile was selected during startup. One of the following reasons:
+  unknown:
+    Generally should not happen, set as a default in case no other reason
+    occured.
+  profile-manager:
+    The profile was selected by the profile manager.
+  profile-selector:
+    The profile was selected by the profile selector window.
+  profile-reset:
+    The profile was selected for reset, normally this would mean a restart.
+  restart:
+    The user restarted the application, the same profile as previous will
+    be used.
+  argument-profile:
+    The profile was selected by the --profile command line argument.
+  argument-p:
+    The profile was selected by the -p command line argument.
+  firstrun-claimed-default:
+    A first run of a dedicated profiles build chose the old default
+    profile to be the default for this install.
+  firstrun-skipped-default:
+    A first run of a dedicated profiles build skipped over the old default
+    profile and created a new profile.
+  restart-claimed-default:
+    A first run of a dedicate"
   }
 
   dimension: metrics__timespan__glean_baseline_duration__time_unit {

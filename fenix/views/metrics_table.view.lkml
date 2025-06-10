@@ -229,6 +229,12 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: is_bot_generated {
+    sql: ${TABLE}.is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
@@ -715,6 +721,30 @@ view: metrics_table {
     group_item_label: "Formautofill OS Auth Enabled"
   }
 
+  dimension: metrics__boolean__gfx_d2d_enabled {
+    sql: ${TABLE}.metrics.boolean.gfx_d2d_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Gfx D2D Enabled"
+  }
+
+  dimension: metrics__boolean__gfx_dwrite_enabled {
+    sql: ${TABLE}.metrics.boolean.gfx_dwrite_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Gfx Dwrite Enabled"
+  }
+
+  dimension: metrics__boolean__gfx_headless {
+    sql: ${TABLE}.metrics.boolean.gfx_headless ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Gfx Headless"
+  }
+
   dimension: metrics__boolean__gfx_os_compositor {
     sql: ${TABLE}.metrics.boolean.gfx_os_compositor ;;
     type: yesno
@@ -1115,12 +1145,60 @@ view: metrics_table {
     group_item_label: "Shopping Settings User Has Onboarded"
   }
 
+  dimension: metrics__boolean__system_has_win_package_id {
+    sql: ${TABLE}.metrics.boolean.system_has_win_package_id ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "System Has Win Package ID"
+  }
+
+  dimension: metrics__boolean__system_is_wow_64 {
+    sql: ${TABLE}.metrics.boolean.system_is_wow_64 ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "System Is Wow 64"
+  }
+
+  dimension: metrics__boolean__system_is_wow_arm_64 {
+    sql: ${TABLE}.metrics.boolean.system_is_wow_arm_64 ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "System Is Wow Arm 64"
+  }
+
   dimension: metrics__boolean__tab_strip_enabled {
     sql: ${TABLE}.metrics.boolean.tab_strip_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Tab Strip Enabled"
+  }
+
+  dimension: metrics__boolean__update_settings_auto_download {
+    sql: ${TABLE}.metrics.boolean.update_settings_auto_download ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Update Settings Auto Download"
+  }
+
+  dimension: metrics__boolean__update_settings_background {
+    sql: ${TABLE}.metrics.boolean.update_settings_background ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Update Settings Background"
+  }
+
+  dimension: metrics__boolean__update_settings_enabled {
+    sql: ${TABLE}.metrics.boolean.update_settings_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Update Settings Enabled"
   }
 
   dimension: metrics__boolean__updater_available {
@@ -6817,6 +6895,27 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_local_network_access_port__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_local_network_access_port.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Networking Local Network Access Port"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_local_network_access_port__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_local_network_access_port.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Networking Local Network Access Port"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_local_network_access_port__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_local_network_access_port.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__pdfjs_editing_highlight_thickness__count {
     sql: ${TABLE}.metrics.custom_distribution.pdfjs_editing_highlight_thickness.count ;;
     type: number
@@ -10882,6 +10981,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_connection_address_type {
+    sql: ${TABLE}.metrics.labeled_counter.networking_connection_address_type ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
     sql: ${TABLE}.metrics.labeled_counter.networking_cookie_timestamp_fixed_count ;;
     hidden: yes
@@ -11019,6 +11123,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__networking_https_upgrade_with_https_rr {
     sql: ${TABLE}.metrics.labeled_counter.networking_https_upgrade_with_https_rr ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_local_network_access {
+    sql: ${TABLE}.metrics.labeled_counter.networking_local_network_access ;;
     hidden: yes
   }
 
@@ -11794,6 +11903,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_memory_distribution__network_cache_size {
     sql: ${TABLE}.metrics.labeled_memory_distribution.network_cache_size ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_memory_distribution__network_page_load_size {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.network_page_load_size ;;
     hidden: yes
   }
 
@@ -13223,6 +13337,71 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__object__gfx_adapters {
+    sql: ${TABLE}.metrics.object.gfx_adapters ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__gfx_features_d2d {
+    sql: ${TABLE}.metrics.object.gfx_features_d2d ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__gfx_features_d3d11 {
+    sql: ${TABLE}.metrics.object.gfx_features_d3d11 ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__gfx_features_gpu_process {
+    sql: ${TABLE}.metrics.object.gfx_features_gpu_process ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__gfx_features_hw_compositing {
+    sql: ${TABLE}.metrics.object.gfx_features_hw_compositing ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__gfx_features_omtp {
+    sql: ${TABLE}.metrics.object.gfx_features_omtp ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__gfx_features_opengl_compositing {
+    sql: ${TABLE}.metrics.object.gfx_features_opengl_compositing ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__gfx_features_webrender {
+    sql: ${TABLE}.metrics.object.gfx_features_webrender ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__gfx_features_wr_compositor {
+    sql: ${TABLE}.metrics.object.gfx_features_wr_compositor ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__gfx_monitors {
+    sql: ${TABLE}.metrics.object.gfx_monitors ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__hdd_binary {
+    sql: ${TABLE}.metrics.object.hdd_binary ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__hdd_profile {
+    sql: ${TABLE}.metrics.object.hdd_profile ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__hdd_system {
+    sql: ${TABLE}.metrics.object.hdd_system ;;
+    hidden: yes
+  }
+
   dimension: metrics__object__nimbus_system_recorded_nimbus_context {
     sql: ${TABLE}.metrics.object.nimbus_system_recorded_nimbus_context ;;
     hidden: yes
@@ -13441,6 +13620,14 @@ view: metrics_table {
     group_item_label: "Gfx Hdr Windows Display Colorspace Bitfield"
   }
 
+  dimension: metrics__quantity__gfx_target_frame_rate {
+    sql: ${TABLE}.metrics.quantity.gfx_target_frame_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Gfx Target Frame Rate"
+  }
+
   dimension: metrics__quantity__gpu_process_total_launch_attempts {
     sql: ${TABLE}.metrics.quantity.gpu_process_total_launch_attempts ;;
     type: number
@@ -13545,6 +13732,38 @@ view: metrics_table {
     group_item_label: "Policies Count"
   }
 
+  dimension: metrics__quantity__profiles_creation_date {
+    sql: ${TABLE}.metrics.quantity.profiles_creation_date ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Profiles Creation Date"
+  }
+
+  dimension: metrics__quantity__profiles_first_use_date {
+    sql: ${TABLE}.metrics.quantity.profiles_first_use_date ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Profiles First Use Date"
+  }
+
+  dimension: metrics__quantity__profiles_recovered_from_backup {
+    sql: ${TABLE}.metrics.quantity.profiles_recovered_from_backup ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Profiles Recovered From Backup"
+  }
+
+  dimension: metrics__quantity__profiles_reset_date {
+    sql: ${TABLE}.metrics.quantity.profiles_reset_date ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Profiles Reset Date"
+  }
+
   dimension: metrics__quantity__pwmgr_num_saved_passwords {
     sql: ${TABLE}.metrics.quantity.pwmgr_num_saved_passwords ;;
     type: number
@@ -13567,6 +13786,22 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Recent Bookmarks Recent Bookmarks Count"
+  }
+
+  dimension: metrics__quantity__sandbox_content_win32k_lockdown_state {
+    sql: ${TABLE}.metrics.quantity.sandbox_content_win32k_lockdown_state ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Sandbox Content Win32K Lockdown State"
+  }
+
+  dimension: metrics__quantity__sandbox_effective_content_process_level {
+    sql: ${TABLE}.metrics.quantity.sandbox_effective_content_process_level ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Sandbox Effective Content Process Level"
   }
 
   dimension: metrics__quantity__startup_profile_count {
@@ -13663,6 +13898,54 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "System CPU Stepping"
+  }
+
+  dimension: metrics__quantity__system_memory {
+    sql: ${TABLE}.metrics.quantity.system_memory ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System Memory"
+  }
+
+  dimension: metrics__quantity__system_os_service_pack_major {
+    sql: ${TABLE}.metrics.quantity.system_os_service_pack_major ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System OS Service Pack Major"
+  }
+
+  dimension: metrics__quantity__system_os_service_pack_minor {
+    sql: ${TABLE}.metrics.quantity.system_os_service_pack_minor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System OS Service Pack Minor"
+  }
+
+  dimension: metrics__quantity__system_os_windows_build_number {
+    sql: ${TABLE}.metrics.quantity.system_os_windows_build_number ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System OS Windows Build Number"
+  }
+
+  dimension: metrics__quantity__system_os_windows_ubr {
+    sql: ${TABLE}.metrics.quantity.system_os_windows_ubr ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System OS Windows Ubr"
+  }
+
+  dimension: metrics__quantity__system_virtual_memory {
+    sql: ${TABLE}.metrics.quantity.system_virtual_memory ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System Virtual Memory"
   }
 
   dimension: metrics__quantity__timestamps_first_paint {
@@ -14385,12 +14668,28 @@ view: metrics_table {
     group_item_label: "Gfx Adapter Primary Vendor ID"
   }
 
+  dimension: metrics__string__gfx_content_backend {
+    sql: ${TABLE}.metrics.string.gfx_content_backend ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Gfx Content Backend"
+  }
+
   dimension: metrics__string__gfx_feature_webrender {
     sql: ${TABLE}.metrics.string.gfx_feature_webrender ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Gfx Feature Webrender"
+  }
+
+  dimension: metrics__string__gfx_features_compositor {
+    sql: ${TABLE}.metrics.string.gfx_features_compositor ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Gfx Features Compositor"
   }
 
   dimension: metrics__string__gfx_linux_window_protocol {
@@ -14423,6 +14722,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Gfx Status Last Compositor Gecko Version"
+  }
+
+  dimension: metrics__string__gfx_text_scale_factor {
+    sql: ${TABLE}.metrics.string.gfx_text_scale_factor ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Gfx Text Scale Factor"
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
@@ -14633,6 +14940,14 @@ view: metrics_table {
     group_item_label: "Startup Profile Selection Reason"
   }
 
+  dimension: metrics__string__system_apple_model_id {
+    sql: ${TABLE}.metrics.string.system_apple_model_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System Apple Model ID"
+  }
+
   dimension: metrics__string__system_cpu_name {
     sql: ${TABLE}.metrics.string.system_cpu_name ;;
     type: string
@@ -14647,6 +14962,62 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "System CPU Vendor"
+  }
+
+  dimension: metrics__string__system_os_distro {
+    sql: ${TABLE}.metrics.string.system_os_distro ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System OS Distro"
+  }
+
+  dimension: metrics__string__system_os_distro_version {
+    sql: ${TABLE}.metrics.string.system_os_distro_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System OS Distro Version"
+  }
+
+  dimension: metrics__string__system_os_locale {
+    sql: ${TABLE}.metrics.string.system_os_locale ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System OS Locale"
+  }
+
+  dimension: metrics__string__system_os_name {
+    sql: ${TABLE}.metrics.string.system_os_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System OS Name"
+  }
+
+  dimension: metrics__string__system_os_version {
+    sql: ${TABLE}.metrics.string.system_os_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System OS Version"
+  }
+
+  dimension: metrics__string__system_win_package_family_name {
+    sql: ${TABLE}.metrics.string.system_win_package_family_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System Win Package Family Name"
+  }
+
+  dimension: metrics__string__update_settings_channel {
+    sql: ${TABLE}.metrics.string.update_settings_channel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Update Settings Channel"
   }
 
   dimension: metrics__string__webcompatreporting_reason_dropdown {
@@ -14675,6 +15046,36 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__string_list__intl_accept_languages {
+    sql: ${TABLE}.metrics.string_list.intl_accept_languages ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__intl_app_locales {
+    sql: ${TABLE}.metrics.string_list.intl_app_locales ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__intl_available_locales {
+    sql: ${TABLE}.metrics.string_list.intl_available_locales ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__intl_regional_prefs_locales {
+    sql: ${TABLE}.metrics.string_list.intl_regional_prefs_locales ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__intl_requested_locales {
+    sql: ${TABLE}.metrics.string_list.intl_requested_locales ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__intl_system_locales {
+    sql: ${TABLE}.metrics.string_list.intl_system_locales ;;
+    hidden: yes
+  }
+
   dimension: metrics__string_list__logins_store_migration_errors {
     sql: ${TABLE}.metrics.string_list.logins_store_migration_errors ;;
     hidden: yes
@@ -14687,6 +15088,11 @@ view: metrics_table {
 
   dimension: metrics__string_list__metrics_syncing_items {
     sql: ${TABLE}.metrics.string_list.metrics_syncing_items ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__pkcs11_third_party_module_profile_entries {
+    sql: ${TABLE}.metrics.string_list.pkcs11_third_party_module_profile_entries ;;
     hidden: yes
   }
 
@@ -14772,6 +15178,11 @@ view: metrics_table {
 
   dimension: metrics__string_list__preferences_tracking_protection {
     sql: ${TABLE}.metrics.string_list.preferences_tracking_protection ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__system_cpu_extensions {
+    sql: ${TABLE}.metrics.string_list.system_cpu_extensions ;;
     hidden: yes
   }
 
@@ -25458,6 +25869,72 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__javascript_gc_time_between__values {
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Minor"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Minor"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Minor"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Minor"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Minor"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Minor"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Javascript GC Time Between Minor"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.values ;;
     hidden: yes
   }
 
@@ -46107,6 +46584,20 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_upload_thro
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_local_network_access_port__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__pdfjs_editing_highlight_thickness__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -50186,6 +50677,49 @@ view: metrics_table__metrics__labeled_memory_distribution__network_cache_size {
 }
 
 view: metrics_table__metrics__labeled_memory_distribution__network_cache_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__network_page_load_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__network_page_load_size__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -58784,6 +59318,20 @@ view: metrics_table__metrics__timing_distribution__javascript_gc_task_start_dela
 }
 
 view: metrics_table__metrics__timing_distribution__javascript_gc_time_between__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_gc_time_between_minor__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

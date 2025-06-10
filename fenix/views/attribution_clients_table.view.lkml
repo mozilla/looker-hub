@@ -38,20 +38,22 @@ view: attribution_clients_table {
     sql: ${TABLE}.distribution_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "A string containing the distribution identifier.
-"
   }
 
   dimension: install_source {
     sql: ${TABLE}.install_source ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The source of a profile installation.
-"
   }
 
   dimension: meta_attribution_app {
     sql: ${TABLE}.meta_attribution_app ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: normalized_channel {
+    sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
   }

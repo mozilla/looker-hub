@@ -41,6 +41,10 @@ COALESCE(SUM(weather_widget_clicks), 0) AS weather_widget_clicks,
 COALESCE(SUM(weather_widget_load_errors), 0) AS weather_widget_load_errors,
 COALESCE(SUM(weather_widget_change_display_to_detailed), 0) AS weather_widget_change_display_to_detailed,
 COALESCE(SUM(weather_widget_change_display_to_simple), 0) AS weather_widget_change_display_to_simple,
+COALESCE(COUNTIF(sponsored_topsite_tile_impressions>0), 0) AS newtab_clients_with_sponsored_tile_impressions,
+COALESCE(COUNTIF(sponsored_topsite_tile_clicks>0), 0) AS newtab_clients_with_sponsored_tile_clicks,
+COALESCE(COUNTIF(sponsored_pocket_impressions>0), 0) AS newtab_clients_with_sponsored_content_impressions,
+COALESCE(COUNTIF(sponsored_pocket_clicks>0), 0) AS newtab_clients_with_sponsored_content_clicks,
 
                 countries_ads_value_tier,
 countries_code,
@@ -683,6 +687,42 @@ a wallpaper.
 "
     type: number
     sql: ${TABLE}.weather_widget_change_display_to_simple ;;
+  }
+
+  dimension: newtab_clients_with_sponsored_tile_impressions {
+    group_label: "Metrics"
+    label: "Newtab Clients with Sponsored Tile Impressions"
+    description: "Count of clients with any sponsored tile impressions.
+"
+    type: number
+    sql: ${TABLE}.newtab_clients_with_sponsored_tile_impressions ;;
+  }
+
+  dimension: newtab_clients_with_sponsored_tile_clicks {
+    group_label: "Metrics"
+    label: "Newtab Clients with Sponsored Tile Clicks"
+    description: "Count of clients with any sponsored tile clicks.
+"
+    type: number
+    sql: ${TABLE}.newtab_clients_with_sponsored_tile_clicks ;;
+  }
+
+  dimension: newtab_clients_with_sponsored_content_impressions {
+    group_label: "Metrics"
+    label: "Newtab Clients with Sponsored Content Impressions"
+    description: "Count of clients with any sponsored content impressions.
+"
+    type: number
+    sql: ${TABLE}.newtab_clients_with_sponsored_content_impressions ;;
+  }
+
+  dimension: newtab_clients_with_sponsored_content_clicks {
+    group_label: "Metrics"
+    label: "Newtab Clients with Sponsored Content Clicks"
+    description: "Count of clients with any sponsored content clicks.
+"
+    type: number
+    sql: ${TABLE}.newtab_clients_with_sponsored_content_clicks ;;
   }
 
   dimension: ads_value_tier {
@@ -1378,6 +1418,10 @@ a wallpaper.
       weather_widget_load_errors,
       weather_widget_change_display_to_detailed,
       weather_widget_change_display_to_simple,
+      newtab_clients_with_sponsored_tile_impressions,
+      newtab_clients_with_sponsored_tile_clicks,
+      newtab_clients_with_sponsored_content_impressions,
+      newtab_clients_with_sponsored_content_clicks,
       newtab_ad_click_rate_average,
       newtab_visits_sum,
       newtab_visits_client_count_sampled,

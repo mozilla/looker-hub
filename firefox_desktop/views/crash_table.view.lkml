@@ -254,6 +254,12 @@ view: crash_table {
     hidden: yes
   }
 
+  dimension: is_bot_generated {
+    sql: ${TABLE}.is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
@@ -852,6 +858,26 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Glean Client Annotation Experimentation ID"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
+"
+  }
+
+  dimension: metrics__string__memory_js_large_allocation_failure {
+    sql: ${TABLE}.metrics.string.memory_js_large_allocation_failure ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Memory Js Large Allocation Failure"
+    description: "A large allocation couldn't be satisfied: What was its state when the crash happened.
+"
+  }
+
+  dimension: metrics__string__memory_js_out_of_memory {
+    sql: ${TABLE}.metrics.string.memory_js_out_of_memory ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Memory Js Out Of Memory"
+    description: "A small allocation couldn't be satisfied: What was its state when the crash happened.
 "
   }
 

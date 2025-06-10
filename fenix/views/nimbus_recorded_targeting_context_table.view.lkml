@@ -11,12 +11,6 @@ view: nimbus_recorded_targeting_context_table {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: androidSdkVersion_1 {
-    sql: ${TABLE}.androidSdkVersion_1 ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
   dimension: appVersion {
     sql: ${TABLE}.appVersion ;;
     type: string
@@ -133,5 +127,20 @@ view: nimbus_recorded_targeting_context_table {
     datatype: date
   }
 
-  sql_table_name: `mozdata.org_mozilla_fenix.nimbus_recorded_targeting_context` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.fenix.nimbus_recorded_targeting_context"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.fenix.nimbus_recorded_targeting_context"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.nimbus_recorded_targeting_context"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }

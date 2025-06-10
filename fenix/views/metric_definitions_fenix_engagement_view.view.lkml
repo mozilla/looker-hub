@@ -34,6 +34,7 @@ looker_base_fields_client_info__session_count,
 looker_base_fields_client_info__session_id,
 looker_base_fields_client_info__telemetry_sdk_build,
 looker_base_fields_client_info__windows_build_number,
+looker_base_fields_is_bot_generated,
 looker_base_fields_metadata__geo__city,
 looker_base_fields_metadata__geo__country,
 looker_base_fields_metadata__geo__db_version,
@@ -143,6 +144,7 @@ looker_base_fields.client_info.session_count AS looker_base_fields_client_info__
 looker_base_fields.client_info.session_id AS looker_base_fields_client_info__session_id,
 looker_base_fields.client_info.telemetry_sdk_build AS looker_base_fields_client_info__telemetry_sdk_build,
 looker_base_fields.client_info.windows_build_number AS looker_base_fields_client_info__windows_build_number,
+looker_base_fields.is_bot_generated AS looker_base_fields_is_bot_generated,
 looker_base_fields.metadata.geo.city AS looker_base_fields_metadata__geo__city,
 looker_base_fields.metadata.geo.country AS looker_base_fields_metadata__geo__country,
 looker_base_fields.metadata.geo.db_version AS looker_base_fields_metadata__geo__db_version,
@@ -150,7 +152,7 @@ looker_base_fields.metadata.geo.subdivision1 AS looker_base_fields_metadata__geo
 looker_base_fields.metadata.geo.subdivision2 AS looker_base_fields_metadata__geo__subdivision2,
 looker_base_fields.metadata.header.date AS looker_base_fields_metadata__header__date,
 looker_base_fields.metadata.header.dnt AS looker_base_fields_metadata__header__dnt,
-looker_base_fields.metadata.header.parsed AS looker_base_fields_metadata__header__parsed,
+looker_base_fields.metadata.header.parsed_date AS looker_base_fields_metadata__header__parsed,
 looker_base_fields.metadata.header.parsed_x_lb_tags.tls_cipher_hex AS looker_base_fields_metadata__header__parsed_x_lb_tags__tls_cipher_hex,
 looker_base_fields.metadata.header.parsed_x_lb_tags.tls_version AS looker_base_fields_metadata__header__parsed_x_lb_tags__tls_version,
 looker_base_fields.metadata.header.x_debug_id AS looker_base_fields_metadata__header__x_debug_id,
@@ -183,7 +185,7 @@ fenix_engagement_view.dau AS fenix_engagement_view_dau,
 fenix_engagement_view.device_manufacturer AS fenix_engagement_view_device_manufacturer,
 fenix_engagement_view.device_type AS fenix_engagement_view_device_type,
 fenix_engagement_view.distribution_id AS fenix_engagement_view_distribution_id,
-fenix_engagement_view.first_seen AS fenix_engagement_view_first_seen,
+fenix_engagement_view.first_seen_date AS fenix_engagement_view_first_seen,
 fenix_engagement_view.install_source AS fenix_engagement_view_install_source,
 fenix_engagement_view.is_mobile AS fenix_engagement_view_is_mobile,
 fenix_engagement_view.lifecycle_stage AS fenix_engagement_view_lifecycle_stage,
@@ -261,6 +263,7 @@ looker_base_fields_client_info__session_count,
 looker_base_fields_client_info__session_id,
 looker_base_fields_client_info__telemetry_sdk_build,
 looker_base_fields_client_info__windows_build_number,
+looker_base_fields_is_bot_generated,
 looker_base_fields_metadata__geo__city,
 looker_base_fields_metadata__geo__country,
 looker_base_fields_metadata__geo__db_version,
@@ -557,6 +560,13 @@ fenix_engagement_view_wau,
   dimension: document_id {
     sql: ${TABLE}.looker_base_fields_document_id ;;
     hidden: yes
+    group_label: "Base Fields"
+  }
+
+  dimension: is_bot_generated {
+    sql: ${TABLE}.looker_base_fields_is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 

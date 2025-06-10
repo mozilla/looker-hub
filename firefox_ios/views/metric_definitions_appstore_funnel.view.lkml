@@ -40,6 +40,7 @@ looker_base_fields_geo__country,
 looker_base_fields_geo__db_version,
 looker_base_fields_geo__subdivision1,
 looker_base_fields_geo__subdivision2,
+looker_base_fields_is_bot_generated,
 looker_base_fields_normalized_app_id,
 looker_base_fields_normalized_app_name,
 looker_base_fields_normalized_channel,
@@ -118,6 +119,7 @@ looker_base_fields.geo.country AS looker_base_fields_geo__country,
 looker_base_fields.geo.db_version AS looker_base_fields_geo__db_version,
 looker_base_fields.geo.subdivision1 AS looker_base_fields_geo__subdivision1,
 looker_base_fields.geo.subdivision2 AS looker_base_fields_geo__subdivision2,
+looker_base_fields.is_bot_generated AS looker_base_fields_is_bot_generated,
 looker_base_fields.normalized_app_id AS looker_base_fields_normalized_app_id,
 looker_base_fields.normalized_app_name AS looker_base_fields_normalized_app_name,
 looker_base_fields.normalized_channel AS looker_base_fields_normalized_channel,
@@ -129,7 +131,7 @@ looker_base_fields.user_agent.browser AS looker_base_fields_user_agent__browser,
 looker_base_fields.user_agent.os AS looker_base_fields_user_agent__os,
 looker_base_fields.user_agent.version AS looker_base_fields_user_agent__version,
 appstore_funnel.country AS appstore_funnel_country,
-appstore_funnel.first_seen AS appstore_funnel_first_seen,
+appstore_funnel.first_seen_date AS appstore_funnel_first_seen,
 appstore_funnel.first_time_downloads AS appstore_funnel_first_time_downloads,
 appstore_funnel.new_profiles AS appstore_funnel_new_profiles,
 appstore_funnel.redownloads AS appstore_funnel_redownloads,
@@ -204,6 +206,7 @@ looker_base_fields_geo__country,
 looker_base_fields_geo__db_version,
 looker_base_fields_geo__subdivision1,
 looker_base_fields_geo__subdivision2,
+looker_base_fields_is_bot_generated,
 looker_base_fields_normalized_app_id,
 looker_base_fields_normalized_app_name,
 looker_base_fields_normalized_channel,
@@ -517,6 +520,13 @@ appstore_funnel_total_downloads,
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Subdivision2"
+  }
+
+  dimension: is_bot_generated {
+    sql: ${TABLE}.looker_base_fields_is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
   }
 
   dimension: normalized_app_id {

@@ -12,6 +12,10 @@ datagroup: service_subscription_events_last_updated {
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'subscription_platform_derived' AND table_name = 'recent_service_subscription_events_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE (table_schema = 'subscription_platform_derived' AND table_name = 'service_subscription_events_v1')
 
     ) ;;
